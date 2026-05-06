@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { createStudent } from "../actions";
 import { SCHOOL_YEARS, CURRICULUM_LEVELS } from "@/lib/levels";
-import Button from "@/components/ui/Button";
+import SubmitButton from "@/components/ui/SubmitButton";
 
 export default function NewStudentPage() {
   return (
@@ -54,9 +54,7 @@ export default function NewStudentPage() {
         />
 
         <div className="pt-2">
-          <Button variant="primary" size="lg" type="submit">
-            Add student
-          </Button>
+          <SubmitButton pendingLabel="Adding…">Add student</SubmitButton>
         </div>
       </form>
     </div>

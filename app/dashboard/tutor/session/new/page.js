@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import { createSession } from "../actions";
 import SessionNotesField from "@/components/SessionNotesField";
-import Button from "@/components/ui/Button";
+import SubmitButton from "@/components/ui/SubmitButton";
 
 const NOTE_PROMPTS = `e.g.
 - Topics covered: …
@@ -118,9 +118,7 @@ export default async function NewSessionPage({ searchParams }) {
         </Label>
 
         <div className="pt-2">
-          <Button variant="primary" size="lg" type="submit">
-            Save session
-          </Button>
+          <SubmitButton pendingLabel="Saving…">Save session</SubmitButton>
         </div>
       </form>
     </div>
