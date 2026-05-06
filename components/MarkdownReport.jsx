@@ -1,0 +1,107 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+
+export default function MarkdownReport({ content }) {
+  return (
+    <article className="report-prose">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          h1: (props) => (
+            <h1 className="text-[26px] font-semibold tracking-tight text-foreground" {...props} />
+          ),
+          h2: (props) => (
+            <h2
+              className="text-base font-semibold tracking-tight text-foreground mt-8 mb-1.5 pb-1.5 border-b border-zinc-200 dark:border-zinc-800 uppercase letter-spacing-wide"
+              style={{ letterSpacing: "0.04em" }}
+              {...props}
+            />
+          ),
+          h3: (props) => (
+            <h3 className="text-[15px] font-semibold mt-5 mb-1" {...props} />
+          ),
+          p: (props) => (
+            <p
+              className="text-[15px] leading-[1.65] my-2.5 text-zinc-700 dark:text-zinc-300"
+              {...props}
+            />
+          ),
+          ul: (props) => (
+            <ul className="my-2.5 space-y-1.5 list-none pl-0" {...props} />
+          ),
+          ol: (props) => (
+            <ol className="my-2.5 space-y-1.5 list-decimal pl-5" {...props} />
+          ),
+          li: ({ ordered, ...props }) => (
+            <li
+              className={`text-[15px] leading-[1.65] text-zinc-700 dark:text-zinc-300 ${
+                ordered ? "" : "pl-5 relative"
+              }`}
+              {...props}
+            >
+              {!ordered && (
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 top-[0.6em] w-2 h-2 rounded-full bg-brand"
+                />
+              )}
+              {props.children}
+            </li>
+          ),
+          strong: (props) => (
+            <strong className="font-semibold text-foreground" {...props} />
+          ),
+          em: (props) => (
+            <em className="not-italic text-xs text-muted" {...props} />
+          ),
+          hr: () => <hr className="my-8 border-zinc-200 dark:border-zinc-800" />,
+          code: (props) => (
+            <code
+              className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 text-[13px] font-mono"
+              {...props}
+            />
+          ),
+          a: (props) => (
+            <a
+              className="text-brand hover:text-brand-dark underline underline-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...props}
+            />
+          ),
+          details: (props) => (
+            <details
+              className="group my-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30"
+              {...props}
+            />
+          ),
+          summary: (props) => (
+            <summary
+              className="cursor-pointer select-none px-4 py-2.5 text-sm font-medium text-brand-dark hover:bg-brand-pale transition flex items-center gap-2 list-none [&::-webkit-details-marker]:hidden"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className="transition-transform group-open:rotate-90"
+              >
+                <polyline points="9 6 15 12 9 18" />
+              </svg>
+              {props.children}
+            </summary>
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </article>
+  );
+}
