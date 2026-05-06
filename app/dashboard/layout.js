@@ -17,6 +17,13 @@ const NAV = {
       icon: <Icon name="heart" />,
     },
   ],
+  student: [
+    {
+      label: "My dashboard",
+      href: "/dashboard/student",
+      icon: <Icon name="book" />,
+    },
+  ],
   admin: [
     {
       label: "Overview",
@@ -80,6 +87,14 @@ function Icon({ name }) {
     return (
       <svg {...common} aria-hidden="true">
         <path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" />
+      </svg>
+    );
+  }
+  if (name === "book") {
+    return (
+      <svg {...common} aria-hidden="true">
+        <path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19v14H5.5A1.5 1.5 0 0 0 4 18.5V4.5z" />
+        <path d="M4 18.5A1.5 1.5 0 0 0 5.5 20H19" />
       </svg>
     );
   }

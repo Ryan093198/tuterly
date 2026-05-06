@@ -16,21 +16,17 @@ export default async function ParentDashboard() {
     .eq("parent_id", user.id)
     .order("first_name");
 
-  // Fetch latest sent report per student (best-effort).
+  // Fetch latest report per student (any generated report counts).
   const studentIds = (students ?? []).map((s) => s.id);
   let latestByStudent = new Map();
   if (studentIds.length) {
     const { data: latestReports } = await supabase
       .from("reports")
       .select(
-        "id, sent_at, parent_viewed_at, sessions(student_id, date)"
+        "id, sent_at, parent_viewed_at, created_at, sessions(student_id, date)"
       )
-      .in(
-        "sessions.student_id",
-        studentIds
-      )
-      .not("sent_at", "is", null)
-      .order("sent_at", { ascending: false });
+      .in("sessions.student_id", studentIds)
+      .order("created_at", { ascending: false });
     for (const r of latestReports ?? []) {
       const sid = r.sessions?.student_id;
       if (sid && !latestByStudent.has(sid)) latestByStudent.set(sid, r);

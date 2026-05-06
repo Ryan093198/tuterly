@@ -6,15 +6,17 @@ import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { sendInviteEmail } from "@/lib/email";
 
-export async function inviteParent(formData) {
+const VALID_ROLES = new Set(["parent", "student"]);
+
+async function createInviteFor({ studentId, toEmail, role }) {
+  if (!VALID_ROLES.has(role)) throw new Error(`invalid role: ${role}`);
+
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/");
 
-  const studentId = formData.get("student_id");
-  const toEmail = formData.get("email")?.toString().trim().toLowerCase();
   if (!studentId || !toEmail) throw new Error("missing fields");
 
   const { data: student } = await supabase
@@ -36,7 +38,7 @@ export async function inviteParent(formData) {
       from_user_id: user.id,
       to_email: toEmail,
       student_id: student.id,
-      role: "parent",
+      role,
     })
     .select("token")
     .single();
@@ -47,20 +49,33 @@ export async function inviteParent(formData) {
       to: toEmail,
       inviterName: profile?.full_name || "Your tutor",
       studentName: `${student.first_name} ${student.last_name}`,
-      role: "parent",
+      role,
       token: invite.token,
     });
   } catch (e) {
-    // Don't roll back the invite — the row + token are already created and
-    // the tutor can share the link manually. Log so it's visible in the dev
-    // server output.
     console.warn(
-      `[inviteParent] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
+      `[invite/${role}] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
         `Invite link: ${process.env.NEXT_PUBLIC_APP_URL || ""}/invite/${invite.token}`
     );
   }
 
   revalidatePath(`/dashboard/tutor/students/${student.id}`);
+}
+
+export async function inviteParent(formData) {
+  await createInviteFor({
+    studentId: formData.get("student_id"),
+    toEmail: formData.get("email")?.toString().trim().toLowerCase(),
+    role: "parent",
+  });
+}
+
+export async function inviteStudent(formData) {
+  await createInviteFor({
+    studentId: formData.get("student_id"),
+    toEmail: formData.get("email")?.toString().trim().toLowerCase(),
+    role: "student",
+  });
 }
 
 export async function resendInvite(formData) {
@@ -71,6 +86,7 @@ export async function resendInvite(formData) {
   if (!user) redirect("/");
 
   const studentId = formData.get("student_id");
+  const role = formData.get("role")?.toString() || "parent";
   if (!studentId) throw new Error("missing student_id");
 
   const { data: invite } = await supabase
@@ -78,6 +94,7 @@ export async function resendInvite(formData) {
     .select("token, to_email, role, student_id, students(first_name, last_name)")
     .eq("student_id", studentId)
     .eq("from_user_id", user.id)
+    .eq("role", role)
     .eq("status", "pending")
     .order("created_at", { ascending: false })
     .limit(1)
@@ -90,7 +107,6 @@ export async function resendInvite(formData) {
     .eq("id", user.id)
     .single();
 
-  // Surface the real error here so the tutor sees if Resend is still misconfigured.
   await sendInviteEmail({
     to: invite.to_email,
     inviterName: profile?.full_name || "Your tutor",
@@ -110,15 +126,16 @@ export async function cancelInvite(formData) {
   if (!user) redirect("/");
 
   const studentId = formData.get("student_id");
+  const role = formData.get("role")?.toString() || "parent";
   if (!studentId) throw new Error("missing student_id");
 
-  // Service role: invites are protected by RLS but we're already auth-checked.
   const admin = createAdminClient();
   await admin
     .from("invites")
     .update({ status: "expired" })
     .eq("student_id", studentId)
     .eq("from_user_id", user.id)
+    .eq("role", role)
     .eq("status", "pending");
 
   revalidatePath(`/dashboard/tutor/students/${studentId}`);

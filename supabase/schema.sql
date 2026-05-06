@@ -252,6 +252,63 @@ create policy "Users can insert own profile" on profiles for insert with check (
 -- ─── Student working level (curriculum level being taught, vs school year) ───
 alter table students add column if not exists working_level text;
 
+-- ─── Student role + per-student account ───
+-- A student can have their own Tuterly account so they see their own reports,
+-- progress, and can upload resources. Optional — many students will only ever
+-- exist as a `students` row managed by the tutor.
+alter table profiles drop constraint if exists profiles_role_check;
+alter table profiles add constraint profiles_role_check
+  check (role in ('parent', 'tutor', 'admin', 'student'));
+
+alter table invites drop constraint if exists invites_role_check;
+alter table invites add constraint invites_role_check
+  check (role in ('parent', 'tutor', 'student'));
+
+alter table students add column if not exists student_user_id uuid references profiles(id);
+create index if not exists idx_students_student_user on students(student_user_id);
+
+drop policy if exists "Students view own record" on students;
+create policy "Students view own record" on students for select using (
+  student_user_id = auth.uid()
+);
+
+drop policy if exists "Students view own sessions" on sessions;
+create policy "Students view own sessions" on sessions for select using (
+  student_id in (select id from students where student_user_id = auth.uid())
+);
+
+drop policy if exists "Students view own reports" on reports;
+create policy "Students view own reports" on reports for select using (
+  session_id in (
+    select s.id from sessions s join students st on s.student_id = st.id
+    where st.student_user_id = auth.uid()
+  )
+);
+
+drop policy if exists "Students view own ratings" on ratings;
+create policy "Students view own ratings" on ratings for select using (
+  student_id in (select id from students where student_user_id = auth.uid())
+);
+
+drop policy if exists "Students view own resources" on resources;
+create policy "Students view own resources" on resources for select using (
+  student_id in (select id from students where student_user_id = auth.uid())
+);
+
+drop policy if exists "Students add own resources" on resources;
+create policy "Students add own resources" on resources for insert with check (
+  uploaded_by = auth.uid()
+  and student_id in (select id from students where student_user_id = auth.uid())
+);
+
+drop policy if exists "Students view own session photos" on session_photos;
+create policy "Students view own session photos" on session_photos for select using (
+  session_id in (
+    select s.id from sessions s join students st on s.student_id = st.id
+    where st.student_user_id = auth.uid()
+  )
+);
+
 -- ─── Session photos (working/notes uploads) ───
 create table if not exists session_photos (
   id uuid primary key default uuid_generate_v4(),

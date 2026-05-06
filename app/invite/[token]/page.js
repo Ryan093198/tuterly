@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
@@ -35,7 +34,12 @@ export default async function InvitePage({ params }) {
     ? `${invite.students.first_name} ${invite.students.last_name}`
     : "your child";
   const inviterName = inviter?.full_name || "Your tutor";
-  const inviteRole = invite.role === "parent" ? "view reports for" : "tutor";
+  const inviteRole =
+    invite.role === "parent"
+      ? "view reports for"
+      : invite.role === "student"
+        ? "be the student account for"
+        : "tutor";
 
   // Check if the user is signed in.
   const supabase = await createClient();
@@ -44,19 +48,16 @@ export default async function InvitePage({ params }) {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    return (
-      <InviteShell
-        heading={`${inviterName} invited you to Tuterly`}
-        body={`Sign in or sign up with ${invite.to_email} to ${inviteRole} ${studentName}.`}
-      >
-        <Link
-          href={`/?next=${encodeURIComponent(`/invite/${token}`)}`}
-          className="inline-flex h-11 px-5 rounded-full bg-foreground text-background font-medium items-center"
-        >
-          Continue
-        </Link>
-      </InviteShell>
-    );
+    // Send invitees straight to the signup form with the email + role pre-filled.
+    const params = new URLSearchParams({
+      next: `/invite/${token}`,
+      mode: "signup",
+      email: invite.to_email,
+      role: invite.role,
+      inviter: inviterName,
+      student: studentName,
+    });
+    redirect(`/?${params.toString()}`);
   }
 
   // Email mismatch — the invite was for a different address.
@@ -98,6 +99,14 @@ export default async function InvitePage({ params }) {
       { onConflict: "tutor_id,student_id" }
     );
     await admin.from("profiles").update({ role: "tutor" }).eq("id", user.id);
+  }
+
+  if (invite.role === "student" && invite.student_id) {
+    await admin
+      .from("students")
+      .update({ student_user_id: user.id })
+      .eq("id", invite.student_id);
+    await admin.from("profiles").update({ role: "student" }).eq("id", user.id);
   }
 
   await admin.from("invites").update({ status: "accepted" }).eq("id", invite.id);

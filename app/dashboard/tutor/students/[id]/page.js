@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
-import { inviteParent, resendInvite, cancelInvite } from "../invite-actions";
+import {
+  inviteParent,
+  inviteStudent,
+  resendInvite,
+  cancelInvite,
+} from "../invite-actions";
+import { createAdminClient } from "@/lib/supabase-admin";
 import { signedUrlFor } from "@/app/dashboard/resource-actions";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
@@ -13,7 +19,7 @@ import Badge from "@/components/ui/Badge";
 const STATUS_TONE = {
   pending: "neutral",
   notes_added: "neutral",
-  report_generated: "warning",
+  report_generated: "brand",
   sent_to_parent: "success",
 };
 
@@ -21,7 +27,7 @@ const STATUS_LABEL = {
   pending: "Notes pending",
   notes_added: "Notes added",
   report_generated: "Report ready",
-  sent_to_parent: "Sent to parent",
+  sent_to_parent: "Emailed",
 };
 
 export default async function StudentDetail({ params }) {
@@ -34,16 +40,21 @@ export default async function StudentDetail({ params }) {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "id, first_name, last_name, year_level, working_level, school, subjects, goals, concerns, parent_id"
+      "id, first_name, last_name, year_level, working_level, school, subjects, goals, concerns, parent_id, student_user_id"
     )
     .eq("id", id)
     .single();
   if (!student) notFound();
 
+  // Use admin to look up linked profile rows (RLS hides other users' profiles).
+  const admin = createAdminClient();
+
   const [
     { data: sessions },
     { data: parentProfile },
-    { data: pendingInvite },
+    { data: studentProfile },
+    { data: pendingParentInvite },
+    { data: pendingStudentInvite },
     { data: ratingsRaw },
     { data: rawResources },
   ] = await Promise.all([
@@ -54,10 +65,17 @@ export default async function StudentDetail({ params }) {
       .eq("tutor_id", user.id)
       .order("date", { ascending: false }),
     student.parent_id
-      ? supabase
+      ? admin
           .from("profiles")
           .select("full_name, email")
           .eq("id", student.parent_id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+    student.student_user_id
+      ? admin
+          .from("profiles")
+          .select("full_name, email")
+          .eq("id", student.student_user_id)
           .maybeSingle()
       : Promise.resolve({ data: null }),
     supabase
@@ -66,6 +84,16 @@ export default async function StudentDetail({ params }) {
       .eq("student_id", id)
       .eq("from_user_id", user.id)
       .eq("role", "parent")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+    supabase
+      .from("invites")
+      .select("to_email, token, created_at")
+      .eq("student_id", id)
+      .eq("from_user_id", user.id)
+      .eq("role", "student")
       .eq("status", "pending")
       .order("created_at", { ascending: false })
       .limit(1)
@@ -121,88 +149,28 @@ export default async function StudentDetail({ params }) {
         </div>
       )}
 
-      <Section label="Parent">
-        {parentProfile ? (
-          <Card className="p-4 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold">
-              {(parentProfile.full_name || "?")
-                .split(/\s+/)
-                .map((p) => p[0])
-                .filter(Boolean)
-                .slice(0, 2)
-                .join("")
-                .toUpperCase()}
-            </div>
-            <div className="min-w-0">
-              <div className="font-medium truncate">
-                {parentProfile.full_name}
-              </div>
-              <div className="text-sm text-muted truncate">
-                {parentProfile.email}
-              </div>
-            </div>
-            <Badge tone="success" className="ml-auto">
-              Linked
-            </Badge>
-          </Card>
-        ) : pendingInvite ? (
-          <Card className="p-5 border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 space-y-3">
-            <div className="text-sm">
-              <span className="font-medium">Invite pending</span> — sent to{" "}
-              <span className="font-medium">{pendingInvite.to_email}</span>
-            </div>
-            <div className="text-xs text-muted break-all">
-              Link:{" "}
-              <code className="px-1.5 py-0.5 rounded bg-white/60 dark:bg-black/30 font-mono">
-                {(process.env.NEXT_PUBLIC_APP_URL ||
-                  "http://localhost:3000") +
-                  "/invite/" +
-                  pendingInvite.token}
-              </code>
-            </div>
-            <div className="flex gap-2">
-              <form action={resendInvite}>
-                <input type="hidden" name="student_id" value={student.id} />
-                <button
-                  type="submit"
-                  className="h-8 px-3 rounded-full bg-brand text-white text-xs font-medium hover:bg-brand-dark transition shadow-sm shadow-brand/20"
-                >
-                  Resend email
-                </button>
-              </form>
-              <form action={cancelInvite}>
-                <input type="hidden" name="student_id" value={student.id} />
-                <button
-                  type="submit"
-                  className="h-8 px-3 rounded-full border border-zinc-300 dark:border-zinc-700 text-xs font-medium hover:bg-white/40 dark:hover:bg-white/5 transition"
-                >
-                  Cancel
-                </button>
-              </form>
-            </div>
-          </Card>
-        ) : (
-          <form
-            action={inviteParent}
-            className="flex flex-col sm:flex-row gap-2 p-5 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700"
-          >
-            <input type="hidden" name="student_id" value={student.id} />
-            <input
-              required
-              type="email"
-              name="email"
-              placeholder="parent@example.com"
-              className="flex-1 h-10 px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
-            />
-            <button
-              type="submit"
-              className="h-10 px-4 rounded-full bg-brand hover:bg-brand-dark text-white text-sm font-medium shadow-sm shadow-brand/20 transition"
-            >
-              Invite parent
-            </button>
-          </form>
-        )}
-      </Section>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <AccountSlot
+          label="Parent"
+          studentId={student.id}
+          role="parent"
+          inviteAction={inviteParent}
+          profile={parentProfile}
+          pendingInvite={pendingParentInvite}
+          placeholder="parent@example.com"
+          inviteLabel="Invite parent"
+        />
+        <AccountSlot
+          label="Student"
+          studentId={student.id}
+          role="student"
+          inviteAction={inviteStudent}
+          profile={studentProfile}
+          pendingInvite={pendingStudentInvite}
+          placeholder="student@example.com"
+          inviteLabel="Invite student"
+        />
+      </div>
 
       <Section label="Sessions">
         {sessions?.length ? (
@@ -279,4 +247,120 @@ function InfoCard({ title, body }) {
       <div className="mt-2 text-sm whitespace-pre-wrap leading-relaxed">{body}</div>
     </Card>
   );
+}
+
+function AccountSlot({
+  label,
+  studentId,
+  role,
+  inviteAction,
+  profile,
+  pendingInvite,
+  placeholder,
+  inviteLabel,
+}) {
+  const initials = (profile?.full_name || profile?.email || "?")
+    .split(/\s+/)
+    .map((p) => p[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+  return (
+    <section className="space-y-2">
+      <h2 className="text-[11px] uppercase tracking-wider text-muted font-medium">
+        {label}
+      </h2>
+      {profile ? (
+        <Card className="p-4 flex items-center gap-3 h-full">
+          <div className="h-10 w-10 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold shrink-0">
+            {initials}
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="font-medium truncate">
+              {profile.full_name || profile.email}
+            </div>
+            {profile.full_name && (
+              <div className="text-sm text-muted truncate">{profile.email}</div>
+            )}
+          </div>
+          <Badge tone="success" className="ml-auto shrink-0">
+            Linked
+          </Badge>
+        </Card>
+      ) : pendingInvite ? (
+        <Card className="p-4 border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 space-y-2.5 h-full">
+          <div className="flex items-center justify-between gap-2">
+            <Badge tone="warning">Invite sent</Badge>
+            <span className="text-xs text-muted">
+              {timeAgo(pendingInvite.created_at)}
+            </span>
+          </div>
+          <div className="text-sm truncate">{pendingInvite.to_email}</div>
+          <div className="text-[10px] text-muted break-all leading-tight">
+            <code className="px-1 py-0.5 rounded bg-white/60 dark:bg-black/30 font-mono">
+              {(process.env.NEXT_PUBLIC_APP_URL || "https://app.tuterly.com.au") +
+                "/invite/" +
+                pendingInvite.token}
+            </code>
+          </div>
+          <div className="flex gap-1.5 pt-1">
+            <form action={resendInvite}>
+              <input type="hidden" name="student_id" value={studentId} />
+              <input type="hidden" name="role" value={role} />
+              <button
+                type="submit"
+                className="h-8 px-3 rounded-full bg-brand text-white text-xs font-medium hover:bg-brand-dark transition shadow-sm shadow-brand/20"
+              >
+                Resend
+              </button>
+            </form>
+            <form action={cancelInvite}>
+              <input type="hidden" name="student_id" value={studentId} />
+              <input type="hidden" name="role" value={role} />
+              <button
+                type="submit"
+                className="h-8 px-3 rounded-full border border-zinc-300 dark:border-zinc-700 text-xs font-medium hover:bg-white/40 dark:hover:bg-white/5 transition"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </Card>
+      ) : (
+        <form
+          action={inviteAction}
+          className="flex flex-col sm:flex-row gap-2 p-4 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700 h-full"
+        >
+          <input type="hidden" name="student_id" value={studentId} />
+          <input
+            required
+            type="email"
+            name="email"
+            placeholder={placeholder}
+            className="flex-1 h-10 px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition min-w-0"
+          />
+          <button
+            type="submit"
+            className="h-10 px-4 rounded-full bg-brand hover:bg-brand-dark text-white text-sm font-medium shadow-sm shadow-brand/20 transition shrink-0"
+          >
+            {inviteLabel}
+          </button>
+        </form>
+      )}
+    </section>
+  );
+}
+
+function timeAgo(iso) {
+  if (!iso) return "";
+  const ms = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(ms / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
 }

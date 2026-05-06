@@ -9,12 +9,22 @@ export default function Auth() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/dashboard";
+  const initialMode = searchParams.get("mode") === "signup" ? "signup" : "login";
+  const initialEmail = searchParams.get("email") || "";
+  const paramRole = searchParams.get("role");
+  const initialRole =
+    paramRole === "tutor"
+      ? "tutor"
+      : paramRole === "student"
+        ? "student"
+        : "parent";
+  const isInvite = !!searchParams.get("inviter");
 
-  const [mode, setMode] = useState("login");
-  const [email, setEmail] = useState("");
+  const [mode, setMode] = useState(initialMode);
+  const [email, setEmail] = useState(initialEmail);
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
-  const [role, setRole] = useState("parent");
+  const [role, setRole] = useState(initialRole);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -130,24 +140,31 @@ export default function Auth() {
           minLength={8}
           required
         />
-        {mode === "signup" && (
+        {mode === "signup" && !isInvite && (
           <div className="space-y-1.5">
             <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
               I'm signing up as
             </span>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               <RoleOption
                 value="parent"
-                label="A parent"
-                description="See my child's reports"
+                label="Parent"
+                description="View reports"
                 selected={role === "parent"}
                 onSelect={setRole}
               />
               <RoleOption
                 value="tutor"
-                label="A tutor"
-                description="Generate session reports"
+                label="Tutor"
+                description="Run sessions"
                 selected={role === "tutor"}
+                onSelect={setRole}
+              />
+              <RoleOption
+                value="student"
+                label="Student"
+                description="See my progress"
+                selected={role === "student"}
                 onSelect={setRole}
               />
             </div>

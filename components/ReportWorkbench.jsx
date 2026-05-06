@@ -156,15 +156,6 @@ export default function ReportWorkbench({
         >
           Edit
         </Button>
-        {status !== "report_generated" && status !== "sent_to_parent" && (
-          <Button
-            variant="primary"
-            onClick={() => handleSave(true)}
-            disabled={savingPending}
-          >
-            {savingPending ? "Saving…" : "Mark ready for parent"}
-          </Button>
-        )}
         <Button variant="ghost" onClick={handleGenerate} disabled={generating}>
           {generating ? "Regenerating…" : "Regenerate"}
         </Button>
@@ -173,9 +164,14 @@ export default function ReportWorkbench({
             Saved {savedAt.toLocaleTimeString()}
           </span>
         )}
-        {(status === "report_generated" || status === "sent_to_parent") && !savedAt && (
+        {status === "sent_to_parent" && !savedAt && (
           <span className="text-xs text-emerald-600 ml-auto font-medium">
-            {status === "sent_to_parent" ? "Sent to parent" : "Marked ready"}
+            Emailed to parent
+          </span>
+        )}
+        {status === "report_generated" && !savedAt && (
+          <span className="text-xs text-muted ml-auto font-medium">
+            Visible to parent
           </span>
         )}
       </div>
@@ -212,10 +208,10 @@ function SendPromptDialog({ parentEmail, sending, onSend, onCancel }) {
           </div>
           <div className="space-y-1">
             <h3 className="text-base font-semibold tracking-tight">
-              Report ready
+              Report generated
             </h3>
             <p className="text-sm text-muted leading-relaxed">
-              Email it to <span className="font-medium text-foreground">{parentEmail || "the parent"}</span> now? They'll receive a link to the dashboard plus a PDF copy.
+              <span className="font-medium text-foreground">{parentEmail || "The parent"}</span> can already see it in their dashboard. Want to email a PDF copy as well?
             </p>
           </div>
         </div>
@@ -226,7 +222,7 @@ function SendPromptDialog({ parentEmail, sending, onSend, onCancel }) {
             disabled={sending}
             className="flex-1"
           >
-            {sending ? "Sending…" : "Send now"}
+            {sending ? "Sending…" : "Email now"}
           </Button>
           <Button
             variant="outline"
@@ -234,7 +230,7 @@ function SendPromptDialog({ parentEmail, sending, onSend, onCancel }) {
             disabled={sending}
             className="flex-1"
           >
-            Review first
+            Skip for now
           </Button>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
@@ -8,8 +7,7 @@ import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 
-export default async function ParentStudentDetail({ params }) {
-  const { id } = await params;
+export default async function StudentDashboard() {
   const supabase = await createClient();
   const {
     data: { user },
@@ -20,10 +18,19 @@ export default async function ParentStudentDetail({ params }) {
     .select(
       "id, first_name, last_name, year_level, working_level, school, subjects"
     )
-    .eq("id", id)
-    .eq("parent_id", user.id)
-    .single();
-  if (!student) notFound();
+    .eq("student_user_id", user.id)
+    .maybeSingle();
+
+  if (!student) {
+    return (
+      <div className="px-6 sm:px-8 py-10 max-w-4xl mx-auto animate-fade-in-up">
+        <EmptyState
+          title="No student record linked yet"
+          description="Your tutor needs to link this account to your student profile in Tuterly. Ask them to send you a fresh invite from the student page."
+        />
+      </div>
+    );
+  }
 
   const [{ data: sessions }, { data: ratingsRaw }, { data: rawResources }] =
     await Promise.all([
@@ -32,16 +39,16 @@ export default async function ParentStudentDetail({ params }) {
         .select(
           "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at)"
         )
-        .eq("student_id", id)
+        .eq("student_id", student.id)
         .order("date", { ascending: false }),
       supabase
         .from("ratings")
         .select("topic, subtopic, confidence, sessions(date)")
-        .eq("student_id", id),
+        .eq("student_id", student.id),
       supabase
         .from("resources")
         .select("id, name, category, notes, file_url, created_at")
-        .eq("student_id", id)
+        .eq("student_id", student.id)
         .order("created_at", { ascending: false }),
     ]);
 
@@ -63,27 +70,19 @@ export default async function ParentStudentDetail({ params }) {
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
-      <header className="space-y-2">
-        <Link
-          href="/dashboard/parent"
-          className="text-sm text-muted hover:text-foreground transition"
-        >
-          ← All children
-        </Link>
-        <div className="flex items-center gap-4">
-          <Avatar name={`${student.first_name} ${student.last_name}`} />
-          <div>
-            <h1 className="text-3xl font-semibold tracking-tight">
-              {student.first_name} {student.last_name}
-            </h1>
-            <p className="text-sm text-muted mt-0.5">
-              {student.year_level}
-              {student.working_level && student.working_level !== student.year_level
-                ? ` · working at ${student.working_level}`
-                : ""}
-              {student.school ? ` · ${student.school}` : ""}
-            </p>
-          </div>
+      <header className="flex items-center gap-4">
+        <Avatar name={`${student.first_name} ${student.last_name}`} />
+        <div>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            Hi, {student.first_name}
+          </h1>
+          <p className="text-sm text-muted mt-0.5">
+            {student.year_level}
+            {student.working_level && student.working_level !== student.year_level
+              ? ` · working at ${student.working_level}`
+              : ""}
+            {student.school ? ` · ${student.school}` : ""}
+          </p>
         </div>
       </header>
 
@@ -93,7 +92,7 @@ export default async function ParentStudentDetail({ params }) {
             {reportSessions.map((s) => (
               <li key={s.id}>
                 <Link
-                  href={`/dashboard/parent/reports/${s.reports.id}`}
+                  href={`/dashboard/student/reports/${s.reports.id}`}
                   className="block group"
                 >
                   <Card className="px-5 py-4 transition group-hover:border-brand/40 group-hover:shadow-md flex items-center justify-between gap-3">
@@ -110,12 +109,9 @@ export default async function ParentStudentDetail({ params }) {
                         {s.duration_minutes} min session
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      {!s.reports.parent_viewed_at && <Badge tone="brand">New</Badge>}
-                      <span className="text-muted group-hover:text-brand transition">
-                        →
-                      </span>
-                    </div>
+                    <span className="text-muted group-hover:text-brand transition">
+                      →
+                    </span>
                   </Card>
                 </Link>
               </li>
@@ -124,7 +120,7 @@ export default async function ParentStudentDetail({ params }) {
         ) : (
           <EmptyState
             title="No reports yet"
-            description="Your tutor will send the first report after your next session."
+            description="Your reports will appear here after your next tutoring session."
           />
         )}
       </Section>
@@ -133,7 +129,7 @@ export default async function ParentStudentDetail({ params }) {
         <ProgressTracker student={student} ratings={ratings} />
       </Section>
 
-      <Section label="Resources">
+      <Section label="Your resources">
         <ResourcesPanel studentId={student.id} resources={resources} />
       </Section>
     </div>

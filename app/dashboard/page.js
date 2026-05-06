@@ -18,6 +18,8 @@ export default async function DashboardIndex() {
       redirect("/dashboard/tutor");
     case "admin":
       redirect("/dashboard/admin");
+    case "student":
+      redirect("/dashboard/student");
     case "parent":
     default:
       redirect("/dashboard/parent");

@@ -124,11 +124,12 @@ export default async function SessionPage({ params }) {
       )}
 
       {hasReport && (
-        <Section label="Send to parent">
+        <Section label="Email parent">
           <SendToParentPanel
             sessionId={session.id}
             studentId={student.id}
             parentLinked={!!student.parent_id}
+            parentEmail={parentEmail}
             sentAt={report.sent_at}
           />
         </Section>

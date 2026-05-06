@@ -10,6 +10,7 @@ export default function SendToParentPanel({
   sessionId,
   studentId,
   parentLinked,
+  parentEmail,
   sentAt,
 }) {
   const router = useRouter();
@@ -31,52 +32,99 @@ export default function SendToParentPanel({
   if (!parentLinked) {
     return (
       <div className="p-5 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700 text-sm text-muted">
-        Link a parent on the{" "}
+        The parent can already see this report in their dashboard.{" "}
         <Link
           href={`/dashboard/tutor/students/${studentId}`}
           className="underline text-foreground"
         >
-          student page
+          Link a parent
         </Link>{" "}
-        before sending the report.
+        to also email them a PDF copy.
       </div>
     );
   }
 
   return (
-    <div className="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card flex items-center justify-between gap-3 flex-wrap">
-      <div className="text-sm">
-        {sentAt ? (
-          <>
-            <div className="font-medium text-emerald-600 inline-flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Sent to parent
-            </div>
-            <div className="text-xs text-muted mt-0.5">
-              {new Date(sentAt).toLocaleString("en-AU", {
-                day: "numeric",
-                month: "short",
-                hour: "numeric",
-                minute: "2-digit",
-              })}
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="font-medium">Ready to send</div>
-            <div className="text-xs text-muted mt-0.5">
-              The parent will receive an email with a link and PDF copy.
-            </div>
-          </>
-        )}
+    <div className="rounded-2xl border border-brand/30 bg-brand-pale/40 p-5 sm:p-6">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
+        <div className="flex items-start gap-3 min-w-0 flex-1">
+          <div className="h-10 w-10 rounded-full bg-brand text-white flex items-center justify-center shrink-0 shadow-sm shadow-brand/30">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 7.5L12 13l9-5.5" />
+              <rect x="3" y="5.5" width="18" height="13" rx="2" />
+            </svg>
+          </div>
+          <div className="min-w-0">
+            {sentAt ? (
+              <>
+                <h3 className="text-base font-semibold text-brand-foreground inline-flex items-center gap-1.5">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  Emailed
+                </h3>
+                <p className="text-sm text-brand-foreground/80 mt-0.5">
+                  Sent to{" "}
+                  <span className="font-medium">{parentEmail || "parent"}</span>{" "}
+                  on{" "}
+                  {new Date(sentAt).toLocaleString("en-AU", {
+                    day: "numeric",
+                    month: "short",
+                    hour: "numeric",
+                    minute: "2-digit",
+                  })}
+                  .
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="text-base font-semibold text-brand-foreground">
+                  Email a PDF copy to the parent
+                </h3>
+                <p className="text-sm text-brand-foreground/80 mt-0.5">
+                  {parentEmail || "The parent"} can already see this report in
+                  their dashboard. Send them an email with a PDF attachment too?
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+        <Button
+          variant="primary"
+          size="lg"
+          onClick={handleSend}
+          disabled={pending}
+          className="shrink-0"
+        >
+          {pending
+            ? "Sending…"
+            : sentAt
+              ? "Re-send email"
+              : "Email parent now"}
+        </Button>
       </div>
-      <Button variant="primary" onClick={handleSend} disabled={pending}>
-        {pending ? "Sending…" : sentAt ? "Re-send" : "Send to parent"}
-      </Button>
       {error && (
-        <p className="text-xs text-red-500 w-full" role="alert">
+        <p className="text-xs text-red-600 mt-3" role="alert">
           {error}
         </p>
       )}
