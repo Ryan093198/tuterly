@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Tuterly",
-  description: "Tutoring sessions, tracked. Reports parents actually read.",
+  description: "Tutoring sessions tracked. Curriculum aligned reports prepared.",
 };
 
 export default function RootLayout({ children }) {

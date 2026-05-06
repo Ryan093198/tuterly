@@ -9,7 +9,7 @@ export default function Home() {
         <div className="flex flex-col items-center mb-8 text-center">
           <Logo size="lg" />
           <p className="mt-3 text-sm text-muted max-w-xs">
-            Tutoring sessions, tracked. Reports parents actually read.
+            Tutoring sessions tracked. Curriculum aligned reports prepared.
           </p>
         </div>
 
