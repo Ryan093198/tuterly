@@ -12,6 +12,7 @@ import { signedUrlFor } from "@/app/dashboard/resource-actions";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
 import StudentEditor from "@/components/StudentEditor";
+import DeleteStudentButton from "@/components/DeleteStudentButton";
 import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
@@ -223,6 +224,13 @@ export default async function StudentDetail({ params }) {
       <Section label="Resources">
         <ResourcesPanel studentId={student.id} resources={resources} />
       </Section>
+
+      <section className="pt-6 border-t border-zinc-200 dark:border-zinc-800">
+        <DeleteStudentButton
+          studentId={student.id}
+          studentName={`${student.first_name} ${student.last_name}`}
+        />
+      </section>
     </div>
   );
 }
