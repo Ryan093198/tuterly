@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { buildReportPrompt } from "@/lib/report-prompt";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request) {
   const { session_id } = await request.json();
@@ -16,6 +17,17 @@ export async function POST(request) {
   } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
+  const limit = await checkRateLimit(user.id, "generate", {
+    perMinute: 3,
+    perHour: 30,
+  });
+  if (!limit.ok) {
+    return NextResponse.json(
+      { error: limit.message },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } }
+    );
   }
 
   const { data: session } = await supabase

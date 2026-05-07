@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 // Whisper hard limit. Roughly 30–90 min of compressed audio depending on bitrate.
 const MAX_BYTES = 25 * 1024 * 1024;
@@ -26,6 +27,17 @@ export async function POST(request) {
   } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
+  const limit = await checkRateLimit(user.id, "transcribe", {
+    perMinute: 2,
+    perHour: 15,
+  });
+  if (!limit.ok) {
+    return NextResponse.json(
+      { error: limit.message },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } }
+    );
   }
 
   const form = await request.formData();

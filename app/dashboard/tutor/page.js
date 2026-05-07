@@ -41,31 +41,60 @@ export default async function TutorDashboard() {
       </header>
 
       {students.length === 0 ? (
-        <EmptyState
-          icon={
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.75"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <circle cx="9" cy="8" r="3.5" />
-              <path d="M2.5 19c.7-3.3 3.4-5.5 6.5-5.5s5.8 2.2 6.5 5.5" />
-            </svg>
-          }
-          title="No students yet"
-          description="Add a student, log a session, and Claude will turn your dot-point notes into a parent-ready report in seconds."
-          action={
-            <Link href="/dashboard/tutor/students/new">
-              <Button variant="primary">Add your first student</Button>
-            </Link>
-          }
-        />
+        <div className="space-y-6">
+          <EmptyState
+            icon={
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="9" cy="8" r="3.5" />
+                <path d="M2.5 19c.7-3.3 3.4-5.5 6.5-5.5s5.8 2.2 6.5 5.5" />
+              </svg>
+            }
+            title="No students yet"
+            description="Add a student, log a session, and Tuterly will turn your dot-point notes into a parent-ready report in seconds."
+            action={
+              <Link href="/dashboard/tutor/students/new">
+                <Button variant="primary">Add your first student</Button>
+              </Link>
+            }
+          />
+          <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-6">
+            <h3 className="text-sm font-semibold tracking-tight">
+              Getting started
+            </h3>
+            <ol className="mt-3 space-y-2.5">
+              <Step
+                n={1}
+                title="Add a student"
+                desc="Name, year level, school. Set their working level if they're ahead or behind."
+              />
+              <Step
+                n={2}
+                title="Log a session"
+                desc="Date, duration, and notes. Snap photos of the working or upload an audio recording — Tuterly will read both."
+              />
+              <Step
+                n={3}
+                title="Generate the report"
+                desc="One click. Review, edit if needed, then email a PDF to the parent."
+              />
+              <Step
+                n={4}
+                title="Invite the parent (and student)"
+                desc="They'll get their own account to view reports, track progress, and flag tricky questions."
+              />
+            </ol>
+          </div>
+        </div>
       ) : (
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {students.map((s) => (
@@ -106,6 +135,20 @@ export default async function TutorDashboard() {
         </ul>
       )}
     </div>
+  );
+}
+
+function Step({ n, title, desc }) {
+  return (
+    <li className="flex gap-3">
+      <span className="shrink-0 h-6 w-6 rounded-full bg-brand-pale text-brand-foreground text-xs font-semibold flex items-center justify-center mt-0.5">
+        {n}
+      </span>
+      <span className="text-sm">
+        <span className="font-medium">{title}.</span>{" "}
+        <span className="text-muted">{desc}</span>
+      </span>
+    </li>
   );
 }
 

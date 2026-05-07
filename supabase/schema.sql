@@ -326,6 +326,21 @@ alter table flagged_questions enable row level security;
 alter table flagged_questions add column if not exists understood_at timestamptz;
 alter table flagged_questions add column if not exists understood_by uuid references profiles(id);
 
+-- ─── API rate limit log ───────────────────────────────────────────────
+-- Simple rolling-window rate limit table. Server actions / API routes log
+-- calls here and check the count against a per-user-per-endpoint limit.
+-- Cleaned up periodically; nothing depends on it surviving.
+create table if not exists api_rate_limits (
+  id bigserial primary key,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  endpoint text not null,
+  called_at timestamptz default now()
+);
+create index if not exists idx_api_rate_limits_user_endpoint_time
+  on api_rate_limits(user_id, endpoint, called_at desc);
+alter table api_rate_limits enable row level security;
+-- No SELECT policy — only the service-role admin client touches this table.
+
 drop policy if exists "Students manage own flags" on flagged_questions;
 drop policy if exists "Parents view own student flags" on flagged_questions;
 drop policy if exists "Parents and students manage flags" on flagged_questions;

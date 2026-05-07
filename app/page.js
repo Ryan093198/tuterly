@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import Auth from "@/components/Auth";
 import Logo from "@/components/Logo";
 
@@ -39,8 +40,15 @@ export default async function Home({ searchParams }) {
         </div>
 
         <p className="mt-6 text-xs text-center text-muted">
-          By signing up you agree to Tuterly's terms of service. Reports are
-          stored privately for you and the linked parent.
+          By signing up you agree to our{" "}
+          <Link href="/terms" className="text-brand hover:text-brand-dark underline">
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link href="/privacy" className="text-brand hover:text-brand-dark underline">
+            Privacy Policy
+          </Link>
+          .
         </p>
       </div>
     </main>

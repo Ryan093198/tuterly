@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const STATIC_INSTRUCTIONS = `You are a maths tutor assistant. A student is studying a specific topic and needs help understanding one subtopic. Produce EXACTLY this markdown structure:
 
@@ -37,6 +38,17 @@ export async function POST(request) {
   } = await supabase.auth.getUser();
   if (!user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
+  const limit = await checkRateLimit(user.id, "explain", {
+    perMinute: 6,
+    perHour: 60,
+  });
+  if (!limit.ok) {
+    return NextResponse.json(
+      { error: limit.message },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } }
+    );
   }
 
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
