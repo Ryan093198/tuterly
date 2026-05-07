@@ -6,6 +6,7 @@ import PrintButton from "@/components/PrintButton";
 import SessionPhotos from "@/components/SessionPhotos";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import Logo from "@/components/Logo";
+import { detectOverallTopic } from "@/lib/rating";
 
 export default async function ParentReportView({ params }) {
   const { id } = await params;
@@ -83,6 +84,15 @@ export default async function ParentReportView({ params }) {
     }))
   );
 
+  // Existing flags for this report — parents can flag too.
+  const { data: flagRows } = await supabase
+    .from("flagged_questions")
+    .select("question_number")
+    .eq("report_id", report.id)
+    .eq("student_id", student.id);
+  const flaggedSet = new Set((flagRows ?? []).map((r) => r.question_number));
+  const overallTopic = detectOverallTopic(report.content) || null;
+
   const formattedDate = new Date(sessionDate).toLocaleDateString("en-AU", {
     weekday: "long",
     day: "numeric",
@@ -128,7 +138,14 @@ export default async function ParentReportView({ params }) {
         </header>
 
         <div className="px-6 sm:px-10 py-8 sm:py-10">
-          <MarkdownReport content={report.content} />
+          <MarkdownReport
+            content={report.content}
+            flagOptions={{
+              reportId: report.id,
+              topic: overallTopic,
+              flaggedSet,
+            }}
+          />
         </div>
       </article>
 

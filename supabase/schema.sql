@@ -324,15 +324,20 @@ create index if not exists idx_flagged_questions_report on flagged_questions(rep
 alter table flagged_questions enable row level security;
 
 drop policy if exists "Students manage own flags" on flagged_questions;
-create policy "Students manage own flags" on flagged_questions for all
-  using (student_id in (select id from students where student_user_id = auth.uid()))
-  with check (student_id in (select id from students where student_user_id = auth.uid()));
-
 drop policy if exists "Parents view own student flags" on flagged_questions;
-create policy "Parents view own student flags" on flagged_questions for select
-  using (student_id in (select id from students where parent_id = auth.uid()));
-
+drop policy if exists "Parents and students manage flags" on flagged_questions;
 drop policy if exists "Tutors view linked student flags" on flagged_questions;
+
+create policy "Parents and students manage flags" on flagged_questions for all
+  using (
+    student_id in (select id from students where student_user_id = auth.uid())
+    or student_id in (select id from students where parent_id = auth.uid())
+  )
+  with check (
+    student_id in (select id from students where student_user_id = auth.uid())
+    or student_id in (select id from students where parent_id = auth.uid())
+  );
+
 create policy "Tutors view linked student flags" on flagged_questions for select
   using (student_id in (select student_id from tutor_students where tutor_id = auth.uid()));
 
