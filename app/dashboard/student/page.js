@@ -32,25 +32,33 @@ export default async function StudentDashboard() {
     );
   }
 
-  const [{ data: sessions }, { data: ratingsRaw }, { data: rawResources }] =
-    await Promise.all([
-      supabase
-        .from("sessions")
-        .select(
-          "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at)"
-        )
-        .eq("student_id", student.id)
-        .order("date", { ascending: false }),
-      supabase
-        .from("ratings")
-        .select("topic, subtopic, confidence, sessions(date)")
-        .eq("student_id", student.id),
-      supabase
-        .from("resources")
-        .select("id, name, category, notes, file_url, created_at")
-        .eq("student_id", student.id)
-        .order("created_at", { ascending: false }),
-    ]);
+  const [
+    { data: sessions },
+    { data: ratingsRaw },
+    { data: rawResources },
+    { count: flaggedCount },
+  ] = await Promise.all([
+    supabase
+      .from("sessions")
+      .select(
+        "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at)"
+      )
+      .eq("student_id", student.id)
+      .order("date", { ascending: false }),
+    supabase
+      .from("ratings")
+      .select("topic, subtopic, confidence, sessions(date)")
+      .eq("student_id", student.id),
+    supabase
+      .from("resources")
+      .select("id, name, category, notes, file_url, created_at")
+      .eq("student_id", student.id)
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("flagged_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("student_id", student.id),
+  ]);
 
   const reportSessions = (sessions ?? []).filter((s) => s.reports);
   const ratings = (ratingsRaw ?? [])
@@ -126,7 +134,11 @@ export default async function StudentDashboard() {
       </Section>
 
       <Section label="Progress">
-        <ProgressTracker student={student} ratings={ratings} />
+        <ProgressTracker
+          student={student}
+          ratings={ratings}
+          flaggedCount={flaggedCount ?? 0}
+        />
       </Section>
 
       <Section label="Your resources">

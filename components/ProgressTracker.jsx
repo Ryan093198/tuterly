@@ -1,10 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import MarkdownReport from "@/components/MarkdownReport";
 import { CONFIDENCE_LABELS, CONFIDENCE_COLORS } from "@/lib/rating";
 
-export default function ProgressTracker({ student, ratings }) {
+export default function ProgressTracker({
+  student,
+  ratings,
+  flaggedCount = 0,
+  flaggedHref = null,
+}) {
   const [expandedTopic, setExpandedTopic] = useState(null);
   const [drill, setDrill] = useState(null); // { topic, subtopic }
   const [drillContent, setDrillContent] = useState(null);
@@ -96,18 +102,17 @@ export default function ProgressTracker({ student, ratings }) {
       <div className="grid grid-cols-3 gap-2 sm:gap-3">
         <SummaryCard label="Sessions tracked" value={sessionsTracked} />
         <SummaryCard
-          label="Overall average"
-          value={overallAvg != null ? `${overallAvg}/5` : "—"}
-          color={
-            overallAvg != null ? CONFIDENCE_COLORS[Math.round(overallAvg)] : null
-          }
-        />
-        <SummaryCard
           label="Latest session"
           value={latestAvg != null ? `${latestAvg}/5` : "—"}
           color={
             latestAvg != null ? CONFIDENCE_COLORS[Math.round(latestAvg)] : null
           }
+        />
+        <SummaryCard
+          label="Flagged questions"
+          value={flaggedCount}
+          color={flaggedCount > 0 ? "#d97706" : null}
+          href={flaggedHref}
         />
       </div>
 
@@ -254,9 +259,9 @@ function SubtopicRow({ subtopic, dataPoints, onClick }) {
   );
 }
 
-function SummaryCard({ label, value, color }) {
-  return (
-    <div className="p-3 sm:p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 text-center">
+function SummaryCard({ label, value, color, href }) {
+  const inner = (
+    <>
       <p className="text-[10px] uppercase tracking-wide text-zinc-500">
         {label}
       </p>
@@ -266,8 +271,19 @@ function SummaryCard({ label, value, color }) {
       >
         {value}
       </p>
-    </div>
+    </>
   );
+  const className =
+    "block p-3 sm:p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 text-center transition" +
+    (href ? " hover:border-brand/40 hover:shadow-sm cursor-pointer" : "");
+  if (href) {
+    return (
+      <Link href={href} className={className}>
+        {inner}
+      </Link>
+    );
+  }
+  return <div className={className}>{inner}</div>;
 }
 
 function avg(nums) {

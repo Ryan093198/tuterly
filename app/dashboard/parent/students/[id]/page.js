@@ -25,8 +25,12 @@ export default async function ParentStudentDetail({ params }) {
     .single();
   if (!student) notFound();
 
-  const [{ data: sessions }, { data: ratingsRaw }, { data: rawResources }] =
-    await Promise.all([
+  const [
+    { data: sessions },
+    { data: ratingsRaw },
+    { data: rawResources },
+    { count: flaggedCount },
+  ] = await Promise.all([
       supabase
         .from("sessions")
         .select(
@@ -43,6 +47,10 @@ export default async function ParentStudentDetail({ params }) {
         .select("id, name, category, notes, file_url, created_at")
         .eq("student_id", id)
         .order("created_at", { ascending: false }),
+      supabase
+        .from("flagged_questions")
+        .select("id", { count: "exact", head: true })
+        .eq("student_id", id),
     ]);
 
   const reportSessions = (sessions ?? []).filter((s) => s.reports);
@@ -130,7 +138,11 @@ export default async function ParentStudentDetail({ params }) {
       </Section>
 
       <Section label="Progress">
-        <ProgressTracker student={student} ratings={ratings} />
+        <ProgressTracker
+          student={student}
+          ratings={ratings}
+          flaggedCount={flaggedCount ?? 0}
+        />
       </Section>
 
       <Section label="Resources">

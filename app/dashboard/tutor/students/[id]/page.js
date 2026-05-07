@@ -110,6 +110,11 @@ export default async function StudentDetail({ params }) {
       .order("created_at", { ascending: false }),
   ]);
 
+  const { count: flaggedCount } = await supabase
+    .from("flagged_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("student_id", id);
+
   const ratings = (ratingsRaw ?? [])
     .filter((r) => r.sessions)
     .map((r) => ({
@@ -218,7 +223,12 @@ export default async function StudentDetail({ params }) {
       </Section>
 
       <Section label="Progress">
-        <ProgressTracker student={student} ratings={ratings} />
+        <ProgressTracker
+          student={student}
+          ratings={ratings}
+          flaggedCount={flaggedCount ?? 0}
+          flaggedHref={`/dashboard/tutor/students/${student.id}/flagged`}
+        />
       </Section>
 
       <Section label="Resources">

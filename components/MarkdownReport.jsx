@@ -1,8 +1,17 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import FlagQuestion from "@/components/FlagQuestion";
 
-export default function MarkdownReport({ content }) {
+// flagOptions (optional): { reportId, topic, flaggedSet: Set<number> }
+//   — when provided, every <details> in the report is treated as a practice
+//   question and gets a FlagQuestion button at the bottom. The Nth details in
+//   document order is question N (1-indexed).
+export default function MarkdownReport({ content, flagOptions }) {
+  // Track which details we're rendering so we can assign question numbers
+  // 1, 2, 3 sequentially. Reset on every render via a fresh closure.
+  const counter = { n: 0 };
+
   return (
     <article className="report-prose">
       <ReactMarkdown
@@ -71,12 +80,28 @@ export default function MarkdownReport({ content }) {
               {...props}
             />
           ),
-          details: (props) => (
-            <details
-              className="group my-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30"
-              {...props}
-            />
-          ),
+          details: (props) => {
+            counter.n += 1;
+            const num = counter.n;
+            return (
+              <details
+                className="group my-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30"
+                {...props}
+              >
+                {props.children}
+                {flagOptions && (
+                  <div className="px-5 pb-3">
+                    <FlagQuestion
+                      reportId={flagOptions.reportId}
+                      questionNumber={num}
+                      topic={flagOptions.topic}
+                      initial={flagOptions.flaggedSet?.has(num)}
+                    />
+                  </div>
+                )}
+              </details>
+            );
+          },
           summary: (props) => (
             <summary
               className="cursor-pointer select-none px-4 py-2.5 text-sm font-medium text-brand-dark hover:bg-brand-pale transition flex items-center gap-2 list-none [&::-webkit-details-marker]:hidden"

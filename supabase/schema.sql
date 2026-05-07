@@ -309,6 +309,33 @@ create policy "Students view own session photos" on session_photos for select us
   )
 );
 
+-- ─── Flagged questions (student marks ones they want help with) ───
+create table if not exists flagged_questions (
+  id uuid primary key default uuid_generate_v4(),
+  student_id uuid not null references students(id) on delete cascade,
+  report_id uuid not null references reports(id) on delete cascade,
+  question_number int not null,
+  topic text,
+  flagged_at timestamptz default now(),
+  unique(student_id, report_id, question_number)
+);
+create index if not exists idx_flagged_questions_student on flagged_questions(student_id);
+create index if not exists idx_flagged_questions_report on flagged_questions(report_id);
+alter table flagged_questions enable row level security;
+
+drop policy if exists "Students manage own flags" on flagged_questions;
+create policy "Students manage own flags" on flagged_questions for all
+  using (student_id in (select id from students where student_user_id = auth.uid()))
+  with check (student_id in (select id from students where student_user_id = auth.uid()));
+
+drop policy if exists "Parents view own student flags" on flagged_questions;
+create policy "Parents view own student flags" on flagged_questions for select
+  using (student_id in (select id from students where parent_id = auth.uid()));
+
+drop policy if exists "Tutors view linked student flags" on flagged_questions;
+create policy "Tutors view linked student flags" on flagged_questions for select
+  using (student_id in (select student_id from tutor_students where tutor_id = auth.uid()));
+
 -- ─── Session photos (working/notes uploads) ───
 create table if not exists session_photos (
   id uuid primary key default uuid_generate_v4(),
