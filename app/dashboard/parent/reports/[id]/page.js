@@ -14,7 +14,7 @@ export default async function ParentReportView({ params }) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: report } = await supabase
+  const { data: report, error: reportError } = await supabase
     .from("reports")
     .select(
       "id, content, sent_at, parent_viewed_at, sessions(id, date, student_id, students(id, first_name, last_name, parent_id))"
@@ -22,11 +22,41 @@ export default async function ParentReportView({ params }) {
     .eq("id", id)
     .single();
 
-  if (
-    !report ||
-    !report.sessions?.students ||
-    report.sessions.students.parent_id !== user.id
-  ) {
+  if (reportError || !report) {
+    console.warn("[parent report view] no report:", id, reportError?.message);
+    notFound();
+  }
+
+  // Supabase can return nested relations as either a single object or an
+  // array depending on FK resolution. Normalise.
+  const sessionData = Array.isArray(report.sessions)
+    ? report.sessions[0]
+    : report.sessions;
+  const studentData = Array.isArray(sessionData?.students)
+    ? sessionData?.students[0]
+    : sessionData?.students;
+
+  if (!sessionData || !studentData) {
+    console.warn(
+      "[parent report view] missing joined data:",
+      id,
+      "session?",
+      !!sessionData,
+      "student?",
+      !!studentData
+    );
+    notFound();
+  }
+
+  if (studentData.parent_id !== user.id) {
+    console.warn(
+      "[parent report view] parent_id mismatch:",
+      id,
+      "student.parent_id=",
+      studentData.parent_id,
+      "user.id=",
+      user.id
+    );
     notFound();
   }
 
@@ -37,13 +67,13 @@ export default async function ParentReportView({ params }) {
       .eq("id", id);
   }
 
-  const student = report.sessions.students;
-  const sessionDate = report.sessions.date;
+  const student = studentData;
+  const sessionDate = sessionData.date;
 
   const { data: photoRows } = await supabase
     .from("session_photos")
     .select("id, file_url, created_at")
-    .eq("session_id", report.sessions.id)
+    .eq("session_id", sessionData.id)
     .order("created_at", { ascending: true });
 
   const photos = await Promise.all(
@@ -77,7 +107,7 @@ export default async function ParentReportView({ params }) {
             Photos from the session
           </h2>
           <SessionPhotos
-            sessionId={report.sessions.id}
+            sessionId={sessionData.id}
             photos={photos}
             canManage={false}
           />

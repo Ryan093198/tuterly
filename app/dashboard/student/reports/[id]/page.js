@@ -15,7 +15,7 @@ export default async function StudentReportView({ params }) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: report } = await supabase
+  const { data: report, error: reportError } = await supabase
     .from("reports")
     .select(
       "id, content, sent_at, sessions(id, date, student_id, students(id, first_name, last_name, student_user_id))"
@@ -23,21 +23,30 @@ export default async function StudentReportView({ params }) {
     .eq("id", id)
     .single();
 
+  if (reportError || !report) notFound();
+
+  const sessionData = Array.isArray(report.sessions)
+    ? report.sessions[0]
+    : report.sessions;
+  const studentData = Array.isArray(sessionData?.students)
+    ? sessionData?.students[0]
+    : sessionData?.students;
+
   if (
-    !report ||
-    !report.sessions?.students ||
-    report.sessions.students.student_user_id !== user.id
+    !sessionData ||
+    !studentData ||
+    studentData.student_user_id !== user.id
   ) {
     notFound();
   }
 
-  const student = report.sessions.students;
-  const sessionDate = report.sessions.date;
+  const student = studentData;
+  const sessionDate = sessionData.date;
 
   const { data: photoRows } = await supabase
     .from("session_photos")
     .select("id, file_url, created_at")
-    .eq("session_id", report.sessions.id)
+    .eq("session_id", sessionData.id)
     .order("created_at", { ascending: true });
 
   const photos = await Promise.all(
@@ -80,7 +89,7 @@ export default async function StudentReportView({ params }) {
             Photos from the session
           </h2>
           <SessionPhotos
-            sessionId={report.sessions.id}
+            sessionId={sessionData.id}
             photos={photos}
             canManage={false}
           />
