@@ -20,14 +20,14 @@ import Badge from "@/components/ui/Badge";
 const STATUS_TONE = {
   pending: "neutral",
   notes_added: "neutral",
-  report_generated: "brand",
+  report_generated: "warning",
   sent_to_parent: "success",
 };
 
 const STATUS_LABEL = {
   pending: "Notes pending",
   notes_added: "Notes added",
-  report_generated: "Report ready",
+  report_generated: "Ready · not emailed",
   sent_to_parent: "Emailed",
 };
 

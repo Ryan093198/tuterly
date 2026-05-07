@@ -21,7 +21,8 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "resend": "^6.12.2",
-    "stripe": "^22.1.0"
+    "stripe": "^22.1.0",
+    "unpdf": "^1.6.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -9,6 +9,16 @@ import { createAdminClient } from "@/lib/supabase-admin";
 const BUCKET = "resources";
 
 const TEXT_EXTENSIONS = new Set([".txt", ".md", ".csv"]);
+const PDF_EXTENSIONS = new Set([".pdf"]);
+
+async function extractPdfText(arrayBuffer) {
+  // unpdf is dynamically imported because it pulls in a wasm-ish parser that's
+  // chunky at module-init time.
+  const { extractText, getDocumentProxy } = await import("unpdf");
+  const pdf = await getDocumentProxy(new Uint8Array(arrayBuffer));
+  const { text } = await extractText(pdf, { mergePages: true });
+  return text || "";
+}
 
 function classifyCategory(filename) {
   const n = filename.toLowerCase();
@@ -103,13 +113,24 @@ export async function uploadResource(formData) {
     const ext = fileExtension(name);
     if (TEXT_EXTENSIONS.has(ext)) {
       content = await file.text();
-      if (content.length > 50000) {
-        content =
-          content.slice(0, 50000) +
-          "\n\n[Content truncated at 50,000 characters]";
+    } else if (PDF_EXTENSIONS.has(ext) || file.type === "application/pdf") {
+      try {
+        const buffer = await file.arrayBuffer();
+        content = (await extractPdfText(buffer)).trim();
+        if (!content) {
+          content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF text could not be extracted (likely scanned image)]`;
+        }
+      } catch (e) {
+        console.warn(`[uploadResource] PDF extract failed for ${name}: ${e?.message || e}`);
+        content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF, text extraction failed]`;
       }
     } else {
       content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — ${file.type || "unknown type"}]`;
+    }
+    if (content.length > 50000) {
+      content =
+        content.slice(0, 50000) +
+        "\n\n[Content truncated at 50,000 characters]";
     }
 
     const admin = createAdminClient();

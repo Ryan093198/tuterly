@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase-client";
 import Button from "@/components/ui/Button";
@@ -131,15 +132,30 @@ export default function Auth() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <Field
-          label="Password"
-          type="password"
-          autoComplete={mode === "login" ? "current-password" : "new-password"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          minLength={8}
-          required
-        />
+        <div className="space-y-1.5">
+          <div className="flex items-baseline justify-between">
+            <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+              Password
+            </span>
+            {mode === "login" && (
+              <Link
+                href="/auth/forgot"
+                className="text-xs text-brand hover:text-brand-dark"
+              >
+                Forgot password?
+              </Link>
+            )}
+          </div>
+          <input
+            type="password"
+            autoComplete={mode === "login" ? "current-password" : "new-password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            minLength={8}
+            required
+            className="w-full h-11 px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
+          />
+        </div>
         {mode === "signup" && !isInvite && (
           <div className="space-y-1.5">
             <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
