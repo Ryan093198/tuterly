@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase-client";
 import Button from "@/components/ui/Button";
+import Spinner from "@/components/ui/Spinner";
 
 export default function Auth() {
   const router = useRouter();
@@ -195,8 +196,11 @@ export default function Auth() {
             size="lg"
             className="w-full"
           >
+            {loading && <Spinner />}
             {loading
-              ? "…"
+              ? mode === "login"
+                ? "Logging in…"
+                : "Creating account…"
               : mode === "login"
                 ? "Log in"
                 : "Create account"}

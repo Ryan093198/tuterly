@@ -14,6 +14,7 @@ import ResourcesPanel from "@/components/ResourcesPanel";
 import StudentEditor from "@/components/StudentEditor";
 import DeleteStudentButton from "@/components/DeleteStudentButton";
 import Card from "@/components/ui/Card";
+import SubmitButton from "@/components/ui/SubmitButton";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
 
@@ -327,22 +328,16 @@ function AccountSlot({
             <form action={resendInvite}>
               <input type="hidden" name="student_id" value={studentId} />
               <input type="hidden" name="role" value={role} />
-              <button
-                type="submit"
-                className="h-8 px-3 rounded-full bg-brand text-white text-xs font-medium hover:bg-brand-dark transition shadow-sm shadow-brand/20"
-              >
+              <SubmitButton variant="primary" size="sm" pendingLabel="Sending…">
                 Resend
-              </button>
+              </SubmitButton>
             </form>
             <form action={cancelInvite}>
               <input type="hidden" name="student_id" value={studentId} />
               <input type="hidden" name="role" value={role} />
-              <button
-                type="submit"
-                className="h-8 px-3 rounded-full border border-zinc-300 dark:border-zinc-700 text-xs font-medium hover:bg-white/40 dark:hover:bg-white/5 transition"
-              >
+              <SubmitButton variant="outline" size="sm" pendingLabel="Cancelling…">
                 Cancel
-              </button>
+              </SubmitButton>
             </form>
           </div>
         </Card>
@@ -359,12 +354,14 @@ function AccountSlot({
             placeholder={placeholder}
             className="flex-1 h-10 px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition min-w-0"
           />
-          <button
-            type="submit"
-            className="h-10 px-4 rounded-full bg-brand hover:bg-brand-dark text-white text-sm font-medium shadow-sm shadow-brand/20 transition shrink-0"
+          <SubmitButton
+            variant="primary"
+            size="md"
+            pendingLabel="Sending…"
+            className="shrink-0"
           >
             {inviteLabel}
-          </button>
+          </SubmitButton>
         </form>
       )}
     </section>

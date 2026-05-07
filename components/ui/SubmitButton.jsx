@@ -2,6 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 import Button from "@/components/ui/Button";
+import Spinner from "@/components/ui/Spinner";
 
 export default function SubmitButton({
   children,
@@ -21,6 +22,7 @@ export default function SubmitButton({
       className={className}
       {...rest}
     >
+      {pending && <Spinner />}
       {pending ? pendingLabel || "Working…" : children}
     </Button>
   );

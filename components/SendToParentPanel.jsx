@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { sendReportToParent } from "@/app/dashboard/tutor/session/actions";
 import Button from "@/components/ui/Button";
+import Spinner from "@/components/ui/Spinner";
 
 export default function SendToParentPanel({
   sessionId,
@@ -116,6 +117,7 @@ export default function SendToParentPanel({
           disabled={pending}
           className="shrink-0"
         >
+          {pending && <Spinner />}
           {pending
             ? "Sending…"
             : sentAt

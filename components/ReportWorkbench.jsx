@@ -9,6 +9,7 @@ import {
 import MarkdownReport from "@/components/MarkdownReport";
 import Button from "@/components/ui/Button";
 import EmptyState from "@/components/ui/EmptyState";
+import Spinner from "@/components/ui/Spinner";
 
 export default function ReportWorkbench({
   sessionId,
@@ -101,6 +102,7 @@ export default function ReportWorkbench({
               onClick={handleGenerate}
               disabled={generating}
             >
+              {generating && <Spinner />}
               {generating ? "Generating…" : "Generate report"}
             </Button>
           }
@@ -125,6 +127,7 @@ export default function ReportWorkbench({
             onClick={() => handleSave(false)}
             disabled={savingPending}
           >
+            {savingPending && <Spinner />}
             {savingPending ? "Saving…" : "Save changes"}
           </Button>
           <Button variant="outline" onClick={handleCancel} disabled={savingPending}>
@@ -157,6 +160,7 @@ export default function ReportWorkbench({
           Edit
         </Button>
         <Button variant="ghost" onClick={handleGenerate} disabled={generating}>
+          {generating && <Spinner />}
           {generating ? "Regenerating…" : "Regenerate"}
         </Button>
         {savedAt && (
@@ -222,6 +226,7 @@ function SendPromptDialog({ parentEmail, sending, onSend, onCancel }) {
             disabled={sending}
             className="flex-1"
           >
+            {sending && <Spinner />}
             {sending ? "Sending…" : "Email now"}
           </Button>
           <Button
