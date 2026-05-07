@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
-import MarkdownReport from "@/components/MarkdownReport";
 import EmptyState from "@/components/ui/EmptyState";
-import Card from "@/components/ui/Card";
+import FlaggedQuestionCard from "@/components/FlaggedQuestionCard";
 
 export default async function StudentFlaggedQuestions() {
   const supabase = await createClient();
@@ -21,9 +20,10 @@ export default async function StudentFlaggedQuestions() {
   const { data: flags } = await supabase
     .from("flagged_questions")
     .select(
-      "id, report_id, question_number, topic, flagged_at, reports(id, content, sessions(id, date))"
+      "id, student_id, report_id, question_number, topic, flagged_at, understood_at, reports(id, content, sessions(id, date))"
     )
     .eq("student_id", student.id)
+    .order("understood_at", { ascending: true, nullsFirst: true })
     .order("flagged_at", { ascending: false });
 
   const grouped = {};
@@ -76,39 +76,14 @@ export default async function StudentFlaggedQuestions() {
             <ul className="space-y-3">
               {items.map((item) => (
                 <li key={item.id}>
-                  <Card className="p-5 sm:p-6 border-amber-200 dark:border-amber-900/40 bg-amber-50/40 dark:bg-amber-950/10">
-                    <div className="flex items-center justify-between mb-3 text-xs text-muted gap-2 flex-wrap">
-                      {item.report_id ? (
-                        <Link
-                          href={`/dashboard/student/reports/${item.report_id}`}
-                          className="hover:text-foreground transition"
-                        >
-                          {item.session_date
-                            ? `Session on ${new Date(
-                                item.session_date
-                              ).toLocaleDateString("en-AU", {
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                              })}`
-                            : "Session"}
-                        </Link>
-                      ) : (
-                        <span>Session</span>
-                      )}
-                      <span>flagged {timeAgo(item.flagged_at)}</span>
-                    </div>
-                    {item.question ? (
-                      <MarkdownReport
-                        content={`${item.question}\n\n<details><summary>Reveal worked solution</summary>\n\n${item.solution}\n\n</details>`}
-                      />
-                    ) : (
-                      <p className="text-sm text-muted">
-                        Question content unavailable (the report may have been
-                        regenerated since the flag was set).
-                      </p>
-                    )}
-                  </Card>
+                  <FlaggedQuestionCard
+                    flag={item}
+                    sessionHref={
+                      item.report_id
+                        ? `/dashboard/student/reports/${item.report_id}`
+                        : null
+                    }
+                  />
                 </li>
               ))}
             </ul>
@@ -142,14 +117,3 @@ function extractQuestion(content, n) {
   return null;
 }
 
-function timeAgo(iso) {
-  if (!iso) return "";
-  const ms = Date.now() - new Date(iso).getTime();
-  const mins = Math.floor(ms / 60000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
-  const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
-  const days = Math.floor(hours / 24);
-  return `${days}d ago`;
-}

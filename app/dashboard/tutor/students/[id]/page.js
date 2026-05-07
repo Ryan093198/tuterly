@@ -114,7 +114,8 @@ export default async function StudentDetail({ params }) {
   const { count: flaggedCount } = await supabase
     .from("flagged_questions")
     .select("id", { count: "exact", head: true })
-    .eq("student_id", id);
+    .eq("student_id", id)
+    .is("understood_at", null);
 
   const ratings = (ratingsRaw ?? [])
     .filter((r) => r.sessions)

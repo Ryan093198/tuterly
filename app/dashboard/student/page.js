@@ -57,7 +57,8 @@ export default async function StudentDashboard() {
     supabase
       .from("flagged_questions")
       .select("id", { count: "exact", head: true })
-      .eq("student_id", student.id),
+      .eq("student_id", student.id)
+      .is("understood_at", null),
   ]);
 
   const reportSessions = (sessions ?? [])

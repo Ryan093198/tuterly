@@ -50,7 +50,8 @@ export default async function ParentStudentDetail({ params }) {
       supabase
         .from("flagged_questions")
         .select("id", { count: "exact", head: true })
-        .eq("student_id", id),
+        .eq("student_id", id)
+        .is("understood_at", null),
     ]);
 
   // sessions → reports is one-to-many, so Supabase returns reports as an
