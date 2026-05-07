@@ -60,7 +60,14 @@ export default async function StudentDashboard() {
       .eq("student_id", student.id),
   ]);
 
-  const reportSessions = (sessions ?? []).filter((s) => s.reports);
+  const reportSessions = (sessions ?? [])
+    .map((s) => ({
+      ...s,
+      report: Array.isArray(s.reports)
+        ? s.reports[0] ?? null
+        : s.reports ?? null,
+    }))
+    .filter((s) => s.report);
   const ratings = (ratingsRaw ?? [])
     .filter((r) => r.sessions)
     .map((r) => ({
@@ -100,7 +107,7 @@ export default async function StudentDashboard() {
             {reportSessions.map((s) => (
               <li key={s.id}>
                 <Link
-                  href={`/dashboard/student/reports/${s.reports.id}`}
+                  href={`/dashboard/student/reports/${s.report.id}`}
                   className="block group"
                 >
                   <Card className="px-5 py-4 transition group-hover:border-brand/40 group-hover:shadow-md flex items-center justify-between gap-3">

@@ -53,7 +53,17 @@ export default async function ParentStudentDetail({ params }) {
         .eq("student_id", id),
     ]);
 
-  const reportSessions = (sessions ?? []).filter((s) => s.reports);
+  // sessions → reports is one-to-many, so Supabase returns reports as an
+  // array. Normalise to the first (most recent) report and drop sessions with
+  // no report at all.
+  const reportSessions = (sessions ?? [])
+    .map((s) => ({
+      ...s,
+      report: Array.isArray(s.reports)
+        ? s.reports[0] ?? null
+        : s.reports ?? null,
+    }))
+    .filter((s) => s.report);
   const ratings = (ratingsRaw ?? [])
     .filter((r) => r.sessions)
     .map((r) => ({
@@ -101,7 +111,7 @@ export default async function ParentStudentDetail({ params }) {
             {reportSessions.map((s) => (
               <li key={s.id}>
                 <Link
-                  href={`/dashboard/parent/reports/${s.reports.id}`}
+                  href={`/dashboard/parent/reports/${s.report.id}`}
                   className="block group"
                 >
                   <Card className="px-5 py-4 transition group-hover:border-brand/40 group-hover:shadow-md flex items-center justify-between gap-3">
@@ -119,7 +129,7 @@ export default async function ParentStudentDetail({ params }) {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      {!s.reports.parent_viewed_at && <Badge tone="brand">New</Badge>}
+                      {!s.report.parent_viewed_at && <Badge tone="brand">New</Badge>}
                       <span className="text-muted group-hover:text-brand transition">
                         →
                       </span>
