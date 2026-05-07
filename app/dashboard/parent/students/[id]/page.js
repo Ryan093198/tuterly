@@ -152,6 +152,7 @@ export default async function ParentStudentDetail({ params }) {
           student={student}
           ratings={ratings}
           flaggedCount={flaggedCount ?? 0}
+          flaggedHref={`/dashboard/parent/students/${student.id}/flagged`}
         />
       </Section>
 

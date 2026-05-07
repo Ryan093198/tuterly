@@ -145,6 +145,7 @@ export default async function StudentDashboard() {
           student={student}
           ratings={ratings}
           flaggedCount={flaggedCount ?? 0}
+          flaggedHref="/dashboard/student/flagged"
         />
       </Section>
 
