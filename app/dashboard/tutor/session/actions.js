@@ -79,7 +79,9 @@ export async function createSession(formData) {
   }
 
   revalidatePath(`/dashboard/tutor/students/${studentId}`);
-  redirect(`/dashboard/tutor/session/${session.id}`);
+  // ?fresh=1 tells the session page to auto-generate the report on this
+  // visit. Subsequent visits to the same URL won't re-trigger generation.
+  redirect(`/dashboard/tutor/session/${session.id}?fresh=1`);
 }
 
 export async function deleteSession(formData) {

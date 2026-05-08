@@ -10,8 +10,9 @@ import DeleteSessionButton from "@/components/DeleteSessionButton";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { createAdminClient } from "@/lib/supabase-admin";
 
-export default async function SessionPage({ params }) {
+export default async function SessionPage({ params, searchParams }) {
   const { id } = await params;
+  const sp = (await searchParams) ?? {};
   const supabase = await createClient();
   const {
     data: { user },
@@ -127,6 +128,11 @@ export default async function SessionPage({ params }) {
           status={session.status}
           parentLinked={!!recipientEmail}
           parentEmail={recipientEmail}
+          autoGenerate={
+            sp.fresh === "1" &&
+            !report?.content &&
+            (!!session.raw_notes?.trim() || photos.length > 0)
+          }
         />
       </Section>
 

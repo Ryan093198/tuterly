@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
   updateReport,
@@ -17,6 +17,7 @@ export default function ReportWorkbench({
   status,
   parentLinked,
   parentEmail,
+  autoGenerate = false,
 }) {
   const router = useRouter();
   const [content, setContent] = useState(initialContent ?? "");
@@ -28,6 +29,9 @@ export default function ReportWorkbench({
   const [savedAt, setSavedAt] = useState(null);
   const [showSendPrompt, setShowSendPrompt] = useState(false);
   const [sending, setSending] = useState(false);
+  // Guard so React StrictMode (which mounts effects twice in dev) and any
+  // tab-refocus re-render can't double-fire the generate request.
+  const autoFiredRef = useRef(false);
 
   async function handleGenerate() {
     setGenerating(true);
@@ -54,6 +58,22 @@ export default function ReportWorkbench({
       setGenerating(false);
     }
   }
+
+  // Auto-generate on first mount when the parent told us to. The session
+  // page sets this flag right after a fresh save, so the tutor doesn't have
+  // to click "Generate report" as a second step.
+  useEffect(() => {
+    if (
+      autoGenerate &&
+      !autoFiredRef.current &&
+      !content &&
+      !generating
+    ) {
+      autoFiredRef.current = true;
+      handleGenerate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoGenerate]);
 
   async function handleSendNow() {
     setSending(true);
@@ -89,12 +109,19 @@ export default function ReportWorkbench({
   }
 
   if (!content) {
+    const isAutoRun = generating && autoGenerate;
     return (
       <>
         <EmptyState
           icon={<SparklesIcon />}
-          title="Generate the report"
-          description="Claude turns your dot-point notes — and any photos of the working — into a parent-ready report in seconds."
+          title={
+            isAutoRun ? "Generating your report…" : "Generate the report"
+          }
+          description={
+            isAutoRun
+              ? "Claude is reading your notes and any attached photos. This usually takes 10–20 seconds — feel free to leave this tab; the report will be here when you come back."
+              : "Claude turns your dot-point notes — and any photos of the working — into a parent-ready report in seconds."
+          }
           action={
             <Button
               variant="primary"

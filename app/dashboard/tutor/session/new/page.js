@@ -117,8 +117,11 @@ export default async function NewSessionPage({ searchParams }) {
           </span>
         </Label>
 
-        <div className="pt-2">
+        <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <SubmitButton pendingLabel="Saving…">Save session</SubmitButton>
+          <span className="text-xs text-muted">
+            The report will start generating automatically once you save.
+          </span>
         </div>
       </form>
     </div>
