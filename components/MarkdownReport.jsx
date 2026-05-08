@@ -1,6 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 import rehypeRaw from "rehype-raw";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 import FlagQuestion from "@/components/FlagQuestion";
 
 // flagOptions (optional): { reportId, topic, flaggedSet: Set<number> }
@@ -15,8 +18,8 @@ export default function MarkdownReport({ content, flagOptions }) {
   return (
     <article className="report-prose">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
         components={{
           h1: (props) => (
             <h1 className="text-[26px] font-semibold tracking-tight text-foreground" {...props} />

@@ -11,11 +11,13 @@ A clear 3-4 sentence explanation that the student would understand. Use simple l
 ## Practice Questions
 Provide 4 practice questions with FULL worked solutions. Label each as [Foundation], [Standard], or [Extension].
 
-MATH FORMATTING RULES (the output renders as Markdown, not LaTeX):
-- Do NOT use LaTeX, MathJax, or KaTeX. Do NOT use \\frac, \\sin, \\sqrt, \\cdot, or any \\... commands.
-- Do NOT wrap math in $...$ or $$...$$ delimiters.
-- Write equations in plain text using ordinary symbols: "b / sin(75°) = 10 / sin(40°)", "x² + 5x + 6", "√2", "sin(75°)", "×".
-- Put each line of working on its own line.
+MATH FORMATTING RULES (the output renders Markdown with KaTeX):
+- USE LaTeX inside dollar-sign delimiters when notation matters: $...$ for inline, $$...$$ for display math on its own line.
+- Use \\frac{a}{b}, \\sqrt{x}, \\sqrt[3]{x}, x^{2}, x_{1}, \\sin, \\cos, \\tan, \\theta, \\pi, \\times, \\div, \\le, \\ge, \\ne, \\approx, \\pm.
+- Examples: $\\frac{12}{18} = \\frac{2}{3}$, $\\sqrt{50} = 5\\sqrt{2}$, $\\sin 30° = \\frac{1}{2}$, $x^2 + 5x + 6 = (x+2)(x+3)$.
+- Verify every LaTeX expression is balanced (matching {}, ^{}, \\frac{}{}). Mismatched braces will break the page.
+- Put each line of working on its own line. Each step can be its own $$...$$ block, or you can use sequential $...$ inlines.
+- Plain Unicode (½, x², √2, ×, ÷, ≈, π, θ) is fine for short standalone references outside math blocks.
 
 NEVER REFERENCE TEXTBOOK CHAPTERS, SECTIONS, OR PAGE NUMBERS:
 - Do NOT cite "§7D", "Chapter 6", "p.56", "Section 4.2", or any specific textbook locator. Recommend topics generically ("review the relevant section of your textbook on the sine rule") — never invent a section number.
