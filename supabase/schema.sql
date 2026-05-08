@@ -326,6 +326,16 @@ alter table flagged_questions enable row level security;
 alter table flagged_questions add column if not exists understood_at timestamptz;
 alter table flagged_questions add column if not exists understood_by uuid references profiles(id);
 
+-- ─── Student subject (curriculum framework) ───────────────────────────
+-- Discriminates which VCAA framework drives the report prompt and progress
+-- view. Distinct from `subjects text[]` (used to record VCE study designs
+-- like 'VCE Maths Methods'). Defaults to 'maths' to keep existing rows
+-- working until they're explicitly switched.
+alter table students add column if not exists subject text default 'maths';
+alter table students drop constraint if exists students_subject_check;
+alter table students add constraint students_subject_check
+  check (subject in ('maths', 'english'));
+
 -- ─── API rate limit log ───────────────────────────────────────────────
 -- Simple rolling-window rate limit table. Server actions / API routes log
 -- calls here and check the count against a per-user-per-endpoint limit.

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createStudent } from "../actions";
-import { SCHOOL_YEARS, CURRICULUM_LEVELS } from "@/lib/levels";
+import { SCHOOL_YEARS, CURRICULUM_LEVELS, SUBJECTS } from "@/lib/levels";
 import SubmitButton from "@/components/ui/SubmitButton";
 
 export default function NewStudentPage() {
@@ -30,17 +30,28 @@ export default function NewStudentPage() {
           <Select label="Year level" name="year_level" required options={SCHOOL_YEARS} />
           <Field label="School" name="school" />
         </div>
-        <Select
-          label="Working level (curriculum)"
-          name="working_level"
-          options={CURRICULUM_LEVELS}
-          hint="Leave blank if same as year level. Set if the student is ahead or behind."
-          allowEmpty
-        />
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Select
+            label="Subject"
+            name="subject"
+            required
+            optionPairs={SUBJECTS}
+            defaultValue="maths"
+            hint="Drives which curriculum block the AI references."
+          />
+          <Select
+            label="Working level (curriculum)"
+            name="working_level"
+            options={CURRICULUM_LEVELS}
+            hint="Leave blank if same as year level."
+            allowEmpty
+          />
+        </div>
         <Field
-          label="Subjects"
+          label="VCE study designs (optional)"
           name="subjects"
-          placeholder="Maths, English (comma-separated)"
+          placeholder="VCE Maths Methods, VCE Specialist Maths"
+          hint="Comma-separated. Only needed for VCE students."
         />
         <TextArea
           label="Goals"
@@ -61,7 +72,7 @@ export default function NewStudentPage() {
   );
 }
 
-function Field({ label, name, ...rest }) {
+function Field({ label, name, hint, ...rest }) {
   return (
     <label className="block space-y-1.5">
       <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
@@ -72,11 +83,23 @@ function Field({ label, name, ...rest }) {
         className="w-full h-11 px-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
         {...rest}
       />
+      {hint && <span className="block text-xs text-muted">{hint}</span>}
     </label>
   );
 }
 
-function Select({ label, name, options, required, allowEmpty, hint }) {
+function Select({
+  label,
+  name,
+  options,
+  optionPairs,
+  required,
+  allowEmpty,
+  hint,
+  defaultValue = "",
+}) {
+  const pairs =
+    optionPairs ?? (options ?? []).map((o) => ({ value: o, label: o }));
   return (
     <label className="block space-y-1.5">
       <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
@@ -85,15 +108,17 @@ function Select({ label, name, options, required, allowEmpty, hint }) {
       <select
         name={name}
         required={required}
-        defaultValue=""
+        defaultValue={defaultValue}
         className="w-full h-11 px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
       >
-        <option value="" disabled={!allowEmpty}>
-          {allowEmpty ? "Same as year level" : "Choose…"}
-        </option>
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
+        {(allowEmpty || defaultValue === "") && (
+          <option value="" disabled={!allowEmpty}>
+            {allowEmpty ? "Same as year level" : "Choose…"}
+          </option>
+        )}
+        {pairs.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
           </option>
         ))}
       </select>

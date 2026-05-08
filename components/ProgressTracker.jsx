@@ -35,6 +35,7 @@ export default function ProgressTracker({
           topic,
           subtopic,
           year_level: student.working_level || student.year_level,
+          subject: student.subject || "maths",
         }),
       });
       if (!res.ok) {

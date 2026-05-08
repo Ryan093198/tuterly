@@ -43,7 +43,7 @@ export async function POST(request) {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "first_name, last_name, year_level, working_level, school, subjects, goals, concerns, term_outline"
+      "first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, term_outline"
     )
     .eq("id", session.student_id)
     .single();

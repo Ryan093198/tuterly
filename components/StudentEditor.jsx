@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { updateStudent } from "@/app/dashboard/tutor/students/actions";
-import { SCHOOL_YEARS, CURRICULUM_LEVELS } from "@/lib/levels";
+import { SCHOOL_YEARS, CURRICULUM_LEVELS, SUBJECTS } from "@/lib/levels";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 
@@ -35,6 +35,7 @@ export default function StudentEditor({ student, newSessionHref }) {
             </h1>
             <p className="text-sm text-muted mt-0.5 truncate">
               {student.year_level}
+              {student.subject === "english" ? " · English" : " · Maths"}
               {student.working_level && student.working_level !== student.year_level
                 ? ` · working at ${student.working_level}`
                 : ""}
@@ -96,6 +97,15 @@ export default function StudentEditor({ student, newSessionHref }) {
           required
         />
         <SelectField
+          label="Subject"
+          name="subject"
+          optionPairs={SUBJECTS}
+          defaultValue={student.subject || "maths"}
+          required
+        />
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <SelectField
           label="Working level"
           name="working_level"
           options={CURRICULUM_LEVELS}
@@ -103,12 +113,17 @@ export default function StudentEditor({ student, newSessionHref }) {
           allowEmpty
           emptyLabel="Same as year level"
         />
+        <Field
+          label="School"
+          name="school"
+          defaultValue={student.school || ""}
+        />
       </div>
-      <Field label="School" name="school" defaultValue={student.school || ""} />
       <Field
-        label="Subjects (comma-separated)"
+        label="VCE study designs (optional)"
         name="subjects"
         defaultValue={(student.subjects || []).join(", ")}
+        placeholder="VCE Maths Methods, VCE Specialist Maths"
       />
       <TextArea label="Goals" name="goals" defaultValue={student.goals || ""} />
       <TextArea
@@ -152,11 +167,14 @@ function SelectField({
   label,
   name,
   options,
+  optionPairs,
   defaultValue,
   required,
   allowEmpty,
   emptyLabel,
 }) {
+  const pairs =
+    optionPairs ?? (options ?? []).map((o) => ({ value: o, label: o }));
   return (
     <label className="block space-y-1.5">
       <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
@@ -168,12 +186,14 @@ function SelectField({
         required={required}
         className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
       >
-        <option value="" disabled={!allowEmpty}>
-          {allowEmpty ? emptyLabel || "—" : "Choose…"}
-        </option>
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
+        {(allowEmpty || !defaultValue) && (
+          <option value="" disabled={!allowEmpty}>
+            {allowEmpty ? emptyLabel || "—" : "Choose…"}
+          </option>
+        )}
+        {pairs.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
           </option>
         ))}
       </select>

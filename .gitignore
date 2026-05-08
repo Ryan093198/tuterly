@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# curriculum source documents (parsed into lib/curriculum*.js, kept locally only)
+/app/curriculum/
+/app/Curriculum/

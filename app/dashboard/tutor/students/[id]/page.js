@@ -42,7 +42,7 @@ export default async function StudentDetail({ params }) {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "id, first_name, last_name, year_level, working_level, school, subjects, goals, concerns, parent_id, student_user_id"
+      "id, first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, parent_id, student_user_id"
     )
     .eq("id", id)
     .single();

@@ -16,7 +16,7 @@ export default async function StudentDashboard() {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "id, first_name, last_name, year_level, working_level, school, subjects"
+      "id, first_name, last_name, year_level, working_level, school, subject, subjects"
     )
     .eq("student_user_id", user.id)
     .maybeSingle();

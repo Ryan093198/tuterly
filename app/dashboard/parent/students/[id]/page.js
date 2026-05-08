@@ -18,7 +18,7 @@ export default async function ParentStudentDetail({ params }) {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "id, first_name, last_name, year_level, working_level, school, subjects"
+      "id, first_name, last_name, year_level, working_level, school, subject, subjects"
     )
     .eq("id", id)
     .eq("parent_id", user.id)

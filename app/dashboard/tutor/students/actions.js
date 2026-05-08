@@ -24,6 +24,8 @@ export async function createStudent(formData) {
   // SELECT-after-INSERT round-trip is blocked by RLS.
   const studentId = randomUUID();
 
+  const subject = formData.get("subject") === "english" ? "english" : "maths";
+
   const { error } = await supabase.from("students").insert({
     id: studentId,
     first_name: formData.get("first_name"),
@@ -31,6 +33,7 @@ export async function createStudent(formData) {
     year_level: formData.get("year_level"),
     working_level: formData.get("working_level") || null,
     school: formData.get("school") || null,
+    subject,
     subjects,
     goals: formData.get("goals") || null,
     concerns: formData.get("concerns") || null,
@@ -67,6 +70,14 @@ export async function updateStudent(formData) {
           .map((s) => s.trim())
           .filter(Boolean);
 
+  const subjectRaw = formData.get("subject");
+  const subject =
+    subjectRaw === null
+      ? undefined
+      : subjectRaw === "english"
+      ? "english"
+      : "maths";
+
   const patch = {
     first_name: formData.get("first_name"),
     last_name: formData.get("last_name"),
@@ -78,6 +89,7 @@ export async function updateStudent(formData) {
     updated_at: new Date().toISOString(),
   };
   if (subjects !== undefined) patch.subjects = subjects;
+  if (subject !== undefined) patch.subject = subject;
 
   const { error } = await supabase.from("students").update(patch).eq("id", studentId);
   if (error) throw error;
