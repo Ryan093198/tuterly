@@ -10,8 +10,8 @@ import Spinner from "@/components/ui/Spinner";
 export default function SendToParentPanel({
   sessionId,
   studentId,
-  parentLinked,
-  parentEmail,
+  recipientEmail,
+  recipientLinked,
   sentAt,
 }) {
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function SendToParentPanel({
     });
   }
 
-  if (!parentLinked) {
+  if (!recipientEmail) {
     return (
       <div className="p-5 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700 text-sm text-muted">
         The parent can already see this report in their dashboard.{" "}
@@ -38,7 +38,7 @@ export default function SendToParentPanel({
           href={`/dashboard/tutor/students/${studentId}`}
           className="underline text-foreground"
         >
-          Link a parent
+          Invite a parent
         </Link>{" "}
         to also email them a PDF copy.
       </div>
@@ -86,8 +86,7 @@ export default function SendToParentPanel({
                 </h3>
                 <p className="text-sm text-brand-foreground/80 mt-0.5">
                   Sent to{" "}
-                  <span className="font-medium">{parentEmail || "parent"}</span>{" "}
-                  on{" "}
+                  <span className="font-medium">{recipientEmail}</span> on{" "}
                   {new Date(sentAt).toLocaleString("en-AU", {
                     day: "numeric",
                     month: "short",
@@ -103,8 +102,10 @@ export default function SendToParentPanel({
                   Email a PDF copy to the parent
                 </h3>
                 <p className="text-sm text-brand-foreground/80 mt-0.5">
-                  {parentEmail || "The parent"} can already see this report in
-                  their dashboard. Send them an email with a PDF attachment too?
+                  Send to <span className="font-medium">{recipientEmail}</span>
+                  {recipientLinked
+                    ? " — they can already see this report in their dashboard."
+                    : " — invite hasn't been accepted yet, but the PDF will still arrive."}
                 </p>
               </>
             )}

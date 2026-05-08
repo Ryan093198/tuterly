@@ -55,7 +55,11 @@ export default async function SessionPage({ params }) {
   const hasReport = !!report?.content;
   const initialTopic = ratings?.[0]?.topic ?? "";
 
-  let parentEmail = null;
+  // Resolve the email we'd send the report to. Linked-parent profile if one
+  // exists, otherwise the most recent pending parent invite. The send action
+  // uses the same fallback so the panel and the actual send agree.
+  let recipientEmail = null;
+  let recipientLinked = false;
   if (student.parent_id) {
     const admin = createAdminClient();
     const { data: parent } = await admin
@@ -63,7 +67,21 @@ export default async function SessionPage({ params }) {
       .select("email")
       .eq("id", student.parent_id)
       .maybeSingle();
-    parentEmail = parent?.email ?? null;
+    recipientEmail = parent?.email ?? null;
+    recipientLinked = !!recipientEmail;
+  }
+  if (!recipientEmail) {
+    const { data: invite } = await supabase
+      .from("invites")
+      .select("to_email")
+      .eq("student_id", student.id)
+      .eq("from_user_id", user.id)
+      .eq("role", "parent")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    recipientEmail = invite?.to_email ?? null;
   }
 
   return (
@@ -107,8 +125,8 @@ export default async function SessionPage({ params }) {
           sessionId={session.id}
           initialContent={report?.content ?? ""}
           status={session.status}
-          parentLinked={!!student.parent_id}
-          parentEmail={parentEmail}
+          parentLinked={!!recipientEmail}
+          parentEmail={recipientEmail}
         />
       </Section>
 
@@ -128,8 +146,8 @@ export default async function SessionPage({ params }) {
           <SendToParentPanel
             sessionId={session.id}
             studentId={student.id}
-            parentLinked={!!student.parent_id}
-            parentEmail={parentEmail}
+            recipientEmail={recipientEmail}
+            recipientLinked={recipientLinked}
             sentAt={report.sent_at}
           />
         </Section>

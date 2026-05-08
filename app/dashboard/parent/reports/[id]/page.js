@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
+import { createAdminClient } from "@/lib/supabase-admin";
 import MarkdownReport from "@/components/MarkdownReport";
 import PrintButton from "@/components/PrintButton";
 import SessionPhotos from "@/components/SessionPhotos";
@@ -50,15 +51,24 @@ export default async function ParentReportView({ params }) {
   }
 
   if (studentData.parent_id !== user.id) {
-    console.warn(
-      "[parent report view] parent_id mismatch:",
-      id,
-      "student.parent_id=",
-      studentData.parent_id,
-      "user.id=",
-      user.id
+    // If this user has a pending parent invite for the report's student
+    // (e.g. they got the PDF email, just signed up, and clicked the link),
+    // auto-accept it inline so the deep link works on first visit.
+    const accepted = await tryAutoAcceptParentInvite(
+      user,
+      studentData.id
     );
-    notFound();
+    if (!accepted) {
+      console.warn(
+        "[parent report view] parent_id mismatch:",
+        id,
+        "student.parent_id=",
+        studentData.parent_id,
+        "user.id=",
+        user.id
+      );
+      notFound();
+    }
   }
 
   if (!report.parent_viewed_at) {
@@ -154,4 +164,31 @@ export default async function ParentReportView({ params }) {
       </div>
     </div>
   );
+}
+
+async function tryAutoAcceptParentInvite(user, studentId) {
+  if (!user?.email) return false;
+  const admin = createAdminClient();
+  const { data: invite } = await admin
+    .from("invites")
+    .select("id")
+    .eq("student_id", studentId)
+    .eq("to_email", user.email.toLowerCase())
+    .eq("role", "parent")
+    .eq("status", "pending")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (!invite) return false;
+
+  await admin
+    .from("students")
+    .update({ parent_id: user.id })
+    .eq("id", studentId);
+  await admin.from("profiles").update({ role: "parent" }).eq("id", user.id);
+  await admin
+    .from("invites")
+    .update({ status: "accepted" })
+    .eq("id", invite.id);
+  return true;
 }

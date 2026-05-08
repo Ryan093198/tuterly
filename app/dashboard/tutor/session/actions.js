@@ -312,11 +312,6 @@ export async function sendReportToParent(sessionId) {
     .single();
   if (!session) throw new Error("session not found");
 
-  const parentId = session.students?.parent_id;
-  if (!parentId) {
-    throw new Error("No parent linked to this student. Invite a parent first.");
-  }
-
   const { data: report } = await supabase
     .from("reports")
     .select("id, content")
@@ -324,14 +319,43 @@ export async function sendReportToParent(sessionId) {
     .single();
   if (!report) throw new Error("No report to send");
 
-  // Look up parent email via admin client (RLS hides other profiles).
+  // Resolve recipient: linked parent profile first, otherwise the most recent
+  // pending parent invite. This lets a tutor email a PDF to a parent who
+  // hasn't signed up yet — the email link still works because the report
+  // view auto-accepts a matching invite on first visit.
   const admin = createAdminClient();
-  const { data: parent } = await admin
-    .from("profiles")
-    .select("email, full_name")
-    .eq("id", parentId)
-    .single();
-  if (!parent?.email) throw new Error("Parent profile missing email");
+  let recipientEmail = null;
+  let recipientName = null;
+
+  if (session.students?.parent_id) {
+    const { data: parent } = await admin
+      .from("profiles")
+      .select("email, full_name")
+      .eq("id", session.students.parent_id)
+      .single();
+    recipientEmail = parent?.email ?? null;
+    recipientName = parent?.full_name ?? null;
+  }
+
+  if (!recipientEmail) {
+    const { data: invite } = await supabase
+      .from("invites")
+      .select("to_email")
+      .eq("student_id", session.student_id)
+      .eq("from_user_id", user.id)
+      .eq("role", "parent")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    recipientEmail = invite?.to_email ?? null;
+  }
+
+  if (!recipientEmail) {
+    throw new Error(
+      "No parent email on file. Invite a parent on the student page first."
+    );
+  }
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const reportUrl = `${baseUrl}/dashboard/parent/reports/${report.id}`;
@@ -362,8 +386,8 @@ export async function sendReportToParent(sessionId) {
 
   try {
     await sendReportEmail({
-      to: parent.email,
-      parentName: parent.full_name,
+      to: recipientEmail,
+      parentName: recipientName,
       studentName: studentFullName,
       reportUrl,
       attachments,
