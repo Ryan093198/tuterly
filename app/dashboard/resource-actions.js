@@ -5,11 +5,21 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
+import {
+  ALLOWED_IMAGE_TYPES,
+  compressImage,
+  rewriteImageFilename,
+} from "@/lib/image-utils";
 
 const BUCKET = "resources";
 
 const TEXT_EXTENSIONS = new Set([".txt", ".md", ".csv"]);
 const PDF_EXTENSIONS = new Set([".pdf"]);
+
+// Per-file upload limit. 25MB covers >99% of legitimate textbook/term-outline
+// PDFs and stops a single bad upload (e.g. a 200MB scanned binder) from
+// quietly eating bucket storage.
+const MAX_RESOURCE_BYTES = 25 * 1024 * 1024; // 25MB
 
 async function extractPdfText(arrayBuffer) {
   // unpdf is dynamically imported because it pulls in a wasm-ish parser that's
@@ -107,27 +117,54 @@ export async function uploadResource(formData) {
   let filePath = null;
 
   if (file && typeof file === "object" && "arrayBuffer" in file && file.size > 0) {
+    if (file.size > MAX_RESOURCE_BYTES) {
+      throw new Error(
+        `"${file.name}" is too large (${(file.size / 1024 / 1024).toFixed(
+          1
+        )}MB). Maximum is 25MB per resource.`
+      );
+    }
+
     name = file.name;
     if (!category) category = classifyCategory(name);
 
     const ext = fileExtension(name);
+    let uploadBuffer = null;
+    let uploadContentType = file.type || "application/octet-stream";
+
     if (TEXT_EXTENSIONS.has(ext)) {
       content = await file.text();
+      uploadBuffer = Buffer.from(await file.arrayBuffer());
     } else if (PDF_EXTENSIONS.has(ext) || file.type === "application/pdf") {
       try {
-        const buffer = await file.arrayBuffer();
-        content = (await extractPdfText(buffer)).trim();
+        const ab = await file.arrayBuffer();
+        content = (await extractPdfText(ab)).trim();
         if (!content) {
           content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF text could not be extracted (likely scanned image)]`;
         }
+        uploadBuffer = Buffer.from(ab);
       } catch (e) {
         console.warn(`[uploadResource] PDF extract failed for ${name}: ${e?.message || e}`);
         content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF, text extraction failed]`;
+        uploadBuffer = Buffer.from(await file.arrayBuffer());
       }
+    } else if (ALLOWED_IMAGE_TYPES.has(file.type)) {
+      // Image resource (e.g. photo of a textbook page). Same compression
+      // pass as session photos so we don't quietly burn storage.
+      const raw = Buffer.from(await file.arrayBuffer());
+      const compressed = await compressImage(raw);
+      uploadBuffer = compressed.buffer;
+      uploadContentType = compressed.contentType;
+      name = rewriteImageFilename(name);
+      content = `[File: ${name} (${(uploadBuffer.length / 1024).toFixed(
+        0
+      )}KB) — ${uploadContentType}]`;
     } else {
       content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — ${file.type || "unknown type"}]`;
+      uploadBuffer = Buffer.from(await file.arrayBuffer());
     }
-    if (content.length > 50000) {
+
+    if (content && content.length > 50000) {
       content =
         content.slice(0, 50000) +
         "\n\n[Content truncated at 50,000 characters]";
@@ -135,11 +172,10 @@ export async function uploadResource(formData) {
 
     const admin = createAdminClient();
     const objectKey = `${studentId}/${randomUUID()}-${sanitizeFilename(name)}`;
-    const buffer = Buffer.from(await file.arrayBuffer());
     const { error: uploadError } = await admin.storage
       .from(BUCKET)
-      .upload(objectKey, buffer, {
-        contentType: file.type || "application/octet-stream",
+      .upload(objectKey, uploadBuffer, {
+        contentType: uploadContentType,
         upsert: false,
       });
     if (uploadError) throw uploadError;

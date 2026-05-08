@@ -7,14 +7,17 @@ import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { sendReportEmail } from "@/lib/email";
 import { renderReportPdf, pdfFilename } from "@/lib/report-pdf";
+import {
+  ALLOWED_IMAGE_TYPES,
+  compressImage,
+  rewriteImageFilename,
+} from "@/lib/image-utils";
 
 const PHOTO_BUCKET = "session-photos";
-const ALLOWED_IMAGE_TYPES = new Set([
-  "image/jpeg",
-  "image/png",
-  "image/webp",
-  "image/gif",
-]);
+// Photos are run through sharp before storage. The cap applies to the raw
+// upload (a phone shot can be 8MB before compression); after compression
+// the typical stored size is under 500KB.
+const MAX_PHOTO_BYTES = 10 * 1024 * 1024; // 10MB
 
 function sanitizeFilename(name) {
   return name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 120);
@@ -24,13 +27,28 @@ async function uploadPhotoForSession(sessionId, userId, file) {
   if (!ALLOWED_IMAGE_TYPES.has(file.type)) {
     throw new Error(`Unsupported image type: ${file.type || "unknown"}`);
   }
+  if (file.size > MAX_PHOTO_BYTES) {
+    throw new Error(
+      `Photo "${file.name || "photo"}" is too large (${(
+        file.size /
+        1024 /
+        1024
+      ).toFixed(1)}MB). Maximum is 10MB per photo.`
+    );
+  }
   const admin = createAdminClient();
-  const objectKey = `${sessionId}/${randomUUID()}-${sanitizeFilename(file.name || "photo")}`;
-  const buffer = Buffer.from(await file.arrayBuffer());
+  const rawBuffer = Buffer.from(await file.arrayBuffer());
+
+  // Resize to 1500px max edge + JPEG q80. ~5-10× smaller, no visible loss
+  // for whiteboard / notes shots.
+  const compressed = await compressImage(rawBuffer);
+  const filename = rewriteImageFilename(file.name || "photo");
+  const objectKey = `${sessionId}/${randomUUID()}-${sanitizeFilename(filename)}`;
+
   const { error: uploadError } = await admin.storage
     .from(PHOTO_BUCKET)
-    .upload(objectKey, buffer, {
-      contentType: file.type,
+    .upload(objectKey, compressed.buffer, {
+      contentType: compressed.contentType,
       upsert: false,
     });
   if (uploadError) throw uploadError;

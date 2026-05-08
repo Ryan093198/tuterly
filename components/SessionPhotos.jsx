@@ -131,6 +131,9 @@ export default function SessionPhotos({ sessionId, photos, canManage }) {
             className="hidden"
             onChange={(e) => handleFiles(e.target.files)}
           />
+          <span className="basis-full text-xs text-muted">
+            Max 10MB per photo · automatically resized for storage.
+          </span>
         </div>
       )}
 

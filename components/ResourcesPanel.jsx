@@ -139,7 +139,7 @@ function Dropzone({ uploading, onPick, onTogglePaste, showPaste, fileInputRef })
         {uploading ? "Uploading…" : "Drop a file or click to upload"}
       </p>
       <p className="text-xs text-muted mt-1">
-        PDF, Word, text or image — auto-classified by filename.{" "}
+        PDF, Word, text or image — auto-classified by filename. Max 25MB per file.{" "}
         <button
           type="button"
           onClick={(e) => {
