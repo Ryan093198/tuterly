@@ -23,7 +23,22 @@ const CATEGORY_LABEL = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c.label])
 );
 
-export default function ResourcesPanel({ studentId, resources }) {
+const ROLE_LABEL = {
+  tutor: "Tutor",
+  parent: "Parent",
+  student: "Student",
+  admin: "Admin",
+};
+
+function uploaderLabel(uploader, currentUserId) {
+  if (!uploader) return null;
+  if (uploader.id === currentUserId) return "by you";
+  const name = uploader.full_name?.split(/\s+/)[0] || "Unknown";
+  const role = ROLE_LABEL[uploader.role];
+  return role ? `by ${name} (${role.toLowerCase()})` : `by ${name}`;
+}
+
+export default function ResourcesPanel({ studentId, resources, currentUserId }) {
   const router = useRouter();
   const fileInputRef = useRef(null);
   const [uploading, setUploading] = useState(false);
@@ -81,7 +96,11 @@ export default function ResourcesPanel({ studentId, resources }) {
       ) : (
         <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 overflow-hidden">
           {resources.map((r) => (
-            <ResourceRow key={r.id} resource={r} />
+            <ResourceRow
+              key={r.id}
+              resource={r}
+              currentUserId={currentUserId}
+            />
           ))}
         </ul>
       )}
@@ -251,7 +270,7 @@ function PasteForm({ studentId, onClose, onSaved }) {
   );
 }
 
-function ResourceRow({ resource }) {
+function ResourceRow({ resource, currentUserId }) {
   const router = useRouter();
   const [editing, setEditing] = useState(false);
   const [category, setCategory] = useState(resource.category);
@@ -308,6 +327,11 @@ function ResourceRow({ resource }) {
               {!resource.file_url && (
                 <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-brand-pale text-brand-foreground font-medium">
                   Pasted
+                </span>
+              )}
+              {uploaderLabel(resource.uploader, currentUserId) && (
+                <span className="text-[11px] text-muted">
+                  {uploaderLabel(resource.uploader, currentUserId)}
                 </span>
               )}
             </div>
@@ -511,4 +535,4 @@ function CloseIcon() {
   );
 }
 
-export { CATEGORY_LABEL };
+export { CATEGORY_LABEL, CATEGORIES, ROLE_LABEL, uploaderLabel };

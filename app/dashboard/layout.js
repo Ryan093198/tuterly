@@ -10,6 +10,11 @@ const NAV = {
       icon: <Icon name="students" />,
     },
     {
+      label: "Resources",
+      href: "/dashboard/tutor/resources",
+      icon: <Icon name="folder" />,
+    },
+    {
       label: "Settings",
       href: "/dashboard/settings",
       icon: <Icon name="cog" />,
@@ -115,6 +120,13 @@ function Icon({ name }) {
       <svg {...common} aria-hidden="true">
         <path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H19v14H5.5A1.5 1.5 0 0 0 4 18.5V4.5z" />
         <path d="M4 18.5A1.5 1.5 0 0 0 5.5 20H19" />
+      </svg>
+    );
+  }
+  if (name === "folder") {
+    return (
+      <svg {...common} aria-hidden="true">
+        <path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
       </svg>
     );
   }

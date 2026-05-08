@@ -467,3 +467,10 @@ create index if not exists idx_pending_email_changes_token on pending_email_chan
 create index if not exists idx_pending_email_changes_user on pending_email_changes(user_id);
 alter table pending_email_changes enable row level security;
 -- No SELECT policy — only the service-role admin client touches this table.
+
+-- ─── Resource lookups for the centralised tutor index ───
+-- The /dashboard/tutor/resources page lists every resource across all the
+-- tutor's linked students, ordered by recency. This index covers that path.
+create index if not exists idx_resources_student_created
+  on resources(student_id, created_at desc);
+create index if not exists idx_resources_uploaded_by on resources(uploaded_by);

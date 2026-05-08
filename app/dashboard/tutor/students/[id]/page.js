@@ -12,7 +12,7 @@ import {
   requestParentEmailChange,
 } from "../parent-actions";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { signedUrlFor } from "@/app/dashboard/resource-actions";
+import { enrichResources } from "@/lib/resource-helpers";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
 import StudentEditor from "@/components/StudentEditor";
@@ -110,7 +110,7 @@ export default async function StudentDetail({ params }) {
       .eq("student_id", id),
     supabase
       .from("resources")
-      .select("id, name, category, notes, file_url, created_at")
+      .select("id, name, category, notes, file_url, created_at, uploaded_by")
       .eq("student_id", id)
       .order("created_at", { ascending: false }),
   ]);
@@ -130,12 +130,7 @@ export default async function StudentDetail({ params }) {
       session_date: r.sessions.date,
     }));
 
-  const resources = await Promise.all(
-    (rawResources ?? []).map(async (r) => ({
-      ...r,
-      signed_url: r.file_url ? await signedUrlFor(r.file_url) : null,
-    }))
-  );
+  const resources = await enrichResources(rawResources ?? []);
 
   return (
     <div className="px-4 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
@@ -238,7 +233,11 @@ export default async function StudentDetail({ params }) {
       </Section>
 
       <Section label="Resources">
-        <ResourcesPanel studentId={student.id} resources={resources} />
+        <ResourcesPanel
+          studentId={student.id}
+          resources={resources}
+          currentUserId={user.id}
+        />
       </Section>
 
       <section className="pt-6 border-t border-zinc-200 dark:border-zinc-800">

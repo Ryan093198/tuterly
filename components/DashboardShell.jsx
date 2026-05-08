@@ -9,10 +9,21 @@ export default function DashboardShell({ navItems, user, children }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const isActive = (href) =>
-    href === "/dashboard"
-      ? pathname === href
-      : pathname === href || pathname.startsWith(`${href}/`);
+  // Pick the *most specific* matching href so that e.g. "Students" at
+  // /dashboard/tutor doesn't stay highlighted when the user navigates to a
+  // sibling like /dashboard/tutor/resources.
+  const matchingHrefs = navItems
+    .map((i) => i.href)
+    .filter((h) =>
+      h === "/dashboard"
+        ? pathname === h
+        : pathname === h || pathname.startsWith(`${h}/`)
+    );
+  const activeHref = matchingHrefs.reduce(
+    (best, h) => (h.length > best.length ? h : best),
+    ""
+  );
+  const isActive = (href) => href === activeHref;
 
   const initials = (user?.full_name || user?.email || "?")
     .split(/\s+/)
