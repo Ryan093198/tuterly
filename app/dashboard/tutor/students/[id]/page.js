@@ -7,6 +7,10 @@ import {
   resendInvite,
   cancelInvite,
 } from "../invite-actions";
+import {
+  updateInviteEmail,
+  requestParentEmailChange,
+} from "../parent-actions";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { signedUrlFor } from "@/app/dashboard/resource-actions";
 import ProgressTracker from "@/components/ProgressTracker";
@@ -293,21 +297,52 @@ function AccountSlot({
         {label}
       </h2>
       {profile ? (
-        <Card className="p-4 flex items-center gap-3 h-full">
-          <div className="h-10 w-10 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold shrink-0">
-            {initials}
-          </div>
-          <div className="min-w-0 flex-1">
-            <div className="font-medium truncate">
-              {profile.full_name || profile.email}
+        <Card className="p-4 space-y-3 h-full">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold shrink-0">
+              {initials}
             </div>
-            {profile.full_name && (
-              <div className="text-sm text-muted truncate">{profile.email}</div>
-            )}
+            <div className="min-w-0 flex-1">
+              <div className="font-medium truncate">
+                {profile.full_name || profile.email}
+              </div>
+              {profile.full_name && (
+                <div className="text-sm text-muted truncate">{profile.email}</div>
+              )}
+            </div>
+            <Badge tone="success" className="ml-auto shrink-0">
+              Linked
+            </Badge>
           </div>
-          <Badge tone="success" className="ml-auto shrink-0">
-            Linked
-          </Badge>
+          {role === "parent" && (
+            <details className="group">
+              <summary className="text-xs text-muted hover:text-foreground transition cursor-pointer list-none flex items-center gap-1.5 select-none">
+                <span className="group-open:rotate-90 transition inline-block">›</span>
+                Change email
+              </summary>
+              <form
+                action={requestParentEmailChange}
+                className="mt-2.5 flex flex-col sm:flex-row gap-2"
+              >
+                <input type="hidden" name="student_id" value={studentId} />
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="new.email@example.com"
+                  defaultValue=""
+                  className="flex-1 h-9 px-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition min-w-0"
+                />
+                <SubmitButton variant="primary" size="sm" pendingLabel="Sending…">
+                  Send confirmation
+                </SubmitButton>
+              </form>
+              <p className="text-[11px] text-muted mt-1.5 leading-snug">
+                We'll email a confirmation link to the new address. The
+                parent's sign-in won't change until they click it.
+              </p>
+            </details>
+          )}
         </Card>
       ) : pendingInvite ? (
         <Card className="p-4 border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 space-y-2.5 h-full">
@@ -341,6 +376,29 @@ function AccountSlot({
               </SubmitButton>
             </form>
           </div>
+          <details className="group pt-1">
+            <summary className="text-xs text-muted hover:text-foreground transition cursor-pointer list-none flex items-center gap-1.5 select-none">
+              <span className="group-open:rotate-90 transition inline-block">›</span>
+              Wrong email? Send to a different address
+            </summary>
+            <form
+              action={updateInviteEmail}
+              className="mt-2.5 flex flex-col sm:flex-row gap-2"
+            >
+              <input type="hidden" name="student_id" value={studentId} />
+              <input type="hidden" name="role" value={role} />
+              <input
+                required
+                type="email"
+                name="email"
+                placeholder="new.email@example.com"
+                className="flex-1 h-9 px-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition min-w-0"
+              />
+              <SubmitButton variant="primary" size="sm" pendingLabel="Sending…">
+                Re-invite
+              </SubmitButton>
+            </form>
+          </details>
         </Card>
       ) : (
         <form

@@ -425,3 +425,45 @@ $$ language plpgsql security definer;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function handle_new_user();
+
+-- ═══ SYNC PROFILE EMAIL WHEN AUTH EMAIL CHANGES ═══
+-- After a parent confirms a verified email change (either self-initiated via
+-- supabase.auth.updateUser, or tutor-initiated via the admin-API path), the
+-- profiles row should reflect the new address so report emails and the UI
+-- stay in sync.
+create or replace function handle_user_email_change()
+returns trigger as $$
+begin
+  if old.email is distinct from new.email then
+    update profiles
+       set email = new.email,
+           updated_at = now()
+     where id = new.id;
+  end if;
+  return new;
+end;
+$$ language plpgsql security definer;
+
+drop trigger if exists on_auth_user_email_changed on auth.users;
+create trigger on_auth_user_email_changed
+  after update on auth.users
+  for each row execute function handle_user_email_change();
+
+-- ═══ PENDING EMAIL CHANGES (TUTOR-INITIATED) ═══
+-- When a tutor changes a signed-up parent's email, we don't want to flip the
+-- auth identity silently. We create a one-time token, email it to the NEW
+-- address, and only swap the auth email after the parent clicks through.
+create table if not exists pending_email_changes (
+  id uuid primary key default uuid_generate_v4(),
+  user_id uuid not null references profiles(id) on delete cascade,
+  new_email text not null,
+  initiated_by uuid not null references profiles(id),
+  token text not null unique default encode(gen_random_bytes(32), 'hex'),
+  expires_at timestamptz default now() + interval '24 hours',
+  consumed_at timestamptz,
+  created_at timestamptz default now()
+);
+create index if not exists idx_pending_email_changes_token on pending_email_changes(token);
+create index if not exists idx_pending_email_changes_user on pending_email_changes(user_id);
+alter table pending_email_changes enable row level security;
+-- No SELECT policy — only the service-role admin client touches this table.
