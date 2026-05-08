@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
 import Button from "@/components/ui/Button";
-import Badge from "@/components/ui/Badge";
-import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
+import StudentSearchList from "@/components/StudentSearchList";
 
 export default async function TutorDashboard() {
   const supabase = await createClient();
@@ -14,13 +13,25 @@ export default async function TutorDashboard() {
   const { data: links } = await supabase
     .from("tutor_students")
     .select(
-      "status, students(id, first_name, last_name, year_level, working_level, school, subjects)"
+      "students(id, first_name, last_name, year_level, working_level, school, subjects)"
     )
     .eq("tutor_id", user.id)
-    .eq("status", "active")
-    .order("created_at", { ascending: false });
+    .eq("status", "active");
 
-  const students = (links ?? []).map((l) => l.students).filter(Boolean);
+  // Sort alphabetically by first name (then last name) so the list is easy
+  // to scan when a tutor has many students.
+  const students = (links ?? [])
+    .map((l) => l.students)
+    .filter(Boolean)
+    .sort((a, b) => {
+      const f = (a.first_name || "").localeCompare(b.first_name || "", "en", {
+        sensitivity: "base",
+      });
+      if (f !== 0) return f;
+      return (a.last_name || "").localeCompare(b.last_name || "", "en", {
+        sensitivity: "base",
+      });
+    });
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-6xl mx-auto animate-fade-in-up">
@@ -96,43 +107,7 @@ export default async function TutorDashboard() {
           </div>
         </div>
       ) : (
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {students.map((s) => (
-            <li key={s.id}>
-              <Link
-                href={`/dashboard/tutor/students/${s.id}`}
-                className="group block h-full"
-              >
-                <Card className="h-full p-5 transition group-hover:border-brand/40 group-hover:shadow-md">
-                  <div className="flex items-start gap-3">
-                    <Avatar name={`${s.first_name} ${s.last_name}`} />
-                    <div className="min-w-0 flex-1">
-                      <div className="font-semibold tracking-tight truncate">
-                        {s.first_name} {s.last_name}
-                      </div>
-                      <div className="text-xs text-muted truncate mt-0.5">
-                        {s.year_level}
-                        {s.working_level && s.working_level !== s.year_level
-                          ? ` · ${s.working_level}`
-                          : ""}
-                        {s.school ? ` · ${s.school}` : ""}
-                      </div>
-                    </div>
-                  </div>
-                  {s.subjects?.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-4">
-                      {s.subjects.map((subj) => (
-                        <Badge key={subj} tone="brand">
-                          {subj}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </Card>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <StudentSearchList students={students} />
       )}
     </div>
   );
@@ -149,20 +124,5 @@ function Step({ n, title, desc }) {
         <span className="text-muted">{desc}</span>
       </span>
     </li>
-  );
-}
-
-function Avatar({ name }) {
-  const initials = (name || "?")
-    .split(/\s+/)
-    .map((p) => p[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-  return (
-    <div className="h-10 w-10 shrink-0 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold">
-      {initials}
-    </div>
   );
 }
