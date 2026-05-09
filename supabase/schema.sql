@@ -270,6 +270,28 @@ create index if not exists idx_students_student_user on students(student_user_id
 
 alter table reports add column if not exists student_sent_at timestamptz;
 
+-- ─── Flagged questions on practice worksheets ────────────────────────
+-- Originally flagged_questions only tracked questions on session reports.
+-- Practice worksheets (saved as `resources` rows with category=
+-- 'practice_questions') now use the same flag flow: parents/students click
+-- the same flag button, tutors see them in the same flagged-questions list.
+-- One of report_id / resource_id is set; never both, never neither.
+alter table flagged_questions alter column report_id drop not null;
+alter table flagged_questions add column if not exists resource_id uuid
+  references resources(id) on delete cascade;
+alter table flagged_questions drop constraint if exists flagged_questions_source_check;
+alter table flagged_questions add constraint flagged_questions_source_check
+  check ((report_id is not null) <> (resource_id is not null));
+create unique index if not exists flagged_questions_resource_unique
+  on flagged_questions (student_id, resource_id, question_number)
+  where resource_id is not null;
+create index if not exists idx_flagged_questions_resource on flagged_questions(resource_id);
+
+-- Resources can carry generator-specific metadata (e.g. the topic_id /
+-- difficulty / question_count of a practice worksheet) so a "Regenerate"
+-- button can replay the exact same parameters without parsing the markdown.
+alter table resources add column if not exists metadata jsonb not null default '{}'::jsonb;
+
 drop policy if exists "Students view own record" on students;
 create policy "Students view own record" on students for select using (
   student_user_id = auth.uid()

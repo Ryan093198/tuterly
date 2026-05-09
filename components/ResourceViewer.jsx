@@ -5,19 +5,31 @@ import MarkdownReport from "@/components/MarkdownReport";
 import { CATEGORY_LABEL } from "@/components/ResourcesPanel";
 import { emailLessonPlanToParent } from "@/app/dashboard/lesson-plan-actions";
 import Button from "@/components/ui/Button";
+import Spinner from "@/components/ui/Spinner";
 
 // Modal that renders the inline `content` of a resource as Markdown. Used
 // for resources that don't have a downloadable file (lesson plans, pasted
 // textbook contents, etc.) — these previously had no way to be opened from
 // the resource list.
+//
+// flagOptions / onRegenerate are practice-worksheet specific:
+//   - flagOptions: { resourceId, topic, flaggedSet } — passed straight to
+//     MarkdownReport so every <details> block gets a flag button.
+//   - onRegenerate: async () => void — when present, a "Regenerate
+//     questions" button is shown in the footer; the parent owns the API
+//     call and the post-success swap.
 export default function ResourceViewer({
   open,
   onClose,
   resource,
   canEmailToParent = false,
+  flagOptions = null,
+  onRegenerate = null,
 }) {
   const [emailing, setEmailing] = useState(false);
   const [emailMsg, setEmailMsg] = useState(null);
+  const [regenerating, setRegenerating] = useState(false);
+  const [regenError, setRegenError] = useState(null);
 
   async function handleEmail() {
     if (!resource) return;
@@ -35,6 +47,19 @@ export default function ResourceViewer({
       setEmailMsg({ ok: false, text: e?.message || "Could not send email." });
     } finally {
       setEmailing(false);
+    }
+  }
+
+  async function handleRegenerate() {
+    if (!onRegenerate) return;
+    setRegenError(null);
+    setRegenerating(true);
+    try {
+      await onRegenerate();
+    } catch (e) {
+      setRegenError(e?.message || "Couldn't regenerate.");
+    } finally {
+      setRegenerating(false);
     }
   }
 
@@ -102,13 +127,38 @@ export default function ResourceViewer({
         </div>
         <div className="overflow-y-auto px-6 py-5">
           {resource.content ? (
-            <MarkdownReport content={resource.content} />
+            <MarkdownReport
+              content={resource.content}
+              flagOptions={flagOptions}
+            />
           ) : (
             <p className="text-sm text-muted">
               This resource has no inline content to display.
             </p>
           )}
         </div>
+
+        {onRegenerate && (
+          <div className="px-6 py-4 border-t border-zinc-100 dark:border-zinc-900 flex items-center gap-3 flex-wrap bg-surface-soft/50">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleRegenerate}
+              disabled={regenerating}
+            >
+              {regenerating && <Spinner />}
+              {regenerating ? "Regenerating…" : "Regenerate questions"}
+            </Button>
+            <span className="text-xs text-muted">
+              {regenError ? (
+                <span className="text-red-600">{regenError}</span>
+              ) : (
+                "Same topic, fresh questions. Counts toward your daily limit."
+              )}
+            </span>
+          </div>
+        )}
 
         {canEmailToParent && resource.category === "lesson_plan" && (
           <div className="px-6 py-4 border-t border-zinc-100 dark:border-zinc-900 flex items-center gap-3 flex-wrap bg-surface-soft/50">

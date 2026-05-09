@@ -10,6 +10,10 @@ import {
 import EmptyState from "@/components/ui/EmptyState";
 import LessonPlanModal from "@/components/LessonPlanModal";
 import ResourceViewer from "@/components/ResourceViewer";
+import {
+  buildPracticeFlagOptions,
+  regeneratePractice,
+} from "@/lib/practice-client";
 
 const CATEGORIES = [
   { id: "textbook", label: "Textbook" },
@@ -48,6 +52,11 @@ export default function ResourcesPanel({
   currentUserId,
   student = null,
   autoOpenResourceId = null,
+  // Practice-worksheet UI gates. Flagging is allowed for the linked parent
+  // and student; regeneration is parent-only (the API enforces both).
+  // Tutors leave both off to avoid showing UI that 403s on click.
+  practiceFlagEnabled = false,
+  practiceRegenerateEnabled = false,
 }) {
   const router = useRouter();
   const fileInputRef = useRef(null);
@@ -153,6 +162,19 @@ export default function ResourcesPanel({
         onClose={() => setViewing(null)}
         resource={viewing}
         canEmailToParent={canGeneratePlan}
+        flagOptions={
+          practiceFlagEnabled ? buildPracticeFlagOptions(viewing) : null
+        }
+        onRegenerate={
+          practiceRegenerateEnabled &&
+          viewing?.category === "practice_questions"
+            ? async () => {
+                const fresh = await regeneratePractice(viewing, studentId);
+                setViewing(fresh);
+                router.refresh();
+              }
+            : null
+        }
       />
 
       {showPaste && (

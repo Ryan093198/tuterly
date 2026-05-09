@@ -6,10 +6,11 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import FlagQuestion from "@/components/FlagQuestion";
 
-// flagOptions (optional): { reportId, topic, flaggedSet: Set<number> }
+// flagOptions (optional): { reportId | resourceId, topic, flaggedSet: Set<number> }
 //   — when provided, every <details> in the report is treated as a practice
 //   question and gets a FlagQuestion button at the bottom. The Nth details in
-//   document order is question N (1-indexed).
+//   document order is question N (1-indexed). Pass either reportId (for
+//   session reports) or resourceId (for practice worksheets) — never both.
 export default function MarkdownReport({ content, flagOptions }) {
   // Track which details we're rendering so we can assign question numbers
   // 1, 2, 3 sequentially. Reset on every render via a fresh closure.
@@ -96,6 +97,7 @@ export default function MarkdownReport({ content, flagOptions }) {
                   <div className="px-5 pb-3">
                     <FlagQuestion
                       reportId={flagOptions.reportId}
+                      resourceId={flagOptions.resourceId}
                       questionNumber={num}
                       topic={flagOptions.topic}
                       initial={flagOptions.flaggedSet?.has(num)}

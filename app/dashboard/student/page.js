@@ -37,6 +37,7 @@ export default async function StudentDashboard() {
     { data: ratingsRaw },
     { data: rawResources },
     { count: flaggedCount },
+    { data: resourceFlags },
   ] = await Promise.all([
     supabase
       .from("sessions")
@@ -51,7 +52,9 @@ export default async function StudentDashboard() {
       .eq("student_id", student.id),
     supabase
       .from("resources")
-      .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
+      .select(
+        "id, name, category, notes, file_url, content, metadata, created_at, uploaded_by"
+      )
       .eq("student_id", student.id)
       .order("created_at", { ascending: false }),
     supabase
@@ -59,6 +62,11 @@ export default async function StudentDashboard() {
       .select("id", { count: "exact", head: true })
       .eq("student_id", student.id)
       .is("understood_at", null),
+    supabase
+      .from("flagged_questions")
+      .select("resource_id, question_number")
+      .eq("student_id", student.id)
+      .not("resource_id", "is", null),
   ]);
 
   const reportSessions = (sessions ?? [])
@@ -78,6 +86,20 @@ export default async function StudentDashboard() {
       session_date: r.sessions.date,
     }));
   const resources = await enrichResources(rawResources ?? []);
+
+  const flagsByResource = new Map();
+  for (const f of resourceFlags ?? []) {
+    if (!f.resource_id) continue;
+    if (!flagsByResource.has(f.resource_id)) {
+      flagsByResource.set(f.resource_id, []);
+    }
+    flagsByResource.get(f.resource_id).push(f.question_number);
+  }
+  for (const r of resources) {
+    if (r.category === "practice_questions") {
+      r.flaggedNumbers = flagsByResource.get(r.id) ?? [];
+    }
+  }
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
@@ -150,6 +172,7 @@ export default async function StudentDashboard() {
           studentId={student.id}
           resources={resources}
           currentUserId={user.id}
+          practiceFlagEnabled
         />
       </Section>
     </div>

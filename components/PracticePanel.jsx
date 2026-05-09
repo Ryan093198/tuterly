@@ -4,6 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import PracticeModal from "@/components/PracticeModal";
 import ResourceViewer from "@/components/ResourceViewer";
+import {
+  buildPracticeFlagOptions,
+  regeneratePractice,
+} from "@/lib/practice-client";
 
 // Small entry card on the parent's per-child page. The actual generation
 // flow lives in PracticeModal; the card just sells the feature and surfaces
@@ -100,6 +104,16 @@ export default function PracticePanel({ student, weakTopics, topicGroups }) {
         open={!!viewing}
         onClose={() => setViewing(null)}
         resource={viewing}
+        flagOptions={buildPracticeFlagOptions(viewing)}
+        onRegenerate={
+          viewing?.category === "practice_questions"
+            ? async () => {
+                const fresh = await regeneratePractice(viewing, student.id);
+                setViewing(fresh);
+                router.refresh();
+              }
+            : null
+        }
       />
     </div>
   );

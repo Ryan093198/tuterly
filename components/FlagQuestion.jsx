@@ -5,6 +5,7 @@ import { toggleFlag } from "@/app/dashboard/student/flag-actions";
 
 export default function FlagQuestion({
   reportId,
+  resourceId,
   questionNumber,
   topic,
   initial,
@@ -19,7 +20,8 @@ export default function FlagQuestion({
       const next = !flagged;
       try {
         const fd = new FormData();
-        fd.set("report_id", reportId);
+        if (reportId) fd.set("report_id", reportId);
+        if (resourceId) fd.set("resource_id", resourceId);
         fd.set("question_number", String(questionNumber));
         if (topic) fd.set("topic", topic);
         fd.set("on", next ? "1" : "0");

@@ -12,35 +12,52 @@ export async function toggleFlag(formData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/");
 
-  const reportId = formData.get("report_id")?.toString();
+  const reportId = formData.get("report_id")?.toString() || null;
+  const resourceId = formData.get("resource_id")?.toString() || null;
   const questionNumber = parseInt(formData.get("question_number"), 10);
   const topic = formData.get("topic")?.toString() || null;
   const on = formData.get("on") === "1";
 
-  if (!reportId || !Number.isFinite(questionNumber)) {
+  if (!Number.isFinite(questionNumber)) {
     throw new Error("missing fields");
   }
+  if ((reportId && resourceId) || (!reportId && !resourceId)) {
+    throw new Error("provide exactly one of report_id / resource_id");
+  }
 
-  // Find the student associated with this report. Use admin to side-step any
-  // RLS quirks on the join — we do an explicit auth check below.
+  // Find the student associated with this flag source. Use admin to
+  // side-step RLS quirks on the join — we do an explicit auth check below.
   const admin = createAdminClient();
-  const { data: report } = await admin
-    .from("reports")
-    .select(
-      "id, sessions(student_id, students(id, parent_id, student_user_id))"
-    )
-    .eq("id", reportId)
-    .maybeSingle();
-  if (!report) throw new Error("report not found");
+  let studentRecord;
+  if (reportId) {
+    const { data: report } = await admin
+      .from("reports")
+      .select(
+        "id, sessions(student_id, students(id, parent_id, student_user_id))"
+      )
+      .eq("id", reportId)
+      .maybeSingle();
+    if (!report) throw new Error("report not found");
+    const sessionData = Array.isArray(report.sessions)
+      ? report.sessions[0]
+      : report.sessions;
+    studentRecord = Array.isArray(sessionData?.students)
+      ? sessionData.students[0]
+      : sessionData?.students;
+  } else {
+    const { data: resource } = await admin
+      .from("resources")
+      .select("id, students(id, parent_id, student_user_id)")
+      .eq("id", resourceId)
+      .maybeSingle();
+    if (!resource) throw new Error("resource not found");
+    studentRecord = Array.isArray(resource.students)
+      ? resource.students[0]
+      : resource.students;
+  }
 
-  const sessionData = Array.isArray(report.sessions)
-    ? report.sessions[0]
-    : report.sessions;
-  const studentRecord = Array.isArray(sessionData?.students)
-    ? sessionData.students[0]
-    : sessionData?.students;
   const studentId = studentRecord?.id;
-  if (!studentId) throw new Error("student not found for report");
+  if (!studentId) throw new Error("student not found for flag source");
 
   // Only the linked parent or the linked student can flag.
   if (
@@ -50,15 +67,18 @@ export async function toggleFlag(formData) {
     throw new Error("forbidden");
   }
 
+  const sourceColumn = reportId ? "report_id" : "resource_id";
+  const sourceId = reportId || resourceId;
+
   if (on) {
     const { error } = await admin.from("flagged_questions").upsert(
       {
         student_id: studentId,
-        report_id: reportId,
+        [sourceColumn]: sourceId,
         question_number: questionNumber,
         topic,
       },
-      { onConflict: "student_id,report_id,question_number" }
+      { onConflict: `student_id,${sourceColumn},question_number` }
     );
     if (error) throw error;
   } else {
@@ -66,14 +86,21 @@ export async function toggleFlag(formData) {
       .from("flagged_questions")
       .delete()
       .eq("student_id", studentId)
-      .eq("report_id", reportId)
+      .eq(sourceColumn, sourceId)
       .eq("question_number", questionNumber);
     if (error) throw error;
   }
 
-  revalidatePath(`/dashboard/student/reports/${reportId}`);
-  revalidatePath(`/dashboard/parent/reports/${reportId}`);
+  if (reportId) {
+    revalidatePath(`/dashboard/student/reports/${reportId}`);
+    revalidatePath(`/dashboard/parent/reports/${reportId}`);
+  }
+  revalidatePath(`/dashboard/parent/students/${studentId}`);
+  revalidatePath(`/dashboard/parent/students/${studentId}/flagged`);
+  revalidatePath(`/dashboard/tutor/students/${studentId}`);
+  revalidatePath(`/dashboard/tutor/students/${studentId}/flagged`);
   revalidatePath("/dashboard/student");
+  revalidatePath("/dashboard/student/flagged");
 }
 
 // Toggle "understood" state on an existing flag. Tutor, parent, or student

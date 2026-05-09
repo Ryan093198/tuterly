@@ -36,6 +36,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     { data: rawResources },
     { count: flaggedCount },
     { data: openFlags },
+    { data: resourceFlags },
   ] = await Promise.all([
       supabase
         .from("sessions")
@@ -50,7 +51,9 @@ export default async function ParentStudentDetail({ params, searchParams }) {
         .eq("student_id", id),
       supabase
         .from("resources")
-        .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
+        .select(
+          "id, name, category, notes, file_url, content, metadata, created_at, uploaded_by"
+        )
         .eq("student_id", id)
         .order("created_at", { ascending: false }),
       supabase
@@ -65,6 +68,13 @@ export default async function ParentStudentDetail({ params, searchParams }) {
         .select("topic")
         .eq("student_id", id)
         .is("understood_at", null),
+      // Practice-worksheet flags, used to pre-populate the flag state on
+      // each worksheet when the parent opens it.
+      supabase
+        .from("flagged_questions")
+        .select("resource_id, question_number")
+        .eq("student_id", id)
+        .not("resource_id", "is", null),
     ]);
 
   // sessions → reports is one-to-many, so Supabase returns reports as an
@@ -87,6 +97,22 @@ export default async function ParentStudentDetail({ params, searchParams }) {
       session_date: r.sessions.date,
     }));
   const resources = await enrichResources(rawResources ?? []);
+
+  // Attach flagged question numbers to practice worksheets so the viewer
+  // can highlight already-flagged items without an extra round-trip.
+  const flagsByResource = new Map();
+  for (const f of resourceFlags ?? []) {
+    if (!f.resource_id) continue;
+    if (!flagsByResource.has(f.resource_id)) {
+      flagsByResource.set(f.resource_id, []);
+    }
+    flagsByResource.get(f.resource_id).push(f.question_number);
+  }
+  for (const r of resources) {
+    if (r.category === "practice_questions") {
+      r.flaggedNumbers = flagsByResource.get(r.id) ?? [];
+    }
+  }
 
   const weakTopics = deriveWeakTopics({
     ratings,
@@ -193,6 +219,8 @@ export default async function ParentStudentDetail({ params, searchParams }) {
           resources={resources}
           currentUserId={user.id}
           autoOpenResourceId={autoOpenResourceId}
+          practiceFlagEnabled
+          practiceRegenerateEnabled
         />
       </Section>
     </div>

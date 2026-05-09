@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import EmptyState from "@/components/ui/EmptyState";
 import FlaggedQuestionCard from "@/components/FlaggedQuestionCard";
+import { enrichFlag } from "@/lib/flag-helpers";
 
 export default async function ParentFlaggedQuestions({ params }) {
   const { id } = await params;
@@ -23,27 +24,17 @@ export default async function ParentFlaggedQuestions({ params }) {
   const { data: flags } = await supabase
     .from("flagged_questions")
     .select(
-      "id, student_id, report_id, question_number, topic, flagged_at, understood_at, reports(id, content, sessions(id, date))"
+      "id, student_id, report_id, resource_id, question_number, topic, flagged_at, understood_at, reports(id, content, sessions(id, date)), resources(id, name, content)"
     )
     .eq("student_id", id)
     .order("understood_at", { ascending: true, nullsFirst: true })
     .order("flagged_at", { ascending: false });
 
   const grouped = {};
-  for (const flag of flags ?? []) {
-    const topic = flag.topic || "Other";
+  for (const raw of flags ?? []) {
+    const topic = raw.topic || "Other";
     if (!grouped[topic]) grouped[topic] = [];
-    const extracted = extractQuestion(
-      flag.reports?.content ?? "",
-      flag.question_number
-    );
-    grouped[topic].push({
-      ...flag,
-      question: extracted?.question,
-      solution: extracted?.solution,
-      session_id: flag.reports?.sessions?.id,
-      session_date: flag.reports?.sessions?.date,
-    });
+    grouped[topic].push(enrichFlag(raw));
   }
 
   return (
@@ -83,10 +74,12 @@ export default async function ParentFlaggedQuestions({ params }) {
                 <li key={item.id}>
                   <FlaggedQuestionCard
                     flag={item}
-                    sessionHref={
+                    sourceHref={
                       item.report_id
                         ? `/dashboard/parent/reports/${item.report_id}`
-                        : null
+                        : item.resource_id
+                          ? `/dashboard/parent/students/${id}?resource=${item.resource_id}`
+                          : null
                     }
                   />
                 </li>
@@ -99,26 +92,4 @@ export default async function ParentFlaggedQuestions({ params }) {
   );
 }
 
-function extractQuestion(content, n) {
-  if (!content || n < 1) return null;
-  const detailsRe = /<details[^>]*>([\s\S]*?)<\/details>/g;
-  let count = 0;
-  let prevEnd = 0;
-  let match;
-  while ((match = detailsRe.exec(content)) !== null) {
-    count++;
-    if (count === n) {
-      const slice = content.slice(prevEnd, match.index);
-      const markerIdx = slice.lastIndexOf("**Question");
-      const question =
-        markerIdx >= 0 ? slice.slice(markerIdx).trim() : slice.trim();
-      const solution = match[1]
-        .replace(/^\s*<summary>[\s\S]*?<\/summary>\s*/i, "")
-        .trim();
-      return { question, solution };
-    }
-    prevEnd = detailsRe.lastIndex;
-  }
-  return null;
-}
 

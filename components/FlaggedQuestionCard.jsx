@@ -9,7 +9,11 @@ import {
 } from "@/app/dashboard/student/flag-actions";
 import MarkdownReport from "@/components/MarkdownReport";
 
-export default function FlaggedQuestionCard({ flag, sessionHref }) {
+export default function FlaggedQuestionCard({ flag, sessionHref, sourceHref }) {
+  // sourceHref is the generic deep link to the flag's source (report or
+  // resource); sessionHref is kept as an alias for back-compat with older
+  // call sites that only handled report flags.
+  const linkHref = sourceHref ?? sessionHref ?? null;
   const router = useRouter();
   const [understood, setUnderstood] = useState(!!flag.understood_at);
   const [pendingMark, startMarking] = useTransition();
@@ -48,13 +52,17 @@ export default function FlaggedQuestionCard({ flag, sessionHref }) {
     });
   }
 
-  const sessionLabel = flag.session_date
-    ? `Session on ${new Date(flag.session_date).toLocaleDateString("en-AU", {
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-      })}`
-    : "Session";
+  // Header label: prefer the new explicit source_label (from enrichFlag), fall
+  // back to the legacy session-date heuristic.
+  const sourceLabel =
+    flag.source_label ||
+    (flag.session_date
+      ? `Session on ${new Date(flag.session_date).toLocaleDateString("en-AU", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}`
+      : "Session");
 
   const containerClass = understood
     ? "rounded-2xl border bg-emerald-50/50 dark:bg-emerald-950/10 border-emerald-200 dark:border-emerald-900/40 shadow-sm"
@@ -64,15 +72,15 @@ export default function FlaggedQuestionCard({ flag, sessionHref }) {
     <div className={`${containerClass} p-5 sm:p-6 transition`}>
       <div className="flex items-center justify-between mb-3 text-xs text-muted gap-2 flex-wrap">
         <div className="flex items-center gap-2">
-          {sessionHref ? (
+          {linkHref ? (
             <Link
-              href={sessionHref}
+              href={linkHref}
               className="hover:text-foreground transition"
             >
-              {sessionLabel}
+              {sourceLabel}
             </Link>
           ) : (
-            <span>{sessionLabel}</span>
+            <span>{sourceLabel}</span>
           )}
           {understood && (
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-[11px] font-medium">

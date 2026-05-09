@@ -175,6 +175,19 @@ export async function POST(request) {
     : topicLabel;
   const resourceName = `Practice — ${shortLabel} (${dateLabel})`;
 
+  // Persist the exact generation parameters so a "Regenerate" click can
+  // replay them without re-parsing the markdown or re-deriving the topic.
+  const metadata = {
+    kind: "practice",
+    subject,
+    level,
+    topic_id: topicId,
+    topic_label: topicLabel,
+    subtopic: subtopic || null,
+    question_count: questionCount,
+    difficulty,
+  };
+
   const admin = createAdminClient();
   const { data: inserted, error: insertErr } = await admin
     .from("resources")
@@ -188,8 +201,11 @@ export async function POST(request) {
       notes: subtopic
         ? `${questionCount}-question worksheet · ${subtopic}`
         : `${questionCount}-question worksheet`,
+      metadata,
     })
-    .select("id, name, category, content, file_url, notes, created_at, uploaded_by")
+    .select(
+      "id, name, category, content, file_url, notes, metadata, created_at, uploaded_by"
+    )
     .single();
   if (insertErr) {
     console.error("[practice] insert failed:", insertErr);
