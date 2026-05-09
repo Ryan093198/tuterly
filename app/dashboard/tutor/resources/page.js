@@ -31,7 +31,7 @@ export default async function TutorResourcesPage() {
     const studentIds = students.map((s) => s.id);
     const { data: rawResources } = await supabase
       .from("resources")
-      .select("id, name, category, notes, file_url, created_at, uploaded_by, student_id")
+      .select("id, name, category, notes, file_url, content, created_at, uploaded_by, student_id")
       .in("student_id", studentIds)
       .order("created_at", { ascending: false });
 

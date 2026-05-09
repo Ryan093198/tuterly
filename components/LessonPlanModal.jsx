@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
+import { CURRICULUM_LEVELS } from "@/lib/levels";
 
 // Modal wrapping the lesson-plan generation flow. Lives behind a button on
 // the per-student Resources panel for tutors. On success the resulting plan
@@ -16,9 +17,9 @@ export default function LessonPlanModal({
   const router = useRouter();
   const [weeks, setWeeks] = useState(10);
   const [subject, setSubject] = useState(student.subject || "maths");
-  const [vceStudyDesign, setVceStudyDesign] = useState(
-    (student.subjects && student.subjects[0]) || ""
-  );
+  // "" = use the student's current year/working level. Anything else is an
+  // explicit override picked from CURRICULUM_LEVELS.
+  const [level, setLevel] = useState("");
   const [topics, setTopics] = useState("");
   const [plannerFile, setPlannerFile] = useState(null);
   const [pending, setPending] = useState(false);
@@ -52,7 +53,7 @@ export default function LessonPlanModal({
       fd.set("student_id", student.id);
       fd.set("weeks", String(weeks));
       fd.set("subject", subject);
-      if (vceStudyDesign) fd.set("vce_study_design", vceStudyDesign);
+      if (level) fd.set("level", level);
       if (topics.trim()) fd.set("topics", topics.trim());
       if (plannerFile) fd.set("planner_file", plannerFile);
 
@@ -73,7 +74,10 @@ export default function LessonPlanModal({
     }
   }
 
-  const vceOptions = student.subjects || [];
+  // Show the student's current default in the placeholder so the tutor can
+  // see what "Use current year level" actually maps to.
+  const currentLabel =
+    student.working_level || student.year_level || "—";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -156,26 +160,24 @@ export default function LessonPlanModal({
                 <option value="english">English</option>
               </select>
             </label>
-            {vceOptions.length > 0 && subject === "maths" && (
-              <label className="block space-y-1.5">
-                <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
-                  VCE study design
-                </span>
-                <select
-                  value={vceStudyDesign}
-                  onChange={(e) => setVceStudyDesign(e.target.value)}
-                  disabled={pending}
-                  className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
-                >
-                  <option value="">— Use year level —</option>
-                  {vceOptions.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
+            <label className="block space-y-1.5">
+              <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                Level
+              </span>
+              <select
+                value={level}
+                onChange={(e) => setLevel(e.target.value)}
+                disabled={pending}
+                className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
+              >
+                <option value="">Use current year level ({currentLabel})</option>
+                {CURRICULUM_LEVELS.map((l) => (
+                  <option key={l} value={l}>
+                    {l}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
 
           <div className="space-y-1.5">

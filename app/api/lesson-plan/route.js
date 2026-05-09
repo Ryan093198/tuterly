@@ -96,7 +96,10 @@ export async function POST(request) {
   const subject = (formData.get("subject")?.toString() || "maths") === "english"
     ? "english"
     : "maths";
-  const vceStudyDesign = formData.get("vce_study_design")?.toString() || null;
+  // `level` is an explicit override picked from CURRICULUM_LEVELS. When
+  // empty/unset the curriculum lookup falls back to the student's
+  // working_level (or year_level if working_level is unset).
+  const levelOverride = formData.get("level")?.toString().trim() || null;
   const customTopics = formData.get("topics")?.toString().trim() || null;
 
   const { data: student } = await supabase
@@ -141,19 +144,26 @@ export async function POST(request) {
     }
   }
 
-  // Curriculum block: pulled from the student's working_level/year_level for
-  // the picked subject. Acts as a fallback when the tutor supplies neither a
-  // planner nor explicit topics.
-  const curriculumLevel = student.working_level || student.year_level;
-  const curriculumLookup = vceStudyDesign
-    ? getCurriculumForStudent(curriculumLevel, [vceStudyDesign], subject)
-    : getCurriculumForStudent(curriculumLevel, student.subjects, subject);
+  // Curriculum block: pulled from `level` (explicit override) or the
+  // student's working_level / year_level. Pass `level` as both the year-level
+  // arg AND as a single-element subjects[] so the lookup function picks up
+  // VCE study designs (e.g. "VCE Maths Methods") via either branch.
+  const curriculumLevel =
+    levelOverride || student.working_level || student.year_level;
+  const subjectsForLookup = levelOverride
+    ? [levelOverride]
+    : student.subjects;
+  const curriculumLookup = getCurriculumForStudent(
+    curriculumLevel,
+    subjectsForLookup,
+    subject
+  );
   const curriculumBlock = curriculumLookup
     ? formatCurriculumForPrompt(curriculumLookup.curriculum, curriculumLookup.isVCE)
     : "(No curriculum data available for this level/subject — plan from general knowledge of the subject at the student's year level.)";
 
-  const subjectLabel = vceStudyDesign
-    ? vceStudyDesign
+  const subjectLabel = levelOverride
+    ? levelOverride
     : subject === "english"
       ? "English"
       : "Maths";

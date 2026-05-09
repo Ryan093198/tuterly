@@ -9,6 +9,7 @@ import {
 } from "@/app/dashboard/resource-actions";
 import EmptyState from "@/components/ui/EmptyState";
 import LessonPlanModal from "@/components/LessonPlanModal";
+import ResourceViewer from "@/components/ResourceViewer";
 
 const CATEGORIES = [
   { id: "textbook", label: "Textbook" },
@@ -52,6 +53,7 @@ export default function ResourcesPanel({
   const [error, setError] = useState(null);
   const [showPaste, setShowPaste] = useState(false);
   const [showPlanModal, setShowPlanModal] = useState(false);
+  const [viewing, setViewing] = useState(null);
 
   // Only render the lesson-plan generator when the caller passed `student`
   // (the per-student tutor page), not on the parent/student views.
@@ -135,6 +137,12 @@ export default function ResourcesPanel({
         />
       )}
 
+      <ResourceViewer
+        open={!!viewing}
+        onClose={() => setViewing(null)}
+        resource={viewing}
+      />
+
       {showPaste && (
         <PasteForm
           studentId={studentId}
@@ -160,6 +168,7 @@ export default function ResourcesPanel({
               key={r.id}
               resource={r}
               currentUserId={currentUserId}
+              onView={() => setViewing(r)}
             />
           ))}
         </ul>
@@ -330,7 +339,7 @@ function PasteForm({ studentId, onClose, onSaved }) {
   );
 }
 
-function ResourceRow({ resource, currentUserId }) {
+function ResourceRow({ resource, currentUserId, onView }) {
   const router = useRouter();
   const [editing, setEditing] = useState(false);
   const [category, setCategory] = useState(resource.category);
@@ -376,6 +385,14 @@ function ResourceRow({ resource, currentUserId }) {
                 >
                   {resource.name}
                 </a>
+              ) : resource.content && onView ? (
+                <button
+                  type="button"
+                  onClick={onView}
+                  className="text-sm font-medium truncate hover:text-brand transition text-left"
+                >
+                  {resource.name}
+                </button>
               ) : (
                 <span className="text-sm font-medium truncate">
                   {resource.name}

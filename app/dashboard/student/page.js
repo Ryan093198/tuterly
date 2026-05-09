@@ -51,7 +51,7 @@ export default async function StudentDashboard() {
       .eq("student_id", student.id),
     supabase
       .from("resources")
-      .select("id, name, category, notes, file_url, created_at, uploaded_by")
+      .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
       .eq("student_id", student.id)
       .order("created_at", { ascending: false }),
     supabase

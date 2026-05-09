@@ -44,7 +44,7 @@ export default async function ParentStudentDetail({ params }) {
         .eq("student_id", id),
       supabase
         .from("resources")
-        .select("id, name, category, notes, file_url, created_at, uploaded_by")
+        .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
         .eq("student_id", id)
         .order("created_at", { ascending: false }),
       supabase

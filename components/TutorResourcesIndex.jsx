@@ -9,6 +9,7 @@ import {
 } from "@/components/ResourcesPanel";
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
+import ResourceViewer from "@/components/ResourceViewer";
 
 export default function TutorResourcesIndex({
   resources,
@@ -20,6 +21,7 @@ export default function TutorResourcesIndex({
   const [category, setCategory] = useState("all");
   const [yearLevel, setYearLevel] = useState("all");
   const [school, setSchool] = useState("all");
+  const [viewing, setViewing] = useState(null);
 
   const yearLevels = useMemo(
     () =>
@@ -157,10 +159,21 @@ export default function TutorResourcesIndex({
       ) : (
         <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 overflow-hidden">
           {filtered.map((r) => (
-            <ResourceRow key={r.id} resource={r} currentUserId={currentUserId} />
+            <ResourceRow
+              key={r.id}
+              resource={r}
+              currentUserId={currentUserId}
+              onView={() => setViewing(r)}
+            />
           ))}
         </ul>
       )}
+
+      <ResourceViewer
+        open={!!viewing}
+        onClose={() => setViewing(null)}
+        resource={viewing}
+      />
     </div>
   );
 }
@@ -185,7 +198,7 @@ function FilterSelect({ label, value, onChange, options, disabled }) {
   );
 }
 
-function ResourceRow({ resource, currentUserId }) {
+function ResourceRow({ resource, currentUserId, onView }) {
   const meta = [
     resource.student
       ? `${resource.student.first_name} ${resource.student.last_name}`
@@ -209,6 +222,14 @@ function ResourceRow({ resource, currentUserId }) {
               >
                 {resource.name}
               </a>
+            ) : resource.content && onView ? (
+              <button
+                type="button"
+                onClick={onView}
+                className="text-sm font-medium truncate hover:text-brand transition text-left"
+              >
+                {resource.name}
+              </button>
             ) : (
               <span className="text-sm font-medium truncate">{resource.name}</span>
             )}
