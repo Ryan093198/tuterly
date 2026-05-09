@@ -76,6 +76,7 @@ create table reports (
   session_id uuid not null references sessions(id) on delete cascade,
   content text not null,
   sent_at timestamptz,
+  student_sent_at timestamptz,
   parent_viewed_at timestamptz,
   created_at timestamptz default now(),
   updated_at timestamptz default now()
@@ -266,6 +267,8 @@ alter table invites add constraint invites_role_check
 
 alter table students add column if not exists student_user_id uuid references profiles(id);
 create index if not exists idx_students_student_user on students(student_user_id);
+
+alter table reports add column if not exists student_sent_at timestamptz;
 
 drop policy if exists "Students view own record" on students;
 create policy "Students view own record" on students for select using (

@@ -3,26 +3,72 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { sendReportToParent } from "@/app/dashboard/tutor/session/actions";
+import { sendReport } from "@/app/dashboard/tutor/session/actions";
 import Button from "@/components/ui/Button";
 import Spinner from "@/components/ui/Spinner";
 
-export default function SendToParentPanel({
+export default function SendReportPanel({
   sessionId,
   studentId,
-  recipientEmail,
-  recipientLinked,
-  sentAt,
+  parent,
+  student,
 }) {
+  return (
+    <div className="space-y-3">
+      <RecipientRow
+        sessionId={sessionId}
+        studentId={studentId}
+        role="parent"
+        recipient={parent}
+      />
+      <RecipientRow
+        sessionId={sessionId}
+        studentId={studentId}
+        role="student"
+        recipient={student}
+      />
+    </div>
+  );
+}
+
+const ROLE_COPY = {
+  parent: {
+    inviteCta: "Invite a parent",
+    initialEmptyHint:
+      "The parent can already see this report in their dashboard.",
+    initialEmptyTrailing: "to also email them a PDF copy.",
+    initialHeading: "Email a PDF copy to the parent",
+    initialButton: "Email parent now",
+    resendButton: "Re-send to parent",
+    linkedSuffix: " — they can already see this report in their dashboard.",
+    pendingSuffix:
+      " — invite hasn't been accepted yet, but the PDF will still arrive.",
+  },
+  student: {
+    inviteCta: "Invite the student",
+    initialEmptyHint:
+      "Invite the student to give them their own dashboard,",
+    initialEmptyTrailing: "or to email them a PDF copy of this report.",
+    initialHeading: "Email a PDF copy to the student",
+    initialButton: "Email student now",
+    resendButton: "Re-send to student",
+    linkedSuffix: " — they can already see this report in their dashboard.",
+    pendingSuffix:
+      " — invite hasn't been accepted yet, but the PDF will still arrive.",
+  },
+};
+
+function RecipientRow({ sessionId, studentId, role, recipient }) {
   const router = useRouter();
   const [pending, startSending] = useTransition();
   const [error, setError] = useState(null);
+  const copy = ROLE_COPY[role];
 
   function handleSend() {
     setError(null);
     startSending(async () => {
       try {
-        await sendReportToParent(sessionId);
+        await sendReport(sessionId, role);
         router.refresh();
       } catch (e) {
         setError(e.message);
@@ -30,20 +76,22 @@ export default function SendToParentPanel({
     });
   }
 
-  if (!recipientEmail) {
+  if (!recipient?.email) {
     return (
       <div className="p-5 rounded-2xl border border-dashed border-zinc-300 dark:border-zinc-700 text-sm text-muted">
-        The parent can already see this report in their dashboard.{" "}
+        {copy.initialEmptyHint}{" "}
         <Link
           href={`/dashboard/tutor/students/${studentId}`}
           className="underline text-foreground"
         >
-          Invite a parent
+          {copy.inviteCta}
         </Link>{" "}
-        to also email them a PDF copy.
+        {copy.initialEmptyTrailing}
       </div>
     );
   }
+
+  const sentAt = recipient.sentAt;
 
   return (
     <div className="rounded-2xl border border-brand/30 bg-brand-pale/40 p-5 sm:p-6">
@@ -82,11 +130,11 @@ export default function SendToParentPanel({
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Emailed
+                  Emailed {role === "parent" ? "parent" : "student"}
                 </h3>
                 <p className="text-sm text-brand-foreground/80 mt-0.5">
                   Sent to{" "}
-                  <span className="font-medium">{recipientEmail}</span> on{" "}
+                  <span className="font-medium">{recipient.email}</span> on{" "}
                   {new Date(sentAt).toLocaleString("en-AU", {
                     day: "numeric",
                     month: "short",
@@ -99,13 +147,11 @@ export default function SendToParentPanel({
             ) : (
               <>
                 <h3 className="text-base font-semibold text-brand-foreground">
-                  Email a PDF copy to the parent
+                  {copy.initialHeading}
                 </h3>
                 <p className="text-sm text-brand-foreground/80 mt-0.5">
-                  Send to <span className="font-medium">{recipientEmail}</span>
-                  {recipientLinked
-                    ? " — they can already see this report in their dashboard."
-                    : " — invite hasn't been accepted yet, but the PDF will still arrive."}
+                  Send to <span className="font-medium">{recipient.email}</span>
+                  {recipient.linked ? copy.linkedSuffix : copy.pendingSuffix}
                 </p>
               </>
             )}
@@ -122,8 +168,8 @@ export default function SendToParentPanel({
           {pending
             ? "Sending…"
             : sentAt
-              ? "Re-send email"
-              : "Email parent now"}
+              ? copy.resendButton
+              : copy.initialButton}
         </Button>
       </div>
       {error && (

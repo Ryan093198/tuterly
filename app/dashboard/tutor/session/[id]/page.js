@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import ReportWorkbench from "@/components/ReportWorkbench";
 import RatingPanel from "@/components/RatingPanel";
-import SendToParentPanel from "@/components/SendToParentPanel";
+import SendReportPanel from "@/components/SendReportPanel";
 import SessionPhotos from "@/components/SessionPhotos";
 import NotesEditor from "@/components/NotesEditor";
 import DeleteSessionButton from "@/components/DeleteSessionButton";
@@ -21,7 +21,7 @@ export default async function SessionPage({ params, searchParams }) {
   const { data: session } = await supabase
     .from("sessions")
     .select(
-      "id, date, duration_minutes, raw_notes, status, student_id, students(id, first_name, last_name, year_level, parent_id)"
+      "id, date, duration_minutes, raw_notes, status, student_id, students(id, first_name, last_name, year_level, parent_id, student_user_id)"
     )
     .eq("id", id)
     .eq("tutor_id", user.id)
@@ -30,7 +30,7 @@ export default async function SessionPage({ params, searchParams }) {
 
   const { data: report } = await supabase
     .from("reports")
-    .select("content, sent_at")
+    .select("content, sent_at, student_sent_at")
     .eq("session_id", id)
     .maybeSingle();
 
@@ -56,34 +56,27 @@ export default async function SessionPage({ params, searchParams }) {
   const hasReport = !!report?.content;
   const initialTopic = ratings?.[0]?.topic ?? "";
 
-  // Resolve the email we'd send the report to. Linked-parent profile if one
-  // exists, otherwise the most recent pending parent invite. The send action
-  // uses the same fallback so the panel and the actual send agree.
-  let recipientEmail = null;
-  let recipientLinked = false;
-  if (student.parent_id) {
-    const admin = createAdminClient();
-    const { data: parent } = await admin
-      .from("profiles")
-      .select("email")
-      .eq("id", student.parent_id)
-      .maybeSingle();
-    recipientEmail = parent?.email ?? null;
-    recipientLinked = !!recipientEmail;
-  }
-  if (!recipientEmail) {
-    const { data: invite } = await supabase
-      .from("invites")
-      .select("to_email")
-      .eq("student_id", student.id)
-      .eq("from_user_id", user.id)
-      .eq("role", "parent")
-      .eq("status", "pending")
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    recipientEmail = invite?.to_email ?? null;
-  }
+  // Resolve the address we'd email each report copy to. Linked profile if
+  // one exists, otherwise the most recent pending invite for that role. The
+  // send action uses the same fallback, so the panel and the actual send
+  // always agree on which address would be used.
+  const admin = createAdminClient();
+  const parentRecipient = await resolveRecipient({
+    supabase,
+    admin,
+    studentId: student.id,
+    tutorId: user.id,
+    role: "parent",
+    linkedProfileId: student.parent_id,
+  });
+  const studentRecipient = await resolveRecipient({
+    supabase,
+    admin,
+    studentId: student.id,
+    tutorId: user.id,
+    role: "student",
+    linkedProfileId: student.student_user_id,
+  });
 
   return (
     <div className="px-4 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
@@ -126,8 +119,8 @@ export default async function SessionPage({ params, searchParams }) {
           sessionId={session.id}
           initialContent={report?.content ?? ""}
           status={session.status}
-          parentLinked={!!recipientEmail}
-          parentEmail={recipientEmail}
+          parentLinked={!!parentRecipient.email}
+          parentEmail={parentRecipient.email}
           autoGenerate={
             sp.fresh === "1" &&
             !report?.content &&
@@ -148,13 +141,20 @@ export default async function SessionPage({ params, searchParams }) {
       )}
 
       {hasReport && (
-        <Section label="Email parent">
-          <SendToParentPanel
+        <Section label="Email report">
+          <SendReportPanel
             sessionId={session.id}
             studentId={student.id}
-            recipientEmail={recipientEmail}
-            recipientLinked={recipientLinked}
-            sentAt={report.sent_at}
+            parent={{
+              email: parentRecipient.email,
+              linked: parentRecipient.linked,
+              sentAt: report.sent_at,
+            }}
+            student={{
+              email: studentRecipient.email,
+              linked: studentRecipient.linked,
+              sentAt: report.student_sent_at,
+            }}
           />
         </Section>
       )}
@@ -167,6 +167,37 @@ export default async function SessionPage({ params, searchParams }) {
       </section>
     </div>
   );
+}
+
+async function resolveRecipient({
+  supabase,
+  admin,
+  studentId,
+  tutorId,
+  role,
+  linkedProfileId,
+}) {
+  if (linkedProfileId) {
+    const { data: profile } = await admin
+      .from("profiles")
+      .select("email")
+      .eq("id", linkedProfileId)
+      .maybeSingle();
+    if (profile?.email) {
+      return { email: profile.email, linked: true };
+    }
+  }
+  const { data: invite } = await supabase
+    .from("invites")
+    .select("to_email")
+    .eq("student_id", studentId)
+    .eq("from_user_id", tutorId)
+    .eq("role", role)
+    .eq("status", "pending")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  return { email: invite?.to_email ?? null, linked: false };
 }
 
 function Section({ label, hint, children }) {

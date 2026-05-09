@@ -317,7 +317,14 @@ export async function saveRatings({ sessionId, overallTopic, ratings }) {
   revalidatePath(`/dashboard/tutor/session/${sessionId}`);
 }
 
-export async function sendReportToParent(sessionId) {
+// Email the report to the parent or the student. The two flows are nearly
+// identical — only the recipient lookup, the deep link, and the timestamp
+// column differ — so they share one server action.
+export async function sendReport(sessionId, role = "parent") {
+  if (role !== "parent" && role !== "student") {
+    throw new Error(`invalid recipient role: ${role}`);
+  }
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -326,7 +333,9 @@ export async function sendReportToParent(sessionId) {
 
   const { data: session } = await supabase
     .from("sessions")
-    .select("id, date, student_id, students(first_name, last_name, parent_id)")
+    .select(
+      "id, date, student_id, students(first_name, last_name, parent_id, student_user_id)"
+    )
     .eq("id", sessionId)
     .eq("tutor_id", user.id)
     .single();
@@ -339,22 +348,26 @@ export async function sendReportToParent(sessionId) {
     .single();
   if (!report) throw new Error("No report to send");
 
-  // Resolve recipient: linked parent profile first, otherwise the most recent
-  // pending parent invite. This lets a tutor email a PDF to a parent who
-  // hasn't signed up yet — the email link still works because the report
-  // view auto-accepts a matching invite on first visit.
+  // Resolve recipient: linked profile first, otherwise the most recent
+  // pending invite for this role. This lets a tutor email a PDF before the
+  // recipient has signed up — the parent flow auto-accepts a matching invite
+  // on first visit (the student flow doesn't yet, but the PDF still arrives).
   const admin = createAdminClient();
+  const linkedProfileId =
+    role === "parent"
+      ? session.students?.parent_id
+      : session.students?.student_user_id;
   let recipientEmail = null;
   let recipientName = null;
 
-  if (session.students?.parent_id) {
-    const { data: parent } = await admin
+  if (linkedProfileId) {
+    const { data: profile } = await admin
       .from("profiles")
       .select("email, full_name")
-      .eq("id", session.students.parent_id)
+      .eq("id", linkedProfileId)
       .single();
-    recipientEmail = parent?.email ?? null;
-    recipientName = parent?.full_name ?? null;
+    recipientEmail = profile?.email ?? null;
+    recipientName = profile?.full_name ?? null;
   }
 
   if (!recipientEmail) {
@@ -363,7 +376,7 @@ export async function sendReportToParent(sessionId) {
       .select("to_email")
       .eq("student_id", session.student_id)
       .eq("from_user_id", user.id)
-      .eq("role", "parent")
+      .eq("role", role)
       .eq("status", "pending")
       .order("created_at", { ascending: false })
       .limit(1)
@@ -373,12 +386,14 @@ export async function sendReportToParent(sessionId) {
 
   if (!recipientEmail) {
     throw new Error(
-      "No parent email on file. Invite a parent on the student page first."
+      role === "parent"
+        ? "No parent email on file. Invite a parent on the student page first."
+        : "No student email on file. Invite the student on the student page first."
     );
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-  const reportUrl = `${baseUrl}/dashboard/parent/reports/${report.id}`;
+  const reportUrl = `${baseUrl}/dashboard/${role}/reports/${report.id}`;
 
   const studentFullName = `${session.students.first_name} ${session.students.last_name}`;
 
@@ -401,33 +416,46 @@ export async function sendReportToParent(sessionId) {
       },
     ];
   } catch (e) {
-    console.warn(`[sendReportToParent] PDF render failed: ${e?.message || e}`);
+    console.warn(`[sendReport/${role}] PDF render failed: ${e?.message || e}`);
   }
 
   try {
     await sendReportEmail({
       to: recipientEmail,
-      parentName: recipientName,
+      recipientName,
+      recipientRole: role,
       studentName: studentFullName,
       reportUrl,
       attachments,
     });
   } catch (e) {
     console.warn(
-      `[sendReportToParent] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
+      `[sendReport/${role}] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
         `Report URL: ${reportUrl}`
     );
   }
 
+  const timestampColumn = role === "parent" ? "sent_at" : "student_sent_at";
   await supabase
     .from("reports")
-    .update({ sent_at: new Date().toISOString() })
+    .update({ [timestampColumn]: new Date().toISOString() })
     .eq("id", report.id);
 
-  await supabase
-    .from("sessions")
-    .update({ status: "sent_to_parent" })
-    .eq("id", sessionId);
+  // Only the parent send flips session status to "sent_to_parent" — that
+  // status drives the parent-facing dashboards. A student-only send leaves
+  // the session in its previous state (e.g. report_generated).
+  if (role === "parent") {
+    await supabase
+      .from("sessions")
+      .update({ status: "sent_to_parent" })
+      .eq("id", sessionId);
+  }
 
   revalidatePath(`/dashboard/tutor/session/${sessionId}`);
+}
+
+// Back-compat thin wrapper. ReportWorkbench's auto-prompt after generation
+// only offers the parent send, so this keeps that call site tidy.
+export async function sendReportToParent(sessionId) {
+  return sendReport(sessionId, "parent");
 }
