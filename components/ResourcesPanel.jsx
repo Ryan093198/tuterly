@@ -46,6 +46,7 @@ export default function ResourcesPanel({
   resources,
   currentUserId,
   student = null,
+  autoOpenResourceId = null,
 }) {
   const router = useRouter();
   const fileInputRef = useRef(null);
@@ -53,10 +54,17 @@ export default function ResourcesPanel({
   const [error, setError] = useState(null);
   const [showPaste, setShowPaste] = useState(false);
   const [showPlanModal, setShowPlanModal] = useState(false);
-  const [viewing, setViewing] = useState(null);
+  // Lazy initializer auto-opens a deep-linked resource on mount when
+  // ?resource=<id> is in the URL — used when a parent clicks the
+  // "View in Tuterly" button in a sent lesson-plan email. Doing this in
+  // useState (not useEffect) avoids a cascading-render lint warning.
+  const [viewing, setViewing] = useState(() => {
+    if (!autoOpenResourceId) return null;
+    return resources?.find((r) => r.id === autoOpenResourceId) || null;
+  });
 
-  // Only render the lesson-plan generator when the caller passed `student`
-  // (the per-student tutor page), not on the parent/student views.
+  // Only render the lesson-plan generator + "Email to parent" button when
+  // the caller passed `student` (the per-student tutor page).
   const canGeneratePlan = !!student;
 
   async function handleFiles(files) {
@@ -134,13 +142,16 @@ export default function ResourcesPanel({
           open={showPlanModal}
           onClose={() => setShowPlanModal(false)}
           student={student}
+          onGenerated={(r) => setViewing(r)}
         />
       )}
 
       <ResourceViewer
+        key={viewing?.id || "none"}
         open={!!viewing}
         onClose={() => setViewing(null)}
         resource={viewing}
+        canEmailToParent={canGeneratePlan}
       />
 
       {showPaste && (

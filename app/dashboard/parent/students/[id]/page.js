@@ -8,8 +8,10 @@ import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 
-export default async function ParentStudentDetail({ params }) {
+export default async function ParentStudentDetail({ params, searchParams }) {
   const { id } = await params;
+  const sp = searchParams ? await searchParams : {};
+  const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -157,6 +159,7 @@ export default async function ParentStudentDetail({ params }) {
           studentId={student.id}
           resources={resources}
           currentUserId={user.id}
+          autoOpenResourceId={autoOpenResourceId}
         />
       </Section>
     </div>

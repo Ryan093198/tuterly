@@ -13,6 +13,7 @@ export default function LessonPlanModal({
   open,
   onClose,
   student,
+  onGenerated,
 }) {
   const router = useRouter();
   const [weeks, setWeeks] = useState(10);
@@ -67,6 +68,9 @@ export default function LessonPlanModal({
       }
       closeAndReset();
       router.refresh();
+      // Hand the new resource back so the parent can auto-open it in the
+      // viewer for an immediate "here's what was generated" moment.
+      if (data?.resource && onGenerated) onGenerated(data.resource);
     } catch (err) {
       setError(err.message || "Could not generate plan.");
     } finally {

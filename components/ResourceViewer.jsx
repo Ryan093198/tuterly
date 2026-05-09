@@ -1,14 +1,43 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { CATEGORY_LABEL } from "@/components/ResourcesPanel";
+import { emailLessonPlanToParent } from "@/app/dashboard/lesson-plan-actions";
+import Button from "@/components/ui/Button";
 
 // Modal that renders the inline `content` of a resource as Markdown. Used
 // for resources that don't have a downloadable file (lesson plans, pasted
 // textbook contents, etc.) — these previously had no way to be opened from
 // the resource list.
-export default function ResourceViewer({ open, onClose, resource }) {
+export default function ResourceViewer({
+  open,
+  onClose,
+  resource,
+  canEmailToParent = false,
+}) {
+  const [emailing, setEmailing] = useState(false);
+  const [emailMsg, setEmailMsg] = useState(null);
+
+  async function handleEmail() {
+    if (!resource) return;
+    setEmailing(true);
+    setEmailMsg(null);
+    try {
+      const fd = new FormData();
+      fd.set("resource_id", resource.id);
+      const res = await emailLessonPlanToParent(fd);
+      setEmailMsg({
+        ok: true,
+        text: `Sent to ${res?.recipientEmail || "parent"}.`,
+      });
+    } catch (e) {
+      setEmailMsg({ ok: false, text: e?.message || "Could not send email." });
+    } finally {
+      setEmailing(false);
+    }
+  }
+
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -22,6 +51,9 @@ export default function ResourceViewer({ open, onClose, resource }) {
       document.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
+
+  // (Reset of email state across opens is handled by the parent passing a
+  // fresh `key` per resource — see ResourcesPanel.)
 
   if (!open || !resource) return null;
 
@@ -77,6 +109,34 @@ export default function ResourceViewer({ open, onClose, resource }) {
             </p>
           )}
         </div>
+
+        {canEmailToParent && resource.category === "lesson_plan" && (
+          <div className="px-6 py-4 border-t border-zinc-100 dark:border-zinc-900 flex items-center gap-3 flex-wrap bg-surface-soft/50">
+            <Button
+              type="button"
+              variant="primary"
+              size="sm"
+              onClick={handleEmail}
+              disabled={emailing}
+            >
+              {emailing ? "Sending…" : "Email PDF to parent"}
+            </Button>
+            {emailMsg && (
+              <span
+                className={`text-xs ${
+                  emailMsg.ok ? "text-green-700 dark:text-green-400" : "text-red-600"
+                }`}
+              >
+                {emailMsg.text}
+              </span>
+            )}
+            {!emailMsg && (
+              <span className="text-xs text-muted">
+                Sends a PDF to the linked parent with a link back to this plan.
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -19,31 +19,43 @@ const DEFAULT_WEEKS = 10;
 
 const SYSTEM_INSTRUCTIONS = `You are an experienced one-on-one tutor planning a sequence of weekly tutoring sessions for a single student. Each tutoring session is roughly an hour, occurring once per week.
 
+Schools typically spend 3–4 weeks on a major topic before moving on. Match that pacing — give each main topic enough time for the student to actually internalise it, with each week of the topic going deeper or covering a different sub-skill.
+
 Produce a markdown lesson plan with EXACTLY this structure:
 
 # Lesson Plan — {Subject} — {N} weeks
 
-## Week 1: {Main topic for the week}
-**Subtopics:**
-- {Specific subtopic 1}
-- {Specific subtopic 2}
-- {Specific subtopic 3}
+## Topic 1: {Main topic name} (Weeks 1–4)
 
-## Week 2: {Main topic}
+### Week 1: {What this week focuses on within the topic}
+**Subtopics:**
+- {Specific subtopic}
+- {Specific subtopic}
+- {Specific subtopic}
+- {Specific subtopic}
+
+### Week 2: {Different angle / next sub-skill on the same main topic}
 **Subtopics:**
 - ...
 
-(continue for every week)
+(continue for every week of this topic, then start the next topic)
+
+## Topic 2: {Main topic name} (Weeks 5–8)
+
+### Week 5: ...
 
 PLANNING RULES:
-- One main topic per week, with 3–5 specific subtopics under it.
+- Each main topic spans 3–4 weeks. Don't power through a major topic in a single week.
+- Each week within a topic must focus on a DIFFERENT angle or sub-skill of that topic — don't repeat. Examples for "Quadratic Functions": Week 1 expanding/factorising, Week 2 solving equations and the null factor law, Week 3 graphing parabolas and key features, Week 4 applications and word problems.
+- 3–5 specific subtopics per week. Subtopics should be concrete (e.g. "Solving quadratic equations using the null factor law"), not vague (e.g. "Quadratics").
 - Order topics so prior knowledge supports later topics. Foundations first, harder material later.
-- If the tutor supplied a school term planner, mirror its sequence as closely as possible — the school's progression takes priority over the curriculum data.
-- If the tutor supplied a list of topics they want to cover, prioritise those, ordered logically.
+- If the tutor supplied a school term planner, mirror its sequence as closely as possible — the school's progression takes priority over the curriculum data. Match the school's pacing too.
+- If the tutor supplied a list of topics, prioritise those in roughly that order, still allocating 3–4 weeks per main topic.
 - Otherwise plan from the curriculum reference.
-- Subtopics should be specific (e.g. "Solving quadratic equations using the null factor law") not vague (e.g. "Quadratics").
+- For shorter total durations (e.g. a 1–3 week plan), it's fine for a topic to span fewer weeks — but never just label every week as a separate main topic.
+- Use the exact "## Topic N: ... (Weeks A–B)" / "### Week N: ..." / "**Subtopics:**" / bulleted list structure. The PDF/email pipeline parses these markers.
 - Do NOT invent textbook page numbers, chapter numbers, or section references. Refer to topics by name only.
-- Keep it concise — this is a planning aid for the tutor, not a full lesson script. No worked examples, no homework instructions, no padding.
+- Keep it concise — this is a planning aid, not a full lesson script. No worked examples, no homework instructions, no padding.
 - Output ONLY the markdown plan. No preamble, no closing remarks, no commentary about your own process.`;
 
 export async function POST(request) {
@@ -260,8 +272,18 @@ export async function POST(request) {
   }
 
   return NextResponse.json({
-    resource_id: inserted.id,
-    name: resourceName,
+    resource: {
+      id: inserted.id,
+      name: resourceName,
+      category: "lesson_plan",
+      content: planMarkdown,
+      file_url: null,
+      notes: plannerText
+        ? "Generated from school term planner."
+        : customTopics
+          ? "Generated from tutor-specified topics."
+          : "Generated from curriculum reference.",
+    },
     weeks,
     usage: message.usage,
   });
