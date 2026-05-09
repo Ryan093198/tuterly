@@ -3,7 +3,10 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
+import PracticePanel from "@/components/PracticePanel";
 import { enrichResources } from "@/lib/resource-helpers";
+import { deriveWeakTopics } from "@/lib/weak-topics";
+import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
@@ -32,6 +35,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     { data: ratingsRaw },
     { data: rawResources },
     { count: flaggedCount },
+    { data: openFlags },
   ] = await Promise.all([
       supabase
         .from("sessions")
@@ -52,6 +56,13 @@ export default async function ParentStudentDetail({ params, searchParams }) {
       supabase
         .from("flagged_questions")
         .select("id", { count: "exact", head: true })
+        .eq("student_id", id)
+        .is("understood_at", null),
+      // Topics of unresolved flags drive the second source for the practice
+      // panel suggestions. Same student-scoped policy as the count query.
+      supabase
+        .from("flagged_questions")
+        .select("topic")
         .eq("student_id", id)
         .is("understood_at", null),
     ]);
@@ -76,6 +87,20 @@ export default async function ParentStudentDetail({ params, searchParams }) {
       session_date: r.sessions.date,
     }));
   const resources = await enrichResources(rawResources ?? []);
+
+  const weakTopics = deriveWeakTopics({
+    ratings,
+    flags: openFlags ?? [],
+  });
+  // Curriculum topic dropdown is anchored on the level the student is
+  // currently working at (or year level if none set). The parent doesn't
+  // pick a level — keeping the surface small means fewer ways to misuse it.
+  const practiceLevel = student.working_level || student.year_level;
+  const topicGroups = getTopicGroupsForLevel(
+    practiceLevel,
+    student.subject || "maths",
+    student.subjects
+  );
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
@@ -151,6 +176,14 @@ export default async function ParentStudentDetail({ params, searchParams }) {
           ratings={ratings}
           flaggedCount={flaggedCount ?? 0}
           flaggedHref={`/dashboard/parent/students/${student.id}/flagged`}
+        />
+      </Section>
+
+      <Section label="Practice">
+        <PracticePanel
+          student={student}
+          weakTopics={weakTopics}
+          topicGroups={topicGroups}
         />
       </Section>
 

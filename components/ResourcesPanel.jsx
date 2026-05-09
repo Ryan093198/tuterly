@@ -19,6 +19,7 @@ const CATEGORIES = [
   { id: "assessment", label: "Assessment" },
   { id: "assessment_schedule", label: "Assessment schedule" },
   { id: "lesson_plan", label: "Lesson plan" },
+  { id: "practice_questions", label: "Practice worksheet" },
   { id: "other", label: "Other" },
 ];
 
@@ -564,6 +565,14 @@ function CategoryIcon({ category }) {
           <path d="M3.5 9h17" />
           <path d="M8 13h4M8 16.5h6" />
           <circle cx="16" cy="13.5" r="1.25" fill="currentColor" />
+        </svg>
+      );
+    case "practice_questions":
+      return wrap(
+        <svg {...common} aria-hidden="true">
+          <path d="M9 5h8a2 2 0 0 1 2 2v13H9z" />
+          <path d="M9 5a2 2 0 0 0-2 2v13M5 9h2M5 12h2M5 15h2" />
+          <path d="M12 10h4M12 13h4M12 16h3" />
         </svg>
       );
     default:
