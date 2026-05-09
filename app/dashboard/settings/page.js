@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import EmailChangeForm from "@/components/EmailChangeForm";
+import DeleteAccountSection from "@/components/DeleteAccountSection";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -40,6 +41,16 @@ export default async function SettingsPage() {
         <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-5">
           <EmailChangeForm currentEmail={profile?.email || user.email} />
         </div>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-[11px] uppercase tracking-wider text-muted font-medium">
+          Danger zone
+        </h2>
+        <DeleteAccountSection
+          email={profile?.email || user.email}
+          role={profile?.role}
+        />
       </section>
     </div>
   );
