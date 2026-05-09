@@ -237,6 +237,7 @@ export default async function StudentDetail({ params }) {
           studentId={student.id}
           resources={resources}
           currentUserId={user.id}
+          student={student}
         />
       </Section>
 

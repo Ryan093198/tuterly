@@ -8,6 +8,7 @@ import {
   updateResource,
 } from "@/app/dashboard/resource-actions";
 import EmptyState from "@/components/ui/EmptyState";
+import LessonPlanModal from "@/components/LessonPlanModal";
 
 const CATEGORIES = [
   { id: "textbook", label: "Textbook" },
@@ -16,6 +17,7 @@ const CATEGORIES = [
   { id: "teacher_notes", label: "Teacher notes" },
   { id: "assessment", label: "Assessment" },
   { id: "assessment_schedule", label: "Assessment schedule" },
+  { id: "lesson_plan", label: "Lesson plan" },
   { id: "other", label: "Other" },
 ];
 
@@ -38,12 +40,22 @@ function uploaderLabel(uploader, currentUserId) {
   return role ? `by ${name} (${role.toLowerCase()})` : `by ${name}`;
 }
 
-export default function ResourcesPanel({ studentId, resources, currentUserId }) {
+export default function ResourcesPanel({
+  studentId,
+  resources,
+  currentUserId,
+  student = null,
+}) {
   const router = useRouter();
   const fileInputRef = useRef(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(null);
   const [showPaste, setShowPaste] = useState(false);
+  const [showPlanModal, setShowPlanModal] = useState(false);
+
+  // Only render the lesson-plan generator when the caller passed `student`
+  // (the per-student tutor page), not on the parent/student views.
+  const canGeneratePlan = !!student;
 
   async function handleFiles(files) {
     if (!files || files.length === 0) return;
@@ -67,6 +79,46 @@ export default function ResourcesPanel({ studentId, resources, currentUserId }) 
 
   return (
     <div className="space-y-4">
+      {canGeneratePlan && (
+        <button
+          type="button"
+          onClick={() => setShowPlanModal(true)}
+          className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-2xl border border-brand/30 bg-brand-pale/40 hover:bg-brand-pale/60 transition group"
+        >
+          <span className="flex items-center gap-3 min-w-0">
+            <span className="h-9 w-9 shrink-0 rounded-xl bg-white/70 dark:bg-black/20 text-brand-dark flex items-center justify-center">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 11h6M9 15h4" />
+                <path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H17l3 3v13.5a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 5 19.5v-15z" />
+                <circle cx="17" cy="11" r="1.25" fill="currentColor" />
+              </svg>
+            </span>
+            <span className="min-w-0 text-left">
+              <span className="block text-sm font-medium">
+                Generate a lesson plan
+              </span>
+              <span className="block text-xs text-muted">
+                10–40 weeks based on the curriculum, your topics, or a school
+                planner.
+              </span>
+            </span>
+          </span>
+          <span className="text-muted group-hover:text-brand transition shrink-0">
+            →
+          </span>
+        </button>
+      )}
+
       <Dropzone
         uploading={uploading}
         onPick={(files) => handleFiles(files)}
@@ -74,6 +126,14 @@ export default function ResourcesPanel({ studentId, resources, currentUserId }) 
         showPaste={showPaste}
         fileInputRef={fileInputRef}
       />
+
+      {canGeneratePlan && (
+        <LessonPlanModal
+          open={showPlanModal}
+          onClose={() => setShowPlanModal(false)}
+          student={student}
+        />
+      )}
 
       {showPaste && (
         <PasteForm
@@ -467,6 +527,15 @@ function CategoryIcon({ category }) {
         <svg {...common} aria-hidden="true">
           <rect x="5" y="4" width="14" height="17" rx="2" />
           <path d="M9 8h6M9 12h6M9 16h4" />
+        </svg>
+      );
+    case "lesson_plan":
+      return wrap(
+        <svg {...common} aria-hidden="true">
+          <rect x="3.5" y="4" width="17" height="16.5" rx="2" />
+          <path d="M3.5 9h17" />
+          <path d="M8 13h4M8 16.5h6" />
+          <circle cx="16" cy="13.5" r="1.25" fill="currentColor" />
         </svg>
       );
     default:

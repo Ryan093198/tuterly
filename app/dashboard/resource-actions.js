@@ -10,6 +10,7 @@ import {
   compressImage,
   rewriteImageFilename,
 } from "@/lib/image-utils";
+import { extractPdfText } from "@/lib/pdf";
 
 const BUCKET = "resources";
 
@@ -20,15 +21,6 @@ const PDF_EXTENSIONS = new Set([".pdf"]);
 // PDFs and stops a single bad upload (e.g. a 200MB scanned binder) from
 // quietly eating bucket storage.
 const MAX_RESOURCE_BYTES = 25 * 1024 * 1024; // 25MB
-
-async function extractPdfText(arrayBuffer) {
-  // unpdf is dynamically imported because it pulls in a wasm-ish parser that's
-  // chunky at module-init time.
-  const { extractText, getDocumentProxy } = await import("unpdf");
-  const pdf = await getDocumentProxy(new Uint8Array(arrayBuffer));
-  const { text } = await extractText(pdf, { mergePages: true });
-  return text || "";
-}
 
 function classifyCategory(filename) {
   const n = filename.toLowerCase();
