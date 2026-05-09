@@ -282,9 +282,14 @@ alter table flagged_questions add column if not exists resource_id uuid
 alter table flagged_questions drop constraint if exists flagged_questions_source_check;
 alter table flagged_questions add constraint flagged_questions_source_check
   check ((report_id is not null) <> (resource_id is not null));
+-- Non-partial unique index. supabase-js's upsert(onConflict: "...") emits
+-- ON CONFLICT (cols) without a WHERE predicate, so a partial index can't
+-- be inferred as the arbiter and the upsert errors at parse time. Rows
+-- where resource_id IS NULL (i.e. report flags) are still allowed because
+-- NULL values in unique indexes are distinct under default settings.
+drop index if exists flagged_questions_resource_unique;
 create unique index if not exists flagged_questions_resource_unique
-  on flagged_questions (student_id, resource_id, question_number)
-  where resource_id is not null;
+  on flagged_questions (student_id, resource_id, question_number);
 create index if not exists idx_flagged_questions_resource on flagged_questions(resource_id);
 
 -- Resources can carry generator-specific metadata (e.g. the topic_id /
