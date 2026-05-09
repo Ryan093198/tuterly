@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createStudent } from "../actions";
 import { SCHOOL_YEARS, CURRICULUM_LEVELS, SUBJECTS } from "@/lib/levels";
 import SubmitButton from "@/components/ui/SubmitButton";
+import SchoolAutocomplete from "@/components/SchoolAutocomplete";
 
 export default function NewStudentPage() {
   return (
@@ -28,7 +29,7 @@ export default function NewStudentPage() {
         </div>
         <div className="grid sm:grid-cols-2 gap-3">
           <Select label="Year level" name="year_level" required options={SCHOOL_YEARS} />
-          <Field label="School" name="school" />
+          <SchoolAutocomplete name="school" />
         </div>
         <div className="grid sm:grid-cols-2 gap-3">
           <Select

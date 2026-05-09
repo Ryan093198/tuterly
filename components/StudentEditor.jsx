@@ -7,6 +7,7 @@ import { updateStudent } from "@/app/dashboard/tutor/students/actions";
 import { SCHOOL_YEARS, CURRICULUM_LEVELS, SUBJECTS } from "@/lib/levels";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
+import SchoolAutocomplete from "@/components/SchoolAutocomplete";
 
 export default function StudentEditor({ student, newSessionHref }) {
   const router = useRouter();
@@ -113,10 +114,10 @@ export default function StudentEditor({ student, newSessionHref }) {
           allowEmpty
           emptyLabel="Same as year level"
         />
-        <Field
-          label="School"
+        <SchoolAutocomplete
           name="school"
           defaultValue={student.school || ""}
+          inputHeight="h-10"
         />
       </div>
       <Field
