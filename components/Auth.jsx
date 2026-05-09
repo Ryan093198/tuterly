@@ -14,12 +14,15 @@ export default function Auth() {
   const initialMode = searchParams.get("mode") === "signup" ? "signup" : "login";
   const initialEmail = searchParams.get("email") || "";
   const paramRole = searchParams.get("role");
+  // Don't default-pick a role on the signup tab — silently defaulting to
+  // "parent" was how a tutor ended up in a parent account after clicking
+  // "Continue with Google". The /onboarding/role page is the safety net,
+  // but making the picker explicit prevents the wrong choice in the first
+  // place.
   const initialRole =
-    paramRole === "tutor"
-      ? "tutor"
-      : paramRole === "student"
-        ? "student"
-        : "parent";
+    paramRole === "tutor" || paramRole === "parent" || paramRole === "student"
+      ? paramRole
+      : null;
   const isInvite = !!searchParams.get("inviter");
 
   const [mode, setMode] = useState(initialMode);
@@ -46,6 +49,10 @@ export default function Auth() {
       router.push(next);
       router.refresh();
     } else {
+      if (!role && !isInvite) {
+        setLoading(false);
+        return setError("Pick whether you're signing up as a parent, tutor, or student.");
+      }
       const { error } = await supabase.auth.signUp({
         email,
         password,
@@ -61,9 +68,12 @@ export default function Auth() {
   }
 
   async function handleGoogle() {
+    if (mode === "signup" && !role && !isInvite) {
+      return setError("Pick whether you're signing up as a parent, tutor, or student.");
+    }
     const supabase = createClient();
     const params = new URLSearchParams({ next });
-    if (mode === "signup") params.set("role", role);
+    if (mode === "signup" && role) params.set("role", role);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {

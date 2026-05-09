@@ -71,8 +71,13 @@ export default async function DashboardLayout({ children }) {
     .eq("id", user.id)
     .single();
 
-  const role = profile?.role ?? "parent";
-  const navItems = NAV[role] ?? NAV.parent;
+  // Role is null on accounts that signed up via Google/OAuth without
+  // selecting a role first (the old default-to-parent trigger has been
+  // changed to NULL). Force them through the onboarding picker before
+  // they hit any dashboard.
+  if (!profile?.role) redirect("/onboarding/role");
+
+  const navItems = NAV[profile.role] ?? NAV.parent;
 
   return (
     <DashboardShell

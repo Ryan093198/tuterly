@@ -474,3 +474,25 @@ alter table pending_email_changes enable row level security;
 create index if not exists idx_resources_student_created
   on resources(student_id, created_at desc);
 create index if not exists idx_resources_uploaded_by on resources(uploaded_by);
+
+-- ─── First-time-sign-in role picker ───
+-- The previous trigger defaulted role to 'parent' when raw_user_meta_data
+-- carried no role, which silently mislabelled anyone who clicked "Continue
+-- with Google" without first choosing a role. Now: role stays NULL on those
+-- signups, the proxy redirects them to /onboarding/role, and the picker
+-- writes the chosen role.
+alter table profiles alter column role drop not null;
+
+create or replace function handle_new_user()
+returns trigger as $$
+begin
+  insert into profiles (id, email, full_name, role)
+  values (
+    new.id,
+    new.email,
+    coalesce(new.raw_user_meta_data->>'full_name', split_part(new.email, '@', 1)),
+    nullif(new.raw_user_meta_data->>'role', '')
+  );
+  return new;
+end;
+$$ language plpgsql security definer;
