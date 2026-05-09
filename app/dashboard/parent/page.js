@@ -3,6 +3,10 @@ import { createClient } from "@/lib/supabase-server";
 import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
+import {
+  fetchTutorsForStudents,
+  tutoringSummary,
+} from "@/lib/tutoring-summary";
 
 export default async function ParentDashboard() {
   const supabase = await createClient();
@@ -12,7 +16,7 @@ export default async function ParentDashboard() {
 
   const { data: students } = await supabase
     .from("students")
-    .select("id, first_name, last_name, year_level, working_level, school")
+    .select("id, first_name, last_name, year_level, working_level, school, subject")
     .eq("parent_id", user.id)
     .order("first_name");
 
@@ -32,6 +36,10 @@ export default async function ParentDashboard() {
       if (sid && !latestByStudent.has(sid)) latestByStudent.set(sid, r);
     }
   }
+
+  // Tutor names per student row, used to disambiguate when two tutors have
+  // each independently created a record for the same real kid.
+  const tutorsByStudent = await fetchTutorsForStudents(studentIds);
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up">
@@ -72,6 +80,9 @@ export default async function ParentDashboard() {
                           {s.first_name} {s.last_name}
                         </div>
                         <div className="text-xs text-muted mt-0.5 truncate">
+                          {tutoringSummary(s, tutorsByStudent.get(s.id))}
+                        </div>
+                        <div className="text-[11px] text-muted/70 mt-0.5 truncate">
                           {s.year_level}
                           {s.working_level && s.working_level !== s.year_level
                             ? ` · ${s.working_level}`

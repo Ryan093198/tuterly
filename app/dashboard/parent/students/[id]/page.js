@@ -7,6 +7,10 @@ import PracticePanel from "@/components/PracticePanel";
 import { enrichResources } from "@/lib/resource-helpers";
 import { deriveWeakTopics } from "@/lib/weak-topics";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
+import {
+  fetchTutorsForStudents,
+  tutoringSummary,
+} from "@/lib/tutoring-summary";
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
@@ -128,6 +132,11 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     student.subjects
   );
 
+  // Tutor name for the subhead — disambiguates the duplicate-record case
+  // when the parent's child appears under more than one tutor.
+  const tutorsByStudent = await fetchTutorsForStudents([student.id]);
+  const tutoringLine = tutoringSummary(student, tutorsByStudent.get(student.id));
+
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
       <header className="space-y-2">
@@ -143,7 +152,8 @@ export default async function ParentStudentDetail({ params, searchParams }) {
             <h1 className="text-3xl font-semibold tracking-tight">
               {student.first_name} {student.last_name}
             </h1>
-            <p className="text-sm text-muted mt-0.5">
+            <p className="text-sm text-foreground/80 mt-0.5">{tutoringLine}</p>
+            <p className="text-xs text-muted mt-0.5">
               {student.year_level}
               {student.working_level && student.working_level !== student.year_level
                 ? ` · working at ${student.working_level}`

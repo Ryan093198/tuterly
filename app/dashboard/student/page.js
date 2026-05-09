@@ -6,22 +6,32 @@ import { enrichResources } from "@/lib/resource-helpers";
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import {
+  fetchTutorsForStudents,
+  tutoringSummary,
+} from "@/lib/tutoring-summary";
 
-export default async function StudentDashboard() {
+export default async function StudentDashboard({ searchParams }) {
+  const sp = searchParams ? await searchParams : {};
+  const requestedRecord = typeof sp.student === "string" ? sp.student : null;
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: student } = await supabase
+  // A student may legitimately have multiple `students` rows linked to them
+  // — when two tutors each create their own record for the same kid, the
+  // student accepts both invites and ends up with one record per tutor.
+  // Fetch them all and let the user switch between them via ?student=<id>.
+  const { data: studentRecords } = await supabase
     .from("students")
     .select(
       "id, first_name, last_name, year_level, working_level, school, subject, subjects"
     )
     .eq("student_user_id", user.id)
-    .maybeSingle();
+    .order("created_at", { ascending: true });
 
-  if (!student) {
+  if (!studentRecords?.length) {
     return (
       <div className="px-6 sm:px-8 py-10 max-w-4xl mx-auto animate-fade-in-up">
         <EmptyState
@@ -31,6 +41,16 @@ export default async function StudentDashboard() {
       </div>
     );
   }
+
+  const tutorsByStudent = await fetchTutorsForStudents(
+    studentRecords.map((r) => r.id)
+  );
+
+  // Pick the requested record if it belongs to the user, otherwise fall back
+  // to the first one. Querystring stays canonical between renders.
+  const student =
+    studentRecords.find((r) => r.id === requestedRecord) || studentRecords[0];
+  const isMulti = studentRecords.length > 1;
 
   const [
     { data: sessions },
@@ -103,20 +123,49 @@ export default async function StudentDashboard() {
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
-      <header className="flex items-center gap-4">
-        <Avatar name={`${student.first_name} ${student.last_name}`} />
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">
-            Hi, {student.first_name}
-          </h1>
-          <p className="text-sm text-muted mt-0.5">
-            {student.year_level}
-            {student.working_level && student.working_level !== student.year_level
-              ? ` · working at ${student.working_level}`
-              : ""}
-            {student.school ? ` · ${student.school}` : ""}
-          </p>
+      <header className="space-y-4">
+        <div className="flex items-center gap-4">
+          <Avatar name={`${student.first_name} ${student.last_name}`} />
+          <div>
+            <h1 className="text-3xl font-semibold tracking-tight">
+              Hi, {student.first_name}
+            </h1>
+            <p className="text-sm text-foreground/80 mt-0.5">
+              {tutoringSummary(student, tutorsByStudent.get(student.id))}
+            </p>
+            <p className="text-xs text-muted mt-0.5">
+              {student.year_level}
+              {student.working_level && student.working_level !== student.year_level
+                ? ` · working at ${student.working_level}`
+                : ""}
+              {student.school ? ` · ${student.school}` : ""}
+            </p>
+          </div>
         </div>
+        {isMulti && (
+          <div className="flex flex-wrap gap-2">
+            {studentRecords.map((r) => {
+              const active = r.id === student.id;
+              const tutors = tutorsByStudent.get(r.id) ?? [];
+              const label = tutors.length
+                ? `with ${tutors.join(", ")}`
+                : "no tutor linked";
+              return (
+                <Link
+                  key={r.id}
+                  href={`/dashboard/student?student=${r.id}`}
+                  className={`text-xs px-3 py-1.5 rounded-full border transition ${
+                    active
+                      ? "border-brand bg-brand-pale text-brand-foreground"
+                      : "border-zinc-200 dark:border-zinc-800 text-muted hover:border-brand/40 hover:text-foreground"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </header>
 
       <Section label="Reports">
