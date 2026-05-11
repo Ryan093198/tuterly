@@ -6,6 +6,23 @@ import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request) {
+  try {
+    return await handle(request);
+  } catch (err) {
+    // Without this, an unhandled exception (Anthropic call failure, DB
+    // glitch, etc.) bubbles to Next's default HTML error page — the client
+    // then fails to parse it as JSON and the tutor sees a cryptic
+    // "Unexpected token" instead of the real cause.
+    console.error("[generate] unhandled error:", err);
+    const message =
+      err?.message && typeof err.message === "string"
+        ? err.message
+        : "Report generator failed. Try again in a moment.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+}
+
+async function handle(request) {
   const { session_id } = await request.json();
   if (!session_id) {
     return NextResponse.json({ error: "session_id required" }, { status: 400 });

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
+import { readJsonOrFallback } from "@/lib/practice-client";
 
 // Modal that drives the parent practice-worksheet generator. Two paths:
 //   - one-click "weak topic" chips (pre-filled from ratings + flags)
@@ -85,7 +86,7 @@ export default function PracticeModal({
           difficulty,
         }),
       });
-      const data = await res.json();
+      const data = await readJsonOrFallback(res);
       if (!res.ok) {
         throw new Error(data?.error || "Could not generate worksheet.");
       }

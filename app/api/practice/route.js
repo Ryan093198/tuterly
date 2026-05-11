@@ -23,6 +23,24 @@ const DAILY_LIMIT = Number(process.env.PRACTICE_DAILY_LIMIT) || 5;
 const ALLOWED_DIFFICULTIES = new Set(["review", "core", "stretch"]);
 
 export async function POST(request) {
+  try {
+    return await handle(request);
+  } catch (err) {
+    // Anything that escapes the handler — Anthropic call failures,
+    // unexpected DB errors, transient network issues — gets surfaced as a
+    // JSON error instead of Next's default HTML error page. Without this
+    // the client's res.json() blows up on the HTML and the user just sees
+    // "Unexpected token 'A'..." with no actionable info.
+    console.error("[practice] unhandled error:", err);
+    const message =
+      err?.message && typeof err.message === "string"
+        ? err.message
+        : "Worksheet generator failed. Try again in a moment.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+}
+
+async function handle(request) {
   const supabase = await createClient();
   const {
     data: { user },
