@@ -22,7 +22,7 @@ export default async function SessionPage({ params, searchParams }) {
   const { data: session } = await supabase
     .from("sessions")
     .select(
-      "id, date, duration_minutes, raw_notes, status, student_id, students(id, first_name, last_name, year_level, parent_id, student_user_id)"
+      "id, date, duration_minutes, raw_notes, status, subject, student_id, students(id, first_name, last_name, year_level, subject, parent_id, student_user_id)"
     )
     .eq("id", id)
     .eq("tutor_id", user.id)
@@ -121,6 +121,7 @@ export default async function SessionPage({ params, searchParams }) {
           sessionId={session.id}
           initialContent={report?.content ?? ""}
           status={session.status}
+          subject={session.subject || student.subject || "maths"}
           parentLinked={!!parentRecipient.email}
           parentEmail={parentRecipient.email}
           autoGenerate={

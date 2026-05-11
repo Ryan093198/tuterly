@@ -75,6 +75,17 @@ export async function createSession(formData) {
   const date = formData.get("date") || undefined;
   const duration = parseInt(formData.get("duration_minutes") ?? "60", 10);
 
+  // Default the session's subject from the student's so the tutor doesn't
+  // pick on the create form; if they teach the kid both subjects, they
+  // change it from the report-generation UI on the session page.
+  const { data: studentForSubject } = await supabase
+    .from("students")
+    .select("subject")
+    .eq("id", studentId)
+    .maybeSingle();
+  const sessionSubject =
+    studentForSubject?.subject === "english" ? "english" : "maths";
+
   const { data: session, error } = await supabase
     .from("sessions")
     .insert({
@@ -83,6 +94,7 @@ export async function createSession(formData) {
       date,
       duration_minutes: duration,
       raw_notes: rawNotes,
+      subject: sessionSubject,
       status: rawNotes.trim() ? "notes_added" : "pending",
     })
     .select("id")
@@ -160,6 +172,26 @@ export async function updateSessionNotes(formData) {
       raw_notes: notes,
       status: notes.trim() ? "notes_added" : "pending",
     })
+    .eq("id", sessionId)
+    .eq("tutor_id", user.id);
+  if (error) throw error;
+
+  revalidatePath(`/dashboard/tutor/session/${sessionId}`);
+}
+
+export async function updateSessionSubject(sessionId, subject) {
+  if (subject !== "maths" && subject !== "english") {
+    throw new Error(`invalid subject: ${subject}`);
+  }
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/");
+
+  const { error } = await supabase
+    .from("sessions")
+    .update({ subject })
     .eq("id", sessionId)
     .eq("tutor_id", user.id);
   if (error) throw error;

@@ -383,6 +383,17 @@ alter table students drop constraint if exists students_subject_check;
 alter table students add constraint students_subject_check
   check (subject in ('maths', 'english'));
 
+-- ─── Per-session subject override ───────────────────────────────────────
+-- A student record carries one curriculum framework, but a tutor who
+-- teaches the same kid both subjects shouldn't need two student rows.
+-- Sessions optionally carry their own subject; the report-generation
+-- pipeline reads session.subject when set and falls back to
+-- student.subject otherwise.
+alter table sessions add column if not exists subject text;
+alter table sessions drop constraint if exists sessions_subject_check;
+alter table sessions add constraint sessions_subject_check
+  check (subject is null or subject in ('maths', 'english'));
+
 -- ─── API rate limit log ───────────────────────────────────────────────
 -- Simple rolling-window rate limit table. Server actions / API routes log
 -- calls here and check the count against a per-user-per-endpoint limit.

@@ -32,7 +32,7 @@ export async function POST(request) {
 
   const { data: session } = await supabase
     .from("sessions")
-    .select("id, date, duration_minutes, raw_notes, tutor_id, student_id")
+    .select("id, date, duration_minutes, raw_notes, tutor_id, student_id, subject")
     .eq("id", session_id)
     .eq("tutor_id", user.id)
     .single();
@@ -40,13 +40,21 @@ export async function POST(request) {
     return NextResponse.json({ error: "session not found" }, { status: 404 });
   }
 
-  const { data: student } = await supabase
+  const { data: studentRow } = await supabase
     .from("students")
     .select(
       "first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, term_outline"
     )
     .eq("id", session.student_id)
     .single();
+
+  // Sessions can override the student's curriculum framework so a tutor
+  // teaching the same kid both subjects doesn't need duplicate student
+  // records. Fall back to the student's subject when the session hasn't
+  // picked one.
+  const student = studentRow
+    ? { ...studentRow, subject: session.subject || studentRow.subject }
+    : studentRow;
 
   const { data: tutor } = await supabase
     .from("profiles")

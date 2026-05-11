@@ -5,16 +5,20 @@ import { useRouter } from "next/navigation";
 import {
   updateReport,
   sendReportToParent,
+  updateSessionSubject,
 } from "@/app/dashboard/tutor/session/actions";
 import MarkdownReport from "@/components/MarkdownReport";
 import Button from "@/components/ui/Button";
 import EmptyState from "@/components/ui/EmptyState";
 import Spinner from "@/components/ui/Spinner";
 
+const SUBJECT_LABEL = { maths: "Maths", english: "English" };
+
 export default function ReportWorkbench({
   sessionId,
   initialContent,
   status,
+  subject: initialSubject = "maths",
   parentLinked,
   parentEmail,
   autoGenerate = false,
@@ -29,9 +33,26 @@ export default function ReportWorkbench({
   const [savedAt, setSavedAt] = useState(null);
   const [showSendPrompt, setShowSendPrompt] = useState(false);
   const [sending, setSending] = useState(false);
+  const [subject, setSubject] = useState(initialSubject);
+  const [subjectPending, setSubjectPending] = useState(false);
   // Guard so React StrictMode (which mounts effects twice in dev) and any
   // tab-refocus re-render can't double-fire the generate request.
   const autoFiredRef = useRef(false);
+
+  async function handleChangeSubject(next) {
+    if (next === subject || subjectPending) return;
+    setSubjectPending(true);
+    setError(null);
+    try {
+      await updateSessionSubject(sessionId, next);
+      setSubject(next);
+      router.refresh();
+    } catch (e) {
+      setError(e.message || "Couldn't change subject");
+    } finally {
+      setSubjectPending(false);
+    }
+  }
 
   async function handleGenerate() {
     setGenerating(true);
@@ -123,15 +144,22 @@ export default function ReportWorkbench({
               : "Tuterly turns your dot-point notes — and any photos of the working — into a parent-ready report in seconds."
           }
           action={
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={handleGenerate}
-              disabled={generating}
-            >
-              {generating && <Spinner />}
-              {generating ? "Generating…" : "Generate report"}
-            </Button>
+            <div className="flex flex-col items-center gap-3">
+              <SubjectPicker
+                subject={subject}
+                onChange={handleChangeSubject}
+                disabled={generating || subjectPending}
+              />
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={handleGenerate}
+                disabled={generating || subjectPending}
+              >
+                {generating && <Spinner />}
+                {generating ? "Generating…" : "Generate report"}
+              </Button>
+            </div>
           }
         />
         {error && <p className="text-sm text-red-500 mt-3 text-center">{error}</p>}
@@ -190,6 +218,11 @@ export default function ReportWorkbench({
           {generating && <Spinner />}
           {generating ? "Regenerating…" : "Regenerate"}
         </Button>
+        <SubjectPicker
+          subject={subject}
+          onChange={handleChangeSubject}
+          disabled={generating || subjectPending}
+        />
         {savedAt && (
           <span className="text-xs text-muted ml-auto">
             Saved {savedAt.toLocaleTimeString()}
@@ -266,6 +299,37 @@ function SendPromptDialog({ parentEmail, sending, onSend, onCancel }) {
           </Button>
         </div>
       </div>
+    </div>
+  );
+}
+
+function SubjectPicker({ subject, onChange, disabled }) {
+  return (
+    <div
+      role="radiogroup"
+      aria-label="Subject for this session"
+      className="inline-flex rounded-full border border-zinc-200 dark:border-zinc-800 bg-card p-0.5"
+    >
+      {["maths", "english"].map((value) => {
+        const active = subject === value;
+        return (
+          <button
+            key={value}
+            type="button"
+            role="radio"
+            aria-checked={active}
+            onClick={() => onChange(value)}
+            disabled={disabled}
+            className={`px-3 h-7 text-xs font-medium rounded-full transition disabled:opacity-50 ${
+              active
+                ? "bg-brand-pale text-brand-foreground"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            {SUBJECT_LABEL[value]}
+          </button>
+        );
+      })}
     </div>
   );
 }
