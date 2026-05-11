@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import EmailChangeForm from "@/components/EmailChangeForm";
 import DeleteAccountSection from "@/components/DeleteAccountSection";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -31,6 +32,21 @@ export default async function SettingsPage() {
           <Row label="Name" value={profile?.full_name || "—"} />
           <Row label="Email" value={profile?.email || user.email} />
           <Row label="Role" value={titleCase(profile?.role || "—")} />
+        </div>
+      </section>
+
+      <section className="mt-8 space-y-3">
+        <h2 className="text-[11px] uppercase tracking-wider text-muted font-medium">
+          Appearance
+        </h2>
+        <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-5 flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <div className="text-sm font-medium">Theme</div>
+            <div className="text-xs text-muted mt-0.5">
+              System follows your device. Pick a side to override.
+            </div>
+          </div>
+          <ThemeToggle />
         </div>
       </section>
 

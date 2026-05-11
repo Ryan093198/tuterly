@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Class-based dark mode so the Settings toggle can override the OS
+ * preference. The anti-flash script in app/layout.js adds `.dark` to
+ * <html> before paint based on localStorage (or `prefers-color-scheme`
+ * when the user hasn't picked a theme explicitly). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
@@ -53,15 +59,13 @@
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #fafafa;
-    --muted: #a1a1aa;
-    --border: #262626;
-    --card: #111113;
-    --surface-soft: #0e1117;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #a1a1aa;
+  --border: #262626;
+  --card: #111113;
+  --surface-soft: #0e1117;
 }
 
 * {
