@@ -5,6 +5,11 @@ import { buildReportPrompt } from "@/lib/report-prompt";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { checkRateLimit } from "@/lib/rate-limit";
 
+export const runtime = "nodejs";
+// Reports with photos + LaTeX + Sonnet routinely take 30-50s. Was relying
+// on the platform default which is too short for the slow path.
+export const maxDuration = 60;
+
 export async function POST(request) {
   try {
     return await handle(request);

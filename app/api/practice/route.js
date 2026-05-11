@@ -10,7 +10,10 @@ import {
 } from "@/lib/practice-prompt";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+// Sonnet generating a worksheet's worth of LaTeX-heavy math comfortably
+// runs 30-50s, so 30s timed out FUNCTION_INVOCATION_TIMEOUT for parents.
+// Matches /api/lesson-plan, which has the same shape.
+export const maxDuration = 60;
 
 const DEFAULT_QUESTIONS = 8;
 const MAX_QUESTIONS = 15;
