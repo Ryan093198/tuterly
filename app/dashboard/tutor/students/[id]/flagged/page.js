@@ -84,7 +84,9 @@ export default async function FlaggedQuestionsPage({ params }) {
                     sourceHref={
                       item.session_id
                         ? `/dashboard/tutor/session/${item.session_id}`
-                        : null
+                        : item.resource_id
+                          ? `/dashboard/tutor/students/${id}?resource=${item.resource_id}`
+                          : null
                     }
                   />
                 </li>

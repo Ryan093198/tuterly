@@ -71,12 +71,14 @@ export default async function ParentReportView({ params }) {
     }
   }
 
-  if (!report.parent_viewed_at) {
-    await supabase
-      .from("reports")
-      .update({ parent_viewed_at: new Date().toISOString() })
-      .eq("id", id);
-  }
+  // Always touch parent_viewed_at so it tracks the *last* time the parent
+  // opened this report. The "New" badge compares it against reports.updated_at,
+  // which is bumped on regeneration — sticking with first-view-only would
+  // strand the badge as "New" forever after any regen-and-re-view cycle.
+  await supabase
+    .from("reports")
+    .update({ parent_viewed_at: new Date().toISOString() })
+    .eq("id", id);
 
   const student = studentData;
   const sessionDate = sessionData.date;

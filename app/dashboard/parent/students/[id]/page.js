@@ -14,6 +14,7 @@ import {
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import { isReportUnreadByParent } from "@/lib/report-status";
 
 export default async function ParentStudentDetail({ params, searchParams }) {
   const { id } = await params;
@@ -45,7 +46,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
       supabase
         .from("sessions")
         .select(
-          "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at)"
+          "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at, updated_at)"
         )
         .eq("student_id", id)
         .order("date", { ascending: false }),
@@ -188,7 +189,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      {!s.report.parent_viewed_at && <Badge tone="brand">New</Badge>}
+                      {isReportUnreadByParent(s.report) && <Badge tone="brand">New</Badge>}
                       <span className="text-muted group-hover:text-brand transition">
                         →
                       </span>

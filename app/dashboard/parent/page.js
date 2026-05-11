@@ -7,6 +7,7 @@ import {
   fetchTutorsForStudents,
   tutoringSummary,
 } from "@/lib/tutoring-summary";
+import { isReportUnreadByParent } from "@/lib/report-status";
 
 export default async function ParentDashboard() {
   const supabase = await createClient();
@@ -27,7 +28,7 @@ export default async function ParentDashboard() {
     const { data: latestReports } = await supabase
       .from("reports")
       .select(
-        "id, sent_at, parent_viewed_at, created_at, sessions(student_id, date)"
+        "id, sent_at, parent_viewed_at, updated_at, created_at, sessions(student_id, date)"
       )
       .in("sessions.student_id", studentIds)
       .order("created_at", { ascending: false });
@@ -108,7 +109,7 @@ export default async function ParentDashboard() {
                               )}
                             </div>
                           </div>
-                          {!latest.parent_viewed_at ? (
+                          {isReportUnreadByParent(latest) ? (
                             <Badge tone="brand">New</Badge>
                           ) : (
                             <Badge tone="neutral">Viewed</Badge>

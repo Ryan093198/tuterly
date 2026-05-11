@@ -36,8 +36,10 @@ const STATUS_LABEL = {
   sent_to_parent: "Emailed",
 };
 
-export default async function StudentDetail({ params }) {
+export default async function StudentDetail({ params, searchParams }) {
   const { id } = await params;
+  const sp = searchParams ? await searchParams : {};
+  const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -238,6 +240,7 @@ export default async function StudentDetail({ params }) {
           resources={resources}
           currentUserId={user.id}
           student={student}
+          autoOpenResourceId={autoOpenResourceId}
         />
       </Section>
 
