@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import ReportWorkbench from "@/components/ReportWorkbench";
+import FlagScrollTarget from "@/components/FlagScrollTarget";
 import RatingPanel from "@/components/RatingPanel";
 import SendReportPanel from "@/components/SendReportPanel";
 import SessionPhotos from "@/components/SessionPhotos";
@@ -80,6 +81,7 @@ export default async function SessionPage({ params, searchParams }) {
 
   return (
     <div className="px-4 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">
+      <FlagScrollTarget />
       <header className="space-y-2">
         <Link
           href={`/dashboard/tutor/students/${student.id}`}

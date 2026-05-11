@@ -76,9 +76,9 @@ export default async function ParentFlaggedQuestions({ params }) {
                     flag={item}
                     sourceHref={
                       item.report_id
-                        ? `/dashboard/parent/reports/${item.report_id}`
+                        ? `/dashboard/parent/reports/${item.report_id}?flag=${item.question_number}`
                         : item.resource_id
-                          ? `/dashboard/parent/students/${id}?resource=${item.resource_id}`
+                          ? `/dashboard/parent/students/${id}?resource=${item.resource_id}&flag=${item.question_number}`
                           : null
                     }
                   />

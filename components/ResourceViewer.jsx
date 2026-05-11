@@ -25,6 +25,10 @@ export default function ResourceViewer({
   canEmailToParent = false,
   flagOptions = null,
   onRegenerate = null,
+  // Question number to scroll to once the modal mounts — only honoured for
+  // the resource the deep link points at, the parent panel clears it when
+  // the user opens a different resource.
+  autoFlag = null,
 }) {
   const [emailing, setEmailing] = useState(false);
   const [emailMsg, setEmailMsg] = useState(null);
@@ -76,6 +80,19 @@ export default function ResourceViewer({
       document.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open || !autoFlag) return;
+    // The modal mounts MarkdownReport synchronously, but layout still needs a
+    // tick before scrollIntoView lands on the right element — defer one frame.
+    const raf = requestAnimationFrame(() => {
+      const el = document.getElementById(`question-${autoFlag}`);
+      if (!el) return;
+      if (el.tagName === "DETAILS") el.open = true;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [open, autoFlag, resource?.id]);
 
   // (Reset of email state across opens is handled by the parent passing a
   // fresh `key` per resource — see ResourcesPanel.)

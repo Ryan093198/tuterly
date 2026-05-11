@@ -30,6 +30,7 @@ export default async function StudentDetail({ params, searchParams }) {
   const { id } = await params;
   const sp = searchParams ? await searchParams : {};
   const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
+  const autoOpenFlag = typeof sp.flag === "string" ? sp.flag : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -231,6 +232,7 @@ export default async function StudentDetail({ params, searchParams }) {
           currentUserId={user.id}
           student={student}
           autoOpenResourceId={autoOpenResourceId}
+          autoOpenFlag={autoOpenFlag}
         />
       </Section>
 

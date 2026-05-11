@@ -89,7 +89,8 @@ export default function MarkdownReport({ content, flagOptions }) {
             const num = counter.n;
             return (
               <details
-                className="group my-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30"
+                id={`question-${num}`}
+                className="group my-3 scroll-mt-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30 target:ring-2 target:ring-brand/40"
                 {...props}
               >
                 {props.children}

@@ -52,6 +52,11 @@ export default function ResourcesPanel({
   currentUserId,
   student = null,
   autoOpenResourceId = null,
+  // Question number from a flagged-question deep link — only honoured while
+  // the originally-deep-linked resource is open. Cleared as soon as the user
+  // opens a different resource so the next worksheet doesn't keep scrolling
+  // to a phantom question number.
+  autoOpenFlag = null,
   // Practice-worksheet UI gates. Flagging is allowed for the linked parent
   // and student; regeneration is parent-only (the API enforces both).
   // Tutors leave both off to avoid showing UI that 403s on click.
@@ -72,6 +77,14 @@ export default function ResourcesPanel({
     if (!autoOpenResourceId) return null;
     return resources?.find((r) => r.id === autoOpenResourceId) || null;
   });
+  // Flag scroll target only applies while the originally-deep-linked
+  // resource is open. Once the user opens a different resource (or closes
+  // the panel), drop it so we don't jump to a wrong question.
+  const [autoFlag, setAutoFlag] = useState(autoOpenFlag);
+  function setViewingResource(next) {
+    if (!next || next.id !== autoOpenResourceId) setAutoFlag(null);
+    setViewing(next);
+  }
 
   // Only render the lesson-plan generator + "Email to parent" button when
   // the caller passed `student` (the per-student tutor page).
@@ -152,15 +165,16 @@ export default function ResourcesPanel({
           open={showPlanModal}
           onClose={() => setShowPlanModal(false)}
           student={student}
-          onGenerated={(r) => setViewing(r)}
+          onGenerated={(r) => setViewingResource(r)}
         />
       )}
 
       <ResourceViewer
         key={viewing?.id || "none"}
         open={!!viewing}
-        onClose={() => setViewing(null)}
+        onClose={() => setViewingResource(null)}
         resource={viewing}
+        autoFlag={viewing?.id === autoOpenResourceId ? autoFlag : null}
         canEmailToParent={canGeneratePlan}
         flagOptions={
           practiceFlagEnabled ? buildPracticeFlagOptions(viewing) : null
@@ -170,7 +184,7 @@ export default function ResourcesPanel({
           viewing?.category === "practice_questions"
             ? async () => {
                 const fresh = await regeneratePractice(viewing, studentId);
-                setViewing(fresh);
+                setViewingResource(fresh);
                 router.refresh();
               }
             : null
@@ -202,7 +216,7 @@ export default function ResourcesPanel({
               key={r.id}
               resource={r}
               currentUserId={currentUserId}
-              onView={() => setViewing(r)}
+              onView={() => setViewingResource(r)}
             />
           ))}
         </ul>

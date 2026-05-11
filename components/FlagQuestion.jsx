@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { toggleFlag } from "@/app/dashboard/student/flag-actions";
+import Spinner from "@/components/ui/Spinner";
 
 export default function FlagQuestion({
   reportId,
@@ -45,7 +46,7 @@ export default function FlagQuestion({
             : "text-muted hover:text-foreground"
         }`}
       >
-        <FlagIcon filled={flagged} />
+        {pending ? <Spinner size={13} /> : <FlagIcon filled={flagged} />}
         {pending
           ? "Saving…"
           : flagged

@@ -20,6 +20,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
   const { id } = await params;
   const sp = searchParams ? await searchParams : {};
   const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
+  const autoOpenFlag = typeof sp.flag === "string" ? sp.flag : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -202,7 +203,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
         ) : (
           <EmptyState
             title="No reports yet"
-            description="Your tutor will send the first report after your next session."
+            description="Reports appear here after each tutoring session."
           />
         )}
       </Section>
@@ -230,6 +231,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
           resources={resources}
           currentUserId={user.id}
           autoOpenResourceId={autoOpenResourceId}
+          autoOpenFlag={autoOpenFlag}
           practiceFlagEnabled
           practiceRegenerateEnabled
         />

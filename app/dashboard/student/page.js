@@ -15,6 +15,8 @@ import { isReportUnreadByStudent } from "@/lib/report-status";
 export default async function StudentDashboard({ searchParams }) {
   const sp = searchParams ? await searchParams : {};
   const requestedRecord = typeof sp.student === "string" ? sp.student : null;
+  const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
+  const autoOpenFlag = typeof sp.flag === "string" ? sp.flag : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -208,7 +210,7 @@ export default async function StudentDashboard({ searchParams }) {
         ) : (
           <EmptyState
             title="No reports yet"
-            description="Your reports will appear here after your next tutoring session."
+            description="Reports appear here after each tutoring session."
           />
         )}
       </Section>
@@ -227,6 +229,8 @@ export default async function StudentDashboard({ searchParams }) {
           studentId={student.id}
           resources={resources}
           currentUserId={user.id}
+          autoOpenResourceId={autoOpenResourceId}
+          autoOpenFlag={autoOpenFlag}
           practiceFlagEnabled
         />
       </Section>

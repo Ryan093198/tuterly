@@ -72,8 +72,10 @@ export default async function StudentFlaggedQuestions() {
                     flag={item}
                     sourceHref={
                       item.report_id
-                        ? `/dashboard/student/reports/${item.report_id}`
-                        : null
+                        ? `/dashboard/student/reports/${item.report_id}?flag=${item.question_number}`
+                        : item.resource_id
+                          ? `/dashboard/student?resource=${item.resource_id}&flag=${item.question_number}`
+                          : null
                     }
                   />
                 </li>

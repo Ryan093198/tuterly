@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import MarkdownReport from "@/components/MarkdownReport";
+import FlagScrollTarget from "@/components/FlagScrollTarget";
 import PrintButton from "@/components/PrintButton";
 import SessionPhotos from "@/components/SessionPhotos";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
@@ -82,6 +83,7 @@ export default async function StudentReportView({ params }) {
 
   return (
     <div className="px-4 sm:px-6 py-8 sm:py-10 max-w-3xl mx-auto animate-fade-in-up">
+      <FlagScrollTarget />
       <div className="mb-6 no-print">
         <Link
           href="/dashboard/student"
