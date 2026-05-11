@@ -218,7 +218,10 @@ export default function ParentsLanding() {
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, color: c.navy }}>tuterly</span>
           </a>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            <a href="https://app.tuterly.com.au" style={{ padding: "9px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
+            <a href="/parents" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.teal, textDecoration: "none" }}>For Parents</a>
+            <a href="/directory" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Find a Tutor</a>
+            <a href="/centres" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Centres</a>
+            <a href="https://app.tuterly.com.au" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
             <a href="https://app.tuterly.com.au" style={{ padding: "9px 20px", borderRadius: 8, fontSize: 14, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none" }}>Sign up free</a>
           </div>
         </div>
@@ -229,45 +232,19 @@ export default function ParentsLanding() {
         <div className="hero-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "center" }}>
           <div style={{ animation: "fadeUp 0.8s ease" }}>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 16 }}>For Parents</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>Finally know what happens in your child's tutoring sessions.</h1>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 12, maxWidth: 480 }}>You pay for tutoring every week. But do you actually know what's being covered? Whether it's working? What to focus on next?</p>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 32, maxWidth: 480 }}>Tuterly sends you a detailed session report after every lesson - written by your tutor, enhanced by our system, delivered to your inbox.</p>
+            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>Find the right tutor. Track every session.</h1>
+            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 12, maxWidth: 480 }}>Browse our directory of vetted tutors, book at their rates, and receive a detailed session report after every lesson. Progress tracking, practice questions, and curriculum alignment - all in one place.</p>
+            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 32, maxWidth: 480 }}>Already have a tutor? Tuterly works with them too. Invite any tutor to start generating reports.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-              <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Sign up free →</a>
+              <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Start 7-day free trial →</a>
               <a href="#sample-report" onClick={(e) => { e.preventDefault(); document.getElementById('sample-report')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>See a sample report</a>
             </div>
-            <p style={{ fontSize: 13, color: c.textMuted }}>Free to sign up. Only $29/month after your first report.</p>
+            <p style={{ fontSize: 13, color: c.textMuted }}>7 days free. Then $39/month. Cancel anytime.</p>
           </div>
           <div style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
-            {/* Mini report preview card */}
-            <div style={{ background: c.white, borderRadius: 20, padding: 28, boxShadow: "0 20px 60px rgba(0,0,0,0.08)", border: `1px solid ${c.border}`, transform: "rotate(1deg)" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <div>
-                  <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>Session Report</p>
-                  <p style={{ fontSize: 18, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>Julian M.</p>
-                </div>
-                <div style={{ background: c.tealPale, borderRadius: 8, padding: "6px 12px" }}>
-                  <p style={{ fontSize: 12, fontWeight: 600, color: c.tealDark }}>Year 10 Maths</p>
-                </div>
-              </div>
-              <div style={{ background: c.offWhite, borderRadius: 12, padding: 16, marginBottom: 12 }}>
-                <p style={{ fontSize: 13, fontWeight: 600, color: c.teal, marginBottom: 6 }}>What We Covered</p>
-                <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.6 }}>Factorising quadratic expressions - monic quadratics with positive and negative constant terms...</p>
-              </div>
-              <div style={{ display: "grid", gap: 8 }}>
-                {[{ t: "Expanding brackets", r: 5 }, { t: "Factorising (positive)", r: 4 }, { t: "Factorising (negative)", r: 3 }].map((item, i) => (
-                  <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontSize: 13, color: c.textLight }}>{item.t}</span>
-                    <div style={{ display: "flex", gap: 3 }}>
-                      {[1, 2, 3, 4, 5].map(v => <div key={v} style={{ width: 10, height: 10, borderRadius: 3, background: v <= item.r ? c.teal : `${c.teal}20` }} />)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 14, paddingTop: 12, borderTop: `1px solid ${c.border}`, display: "flex", gap: 6 }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: c.success, marginTop: 4 }} />
-                <p style={{ fontSize: 12, color: c.textLight, lineHeight: 1.5 }}>Julian grasped the core process well. Needs more practice with negative constants before next session.</p>
-              </div>
+            {/* Interactive report preview card */}
+            <div style={{ transform: "rotate(1deg)" }}>
+              <ComparisonReportCard />
             </div>
           </div>
         </div>
@@ -294,6 +271,103 @@ export default function ParentsLanding() {
               </Fade>
             ))}
           </div>
+        </div>
+      </section>
+
+
+
+      {/* WHAT YOU GET */}
+      <section style={{ padding: "80px 40px", background: c.white }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>What you get</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>Everything you need to stay in the loop.</h2>
+          </Fade>
+          <div className="features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            {[
+              { icon: "🔍", title: "Tutor directory", desc: "Browse our directory of vetted tutors. Filter by subject, year level, location, and budget. Every tutor sets their own rate - no inflated agency fees." },
+              { icon: "📋", title: "Detailed session reports", desc: "After every lesson, see exactly what was covered. Stay in the loop on your child's progress, strengths, and areas that need attention." },
+              { icon: "📊", title: "Progress tracking", desc: "Watch your child's confidence grow across every topic and subtopic. See trends over weeks and months, not just a single snapshot." },
+              { icon: "📝", title: "Practice question generator", desc: "Generate unlimited VCAA-aligned practice questions in any topic. Your child can practise independently and flag questions they're stuck on for the next session." },
+              { icon: "🎯", title: "Curriculum aligned", desc: "Every topic is mapped to the Victorian Curriculum (VCAA). You'll see the exact content descriptors your child is working on." },
+              { icon: "📅", title: "Assessment aware", desc: "Upload your child's term planner and assessment schedule. Your tutor will plan sessions around upcoming tests and SACs." },
+            ].map((f, i) => (
+              <Fade key={i} delay={i * 0.06}>
+                <div style={{ display: "flex", gap: 16, padding: "24px 20px", borderRadius: 14, border: `1px solid ${c.border}`, background: c.offWhite }}>
+                  <span style={{ fontSize: 28, flexShrink: 0 }}>{f.icon}</span>
+                  <div>
+                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>{f.title}</h3>
+                    <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7 }}>{f.desc}</p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* SAMPLE REPORT */}
+      <section id="sample-report" style={{ padding: "80px 40px", background: c.offWhite }}>
+        <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Sample report</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>This is what you'll receive after every session.</h2>
+            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", marginBottom: 40, lineHeight: 1.7 }}>A real example - not a mockup. This is what Tuterly produces from a tutor's quick session notes.</p>
+          </Fade>
+          <Fade delay={0.15}>
+            <div className="report-mock" style={{ background: c.white, borderRadius: 20, border: `1px solid ${c.border}`, overflow: "hidden", boxShadow: "0 12px 48px rgba(0,0,0,0.06)" }}>
+              <div style={{ background: c.navy, padding: "22px 28px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div>
+                  <p style={{ color: c.teal, fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2 }}>Session Report</p>
+                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, marginTop: 2 }}>powered by tuterly</p>
+                </div>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12 }}>April 28, 2026</p>
+              </div>
+              <div style={{ padding: "24px 28px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
+                  {[{ l: "Student", v: "Julian M." }, { l: "Year Level", v: "Year 10" }, { l: "Subject", v: "Mathematics" }, { l: "Tutor", v: "Ryan" }].map((item, i) => (
+                    <div key={i}><p style={{ fontSize: 10, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{item.l}</p><p style={{ fontSize: 14, fontWeight: 600, color: c.navy }}>{item.v}</p></div>
+                  ))}
+                </div>
+
+                {[
+                  { title: "What We Covered Today", content: "Today's session focused on factorising quadratic expressions. We started by reviewing how to expand brackets, then moved into factorising monic quadratics where the leading coefficient is 1. We worked through several examples from Chapter 5 of the Cambridge Essential Maths 10 textbook, progressing from simple positive constant terms to expressions with negative constants." },
+                  { title: "How Julian Went", content: "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms - specifically identifying factor pairs where one factor is negative." },
+                ].map((section, i) => (
+                  <div key={i} style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
+                    <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 8 }}>{section.title}</h4>
+                    <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.7 }}>{section.content}</p>
+                  </div>
+                ))}
+
+                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
+                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 10 }}>Topic Confidence</h4>
+                  {[{ t: "Expanding brackets", r: 5 }, { t: "Factorising monic (positive)", r: 4 }, { t: "Factorising with negatives", r: 3 }, { t: "Solving by factorising", r: 3 }].map((item, i) => (
+                    <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0" }}>
+                      <span style={{ fontSize: 13, color: c.textLight }}>{item.t}</span>
+                      <div style={{ display: "flex", gap: 3 }}>{[1, 2, 3, 4, 5].map(v => <div key={v} style={{ width: 10, height: 10, borderRadius: 3, background: v <= item.r ? c.teal : `${c.teal}20` }} />)}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
+                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 8 }}>Areas to Focus On</h4>
+                  {["Review factor pairs for numbers up to 50 with one negative factor", "Practice factorising expressions with negative constant terms", "Attempt Exercise 5D Q1-10 in the Cambridge textbook"].map((a, i) => (
+                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "start", marginBottom: 6 }}>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: c.teal, marginTop: 6, flexShrink: 0 }} />
+                      <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.5 }}>{a}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16 }}>
+                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 12 }}>Practice Questions</h4>
+                  <PracticeQuestions expanded={reportExpanded} setExpanded={setReportExpanded} />
+                </div>
+              </div>
+            </div>
+          </Fade>
         </div>
       </section>
 
@@ -414,100 +488,6 @@ export default function ParentsLanding() {
         </div>
       </section>
 
-      {/* WHAT YOU GET */}
-      <section style={{ padding: "80px 40px", background: c.white }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>What you get</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>Everything you need to stay in the loop.</h2>
-          </Fade>
-          <div className="features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-            {[
-              { icon: "📋", title: "Detailed session reports", desc: "After every lesson, see exactly what was covered. Stay in the loop on your child's progress, strengths, and areas that need attention." },
-              { icon: "📊", title: "Progress tracking", desc: "Watch your child's confidence grow across every topic and subtopic. See trends over weeks and months, not just a single snapshot." },
-              { icon: "🎯", title: "Curriculum aligned", desc: "Every topic is mapped to the Victorian Curriculum (VCAA). You'll see the exact content descriptors your child is working on." },
-              { icon: "📝", title: "Practice questions", desc: "Each report includes tailored practice questions with full worked solutions - at Foundation, Standard, and Extension levels." },
-              { icon: "📅", title: "Assessment aware", desc: "Upload your child's term planner and assessment schedule. Your tutor will plan sessions around upcoming tests and SACs." },
-              { icon: "🔔", title: "Instant notifications", desc: "Receive an email the moment a new report is ready. Read it on your phone, tablet, or computer." },
-            ].map((f, i) => (
-              <Fade key={i} delay={i * 0.06}>
-                <div style={{ display: "flex", gap: 16, padding: "24px 20px", borderRadius: 14, border: `1px solid ${c.border}`, background: c.offWhite }}>
-                  <span style={{ fontSize: 28, flexShrink: 0 }}>{f.icon}</span>
-                  <div>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>{f.title}</h3>
-                    <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7 }}>{f.desc}</p>
-                  </div>
-                </div>
-              </Fade>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* SAMPLE REPORT */}
-      <section id="sample-report" style={{ padding: "80px 40px", background: c.offWhite }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Sample report</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>This is what you'll receive after every session.</h2>
-            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", marginBottom: 40, lineHeight: 1.7 }}>A real example - not a mockup. This is what Tuterly produces from a tutor's quick session notes.</p>
-          </Fade>
-          <Fade delay={0.15}>
-            <div className="report-mock" style={{ background: c.white, borderRadius: 20, border: `1px solid ${c.border}`, overflow: "hidden", boxShadow: "0 12px 48px rgba(0,0,0,0.06)" }}>
-              <div style={{ background: c.navy, padding: "22px 28px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <div>
-                  <p style={{ color: c.teal, fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 2 }}>Session Report</p>
-                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, marginTop: 2 }}>powered by tuterly</p>
-                </div>
-                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 12 }}>April 28, 2026</p>
-              </div>
-              <div style={{ padding: "24px 28px" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
-                  {[{ l: "Student", v: "Julian M." }, { l: "Year Level", v: "Year 10" }, { l: "Subject", v: "Mathematics" }, { l: "Tutor", v: "Ryan" }].map((item, i) => (
-                    <div key={i}><p style={{ fontSize: 10, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{item.l}</p><p style={{ fontSize: 14, fontWeight: 600, color: c.navy }}>{item.v}</p></div>
-                  ))}
-                </div>
-
-                {[
-                  { title: "What We Covered Today", content: "Today's session focused on factorising quadratic expressions. We started by reviewing how to expand brackets, then moved into factorising monic quadratics where the leading coefficient is 1. We worked through several examples from Chapter 5 of the Cambridge Essential Maths 10 textbook, progressing from simple positive constant terms to expressions with negative constants." },
-                  { title: "How Julian Went", content: "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms - specifically identifying factor pairs where one factor is negative." },
-                ].map((section, i) => (
-                  <div key={i} style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
-                    <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 8 }}>{section.title}</h4>
-                    <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.7 }}>{section.content}</p>
-                  </div>
-                ))}
-
-                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 10 }}>Topic Confidence</h4>
-                  {[{ t: "Expanding brackets", r: 5 }, { t: "Factorising monic (positive)", r: 4 }, { t: "Factorising with negatives", r: 3 }, { t: "Solving by factorising", r: 3 }].map((item, i) => (
-                    <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0" }}>
-                      <span style={{ fontSize: 13, color: c.textLight }}>{item.t}</span>
-                      <div style={{ display: "flex", gap: 3 }}>{[1, 2, 3, 4, 5].map(v => <div key={v} style={{ width: 10, height: 10, borderRadius: 3, background: v <= item.r ? c.teal : `${c.teal}20` }} />)}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 8 }}>Areas to Focus On</h4>
-                  {["Review factor pairs for numbers up to 50 with one negative factor", "Practice factorising expressions with negative constant terms", "Attempt Exercise 5D Q1-10 in the Cambridge textbook"].map((a, i) => (
-                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "start", marginBottom: 6 }}>
-                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: c.teal, marginTop: 6, flexShrink: 0 }} />
-                      <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.5 }}>{a}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16 }}>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 12 }}>Practice Questions</h4>
-                  <PracticeQuestions expanded={reportExpanded} setExpanded={setReportExpanded} />
-                </div>
-              </div>
-            </div>
-          </Fade>
-        </div>
-      </section>
 
       {/* WHY NOT JUST NOTES */}
       <section style={{ padding: "80px 40px", background: c.white }}>
@@ -549,9 +529,6 @@ export default function ParentsLanding() {
               {/* Tuterly report */}
               <ComparisonReportCard />
             </div>
-          </Fade>
-          <Fade delay={0.2}>
-            <p style={{ textAlign: "center", fontSize: 14, color: c.textLight, marginTop: 28, lineHeight: 1.7, maxWidth: 600, margin: "28px auto 0" }}>The best part? It takes your tutor less time to generate a Tuterly report than to write up good notes manually. They just need to record the session, type out what they worked on, or take a photo of their notes. It doesn't require much additional time outside of the session, but our system delivers a comprehensive report - all aligned to your child's school coursework and the VCAA curriculum.</p>
           </Fade>
         </div>
       </section>
@@ -666,18 +643,18 @@ export default function ParentsLanding() {
           </Fade>
           <Fade delay={0.1}>
             <div style={{ background: c.offWhite, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$29<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
-              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>per child. Cancel anytime.</p>
+              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$39<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Everything included. Cancel anytime.</p>
               <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
-                {["30-day free trial of everything", "Detailed report after every session", "Progress tracking across all topics", "Practice questions with worked solutions", "Curriculum-aligned content descriptors", "Works with any tutor, anywhere", "No sessions in a month = no charge"].map((f, i) => (
+                {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "No sessions in a month = no charge"].map((f, i) => (
                   <div key={i} style={{ display: "flex", gap: 10, alignItems: "center" }}>
                     <span style={{ color: c.teal, fontSize: 13, fontWeight: 700 }}>✓</span>
                     <span style={{ fontSize: 14, color: c.textLight }}>{f}</span>
                   </div>
                 ))}
               </div>
-              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start your free trial</a>
-              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>Free to sign up. Only charged after your first report is generated.</p>
+              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial</a>
+              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $39/month after trial.</p>
             </div>
           </Fade>
         </div>
@@ -691,11 +668,13 @@ export default function ParentsLanding() {
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 40, lineHeight: 1.25 }}>Frequently asked.</h2>
           </Fade>
           {[
-            { q: "Does my tutor need to sign up too?", a: "Yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out to them with a summary pack and offer a free info session. You don't need to explain anything - we handle it." },
-            { q: "What if my tutor doesn't want to use it?", a: "Most tutors love it once they see what it does - it makes them look more professional and helps them retain students. Our team will walk them through it and answer any questions. If they're still not interested, we'll let you know so you can decide how to proceed." },
-            { q: "What subjects are covered?", a: "All subjects from Prep to Year 12 - Mathematics, English, Sciences, Humanities, and all VCE subjects. Reports are aligned to the Victorian Curriculum (VCAA)." },
-            { q: "Can I use this with multiple children?", a: "Yes. Additional children are $19/month each." },
-            { q: "What if we skip a month of tutoring?", a: "If no reports are generated in a given month, you won't be charged for that month." },
+            { q: "Do I have to use a tutor from your directory?", a: "No. You can browse and connect with tutors from our directory, or invite your existing tutor to the platform. Tuterly works with any tutor, anywhere." },
+            { q: "How is this different from a tutoring agency?", a: "Agencies charge $70-100/hour and take a large cut from the tutor. On Tuterly, tutors set their own rates and you pay them directly. Your $39/month subscription gives you access to the directory, session reports, progress tracking, and practice questions." },
+            { q: "Does my tutor need to sign up too?", a: "Yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out to them with a summary pack and offer a free info session. You don't need to explain anything." },
+            { q: "What if my tutor doesn't want to use it?", a: "Most tutors love it once they see what it does. It makes them look more professional and helps them retain students. Our team will walk them through it. If they're still not interested, you can find a new tutor through our directory who already uses Tuterly." },
+            { q: "Can I use the practice question generator without a tutor?", a: "Yes. Your subscription includes unlimited access to our VCAA-aligned question generator. Your child can generate practice questions in any topic, at any difficulty level, with full worked solutions." },
+            { q: "What subjects are covered?", a: "All subjects from Prep to Year 12, including Mathematics, English, Sciences, Humanities, and all VCE subjects. Reports and practice questions are aligned to the Victorian Curriculum (VCAA)." },
+            { q: "What if we skip a month of tutoring?", a: "If no reports are generated in a given month, you won't be charged for that month. You still have access to the directory and practice question generator." },
             { q: "Is my child's data private?", a: "Absolutely. Only you and your child's tutor can see the reports. We never share data with third parties." },
           ].map((faq, i) => (
             <Fade key={i} delay={i * 0.05}>
@@ -714,13 +693,13 @@ export default function ParentsLanding() {
       {/* BOTTOM CTA */}
       <section style={{ padding: "80px 40px", background: c.navy, textAlign: "center" }}>
         <Fade>
-          <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.white, marginBottom: 12, lineHeight: 1.25 }}>Your child deserves more than "it went well."</h2>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>Sign up free, invite your tutor, and see what a real session report looks like.</p>
+          <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.white, marginBottom: 12, lineHeight: 1.25 }}>Find the right tutor. Know what's happening every session.</h2>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>Start your 7-day free trial. Browse tutors, invite your own, and see what a real session report looks like.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 20 }}>
             <a href="tel:0426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
             <a href="mailto:admin@baysideacademics.com.au" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 admin@baysideacademics.com.au</a>
           </div>
-          <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start your free trial →</a>
+          <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial →</a>
         </Fade>
       </section>
 
