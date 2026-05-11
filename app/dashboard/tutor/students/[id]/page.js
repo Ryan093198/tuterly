@@ -21,20 +21,10 @@ import Card from "@/components/ui/Card";
 import SubmitButton from "@/components/ui/SubmitButton";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
-
-const STATUS_TONE = {
-  pending: "neutral",
-  notes_added: "neutral",
-  report_generated: "warning",
-  sent_to_parent: "success",
-};
-
-const STATUS_LABEL = {
-  pending: "Notes pending",
-  notes_added: "Notes added",
-  report_generated: "Ready · not emailed",
-  sent_to_parent: "Emailed",
-};
+import {
+  SESSION_STATUS_LABEL,
+  SESSION_STATUS_TONE,
+} from "@/lib/session-status";
 
 export default async function StudentDetail({ params, searchParams }) {
   const { id } = await params;
@@ -205,8 +195,8 @@ export default async function StudentDetail({ params, searchParams }) {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Badge tone={STATUS_TONE[s.status] ?? "neutral"}>
-                        {STATUS_LABEL[s.status] ?? s.status}
+                      <Badge tone={SESSION_STATUS_TONE[s.status] ?? "neutral"}>
+                        {SESSION_STATUS_LABEL[s.status] ?? s.status}
                       </Badge>
                       <span className="text-muted group-hover:text-brand transition">
                         →

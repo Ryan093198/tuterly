@@ -4,6 +4,10 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import {
+  SESSION_STATUS_LABEL,
+  SESSION_STATUS_TONE,
+} from "@/lib/session-status";
 
 export default function StudentSearchList({ students }) {
   const [query, setQuery] = useState("");
@@ -81,7 +85,7 @@ export default function StudentSearchList({ students }) {
                 href={`/dashboard/tutor/students/${s.id}`}
                 className="group block h-full"
               >
-                <Card className="h-full p-5 transition group-hover:border-brand/40 group-hover:shadow-md">
+                <Card className="h-full p-5 transition group-hover:border-brand/40 group-hover:shadow-md flex flex-col">
                   <div className="flex items-start gap-3">
                     <Avatar name={`${s.first_name} ${s.last_name}`} />
                     <div className="min-w-0 flex-1">
@@ -106,11 +110,40 @@ export default function StudentSearchList({ students }) {
                       ))}
                     </div>
                   )}
+                  <SessionFooter session={s.latestSession} />
                 </Card>
               </Link>
             </li>
           ))}
         </ul>
+      )}
+    </div>
+  );
+}
+
+function SessionFooter({ session }) {
+  return (
+    <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-900 flex items-center justify-between gap-2 text-xs">
+      {session ? (
+        <>
+          <div className="min-w-0">
+            <div className="text-muted">Last session</div>
+            <div className="font-medium mt-0.5 truncate">
+              {new Date(session.date).toLocaleDateString("en-AU", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
+            </div>
+          </div>
+          {session.status && SESSION_STATUS_LABEL[session.status] && (
+            <Badge tone={SESSION_STATUS_TONE[session.status] || "neutral"}>
+              {SESSION_STATUS_LABEL[session.status]}
+            </Badge>
+          )}
+        </>
+      ) : (
+        <span className="text-muted">No sessions yet</span>
       )}
     </div>
   );

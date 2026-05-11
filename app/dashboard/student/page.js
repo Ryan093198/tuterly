@@ -10,6 +10,7 @@ import {
   fetchTutorsForStudents,
   tutoringSummary,
 } from "@/lib/tutoring-summary";
+import { isReportUnreadByStudent } from "@/lib/report-status";
 
 export default async function StudentDashboard({ searchParams }) {
   const sp = searchParams ? await searchParams : {};
@@ -62,7 +63,7 @@ export default async function StudentDashboard({ searchParams }) {
     supabase
       .from("sessions")
       .select(
-        "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at)"
+        "id, date, duration_minutes, status, reports(id, sent_at, student_viewed_at, updated_at)"
       )
       .eq("student_id", student.id)
       .order("date", { ascending: false }),
@@ -191,9 +192,14 @@ export default async function StudentDashboard({ searchParams }) {
                         {s.duration_minutes} min session
                       </div>
                     </div>
-                    <span className="text-muted group-hover:text-brand transition">
-                      →
-                    </span>
+                    <div className="flex items-center gap-3">
+                      {isReportUnreadByStudent(s.report) && (
+                        <Badge tone="brand">New</Badge>
+                      )}
+                      <span className="text-muted group-hover:text-brand transition">
+                        →
+                      </span>
+                    </div>
                   </Card>
                 </Link>
               </li>

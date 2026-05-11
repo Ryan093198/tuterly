@@ -40,6 +40,14 @@ export default async function StudentReportView({ params }) {
     notFound();
   }
 
+  // Touch the view timestamp on every visit so a regen-then-revisit cycle
+  // correctly clears the "New" badge on the dashboard. Mirrors the parent
+  // viewer.
+  await supabase
+    .from("reports")
+    .update({ student_viewed_at: new Date().toISOString() })
+    .eq("id", id);
+
   const student = studentData;
   const sessionDate = sessionData.date;
 

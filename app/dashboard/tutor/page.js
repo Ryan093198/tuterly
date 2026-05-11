@@ -20,7 +20,7 @@ export default async function TutorDashboard() {
 
   // Sort alphabetically by first name (then last name) so the list is easy
   // to scan when a tutor has many students.
-  const students = (links ?? [])
+  const baseStudents = (links ?? [])
     .map((l) => l.students)
     .filter(Boolean)
     .sort((a, b) => {
@@ -32,6 +32,27 @@ export default async function TutorDashboard() {
         sensitivity: "base",
       });
     });
+
+  // Latest session per student so the roster card can show "Last session: X"
+  // and a status badge — without that the roster gives no signal about
+  // outstanding work (notes pending / report not emailed / etc.).
+  const studentIds = baseStudents.map((s) => s.id);
+  const latestByStudent = new Map();
+  if (studentIds.length) {
+    const { data: recent } = await supabase
+      .from("sessions")
+      .select("id, date, status, student_id")
+      .eq("tutor_id", user.id)
+      .in("student_id", studentIds)
+      .order("date", { ascending: false });
+    for (const s of recent ?? []) {
+      if (!latestByStudent.has(s.student_id)) latestByStudent.set(s.student_id, s);
+    }
+  }
+  const students = baseStudents.map((s) => ({
+    ...s,
+    latestSession: latestByStudent.get(s.id) ?? null,
+  }));
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-6xl mx-auto animate-fade-in-up">

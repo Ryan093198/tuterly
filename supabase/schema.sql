@@ -269,6 +269,23 @@ alter table students add column if not exists student_user_id uuid references pr
 create index if not exists idx_students_student_user on students(student_user_id);
 
 alter table reports add column if not exists student_sent_at timestamptz;
+-- Student equivalent of parent_viewed_at: touched whenever a student opens
+-- their report so the dashboard can show a "New" badge until they read the
+-- current version (compared against reports.updated_at).
+alter table reports add column if not exists student_viewed_at timestamptz;
+
+drop policy if exists "Students update view timestamp" on reports;
+create policy "Students update view timestamp" on reports for update using (
+  session_id in (
+    select s.id from sessions s join students st on s.student_id = st.id
+    where st.student_user_id = auth.uid()
+  )
+) with check (
+  session_id in (
+    select s.id from sessions s join students st on s.student_id = st.id
+    where st.student_user_id = auth.uid()
+  )
+);
 
 -- ─── Flagged questions on practice worksheets ────────────────────────
 -- Originally flagged_questions only tracked questions on session reports.
