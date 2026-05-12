@@ -71,6 +71,22 @@ export default function WorksheetGenerator({ topicsByYear }) {
     }
   }, []);
 
+  // The public worksheet page is white-themed regardless of OS preference.
+  // MarkdownReport uses Tailwind `dark:` variants that flip to light-grey
+  // text under a `.dark` ancestor, so when a visitor's OS is in dark mode
+  // (or they previously toggled dark mode in the dashboard) the worksheet
+  // becomes unreadable on the white card. Strip `.dark` for the lifetime
+  // of this component and restore it on unmount so the dashboard's theme
+  // toggle still works normally elsewhere.
+  useEffect(() => {
+    const html = document.documentElement;
+    const wasDark = html.classList.contains("dark");
+    if (wasDark) html.classList.remove("dark");
+    return () => {
+      if (wasDark) html.classList.add("dark");
+    };
+  }, []);
+
   const yearGroups = topicsByYear[yearLevel] || [];
 
   // Flatten for the id→label lookup. Memoised because the user can flip
