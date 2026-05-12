@@ -264,6 +264,7 @@ export default function ParentsLanding() {
           </a>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <a href="/parents" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.teal, textDecoration: "none" }}>For Parents</a>
+            <a href="/worksheets" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Free Worksheets</a>
             <a href="/directory" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Find a Tutor</a>
             <a href="/centres" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Centres</a>
             <a href="https://app.tuterly.com.au" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>

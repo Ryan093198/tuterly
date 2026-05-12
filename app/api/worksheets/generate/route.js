@@ -1,0 +1,190 @@
+import { NextResponse } from "next/server";
+import Anthropic from "@anthropic-ai/sdk";
+import { createClient } from "@/lib/supabase-server";
+import { createAdminClient } from "@/lib/supabase-admin";
+import { getCurriculumForStudent } from "@/lib/curriculum";
+import {
+  SYSTEM_INSTRUCTIONS,
+  buildWorksheetUserMessage,
+} from "@/lib/worksheet-prompt";
+
+export const runtime = "nodejs";
+// 10 questions with worked solutions in LaTeX comfortably runs 30-50s on
+// Sonnet — same shape as /api/practice. 60s is the Vercel cap for non-pro.
+export const maxDuration = 60;
+
+const ALLOWED_YEARS = new Set([
+  "Year 3",
+  "Year 4",
+  "Year 5",
+  "Year 6",
+  "Year 7",
+  "Year 8",
+  "Year 9",
+  "Year 10",
+]);
+
+// Per-IP daily cap. Signed-in users (any role) bypass it.
+const DAILY_IP_LIMIT = Number(process.env.WORKSHEET_DAILY_IP_LIMIT) || 1;
+
+export async function POST(request) {
+  try {
+    return await handle(request);
+  } catch (err) {
+    console.error("[worksheets/generate] unhandled error:", err);
+    const message =
+      err?.message && typeof err.message === "string"
+        ? err.message
+        : "Worksheet generator failed. Try again in a moment.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+}
+
+async function handle(request) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "expected json body" }, { status: 400 });
+  }
+
+  const yearLevel = body?.year_level?.toString().trim();
+  if (!yearLevel || !ALLOWED_YEARS.has(yearLevel)) {
+    return NextResponse.json(
+      { error: "Pick a year level between 3 and 10." },
+      { status: 400 }
+    );
+  }
+  const topicId = body?.topic_id?.toString().trim() || null;
+  const topicLabel = body?.topic_label?.toString().trim();
+  if (!topicLabel) {
+    return NextResponse.json({ error: "Pick a topic." }, { status: 400 });
+  }
+  const email = sanitizeEmail(body?.email);
+  // Email isn't strictly required to generate — the client side gates the UI —
+  // but we tag the generation row with it when present so the marketing list
+  // can be cross-referenced with conversion.
+
+  const ip = clientIp(request);
+
+  // Signed-in visitors (parents/tutors/centres in the app) skip the IP cap.
+  // The free generator is meant to be a lead funnel for non-customers.
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const isSignedIn = !!user;
+
+  const admin = createAdminClient();
+
+  if (!isSignedIn && ip) {
+    const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+    const { count, error: countErr } = await admin
+      .from("worksheet_generations")
+      .select("id", { count: "exact", head: true })
+      .eq("ip", ip)
+      .gte("created_at", dayAgo);
+    if (countErr) {
+      console.warn("[worksheets/generate] rate-count failed:", countErr);
+    }
+    if ((count ?? 0) >= DAILY_IP_LIMIT) {
+      return NextResponse.json(
+        {
+          error:
+            "You've used your free worksheet for today. Start a 7-day trial for unlimited worksheets and tutor-quality reports.",
+          rate_limited: true,
+        },
+        { status: 429 }
+      );
+    }
+  }
+
+  // Look up the VCAA descriptor so the prompt can pin difficulty to the
+  // year-level standard. Topic id may not be present (free-text fallback);
+  // in that case we pass just the human label.
+  const lookup = getCurriculumForStudent(yearLevel, [yearLevel], "maths");
+  let topicDescription = null;
+  if (lookup && !lookup.isVCE && topicId) {
+    for (const items of Object.values(lookup.curriculum)) {
+      for (const item of items) {
+        if (item.code === topicId) {
+          topicDescription = item.desc;
+          break;
+        }
+      }
+      if (topicDescription) break;
+    }
+  }
+
+  const variantSeed = body?.variant_seed?.toString().slice(0, 32) || null;
+
+  const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const userMessage = buildWorksheetUserMessage({
+    yearLevel,
+    topicLabel,
+    topicDescription,
+    variantSeed,
+  });
+
+  const message = await anthropic.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 3500,
+    system: [
+      {
+        type: "text",
+        text: SYSTEM_INSTRUCTIONS,
+        cache_control: { type: "ephemeral" },
+      },
+    ],
+    messages: [{ role: "user", content: userMessage }],
+  });
+
+  const worksheetMarkdown = message.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("\n")
+    .trim();
+
+  if (!worksheetMarkdown) {
+    return NextResponse.json(
+      { error: "Generation returned no content. Please try again." },
+      { status: 502 }
+    );
+  }
+
+  // Log the generation — drives the per-IP cap and gives us a record of
+  // demand by topic / year level. Best-effort; we don't fail the request
+  // if logging fails (the user still gets their worksheet).
+  const { error: logErr } = await admin.from("worksheet_generations").insert({
+    ip,
+    email,
+    year_level: yearLevel,
+    topic_id: topicId,
+    topic_label: topicLabel,
+    question_count: 10,
+  });
+  if (logErr) {
+    console.warn("[worksheets/generate] log insert failed:", logErr);
+  }
+
+  return NextResponse.json({
+    content: worksheetMarkdown,
+    year_level: yearLevel,
+    topic_label: topicLabel,
+    usage: message.usage,
+  });
+}
+
+function sanitizeEmail(raw) {
+  if (typeof raw !== "string") return null;
+  const t = raw.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)) return null;
+  if (t.length > 254) return null;
+  return t;
+}
+
+function clientIp(request) {
+  const fwd = request.headers.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0].trim();
+  return request.headers.get("x-real-ip") || null;
+}
