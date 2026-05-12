@@ -158,24 +158,57 @@ async function handle(request) {
   });
 
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 3000,
-    system: [
-      {
-        type: "text",
-        text: SYSTEM_INSTRUCTIONS,
-        cache_control: { type: "ephemeral" },
-      },
-    ],
-    messages: [{ role: "user", content: userMessage }],
-  });
+  const baseMessages = [{ role: "user", content: userMessage }];
 
-  const worksheetMarkdown = message.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n")
-    .trim();
+  async function generateOnce(messages) {
+    const message = await anthropic.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 3000,
+      system: [
+        {
+          type: "text",
+          text: SYSTEM_INSTRUCTIONS,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
+      messages,
+    });
+    const text = message.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n")
+      .trim();
+    return { message, text };
+  }
+
+  let { message, text: worksheetMarkdown } = await generateOnce(baseMessages);
+  let totalUsage = message.usage;
+
+  // The model intermittently leaks scratch-work ("let me recheck"),
+  // self-flagged errors ("Note to parent: Q2 has an arithmetic error"), or
+  // contradictory Answer:/working pairs. The prompt forbids all of this, but
+  // it still slips through 1 generation in ~5. One automatic retry — with
+  // the bad output shown back so the model can see what to avoid — clears
+  // the vast majority without burning the user's daily quota.
+  const leaks = detectLeaks(worksheetMarkdown);
+  if (leaks.length > 0) {
+    console.warn("[practice] leak detected, retrying:", leaks);
+    const retryMessages = [
+      ...baseMessages,
+      { role: "assistant", content: worksheetMarkdown },
+      {
+        role: "user",
+        content: `That worksheet violated the rules: ${leaks.join(
+          "; "
+        )}. Re-emit the ENTIRE worksheet from scratch. Derive every answer privately before writing — solutions must be clean final reasoning only, with no "wait" / "hmm" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`,
+      },
+    ];
+    const retry = await generateOnce(retryMessages);
+    if (retry.text) {
+      worksheetMarkdown = retry.text;
+      totalUsage = retry.message.usage;
+    }
+  }
 
   if (!worksheetMarkdown) {
     return NextResponse.json(
@@ -238,8 +271,27 @@ async function handle(request) {
 
   return NextResponse.json({
     resource: inserted,
-    usage: message.usage,
+    usage: totalUsage,
   });
+}
+
+// Patterns the prompt forbids but the model keeps emitting anyway. Matched
+// case-insensitively. Each entry is a short label + a regex; the label flows
+// into the retry message so the model knows exactly what to fix.
+const LEAK_PATTERNS = [
+  ["visible self-correction", /\b(let me|let'?s) (?:redo|recheck|re-?check|re-?derive|be precise)/i],
+  ["scratch-work interjection", /\b(?:wait|hmm)\b[\s,—\-]+(?:let|recheck|re-?check|that|the|my|i)/i],
+  ["correction header", /\b(?:correction(?:\s+note)?:|answer\s*\((?:corrected|confirmed)\))/i],
+  ["meta-note to parent/student", /\bnote\s+(?:to|for)\s+(?:the\s+)?(?:parent|student|tutor)/i],
+  ["apology / disclaimer", /\b(?:please\s+disregard|contains?\s+(?:a|an|the)?\s*(?:arithmetic\s+)?error|please\s+contact\s+your\s+tutor)/i],
+];
+
+function detectLeaks(markdown) {
+  const hits = [];
+  for (const [label, re] of LEAK_PATTERNS) {
+    if (re.test(markdown)) hits.push(label);
+  }
+  return hits;
 }
 
 function lookupTopicDescription(level, subject, topicId, subjects = null) {
