@@ -279,11 +279,13 @@ async function handle(request) {
 // case-insensitively. Each entry is a short label + a regex; the label flows
 // into the retry message so the model knows exactly what to fix.
 const LEAK_PATTERNS = [
-  ["visible self-correction", /\b(let me|let'?s) (?:redo|recheck|re-?check|re-?derive|be precise)/i],
-  ["scratch-work interjection", /\b(?:wait|hmm)\b[\s,—\-]+(?:let|recheck|re-?check|that|the|my|i)/i],
-  ["correction header", /\b(?:correction(?:\s+note)?:|answer\s*\((?:corrected|confirmed)\))/i],
+  ["visible self-correction", /\b(?:let me|let'?s)\s+(?:redo|recheck|re-?check|re-?derive|be precise|choose|pick|use|try|fix)/i],
+  ["scratch-work interjection", /(?:^|[\s>])(?:wait|hmm|oops|actually)\b\s*[,—\-:]/im],
+  ["correction header", /\b(?:correction(?:\s+note)?:|answer\s*\((?:corrected|confirmed|revised)\)|corrected\s+(?:question|version|answer|text|setup|equation|solution|note|below)|revised\s+(?:question|answer|version))/i],
+  ["question replacement", /\b(?:restate(?:d|ment)?\b|replaced\s+(?:above|below)|question\s+above\s+is\s+(?:replaced|incorrect|wrong)|clean(?:er)?\s+version|cleaner\s+numbers|not\s+clean\b|isn'?t\s+clean\b|that'?s\s+not\s+clean\b)/i],
   ["meta-note to parent/student", /\bnote\s+(?:to|for)\s+(?:the\s+)?(?:parent|student|tutor)/i],
-  ["apology / disclaimer", /\b(?:please\s+disregard|contains?\s+(?:a|an|the)?\s*(?:arithmetic\s+)?error|please\s+contact\s+your\s+tutor)/i],
+  ["see-note reference", /\(\s*see\s+note(?:\s+above|\s+below)?\s*\)/i],
+  ["apology / disclaimer", /\b(?:please\s+disregard|contains?\s+(?:a|an|the)?\s*(?:arithmetic|self-correction)?\s*error|please\s+contact\s+your\s+tutor|disregard\s+(?:the|this)\s+(?:above|previous))/i],
 ];
 
 function detectLeaks(markdown) {
