@@ -233,8 +233,8 @@ export default function PracticeModal({
                 {topicGroups.map((g) => (
                   <optgroup key={g.strand} label={g.strand}>
                     {g.topics.map((t) => (
-                      <option key={t.id} value={t.id}>
-                        {truncate(t.label, 90)}
+                      <option key={t.id} value={t.id} title={t.desc}>
+                        {t.label}
                       </option>
                     ))}
                   </optgroup>
@@ -351,11 +351,6 @@ export default function PracticeModal({
 
 function labelForLevel(student) {
   return student.working_level || student.year_level || "current";
-}
-
-function truncate(s, n) {
-  if (!s) return "";
-  return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
 
 const CONFIDENCE_TEXT = {
