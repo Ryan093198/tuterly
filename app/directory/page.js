@@ -365,7 +365,7 @@ export default function DirectoryPage() {
       <section style={{ padding: "40px", background: c.navy, textAlign: "center" }}>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.white, marginBottom: 8 }}>Are you a high-achieving tutor?</p>
         <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", maxWidth: 500, margin: "0 auto 16px" }}>We're looking for tutors who are top performers in their subjects and committed to delivering structured, trackable sessions. Set your own rates and keep 100% of your income.</p>
-        <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "12px 28px", borderRadius: 10, border: `2px solid ${c.teal}`, color: c.teal, fontSize: 14, fontWeight: 700, textDecoration: "none" }}>Join as a tutor →</a>
+        <a href="/tutors" style={{ display: "inline-block", padding: "12px 28px", borderRadius: 10, border: `2px solid ${c.teal}`, color: c.teal, fontSize: 14, fontWeight: 700, textDecoration: "none" }}>Join as a tutor →</a>
       </section>
 
       {/* FOOTER */}

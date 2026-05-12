@@ -43,6 +43,51 @@ function Fade({ children, delay = 0 }) {
   );
 }
 
+const galleryTutors = [
+  { name: "Sarah T.", atar: "99.45", subject: "Maths / VCE Methods", img: "https://i.pravatar.cc/200?img=1" },
+  { name: "James W.", atar: "98.90", subject: "English / VCE English", img: "https://i.pravatar.cc/200?img=3" },
+  { name: "Emily K.", atar: "99.10", subject: "Science / VCE Biology", img: "https://i.pravatar.cc/200?img=5" },
+  { name: "Tom R.", atar: "99.80", subject: "Maths / VCE Specialist", img: "https://i.pravatar.cc/200?img=8" },
+  { name: "Lisa M.", atar: "98.50", subject: "English / Humanities", img: "https://i.pravatar.cc/200?img=9" },
+  { name: "Daniel C.", atar: "99.30", subject: "Maths / VCE Physics", img: "https://i.pravatar.cc/200?img=11" },
+  { name: "Priya S.", atar: "99.55", subject: "Maths / VCE Methods", img: "https://i.pravatar.cc/200?img=16" },
+  { name: "Alex N.", atar: "98.70", subject: "English Language / Media", img: "https://i.pravatar.cc/200?img=12" },
+  { name: "Wei L.", atar: "99.00", subject: "Maths / Science (Bilingual)", img: "https://i.pravatar.cc/200?img=14" },
+  { name: "Sophie H.", atar: "99.25", subject: "VCE Chemistry / Biology", img: "https://i.pravatar.cc/200?img=20" },
+  { name: "Marcus D.", atar: "98.85", subject: "VCE Methods / Physics", img: "https://i.pravatar.cc/200?img=53" },
+  { name: "Anika R.", atar: "99.60", subject: "English / VCE Literature", img: "https://i.pravatar.cc/200?img=23" },
+];
+
+function TutorGallery() {
+  const scrollRef = useRef(null);
+
+  const scroll = (dir) => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: dir * 280, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div style={{ position: "relative" }}>
+      <button onClick={() => scroll(-1)} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", zIndex: 10, width: 36, height: 36, borderRadius: "50%", border: `1px solid ${c.border}`, background: "rgba(255,255,255,0.95)", color: c.navy, fontSize: 16, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>←</button>
+      <button onClick={() => scroll(1)} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", zIndex: 10, width: 36, height: 36, borderRadius: "50%", border: `1px solid ${c.border}`, background: "rgba(255,255,255,0.95)", color: c.navy, fontSize: 16, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>→</button>
+      <div ref={scrollRef} style={{ display: "flex", gap: 16, overflowX: "auto", scrollbarWidth: "none", msOverflowStyle: "none", padding: "8px 40px", WebkitOverflowScrolling: "touch" }}>
+        <style>{`div::-webkit-scrollbar { display: none; }`}</style>
+        {galleryTutors.map((t, i) => (
+          <a href="/directory" key={i} style={{ textDecoration: "none", flexShrink: 0, width: 140, textAlign: "center", cursor: "pointer" }}>
+            <div style={{ width: 88, height: 88, borderRadius: "50%", margin: "0 auto 10px", overflow: "hidden", border: `3px solid ${c.border}`, transition: "border-color 0.2s" }} onMouseEnter={e => e.currentTarget.style.borderColor = c.teal} onMouseLeave={e => e.currentTarget.style.borderColor = c.border}>
+              <img src={t.img} alt={t.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 2 }}>{t.name}</p>
+            <p style={{ fontSize: 12, fontWeight: 600, color: c.teal, marginBottom: 2 }}>ATAR {t.atar}</p>
+            <p style={{ fontSize: 11, color: c.textMuted, lineHeight: 1.3 }}>{t.subject}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const questionBank = {
   foundation: [
     { q: "Factorise: x² + 9x + 20", a: "Find two numbers that multiply to 20 and add to 9: 4 and 5.\nAnswer: (x + 4)(x + 5)" },
@@ -248,6 +293,22 @@ export default function ParentsLanding() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* TUTOR GALLERY */}
+      <section style={{ padding: "40px 0 60px", background: c.white, overflow: "hidden" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 40px" }}>
+          <Fade>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
+              <div>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 6 }}>Our tutors</p>
+                <p style={{ fontSize: 16, fontWeight: 600, color: c.navy }}>Trained, verified, high-achieving.</p>
+              </div>
+              <a href="/directory" style={{ fontSize: 14, fontWeight: 600, color: c.teal, textDecoration: "none" }}>View all tutors →</a>
+            </div>
+          </Fade>
+        </div>
+        <TutorGallery />
       </section>
 
       {/* PAIN POINTS */}
