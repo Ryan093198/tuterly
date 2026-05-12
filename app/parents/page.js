@@ -233,7 +233,7 @@ export default function ParentsLanding() {
           <div style={{ animation: "fadeUp 0.8s ease" }}>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 16 }}>For Parents</p>
             <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>Find the right tutor. Track every session.</h1>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 12, maxWidth: 480 }}>Browse our directory of vetted tutors, book at their rates, and receive a detailed session report after every lesson. Progress tracking, practice questions, and curriculum alignment - all in one place.</p>
+            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 12, maxWidth: 480 }}>Browse our directory of vetted tutors and reach out directly, or let one of our education experts find the right match for your child. Every tutor is trained on our platform, so you get detailed session reports, progress tracking, and practice questions after every lesson.</p>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 32, maxWidth: 480 }}>Already have a tutor? Tuterly works with them too. Invite any tutor to start generating reports.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
               <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Start 7-day free trial →</a>
@@ -285,7 +285,8 @@ export default function ParentsLanding() {
           </Fade>
           <div className="features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
             {[
-              { icon: "🔍", title: "Tutor directory", desc: "Browse our directory of vetted tutors. Filter by subject, year level, location, and budget. Every tutor sets their own rate - no inflated agency fees." },
+              { icon: "🔍", title: "Browse tutors directly", desc: "Search our directory of vetted tutors by subject, year level, location, and budget. View their profiles, ratings, and session history, then reach out directly to whoever you think is the right fit." },
+              { icon: "🤝", title: "Let us find the right tutor for you", desc: "Not sure where to start? Submit a request and one of our education experts will personally match your child with a suitable tutor based on their needs, year level, and learning style." },
               { icon: "📋", title: "Detailed session reports", desc: "After every lesson, see exactly what was covered. Stay in the loop on your child's progress, strengths, and areas that need attention." },
               { icon: "📊", title: "Progress tracking", desc: "Watch your child's confidence grow across every topic and subtopic. See trends over weeks and months, not just a single snapshot." },
               { icon: "📝", title: "Practice question generator", desc: "Generate unlimited VCAA-aligned practice questions in any topic. Your child can practise independently and flag questions they're stuck on for the next session." },
@@ -610,26 +611,29 @@ export default function ParentsLanding() {
 
       {/* TEAM SUPPORT */}
       <section style={{ padding: "80px 40px", background: c.cream }}>
-        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>We handle the hard part</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>You don't need to convince your tutor.</h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 36 }}>When you sign up and add your tutor's details, our team personally reaches out to them. We explain how it works, send them a summary pack, and offer a free info session. Most tutors are set up within 48 hours.</p>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Two ways to find a tutor</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 36, lineHeight: 1.25 }}>Choose what works best for you.</h2>
           </Fade>
           <Fade delay={0.1}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }} className="features-grid">
-              {[
-                { icon: "📩", title: "We reach out", desc: "A friendly email from our team explaining Tuterly and what's involved" },
-                { icon: "📄", title: "Summary pack", desc: "A 1-page overview your tutor can read in under 2 minutes" },
-                { icon: "📞", title: "Free info session", desc: "10-minute walkthrough with our team if they'd like one" },
-              ].map((s, i) => (
-                <div key={i} style={{ background: c.white, borderRadius: 14, padding: "24px 20px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-                  <span style={{ fontSize: 28 }}>{s.icon}</span>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginTop: 10, marginBottom: 4 }}>{s.title}</h3>
-                  <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.6 }}>{s.desc}</p>
-                </div>
-              ))}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="grid-2">
+              <div style={{ background: c.white, borderRadius: 16, padding: "28px 24px", border: `1px solid ${c.border}`, textAlign: "left" }}>
+                <span style={{ fontSize: 28 }}>🔍</span>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginTop: 12, marginBottom: 8 }}>Browse and choose yourself</h3>
+                <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>Search our directory of vetted tutors. Filter by subject, year level, location, and budget. View profiles, ratings, and past session data, then reach out directly to whoever you think is the right fit for your child.</p>
+                <a href="/directory" style={{ fontSize: 14, fontWeight: 600, color: c.teal, textDecoration: "none" }}>Browse tutors →</a>
+              </div>
+              <div style={{ background: c.white, borderRadius: 16, padding: "28px 24px", border: `1px solid ${c.border}`, textAlign: "left" }}>
+                <span style={{ fontSize: 28 }}>🤝</span>
+                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginTop: 12, marginBottom: 8 }}>Let us match you</h3>
+                <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>Not sure where to start? Submit a request and one of our education experts will personally find a tutor for your child based on their year level, subjects, learning style, and goals. We handle everything.</p>
+                <a href="https://app.tuterly.com.au" style={{ fontSize: 14, fontWeight: 600, color: c.teal, textDecoration: "none" }}>Submit a request →</a>
+              </div>
             </div>
+          </Fade>
+          <Fade delay={0.2}>
+            <p style={{ fontSize: 14, color: c.textLight, marginTop: 24, lineHeight: 1.7 }}>Either way, every tutor on Tuterly is trained on our platform. You'll receive detailed session reports, progress tracking, and practice questions from day one.</p>
           </Fade>
         </div>
       </section>
@@ -669,7 +673,7 @@ export default function ParentsLanding() {
           </Fade>
           {[
             { q: "Do I have to use a tutor from your directory?", a: "No. You can browse and connect with tutors from our directory, or invite your existing tutor to the platform. Tuterly works with any tutor, anywhere." },
-            { q: "How is this different from a tutoring agency?", a: "Agencies charge $70-100/hour and take a large cut from the tutor. On Tuterly, tutors set their own rates and you pay them directly. Your $39/month subscription gives you access to the directory, session reports, progress tracking, and practice questions." },
+            { q: "How is this different from a tutoring agency?", a: "Tutoring companies typically charge $80-100/hour and take a large cut from the tutor. On Tuterly, tutors set their own rates and you pay them directly. Your $39/month subscription gives you access to our directory, session reports, progress tracking, and practice questions. Every tutor on Tuterly is a high achiever who is trained on our platform, so you get all the structure and accountability of a tutoring company - detailed reports, progress tracking, curriculum alignment - without the inflated hourly rates." },
             { q: "Does my tutor need to sign up too?", a: "Yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out to them with a summary pack and offer a free info session. You don't need to explain anything." },
             { q: "What if my tutor doesn't want to use it?", a: "Most tutors love it once they see what it does. It makes them look more professional and helps them retain students. Our team will walk them through it. If they're still not interested, you can find a new tutor through our directory who already uses Tuterly." },
             { q: "Can I use the practice question generator without a tutor?", a: "Yes. Your subscription includes unlimited access to our VCAA-aligned question generator. Your child can generate practice questions in any topic, at any difficulty level, with full worked solutions." },
