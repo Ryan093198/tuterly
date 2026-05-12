@@ -7,6 +7,7 @@ import {
   SYSTEM_INSTRUCTIONS,
   buildWorksheetUserMessage,
 } from "@/lib/worksheet-prompt";
+import { escapeProseDollars } from "@/lib/markdown-money-safety";
 
 export const runtime = "nodejs";
 // 10 questions with worked solutions in LaTeX comfortably runs 30-50s on
@@ -139,11 +140,15 @@ async function handle(request) {
     messages: [{ role: "user", content: userMessage }],
   });
 
-  const worksheetMarkdown = message.content
+  const rawMarkdown = message.content
     .filter((b) => b.type === "text")
     .map((b) => b.text)
     .join("\n")
     .trim();
+  // Rescue unescaped dollar amounts in prose. The prompt asks for `\$120`,
+  // but the model still forgets and KaTeX swallows everything between two
+  // money signs into italic math.
+  const worksheetMarkdown = escapeProseDollars(rawMarkdown);
 
   if (!worksheetMarkdown) {
     return NextResponse.json(

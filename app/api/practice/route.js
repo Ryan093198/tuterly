@@ -8,6 +8,7 @@ import {
   SYSTEM_INSTRUCTIONS,
   buildPracticeUserMessage,
 } from "@/lib/practice-prompt";
+import { escapeProseDollars } from "@/lib/markdown-money-safety";
 
 export const runtime = "nodejs";
 // Sonnet generating a worksheet's worth of LaTeX-heavy math comfortably
@@ -216,6 +217,9 @@ async function handle(request) {
       { status: 502 }
     );
   }
+  // Rescue unescaped dollar amounts in prose ($120, $80, ...) before saving
+  // so the rendered + flagged + regenerated copies all show consistent text.
+  worksheetMarkdown = escapeProseDollars(worksheetMarkdown);
 
   const dateLabel = new Date().toLocaleDateString("en-AU", {
     day: "numeric",

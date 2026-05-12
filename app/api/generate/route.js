@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase-server";
 import { buildReportPrompt } from "@/lib/report-prompt";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { escapeProseDollars } from "@/lib/markdown-money-safety";
 
 export const runtime = "nodejs";
 // Reports with photos + LaTeX + Sonnet routinely take 30-50s. Was relying
@@ -125,10 +126,12 @@ async function handle(request) {
     messages: [{ role: "user", content: userContent }],
   });
 
-  const content = message.content
-    .filter((block) => block.type === "text")
-    .map((block) => block.text)
-    .join("\n");
+  const content = escapeProseDollars(
+    message.content
+      .filter((block) => block.type === "text")
+      .map((block) => block.text)
+      .join("\n")
+  );
 
   const { data: existing } = await supabase
     .from("reports")
