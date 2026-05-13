@@ -9,6 +9,7 @@ import {
   findKatexErrors,
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
+import { stripEmDashes } from "@/lib/markdown-voice";
 
 export const runtime = "nodejs";
 // Reports with photos + LaTeX + Sonnet routinely take 30-50s. Was relying
@@ -174,6 +175,10 @@ async function handle(request) {
       RETRY_BUDGET_MS
     );
   }
+
+  // Final voice scrub — strip any em dashes the model emitted despite the
+  // prompt rule. They're the single biggest "this is AI" tell.
+  content = stripEmDashes(content);
 
   const { data: existing } = await supabase
     .from("reports")
