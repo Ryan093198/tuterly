@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase-server";
 import { buildReportPrompt } from "@/lib/report-prompt";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { createAdminClient } from "@/lib/supabase-admin";
 import {
   findKatexErrors,
   formatErrorsForRetry,
@@ -180,19 +181,65 @@ async function handle(request) {
     .eq("session_id", session_id)
     .maybeSingle();
 
+  let reportId = existing?.id ?? null;
   if (existing) {
     await supabase
       .from("reports")
       .update({ content, updated_at: new Date().toISOString() })
       .eq("id", existing.id);
   } else {
-    await supabase.from("reports").insert({ session_id, content });
+    const { data: inserted } = await supabase
+      .from("reports")
+      .insert({ session_id, content })
+      .select("id")
+      .single();
+    reportId = inserted?.id ?? null;
   }
 
   await supabase
     .from("sessions")
     .update({ status: "report_generated" })
     .eq("id", session_id);
+
+  // Best-effort flat-audit row in session_report_log. Browsable in the
+  // Supabase Table Editor without needing joins — one row per generated
+  // report with tutor name, student name, duration, date, subject, and a
+  // semicolon-joined list of topics covered (from the session's ratings).
+  // Failure here never blocks the response — the user already has their
+  // report, this is just the audit log.
+  try {
+    const admin = createAdminClient();
+    const { data: ratings } = await admin
+      .from("ratings")
+      .select("topic, subtopic")
+      .eq("session_id", session_id);
+    const topics =
+      (ratings ?? [])
+        .map((r) =>
+          r.subtopic && r.subtopic !== r.topic
+            ? `${r.topic} — ${r.subtopic}`
+            : r.topic
+        )
+        .filter(Boolean)
+        .join("; ") || null;
+    await admin.from("session_report_log").insert({
+      session_id,
+      report_id: reportId,
+      tutor_id: user.id,
+      tutor_name: tutor?.full_name ?? null,
+      student_id: student?.id ?? null,
+      student_name: student
+        ? `${student.first_name} ${student.last_name}`
+        : null,
+      year_level: student?.year_level ?? null,
+      subject: session.subject || student?.subject || null,
+      session_date: session.date,
+      duration_minutes: session.duration_minutes,
+      topics,
+    });
+  } catch (e) {
+    console.warn("[generate] session_report_log insert failed:", e?.message || e);
+  }
 
   return NextResponse.json({
     content,
