@@ -206,6 +206,32 @@ function Nav() {
             Free Worksheets
           </a>
           <a
+            href="/directory"
+            style={{
+              padding: "9px 16px",
+              borderRadius: 8,
+              fontSize: 14,
+              fontWeight: 600,
+              color: c.textLight,
+              textDecoration: "none",
+            }}
+          >
+            Find a Tutor
+          </a>
+          <a
+            href="/centres"
+            style={{
+              padding: "9px 16px",
+              borderRadius: 8,
+              fontSize: 14,
+              fontWeight: 600,
+              color: c.textLight,
+              textDecoration: "none",
+            }}
+          >
+            For Centres
+          </a>
+          <a
             href="https://app.tuterly.com.au"
             style={{
               padding: "9px 16px",
