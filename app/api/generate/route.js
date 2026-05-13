@@ -241,8 +241,5 @@ async function handle(request) {
     console.warn("[generate] session_report_log insert failed:", e?.message || e);
   }
 
-  return NextResponse.json({
-    content,
-    usage: message.usage,
-  });
+  return NextResponse.json({ content });
 }
