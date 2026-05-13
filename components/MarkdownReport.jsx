@@ -108,6 +108,29 @@ export default function MarkdownReport({ content, flagOptions }) {
               </details>
             );
           },
+          table: (props) => (
+            <div className="my-3 overflow-x-auto">
+              <table
+                className="min-w-[50%] border-collapse text-[14px] text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden"
+                {...props}
+              />
+            </div>
+          ),
+          thead: (props) => (
+            <thead className="bg-surface-soft" {...props} />
+          ),
+          th: (props) => (
+            <th
+              className="text-left font-semibold px-3 py-2 border-b border-zinc-200 dark:border-zinc-800 text-foreground"
+              {...props}
+            />
+          ),
+          td: (props) => (
+            <td
+              className="px-3 py-2 border-b border-zinc-100 dark:border-zinc-900 last:border-b-0"
+              {...props}
+            />
+          ),
           summary: (props) => (
             <summary
               className="cursor-pointer select-none px-4 py-2.5 text-sm font-medium text-brand-dark hover:bg-brand-pale transition flex items-center gap-2 list-none [&::-webkit-details-marker]:hidden"
