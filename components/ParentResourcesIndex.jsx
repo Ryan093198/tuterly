@@ -105,27 +105,38 @@ export default function ParentResourcesIndex({ kids }) {
         </section>
       ))}
 
-      <PracticeModal
-        open={!!practiceFor}
-        onClose={() => setPracticeFor(null)}
-        student={practiceFor?.student}
-        weakTopics={practiceFor?.weakTopics ?? []}
-        topicGroups={practiceFor?.topicGroups ?? []}
-        onGenerated={(resource) => {
-          setViewing(resource);
-          router.refresh();
-        }}
-      />
+      {/* The generator modals destructure `student.subject` in their
+          useState initialisers, so they MUST NOT render until a student
+          is chosen — otherwise we hit `Cannot read properties of
+          undefined`. Conditional-mount keyed on the kid id so swapping
+          kids resets the modal's internal state cleanly. */}
+      {practiceFor && (
+        <PracticeModal
+          key={`p-${practiceFor.student.id}`}
+          open
+          onClose={() => setPracticeFor(null)}
+          student={practiceFor.student}
+          weakTopics={practiceFor.weakTopics ?? []}
+          topicGroups={practiceFor.topicGroups ?? []}
+          onGenerated={(resource) => {
+            setViewing(resource);
+            router.refresh();
+          }}
+        />
+      )}
 
-      <LessonPlanModal
-        open={!!lessonPlanFor}
-        onClose={() => setLessonPlanFor(null)}
-        student={lessonPlanFor?.student}
-        onGenerated={(resource) => {
-          setViewing(resource);
-          router.refresh();
-        }}
-      />
+      {lessonPlanFor && (
+        <LessonPlanModal
+          key={`l-${lessonPlanFor.student.id}`}
+          open
+          onClose={() => setLessonPlanFor(null)}
+          student={lessonPlanFor.student}
+          onGenerated={(resource) => {
+            setViewing(resource);
+            router.refresh();
+          }}
+        />
+      )}
 
       <ResourceViewer
         key={viewing?.id || "none"}
