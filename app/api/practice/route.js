@@ -27,6 +27,10 @@ const MIN_QUESTIONS = 3;
 // without sweating cost. Tunable via env without a deploy.
 const DAILY_LIMIT = Number(process.env.PRACTICE_DAILY_LIMIT) || 5;
 
+// If the first generation took longer than this, skip the validate-and-retry
+// pass — a second Sonnet call on top would risk Vercel's 60s timeout.
+const RETRY_BUDGET_MS = 30_000;
+
 const ALLOWED_DIFFICULTIES = new Set(["review", "core", "stretch"]);
 
 export async function POST(request) {
@@ -185,6 +189,7 @@ async function handle(request) {
     return { message, text };
   }
 
+  const startedAt = Date.now();
   let { message, text: worksheetMarkdown } = await generateOnce(baseMessages);
   let totalUsage = message.usage;
 
@@ -201,9 +206,26 @@ async function handle(request) {
   // If either check fires, we send the bad output back to the model with
   // the specific failures listed and ask for a redo. One retry covers
   // most cases without burning the daily quota.
+  //
+  // Skip the retry if the first call already used more than half the
+  // function budget — Vercel's maxDuration is 60s and a second 30-40s
+  // call on top would 504. Better to ship the slightly-broken first
+  // attempt than to fail entirely.
   const leaks = detectLeaks(worksheetMarkdown);
   const katexErrors = findKatexErrors(worksheetMarkdown);
-  if (leaks.length > 0 || katexErrors.length > 0) {
+  const elapsedMs = Date.now() - startedAt;
+  if ((leaks.length > 0 || katexErrors.length > 0) && elapsedMs >= RETRY_BUDGET_MS) {
+    console.warn(
+      "[practice] issues found but skipping retry — elapsed",
+      elapsedMs,
+      "exceeds budget",
+      RETRY_BUDGET_MS,
+      "leaks:",
+      leaks.length,
+      "katex:",
+      katexErrors.length
+    );
+  } else if (leaks.length > 0 || katexErrors.length > 0) {
     console.warn(
       "[practice] retry triggered — leaks:",
       leaks,

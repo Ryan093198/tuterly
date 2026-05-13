@@ -31,6 +31,11 @@ const ALLOWED_YEARS = new Set([
 // Per-IP daily cap. Signed-in users (any role) bypass it.
 const DAILY_IP_LIMIT = Number(process.env.WORKSHEET_DAILY_IP_LIMIT) || 1;
 
+// If the first generation took longer than this, skip the validate-and-retry
+// pass — a second Sonnet call on top would risk Vercel's 60s timeout. Leaves
+// ~25s of headroom for the retry to finish if it does fire.
+const RETRY_BUDGET_MS = 30_000;
+
 export async function POST(request) {
   try {
     return await handle(request);
@@ -152,6 +157,7 @@ async function handle(request) {
     return { message: m, text: t };
   }
 
+  const startedAt = Date.now();
   let { text: worksheetMarkdown } = await generateOnce(baseMessages);
 
   // Validate every math block via KaTeX. If anything won't render, the
@@ -159,11 +165,19 @@ async function handle(request) {
   // bad output back to the model with the exact KaTeX errors and ask for
   // a single redo. Cheaper than serving broken content and forcing a
   // human-triggered regenerate.
+  //
+  // Skip the retry if the first call already used more than half the
+  // function budget — a second 30-40s call on top would hit Vercel's
+  // 60s maxDuration cap and the user would see a 504 with nothing
+  // saved. Better to ship the slightly-broken first attempt.
   const katexErrors = findKatexErrors(worksheetMarkdown);
-  if (katexErrors.length > 0) {
+  const elapsedMs = Date.now() - startedAt;
+  if (katexErrors.length > 0 && elapsedMs < RETRY_BUDGET_MS) {
     console.warn(
       "[worksheets] katex errors, retrying:",
-      katexErrors.length
+      katexErrors.length,
+      "elapsed:",
+      elapsedMs
     );
     const retry = await generateOnce([
       ...baseMessages,
@@ -171,6 +185,13 @@ async function handle(request) {
       { role: "user", content: formatErrorsForRetry(katexErrors) },
     ]);
     if (retry.text) worksheetMarkdown = retry.text;
+  } else if (katexErrors.length > 0) {
+    console.warn(
+      "[worksheets] katex errors but skipping retry — elapsed",
+      elapsedMs,
+      "exceeds budget",
+      RETRY_BUDGET_MS
+    );
   }
 
   if (!worksheetMarkdown) {

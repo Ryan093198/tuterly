@@ -14,6 +14,10 @@ export const runtime = "nodejs";
 // on the platform default which is too short for the slow path.
 export const maxDuration = 60;
 
+// If the first generation took longer than this, skip the validate-and-retry
+// pass — a second Sonnet call on top would risk the 60s maxDuration cap.
+const RETRY_BUDGET_MS = 30_000;
+
 export async function POST(request) {
   try {
     return await handle(request);
@@ -137,20 +141,37 @@ async function handle(request) {
     return { message: m, text: t };
   }
 
+  const startedAt = Date.now();
   let { text: content } = await generateOnce(baseMessages);
 
   // Validate every math block via KaTeX. If anything fails to render, the
   // tutor would see red error text in the browser — better to ask the
   // model to redo with the exact errors than to save broken markdown.
+  //
+  // Skip the retry if the first call already used more than half the
+  // function budget — a second 30-40s call would risk Vercel's 60s cap.
   const katexErrors = findKatexErrors(content);
-  if (katexErrors.length > 0) {
-    console.warn("[generate] katex errors, retrying:", katexErrors.length);
+  const elapsedMs = Date.now() - startedAt;
+  if (katexErrors.length > 0 && elapsedMs < RETRY_BUDGET_MS) {
+    console.warn(
+      "[generate] katex errors, retrying:",
+      katexErrors.length,
+      "elapsed:",
+      elapsedMs
+    );
     const retry = await generateOnce([
       ...baseMessages,
       { role: "assistant", content },
       { role: "user", content: formatErrorsForRetry(katexErrors) },
     ]);
     if (retry.text) content = retry.text;
+  } else if (katexErrors.length > 0) {
+    console.warn(
+      "[generate] katex errors but skipping retry — elapsed",
+      elapsedMs,
+      "exceeds budget",
+      RETRY_BUDGET_MS
+    );
   }
 
   const { data: existing } = await supabase
