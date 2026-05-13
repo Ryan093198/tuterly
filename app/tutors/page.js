@@ -291,40 +291,6 @@ export default function TutorsLanding() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section style={{ padding: "80px 40px", background: c.offWhite }}>
-        <div style={{ maxWidth: 500, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 40, lineHeight: 1.25 }}>Free until you get your first student.</h2>
-          </Fade>
-          <Fade delay={0.1}>
-            <div style={{ background: c.white, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$0<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}> to join</span></p>
-              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Small commission per session. You set your rate, we handle invoicing. No upfront costs.</p>
-              <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
-                {[
-                  "Free to join and create your profile",
-                  "You set your own hourly rate",
-                  "Small commission per session - you still earn significantly more than at a tutoring company",
-                  "We handle all parent billing and invoicing",
-                  "Professional session reports generated automatically",
-                  "Listed in the Tuterly directory",
-                  "Training and onboarding from our team",
-                  "Refer a tutor, earn $10 per successful referral",
-                ].map((f, i) => (
-                  <div key={i} style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                    <span style={{ color: c.teal, fontSize: 13, fontWeight: 700 }}>✓</span>
-                    <span style={{ fontSize: 14, color: c.textLight }}>{f}</span>
-                  </div>
-                ))}
-              </div>
-              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join for free</a>
-            </div>
-          </Fade>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section style={{ padding: "80px 40px", background: c.white }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
