@@ -24,6 +24,14 @@ function sanitizeFilename(name) {
 }
 
 async function uploadPhotoForSession(sessionId, userId, file) {
+  // sharp doesn't decode HEIC/HEIF without libheif, which Vercel's runtime
+  // doesn't ship with. iPhones save photos as HEIC by default, so this
+  // tells the tutor exactly what to do.
+  if (file.type === "image/heic" || file.type === "image/heif") {
+    throw new Error(
+      `HEIC photos aren't supported yet. On iPhone: Settings, Camera, Formats, choose Most Compatible, then retake the photo. Or open the photo in Photos and use Share, Save as JPEG.`
+    );
+  }
   if (!ALLOWED_IMAGE_TYPES.has(file.type)) {
     throw new Error(`Unsupported image type: ${file.type || "unknown"}`);
   }
@@ -41,7 +49,14 @@ async function uploadPhotoForSession(sessionId, userId, file) {
 
   // Resize to 1500px max edge + JPEG q80. ~5-10× smaller, no visible loss
   // for whiteboard / notes shots.
-  const compressed = await compressImage(rawBuffer);
+  let compressed;
+  try {
+    compressed = await compressImage(rawBuffer);
+  } catch (e) {
+    throw new Error(
+      `Couldn't process this photo (${e?.message || "unknown error"}). Try a different file or save it as JPEG first.`
+    );
+  }
   const filename = rewriteImageFilename(file.name || "photo");
   const objectKey = `${sessionId}/${randomUUID()}-${sanitizeFilename(filename)}`;
 
@@ -200,35 +215,48 @@ export async function updateSessionSubject(sessionId, subject) {
 }
 
 export async function addSessionPhoto(formData) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) redirect("/");
+  // Server actions that throw are surfaced to the client as a generic
+  // "An unexpected response was received from the server" with no useful
+  // detail. We return { error } instead so the tutor sees what actually
+  // went wrong (HEIC, oversize, sharp failure, etc.).
+  try {
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return { error: "Not signed in." };
 
-  const sessionId = formData.get("session_id");
-  if (!sessionId) throw new Error("session_id required");
+    const sessionId = formData.get("session_id");
+    if (!sessionId) return { error: "Missing session id." };
 
-  // Verify the session belongs to this tutor.
-  const { data: session } = await supabase
-    .from("sessions")
-    .select("id, student_id")
-    .eq("id", sessionId)
-    .eq("tutor_id", user.id)
-    .maybeSingle();
-  if (!session) throw new Error("session not found");
+    const { data: session } = await supabase
+      .from("sessions")
+      .select("id, student_id")
+      .eq("id", sessionId)
+      .eq("tutor_id", user.id)
+      .maybeSingle();
+    if (!session) return { error: "Session not found." };
 
-  const photos = formData.getAll("photos").filter(
-    (f) => f && typeof f === "object" && "arrayBuffer" in f && f.size > 0
-  );
-  if (photos.length === 0) throw new Error("no photos provided");
+    const photos = formData.getAll("photos").filter(
+      (f) => f && typeof f === "object" && "arrayBuffer" in f && f.size > 0
+    );
+    if (photos.length === 0) return { error: "No photos provided." };
 
-  for (const photo of photos) {
-    await uploadPhotoForSession(sessionId, user.id, photo);
+    for (const photo of photos) {
+      await uploadPhotoForSession(sessionId, user.id, photo);
+    }
+
+    revalidatePath(`/dashboard/tutor/session/${sessionId}`);
+    revalidatePath(`/dashboard/tutor/students/${session.student_id}`);
+    return { ok: true };
+  } catch (e) {
+    console.error("[addSessionPhoto] failed:", e);
+    return {
+      error:
+        e?.message ||
+        "Couldn't upload the photo. Please try again or use a different image.",
+    };
   }
-
-  revalidatePath(`/dashboard/tutor/session/${sessionId}`);
-  revalidatePath(`/dashboard/tutor/students/${session.student_id}`);
 }
 
 export async function deleteSessionPhoto(formData) {

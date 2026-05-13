@@ -24,8 +24,16 @@ export default function SessionPhotos({ sessionId, photos, canManage }) {
       const fd = new FormData();
       fd.set("session_id", sessionId);
       for (const file of files) fd.append("photos", file);
-      await addSessionPhoto(fd);
-      router.refresh();
+      const result = await addSessionPhoto(fd);
+      // The action returns { error } on failure rather than throwing,
+      // because thrown server-action errors come back to the client as
+      // "An unexpected response was received from the server" with no
+      // useful detail.
+      if (result?.error) {
+        setError(result.error);
+      } else {
+        router.refresh();
+      }
     } catch (e) {
       setError(e.message || "Upload failed");
     } finally {
