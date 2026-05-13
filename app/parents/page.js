@@ -352,6 +352,7 @@ export default function ParentsLanding() {
               { icon: "📋", title: "Detailed session reports", desc: "After every lesson, see exactly what was covered. Stay in the loop on your child's progress, strengths, and areas that need attention." },
               { icon: "📊", title: "Progress tracking", desc: "Watch your child's confidence grow across every topic and subtopic. See trends over weeks and months, not just a single snapshot." },
               { icon: "📝", title: "Practice question generator", desc: "Generate unlimited VCAA-aligned practice questions in any topic. Your child can practise independently and flag questions they're stuck on for the next session." },
+              { icon: "📚", title: "Lesson plans on demand", desc: "Build a week-by-week study plan in any topic and year level. Use it as holiday revision, exam prep, or a roadmap to share with your child's tutor." },
               { icon: "🎯", title: "Curriculum aligned", desc: "Every topic is mapped to the Victorian Curriculum (VCAA). You'll see the exact content descriptors your child is working on." },
               { icon: "📅", title: "Assessment aware", desc: "Upload your child's term planner and assessment schedule. Your tutor will plan sessions around upcoming tests and SACs." },
             ].map((f, i) => (
