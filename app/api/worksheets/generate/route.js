@@ -7,7 +7,10 @@ import {
   SYSTEM_INSTRUCTIONS,
   buildWorksheetUserMessage,
 } from "@/lib/worksheet-prompt";
-import { escapeProseDollars } from "@/lib/markdown-money-safety";
+import {
+  findKatexErrors,
+  formatErrorsForRetry,
+} from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
 // 10 questions with worked solutions in LaTeX comfortably runs 30-50s on
@@ -126,29 +129,49 @@ async function handle(request) {
     topicDescription,
     variantSeed,
   });
+  const baseMessages = [{ role: "user", content: userMessage }];
 
-  const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 3500,
-    system: [
-      {
-        type: "text",
-        text: SYSTEM_INSTRUCTIONS,
-        cache_control: { type: "ephemeral" },
-      },
-    ],
-    messages: [{ role: "user", content: userMessage }],
-  });
+  async function generateOnce(messages) {
+    const m = await anthropic.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 3500,
+      system: [
+        {
+          type: "text",
+          text: SYSTEM_INSTRUCTIONS,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
+      messages,
+    });
+    const t = m.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n")
+      .trim();
+    return { message: m, text: t };
+  }
 
-  const rawMarkdown = message.content
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n")
-    .trim();
-  // Rescue unescaped dollar amounts in prose. The prompt asks for `\$120`,
-  // but the model still forgets and KaTeX swallows everything between two
-  // money signs into italic math.
-  const worksheetMarkdown = escapeProseDollars(rawMarkdown);
+  let { text: worksheetMarkdown } = await generateOnce(baseMessages);
+
+  // Validate every math block via KaTeX. If anything won't render, the
+  // user would see red error text or italicised prose, so we send the
+  // bad output back to the model with the exact KaTeX errors and ask for
+  // a single redo. Cheaper than serving broken content and forcing a
+  // human-triggered regenerate.
+  const katexErrors = findKatexErrors(worksheetMarkdown);
+  if (katexErrors.length > 0) {
+    console.warn(
+      "[worksheets] katex errors, retrying:",
+      katexErrors.length
+    );
+    const retry = await generateOnce([
+      ...baseMessages,
+      { role: "assistant", content: worksheetMarkdown },
+      { role: "user", content: formatErrorsForRetry(katexErrors) },
+    ]);
+    if (retry.text) worksheetMarkdown = retry.text;
+  }
 
   if (!worksheetMarkdown) {
     return NextResponse.json(
@@ -176,7 +199,6 @@ async function handle(request) {
     content: worksheetMarkdown,
     year_level: yearLevel,
     topic_label: topicLabel,
-    usage: message.usage,
   });
 }
 

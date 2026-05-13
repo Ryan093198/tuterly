@@ -8,7 +8,10 @@ import {
   SYSTEM_INSTRUCTIONS,
   buildPracticeUserMessage,
 } from "@/lib/practice-prompt";
-import { escapeProseDollars } from "@/lib/markdown-money-safety";
+import {
+  findKatexErrors,
+  formatErrorsForRetry,
+} from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
 // Sonnet generating a worksheet's worth of LaTeX-heavy math comfortably
@@ -185,23 +188,47 @@ async function handle(request) {
   let { message, text: worksheetMarkdown } = await generateOnce(baseMessages);
   let totalUsage = message.usage;
 
-  // The model intermittently leaks scratch-work ("let me recheck"),
-  // self-flagged errors ("Note to parent: Q2 has an arithmetic error"), or
-  // contradictory Answer:/working pairs. The prompt forbids all of this, but
-  // it still slips through 1 generation in ~5. One automatic retry — with
-  // the bad output shown back so the model can see what to avoid — clears
-  // the vast majority without burning the user's daily quota.
+  // Two automatic-retry checks, combined into a single retry message:
+  //
+  // 1. Content leaks ("let me recheck", "Answer (corrected)", "Note to
+  //    parent/student") — the prompt forbids these but the model still
+  //    slips through ~1 in 5.
+  // 2. Math that won't render — we run every $...$ and $$...$$ block
+  //    through KaTeX server-side. If any block errors, the user would
+  //    see red error text or italicised prose in the browser, so it's
+  //    not worth saving.
+  //
+  // If either check fires, we send the bad output back to the model with
+  // the specific failures listed and ask for a redo. One retry covers
+  // most cases without burning the daily quota.
   const leaks = detectLeaks(worksheetMarkdown);
-  if (leaks.length > 0) {
-    console.warn("[practice] leak detected, retrying:", leaks);
+  const katexErrors = findKatexErrors(worksheetMarkdown);
+  if (leaks.length > 0 || katexErrors.length > 0) {
+    console.warn(
+      "[practice] retry triggered — leaks:",
+      leaks,
+      "katex errors:",
+      katexErrors.length
+    );
+    const corrections = [];
+    if (leaks.length > 0) {
+      corrections.push(
+        `Your previous worksheet violated these content rules: ${leaks.join(
+          "; "
+        )}. Solutions must be clean final reasoning only — no "wait" / "hmm" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`
+      );
+    }
+    if (katexErrors.length > 0) {
+      corrections.push(formatErrorsForRetry(katexErrors));
+    }
     const retryMessages = [
       ...baseMessages,
       { role: "assistant", content: worksheetMarkdown },
       {
         role: "user",
-        content: `That worksheet violated the rules: ${leaks.join(
-          "; "
-        )}. Re-emit the ENTIRE worksheet from scratch. Derive every answer privately before writing — solutions must be clean final reasoning only, with no "wait" / "hmm" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`,
+        content: `Re-emit the ENTIRE worksheet from scratch, addressing every issue below.\n\n${corrections.join(
+          "\n\n"
+        )}`,
       },
     ];
     const retry = await generateOnce(retryMessages);
@@ -217,9 +244,6 @@ async function handle(request) {
       { status: 502 }
     );
   }
-  // Rescue unescaped dollar amounts in prose ($120, $80, ...) before saving
-  // so the rendered + flagged + regenerated copies all show consistent text.
-  worksheetMarkdown = escapeProseDollars(worksheetMarkdown);
 
   const dateLabel = new Date().toLocaleDateString("en-AU", {
     day: "numeric",

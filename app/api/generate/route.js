@@ -4,7 +4,10 @@ import { createClient } from "@/lib/supabase-server";
 import { buildReportPrompt } from "@/lib/report-prompt";
 import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
 import { checkRateLimit } from "@/lib/rate-limit";
-import { escapeProseDollars } from "@/lib/markdown-money-safety";
+import {
+  findKatexErrors,
+  formatErrorsForRetry,
+} from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
 // Reports with photos + LaTeX + Sonnet routinely take 30-50s. Was relying
@@ -118,20 +121,37 @@ async function handle(request) {
   ];
 
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const baseMessages = [{ role: "user", content: userContent }];
 
-  const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 4000,
-    system,
-    messages: [{ role: "user", content: userContent }],
-  });
+  async function generateOnce(messages) {
+    const m = await anthropic.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 4000,
+      system,
+      messages,
+    });
+    const t = m.content
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n");
+    return { message: m, text: t };
+  }
 
-  const content = escapeProseDollars(
-    message.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("\n")
-  );
+  let { text: content } = await generateOnce(baseMessages);
+
+  // Validate every math block via KaTeX. If anything fails to render, the
+  // tutor would see red error text in the browser — better to ask the
+  // model to redo with the exact errors than to save broken markdown.
+  const katexErrors = findKatexErrors(content);
+  if (katexErrors.length > 0) {
+    console.warn("[generate] katex errors, retrying:", katexErrors.length);
+    const retry = await generateOnce([
+      ...baseMessages,
+      { role: "assistant", content },
+      { role: "user", content: formatErrorsForRetry(katexErrors) },
+    ]);
+    if (retry.text) content = retry.text;
+  }
 
   const { data: existing } = await supabase
     .from("reports")
