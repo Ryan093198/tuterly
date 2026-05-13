@@ -65,7 +65,6 @@ export default function TutorsLanding() {
           </a>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <a href="/parents" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Parents</a>
-            <a href="/worksheets" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Free Worksheets</a>
             <a href="/directory" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Find a Tutor</a>
             <a href="/centres" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Centres</a>
             <a href="https://app.tuterly.com.au" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
@@ -79,13 +78,13 @@ export default function TutorsLanding() {
         <div className="hero-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 60, alignItems: "center" }}>
           <div style={{ animation: "fadeUp 0.8s ease" }}>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 16 }}>For Tutors</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 46, color: c.white, lineHeight: 1.15, marginBottom: 20 }}>Keep 100% of your income. Equipped with the tools of a premium service.</h1>
-            <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: 32, maxWidth: 500 }}>Join the Tuterly directory, set your own rates, and get access to professional tools that make you stand out. Session reports, progress tracking, and curriculum-aligned practice questions - all generated in under 2 minutes.</p>
+            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 46, color: c.white, lineHeight: 1.15, marginBottom: 20 }}>Set your own rates. Equipped with the tools of a premium service.</h1>
+            <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: 32, maxWidth: 500 }}>Join the Tuterly team, set your own hourly rate, and get access to professional tools that make you stand out. Session reports, progress tracking, and curriculum-aligned practice questions - all generated in under 2 minutes. We handle the invoicing, you focus on teaching.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
               <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join for free</a>
               <a href="#how-it-works" onClick={(e) => { e.preventDefault(); document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.8)", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>See how it works</a>
             </div>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>Free to join. $39/month only after your first student.</p>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>Free to join. No fees until your first student.</p>
           </div>
           <div style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
             <div style={{ background: c.navyMid, borderRadius: 16, padding: 24, border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
@@ -118,7 +117,7 @@ export default function TutorsLanding() {
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Fade>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Why Tuterly</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>Stop giving away over 50% of your income.</h2>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>Earn more. Do less admin.</h2>
           </Fade>
           <Fade delay={0.1}>
             <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
@@ -130,11 +129,11 @@ export default function TutorsLanding() {
                   <div style={{ display: "grid", gap: 10 }}>
                     {[
                       { icon: "✕", text: "Parent pays $80-100/hr to the company", color: "#F43F5E" },
-                      { icon: "✕", text: "You receive $30-40/hr", color: "#F43F5E" },
+                      { icon: "✕", text: "You receive $30/hr", color: "#F43F5E" },
                       { icon: "✕", text: "Company controls your schedule", color: "#F43F5E" },
                       { icon: "✕", text: "No say in your rates", color: "#F43F5E" },
                       { icon: "✕", text: "Students belong to the company, not you", color: "#F43F5E" },
-                      { icon: "✕", text: "You build their brand, not yours", color: "#F43F5E" },
+                      { icon: "✕", text: "You write reports manually for free", color: "#F43F5E" },
                     ].map((item, i) => (
                       <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
                         <span style={{ fontSize: 11, color: item.color, fontWeight: 700 }}>{item.icon}</span>
@@ -153,12 +152,12 @@ export default function TutorsLanding() {
                 <div style={{ padding: "22px" }}>
                   <div style={{ display: "grid", gap: 10 }}>
                     {[
-                      { icon: "✓", text: "You set your own rate - keep every dollar" },
-                      { icon: "✓", text: "Parents pay you directly" },
+                      { icon: "✓", text: "You set your own rate" },
+                      { icon: "✓", text: "We handle invoicing and parent billing" },
                       { icon: "✓", text: "You control your schedule" },
                       { icon: "✓", text: "Professional reports generated in 2 minutes" },
-                      { icon: "✓", text: "Your students. Your reputation. Your brand." },
-                      { icon: "✓", text: "$39/month flat - only after your first student" },
+                      { icon: "✓", text: "Small platform commission - you still earn significantly more" },
+                      { icon: "✓", text: "We find students for you through our directory" },
                     ].map((item, i) => (
                       <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
                         <span style={{ fontSize: 11, color: c.teal, fontWeight: 700 }}>{item.icon}</span>
@@ -196,25 +195,25 @@ export default function TutorsLanding() {
               {students === 0 ? (
                 <div style={{ background: c.tealPale, borderRadius: 12, padding: "24px 20px", textAlign: "center", border: `1px solid ${c.teal}30` }}>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 8 }}>$0/month</p>
-                  <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7 }}>No students, no charge. Tuterly is completely free until you're matched with your first student. Create your profile, get listed in the directory, and only start paying once you start teaching.</p>
+                  <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7 }}>Create your profile, get listed in the directory, and start earning at your own rates!</p>
                 </div>
               ) : (<>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 20 }}>
                 <div style={{ background: c.offWhite, borderRadius: 12, padding: "16px", textAlign: "center" }}>
                   <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>At a tutoring company</p>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, color: c.textMuted }}>${(students * 30 * 4).toLocaleString()}</p>
-                  <p style={{ fontSize: 11, color: c.textMuted }}>per month (at $30/hr - typical pay at a tutoring centre)</p>
+                  <p style={{ fontSize: 11, color: c.textMuted }}>per month (at $30/hr - typical pay at a tutoring company)</p>
                 </div>
                 <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px", textAlign: "center", border: `1px solid ${c.teal}30` }}>
                   <p style={{ fontSize: 11, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>With Tuterly</p>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, color: c.teal }}>${(students * 60 * 4 - 39).toLocaleString()}</p>
-                  <p style={{ fontSize: 11, color: c.tealDark }}>per month (at $60/hr, minus $39 Tuterly fee)</p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 700, color: c.teal }}>${(students * 55 * 4).toLocaleString()}</p>
+                  <p style={{ fontSize: 11, color: c.tealDark }}>per month (at $55/hr net after commission)</p>
                 </div>
               </div>
 
               <div style={{ background: c.navy, borderRadius: 12, padding: "16px 20px", textAlign: "center" }}>
                 <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>Extra income with Tuterly</p>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, color: c.success }}>+${(students * 60 * 4 - 39 - students * 30 * 4).toLocaleString()}/month</p>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, color: c.success }}>+${(students * 55 * 4 - students * 30 * 4).toLocaleString()}/month</p>
               </div>
               </>)}
             </div>
@@ -301,16 +300,16 @@ export default function TutorsLanding() {
           </Fade>
           <Fade delay={0.1}>
             <div style={{ background: c.white, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$39<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
-              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Flat rate. Unlimited students. Only starts after your first student.</p>
+              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$0<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}> to join</span></p>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Small commission per session. You set your rate, we handle invoicing. No upfront costs.</p>
               <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
                 {[
                   "Free to join and create your profile",
-                  "$0 until you're matched with your first student",
-                  "Unlimited students on one flat rate",
+                  "You set your own hourly rate",
+                  "Small commission per session - you still earn significantly more than at a tutoring company",
+                  "We handle all parent billing and invoicing",
                   "Professional session reports generated automatically",
-                  "Listed in the Tuterly directory with your own rates",
-                  "Progress tracking and practice questions included",
+                  "Listed in the Tuterly directory",
                   "Training and onboarding from our team",
                   "Refer a tutor, earn $10 per successful referral",
                 ].map((f, i) => (
@@ -321,7 +320,6 @@ export default function TutorsLanding() {
                 ))}
               </div>
               <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join for free</a>
-              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required. No commitment until your first student.</p>
             </div>
           </Fade>
         </div>
@@ -335,7 +333,7 @@ export default function TutorsLanding() {
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 40, lineHeight: 1.25 }}>Frequently asked.</h2>
           </Fade>
           {[
-            { q: "Do I need to pay anything to join?", a: "No. Signing up, creating your profile, and getting listed in the directory is completely free. The $39/month fee only starts once you're matched with your first student through the platform." },
+            { q: "Do I need to pay anything to join?", a: "No. Signing up, creating your profile, and getting listed in the directory is completely free. We take a small commission per session once you start teaching, but you'll still earn significantly more than you would at a tutoring company. We handle all invoicing so you never have to chase payments." },
             { q: "Do I set my own rates?", a: "Yes. You choose your hourly rate and parents pay you directly. Tuterly doesn't take a percentage of your tutoring income. If you're not sure what to charge, our education adviser can help recommend a suitable rate based on your experience, qualifications, and the subjects you teach." },
             { q: "Can I still work for other companies?", a: "Yes, absolutely. Tuterly is not exclusive. You're free to work with other tutoring companies, take on private students, or use any other platform alongside Tuterly. We're here to give you tools and help you find students, not to restrict how you run your business." },
             { q: "Can I bring my existing students onto the platform?", a: "Absolutely. You can invite your current students' parents to Tuterly so they get session reports and progress tracking. This makes your existing service more premium without extra effort." },
