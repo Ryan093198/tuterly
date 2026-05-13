@@ -27,6 +27,11 @@ const NAV = {
       icon: <Icon name="heart" />,
     },
     {
+      label: "Resources",
+      href: "/dashboard/parent/resources",
+      icon: <Icon name="folder" />,
+    },
+    {
       label: "Settings",
       href: "/dashboard/settings",
       icon: <Icon name="cog" />,
@@ -37,6 +42,11 @@ const NAV = {
       label: "My dashboard",
       href: "/dashboard/student",
       icon: <Icon name="book" />,
+    },
+    {
+      label: "Resources",
+      href: "/dashboard/student/resources",
+      icon: <Icon name="folder" />,
     },
     {
       label: "Settings",

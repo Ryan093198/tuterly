@@ -90,14 +90,27 @@ export async function POST(request) {
     return NextResponse.json({ error: "student_id required" }, { status: 400 });
   }
 
-  // Authorize: must be the tutor linked to this student.
-  const { data: link } = await supabase
-    .from("tutor_students")
-    .select("student_id")
-    .eq("tutor_id", user.id)
-    .eq("student_id", studentId)
-    .maybeSingle();
-  if (!link) {
+  // Authorize: caller must be the tutor linked to this student, OR the
+  // parent who owns the student record, OR the student themselves.
+  // Lets parents/students generate plans from their own Resources tab
+  // without needing a tutor relationship.
+  const [{ data: link }, { data: studentRow }] = await Promise.all([
+    supabase
+      .from("tutor_students")
+      .select("student_id")
+      .eq("tutor_id", user.id)
+      .eq("student_id", studentId)
+      .maybeSingle(),
+    supabase
+      .from("students")
+      .select("id, parent_id, student_user_id")
+      .eq("id", studentId)
+      .maybeSingle(),
+  ]);
+  const isTutor = !!link;
+  const isParent = studentRow?.parent_id === user.id;
+  const isStudent = studentRow?.student_user_id === user.id;
+  if (!isTutor && !isParent && !isStudent) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 

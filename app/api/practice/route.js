@@ -84,17 +84,25 @@ async function handle(request) {
     return NextResponse.json({ error: "student_id required" }, { status: 400 });
   }
 
-  // Authorization: must be the parent linked to this student. Tutors and
-  // students don't hit this route — they have their own flows.
+  // Authorization: caller must own the student record. That's either the
+  // parent (student.parent_id) or the student themselves
+  // (student.student_user_id) — both can now hit this route from their
+  // Resources tab. Tutors generate via the lesson-plan / dashboard flow,
+  // not this one.
   const { data: student } = await supabase
     .from("students")
-    .select("id, first_name, last_name, year_level, working_level, subject, subjects, parent_id")
+    .select(
+      "id, first_name, last_name, year_level, working_level, subject, subjects, parent_id, student_user_id"
+    )
     .eq("id", studentId)
     .single();
   if (!student) {
     return NextResponse.json({ error: "student not found" }, { status: 404 });
   }
-  if (student.parent_id !== user.id) {
+  if (
+    student.parent_id !== user.id &&
+    student.student_user_id !== user.id
+  ) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 
