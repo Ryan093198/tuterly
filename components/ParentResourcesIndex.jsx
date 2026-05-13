@@ -76,7 +76,7 @@ export default function ParentResourcesIndex({ kids }) {
               worksheet or lesson plan to get started.
             </p>
           ) : (
-            <ul className="space-y-2">
+            <ul className="space-y-2 max-h-130 overflow-y-auto pr-1 -mr-1">
               {kid.resources.map((r) => (
                 <li key={r.id}>
                   <button

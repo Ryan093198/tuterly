@@ -210,7 +210,7 @@ export default function ResourcesPanel({
           description="Upload a textbook contents page, term outline, or school report and the AI will reference it in future reports."
         />
       ) : (
-        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 overflow-hidden">
+        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 max-h-130 overflow-y-auto">
           {resources.map((r) => (
             <ResourceRow
               key={r.id}

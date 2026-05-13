@@ -174,7 +174,7 @@ export default async function StudentDetail({ params, searchParams }) {
 
       <Section label="Sessions">
         {sessions?.length ? (
-          <ul className="space-y-2">
+          <ul className="space-y-2 max-h-130 overflow-y-auto pr-1 -mr-1">
             {sessions.map((s) => (
               <li key={s.id}>
                 <Link

@@ -157,7 +157,7 @@ export default function TutorResourcesIndex({
           </p>
         </Card>
       ) : (
-        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 overflow-hidden">
+        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 max-h-130 overflow-y-auto">
           {filtered.map((r) => (
             <ResourceRow
               key={r.id}

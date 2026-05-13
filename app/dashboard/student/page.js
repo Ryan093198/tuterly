@@ -173,7 +173,7 @@ export default async function StudentDashboard({ searchParams }) {
 
       <Section label="Reports">
         {reportSessions.length ? (
-          <ul className="space-y-2">
+          <ul className="space-y-2 max-h-130 overflow-y-auto pr-1 -mr-1">
             {reportSessions.map((s) => (
               <li key={s.id}>
                 <Link
