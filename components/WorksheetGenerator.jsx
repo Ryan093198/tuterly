@@ -459,8 +459,7 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
         <p style={{ color: c.textLight, fontSize: 15, lineHeight: 1.65, margin: "0 0 16px" }}>
           Start your free 7-day Tuterly trial for unlimited worksheets,
           lesson plans, and progress tracking for your child. Cancel any
-          time from your Settings tab before the trial ends and you
-          won&apos;t be charged.
+          time before the trial ends and you won&apos;t be charged.
         </p>
         <ul
           style={{
@@ -475,9 +474,10 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
         >
           {[
             "Unlimited VCAA-aligned practice worksheets",
-            "Custom lesson plans, any topic or year level",
+            "Generate custom lesson plans, any topic or year level",
             "Session reports and progress tracking",
-            "$29 / month after the trial — cancel any time",
+            "Full access to our directory of qualified Tutors",
+            "$29 / month after the trial - cancel any time",
           ].map((t) => (
             <li key={t} style={{ display: "flex", gap: 10 }}>
               <span style={{ color: c.teal, fontWeight: 700 }}>✓</span>
