@@ -54,6 +54,9 @@ export default function WorksheetGenerator({ topicsByYear }) {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState(null);
   const [worksheet, setWorksheet] = useState(null);
+  const [trialPromptOpen, setTrialPromptOpen] = useState(false);
+  const [trialPending, setTrialPending] = useState(false);
+  const [trialError, setTrialError] = useState(null);
   const resultRef = useRef(null);
 
   // Hydrate email from localStorage on mount so returning visitors skip the gate.
@@ -159,6 +162,13 @@ export default function WorksheetGenerator({ topicsByYear }) {
       });
       const data = await readJsonOrFallback(res);
       if (!res.ok) {
+        // Rate-limit response triggers the trial-signup modal instead
+        // of a plain error toast. Anonymous + already-used-free-quota
+        // visitors see the conversion prompt.
+        if (res.status === 429 && data?.rate_limited) {
+          setTrialPromptOpen(true);
+          return;
+        }
         throw new Error(data?.error || "Could not generate worksheet.");
       }
       setWorksheet({
@@ -176,6 +186,26 @@ export default function WorksheetGenerator({ topicsByYear }) {
       setError(err.message || "Could not generate worksheet.");
     } finally {
       setGenerating(false);
+    }
+  }
+
+  async function handleStartTrial() {
+    setTrialError(null);
+    setTrialPending(true);
+    try {
+      const res = await fetch("/api/billing/checkout-session", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await readJsonOrFallback(res);
+      if (!res.ok || !data?.url) {
+        throw new Error(data?.error || "Could not start checkout.");
+      }
+      window.location.href = data.url;
+    } catch (err) {
+      setTrialError(err.message || "Could not start checkout.");
+      setTrialPending(false);
     }
   }
 
@@ -359,6 +389,153 @@ export default function WorksheetGenerator({ topicsByYear }) {
           </div>
         </div>
       )}
+
+      {trialPromptOpen && (
+        <TrialSignupModal
+          onClose={() => {
+            setTrialPromptOpen(false);
+            setTrialError(null);
+          }}
+          onStart={handleStartTrial}
+          pending={trialPending}
+          error={trialError}
+        />
+      )}
+    </div>
+  );
+}
+
+function TrialSignupModal({ onClose, onStart, pending, error }) {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 24,
+        background: "rgba(15, 23, 42, 0.55)",
+      }}
+      onClick={pending ? undefined : onClose}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: c.white,
+          borderRadius: 20,
+          padding: 32,
+          maxWidth: 460,
+          width: "100%",
+          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
+          border: `1px solid ${c.border}`,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            color: c.teal,
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            margin: 0,
+          }}
+        >
+          7-day free trial
+        </p>
+        <h2
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: 26,
+            color: c.navy,
+            lineHeight: 1.2,
+            margin: "8px 0 12px",
+          }}
+        >
+          You&apos;ve used your free worksheet for today.
+        </h2>
+        <p style={{ color: c.textLight, fontSize: 15, lineHeight: 1.65, margin: "0 0 16px" }}>
+          Start your free 7-day Tuterly trial for unlimited worksheets,
+          lesson plans, and progress tracking for your child. Cancel any
+          time from your Settings tab before the trial ends and you
+          won&apos;t be charged.
+        </p>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: "0 0 20px",
+            padding: 0,
+            display: "grid",
+            gap: 6,
+            color: c.text,
+            fontSize: 14,
+          }}
+        >
+          {[
+            "Unlimited VCAA-aligned practice worksheets",
+            "Custom lesson plans, any topic or year level",
+            "Session reports and progress tracking",
+            "$29 / month after the trial — cancel any time",
+          ].map((t) => (
+            <li key={t} style={{ display: "flex", gap: 10 }}>
+              <span style={{ color: c.teal, fontWeight: 700 }}>✓</span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+        {error && (
+          <p
+            style={{
+              color: c.rose,
+              fontSize: 13,
+              margin: "0 0 12px",
+              background: "#FFF1F2",
+              padding: "8px 10px",
+              borderRadius: 8,
+            }}
+          >
+            {error}
+          </p>
+        )}
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <button
+            type="button"
+            onClick={onStart}
+            disabled={pending}
+            style={{
+              ...primaryButtonStyle,
+              flex: "1 1 auto",
+              opacity: pending ? 0.7 : 1,
+              cursor: pending ? "wait" : "pointer",
+            }}
+          >
+            {pending ? "Starting…" : "Start free trial"}
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={pending}
+            style={{
+              ...secondaryButtonStyle,
+              flex: "0 0 auto",
+            }}
+          >
+            Maybe later
+          </button>
+        </div>
+        <p
+          style={{
+            color: c.textMuted,
+            fontSize: 12,
+            margin: "14px 0 0",
+            textAlign: "center",
+          }}
+        >
+          Powered by Stripe · card not charged during trial
+        </p>
+      </div>
     </div>
   );
 }

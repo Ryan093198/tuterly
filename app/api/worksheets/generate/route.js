@@ -76,17 +76,30 @@ async function handle(request) {
 
   const ip = clientIp(request);
 
-  // Signed-in visitors (parents/tutors/centres in the app) skip the IP cap.
-  // The free generator is meant to be a lead funnel for non-customers.
+  // Signed-in visitors bypass the IP cap when they have an active trial
+  // or paid subscription. Signed-in without an active subscription falls
+  // back to the same 1/day IP cap as anonymous visitors — so the trial
+  // upgrade is still the right call to action.
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  const isSignedIn = !!user;
-
   const admin = createAdminClient();
 
-  if (!isSignedIn && ip) {
+  let bypassCap = false;
+  if (user) {
+    const { data: sub } = await admin
+      .from("subscriptions")
+      .select("status")
+      .eq("user_id", user.id)
+      .in("status", ["trialing", "active", "trial", "past_due"])
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    bypassCap = !!sub;
+  }
+
+  if (!bypassCap && ip) {
     const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
     const { count, error: countErr } = await admin
       .from("worksheet_generations")
