@@ -89,6 +89,43 @@ export async function createSession(formData) {
   const rawNotes = formData.get("raw_notes")?.toString() ?? "";
   const date = formData.get("date") || undefined;
   const duration = parseInt(formData.get("duration_minutes") ?? "60", 10);
+  // Tutors can override the duplicate-session guard from the UI if they
+  // really do mean to log two sessions for the same student on the same
+  // day (eg. a make-up plus the original). Default false.
+  const forceDuplicate = formData.get("force_duplicate") === "1";
+
+  // ─── PHASE 4B GUARDS ──────────────────────────────────────────────
+  // Duration must be one of the allowed slot lengths so payouts are
+  // predictable. Tutors who need an off-list duration contact admin.
+  const ALLOWED_DURATIONS = new Set([30, 45, 60, 90, 120]);
+  if (!ALLOWED_DURATIONS.has(duration)) {
+    throw new Error(
+      `Session duration must be one of 30, 45, 60, 90 or 120 minutes (got ${duration}).`
+    );
+  }
+
+  // Date must be today or within the past 7 days. Cannot be in the
+  // future; cannot be more than a week back (those need admin help).
+  if (date) {
+    const sessionDate = new Date(date + "T00:00:00");
+    if (Number.isNaN(sessionDate.getTime())) {
+      throw new Error("Session date is invalid.");
+    }
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    if (sessionDate > today) {
+      throw new Error(
+        "Session date cannot be in the future. Log sessions after they happen."
+      );
+    }
+    if (sessionDate < sevenDaysAgo) {
+      throw new Error(
+        "Sessions more than 7 days old need admin approval. Contact admin@baysideacademics.com.au."
+      );
+    }
+  }
 
   // Default the session's subject from the student's so the tutor doesn't
   // pick on the create form; if they teach the kid both subjects, they
@@ -100,6 +137,25 @@ export async function createSession(formData) {
     .maybeSingle();
   const sessionSubject =
     studentForSubject?.subject === "english" ? "english" : "maths";
+
+  // Duplicate-session guard: refuse to insert a second session for the
+  // same student on the same date unless the caller explicitly overrode
+  // it. Prevents the common "I clicked save twice" mistake.
+  if (date && !forceDuplicate) {
+    const { data: existing } = await supabase
+      .from("sessions")
+      .select("id")
+      .eq("tutor_id", user.id)
+      .eq("student_id", studentId)
+      .eq("date", date)
+      .limit(1)
+      .maybeSingle();
+    if (existing) {
+      throw new Error(
+        "You already have a session logged for this student on this date. Open the existing session to edit it, or re-submit with force=1 if you really mean to create a second."
+      );
+    }
+  }
 
   const { data: session, error } = await supabase
     .from("sessions")
