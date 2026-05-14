@@ -231,6 +231,19 @@ function ComparisonReportCard() {
 export default function ParentsLanding() {
   const [expandedQ, setExpandedQ] = useState(null);
   const [reportExpanded, setReportExpanded] = useState({});
+  // Savings calculator state — slider drives a comparison between a typical
+  // tutoring company ($100/hr) and Tuterly (avg $60/hr from the directory +
+  // $29/mo platform subscription), assuming 4 lessons per month.
+  const [savingsMonths, setSavingsMonths] = useState(1);
+  const LESSONS_PER_MONTH = 4;
+  const COMPANY_HOURLY = 100;
+  const TUTERLY_HOURLY = 60;
+  const TUTERLY_SUB = 29;
+  const companyCost = COMPANY_HOURLY * LESSONS_PER_MONTH * savingsMonths;
+  const tuterlyCost =
+    TUTERLY_HOURLY * LESSONS_PER_MONTH * savingsMonths +
+    TUTERLY_SUB * savingsMonths;
+  const savings = companyCost - tuterlyCost;
 
   return (
     <div style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif", color: c.text, background: c.white, overflowX: "hidden" }}>
@@ -242,6 +255,9 @@ export default function ParentsLanding() {
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        input[type=range] { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px; background: ${c.border}; outline: none; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: ${c.teal}; cursor: pointer; box-shadow: 0 2px 8px rgba(10, 186, 181, 0.4); }
+        input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: ${c.teal}; cursor: pointer; border: none; box-shadow: 0 2px 8px rgba(10, 186, 181, 0.4); }
         @media(max-width:768px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .features-grid { grid-template-columns: 1fr !important; }
@@ -285,7 +301,7 @@ export default function ParentsLanding() {
               <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Start 7-day free trial →</a>
               <a href="#sample-report" onClick={(e) => { e.preventDefault(); document.getElementById('sample-report')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>See a sample report</a>
             </div>
-            <p style={{ fontSize: 13, color: c.textMuted }}>7 days free. Then $39/month. Cancel anytime.</p>
+            <p style={{ fontSize: 13, color: c.textMuted }}>7 days free. Then $29/month. Cancel anytime.</p>
           </div>
           <div style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
             {/* Interactive report preview card */}
@@ -703,14 +719,91 @@ export default function ParentsLanding() {
 
       {/* PRICING */}
       <section style={{ padding: "80px 40px", background: c.white }}>
-        <div style={{ maxWidth: 500, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 40, lineHeight: 1.25 }}>Less than the cost of one tutoring session.</h2>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>Less than the cost of one tutoring session.</h2>
+            <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 40, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>See how much you save versus a typical tutoring company. Drag the slider to see your savings over time.</p>
           </Fade>
+
+          {/* SAVINGS CALCULATOR */}
+          <Fade delay={0.05}>
+            <div style={{ background: c.offWhite, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 8, marginBottom: 4 }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2 }}>Your savings</p>
+                <p style={{ fontSize: 13, color: c.textMuted }}>Assumes 4 lessons/month</p>
+              </div>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18 }}>
+                Over <strong style={{ color: c.navy, fontWeight: 700 }}>{savingsMonths} {savingsMonths === 1 ? "month" : "months"}</strong> of tutoring, you save
+              </p>
+              <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.teal, lineHeight: 1.1, marginBottom: 24 }}>
+                ${savings.toLocaleString("en-AU")}
+              </p>
+              <input
+                type="range"
+                min={1}
+                max={12}
+                step={1}
+                value={savingsMonths}
+                onChange={(e) => setSavingsMonths(parseInt(e.target.value, 10))}
+                style={{ width: "100%", marginBottom: 6 }}
+                aria-label="Months of tutoring"
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: c.textMuted, marginBottom: 24 }}>
+                <span>1 month</span>
+                <span>6 months</span>
+                <span>12 months</span>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.border}` }}>
+                  <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Typical company</p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${companyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr × {LESSONS_PER_MONTH * savingsMonths} lessons</p>
+                </div>
+                <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
+                  <p style={{ fontSize: 11, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>With Tuterly</p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${tuterlyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${TUTERLY_HOURLY}/hr × {LESSONS_PER_MONTH * savingsMonths} + ${TUTERLY_SUB}/mo</p>
+                </div>
+              </div>
+            </div>
+          </Fade>
+
+          {/* COMPARISON TABLE */}
+          <Fade delay={0.1}>
+            <div style={{ background: c.white, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Tuterly vs a typical tutoring company</p>
+              <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, lineHeight: 1.3, marginBottom: 20 }}>Everything they offer, none of the inflated price.</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "1.6fr 0.7fr 0.7fr", borderTop: `1px solid ${c.border}` }}>
+                <div style={{ padding: "12px 6px", fontSize: 12, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}></div>
+                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.textMuted, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tutoring company</div>
+                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.teal, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tuterly</div>
+                {[
+                  { label: "Detailed post-session reports", company: true, tuterly: true },
+                  { label: "Progress tracking across topics", company: false, tuterly: true },
+                  { label: "VCAA-aligned practice worksheets", company: false, tuterly: true },
+                  { label: "Custom lesson plans on demand", company: false, tuterly: true },
+                  { label: "You set the tutor's hourly rate", company: false, tuterly: true },
+                  { label: "Pay your tutor directly (no middleman cut)", company: false, tuterly: true },
+                  { label: "Switch tutors easily — no contracts", company: false, tuterly: true },
+                  { label: "Transparent ratings + reviews on tutors", company: false, tuterly: true },
+                  { label: "Trained, vetted tutors", company: true, tuterly: true },
+                  { label: "$80–$100/hour locked in", company: true, tuterly: false },
+                  { label: "Long-term contracts and lock-ins", company: true, tuterly: false },
+                ].map((row, i) => (
+                  <div key={i} style={{ display: "contents" }}>
+                    <div style={{ padding: "12px 6px", fontSize: 14, color: c.text, borderBottom: `1px solid ${c.border}` }}>{row.label}</div>
+                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.company ? c.teal : "#cbd5e1" }}>{row.company ? "✓" : "✕"}</div>
+                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.tuterly ? c.teal : "#cbd5e1" }}>{row.tuterly ? "✓" : "✕"}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Fade>
+
           <Fade delay={0.1}>
             <div style={{ background: c.offWhite, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$39<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$29<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
               <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Everything included. Cancel anytime.</p>
               <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
                 {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "No sessions in a month = no charge"].map((f, i) => (
@@ -721,7 +814,7 @@ export default function ParentsLanding() {
                 ))}
               </div>
               <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial</a>
-              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $39/month after trial.</p>
+              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $29/month after trial.</p>
             </div>
           </Fade>
         </div>
@@ -736,7 +829,7 @@ export default function ParentsLanding() {
           </Fade>
           {[
             { q: "Do I have to use a tutor from your directory?", a: "No. You can browse and connect with tutors from our directory, or invite your existing tutor to the platform. Tuterly works with any tutor, anywhere." },
-            { q: "How is this different from a tutoring agency?", a: "Tutoring companies typically charge $80-100/hour and take a large cut from the tutor. On Tuterly, tutors set their own rates and you pay them directly. Your $39/month subscription gives you access to our directory, session reports, progress tracking, and practice questions. Every tutor on Tuterly is a high achiever who is trained on our platform, so you get all the structure and accountability of a tutoring company - detailed reports, progress tracking, curriculum alignment - without the inflated hourly rates." },
+            { q: "How is this different from a tutoring agency?", a: "Tutoring companies typically charge $80-100/hour and take a large cut from the tutor. On Tuterly, tutors set their own rates and you pay them directly. Your $29/month subscription gives you access to our directory, session reports, progress tracking, and practice questions. Every tutor on Tuterly is a high achiever who is trained on our platform, so you get all the structure and accountability of a tutoring company - detailed reports, progress tracking, curriculum alignment - without the inflated hourly rates." },
             { q: "Does my tutor need to sign up too?", a: "Yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out to them with a summary pack and offer a free info session. You don't need to explain anything." },
             { q: "What if my tutor doesn't want to use it?", a: "Most tutors love it once they see what it does. It makes them look more professional and helps them retain students. Our team will walk them through it. If they're still not interested, you can find a new tutor through our directory who already uses Tuterly." },
             { q: "Can I use the practice question generator without a tutor?", a: "Yes. Your subscription includes unlimited access to our VCAA-aligned question generator. Your child can generate practice questions in any topic, at any difficulty level, with full worked solutions." },
