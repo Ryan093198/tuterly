@@ -88,15 +88,28 @@ async function handle(request) {
 
   let bypassCap = false;
   if (user) {
-    const { data: sub } = await admin
-      .from("subscriptions")
-      .select("status")
-      .eq("user_id", user.id)
-      .in("status", ["trialing", "active", "trial", "past_due"])
-      .order("created_at", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    bypassCap = !!sub;
+    // Comma-separated env var lets us hand out unlimited access for
+    // testing or to specific accounts (eg. founder accounts) without
+    // hardcoding emails in the repo. Case-insensitive match on the
+    // signed-in user's email.
+    const allowlist = (process.env.WORKSHEET_UNLIMITED_EMAILS || "")
+      .split(",")
+      .map((s) => s.trim().toLowerCase())
+      .filter(Boolean);
+    const userEmail = user.email?.toLowerCase();
+    if (userEmail && allowlist.includes(userEmail)) {
+      bypassCap = true;
+    } else {
+      const { data: sub } = await admin
+        .from("subscriptions")
+        .select("status")
+        .eq("user_id", user.id)
+        .in("status", ["trialing", "active", "trial", "past_due"])
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      bypassCap = !!sub;
+    }
   }
 
   if (!bypassCap && ip) {
