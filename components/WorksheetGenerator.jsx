@@ -259,11 +259,7 @@ export default function WorksheetGenerator({ topicsByYear }) {
     return (
       <div style={cardStyle}>
         <h2 style={h2Style}>Get free, VCAA-aligned worksheets</h2>
-        <p style={pMutedStyle}>
-          One free maths worksheet per day. Drop your email so we can send
-          you the occasional tutoring tip — we won&apos;t spam, and you can
-          unsubscribe any time.
-        </p>
+        <p style={pMutedStyle}>Drop your email address for access!</p>
         <form onSubmit={handleEmailSubmit} style={{ marginTop: 20 }}>
           <label style={labelStyle}>
             <span>Your email</span>
