@@ -84,7 +84,6 @@ export default function TutorsLanding() {
               <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join for free</a>
               <a href="#how-it-works" onClick={(e) => { e.preventDefault(); document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.8)", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>See how it works</a>
             </div>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.35)" }}>Free to join. No fees until your first student.</p>
           </div>
           <div style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
             <div style={{ background: c.navyMid, borderRadius: 16, padding: 24, border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
