@@ -467,9 +467,13 @@ create policy "Parents view student session photos" on session_photos for select
 
 -- ═══ AUTO-CREATE PROFILE ON SIGNUP ═══
 create or replace function handle_new_user()
-returns trigger as $$
+returns trigger
+language plpgsql
+security definer
+set search_path = public, auth
+as $$
 begin
-  insert into profiles (id, email, full_name, role)
+  insert into public.profiles (id, email, full_name, role)
   values (
     new.id,
     new.email,
@@ -478,7 +482,7 @@ begin
   );
   return new;
 end;
-$$ language plpgsql security definer;
+$$;
 
 create trigger on_auth_user_created
   after insert on auth.users
@@ -490,17 +494,21 @@ create trigger on_auth_user_created
 -- profiles row should reflect the new address so report emails and the UI
 -- stay in sync.
 create or replace function handle_user_email_change()
-returns trigger as $$
+returns trigger
+language plpgsql
+security definer
+set search_path = public, auth
+as $$
 begin
   if old.email is distinct from new.email then
-    update profiles
+    update public.profiles
        set email = new.email,
            updated_at = now()
      where id = new.id;
   end if;
   return new;
 end;
-$$ language plpgsql security definer;
+$$;
 
 drop trigger if exists on_auth_user_email_changed on auth.users;
 create trigger on_auth_user_email_changed
@@ -542,9 +550,13 @@ create index if not exists idx_resources_uploaded_by on resources(uploaded_by);
 alter table profiles alter column role drop not null;
 
 create or replace function handle_new_user()
-returns trigger as $$
+returns trigger
+language plpgsql
+security definer
+set search_path = public, auth
+as $$
 begin
-  insert into profiles (id, email, full_name, role)
+  insert into public.profiles (id, email, full_name, role)
   values (
     new.id,
     new.email,
@@ -553,4 +565,4 @@ begin
   );
   return new;
 end;
-$$ language plpgsql security definer;
+$$;
