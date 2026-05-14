@@ -219,7 +219,7 @@ function Nav() {
             Find a Tutor
           </a>
           <a
-            href="/centres"
+            href="/tutors"
             style={{
               padding: "9px 16px",
               borderRadius: 8,
@@ -229,7 +229,7 @@ function Nav() {
               textDecoration: "none",
             }}
           >
-            For Centres
+            Apply as a Tutor
           </a>
           <a
             href="https://app.tuterly.com.au"
