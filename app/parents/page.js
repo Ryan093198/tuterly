@@ -231,9 +231,9 @@ function ComparisonReportCard() {
 export default function ParentsLanding() {
   const [expandedQ, setExpandedQ] = useState(null);
   const [reportExpanded, setReportExpanded] = useState({});
-  // Savings calculator state — slider drives a comparison between a typical
-  // tutoring company ($100/hr) and Tuterly (avg $60/hr from the directory +
-  // $29/mo platform subscription), assuming 4 lessons per month.
+  // Savings calculator state. Slider drives a comparison between a typical
+  // tutoring company ($100/hr) and Tuterly (avg $60/hr from the directory
+  // plus $29/mo platform subscription), assuming 4 lessons per month.
   const [savingsMonths, setSavingsMonths] = useState(1);
   const LESSONS_PER_MONTH = 4;
   const COMPANY_HOURLY = 100;
@@ -456,12 +456,9 @@ export default function ParentsLanding() {
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>The same structured tutoring — for less.</h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-              You get the structure of a top tutoring company — detailed session reports, curriculum-aligned practice worksheets, custom lesson plans, and progress tracking on every topic — without paying the company markup.
-            </p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>The same structured tutoring, for less.</h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 40, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-              Because you&apos;re connecting directly with the tutor through Tuterly, there&apos;s no agency taking a commission on every lesson. The savings stay with you. Drag the slider to see how much.
+              You get the structure of a top tutoring company. Detailed session reports, curriculum-aligned practice worksheets, custom lesson plans, and progress tracking on every topic, without paying the company markup.
             </p>
           </Fade>
 
