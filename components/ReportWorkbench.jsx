@@ -14,6 +14,34 @@ import Spinner from "@/components/ui/Spinner";
 
 const SUBJECT_LABEL = { maths: "Maths", english: "English" };
 
+// Sonnet+photos+English on a cold prompt cache occasionally tips just over
+// the 60s Vercel function cap on the first call, returning a 504. The next
+// call lands inside the 5-minute Anthropic prompt-cache window so it
+// completes in ~25s. We auto-retry once on 504 with a short pause so the
+// tutor doesn't see the "Generation failed" toast for a bug they didn't
+// cause — and so they don't have to click Regenerate themselves.
+async function callGenerateWithRetry(sessionId) {
+  const body = JSON.stringify({ session_id: sessionId });
+  const post = () =>
+    fetch("/api/generate", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body,
+    });
+
+  let res = await post();
+  if (res.status === 504 || res.status === 502) {
+    await new Promise((r) => setTimeout(r, 1500));
+    res = await post();
+  }
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.error || `HTTP ${res.status}`);
+  }
+  const { content } = await res.json();
+  return content;
+}
+
 export default function ReportWorkbench({
   sessionId,
   initialContent,
@@ -58,16 +86,7 @@ export default function ReportWorkbench({
     setGenerating(true);
     setError(null);
     try {
-      const res = await fetch("/api/generate", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ session_id: sessionId }),
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || `HTTP ${res.status}`);
-      }
-      const { content: generated } = await res.json();
+      const generated = await callGenerateWithRetry(sessionId);
       setContent(generated);
       setDraft(generated);
       setEditing(false);
