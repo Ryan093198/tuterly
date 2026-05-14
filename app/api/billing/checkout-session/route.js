@@ -20,6 +20,7 @@ export async function POST(request) {
   }
 
   const email = sanitizeEmail(body?.email);
+  const referralCode = sanitizeReferralCode(body?.ref);
 
   const origin =
     request.headers.get("origin") ||
@@ -40,7 +41,12 @@ export async function POST(request) {
         trial_settings: {
           end_behavior: { missing_payment_method: "cancel" },
         },
-        metadata: { source: "worksheets_landing" },
+        metadata: {
+          source: "worksheets_landing",
+          // Referral code (if any) flows through to the webhook so we
+          // can attribute the signup back to the referring parent.
+          ...(referralCode ? { referral_code: referralCode } : {}),
+        },
       },
       // Pre-fill email if the caller passed one (the worksheet email
       // gate already collected it). Customer record is created by Stripe
@@ -68,5 +74,12 @@ function sanitizeEmail(raw) {
   const t = raw.trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)) return null;
   if (t.length > 254) return null;
+  return t;
+}
+
+function sanitizeReferralCode(raw) {
+  if (typeof raw !== "string") return null;
+  const t = raw.trim().toUpperCase();
+  if (!/^[A-Z2-9]{6,12}$/.test(t)) return null;
   return t;
 }

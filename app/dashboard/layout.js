@@ -32,6 +32,11 @@ const NAV = {
       icon: <Icon name="folder" />,
     },
     {
+      label: "Refer a friend",
+      href: "/dashboard/parent/refer",
+      icon: <Icon name="gift" />,
+    },
+    {
       label: "Settings",
       href: "/dashboard/settings",
       icon: <Icon name="cog" />,
@@ -152,6 +157,17 @@ function Icon({ name }) {
         <rect x="14" y="3" width="7" height="7" rx="1.5" />
         <rect x="3" y="14" width="7" height="7" rx="1.5" />
         <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      </svg>
+    );
+  }
+  if (name === "gift") {
+    return (
+      <svg {...common} aria-hidden="true">
+        <rect x="3.5" y="9" width="17" height="11" rx="1.5" />
+        <path d="M3 12h18" />
+        <path d="M12 9v11" />
+        <path d="M12 9c-2.5 0-4-1.4-4-3a2 2 0 0 1 4 0c0 1.6 0 3 0 3z" />
+        <path d="M12 9c2.5 0 4-1.4 4-3a2 2 0 0 0-4 0c0 1.6 0 3 0 3z" />
       </svg>
     );
   }

@@ -10,6 +10,8 @@ import {
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
 import { stripEmDashes } from "@/lib/markdown-voice";
+import { stripe } from "@/lib/stripe";
+import { awardReferralCreditForReferee } from "@/lib/referrals";
 
 export const runtime = "nodejs";
 // Reports with photos + LaTeX + Sonnet routinely take 30-50s. Was relying
@@ -205,6 +207,45 @@ async function handle(request) {
     .from("sessions")
     .update({ status: "report_generated" })
     .eq("id", session_id);
+
+  // Trigger the referral credit, if this is the first generated report
+  // for the referee. We treat "first report ever for this student" as
+  // the firing event — once the student has any other report on file
+  // we skip silently. Best-effort: any failure (no referral row, no
+  // Stripe customer yet, network error) just logs and moves on; the
+  // tutor still gets their report.
+  if (!existing && student?.parent_id) {
+    try {
+      // Check this was actually the first report for the student. We
+      // count reports across the student's sessions other than the one
+      // we just wrote; if any exist, this isn't the first lesson.
+      const { count: otherReportCount } = await admin
+        .from("reports")
+        .select("id, sessions!inner(student_id)", {
+          count: "exact",
+          head: true,
+        })
+        .eq("sessions.student_id", student.id)
+        .neq("session_id", session_id);
+      if ((otherReportCount ?? 0) === 0) {
+        const result = await awardReferralCreditForReferee(
+          admin,
+          stripe(),
+          student.parent_id
+        );
+        if (result.applied) {
+          console.log(
+            "[generate] referral credit applied:",
+            result.amountCents,
+            "cents to parent",
+            student.parent_id
+          );
+        }
+      }
+    } catch (e) {
+      console.warn("[generate] referral credit hook failed:", e?.message || e);
+    }
+  }
 
   // Best-effort flat-audit row in session_report_log. Browsable in the
   // Supabase Table Editor without needing joins — one row per generated

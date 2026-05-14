@@ -60,6 +60,9 @@ export default function WorksheetGenerator({ topicsByYear }) {
   const resultRef = useRef(null);
 
   // Hydrate email from localStorage on mount so returning visitors skip the gate.
+  // Also stash a `?ref=` query param into localStorage so the referral code
+  // survives email-gate detours and lands in the Stripe checkout body when
+  // the visitor finally signs up.
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
@@ -67,9 +70,14 @@ export default function WorksheetGenerator({ topicsByYear }) {
         setEmail(saved);
         setEmailSaved(true);
       }
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+      if (ref && /^[A-Za-z2-9]{6,12}$/.test(ref)) {
+        window.localStorage.setItem("tuterly:ref", ref.toUpperCase());
+      }
     } catch {
-      // localStorage can throw in private-browsing / sandboxed contexts —
-      // fall back to in-memory state. The gate still works, just resets
+      // localStorage can throw in private-browsing / sandboxed contexts.
+      // Fall back to in-memory state — the gate still works, just resets
       // on each visit.
     }
   }, []);
@@ -193,10 +201,14 @@ export default function WorksheetGenerator({ topicsByYear }) {
     setTrialError(null);
     setTrialPending(true);
     try {
+      let ref = null;
+      try {
+        ref = window.localStorage.getItem("tuterly:ref");
+      } catch {}
       const res = await fetch("/api/billing/checkout-session", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, ref }),
       });
       const data = await readJsonOrFallback(res);
       if (!res.ok || !data?.url) {

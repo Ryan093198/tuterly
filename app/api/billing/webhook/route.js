@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { sendTrialWelcomeEmail } from "@/lib/email";
+import { findReferrerByCode } from "@/lib/referrals";
 
 export const runtime = "nodejs";
 
@@ -134,6 +135,39 @@ async function onCheckoutCompleted(session) {
     .from("subscriptions")
     .upsert(subRow, { onConflict: "stripe_subscription_id" });
   if (upsertErr) throw upsertErr;
+
+  // Record the referral, if any. The checkout-session route forwarded
+  // the referrer's code into subscription_data.metadata.referral_code,
+  // so we read it off the freshly-retrieved subscription. Idempotent
+  // via the (referrer_id, referred_user_id) unique index — duplicate
+  // webhook deliveries collapse onto the same referrals row.
+  const referralCode = subscription.metadata?.referral_code;
+  if (referralCode) {
+    try {
+      const referrer = await findReferrerByCode(admin, referralCode);
+      if (referrer && referrer.id !== userId) {
+        const { error: refErr } = await admin
+          .from("referrals")
+          .upsert(
+            {
+              referrer_id: referrer.id,
+              referred_email: email,
+              referred_user_id: userId,
+              status: "signed_up",
+            },
+            { onConflict: "referrer_id,referred_user_id" }
+          );
+        if (refErr) {
+          console.warn(
+            "[billing/webhook] referral insert failed:",
+            refErr.message
+          );
+        }
+      }
+    } catch (e) {
+      console.warn("[billing/webhook] referral attribution failed:", e?.message);
+    }
+  }
 
   // Email them a magic link so they can sign in without a password.
   // generateLink returns the action_link we control delivery on — using
