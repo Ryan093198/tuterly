@@ -43,7 +43,14 @@ export async function POST(request) {
   try {
     switch (event.type) {
       case "checkout.session.completed":
-        await onCheckoutCompleted(event.data.object);
+        // The same event fires for subscription trial signups (mode =
+        // 'subscription') and one-off session-pack purchases (mode =
+        // 'payment'). Route to the right handler based on mode.
+        if (event.data.object.mode === "payment") {
+          await onPackPurchaseCompleted(event.data.object);
+        } else {
+          await onCheckoutCompleted(event.data.object);
+        }
         break;
       case "customer.subscription.created":
       case "customer.subscription.updated":
@@ -62,6 +69,123 @@ export async function POST(request) {
     // 500 prompts Stripe to retry. Idempotent handlers below mean retries
     // are safe.
     return NextResponse.json({ error: "handler failed" }, { status: 500 });
+  }
+}
+
+// Session-pack purchase completed. Credit the parent + write the invoice
+// row + append a ledger transaction. Idempotent on the
+// stripe_payment_intent_id so duplicate webhook deliveries (Stripe
+// retries, manual replays) collapse safely.
+async function onPackPurchaseCompleted(session) {
+  const admin = createAdminClient();
+  const userId = session.metadata?.user_id;
+  const packId = session.metadata?.pack_id;
+  const packSessions = parseInt(session.metadata?.pack_sessions || "0", 10);
+  const paymentIntentId = session.payment_intent;
+  const stripeInvoiceId = session.invoice ?? null;
+  const customerId = session.customer ?? null;
+  if (!userId || !packId || !packSessions || !paymentIntentId) {
+    console.warn("[billing/webhook] pack purchase missing fields:", {
+      userId,
+      packId,
+      packSessions,
+      paymentIntentId,
+    });
+    return;
+  }
+
+  // Idempotency: if we've already logged this payment intent as a
+  // purchase transaction, skip the whole handler. Duplicate Stripe
+  // deliveries collapse onto the same row.
+  const { data: existingTx } = await admin
+    .from("credit_transactions")
+    .select("id")
+    .eq("stripe_payment_intent_id", paymentIntentId)
+    .maybeSingle();
+  if (existingTx) {
+    console.log(
+      "[billing/webhook] pack purchase already credited:",
+      paymentIntentId
+    );
+    return;
+  }
+
+  // Look up the pack for the amount (don't trust client-side metadata
+  // for money — refetch the canonical row).
+  const { data: pack } = await admin
+    .from("session_packs")
+    .select("id, name, sessions, price")
+    .eq("id", packId)
+    .maybeSingle();
+  if (!pack) {
+    console.warn("[billing/webhook] pack not found:", packId);
+    return;
+  }
+
+  // Ensure a credits row exists for this parent, then add the pack's
+  // sessions to credits_remaining. We don't decrement-with-stripe; we
+  // just add the count from the pack.
+  const { data: creditsRow } = await admin
+    .from("credits")
+    .select("id, credits_remaining")
+    .eq("parent_id", userId)
+    .maybeSingle();
+
+  if (creditsRow) {
+    const { error } = await admin
+      .from("credits")
+      .update({
+        credits_remaining: creditsRow.credits_remaining + pack.sessions,
+        pack_size: pack.sessions,
+        stripe_payment_method_id: null, // could capture from session later
+        updated_at: new Date().toISOString(),
+      })
+      .eq("parent_id", userId);
+    if (error) throw error;
+  } else {
+    const { error } = await admin.from("credits").insert({
+      parent_id: userId,
+      credits_remaining: pack.sessions,
+      pack_size: pack.sessions,
+      auto_topup: true,
+    });
+    if (error) throw error;
+  }
+
+  // Append the immutable ledger row. This is the dedup key for retries.
+  const { error: txErr } = await admin.from("credit_transactions").insert({
+    parent_id: userId,
+    type: "purchase",
+    credits: pack.sessions,
+    stripe_payment_intent_id: paymentIntentId,
+    notes: `Purchased ${pack.name} pack (${pack.sessions} sessions)`,
+  });
+  if (txErr) throw txErr;
+
+  // Build the parent-facing invoice record. Stripe also generates its
+  // own hosted invoice via invoice_creation:enabled — we mirror the id
+  // here so parents can pull receipts from inside Tuterly later.
+  const { error: invoiceErr } = await admin.from("invoices").insert({
+    parent_id: userId,
+    type: "session_pack",
+    amount: pack.price,
+    description: `${pack.name} pack — ${pack.sessions} sessions`,
+    stripe_invoice_id: stripeInvoiceId,
+    stripe_payment_intent_id: paymentIntentId,
+    status: "paid",
+  });
+  if (invoiceErr) {
+    console.warn("[billing/webhook] invoice insert failed:", invoiceErr.message);
+  }
+
+  // Mirror the Stripe customer id onto profiles if it isn't there yet,
+  // so future purchase-pack calls can reuse the saved card.
+  if (customerId) {
+    await admin
+      .from("profiles")
+      .update({ stripe_customer_id: customerId })
+      .eq("id", userId)
+      .is("stripe_customer_id", null);
   }
 }
 

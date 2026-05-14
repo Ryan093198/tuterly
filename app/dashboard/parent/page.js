@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase-server";
 import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
+import BuyCreditsPanel from "@/components/BuyCreditsPanel";
 import {
   fetchTutorsForStudents,
   tutoringSummary,
@@ -42,6 +43,20 @@ export default async function ParentDashboard() {
   // each independently created a record for the same real kid.
   const tutorsByStudent = await fetchTutorsForStudents(studentIds);
 
+  // Credit balance + pack catalogue for the Buy Credits panel. Both are
+  // best-effort — if the payment-schema migration hasn't been applied
+  // yet, the panel just renders zero balance with the default pack list.
+  const { data: creditsRow } = await supabase
+    .from("credits")
+    .select("credits_remaining")
+    .eq("parent_id", user.id)
+    .maybeSingle();
+  const { data: packs } = await supabase
+    .from("session_packs")
+    .select("id, name, sessions, price, per_session, savings")
+    .eq("active", true)
+    .order("sessions", { ascending: true });
+
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up">
       <header className="mb-8">
@@ -52,6 +67,11 @@ export default async function ParentDashboard() {
             : "Open a child to see their reports and progress."}
         </p>
       </header>
+
+      <BuyCreditsPanel
+        creditsRemaining={creditsRow?.credits_remaining ?? 0}
+        packs={packs ?? []}
+      />
 
       {students?.length === 0 ? (
         <EmptyState
