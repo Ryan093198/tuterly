@@ -451,6 +451,110 @@ export default function ParentsLanding() {
         </div>
       </section>
 
+      {/* PRICING */}
+      <section style={{ padding: "80px 40px", background: c.white }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Simple pricing</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>The same structured tutoring — for less.</h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+              You get the structure of a top tutoring company — detailed session reports, curriculum-aligned practice worksheets, custom lesson plans, and progress tracking on every topic — without paying the company markup.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 40, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+              Because you&apos;re connecting directly with the tutor through Tuterly, there&apos;s no agency taking a commission on every lesson. The savings stay with you. Drag the slider to see how much.
+            </p>
+          </Fade>
+
+          {/* SAVINGS CALCULATOR */}
+          <Fade delay={0.05}>
+            <div style={{ background: c.offWhite, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 8, marginBottom: 4 }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2 }}>Your savings</p>
+                <p style={{ fontSize: 13, color: c.textMuted }}>Assumes 4 lessons/month</p>
+              </div>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18 }}>
+                Over <strong style={{ color: c.navy, fontWeight: 700 }}>{savingsMonths} {savingsMonths === 1 ? "month" : "months"}</strong> of tutoring, you save
+              </p>
+              <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.teal, lineHeight: 1.1, marginBottom: 24 }}>
+                ${savings.toLocaleString("en-AU")}
+              </p>
+              <input
+                type="range"
+                min={1}
+                max={12}
+                step={1}
+                value={savingsMonths}
+                onChange={(e) => setSavingsMonths(parseInt(e.target.value, 10))}
+                style={{ width: "100%", marginBottom: 6 }}
+                aria-label="Months of tutoring"
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: c.textMuted, marginBottom: 24 }}>
+                <span>1 month</span>
+                <span>6 months</span>
+                <span>12 months</span>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.border}` }}>
+                  <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Typical company</p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${companyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr (typical agency rate) × {LESSONS_PER_MONTH * savingsMonths} lessons</p>
+                </div>
+                <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
+                  <p style={{ fontSize: 11, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>With Tuterly</p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${tuterlyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${TUTERLY_HOURLY}/hr (avg tutor on our directory) × {LESSONS_PER_MONTH * savingsMonths} lessons + ${TUTERLY_SUB}/mo subscription</p>
+                </div>
+              </div>
+            </div>
+          </Fade>
+
+          {/* COMPARISON TABLE */}
+          <Fade delay={0.1}>
+            <div style={{ background: c.white, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Tuterly vs a typical tutoring company</p>
+              <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, lineHeight: 1.3, marginBottom: 20 }}>Everything they offer, none of the inflated price.</h3>
+              <div style={{ display: "grid", gridTemplateColumns: "1.6fr 0.7fr 0.7fr", borderTop: `1px solid ${c.border}` }}>
+                <div style={{ padding: "12px 6px", fontSize: 12, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}></div>
+                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.teal, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tuterly</div>
+                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.textMuted, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tutoring company</div>
+                {[
+                  { label: "Trained, vetted tutors", tuterly: true, company: true },
+                  { label: "Detailed post-session reports", tuterly: true, company: false },
+                  { label: "Progress tracking across topics", tuterly: true, company: false },
+                  { label: "VCAA-aligned practice worksheets", tuterly: true, company: false },
+                  { label: "Custom lesson plans on demand", tuterly: true, company: false },
+                  { label: "Transparent ratings + reviews on tutors", tuterly: true, company: false },
+                  { label: "No long-term contracts or lock-ins", tuterly: true, company: false },
+                ].map((row, i) => (
+                  <div key={i} style={{ display: "contents" }}>
+                    <div style={{ padding: "12px 6px", fontSize: 14, color: c.text, borderBottom: `1px solid ${c.border}` }}>{row.label}</div>
+                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.tuterly ? c.teal : "#cbd5e1" }}>{row.tuterly ? "✓" : "✕"}</div>
+                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.company ? c.teal : "#cbd5e1" }}>{row.company ? "✓" : "✕"}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Fade>
+
+          <Fade delay={0.1}>
+            <div style={{ background: c.offWhite, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
+              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$29<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Everything included. Cancel anytime.</p>
+              <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
+                {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "No sessions in a month = no charge"].map((f, i) => (
+                  <div key={i} style={{ display: "flex", gap: 10, alignItems: "center" }}>
+                    <span style={{ color: c.teal, fontSize: 13, fontWeight: 700 }}>✓</span>
+                    <span style={{ fontSize: 14, color: c.textLight }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial</a>
+              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $29/month after trial.</p>
+            </div>
+          </Fade>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section style={{ padding: "80px 40px", background: c.offWhite }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -713,105 +817,6 @@ export default function ParentsLanding() {
           </Fade>
           <Fade delay={0.2}>
             <p style={{ fontSize: 14, color: c.textLight, marginTop: 24, lineHeight: 1.7 }}>Either way, every tutor on Tuterly is trained on our platform. You'll receive detailed session reports, progress tracking, and practice questions from day one.</p>
-          </Fade>
-        </div>
-      </section>
-
-      {/* PRICING */}
-      <section style={{ padding: "80px 40px", background: c.white }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>Less than the cost of one tutoring session.</h2>
-            <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 40, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>See how much you save versus a typical tutoring company. Drag the slider to see your savings over time.</p>
-          </Fade>
-
-          {/* SAVINGS CALCULATOR */}
-          <Fade delay={0.05}>
-            <div style={{ background: c.offWhite, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 8, marginBottom: 4 }}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2 }}>Your savings</p>
-                <p style={{ fontSize: 13, color: c.textMuted }}>Assumes 4 lessons/month</p>
-              </div>
-              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18 }}>
-                Over <strong style={{ color: c.navy, fontWeight: 700 }}>{savingsMonths} {savingsMonths === 1 ? "month" : "months"}</strong> of tutoring, you save
-              </p>
-              <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.teal, lineHeight: 1.1, marginBottom: 24 }}>
-                ${savings.toLocaleString("en-AU")}
-              </p>
-              <input
-                type="range"
-                min={1}
-                max={12}
-                step={1}
-                value={savingsMonths}
-                onChange={(e) => setSavingsMonths(parseInt(e.target.value, 10))}
-                style={{ width: "100%", marginBottom: 6 }}
-                aria-label="Months of tutoring"
-              />
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: c.textMuted, marginBottom: 24 }}>
-                <span>1 month</span>
-                <span>6 months</span>
-                <span>12 months</span>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.border}` }}>
-                  <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Typical company</p>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${companyCost.toLocaleString("en-AU")}</p>
-                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr × {LESSONS_PER_MONTH * savingsMonths} lessons</p>
-                </div>
-                <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
-                  <p style={{ fontSize: 11, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>With Tuterly</p>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${tuterlyCost.toLocaleString("en-AU")}</p>
-                  <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${TUTERLY_HOURLY}/hr × {LESSONS_PER_MONTH * savingsMonths} + ${TUTERLY_SUB}/mo</p>
-                </div>
-              </div>
-            </div>
-          </Fade>
-
-          {/* COMPARISON TABLE */}
-          <Fade delay={0.1}>
-            <div style={{ background: c.white, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, marginBottom: 32, textAlign: "left" }}>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Tuterly vs a typical tutoring company</p>
-              <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, lineHeight: 1.3, marginBottom: 20 }}>Everything they offer, none of the inflated price.</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "1.6fr 0.7fr 0.7fr", borderTop: `1px solid ${c.border}` }}>
-                <div style={{ padding: "12px 6px", fontSize: 12, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}></div>
-                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.teal, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tuterly</div>
-                <div style={{ padding: "12px 6px", fontSize: 12, fontWeight: 700, color: c.textMuted, textAlign: "center", textTransform: "uppercase", letterSpacing: 1, borderBottom: `1px solid ${c.border}` }}>Tutoring company</div>
-                {[
-                  { label: "Trained, vetted tutors", tuterly: true, company: true },
-                  { label: "Detailed post-session reports", tuterly: true, company: false },
-                  { label: "Progress tracking across topics", tuterly: true, company: false },
-                  { label: "VCAA-aligned practice worksheets", tuterly: true, company: false },
-                  { label: "Custom lesson plans on demand", tuterly: true, company: false },
-                  { label: "Transparent ratings + reviews on tutors", tuterly: true, company: false },
-                  { label: "No long-term contracts or lock-ins", tuterly: true, company: false },
-                ].map((row, i) => (
-                  <div key={i} style={{ display: "contents" }}>
-                    <div style={{ padding: "12px 6px", fontSize: 14, color: c.text, borderBottom: `1px solid ${c.border}` }}>{row.label}</div>
-                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.tuterly ? c.teal : "#cbd5e1" }}>{row.tuterly ? "✓" : "✕"}</div>
-                    <div style={{ padding: "12px 6px", fontSize: 18, textAlign: "center", borderBottom: `1px solid ${c.border}`, color: row.company ? c.teal : "#cbd5e1" }}>{row.company ? "✓" : "✕"}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Fade>
-
-          <Fade delay={0.1}>
-            <div style={{ background: c.offWhite, borderRadius: 20, padding: "40px 32px", border: `1px solid ${c.border}`, textAlign: "center" }}>
-              <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$29<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
-              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Everything included. Cancel anytime.</p>
-              <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
-                {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "No sessions in a month = no charge"].map((f, i) => (
-                  <div key={i} style={{ display: "flex", gap: 10, alignItems: "center" }}>
-                    <span style={{ color: c.teal, fontSize: 13, fontWeight: 700 }}>✓</span>
-                    <span style={{ fontSize: 14, color: c.textLight }}>{f}</span>
-                  </div>
-                ))}
-              </div>
-              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial</a>
-              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $29/month after trial.</p>
-            </div>
           </Fade>
         </div>
       </section>
