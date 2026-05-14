@@ -3,7 +3,12 @@ import { createClient } from "@/lib/supabase-server";
 import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
-import BuyCreditsPanel from "@/components/BuyCreditsPanel";
+// BuyCreditsPanel intentionally not imported while we're in internal
+// testing — the product is free for now, so parents shouldn't see a
+// "buy session credits" CTA. The component + the underlying
+// /api/payments/purchase-pack route still exist; flip the import + the
+// render below back on when paid mode is ready.
+// import BuyCreditsPanel from "@/components/BuyCreditsPanel";
 import {
   fetchTutorsForStudents,
   tutoringSummary,
@@ -43,19 +48,8 @@ export default async function ParentDashboard() {
   // each independently created a record for the same real kid.
   const tutorsByStudent = await fetchTutorsForStudents(studentIds);
 
-  // Credit balance + pack catalogue for the Buy Credits panel. Both are
-  // best-effort — if the payment-schema migration hasn't been applied
-  // yet, the panel just renders zero balance with the default pack list.
-  const { data: creditsRow } = await supabase
-    .from("credits")
-    .select("credits_remaining")
-    .eq("parent_id", user.id)
-    .maybeSingle();
-  const { data: packs } = await supabase
-    .from("session_packs")
-    .select("id, name, sessions, price, per_session, savings")
-    .eq("active", true)
-    .order("sessions", { ascending: true });
+  // Credit balance + pack catalogue used to live here for the
+  // BuyCreditsPanel. Re-enable when the payment system goes live.
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up">
@@ -68,10 +62,9 @@ export default async function ParentDashboard() {
         </p>
       </header>
 
-      <BuyCreditsPanel
-        creditsRemaining={creditsRow?.credits_remaining ?? 0}
-        packs={packs ?? []}
-      />
+      {/* BuyCreditsPanel hidden during internal testing — product is
+          free for now. Restore the import + render when paid mode flips
+          back on. */}
 
       {students?.length === 0 ? (
         <EmptyState

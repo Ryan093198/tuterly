@@ -31,11 +31,15 @@ const NAV = {
       href: "/dashboard/parent/resources",
       icon: <Icon name="folder" />,
     },
-    {
-      label: "Refer a friend",
-      href: "/dashboard/parent/refer",
-      icon: <Icon name="gift" />,
-    },
+    // "Refer a friend" hidden during internal testing — the $20 credit
+    // it pitches is part of the payment system, which is off while the
+    // product is free. The page + API routes still exist; uncomment
+    // when paid mode is ready.
+    // {
+    //   label: "Refer a friend",
+    //   href: "/dashboard/parent/refer",
+    //   icon: <Icon name="gift" />,
+    // },
     {
       label: "Settings",
       href: "/dashboard/settings",
