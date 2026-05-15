@@ -47,6 +47,12 @@ export default function WorksheetGenerator({ topicsByYear }) {
   const [emailSaved, setEmailSaved] = useState(false);
   const [emailPending, setEmailPending] = useState(false);
   const [emailError, setEmailError] = useState(null);
+  // Email-capture modal opens on first Generate click instead of
+  // gating the whole page. Visitors get to browse year + topic +
+  // difficulty before being asked to part with their address.
+  const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [modalEmailInput, setModalEmailInput] = useState("");
+  const [modalYearInput, setModalYearInput] = useState("Year 7");
 
   const [yearLevel, setYearLevel] = useState("Year 7");
   const [topicId, setTopicId] = useState("");
@@ -114,10 +120,14 @@ export default function WorksheetGenerator({ topicsByYear }) {
     setTopicLabel("");
   }, [yearLevel]);
 
-  async function handleEmailSubmit(e) {
+  // Submitted from the email-capture modal. Saves the address + child's
+  // year level to the marketing list, mirrors them into local state +
+  // localStorage, closes the modal, and continues straight to the
+  // generation the user just clicked Generate to start.
+  async function handleEmailModalSubmit(e) {
     e.preventDefault();
     setEmailError(null);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(modalEmailInput)) {
       setEmailError("Please enter a valid email address.");
       return;
     }
@@ -126,14 +136,26 @@ export default function WorksheetGenerator({ topicsByYear }) {
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email: modalEmailInput,
+          year_level: modalYearInput,
+        }),
       });
       const data = await readJsonOrFallback(res);
       if (!res.ok) throw new Error(data?.error || "Could not save email.");
       try {
-        window.localStorage.setItem(STORAGE_KEY, email);
+        window.localStorage.setItem(STORAGE_KEY, modalEmailInput);
       } catch {}
+      setEmail(modalEmailInput);
       setEmailSaved(true);
+      // Sync the form's year picker to whatever they confirmed in the
+      // modal (might differ from the year they had open at the time).
+      setYearLevel(modalYearInput);
+      setEmailModalOpen(false);
+      // Re-trigger the generation now that we have an email on file.
+      // Pass an explicit year override since React state hasn't flushed
+      // yet on the next line.
+      handleGenerate(undefined, { yearLevelOverride: modalYearInput });
     } catch (err) {
       setEmailError(err.message || "Could not save email.");
     } finally {
@@ -147,13 +169,24 @@ export default function WorksheetGenerator({ topicsByYear }) {
     setTopicLabel(match?.label || "");
   }
 
-  async function handleGenerate(e) {
+  async function handleGenerate(e, opts = {}) {
     if (e) e.preventDefault();
     setError(null);
     if (!topicLabel.trim()) {
       setError("Pick a topic.");
       return;
     }
+    // First-time generators land on the email + year-level capture
+    // modal instead of the generate endpoint. Pre-fill the modal with
+    // the year they currently have selected.
+    if (!emailSaved) {
+      setModalEmailInput(email || "");
+      setModalYearInput(yearLevel);
+      setEmailError(null);
+      setEmailModalOpen(true);
+      return;
+    }
+    const effectiveYear = opts.yearLevelOverride || yearLevel;
     setGenerating(true);
     try {
       const res = await fetch("/api/worksheets/generate", {
@@ -161,7 +194,7 @@ export default function WorksheetGenerator({ topicsByYear }) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           email,
-          year_level: yearLevel,
+          year_level: effectiveYear,
           topic_id: topicId || undefined,
           topic_label: topicLabel,
           // Fresh seed each click so "Regenerate" returns different numbers.
@@ -181,7 +214,7 @@ export default function WorksheetGenerator({ topicsByYear }) {
       }
       setWorksheet({
         content: data.content,
-        yearLevel: data.year_level || yearLevel,
+        yearLevel: data.year_level || effectiveYear,
         topicLabel: data.topic_label || topicLabel,
         topicId,
       });
@@ -254,38 +287,6 @@ export default function WorksheetGenerator({ topicsByYear }) {
   }
 
   // --- Render ---
-
-  if (!emailSaved) {
-    return (
-      <div style={cardStyle}>
-        <h2 style={h2Style}>Get free, VCAA-aligned worksheets</h2>
-        <p style={pMutedStyle}>Drop your email address for access!</p>
-        <form onSubmit={handleEmailSubmit} style={{ marginTop: 20 }}>
-          <label style={labelStyle}>
-            <span>Your email</span>
-            <input
-              type="email"
-              required
-              autoFocus
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              disabled={emailPending}
-              style={inputStyle}
-            />
-          </label>
-          {emailError && <p style={errorTextStyle}>{emailError}</p>}
-          <button
-            type="submit"
-            disabled={emailPending}
-            style={primaryButtonStyle}
-          >
-            {emailPending ? "Saving…" : "Continue"}
-          </button>
-        </form>
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -398,6 +399,23 @@ export default function WorksheetGenerator({ topicsByYear }) {
         </div>
       )}
 
+      {emailModalOpen && (
+        <EmailGateModal
+          email={modalEmailInput}
+          year={modalYearInput}
+          pending={emailPending}
+          error={emailError}
+          onEmailChange={setModalEmailInput}
+          onYearChange={setModalYearInput}
+          onSubmit={handleEmailModalSubmit}
+          onClose={() => {
+            if (emailPending) return;
+            setEmailModalOpen(false);
+            setEmailError(null);
+          }}
+        />
+      )}
+
       {trialPromptOpen && (
         <TrialSignupModal
           onClose={() => {
@@ -409,6 +427,136 @@ export default function WorksheetGenerator({ topicsByYear }) {
           error={trialError}
         />
       )}
+    </div>
+  );
+}
+
+function EmailGateModal({
+  email,
+  year,
+  pending,
+  error,
+  onEmailChange,
+  onYearChange,
+  onSubmit,
+  onClose,
+}) {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 24,
+        background: "rgba(15, 23, 42, 0.55)",
+      }}
+      onClick={pending ? undefined : onClose}
+    >
+      <form
+        onSubmit={onSubmit}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: c.white,
+          borderRadius: 20,
+          padding: 32,
+          maxWidth: 440,
+          width: "100%",
+          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
+          border: `1px solid ${c.border}`,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            color: c.teal,
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            margin: 0,
+          }}
+        >
+          One quick step
+        </p>
+        <h2
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: 24,
+            color: c.navy,
+            lineHeight: 1.2,
+            margin: "8px 0 8px",
+          }}
+        >
+          Unlock your free worksheet
+        </h2>
+        <p style={{ color: c.textLight, fontSize: 14, lineHeight: 1.6, margin: "0 0 18px" }}>
+          Drop your email and your child&apos;s year level. One free
+          worksheet per day, no credit card needed.
+        </p>
+
+        <div style={{ display: "grid", gap: 14 }}>
+          <label style={labelStyle}>
+            <span>Your email</span>
+            <input
+              type="email"
+              required
+              autoFocus
+              value={email}
+              onChange={(e) => onEmailChange(e.target.value)}
+              placeholder="you@example.com"
+              disabled={pending}
+              style={inputStyle}
+            />
+          </label>
+          <label style={labelStyle}>
+            <span>Child&apos;s year level</span>
+            <select
+              value={year}
+              onChange={(e) => onYearChange(e.target.value)}
+              disabled={pending}
+              style={inputStyle}
+            >
+              {YEAR_LEVELS.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {error && (
+          <p
+            style={{
+              color: c.rose,
+              fontSize: 13,
+              margin: "12px 0 0",
+              background: "#FFF1F2",
+              padding: "8px 10px",
+              borderRadius: 8,
+            }}
+          >
+            {error}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={pending}
+          style={{
+            ...primaryButtonStyle,
+            width: "100%",
+            marginTop: 16,
+            opacity: pending ? 0.7 : 1,
+            cursor: pending ? "wait" : "pointer",
+          }}
+        >
+          {pending ? "Saving…" : "Generate worksheet"}
+        </button>
+      </form>
     </div>
   );
 }

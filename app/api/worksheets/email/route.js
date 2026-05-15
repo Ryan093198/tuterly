@@ -21,16 +21,24 @@ export async function POST(request) {
       { status: 400 }
     );
   }
+  const yearLevel = sanitizeYearLevel(body?.year_level);
 
   const ip = clientIp(request);
   const admin = createAdminClient();
 
+  // year_level is only written when present so re-submissions without
+  // a year (eg. older clients) don't blank out a previously-captured
+  // value.
+  const upsertRow = {
+    email,
+    ip,
+    last_seen_at: new Date().toISOString(),
+  };
+  if (yearLevel) upsertRow.year_level = yearLevel;
+
   const { error } = await admin
     .from("worksheet_email_signups")
-    .upsert(
-      { email, ip, last_seen_at: new Date().toISOString() },
-      { onConflict: "email" }
-    );
+    .upsert(upsertRow, { onConflict: "email" });
   if (error) {
     console.error("[worksheets/email] upsert failed:", error);
     return NextResponse.json(
@@ -50,6 +58,15 @@ function sanitizeEmail(raw) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return null;
   if (trimmed.length > 254) return null;
   return trimmed;
+}
+
+function sanitizeYearLevel(raw) {
+  if (typeof raw !== "string") return null;
+  const t = raw.trim();
+  // Accept "Year 3" through "Year 10"; reject anything else so we don't
+  // pollute the list with freeform input.
+  if (!/^Year (3|4|5|6|7|8|9|10)$/.test(t)) return null;
+  return t;
 }
 
 function clientIp(request) {
