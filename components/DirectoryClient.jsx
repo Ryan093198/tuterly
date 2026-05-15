@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import EnquiryFormModal from "@/components/EnquiryFormModal";
+import SuburbAutocomplete from "@/components/SuburbAutocomplete";
+import { getNearby } from "@/lib/suburbs";
 
 const c = {
   teal: "#0ABAB5", tealLight: "#2DD4BF", tealDark: "#0D9488", tealPale: "#F0FDFA",
@@ -55,14 +57,25 @@ export default function DirectoryClient({ viewer }) {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [reportSolutions, setReportSolutions] = useState({});
   const [reportQIndices, setReportQIndices] = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
-  const [filters, setFilters] = useState({ subject: "", yearLevel: "", location: "", online: false });
+  const [filters, setFilters] = useState({ subject: "", yearLevel: "", location: "", nearby: false, online: false });
 
   const allSubjects = [...new Set(tutors.flatMap(t => t.subjects))].sort();
-  const allLocations = [...new Set(tutors.map(t => t.location))].sort();
 
   const filtered = tutors.filter(t => {
     if (filters.subject && !t.subjects.some(s => s.toLowerCase().includes(filters.subject.toLowerCase()))) return false;
-    if (filters.location && t.location !== filters.location) return false;
+    if (filters.location) {
+      const target = filters.location.toLowerCase();
+      const tutorLoc = t.location.toLowerCase();
+      const matchesExact = tutorLoc === target;
+      // "Include nearby" expands the match to suburbs adjacent to the
+      // typed one. Curated adjacency map lives in lib/suburbs.js.
+      const matchesNearby =
+        filters.nearby &&
+        getNearby(filters.location)
+          .map((s) => s.toLowerCase())
+          .includes(tutorLoc);
+      if (!matchesExact && !matchesNearby) return false;
+    }
     if (filters.online && !t.online) return false;
     return true;
   });
@@ -126,16 +139,28 @@ export default function DirectoryClient({ viewer }) {
               <option value="">All subjects</option>
               {allSubjects.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
-            <select value={filters.location} onChange={e => setFilters(p => ({ ...p, location: e.target.value }))} style={{ padding: "10px 14px", borderRadius: 8, border: `1px solid ${c.border}`, fontSize: 14, color: c.text, background: c.white, minWidth: 160 }}>
-              <option value="">All locations</option>
-              {allLocations.map(l => <option key={l} value={l}>{l}</option>)}
-            </select>
+            <SuburbAutocomplete
+              value={filters.location}
+              onChange={(loc) => setFilters((p) => ({ ...p, location: loc }))}
+              placeholder="Suburb"
+              width={200}
+            />
+            <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, color: filters.location ? c.textLight : c.textMuted, cursor: filters.location ? "pointer" : "not-allowed" }} title={filters.location ? "" : "Pick a suburb first"}>
+              <input
+                type="checkbox"
+                checked={filters.nearby}
+                disabled={!filters.location}
+                onChange={(e) => setFilters((p) => ({ ...p, nearby: e.target.checked }))}
+                style={{ accentColor: c.teal }}
+              />
+              Include nearby suburbs
+            </label>
             <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, color: c.textLight, cursor: "pointer" }}>
               <input type="checkbox" checked={filters.online} onChange={e => setFilters(p => ({ ...p, online: e.target.checked }))} style={{ accentColor: c.teal }} />
               Online available
             </label>
             {(filters.subject || filters.location || filters.online) && (
-              <button onClick={() => setFilters({ subject: "", yearLevel: "", location: "", online: false })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
+              <button onClick={() => setFilters({ subject: "", yearLevel: "", location: "", nearby: false, online: false })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
             )}
             <p style={{ fontSize: 13, color: c.textMuted, marginLeft: "auto" }}>{filtered.length} tutor{filtered.length !== 1 ? "s" : ""} found</p>
           </div>
