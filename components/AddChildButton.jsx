@@ -3,6 +3,7 @@
 import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { createMyChild } from "@/app/dashboard/parent/student-actions";
+import SchoolAutocomplete from "@/components/SchoolAutocomplete";
 
 const YEAR_LEVELS = [
   "Prep",
@@ -194,15 +195,15 @@ export default function AddChildButton({ variant = "secondary", label = "Add chi
                   </select>
                 </Field>
               </div>
-              <Field label="School (optional)">
-                <input
-                  name="school"
-                  type="text"
-                  placeholder="e.g. Brighton Grammar"
-                  disabled={pending}
-                  className={inputClass}
-                />
-              </Field>
+              {/* Same ACARA-backed school typeahead the tutor flow uses, so
+                  the school field stays consistent across both create paths
+                  and a parent's typed value matches what tutors search. */}
+              <SchoolAutocomplete
+                name="school"
+                label="School (optional)"
+                placeholder="Start typing a school name…"
+                inputHeight="h-10"
+              />
               {error && (
                 <p className="text-sm text-red-600 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg">
                   {error}
