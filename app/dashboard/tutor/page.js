@@ -142,17 +142,20 @@ export default async function TutorDashboard({ searchParams }) {
           label="This week"
           primary={`${weekReports.length} report${weekReports.length === 1 ? "" : "s"} submitted`}
           secondary={`${formatHours(weekHours)} of teaching`}
+          href={`/dashboard/tutor/activity?range=week&week=${toIso(weekStart)}`}
           accent
         />
         <StatCard
           label="This month"
           primary={`${monthSessions.length} session${monthSessions.length === 1 ? "" : "s"} completed`}
           secondary={`${formatHours(monthHours)} of teaching`}
+          href="/dashboard/tutor/activity?range=month"
         />
         <StatCard
           label="This year"
           primary={`${yearSessions.length} session${yearSessions.length === 1 ? "" : "s"} completed`}
           secondary={`${formatHours(yearHours)} of teaching`}
+          href="/dashboard/tutor/activity?range=year"
         />
       </section>
 
@@ -248,15 +251,14 @@ export default async function TutorDashboard({ searchParams }) {
   );
 }
 
-function StatCard({ label, primary, secondary, accent = false }) {
-  return (
-    <div
-      className={`rounded-2xl border p-4 sm:p-5 ${
-        accent
-          ? "border-brand/30 bg-brand-pale/40"
-          : "border-zinc-200 dark:border-zinc-800 bg-card"
-      }`}
-    >
+function StatCard({ label, primary, secondary, href, accent = false }) {
+  const base = `rounded-2xl border p-4 sm:p-5 transition ${
+    accent
+      ? "border-brand/30 bg-brand-pale/40"
+      : "border-zinc-200 dark:border-zinc-800 bg-card"
+  } ${href ? "hover:border-brand/40 hover:shadow-sm cursor-pointer" : ""}`;
+  const body = (
+    <>
       <p className="text-[10px] uppercase tracking-wider text-muted font-semibold">
         {label}
       </p>
@@ -268,7 +270,14 @@ function StatCard({ label, primary, secondary, accent = false }) {
         {primary}
       </p>
       <p className="text-xs text-muted mt-1">{secondary}</p>
-    </div>
+    </>
+  );
+  return href ? (
+    <Link href={href} className={`block ${base}`}>
+      {body}
+    </Link>
+  ) : (
+    <div className={base}>{body}</div>
   );
 }
 

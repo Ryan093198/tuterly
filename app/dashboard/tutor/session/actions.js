@@ -222,6 +222,19 @@ export async function deleteSession(formData) {
 
   revalidatePath(`/dashboard/tutor/students/${session.student_id}`);
   revalidatePath("/dashboard/tutor");
+  revalidatePath("/dashboard/tutor/activity");
+
+  // Caller can override the post-delete destination — used by the activity
+  // list, which wants the user to stay where they were after deleting one
+  // row from a list of many. Only relative paths under /dashboard/tutor are
+  // honoured so a malicious form can't bounce us off-site.
+  const redirectTo = formData.get("redirect_to");
+  if (
+    typeof redirectTo === "string" &&
+    redirectTo.startsWith("/dashboard/tutor")
+  ) {
+    redirect(redirectTo);
+  }
   redirect(`/dashboard/tutor/students/${session.student_id}`);
 }
 
