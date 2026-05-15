@@ -36,7 +36,11 @@ export default function TutorApplicationForm() {
     setError(null);
     if (!name.trim()) return setError("Please add your name.");
     if (!email.trim()) return setError("Please add your email.");
+    if (!phone.trim())
+      return setError("Please add a phone number so we can call you back.");
     if (!subjects.trim()) return setError("Tell us which subjects you tutor.");
+    if (!yearLevels.trim())
+      return setError("Let us know which year levels you can tutor.");
     if (!experience.trim())
       return setError("A few sentences on your tutoring background helps us match you well.");
 
@@ -160,7 +164,7 @@ export default function TutorApplicationForm() {
           <Field label="Your name">
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} disabled={pending} style={inputStyle} />
           </Field>
-          <Field label="Phone (optional)">
+          <Field label="Phone">
             <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} disabled={pending} placeholder="04XX XXX XXX" style={inputStyle} />
           </Field>
         </Two>
@@ -171,7 +175,7 @@ export default function TutorApplicationForm() {
           <Field label="Subjects you tutor">
             <input type="text" value={subjects} onChange={(e) => setSubjects(e.target.value)} disabled={pending} placeholder="e.g. VCE Methods, Year 9 English" style={inputStyle} />
           </Field>
-          <Field label="Year levels (optional)">
+          <Field label="Year levels">
             <input type="text" value={yearLevels} onChange={(e) => setYearLevels(e.target.value)} disabled={pending} placeholder="e.g. Year 7-12" style={inputStyle} />
           </Field>
         </Two>

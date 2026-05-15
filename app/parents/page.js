@@ -74,7 +74,7 @@ function TutorGallery() {
       <div ref={scrollRef} style={{ display: "flex", gap: 16, overflowX: "auto", scrollbarWidth: "none", msOverflowStyle: "none", padding: "8px 0", WebkitOverflowScrolling: "touch" }}>
         <style>{`div::-webkit-scrollbar { display: none; }`}</style>
         {galleryTutors.map((t, i) => (
-          <a href="/directory" key={i} style={{ textDecoration: "none", flexShrink: 0, width: 130, textAlign: "center", cursor: "pointer" }}>
+          <a href={`/directory?tutor=${encodeURIComponent(t.name)}`} key={i} style={{ textDecoration: "none", flexShrink: 0, width: 130, textAlign: "center", cursor: "pointer" }}>
             <div style={{ width: 80, height: 80, borderRadius: "50%", margin: "0 auto 10px", overflow: "hidden", border: `3px solid ${c.border}`, background: t.color, display: "flex", alignItems: "center", justifyContent: "center", transition: "border-color 0.2s" }} onMouseEnter={e => e.currentTarget.style.borderColor = c.teal} onMouseLeave={e => e.currentTarget.style.borderColor = c.border}>
               <span style={{ fontSize: 24, fontWeight: 700, color: c.white, fontFamily: "'Space Grotesk', sans-serif" }}>{t.initials}</span>
             </div>
@@ -393,7 +393,7 @@ export default function ParentsLanding() {
           <Fade>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Sample report</p>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>This is what you'll receive after every session.</h2>
-            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", marginBottom: 40, lineHeight: 1.7 }}>A real example - not a mockup. This is what Tuterly produces from a tutor's quick session notes.</p>
+            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", marginBottom: 40, lineHeight: 1.7 }}>A real example of a Tuterly report. Our tutors are all trained to use the platform, so that you&apos;re kept in the loop after every session. Practice questions, along with solutions, are sent after every tutoring lesson to reinforce concepts learnt.</p>
           </Fade>
           <Fade delay={0.15}>
             <div className="report-mock" style={{ background: c.white, borderRadius: 20, border: `1px solid ${c.border}`, overflow: "hidden", boxShadow: "0 12px 48px rgba(0,0,0,0.06)" }}>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EnquiryFormModal from "@/components/EnquiryFormModal";
 import SuburbAutocomplete from "@/components/SuburbAutocomplete";
 import { getNearby } from "@/lib/suburbs";
@@ -57,6 +57,19 @@ export default function DirectoryClient({ viewer }) {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [reportSolutions, setReportSolutions] = useState({});
   const [reportQIndices, setReportQIndices] = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
+  // Honour ?tutor=Sarah%20T. on mount so deep-links from the parents
+  // homepage tutor preview open straight into the matching profile.
+  // Falls through silently if the name doesn't match anyone.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const target = new URLSearchParams(window.location.search).get("tutor");
+    if (!target) return;
+    const match = tutors.find(
+      (t) => t.name.toLowerCase() === target.trim().toLowerCase()
+    );
+    if (match) setSelectedTutor(match);
+  }, []);
+
   // `nearby` defaults to true so the moment a parent picks a suburb,
   // adjacent suburbs are already included in the result set. They can
   // untick if they want strict-suburb-only matching.

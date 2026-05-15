@@ -34,8 +34,12 @@ export async function POST(request) {
       { error: "valid email required" },
       { status: 400 }
     );
+  if (!phone)
+    return NextResponse.json({ error: "phone required" }, { status: 400 });
   if (!subjects)
     return NextResponse.json({ error: "subjects required" }, { status: 400 });
+  if (!yearLevels)
+    return NextResponse.json({ error: "year_levels required" }, { status: 400 });
   if (!experience)
     return NextResponse.json(
       { error: "tell us a bit about your tutoring experience" },
@@ -50,7 +54,7 @@ export async function POST(request) {
       applicantEmail: email,
       applicantPhone: phone,
       subjects,
-      yearLevels: yearLevels || "Not specified",
+      yearLevels,
       experience,
     });
     return NextResponse.json({ ok: true });
