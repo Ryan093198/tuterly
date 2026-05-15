@@ -144,9 +144,7 @@ export default async function TutorDashboard({ searchParams }) {
           <span aria-hidden="true" className="text-lg leading-none">⚠️</span>
           <div className="text-sm">
             <span className="font-medium text-amber-900 dark:text-amber-200">
-              {studentsWithoutReport.length} student
-              {studentsWithoutReport.length === 1 ? "" : "s"} haven&apos;t
-              received a report this week
+              {`${studentsWithoutReport.length} student${studentsWithoutReport.length === 1 ? "" : "s"} ${studentsWithoutReport.length === 1 ? "hasn't" : "haven't"} received a report this week`}
             </span>
             <span className="text-amber-800/80 dark:text-amber-200/70 ml-1">
               · scroll down to submit notes
