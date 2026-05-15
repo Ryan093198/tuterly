@@ -236,11 +236,6 @@ function ResourceRow({ resource, currentUserId, onView }) {
             <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-surface-soft text-muted font-medium border border-zinc-200 dark:border-zinc-800">
               {CATEGORY_LABEL[resource.category] ?? resource.category}
             </span>
-            {!resource.file_url && (
-              <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-brand-pale text-brand-foreground font-medium">
-                Pasted
-              </span>
-            )}
           </div>
           <div className="flex items-center gap-2 flex-wrap mt-1 text-xs text-muted">
             {resource.student ? (
