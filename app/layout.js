@@ -12,15 +12,16 @@ export const metadata = {
   description: "Tutoring sessions tracked. Curriculum aligned reports prepared.",
 };
 
-// Runs before React hydrates. Reads the persisted theme choice (or falls
-// back to the OS preference) and adds `.dark` to <html> so the first paint
-// is the right colour scheme — without this the page would flash light
-// for users who chose dark.
+// Runs before React hydrates. Reads the persisted theme choice and adds
+// `.dark` to <html> so the first paint is the right colour scheme. The
+// default (no stored choice) is light — dark mode needs a deliberate
+// opt-in via Settings, since the app's UI is tuned for light first.
+// "system" is still respected for users who explicitly pick it.
 const THEME_INIT_SCRIPT = `(function () {
   try {
     var t = localStorage.getItem('theme');
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var isDark = t === 'dark' || ((t === null || t === 'system') && prefersDark);
+    var isDark = t === 'dark' || (t === 'system' && prefersDark);
     if (isDark) document.documentElement.classList.add('dark');
   } catch (e) {}
 })();`;

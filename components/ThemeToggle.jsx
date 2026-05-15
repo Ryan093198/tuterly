@@ -27,10 +27,11 @@ function subscribeTheme(callback) {
 }
 function readTheme() {
   const v = localStorage.getItem("theme");
-  return v === "light" || v === "dark" ? v : "system";
+  if (v === "light" || v === "dark" || v === "system") return v;
+  return "light";
 }
 function readThemeServer() {
-  return "system";
+  return "light";
 }
 
 function applyTheme(value) {
@@ -57,8 +58,10 @@ export default function ThemeToggle() {
   }, [theme]);
 
   function choose(value) {
-    if (value === "system") localStorage.removeItem("theme");
-    else localStorage.setItem("theme", value);
+    // Always write the explicit choice — including "system" — so the
+    // anti-flash script in layout.js can distinguish "user picked
+    // System" from "first visit, default to light".
+    localStorage.setItem("theme", value);
     applyTheme(value);
     window.dispatchEvent(new Event(THEME_EVENT));
   }
