@@ -22,9 +22,9 @@ const NAV = {
   ],
   parent: [
     {
-      label: "My children",
+      label: "Dashboard",
       href: "/dashboard/parent",
-      icon: <Icon name="heart" />,
+      icon: <Icon name="grid" />,
     },
     {
       label: "Resources",
