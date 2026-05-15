@@ -13,7 +13,10 @@ import {
 } from "../parent-actions";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { enrichResources } from "@/lib/resource-helpers";
+import { deriveWeakTopics } from "@/lib/weak-topics";
+import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import ProgressTracker from "@/components/ProgressTracker";
+import PracticePanel from "@/components/PracticePanel";
 import ResourcesPanel from "@/components/ResourcesPanel";
 import StudentEditor from "@/components/StudentEditor";
 import DeleteStudentButton from "@/components/DeleteStudentButton";
@@ -108,11 +111,20 @@ export default async function StudentDetail({ params, searchParams }) {
       .order("created_at", { ascending: false }),
   ]);
 
-  const { count: flaggedCount } = await supabase
-    .from("flagged_questions")
-    .select("id", { count: "exact", head: true })
-    .eq("student_id", id)
-    .is("understood_at", null);
+  const [{ count: flaggedCount }, { data: openFlags }] = await Promise.all([
+    supabase
+      .from("flagged_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("student_id", id)
+      .is("understood_at", null),
+    // Topics of unresolved flags feed into the PracticePanel weak-topic
+    // suggestions the same way they do on the parent page.
+    supabase
+      .from("flagged_questions")
+      .select("topic")
+      .eq("student_id", id)
+      .is("understood_at", null),
+  ]);
 
   const ratings = (ratingsRaw ?? [])
     .filter((r) => r.sessions)
@@ -122,6 +134,20 @@ export default async function StudentDetail({ params, searchParams }) {
       confidence: r.confidence,
       session_date: r.sessions.date,
     }));
+
+  // Derive weak topics + per-subject curriculum groups so the tutor's
+  // practice generator surfaces the same suggestions as the parent's
+  // (low confidence ratings + open flagged questions) and the topic
+  // dropdown switches subjects cleanly.
+  const weakTopics = deriveWeakTopics({
+    ratings,
+    flags: openFlags ?? [],
+  });
+  const practiceLevel = student.working_level || student.year_level;
+  const topicsBySubject = {
+    maths: getTopicGroupsForLevel(practiceLevel, "maths", student.subjects),
+    english: getTopicGroupsForLevel(practiceLevel, "english", student.subjects),
+  };
 
   const resources = await enrichResources(rawResources ?? []);
 
@@ -222,6 +248,14 @@ export default async function StudentDetail({ params, searchParams }) {
           ratings={ratings}
           flaggedCount={flaggedCount ?? 0}
           flaggedHref={`/dashboard/tutor/students/${student.id}/flagged`}
+        />
+      </Section>
+
+      <Section label="Practice">
+        <PracticePanel
+          student={student}
+          weakTopics={weakTopics}
+          topicsBySubject={topicsBySubject}
         />
       </Section>
 

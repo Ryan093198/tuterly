@@ -84,25 +84,32 @@ async function handle(request) {
     return NextResponse.json({ error: "student_id required" }, { status: 400 });
   }
 
-  // Authorization: caller must own the student record. That's either the
-  // parent (student.parent_id) or the student themselves
-  // (student.student_user_id) — both can now hit this route from their
-  // Resources tab. Tutors generate via the lesson-plan / dashboard flow,
-  // not this one.
-  const { data: student } = await supabase
-    .from("students")
-    .select(
-      "id, first_name, last_name, year_level, working_level, subject, subjects, parent_id, student_user_id"
-    )
-    .eq("id", studentId)
-    .single();
+  // Authorization: caller is either the parent (student.parent_id), the
+  // student themselves (student.student_user_id), OR a tutor linked to
+  // the student via tutor_students. Tutors generate worksheets for
+  // their kids as extra practice between sessions.
+  const [{ data: student }, { data: tutorLink }] = await Promise.all([
+    supabase
+      .from("students")
+      .select(
+        "id, first_name, last_name, year_level, working_level, subject, subjects, parent_id, student_user_id"
+      )
+      .eq("id", studentId)
+      .single(),
+    supabase
+      .from("tutor_students")
+      .select("student_id")
+      .eq("tutor_id", user.id)
+      .eq("student_id", studentId)
+      .maybeSingle(),
+  ]);
   if (!student) {
     return NextResponse.json({ error: "student not found" }, { status: 404 });
   }
-  if (
-    student.parent_id !== user.id &&
-    student.student_user_id !== user.id
-  ) {
+  const isParent = student.parent_id === user.id;
+  const isStudent = student.student_user_id === user.id;
+  const isTutor = !!tutorLink;
+  if (!isParent && !isStudent && !isTutor) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 
