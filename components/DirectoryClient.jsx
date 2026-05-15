@@ -57,7 +57,10 @@ export default function DirectoryClient({ viewer }) {
   const [showEnquiry, setShowEnquiry] = useState(false);
   const [reportSolutions, setReportSolutions] = useState({});
   const [reportQIndices, setReportQIndices] = useState({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 });
-  const [filters, setFilters] = useState({ subject: "", yearLevel: "", location: "", nearby: false, online: false });
+  // `nearby` defaults to true so the moment a parent picks a suburb,
+  // adjacent suburbs are already included in the result set. They can
+  // untick if they want strict-suburb-only matching.
+  const [filters, setFilters] = useState({ subject: "", yearLevel: "", location: "", nearby: true, online: false });
 
   const allSubjects = [...new Set(tutors.flatMap(t => t.subjects))].sort();
 
@@ -160,7 +163,7 @@ export default function DirectoryClient({ viewer }) {
               Online available
             </label>
             {(filters.subject || filters.location || filters.online) && (
-              <button onClick={() => setFilters({ subject: "", yearLevel: "", location: "", nearby: false, online: false })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
+              <button onClick={() => setFilters({ subject: "", yearLevel: "", location: "", nearby: true, online: false })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
             )}
             <p style={{ fontSize: 13, color: c.textMuted, marginLeft: "auto" }}>{filtered.length} tutor{filtered.length !== 1 ? "s" : ""} found</p>
           </div>
@@ -408,13 +411,6 @@ export default function DirectoryClient({ viewer }) {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Call 0426 787 978
         </a>
-      </section>
-
-      {/* BOTTOM BAR */}
-      <section style={{ padding: "40px", background: c.navy, textAlign: "center" }}>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.white, marginBottom: 8 }}>Are you a high-achieving tutor?</p>
-        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", maxWidth: 500, margin: "0 auto 16px" }}>We're looking for tutors who are top performers in their subjects and committed to delivering structured, trackable sessions. Set your own rates and keep 100% of your income.</p>
-        <a href="/tutors" style={{ display: "inline-block", padding: "12px 28px", borderRadius: 10, border: `2px solid ${c.teal}`, color: c.teal, fontSize: 14, fontWeight: 700, textDecoration: "none" }}>Join as a tutor →</a>
       </section>
 
       {/* FOOTER */}

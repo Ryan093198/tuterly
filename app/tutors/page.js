@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import TutorApplicationForm from "@/components/TutorApplicationForm";
 
 const c = {
   teal: "#0ABAB5", tealLight: "#2DD4BF", tealDark: "#0D9488", tealPale: "#F0FDFA",
@@ -81,8 +82,8 @@ export default function TutorsLanding() {
             <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 46, color: c.white, lineHeight: 1.15, marginBottom: 20 }}>Set your own rates. Equipped with the tools of a premium service.</h1>
             <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.8, marginBottom: 32, maxWidth: 500 }}>Join the Tuterly team, set your own hourly rate, and get access to professional tools that make you stand out. Session reports, progress tracking, and curriculum-aligned practice questions - all generated in under 2 minutes. We handle the invoicing, you focus on teaching.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-              <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join for free</a>
-              <a href="#how-it-works" onClick={(e) => { e.preventDefault(); document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.8)", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>See how it works</a>
+              <a href="#apply" onClick={(e) => { e.preventDefault(); document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start your application</a>
+              <a href="tel:0426787978" style={{ padding: "14px 28px", borderRadius: 10, border: "2px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.9)", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>📱 Call 0426 787 978</a>
             </div>
           </div>
           <div style={{ animation: "fadeUp 0.8s ease 0.2s both" }}>
@@ -320,17 +321,30 @@ export default function TutorsLanding() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding: "80px 40px", background: c.navy, textAlign: "center" }}>
-        <Fade>
-          <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.white, marginBottom: 12, lineHeight: 1.25 }}>Ready to take control of your tutoring business?</h2>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>Join for free, set your rates, and let Tuterly handle the reporting, tracking, and parent communication.</p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 24 }}>
-            <a href="tel:0426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
-            <a href="mailto:admin@baysideacademics.com.au" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 admin@baysideacademics.com.au</a>
-          </div>
-          <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Join as a tutor - it's free</a>
-        </Fade>
+      {/* APPLY */}
+      <section id="apply" style={{ padding: "80px 40px", background: c.offWhite }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Join the team</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>Apply to tutor with Tuterly</h2>
+            <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, marginBottom: 32, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>
+              Send us your details and someone from our team will reach out
+              for a chat about your subjects, rates, and availability.
+            </p>
+          </Fade>
+          <Fade delay={0.1}>
+            <TutorApplicationForm />
+          </Fade>
+          <Fade delay={0.15}>
+            <div style={{ textAlign: "center", marginTop: 24 }}>
+              <p style={{ fontSize: 14, color: c.textLight, marginBottom: 8 }}>Prefer to talk first?</p>
+              <a href="tel:0426787978" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 24px", borderRadius: 12, background: c.navy, color: c.white, fontSize: 15, fontWeight: 700, textDecoration: "none" }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call 0426 787 978
+              </a>
+            </div>
+          </Fade>
+        </div>
       </section>
 
       {/* FOOTER */}
