@@ -264,7 +264,7 @@ export default function DirectoryClient({ viewer }) {
               {!showSignup ? (
                 <div style={{ textAlign: "center" }}>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32, fontWeight: 700, color: c.navy, marginBottom: 4 }}>${selectedTutor.rate}<span style={{ fontSize: 16, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
-                  <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Rate set by {selectedTutor.name}</p>
+                  <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Tuterly Member&apos;s Rate</p>
 
                   <div style={{ background: c.white, borderRadius: 14, padding: "24px 20px", border: `1px solid ${c.border}`, marginBottom: 20, textAlign: "left" }}>
                     <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 12 }}>What's included with Tuterly</p>
