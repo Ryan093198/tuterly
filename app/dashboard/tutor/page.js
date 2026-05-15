@@ -2,6 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
 import Button from "@/components/ui/Button";
 import EmptyState from "@/components/ui/EmptyState";
+import TutorStudentList from "@/components/TutorStudentList";
 
 // Tutor dashboard. Three-zone layout designed so a tutor checking on
 // their phone Sunday night can answer two questions in five seconds:
@@ -203,56 +204,25 @@ export default async function TutorDashboard({ searchParams }) {
           )}
         </div>
 
-        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 max-h-[32rem] overflow-y-auto">
-          {students.map((s) => {
+        <TutorStudentList
+          rows={students.map((s) => {
             const reportSession = reportByStudentThisWeek.get(s.id);
-            return (
-              <li
-                key={s.id}
-                className="flex items-center gap-3 px-4 py-3 sm:px-5 sm:py-4 hover:bg-surface-soft transition"
-              >
-                {reportSession ? (
-                  <span
-                    aria-hidden="true"
-                    className="h-7 w-7 shrink-0 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
-                  </span>
-                ) : (
-                  <span
-                    aria-hidden="true"
-                    className="h-7 w-7 shrink-0 rounded-full border-2 border-zinc-200 dark:border-zinc-800"
-                  />
-                )}
-                <Link
-                  href={`/dashboard/tutor/students/${s.id}`}
-                  className="min-w-0 flex-1 group"
-                >
-                  <p className="font-medium truncate group-hover:underline">
-                    {s.first_name} {s.last_name}
-                  </p>
-                  <p className="text-xs text-muted mt-0.5">
-                    {[s.working_level || s.year_level, subjectLabel(s.subject)]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </p>
-                </Link>
-                {reportSession ? (
-                  <span className="text-xs text-emerald-700 dark:text-emerald-400 whitespace-nowrap hidden sm:inline">
-                    Report sent {formatShortDate(reportSession.date)}
-                  </span>
-                ) : (
-                  <Link
-                    href={`/dashboard/tutor/session/new?student=${s.id}`}
-                    className="text-xs font-medium text-brand whitespace-nowrap hover:underline"
-                  >
-                    Submit notes →
-                  </Link>
-                )}
-              </li>
-            );
+            return {
+              id: s.id,
+              name: `${s.first_name ?? ""} ${s.last_name ?? ""}`.trim(),
+              meta:
+                [s.working_level || s.year_level, subjectLabel(s.subject)]
+                  .filter(Boolean)
+                  .join(" · ") || null,
+              hasReport: !!reportSession,
+              reportDateLabel: reportSession
+                ? formatShortDate(reportSession.date)
+                : null,
+              detailHref: `/dashboard/tutor/students/${s.id}`,
+              submitNotesHref: `/dashboard/tutor/session/new?student=${s.id}`,
+            };
           })}
-        </ul>
+        />
       </section>
 
       {/* QUICK ACTIONS */}
