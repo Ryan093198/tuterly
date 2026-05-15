@@ -115,6 +115,19 @@ export default async function TutorDashboard({ searchParams }) {
   const prevWeek = toIso(addDays(weekStart, -7));
   const nextWeek = toIso(addDays(weekStart, 7));
 
+  // Open flagged-question count for the follow-up banner. One short
+  // count query — the full list is fetched on /dashboard/tutor/flagged.
+  const studentIds = students.map((s) => s.id);
+  let openFlagCount = 0;
+  if (studentIds.length > 0) {
+    const { count } = await supabase
+      .from("flagged_questions")
+      .select("id", { count: "exact", head: true })
+      .in("student_id", studentIds)
+      .is("understood_at", null);
+    openFlagCount = count ?? 0;
+  }
+
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
       {studentsWithoutReport.length > 0 && isCurrentWeek && (
@@ -134,6 +147,27 @@ export default async function TutorDashboard({ searchParams }) {
             </span>
           </div>
         </div>
+      )}
+
+      {openFlagCount > 0 && (
+        <Link
+          href="/dashboard/tutor/flagged"
+          className="flex items-start gap-3 rounded-2xl border border-rose-200 dark:border-rose-900/40 bg-rose-50 dark:bg-rose-950/20 px-4 py-3 hover:border-rose-300 dark:hover:border-rose-800/60 transition"
+        >
+          <span aria-hidden="true" className="text-lg leading-none">🚩</span>
+          <div className="text-sm flex-1">
+            <span className="font-medium text-rose-900 dark:text-rose-200">
+              {openFlagCount} question{openFlagCount === 1 ? "" : "s"} flagged
+              for follow-up
+            </span>
+            <span className="text-rose-800/80 dark:text-rose-200/70 ml-1">
+              · prep these before next session
+            </span>
+          </div>
+          <span aria-hidden="true" className="text-rose-700 dark:text-rose-300">
+            →
+          </span>
+        </Link>
       )}
 
       {/* TOP STATS BAR */}
@@ -229,7 +263,7 @@ export default async function TutorDashboard({ searchParams }) {
       </section>
 
       {/* QUICK ACTIONS */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <QuickAction
           href="/dashboard/tutor/session/new"
           icon={
@@ -237,6 +271,18 @@ export default async function TutorDashboard({ searchParams }) {
           }
           title="Submit notes for a student"
           desc="Log a new session and generate the report."
+        />
+        <QuickAction
+          href="/dashboard/tutor/flagged"
+          icon={
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 21V4M4 4h12l-2 4 2 4H4" /></svg>
+          }
+          title="Needs follow-up"
+          desc={
+            openFlagCount === 0
+              ? "Nothing flagged right now."
+              : `${openFlagCount} question${openFlagCount === 1 ? "" : "s"} to walk through.`
+          }
         />
         <QuickAction
           href="/dashboard/tutor/resources"
