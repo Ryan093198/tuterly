@@ -27,26 +27,30 @@ export default async function ParentDashboard() {
     .eq("parent_id", user.id)
     .order("first_name");
 
-  // Fetch latest report per student (any generated report counts).
   const studentIds = (students ?? []).map((s) => s.id);
+
+  // The latest-reports query and the tutors-per-student query don't
+  // depend on each other, so fire them in parallel — saves a Supabase
+  // round trip on every dashboard load.
   let latestByStudent = new Map();
+  let tutorsByStudent = new Map();
   if (studentIds.length) {
-    const { data: latestReports } = await supabase
-      .from("reports")
-      .select(
-        "id, sent_at, parent_viewed_at, updated_at, created_at, sessions(student_id, date)"
-      )
-      .in("sessions.student_id", studentIds)
-      .order("created_at", { ascending: false });
-    for (const r of latestReports ?? []) {
+    const [latestRes, tutorsRes] = await Promise.all([
+      supabase
+        .from("reports")
+        .select(
+          "id, sent_at, parent_viewed_at, updated_at, created_at, sessions(student_id, date)"
+        )
+        .in("sessions.student_id", studentIds)
+        .order("created_at", { ascending: false }),
+      fetchTutorsForStudents(studentIds),
+    ]);
+    for (const r of latestRes.data ?? []) {
       const sid = r.sessions?.student_id;
       if (sid && !latestByStudent.has(sid)) latestByStudent.set(sid, r);
     }
+    tutorsByStudent = tutorsRes;
   }
-
-  // Tutor names per student row, used to disambiguate when two tutors have
-  // each independently created a record for the same real kid.
-  const tutorsByStudent = await fetchTutorsForStudents(studentIds);
 
   // Credit balance + pack catalogue used to live here for the
   // BuyCreditsPanel. Re-enable when the payment system goes live.

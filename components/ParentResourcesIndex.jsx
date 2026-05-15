@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import PracticeModal from "@/components/PracticeModal";
 import LessonPlanModal from "@/components/LessonPlanModal";
 import ResourceViewer from "@/components/ResourceViewer";
 import EmptyState from "@/components/ui/EmptyState";
 import { CATEGORY_LABEL } from "@/components/ResourcesPanel";
+import { deleteResource } from "@/app/dashboard/resource-actions";
 import {
   buildPracticeFlagOptions,
   regeneratePractice,
@@ -26,6 +27,25 @@ export default function ParentResourcesIndex({ kids }) {
   const [practiceFor, setPracticeFor] = useState(null);
   const [lessonPlanFor, setLessonPlanFor] = useState(null);
   const [viewing, setViewing] = useState(null);
+  const [deletingId, setDeletingId] = useState(null);
+  const [, startDelete] = useTransition();
+
+  function handleDelete(resource) {
+    if (!confirm(`Delete "${resource.name}"? This can't be undone.`)) return;
+    setDeletingId(resource.id);
+    startDelete(async () => {
+      try {
+        const fd = new FormData();
+        fd.set("resource_id", resource.id);
+        await deleteResource(fd);
+        router.refresh();
+      } catch (e) {
+        alert(e?.message || "Could not delete that resource.");
+      } finally {
+        setDeletingId(null);
+      }
+    });
+  }
 
   if (!kids || kids.length === 0) {
     return (
@@ -78,11 +98,14 @@ export default function ParentResourcesIndex({ kids }) {
           ) : (
             <ul className="space-y-2 max-h-130 overflow-y-auto pr-1 -mr-1">
               {kid.resources.map((r) => (
-                <li key={r.id}>
+                <li
+                  key={r.id}
+                  className="group relative flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card hover:border-brand/40 hover:bg-brand-pale/20 transition"
+                >
                   <button
                     type="button"
                     onClick={() => setViewing(r)}
-                    className="w-full text-left flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card hover:border-brand/40 hover:bg-brand-pale/20 transition"
+                    className="flex-1 min-w-0 flex items-center justify-between gap-3 text-left"
                   >
                     <div className="min-w-0">
                       <p className="text-sm font-medium truncate">{r.name}</p>
@@ -97,6 +120,34 @@ export default function ParentResourcesIndex({ kids }) {
                         month: "short",
                       })}
                     </span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(r)}
+                    disabled={deletingId === r.id}
+                    aria-label={`Delete ${r.name}`}
+                    title="Delete resource"
+                    className="shrink-0 h-8 w-8 rounded-lg flex items-center justify-center text-muted opacity-0 group-hover:opacity-100 hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-950/30 transition disabled:opacity-50 disabled:cursor-wait focus:opacity-100"
+                  >
+                    {deletingId === r.id ? (
+                      <span className="text-xs">…</span>
+                    ) : (
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 6h18" />
+                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                      </svg>
+                    )}
                   </button>
                 </li>
               ))}

@@ -233,6 +233,12 @@ export async function deleteResource(formData) {
 
   revalidatePath(`/dashboard/tutor/students/${resource.student_id}`);
   revalidatePath(`/dashboard/parent/students/${resource.student_id}`);
+  // Top-level Resources tabs aggregate across kids — bust their caches
+  // too so a delete or update reflects immediately on the aggregate
+  // view without a manual reload.
+  revalidatePath(`/dashboard/parent/resources`);
+  revalidatePath(`/dashboard/student/resources`);
+  revalidatePath(`/dashboard/tutor/resources`);
 }
 
 export async function updateResource(formData) {
@@ -273,6 +279,12 @@ export async function updateResource(formData) {
 
   revalidatePath(`/dashboard/tutor/students/${resource.student_id}`);
   revalidatePath(`/dashboard/parent/students/${resource.student_id}`);
+  // Top-level Resources tabs aggregate across kids — bust their caches
+  // too so a delete or update reflects immediately on the aggregate
+  // view without a manual reload.
+  revalidatePath(`/dashboard/parent/resources`);
+  revalidatePath(`/dashboard/student/resources`);
+  revalidatePath(`/dashboard/tutor/resources`);
 }
 
 // Helper for server components rendering the resource list.
