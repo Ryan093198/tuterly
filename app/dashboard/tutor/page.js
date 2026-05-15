@@ -130,6 +130,12 @@ export default async function TutorDashboard({ searchParams }) {
 
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
+      <header>
+        <h1 className="text-2xl font-semibold tracking-tight font-grotesk">
+          Tutor&apos;s Dashboard
+        </h1>
+      </header>
+
       {studentsWithoutReport.length > 0 && isCurrentWeek && (
         <div
           className="flex items-start gap-3 rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 px-4 py-3"
@@ -349,7 +355,9 @@ function NewTutorOnboarding() {
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up space-y-6">
       <header className="flex items-end justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Students</h1>
+          <h1 className="text-2xl font-semibold tracking-tight font-grotesk">
+            Tutor&apos;s Dashboard
+          </h1>
           <p className="text-sm text-muted mt-1">
             Add your first student to get started.
           </p>

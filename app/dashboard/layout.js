@@ -5,9 +5,9 @@ import DashboardShell from "@/components/DashboardShell";
 const NAV = {
   tutor: [
     {
-      label: "Students",
+      label: "Dashboard",
       href: "/dashboard/tutor",
-      icon: <Icon name="students" />,
+      icon: <Icon name="grid" />,
     },
     {
       label: "Resources",
