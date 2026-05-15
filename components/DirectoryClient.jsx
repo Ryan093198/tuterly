@@ -11,15 +11,15 @@ const c = {
 };
 
 const tutors = [
-  { name: "Sarah T.", initials: "ST", color: "#6366F1", subjects: ["Mathematics", "VCE Methods"], yearLevels: "Year 7-12", rate: 75, rating: 4.9, sessions: 142, location: "Brighton", online: true, inPerson: true, bio: "Maths specialist with a passion for making complex concepts click. ATAR 99.45. Experienced with Cambridge and Jacaranda textbooks.", improvement: 38, languages: ["English"] },
-  { name: "James W.", initials: "JW", color: "#EC4899", subjects: ["English", "VCE English"], yearLevels: "Year 7-12", rate: 80, rating: 4.8, sessions: 98, location: "Elsternwick", online: true, inPerson: true, bio: "English and literature tutor focused on essay writing, text response, and analytical skills. Published writer and experienced VCE marker.", improvement: 34, languages: ["English"] },
-  { name: "Emily K.", initials: "EK", color: "#F59E0B", subjects: ["Science", "VCE Biology", "VCE Chemistry"], yearLevels: "Year 7-12", rate: 70, rating: 4.9, sessions: 76, location: "Sandringham", online: true, inPerson: false, bio: "Science tutor covering Biology, Chemistry, and general Science. Currently studying Biomedical Science at Monash. Makes science practical and relatable.", improvement: 41, languages: ["English", "Mandarin"] },
-  { name: "Tom R.", initials: "TR", color: "#0ABAB5", subjects: ["Mathematics", "VCE Specialist Maths"], yearLevels: "Year 9-12", rate: 85, rating: 5.0, sessions: 203, location: "Hampton", online: true, inPerson: true, bio: "Specialist Maths and Methods expert. Engineering student at Melbourne Uni. ATAR 99.80. Patient, methodical approach to problem solving.", improvement: 45, languages: ["English"] },
-  { name: "Lisa M.", initials: "LM", color: "#8B5CF6", subjects: ["English", "Humanities", "History"], yearLevels: "Prep-Year 10", rate: 60, rating: 4.7, sessions: 54, location: "Bentleigh", online: true, inPerson: true, bio: "Primary and middle school specialist. Focuses on reading comprehension, creative writing, and building confidence in younger learners.", improvement: 32, languages: ["English", "Vietnamese"] },
-  { name: "Daniel C.", initials: "DC", color: "#EF4444", subjects: ["Mathematics", "Science", "VCE Physics"], yearLevels: "Year 7-12", rate: 75, rating: 4.8, sessions: 117, location: "Caulfield", online: true, inPerson: true, bio: "Maths and Physics tutor with a knack for visual explanations. Uses real-world examples to make abstract concepts tangible. ATAR 99.30.", improvement: 36, languages: ["English", "Greek"] },
-  { name: "Priya S.", initials: "PS", color: "#14B8A6", subjects: ["Mathematics", "VCE Methods", "VCE Specialist Maths"], yearLevels: "Year 7-12", rate: 70, rating: 4.9, sessions: 89, location: "Glen Huntly", online: true, inPerson: false, bio: "Maths tutor specialising in building problem-solving strategies. Actuarial Science student at Monash. Patient and structured approach.", improvement: 39, languages: ["English", "Hindi", "Tamil"] },
-  { name: "Alex N.", initials: "AN", color: "#3B82F6", subjects: ["English", "VCE English Language", "Media"], yearLevels: "Year 9-12", rate: 80, rating: 4.7, sessions: 63, location: "St Kilda", online: true, inPerson: true, bio: "English Language and Media specialist. Journalism student who brings real-world media literacy into every session. Strong essay structure focus.", improvement: 33, languages: ["English"] },
-  { name: "Wei L.", initials: "WL", color: "#F97316", subjects: ["Mathematics", "Science", "Mandarin"], yearLevels: "Prep-Year 12", rate: 65, rating: 4.8, sessions: 71, location: "Brighton East", online: true, inPerson: true, bio: "Bilingual tutor fluent in English and Mandarin. Specialises in helping international students bridge the gap with the Australian curriculum.", improvement: 42, languages: ["English", "Mandarin", "Cantonese"] },
+  { name: "Sarah T.", initials: "ST", color: "#6366F1", subjects: ["Mathematics", "VCE Methods"], yearLevels: "Year 7-12", rate: 65, rating: 4.9, sessions: 142, location: "Brighton", online: true, inPerson: true, bio: "Maths specialist with a passion for making complex concepts click. ATAR 99.45. Experienced with Cambridge and Jacaranda textbooks.", improvement: 38, languages: ["English"] },
+  { name: "James W.", initials: "JW", color: "#EC4899", subjects: ["English", "VCE English"], yearLevels: "Year 7-12", rate: 68, rating: 4.8, sessions: 98, location: "Elsternwick", online: true, inPerson: true, bio: "English and literature tutor focused on essay writing, text response, and analytical skills. Published writer and experienced VCE marker.", improvement: 34, languages: ["English"] },
+  { name: "Emily K.", initials: "EK", color: "#F59E0B", subjects: ["Science", "VCE Biology", "VCE Chemistry"], yearLevels: "Year 7-12", rate: 60, rating: 4.9, sessions: 76, location: "Sandringham", online: true, inPerson: false, bio: "Science tutor covering Biology, Chemistry, and general Science. Currently studying Biomedical Science at Monash. Makes science practical and relatable.", improvement: 41, languages: ["English", "Mandarin"] },
+  { name: "Tom R.", initials: "TR", color: "#0ABAB5", subjects: ["Mathematics", "VCE Specialist Maths"], yearLevels: "Year 9-12", rate: 70, rating: 5.0, sessions: 203, location: "Hampton", online: true, inPerson: true, bio: "Specialist Maths and Methods expert. Engineering student at Melbourne Uni. ATAR 99.80. Patient, methodical approach to problem solving.", improvement: 45, languages: ["English"] },
+  { name: "Lisa M.", initials: "LM", color: "#8B5CF6", subjects: ["English", "Humanities", "History"], yearLevels: "Prep-Year 10", rate: 55, rating: 4.7, sessions: 54, location: "Bentleigh", online: true, inPerson: true, bio: "Primary and middle school specialist. Focuses on reading comprehension, creative writing, and building confidence in younger learners.", improvement: 32, languages: ["English", "Vietnamese"] },
+  { name: "Daniel C.", initials: "DC", color: "#EF4444", subjects: ["Mathematics", "Science", "VCE Physics"], yearLevels: "Year 7-12", rate: 62, rating: 4.8, sessions: 117, location: "Caulfield", online: true, inPerson: true, bio: "Maths and Physics tutor with a knack for visual explanations. Uses real-world examples to make abstract concepts tangible. ATAR 99.30.", improvement: 36, languages: ["English", "Greek"] },
+  { name: "Priya S.", initials: "PS", color: "#14B8A6", subjects: ["Mathematics", "VCE Methods", "VCE Specialist Maths"], yearLevels: "Year 7-12", rate: 58, rating: 4.9, sessions: 89, location: "Glen Huntly", online: true, inPerson: false, bio: "Maths tutor specialising in building problem-solving strategies. Actuarial Science student at Monash. Patient and structured approach.", improvement: 39, languages: ["English", "Hindi", "Tamil"] },
+  { name: "Alex N.", initials: "AN", color: "#3B82F6", subjects: ["English", "VCE English Language", "Media"], yearLevels: "Year 9-12", rate: 65, rating: 4.7, sessions: 63, location: "St Kilda", online: true, inPerson: true, bio: "English Language and Media specialist. Journalism student who brings real-world media literacy into every session. Strong essay structure focus.", improvement: 33, languages: ["English"] },
+  { name: "Wei L.", initials: "WL", color: "#F97316", subjects: ["Mathematics", "Science", "Mandarin"], yearLevels: "Prep-Year 12", rate: 50, rating: 4.8, sessions: 71, location: "Brighton East", online: true, inPerson: true, bio: "Bilingual tutor fluent in English and Mandarin. Specialises in helping international students bridge the gap with the Australian curriculum.", improvement: 42, languages: ["English", "Mandarin", "Cantonese"] },
 ];
 
 const sampleReports = {
@@ -167,14 +167,7 @@ export default function DirectoryClient({ viewer }) {
                   <span style={{ fontSize: 12, color: c.textMuted }}>{t.sessions} sessions</span>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  {isAuthed ? (
-                    <>
-                      <p style={{ fontSize: 11, color: c.textMuted, textDecoration: "line-through" }}>${t.rate + 10}/hr</p>
-                      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.success }}>${t.rate}<span style={{ fontSize: 11, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
-                    </>
-                  ) : (
-                    <p style={{ fontSize: 11, color: c.teal, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1 }}>Sign up to see rate</p>
-                  )}
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy }}>${t.rate}<span style={{ fontSize: 12, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
                 </div>
               </div>
             </div>
@@ -229,24 +222,8 @@ export default function DirectoryClient({ viewer }) {
             <div style={{ padding: "32px 28px", background: c.offWhite, display: "flex", flexDirection: "column", justifyContent: "center" }}>
               {!showSignup ? (
                 <div style={{ textAlign: "center" }}>
-                  {isAuthed ? (
-                    <>
-                      <p style={{ fontSize: 14, color: c.textMuted, textDecoration: "line-through" }}>${selectedTutor.rate + 10}/hr</p>
-                      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 700, color: c.success, marginBottom: 2 }}>${selectedTutor.rate}<span style={{ fontSize: 14, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
-                      <div style={{ background: c.tealPale, borderRadius: 6, padding: "3px 10px", display: "inline-block", marginBottom: 4 }}>
-                        <p style={{ fontSize: 11, fontWeight: 600, color: c.tealDark }}>Tuterly member price</p>
-                      </div>
-                      <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Rate set by {selectedTutor.name}</p>
-                    </>
-                  ) : (
-                    <>
-                      <div style={{ background: c.tealPale, borderRadius: 999, padding: "6px 14px", display: "inline-block", marginBottom: 12 }}>
-                        <p style={{ fontSize: 11, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1 }}>Members only</p>
-                      </div>
-                      <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, lineHeight: 1.25, marginBottom: 8 }}>Sign up to see {selectedTutor.name}&apos;s rate and connect</p>
-                      <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>7-day free trial. Cancel anytime.</p>
-                    </>
-                  )}
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32, fontWeight: 700, color: c.navy, marginBottom: 4 }}>${selectedTutor.rate}<span style={{ fontSize: 16, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
+                  <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Rate set by {selectedTutor.name}</p>
 
                   <div style={{ background: c.white, borderRadius: 14, padding: "24px 20px", border: `1px solid ${c.border}`, marginBottom: 20, textAlign: "left" }}>
                     <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 12 }}>What's included with Tuterly</p>
@@ -260,17 +237,17 @@ export default function DirectoryClient({ viewer }) {
                     </div>
                   </div>
 
-                  {isAuthed ? (
-                    <>
-                      <button onClick={() => setShowEnquiry(true)} style={{ width: "100%", padding: "14px", borderRadius: 10, border: "none", background: c.navy, color: c.white, fontSize: 15, fontWeight: 700, cursor: "pointer", marginBottom: 8 }}>Enquire about {selectedTutor.name}</button>
-                      <p style={{ fontSize: 12, color: c.textMuted, marginBottom: 16 }}>We&apos;ll send your enquiry to our team and put you in touch.</p>
-                    </>
-                  ) : (
-                    <>
-                      <button onClick={() => setShowSignup(true)} style={{ width: "100%", padding: "14px", borderRadius: 10, border: "none", background: c.navy, color: c.white, fontSize: 15, fontWeight: 700, cursor: "pointer", marginBottom: 8 }}>Start 7-day free trial</button>
-                      <p style={{ fontSize: 12, color: c.textMuted, marginBottom: 16 }}>Then $29/month. Cancel anytime.</p>
-                    </>
-                  )}
+                  <button
+                    onClick={() => (isAuthed ? setShowEnquiry(true) : setShowSignup(true))}
+                    style={{ width: "100%", padding: "14px", borderRadius: 10, border: "none", background: c.navy, color: c.white, fontSize: 15, fontWeight: 700, cursor: "pointer", marginBottom: 8 }}
+                  >
+                    Contact {selectedTutor.name}
+                  </button>
+                  <p style={{ fontSize: 12, color: c.textMuted, marginBottom: 16 }}>
+                    {isAuthed
+                      ? "We'll forward your enquiry and put you in touch."
+                      : "Start your 7-day free trial to send your enquiry. Cancel anytime."}
+                  </p>
                   {sampleReports[selectedTutor.name] && (
                     <button onClick={() => { setShowReport(true); setReportSolutions({}); setReportQIndices({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 }); }} style={{ width: "100%", padding: "12px", borderRadius: 10, border: `1px solid ${c.border}`, background: c.white, color: c.teal, fontSize: 13, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
                       📋 See a weekly report by {selectedTutor.name}
