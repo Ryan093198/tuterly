@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { sendInviteEmail } from "@/lib/email";
 
-const VALID_ROLES = new Set(["parent", "student"]);
+const VALID_ROLES = new Set(["parent", "student", "tutor"]);
 
 async function createInviteFor({ studentId, toEmail, role }) {
   if (!VALID_ROLES.has(role)) throw new Error(`invalid role: ${role}`);
@@ -59,7 +59,10 @@ async function createInviteFor({ studentId, toEmail, role }) {
     );
   }
 
+  // Bust the per-student page on every dashboard role so any of them can
+  // see the new "invite sent" badge without a manual reload.
   revalidatePath(`/dashboard/tutor/students/${student.id}`);
+  revalidatePath(`/dashboard/parent/students/${student.id}`);
 }
 
 export async function inviteParent(formData) {
@@ -75,6 +78,19 @@ export async function inviteStudent(formData) {
     studentId: formData.get("student_id"),
     toEmail: formData.get("email")?.toString().trim().toLowerCase(),
     role: "student",
+  });
+}
+
+// Parents (and anyone else with student-row access via RLS) can invite a
+// tutor to take on a child. Accept-invite already handles the tutor
+// role by inserting a tutor_students link, so the only thing this
+// action does differently from the parent/student invites is set
+// role="tutor" on the invites row.
+export async function inviteTutor(formData) {
+  await createInviteFor({
+    studentId: formData.get("student_id"),
+    toEmail: formData.get("email")?.toString().trim().toLowerCase(),
+    role: "tutor",
   });
 }
 

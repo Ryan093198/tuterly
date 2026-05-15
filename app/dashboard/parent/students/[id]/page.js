@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
+import { createAdminClient } from "@/lib/supabase-admin";
 import ProgressTracker from "@/components/ProgressTracker";
 import ResourcesPanel from "@/components/ResourcesPanel";
 import PracticePanel from "@/components/PracticePanel";
@@ -14,7 +15,12 @@ import {
 import EmptyState from "@/components/ui/EmptyState";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
+import SubmitButton from "@/components/ui/SubmitButton";
 import { isReportUnreadByParent } from "@/lib/report-status";
+import {
+  inviteTutor,
+  inviteStudent,
+} from "@/app/dashboard/tutor/students/invite-actions";
 
 export default async function ParentStudentDetail({ params, searchParams }) {
   const { id } = await params;
@@ -29,12 +35,52 @@ export default async function ParentStudentDetail({ params, searchParams }) {
   const { data: student } = await supabase
     .from("students")
     .select(
-      "id, first_name, last_name, year_level, working_level, school, subject, subjects"
+      "id, first_name, last_name, year_level, working_level, school, subject, subjects, student_user_id"
     )
     .eq("id", id)
     .eq("parent_id", user.id)
     .single();
   if (!student) notFound();
+
+  // Pull the linked-student profile (if any) and the latest pending
+  // tutor / student invites the parent has sent. Profiles need the
+  // admin client because RLS hides other users' rows from the parent;
+  // invites are user-scoped (RLS exposes invites where from_user_id =
+  // auth.uid()) so they can use the regular client.
+  const admin = createAdminClient();
+  const [
+    { data: studentProfile },
+    { data: pendingTutorInvite },
+    { data: pendingStudentInvite },
+  ] = await Promise.all([
+    student.student_user_id
+      ? admin
+          .from("profiles")
+          .select("full_name, email")
+          .eq("id", student.student_user_id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+    supabase
+      .from("invites")
+      .select("to_email, created_at")
+      .eq("student_id", student.id)
+      .eq("from_user_id", user.id)
+      .eq("role", "tutor")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+    supabase
+      .from("invites")
+      .select("to_email, created_at")
+      .eq("student_id", student.id)
+      .eq("from_user_id", user.id)
+      .eq("role", "student")
+      .eq("status", "pending")
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+  ]);
 
   const [
     { data: sessions },
@@ -166,6 +212,29 @@ export default async function ParentStudentDetail({ params, searchParams }) {
         </div>
       </header>
 
+      <div className="grid sm:grid-cols-2 gap-4">
+        <InviteSlot
+          label="Tutor"
+          studentId={student.id}
+          inviteAction={inviteTutor}
+          linkedTutors={tutorsByStudent.get(student.id) ?? []}
+          pendingInvite={pendingTutorInvite}
+          placeholder="tutor@example.com"
+          inviteLabel="Invite tutor"
+          unlinkedHelp="Invite the tutor your child is working with so their session reports land here."
+        />
+        <InviteSlot
+          label="Student"
+          studentId={student.id}
+          inviteAction={inviteStudent}
+          linkedProfile={studentProfile}
+          pendingInvite={pendingStudentInvite}
+          placeholder="student@example.com"
+          inviteLabel="Invite student"
+          unlinkedHelp="Give your child their own login so they can see their reports and flag tricky questions."
+        />
+      </div>
+
       <Section label="Reports">
         {reportSessions.length ? (
           <ul className="space-y-2 max-h-130 overflow-y-auto pr-1 -mr-1">
@@ -263,5 +332,112 @@ function Avatar({ name }) {
     <div className="h-14 w-14 shrink-0 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-lg font-semibold">
       {initials}
     </div>
+  );
+}
+
+// Per-role invite slot for the parent's per-student page. Three states:
+//   linked     — show name + Linked badge
+//   pending    — show "invite sent" + the email it went to
+//   empty      — show the invite form
+//
+// `linkedTutors` is an array because a student can have multiple
+// tutors (eg. maths + english); we render the first as primary and a
+// "+N more" note. `linkedProfile` is the singular student-account
+// profile (a student record points at exactly one auth user).
+function InviteSlot({
+  label,
+  studentId,
+  inviteAction,
+  linkedTutors,
+  linkedProfile,
+  pendingInvite,
+  placeholder,
+  inviteLabel,
+  unlinkedHelp,
+}) {
+  const tutors = Array.isArray(linkedTutors) ? linkedTutors : [];
+  const primary = linkedProfile || tutors[0] || null;
+  const extraTutors = tutors.length > 1 ? tutors.length - 1 : 0;
+  const initials = primary
+    ? (primary.full_name || primary.email || "?")
+        .split(/\s+/)
+        .map((p) => p[0])
+        .filter(Boolean)
+        .slice(0, 2)
+        .join("")
+        .toUpperCase()
+    : null;
+
+  return (
+    <section className="space-y-2">
+      <h2 className="text-[11px] uppercase tracking-wider text-muted font-medium">
+        {label}
+      </h2>
+      {primary ? (
+        <Card className="p-4 h-full">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-full bg-brand-pale text-brand-foreground flex items-center justify-center text-sm font-semibold shrink-0">
+              {initials}
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="font-medium truncate">
+                {primary.full_name || primary.email}
+              </div>
+              {primary.full_name && (
+                <div className="text-sm text-muted truncate">
+                  {primary.email}
+                </div>
+              )}
+              {extraTutors > 0 && (
+                <div className="text-xs text-muted mt-0.5">
+                  +{extraTutors} other tutor{extraTutors === 1 ? "" : "s"}
+                </div>
+              )}
+            </div>
+            <Badge tone="success" className="ml-auto shrink-0">
+              Linked
+            </Badge>
+          </div>
+        </Card>
+      ) : pendingInvite ? (
+        <Card className="p-4 border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 space-y-2 h-full">
+          <div className="flex items-center justify-between gap-2">
+            <Badge tone="warning">Invite sent</Badge>
+            <span className="text-[11px] text-muted">
+              {new Date(pendingInvite.created_at).toLocaleDateString("en-AU", {
+                day: "numeric",
+                month: "short",
+              })}
+            </span>
+          </div>
+          <p className="text-sm text-foreground/80 truncate">
+            Sent to <span className="font-medium">{pendingInvite.to_email}</span>
+          </p>
+          <p className="text-xs text-muted leading-snug">
+            They&apos;ll appear here once they accept the email link.
+          </p>
+        </Card>
+      ) : (
+        <Card className="p-4 space-y-3 h-full">
+          <p className="text-xs text-muted leading-snug">{unlinkedHelp}</p>
+          <form
+            action={inviteAction}
+            className="flex flex-col sm:flex-row gap-2"
+          >
+            <input type="hidden" name="student_id" value={studentId} />
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder={placeholder}
+              className="flex-1 h-9 px-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition min-w-0"
+            />
+            <SubmitButton variant="primary" size="sm" pendingLabel="Sending…">
+              {inviteLabel}
+            </SubmitButton>
+          </form>
+        </Card>
+      )}
+    </section>
   );
 }
