@@ -174,11 +174,13 @@ export default async function ParentStudentDetail({ params, searchParams }) {
   // currently working at (or year level if none set). The parent doesn't
   // pick a level — keeping the surface small means fewer ways to misuse it.
   const practiceLevel = student.working_level || student.year_level;
-  const topicGroups = getTopicGroupsForLevel(
-    practiceLevel,
-    student.subject || "maths",
-    student.subjects
-  );
+  // Pre-compute curriculum groups for both subjects so PracticeModal
+  // can swap them when the parent toggles subject inside the modal —
+  // otherwise switching to English keeps the maths topics visible.
+  const topicsBySubject = {
+    maths: getTopicGroupsForLevel(practiceLevel, "maths", student.subjects),
+    english: getTopicGroupsForLevel(practiceLevel, "english", student.subjects),
+  };
 
   // Tutor name for the subhead — disambiguates the duplicate-record case
   // when the parent's child appears under more than one tutor.
@@ -290,7 +292,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
         <PracticePanel
           student={student}
           weakTopics={weakTopics}
-          topicGroups={topicGroups}
+          topicsBySubject={topicsBySubject}
         />
       </Section>
 

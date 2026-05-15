@@ -50,15 +50,20 @@ export default async function StudentResourcesPage() {
 
     kids = studentList.map((student) => {
       const level = student.working_level || student.year_level;
-      const topicGroups = getTopicGroupsForLevel(
-        level,
-        student.subject || "maths",
-        student.subjects && student.subjects.length ? student.subjects : [level]
-      );
+      // Pre-compute curriculum groups for both subjects so the
+      // PracticeModal can swap them when the student toggles subject.
+      const subjects =
+        student.subjects && student.subjects.length
+          ? student.subjects
+          : [level];
+      const topicsBySubject = {
+        maths: getTopicGroupsForLevel(level, "maths", subjects),
+        english: getTopicGroupsForLevel(level, "english", subjects),
+      };
       return {
         student,
         resources: byStudent.get(student.id) ?? [],
-        topicGroups,
+        topicsBySubject,
         weakTopics: [],
       };
     });

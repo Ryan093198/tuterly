@@ -19,7 +19,7 @@ export default async function StudentReportView({ params }) {
   const { data: report, error: reportError } = await supabase
     .from("reports")
     .select(
-      "id, content, sent_at, sessions(id, date, student_id, students(id, first_name, last_name, student_user_id))"
+      "id, content, sent_at, sessions(id, date, subject, student_id, students(id, first_name, last_name, student_user_id, subject))"
     )
     .eq("id", id)
     .single();
@@ -72,7 +72,8 @@ export default async function StudentReportView({ params }) {
     .eq("report_id", report.id)
     .eq("student_id", student.id);
   const flaggedSet = new Set((flagRows ?? []).map((r) => r.question_number));
-  const overallTopic = detectOverallTopic(report.content) || null;
+  const reportSubject = sessionData?.subject || studentData?.subject || "maths";
+  const overallTopic = detectOverallTopic(report.content, reportSubject) || null;
 
   const formattedDate = new Date(sessionDate).toLocaleDateString("en-AU", {
     weekday: "long",

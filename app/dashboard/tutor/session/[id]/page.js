@@ -139,6 +139,7 @@ export default async function SessionPage({ params, searchParams }) {
             reportContent={report.content}
             initialRatings={ratings ?? []}
             initialTopic={initialTopic}
+            subject={session.subject || student.subject || "maths"}
           />
         </Section>
       )}

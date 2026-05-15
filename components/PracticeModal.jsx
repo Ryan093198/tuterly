@@ -16,6 +16,12 @@ export default function PracticeModal({
   onClose,
   student,
   weakTopics,
+  // Either topicsBySubject ({ maths, english }) or the legacy single
+  // topicGroups prop. topicsBySubject is preferred so the topic
+  // dropdown can swap when the parent toggles subject inside the
+  // modal — without it, a maths student switching to english would
+  // still see maths topics (the original bug).
+  topicsBySubject,
   topicGroups,
   onGenerated,
 }) {
@@ -29,9 +35,20 @@ export default function PracticeModal({
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
 
+  // Re-derive the visible topic groups whenever the subject changes.
+  // topicsBySubject is the canonical source; fall back to the legacy
+  // topicGroups prop so existing callers don't break before they're
+  // migrated.
+  const activeTopicGroups = useMemo(() => {
+    if (topicsBySubject && Array.isArray(topicsBySubject[subject])) {
+      return topicsBySubject[subject];
+    }
+    return topicGroups ?? [];
+  }, [topicsBySubject, topicGroups, subject]);
+
   const flatTopics = useMemo(
-    () => (topicGroups ?? []).flatMap((g) => g.topics),
-    [topicGroups]
+    () => activeTopicGroups.flatMap((g) => g.topics),
+    [activeTopicGroups]
   );
 
   useEffect(() => {
@@ -42,6 +59,14 @@ export default function PracticeModal({
       document.body.style.overflow = prev;
     };
   }, [open]);
+
+  // Clear the picked topic on subject swap — the old topicId belongs to
+  // the previous subject's curriculum so leaving it selected sends the
+  // wrong descriptor to the API.
+  useEffect(() => {
+    setTopicId("");
+    setTopicLabel("");
+  }, [subject]);
 
   if (!open) return null;
 
@@ -222,7 +247,7 @@ export default function PracticeModal({
             <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">
               Or pick a topic from the {labelForLevel(student)} curriculum
             </span>
-            {topicGroups?.length > 0 ? (
+            {activeTopicGroups.length > 0 ? (
               <select
                 value={topicId}
                 onChange={(e) => pickCurriculumTopic(e.target.value)}
@@ -230,7 +255,7 @@ export default function PracticeModal({
                 className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
               >
                 <option value="">— Choose a topic —</option>
-                {topicGroups.map((g) => (
+                {activeTopicGroups.map((g) => (
                   <optgroup key={g.strand} label={g.strand}>
                     {g.topics.map((t) => (
                       <option key={t.id} value={t.id} title={t.desc}>
@@ -253,7 +278,7 @@ export default function PracticeModal({
                 className="w-full h-10 px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
               />
             )}
-            {topicGroups?.length > 0 && (
+            {activeTopicGroups.length > 0 && (
               <span className="block text-[11px] text-muted">
                 Don&apos;t see what you&apos;re after? Type it in the
                 &quot;Focus&quot; box below.

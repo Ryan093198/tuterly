@@ -16,7 +16,7 @@ import {
 // Generated worksheets are stored as `practice_questions` resources, so they
 // also appear in the Resources panel below — no need to duplicate that list
 // here.
-export default function PracticePanel({ student, weakTopics, topicGroups }) {
+export default function PracticePanel({ student, weakTopics, topicGroups, topicsBySubject }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [viewing, setViewing] = useState(null);
@@ -93,6 +93,7 @@ export default function PracticePanel({ student, weakTopics, topicGroups }) {
         student={student}
         weakTopics={weakTopics}
         topicGroups={topicGroups}
+        topicsBySubject={topicsBySubject}
         onGenerated={(resource) => {
           setViewing(resource);
           router.refresh();

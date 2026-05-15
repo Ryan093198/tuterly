@@ -168,6 +168,7 @@ export default function ParentResourcesIndex({ kids }) {
           onClose={() => setPracticeFor(null)}
           student={practiceFor.student}
           weakTopics={practiceFor.weakTopics ?? []}
+          topicsBySubject={practiceFor.topicsBySubject}
           topicGroups={practiceFor.topicGroups ?? []}
           onGenerated={(resource) => {
             setViewing(resource);

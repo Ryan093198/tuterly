@@ -10,14 +10,16 @@ import {
 } from "@/lib/rating";
 import { saveRatings } from "@/app/dashboard/tutor/session/actions";
 
-export default function RatingPanel({ sessionId, reportContent, initialRatings = [], initialTopic = "" }) {
+export default function RatingPanel({ sessionId, reportContent, initialRatings = [], initialTopic = "", subject = "maths" }) {
   const router = useRouter();
 
   const detected = useMemo(() => {
     const subs = extractSubtopics(reportContent);
-    const topic = detectOverallTopic(reportContent);
+    // Pass subject so an English report doesn't get tagged with maths
+    // topics like "Geometry" because of incidental word matches.
+    const topic = detectOverallTopic(reportContent, subject);
     return { subs, topic };
-  }, [reportContent]);
+  }, [reportContent, subject]);
 
   const [overallTopic, setOverallTopic] = useState(initialTopic || detected.topic);
   const [subtopicRatings, setSubtopicRatings] = useState(() => {

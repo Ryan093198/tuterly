@@ -47,15 +47,22 @@ export default async function ParentResourcesPage() {
 
     kids = studentList.map((student) => {
       const level = student.working_level || student.year_level;
-      const topicGroups = getTopicGroupsForLevel(
-        level,
-        student.subject || "maths",
-        student.subjects && student.subjects.length ? student.subjects : [level]
-      );
+      // Pre-compute curriculum groups for both subjects so the
+      // PracticeModal can swap them when the parent toggles subject
+      // inside the modal — without it, switching to English keeps
+      // the maths topics visible.
+      const subjects =
+        student.subjects && student.subjects.length
+          ? student.subjects
+          : [level];
+      const topicsBySubject = {
+        maths: getTopicGroupsForLevel(level, "maths", subjects),
+        english: getTopicGroupsForLevel(level, "english", subjects),
+      };
       return {
         student,
         resources: byStudent.get(student.id) ?? [],
-        topicGroups,
+        topicsBySubject,
         // Aggregated weak-topic suggestions live on the per-student page;
         // the Resources tab uses the curriculum dropdown only. Keeps this
         // server fetch cheap.
