@@ -2,67 +2,331 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
 import Button from "@/components/ui/Button";
 import EmptyState from "@/components/ui/EmptyState";
-import StudentSearchList from "@/components/StudentSearchList";
 
-export default async function TutorDashboard() {
+// Tutor dashboard. Three-zone layout designed so a tutor checking on
+// their phone Sunday night can answer two questions in five seconds:
+//   1. How many reports do I still owe this week?
+//   2. Which students don't have one yet?
+//
+// Top stats bar shows this-week / this-month / this-year totals.
+// Per-student weekly status list takes up the bulk of the page. Quick
+// actions are below the fold for the deliberate "log a new session"
+// path. No payments, no scheduling, no performance metrics — those
+// come in later phases.
+
+export default async function TutorDashboard({ searchParams }) {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Roster — fetch first because if there are no students every other
+  // query is moot and we render the new-tutor onboarding flow.
   const { data: links } = await supabase
     .from("tutor_students")
     .select(
-      "students(id, first_name, last_name, year_level, working_level, school, subjects)"
+      "students(id, first_name, last_name, year_level, working_level, subject, school)"
     )
     .eq("tutor_id", user.id)
     .eq("status", "active");
-
-  // Sort alphabetically by first name (then last name) so the list is easy
-  // to scan when a tutor has many students.
-  const baseStudents = (links ?? [])
+  const students = (links ?? [])
     .map((l) => l.students)
     .filter(Boolean)
-    .sort((a, b) => {
-      const f = (a.first_name || "").localeCompare(b.first_name || "", "en", {
+    .sort((a, b) =>
+      (a.first_name || "").localeCompare(b.first_name || "", "en", {
         sensitivity: "base",
-      });
-      if (f !== 0) return f;
-      return (a.last_name || "").localeCompare(b.last_name || "", "en", {
-        sensitivity: "base",
-      });
-    });
+      })
+    );
 
-  // Latest session per student so the roster card can show "Last session: X"
-  // and a status badge — without that the roster gives no signal about
-  // outstanding work (notes pending / report not emailed / etc.).
-  const studentIds = baseStudents.map((s) => s.id);
-  const latestByStudent = new Map();
-  if (studentIds.length) {
-    const { data: recent } = await supabase
-      .from("sessions")
-      .select("id, date, status, student_id")
-      .eq("tutor_id", user.id)
-      .in("student_id", studentIds)
-      .order("date", { ascending: false });
-    for (const s of recent ?? []) {
-      if (!latestByStudent.has(s.student_id)) latestByStudent.set(s.student_id, s);
-    }
+  if (students.length === 0) {
+    return <NewTutorOnboarding />;
   }
-  const students = baseStudents.map((s) => ({
-    ...s,
-    latestSession: latestByStudent.get(s.id) ?? null,
+
+  // Resolve the week the page is showing. ?week=YYYY-MM-DD picks a
+  // specific Monday so the prev/next arrows work via plain links;
+  // missing or invalid → snap to the Monday of today.
+  const sp = searchParams ? await searchParams : {};
+  const weekStart = mondayOf(parseIsoDate(sp?.week) ?? new Date());
+  const weekEnd = addDays(weekStart, 6);
+  const isCurrentWeek = sameDay(weekStart, mondayOf(new Date()));
+
+  // One sessions query covers everything: this-week per-student status,
+  // month totals, year totals. Joined report row tells us if the
+  // session has a report — used for "Report sent" vs "No report yet"
+  // and for the headline "X reports submitted this week" stat.
+  const yearStart = new Date(weekStart.getFullYear(), 0, 1);
+  const { data: rawSessions } = await supabase
+    .from("sessions")
+    .select(
+      "id, date, duration_minutes, student_id, status, reports(id, sent_at, created_at)"
+    )
+    .eq("tutor_id", user.id)
+    .gte("date", toIso(yearStart))
+    .order("date", { ascending: false });
+
+  // Normalise: reports comes back as an array (sessions → reports is
+  // one-to-many, even though we enforce uniqueness in practice).
+  const sessions = (rawSessions ?? []).map((s) => ({
+    id: s.id,
+    date: s.date,
+    duration_minutes: s.duration_minutes ?? 60,
+    student_id: s.student_id,
+    status: s.status,
+    report: Array.isArray(s.reports) ? s.reports[0] ?? null : s.reports ?? null,
   }));
 
+  // Buckets.
+  const weekRange = (s) =>
+    isoBetween(s.date, toIso(weekStart), toIso(weekEnd));
+  const monthRange = (s) => {
+    const d = new Date(s.date + "T00:00:00");
+    const today = new Date();
+    return (
+      d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()
+    );
+  };
+
+  const weekSessions = sessions.filter(weekRange);
+  const weekReports = weekSessions.filter((s) => s.report);
+  const monthSessions = sessions.filter(monthRange);
+  const yearSessions = sessions;
+
+  const sumHours = (arr) =>
+    arr.reduce((acc, s) => acc + (s.duration_minutes ?? 60) / 60, 0);
+  const weekHours = sumHours(weekReports);
+  const monthHours = sumHours(monthSessions);
+  const yearHours = sumHours(yearSessions);
+
+  // Per-student status for the selected week. Latest report-bearing
+  // session in the range wins (a kid might have two sessions in a
+  // week, only one with a report — the report is what we care about).
+  const reportByStudentThisWeek = new Map();
+  for (const s of weekSessions) {
+    if (s.report && !reportByStudentThisWeek.has(s.student_id)) {
+      reportByStudentThisWeek.set(s.student_id, s);
+    }
+  }
+  const reportsDoneThisWeek = reportByStudentThisWeek.size;
+  const studentsWithoutReport = students.filter(
+    (st) => !reportByStudentThisWeek.has(st.id)
+  );
+
+  const prevWeek = toIso(addDays(weekStart, -7));
+  const nextWeek = toIso(addDays(weekStart, 7));
+
   return (
-    <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-6xl mx-auto animate-fade-in-up">
-      <header className="flex items-end justify-between gap-4 mb-8">
+    <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
+      {studentsWithoutReport.length > 0 && isCurrentWeek && (
+        <div
+          className="flex items-start gap-3 rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 px-4 py-3"
+          role="status"
+        >
+          <span aria-hidden="true" className="text-lg leading-none">⚠️</span>
+          <div className="text-sm">
+            <span className="font-medium text-amber-900 dark:text-amber-200">
+              {studentsWithoutReport.length} student
+              {studentsWithoutReport.length === 1 ? "" : "s"} haven&apos;t
+              received a report this week
+            </span>
+            <span className="text-amber-800/80 dark:text-amber-200/70 ml-1">
+              · scroll down to submit notes
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* TOP STATS BAR */}
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <StatCard
+          label="This week"
+          primary={`${weekReports.length} report${weekReports.length === 1 ? "" : "s"} submitted`}
+          secondary={`${formatHours(weekHours)} of teaching`}
+          accent
+        />
+        <StatCard
+          label="This month"
+          primary={`${monthSessions.length} session${monthSessions.length === 1 ? "" : "s"} completed`}
+          secondary={`${formatHours(monthHours)} of teaching`}
+        />
+        <StatCard
+          label="This year"
+          primary={`${yearSessions.length} session${yearSessions.length === 1 ? "" : "s"} completed`}
+          secondary={`${formatHours(yearHours)} of teaching`}
+        />
+      </section>
+
+      {/* MY STUDENTS */}
+      <section className="space-y-4">
+        <div className="flex items-end justify-between gap-3 flex-wrap">
+          <div>
+            <h2 className="text-xl font-semibold tracking-tight font-grotesk">
+              My students <span className="text-muted font-normal">({students.length})</span>
+            </h2>
+            <p className="text-sm text-muted mt-1">
+              {reportsDoneThisWeek} of {students.length} report
+              {students.length === 1 ? "" : "s"} done this week
+            </p>
+          </div>
+          <Link href="/dashboard/tutor/students/new">
+            <Button variant="primary" size="md">
+              <span aria-hidden="true">+</span> Add student
+            </Button>
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-2 text-sm">
+          <Link
+            href={`/dashboard/tutor?week=${prevWeek}`}
+            aria-label="Previous week"
+            className="h-8 w-8 rounded-lg border border-zinc-200 dark:border-zinc-800 flex items-center justify-center hover:bg-surface-soft transition"
+          >
+            ‹
+          </Link>
+          <span className="font-medium">
+            This week ({formatShortDate(weekStart)} – {formatShortDate(weekEnd)})
+          </span>
+          <Link
+            href={`/dashboard/tutor?week=${nextWeek}`}
+            aria-label="Next week"
+            className={`h-8 w-8 rounded-lg border border-zinc-200 dark:border-zinc-800 flex items-center justify-center transition ${isCurrentWeek ? "opacity-40 pointer-events-none" : "hover:bg-surface-soft"}`}
+            aria-disabled={isCurrentWeek}
+          >
+            ›
+          </Link>
+          {!isCurrentWeek && (
+            <Link
+              href="/dashboard/tutor"
+              className="ml-2 text-xs text-brand font-medium hover:underline"
+            >
+              Jump to current week
+            </Link>
+          )}
+        </div>
+
+        <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 max-h-130 overflow-y-auto">
+          {students.map((s) => {
+            const reportSession = reportByStudentThisWeek.get(s.id);
+            return (
+              <li key={s.id}>
+                <Link
+                  href={`/dashboard/tutor/students/${s.id}`}
+                  className="flex items-center gap-3 px-4 py-3 sm:px-5 sm:py-4 hover:bg-surface-soft transition"
+                >
+                  {reportSession ? (
+                    <span
+                      aria-hidden="true"
+                      className="h-7 w-7 shrink-0 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                    </span>
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="h-7 w-7 shrink-0 rounded-full border-2 border-zinc-200 dark:border-zinc-800"
+                    />
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <p className="font-medium truncate">
+                      {s.first_name} {s.last_name}
+                    </p>
+                    <p className="text-xs text-muted mt-0.5">
+                      {[s.working_level || s.year_level, subjectLabel(s.subject)]
+                        .filter(Boolean)
+                        .join(" · ")}
+                    </p>
+                  </div>
+                  {reportSession ? (
+                    <span className="text-xs text-emerald-700 dark:text-emerald-400 whitespace-nowrap hidden sm:inline">
+                      Report sent {formatShortDate(reportSession.date)}
+                    </span>
+                  ) : (
+                    <Link
+                      href={`/dashboard/tutor/session/new?student=${s.id}`}
+                      className="text-xs font-medium text-brand whitespace-nowrap hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Submit notes →
+                    </Link>
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      {/* QUICK ACTIONS */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <QuickAction
+          href="/dashboard/tutor/session/new"
+          icon={
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+          }
+          title="Submit notes for a student"
+          desc="Log a new session and generate the report."
+        />
+        <QuickAction
+          href="/dashboard/tutor/resources"
+          icon={
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
+          }
+          title="View past reports"
+          desc="Browse every report you've generated."
+        />
+      </section>
+    </div>
+  );
+}
+
+function StatCard({ label, primary, secondary, accent = false }) {
+  return (
+    <div
+      className={`rounded-2xl border p-4 sm:p-5 ${
+        accent
+          ? "border-brand/30 bg-brand-pale/40"
+          : "border-zinc-200 dark:border-zinc-800 bg-card"
+      }`}
+    >
+      <p className="text-[10px] uppercase tracking-wider text-muted font-semibold">
+        {label}
+      </p>
+      <p
+        className={`mt-1 text-lg sm:text-xl font-semibold tracking-tight ${
+          accent ? "text-brand-dark" : ""
+        } font-grotesk`}
+      >
+        {primary}
+      </p>
+      <p className="text-xs text-muted mt-1">{secondary}</p>
+    </div>
+  );
+}
+
+function QuickAction({ href, icon, title, desc }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center gap-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-4 sm:p-5 hover:border-brand/40 hover:bg-brand-pale/20 transition"
+    >
+      <div className="h-10 w-10 rounded-xl bg-brand-pale text-brand-dark flex items-center justify-center shrink-0">
+        {icon}
+      </div>
+      <div className="min-w-0">
+        <p className="font-medium truncate">{title}</p>
+        <p className="text-xs text-muted mt-0.5 truncate">{desc}</p>
+      </div>
+    </Link>
+  );
+}
+
+function NewTutorOnboarding() {
+  return (
+    <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up space-y-6">
+      <header className="flex items-end justify-between gap-4 flex-wrap">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Students</h1>
           <p className="text-sm text-muted mt-1">
-            {students.length === 0
-              ? "Add your first student to get started."
-              : `${students.length} active student${students.length === 1 ? "" : "s"}`}
+            Add your first student to get started.
           </p>
         </div>
         <Link href="/dashboard/tutor/students/new">
@@ -71,65 +335,54 @@ export default async function TutorDashboard() {
           </Button>
         </Link>
       </header>
-
-      {students.length === 0 ? (
-        <div className="space-y-6">
-          <EmptyState
-            icon={
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="9" cy="8" r="3.5" />
-                <path d="M2.5 19c.7-3.3 3.4-5.5 6.5-5.5s5.8 2.2 6.5 5.5" />
-              </svg>
-            }
-            title="No students yet"
-            description="Add a student, log a session, and Tuterly will turn your dot-point notes into a parent-ready report in seconds."
-            action={
-              <Link href="/dashboard/tutor/students/new">
-                <Button variant="primary">Add your first student</Button>
-              </Link>
-            }
+      <EmptyState
+        icon={
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M2.5 19c.7-3.3 3.4-5.5 6.5-5.5s5.8 2.2 6.5 5.5" />
+          </svg>
+        }
+        title="No students yet"
+        description="Add a student, log a session, and Tuterly will turn your dot-point notes into a parent-ready report in seconds."
+        action={
+          <Link href="/dashboard/tutor/students/new">
+            <Button variant="primary">Add your first student</Button>
+          </Link>
+        }
+      />
+      <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-6">
+        <h3 className="text-sm font-semibold tracking-tight">
+          Getting started
+        </h3>
+        <ol className="mt-3 space-y-2.5">
+          <Step n={1} title="Add a student" desc="Name, year level, school." />
+          <Step
+            n={2}
+            title="Log a session"
+            desc="Date, duration, and notes. Snap photos of the working too."
           />
-          <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-6">
-            <h3 className="text-sm font-semibold tracking-tight">
-              Getting started
-            </h3>
-            <ol className="mt-3 space-y-2.5">
-              <Step
-                n={1}
-                title="Add a student"
-                desc="Name, year level, school. Set their working level if they're ahead or behind."
-              />
-              <Step
-                n={2}
-                title="Log a session"
-                desc="Date, duration, and notes. Snap photos of the working or upload an audio recording — Tuterly will read both."
-              />
-              <Step
-                n={3}
-                title="Generate the report"
-                desc="One click. Review, edit if needed, then email a PDF to the parent."
-              />
-              <Step
-                n={4}
-                title="Invite the parent (and student)"
-                desc="They'll get their own account to view reports, track progress, and flag tricky questions."
-              />
-            </ol>
-          </div>
-        </div>
-      ) : (
-        <StudentSearchList students={students} />
-      )}
+          <Step
+            n={3}
+            title="Generate the report"
+            desc="One click. Review, edit if needed, send to the parent."
+          />
+          <Step
+            n={4}
+            title="Invite the parent"
+            desc="They'll get their own account to view reports + flag tricky questions."
+          />
+        </ol>
+      </div>
     </div>
   );
 }
@@ -146,4 +399,56 @@ function Step({ n, title, desc }) {
       </span>
     </li>
   );
+}
+
+// ── Date helpers ────────────────────────────────────────────────────
+function parseIsoDate(value) {
+  if (typeof value !== "string") return null;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return null;
+  const d = new Date(`${value}T00:00:00`);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+function mondayOf(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  const day = d.getDay(); // 0 (Sun) – 6 (Sat)
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  return d;
+}
+function addDays(date, n) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + n);
+  return d;
+}
+function sameDay(a, b) {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+}
+function toIso(date) {
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+function isoBetween(value, startIso, endIso) {
+  return typeof value === "string" && value >= startIso && value <= endIso;
+}
+function formatShortDate(date) {
+  const d = typeof date === "string" ? new Date(date + "T00:00:00") : date;
+  return d.toLocaleDateString("en-AU", { day: "numeric", month: "short" });
+}
+function formatHours(hours) {
+  // 1 dp, drop trailing .0
+  const rounded = Math.round(hours * 10) / 10;
+  const str = rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(1);
+  return `${str} ${hours === 1 ? "hour" : "hours"}`;
+}
+function subjectLabel(raw) {
+  if (raw === "english") return "English";
+  if (raw === "maths") return "Maths";
+  return raw ?? null;
 }
