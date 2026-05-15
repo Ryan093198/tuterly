@@ -235,7 +235,7 @@ export default function DirectoryPage() {
                   </div>
 
                   <button onClick={() => setShowSignup(true)} style={{ width: "100%", padding: "14px", borderRadius: 10, border: "none", background: c.navy, color: c.white, fontSize: 15, fontWeight: 700, cursor: "pointer", marginBottom: 8 }}>Start 7-day free trial</button>
-                  <p style={{ fontSize: 12, color: c.textMuted, marginBottom: 16 }}>Then $39/month. Cancel anytime.</p>
+                  <p style={{ fontSize: 12, color: c.textMuted, marginBottom: 16 }}>Then $29/month. Cancel anytime.</p>
                   {sampleReports[selectedTutor.name] && (
                     <button onClick={() => { setShowReport(true); setReportSolutions({}); setReportQIndices({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0 }); }} style={{ width: "100%", padding: "12px", borderRadius: 10, border: `1px solid ${c.border}`, background: c.white, color: c.teal, fontSize: 13, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
                       📋 See a weekly report by {selectedTutor.name}
