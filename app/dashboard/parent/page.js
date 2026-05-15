@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase-server";
 import Card from "@/components/ui/Card";
 import EmptyState from "@/components/ui/EmptyState";
 import Badge from "@/components/ui/Badge";
+import AddChildButton from "@/components/AddChildButton";
 // BuyCreditsPanel intentionally not imported while we're in internal
 // testing — the product is free for now, so parents shouldn't see a
 // "buy session credits" CTA. The component + the underlying
@@ -57,13 +58,16 @@ export default async function ParentDashboard() {
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up">
-      <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight">Your children</h1>
-        <p className="text-sm text-muted mt-1">
-          {students?.length === 0
-            ? "Once your tutor links you, your child's reports will appear here."
-            : "Open a child to see their reports and progress."}
-        </p>
+      <header className="mb-8 flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Your children</h1>
+          <p className="text-sm text-muted mt-1">
+            {students?.length === 0
+              ? "Add your child to start generating worksheets and lesson plans straight away."
+              : "Open a child to see their reports and progress, or add another."}
+          </p>
+        </div>
+        {students?.length > 0 && <AddChildButton />}
       </header>
 
       {/* BuyCreditsPanel hidden during internal testing — product is
@@ -71,15 +75,22 @@ export default async function ParentDashboard() {
           back on. */}
 
       {students?.length === 0 ? (
-        <EmptyState
-          icon={
+        <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-card p-8 sm:p-10 text-center space-y-4">
+          <div className="mx-auto h-12 w-12 rounded-2xl bg-brand-pale text-brand-dark flex items-center justify-center">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 20s-7-4.3-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.7-7 10-7 10z" />
             </svg>
-          }
-          title="Waiting on your tutor"
-          description="Your tutor will send you an invite from Tuterly. Once you accept, your child's session reports will appear here."
-        />
+          </div>
+          <div className="space-y-2 max-w-md mx-auto">
+            <h2 className="text-lg font-semibold tracking-tight">Add your child to get started</h2>
+            <p className="text-sm text-muted leading-relaxed">
+              Once they&apos;re added, you can generate practice worksheets and lesson plans for them straight away. If a tutor invites you later, their sessions will plug into the same record.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <AddChildButton variant="primary" label="Add your child" />
+          </div>
+        </div>
       ) : (
         <ul className="grid sm:grid-cols-2 gap-4">
           {students.map((s) => {
