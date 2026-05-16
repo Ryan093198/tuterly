@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
+import NavProgress from "../components/NavProgress";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,7 +38,12 @@ export default function RootLayout({ children }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Suspense fallback={null}>
+          <NavProgress />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }
