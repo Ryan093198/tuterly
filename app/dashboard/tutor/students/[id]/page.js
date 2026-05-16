@@ -35,30 +35,60 @@ export default async function StudentDetail({ params, searchParams }) {
   const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
   const autoOpenFlag = typeof sp.flag === "string" ? sp.flag : null;
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  const { data: student } = await supabase
-    .from("students")
-    .select(
-      "id, first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, parent_id, student_user_id"
-    )
-    .eq("id", id)
-    .single();
-  if (!student) notFound();
-
-  // Use admin to look up linked profile rows (RLS hides other users' profiles).
   const admin = createAdminClient();
 
+  // Wave 1: everything that only needs the URL `id` runs alongside auth.
+  // The `students` query has no `tutor_id` filter — RLS enforces who can
+  // read it, so it doesn't need to wait for getUser().
+  const [
+    { data: { user } },
+    { data: student },
+    { data: ratingsRaw },
+    { data: rawResources },
+    { count: flaggedCount },
+    { data: openFlags },
+  ] = await Promise.all([
+    supabase.auth.getUser(),
+    supabase
+      .from("students")
+      .select(
+        "id, first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, parent_id, student_user_id"
+      )
+      .eq("id", id)
+      .single(),
+    supabase
+      .from("ratings")
+      .select("topic, subtopic, confidence, sessions(date)")
+      .eq("student_id", id),
+    supabase
+      .from("resources")
+      .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
+      .eq("student_id", id)
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("flagged_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("student_id", id)
+      .is("understood_at", null),
+    // Topics of unresolved flags feed into the PracticePanel weak-topic
+    // suggestions the same way they do on the parent page.
+    supabase
+      .from("flagged_questions")
+      .select("topic")
+      .eq("student_id", id)
+      .is("understood_at", null),
+  ]);
+  if (!student) notFound();
+
+  // Wave 2: needs user.id and/or student fields. enrichResources is
+  // hoisted up so its profile-lookup round-trip overlaps the rest.
   const [
     { data: sessions },
     { data: parentProfile },
     { data: studentProfile },
     { data: pendingParentInvite },
     { data: pendingStudentInvite },
-    { data: ratingsRaw },
-    { data: rawResources },
+    resources,
   ] = await Promise.all([
     supabase
       .from("sessions")
@@ -100,30 +130,7 @@ export default async function StudentDetail({ params, searchParams }) {
       .order("created_at", { ascending: false })
       .limit(1)
       .maybeSingle(),
-    supabase
-      .from("ratings")
-      .select("topic, subtopic, confidence, sessions(date)")
-      .eq("student_id", id),
-    supabase
-      .from("resources")
-      .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
-      .eq("student_id", id)
-      .order("created_at", { ascending: false }),
-  ]);
-
-  const [{ count: flaggedCount }, { data: openFlags }] = await Promise.all([
-    supabase
-      .from("flagged_questions")
-      .select("id", { count: "exact", head: true })
-      .eq("student_id", id)
-      .is("understood_at", null),
-    // Topics of unresolved flags feed into the PracticePanel weak-topic
-    // suggestions the same way they do on the parent page.
-    supabase
-      .from("flagged_questions")
-      .select("topic")
-      .eq("student_id", id)
-      .is("understood_at", null),
+    enrichResources(rawResources ?? []),
   ]);
 
   const ratings = (ratingsRaw ?? [])
@@ -148,8 +155,6 @@ export default async function StudentDetail({ params, searchParams }) {
     maths: getTopicGroupsForLevel(practiceLevel, "maths", student.subjects),
     english: getTopicGroupsForLevel(practiceLevel, "english", student.subjects),
   };
-
-  const resources = await enrichResources(rawResources ?? []);
 
   return (
     <div className="px-4 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">

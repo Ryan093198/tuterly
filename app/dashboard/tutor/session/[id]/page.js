@@ -15,43 +15,44 @@ export default async function SessionPage({ params, searchParams }) {
   const { id } = await params;
   const sp = (await searchParams) ?? {};
   const supabase = await createClient();
+  const admin = createAdminClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { data: session } = await supabase
-    .from("sessions")
-    .select(
-      "id, date, duration_minutes, raw_notes, status, subject, student_id, students(id, first_name, last_name, year_level, subject, parent_id, student_user_id)"
-    )
-    .eq("id", id)
-    .eq("tutor_id", user.id)
-    .single();
+  // session/report/ratings/photoRows only need user.id (for session) or
+  // the URL id (for the rest, where RLS enforces tutor-only access via
+  // session_id), so they all fire in one parallel wave.
+  const [
+    { data: session },
+    { data: report },
+    { data: ratings },
+    { data: photoRows },
+  ] = await Promise.all([
+    supabase
+      .from("sessions")
+      .select(
+        "id, date, duration_minutes, raw_notes, status, subject, student_id, students(id, first_name, last_name, year_level, subject, parent_id, student_user_id)"
+      )
+      .eq("id", id)
+      .eq("tutor_id", user.id)
+      .single(),
+    supabase
+      .from("reports")
+      .select("content, sent_at, student_sent_at")
+      .eq("session_id", id)
+      .maybeSingle(),
+    supabase
+      .from("ratings")
+      .select("topic, subtopic, confidence")
+      .eq("session_id", id),
+    supabase
+      .from("session_photos")
+      .select("id, file_url, created_at")
+      .eq("session_id", id)
+      .order("created_at", { ascending: true }),
+  ]);
   if (!session) notFound();
-
-  const { data: report } = await supabase
-    .from("reports")
-    .select("content, sent_at, student_sent_at")
-    .eq("session_id", id)
-    .maybeSingle();
-
-  const { data: ratings } = await supabase
-    .from("ratings")
-    .select("topic, subtopic, confidence")
-    .eq("session_id", id);
-
-  const { data: photoRows } = await supabase
-    .from("session_photos")
-    .select("id, file_url, created_at")
-    .eq("session_id", id)
-    .order("created_at", { ascending: true });
-
-  const photos = await Promise.all(
-    (photoRows ?? []).map(async (p) => ({
-      ...p,
-      signed_url: await signedPhotoUrl(p.file_url),
-    }))
-  );
 
   const student = session.students;
   const hasReport = !!report?.content;
@@ -61,23 +62,30 @@ export default async function SessionPage({ params, searchParams }) {
   // one exists, otherwise the most recent pending invite for that role. The
   // send action uses the same fallback, so the panel and the actual send
   // always agree on which address would be used.
-  const admin = createAdminClient();
-  const parentRecipient = await resolveRecipient({
-    supabase,
-    admin,
-    studentId: student.id,
-    tutorId: user.id,
-    role: "parent",
-    linkedProfileId: student.parent_id,
-  });
-  const studentRecipient = await resolveRecipient({
-    supabase,
-    admin,
-    studentId: student.id,
-    tutorId: user.id,
-    role: "student",
-    linkedProfileId: student.student_user_id,
-  });
+  const [photos, parentRecipient, studentRecipient] = await Promise.all([
+    Promise.all(
+      (photoRows ?? []).map(async (p) => ({
+        ...p,
+        signed_url: await signedPhotoUrl(p.file_url),
+      }))
+    ),
+    resolveRecipient({
+      supabase,
+      admin,
+      studentId: student.id,
+      tutorId: user.id,
+      role: "parent",
+      linkedProfileId: student.parent_id,
+    }),
+    resolveRecipient({
+      supabase,
+      admin,
+      studentId: student.id,
+      tutorId: user.id,
+      role: "student",
+      linkedProfileId: student.student_user_id,
+    }),
+  ]);
 
   return (
     <div className="px-4 sm:px-8 py-8 sm:py-10 max-w-4xl mx-auto space-y-10 animate-fade-in-up">

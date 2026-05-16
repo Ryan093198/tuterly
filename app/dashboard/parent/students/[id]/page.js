@@ -42,8 +42,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     .single();
   if (!student) notFound();
 
-  // Pull the linked-student profile (if any) and the latest pending
-  // tutor / student invites the parent has sent. Profiles need the
+  // Pull everything we need in one parallel wave. Profiles need the
   // admin client because RLS hides other users' rows from the parent;
   // invites are user-scoped (RLS exposes invites where from_user_id =
   // auth.uid()) so they can use the regular client.
@@ -52,6 +51,13 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     { data: studentProfile },
     { data: pendingTutorInvite },
     { data: pendingStudentInvite },
+    { data: sessions },
+    { data: ratingsRaw },
+    { data: rawResources },
+    { count: flaggedCount },
+    { data: openFlags },
+    { data: resourceFlags },
+    tutorsByStudent,
   ] = await Promise.all([
     student.student_user_id
       ? admin
@@ -80,54 +86,45 @@ export default async function ParentStudentDetail({ params, searchParams }) {
       .order("created_at", { ascending: false })
       .limit(1)
       .maybeSingle(),
+    supabase
+      .from("sessions")
+      .select(
+        "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at, updated_at)"
+      )
+      .eq("student_id", id)
+      .order("date", { ascending: false }),
+    supabase
+      .from("ratings")
+      .select("topic, subtopic, confidence, sessions(date)")
+      .eq("student_id", id),
+    supabase
+      .from("resources")
+      .select(
+        "id, name, category, notes, file_url, content, metadata, created_at, uploaded_by"
+      )
+      .eq("student_id", id)
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("flagged_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("student_id", id)
+      .is("understood_at", null),
+    // Topics of unresolved flags drive the second source for the practice
+    // panel suggestions. Same student-scoped policy as the count query.
+    supabase
+      .from("flagged_questions")
+      .select("topic")
+      .eq("student_id", id)
+      .is("understood_at", null),
+    // Practice-worksheet flags, used to pre-populate the flag state on
+    // each worksheet when the parent opens it.
+    supabase
+      .from("flagged_questions")
+      .select("resource_id, question_number")
+      .eq("student_id", id)
+      .not("resource_id", "is", null),
+    fetchTutorsForStudents([id]),
   ]);
-
-  const [
-    { data: sessions },
-    { data: ratingsRaw },
-    { data: rawResources },
-    { count: flaggedCount },
-    { data: openFlags },
-    { data: resourceFlags },
-  ] = await Promise.all([
-      supabase
-        .from("sessions")
-        .select(
-          "id, date, duration_minutes, status, reports(id, sent_at, parent_viewed_at, updated_at)"
-        )
-        .eq("student_id", id)
-        .order("date", { ascending: false }),
-      supabase
-        .from("ratings")
-        .select("topic, subtopic, confidence, sessions(date)")
-        .eq("student_id", id),
-      supabase
-        .from("resources")
-        .select(
-          "id, name, category, notes, file_url, content, metadata, created_at, uploaded_by"
-        )
-        .eq("student_id", id)
-        .order("created_at", { ascending: false }),
-      supabase
-        .from("flagged_questions")
-        .select("id", { count: "exact", head: true })
-        .eq("student_id", id)
-        .is("understood_at", null),
-      // Topics of unresolved flags drive the second source for the practice
-      // panel suggestions. Same student-scoped policy as the count query.
-      supabase
-        .from("flagged_questions")
-        .select("topic")
-        .eq("student_id", id)
-        .is("understood_at", null),
-      // Practice-worksheet flags, used to pre-populate the flag state on
-      // each worksheet when the parent opens it.
-      supabase
-        .from("flagged_questions")
-        .select("resource_id, question_number")
-        .eq("student_id", id)
-        .not("resource_id", "is", null),
-    ]);
 
   // sessions → reports is one-to-many, so Supabase returns reports as an
   // array. Normalise to the first (most recent) report and drop sessions with
@@ -184,7 +181,6 @@ export default async function ParentStudentDetail({ params, searchParams }) {
 
   // Tutor name for the subhead — disambiguates the duplicate-record case
   // when the parent's child appears under more than one tutor.
-  const tutorsByStudent = await fetchTutorsForStudents([student.id]);
   const tutoringLine = tutoringSummary(student, tutorsByStudent.get(student.id));
 
   return (
