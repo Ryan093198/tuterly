@@ -13,22 +13,26 @@ import { usePathname, useSearchParams } from 'next/navigation';
 //
 // Completes on: pathname or searchParams change after a start.
 //
-// Hidden during the first ~80ms so transitions fast enough not to need
-// feedback never flash the bar.
+// We hold the 'loading' phase for at least MIN_VISIBLE_MS so the bar
+// is actually visible even when pathname updates synchronously with
+// the click (e.g. prefetched routes), since opacity 0 → 0 doesn't
+// animate.
+const MIN_VISIBLE_MS = 300;
+
 export default function NavProgress() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [phase, setPhase] = useState('idle'); // 'idle' | 'loading' | 'done'
-  const startedRef = useRef(false);
-  const showTimerRef = useRef(null);
-  const doneTimerRef = useRef(null);
+  const startedAtRef = useRef(0);
+  const finishTimerRef = useRef(null);
+  const resetTimerRef = useRef(null);
 
   useEffect(() => {
     const start = () => {
-      if (startedRef.current) return;
-      startedRef.current = true;
-      clearTimeout(doneTimerRef.current);
-      showTimerRef.current = setTimeout(() => setPhase('loading'), 80);
+      if (startedAtRef.current) return;
+      startedAtRef.current = performance.now();
+      clearTimeout(resetTimerRef.current);
+      setPhase('loading');
     };
 
     const onClick = (e) => {
@@ -68,17 +72,20 @@ export default function NavProgress() {
       document.removeEventListener('click', onClick, true);
       history.pushState = origPush;
       history.replaceState = origReplace;
-      clearTimeout(showTimerRef.current);
-      clearTimeout(doneTimerRef.current);
+      clearTimeout(finishTimerRef.current);
+      clearTimeout(resetTimerRef.current);
     };
   }, []);
 
   useEffect(() => {
-    if (!startedRef.current) return;
-    startedRef.current = false;
-    clearTimeout(showTimerRef.current);
-    setPhase('done');
-    doneTimerRef.current = setTimeout(() => setPhase('idle'), 400);
+    if (!startedAtRef.current) return;
+    const elapsed = performance.now() - startedAtRef.current;
+    const remaining = Math.max(0, MIN_VISIBLE_MS - elapsed);
+    startedAtRef.current = 0;
+    finishTimerRef.current = setTimeout(() => {
+      setPhase('done');
+      resetTimerRef.current = setTimeout(() => setPhase('idle'), 400);
+    }, remaining);
   }, [pathname, searchParams]);
 
   return <div aria-hidden className={`nav-progress nav-progress-${phase}`} />;

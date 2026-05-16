@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
 import EmptyState from "@/components/ui/EmptyState";
@@ -36,12 +37,12 @@ export default async function ParentDashboard() {
   const studentList = students ?? [];
   const studentIds = studentList.map((s) => s.id);
 
-  const [tutorsByStudent, events] = studentIds.length
-    ? await Promise.all([
-        fetchTutorsForStudents(studentIds),
-        fetchParentActivity(supabase, user.id, studentList),
-      ])
-    : [new Map(), []];
+  // The children strip needs tutor names to render; the activity feed
+  // hits 3 more tables and is streamed in via <Suspense> below so the
+  // strip can paint as soon as it's ready instead of blocking on it.
+  const tutorsByStudent = studentIds.length
+    ? await fetchTutorsForStudents(studentIds)
+    : new Map();
 
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
@@ -100,11 +101,42 @@ export default async function ParentDashboard() {
             <h2 className="text-xl font-semibold tracking-tight font-grotesk">
               Recent activity
             </h2>
-            <ParentActivityFeed events={events} />
+            <Suspense fallback={<ActivityFeedSkeleton />}>
+              <ActivityFeedStream
+                parentId={user.id}
+                students={studentList}
+              />
+            </Suspense>
           </section>
         </>
       )}
     </div>
+  );
+}
+
+async function ActivityFeedStream({ parentId, students }) {
+  const supabase = await createClient();
+  const events = await fetchParentActivity(supabase, parentId, students);
+  return <ParentActivityFeed events={events} />;
+}
+
+function ActivityFeedSkeleton() {
+  return (
+    <ul className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card divide-y divide-zinc-100 dark:divide-zinc-900 overflow-hidden animate-pulse">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <li
+          key={i}
+          className="flex items-start gap-3 px-4 py-3 sm:px-5 sm:py-4"
+        >
+          <div className="h-9 w-9 shrink-0 rounded-full bg-zinc-200/70 dark:bg-zinc-800/60" />
+          <div className="flex-1 space-y-2">
+            <div className="h-3.5 w-40 rounded bg-zinc-200/70 dark:bg-zinc-800/60" />
+            <div className="h-3 w-28 rounded bg-zinc-200/60 dark:bg-zinc-800/50" />
+          </div>
+          <div className="h-3 w-8 rounded bg-zinc-200/50 dark:bg-zinc-800/40 mt-1" />
+        </li>
+      ))}
+    </ul>
   );
 }
 
