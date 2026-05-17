@@ -21,10 +21,10 @@ export async function generateMetadata({ params }) {
   const { suburb: slug } = await params;
   const data = getSeoSuburb(slug);
   if (!data) return {};
-  const title = `Online Tutoring in ${data.name} | Tuterly`;
+  const title = `Online & In-Person Tutoring in ${data.name} | Tuterly`;
   const description =
     data.blurb ||
-    `Online maths and English tutors for ${data.name} students. Session reports after every lesson and practice worksheets between them.`;
+    `Maths and English tutors for ${data.name} students — choose online sessions or in-person at home. Session reports after every lesson and practice worksheets between them.`;
   const url = `${SITE_URL}/tutoring/${slug}`;
   // Draft suburbs are noindexed so they don't get into Google before
   // they have real content. The route stays live for previewing /
@@ -53,7 +53,7 @@ export default async function SuburbPage({ params }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Online Tutoring in ${data.name}`,
+    name: `Online and In-Person Tutoring in ${data.name}`,
     provider: {
       "@type": "Organization",
       name: "Tuterly",
@@ -63,7 +63,7 @@ export default async function SuburbPage({ params }) {
       "@type": "Place",
       name: `${data.name}, Victoria, Australia`,
     },
-    serviceType: "Online maths and English tutoring",
+    serviceType: "Online and in-person maths and English tutoring",
     url: `${SITE_URL}/tutoring/${slug}`,
   };
 
@@ -79,11 +79,11 @@ export default async function SuburbPage({ params }) {
           <Logo size="sm" />
         </Link>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight font-grotesk">
-          Online Tutoring in {data.name}
+          Online and In-Person Tutoring in {data.name}
         </h1>
         <p className="text-lg text-muted leading-relaxed">
           {data.blurb ||
-            `Online maths and English tutors who know the ${data.name} school curriculum. One-on-one sessions with a detailed report after each lesson and practice worksheets your child can do between them.`}
+            `Maths and English tutors for ${data.name} students — choose online sessions or in-person at home. Detailed reports after every lesson and practice worksheets your child can do between them.`}
         </p>
         <div className="pt-2">
           <a
@@ -135,16 +135,20 @@ export default async function SuburbPage({ params }) {
         </h2>
         <ul className="space-y-2 text-foreground/90">
           <li>
-            Online sessions — your child can practise from home, no driving
-            on a weeknight.
+            <strong>Online or in-person.</strong> Online means your child
+            can practise from home with no driving on a weeknight;
+            in-person means a tutor comes to your home, ideal if your
+            child works better away from a screen.
           </li>
           <li>
-            A detailed report after every session so you know what was
-            covered and where they&apos;re up to.
+            <strong>A report after every session</strong> so you know what
+            was covered, what they understood, and where they&apos;re up
+            to in the term.
           </li>
           <li>
-            Practice worksheets generated on the topics they&apos;re working
-            on, so the work doesn&apos;t stop when the session ends.
+            <strong>Practice worksheets between sessions</strong>,
+            generated on the topics they&apos;re actually working on, so
+            the work doesn&apos;t stop when the session ends.
           </li>
         </ul>
       </section>

@@ -4,14 +4,14 @@ import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SITE_URL, APP_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Tutoring across Melbourne | Tuterly",
+  title: "Online & In-Person Tutoring across Melbourne | Tuterly",
   description:
-    "Online maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
+    "Online or in-person maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
   alternates: { canonical: `${SITE_URL}/tutoring` },
   openGraph: {
-    title: "Tutoring across Melbourne | Tuterly",
+    title: "Online & In-Person Tutoring across Melbourne | Tuterly",
     description:
-      "Online maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
+      "Online or in-person maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
     url: `${SITE_URL}/tutoring`,
     type: "website",
   },
@@ -23,12 +23,14 @@ export default function TutoringDirectory() {
       <header className="space-y-4">
         <Logo size="sm" />
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight font-grotesk">
-          Online tutoring across Melbourne
+          Online and in-person tutoring across Melbourne
         </h1>
         <p className="text-lg text-muted leading-relaxed">
-          Our tutors run sessions online, so a tutor doesn&apos;t need to
-          live near your child to know their school. Find your suburb below
-          to see how Tuterly works for families in your area.
+          Tuterly tutors run one-on-one maths and English sessions either
+          online or in-person across Melbourne&apos;s east — your family
+          picks what works. Online means your child can practise from home
+          with no driving on a weeknight; in-person means a tutor comes to
+          your home for sessions at the kitchen table.
         </p>
         <div className="pt-2">
           <a
@@ -39,6 +41,29 @@ export default function TutoringDirectory() {
           </a>
         </div>
       </header>
+
+      <section className="space-y-3 rounded-3xl bg-brand-pale dark:bg-brand-pale/30 p-6 sm:p-8">
+        <h2 className="text-xl font-semibold tracking-tight font-grotesk">
+          What every Tuterly tutor offers
+        </h2>
+        <ul className="space-y-2 text-foreground/90">
+          <li>
+            <strong>One-on-one sessions</strong> in maths or English,
+            aligned with your child&apos;s school curriculum, VCE study
+            design, or IB programme.
+          </li>
+          <li>
+            <strong>A detailed report after every session</strong> so you
+            know exactly what was covered and where your child is up to —
+            no more guessing what happened in last week&apos;s lesson.
+          </li>
+          <li>
+            <strong>Practice worksheets between sessions</strong>,
+            generated on the topics your child is actually working on, so
+            the learning continues during the week.
+          </li>
+        </ul>
+      </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold tracking-tight font-grotesk">
