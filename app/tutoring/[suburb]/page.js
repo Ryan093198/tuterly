@@ -1,17 +1,26 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Logo from "@/components/Logo";
 import {
   SEO_SUBURBS,
   getSeoSuburb,
   isPublishable,
 } from "@/lib/seo-suburbs";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, APP_URL } from "@/lib/site";
+import {
+  c,
+  MARKETING_FONTS_IMPORT,
+} from "@/components/marketing/theme";
+import SampleReport from "@/components/marketing/SampleReport";
+import SavingsCalculator from "@/components/marketing/SavingsCalculator";
+import ComparisonTable from "@/components/marketing/ComparisonTable";
+import TuterlyMethod from "@/components/marketing/TuterlyMethod";
+import Fade from "@/components/marketing/Fade";
 
-// One statically-generated page per entry in SEO_SUBURBS. The page
-// renders the template even when a suburb has no schools/blurb yet so
-// content can be filled in incrementally — but the sitemap only lists
-// publishable entries (see isPublishable in lib/seo-suburbs.js).
+// /tutoring/[suburb] — programmatic SEO landing pages. Match the
+// visual language of /parents (inline styles, marketing palette) so
+// the SampleReport / SavingsCalculator / ComparisonTable showcase
+// components blend in. Static content per suburb comes from
+// lib/seo-suburbs.js.
 
 const DIRECTORY_HREF = "/directory";
 
@@ -28,9 +37,6 @@ export async function generateMetadata({ params }) {
     data.blurb ||
     `Tutoring in ${data.name} — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.`;
   const url = `${SITE_URL}/tutoring/${slug}`;
-  // Draft suburbs are noindexed so they don't get into Google before
-  // they have real content. The route stays live for previewing /
-  // sharing the link internally.
   const robots = isPublishable(data)
     ? undefined
     : { index: false, follow: false };
@@ -56,126 +62,169 @@ export default async function SuburbPage({ params }) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `Tutoring in ${data.name}`,
-    provider: {
-      "@type": "Organization",
-      name: "Tuterly",
-      url: SITE_URL,
-    },
-    areaServed: {
-      "@type": "Place",
-      name: `${data.name}, Victoria, Australia`,
-    },
+    provider: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
+    areaServed: { "@type": "Place", name: `${data.name}, Victoria, Australia` },
     serviceType: "Online and in-person maths and English tutoring",
     url: `${SITE_URL}/tutoring/${slug}`,
   };
 
   return (
-    <main className="max-w-3xl mx-auto px-6 sm:px-8 py-12 sm:py-16 space-y-12">
+    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+      <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <header className="space-y-5">
-        <Link href="/tutoring" className="inline-block">
-          <Logo size="sm" />
-        </Link>
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight font-grotesk">
-          Tutoring in {data.name}
-        </h1>
-        <p className="text-lg text-foreground/90 leading-relaxed">
-          {data.blurb ||
-            `Finding the right tutor in ${data.name} shouldn't be hard. Tuterly connects you with experienced tutors who know the curriculum and deliver results you can actually see.`}
-        </p>
-        <p className="pt-1">
-          <Link
-            href={DIRECTORY_HREF}
-            className="text-brand-dark hover:text-brand font-medium"
-          >
-            Find a tutor in {data.name} →
+      {/* TOP NAV */}
+      <nav style={{ background: c.white, borderBottom: `1px solid ${c.border}`, padding: "16px 24px", position: "sticky", top: 0, zIndex: 20 }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ width: 28, height: 28, borderRadius: 7, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: c.white }}>T</div>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy }}>tuterly</span>
           </Link>
-        </p>
-      </header>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            <Link href="/parents" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Parents</Link>
+            <Link href={DIRECTORY_HREF} style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Find a Tutor</Link>
+            <Link href="/tutors" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Apply as a Tutor</Link>
+            <a href={APP_URL} style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
+            <Link href={DIRECTORY_HREF} style={{ padding: "8px 18px", borderRadius: 8, fontSize: 13, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none" }}>Sign up free</Link>
+          </div>
+        </div>
+      </nav>
 
-      {data.schools?.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-            Schools in the area
-          </h2>
-          <p className="text-foreground/90 leading-relaxed">
-            We work with students from schools across {data.name} and
-            surrounds, including:
-          </p>
-          <ul className="space-y-1.5 text-foreground/90">
-            {data.schools.map((s) => (
-              <li key={s.name}>
-                <span className="font-medium">{s.name}</span>
-                {s.note ? (
-                  <span className="text-muted"> – {s.note}</span>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {data.parentNeeds && (
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-            What parents in {data.name} typically need help with
-          </h2>
-          <p className="text-foreground/90 leading-relaxed">
-            {data.parentNeeds}
-          </p>
-        </section>
-      )}
-
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-          How it works
-        </h2>
-        <p className="text-foreground/90 leading-relaxed">
-          Every session is one-on-one, either online or face-to-face at
-          your home — whichever suits your family. After each session,
-          your tutor submits their notes and Tuterly generates a detailed
-          report covering what was taught, how your child went, and what
-          to focus on next. You also get practice questions tailored to
-          the exact topics they covered, so learning continues between
-          sessions.
-        </p>
-        <p className="text-foreground/90 leading-relaxed">
-          No lock-in contracts. No agency markups. Your tutor sets their
-          own rate and you pay directly.
-        </p>
-        <div className="pt-2">
-          <Link
-            href={DIRECTORY_HREF}
-            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition"
-          >
-            Get started — free to sign up
-          </Link>
+      {/* HERO */}
+      <section style={{ padding: "72px 24px 56px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring in {data.name}</p>
+            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+              Tutoring in {data.name}
+            </h1>
+            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
+              {data.blurb ||
+                `Finding the right tutor in ${data.name} shouldn't be hard. Tuterly connects you with experienced tutors who know the curriculum and deliver results you can actually see.`}
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+                Find a tutor in {data.name} →
+              </Link>
+              <a href="#sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+                See a sample report
+              </a>
+            </div>
+          </Fade>
         </div>
       </section>
 
-      {neighbours.length > 0 && (
-        <section className="space-y-3 pt-2 border-t border-zinc-200 dark:border-zinc-800">
-          <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-            Also serving nearby suburbs
-          </h2>
-          <ul className="flex flex-wrap gap-2">
-            {neighbours.map((n) => (
-              <li key={n.slug}>
-                <Link
-                  href={`/tutoring/${n.slug}`}
-                  className="inline-block text-sm px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-brand/40 transition"
-                >
-                  {n.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      {/* SCHOOLS */}
+      {data.schools?.length > 0 && (
+        <section style={{ padding: "56px 24px", background: c.offWhite }}>
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <Fade>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Schools in the area</p>
+              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+                We work with students across {data.name} and surrounds.
+              </h2>
+              <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
+                {data.schools.map((s) => (
+                  <li key={s.name} style={{ background: c.white, borderRadius: 12, border: `1px solid ${c.border}`, padding: "14px 18px" }}>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: s.note ? 2 : 0 }}>{s.name}</p>
+                    {s.note && <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.5 }}>{s.note}</p>}
+                  </li>
+                ))}
+              </ul>
+            </Fade>
+          </div>
         </section>
       )}
+
+      {/* WHAT PARENTS NEED HELP WITH */}
+      {data.parentNeeds && (
+        <section style={{ padding: "56px 24px", background: c.white }}>
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <Fade>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What parents ask us about</p>
+              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+                What parents in {data.name} typically need help with.
+              </h2>
+              <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>{data.parentNeeds}</p>
+            </Fade>
+          </div>
+        </section>
+      )}
+
+      {/* THE TUTERLY METHOD */}
+      <TuterlyMethod background={c.offWhite} padding="80px 24px" />
+
+      {/* SAMPLE REPORT */}
+      <SampleReport background={c.white} padding="80px 24px" />
+
+      {/* PRICING — SAVINGS + COMPARISON */}
+      <section style={{ padding: "80px 24px", background: c.offWhite }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Simple pricing</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
+              Structured tutoring without the agency markup.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
+              You get the structure of a top tutoring company — session reports, practice worksheets, progress tracking — without paying the company markup, because your tutor sets their own rate and you pay them directly.
+            </p>
+          </Fade>
+          <div style={{ display: "grid", gap: 20 }}>
+            <SavingsCalculator />
+            <ComparisonTable />
+          </div>
+        </div>
+      </section>
+
+      {/* GET STARTED CTA */}
+      <section style={{ padding: "72px 24px", background: c.white }}>
+        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
+          <Fade>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              Ready to find a tutor in {data.name}?
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
+              No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
+            </p>
+            <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+              Get started — free to sign up
+            </Link>
+          </Fade>
+        </div>
+      </section>
+
+      {/* NEARBY SUBURBS — INTERNAL LINKS */}
+      {neighbours.length > 0 && (
+        <section style={{ padding: "48px 24px 72px", background: c.offWhite }}>
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Also serving nearby suburbs</p>
+            <ul style={{ display: "flex", flexWrap: "wrap", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
+              {neighbours.map((n) => (
+                <li key={n.slug}>
+                  <Link href={`/tutoring/${n.slug}`} style={{ display: "inline-block", padding: "8px 14px", borderRadius: 999, border: `1px solid ${c.border}`, background: c.white, color: c.text, fontSize: 14, textDecoration: "none" }}>
+                    {n.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* FOOTER */}
+      <footer style={{ background: c.navy, borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
+          </div>
+          <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
+        </div>
+      </footer>
     </main>
   );
 }
