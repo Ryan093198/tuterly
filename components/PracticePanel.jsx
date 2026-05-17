@@ -16,9 +16,23 @@ import {
 // Generated worksheets are stored as `practice_questions` resources, so they
 // also appear in the Resources panel below — no need to duplicate that list
 // here.
-export default function PracticePanel({ student, weakTopics, topicGroups, topicsBySubject }) {
+export default function PracticePanel({
+  student,
+  weakTopics,
+  topicGroups,
+  topicsBySubject,
+  // When the parent arrives here from a suggested-practice chip on
+  // the dashboard ({ topic, subtopic } via query params), auto-open
+  // the modal pre-filled so they can click Generate without picking
+  // the topic again.
+  initialPracticeTopic,
+}) {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  // Derive the initial open state from the prop so we don't have to
+  // run an effect to reopen on chip arrival. The parent forces a fresh
+  // component instance per chip click via `key`, so this runs again
+  // when the parent navigates between different practice topics.
+  const [open, setOpen] = useState(!!initialPracticeTopic?.topic);
   const [viewing, setViewing] = useState(null);
 
   const hasWeak = weakTopics && weakTopics.length > 0;
@@ -94,6 +108,8 @@ export default function PracticePanel({ student, weakTopics, topicGroups, topics
         weakTopics={weakTopics}
         topicGroups={topicGroups}
         topicsBySubject={topicsBySubject}
+        initialTopic={initialPracticeTopic?.topic}
+        initialSubtopic={initialPracticeTopic?.subtopic}
         onGenerated={(resource) => {
           setViewing(resource);
           router.refresh();

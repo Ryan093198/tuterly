@@ -115,17 +115,23 @@ function ChildSnapshotCard({ student, tutorLine, snapshot }) {
   const flagsOpen = snapshot?.flagsOpen ?? 0;
   const flagsResolved = snapshot?.flagsResolved ?? 0;
   const topics = snapshot?.suggestedTopics ?? [];
+  const profileHref = `/dashboard/parent/students/${student.id}`;
+  // Block-link pattern: the card is a positioned container and the
+  // name link has an ::after that covers the card surface, so clicking
+  // any "empty" area opens the profile. Chip links use position:
+  // relative so they sit above the overlay and stay independently
+  // clickable.
   return (
-    <Link
-      href={`/dashboard/parent/students/${student.id}`}
-      className="block group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-4 sm:p-5 hover:border-brand/40 hover:shadow-sm transition h-full"
-    >
+    <div className="group relative rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-4 sm:p-5 hover:border-brand/40 hover:shadow-sm transition h-full">
       <div className="flex items-center gap-3">
         <Avatar name={`${student.first_name} ${student.last_name}`} />
         <div className="min-w-0 flex-1">
-          <p className="font-medium truncate">
+          <Link
+            href={profileHref}
+            className="font-medium truncate block after:absolute after:inset-0 after:content-['']"
+          >
             {student.first_name} {student.last_name}
-          </p>
+          </Link>
           <p className="text-xs text-muted truncate">{tutorLine}</p>
         </div>
         <span className="text-muted group-hover:text-brand transition shrink-0">
@@ -157,18 +163,24 @@ function ChildSnapshotCard({ student, tutorLine, snapshot }) {
             Suggested practice
           </p>
           <div className="flex flex-wrap gap-1.5">
-            {topics.map((t, i) => (
-              <span
-                key={`${t.topic}-${t.subtopic ?? ""}-${i}`}
-                className="text-xs px-2 py-0.5 rounded-md bg-brand-pale text-brand-foreground"
-              >
-                {t.subtopic ? `${t.topic} · ${t.subtopic}` : t.topic}
-              </span>
-            ))}
+            {topics.map((t, i) => {
+              const params = new URLSearchParams({ practice_topic: t.topic });
+              if (t.subtopic) params.set("practice_subtopic", t.subtopic);
+              return (
+                <Link
+                  key={`${t.topic}-${t.subtopic ?? ""}-${i}`}
+                  href={`${profileHref}?${params.toString()}`}
+                  className="relative text-xs px-2 py-0.5 rounded-md bg-brand-pale text-brand-foreground hover:bg-brand hover:text-white transition"
+                  title={`Generate a worksheet on ${t.subtopic || t.topic}`}
+                >
+                  {t.subtopic ? `${t.topic} · ${t.subtopic}` : t.topic}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
-    </Link>
+    </div>
   );
 }
 

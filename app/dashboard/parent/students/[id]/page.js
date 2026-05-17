@@ -27,6 +27,18 @@ export default async function ParentStudentDetail({ params, searchParams }) {
   const sp = searchParams ? await searchParams : {};
   const autoOpenResourceId = typeof sp.resource === "string" ? sp.resource : null;
   const autoOpenFlag = typeof sp.flag === "string" ? sp.flag : null;
+  // Dashboard "suggested practice" chips link here with these params
+  // so PracticePanel can auto-open the modal pre-filled with the topic.
+  const initialPracticeTopic =
+    typeof sp.practice_topic === "string"
+      ? {
+          topic: sp.practice_topic,
+          subtopic:
+            typeof sp.practice_subtopic === "string"
+              ? sp.practice_subtopic
+              : "",
+        }
+      : null;
   const supabase = await createClient();
   const {
     data: { user },
@@ -286,9 +298,15 @@ export default async function ParentStudentDetail({ params, searchParams }) {
 
       <Section label="Practice">
         <PracticePanel
+          key={
+            initialPracticeTopic
+              ? `practice-${initialPracticeTopic.topic}|${initialPracticeTopic.subtopic ?? ""}`
+              : "practice"
+          }
           student={student}
           weakTopics={weakTopics}
           topicsBySubject={topicsBySubject}
+          initialPracticeTopic={initialPracticeTopic}
         />
       </Section>
 

@@ -24,12 +24,21 @@ export default function PracticeModal({
   topicsBySubject,
   topicGroups,
   onGenerated,
+  // When the parent jumps in from a suggested-practice chip on the
+  // dashboard, prefill the topic/subtopic so they can hit Generate
+  // without picking it again. Only honoured when the modal opens.
+  initialTopic,
+  initialSubtopic,
 }) {
   const router = useRouter();
   const [subject, setSubject] = useState(student.subject || "maths");
   const [topicId, setTopicId] = useState("");
-  const [topicLabel, setTopicLabel] = useState("");
-  const [subtopic, setSubtopic] = useState("");
+  // Initialize from the dashboard-handoff props so the modal opens
+  // pre-filled when the parent arrives via a "Suggested practice"
+  // chip. The parent forces a fresh component instance per chip via
+  // `key`, so these initializers run again on each fresh nav.
+  const [topicLabel, setTopicLabel] = useState(initialTopic || "");
+  const [subtopic, setSubtopic] = useState(initialSubtopic || "");
   const [questionCount, setQuestionCount] = useState(8);
   const [difficulty, setDifficulty] = useState("core");
   const [pending, setPending] = useState(false);
@@ -59,6 +68,7 @@ export default function PracticeModal({
       document.body.style.overflow = prev;
     };
   }, [open]);
+
 
   // Clear the picked topic on subject swap — the old topicId belongs to
   // the previous subject's curriculum so leaving it selected sends the
