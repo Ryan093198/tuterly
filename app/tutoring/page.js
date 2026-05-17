@@ -1,106 +1,107 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
-import { SITE_URL, APP_URL } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
+
+const DIRECTORY_HREF = "/directory";
 
 export const metadata = {
-  title: "Online & In-Person Tutoring across Melbourne | Tuterly",
+  title: "Tutoring across Melbourne | Tuterly",
   description:
-    "Online or in-person maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
+    "Tutoring across Melbourne — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
   alternates: { canonical: `${SITE_URL}/tutoring` },
   openGraph: {
-    title: "Online & In-Person Tutoring across Melbourne | Tuterly",
+    title: "Tutoring across Melbourne | Tuterly",
     description:
-      "Online or in-person maths and English tutoring for Melbourne students. Find a tutor for your child's suburb and school.",
+      "Tutoring across Melbourne — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
     url: `${SITE_URL}/tutoring`,
     type: "website",
   },
 };
 
 export default function TutoringDirectory() {
+  const live = SEO_SUBURBS.filter(isPublishable);
   return (
-    <main className="max-w-3xl mx-auto px-6 sm:px-8 py-12 sm:py-16 space-y-10">
-      <header className="space-y-4">
+    <main className="max-w-3xl mx-auto px-6 sm:px-8 py-12 sm:py-16 space-y-12">
+      <header className="space-y-5">
         <Logo size="sm" />
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight font-grotesk">
-          Online and in-person tutoring across Melbourne
+          Tutoring across Melbourne
         </h1>
-        <p className="text-lg text-muted leading-relaxed">
-          Tuterly tutors run one-on-one maths and English sessions either
-          online or in-person across Melbourne&apos;s east — your family
-          picks what works. Online means your child can practise from home
-          with no driving on a weeknight; in-person means a tutor comes to
-          your home for sessions at the kitchen table.
+        <p className="text-lg text-foreground/90 leading-relaxed">
+          Finding the right tutor in Melbourne shouldn&apos;t be hard.
+          Tuterly connects families with experienced tutors who know their
+          child&apos;s curriculum and deliver results you can actually see
+          — sessions can be online or in-person, depending on what works
+          for your family.
         </p>
-        <div className="pt-2">
-          <a
-            href={APP_URL}
-            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition"
+        <p className="pt-1">
+          <Link
+            href={DIRECTORY_HREF}
+            className="text-brand-dark hover:text-brand font-medium"
           >
-            Find a tutor — free to start
-          </a>
-        </div>
+            Find a tutor →
+          </Link>
+        </p>
       </header>
-
-      <section className="space-y-3 rounded-3xl bg-brand-pale dark:bg-brand-pale/30 p-6 sm:p-8">
-        <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-          What every Tuterly tutor offers
-        </h2>
-        <ul className="space-y-2 text-foreground/90">
-          <li>
-            <strong>One-on-one sessions</strong> in maths or English,
-            aligned with your child&apos;s school curriculum, VCE study
-            design, or IB programme.
-          </li>
-          <li>
-            <strong>A detailed report after every session</strong> so you
-            know exactly what was covered and where your child is up to —
-            no more guessing what happened in last week&apos;s lesson.
-          </li>
-          <li>
-            <strong>Practice worksheets between sessions</strong>,
-            generated on the topics your child is actually working on, so
-            the learning continues during the week.
-          </li>
-        </ul>
-      </section>
 
       <section className="space-y-3">
         <h2 className="text-xl font-semibold tracking-tight font-grotesk">
-          Eastern suburbs
+          Suburbs we serve
         </h2>
-        {(() => {
-          const live = SEO_SUBURBS.filter(isPublishable);
-          if (live.length === 0) {
-            return (
-              <p className="text-muted">
-                More suburb-specific pages are on the way. In the meantime,
-                any Melbourne family can{" "}
-                <a
-                  href={APP_URL}
-                  className="underline underline-offset-2 hover:text-brand"
+        {live.length === 0 ? (
+          <p className="text-muted">
+            More suburb-specific pages are on the way. In the meantime,
+            any Melbourne family can{" "}
+            <Link
+              href={DIRECTORY_HREF}
+              className="underline underline-offset-2 hover:text-brand"
+            >
+              find a tutor in our directory
+            </Link>
+            .
+          </p>
+        ) : (
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {live.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/tutoring/${s.slug}`}
+                  className="block px-4 py-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-brand/40 hover:shadow-sm transition"
                 >
-                  sign up
-                </a>{" "}
-                — our tutors run sessions online.
-              </p>
-            );
-          }
-          return (
-            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {live.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/tutoring/${s.slug}`}
-                    className="block px-4 py-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:border-brand/40 hover:shadow-sm transition"
-                  >
-                    <span className="font-medium">{s.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          );
-        })()}
+                  <span className="font-medium">{s.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold tracking-tight font-grotesk">
+          How it works
+        </h2>
+        <p className="text-foreground/90 leading-relaxed">
+          Every session is one-on-one, either online or face-to-face at
+          your home — whichever suits your family. After each session,
+          your tutor submits their notes and Tuterly generates a detailed
+          report covering what was taught, how your child went, and what
+          to focus on next. You also get practice questions tailored to
+          the exact topics they covered, so learning continues between
+          sessions.
+        </p>
+        <p className="text-foreground/90 leading-relaxed">
+          No lock-in contracts. No agency markups. Your tutor sets their
+          own rate and you pay directly.
+        </p>
+        <div className="pt-2">
+          <Link
+            href={DIRECTORY_HREF}
+            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition"
+          >
+            Get started — free to sign up
+          </Link>
+        </div>
       </section>
     </main>
   );
