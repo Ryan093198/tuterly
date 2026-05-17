@@ -9,6 +9,7 @@ import {
   tutoringSummary,
 } from "@/lib/tutoring-summary";
 import { fetchParentActivity } from "@/lib/parent-activity";
+import { fetchChildSnapshots } from "@/lib/parent-snapshot";
 
 // Parent dashboard. Two-zone layout:
 //   1. Children strip up top — compact entry points; each card opens
@@ -37,12 +38,16 @@ export default async function ParentDashboard() {
   const studentList = students ?? [];
   const studentIds = studentList.map((s) => s.id);
 
-  // The children strip needs tutor names to render; the activity feed
-  // hits 3 more tables and is streamed in via <Suspense> below so the
-  // strip can paint as soon as it's ready instead of blocking on it.
-  const tutorsByStudent = studentIds.length
-    ? await fetchTutorsForStudents(studentIds)
-    : new Map();
+  // Children cards need tutor names + the per-child snapshot (sessions
+  // in the window, flag counts, suggested practice topics). Both run
+  // in parallel; the activity feed hits 3 more tables and streams in
+  // separately via <Suspense> below so it can't block the strip.
+  const [tutorsByStudent, snapshotsByStudent] = studentIds.length
+    ? await Promise.all([
+        fetchTutorsForStudents(studentIds),
+        fetchChildSnapshots(supabase, studentIds),
+      ])
+    : [new Map(), new Map()];
 
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
@@ -69,28 +74,19 @@ export default async function ParentDashboard() {
         />
       ) : (
         <>
-          {/* CHILDREN STRIP */}
+          {/* CHILDREN — snapshot cards */}
           <section className="space-y-3">
             <h2 className="text-[11px] uppercase tracking-wider text-muted font-medium">
               Your children
             </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {studentList.map((s) => (
                 <li key={s.id}>
-                  <Link
-                    href={`/dashboard/parent/students/${s.id}`}
-                    className="flex items-center gap-3 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-3 hover:border-brand/40 hover:shadow-sm transition"
-                  >
-                    <Avatar name={`${s.first_name} ${s.last_name}`} />
-                    <div className="min-w-0">
-                      <p className="font-medium truncate text-sm">
-                        {s.first_name} {s.last_name}
-                      </p>
-                      <p className="text-[11px] text-muted truncate">
-                        {tutoringSummary(s, tutorsByStudent.get(s.id))}
-                      </p>
-                    </div>
-                  </Link>
+                  <ChildSnapshotCard
+                    student={s}
+                    tutorLine={tutoringSummary(s, tutorsByStudent.get(s.id))}
+                    snapshot={snapshotsByStudent.get(s.id)}
+                  />
                 </li>
               ))}
             </ul>
@@ -109,6 +105,82 @@ export default async function ParentDashboard() {
             </Suspense>
           </section>
         </>
+      )}
+    </div>
+  );
+}
+
+function ChildSnapshotCard({ student, tutorLine, snapshot }) {
+  const sessions = snapshot?.sessions ?? 0;
+  const flagsOpen = snapshot?.flagsOpen ?? 0;
+  const flagsResolved = snapshot?.flagsResolved ?? 0;
+  const topics = snapshot?.suggestedTopics ?? [];
+  return (
+    <Link
+      href={`/dashboard/parent/students/${student.id}`}
+      className="block group rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-card p-4 sm:p-5 hover:border-brand/40 hover:shadow-sm transition h-full"
+    >
+      <div className="flex items-center gap-3">
+        <Avatar name={`${student.first_name} ${student.last_name}`} />
+        <div className="min-w-0 flex-1">
+          <p className="font-medium truncate">
+            {student.first_name} {student.last_name}
+          </p>
+          <p className="text-xs text-muted truncate">{tutorLine}</p>
+        </div>
+        <span className="text-muted group-hover:text-brand transition shrink-0">
+          →
+        </span>
+      </div>
+
+      <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
+        <Stat
+          label="Sessions · last 4 wks"
+          value={sessions}
+        />
+        <Stat
+          label="Open flags"
+          value={flagsOpen}
+          sublabel={
+            flagsResolved > 0
+              ? `${flagsResolved} resolved`
+              : flagsOpen === 0
+                ? "all clear"
+                : null
+          }
+        />
+      </dl>
+
+      {topics.length > 0 && (
+        <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-900">
+          <p className="text-[11px] uppercase tracking-wider text-muted font-medium mb-1.5">
+            Suggested practice
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {topics.map((t, i) => (
+              <span
+                key={`${t.topic}-${t.subtopic ?? ""}-${i}`}
+                className="text-xs px-2 py-0.5 rounded-md bg-brand-pale text-brand-foreground"
+              >
+                {t.subtopic ? `${t.topic} · ${t.subtopic}` : t.topic}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </Link>
+  );
+}
+
+function Stat({ label, value, sublabel }) {
+  return (
+    <div>
+      <dt className="text-[11px] uppercase tracking-wider text-muted font-medium">
+        {label}
+      </dt>
+      <dd className="mt-0.5 text-lg font-semibold tabular-nums">{value}</dd>
+      {sublabel && (
+        <dd className="text-[11px] text-muted mt-0.5">{sublabel}</dd>
       )}
     </div>
   );
