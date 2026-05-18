@@ -9,18 +9,21 @@ import {
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
+import WhyTutorsJoinTuterly from "@/components/marketing/WhyTutorsJoinTuterly";
 
 const APPLY_HREF = "/tutors#apply";
 
+const METADATA_TITLE = "Become a Tuterly Tutor | Tuterly";
+const METADATA_DESCRIPTION =
+  "We'll train you, give you the tools, and connect you with families — then let you run your own practice without an agency taking a cut.";
+
 export const metadata = {
-  title: "Tutoring Jobs across Melbourne | Tuterly",
-  description:
-    "Tutoring jobs across Melbourne — set your own rate, keep what you earn, and use Tuterly's professional tools. Online or in-person, no agency markup.",
+  title: METADATA_TITLE,
+  description: METADATA_DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/tutor-jobs` },
   openGraph: {
-    title: "Tutoring Jobs across Melbourne | Tuterly",
-    description:
-      "Tutoring jobs across Melbourne — set your own rate, keep what you earn, and use Tuterly's professional tools. Online or in-person, no agency markup.",
+    title: METADATA_TITLE,
+    description: METADATA_DESCRIPTION,
     url: `${SITE_URL}/tutor-jobs`,
     type: "website",
   },
@@ -36,21 +39,32 @@ export default function TutorJobsDirectory() {
       <MarketingNav />
 
       {/* HERO */}
-      <section style={{ padding: "72px 24px 56px", background: c.white }}>
+      <section style={{ padding: "72px 24px 40px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring jobs across Melbourne</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Tutoring jobs across Melbourne.
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>For tutors</p>
+            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 48, color: c.navy, lineHeight: 1.1, marginBottom: 20 }}>
+              Become a Tuterly tutor.
             </h1>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Tuterly is a platform for independent tutors who&apos;d rather run their own practice than work as a contractor for an agency. You set your own rate, keep what you earn, and use our tooling — session reports, practice generators, parent comms — to look as organised as a top agency from day one.
+            <p style={{ fontSize: 18, color: c.text, lineHeight: 1.65, marginBottom: 24, fontWeight: 500 }}>
+              We&apos;ll train you, give you the tools, and connect you with families — then let you run your own practice without an agency taking a cut.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={APPLY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Start your application →
               </Link>
             </div>
+          </Fade>
+        </div>
+      </section>
+
+      {/* BODY INTRO */}
+      <section style={{ padding: "32px 24px 64px", background: c.white }}>
+        <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <Fade delay={0.1}>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
+              Tuterly isn&apos;t a job board. It&apos;s a platform for tutors who want to be great at what they do — with the training, tools, and students to make it happen. You go through our onboarding, get access to systems that make you look and operate like a premium tutoring company, and then you set your own rate, choose your own hours, and keep everything you earn.
+            </p>
           </Fade>
         </div>
       </section>
@@ -111,43 +125,17 @@ export default function TutorJobsDirectory() {
         </div>
       </section>
 
-      {/* WHY TUTOR WITH TUTERLY — compact */}
-      <section style={{ padding: "80px 24px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Why tutor with Tuterly</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
-              Earn more. Do less admin.
-            </h2>
-            <ul style={{ display: "grid", gap: 14, listStyle: "none", padding: 0, margin: 0 }}>
-              {[
-                ["Set your own rate", "You decide what you charge. Raise it when demand justifies it. No agency cap and no commission taken out."],
-                ["Tools an agency would charge for", "Session reports, practice-worksheet generators, progress dashboards, and parent messaging — all built in."],
-                ["Parents find you", "Sign-ups from the parent-facing directory funnel directly to tutors. You don't need to chase referrals or spend on ads."],
-                ["On your terms", "Online or in-person. Whatever hours you want. No fixed weekly shifts, no minimum commitment."],
-              ].map(([title, body]) => (
-                <li key={title} style={{ display: "flex", gap: 14, alignItems: "start" }}>
-                  <span style={{ color: c.teal, fontWeight: 700, fontSize: 18, marginTop: 1 }}>✓</span>
-                  <div>
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>{title}</p>
-                    <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{body}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Fade>
-        </div>
-      </section>
+      <WhyTutorsJoinTuterly background={c.offWhite} padding="80px 24px" />
 
       {/* GET STARTED CTA */}
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
+      <section style={{ padding: "72px 24px", background: c.white }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Ready to start tutoring through Tuterly?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Application takes about 10 minutes. We&apos;ll review your subjects, year levels, and a short writing sample, then onboard you to the platform.
+              Apply now. We&apos;ll review your subjects and year levels, and get back to you within one day.
             </p>
             <Link href={APPLY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
               Start your application →

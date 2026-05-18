@@ -8,39 +8,13 @@ import Fade from "./Fade";
 import MarketingNav from "./MarketingNav";
 import MarketingFooter from "./MarketingFooter";
 import TutorRateComparison from "./TutorRateComparison";
+import WhyTutorsJoinTuterly from "./WhyTutorsJoinTuterly";
 
 // Suburb-flavoured /tutor-jobs page. Extracted from the previous
 // inline page.js so the same dispatcher route can render both suburb
 // and subject pages.
 
 const APPLY_HREF = "/tutors#apply";
-
-// Value-prop pillars on the "why tutor with us" section. Shared
-// between the suburb and subject pages — the same four reasons a
-// tutor would pick Tuterly regardless of where they tutor or what
-// subject they teach.
-const TUTOR_PILLARS = [
-  {
-    icon: "💵",
-    title: "Set your own rate",
-    body: "You decide what you charge. Tutors on our directory typically run between $50 and $90 an hour depending on subject and level. You raise it when demand justifies it.",
-  },
-  {
-    icon: "🛠️",
-    title: "Tools an agency would charge for",
-    body: "Session reports, practice-worksheet generators, progress dashboards, and parent messaging — all built in. Make yourself look as organised as a full-service agency from your first session.",
-  },
-  {
-    icon: "📥",
-    title: "Parents find you",
-    body: "Sign-ups from our /directory and these landing pages funnel directly to tutors. You don't need to spend on ads or chase referrals — students find your profile by suburb, subject, and year level.",
-  },
-  {
-    icon: "🗓️",
-    title: "On your terms",
-    body: "Online or in-person. Whatever hours you want. No fixed weekly shifts, no minimum commitment, no agency taking a cut of what you earn.",
-  },
-];
 
 export default function TutorJobsSuburbPage({ suburb: data }) {
   const neighbours = (data.neighbouring ?? [])
@@ -138,32 +112,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
         </section>
       )}
 
-      {/* WHY TUTOR WITH TUTERLY */}
-      <section style={{ padding: "80px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Why tutor with Tuterly</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
-              Earn more. Do less admin.
-            </h2>
-            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.7 }}>
-              Tuterly is built for tutors who&apos;d rather run their own practice than work as a contractor for an agency. We provide the tooling. You keep what you earn.
-            </p>
-          </Fade>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16 }}>
-            {TUTOR_PILLARS.map((p, i) => (
-              <Fade key={p.title} delay={0.05 + i * 0.05}>
-                <div style={{ background: c.white, borderRadius: 18, border: `1px solid ${c.border}`, padding: "24px 22px", height: "100%" }}>
-                  <div style={{ fontSize: 28, marginBottom: 12 }}>{p.icon}</div>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>{p.title}</h3>
-                  <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{p.body}</p>
-                </div>
-              </Fade>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyTutorsJoinTuterly background={c.offWhite} padding="80px 24px" />
 
       <SampleReport
         background={c.white}
@@ -203,10 +152,10 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to tutor in {data.name}?
+              Ready to start tutoring in {data.name}?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Application takes about 10 minutes. We&apos;ll review your subjects, year levels, and a short writing sample, then onboard you to the platform.
+              Apply now. We&apos;ll review your subjects and year levels, and get back to you within one day.
             </p>
             <Link href={APPLY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
               Start your application →
