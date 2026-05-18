@@ -159,7 +159,13 @@ export default function SelectiveEntryPrepPage() {
 
       <TuterlyMethod background={c.offWhite} padding="80px 24px" />
 
-      <SampleReport background={c.white} padding="80px 24px" />
+      <SampleReport
+        background={c.white}
+        padding="80px 24px"
+        preset="selective-numerical"
+        heading="A sample selective-entry session report."
+        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson — not just at the end of term."
+      />
 
       <EducourseCallout />
 
