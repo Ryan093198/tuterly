@@ -13,6 +13,11 @@ const STATIC_PAGES = [
   { path: "/worksheets", priority: 0.7, changeFrequency: "monthly" },
   { path: "/directory", priority: 0.6, changeFrequency: "weekly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
+  // High-intent exam-prep landing pages. Listed alongside the suburb
+  // pages because they target the strongest parent search intents on
+  // the tutoring side (selective entry + scholarship).
+  { path: "/tutoring/selective-entry-exam-prep", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/tutoring/scholarship-exam-prep", priority: 0.8, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];

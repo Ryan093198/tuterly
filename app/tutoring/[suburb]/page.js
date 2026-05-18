@@ -5,7 +5,7 @@ import {
   getSeoSuburb,
   isPublishable,
 } from "@/lib/seo-suburbs";
-import { SITE_URL, APP_URL } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 import {
   c,
   MARKETING_FONTS_IMPORT,
@@ -15,6 +15,8 @@ import SavingsCalculator from "@/components/marketing/SavingsCalculator";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
 import TuterlyMethod from "@/components/marketing/TuterlyMethod";
 import Fade from "@/components/marketing/Fade";
+import MarketingNav from "@/components/marketing/MarketingNav";
+import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 // /tutoring/[suburb] — programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
@@ -76,22 +78,7 @@ export default async function SuburbPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* TOP NAV */}
-      <nav style={{ background: c.white, borderBottom: `1px solid ${c.border}`, padding: "16px 24px", position: "sticky", top: 0, zIndex: 20 }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 28, height: 28, borderRadius: 7, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: c.white }}>T</div>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy }}>tuterly</span>
-          </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-            <Link href="/parents" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Parents</Link>
-            <Link href={DIRECTORY_HREF} style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Find a Tutor</Link>
-            <Link href="/tutors" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Apply as a Tutor</Link>
-            <a href={APP_URL} style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
-            <Link href={DIRECTORY_HREF} style={{ padding: "8px 18px", borderRadius: 8, fontSize: 13, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none" }}>Sign up free</Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       {/* HERO */}
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
@@ -214,17 +201,7 @@ export default async function SuburbPage({ params }) {
         </section>
       )}
 
-      {/* FOOTER */}
-      <footer style={{ background: c.navy, borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
-          </div>
-          <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
-          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
-        </div>
-      </footer>
+      <MarketingFooter />
     </main>
   );
 }
