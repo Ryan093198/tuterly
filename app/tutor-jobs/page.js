@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
+import { SEO_TUTOR_SUBJECTS } from "@/lib/seo-tutor-subjects";
 import { SITE_URL } from "@/lib/site";
 import {
   c,
@@ -54,11 +55,37 @@ export default function TutorJobsDirectory() {
         </div>
       </section>
 
-      {/* SUBURB LIST */}
+      {/* HIRING BY SUBJECT */}
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Currently hiring across the east</p>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By subject</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
+              The subjects we&apos;re actively recruiting for.
+            </h2>
+            <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 12, listStyle: "none", padding: 0, margin: 0 }}>
+              {SEO_TUTOR_SUBJECTS.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/tutor-jobs/${s.slug}`}
+                    style={{ display: "block", padding: "18px 20px", borderRadius: 14, background: c.white, border: `1px solid ${c.border}`, textDecoration: "none" }}
+                  >
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>{s.level} · {s.yearRange}</p>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 4 }}>{s.name}</p>
+                    <p style={{ fontSize: 13, color: c.textLight }}>{s.typicalRate}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Fade>
+        </div>
+      </section>
+
+      {/* HIRING BY SUBURB */}
+      <section style={{ padding: "56px 24px", background: c.white }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By suburb</p>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
               Suburbs we&apos;re actively building tutor supply in.
             </h2>
@@ -73,7 +100,7 @@ export default function TutorJobsDirectory() {
                   <li key={s.slug}>
                     <Link
                       href={`/tutor-jobs/${s.slug}`}
-                      style={{ display: "block", padding: "14px 18px", borderRadius: 12, background: c.white, border: `1px solid ${c.border}`, textDecoration: "none", color: c.navy, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15 }}
+                      style={{ display: "block", padding: "14px 18px", borderRadius: 12, background: c.offWhite, border: `1px solid ${c.border}`, textDecoration: "none", color: c.navy, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15 }}
                     >
                       {s.name}
                     </Link>

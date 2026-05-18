@@ -1,4 +1,5 @@
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
+import { SEO_TUTOR_SUBJECTS } from "@/lib/seo-tutor-subjects";
 import { SITE_URL } from "@/lib/site";
 
 // Public marketing pages Google should be aware of. Anything under
@@ -53,5 +54,15 @@ export default function sitemap() {
     priority: s.tier === 1 ? 0.6 : s.tier === 2 ? 0.5 : 0.4,
   }));
 
-  return [...statics, ...parentSuburbs, ...tutorSuburbs];
+  // Subject/level tutor-recruitment pages — same /tutor-jobs route,
+  // different slug source. Priority follows the subject tiers
+  // (Tier 1 = primary/secondary core; highest).
+  const tutorSubjects = SEO_TUTOR_SUBJECTS.map((s) => ({
+    url: `${SITE_URL}/tutor-jobs/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: s.tier === 1 ? 0.7 : s.tier === 2 ? 0.6 : 0.5,
+  }));
+
+  return [...statics, ...parentSuburbs, ...tutorSuburbs, ...tutorSubjects];
 }

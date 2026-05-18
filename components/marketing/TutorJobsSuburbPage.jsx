@@ -1,32 +1,22 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import {
-  SEO_SUBURBS,
-  getSeoSuburb,
-  isPublishable,
-} from "@/lib/seo-suburbs";
+import { c, MARKETING_FONTS_IMPORT } from "./theme";
 import { SITE_URL } from "@/lib/site";
-import {
-  c,
-  MARKETING_FONTS_IMPORT,
-} from "@/components/marketing/theme";
-import SampleReport from "@/components/marketing/SampleReport";
-import Fade from "@/components/marketing/Fade";
-import MarketingNav from "@/components/marketing/MarketingNav";
-import MarketingFooter from "@/components/marketing/MarketingFooter";
+import { getSeoSuburb } from "@/lib/seo-suburbs";
+import SampleReport from "./SampleReport";
+import Fade from "./Fade";
+import MarketingNav from "./MarketingNav";
+import MarketingFooter from "./MarketingFooter";
 
-// Tutor-facing suburb landing pages. Mirror the parent /tutoring/[suburb]
-// pages but speak to tutors looking for work in that area. CTAs funnel
-// to /tutors#apply where the actual application sits.
-//
-// Data is shared with the parent pages — same SEO_SUBURBS list, same
-// schools and parentNeeds fields, just framed for the tutor audience.
+// Suburb-flavoured /tutor-jobs page. Extracted from the previous
+// inline page.js so the same dispatcher route can render both suburb
+// and subject pages.
 
 const APPLY_HREF = "/tutors#apply";
 
-// Value-prop pillars on the "why tutor with us" section. Tutor-side
-// equivalents of the parent-side Tuterly method bullets — the things
-// a tutor cares about when picking which platform to work through.
+// Value-prop pillars on the "why tutor with us" section. Shared
+// between the suburb and subject pages — the same four reasons a
+// tutor would pick Tuterly regardless of where they tutor or what
+// subject they teach.
 const TUTOR_PILLARS = [
   {
     icon: "💵",
@@ -50,34 +40,7 @@ const TUTOR_PILLARS = [
   },
 ];
 
-export function generateStaticParams() {
-  return SEO_SUBURBS.map((s) => ({ suburb: s.slug }));
-}
-
-export async function generateMetadata({ params }) {
-  const { suburb: slug } = await params;
-  const data = getSeoSuburb(slug);
-  if (!data) return {};
-  const title = `Tutoring Jobs in ${data.name} | Tuterly`;
-  const description = `Tutoring jobs in ${data.name}, Melbourne. Set your own rate, keep what you earn, and use Tuterly's tools to build a professional tutoring practice — online or in-person.`;
-  const url = `${SITE_URL}/tutor-jobs/${slug}`;
-  const robots = isPublishable(data)
-    ? undefined
-    : { index: false, follow: false };
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website" },
-    ...(robots ? { robots } : {}),
-  };
-}
-
-export default async function TutorJobsSuburbPage({ params }) {
-  const { suburb: slug } = await params;
-  const data = getSeoSuburb(slug);
-  if (!data) notFound();
-
+export default function TutorJobsSuburbPage({ suburb: data }) {
   const neighbours = (data.neighbouring ?? [])
     .map(getSeoSuburb)
     .filter(Boolean);
@@ -87,11 +50,7 @@ export default async function TutorJobsSuburbPage({ params }) {
     "@type": "JobPosting",
     title: `Tutoring jobs in ${data.name}`,
     description: `Tutoring positions for VCE, secondary, and primary level subjects in ${data.name}, Melbourne. Set your own rate, work online or in-person, and use Tuterly's professional tools.`,
-    hiringOrganization: {
-      "@type": "Organization",
-      name: "Tuterly",
-      sameAs: SITE_URL,
-    },
+    hiringOrganization: { "@type": "Organization", name: "Tuterly", sameAs: SITE_URL },
     jobLocation: {
       "@type": "Place",
       address: {
@@ -104,16 +63,13 @@ export default async function TutorJobsSuburbPage({ params }) {
     employmentType: "CONTRACTOR",
     applicantLocationRequirements: { "@type": "Country", name: "Australia" },
     jobLocationType: "TELECOMMUTE",
-    url: `${SITE_URL}/tutor-jobs/${slug}`,
+    url: `${SITE_URL}/tutor-jobs/${data.slug}`,
   };
 
   return (
     <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <MarketingNav />
 
@@ -207,7 +163,6 @@ export default async function TutorJobsSuburbPage({ params }) {
         </div>
       </section>
 
-      {/* SAMPLE REPORT — showing tutors what their work product looks like */}
       <SampleReport
         background={c.white}
         padding="80px 24px"
@@ -232,7 +187,6 @@ export default async function TutorJobsSuburbPage({ params }) {
         </div>
       </section>
 
-      {/* NEARBY SUBURBS — INTERNAL LINKS */}
       {neighbours.length > 0 && (
         <section style={{ padding: "48px 24px 72px", background: c.white }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
