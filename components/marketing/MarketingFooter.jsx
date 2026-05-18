@@ -12,7 +12,10 @@ export default function MarketingFooter() {
           <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
         </div>
-        <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
+        <div style={{ display: "flex", gap: 16 }}>
+          <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
+          <Link href="/learn" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Learn</Link>
+        </div>
         <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
       </div>
     </footer>
