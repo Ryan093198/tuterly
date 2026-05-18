@@ -6,6 +6,7 @@ import SampleReport from "./SampleReport";
 import Fade from "./Fade";
 import MarketingNav from "./MarketingNav";
 import MarketingFooter from "./MarketingFooter";
+import TutorRateComparison from "./TutorRateComparison";
 
 // Subject-flavoured /tutor-jobs page (e.g., /tutor-jobs/vce-methods).
 // Structurally mirrors the suburb tutor page but the per-page
@@ -45,7 +46,7 @@ export default function TutorJobsSubjectPage({ subject: data }) {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: data.pageTitle,
-    description: `${data.pageTitle} in Melbourne. Set your own rate, work online or in-person, and use Tuterly's professional tools. Typical rate ${data.typicalRate}.`,
+    description: `${data.pageTitle} in Melbourne. Set your own rate, work online or in-person, and use Tuterly's professional tools.`,
     hiringOrganization: { "@type": "Organization", name: "Tuterly", sameAs: SITE_URL },
     jobLocation: {
       "@type": "Place",
@@ -105,22 +106,7 @@ export default function TutorJobsSubjectPage({ subject: data }) {
         </section>
       )}
 
-      {/* TYPICAL RATE */}
-      <section style={{ padding: "56px 24px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <div style={{ background: c.tealPale, borderRadius: 20, padding: "32px 28px", border: `2px solid ${c.teal}`, textAlign: "center" }}>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 10 }}>Typical rate</p>
-              <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.1, marginBottom: 10 }}>
-                {data.typicalRate}
-              </p>
-              <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.6, maxWidth: 500, margin: "0 auto" }}>
-                You set your own rate. The range above is what tutors on our platform charge for {data.name} based on experience, year level, and demand in your area.
-              </p>
-            </div>
-          </Fade>
-        </div>
-      </section>
+      <TutorRateComparison />
 
       {/* WHY TUTOR WITH TUTERLY */}
       <section style={{ padding: "80px 24px", background: c.offWhite }}>

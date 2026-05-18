@@ -2,10 +2,12 @@ import Link from "next/link";
 import { c, MARKETING_FONTS_IMPORT } from "./theme";
 import { SITE_URL } from "@/lib/site";
 import { getSeoSuburb } from "@/lib/seo-suburbs";
+import { SEO_TUTOR_SUBJECTS } from "@/lib/seo-tutor-subjects";
 import SampleReport from "./SampleReport";
 import Fade from "./Fade";
 import MarketingNav from "./MarketingNav";
 import MarketingFooter from "./MarketingFooter";
+import TutorRateComparison from "./TutorRateComparison";
 
 // Suburb-flavoured /tutor-jobs page. Extracted from the previous
 // inline page.js so the same dispatcher route can render both suburb
@@ -169,6 +171,32 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
         heading="Your sessions look this professional from day one."
         sub="Every tutor on Tuterly submits a structured report after each session. Parents get a clear picture of what was covered and where their child is up to — and you look like a senior agency tutor without having to learn a new admin system. The sample below is what every parent receives in their inbox."
       />
+
+      <TutorRateComparison background={c.offWhite} />
+
+      {/* SUBJECTS WE'RE ALSO RECRUITING FOR */}
+      <section style={{ padding: "56px 24px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Also recruiting by subject</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 26, color: c.navy, marginBottom: 16, lineHeight: 1.3 }}>
+              Tell us which subjects you teach.
+            </h2>
+            <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 18 }}>
+              We&apos;re actively building tutor supply across the following subjects. Click the one closest to what you teach for the role-specific page, or apply once and tell us in your application.
+            </p>
+            <ul style={{ display: "flex", flexWrap: "wrap", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
+              {SEO_TUTOR_SUBJECTS.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/tutor-jobs/${s.slug}`} style={{ display: "inline-block", padding: "8px 14px", borderRadius: 999, border: `1px solid ${c.border}`, background: c.white, color: c.text, fontSize: 14, textDecoration: "none" }}>
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Fade>
+        </div>
+      </section>
 
       {/* GET STARTED CTA */}
       <section style={{ padding: "72px 24px", background: c.offWhite }}>

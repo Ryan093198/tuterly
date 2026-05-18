@@ -71,8 +71,7 @@ export default function TutorJobsDirectory() {
                     style={{ display: "block", padding: "18px 20px", borderRadius: 14, background: c.white, border: `1px solid ${c.border}`, textDecoration: "none" }}
                   >
                     <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>{s.level} · {s.yearRange}</p>
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 4 }}>{s.name}</p>
-                    <p style={{ fontSize: 13, color: c.textLight }}>{s.typicalRate}</p>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy }}>{s.name}</p>
                   </Link>
                 </li>
               ))}
