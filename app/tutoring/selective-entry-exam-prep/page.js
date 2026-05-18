@@ -16,7 +16,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 const DIRECTORY_HREF = "/directory";
 const TITLE = "Selective Entry Exam Tutoring (Victoria) | Tuterly";
 const DESCRIPTION =
-  "Online and in-person tutors for the Victorian selective entry exams — John Monash Science School, Nossal High, MacRobertson Girls', Suzanne Cory, and the Box Hill High SEAL program.";
+  "Online and in-person tutors for the Victorian selective entry exams - John Monash Science School, Nossal High, MacRobertson Girls', Suzanne Cory, and the Box Hill High SEAL program.";
 
 const SCHOOLS = [
   {
@@ -36,7 +36,7 @@ const SCHOOLS = [
     note: "Year 9-12 selective entry, Werribee, growing reputation across STEM.",
   },
   {
-    name: "Box Hill High School — SEAL program",
+    name: "Box Hill High School - SEAL program",
     note: "Year 7-12 Select Entry Accelerated Learning program for high-ability students.",
   },
 ];
@@ -44,7 +44,7 @@ const SCHOOLS = [
 const EXAM_AREAS = [
   {
     title: "Verbal reasoning",
-    body: "Vocabulary, analogies, and reading comprehension under tight time limits — the section most students lose marks on without dedicated practice.",
+    body: "Vocabulary, analogies, and reading comprehension under tight time limits - the section most students lose marks on without dedicated practice.",
   },
   {
     title: "Numerical reasoning",
@@ -52,7 +52,7 @@ const EXAM_AREAS = [
   },
   {
     title: "Written expression",
-    body: "Two short writing tasks (creative + persuasive). The skill that's hardest to self-improve from a textbook — direct tutor feedback is what moves it.",
+    body: "Two short writing tasks (creative + persuasive). The skill that's hardest to self-improve from a textbook - direct tutor feedback is what moves it.",
   },
   {
     title: "Mathematics",
@@ -80,7 +80,7 @@ export default function SelectiveEntryPrepPage() {
     provider: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
     areaServed: { "@type": "Place", name: "Victoria, Australia" },
     serviceType:
-      "Selective entry exam preparation tutoring — John Monash, Nossal, MacRob, Suzanne Cory, SEAL",
+      "Selective entry exam preparation tutoring - John Monash, Nossal, MacRob, Suzanne Cory, SEAL",
     url: `${SITE_URL}/tutoring/selective-entry-exam-prep`,
   };
 
@@ -103,7 +103,7 @@ export default function SelectiveEntryPrepPage() {
               Tutoring for the Victorian selective entry exams.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              The four Victorian selective entry schools — and the Box Hill High SEAL program — are the toughest tests in the state system. Tuterly connects families with tutors who&apos;ve prepared students through the verbal reasoning, numerical reasoning, written expression, and mathematics sections, and who know the difference between Year 8 maths and what actually appears on the exam.
+              The four Victorian selective entry schools - and the Box Hill High SEAL program - are the toughest tests in the state system. Tuterly connects families with tutors who&apos;ve prepared students through the verbal reasoning, numerical reasoning, written expression, and mathematics sections, and who know the difference between Year 8 maths and what actually appears on the exam.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -164,7 +164,7 @@ export default function SelectiveEntryPrepPage() {
         padding="80px 24px"
         preset="selective-numerical"
         heading="A sample selective-entry session report."
-        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson — not just at the end of term."
+        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson - not just at the end of term."
       />
 
       <EducourseCallout />
@@ -178,7 +178,7 @@ export default function SelectiveEntryPrepPage() {
               Selective entry prep without the agency markup.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
-              The same structure a top tutoring agency offers — session reports, practice worksheets, progress tracking — at a directly-paid hourly rate instead of an agency margin.
+              The same structure a top tutoring agency offers - session reports, practice worksheets, progress tracking - at a directly-paid hourly rate instead of an agency margin.
             </p>
           </Fade>
           <div style={{ display: "grid", gap: 20 }}>
@@ -199,7 +199,7 @@ export default function SelectiveEntryPrepPage() {
               No lock-in contracts. No agency markups. Browse tutors who&apos;ve prepared students for selective entry, message them directly, and start whenever you&apos;re ready.
             </p>
             <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started — free to sign up
+              Get started - free to sign up
             </Link>
           </Fade>
         </div>

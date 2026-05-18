@@ -18,7 +18,7 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-// /tutoring/[suburb] — programmatic SEO landing pages. Match the
+// /tutoring/[suburb] - programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
 // the SampleReport / SavingsCalculator / ComparisonTable showcase
 // components blend in. Static content per suburb comes from
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
   const title = `Tutoring in ${data.name} | Tuterly`;
   const description =
     data.blurb ||
-    `Tutoring in ${data.name} — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.`;
+    `Tutoring in ${data.name} - Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.`;
   const url = `${SITE_URL}/tutoring/${slug}`;
   const robots = isPublishable(data)
     ? undefined
@@ -147,7 +147,7 @@ export default async function SuburbPage({ params }) {
       {/* SAMPLE REPORT */}
       <SampleReport background={c.white} padding="80px 24px" />
 
-      {/* PRICING — SAVINGS + COMPARISON */}
+      {/* PRICING - SAVINGS + COMPARISON */}
       <section style={{ padding: "80px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
@@ -156,7 +156,7 @@ export default async function SuburbPage({ params }) {
               Structured tutoring without the agency markup.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
-              You get the structure of a top tutoring company — session reports, practice worksheets, progress tracking — without paying the company markup, because your tutor sets their own rate and you pay them directly.
+              You get the structure of a top tutoring company - session reports, practice worksheets, progress tracking - without paying the company markup, because your tutor sets their own rate and you pay them directly.
             </p>
           </Fade>
           <div style={{ display: "grid", gap: 20 }}>
@@ -177,13 +177,13 @@ export default async function SuburbPage({ params }) {
               No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
             </p>
             <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started — free to sign up
+              Get started - free to sign up
             </Link>
           </Fade>
         </div>
       </section>
 
-      {/* NEARBY SUBURBS — INTERNAL LINKS */}
+      {/* NEARBY SUBURBS - INTERNAL LINKS */}
       {neighbours.length > 0 && (
         <section style={{ padding: "48px 24px 72px", background: c.offWhite }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>

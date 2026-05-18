@@ -24,6 +24,6 @@ export const c = {
 };
 
 // Drop once per page (inside a <style> block). Loads the marketing
-// fonts via @import — pragmatic given each marketing page is
+// fonts via @import - pragmatic given each marketing page is
 // self-contained inline styles.
 export const MARKETING_FONTS_IMPORT = `@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap');`;

@@ -15,12 +15,12 @@ const DIRECTORY_HREF = "/directory";
 export const metadata = {
   title: "Tutoring across Melbourne | Tuterly",
   description:
-    "Tutoring across Melbourne — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
+    "Tutoring across Melbourne - Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
   alternates: { canonical: `${SITE_URL}/tutoring` },
   openGraph: {
     title: "Tutoring across Melbourne | Tuterly",
     description:
-      "Tutoring across Melbourne — Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
+      "Tutoring across Melbourne - Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
     url: `${SITE_URL}/tutoring`,
     type: "website",
   },
@@ -44,7 +44,7 @@ export default function TutoringDirectory() {
               Tutoring across Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Finding the right tutor in Melbourne shouldn&apos;t be hard. Tuterly connects families with experienced tutors who know their child&apos;s curriculum and deliver results you can actually see — sessions can be online or in-person, depending on what works for your family.
+              Finding the right tutor in Melbourne shouldn&apos;t be hard. Tuterly connects families with experienced tutors who know their child&apos;s curriculum and deliver results you can actually see - sessions can be online or in-person, depending on what works for your family.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -100,7 +100,7 @@ export default function TutoringDirectory() {
               No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
             </p>
             <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started — free to sign up
+              Get started - free to sign up
             </Link>
           </Fade>
         </div>

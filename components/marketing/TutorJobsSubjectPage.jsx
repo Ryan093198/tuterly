@@ -76,7 +76,7 @@ export default function TutorJobsSubjectPage({ subject: data }) {
             <Fade>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What students are asking for</p>
               <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-                The kind of {data.name.toLowerCase()} work that&apos;s in demand.
+                {`The kind of ${data.name.toLowerCase()} work that's in demand.`}
               </h2>
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>{data.demand}</p>
             </Fade>
@@ -92,7 +92,7 @@ export default function TutorJobsSubjectPage({ subject: data }) {
         background={c.white}
         padding="80px 24px"
         heading="Your sessions look this professional from day one."
-        sub="Every tutor on Tuterly submits a structured report after each session. Parents get a clear picture of what was covered and where their child is up to — and you look like a senior agency tutor without having to learn a new admin system. The sample below is what every parent receives in their inbox."
+        sub="Every tutor on Tuterly submits a structured report after each session. Parents get a clear picture of what was covered and where their child is up to - and you look like a senior agency tutor without having to learn a new admin system. The sample below is what every parent receives in their inbox."
       />
 
       {/* GET STARTED CTA */}
@@ -100,7 +100,7 @@ export default function TutorJobsSubjectPage({ subject: data }) {
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to start tutoring {data.name}?
+              {`Ready to start tutoring ${data.name}?`}
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
               Apply now. We&apos;ll review your subjects and year levels, and get back to you within one day.

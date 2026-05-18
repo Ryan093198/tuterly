@@ -2,7 +2,7 @@ import Fade from "./Fade";
 import { c } from "./theme";
 
 // Static feature comparison between Tuterly and a typical tutoring
-// company. Pure visual — no interactivity, no state.
+// company. Pure visual - no interactivity, no state.
 const ROWS = [
   { label: "Trained, vetted tutors", tuterly: true, company: true },
   { label: "Detailed post-session reports", tuterly: true, company: false },

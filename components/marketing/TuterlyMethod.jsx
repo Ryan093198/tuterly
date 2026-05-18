@@ -8,17 +8,17 @@ const PILLARS = [
   {
     icon: "📝",
     title: "A report after every session",
-    body: "Most agencies hand parents a generic invoice and a vague \"went well\". Tuterly tutors submit structured notes and the platform turns them into a session report covering what was taught, how your child went, and what to focus on next — every single lesson.",
+    body: "Most agencies hand parents a generic invoice and a vague \"went well\". Tuterly tutors submit structured notes and the platform turns them into a session report covering what was taught, how your child went, and what to focus on next - every single lesson.",
   },
   {
     icon: "📈",
     title: "Progress you can actually see",
-    body: "Each topic your child works on is rated for confidence and tracked over time. After a few sessions you can see, on a single page, which areas have moved and which still need work — instead of guessing whether the tutoring is doing anything.",
+    body: "Each topic your child works on is rated for confidence and tracked over time. After a few sessions you can see, on a single page, which areas have moved and which still need work - instead of guessing whether the tutoring is doing anything.",
   },
   {
     icon: "🧠",
     title: "Practice questions, automatically",
-    body: "Tuterly generates worksheets on the exact topics your tutor covered, so the learning doesn't stop when the session ends. Worked solutions included — your child can attempt the questions, check answers, and bring anything they got stuck on to the next session.",
+    body: "Tuterly generates worksheets on the exact topics your tutor covered, so the learning doesn't stop when the session ends. Worked solutions included - your child can attempt the questions, check answers, and bring anything they got stuck on to the next session.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function TuterlyMethod({ background = c.white, padding = "80px 40
             How Tuterly is different from a regular tutoring service.
           </h2>
           <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", maxWidth: 640, margin: "0 auto 48px", lineHeight: 1.7 }}>
-            Most tutoring services take a fee, book you a tutor, and leave you in the dark about everything else. Tuterly is built around the four things parents actually want from tutoring — visibility, progress, follow-through, and a fair price.
+            Most tutoring services take a fee, book you a tutor, and leave you in the dark about everything else. Tuterly is built around the four things parents actually want from tutoring - visibility, progress, follow-through, and a fair price.
           </p>
         </Fade>
 

@@ -22,7 +22,7 @@ export default function TutorRateComparison({
             Set your rate around ${TUTERLY_TUTOR_HOURLY}/hour. Keep all of it.
           </h2>
           <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", maxWidth: 560, margin: "0 auto 32px", lineHeight: 1.7 }}>
-            Tutors on Tuterly typically charge around ${TUTERLY_TUTOR_HOURLY}/hour and keep the full amount — about {uplift}% more take-home than the ~${AGENCY_TUTOR_HOURLY}/hour tutors usually earn working through an agency.
+            Tutors on Tuterly typically charge around ${TUTERLY_TUTOR_HOURLY}/hour and keep the full amount - about {uplift}% more take-home than the ~${AGENCY_TUTOR_HOURLY}/hour tutors usually earn working through an agency.
           </p>
         </Fade>
         <Fade delay={0.1}>
@@ -42,7 +42,7 @@ export default function TutorRateComparison({
                 ${TUTERLY_TUTOR_HOURLY}<span style={{ fontSize: 16, color: c.textMuted, fontWeight: 400 }}>/hr</span>
               </p>
               <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.55 }}>
-                What you&apos;d typically charge parents directly — and you keep every dollar of it.
+                What you&apos;d typically charge parents directly - and you keep every dollar of it.
               </p>
             </div>
           </div>

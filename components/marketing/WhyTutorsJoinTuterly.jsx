@@ -3,19 +3,19 @@ import { c } from "./theme";
 
 // Shared "Why tutors join Tuterly" section, dropped onto every
 // tutor-facing page so the pitch stays consistent. Four pillars:
-// training, tools, demand, autonomy — in that order, because that's
+// training, tools, demand, autonomy - in that order, because that's
 // the order the value lands for a new tutor (we train you → equip
 // you → bring you students → you keep everything).
 const PILLARS = [
   {
     icon: "🎓",
     title: "We help you become a great tutor.",
-    body: "Structured onboarding, practical training, and ongoing support so you're not just winging it — you're delivering real results for your students.",
+    body: "Structured onboarding, practical training, and ongoing support so you're not just winging it - you're delivering real results for your students.",
   },
   {
     icon: "🛠️",
     title: "Professional tools, built in.",
-    body: "Session reports, practice-worksheet generators, progress dashboards, and parent messaging — the kind of systems only top tutoring companies use. You get them from day one.",
+    body: "Session reports, practice-worksheet generators, progress dashboards, and parent messaging - the kind of systems only top tutoring companies use. You get them from day one.",
   },
   {
     icon: "📥",

@@ -16,7 +16,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 const DIRECTORY_HREF = "/directory";
 const TITLE = "Private School Scholarship Exam Tutoring | Tuterly";
 const DESCRIPTION =
-  "Online and in-person tutors for Year 7 and Year 9 private school scholarship exams — EduTest, ACER, and individual-school entry exams used by Melbourne's leading independent schools.";
+  "Online and in-person tutors for Year 7 and Year 9 private school scholarship exams - EduTest, ACER, and individual-school entry exams used by Melbourne's leading independent schools.";
 
 const TEST_FORMATS = [
   {
@@ -68,7 +68,7 @@ export default function ScholarshipPrepPage() {
     provider: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
     areaServed: { "@type": "Place", name: "Victoria, Australia" },
     serviceType:
-      "Private school scholarship exam preparation tutoring — EduTest, ACER, individual-school entry exams",
+      "Private school scholarship exam preparation tutoring - EduTest, ACER, individual-school entry exams",
     url: `${SITE_URL}/tutoring/scholarship-exam-prep`,
   };
 
@@ -91,7 +91,7 @@ export default function ScholarshipPrepPage() {
               Tutoring for private school scholarship exams.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Year 7 and Year 9 scholarship exams open doors to Melbourne&apos;s top private schools — and a meaningful fee reduction for the next six years. Tuterly connects families with tutors who&apos;ve prepared students for the EduTest, the ACER scholarship tests, and the individual-school entry exams that many schools run alongside.
+              Year 7 and Year 9 scholarship exams open doors to Melbourne&apos;s top private schools - and a meaningful fee reduction for the next six years. Tuterly connects families with tutors who&apos;ve prepared students for the EduTest, the ACER scholarship tests, and the individual-school entry exams that many schools run alongside.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -134,7 +134,7 @@ export default function ScholarshipPrepPage() {
               Melbourne private schools we prepare students for.
             </h2>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>
-              Most Melbourne independent schools accept either EduTest or ACER results — sometimes both — for scholarships and entry. The tutoring approach is shaped by which test the school uses and by the school&apos;s own essay or interview round, if it runs one.
+              Most Melbourne independent schools accept either EduTest or ACER results - sometimes both - for scholarships and entry. The tutoring approach is shaped by which test the school uses and by the school&apos;s own essay or interview round, if it runs one.
             </p>
             <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
               {SCHOOLS.map((s) => (
@@ -154,7 +154,7 @@ export default function ScholarshipPrepPage() {
         padding="80px 24px"
         preset="selective-numerical"
         heading="A sample scholarship session report."
-        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson — not just at the end of term."
+        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson - not just at the end of term."
       />
 
       <EducourseCallout />
@@ -168,7 +168,7 @@ export default function ScholarshipPrepPage() {
               Scholarship prep without the agency markup.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
-              Session reports, practice worksheets, and progress tracking on every topic — at a directly-paid hourly rate instead of an agency margin.
+              Session reports, practice worksheets, and progress tracking on every topic - at a directly-paid hourly rate instead of an agency margin.
             </p>
           </Fade>
           <div style={{ display: "grid", gap: 20 }}>
@@ -189,7 +189,7 @@ export default function ScholarshipPrepPage() {
               No lock-in contracts. No agency markups. Browse tutors who&apos;ve prepared students for Melbourne&apos;s top private schools, message them directly, and start whenever you&apos;re ready.
             </p>
             <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started — free to sign up
+              Get started - free to sign up
             </Link>
           </Fade>
         </div>

@@ -12,7 +12,7 @@ import { SITE_URL } from "@/lib/site";
 import TutorJobsSuburbPage from "@/components/marketing/TutorJobsSuburbPage";
 import TutorJobsSubjectPage from "@/components/marketing/TutorJobsSubjectPage";
 
-// Single dispatcher for /tutor-jobs/[slug] — same URL pattern handles
+// Single dispatcher for /tutor-jobs/[slug] - same URL pattern handles
 // both suburb landing pages (eg /tutor-jobs/glen-waverley) and subject
 // landing pages (eg /tutor-jobs/vce-methods). Subject slugs take
 // priority for collision-handling, though current data has none.
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
   const suburb = getSeoSuburb(slug);
   if (suburb) {
     const title = `Tutoring Jobs in ${suburb.name} | Tuterly`;
-    const description = `Tutoring jobs in ${suburb.name}, Melbourne. Set your own rate, keep what you earn, and use Tuterly's tools to build a professional tutoring practice — online or in-person.`;
+    const description = `Tutoring jobs in ${suburb.name}, Melbourne. Set your own rate, keep what you earn, and use Tuterly's tools to build a professional tutoring practice - online or in-person.`;
     const url = `${SITE_URL}/tutor-jobs/${slug}`;
     const robots = isPublishable(suburb)
       ? undefined

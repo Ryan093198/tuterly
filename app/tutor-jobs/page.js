@@ -15,7 +15,7 @@ const APPLY_HREF = "/tutors#apply";
 
 const METADATA_TITLE = "Become a Tuterly Tutor | Tuterly";
 const METADATA_DESCRIPTION =
-  "We'll train you, give you the tools, and connect you with families — then let you run your own practice without an agency taking a cut.";
+  "We'll train you, give you the tools, and connect you with families - then let you run your own practice without an agency taking a cut.";
 
 export const metadata = {
   title: METADATA_TITLE,
@@ -47,7 +47,7 @@ export default function TutorJobsDirectory() {
               Become a Tuterly tutor.
             </h1>
             <p style={{ fontSize: 18, color: c.text, lineHeight: 1.65, marginBottom: 24, fontWeight: 500 }}>
-              We&apos;ll train you, give you the tools, and connect you with families — then let you run your own practice without an agency taking a cut.
+              We&apos;ll train you, give you the tools, and connect you with families - then let you run your own practice without an agency taking a cut.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={APPLY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -63,7 +63,7 @@ export default function TutorJobsDirectory() {
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <Fade delay={0.1}>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              Tuterly isn&apos;t a job board. It&apos;s a platform for tutors who want to be great at what they do — with the training, tools, and students to make it happen. You go through our onboarding, get access to systems that make you look and operate like a premium tutoring company, and then you set your own rate, choose your own hours, and keep everything you earn.
+              Tuterly isn&apos;t a job board. It&apos;s a platform for tutors who want to be great at what they do - with the training, tools, and students to make it happen. You go through our onboarding, get access to systems that make you look and operate like a premium tutoring company, and then you set your own rate, choose your own hours, and keep everything you earn.
             </p>
           </Fade>
         </div>

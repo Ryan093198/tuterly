@@ -15,7 +15,7 @@ import { c } from "./theme";
 //   - "selective-numerical" numerical reasoning practice, used on the
 //                           selective-entry / scholarship prep pages
 //
-// Each preset is a self-contained content block — change copy here
+// Each preset is a self-contained content block - change copy here
 // without touching the rendering code.
 
 const PRESETS = {
@@ -32,7 +32,7 @@ const PRESETS = {
       "Today's session focused on factorising quadratic expressions. We started by reviewing how to expand brackets, then moved into factorising monic quadratics where the leading coefficient is 1. We worked through several examples from Chapter 5 of the Cambridge Essential Maths 10 textbook, progressing from simple positive constant terms to expressions with negative constants.",
     howWentTitle: "How Julian Went",
     howWentBody:
-      "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms — specifically identifying factor pairs where one factor is negative.",
+      "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms - specifically identifying factor pairs where one factor is negative.",
     topicConfidence: [
       { t: "Expanding brackets", r: 5 },
       { t: "Factorising monic (positive)", r: 4 },
@@ -76,10 +76,10 @@ const PRESETS = {
     ],
     whatCoveredTitle: "What We Covered Today",
     whatCoveredBody:
-      "Today's session focused on numerical reasoning practice for the selective entry exam. We worked through ratio and proportion problems, percentage word problems, and number-sequence patterns. The emphasis was on speed — selective entry questions are time-pressured — and on recognising the underlying pattern even when the question is dressed up in unfamiliar language.",
+      "Today's session focused on numerical reasoning practice for the selective entry exam. We worked through ratio and proportion problems, percentage word problems, and number-sequence patterns. The emphasis was on speed - selective entry questions are time-pressured - and on recognising the underlying pattern even when the question is dressed up in unfamiliar language.",
     howWentTitle: "How Mia Went",
     howWentBody:
-      "Mia worked confidently through the foundation and standard ratio questions and her speed has improved noticeably week-on-week. She still needs work on multi-step word problems where information has to be combined from two separate clues — she tends to focus on the most prominent number and miss the secondary constraint.",
+      "Mia worked confidently through the foundation and standard ratio questions and her speed has improved noticeably week-on-week. She still needs work on multi-step word problems where information has to be combined from two separate clues - she tends to focus on the most prominent number and miss the secondary constraint.",
     topicConfidence: [
       { t: "Ratio and proportion", r: 5 },
       { t: "Percentages", r: 4 },
@@ -87,13 +87,13 @@ const PRESETS = {
       { t: "Multi-step word problems", r: 3 },
     ],
     areasToFocus: [
-      "Daily timed practice — ten numerical-reasoning questions in twelve minutes",
+      "Daily timed practice - ten numerical-reasoning questions in twelve minutes",
       "Multi-step word problems: identify both clues before solving",
       "Past EduTest numerical reasoning paper, sections 3 and 4",
     ],
     questionBank: {
       foundation: [
-        { q: "3, 7, 15, 31, ___ — what's the next number?", a: "Each term doubles the previous and adds 1.\n3 → 7 (×2 + 1), 7 → 15, 15 → 31, 31 → 63.\nAnswer: 63" },
+        { q: "3, 7, 15, 31, ___ - what's the next number?", a: "Each term doubles the previous and adds 1.\n3 → 7 (×2 + 1), 7 → 15, 15 → 31, 31 → 63.\nAnswer: 63" },
         { q: "A jacket costs $80. It's marked down by 25%. What's the new price?", a: "25% of $80 = $20.\n$80 − $20 = $60.\nAnswer: $60" },
         { q: "If 2/3 of a number is 18, what is the number?", a: "Let the number be n. Then (2/3) × n = 18.\nMultiply both sides by 3/2: n = 18 × 3/2 = 27.\nAnswer: 27" },
         { q: "The mean of 5 numbers is 12. The mean of the first 4 is 10. What is the 5th number?", a: "Total of 5 numbers = 5 × 12 = 60.\nTotal of first 4 = 4 × 10 = 40.\n5th number = 60 − 40 = 20.\nAnswer: 20" },
@@ -106,8 +106,8 @@ const PRESETS = {
       ],
       extension: [
         { q: "If x + y = 10 and x² + y² = 58, find the value of xy.", a: "Use the identity (x + y)² = x² + 2xy + y².\nSo 10² = 58 + 2xy.\n100 − 58 = 2xy → 2xy = 42 → xy = 21.\nAnswer: 21" },
-        { q: "A car drives the first half of a 60 km journey at 30 km/h and the second half at 60 km/h. What is the average speed for the whole journey?", a: "First half: 30 km at 30 km/h takes 1 hour.\nSecond half: 30 km at 60 km/h takes 0.5 hours.\nTotal time = 1.5 hours for 60 km.\nAverage speed = 60 ÷ 1.5 = 40 km/h.\n(Note: 45 km/h is the common wrong answer — averaging speeds doesn't work when the times differ.)\nAnswer: 40 km/h" },
-        { q: "An item's price is increased by 20%, then decreased by 20%. By what percentage is the final price different from the original?", a: "Start with $100.\nAfter 20% increase: $100 × 1.20 = $120.\nAfter 20% decrease: $120 × 0.80 = $96.\nFinal is 96% of original — a 4% decrease.\nAnswer: 4% lower than the original" },
+        { q: "A car drives the first half of a 60 km journey at 30 km/h and the second half at 60 km/h. What is the average speed for the whole journey?", a: "First half: 30 km at 30 km/h takes 1 hour.\nSecond half: 30 km at 60 km/h takes 0.5 hours.\nTotal time = 1.5 hours for 60 km.\nAverage speed = 60 ÷ 1.5 = 40 km/h.\n(Note: 45 km/h is the common wrong answer - averaging speeds doesn't work when the times differ.)\nAnswer: 40 km/h" },
+        { q: "An item's price is increased by 20%, then decreased by 20%. By what percentage is the final price different from the original?", a: "Start with $100.\nAfter 20% increase: $100 × 1.20 = $120.\nAfter 20% decrease: $120 × 0.80 = $96.\nFinal is 96% of original - a 4% decrease.\nAnswer: 4% lower than the original" },
         { q: "Pipe A can fill a tank in 4 hours. Pipe B can fill the same tank in 6 hours. How long does it take to fill the tank when both pipes are open at once?", a: "Rate of A = 1/4 tank per hour.\nRate of B = 1/6 tank per hour.\nCombined rate = 1/4 + 1/6 = 3/12 + 2/12 = 5/12 tank per hour.\nTime = 12/5 = 2.4 hours = 2 hours 24 minutes.\nAnswer: 2 hours 24 minutes (12/5 hours)" },
       ],
     },
@@ -161,7 +161,7 @@ export default function SampleReport({
   padding = "80px 40px",
   preset = "math-quadratics",
   heading = "This is what you'll receive after every session.",
-  sub = "A real example of a Tuterly report. Our tutors are trained to use the platform so you're kept in the loop after every session — and practice questions with worked solutions land in your inbox to reinforce what was covered.",
+  sub = "A real example of a Tuterly report. Our tutors are trained to use the platform so you're kept in the loop after every session - and practice questions with worked solutions land in your inbox to reinforce what was covered.",
 }) {
   const content = PRESETS[preset] ?? PRESETS["math-quadratics"];
 

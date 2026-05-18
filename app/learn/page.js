@@ -7,12 +7,12 @@ import Fade from "@/components/marketing/Fade";
 export const metadata = {
   title: "Learn | Tuterly",
   description:
-    "Guides for Melbourne parents — when to tutor, what to expect at each year level, and how to support your child's learning at home.",
+    "Guides for Melbourne parents - when to tutor, what to expect at each year level, and how to support your child's learning at home.",
   alternates: { canonical: `${SITE_URL}/learn` },
   openGraph: {
     title: "Learn | Tuterly",
     description:
-      "Guides for Melbourne parents — when to tutor, what to expect at each year level, and how to support your child's learning at home.",
+      "Guides for Melbourne parents - when to tutor, what to expect at each year level, and how to support your child's learning at home.",
     url: `${SITE_URL}/learn`,
     type: "website",
   },
@@ -32,7 +32,7 @@ export default function LearnIndex() {
             Learn
           </h1>
           <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 48 }}>
-            Straightforward answers to the questions Melbourne parents actually ask — year levels, subject choices, when to get help, and how to make it count.
+            Straightforward answers to the questions Melbourne parents actually ask - year levels, subject choices, when to get help, and how to make it count.
           </p>
         </Fade>
 

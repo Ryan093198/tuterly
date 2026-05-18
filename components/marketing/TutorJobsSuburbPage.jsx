@@ -58,7 +58,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
               Tutoring jobs in {data.name}.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              We&apos;re looking for tutors in {data.name} and the surrounding eastern suburbs. Online or in-person. You set your own rate, keep what you earn, and use Tuterly&apos;s tooling to look as organised as a top agency from day one.
+              {`We're looking for tutors in ${data.name} and the surrounding eastern suburbs. Online or in-person. You set your own rate, keep what you earn, and use Tuterly's tooling to look as organised as a top agency from day one.`}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <Link href={APPLY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -79,7 +79,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
             <Fade>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Demand in {data.name}</p>
               <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-                What families in {data.name} are looking for right now.
+                {`What families in ${data.name} are looking for right now.`}
               </h2>
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>{data.parentNeeds}</p>
               <p style={{ fontSize: 15, color: c.text, lineHeight: 1.7, marginTop: 18, fontStyle: "italic" }}>
@@ -97,7 +97,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
             <Fade>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Schools you might tutor for</p>
               <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-                Students come from across {data.name} and surrounds.
+                {`Students come from across ${data.name} and surrounds.`}
               </h2>
               <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
                 {data.schools.map((s) => (
@@ -118,7 +118,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
         background={c.white}
         padding="80px 24px"
         heading="Your sessions look this professional from day one."
-        sub="Every tutor on Tuterly submits a structured report after each session. Parents get a clear picture of what was covered and where their child is up to — and you look like a senior agency tutor without having to learn a new admin system. The sample below is what every parent receives in their inbox."
+        sub="Every tutor on Tuterly submits a structured report after each session. Parents get a clear picture of what was covered and where their child is up to - and you look like a senior agency tutor without having to learn a new admin system. The sample below is what every parent receives in their inbox."
       />
 
       <TutorRateComparison background={c.offWhite} />
@@ -152,7 +152,7 @@ export default function TutorJobsSuburbPage({ suburb: data }) {
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to start tutoring in {data.name}?
+              {`Ready to start tutoring in ${data.name}?`}
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
               Apply now. We&apos;ll review your subjects and year levels, and get back to you within one day.
