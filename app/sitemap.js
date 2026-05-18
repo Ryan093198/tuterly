@@ -18,6 +18,8 @@ const STATIC_PAGES = [
   // the tutoring side (selective entry + scholarship).
   { path: "/tutoring/selective-entry-exam-prep", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring/scholarship-exam-prep", priority: 0.8, changeFrequency: "monthly" },
+  // Tutor-acquisition directory + per-suburb tutor-jobs pages.
+  { path: "/tutor-jobs", priority: 0.7, changeFrequency: "weekly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];
@@ -34,13 +36,22 @@ export default function sitemap() {
 
   // Only publishable suburb pages enter the sitemap — entries without
   // a blurb or school list are treated as drafts and held back so
-  // Google doesn't index thin content under our domain.
-  const suburbs = SEO_SUBURBS.filter(isPublishable).map((s) => ({
+  // Google doesn't index thin content under our domain. Each
+  // publishable suburb produces two URLs: a parent-facing page
+  // (/tutoring/[slug]) and a tutor-facing page (/tutor-jobs/[slug]).
+  const publishable = SEO_SUBURBS.filter(isPublishable);
+  const parentSuburbs = publishable.map((s) => ({
     url: `${SITE_URL}/tutoring/${s.slug}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: s.tier === 1 ? 0.7 : s.tier === 2 ? 0.6 : 0.5,
   }));
+  const tutorSuburbs = publishable.map((s) => ({
+    url: `${SITE_URL}/tutor-jobs/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: s.tier === 1 ? 0.6 : s.tier === 2 ? 0.5 : 0.4,
+  }));
 
-  return [...statics, ...suburbs];
+  return [...statics, ...parentSuburbs, ...tutorSuburbs];
 }
