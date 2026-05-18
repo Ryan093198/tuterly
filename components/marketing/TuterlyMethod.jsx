@@ -20,11 +20,6 @@ const PILLARS = [
     title: "Practice questions, automatically",
     body: "Tuterly generates worksheets on the exact topics your tutor covered, so the learning doesn't stop when the session ends. Worked solutions included — your child can attempt the questions, check answers, and bring anything they got stuck on to the next session.",
   },
-  {
-    icon: "💸",
-    title: "Direct hire, no agency markup",
-    body: "Your tutor sets their own rate and you pay them directly. There's no booking fee, no agency commission, and no minimum-term lock-in. Tuterly is just the tooling that makes a one-on-one tutor look as organised as a top agency — without the price tag.",
-  },
 ];
 
 export default function TuterlyMethod({ background = c.white, padding = "80px 40px" }) {
