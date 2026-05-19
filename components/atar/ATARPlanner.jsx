@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { c } from "@/components/marketing/theme";
 import courseData from "@/lib/course-data.json";
-import { VCE_SUBJECTS, ENGLISH_SUBJECTS, isEnglishSubject, SUBJECT_GROUPS } from "@/lib/vce-subjects";
+import { VCE_SUBJECTS, ENGLISH_SUBJECTS, isEnglishSubject, SUBJECT_GROUPS, rawToScaled, findSubject } from "@/lib/vce-subjects";
 import {
   calculateAtar,
   checkPrerequisites,
@@ -344,7 +344,55 @@ export default function ATARPlanner() {
           )}{" "}
           → aggregate <strong style={{ color: c.navy }}>{result.aggregate.toFixed(2)}</strong>
         </p>
+        <p style={{ fontSize: 12, color: c.textMuted, marginTop: 6 }}>
+          All totals are scaled study scores. Raw → scaled conversion applied per subject.
+        </p>
       </div>
+
+      {/* SCALED SCORE BREAKDOWN */}
+      <Section title="Scaled scores used in the aggregate">
+        <div style={{ display: "grid", gap: 8 }}>
+          {result.scaled.map((s, i) => {
+            const isInPrimary4 = result.primary4.includes(s);
+            const isIncrement = s === result.increment5 || s === result.increment6;
+            const role = isInPrimary4 ? "Primary 4" : isIncrement ? "Increment (10%)" : "Not counted";
+            const lift = s.scaledScore - s.rawScore;
+            const liftLabel =
+              Math.abs(lift) < 0.1
+                ? null
+                : `${lift > 0 ? "+" : ""}${lift.toFixed(1)}`;
+            return (
+              <div
+                key={s.subject + i}
+                style={{
+                  padding: "10px 14px",
+                  background: c.white,
+                  border: `1px solid ${c.border}`,
+                  borderRadius: 10,
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto auto",
+                  gap: 10,
+                  alignItems: "center",
+                }}
+              >
+                <span style={{ fontSize: 14, color: c.text }}>{s.subject}</span>
+                <span style={{ fontSize: 13, color: c.textLight, fontFamily: "'Space Grotesk', sans-serif" }}>
+                  Raw <strong style={{ color: c.navy }}>{s.rawScore}</strong> → Scaled{" "}
+                  <strong style={{ color: c.navy }}>{s.scaledScore.toFixed(1)}</strong>{" "}
+                  {liftLabel && (
+                    <span style={{ color: lift > 0 ? c.success : c.amber, fontWeight: 600 }}>
+                      ({liftLabel})
+                    </span>
+                  )}
+                </span>
+                <span style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>
+                  {role}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </Section>
 
       {/* COURSE FIT INDICATOR */}
       {selectedCourse && (
@@ -419,7 +467,7 @@ export default function ATARPlanner() {
                       {s.subject}
                     </p>
                     <p style={{ fontSize: 13, color: c.textLight, marginTop: 4 }}>
-                      Lift from <strong>{s.currentScore}</strong> to <strong>{s.targetScore}</strong> → ATAR{" "}
+                      Lift raw study score from <strong>{s.currentRawScore}</strong> to <strong>{s.targetRawScore}</strong> → ATAR{" "}
                       <strong style={{ color: c.tealDark }}>{s.projectedAtar.toFixed(2)}</strong>{" "}
                       <span style={{ color: c.success, fontWeight: 600 }}>(+{s.atarLift.toFixed(2)})</span>
                     </p>
@@ -658,7 +706,16 @@ function CourseCard({ course, onPick }) {
 }
 
 function SubjectRow({ row, onChange, onRemove, isFirst }) {
+  const meta = row.subject ? findSubject(row.subject) : null;
+  const rawNum = Number(row.score);
+  const scaled =
+    meta && Number.isFinite(rawNum) && rawNum > 0
+      ? rawToScaled(rawNum, meta.scalingAt30)
+      : null;
+  const lift = scaled !== null ? scaled - rawNum : 0;
+
   return (
+    <div>
     <div
       style={{
         display: "grid",
@@ -731,6 +788,18 @@ function SubjectRow({ row, onChange, onRemove, isFirst }) {
       ) : (
         <span style={{ width: 24 }} />
       )}
+    </div>
+    {scaled !== null && (
+      <p style={{ fontSize: 12, color: c.textMuted, marginTop: 4, paddingLeft: 4 }}>
+        Raw {rawNum} → estimated scaled <strong style={{ color: c.navy }}>{scaled.toFixed(1)}</strong>
+        {Math.abs(lift) >= 0.5 && (
+          <span style={{ color: lift > 0 ? c.success : c.amber, marginLeft: 6, fontWeight: 600 }}>
+            ({lift > 0 ? "+" : ""}
+            {lift.toFixed(1)})
+          </span>
+        )}
+      </p>
+    )}
     </div>
   );
 }

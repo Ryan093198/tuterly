@@ -105,7 +105,7 @@ export default function ATARPlannerPage() {
               Disclaimer
             </p>
             <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.65 }}>
-              This calculator provides estimates based on 2024 VTAC aggregate-to-ATAR conversion data. Raw study scores are used in this tool - actual ATARs use scaled scores, which may differ by a few points depending on subject scaling and cohort performance in any given year. Course ATARs are 2025-entry estimates and can change. Always verify entry requirements at{" "}
+              This calculator estimates ATARs using 2024 VCAA Scaling Report data plus the 2024 VTAC aggregate-to-ATAR curve. You enter raw study scores and we apply per-subject scaling (eg Methods +5, Specialist +10, Health and HD around -3) before working out the aggregate - the same method VTAC uses. Scaling is approximated with a single anchor point per subject; real VCAA scaling is a non-linear curve recalculated each year, so estimates can drift by a point or two from the official ATAR. Course ATARs are 2025-entry estimates and can change. Always verify entry requirements at{" "}
               <a href="https://vtac.edu.au" target="_blank" rel="noopener" style={{ color: c.tealDark, fontWeight: 600 }}>
                 vtac.edu.au
               </a>{" "}
