@@ -14,6 +14,7 @@ export default function robots() {
         "/onboarding/",
         "/api/",
         "/invite/",
+        "/maindirectory",
       ],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
