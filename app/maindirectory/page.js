@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SEO_TUTOR_SUBJECTS } from "@/lib/seo-tutor-subjects";
+import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 
 // Internal navigation hub for ryanou - lists every public page on the
 // site so they're easy to spot-check without remembering the URLs.
@@ -35,6 +36,17 @@ const PREP_PAGES = [
   { path: "/tutoring/scholarship-exam-prep", label: "Scholarship Exam Prep" },
 ];
 
+const BOTTOM_OF_FUNNEL = [
+  { path: "/cluey-alternative", label: "Cluey alternative (comparison)" },
+  { path: "/tutor-doctor-alternative", label: "Tutor Doctor alternative (comparison)" },
+  { path: "/best-tutoring-melbourne", label: "Best tutoring in Melbourne (showcase)" },
+  { path: "/tutoring-prices-melbourne", label: "Tutoring prices Melbourne (pricing)" },
+  { path: "/vce-tutoring", label: "VCE tutoring hub" },
+  { path: "/online-tutoring-melbourne", label: "Online tutoring Melbourne" },
+  { path: "/scholarship-test-prep", label: "Scholarship test prep" },
+  { path: "/sample-report", label: "Sample report showcase" },
+];
+
 const SYSTEM = [
   { path: "/sitemap.xml", label: "Sitemap (XML)" },
   { path: "/robots.txt", label: "Robots.txt" },
@@ -50,10 +62,17 @@ export default function MainDirectory() {
     label: `${s.name} (${s.level}, ${s.yearRange})`,
   }));
 
+  const worksheetTopics = WORKSHEET_LANDING_PAGES.map((p) => ({
+    path: `/worksheets/${p.slug}`,
+    label: `${p.yearLevel} - ${p.topic}`,
+  }));
+
   const total =
     MAIN_MARKETING.length +
     HUBS.length +
     PREP_PAGES.length +
+    BOTTOM_OF_FUNNEL.length +
+    worksheetTopics.length +
     subjectJobs.length +
     publishable.length * 2 +
     SYSTEM.length;
@@ -71,6 +90,8 @@ export default function MainDirectory() {
       <SimpleSection title="Main marketing pages" entries={MAIN_MARKETING} />
       <SimpleSection title="SEO hubs" entries={HUBS} />
       <SimpleSection title="Exam prep landing pages" entries={PREP_PAGES} />
+      <SimpleSection title="Bottom-of-funnel landing pages" entries={BOTTOM_OF_FUNNEL} />
+      <SimpleSection title="Worksheet topic pages" entries={worksheetTopics} />
       <SimpleSection title="Tutor jobs by subject" entries={subjectJobs} />
 
       <SuburbSection
