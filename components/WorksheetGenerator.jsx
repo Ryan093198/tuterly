@@ -42,7 +42,7 @@ const c = {
   amber: "#F59E0B",
 };
 
-export default function WorksheetGenerator({ topicsByYear }) {
+export default function WorksheetGenerator({ topicsByYear, initialYearLevel, initialTopicId }) {
   const [email, setEmail] = useState("");
   const [emailSaved, setEmailSaved] = useState(false);
   const [emailPending, setEmailPending] = useState(false);
@@ -52,10 +52,13 @@ export default function WorksheetGenerator({ topicsByYear }) {
   // difficulty before being asked to part with their address.
   const [emailModalOpen, setEmailModalOpen] = useState(false);
   const [modalEmailInput, setModalEmailInput] = useState("");
-  const [modalYearInput, setModalYearInput] = useState("Year 7");
+  const [modalYearInput, setModalYearInput] = useState(initialYearLevel || "Year 7");
 
-  const [yearLevel, setYearLevel] = useState("Year 7");
-  const [topicId, setTopicId] = useState("");
+  const [yearLevel, setYearLevel] = useState(initialYearLevel || "Year 7");
+  // Topic-specific landing pages preselect a curriculum code. We seed
+  // topicId at mount and resolve its label from the dropdown source
+  // once it's available so the picker reflects the preset.
+  const [topicId, setTopicId] = useState(initialTopicId || "");
   const [topicLabel, setTopicLabel] = useState("");
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState(null);
@@ -114,11 +117,27 @@ export default function WorksheetGenerator({ topicsByYear }) {
   );
 
   // When year changes, clear the picked topic (it likely doesn't exist
-  // in the new year's curriculum).
+  // in the new year's curriculum). Skipped on the very first mount when
+  // the parent landing page seeded an initialTopicId — otherwise the
+  // preset would be wiped before the user ever sees it.
+  const initialTopicIdRef = useRef(initialTopicId || null);
   useEffect(() => {
+    if (initialTopicIdRef.current) {
+      initialTopicIdRef.current = null;
+      return;
+    }
     setTopicId("");
     setTopicLabel("");
   }, [yearLevel]);
+
+  // Resolve the preset topic's display label once the dropdown data
+  // is available. Runs whenever the topic list for the active year
+  // updates (e.g. on mount, or if topicsByYear changes).
+  useEffect(() => {
+    if (!topicId || topicLabel) return;
+    const match = flatTopics.find((t) => t.id === topicId);
+    if (match) setTopicLabel(match.label);
+  }, [topicId, topicLabel, flatTopics]);
 
   // Submitted from the email-capture modal. Saves the address + child's
   // year level to the marketing list, mirrors them into local state +

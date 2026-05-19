@@ -1,5 +1,6 @@
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SEO_TUTOR_SUBJECTS } from "@/lib/seo-tutor-subjects";
+import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SITE_URL } from "@/lib/site";
 
 // Public marketing pages Google should be aware of. Anything under
@@ -76,5 +77,19 @@ export default function sitemap() {
     priority: s.tier === 1 ? 0.7 : s.tier === 2 ? 0.6 : 0.5,
   }));
 
-  return [...statics, ...parentSuburbs, ...tutorSuburbs, ...tutorSubjects];
+  // Topic-specific worksheet landing pages (e.g. /worksheets/year-7-geometry)
+  const worksheetTopics = WORKSHEET_LANDING_PAGES.map((p) => ({
+    url: `${SITE_URL}/worksheets/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [
+    ...statics,
+    ...parentSuburbs,
+    ...tutorSuburbs,
+    ...tutorSubjects,
+    ...worksheetTopics,
+  ];
 }
