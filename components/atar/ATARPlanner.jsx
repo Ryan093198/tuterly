@@ -705,7 +705,7 @@ function SubjectRow({ row, onChange, onRemove, isFirst }) {
   const rawNum = Number(row.score);
   const scaled =
     meta && Number.isFinite(rawNum) && rawNum > 0
-      ? rawToScaled(rawNum, meta.scalingAt30)
+      ? rawToScaled(rawNum, meta.scaling)
       : null;
   const lift = scaled !== null ? scaled - rawNum : 0;
 

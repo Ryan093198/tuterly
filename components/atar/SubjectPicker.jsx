@@ -200,9 +200,15 @@ export default function SubjectPicker({ value, onChange, placeholder = "Search o
                       aria-selected={isSelected}
                     >
                       <span>{s.name}</span>
-                      {s.scalingAt30 && (
+                      {s.scaling && (
                         <span style={{ fontSize: 11, color: c.textMuted, fontFamily: "'Space Grotesk', sans-serif" }}>
-                          scaled@30: {s.scalingAt30}
+                          @30: {s.scaling[2]}
+                          {s.scaling[2] > 30 && (
+                            <span style={{ color: c.success, marginLeft: 4 }}>(+{s.scaling[2] - 30})</span>
+                          )}
+                          {s.scaling[2] < 30 && (
+                            <span style={{ color: c.amber, marginLeft: 4 }}>({s.scaling[2] - 30})</span>
+                          )}
                         </span>
                       )}
                     </button>
