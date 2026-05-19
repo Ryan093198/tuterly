@@ -1,6 +1,29 @@
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import DirectoryClient from "@/components/DirectoryClient";
+import { SITE_URL } from "@/lib/site";
+
+const TITLE = "Find a Tutor Near You | Tuterly Tutor Directory Melbourne";
+const DESCRIPTION =
+  "Browse experienced tutors across Melbourne. Find a tutor by suburb, subject, and year level. No agency markups - tutors set their own rates.";
+const URL = `${SITE_URL}/directory`;
+
+export const metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+};
 
 // /directory is a public marketing page, but its UX changes once the
 // parent has signed in: prices unlock, the trial-signup CTA flips to

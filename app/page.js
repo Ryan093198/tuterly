@@ -2,6 +2,44 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Auth from "@/components/Auth";
 import Logo from "@/components/Logo";
+import { SITE_URL } from "@/lib/site";
+
+const TITLE = "Tuterly - Tutoring Reports & Practice for Melbourne";
+const DESCRIPTION =
+  "Tuterly turns tutoring into structured session reports, practice worksheets, and progress tracking. Built for families and tutors in Melbourne.";
+
+export const metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+};
+
+// Organization schema for the homepage. Helps Google build a
+// knowledge panel and ties the brand to Bayside Academics.
+const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Tuterly",
+  url: SITE_URL,
+  logo: `${SITE_URL}/og-image.png`,
+  description: DESCRIPTION,
+  areaServed: { "@type": "Place", name: "Melbourne, Victoria, Australia" },
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Bayside Academics",
+  },
+};
 
 export default async function Home({ searchParams }) {
   const sp = await searchParams;
@@ -12,6 +50,10 @@ export default async function Home({ searchParams }) {
 
   return (
     <main className="flex flex-1 items-center justify-center px-6 py-12 bg-gradient-to-b from-brand-pale via-surface-soft to-surface-soft">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+      />
       <div className="w-full max-w-md animate-fade-in-up">
         <div className="flex flex-col items-center mb-8 text-center">
           <Logo size="lg" />

@@ -1,14 +1,31 @@
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
+import { SITE_URL } from "@/lib/site";
 
 // Public landing page for the free maths worksheet generator. Pre-computes
 // the VCAA F-10 topic list for every Year 3-10 level so the client-side
 // dropdown is instant.
 
+const TITLE = "Free Maths Worksheets - Year 3 to Year 10 | Tuterly";
+const DESCRIPTION =
+  "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. 10 questions with worked solutions, downloadable as PDF.";
+const URL = `${SITE_URL}/worksheets`;
+
 export const metadata = {
-  title: "Free Maths Worksheets — Year 3 to Year 10 | Tuterly",
-  description:
-    "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. 10 questions with worked solutions, downloadable as PDF.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 const YEAR_LEVELS = [
@@ -86,7 +103,7 @@ export default function WorksheetsPage() {
           </h1>
           <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.6, margin: 0 }}>
             10 questions, fully worked solutions, aligned to the Victorian
-            Curriculum. Generate one now — no signup required, free for
+            Curriculum. Generate one now - no signup required, free for
             everyone.
           </p>
         </div>

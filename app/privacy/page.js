@@ -1,8 +1,22 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { SITE_URL } from "@/lib/site";
+
+const TITLE = "Privacy Policy | Tuterly";
+const DESCRIPTION =
+  "How Tuterly collects and uses your data. Privacy policy for families, tutors, and centres using the Tuterly platform.";
+const URL = `${SITE_URL}/privacy`;
 
 export const metadata = {
-  title: "Privacy Policy · Tuterly",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    type: "website",
+  },
 };
 
 const lastUpdated = "May 2026";

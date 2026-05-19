@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import NavProgress from "../components/NavProgress";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -9,14 +10,37 @@ const inter = Inter({
   display: "swap",
 });
 
+// Site-wide metadata defaults. Every page inherits these unless it
+// exports its own `metadata` or `generateMetadata`. metadataBase lets
+// relative paths (eg /og-image.png) resolve to absolute URLs in OG
+// and Twitter tags automatically.
+const DEFAULT_TITLE = "Tuterly - Tutoring Reports & Practice for Melbourne";
+const DEFAULT_DESCRIPTION =
+  "Tuterly turns tutoring into structured session reports, practice worksheets, and progress tracking. Built for families and tutors in Melbourne.";
+
 export const metadata = {
-  title: "Tuterly",
-  description: "Tutoring sessions tracked. Curriculum aligned reports prepared.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: "%s | Tuterly",
+  },
+  description: DEFAULT_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: "Tuterly",
+    locale: "en_AU",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
+  icons: { icon: "/favicon.ico" },
 };
 
 // Runs before React hydrates. Reads the persisted theme choice and adds
 // `.dark` to <html> so the first paint is the right colour scheme. The
-// default (no stored choice) is light — dark mode needs a deliberate
+// default (no stored choice) is light - dark mode needs a deliberate
 // opt-in via Settings, since the app's UI is tuned for light first.
 // "system" is still respected for users who explicitly pick it.
 const THEME_INIT_SCRIPT = `(function () {
