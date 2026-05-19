@@ -95,10 +95,10 @@ export default function ATARPlannerPage() {
       </section>
 
       <section style={{ padding: "0 24px 24px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", background: "#FEF3C7", border: `1px solid ${c.amber}`, borderRadius: 12, padding: "14px 18px" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", background: c.tealPale, border: `1px solid ${c.teal}`, borderRadius: 12, padding: "14px 18px" }}>
           <p style={{ fontSize: 14, color: c.text, lineHeight: 1.6 }}>
-            <strong style={{ color: "#B45309" }}>Course ATARs shown are approximations.</strong>{" "}
-            We&apos;re progressively updating the list against official 2025 VTAC data. Always verify the guaranteed ATAR for any course you&apos;re planning around on{" "}
+            <strong style={{ color: c.tealDark }}>Course ATARs use the official 2025 VTAC December round.</strong>{" "}
+            Numbers shown are the lowest selection ranks published by VTAC on 23 December 2025. The January round can shift some courses slightly, so verify on{" "}
             <a href="https://vtac.edu.au" target="_blank" rel="noopener" style={{ color: c.tealDark, fontWeight: 600 }}>vtac.edu.au</a>{" "}
             or the university&apos;s own course page before relying on it for an enrolment decision.
           </p>

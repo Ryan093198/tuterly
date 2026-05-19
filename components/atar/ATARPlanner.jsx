@@ -84,12 +84,12 @@ export default function ATARPlanner() {
   );
   const similarCourses = useMemo(
     () =>
-      detailedUnlocked
+      result.hasEnglish && result.hasMinSubjects
         ? findSimilarCourses(COURSES, result.atar, validSubjects, {
             excludeId: selectedCourse?.id ?? null,
           })
         : [],
-    [detailedUnlocked, result.atar, validSubjects, selectedCourse]
+    [result.hasEnglish, result.hasMinSubjects, result.atar, validSubjects, selectedCourse]
   );
 
   // ----- Course selection prefills subjects -----
@@ -241,6 +241,8 @@ export default function ATARPlanner() {
           Use your raw study scores out of 50 (your actual or predicted ones). English is required - we&apos;ll use whichever English subject you sat as one of your Primary 4.
         </p>
 
+        <LiveAtarPill result={result} selectedCourse={selectedCourse} />
+
         <div style={{ display: "grid", gap: 10 }}>
           {subjects.map((row, idx) => (
             <SubjectRow
@@ -299,7 +301,7 @@ export default function ATARPlanner() {
         {(!result.hasEnglish || !result.hasMinSubjects) && (
           <p style={{ fontSize: 13, color: c.amber, marginTop: 10 }}>
             {!result.hasEnglish
-              ? "Add an English subject (English, EAL, English Language, or Literature) - it&apos;s required in the Primary 4."
+              ? "Add an English subject (English, EAL, English Language, or Literature) - it's required in the Primary 4."
               : "Enter at least 4 subjects to calculate your ATAR."}
           </p>
         )}
@@ -427,7 +429,66 @@ export default function ATARPlanner() {
         </Section>
       )}
 
-      {/* EMAIL GATE for detailed results */}
+      {/* SIMILAR COURSES (always shown) */}
+      {similarCourses.length > 0 && (
+        <Section title="Courses you&apos;d qualify for">
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
+            {similarCourses.map(({ course, allPrereqsMet, unmetPrereqs }) => (
+              <li
+                key={course.id}
+                style={{
+                  padding: "14px 18px",
+                  background: c.white,
+                  border: `1px solid ${c.border}`,
+                  borderRadius: 12,
+                  display: "grid",
+                  gridTemplateColumns: "1fr auto",
+                  gap: 12,
+                  alignItems: "center",
+                }}
+              >
+                <div>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                    {course.courseName}
+                  </p>
+                  <p style={{ fontSize: 13, color: c.textLight, marginTop: 2 }}>
+                    {course.university} - Guaranteed ATAR {course.guaranteedAtar.toFixed(2)} - {course.duration} yr
+                  </p>
+                  {course.prerequisites.length > 0 && (
+                    <p style={{ fontSize: 12, color: c.textMuted, marginTop: 4 }}>
+                      Prereqs:{" "}
+                      {course.prerequisites
+                        .map((p) => `${p.subject} ${p.minimumScore}+`)
+                        .join(", ")}
+                    </p>
+                  )}
+                  {!allPrereqsMet && unmetPrereqs && unmetPrereqs.length > 0 && (
+                    <p style={{ fontSize: 12, color: "#B45309", marginTop: 4, fontWeight: 600 }}>
+                      Missing: {unmetPrereqs.map((p) => `${p.subject} ${p.minimumScore}+`).join(", ")}
+                    </p>
+                  )}
+                </div>
+                <span
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                    padding: "4px 10px",
+                    borderRadius: 999,
+                    color: allPrereqsMet ? c.success : "#B45309",
+                    background: allPrereqsMet ? "#10B98115" : "#F59E0B15",
+                  }}
+                >
+                  {allPrereqsMet ? "Prereqs met" : "Missing prereq"}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {/* EMAIL GATE for improvement plan */}
       {!detailedUnlocked ? (
         <EmailGate
           email={email}
@@ -437,90 +498,41 @@ export default function ATARPlanner() {
           emailError={emailError}
         />
       ) : (
-        <>
-          {/* IMPROVEMENT SUGGESTIONS */}
-          {improvements.length > 0 && (
-            <Section
-              title={
-                selectedCourse
-                  ? `To reach ${selectedCourse.guaranteedAtar.toFixed(2)} (${selectedCourse.courseName})`
-                  : "Where small score lifts move your ATAR most"
-              }
-            >
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
-                {improvements.map((s) => (
-                  <li
-                    key={s.subject}
-                    style={{
-                      padding: "14px 18px",
-                      background: c.offWhite,
-                      border: `1px solid ${c.border}`,
-                      borderRadius: 12,
-                    }}
-                  >
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
-                      {s.subject}
-                    </p>
-                    <p style={{ fontSize: 13, color: c.textLight, marginTop: 4 }}>
-                      Lift raw study score from <strong>{s.currentRawScore}</strong> to <strong>{s.targetRawScore}</strong> → ATAR{" "}
-                      <strong style={{ color: c.tealDark }}>{s.projectedAtar.toFixed(2)}</strong>{" "}
-                      <span style={{ color: c.success, fontWeight: 600 }}>(+{s.atarLift.toFixed(2)})</span>
-                    </p>
-                    <p style={{ fontSize: 11, color: c.textMuted, marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>
-                      {s.weight === "100%" ? "Primary 4 - full weight" : "Increment subject - 10% weight"}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </Section>
-          )}
-
-          {/* SIMILAR COURSES */}
-          {similarCourses.length > 0 && (
-            <Section title="Courses you&apos;d qualify for">
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
-                {similarCourses.map(({ course, allPrereqsMet }) => (
-                  <li
-                    key={course.id}
-                    style={{
-                      padding: "14px 18px",
-                      background: c.white,
-                      border: `1px solid ${c.border}`,
-                      borderRadius: 12,
-                      display: "grid",
-                      gridTemplateColumns: "1fr auto",
-                      gap: 12,
-                      alignItems: "center",
-                    }}
-                  >
-                    <div>
-                      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
-                        {course.courseName}
-                      </p>
-                      <p style={{ fontSize: 13, color: c.textLight, marginTop: 2 }}>
-                        {course.university} - Guaranteed ATAR {course.guaranteedAtar.toFixed(2)}
-                      </p>
-                    </div>
-                    <span
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: 1,
-                        padding: "4px 10px",
-                        borderRadius: 999,
-                        color: allPrereqsMet ? c.success : c.amber,
-                        background: allPrereqsMet ? "#10B98115" : "#F59E0B15",
-                      }}
-                    >
-                      {allPrereqsMet ? "Prereqs met" : "Missing prereq"}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Section>
-          )}
-        </>
+        improvements.length > 0 && (
+          <Section
+            title={
+              selectedCourse
+                ? `To reach ${selectedCourse.guaranteedAtar.toFixed(2)} (${selectedCourse.courseName})`
+                : "Where small score lifts move your ATAR most"
+            }
+          >
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
+              {improvements.map((s) => (
+                <li
+                  key={s.subject}
+                  style={{
+                    padding: "14px 18px",
+                    background: c.offWhite,
+                    border: `1px solid ${c.border}`,
+                    borderRadius: 12,
+                  }}
+                >
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                    {s.subject}
+                  </p>
+                  <p style={{ fontSize: 13, color: c.textLight, marginTop: 4 }}>
+                    Lift raw study score from <strong>{s.currentRawScore}</strong> to <strong>{s.targetRawScore}</strong> → ATAR{" "}
+                    <strong style={{ color: c.tealDark }}>{s.projectedAtar.toFixed(2)}</strong>{" "}
+                    <span style={{ color: c.success, fontWeight: 600 }}>(+{s.atarLift.toFixed(2)})</span>
+                  </p>
+                  <p style={{ fontSize: 11, color: c.textMuted, marginTop: 4, textTransform: "uppercase", letterSpacing: 1 }}>
+                    {s.weight === "100%" ? "Primary 4 - full weight" : "Increment subject - 10% weight"}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )
       )}
 
       {/* CTAs */}
@@ -815,6 +827,63 @@ function CourseFit({ course, atar }) {
   );
 }
 
+function LiveAtarPill({ result, selectedCourse }) {
+  const ready = result.hasEnglish && result.hasMinSubjects;
+  const band = ready ? atarBand(result.atar) : "muted";
+  const colours = BAND_COLOURS[band];
+  const meetsCourse = ready && selectedCourse ? result.atar >= selectedCourse.guaranteedAtar : null;
+  return (
+    <div
+      style={{
+        marginBottom: 18,
+        padding: "14px 18px",
+        background: ready ? colours.bg : c.offWhite,
+        border: `1px solid ${ready ? colours.border : c.border}`,
+        borderRadius: 12,
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: 12,
+      }}
+    >
+      <div>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: ready ? colours.fg : c.textMuted, textTransform: "uppercase", letterSpacing: 1.5 }}>
+          Live estimated ATAR
+        </p>
+        <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, lineHeight: 1.1, color: c.navy, marginTop: 4 }}>
+          {ready ? result.atar.toFixed(2) : "--"}
+        </p>
+        {ready && (
+          <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>
+            Aggregate {result.aggregate.toFixed(2)} - updates as you type.
+          </p>
+        )}
+        {!ready && (
+          <p style={{ fontSize: 12, color: c.textMuted, marginTop: 4 }}>
+            {!result.hasEnglish ? "Add English + 3 other scores to see your live ATAR." : "Enter at least 4 scores to see your live ATAR."}
+          </p>
+        )}
+      </div>
+      {ready && selectedCourse && (
+        <div style={{ textAlign: "right" }}>
+          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5 }}>
+            Target
+          </p>
+          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy, marginTop: 2 }}>
+            {selectedCourse.guaranteedAtar.toFixed(2)}
+          </p>
+          <p style={{ fontSize: 12, color: meetsCourse ? c.success : "#B45309", fontWeight: 600, marginTop: 2 }}>
+            {meetsCourse
+              ? `+${(result.atar - selectedCourse.guaranteedAtar).toFixed(2)} above`
+              : `${(result.atar - selectedCourse.guaranteedAtar).toFixed(2)} below`}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function EmailGate({ email, setEmail, submitEmail, skipEmail, emailError }) {
   return (
     <div
@@ -827,10 +896,10 @@ function EmailGate({ email, setEmail, submitEmail, skipEmail, emailError }) {
       }}
     >
       <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
-        Want the detailed plan?
+        Want a personalised lift plan?
       </p>
       <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>
-        Enter your email to see score improvements and similar courses.
+        Enter your email to see which subjects move your ATAR the most.
       </h3>
       <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18, lineHeight: 1.6 }}>
         We&apos;ll save your plan so you can come back and update your scores as SAC results come in. No spam, just useful study planning emails through the year.
