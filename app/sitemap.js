@@ -21,6 +21,17 @@ const STATIC_PAGES = [
   { path: "/tutoring/scholarship-exam-prep", priority: 0.8, changeFrequency: "monthly" },
   // Tutor-acquisition directory + per-suburb tutor-jobs pages.
   { path: "/tutor-jobs", priority: 0.7, changeFrequency: "weekly" },
+  // Bottom-of-funnel SEO landing pages - comparison, pricing,
+  // topic-focused, and showcase. These target high-intent decision
+  // queries so they get a high sitemap priority.
+  { path: "/cluey-alternative", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/tutor-doctor-alternative", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/best-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/tutoring-prices-melbourne", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/vce-tutoring", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/online-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/scholarship-test-prep", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/sample-report", priority: 0.6, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];
