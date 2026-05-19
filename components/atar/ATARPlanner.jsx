@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { c } from "@/components/marketing/theme";
 import courseData from "@/lib/course-data.json";
-import { VCE_SUBJECTS, ENGLISH_SUBJECTS, isEnglishSubject, SUBJECT_GROUPS, rawToScaled, findSubject } from "@/lib/vce-subjects";
+import { ENGLISH_SUBJECTS, isEnglishSubject, rawToScaled, findSubject } from "@/lib/vce-subjects";
+import SubjectPicker from "./SubjectPicker";
 import {
   calculateAtar,
   checkPrerequisites,
@@ -23,12 +24,6 @@ const BAND_COLOURS = {
   low: { bg: "#F59E0B15", fg: "#B45309", border: "#F59E0B" },
   muted: { bg: c.offWhite, fg: c.textMuted, border: c.border },
 };
-
-// Subject options grouped for the dropdown
-const SUBJECT_OPTIONS_BY_GROUP = SUBJECT_GROUPS.map((group) => ({
-  group,
-  subjects: VCE_SUBJECTS.filter((s) => s.group === group),
-}));
 
 export default function ATARPlanner() {
   const [screen, setScreen] = useState("choose"); // 'choose' | 'subjects' | 'results'
@@ -724,31 +719,11 @@ function SubjectRow({ row, onChange, onRemove, isFirst }) {
         alignItems: "center",
       }}
     >
-      <select
+      <SubjectPicker
         value={row.subject}
-        onChange={(e) => onChange("subject", e.target.value)}
-        style={{
-          padding: "12px 14px",
-          borderRadius: 10,
-          border: `1px solid ${c.border}`,
-          fontFamily: "'DM Sans', sans-serif",
-          fontSize: 14,
-          background: c.white,
-          color: c.text,
-          appearance: "none",
-        }}
-      >
-        <option value="">{isFirst ? "Pick an English subject..." : "Pick a subject..."}</option>
-        {SUBJECT_OPTIONS_BY_GROUP.map(({ group, subjects: subs }) => (
-          <optgroup key={group} label={group}>
-            {subs.map((s) => (
-              <option key={s.name} value={s.name}>
-                {s.name}
-              </option>
-            ))}
-          </optgroup>
-        ))}
-      </select>
+        onChange={(name) => onChange("subject", name)}
+        placeholder={isFirst ? "Search English subjects..." : "Search subjects..."}
+      />
       <input
         type="number"
         min={0}
