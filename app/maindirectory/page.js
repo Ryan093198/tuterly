@@ -20,6 +20,7 @@ const MAIN_MARKETING = [
   { path: "/worksheets", label: "Free Worksheets" },
   { path: "/directory", label: "Parent-facing tutor directory" },
   { path: "/learn", label: "Learn (blog)" },
+  { path: "/atar-planner", label: "ATAR Course Planner (tool)" },
   { path: "/privacy", label: "Privacy" },
   { path: "/terms", label: "Terms" },
 ];

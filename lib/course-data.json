@@ -1,0 +1,1133 @@
+{
+  "_meta": {
+    "lastUpdated": "2025 entry estimates",
+    "disclaimer": "ATAR values are best-effort estimates based on 2025 entry data. Universities adjust requirements each year. Always verify on vtac.edu.au or the university's course page before relying on these numbers.",
+    "guaranteedAtarNotes": "When a course doesn't publish a guaranteed ATAR (eg Melbourne JD, MBBS pathways via UCAT/interview), we list the typical lowest selection rank or note the alternate pathway."
+  },
+  "courses": [
+    {
+      "id": "commerce-melbourne",
+      "courseName": "Bachelor of Commerce",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 95.0,
+      "lowestSelectionRank": 90.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "commerce-monash",
+      "courseName": "Bachelor of Commerce",
+      "university": "Monash University",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 86.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "commerce-deakin",
+      "courseName": "Bachelor of Commerce",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "business-rmit",
+      "courseName": "Bachelor of Business",
+      "university": "RMIT University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "business-latrobe",
+      "courseName": "Bachelor of Business",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "business-swinburne",
+      "courseName": "Bachelor of Business",
+      "university": "Swinburne University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "business-vu",
+      "courseName": "Bachelor of Business",
+      "university": "Victoria University",
+      "guaranteedAtar": 55.0,
+      "lowestSelectionRank": 50.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "business-acu",
+      "courseName": "Bachelor of Business Administration",
+      "university": "Australian Catholic University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "accounting-deakin",
+      "courseName": "Bachelor of Commerce (Accounting)",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "accounting-rmit",
+      "courseName": "Bachelor of Business (Accounting)",
+      "university": "RMIT University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Commerce"
+    },
+    {
+      "id": "engineering-melbourne",
+      "courseName": "Bachelor of Science (Engineering Systems)",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 88.0,
+      "lowestSelectionRank": 85.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 30 }
+      ],
+      "duration": 3,
+      "category": "Engineering"
+    },
+    {
+      "id": "engineering-monash",
+      "courseName": "Bachelor of Engineering (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 88.0,
+      "lowestSelectionRank": 84.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 },
+        { "subject": "Physics", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "engineering-rmit",
+      "courseName": "Bachelor of Engineering (Honours)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "engineering-deakin",
+      "courseName": "Bachelor of Engineering (Honours)",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "engineering-swinburne",
+      "courseName": "Bachelor of Engineering (Honours)",
+      "university": "Swinburne University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "engineering-latrobe",
+      "courseName": "Bachelor of Engineering (Honours)",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "civil-engineering-monash",
+      "courseName": "Bachelor of Civil Engineering (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 88.0,
+      "lowestSelectionRank": 83.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 },
+        { "subject": "Physics", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "mechanical-engineering-rmit",
+      "courseName": "Bachelor of Mechanical Engineering (Honours)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "chemical-engineering-monash",
+      "courseName": "Bachelor of Chemical Engineering (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 88.0,
+      "lowestSelectionRank": 83.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "software-engineering-monash",
+      "courseName": "Bachelor of Software Engineering (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 88.0,
+      "lowestSelectionRank": 84.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "software-engineering-rmit",
+      "courseName": "Bachelor of Software Engineering (Honours)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Engineering"
+    },
+    {
+      "id": "biomedicine-melbourne",
+      "courseName": "Bachelor of Biomedicine",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 96.0,
+      "lowestSelectionRank": 94.5,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "biomed-monash",
+      "courseName": "Bachelor of Biomedical Science",
+      "university": "Monash University",
+      "guaranteedAtar": 92.0,
+      "lowestSelectionRank": 89.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "biomed-deakin",
+      "courseName": "Bachelor of Biomedical Science",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "medicine-monash",
+      "courseName": "Bachelor of Medical Science and Doctor of Medicine",
+      "university": "Monash University",
+      "guaranteedAtar": 98.0,
+      "lowestSelectionRank": 96.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 35 },
+        { "subject": "Chemistry", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 30 }
+      ],
+      "duration": 5,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-melbourne",
+      "courseName": "Master of Nursing Science (3-year direct entry)",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 78.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-monash",
+      "courseName": "Bachelor of Nursing",
+      "university": "Monash University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 20 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-deakin",
+      "courseName": "Bachelor of Nursing",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-latrobe",
+      "courseName": "Bachelor of Nursing",
+      "university": "La Trobe University",
+      "guaranteedAtar": 60.0,
+      "lowestSelectionRank": 55.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-acu",
+      "courseName": "Bachelor of Nursing",
+      "university": "Australian Catholic University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "nursing-rmit",
+      "courseName": "Bachelor of Nursing",
+      "university": "RMIT University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "physiotherapy-monash",
+      "courseName": "Bachelor of Physiotherapy (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 95.0,
+      "lowestSelectionRank": 92.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Health"
+    },
+    {
+      "id": "physiotherapy-latrobe",
+      "courseName": "Bachelor of Physiotherapy (Honours)",
+      "university": "La Trobe University",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 86.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Health"
+    },
+    {
+      "id": "pharmacy-monash",
+      "courseName": "Bachelor of Pharmacy (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 85.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Health"
+    },
+    {
+      "id": "paramedicine-monash",
+      "courseName": "Bachelor of Paramedicine",
+      "university": "Monash University",
+      "guaranteedAtar": 85.0,
+      "lowestSelectionRank": 80.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Chemistry", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "paramedicine-vu",
+      "courseName": "Bachelor of Paramedicine",
+      "university": "Victoria University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "health-science-deakin",
+      "courseName": "Bachelor of Health Sciences",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "exercise-science-deakin",
+      "courseName": "Bachelor of Exercise and Sport Science",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "exercise-science-latrobe",
+      "courseName": "Bachelor of Exercise Physiology",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "sport-science-vu",
+      "courseName": "Bachelor of Sport Science",
+      "university": "Victoria University",
+      "guaranteedAtar": 60.0,
+      "lowestSelectionRank": 55.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Health"
+    },
+    {
+      "id": "law-monash",
+      "courseName": "Bachelor of Laws (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 96.0,
+      "lowestSelectionRank": 94.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 35 }],
+      "duration": 5,
+      "category": "Law"
+    },
+    {
+      "id": "law-deakin",
+      "courseName": "Bachelor of Laws",
+      "university": "Deakin University",
+      "guaranteedAtar": 85.0,
+      "lowestSelectionRank": 80.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Law"
+    },
+    {
+      "id": "law-latrobe",
+      "courseName": "Bachelor of Laws (Honours)",
+      "university": "La Trobe University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Law"
+    },
+    {
+      "id": "law-rmit",
+      "courseName": "Bachelor of Laws (Honours)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Law"
+    },
+    {
+      "id": "law-acu",
+      "courseName": "Bachelor of Laws",
+      "university": "Australian Catholic University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Law"
+    },
+    {
+      "id": "law-vu",
+      "courseName": "Bachelor of Laws (Honours)",
+      "university": "Victoria University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Law"
+    },
+    {
+      "id": "arts-melbourne",
+      "courseName": "Bachelor of Arts",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "arts-monash",
+      "courseName": "Bachelor of Arts",
+      "university": "Monash University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "arts-deakin",
+      "courseName": "Bachelor of Arts",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "arts-latrobe",
+      "courseName": "Bachelor of Arts",
+      "university": "La Trobe University",
+      "guaranteedAtar": 60.0,
+      "lowestSelectionRank": 55.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "arts-rmit",
+      "courseName": "Bachelor of Arts (Languages)",
+      "university": "RMIT University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "media-rmit",
+      "courseName": "Bachelor of Communication (Media)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Media"
+    },
+    {
+      "id": "communications-deakin",
+      "courseName": "Bachelor of Communication",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Media"
+    },
+    {
+      "id": "journalism-rmit",
+      "courseName": "Bachelor of Communication (Journalism)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Media"
+    },
+    {
+      "id": "media-monash",
+      "courseName": "Bachelor of Media Communication",
+      "university": "Monash University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Media"
+    },
+    {
+      "id": "education-melbourne",
+      "courseName": "Bachelor of Arts and Master of Teaching (Secondary)",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 78.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 5,
+      "category": "Education"
+    },
+    {
+      "id": "education-monash",
+      "courseName": "Bachelor of Education (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-deakin",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-latrobe",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "La Trobe University",
+      "guaranteedAtar": 60.0,
+      "lowestSelectionRank": 55.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-acu",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "Australian Catholic University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-rmit",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "RMIT University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-vu",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "Victoria University",
+      "guaranteedAtar": 55.0,
+      "lowestSelectionRank": 50.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "education-federation",
+      "courseName": "Bachelor of Education (Primary)",
+      "university": "Federation University",
+      "guaranteedAtar": 55.0,
+      "lowestSelectionRank": 50.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 4,
+      "category": "Education"
+    },
+    {
+      "id": "cs-melbourne",
+      "courseName": "Bachelor of Science (Computing and Software Systems)",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 86.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "cs-monash",
+      "courseName": "Bachelor of Computer Science (Advanced)",
+      "university": "Monash University",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 87.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "it-rmit",
+      "courseName": "Bachelor of Information Technology",
+      "university": "RMIT University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 20 }
+      ],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "it-deakin",
+      "courseName": "Bachelor of Information Technology",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "cybersecurity-deakin",
+      "courseName": "Bachelor of Cyber Security",
+      "university": "Deakin University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "cs-swinburne",
+      "courseName": "Bachelor of Computer Science",
+      "university": "Swinburne University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 20 }
+      ],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "it-latrobe",
+      "courseName": "Bachelor of Information Technology",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "IT"
+    },
+    {
+      "id": "science-melbourne",
+      "courseName": "Bachelor of Science",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 85.0,
+      "lowestSelectionRank": 80.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "science-monash",
+      "courseName": "Bachelor of Science",
+      "university": "Monash University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "science-deakin",
+      "courseName": "Bachelor of Science",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "science-latrobe",
+      "courseName": "Bachelor of Science",
+      "university": "La Trobe University",
+      "guaranteedAtar": 60.0,
+      "lowestSelectionRank": 55.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "environment-melbourne",
+      "courseName": "Bachelor of Environments",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "environmental-science-deakin",
+      "courseName": "Bachelor of Environmental Science",
+      "university": "Deakin University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "psychology-melbourne",
+      "courseName": "Bachelor of Science (Psychology)",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 85.0,
+      "lowestSelectionRank": 80.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Psychology"
+    },
+    {
+      "id": "psychology-monash",
+      "courseName": "Bachelor of Psychology (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 90.0,
+      "lowestSelectionRank": 86.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Psychology"
+    },
+    {
+      "id": "psychology-deakin",
+      "courseName": "Bachelor of Psychological Science",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Psychology"
+    },
+    {
+      "id": "psychology-latrobe",
+      "courseName": "Bachelor of Psychological Science",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Psychology"
+    },
+    {
+      "id": "psychology-acu",
+      "courseName": "Bachelor of Psychological Science",
+      "university": "Australian Catholic University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Psychology"
+    },
+    {
+      "id": "design-melbourne",
+      "courseName": "Bachelor of Design",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Design"
+    },
+    {
+      "id": "architecture-rmit",
+      "courseName": "Bachelor of Architectural Design",
+      "university": "RMIT University",
+      "guaranteedAtar": 85.0,
+      "lowestSelectionRank": 80.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Design"
+    },
+    {
+      "id": "architecture-deakin",
+      "courseName": "Bachelor of Design (Architecture)",
+      "university": "Deakin University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Design"
+    },
+    {
+      "id": "industrial-design-monash",
+      "courseName": "Bachelor of Industrial Design (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 4,
+      "category": "Design"
+    },
+    {
+      "id": "graphic-design-rmit",
+      "courseName": "Bachelor of Design (Communication Design)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Design"
+    },
+    {
+      "id": "fashion-rmit",
+      "courseName": "Bachelor of Fashion (Design)",
+      "university": "RMIT University",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 30 }],
+      "duration": 3,
+      "category": "Design"
+    },
+    {
+      "id": "social-work-rmit",
+      "courseName": "Bachelor of Social Work (Honours)",
+      "university": "RMIT University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 4,
+      "category": "Social"
+    },
+    {
+      "id": "social-work-latrobe",
+      "courseName": "Bachelor of Social Work (Honours)",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 4,
+      "category": "Social"
+    },
+    {
+      "id": "criminology-deakin",
+      "courseName": "Bachelor of Criminology",
+      "university": "Deakin University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Social"
+    },
+    {
+      "id": "criminology-latrobe",
+      "courseName": "Bachelor of Criminology",
+      "university": "La Trobe University",
+      "guaranteedAtar": 65.0,
+      "lowestSelectionRank": 60.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Social"
+    },
+    {
+      "id": "music-melbourne",
+      "courseName": "Bachelor of Music",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "music-monash",
+      "courseName": "Bachelor of Music",
+      "university": "Monash University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 25 }],
+      "duration": 3,
+      "category": "Arts"
+    },
+    {
+      "id": "veterinary-melbourne",
+      "courseName": "Bachelor of Science / Doctor of Veterinary Medicine",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 95.0,
+      "lowestSelectionRank": 92.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 },
+        { "subject": "Chemistry", "minimumScore": 25 },
+        { "subject": "Biology", "minimumScore": 25 }
+      ],
+      "duration": 6,
+      "category": "Science"
+    },
+    {
+      "id": "agriculture-melbourne",
+      "courseName": "Bachelor of Agriculture",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 80.0,
+      "lowestSelectionRank": 75.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Science"
+    },
+    {
+      "id": "aviation-swinburne",
+      "courseName": "Bachelor of Aviation",
+      "university": "Swinburne University",
+      "guaranteedAtar": 70.0,
+      "lowestSelectionRank": 65.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Aviation"
+    },
+    {
+      "id": "aviation-rmit",
+      "courseName": "Bachelor of Aviation",
+      "university": "RMIT University",
+      "guaranteedAtar": 75.0,
+      "lowestSelectionRank": 70.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 25 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 3,
+      "category": "Aviation"
+    },
+    {
+      "id": "commerce-law-monash",
+      "courseName": "Bachelor of Commerce and Bachelor of Laws (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 97.0,
+      "lowestSelectionRank": 95.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 35 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 6,
+      "category": "Law"
+    },
+    {
+      "id": "arts-law-monash",
+      "courseName": "Bachelor of Arts and Bachelor of Laws (Honours)",
+      "university": "Monash University",
+      "guaranteedAtar": 96.0,
+      "lowestSelectionRank": 94.0,
+      "prerequisites": [{ "subject": "English", "minimumScore": 35 }],
+      "duration": 6,
+      "category": "Law"
+    },
+    {
+      "id": "commerce-arts-melbourne",
+      "courseName": "Bachelor of Commerce and Diploma in Languages",
+      "university": "University of Melbourne",
+      "guaranteedAtar": 95.0,
+      "lowestSelectionRank": 90.0,
+      "prerequisites": [
+        { "subject": "English", "minimumScore": 30 },
+        { "subject": "Mathematical Methods", "minimumScore": 25 }
+      ],
+      "duration": 4,
+      "category": "Commerce"
+    }
+  ]
+}

@@ -32,6 +32,7 @@ const STATIC_PAGES = [
   { path: "/online-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
   { path: "/scholarship-test-prep", priority: 0.8, changeFrequency: "monthly" },
   { path: "/sample-report", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/atar-planner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];
