@@ -9,8 +9,8 @@
       "id": "commerce-melbourne",
       "courseName": "Bachelor of Commerce",
       "university": "University of Melbourne",
-      "guaranteedAtar": 95.0,
-      "lowestSelectionRank": 90.0,
+      "guaranteedAtar": 92.0,
+      "lowestSelectionRank": 88.0,
       "prerequisites": [
         { "subject": "English", "minimumScore": 30 },
         { "subject": "Mathematical Methods", "minimumScore": 25 }
