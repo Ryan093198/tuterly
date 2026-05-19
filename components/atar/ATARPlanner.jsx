@@ -87,6 +87,7 @@ export default function ATARPlanner() {
       result.hasEnglish && result.hasMinSubjects
         ? findSimilarCourses(COURSES, result.atar, validSubjects, {
             excludeId: selectedCourse?.id ?? null,
+            selectedCategory: selectedCourse?.category ?? null,
           })
         : [],
     [result.hasEnglish, result.hasMinSubjects, result.atar, validSubjects, selectedCourse]
@@ -466,7 +467,13 @@ export default function ATARPlanner() {
 
       {/* SIMILAR COURSES (always shown) */}
       {similarCourses.length > 0 && (
-        <Section title="Courses you&apos;d qualify for">
+        <Section
+          title={
+            selectedCourse
+              ? `Similar ${selectedCourse.category} courses you&apos;d qualify for`
+              : "Courses you&apos;d qualify for"
+          }
+        >
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
             {similarCourses.map(({ course, allPrereqsMet, unmetPrereqs }) => (
               <li
