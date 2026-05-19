@@ -214,7 +214,42 @@ export default function ATARPlanner() {
             </p>
             <p style={{ fontSize: 13, color: c.textLight }}>
               {selectedCourse.university} - Guaranteed ATAR {selectedCourse.guaranteedAtar.toFixed(2)}
+              {selectedCourse.duration ? ` - ${selectedCourse.duration} yr` : ""}
             </p>
+            {selectedCourse.prerequisites.length > 0 ? (
+              <div style={{ marginTop: 10 }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
+                  Subject prerequisites
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
+                  {selectedCourse.prerequisites.map((p) => (
+                    <li
+                      key={p.subject}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        gap: 12,
+                        padding: "6px 10px",
+                        background: c.white,
+                        border: `1px solid ${c.border}`,
+                        borderRadius: 8,
+                        fontSize: 13,
+                      }}
+                    >
+                      <span style={{ color: c.navy, fontWeight: 600 }}>{p.subject}</span>
+                      <span style={{ color: c.textLight, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+                        Study score {p.minimumScore}+
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p style={{ fontSize: 13, color: c.textMuted, marginTop: 8, fontStyle: "italic" }}>
+                No specific subject prerequisites - just an ATAR + English requirement.
+              </p>
+            )}
             <button
               type="button"
               onClick={() => setScreen("choose")}
