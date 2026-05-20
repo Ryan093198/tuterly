@@ -25,9 +25,11 @@ const BAND_COLOURS = {
   muted: { bg: c.offWhite, fg: c.textMuted, border: c.border },
 };
 
+const MAX_COURSES = 5;
+
 export default function ATARPlanner() {
   const [screen, setScreen] = useState("choose"); // 'choose' | 'subjects' | 'results'
-  const [selectedCourseId, setSelectedCourseId] = useState(null);
+  const [selectedCourseIds, setSelectedCourseIds] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [subjects, setSubjects] = useState(() => [
@@ -41,10 +43,25 @@ export default function ATARPlanner() {
   const [emailSkipped, setEmailSkipped] = useState(false);
   const [emailError, setEmailError] = useState(null);
 
-  const selectedCourse = useMemo(
-    () => COURSES.find((cc) => cc.id === selectedCourseId) ?? null,
-    [selectedCourseId]
+  // Resolve ids to course objects, preserving the order the student
+  // picked them. Sorted by guaranteed ATAR desc on the results screen
+  // separately so this stays a stable selection ledger.
+  const selectedCourses = useMemo(
+    () =>
+      selectedCourseIds
+        .map((id) => COURSES.find((cc) => cc.id === id))
+        .filter(Boolean),
+    [selectedCourseIds]
   );
+
+  // The "primary" course is the highest-ATAR one - used for headline
+  // CourseFit, improvement target, and similar-course category bias.
+  const primaryCourse = useMemo(() => {
+    if (selectedCourses.length === 0) return null;
+    return selectedCourses.reduce((best, cc) =>
+      cc.guaranteedAtar > best.guaranteedAtar ? cc : best
+    );
+  }, [selectedCourses]);
 
   // Filtered list for the course-selection screen
   const filteredCourses = useMemo(() => {
@@ -70,14 +87,20 @@ export default function ATARPlanner() {
   );
 
   const result = useMemo(() => calculateAtar(validSubjects), [validSubjects]);
-  const prereqResults = useMemo(
-    () => (selectedCourse ? checkPrerequisites(selectedCourse, validSubjects) : []),
-    [selectedCourse, validSubjects]
+
+  // Prereq results, one set per selected course
+  const prereqResultsByCourse = useMemo(
+    () =>
+      selectedCourses.map((cc) => ({
+        course: cc,
+        results: checkPrerequisites(cc, validSubjects),
+      })),
+    [selectedCourses, validSubjects]
   );
 
   // Detailed-results gate: show full results once email is captured or skipped
   const detailedUnlocked = emailSaved || emailSkipped;
-  const targetAtar = selectedCourse?.guaranteedAtar ?? Math.min(99, Math.max(70, result.atar + 5));
+  const targetAtar = primaryCourse?.guaranteedAtar ?? Math.min(99, Math.max(70, result.atar + 5));
   const improvements = useMemo(
     () => (detailedUnlocked ? suggestImprovements(validSubjects, targetAtar) : []),
     [detailedUnlocked, validSubjects, targetAtar]
@@ -86,28 +109,45 @@ export default function ATARPlanner() {
     () =>
       result.hasEnglish && result.hasMinSubjects
         ? findSimilarCourses(COURSES, result.atar, validSubjects, {
-            excludeId: selectedCourse?.id ?? null,
-            selectedCategory: selectedCourse?.category ?? null,
+            excludeIds: selectedCourseIds,
+            selectedCategory: primaryCourse?.category ?? null,
           })
         : [],
-    [result.hasEnglish, result.hasMinSubjects, result.atar, validSubjects, selectedCourse]
+    [result.hasEnglish, result.hasMinSubjects, result.atar, validSubjects, selectedCourseIds, primaryCourse]
   );
 
-  // ----- Course selection prefills subjects -----
-  function selectCourse(course) {
-    setSelectedCourseId(course.id);
-    // Pre-fill subjects with prereq list, keep English first
-    const prereqSubjects = course.prerequisites.map((p) => p.subject);
-    const englishFirst = prereqSubjects.includes("English") ? "English" : "English";
-    const remaining = prereqSubjects.filter((s) => s !== "English");
-    const filled = [englishFirst, ...remaining].slice(0, 6).map((s) => ({ subject: s, score: "" }));
+  // ----- Course selection toggle -----
+  function toggleCourse(course) {
+    setSelectedCourseIds((prev) => {
+      if (prev.includes(course.id)) {
+        return prev.filter((id) => id !== course.id);
+      }
+      if (prev.length >= MAX_COURSES) return prev;
+      return [...prev, course.id];
+    });
+  }
+
+  function clearCourses() {
+    setSelectedCourseIds([]);
+  }
+
+  // Move to the subjects screen, prefilling rows from the union of
+  // every selected course's prereq list (English first, then unique
+  // others). If none selected, just go through.
+  function goToSubjects() {
+    const allPrereqs = selectedCourses.flatMap((cc) =>
+      cc.prerequisites.map((p) => p.subject)
+    );
+    const unique = [...new Set(allPrereqs)];
+    const remaining = unique.filter((s) => s !== "English");
+    const filled = ["English", ...remaining].slice(0, 6).map((s) => ({ subject: s, score: "" }));
     while (filled.length < 4) filled.push({ subject: "", score: "" });
     setSubjects(filled);
     setScreen("subjects");
   }
 
   function skipCourseSelection() {
-    setSelectedCourseId(null);
+    setSelectedCourseIds([]);
     setScreen("subjects");
   }
 
@@ -136,7 +176,7 @@ export default function ATARPlanner() {
     try {
       await savePlannerLead({
         email: email.trim().toLowerCase(),
-        courseId: selectedCourse?.id ?? null,
+        courseIds: selectedCourseIds,
         atar: result.atar,
         aggregate: result.aggregate,
         subjects: validSubjects,
@@ -151,8 +191,52 @@ export default function ATARPlanner() {
   // SCREEN: course selection
   // ===================================================================
   if (screen === "choose") {
+    const count = selectedCourseIds.length;
+    const atLimit = count >= MAX_COURSES;
     return (
-      <div style={{ maxWidth: 880, margin: "0 auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: 880, margin: "0 auto", padding: "0 24px", paddingBottom: count > 0 ? 96 : 24 }}>
+        <div
+          style={{
+            background: c.tealPale,
+            border: `1px solid ${c.teal}`,
+            borderRadius: 14,
+            padding: "14px 18px",
+            marginBottom: 18,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
+              Pick up to {MAX_COURSES} courses
+            </p>
+            <p style={{ fontSize: 14, color: c.text }}>
+              Compare side by side. We&apos;ll check your ATAR + prereqs against each one.
+            </p>
+          </div>
+          {count > 0 && (
+            <button
+              type="button"
+              onClick={clearCourses}
+              style={{
+                background: "none",
+                border: "none",
+                color: c.tealDark,
+                fontSize: 13,
+                fontWeight: 600,
+                cursor: "pointer",
+                padding: 0,
+                textDecoration: "underline",
+              }}
+            >
+              Clear selection
+            </button>
+          )}
+        </div>
+
         <SearchBox value={searchQuery} onChange={setSearchQuery} />
         <CategoryTabs
           categories={["All", ...CATEGORIES]}
@@ -182,11 +266,63 @@ export default function ATARPlanner() {
           {filteredCourses.length === 0 ? (
             <p style={{ color: c.textMuted, fontSize: 14 }}>No courses match that filter.</p>
           ) : (
-            filteredCourses.map((course) => (
-              <CourseCard key={course.id} course={course} onPick={() => selectCourse(course)} />
-            ))
+            filteredCourses.map((course) => {
+              const isSelected = selectedCourseIds.includes(course.id);
+              const isDisabled = !isSelected && atLimit;
+              return (
+                <CourseCard
+                  key={course.id}
+                  course={course}
+                  selected={isSelected}
+                  disabled={isDisabled}
+                  onToggle={() => toggleCourse(course)}
+                />
+              );
+            })
           )}
         </div>
+
+        {count > 0 && (
+          <div
+            style={{
+              position: "sticky",
+              bottom: 16,
+              marginTop: 24,
+              padding: "14px 18px",
+              background: c.navy,
+              color: c.white,
+              borderRadius: 14,
+              boxShadow: "0 12px 32px rgba(15, 23, 42, 0.25)",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <p style={{ fontSize: 14, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+              {count} {count === 1 ? "course" : "courses"} selected
+              {atLimit ? " (max)" : ""}
+            </p>
+            <button
+              type="button"
+              onClick={goToSubjects}
+              style={{
+                padding: "12px 22px",
+                borderRadius: 10,
+                background: c.teal,
+                color: c.white,
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 14,
+                fontWeight: 600,
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Continue →
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -195,9 +331,24 @@ export default function ATARPlanner() {
   // SCREEN: subject input
   // ===================================================================
   if (screen === "subjects") {
+    // Merge prereqs across all selected courses, taking the max required
+    // score per subject so the student knows the toughest bar to clear.
+    const mergedPrereqs = (() => {
+      const map = new Map();
+      for (const cc of selectedCourses) {
+        for (const p of cc.prerequisites) {
+          const existing = map.get(p.subject);
+          if (!existing || p.minimumScore > existing.minimumScore) {
+            map.set(p.subject, { subject: p.subject, minimumScore: p.minimumScore });
+          }
+        }
+      }
+      return [...map.values()];
+    })();
+
     return (
       <div style={{ maxWidth: 760, margin: "0 auto", padding: "0 24px" }}>
-        {selectedCourse && (
+        {selectedCourses.length > 0 && (
           <div
             style={{
               background: c.tealPale,
@@ -207,23 +358,43 @@ export default function ATARPlanner() {
               marginBottom: 20,
             }}
           >
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
-              Planning for
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>
+              Planning for {selectedCourses.length} {selectedCourses.length === 1 ? "course" : "courses"}
             </p>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 2 }}>
-              {selectedCourse.courseName}
-            </p>
-            <p style={{ fontSize: 13, color: c.textLight }}>
-              {selectedCourse.university} - Guaranteed ATAR {selectedCourse.guaranteedAtar.toFixed(2)}
-              {selectedCourse.duration ? ` - ${selectedCourse.duration} yr` : ""}
-            </p>
-            {selectedCourse.prerequisites.length > 0 ? (
-              <div style={{ marginTop: 10 }}>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
+              {selectedCourses.map((cc) => (
+                <li
+                  key={cc.id}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "8px 12px",
+                    background: c.white,
+                    border: `1px solid ${c.border}`,
+                    borderRadius: 8,
+                  }}
+                >
+                  <div>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy }}>
+                      {cc.courseName}
+                    </p>
+                    <p style={{ fontSize: 12, color: c.textLight }}>
+                      {cc.university} - Guaranteed ATAR {cc.guaranteedAtar.toFixed(2)}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {mergedPrereqs.length > 0 ? (
+              <div style={{ marginTop: 12 }}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
-                  Subject prerequisites
+                  Combined subject prerequisites
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
-                  {selectedCourse.prerequisites.map((p) => (
+                  {mergedPrereqs.map((p) => (
                     <li
                       key={p.subject}
                       style={{
@@ -245,9 +416,14 @@ export default function ATARPlanner() {
                     </li>
                   ))}
                 </ul>
+                {selectedCourses.length > 1 && (
+                  <p style={{ fontSize: 12, color: c.textMuted, marginTop: 6 }}>
+                    Highest required score across all selected courses.
+                  </p>
+                )}
               </div>
             ) : (
-              <p style={{ fontSize: 13, color: c.textMuted, marginTop: 8, fontStyle: "italic" }}>
+              <p style={{ fontSize: 13, color: c.textMuted, marginTop: 10, fontStyle: "italic" }}>
                 No specific subject prerequisites - just an ATAR + English requirement.
               </p>
             )}
@@ -265,7 +441,7 @@ export default function ATARPlanner() {
                 padding: 0,
               }}
             >
-              ← Pick a different course
+              ← Edit course selection
             </button>
           </div>
         )}
@@ -277,7 +453,7 @@ export default function ATARPlanner() {
           Use your raw study scores out of 50 (your actual or predicted ones). English is required - we&apos;ll use whichever English subject you sat as one of your Primary 4.
         </p>
 
-        <LiveAtarPill result={result} selectedCourse={selectedCourse} />
+        <LiveAtarPill result={result} selectedCourse={primaryCourse} />
 
         <div style={{ display: "grid", gap: 10 }}>
           {subjects.map((row, idx) => (
@@ -427,41 +603,89 @@ export default function ATARPlanner() {
         </div>
       </Section>
 
-      {/* COURSE FIT INDICATOR */}
-      {selectedCourse && (
-        <CourseFit course={selectedCourse} atar={result.atar} />
-      )}
+      {/* PER-COURSE FIT + PREREQUISITES */}
+      {selectedCourses.length > 0 && (
+        <Section title={selectedCourses.length === 1 ? "Your course" : "Your shortlist"}>
+          <div style={{ display: "grid", gap: 14 }}>
+            {[...prereqResultsByCourse]
+              .sort((a, b) => b.course.guaranteedAtar - a.course.guaranteedAtar)
+              .map(({ course, results }) => {
+                const gap = result.atar - course.guaranteedAtar;
+                const meets = gap >= 0;
+                const allPrereqsMet = results.every((r) => r.met);
+                return (
+                  <div
+                    key={course.id}
+                    style={{
+                      background: c.white,
+                      border: `1px solid ${meets ? "#10B981" : "#F59E0B"}`,
+                      borderRadius: 14,
+                      padding: "16px 18px",
+                    }}
+                  >
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "space-between", alignItems: "baseline", marginBottom: 10 }}>
+                      <div>
+                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                          {course.courseName}
+                        </p>
+                        <p style={{ fontSize: 13, color: c.textLight }}>
+                          {course.university} - Guaranteed ATAR {course.guaranteedAtar.toFixed(2)}
+                        </p>
+                      </div>
+                      <div style={{ textAlign: "right" }}>
+                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: meets ? c.success : "#B45309", textTransform: "uppercase", letterSpacing: 1.5 }}>
+                          {meets ? "Above guaranteed" : "Below guaranteed"}
+                        </p>
+                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: meets ? c.success : "#B45309" }}>
+                          {meets ? "+" : ""}{gap.toFixed(2)}
+                        </p>
+                      </div>
+                    </div>
 
-      {/* PREREQUISITE CHECK */}
-      {selectedCourse && prereqResults.length > 0 && (
-        <Section title="Prerequisites">
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8 }}>
-            {prereqResults.map((p) => (
-              <li
-                key={p.subject}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 12,
-                  padding: "12px 16px",
-                  background: p.met ? "#10B98112" : "#F59E0B12",
-                  border: `1px solid ${p.met ? "#10B981" : "#F59E0B"}`,
-                  borderRadius: 12,
-                }}
-              >
-                <span style={{ fontSize: 18 }}>{p.met ? "✓" : "!"}</span>
-                <span style={{ flex: 1, fontSize: 14 }}>
-                  <strong style={{ color: c.navy }}>{p.subject}</strong>
-                  {p.actualSubject && p.actualSubject !== p.subject && (
-                    <span style={{ color: c.textMuted }}> (using {p.actualSubject})</span>
-                  )}
-                </span>
-                <span style={{ fontSize: 13, color: c.textLight, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
-                  Your score: {p.actualScore || "-"} / need {p.requiredScore}+
-                </span>
-              </li>
-            ))}
-          </ul>
+                    {results.length > 0 && (
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
+                        {results.map((p) => (
+                          <li
+                            key={p.subject}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 10,
+                              padding: "8px 12px",
+                              background: p.met ? "#10B98112" : "#F59E0B12",
+                              border: `1px solid ${p.met ? "#10B98140" : "#F59E0B40"}`,
+                              borderRadius: 8,
+                              fontSize: 13,
+                            }}
+                          >
+                            <span style={{ fontSize: 14 }}>{p.met ? "✓" : "!"}</span>
+                            <span style={{ flex: 1 }}>
+                              <strong style={{ color: c.navy }}>{p.subject}</strong>
+                              {p.actualSubject && p.actualSubject !== p.subject && (
+                                <span style={{ color: c.textMuted }}> (using {p.actualSubject})</span>
+                              )}
+                            </span>
+                            <span style={{ color: c.textLight, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+                              {p.actualScore || "-"} / need {p.requiredScore}+
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {results.length === 0 && (
+                      <p style={{ fontSize: 12, color: c.textMuted, fontStyle: "italic" }}>
+                        No specific subject prerequisites for this course.
+                      </p>
+                    )}
+                    {results.length > 0 && (
+                      <p style={{ marginTop: 8, fontSize: 12, color: allPrereqsMet ? c.success : "#B45309", fontWeight: 600 }}>
+                        {allPrereqsMet ? "All prerequisites met." : "Some prerequisites not yet met."}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
         </Section>
       )}
 
@@ -469,8 +693,8 @@ export default function ATARPlanner() {
       {similarCourses.length > 0 && (
         <Section
           title={
-            selectedCourse
-              ? `Similar ${selectedCourse.category} courses you&apos;d qualify for`
+            primaryCourse
+              ? `Similar ${primaryCourse.category} courses you&apos;d qualify for`
               : "Courses you&apos;d qualify for"
           }
         >
@@ -543,8 +767,8 @@ export default function ATARPlanner() {
         improvements.length > 0 && (
           <Section
             title={
-              selectedCourse
-                ? `To reach ${selectedCourse.guaranteedAtar.toFixed(2)} (${selectedCourse.courseName})`
+              primaryCourse
+                ? `To reach ${primaryCourse.guaranteedAtar.toFixed(2)} (${primaryCourse.courseName})`
                 : "Where small score lifts move your ATAR most"
             }
           >
@@ -708,24 +932,47 @@ function CategoryTabs({ categories, active, onSelect }) {
   );
 }
 
-function CourseCard({ course, onPick }) {
+function CourseCard({ course, onToggle, selected, disabled }) {
+  const borderColor = selected ? c.teal : c.border;
+  const bg = selected ? c.tealPale : c.white;
   return (
     <button
       type="button"
-      onClick={onPick}
+      onClick={onToggle}
+      disabled={disabled}
+      aria-pressed={selected}
       style={{
         textAlign: "left",
-        background: c.white,
-        border: `1px solid ${c.border}`,
+        background: bg,
+        border: `2px solid ${borderColor}`,
         borderRadius: 14,
         padding: "16px 18px",
-        cursor: "pointer",
+        cursor: disabled ? "not-allowed" : "pointer",
+        opacity: disabled ? 0.4 : 1,
         display: "grid",
-        gridTemplateColumns: "1fr auto",
-        gap: 16,
+        gridTemplateColumns: "auto 1fr auto",
+        gap: 14,
         alignItems: "center",
       }}
     >
+      <span
+        style={{
+          width: 22,
+          height: 22,
+          borderRadius: 6,
+          border: `2px solid ${selected ? c.teal : c.border}`,
+          background: selected ? c.teal : c.white,
+          color: c.white,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 14,
+          fontWeight: 700,
+        }}
+        aria-hidden="true"
+      >
+        {selected ? "✓" : ""}
+      </span>
       <div>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>
           {course.courseName}
@@ -829,42 +1076,6 @@ function SubjectRow({ row, onChange, onRemove, isFirst }) {
         )}
       </p>
     )}
-    </div>
-  );
-}
-
-function CourseFit({ course, atar }) {
-  const gap = atar - course.guaranteedAtar;
-  const ok = gap >= 0;
-  return (
-    <div
-      style={{
-        padding: "14px 18px",
-        background: ok ? "#10B98112" : "#F59E0B12",
-        border: `1px solid ${ok ? "#10B981" : "#F59E0B"}`,
-        borderRadius: 12,
-        marginBottom: 20,
-        display: "flex",
-        alignItems: "center",
-        gap: 12,
-      }}
-    >
-      <span style={{ fontSize: 22 }}>{ok ? "✓" : "!"}</span>
-      <div style={{ flex: 1, fontSize: 14 }}>
-        {ok ? (
-          <>
-            <strong style={{ color: c.navy }}>Above the guaranteed ATAR</strong> for{" "}
-            {course.courseName} ({course.guaranteedAtar.toFixed(2)}). You&apos;re{" "}
-            <strong style={{ color: c.success }}>{gap.toFixed(2)} above</strong>.
-          </>
-        ) : (
-          <>
-            <strong style={{ color: c.navy }}>Below the guaranteed ATAR</strong> for{" "}
-            {course.courseName} ({course.guaranteedAtar.toFixed(2)}). You&apos;re{" "}
-            <strong style={{ color: "#B45309" }}>{Math.abs(gap).toFixed(2)} below</strong>.
-          </>
-        )}
-      </div>
     </div>
   );
 }

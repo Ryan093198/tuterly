@@ -7,7 +7,7 @@
 // table - see the comment at the bottom of this file for the table
 // schema.
 
-export async function savePlannerLead({ email, courseId, atar, aggregate, subjects }) {
+export async function savePlannerLead({ email, courseIds, atar, aggregate, subjects }) {
   if (!email || !email.includes("@")) {
     throw new Error("Valid email required.");
   }
@@ -17,7 +17,7 @@ export async function savePlannerLead({ email, courseId, atar, aggregate, subjec
   //   create table public.atar_planner_signups (
   //     id uuid primary key default gen_random_uuid(),
   //     email text not null,
-  //     course_id text,
+  //     course_ids text[] not null default '{}',
   //     atar numeric(5,2),
   //     aggregate numeric(6,2),
   //     subjects jsonb not null default '[]'::jsonb,
@@ -30,12 +30,12 @@ export async function savePlannerLead({ email, courseId, atar, aggregate, subjec
   // Then in this function:
   //   const admin = createAdminClient();
   //   await admin.from("atar_planner_signups").insert({
-  //     email, course_id: courseId, atar, aggregate, subjects,
+  //     email, course_ids: courseIds ?? [], atar, aggregate, subjects,
   //   });
 
   console.log("[atar-planner] lead", {
     email,
-    courseId,
+    courseIds: courseIds ?? [],
     atar,
     aggregate,
     subjectCount: subjects?.length ?? 0,
