@@ -36,6 +36,13 @@ export const metadata = {
     images: ["/og-image.png"],
   },
   icons: { icon: "/favicon.ico" },
+  // Search-engine ownership verification. Codes come from the env so
+  // the actual tokens never land in git. Set GOOGLE_SITE_VERIFICATION
+  // in Vercel (Production + Preview) once Google Search Console hands
+  // it to you. Empty string falls back to no verification tag.
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
 
 // Runs before React hydrates. Reads the persisted theme choice and adds
