@@ -141,6 +141,47 @@ export default async function SuburbPage({ params }) {
         </section>
       )}
 
+      {/* FREE PRACTICE WORKSHEETS */}
+      <section style={{ padding: "56px 24px", background: c.tealPale, borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Free for {data.name} families</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25 }}>
+              Free Year 7-10 maths worksheets, before you book a tutor.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
+              Generate a fresh 10-question worksheet in any Year 7-10 topic, with full worked solutions. No signup needed for the first one.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
+              {[7, 8, 9, 10].map((yr) => (
+                <Link
+                  key={yr}
+                  href={`/worksheets#year-${yr}`}
+                  style={{
+                    display: "block",
+                    padding: "16px 18px",
+                    background: c.white,
+                    border: `1px solid ${c.border}`,
+                    borderRadius: 12,
+                    textDecoration: "none",
+                  }}
+                >
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
+                    Worksheets
+                  </p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy }}>
+                    Year {yr}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <p style={{ marginTop: 16, fontSize: 13, color: c.textMuted }}>
+              13 topic-specific generators per year level. Algebra, linear equations, geometry, statistics, and more.
+            </p>
+          </Fade>
+        </div>
+      </section>
+
       {/* THE TUTERLY METHOD */}
       <TuterlyMethod background={c.offWhite} padding="80px 24px" />
 

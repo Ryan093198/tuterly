@@ -849,6 +849,52 @@ export default function ParentsLanding() {
         </div>
       </section>
 
+      {/* FREE WORKSHEETS */}
+      <section style={{ padding: "80px 40px", background: c.tealPale }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12, textAlign: "center" }}>Free practice, no subscription</p>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, marginBottom: 14, lineHeight: 1.25, textAlign: "center" }}>
+              Year 7-10 maths worksheets your child can use today.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 32, textAlign: "center", maxWidth: 540, margin: "0 auto 32px" }}>
+              Generate a fresh 10-question worksheet on any Victorian Curriculum topic, with fully worked solutions. Free, no signup needed for the first one.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 12 }}>
+              {[7, 8, 9, 10].map((yr) => (
+                <Link
+                  key={yr}
+                  href={`/worksheets#year-${yr}`}
+                  style={{
+                    display: "block",
+                    padding: "20px 22px",
+                    background: c.white,
+                    border: `1px solid ${c.border}`,
+                    borderRadius: 14,
+                    textDecoration: "none",
+                  }}
+                >
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
+                    Worksheets
+                  </p>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 19, fontWeight: 700, color: c.navy, marginBottom: 4 }}>
+                    Year {yr}
+                  </p>
+                  <p style={{ fontSize: 12, color: c.textMuted }}>
+                    13 topics
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <p style={{ marginTop: 18, textAlign: "center" }}>
+              <Link href="/worksheets" style={{ fontSize: 14, color: c.tealDark, fontWeight: 600, textDecoration: "none" }}>
+                See every Year 3-10 topic →
+              </Link>
+            </p>
+          </Fade>
+        </div>
+      </section>
+
       {/* BOTTOM CTA */}
       <section style={{ padding: "80px 40px", background: c.navy, textAlign: "center" }}>
         <Fade>

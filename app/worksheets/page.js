@@ -181,8 +181,9 @@ export default function WorksheetsPage() {
                 (p) => p.yearLevel === year
               );
               if (items.length === 0) return null;
+              const anchorId = `year-${year.split(" ")[1]}`;
               return (
-                <div key={year}>
+                <div key={year} id={anchorId} style={{ scrollMarginTop: 100 }}>
                   <div
                     style={{
                       display: "flex",
