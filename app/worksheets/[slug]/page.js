@@ -12,6 +12,7 @@ import {
   getLandingPageBySlug,
   getLandingPagesForYear,
 } from "@/lib/worksheet-landing-pages";
+import { getFaqsForSlug } from "@/lib/worksheet-faqs";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -65,11 +66,15 @@ export default async function WorksheetTopicLandingPage({ params }) {
   );
 
   const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
+  const faqs = getFaqsForSlug(page.slug);
 
   // Schema.org markup. BreadcrumbList matches the visible breadcrumb
   // below the nav. LearningResource is Google's official type for
   // educational practice material - eligibility for the education
   // rich-snippets carousel and the practice-problems result type.
+  // FAQPage matches the visible <details> block at the bottom of the
+  // page - Google requires the QA pairs to appear on-page, otherwise
+  // it penalises the schema.
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -80,6 +85,18 @@ export default async function WorksheetTopicLandingPage({ params }) {
       { "@type": "ListItem", position: 4, name: page.topic, item: pageUrl },
     ],
   };
+
+  const faqSchema = faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
 
   const learningResourceSchema = {
     "@context": "https://schema.org",
@@ -121,6 +138,12 @@ export default async function WorksheetTopicLandingPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(learningResourceSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <MarketingNav />
 
@@ -282,6 +305,50 @@ export default async function WorksheetTopicLandingPage({ params }) {
                 </Link>
                 .
               </p>
+            </Fade>
+          </div>
+        </section>
+      )}
+
+      {faqs.length > 0 && (
+        <section style={{ padding: "48px 24px 56px", background: c.white }}>
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <Fade>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+                Frequently asked
+              </p>
+              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
+                Questions parents ask about {page.topic.toLowerCase()}
+              </h2>
+              <div style={{ display: "grid", gap: 6 }}>
+                {faqs.map((f, i) => (
+                  <details
+                    key={i}
+                    style={{
+                      background: c.offWhite,
+                      border: `1px solid ${c.border}`,
+                      borderRadius: 10,
+                      padding: "12px 16px",
+                    }}
+                  >
+                    <summary
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: 14,
+                        fontWeight: 600,
+                        color: c.navy,
+                        cursor: "pointer",
+                        listStyle: "none",
+                      }}
+                    >
+                      {f.q}
+                    </summary>
+                    <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65, marginTop: 10 }}>
+                      {f.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
             </Fade>
           </div>
         </section>
