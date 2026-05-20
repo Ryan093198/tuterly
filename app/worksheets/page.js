@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
+import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SITE_URL } from "@/lib/site";
 
 // Public landing page for the free maths worksheet generator. Pre-computes
@@ -42,13 +44,21 @@ const YEAR_LEVELS = [
 const c = {
   teal: "#0ABAB5",
   tealLight: "#2DD4BF",
+  tealDark: "#0D9488",
   tealPale: "#F0FDFA",
   navy: "#0F172A",
   text: "#1E293B",
   textLight: "#64748B",
+  textMuted: "#94A3B8",
   white: "#FFFFFF",
+  offWhite: "#F8FAFC",
   border: "#E2E8F0",
 };
+
+// Year-level groups for the topic grid below the generator. Each year
+// pulls from WORKSHEET_LANDING_PAGES so the section automatically
+// grows as new landing pages are added.
+const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 
 export default function WorksheetsPage() {
   // Build { "Year 3": [{ strand, topics }], ... } server-side. The trimmed
@@ -113,11 +123,149 @@ export default function WorksheetsPage() {
         style={{
           maxWidth: 760,
           margin: "0 auto",
-          padding: "20px 24px 80px",
+          padding: "20px 24px 40px",
         }}
       >
         <WorksheetGenerator topicsByYear={topicsByYear} />
       </main>
+
+      <section
+        style={{
+          background: c.offWhite,
+          borderTop: `1px solid ${c.border}`,
+          padding: "60px 24px 80px",
+        }}
+      >
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 36 }}>
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 13,
+                fontWeight: 600,
+                color: c.teal,
+                textTransform: "uppercase",
+                letterSpacing: 2,
+                marginBottom: 10,
+              }}
+            >
+              Browse by topic
+            </p>
+            <h2
+              style={{
+                fontFamily: "'DM Serif Display', serif",
+                fontSize: 32,
+                color: c.navy,
+                lineHeight: 1.2,
+                margin: "0 0 12px",
+              }}
+            >
+              Topic-specific worksheet pages
+            </h2>
+            <p
+              style={{
+                fontSize: 15,
+                color: c.textLight,
+                lineHeight: 1.6,
+                maxWidth: 540,
+                margin: "0 auto",
+              }}
+            >
+              Pre-configured worksheet generators for every major Year 7-10 maths topic. Tap a topic to land on a page with the generator already set up.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gap: 28 }}>
+            {GRID_YEARS.map((year) => {
+              const items = WORKSHEET_LANDING_PAGES.filter(
+                (p) => p.yearLevel === year
+              );
+              if (items.length === 0) return null;
+              return (
+                <div key={year}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: 10,
+                      marginBottom: 14,
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: 16,
+                        fontWeight: 700,
+                        color: c.navy,
+                        margin: 0,
+                      }}
+                    >
+                      {year}
+                    </h3>
+                    <span
+                      style={{
+                        fontSize: 12,
+                        color: c.textMuted,
+                        fontFamily: "'Space Grotesk', sans-serif",
+                      }}
+                    >
+                      {items.length} topics
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+                      gap: 10,
+                    }}
+                  >
+                    {items.map((p) => (
+                      <Link
+                        key={p.slug}
+                        href={`/worksheets/${p.slug}`}
+                        style={{
+                          display: "block",
+                          padding: "14px 16px",
+                          background: c.white,
+                          border: `1px solid ${c.border}`,
+                          borderRadius: 12,
+                          textDecoration: "none",
+                          transition: "border-color 120ms ease, transform 120ms ease",
+                        }}
+                      >
+                        <p
+                          style={{
+                            fontFamily: "'Space Grotesk', sans-serif",
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: c.tealDark,
+                            textTransform: "uppercase",
+                            letterSpacing: 1.5,
+                            marginBottom: 4,
+                          }}
+                        >
+                          Worksheet
+                        </p>
+                        <p
+                          style={{
+                            fontSize: 15,
+                            fontWeight: 600,
+                            color: c.navy,
+                            lineHeight: 1.35,
+                            margin: 0,
+                          }}
+                        >
+                          {p.topic}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       <footer
         style={{
