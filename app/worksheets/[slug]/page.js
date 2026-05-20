@@ -64,11 +64,108 @@ export default async function WorksheetTopicLandingPage({ params }) {
     (p) => p.slug !== page.slug
   );
 
+  const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
+
+  // Schema.org markup. BreadcrumbList matches the visible breadcrumb
+  // below the nav. LearningResource is Google's official type for
+  // educational practice material - eligibility for the education
+  // rich-snippets carousel and the practice-problems result type.
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Free Worksheets", item: `${SITE_URL}/worksheets` },
+      { "@type": "ListItem", position: 3, name: page.yearLevel, item: `${SITE_URL}/worksheets#year-${page.yearLevel.split(" ")[1]}` },
+      { "@type": "ListItem", position: 4, name: page.topic, item: pageUrl },
+    ],
+  };
+
+  const learningResourceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: page.h1,
+    description: page.metaDescription,
+    url: pageUrl,
+    inLanguage: "en-AU",
+    educationalLevel: page.yearLevel,
+    learningResourceType: "Worksheet",
+    educationalUse: ["practice", "assessment"],
+    teaches: page.topic,
+    about: {
+      "@type": "Thing",
+      name: page.topic,
+      description: page.topicLabel,
+    },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+    },
+    isAccessibleForFree: true,
+    provider: {
+      "@type": "Organization",
+      name: "Tuterly",
+      url: SITE_URL,
+    },
+    competencyRequired: page.yearLevel,
+  };
+
   return (
     <main style={{ background: c.offWhite, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(learningResourceSchema) }}
+      />
 
       <MarketingNav />
+
+      {/* BREADCRUMB - paired with BreadcrumbList JSON-LD above */}
+      <nav
+        aria-label="Breadcrumb"
+        style={{ background: c.white, borderBottom: `1px solid ${c.border}`, padding: "12px 24px" }}
+      >
+        <ol
+          style={{
+            maxWidth: 760,
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 6,
+            listStyle: "none",
+            padding: 0,
+            fontSize: 13,
+            color: c.textLight,
+          }}
+        >
+          <li>
+            <Link href="/" style={{ color: c.textLight, textDecoration: "none" }}>
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <Link href="/worksheets" style={{ color: c.textLight, textDecoration: "none" }}>
+              Free Worksheets
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <Link
+              href={`/worksheets#year-${page.yearLevel.split(" ")[1]}`}
+              style={{ color: c.textLight, textDecoration: "none" }}
+            >
+              {page.yearLevel}
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li style={{ color: c.navy, fontWeight: 600 }}>{page.topic}</li>
+        </ol>
+      </nav>
 
       <section style={{ padding: "60px 24px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
