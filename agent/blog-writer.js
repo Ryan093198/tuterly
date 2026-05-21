@@ -229,7 +229,7 @@ ${competitorContent
 Pick the single best topic to write next. Return JSON only.`;
 
   const response = await client.messages.create({
-    model: "claude-sonnet-4-5-20250514",
+    model: "claude-sonnet-4-6",
     max_tokens: 1000,
     system: systemPrompt,
     messages: [{ role: "user", content: userPrompt }],
@@ -312,7 +312,7 @@ Angle: ${topic.angle}
 Write the complete markdown file including frontmatter. Return ONLY the markdown, no commentary.`;
 
   const response = await client.messages.create({
-    model: "claude-sonnet-4-5-20250514",
+    model: "claude-sonnet-4-6",
     max_tokens: 4000,
     system: systemPrompt,
     messages: [{ role: "user", content: userPrompt }],
