@@ -6,6 +6,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import Fade from "@/components/marketing/Fade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
+import ContactCTA from "@/components/marketing/ContactCTA";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import {
   WORKSHEET_LANDING_PAGES,
@@ -355,30 +356,34 @@ export default async function WorksheetTopicLandingPage({ params }) {
       )}
 
       <section style={{ padding: "60px 24px 80px", background: c.offWhite }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25, textAlign: "center" }}>
               Want a real plan for the term?
             </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 26px", textAlign: "center" }}>
               Worksheets are great for repetition. A Tuterly tutor can spot the specific moves your student keeps getting wrong and fix them in one or two sessions.
             </p>
-            <Link
-              href="/directory"
-              style={{
-                display: "inline-block",
-                padding: "14px 28px",
-                borderRadius: 10,
-                background: c.teal,
-                color: c.white,
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 15,
-                fontWeight: 600,
-                textDecoration: "none",
-              }}
-            >
-              Find a {page.yearLevel} maths tutor →
-            </Link>
+            <ContactCTA
+              variant="card"
+              headline={`Talk to us about ${page.yearLevel} ${page.topic.toLowerCase()}.`}
+              subhead="Call or message us with your student's year level and what's tripping them up - we'll point you to the right tutor."
+              context={`${page.yearLevel} ${page.topic} worksheet page`}
+            />
+            <div style={{ marginTop: 18, textAlign: "center" }}>
+              <Link
+                href="/directory"
+                style={{
+                  color: c.tealDark,
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Or browse the {page.yearLevel} tutor directory →
+              </Link>
+            </div>
           </Fade>
         </div>
       </section>

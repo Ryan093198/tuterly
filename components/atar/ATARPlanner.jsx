@@ -14,6 +14,7 @@ import {
   atarBand,
 } from "@/lib/atar-engine";
 import { savePlannerLead } from "@/app/atar-planner/actions";
+import ContactCTA from "@/components/marketing/ContactCTA";
 
 const COURSES = courseData.courses;
 const CATEGORIES = [...new Set(COURSES.map((c) => c.category))].sort();
@@ -802,38 +803,31 @@ export default function ATARPlanner() {
       )}
 
       {/* CTAs */}
-      <div
-        style={{
-          marginTop: 32,
-          padding: "28px 24px",
-          background: c.offWhite,
-          borderRadius: 16,
-          border: `1px solid ${c.border}`,
-          textAlign: "center",
-        }}
-      >
-        <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy, marginBottom: 10 }}>
-          Need help getting to your target ATAR?
-        </h3>
-        <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18, maxWidth: 480, margin: "0 auto 18px" }}>
-          A VCE tutor can lift your weakest subject by 5+ scaled points over a year of weekly sessions - that&apos;s often the difference between a 75 and an 85 ATAR.
-        </p>
-        <Link
-          href="/directory"
-          style={{
-            display: "inline-block",
-            padding: "12px 24px",
-            borderRadius: 10,
-            background: c.teal,
-            color: c.white,
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 14,
-            fontWeight: 600,
-            textDecoration: "none",
-          }}
-        >
-          Find a VCE tutor →
-        </Link>
+      <div style={{ marginTop: 32 }}>
+        <ContactCTA
+          variant="card"
+          headline="Need help getting to your target ATAR?"
+          subhead={
+            primaryCourse
+              ? `Talk to us about lifting your scores toward ${primaryCourse.guaranteedAtar.toFixed(2)} - we'll match you to a VCE tutor in your subject.`
+              : "Talk to us about lifting your scores - we'll match you to a VCE tutor in your weakest subject."
+          }
+          context="ATAR planner results"
+        />
+        <div style={{ marginTop: 14, textAlign: "center" }}>
+          <Link
+            href="/directory"
+            style={{
+              color: c.tealDark,
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 13,
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            Or browse the VCE tutor directory →
+          </Link>
+        </div>
       </div>
 
       <div style={{ marginTop: 18, display: "flex", justifyContent: "center" }}>

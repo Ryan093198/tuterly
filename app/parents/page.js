@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import ContactCTA from "@/components/marketing/ContactCTA";
 
 const c = {
   teal: "#0ABAB5",
@@ -895,13 +896,27 @@ export default function ParentsLanding() {
         </div>
       </section>
 
+      {/* TALK TO US */}
+      <section style={{ padding: "60px 40px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <ContactCTA
+              variant="card"
+              headline="Want us to point you to the right tutor?"
+              subhead="Call or message us with your child's year level and subject - we'll match them to a tutor in your area or run you through how Tuterly works."
+              context="Parents landing page"
+            />
+          </Fade>
+        </div>
+      </section>
+
       {/* BOTTOM CTA */}
       <section style={{ padding: "80px 40px", background: c.navy, textAlign: "center" }}>
         <Fade>
           <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.white, marginBottom: 12, lineHeight: 1.25 }}>Find the right tutor. Know what's happening every session.</h2>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>Start your 7-day free trial. Browse tutors, invite your own, and see what a real session report looks like.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 20 }}>
-            <a href="tel:0426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
+            <a href="tel:+61426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
             <a href="mailto:admin@baysideacademics.com.au" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 admin@baysideacademics.com.au</a>
           </div>
           <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial →</a>

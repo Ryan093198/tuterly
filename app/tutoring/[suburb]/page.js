@@ -17,6 +17,7 @@ import TuterlyMethod from "@/components/marketing/TuterlyMethod";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
+import ContactCTA from "@/components/marketing/ContactCTA";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
@@ -204,6 +205,20 @@ export default async function SuburbPage({ params }) {
             <SavingsCalculator />
             <ComparisonTable />
           </div>
+        </div>
+      </section>
+
+      {/* CONTACT CTA */}
+      <section style={{ padding: "56px 24px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <ContactCTA
+              variant="card"
+              headline={`Looking for a tutor in ${data.name}? Talk to us.`}
+              subhead="Call or message us with your child's year level and subject - we'll match them to a local tutor or run you through how Tuterly works."
+              context={`Tutoring in ${data.name} suburb page`}
+            />
+          </Fade>
         </div>
       </section>
 
