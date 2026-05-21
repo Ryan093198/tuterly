@@ -2,10 +2,9 @@ name: Competitor intel
 
 on:
   schedule:
-    # Mondays at 09:00 AEST (23:00 UTC Sunday). Cron is UTC, so this
-    # is the previous day in UTC. AEDT (daylight saving) shifts the
-    # local time to 10:00 - acceptable.
-    - cron: "0 23 * * 0"
+    # Daily at 06:00 AEST (20:00 UTC previous day). Runs before the
+    # blog writer so snapshots are fresh. AEDT shifts to 07:00.
+    - cron: "0 20 * * *"
   workflow_dispatch: {}
 
 # Allow committing snapshot + report back to main.
@@ -41,5 +40,5 @@ jobs:
             echo "Nothing changed - skipping commit."
             exit 0
           fi
-          git commit -m "Weekly competitor intel update [skip ci]"
+          git commit -m "Competitor intel update [skip ci]"
           git push
