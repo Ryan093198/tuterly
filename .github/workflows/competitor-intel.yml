@@ -1,0 +1,45 @@
+name: Competitor intel
+
+on:
+  schedule:
+    # Mondays at 09:00 AEST (23:00 UTC Sunday). Cron is UTC, so this
+    # is the previous day in UTC. AEDT (daylight saving) shifts the
+    # local time to 10:00 - acceptable.
+    - cron: "0 23 * * 0"
+  workflow_dispatch: {}
+
+# Allow committing snapshot + report back to main.
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run competitor research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node agent/research.js
+
+      - name: Commit and push snapshots + report
+        run: |
+          git config user.name "tuterly-research-bot"
+          git config user.email "bot@tuterly.com.au"
+          git add agent/snapshots agent/competitor-intel
+          if git diff --cached --quiet; then
+            echo "Nothing changed - skipping commit."
+            exit 0
+          fi
+          git commit -m "Weekly competitor intel update [skip ci]"
+          git push
