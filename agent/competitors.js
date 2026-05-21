@@ -16,14 +16,14 @@ export const COMPETITORS = [
   {
     slug: "tutor-doctor",
     name: "Tutor Doctor Australia",
-    sitemap: "https://www.tutordoctor.com.au/sitemap.xml",
-    homepage: "https://www.tutordoctor.com.au",
+    sitemap: "https://tutordoctor.com.au/sitemap.xml",
+    homepage: "https://tutordoctor.com.au",
   },
   {
     slug: "ezymaths",
     name: "EzyMaths Tutoring",
-    sitemap: "https://www.ezymaths.com.au/sitemap.xml",
-    homepage: "https://www.ezymaths.com.au",
+    sitemap: "https://www.ezymathtutoring.com.au/sitemap.xml",
+    homepage: "https://www.ezymathtutoring.com.au",
   },
   {
     slug: "kip-mcgrath",
@@ -34,7 +34,7 @@ export const COMPETITORS = [
   {
     slug: "begin-bright",
     name: "Begin Bright",
-    sitemap: "https://beginbright.com.au/sitemap.xml",
-    homepage: "https://beginbright.com.au",
+    sitemap: "https://www.beginbright.com.au/sitemap.xml",
+    homepage: "https://www.beginbright.com.au",
   },
 ];
