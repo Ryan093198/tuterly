@@ -21,9 +21,11 @@ alter table subscriptions add constraint subscriptions_status_check
     'trial', 'cancelled', 'expired'
   ));
 
-create unique index if not exists subscriptions_stripe_sub_idx
-  on subscriptions (stripe_subscription_id)
-  where stripe_subscription_id is not null;
+-- A plain unique constraint (not a partial index) so Supabase JS
+-- upsert({ onConflict: "stripe_subscription_id" }) works correctly.
+alter table subscriptions
+  add constraint subscriptions_stripe_subscription_id_key
+  unique (stripe_subscription_id);
 create index if not exists subscriptions_user_idx
   on subscriptions (user_id);
 create index if not exists subscriptions_customer_idx
