@@ -138,7 +138,7 @@ export default function ContactCTA({
   );
 }
 
-function ContactModal({ context, onClose }) {
+export function ContactModal({ context, onClose }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

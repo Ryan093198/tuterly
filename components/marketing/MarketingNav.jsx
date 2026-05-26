@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { c } from "./theme";
 import { APP_URL } from "@/lib/site";
+import { NavEnquireButton } from "./EnquireTriggers";
 
 const DIRECTORY_HREF = "/directory";
 
@@ -22,6 +23,7 @@ export default function MarketingNav() {
           <Link href="/learn" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Learn</Link>
           <Link href="/tutors" style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Apply as a Tutor</Link>
           <a href={APP_URL} style={{ padding: "8px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>Log in</a>
+          <NavEnquireButton context="marketing-nav" />
           <Link href={DIRECTORY_HREF} style={{ padding: "8px 18px", borderRadius: 8, fontSize: 13, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none" }}>Sign up free</Link>
         </div>
       </div>
