@@ -16,36 +16,6 @@ const FLOATING_HIDE_PREFIXES = [
   "/sample-report",
 ];
 
-// Pill button styled for use inside a marketing nav bar. Opens the
-// shared ContactModal. Designed to sit next to "Log in" / "Sign up
-// free" without dominating them — teal pale background, teal text.
-export function NavEnquireButton({ label = "Enquire", context }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        style={{
-          padding: "8px 16px",
-          borderRadius: 8,
-          fontSize: 13,
-          fontWeight: 600,
-          background: c.tealPale,
-          color: c.tealDark,
-          border: `1px solid ${c.teal}`,
-          cursor: "pointer",
-          fontFamily: "inherit",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {label}
-      </button>
-      {open && <ContactModal context={context} onClose={() => setOpen(false)} />}
-    </>
-  );
-}
-
 // Sticky bottom-right "Enquire" button mounted in the root layout so
 // it's available across every marketing page automatically. Hidden on
 // app/auth/onboarding routes where it would be out of place.
