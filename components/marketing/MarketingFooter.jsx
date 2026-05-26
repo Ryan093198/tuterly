@@ -15,6 +15,7 @@ export default function MarketingFooter() {
         <div style={{ display: "flex", gap: 16 }}>
           <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
           <Link href="/learn" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Learn</Link>
+          <Link href="/tutors/blog" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Tutor Blog</Link>
         </div>
         <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
       </div>
