@@ -114,8 +114,8 @@ async function handle(request) {
     );
   }
 
-  // Idempotency: if we've already run the chain for this session, return
-  // the current state without re-deducting / re-queuing.
+  // Idempotency fast-path: if we've already run the chain, return the
+  // current state without re-deducting / re-queuing.
   if (session.parent_credit_deducted) {
     return NextResponse.json({
       already_completed: true,
@@ -147,89 +147,113 @@ async function handle(request) {
   }
   const parentId = student.parent_id;
 
-  // ─── STEP: DEDUCT CREDIT ────────────────────────────────────────────
-  let creditsAfter = null;
-  let creditWarning = null;
-  if (parentId) {
-    // Get or create the parent's credits row. New parents start at zero.
-    const { data: creditsRow, error: creditsErr } = await admin
-      .from("credits")
-      .upsert(
-        { parent_id: parentId },
-        { onConflict: "parent_id", ignoreDuplicates: true }
-      )
-      .select("id, credits_remaining, pack_size, auto_topup, stripe_payment_method_id")
-      .maybeSingle();
-    if (creditsErr) throw creditsErr;
-
-    // upsert with ignoreDuplicates returns null on the conflict path, so
-    // fall back to a select if the upsert was a no-op.
-    let credits = creditsRow;
-    if (!credits) {
-      const { data: existing } = await admin
-        .from("credits")
-        .select(
-          "id, credits_remaining, pack_size, auto_topup, stripe_payment_method_id"
-        )
-        .eq("parent_id", parentId)
-        .single();
-      credits = existing;
-    }
-
-    // Append the ledger row first. Doing it before the balance update
-    // means a failure here aborts the chain BEFORE we've touched the
-    // balance — the txn log stays the source of truth.
-    const { error: txErr } = await admin.from("credit_transactions").insert({
-      parent_id: parentId,
-      type: "deduction",
-      credits: -1,
-      session_id: sessionId,
-      notes: `Session report ${report.id}`,
-    });
-    if (txErr) throw txErr;
-
-    const newRemaining = Math.max(0, (credits?.credits_remaining ?? 0) - 1);
-    const { error: balanceErr } = await admin
-      .from("credits")
-      .update({
-        credits_remaining: newRemaining,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("parent_id", parentId);
-    if (balanceErr) throw balanceErr;
-    creditsAfter = newRemaining;
-
-    // Flag low-balance / out-of-credits states for the (not-yet-built)
-    // cron jobs to pick up. The actual emails and auto-topup charges
-    // ship in a later phase.
-    if (newRemaining === 1) {
-      creditWarning = "low_balance";
-      console.log(
-        "[sessions/complete] parent",
-        parentId,
-        "is down to 1 credit"
-      );
-    } else if (newRemaining === 0) {
-      creditWarning = "out_of_credits";
-      console.log(
-        "[sessions/complete] parent",
-        parentId,
-        "is out of credits — auto-topup hook will fire when wired"
-      );
-    }
+  // ─── GUARD: a session must have a billable parent (H4) ──────────────
+  // Refuse to queue a tutor payout for a session nobody is paying for.
+  if (!parentId) {
+    return NextResponse.json(
+      {
+        error:
+          "This student has no linked parent to bill. Link a parent before completing the session.",
+        code: "no_parent",
+      },
+      { status: 409 }
+    );
   }
 
+  // ─── ATOMIC CLAIM (H4) ──────────────────────────────────────────────
+  // Flip parent_credit_deducted false→true in a single conditional UPDATE.
+  // Only one concurrent/retried request wins the claim; the rest get
+  // rowcount 0 and return already_completed. Claiming BEFORE the side
+  // effects means the worst-case failure is under-processing (recoverable)
+  // rather than double-charging or double-paying.
+  const { data: claimed, error: claimErr } = await admin
+    .from("sessions")
+    .update({ parent_credit_deducted: true })
+    .eq("id", sessionId)
+    .eq("parent_credit_deducted", false)
+    .select("id")
+    .maybeSingle();
+  if (claimErr) throw claimErr;
+  if (!claimed) {
+    return NextResponse.json({
+      already_completed: true,
+      session_id: session.id,
+      tutor_payout_id: session.tutor_payout_id,
+    });
+  }
+
+  async function releaseClaim() {
+    await admin
+      .from("sessions")
+      .update({ parent_credit_deducted: false })
+      .eq("id", sessionId);
+  }
+
+  // ─── STEP: DEDUCT CREDIT (atomic, hard-stop at zero) ────────────────
+  // deduct_one_credit decrements iff balance >= 1 and returns the new
+  // balance, or null when there was nothing to deduct. On a hard stop we
+  // release the claim so the session isn't left marked as processed.
+  const { data: newRemaining, error: deductErr } = await admin.rpc(
+    "deduct_one_credit",
+    { p_parent_id: parentId }
+  );
+  if (deductErr) {
+    await releaseClaim();
+    throw deductErr;
+  }
+  if (newRemaining === null || newRemaining === undefined) {
+    await releaseClaim();
+    // This is the hook point for the (future) auto-topup: no credits, so
+    // don't complete or pay out. Surface a clear, machine-readable status.
+    return NextResponse.json(
+      {
+        error:
+          "The parent has no session credits remaining. Ask them to top up before this session can be completed.",
+        code: "no_credits",
+      },
+      { status: 402 }
+    );
+  }
+  const creditsAfter = newRemaining;
+
+  // Ledger row for the deduction. The unique index on (session_id) where
+  // type='deduction' makes this idempotent; a duplicate is a no-op.
+  const { error: txErr } = await admin.from("credit_transactions").insert({
+    parent_id: parentId,
+    type: "deduction",
+    credits: -1,
+    session_id: sessionId,
+    notes: `Session report ${report.id}`,
+  });
+  if (txErr && !isUniqueViolation(txErr)) {
+    // A real failure after the balance was decremented — roll the balance
+    // back and release the claim so the session can be retried cleanly.
+    await admin.rpc("add_credits", {
+      p_parent_id: parentId,
+      p_amount: 1,
+      p_pack_size: null,
+    });
+    await releaseClaim();
+    throw txErr;
+  }
+
+  let creditWarning = null;
+  if (creditsAfter === 1) creditWarning = "low_balance";
+  else if (creditsAfter === 0) creditWarning = "out_of_credits";
+
   // ─── STEP: QUEUE TUTOR PAYOUT ───────────────────────────────────────
-  // Default rate to $60/hr if the tutor hasn't set their own yet. This
-  // matches the headline rate quoted in the parent-facing comparison;
-  // tutors who set a custom rate via their profile override it.
+  // Default rate to $60/hr if the tutor hasn't set their own yet. Rounding
+  // is done so commission + amount always equals the rounded gross (L1).
   const hourlyRate = Number(tutor?.hourly_rate ?? DEFAULT_HOURLY_RATE);
   const hours = (session.duration_minutes || 60) / 60;
   const gross = round2(hourlyRate * hours);
   const commission = round2(gross * TUTERLY_COMMISSION_RATE);
-  const amount = round2(gross - commission);
+  const amount = round2(gross) - commission;
 
-  const { data: payout, error: payoutErr } = await admin
+  // Idempotent insert: the unique index on tutor_payouts(session_id) means a
+  // retry collapses onto the existing row instead of queuing a second payout.
+  let payout;
+  const { data: insertedPayout, error: payoutErr } = await admin
     .from("tutor_payouts")
     .insert({
       tutor_id: session.tutor_id,
@@ -239,15 +263,25 @@ async function handle(request) {
       status: "pending",
     })
     .select("id, amount, commission, status")
-    .single();
-  if (payoutErr) throw payoutErr;
+    .maybeSingle();
+  if (payoutErr && isUniqueViolation(payoutErr)) {
+    const { data: existingPayout } = await admin
+      .from("tutor_payouts")
+      .select("id, amount, commission, status")
+      .eq("session_id", sessionId)
+      .maybeSingle();
+    payout = existingPayout;
+  } else if (payoutErr) {
+    throw payoutErr;
+  } else {
+    payout = insertedPayout;
+  }
 
   // ─── STEP: UPDATE SESSION ───────────────────────────────────────────
   const { error: sessionUpdateErr } = await admin
     .from("sessions")
     .update({
-      parent_credit_deducted: true,
-      tutor_payout_id: payout.id,
+      tutor_payout_id: payout?.id ?? null,
       status: "sent_to_parent",
     })
     .eq("id", sessionId);
@@ -288,10 +322,10 @@ async function handle(request) {
     credits_remaining: creditsAfter,
     credit_warning: creditWarning,
     tutor_payout: {
-      id: payout.id,
-      amount: payout.amount,
-      commission: payout.commission,
-      status: payout.status,
+      id: payout?.id ?? null,
+      amount: payout?.amount ?? null,
+      commission: payout?.commission ?? null,
+      status: payout?.status ?? null,
     },
     parent_notified: emailSent,
   });
@@ -299,4 +333,10 @@ async function handle(request) {
 
 function round2(n) {
   return Math.round(n * 100) / 100;
+}
+
+// Postgres unique-violation is SQLSTATE 23505; supabase-js surfaces it as
+// error.code === "23505". Used to make insert-based idempotency safe.
+function isUniqueViolation(err) {
+  return err?.code === "23505" || /duplicate key/i.test(err?.message || "");
 }

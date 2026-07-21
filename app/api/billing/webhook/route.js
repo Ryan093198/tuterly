@@ -40,6 +40,26 @@ export async function POST(request) {
     return NextResponse.json({ error: "bad signature" }, { status: 400 });
   }
 
+  // Global event-level idempotency (audit H4). Record the event id; if it's
+  // already present, this is a redelivery — acknowledge and skip. This guards
+  // every handler at once, on top of the per-row constraints below.
+  const dedupAdmin = createAdminClient();
+  const { data: firstSeen, error: dedupErr } = await dedupAdmin
+    .from("stripe_events")
+    .upsert(
+      { event_id: event.id, type: event.type },
+      { onConflict: "event_id", ignoreDuplicates: true }
+    )
+    .select("event_id")
+    .maybeSingle();
+  if (dedupErr) {
+    console.warn("[billing/webhook] event dedup insert failed:", dedupErr.message);
+    // Fail open — the per-row idempotency constraints still protect us.
+  } else if (!firstSeen) {
+    console.log("[billing/webhook] duplicate event ignored:", event.id);
+    return NextResponse.json({ received: true, duplicate: true });
+  }
+
   try {
     switch (event.type) {
       case "checkout.session.completed":
@@ -94,22 +114,6 @@ async function onPackPurchaseCompleted(session) {
     return;
   }
 
-  // Idempotency: if we've already logged this payment intent as a
-  // purchase transaction, skip the whole handler. Duplicate Stripe
-  // deliveries collapse onto the same row.
-  const { data: existingTx } = await admin
-    .from("credit_transactions")
-    .select("id")
-    .eq("stripe_payment_intent_id", paymentIntentId)
-    .maybeSingle();
-  if (existingTx) {
-    console.log(
-      "[billing/webhook] pack purchase already credited:",
-      paymentIntentId
-    );
-    return;
-  }
-
   // Look up the pack for the amount (don't trust client-side metadata
   // for money — refetch the canonical row).
   const { data: pack } = await admin
@@ -122,37 +126,12 @@ async function onPackPurchaseCompleted(session) {
     return;
   }
 
-  // Ensure a credits row exists for this parent, then add the pack's
-  // sessions to credits_remaining. We don't decrement-with-stripe; we
-  // just add the count from the pack.
-  const { data: creditsRow } = await admin
-    .from("credits")
-    .select("id, credits_remaining")
-    .eq("parent_id", userId)
-    .maybeSingle();
-
-  if (creditsRow) {
-    const { error } = await admin
-      .from("credits")
-      .update({
-        credits_remaining: creditsRow.credits_remaining + pack.sessions,
-        pack_size: pack.sessions,
-        stripe_payment_method_id: null, // could capture from session later
-        updated_at: new Date().toISOString(),
-      })
-      .eq("parent_id", userId);
-    if (error) throw error;
-  } else {
-    const { error } = await admin.from("credits").insert({
-      parent_id: userId,
-      credits_remaining: pack.sessions,
-      pack_size: pack.sessions,
-      auto_topup: true,
-    });
-    if (error) throw error;
-  }
-
-  // Append the immutable ledger row. This is the dedup key for retries.
+  // Insert-first idempotency (audit H4): the unique index on
+  // credit_transactions(stripe_payment_intent_id) is the atomic gate. Write
+  // the ledger row FIRST; if it's a duplicate (unique violation), this
+  // delivery has already been processed — bail before crediting again. This
+  // closes the check-then-insert race that could double-credit on overlapping
+  // Stripe retries.
   const { error: txErr } = await admin.from("credit_transactions").insert({
     parent_id: userId,
     type: "purchase",
@@ -160,7 +139,25 @@ async function onPackPurchaseCompleted(session) {
     stripe_payment_intent_id: paymentIntentId,
     notes: `Purchased ${pack.name} pack (${pack.sessions} sessions)`,
   });
-  if (txErr) throw txErr;
+  if (txErr) {
+    if (isUniqueViolation(txErr)) {
+      console.log(
+        "[billing/webhook] pack purchase already credited:",
+        paymentIntentId
+      );
+      return;
+    }
+    throw txErr;
+  }
+
+  // Now that we own this delivery, add the credits atomically (creates the
+  // row on first purchase; avoids the read-modify-write lost-update race).
+  const { error: addErr } = await admin.rpc("add_credits", {
+    p_parent_id: userId,
+    p_amount: pack.sessions,
+    p_pack_size: pack.sessions,
+  });
+  if (addErr) throw addErr;
 
   // Build the parent-facing invoice record. Stripe also generates its
   // own hosted invoice via invoice_creation:enabled — we mirror the id
@@ -269,7 +266,14 @@ async function onCheckoutCompleted(session) {
   if (referralCode) {
     try {
       const referrer = await findReferrerByCode(admin, referralCode);
-      if (referrer && referrer.id !== userId) {
+      // Reject self-referral by identity OR by email (audit H4) — otherwise
+      // one person could farm $20 credits with throwaway trial emails on
+      // their own code.
+      const selfReferral =
+        referrer &&
+        (referrer.id === userId ||
+          referrer.email?.toLowerCase()?.trim() === email);
+      if (referrer && !selfReferral) {
         const { error: refErr } = await admin
           .from("referrals")
           .upsert(
@@ -317,9 +321,16 @@ async function onCheckoutCompleted(session) {
 
 async function syncSubscription(subscription) {
   const admin = createAdminClient();
-  const { error } = await admin
-    .from("subscriptions")
-    .update({
+  // Upsert, not update (audit H4): if a `customer.subscription.updated` event
+  // arrives before the `checkout.session.completed` that carries our user_id,
+  // an UPDATE would match zero rows and the status change would be lost. The
+  // upsert inserts a row (plan defaults; user_id stays null and is filled in
+  // by the checkout handler later) or updates the existing one. We never write
+  // user_id here so we don't clobber it once set.
+  const { error } = await admin.from("subscriptions").upsert(
+    {
+      stripe_subscription_id: subscription.id,
+      stripe_customer_id: subscription.customer ?? null,
       status: subscription.status,
       trial_ends_at: subscription.trial_end
         ? new Date(subscription.trial_end * 1000).toISOString()
@@ -327,22 +338,33 @@ async function syncSubscription(subscription) {
       current_period_end: subscription.current_period_end
         ? new Date(subscription.current_period_end * 1000).toISOString()
         : null,
-    })
-    .eq("stripe_subscription_id", subscription.id);
+    },
+    { onConflict: "stripe_subscription_id" }
+  );
   if (error) throw error;
 }
 
+// Find the Supabase auth user id for an email. Every auth user has a matching
+// profiles row (created by the on-signup trigger), and profiles.email is
+// indexed, so this is O(1) and — unlike the old listUsers({perPage:200}) scan —
+// keeps working past 200 users (audit H4). Returns null if no user exists yet.
 async function findUserIdByEmail(admin, email) {
-  // listUsers doesn't filter server-side by email in supabase-js, so we
-  // page through a small slice. New trial users almost always come back
-  // as not-found on page 1 anyway.
-  const { data, error } = await admin.auth.admin.listUsers({
-    page: 1,
-    perPage: 200,
-  });
-  if (error) throw error;
+  const { data: profile } = await admin
+    .from("profiles")
+    .select("id")
+    .ilike("email", email)
+    .maybeSingle();
+  if (profile?.id) return profile.id;
+
+  // Fallback for the rare orphan case (auth user exists but no profile row):
+  // scan a bounded page. Uncommon, but keeps provisioning correct.
+  const { data } = await admin.auth.admin.listUsers({ page: 1, perPage: 200 });
   const match = (data?.users ?? []).find(
     (u) => u.email?.toLowerCase() === email
   );
   return match?.id ?? null;
+}
+
+function isUniqueViolation(err) {
+  return err?.code === "23505" || /duplicate key/i.test(err?.message || "");
 }
