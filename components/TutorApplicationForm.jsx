@@ -27,6 +27,8 @@ export default function TutorApplicationForm() {
   const [subjects, setSubjects] = useState("");
   const [yearLevels, setYearLevels] = useState("");
   const [experience, setExperience] = useState("");
+  // Honeypot (audit H2): hidden from humans; bots fill it and get silently dropped.
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
   const [done, setDone] = useState(false);
@@ -56,6 +58,7 @@ export default function TutorApplicationForm() {
           subjects: subjects.trim(),
           year_levels: yearLevels.trim(),
           experience: experience.trim(),
+          company_website: companyWebsite,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -129,6 +132,17 @@ export default function TutorApplicationForm() {
         boxShadow: "0 4px 24px rgba(15, 23, 42, 0.04)",
       }}
     >
+      {/* Honeypot — hidden from real users; only bots fill it (audit H2). */}
+      <input
+        type="text"
+        name="company_website"
+        tabIndex={-1}
+        autoComplete="off"
+        value={companyWebsite}
+        onChange={(e) => setCompanyWebsite(e.target.value)}
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <p
         style={{
           fontFamily: "'Space Grotesk', sans-serif",

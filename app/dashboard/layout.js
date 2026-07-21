@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase-server";
 import DashboardShell from "@/components/DashboardShell";
+import { isAdminEmail } from "@/lib/admin";
 
 const NAV = {
   tutor: [
@@ -96,7 +97,18 @@ export default async function DashboardLayout({ children }) {
   // they hit any dashboard.
   if (!profile?.role) redirect("/onboarding/role");
 
-  const navItems = NAV[profile.role] ?? NAV.parent;
+  const navItems = [...(NAV[profile.role] ?? NAV.parent)];
+
+  // Surface an Admin link for allowlisted staff regardless of their role.
+  // Access is enforced server-side by requireAdmin() on the admin routes;
+  // this just adds the nav entry so they can find it (audit C6).
+  if (isAdminEmail(user.email) && profile.role !== "admin") {
+    navItems.push({
+      label: "Admin",
+      href: "/dashboard/admin",
+      icon: <Icon name="grid" />,
+    });
+  }
 
   return (
     <DashboardShell

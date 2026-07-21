@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { buildReportPrompt } from "@/lib/report-prompt";
-import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
+import { signedUrlForPhoto } from "@/lib/storage-signing";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createAdminClient } from "@/lib/supabase-admin";
 import {
   findKatexErrors,
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
-import { stripEmDashes } from "@/lib/markdown-voice";
+import { stripEmDashes, stripLinks } from "@/lib/markdown-voice";
 import { stripe } from "@/lib/stripe";
 import { awardReferralCreditForReferee } from "@/lib/referrals";
 
@@ -53,6 +53,11 @@ async function handle(request) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
+  // One service-role client for the whole request (audit H1: the referral
+  // block previously referenced `admin` before it was declared, so it always
+  // threw and was silently swallowed — the credit never fired).
+  const admin = createAdminClient();
+
   const limit = await checkRateLimit(user.id, "generate", {
     perMinute: 3,
     perHour: 30,
@@ -77,7 +82,7 @@ async function handle(request) {
   const { data: studentRow } = await supabase
     .from("students")
     .select(
-      "first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, term_outline"
+      "id, parent_id, first_name, last_name, year_level, working_level, school, subject, subjects, goals, concerns, term_outline"
     )
     .eq("id", session.student_id)
     .single();
@@ -109,7 +114,7 @@ async function handle(request) {
 
   const photoUrls = (
     await Promise.all(
-      (photoRows ?? []).map((p) => signedPhotoUrl(p.file_url))
+      (photoRows ?? []).map((p) => signedUrlForPhoto(p.file_url))
     )
   ).filter(Boolean);
 
@@ -181,6 +186,9 @@ async function handle(request) {
   // Final voice scrub — strip any em dashes the model emitted despite the
   // prompt rule. They're the single biggest "this is AI" tell.
   content = stripEmDashes(content);
+  // Enforce the no-URL/no-link rule programmatically (audit H3), in case a
+  // prompt-injection payload pushed a link past the prompt instructions.
+  content = stripLinks(content);
 
   const { data: existing } = await supabase
     .from("reports")
@@ -195,9 +203,11 @@ async function handle(request) {
       .update({ content, updated_at: new Date().toISOString() })
       .eq("id", existing.id);
   } else {
+    // Upsert on the session_id unique constraint (audit L1) so a concurrent
+    // generation for the same session can't create a duplicate report row.
     const { data: inserted } = await supabase
       .from("reports")
-      .insert({ session_id, content })
+      .upsert({ session_id, content }, { onConflict: "session_id" })
       .select("id")
       .single();
     reportId = inserted?.id ?? null;
@@ -214,7 +224,16 @@ async function handle(request) {
   // we skip silently. Best-effort: any failure (no referral row, no
   // Stripe customer yet, network error) just logs and moves on; the
   // tutor still gets their report.
-  if (!existing && student?.parent_id) {
+  //
+  // GATED OFF by default (audit H1/H4): this awards a real $20 Stripe credit,
+  // and the referral-abuse guards (self-referral, paid-state requirement,
+  // atomic status flip) are P2 work that lands with billing. Set
+  // REFERRALS_ENABLED=true only once those are in and billing is live.
+  if (
+    process.env.REFERRALS_ENABLED === "true" &&
+    !existing &&
+    student?.parent_id
+  ) {
     try {
       // Check this was actually the first report for the student. We
       // count reports across the student's sessions other than the one
@@ -254,7 +273,6 @@ async function handle(request) {
   // Failure here never blocks the response — the user already has their
   // report, this is just the audit log.
   try {
-    const admin = createAdminClient();
     const { data: ratings } = await admin
       .from("ratings")
       .select("topic, subtopic")

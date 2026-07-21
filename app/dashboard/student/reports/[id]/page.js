@@ -5,7 +5,7 @@ import MarkdownReport from "@/components/MarkdownReport";
 import FlagScrollTarget from "@/components/FlagScrollTarget";
 import PrintButton from "@/components/PrintButton";
 import SessionPhotos from "@/components/SessionPhotos";
-import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
+import { signedUrlForPhoto } from "@/lib/storage-signing";
 import Logo from "@/components/Logo";
 import { detectOverallTopic } from "@/lib/rating";
 
@@ -61,7 +61,7 @@ export default async function StudentReportView({ params }) {
   const photos = await Promise.all(
     (photoRows ?? []).map(async (p) => ({
       ...p,
-      signed_url: await signedPhotoUrl(p.file_url),
+      signed_url: await signedUrlForPhoto(p.file_url),
     }))
   );
 

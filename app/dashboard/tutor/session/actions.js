@@ -362,14 +362,9 @@ export async function deleteSessionPhoto(formData) {
   }
 }
 
-export async function signedPhotoUrl(filePath) {
-  if (!filePath) return null;
-  const admin = createAdminClient();
-  const { data } = await admin.storage
-    .from(PHOTO_BUCKET)
-    .createSignedUrl(filePath, 3600);
-  return data?.signedUrl ?? null;
-}
+// NOTE: signed-URL generation moved to lib/storage-signing.js (signedUrlForPhoto).
+// It must not live here — exporting it from a "use server" module turned it into
+// a callable endpoint that signed arbitrary object paths with no auth (audit C2).
 
 export async function updateReport(formData) {
   const supabase = await createClient();
@@ -548,6 +543,10 @@ export async function sendReport(sessionId, role = "parent") {
     console.warn(`[sendReport/${role}] PDF render failed: ${e?.message || e}`);
   }
 
+  // Audit C9: previously the send was marked successful even when the email
+  // threw — the tutor saw "Emailed to parent" while the parent got nothing.
+  // Now a send failure surfaces as an error and we do NOT stamp sent_at or
+  // flip the session status, so the tutor can retry.
   try {
     await sendReportEmail({
       to: recipientEmail,
@@ -558,9 +557,12 @@ export async function sendReport(sessionId, role = "parent") {
       attachments,
     });
   } catch (e) {
-    console.warn(
+    console.error(
       `[sendReport/${role}] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
         `Report URL: ${reportUrl}`
+    );
+    throw new Error(
+      `The report couldn't be emailed to ${recipientEmail} just now. Nothing was marked as sent — please try again in a moment.`
     );
   }
 

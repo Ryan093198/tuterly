@@ -13,20 +13,39 @@ export async function createStudent(formData) {
   } = await supabase.auth.getUser();
   if (!user) redirect("/");
 
+  const admin = createAdminClient();
+
+  // Vetting gate (audit C5): only an APPROVED tutor may create student records.
+  // New tutors land unapproved and must be approved in the admin dashboard
+  // before they can hold any children's data. We also insert both rows with the
+  // service-role client below, because the public tutor_students INSERT policy
+  // (which any signed-in user could abuse to self-link to any child, C1) has
+  // been removed — the ownership guarantee now lives in this checked action.
+  const { data: me } = await admin
+    .from("profiles")
+    .select("role, approved")
+    .eq("id", user.id)
+    .single();
+  if (me?.role !== "tutor") {
+    throw new Error("Only tutor accounts can add students.");
+  }
+  if (!me?.approved) {
+    throw new Error(
+      "Your tutor account is pending approval. You'll be able to add students once the Tuterly team approves your application."
+    );
+  }
+
   const subjects = (formData.get("subjects") || "")
     .toString()
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
 
-  // Generate the ID client-side so we don't need .select() after insert —
-  // the new row has parent_id=NULL and no tutor_students link yet, so the
-  // SELECT-after-INSERT round-trip is blocked by RLS.
   const studentId = randomUUID();
 
   const subject = formData.get("subject") === "english" ? "english" : "maths";
 
-  const { error } = await supabase.from("students").insert({
+  const { error } = await admin.from("students").insert({
     id: studentId,
     first_name: formData.get("first_name"),
     last_name: formData.get("last_name"),
@@ -40,10 +59,14 @@ export async function createStudent(formData) {
   });
   if (error) throw error;
 
-  const { error: linkError } = await supabase
+  const { error: linkError } = await admin
     .from("tutor_students")
     .insert({ tutor_id: user.id, student_id: studentId });
-  if (linkError) throw linkError;
+  if (linkError) {
+    // Roll back the orphaned student row if the link failed.
+    await admin.from("students").delete().eq("id", studentId);
+    throw linkError;
+  }
 
   revalidatePath("/dashboard/tutor");
   redirect(`/dashboard/tutor/students/${studentId}`);
@@ -148,6 +171,15 @@ export async function deleteStudent(formData) {
   if (resourcePaths.length > 0) {
     await admin.storage.from("resources").remove(resourcePaths);
   }
+
+  // Audit M2: session_report_log is intentionally `on delete set null`, so it
+  // would otherwise retain the child's name / year level / topics after the
+  // student is deleted — conflicting with the deletion promise in the privacy
+  // policy. Scrub those PII fields before the cascade nulls the student_id.
+  await admin
+    .from("session_report_log")
+    .update({ student_name: null, year_level: null, topics: null })
+    .eq("student_id", studentId);
 
   // Cascade-deletes sessions -> reports/ratings/session_photos, plus
   // tutor_students, resources, invites for this student.

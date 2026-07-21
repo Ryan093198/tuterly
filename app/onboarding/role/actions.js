@@ -24,7 +24,7 @@ export async function setInitialRole(formData) {
   const admin = createAdminClient();
   const { data: profile } = await admin
     .from("profiles")
-    .select("role")
+    .select("role, terms_accepted_at")
     .eq("id", user.id)
     .single();
   if (profile?.role) {
@@ -32,9 +32,19 @@ export async function setInitialRole(formData) {
     redirect("/dashboard");
   }
 
+  // Consent capture for the OAuth path (audit C7). Email signups record this
+  // in signup metadata; Google/OAuth users don't carry it, so we stamp it here
+  // when they pick their role (they ticked the consent box before OAuth). Only
+  // set it if not already recorded, so we never overwrite an earlier timestamp.
+  const patch = { role };
+  if (!profile?.terms_accepted_at) {
+    patch.terms_accepted_at = new Date().toISOString();
+    patch.terms_version = "2026-07-20";
+  }
+
   const { error } = await admin
     .from("profiles")
-    .update({ role })
+    .update(patch)
     .eq("id", user.id);
   if (error) throw error;
 

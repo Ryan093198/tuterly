@@ -47,6 +47,8 @@ export default function EnquiryFormModal({
   const [childName, setChildName] = useState("");
   const [childYear, setChildYear] = useState(initialChildYear || "Year 7");
   const [message, setMessage] = useState("");
+  // Honeypot (audit H2): hidden from humans; bots fill it and get silently dropped.
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
   const [done, setDone] = useState(false);
@@ -72,6 +74,7 @@ export default function EnquiryFormModal({
           child_name: childName.trim(),
           child_year_level: childYear,
           message: message.trim(),
+          company_website: companyWebsite,
         }),
       });
       const data = await readJsonOrFallback(res);
@@ -164,6 +167,17 @@ export default function EnquiryFormModal({
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
+            {/* Honeypot — hidden from real users; only bots fill it (audit H2). */}
+            <input
+              type="text"
+              name="company_website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={companyWebsite}
+              onChange={(e) => setCompanyWebsite(e.target.value)}
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+            />
             <p
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",

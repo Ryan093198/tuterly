@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendTutorApplicationEmail } from "@/lib/email";
+import { createAdminClient } from "@/lib/supabase-admin";
+import { guardPublicForm } from "@/lib/public-form-guard";
 
 export const runtime = "nodejs";
 
@@ -19,6 +21,21 @@ export async function POST(request) {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "expected json body" }, { status: 400 });
+  }
+
+  // Abuse protection (audit H2): honeypot + per-IP rate limit. Applications
+  // are lower-frequency, so a tighter daily cap is fine.
+  const guard = await guardPublicForm(request, body, "tutor-application", {
+    perMinute: 2,
+    perHour: 5,
+    perDay: 10,
+  });
+  if (guard.blocked) {
+    if (guard.silent) return NextResponse.json({ ok: true });
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again shortly." },
+      { status: 429, headers: { "Retry-After": String(guard.retryAfterSeconds) } }
+    );
   }
 
   const name = trimStr(body?.name, 120);
@@ -46,6 +63,23 @@ export async function POST(request) {
       { status: 400 }
     );
 
+  // Persist the application so the team can vet it in the admin dashboard,
+  // not just receive an email (audit C5). Service-role write; the table is
+  // default-deny RLS. Best-effort: if the DB write fails we still email.
+  try {
+    const admin = createAdminClient();
+    await admin.from("tutor_applications").insert({
+      name,
+      email,
+      phone,
+      subjects,
+      year_levels: yearLevels,
+      experience,
+    });
+  } catch (e) {
+    console.error("[tutor-application] persist failed:", e);
+  }
+
   try {
     await sendTutorApplicationEmail({
       to: process.env.TUTOR_APPLICATIONS_TO_EMAIL || DEFAULT_TO,
@@ -60,10 +94,10 @@ export async function POST(request) {
     return NextResponse.json({ ok: true });
   } catch (e) {
     console.error("[tutor-application] send failed:", e);
-    return NextResponse.json(
-      { error: "Could not send your application. Please try again or give us a call." },
-      { status: 500 }
-    );
+    // The application is already saved, so acknowledge success — the team
+    // will see it in the admin dashboard even if the notification email
+    // didn't go out.
+    return NextResponse.json({ ok: true, emailed: false });
   }
 }
 

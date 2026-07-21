@@ -3,6 +3,8 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { getCurriculumForStudent } from "@/lib/curriculum";
+import { trustedClientIp } from "@/lib/client-ip";
+import { checkRateLimit } from "@/lib/rate-limit";
 import {
   SYSTEM_INSTRUCTIONS,
   buildWorksheetUserMessage,
@@ -70,11 +72,8 @@ async function handle(request) {
     return NextResponse.json({ error: "Pick a topic." }, { status: 400 });
   }
   const email = sanitizeEmail(body?.email);
-  // Email isn't strictly required to generate — the client side gates the UI —
-  // but we tag the generation row with it when present so the marketing list
-  // can be cross-referenced with conversion.
 
-  const ip = clientIp(request);
+  const ip = trustedClientIp(request);
 
   // Signed-in visitors bypass the IP cap when they have an active trial
   // or paid subscription. Signed-in without an active subscription falls
@@ -112,7 +111,57 @@ async function handle(request) {
     }
   }
 
-  if (!bypassCap && ip) {
+  // Audit C8: every signed-in caller is throttled even when they bypass the
+  // free-tier IP cap. A $0 trial account previously had NO limit on this route
+  // and could loop it to burn unbounded Anthropic credits. The subscription now
+  // only lifts the once-a-day free cap; it never removes throttling.
+  if (user) {
+    const rl = await checkRateLimit(user.id, "worksheets", {
+      perDay: 40,
+      perHour: 20,
+      perMinute: 5,
+    });
+    if (!rl.ok) {
+      return NextResponse.json(
+        { error: rl.message, rate_limited: true },
+        { status: 429, headers: { "Retry-After": String(rl.retryAfterSeconds) } }
+      );
+    }
+  }
+
+  // Audit C8: anonymous callers must supply a captured email before we spend a
+  // model call. This enforces the "enter your email to unlock" gate on the
+  // server (it was previously client-side only) and keeps the cost bounded to
+  // known leads plus the per-IP cap below.
+  if (!user) {
+    if (!email) {
+      return NextResponse.json(
+        { error: "Enter your email to unlock the free worksheet.", need_email: true },
+        { status: 403 }
+      );
+    }
+    const { data: known } = await admin
+      .from("worksheet_email_signups")
+      .select("email")
+      .eq("email", email)
+      .maybeSingle();
+    if (!known) {
+      return NextResponse.json(
+        { error: "Enter your email to unlock the free worksheet.", need_email: true },
+        { status: 403 }
+      );
+    }
+  }
+
+  if (!bypassCap) {
+    if (!ip) {
+      // No trustworthy IP means we can't rate-limit anonymous abuse; fail
+      // closed rather than hand out an uncapped generation.
+      return NextResponse.json(
+        { error: "Could not verify your request. Please try again." },
+        { status: 400 }
+      );
+    }
     const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
     const { count, error: countErr } = await admin
       .from("worksheet_generations")
@@ -153,6 +202,38 @@ async function handle(request) {
 
   const variantSeed = body?.variant_seed?.toString().slice(0, 32) || null;
 
+  // Reserve the generation BEFORE the model call (audit C8). Logging it only
+  // after ~40s of generation left a wide window where a burst of concurrent
+  // requests all read count=0 and all proceeded. Recording it up front makes
+  // concurrent requests see the higher count and shrinks that race to a few ms.
+  // (A fully atomic increment is the P1 follow-up.) If generation fails we
+  // delete the reservation so a transient error doesn't consume the user's cap.
+  let reservationId = null;
+  {
+    const { data: reservation, error: logErr } = await admin
+      .from("worksheet_generations")
+      .insert({
+        ip,
+        email,
+        year_level: yearLevel,
+        topic_id: topicId,
+        topic_label: topicLabel,
+        question_count: 10,
+      })
+      .select("id")
+      .maybeSingle();
+    if (logErr) {
+      console.warn("[worksheets/generate] reservation insert failed:", logErr);
+    } else {
+      reservationId = reservation?.id ?? null;
+    }
+  }
+
+  async function releaseReservation() {
+    if (!reservationId) return;
+    await admin.from("worksheet_generations").delete().eq("id", reservationId);
+  }
+
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const userMessage = buildWorksheetUserMessage({
     yearLevel,
@@ -184,7 +265,13 @@ async function handle(request) {
   }
 
   const startedAt = Date.now();
-  let { text: worksheetMarkdown } = await generateOnce(baseMessages);
+  let worksheetMarkdown;
+  try {
+    ({ text: worksheetMarkdown } = await generateOnce(baseMessages));
+  } catch (e) {
+    await releaseReservation();
+    throw e;
+  }
 
   // Validate every math block via KaTeX. If anything won't render, the
   // user would see red error text or italicised prose, so we send the
@@ -205,12 +292,17 @@ async function handle(request) {
       "elapsed:",
       elapsedMs
     );
-    const retry = await generateOnce([
-      ...baseMessages,
-      { role: "assistant", content: worksheetMarkdown },
-      { role: "user", content: formatErrorsForRetry(katexErrors) },
-    ]);
-    if (retry.text) worksheetMarkdown = retry.text;
+    try {
+      const retry = await generateOnce([
+        ...baseMessages,
+        { role: "assistant", content: worksheetMarkdown },
+        { role: "user", content: formatErrorsForRetry(katexErrors) },
+      ]);
+      if (retry.text) worksheetMarkdown = retry.text;
+    } catch (e) {
+      // Keep the (valid-enough) first attempt if the retry call fails.
+      console.warn("[worksheets] katex retry failed:", e?.message || e);
+    }
   } else if (katexErrors.length > 0) {
     console.warn(
       "[worksheets] katex errors but skipping retry — elapsed",
@@ -221,26 +313,15 @@ async function handle(request) {
   }
 
   if (!worksheetMarkdown) {
+    await releaseReservation();
     return NextResponse.json(
       { error: "Generation returned no content. Please try again." },
       { status: 502 }
     );
   }
 
-  // Log the generation — drives the per-IP cap and gives us a record of
-  // demand by topic / year level. Best-effort; we don't fail the request
-  // if logging fails (the user still gets their worksheet).
-  const { error: logErr } = await admin.from("worksheet_generations").insert({
-    ip,
-    email,
-    year_level: yearLevel,
-    topic_id: topicId,
-    topic_label: topicLabel,
-    question_count: 10,
-  });
-  if (logErr) {
-    console.warn("[worksheets/generate] log insert failed:", logErr);
-  }
+  // The generation was reserved (logged) before the model call — see above —
+  // so there's nothing to log here on success.
 
   return NextResponse.json({
     content: worksheetMarkdown,
@@ -255,10 +336,4 @@ function sanitizeEmail(raw) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)) return null;
   if (t.length > 254) return null;
   return t;
-}
-
-function clientIp(request) {
-  const fwd = request.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0].trim();
-  return request.headers.get("x-real-ip") || null;
 }

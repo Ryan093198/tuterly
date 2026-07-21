@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
+import { trustedClientIp } from "@/lib/client-ip";
 
 export const runtime = "nodejs";
 
@@ -23,7 +24,7 @@ export async function POST(request) {
   }
   const yearLevel = sanitizeYearLevel(body?.year_level);
 
-  const ip = clientIp(request);
+  const ip = trustedClientIp(request);
   const admin = createAdminClient();
 
   // year_level is only written when present so re-submissions without
@@ -67,10 +68,4 @@ function sanitizeYearLevel(raw) {
   // pollute the list with freeform input.
   if (!/^Year (3|4|5|6|7|8|9|10)$/.test(t)) return null;
   return t;
-}
-
-function clientIp(request) {
-  const fwd = request.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0].trim();
-  return request.headers.get("x-real-ip") || null;
 }

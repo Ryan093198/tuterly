@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase-server";
 import { sendEnquiryEmail } from "@/lib/email";
+import { guardPublicForm } from "@/lib/public-form-guard";
 
 export const runtime = "nodejs";
 
@@ -25,6 +26,16 @@ export async function POST(request) {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "expected json body" }, { status: 400 });
+  }
+
+  // Abuse protection (audit H2): honeypot + per-IP rate limit.
+  const guard = await guardPublicForm(request, body, "enquiry");
+  if (guard.blocked) {
+    if (guard.silent) return NextResponse.json({ ok: true });
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again shortly." },
+      { status: 429, headers: { "Retry-After": String(guard.retryAfterSeconds) } }
+    );
   }
 
   const tutorName = trimStr(body?.tutor_name, 120);

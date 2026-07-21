@@ -71,6 +71,13 @@ export async function deleteAccount(formData) {
       for (const r of resources ?? [])
         if (r.file_url) storageRemovals[RESOURCE_BUCKET].push(r.file_url);
 
+      // Audit M2: scrub PII from the flat audit log (on delete set null keeps
+      // the rows) before deleting the students.
+      await admin
+        .from("session_report_log")
+        .update({ student_name: null, year_level: null, topics: null })
+        .in("student_id", studentIds);
+
       // Hard-delete the students. Cascades sessions, ratings, resources,
       // reports, session_photos, flagged_questions.
       const { error: studentDelErr } = await admin

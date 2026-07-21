@@ -144,6 +144,8 @@ export function ContactModal({ context, onClose }) {
   const [phone, setPhone] = useState("");
   const [yearLevel, setYearLevel] = useState("");
   const [message, setMessage] = useState("");
+  // Honeypot (audit H2): hidden from humans; bots fill it and get silently dropped.
+  const [companyWebsite, setCompanyWebsite] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [sent, setSent] = useState(false);
@@ -171,6 +173,7 @@ export function ContactModal({ context, onClose }) {
           year_level: yearLevel.trim(),
           message: message.trim(),
           page_context: context || null,
+          company_website: companyWebsite,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -286,6 +289,17 @@ export function ContactModal({ context, onClose }) {
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
+            {/* Honeypot — hidden from real users; only bots fill it (audit H2). */}
+            <input
+              type="text"
+              name="company_website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={companyWebsite}
+              onChange={(e) => setCompanyWebsite(e.target.value)}
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+            />
             <p
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",

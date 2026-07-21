@@ -30,8 +30,13 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [role, setRole] = useState(initialRole);
+  const [consent, setConsent] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Version string stored against the account so we can prove which Terms /
+  // Privacy version each user accepted (audit C7). Bump when those docs change.
+  const TERMS_VERSION = "2026-07-20";
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -53,11 +58,22 @@ export default function Auth() {
         setLoading(false);
         return setError("Pick whether you're signing up as a parent, tutor, or student.");
       }
+      if (!consent) {
+        setLoading(false);
+        return setError(
+          "Please confirm you agree to the Terms and Privacy Policy to continue."
+        );
+      }
       const { error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          data: { full_name: fullName, role },
+          data: {
+            full_name: fullName,
+            role,
+            terms_accepted: true,
+            terms_version: TERMS_VERSION,
+          },
           emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
         },
       });
@@ -70,6 +86,11 @@ export default function Auth() {
   async function handleGoogle() {
     if (mode === "signup" && !role && !isInvite) {
       return setError("Pick whether you're signing up as a parent, tutor, or student.");
+    }
+    if (mode === "signup" && !consent) {
+      return setError(
+        "Please confirm you agree to the Terms and Privacy Policy to continue."
+      );
     }
     const supabase = createClient();
     const params = new URLSearchParams({ next });
@@ -196,6 +217,30 @@ export default function Auth() {
               />
             </div>
           </div>
+        )}
+
+        {mode === "signup" && (
+          <label className="flex items-start gap-2.5 pt-1 text-xs text-zinc-600 dark:text-zinc-400">
+            <input
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-zinc-300 text-brand focus:ring-brand/30"
+            />
+            <span>
+              I agree to the{" "}
+              <Link href="/terms" className="text-brand hover:text-brand-dark" target="_blank">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy" className="text-brand hover:text-brand-dark" target="_blank">
+                Privacy Policy
+              </Link>
+              , and I confirm I am 18 or older. If I add a student, I confirm I am
+              their parent or guardian, or have authority and consent to enter
+              their details.
+            </span>
+          </label>
         )}
 
         <div className="pt-1">

@@ -287,12 +287,6 @@ export async function updateResource(formData) {
   revalidatePath(`/dashboard/tutor/resources`);
 }
 
-// Helper for server components rendering the resource list.
-export async function signedUrlFor(filePath) {
-  if (!filePath) return null;
-  const admin = createAdminClient();
-  const { data } = await admin.storage
-    .from(BUCKET)
-    .createSignedUrl(filePath, 3600);
-  return data?.signedUrl ?? null;
-}
+// NOTE: signed-URL generation moved to lib/storage-signing.js (signedUrlForResource).
+// It must not live here — exporting it from a "use server" module turned it into
+// a callable endpoint that signed arbitrary object paths with no auth (audit C2).

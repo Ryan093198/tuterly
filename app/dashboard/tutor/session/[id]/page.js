@@ -8,7 +8,7 @@ import SendReportPanel from "@/components/SendReportPanel";
 import SessionPhotos from "@/components/SessionPhotos";
 import NotesEditor from "@/components/NotesEditor";
 import DeleteSessionButton from "@/components/DeleteSessionButton";
-import { signedPhotoUrl } from "@/app/dashboard/tutor/session/actions";
+import { signedUrlForPhoto } from "@/lib/storage-signing";
 import { createAdminClient } from "@/lib/supabase-admin";
 
 export default async function SessionPage({ params, searchParams }) {
@@ -66,7 +66,7 @@ export default async function SessionPage({ params, searchParams }) {
     Promise.all(
       (photoRows ?? []).map(async (p) => ({
         ...p,
-        signed_url: await signedPhotoUrl(p.file_url),
+        signed_url: await signedUrlForPhoto(p.file_url),
       }))
     ),
     resolveRecipient({
