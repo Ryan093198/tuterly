@@ -7,6 +7,11 @@ import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { sendReportEmail } from "@/lib/email";
 import { renderReportPdf, pdfFilename } from "@/lib/report-pdf";
+import { billingEnabled } from "@/lib/billing-config";
+import {
+  settleSessionBilling,
+  parentCreditBalance,
+} from "@/lib/session-billing";
 import {
   ALLOWED_IMAGE_TYPES,
   compressImage,
@@ -516,6 +521,22 @@ export async function sendReport(sessionId, role = "parent") {
     );
   }
 
+  // Billing pre-check (phased MVP). When billing is on, a parent-facing send
+  // spends one session credit. Block delivery up front if the parent is out of
+  // credits so the tutor gets a clear message instead of a silent under-charge.
+  // Only applies when the parent's account is actually linked; an unlinked
+  // (invite-only) recipient can't be billed yet and sends as before.
+  const billingParentId =
+    role === "parent" ? session.students?.parent_id ?? null : null;
+  if (billingEnabled() && billingParentId) {
+    const balance = await parentCreditBalance(admin, billingParentId);
+    if (balance < 1) {
+      throw new Error(
+        "This parent has no session credits left. Ask them to buy a pack before you send this report."
+      );
+    }
+  }
+
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const reportUrl = `${baseUrl}/dashboard/${role}/reports/${report.id}`;
 
@@ -580,6 +601,29 @@ export async function sendReport(sessionId, role = "parent") {
       .from("sessions")
       .update({ status: "sent_to_parent" })
       .eq("id", sessionId);
+  }
+
+  // Settle billing AFTER successful delivery (phased MVP): deduct the credit
+  // and queue the tutor payout. Doing it post-send means we never charge for a
+  // report that didn't go out; settleSessionBilling is idempotent, so a resend
+  // won't double-charge.
+  if (billingEnabled() && billingParentId) {
+    try {
+      const settle = await settleSessionBilling(admin, {
+        sessionId,
+        reportId: report.id,
+      });
+      if (!settle.ok) {
+        console.warn(
+          `[sendReport] billing settle returned "${settle.code}" after delivery of session ${sessionId} — reconcile manually`
+        );
+      }
+    } catch (e) {
+      console.warn(
+        "[sendReport] billing settle failed post-delivery:",
+        e?.message || e
+      );
+    }
   }
 
   revalidatePath(`/dashboard/tutor/session/${sessionId}`);

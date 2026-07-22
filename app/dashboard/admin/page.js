@@ -1,5 +1,6 @@
 import { createAdminClient } from "@/lib/supabase-admin";
 import { requireAdmin } from "@/lib/admin";
+import { billingEnabled } from "@/lib/billing-config";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
@@ -38,6 +39,30 @@ export default async function AdminDashboard() {
         .order("generated_at", { ascending: false })
         .limit(25),
     ]);
+
+  // Pending tutor payouts (phased MVP), grouped by tutor — this is the
+  // manual payout worklist until automated Stripe Connect transfers ship.
+  let pendingPayouts = [];
+  if (billingEnabled()) {
+    const { data: rows } = await admin
+      .from("tutor_payouts")
+      .select("amount, tutor_id, profiles:tutor_id(full_name, email)")
+      .eq("status", "pending");
+    const byTutor = new Map();
+    for (const r of rows ?? []) {
+      const key = r.tutor_id;
+      const cur = byTutor.get(key) || {
+        name: r.profiles?.full_name || r.profiles?.email || "Tutor",
+        email: r.profiles?.email || "",
+        total: 0,
+        count: 0,
+      };
+      cur.total += Number(r.amount || 0);
+      cur.count += 1;
+      byTutor.set(key, cur);
+    }
+    pendingPayouts = [...byTutor.values()].sort((a, b) => b.total - a.total);
+  }
 
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up space-y-10">
@@ -139,6 +164,42 @@ export default async function AdminDashboard() {
           </div>
         )}
       </section>
+
+      {/* ── Pending tutor payouts (manual payout worklist) ───────────── */}
+      {billingEnabled() && (
+        <section className="space-y-3">
+          <h2 className="text-lg font-medium">Pending tutor payouts</h2>
+          {!pendingPayouts.length ? (
+            <p className="text-sm text-muted">No payouts owing.</p>
+          ) : (
+            <Card className="divide-y divide-zinc-100 dark:divide-zinc-800">
+              {pendingPayouts.map((p, i) => (
+                <div
+                  key={i}
+                  className="p-3 flex items-center justify-between gap-3 text-sm"
+                >
+                  <div className="min-w-0">
+                    <span className="font-medium">{p.name}</span>
+                    {p.email ? (
+                      <span className="text-muted"> · {p.email}</span>
+                    ) : null}
+                    <span className="text-muted">
+                      {` · ${p.count} session${p.count === 1 ? "" : "s"}`}
+                    </span>
+                  </div>
+                  <span className="font-semibold tabular-nums shrink-0">
+                    ${p.total.toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </Card>
+          )}
+          <p className="text-xs text-muted">
+            These are the net amounts owed to each tutor. Pay them out manually
+            for now; automated Stripe Connect transfers come in the next phase.
+          </p>
+        </section>
+      )}
 
       {/* ── Recent activity ──────────────────────────────────────────── */}
       <section className="space-y-3">

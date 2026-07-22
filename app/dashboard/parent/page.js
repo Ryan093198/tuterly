@@ -1,9 +1,12 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
+import { createAdminClient } from "@/lib/supabase-admin";
 import EmptyState from "@/components/ui/EmptyState";
 import AddChildButton from "@/components/AddChildButton";
 import ParentActivityFeed from "@/components/ParentActivityFeed";
+import BuyCreditsPanel from "@/components/BuyCreditsPanel";
+import { billingEnabled } from "@/lib/billing-config";
 import {
   fetchTutorsForStudents,
   tutoringSummary,
@@ -49,6 +52,28 @@ export default async function ParentDashboard() {
       ])
     : [new Map(), new Map()];
 
+  // Session credits (phased MVP). Only surfaced when billing is enabled — the
+  // free pilot never shows or spends credits.
+  let credits = null;
+  let packs = [];
+  if (billingEnabled()) {
+    const admin = createAdminClient();
+    const [{ data: creditRow }, { data: packRows }] = await Promise.all([
+      admin
+        .from("credits")
+        .select("credits_remaining")
+        .eq("parent_id", user.id)
+        .maybeSingle(),
+      admin
+        .from("session_packs")
+        .select("id, name, sessions, price, per_session, savings")
+        .eq("active", true)
+        .order("sessions"),
+    ]);
+    credits = creditRow?.credits_remaining ?? 0;
+    packs = packRows ?? [];
+  }
+
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
       <header className="flex items-end justify-between gap-4 flex-wrap">
@@ -64,6 +89,10 @@ export default async function ParentDashboard() {
         </div>
         {studentList.length > 0 && <AddChildButton />}
       </header>
+
+      {billingEnabled() && credits !== null && (
+        <BuyCreditsPanel creditsRemaining={credits} packs={packs} />
+      )}
 
       {studentList.length === 0 ? (
         <EmptyState

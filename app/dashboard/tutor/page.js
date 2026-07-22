@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase-server";
 import Button from "@/components/ui/Button";
 import EmptyState from "@/components/ui/EmptyState";
 import TutorStudentList from "@/components/TutorStudentList";
+import { billingEnabled } from "@/lib/billing-config";
 
 // Tutor dashboard. Three-zone layout designed so a tutor checking on
 // their phone Sunday night can answer two questions in five seconds:
@@ -128,6 +129,23 @@ export default async function TutorDashboard({ searchParams }) {
     openFlagCount = count ?? 0;
   }
 
+  // Pending earnings (phased MVP). Tutors can read their own payouts via RLS.
+  // Only surfaced when billing is on.
+  let pendingEarnings = null;
+  let pendingPayoutCount = 0;
+  if (billingEnabled()) {
+    const { data: payouts } = await supabase
+      .from("tutor_payouts")
+      .select("amount")
+      .eq("tutor_id", user.id)
+      .eq("status", "pending");
+    pendingEarnings = (payouts ?? []).reduce(
+      (sum, p) => sum + Number(p.amount || 0),
+      0
+    );
+    pendingPayoutCount = (payouts ?? []).length;
+  }
+
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
       <header>
@@ -135,6 +153,22 @@ export default async function TutorDashboard({ searchParams }) {
           Tutor&apos;s Dashboard
         </h1>
       </header>
+
+      {billingEnabled() && pendingEarnings !== null && (
+        <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/20 px-4 py-3 flex items-baseline justify-between gap-3">
+          <div className="text-sm">
+            <span className="font-medium text-emerald-900 dark:text-emerald-200">
+              ${pendingEarnings.toFixed(2)} pending
+            </span>
+            <span className="text-emerald-800/80 dark:text-emerald-200/70 ml-1">
+              {`from ${pendingPayoutCount} session${pendingPayoutCount === 1 ? "" : "s"}, net of commission`}
+            </span>
+          </div>
+          <span className="text-[11px] text-emerald-800/70 dark:text-emerald-200/60">
+            Paid out by Tuterly
+          </span>
+        </div>
+      )}
 
       {studentsWithoutReport.length > 0 && isCurrentWeek && (
         <div
