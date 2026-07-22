@@ -9,6 +9,7 @@ import {
   approveApplication,
   rejectApplication,
   setTutorApproval,
+  setTutorRate,
 } from "./actions";
 
 export const dynamic = "force-dynamic";
@@ -30,7 +31,7 @@ export default async function AdminDashboard() {
         .order("created_at", { ascending: false }),
       admin
         .from("profiles")
-        .select("id, full_name, email, approved, created_at")
+        .select("id, full_name, email, approved, hourly_rate, created_at")
         .eq("role", "tutor")
         .order("created_at", { ascending: false }),
       admin
@@ -147,10 +148,29 @@ export default async function AdminDashboard() {
                   </div>
                   <div className="text-sm text-muted truncate">{t.email}</div>
                 </div>
-                <div className="flex items-center gap-3 shrink-0">
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                   <Badge tone={t.approved ? "success" : "warning"}>
                     {t.approved ? "Approved" : "Pending"}
                   </Badge>
+                  {/* Per-tutor hourly wage. Blank = the $35 default. */}
+                  <form action={setTutorRate} className="flex items-center gap-1">
+                    <input type="hidden" name="tutor_id" value={t.id} />
+                    <span className="text-xs text-muted">$</span>
+                    <input
+                      type="number"
+                      name="hourly_rate"
+                      defaultValue={t.hourly_rate ?? 35}
+                      min="20"
+                      max="200"
+                      step="0.5"
+                      aria-label={`Hourly rate for ${t.full_name || t.email}`}
+                      className="w-16 h-8 px-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm"
+                    />
+                    <span className="text-[11px] text-muted">/hr</span>
+                    <Button type="submit" variant="ghost" size="sm">
+                      Save
+                    </Button>
+                  </form>
                   <form action={setTutorApproval}>
                     <input type="hidden" name="tutor_id" value={t.id} />
                     <input
@@ -167,6 +187,11 @@ export default async function AdminDashboard() {
             ))}
           </div>
         )}
+        <p className="text-xs text-muted">
+          Each tutor&apos;s hourly wage defaults to $35. Set a higher rate here
+          for more experienced tutors — their future payouts calculate at that
+          rate (super is added on top automatically).
+        </p>
       </section>
 
       {/* ── Pending tutor payouts (manual payout worklist) ───────────── */}

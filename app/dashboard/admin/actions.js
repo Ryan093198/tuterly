@@ -87,3 +87,25 @@ export async function setTutorApproval(formData) {
 
   revalidatePath("/dashboard/admin");
 }
+
+// Set a tutor's hourly base wage (the per-tutor rate that overrides the $35
+// default). Used to pay more experienced tutors more. Bounded to a sane range.
+export async function setTutorRate(formData) {
+  await requireAdmin();
+  const tutorId = formData.get("tutor_id")?.toString();
+  const rate = Number(formData.get("hourly_rate"));
+  if (!tutorId) throw new Error("tutor_id required");
+  if (!Number.isFinite(rate) || rate < 20 || rate > 200) {
+    throw new Error("Enter an hourly rate between 20 and 200.");
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from("profiles")
+    .update({ hourly_rate: Math.round(rate * 100) / 100 })
+    .eq("id", tutorId)
+    .eq("role", "tutor");
+  if (error) throw error;
+
+  revalidatePath("/dashboard/admin");
+}
