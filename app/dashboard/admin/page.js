@@ -46,7 +46,7 @@ export default async function AdminDashboard() {
   if (billingEnabled()) {
     const { data: rows } = await admin
       .from("tutor_payouts")
-      .select("amount, tutor_id, profiles:tutor_id(full_name, email)")
+      .select("amount, super_amount, tutor_id, profiles:tutor_id(full_name, email)")
       .eq("status", "pending");
     const byTutor = new Map();
     for (const r of rows ?? []) {
@@ -54,14 +54,18 @@ export default async function AdminDashboard() {
       const cur = byTutor.get(key) || {
         name: r.profiles?.full_name || r.profiles?.email || "Tutor",
         email: r.profiles?.email || "",
-        total: 0,
+        wage: 0,
+        superAmt: 0,
         count: 0,
       };
-      cur.total += Number(r.amount || 0);
+      cur.wage += Number(r.amount || 0);
+      cur.superAmt += Number(r.super_amount || 0);
       cur.count += 1;
       byTutor.set(key, cur);
     }
-    pendingPayouts = [...byTutor.values()].sort((a, b) => b.total - a.total);
+    pendingPayouts = [...byTutor.values()]
+      .map((t) => ({ ...t, total: t.wage + t.superAmt }))
+      .sort((a, b) => b.total - a.total);
   }
 
   return (
@@ -187,16 +191,21 @@ export default async function AdminDashboard() {
                       {` · ${p.count} session${p.count === 1 ? "" : "s"}`}
                     </span>
                   </div>
-                  <span className="font-semibold tabular-nums shrink-0">
-                    ${p.total.toFixed(2)}
-                  </span>
+                  <div className="text-right shrink-0">
+                    <div className="font-semibold tabular-nums">
+                      ${p.total.toFixed(2)}
+                    </div>
+                    <div className="text-[11px] text-muted tabular-nums">
+                      wage ${p.wage.toFixed(2)} + super ${p.superAmt.toFixed(2)}
+                    </div>
+                  </div>
                 </div>
               ))}
             </Card>
           )}
           <p className="text-xs text-muted">
-            These are the net amounts owed to each tutor. Pay them out manually
-            for now; automated Stripe Connect transfers come in the next phase.
+            Total owed per tutor = wage + super. Pay the wage to the tutor and
+            the super to their fund; automate this in the next phase.
           </p>
         </section>
       )}

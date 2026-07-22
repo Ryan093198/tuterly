@@ -161,7 +161,7 @@ export default async function TutorDashboard({ searchParams }) {
               ${pendingEarnings.toFixed(2)} pending
             </span>
             <span className="text-emerald-800/80 dark:text-emerald-200/70 ml-1">
-              {`from ${pendingPayoutCount} session${pendingPayoutCount === 1 ? "" : "s"}, net of commission`}
+              {`from ${pendingPayoutCount} session${pendingPayoutCount === 1 ? "" : "s"} · super paid on top`}
             </span>
           </div>
           <span className="text-[11px] text-emerald-800/70 dark:text-emerald-200/60">
