@@ -115,6 +115,7 @@ function SidebarContent({ navItems, user, initials, isActive, onNavigate }) {
           <Link
             key={item.href}
             href={item.href}
+            prefetch={true}
             onClick={onNavigate}
             className={`flex items-center gap-3 px-3 h-10 rounded-lg text-sm font-medium transition ${
               isActive(item.href)
