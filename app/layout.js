@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Script from "next/script";
 import { Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavProgress from "../components/NavProgress";
 import { FloatingEnquireButton } from "../components/marketing/EnquireTriggers";
 import "./globals.css";
@@ -92,6 +93,7 @@ export default function RootLayout({ children }) {
         <Suspense fallback={null}>
           <FloatingEnquireButton />
         </Suspense>
+        <SpeedInsights />
       </body>
     </html>
   );
