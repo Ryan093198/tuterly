@@ -233,6 +233,33 @@ function ComparisonReportCard() {
 export default function ParentsLanding() {
   const [expandedQ, setExpandedQ] = useState(null);
   const [reportExpanded, setReportExpanded] = useState({});
+  const [trialPending, setTrialPending] = useState(false);
+
+  // "Start 7-day free trial" → kick off the $29/mo Tuterly Parent
+  // subscription checkout (mode: subscription, 7-day trial). Stripe collects
+  // email + card on its hosted page; the billing webhook creates the account
+  // and emails a magic-link welcome once the trial subscription is live.
+  async function startTrial() {
+    if (trialPending) return;
+    setTrialPending(true);
+    try {
+      const res = await fetch("/api/billing/checkout-session", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({}),
+      });
+      const data = await res.json().catch(() => null);
+      if (!res.ok || !data?.url) {
+        throw new Error(data?.error || "Could not start checkout.");
+      }
+      window.location.href = data.url;
+    } catch (e) {
+      setTrialPending(false);
+      // Fall back to the app if checkout couldn't start, so the CTA never
+      // dead-ends.
+      window.location.href = "https://app.tuterly.com.au";
+    }
+  }
   // Savings calculator state. Slider drives a comparison between a typical
   // tutoring company ($100/hr) and Tuterly (avg $60/hr from the directory
   // plus $29/mo platform subscription), assuming 4 lessons per month.
@@ -300,7 +327,7 @@ export default function ParentsLanding() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 12, maxWidth: 480 }}>Browse our directory of vetted tutors and reach out directly, or let one of our education experts find the right match for your child. Every tutor is trained on our platform, so you get detailed session reports, progress tracking, and practice questions after every lesson.</p>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.8, marginBottom: 32, maxWidth: 480 }}>Already have a tutor? Tuterly works with them too. Invite any tutor to start generating reports.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-              <a href="https://app.tuterly.com.au" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>Start 7-day free trial →</a>
+              <button type="button" onClick={startTrial} disabled={trialPending} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block", border: "none", cursor: "pointer" }}>{trialPending ? "Redirecting…" : "Start 7-day free trial →"}</button>
               <a href="#sample-report" onClick={(e) => { e.preventDefault(); document.getElementById('sample-report')?.scrollIntoView({ behavior: 'smooth' }); }} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>See a sample report</a>
             </div>
             <p style={{ fontSize: 13, color: c.textMuted }}>7 days free. Then $29/month. Cancel anytime.</p>
@@ -540,15 +567,15 @@ export default function ParentsLanding() {
               <p style={{ fontSize: 48, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: c.navy }}>$29<span style={{ fontSize: 18, color: c.textMuted, fontWeight: 400 }}>/month</span></p>
               <p style={{ fontSize: 14, color: c.textLight, marginBottom: 24, marginTop: 8 }}>Everything included. Cancel anytime.</p>
               <div style={{ display: "grid", gap: 10, textAlign: "left", marginBottom: 28 }}>
-                {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "No sessions in a month = no charge"].map((f, i) => (
+                {["7-day free trial - full access to everything", "Browse and connect with tutors from our directory", "Detailed session report after every lesson", "Progress tracking across all topics over time", "Unlimited VCAA-aligned practice question generator", "Works with any tutor - ours or your own", "Curriculum-aligned content descriptors", "Only pay your tutor for sessions you book"].map((f, i) => (
                   <div key={i} style={{ display: "flex", gap: 10, alignItems: "center" }}>
                     <span style={{ color: c.teal, fontSize: 13, fontWeight: 700 }}>✓</span>
                     <span style={{ fontSize: 14, color: c.textLight }}>{f}</span>
                   </div>
                 ))}
               </div>
-              <a href="https://app.tuterly.com.au" style={{ display: "block", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial</a>
-              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>No credit card required to start. $29/month after trial.</p>
+              <button type="button" onClick={startTrial} disabled={trialPending} style={{ display: "block", width: "100%", padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", border: "none", cursor: "pointer" }}>{trialPending ? "Redirecting…" : "Start 7-day free trial"}</button>
+              <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>7 days free, then $29/month. Cancel anytime before it ends and you won&apos;t be charged.</p>
             </div>
           </Fade>
         </div>
@@ -919,7 +946,7 @@ export default function ParentsLanding() {
             <a href="tel:+61426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
             <a href="mailto:admin@baysideacademics.com.au" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 admin@baysideacademics.com.au</a>
           </div>
-          <a href="https://app.tuterly.com.au" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Start 7-day free trial →</a>
+          <button type="button" onClick={startTrial} disabled={trialPending} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", border: "none", cursor: "pointer" }}>{trialPending ? "Redirecting…" : "Start 7-day free trial →"}</button>
         </Fade>
       </section>
 
