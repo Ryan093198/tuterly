@@ -6,6 +6,7 @@ import EmptyState from "@/components/ui/EmptyState";
 import AddChildButton from "@/components/AddChildButton";
 import ParentActivityFeed from "@/components/ParentActivityFeed";
 import BuyCreditsPanel from "@/components/BuyCreditsPanel";
+import MembershipPanel from "@/components/MembershipPanel";
 import { billingEnabled } from "@/lib/billing-config";
 import {
   fetchTutorsForStudents,
@@ -56,22 +57,36 @@ export default async function ParentDashboard() {
   // free pilot never shows or spends credits.
   let credits = null;
   let packs = [];
+  let membership = null;
   if (billingEnabled()) {
     const admin = createAdminClient();
-    const [{ data: creditRow }, { data: packRows }] = await Promise.all([
-      admin
-        .from("credits")
-        .select("credits_remaining")
-        .eq("parent_id", user.id)
-        .maybeSingle(),
-      admin
-        .from("session_packs")
-        .select("id, name, sessions, price, per_session, savings")
-        .eq("active", true)
-        .order("sessions"),
-    ]);
+    const [{ data: creditRow }, { data: packRows }, { data: subRow }] =
+      await Promise.all([
+        admin
+          .from("credits")
+          .select("credits_remaining")
+          .eq("parent_id", user.id)
+          .maybeSingle(),
+        admin
+          .from("session_packs")
+          .select("id, name, sessions, price, per_session, savings")
+          .eq("active", true)
+          .order("sessions"),
+        // Most recent live membership, if any. trialing/active/past_due all
+        // count as "has a membership"; anything else falls through to the
+        // start-trial pitch.
+        admin
+          .from("subscriptions")
+          .select("status, trial_ends_at, current_period_end")
+          .eq("user_id", user.id)
+          .in("status", ["trialing", "active", "past_due"])
+          .order("current_period_end", { ascending: false, nullsFirst: false })
+          .limit(1)
+          .maybeSingle(),
+      ]);
     credits = creditRow?.credits_remaining ?? 0;
     packs = packRows ?? [];
+    membership = subRow ?? null;
   }
 
   return (
@@ -89,6 +104,8 @@ export default async function ParentDashboard() {
         </div>
         {studentList.length > 0 && <AddChildButton />}
       </header>
+
+      {billingEnabled() && <MembershipPanel subscription={membership} />}
 
       {billingEnabled() && credits !== null && (
         <BuyCreditsPanel creditsRemaining={credits} packs={packs} />
