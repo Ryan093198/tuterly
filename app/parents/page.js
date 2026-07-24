@@ -21,31 +21,35 @@ import ContactCTA from "@/components/marketing/ContactCTA";
 // ─────────────────────────────────────────────────────────────────────────
 
 const c = {
-  // accent
-  teal: "#0E9A94",
-  tealDeep: "#0B7B76",
-  tealBright: "#0ABAB5",
-  tealPale: "#E9F6F4",
-  // ink + text
-  ink: "#0F1B2D",
+  // accent (teal kept as the brand signal)
+  teal: "#0D9488",
+  tealDeep: "#0F766E",
+  tealBright: "#14B8A6",
+  tealPale: "#ECFDFB",
+  // ink + text (cool)
+  ink: "#0F172A",
   inkMid: "#1E293B",
-  text: "#243041",
-  textLight: "#5B6B7E",
-  textMuted: "#93A1B3",
-  // warm neutrals
+  navy: "#0B1220",
+  text: "#334155",
+  textLight: "#64748B",
+  textMuted: "#94A3B8",
+  // cool neutrals
   white: "#FFFFFF",
-  paper: "#FBF9F5",
-  sand: "#F5EFE6",
-  borderWarm: "#E9E3D8",
-  border: "#E4E8EE",
+  paper: "#F7F9FC",
+  sand: "#F1F5F9",
+  borderWarm: "#E6EAF0",
+  border: "#E6EAF0",
   // status
-  success: "#0F9D6C",
-  amber: "#D9962B",
+  success: "#10B981",
+  amber: "#F59E0B",
   rose: "#E05B6D",
 };
 
-const serif = "'Fraunces', Georgia, 'Times New Roman', serif";
-const sans = "'DM Sans', 'Helvetica Neue', sans-serif";
+// Modern identity: Inter sans throughout. `serif` is kept as an alias to
+// the sans stack so existing heading styles resolve to Inter; headings
+// carry their own weight/tracking inline.
+const sans = "'Inter', 'Helvetica Neue', Arial, sans-serif";
+const serif = sans;
 
 function useInView() {
   const ref = useRef(null);
@@ -75,12 +79,9 @@ function SectionHead({ kicker, title, sub, align = "center", light = false }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: alignment, textAlign: align, marginBottom: sub ? 20 : 44 }}>
       {kicker && (
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-          <span style={{ width: 22, height: 2, background: c.teal, display: "inline-block" }} />
-          <p style={{ fontSize: 14, fontWeight: 600, color: light ? c.tealBright : c.tealDeep }}>{kicker}</p>
-        </div>
+        <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: light ? c.tealBright : c.tealDeep, marginBottom: 14 }}>{kicker}</p>
       )}
-      <h2 style={{ fontFamily: serif, fontWeight: 600, fontSize: 40, letterSpacing: "-0.5px", color: light ? c.white : c.ink, lineHeight: 1.18, maxWidth: 640 }}>{title}</h2>
+      <h2 style={{ fontFamily: serif, fontWeight: 800, fontSize: 40, letterSpacing: "-1px", color: light ? c.white : c.ink, lineHeight: 1.16, maxWidth: 640 }}>{title}</h2>
       {sub && <p style={{ fontSize: 16, color: light ? "rgba(255,255,255,0.55)" : c.textLight, lineHeight: 1.75, maxWidth: 560, marginTop: 14, marginBottom: 28 }}>{sub}</p>}
     </div>
   );
@@ -331,7 +332,7 @@ export default function ParentsLanding() {
   return (
     <div style={{ fontFamily: sans, color: c.text, background: c.white, overflowX: "hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { -webkit-font-smoothing: antialiased; }
         ::selection { background: ${c.tealPale}; color: ${c.ink}; }
@@ -356,11 +357,11 @@ export default function ParentsLanding() {
       `}</style>
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: "rgba(251,249,245,0.92)", backdropFilter: "blur(16px)", borderBottom: `1px solid ${c.borderWarm}`, padding: "0 40px" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: "rgba(255,255,255,0.9)", backdropFilter: "blur(16px)", borderBottom: `1px solid ${c.borderWarm}`, padding: "0 40px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: 66 }}>
           <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 9 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 9, background: c.ink, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700, color: c.tealBright, fontFamily: serif }}>t</div>
-            <span style={{ fontFamily: serif, fontSize: 22, fontWeight: 600, color: c.ink, letterSpacing: "-0.5px" }}>tuterly</span>
+            <div style={{ width: 32, height: 32, borderRadius: 9, background: c.navy, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 800, color: c.tealBright }}>t</div>
+            <span style={{ fontSize: 21, fontWeight: 800, color: c.ink, letterSpacing: "-0.8px" }}>tuterly</span>
           </a>
           <div className="nav-links" style={{ display: "flex", gap: 4, alignItems: "center" }}>
             <Link href="/worksheets" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 500, color: c.textLight, textDecoration: "none" }}>Free worksheets</Link>
@@ -373,15 +374,24 @@ export default function ParentsLanding() {
       </nav>
 
       {/* HERO */}
-      <section style={{ padding: "150px 40px 70px", background: c.paper }}>
+      <section style={{ padding: "150px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div className="hero-grid" style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 64, alignItems: "center" }}>
           <div style={{ animation: "fadeUp 0.8s ease" }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: c.white, border: `1px solid ${c.borderWarm}`, borderRadius: 100, padding: "7px 16px", marginBottom: 26 }}>
-              <span style={{ width: 7, height: 7, borderRadius: "50%", background: c.teal }} />
-              <p style={{ fontSize: 13, fontWeight: 600, color: c.text }}>By Bayside Academics · Melbourne tutoring</p>
+            {/* Social-proof row — PLACEHOLDER: star rating stands in for a real
+                Google review score; swap once reviews are collected. */}
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 26 }}>
+              <div style={{ display: "flex" }}>
+                {[["JW", "#5A6ACF"], ["ST", "#0D9488"], ["EK", "#C4587E"], ["TR", "#C98F42"]].map(([ini, col], i) => (
+                  <div key={i} style={{ width: 32, height: 32, borderRadius: "50%", background: col, border: "2px solid #fff", marginLeft: i ? -9 : 0, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 11, fontWeight: 700 }}>{ini}</div>
+                ))}
+              </div>
+              <div>
+                <div style={{ display: "flex", gap: 2, marginBottom: 1 }}>{[1, 2, 3, 4, 5].map(s => <span key={s} style={{ color: c.amber, fontSize: 13 }}>★</span>)}</div>
+                <p style={{ fontSize: 12.5, color: c.textLight, fontWeight: 500 }}>Trusted by Melbourne families · by Bayside Academics</p>
+              </div>
             </div>
-            <h1 style={{ fontFamily: serif, fontWeight: 600, fontSize: 54, color: c.ink, lineHeight: 1.12, letterSpacing: "-1px", marginBottom: 22 }}>
-              Tutoring you can actually <em style={{ fontStyle: "italic", color: c.tealDeep }}>see</em> working.
+            <h1 style={{ fontWeight: 800, fontSize: 54, color: c.ink, lineHeight: 1.08, letterSpacing: "-1.6px", marginBottom: 22 }}>
+              Tutoring you can actually <span style={{ color: c.teal }}>see</span> working.
             </h1>
             <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.75, marginBottom: 30, maxWidth: 470 }}>
               High-achieving tutors, matched to your child. After every session you get a detailed report — what was covered, how they went, and exactly what to practise next. No more guessing what you&apos;re paying for.
@@ -448,7 +458,7 @@ export default function ParentsLanding() {
             ].map((s, i) => (
               <Fade key={i} delay={i * 0.1}>
                 <div style={{ background: c.white, borderRadius: 16, padding: "32px 24px", textAlign: "center", border: `1px solid ${c.borderWarm}` }}>
-                  <p style={{ fontFamily: serif, fontSize: 38, fontWeight: 600, color: c.ink, marginBottom: 8 }}>{s.stat}</p>
+                  <p style={{ fontSize: 38, fontWeight: 800, letterSpacing: "-1px", color: c.ink, marginBottom: 8 }}>{s.stat}</p>
                   <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.6 }}>{s.label}</p>
                 </div>
               </Fade>
@@ -579,7 +589,7 @@ export default function ParentsLanding() {
                     <span style={{ position: "absolute", top: -13, left: 28, background: c.tealBright, color: c.ink, borderRadius: 100, padding: "5px 14px", fontSize: 12, fontWeight: 700 }}>{p.badge}</span>
                   )}
                   <p style={{ fontSize: 14.5, fontWeight: 700, color: p.badge ? c.tealBright : c.tealDeep, marginBottom: 10 }}>{p.name}</p>
-                  <p style={{ fontFamily: serif, fontSize: 46, fontWeight: 600, color: p.badge ? c.white : c.ink, lineHeight: 1 }}>
+                  <p style={{ fontSize: 46, fontWeight: 800, letterSpacing: "-1.6px", color: p.badge ? c.white : c.ink, lineHeight: 1 }}>
                     ${p.price}
                   </p>
                   <p style={{ fontSize: 14, color: p.badge ? "rgba(255,255,255,0.55)" : c.textLight, marginTop: 8, marginBottom: 18 }}>
@@ -627,7 +637,7 @@ export default function ParentsLanding() {
               <p style={{ fontSize: 14, color: c.textLight, marginBottom: 16 }}>
                 Over <strong style={{ color: c.ink, fontWeight: 700 }}>{savingsMonths} {savingsMonths === 1 ? "month" : "months"}</strong> of tutoring, you save
               </p>
-              <p style={{ fontFamily: serif, fontSize: 50, fontWeight: 600, color: c.tealDeep, lineHeight: 1.1, marginBottom: 24 }}>
+              <p style={{ fontSize: 50, fontWeight: 800, letterSpacing: "-1.6px", color: c.tealDeep, lineHeight: 1.1, marginBottom: 24 }}>
                 ${savings.toLocaleString("en-AU")}
               </p>
               <input type="range" min={1} max={12} step={1} value={savingsMonths} onChange={(e) => setSavingsMonths(parseInt(e.target.value, 10))} style={{ width: "100%", marginBottom: 6 }} aria-label="Months of tutoring" />
@@ -637,12 +647,12 @@ export default function ParentsLanding() {
               <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                 <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.borderWarm}` }}>
                   <p style={{ fontSize: 11.5, color: c.textMuted, marginBottom: 6, fontWeight: 600 }}>Typical agency</p>
-                  <p style={{ fontFamily: serif, fontSize: 24, fontWeight: 600, color: c.ink }}>${companyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.ink }}>${companyCost.toLocaleString("en-AU")}</p>
                   <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr agency rate × {LESSONS_PER_MONTH * savingsMonths} lessons — often with little to no session feedback</p>
                 </div>
                 <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
                   <p style={{ fontSize: 11.5, color: c.tealDeep, marginBottom: 6, fontWeight: 700 }}>With Tuterly</p>
-                  <p style={{ fontFamily: serif, fontSize: 24, fontWeight: 600, color: c.ink }}>${tuterlyCost.toLocaleString("en-AU")}</p>
+                  <p style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.ink }}>${tuterlyCost.toLocaleString("en-AU")}</p>
                   <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${TUTERLY_SESSION}/session (Term pack) × {LESSONS_PER_MONTH * savingsMonths} lessons — reports, tracking and software included</p>
                 </div>
               </div>
@@ -953,7 +963,7 @@ export default function ParentsLanding() {
       {/* BOTTOM CTA */}
       <section style={{ padding: "88px 40px", background: c.ink, textAlign: "center" }}>
         <Fade>
-          <h2 style={{ fontFamily: serif, fontSize: 38, fontWeight: 600, color: c.white, marginBottom: 14, lineHeight: 1.2, letterSpacing: "-0.5px" }}>Know what&apos;s happening, every session.</h2>
+          <h2 style={{ fontSize: 38, fontWeight: 800, color: c.white, marginBottom: 14, lineHeight: 1.14, letterSpacing: "-1px" }}>Know what&apos;s happening, every session.</h2>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.7 }}>Get matched with a high-achieving tutor, or bring your own — either way, you&apos;ll see the progress.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
             <a href="#talk" onClick={scrollTo("talk")} style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.tealBright, color: c.ink, fontSize: 15, fontWeight: 700, textDecoration: "none", cursor: "pointer" }}>Find your child&apos;s tutor →</a>
