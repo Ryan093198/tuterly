@@ -42,17 +42,17 @@ const YEAR_LEVELS = [
 ];
 
 const c = {
-  teal: "#0ABAB5",
-  tealLight: "#2DD4BF",
-  tealDark: "#0D9488",
-  tealPale: "#F0FDFA",
+  teal: "#0D9488",
+  tealLight: "#14B8A6",
+  tealDark: "#0F766E",
+  tealPale: "#ECFDFB",
   navy: "#0F172A",
-  text: "#1E293B",
+  text: "#334155",
   textLight: "#64748B",
   textMuted: "#94A3B8",
   white: "#FFFFFF",
-  offWhite: "#F8FAFC",
-  border: "#E2E8F0",
+  offWhite: "#F7F9FC",
+  border: "#E6EAF0",
 };
 
 // Year-level groups for the topic grid below the generator. Each year
@@ -89,7 +89,7 @@ export default function WorksheetsPage() {
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <p
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 13,
               fontWeight: 600,
               color: c.teal,
@@ -102,7 +102,7 @@ export default function WorksheetsPage() {
           </p>
           <h1
             style={{
-              fontFamily: "'DM Serif Display', serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: 44,
               color: c.navy,
               lineHeight: 1.15,
@@ -140,7 +140,7 @@ export default function WorksheetsPage() {
           <div style={{ textAlign: "center", marginBottom: 36 }}>
             <p
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 13,
                 fontWeight: 600,
                 color: c.teal,
@@ -153,7 +153,7 @@ export default function WorksheetsPage() {
             </p>
             <h2
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: 32,
                 color: c.navy,
                 lineHeight: 1.2,
@@ -194,7 +194,7 @@ export default function WorksheetsPage() {
                   >
                     <h3
                       style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: 16,
                         fontWeight: 700,
                         color: c.navy,
@@ -207,7 +207,7 @@ export default function WorksheetsPage() {
                       style={{
                         fontSize: 12,
                         color: c.textMuted,
-                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontFamily: "'Inter', sans-serif",
                       }}
                     >
                       {items.length} topics
@@ -236,7 +236,7 @@ export default function WorksheetsPage() {
                       >
                         <p
                           style={{
-                            fontFamily: "'Space Grotesk', sans-serif",
+                            fontFamily: "'Inter', sans-serif",
                             fontSize: 11,
                             fontWeight: 600,
                             color: c.tealDark,
@@ -321,23 +321,24 @@ function Nav() {
             style={{
               width: 32,
               height: 32,
-              borderRadius: 8,
-              background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`,
+              borderRadius: 9,
+              background: "#0B1220",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 14,
-              fontWeight: 700,
-              color: c.white,
+              fontSize: 15,
+              fontWeight: 800,
+              color: c.tealLight,
             }}
           >
-            T
+            t
           </div>
           <span
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 20,
-              fontWeight: 700,
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 21,
+              fontWeight: 800,
+              letterSpacing: "-0.8px",
               color: c.navy,
             }}
           >
