@@ -30,6 +30,7 @@ const MARKETING_PATH_PREFIXES = [
   "/centres",
   "/directory",
   "/worksheets",
+  "/get-started",
 ];
 
 const APP_URL = "https://app.tuterly.com.au";

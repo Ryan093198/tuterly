@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { sendTrialWelcomeEmail } from "@/lib/email";
+import { sendTrialWelcomeEmail, sendPackWelcomeEmail } from "@/lib/email";
 import { findReferrerByCode } from "@/lib/referrals";
 
 export const runtime = "nodejs";
@@ -98,20 +98,58 @@ export async function POST(request) {
 // retries, manual replays) collapse safely.
 async function onPackPurchaseCompleted(session) {
   const admin = createAdminClient();
-  const userId = session.metadata?.user_id;
+  let userId = session.metadata?.user_id || null;
   const packId = session.metadata?.pack_id;
   const packSessions = parseInt(session.metadata?.pack_sessions || "0", 10);
   const paymentIntentId = session.payment_intent;
   const stripeInvoiceId = session.invoice ?? null;
   const customerId = session.customer ?? null;
-  if (!userId || !packId || !packSessions || !paymentIntentId) {
+  const email = session.customer_details?.email?.toLowerCase()?.trim() || null;
+  if (!packId || !packSessions || !paymentIntentId) {
     console.warn("[billing/webhook] pack purchase missing fields:", {
-      userId,
       packId,
       packSessions,
       paymentIntentId,
     });
     return;
+  }
+
+  // Anonymous direct-buy (the /get-started flow): no account existed before
+  // payment. Create-or-find the account from the Stripe email — mirroring the
+  // trial flow — so credits attach to a real parent. On redelivery,
+  // findUserIdByEmail finds the existing account, so no duplicate is created;
+  // the ledger constraint below still guards double-crediting.
+  let isNewUser = false;
+  if (!userId) {
+    if (!email) {
+      console.warn("[billing/webhook] pack purchase missing user_id and email");
+      return;
+    }
+    userId = await findUserIdByEmail(admin, email);
+    if (!userId) {
+      const { data: created, error: createErr } =
+        await admin.auth.admin.createUser({
+          email,
+          email_confirm: true,
+          user_metadata: { source: "pack_purchase" },
+        });
+      if (createErr) throw createErr;
+      userId = created.user?.id;
+      isNewUser = true;
+    }
+    if (!userId) throw new Error("could not create or find user for pack purchase");
+    // Ensure a parent profile exists for this account.
+    const { data: prof } = await admin
+      .from("profiles")
+      .select("id")
+      .eq("id", userId)
+      .maybeSingle();
+    if (!prof) {
+      const { error: profErr } = await admin
+        .from("profiles")
+        .insert({ id: userId, email, role: "parent" });
+      if (profErr) throw profErr;
+    }
   }
 
   // Look up the pack for the amount (don't trust client-side metadata
@@ -183,6 +221,26 @@ async function onPackPurchaseCompleted(session) {
       .update({ stripe_customer_id: customerId })
       .eq("id", userId)
       .is("stripe_customer_id", null);
+  }
+
+  // Brand-new account from a direct buy → email a magic-link so they can sign
+  // in and add their child. (Existing/logged-in buyers already have access.)
+  if (isNewUser && email) {
+    try {
+      const origin =
+        process.env.NEXT_PUBLIC_APP_URL || "https://app.tuterly.com.au";
+      const { data: linkData, error: linkErr } =
+        await admin.auth.admin.generateLink({
+          type: "magiclink",
+          email,
+          options: { redirectTo: `${origin}/dashboard/parent?welcome=pack` },
+        });
+      if (linkErr) throw linkErr;
+      const magicLink = linkData?.properties?.action_link;
+      if (magicLink) await sendPackWelcomeEmail({ to: email, magicLink });
+    } catch (e) {
+      console.warn("[billing/webhook] pack welcome email failed:", e?.message);
+    }
   }
 }
 
