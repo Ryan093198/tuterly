@@ -12,7 +12,7 @@ import { readJsonOrFallback } from "@/lib/practice-client";
 //   - trialing         → trial status + "Manage membership"
 //   - active           → renews-on status + "Manage membership"
 //   - past_due         → payment warning + "Update payment"
-export default function MembershipPanel({ subscription }) {
+export default function MembershipPanel({ subscription, hasPack = false }) {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
 
@@ -132,21 +132,34 @@ export default function MembershipPanel({ subscription }) {
     );
   }
 
-  // ── No membership → pitch + start ─────────────────────────────────────
+  // ── No membership ─────────────────────────────────────────────────────
+  // A parent who's bought a session pack already has full software access —
+  // the pack includes it. Pitching a separate $29/mo membership here is what
+  // invited the double-charge, so we hide this panel entirely for them.
+  if (hasPack) return null;
+
+  // Otherwise pitch the membership as the SOFTWARE-ONLY option — clearly
+  // distinct from session packs (which bundle tutoring). This is for parents
+  // using their own tutor who just want the reports + practice tools.
   return (
     <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-card p-6 sm:p-7 mb-8">
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <p className="text-[11px] uppercase tracking-wider text-brand font-semibold">
-            Tuterly membership
+            Software only · Tuterly membership
           </p>
           <p className="mt-1 text-2xl font-semibold tracking-tight">
             $29<span className="text-base font-normal text-muted">/month</span>
           </p>
           <p className="mt-1 text-xs text-muted max-w-md">
-            Session reports, progress tracking, the practice generator, and the
-            tutor directory. Start with a 7-day free trial — your first payment
-            is only after it ends, and you can cancel anytime.
+            Just want the software? Get session reports, progress tracking, the
+            practice generator and the tutor directory — without buying session
+            packs. Best if you&apos;re using your own tutor. Start with a 7-day
+            free trial; cancel anytime.
+          </p>
+          <p className="mt-2 text-xs text-muted max-w-md">
+            Buying a session pack instead? The software is already included —
+            you won&apos;t need this.
           </p>
         </div>
       </div>

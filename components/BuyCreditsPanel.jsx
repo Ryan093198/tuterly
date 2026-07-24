@@ -12,7 +12,12 @@ import { readJsonOrFallback } from "@/lib/practice-client";
 // `creditsRemaining` and `packs` are server-rendered so the panel is
 // fully populated before hydration. The Buy buttons are the only
 // interactive surface.
-export default function BuyCreditsPanel({ creditsRemaining, packs }) {
+export default function BuyCreditsPanel({
+  creditsRemaining,
+  packs,
+  hasPack = false,
+  softwareIncluded = false,
+}) {
   const [pending, setPending] = useState(null);
   const [error, setError] = useState(null);
 
@@ -36,25 +41,34 @@ export default function BuyCreditsPanel({ creditsRemaining, packs }) {
     }
   }
 
-  const lowBalance = creditsRemaining <= 1;
+  // Urgency only makes sense once they're actually on the sessions plan.
+  const lowBalance = hasPack && creditsRemaining <= 1;
 
   return (
     <div className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-card p-6 sm:p-7 mb-8">
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <p className="text-[11px] uppercase tracking-wider text-brand font-semibold">
-            Session credits
+            {hasPack ? "Session credits" : "Book tutoring sessions"}
           </p>
-          <p className="mt-1 text-2xl font-semibold tracking-tight">
-            {creditsRemaining}{" "}
-            <span className="text-base font-normal text-muted">
-              {creditsRemaining === 1 ? "session left" : "sessions left"}
-            </span>
-          </p>
-          <p className="mt-1 text-xs text-muted">
-            {lowBalance
-              ? "Buy a pack so your child's next session can run uninterrupted."
-              : "One credit is used each time your tutor publishes a session report."}
+          {hasPack ? (
+            <p className="mt-1 text-2xl font-semibold tracking-tight">
+              {creditsRemaining}{" "}
+              <span className="text-base font-normal text-muted">
+                {creditsRemaining === 1 ? "session left" : "sessions left"}
+              </span>
+            </p>
+          ) : (
+            <p className="mt-1 text-2xl font-semibold tracking-tight">
+              Session packs
+            </p>
+          )}
+          <p className="mt-1 text-xs text-muted max-w-md">
+            {hasPack
+              ? lowBalance
+                ? "Buy a pack so your child's next session can run uninterrupted."
+                : "One credit is used each time your tutor publishes a session report."
+              : "Buy a pack to book sessions with a tutor. Every pack includes full Tuterly software — reports, practice and progress tracking — at no extra cost."}
           </p>
         </div>
         {lowBalance && (
@@ -63,6 +77,33 @@ export default function BuyCreditsPanel({ creditsRemaining, packs }) {
           </span>
         )}
       </div>
+
+      {/* The key clarifier: for anyone on a paid path, spell out that the
+          software comes with it — so they never think they also owe $29/mo. */}
+      {softwareIncluded && (
+        <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-brand/15 bg-brand-pale/40 px-4 py-3">
+          <span className="mt-0.5 shrink-0 text-brand">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+          </span>
+          <p className="text-xs text-foreground leading-relaxed">
+            <span className="font-semibold">Software included.</span> Session
+            reports, the practice generator and progress tracking come with your
+            sessions — there&apos;s no separate $29/month membership to pay.
+          </p>
+        </div>
+      )}
 
       <div className="grid sm:grid-cols-3 gap-3 mt-5">
         {(packs || []).map((p) => (

@@ -79,6 +79,11 @@ export default async function ParentDashboard({ searchParams }) {
   let credits = null;
   let packs = [];
   let membership = null;
+  // hasPack: a credits row exists only once they've bought a session pack, so
+  // it's the durable "they're on the sessions plan" signal even after the
+  // balance is spent down to 0. Software is included with packs, so a pack
+  // buyer must NOT be pitched the separate $29/mo membership.
+  let hasPack = false;
   if (billingEnabled()) {
     const admin = createAdminClient();
     const [{ data: creditRow }, { data: packRows }, { data: subRow }] =
@@ -106,9 +111,16 @@ export default async function ParentDashboard({ searchParams }) {
           .maybeSingle(),
       ]);
     credits = creditRow?.credits_remaining ?? 0;
+    hasPack = creditRow != null;
     packs = packRows ?? [];
     membership = subRow ?? null;
   }
+
+  // Software is included whenever they're on either paid path — a session pack
+  // or an active membership. Drives the "included, no separate membership"
+  // messaging on the credits panel.
+  const hasSub = membership != null;
+  const softwareIncluded = hasPack || hasSub;
 
   return (
     <div className="px-4 sm:px-8 py-6 sm:py-10 max-w-5xl mx-auto space-y-8 animate-fade-in-up">
@@ -135,10 +147,22 @@ export default async function ParentDashboard({ searchParams }) {
         />
       )}
 
-      {billingEnabled() && <MembershipPanel subscription={membership} />}
+      {/* Credits first: for a pack buyer this is their primary relationship,
+          and leading with it (plus the "software included" note) is what
+          prevents the confusing double-ask with the membership panel. */}
+      {billingEnabled() && (
+        <BuyCreditsPanel
+          creditsRemaining={credits}
+          packs={packs}
+          hasPack={hasPack}
+          softwareIncluded={softwareIncluded}
+        />
+      )}
 
-      {billingEnabled() && credits !== null && (
-        <BuyCreditsPanel creditsRemaining={credits} packs={packs} />
+      {/* Membership panel hides its $29/mo pitch entirely for pack buyers —
+          their software is already included. */}
+      {billingEnabled() && (
+        <MembershipPanel subscription={membership} hasPack={hasPack} />
       )}
 
       {studentList.length === 0 ? (
