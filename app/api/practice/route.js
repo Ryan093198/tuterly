@@ -3,7 +3,13 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { hasSoftwareAccess } from "@/lib/entitlements";
 import { getCurriculumForStudent } from "@/lib/curriculum";
+
+// Free (non-subscribed, no pack) family accounts get this many practice sets
+// per week; a subscription or a purchased pack unlocks unlimited (still
+// abuse-throttled). Tune here or lift into an env var later.
+const FREE_PRACTICE_PER_WEEK = 1;
 import {
   SYSTEM_INSTRUCTIONS,
   buildPracticeUserMessage,
@@ -111,6 +117,29 @@ async function handle(request) {
   const isTutor = !!tutorLink;
   if (!isParent && !isStudent && !isTutor) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
+
+  // Freemium gate. Free family accounts get a small daily taste; a subscription
+  // or a purchased pack unlocks unlimited. Tutors are never gated here —
+  // generating practice for their students is part of the paid service.
+  if (!isTutor) {
+    const payerId = isParent ? user.id : student.parent_id;
+    const entitled = await hasSoftwareAccess(payerId);
+    if (!entitled) {
+      const free = await checkRateLimit(payerId || user.id, "practice_free", {
+        perWeek: FREE_PRACTICE_PER_WEEK,
+      });
+      if (!free.ok) {
+        return NextResponse.json(
+          {
+            error:
+              "You've used your free practice set for this week. Start a free trial or buy a session pack to unlock unlimited practice.",
+            need_upgrade: true,
+          },
+          { status: 402 }
+        );
+      }
+    }
   }
 
   const subject = body?.subject === "english" ? "english" : student.subject || "maths";

@@ -3,7 +3,12 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { hasSoftwareAccess } from "@/lib/entitlements";
 import { extractPdfText } from "@/lib/pdf";
+
+// Free (non-subscribed, no pack) family accounts get this many lesson plans
+// per week; a subscription or a purchased pack unlocks unlimited.
+const FREE_LESSONPLAN_PER_WEEK = 1;
 import {
   getCurriculumForStudent,
   formatCurriculumForPrompt,
@@ -112,6 +117,29 @@ export async function POST(request) {
   const isStudent = studentRow?.student_user_id === user.id;
   if (!isTutor && !isParent && !isStudent) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
+
+  // Freemium gate (see lib/entitlements). Free family accounts get a small
+  // daily taste; a subscription or purchased pack unlocks unlimited. Tutors
+  // are never gated.
+  if (!isTutor) {
+    const payerId = isParent ? user.id : studentRow?.parent_id;
+    const entitled = await hasSoftwareAccess(payerId);
+    if (!entitled) {
+      const free = await checkRateLimit(payerId || user.id, "lesson_plan_free", {
+        perWeek: FREE_LESSONPLAN_PER_WEEK,
+      });
+      if (!free.ok) {
+        return NextResponse.json(
+          {
+            error:
+              "You've used your free lesson plan for this week. Start a free trial or buy a session pack to unlock unlimited lesson plans.",
+            need_upgrade: true,
+          },
+          { status: 402 }
+        );
+      }
+    }
   }
 
   const weeksRaw = parseInt(formData.get("weeks")?.toString() || "", 10);

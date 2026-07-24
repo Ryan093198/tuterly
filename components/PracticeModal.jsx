@@ -43,6 +43,7 @@ export default function PracticeModal({
   const [difficulty, setDifficulty] = useState("core");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
+  const [upgrade, setUpgrade] = useState(false);
 
   // Re-derive the visible topic groups whenever the subject changes.
   // topicsBySubject is the canonical source; fall back to the legacy
@@ -102,6 +103,7 @@ export default function PracticeModal({
   async function handleSubmit(e) {
     e.preventDefault();
     setError(null);
+    setUpgrade(false);
     if (!topicLabel.trim()) {
       setError("Pick a topic to practise.");
       return;
@@ -123,6 +125,7 @@ export default function PracticeModal({
       });
       const data = await readJsonOrFallback(res);
       if (!res.ok) {
+        if (res.status === 402 || data?.need_upgrade) setUpgrade(true);
         throw new Error(data?.error || "Could not generate worksheet.");
       }
       onClose();
@@ -354,9 +357,14 @@ export default function PracticeModal({
           )}
 
           {error && (
-            <p className="text-sm text-red-600 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg">
+            <div className="text-sm text-red-600 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg">
               {error}
-            </p>
+              {upgrade && (
+                <a href="/get-started" className="block mt-1.5 font-semibold text-brand underline">
+                  See plans →
+                </a>
+              )}
+            </div>
           )}
 
           {pending && (

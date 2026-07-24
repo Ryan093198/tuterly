@@ -25,6 +25,7 @@ export default function LessonPlanModal({
   const [plannerFile, setPlannerFile] = useState(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
+  const [upgrade, setUpgrade] = useState(false);
   const fileInputRef = useRef(null);
 
   function closeAndReset() {
@@ -48,6 +49,7 @@ export default function LessonPlanModal({
   async function handleSubmit(e) {
     e.preventDefault();
     setError(null);
+    setUpgrade(false);
     setPending(true);
     try {
       const fd = new FormData();
@@ -62,8 +64,9 @@ export default function LessonPlanModal({
         method: "POST",
         body: fd,
       });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
+        if (res.status === 402 || data?.need_upgrade) setUpgrade(true);
         throw new Error(data?.error || "Could not generate plan.");
       }
       closeAndReset();
@@ -221,9 +224,14 @@ export default function LessonPlanModal({
           </label>
 
           {error && (
-            <p className="text-sm text-red-600 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg">
+            <div className="text-sm text-red-600 bg-red-50 dark:bg-red-950/20 px-3 py-2 rounded-lg">
               {error}
-            </p>
+              {upgrade && (
+                <a href="/get-started" className="block mt-1.5 font-semibold text-brand underline">
+                  See plans →
+                </a>
+              )}
+            </div>
           )}
 
           {pending && (

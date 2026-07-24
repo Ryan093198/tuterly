@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase-admin";
 import { getCurriculumForStudent } from "@/lib/curriculum";
 import { trustedClientIp } from "@/lib/client-ip";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { hasSoftwareAccess } from "@/lib/entitlements";
 import {
   SYSTEM_INSTRUCTIONS,
   buildWorksheetUserMessage,
@@ -32,6 +33,10 @@ const ALLOWED_YEARS = new Set([
 
 // Per-IP daily cap. Signed-in users (any role) bypass it.
 const DAILY_IP_LIMIT = Number(process.env.WORKSHEET_DAILY_IP_LIMIT) || 1;
+// Signed-in free (non-subscribed, no pack) accounts get this many worksheets
+// per week; a subscription or purchased pack unlocks unlimited. Anonymous
+// visitors keep the public per-IP daily funnel (DAILY_IP_LIMIT) below.
+const FREE_WORKSHEET_PER_WEEK = 1;
 
 // If the first generation took longer than this, skip the validate-and-retry
 // pass — a second Sonnet call on top would risk Vercel's 60s timeout. Leaves
@@ -99,15 +104,10 @@ async function handle(request) {
     if (userEmail && allowlist.includes(userEmail)) {
       bypassCap = true;
     } else {
-      const { data: sub } = await admin
-        .from("subscriptions")
-        .select("status")
-        .eq("user_id", user.id)
-        .in("status", ["trialing", "active", "trial", "past_due"])
-        .order("created_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
-      bypassCap = !!sub;
+      // Active subscription OR a purchased pack (software included) lifts the
+      // 1/day free cap — same entitlement used by the practice + lesson-plan
+      // generators, so all three stay consistent.
+      bypassCap = await hasSoftwareAccess(user.id);
     }
   }
 
@@ -126,6 +126,25 @@ async function handle(request) {
         { error: rl.message, rate_limited: true },
         { status: 429, headers: { "Retry-After": String(rl.retryAfterSeconds) } }
       );
+    }
+
+    // Freemium gate for signed-in free accounts: one free worksheet per week.
+    // A subscription or purchased pack (bypassCap) unlocks unlimited; anonymous
+    // visitors keep the public per-IP daily funnel below.
+    if (!bypassCap) {
+      const wk = await checkRateLimit(user.id, "worksheet_free", {
+        perWeek: FREE_WORKSHEET_PER_WEEK,
+      });
+      if (!wk.ok) {
+        return NextResponse.json(
+          {
+            error:
+              "You've used your free worksheet for this week. Start a free trial or buy a session pack to unlock unlimited worksheets.",
+            need_upgrade: true,
+          },
+          { status: 402 }
+        );
+      }
     }
   }
 
