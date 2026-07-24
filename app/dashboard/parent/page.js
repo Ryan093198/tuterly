@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
 import EmptyState from "@/components/ui/EmptyState";
 import AddChildButton from "@/components/AddChildButton";
+import OnboardingWelcome from "@/components/OnboardingWelcome";
 import ParentActivityFeed from "@/components/ParentActivityFeed";
 import BuyCreditsPanel from "@/components/BuyCreditsPanel";
 import MembershipPanel from "@/components/MembershipPanel";
@@ -25,7 +26,14 @@ import { fetchChildSnapshots } from "@/lib/parent-snapshot";
 //
 // No payments / credits during internal testing.
 
-export default async function ParentDashboard() {
+export default async function ParentDashboard({ searchParams }) {
+  const sp = searchParams ? await searchParams : {};
+  // Post-checkout magic-link lands here with ?welcome=pack; direct trial
+  // signups may arrive with ?welcome=trial. Either drives the onboarding card.
+  const welcomeRaw = typeof sp.welcome === "string" ? sp.welcome : null;
+  const welcomeType =
+    welcomeRaw === "pack" ? "pack" : welcomeRaw === "trial" ? "trial" : null;
+
   const supabase = await createClient();
   const {
     data: { user },
@@ -41,6 +49,19 @@ export default async function ParentDashboard() {
 
   const studentList = students ?? [];
   const studentIds = studentList.map((s) => s.id);
+
+  // Show the onboarding card when they arrive fresh from checkout (welcome
+  // param) or whenever the account has no children yet — the two moments a
+  // parent most needs a nudge toward the next step.
+  const showOnboarding = welcomeType !== null || studentList.length === 0;
+  // Minimal rows the match modal's child picker needs.
+  const onboardingStudents = studentList.map((s) => ({
+    id: s.id,
+    first_name: s.first_name,
+    last_name: s.last_name,
+    year_level: s.year_level,
+    subject: s.subject,
+  }));
 
   // Children cards need tutor names + the per-child snapshot (sessions
   // in the window, flag counts, suggested practice topics). Both run
@@ -105,6 +126,15 @@ export default async function ParentDashboard() {
         {studentList.length > 0 && <AddChildButton />}
       </header>
 
+      {showOnboarding && (
+        <OnboardingWelcome
+          welcomeType={welcomeType}
+          hasChildren={studentList.length > 0}
+          firstStudentId={studentList[0]?.id ?? null}
+          students={onboardingStudents}
+        />
+      )}
+
       {billingEnabled() && <MembershipPanel subscription={membership} />}
 
       {billingEnabled() && credits !== null && (
@@ -112,12 +142,16 @@ export default async function ParentDashboard() {
       )}
 
       {studentList.length === 0 ? (
-        <EmptyState
-          icon={<HeartIcon />}
-          title="Add your child to get started"
-          description="Once they're added, you can generate practice worksheets and lesson plans for them straight away. If a tutor invites you later, their sessions will plug into the same record."
-          action={<AddChildButton variant="primary" label="Add your child" />}
-        />
+        // The onboarding card already owns the "add your child" call to action,
+        // so don't double up with the plain empty state when it's showing.
+        showOnboarding ? null : (
+          <EmptyState
+            icon={<HeartIcon />}
+            title="Add your child to get started"
+            description="Once they're added, you can generate practice worksheets and lesson plans for them straight away. If a tutor invites you later, their sessions will plug into the same record."
+            action={<AddChildButton variant="primary" label="Add your child" />}
+          />
+        )
       ) : (
         <>
           {/* CHILDREN — snapshot cards */}
