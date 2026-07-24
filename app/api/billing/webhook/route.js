@@ -197,6 +197,22 @@ async function onPackPurchaseCompleted(session) {
   });
   if (addErr) throw addErr;
 
+  // A session pack already includes the software the $29/mo membership pays
+  // for, so a parent who was subscribing no longer needs that membership.
+  // Flag it to cancel at period end — they keep what they've already paid for
+  // (no refund, no access gap: the credits row above keeps hasSoftwareAccess
+  // true once the membership lapses) and it simply stops renewing. Best-effort:
+  // the credits are already applied and this only runs on the first (non-
+  // duplicate) delivery — a Stripe hiccup here must not fail the webhook.
+  try {
+    await cancelMembershipForPackBuyer(admin, userId);
+  } catch (e) {
+    console.warn(
+      "[billing/webhook] membership cancel-on-pack failed:",
+      e?.message
+    );
+  }
+
   // Build the parent-facing invoice record. Stripe also generates its
   // own hosted invoice via invoice_creation:enabled — we mirror the id
   // here so parents can pull receipts from inside Tuterly later.
@@ -241,6 +257,61 @@ async function onPackPurchaseCompleted(session) {
     } catch (e) {
       console.warn("[billing/webhook] pack welcome email failed:", e?.message);
     }
+  }
+}
+
+// When a parent who holds an active membership buys a session pack, the pack
+// already bundles the software the membership pays for. Set the Stripe
+// subscription to cancel at period end so it stops renewing without
+// interrupting access or triggering a refund. Idempotent and defensive: skips
+// subs that are already canceled or already flagged to cancel (calling update
+// on a canceled subscription would error). The customer.subscription.updated
+// event Stripe fires for this change flows back through syncSubscription and
+// mirrors the new status to the subscriptions row.
+async function cancelMembershipForPackBuyer(admin, userId) {
+  const { data: subs } = await admin
+    .from("subscriptions")
+    .select("stripe_subscription_id, status")
+    .eq("user_id", userId)
+    .in("status", ["trialing", "active", "past_due", "trial"]);
+  if (!subs || subs.length === 0) return;
+
+  for (const row of subs) {
+    const subId = row.stripe_subscription_id;
+    if (!subId) continue;
+
+    let stripeSub;
+    try {
+      stripeSub = await stripe().subscriptions.retrieve(subId);
+    } catch (e) {
+      console.warn(
+        "[billing/webhook] could not retrieve sub for cancel:",
+        subId,
+        e?.message
+      );
+      continue;
+    }
+
+    if (
+      !stripeSub ||
+      stripeSub.status === "canceled" ||
+      stripeSub.status === "incomplete_expired" ||
+      stripeSub.cancel_at_period_end
+    ) {
+      continue;
+    }
+
+    await stripe().subscriptions.update(subId, {
+      cancel_at_period_end: true,
+      metadata: {
+        ...(stripeSub.metadata || {}),
+        canceled_reason: "pack_purchase_includes_software",
+      },
+    });
+    console.log(
+      "[billing/webhook] membership set to cancel at period end after pack purchase:",
+      subId
+    );
   }
 }
 
