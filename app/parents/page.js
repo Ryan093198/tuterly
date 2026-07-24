@@ -397,7 +397,7 @@ export default function ParentsLanding() {
               High-achieving tutors, matched to your child. After every session you get a detailed report — what was covered, how they went, and exactly what to practise next. No more guessing what you&apos;re paying for.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 18 }}>
-              <a href="#packages" onClick={scrollTo("packages")} style={btnPrimary}>Find your child&apos;s tutor →</a>
+              <Link href="/get-started" style={btnPrimary}>Find your child&apos;s tutor →</Link>
               <a href="#sample-report" onClick={scrollTo("sample-report")} style={btnGhost}>See a sample report</a>
             </div>
             <p style={{ fontSize: 13.5, color: c.textMuted }}>Sessions from $75/hr, all-inclusive · No lock-in contracts</p>
@@ -604,9 +604,9 @@ export default function ParentsLanding() {
                       </div>
                     ))}
                   </div>
-                  <a href="#talk" onClick={scrollTo("talk")} style={{ marginTop: "auto", textAlign: "center", padding: "14px 24px", borderRadius: 12, background: p.badge ? c.tealBright : c.ink, color: p.badge ? c.ink : c.white, fontSize: 14.5, fontWeight: 700, textDecoration: "none", display: "block" }}>
+                  <Link href="/get-started" style={{ marginTop: "auto", textAlign: "center", padding: "14px 24px", borderRadius: 12, background: p.badge ? c.tealBright : c.ink, color: p.badge ? c.ink : c.white, fontSize: 14.5, fontWeight: 700, textDecoration: "none", display: "block" }}>
                     Get matched with a tutor →
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -886,7 +886,7 @@ export default function ParentsLanding() {
                 </div>
                 <h3 style={{ fontSize: 16.5, fontWeight: 700, color: c.ink, marginBottom: 8 }}>Let us match you</h3>
                 <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>Not sure where to start? Tell us your child&apos;s year level, subjects, and goals — our education team will personally match them with the right tutor. We handle everything.</p>
-                <a href="#talk" onClick={scrollTo("talk")} style={{ fontSize: 14.5, fontWeight: 600, color: c.tealDeep, textDecoration: "none" }}>Request a match →</a>
+                <Link href="/get-started" style={{ fontSize: 14.5, fontWeight: 600, color: c.tealDeep, textDecoration: "none" }}>Request a match →</Link>
               </div>
             </div>
           </Fade>
@@ -966,7 +966,7 @@ export default function ParentsLanding() {
           <h2 style={{ fontSize: 38, fontWeight: 800, color: c.white, marginBottom: 14, lineHeight: 1.14, letterSpacing: "-1px" }}>Know what&apos;s happening, every session.</h2>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.7 }}>Get matched with a high-achieving tutor, or bring your own — either way, you&apos;ll see the progress.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
-            <a href="#talk" onClick={scrollTo("talk")} style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.tealBright, color: c.ink, fontSize: 15, fontWeight: 700, textDecoration: "none", cursor: "pointer" }}>Find your child&apos;s tutor →</a>
+            <Link href="/get-started" style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.tealBright, color: c.ink, fontSize: 15, fontWeight: 700, textDecoration: "none", cursor: "pointer" }}>Find your child&apos;s tutor →</Link>
             <button type="button" onClick={startTrial} disabled={trialPending} style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: "transparent", color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", border: "1.5px solid rgba(255,255,255,0.25)", cursor: "pointer" }}>{trialPending ? "Redirecting…" : "Try the software free"}</button>
           </div>
           <div style={{ display: "flex", gap: 20, justifyContent: "center", flexWrap: "wrap" }}>

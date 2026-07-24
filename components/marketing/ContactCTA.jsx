@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { c } from "@/components/marketing/theme";
 
 // Reusable contact CTA block. Drop into any marketing page where
@@ -186,7 +187,12 @@ export function ContactModal({ context, onClose }) {
     }
   }
 
-  return (
+  // Rendered through a portal to <body> so the fixed-position overlay
+  // escapes any ancestor with a `transform` (e.g. the <Fade> wrapper on the
+  // marketing pages). Without this, "position: fixed" resolves against the
+  // transformed ancestor instead of the viewport, so the modal renders
+  // offset and its Send button falls off-screen (the bug this fixes).
+  const overlay = (
     <div
       role="dialog"
       aria-modal="true"
@@ -460,6 +466,10 @@ export function ContactModal({ context, onClose }) {
       </div>
     </div>
   );
+
+  return typeof document !== "undefined"
+    ? createPortal(overlay, document.body)
+    : null;
 }
 
 function Field({ label, value, onChange, type = "text", required, placeholder, autoComplete }) {
