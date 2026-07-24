@@ -207,9 +207,7 @@ export default function DirectoryClient({ viewer }) {
                   <span style={{ fontSize: 13, color: c.amber, fontWeight: 600 }}>★ {t.rating}</span>
                   <span style={{ fontSize: 12, color: c.textMuted }}>{t.sessions} sessions</span>
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy }}>${t.rate}<span style={{ fontSize: 12, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
-                </div>
+                <span style={{ fontSize: 13, fontWeight: 600, color: c.tealDeep }}>View profile →</span>
               </div>
             </div>
           ))}
@@ -263,8 +261,8 @@ export default function DirectoryClient({ viewer }) {
             <div style={{ padding: "32px 28px", background: c.offWhite, display: "flex", flexDirection: "column", justifyContent: "center" }}>
               {!showSignup ? (
                 <div style={{ textAlign: "center" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 32, fontWeight: 700, color: c.navy, marginBottom: 4 }}>${selectedTutor.rate}<span style={{ fontSize: 16, color: c.textMuted, fontWeight: 400 }}>/hr</span></p>
-                  <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Tuterly Member&apos;s Rate</p>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.navy, marginBottom: 6 }}>Book with {selectedTutor.name}</p>
+                  <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Reports, tracking and software included with every session.</p>
 
                   <div style={{ background: c.white, borderRadius: 14, padding: "24px 20px", border: `1px solid ${c.border}`, marginBottom: 20, textAlign: "left" }}>
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 12 }}>What's included with Tuterly</p>
