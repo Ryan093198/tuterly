@@ -1,10 +1,26 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase-server";
 import { createStudent } from "../actions";
 import { SCHOOL_YEARS, CURRICULUM_LEVELS, SUBJECTS } from "@/lib/levels";
 import SubmitButton from "@/components/ui/SubmitButton";
 import SchoolAutocomplete from "@/components/SchoolAutocomplete";
 
-export default function NewStudentPage() {
+export default async function NewStudentPage() {
+  // Belt to the dashboard's braces: an unapproved tutor cannot reach this form
+  // even by typing the URL. createStudent also re-checks server-side.
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) redirect("/");
+  const { data: me } = await supabase
+    .from("profiles")
+    .select("approved")
+    .eq("id", user.id)
+    .single();
+  if (!me?.approved) redirect("/dashboard/tutor");
+
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-2xl mx-auto animate-fade-in-up">
       <div className="mb-6">

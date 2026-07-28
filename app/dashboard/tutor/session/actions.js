@@ -266,6 +266,8 @@ export async function updateSessionNotes(formData) {
   if (error) throw error;
 
   revalidatePath(`/dashboard/tutor/session/${sessionId}`);
+
+  return { ok: true };
 }
 
 export async function updateSessionSubject(sessionId, subject) {
@@ -514,11 +516,13 @@ export async function sendReport(sessionId, role = "parent") {
   }
 
   if (!recipientEmail) {
-    throw new Error(
-      role === "parent"
-        ? "No parent email on file. Invite a parent on the student page first."
-        : "No student email on file. Invite the student on the student page first."
-    );
+    return {
+      ok: false,
+      error:
+        role === "parent"
+          ? "No parent email on file. Invite a parent on the student page first."
+          : "No student email on file. Invite the student on the student page first.",
+    };
   }
 
   // Billing pre-check (phased MVP). When billing is on, a parent-facing send
@@ -531,9 +535,11 @@ export async function sendReport(sessionId, role = "parent") {
   if (billingEnabled() && billingParentId) {
     const balance = await parentCreditBalance(admin, billingParentId);
     if (balance < 1) {
-      throw new Error(
-        "This parent has no session credits left. Ask them to buy a pack before you send this report."
-      );
+      return {
+        ok: false,
+        error:
+          "This parent has no session credits left. Ask them to buy a pack before you send this report.",
+      };
     }
   }
 
@@ -582,9 +588,11 @@ export async function sendReport(sessionId, role = "parent") {
       `[sendReport/${role}] email send failed (${e?.statusCode || "?"}): ${e?.message || e}. ` +
         `Report URL: ${reportUrl}`
     );
-    throw new Error(
-      `The report couldn't be emailed to ${recipientEmail} just now. Nothing was marked as sent — please try again in a moment.`
-    );
+    return {
+      ok: false,
+      error:
+        `The report couldn't be emailed to ${recipientEmail} just now. Nothing was marked as sent, so please try again in a moment.`,
+    };
   }
 
   const timestampColumn = role === "parent" ? "sent_at" : "student_sent_at";

@@ -68,7 +68,11 @@ function RecipientRow({ sessionId, studentId, role, recipient }) {
     setError(null);
     startSending(async () => {
       try {
-        await sendReport(sessionId, role);
+        const res = await sendReport(sessionId, role);
+        if (res && !res.ok) {
+          setError(res.error);
+          return;
+        }
         router.refresh();
       } catch (e) {
         setError(e.message);

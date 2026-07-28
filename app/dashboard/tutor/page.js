@@ -22,6 +22,14 @@ export default async function TutorDashboard({ searchParams }) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Approval state drives the pending banner and gates the Add-student CTAs.
+  const { data: me } = await supabase
+    .from("profiles")
+    .select("approved")
+    .eq("id", user.id)
+    .single();
+  const approved = me?.approved ?? false;
+
   // Roster — fetch first because if there are no students every other
   // query is moot and we render the new-tutor onboarding flow.
   const { data: links } = await supabase
@@ -41,7 +49,7 @@ export default async function TutorDashboard({ searchParams }) {
     );
 
   if (students.length === 0) {
-    return <NewTutorOnboarding />;
+    return <NewTutorOnboarding approved={approved} />;
   }
 
   // Resolve the week the page is showing. ?week=YYYY-MM-DD picks a
@@ -154,6 +162,8 @@ export default async function TutorDashboard({ searchParams }) {
         </h1>
       </header>
 
+      {!approved && <PendingApprovalBanner />}
+
       {billingEnabled() && pendingEarnings !== null && (
         <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/20 px-4 py-3 flex items-baseline justify-between gap-3">
           <div className="text-sm">
@@ -243,11 +253,13 @@ export default async function TutorDashboard({ searchParams }) {
               {students.length === 1 ? "" : "s"} done this week
             </p>
           </div>
-          <Link href="/dashboard/tutor/students/new">
-            <Button variant="primary" size="md">
-              <span aria-hidden="true">+</span> Add student
-            </Button>
-          </Link>
+          {approved && (
+            <Link href="/dashboard/tutor/students/new">
+              <Button variant="primary" size="md">
+                <span aria-hidden="true">+</span> Add student
+              </Button>
+            </Link>
+          )}
         </div>
 
         <div className="flex items-center gap-2 text-sm">
@@ -382,7 +394,40 @@ function QuickAction({ href, icon, title, desc }) {
   );
 }
 
-function NewTutorOnboarding() {
+function PendingApprovalBanner() {
+  return (
+    <div
+      className="flex items-start gap-3 rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 px-4 py-4"
+      role="status"
+    >
+      <span aria-hidden="true" className="text-lg leading-none">⏳</span>
+      <div className="text-sm">
+        <p className="font-medium text-amber-900 dark:text-amber-200">
+          Your tutor account is pending approval
+        </p>
+        <p className="text-amber-800/80 dark:text-amber-200/70 mt-0.5">
+          The Tuterly team is reviewing your application. You&apos;ll be able to add
+          students and send reports as soon as you&apos;re approved, and we&apos;ll be in
+          touch shortly.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function NewTutorOnboarding({ approved }) {
+  if (!approved) {
+    return (
+      <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up space-y-6">
+        <header>
+          <h1 className="text-2xl font-semibold tracking-tight font-grotesk">
+            Tutor&apos;s Dashboard
+          </h1>
+        </header>
+        <PendingApprovalBanner />
+      </div>
+    );
+  }
   return (
     <div className="px-6 sm:px-8 py-8 sm:py-10 max-w-5xl mx-auto animate-fade-in-up space-y-6">
       <header className="flex items-end justify-between gap-4 flex-wrap">

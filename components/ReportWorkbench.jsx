@@ -119,7 +119,11 @@ export default function ReportWorkbench({
     setSending(true);
     setError(null);
     try {
-      await sendReportToParent(sessionId);
+      const res = await sendReportToParent(sessionId);
+      if (res && !res.ok) {
+        setError(res.error);
+        return;
+      }
       setShowSendPrompt(false);
       router.refresh();
     } catch (e) {
