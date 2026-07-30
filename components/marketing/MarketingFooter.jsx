@@ -14,6 +14,7 @@ export default function MarketingFooter() {
         </div>
         <div style={{ display: "flex", gap: 16 }}>
           <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
+          <Link href="/best-online-tutoring-melbourne" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Online tutoring</Link>
           <Link href="/learn" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Learn</Link>
           <Link href="/tutors/blog" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Tutor Blog</Link>
         </div>

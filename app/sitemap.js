@@ -31,6 +31,8 @@ const STATIC_PAGES = [
   { path: "/tutoring-prices-melbourne", priority: 0.8, changeFrequency: "monthly" },
   { path: "/vce-tutoring", priority: 0.8, changeFrequency: "monthly" },
   { path: "/online-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/best-online-tutoring-melbourne", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/best-online-tutoring-victoria", priority: 0.9, changeFrequency: "monthly" },
   { path: "/scholarship-test-prep", priority: 0.8, changeFrequency: "monthly" },
   { path: "/sample-report", priority: 0.6, changeFrequency: "monthly" },
   { path: "/atar-planner", priority: 0.9, changeFrequency: "monthly" },
