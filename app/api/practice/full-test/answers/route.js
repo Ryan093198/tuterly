@@ -9,18 +9,12 @@ import {
   buildFullTestAnswersMessage,
 } from "@/lib/full-test-prompt";
 import { ANSWER_KEY_SENTINEL, splitFullTest } from "@/lib/full-test-split";
-import {
-  findKatexErrors,
-  formatErrorsForRetry,
-} from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
 // Second half of full-test generation: the answer key for an already-created
 // test resource. Kept separate from the questions call so each stays under
 // Vercel's 60s function limit.
 export const maxDuration = 60;
-
-const RETRY_BUDGET_MS = 30_000;
 
 export async function POST(request) {
   try {
@@ -159,33 +153,9 @@ async function handle(request) {
     return { message, text };
   }
 
-  const startedAt = Date.now();
-  let { text: answersMd } = await generateOnce(baseMessages);
-
-  const leaks = detectLeaks(answersMd);
-  const katexErrors = findKatexErrors(answersMd);
-  const elapsedMs = Date.now() - startedAt;
-  if ((leaks.length > 0 || katexErrors.length > 0) && elapsedMs < RETRY_BUDGET_MS) {
-    const corrections = [];
-    if (leaks.length > 0) {
-      corrections.push(
-        `Your previous answer key violated these content rules: ${leaks.join("; ")}. Emit clean final solutions only, no self-correction language, no notes to the parent/student.`
-      );
-    }
-    if (katexErrors.length > 0) corrections.push(formatErrorsForRetry(katexErrors));
-    const retryMessages = [
-      ...baseMessages,
-      { role: "assistant", content: answersMd },
-      {
-        role: "user",
-        content: `Re-emit the ENTIRE answer key from scratch for all 25 questions, addressing every issue below.\n\n${corrections.join(
-          "\n\n"
-        )}`,
-      },
-    ];
-    const retry = await generateOnce(retryMessages);
-    if (retry.text) answersMd = retry.text;
-  }
+  // Single generation call, no validate-retry pass (keeps us under the 60s
+  // function limit). The prompt carries the anti-leak and KaTeX rules.
+  const { text: answersMd } = await generateOnce(baseMessages);
 
   if (!answersMd) {
     return NextResponse.json(
@@ -210,18 +180,3 @@ async function handle(request) {
   return NextResponse.json({ answers_md: answersMd });
 }
 
-const LEAK_PATTERNS = [
-  ["visible self-correction", /\b(?:let me|let'?s)\s+(?:redo|recheck|re-?check|re-?derive|be precise|choose|pick|use|try|fix)/i],
-  ["scratch-work interjection", /(?:^|[\s>])(?:wait|hmm|oops|actually)\b\s*[,—\-:]/im],
-  ["correction header", /\b(?:correction(?:\s+note)?:|answer\s*\((?:corrected|confirmed|revised)\)|corrected\s+(?:question|version|answer|text|setup|equation|solution|note|below)|revised\s+(?:question|answer|version))/i],
-  ["meta-note to parent/student", /\bnote\s+(?:to|for)\s+(?:the\s+)?(?:parent|student|tutor)/i],
-  ["apology / disclaimer", /\b(?:please\s+disregard|please\s+contact\s+your\s+tutor|disregard\s+(?:the|this)\s+(?:above|previous))/i],
-];
-
-function detectLeaks(markdown) {
-  const hits = [];
-  for (const [label, re] of LEAK_PATTERNS) {
-    if (re.test(markdown)) hits.push(label);
-  }
-  return hits;
-}

@@ -9,10 +9,6 @@ import {
   SYSTEM_INSTRUCTIONS_FULL_TEST_QUESTIONS,
   buildFullTestQuestionsMessage,
 } from "@/lib/full-test-prompt";
-import {
-  findKatexErrors,
-  formatErrorsForRetry,
-} from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
 // This call now generates the QUESTIONS ONLY (the answer key is a separate
@@ -22,7 +18,6 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 
 const DAILY_LIMIT = Number(process.env.FULL_TEST_DAILY_LIMIT) || 8;
-const RETRY_BUDGET_MS = 30_000;
 
 export async function POST(request) {
   try {
@@ -181,39 +176,13 @@ async function handle(request) {
     return { message, text };
   }
 
-  const startedAt = Date.now();
-  let { message, text: testMd } = await generateOnce(baseMessages);
-  let totalUsage = message.usage;
-
-  const leaks = detectLeaks(testMd);
-  const katexErrors = findKatexErrors(testMd);
-  const elapsedMs = Date.now() - startedAt;
-  if ((leaks.length > 0 || katexErrors.length > 0) && elapsedMs >= RETRY_BUDGET_MS) {
-    console.warn("[full-test] issues found but skipping retry - elapsed", elapsedMs);
-  } else if (leaks.length > 0 || katexErrors.length > 0) {
-    const corrections = [];
-    if (leaks.length > 0) {
-      corrections.push(
-        `Your previous test violated these content rules: ${leaks.join("; ")}. Emit clean questions only, no self-correction language, no notes to the parent/student.`
-      );
-    }
-    if (katexErrors.length > 0) corrections.push(formatErrorsForRetry(katexErrors));
-    const retryMessages = [
-      ...baseMessages,
-      { role: "assistant", content: testMd },
-      {
-        role: "user",
-        content: `Re-emit the ENTIRE test from scratch, keeping all 25 questions and the exact structure, addressing every issue below.\n\n${corrections.join(
-          "\n\n"
-        )}`,
-      },
-    ];
-    const retry = await generateOnce(retryMessages);
-    if (retry.text) {
-      testMd = retry.text;
-      totalUsage = retry.message.usage;
-    }
-  }
+  // Single generation call, no validate-retry pass. A second full generation
+  // could push total time past the 60s function limit; 25 questions (no
+  // solutions) is a smaller job than the worksheet generator already handles
+  // in one call, so one pass is enough. The prompt carries the anti-leak and
+  // KaTeX rules.
+  const { message, text: testMd } = await generateOnce(baseMessages);
+  const totalUsage = message.usage;
 
   if (!testMd) {
     return NextResponse.json(
@@ -271,24 +240,6 @@ async function handle(request) {
     test_md: testMd,
     usage: totalUsage,
   });
-}
-
-const LEAK_PATTERNS = [
-  ["visible self-correction", /\b(?:let me|let'?s)\s+(?:redo|recheck|re-?check|re-?derive|be precise|choose|pick|use|try|fix)/i],
-  ["scratch-work interjection", /(?:^|[\s>])(?:wait|hmm|oops|actually)\b\s*[,—\-:]/im],
-  ["correction header", /\b(?:correction(?:\s+note)?:|answer\s*\((?:corrected|confirmed|revised)\)|corrected\s+(?:question|version|answer|text|setup|equation|solution|note|below)|revised\s+(?:question|answer|version))/i],
-  ["question replacement", /\b(?:restate(?:d|ment)?\b|replaced\s+(?:above|below)|question\s+above\s+is\s+(?:replaced|incorrect|wrong)|clean(?:er)?\s+version|cleaner\s+numbers|not\s+clean\b|isn'?t\s+clean\b|that'?s\s+not\s+clean\b)/i],
-  ["meta-note to parent/student", /\bnote\s+(?:to|for)\s+(?:the\s+)?(?:parent|student|tutor)/i],
-  ["see-note reference", /\(\s*see\s+note(?:\s+above|\s+below)?\s*\)/i],
-  ["apology / disclaimer", /\b(?:please\s+disregard|contains?\s+(?:a|an|the)?\s*(?:arithmetic|self-correction)?\s*error|please\s+contact\s+your\s+tutor|disregard\s+(?:the|this)\s+(?:above|previous))/i],
-];
-
-function detectLeaks(markdown) {
-  const hits = [];
-  for (const [label, re] of LEAK_PATTERNS) {
-    if (re.test(markdown)) hits.push(label);
-  }
-  return hits;
 }
 
 function lookupTopicDescription(level, subject, topicId, subjects = null) {
