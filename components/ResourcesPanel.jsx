@@ -24,6 +24,7 @@ const CATEGORIES = [
   { id: "assessment_schedule", label: "Assessment schedule" },
   { id: "lesson_plan", label: "Lesson plan" },
   { id: "practice_questions", label: "Practice worksheet" },
+  { id: "practice_test", label: "Practice test" },
   { id: "other", label: "Other" },
 ];
 
@@ -604,6 +605,13 @@ function CategoryIcon({ category }) {
           <path d="M9 5h8a2 2 0 0 1 2 2v13H9z" />
           <path d="M9 5a2 2 0 0 0-2 2v13M5 9h2M5 12h2M5 15h2" />
           <path d="M12 10h4M12 13h4M12 16h3" />
+        </svg>
+      );
+    case "practice_test":
+      return wrap(
+        <svg {...common} aria-hidden="true">
+          <path d="M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+          <path d="M9 8h6M9 12h6M9 16h4" />
         </svg>
       );
     default:

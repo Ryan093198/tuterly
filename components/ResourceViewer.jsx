@@ -6,6 +6,8 @@ import { CATEGORY_LABEL } from "@/components/ResourcesPanel";
 import { emailLessonPlanToParent } from "@/app/dashboard/lesson-plan-actions";
 import Button from "@/components/ui/Button";
 import Spinner from "@/components/ui/Spinner";
+import { splitFullTest } from "@/lib/full-test-split";
+import { downloadFullTestPdf } from "@/lib/full-test-client";
 
 // Modal that renders the inline `content` of a resource as Markdown. Used
 // for resources that don't have a downloadable file (lesson plans, pasted
@@ -34,6 +36,28 @@ export default function ResourceViewer({
   const [emailMsg, setEmailMsg] = useState(null);
   const [regenerating, setRegenerating] = useState(false);
   const [regenError, setRegenError] = useState(null);
+  const [downloadingPart, setDownloadingPart] = useState(null);
+  const [downloadError, setDownloadError] = useState(null);
+
+  async function handleDownloadTestPart(part) {
+    if (!resource?.content) return;
+    setDownloadError(null);
+    setDownloadingPart(part);
+    try {
+      const { test, answers } = splitFullTest(resource.content);
+      await downloadFullTestPdf({
+        content: part === "answers" ? answers : test,
+        part,
+        studentName: "",
+        yearLevel: resource?.metadata?.level || "",
+        topicLabel: resource?.metadata?.topic_label || "",
+      });
+    } catch (e) {
+      setDownloadError(e?.message || "Could not download the PDF.");
+    } finally {
+      setDownloadingPart(null);
+    }
+  }
 
   async function handleEmail() {
     if (!resource) return;
@@ -172,6 +196,38 @@ export default function ResourceViewer({
                 <span className="text-red-600">{regenError}</span>
               ) : (
                 "Same topic, fresh questions. Counts toward your daily limit."
+              )}
+            </span>
+          </div>
+        )}
+
+        {resource.category === "practice_test" && (
+          <div className="px-6 py-4 border-t border-zinc-100 dark:border-zinc-900 flex items-center gap-3 flex-wrap bg-surface-soft/50">
+            <Button
+              type="button"
+              variant="primary"
+              size="sm"
+              onClick={() => handleDownloadTestPart("test")}
+              disabled={downloadingPart !== null}
+            >
+              {downloadingPart === "test" && <Spinner />}
+              {downloadingPart === "test" ? "Preparing…" : "Download test (PDF)"}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => handleDownloadTestPart("answers")}
+              disabled={downloadingPart !== null}
+            >
+              {downloadingPart === "answers" && <Spinner />}
+              {downloadingPart === "answers" ? "Preparing…" : "Download answer key (PDF)"}
+            </Button>
+            <span className="text-xs text-muted">
+              {downloadError ? (
+                <span className="text-red-600">{downloadError}</span>
+              ) : (
+                "Test for the student, answer key for marking."
               )}
             </span>
           </div>

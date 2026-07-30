@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import PracticeModal from "@/components/PracticeModal";
+import FullTestModal from "@/components/FullTestModal";
 import ResourceViewer from "@/components/ResourceViewer";
 import {
   buildPracticeFlagOptions,
@@ -16,11 +17,16 @@ import {
 // Generated worksheets are stored as `practice_questions` resources, so they
 // also appear in the Resources panel below — no need to duplicate that list
 // here.
+//
+// `hasFullTestAccess` gates the subscriber-only "Full practice test" button:
+// it's only rendered for paying/trial families (and always for tutors), so a
+// free family never sees the feature at all.
 export default function PracticePanel({
   student,
   weakTopics,
   topicGroups,
   topicsBySubject,
+  hasFullTestAccess = false,
   // When the parent arrives here from a suggested-practice chip on
   // the dashboard ({ topic, subtopic } via query params), auto-open
   // the modal pre-filled so they can click Generate without picking
@@ -33,6 +39,7 @@ export default function PracticePanel({
   // component instance per chip click via `key`, so this runs again
   // when the parent navigates between different practice topics.
   const [open, setOpen] = useState(!!initialPracticeTopic?.topic);
+  const [fullTestOpen, setFullTestOpen] = useState(false);
   const [viewing, setViewing] = useState(null);
 
   const hasWeak = weakTopics && weakTopics.length > 0;
@@ -64,15 +71,29 @@ export default function PracticePanel({
           <p className="text-sm text-muted mt-1">
             Generate a printable worksheet on a topic{" "}
             {student.first_name} is working on. Up to 5 worksheets per day.
+            {hasFullTestAccess
+              ? " Or build a full 25-question practice test on a whole topic, with a separate answer key."
+              : ""}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="shrink-0 inline-flex items-center gap-2 px-4 h-10 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition"
-        >
-          New worksheet
-        </button>
+        <div className="shrink-0 flex items-center gap-2 flex-wrap">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="inline-flex items-center gap-2 px-4 h-10 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition"
+          >
+            New worksheet
+          </button>
+          {hasFullTestAccess && (
+            <button
+              type="button"
+              onClick={() => setFullTestOpen(true)}
+              className="inline-flex items-center gap-2 px-4 h-10 rounded-full border border-brand text-brand text-sm font-medium hover:bg-brand-pale/40 transition"
+            >
+              Full practice test
+            </button>
+          )}
+        </div>
       </div>
 
       {hasWeak && (
@@ -115,6 +136,19 @@ export default function PracticePanel({
           router.refresh();
         }}
       />
+
+      {hasFullTestAccess && (
+        <FullTestModal
+          open={fullTestOpen}
+          onClose={() => setFullTestOpen(false)}
+          student={student}
+          topicGroups={topicGroups}
+          topicsBySubject={topicsBySubject}
+          onGenerated={() => {
+            router.refresh();
+          }}
+        />
+      )}
 
       <ResourceViewer
         key={viewing?.id || "none"}

@@ -8,6 +8,7 @@ import PracticePanel from "@/components/PracticePanel";
 import { enrichResources } from "@/lib/resource-helpers";
 import { deriveWeakTopics } from "@/lib/weak-topics";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
+import { hasSoftwareAccess } from "@/lib/entitlements";
 import {
   fetchTutorsForStudents,
   tutoringSummary,
@@ -191,6 +192,10 @@ export default async function ParentStudentDetail({ params, searchParams }) {
     english: getTopicGroupsForLevel(practiceLevel, "english", student.subjects),
   };
 
+  // Full practice tests are a subscriber-only feature. The parent is the
+  // payer here, so their entitlement decides whether the button appears.
+  const hasFullTestAccess = await hasSoftwareAccess(user.id);
+
   // Tutor name for the subhead — disambiguates the duplicate-record case
   // when the parent's child appears under more than one tutor.
   const tutoringLine = tutoringSummary(student, tutorsByStudent.get(student.id));
@@ -306,6 +311,7 @@ export default async function ParentStudentDetail({ params, searchParams }) {
           student={student}
           weakTopics={weakTopics}
           topicsBySubject={topicsBySubject}
+          hasFullTestAccess={hasFullTestAccess}
           initialPracticeTopic={initialPracticeTopic}
         />
       </Section>

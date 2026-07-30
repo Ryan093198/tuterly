@@ -62,7 +62,7 @@ export default async function StudentDetail({ params, searchParams }) {
       .eq("student_id", id),
     supabase
       .from("resources")
-      .select("id, name, category, notes, file_url, content, created_at, uploaded_by")
+      .select("id, name, category, notes, file_url, content, metadata, created_at, uploaded_by")
       .eq("student_id", id)
       .order("created_at", { ascending: false }),
     supabase
@@ -261,6 +261,7 @@ export default async function StudentDetail({ params, searchParams }) {
           student={student}
           weakTopics={weakTopics}
           topicsBySubject={topicsBySubject}
+          hasFullTestAccess={true}
         />
       </Section>
 
