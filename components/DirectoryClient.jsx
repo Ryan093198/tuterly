@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import EnquiryFormModal from "@/components/EnquiryFormModal";
-import SuburbAutocomplete from "@/components/SuburbAutocomplete";
-import { getNearby } from "@/lib/suburbs";
 
 const c = {
   teal: "#0D9488", tealLight: "#14B8A6", tealDark: "#0F766E", tealPale: "#ECFDFB",
@@ -73,26 +71,12 @@ export default function DirectoryClient({ viewer }) {
   // `nearby` defaults to true so the moment a parent picks a suburb,
   // adjacent suburbs are already included in the result set. They can
   // untick if they want strict-suburb-only matching.
-  const [filters, setFilters] = useState({ subject: "", yearLevel: "", location: "", nearby: true, online: false });
+  const [filters, setFilters] = useState({ subject: "", yearLevel: "" });
 
   const allSubjects = [...new Set(tutors.flatMap(t => t.subjects))].sort();
 
   const filtered = tutors.filter(t => {
     if (filters.subject && !t.subjects.some(s => s.toLowerCase().includes(filters.subject.toLowerCase()))) return false;
-    if (filters.location) {
-      const target = filters.location.toLowerCase();
-      const tutorLoc = t.location.toLowerCase();
-      const matchesExact = tutorLoc === target;
-      // "Include nearby" expands the match to suburbs adjacent to the
-      // typed one. Curated adjacency map lives in lib/suburbs.js.
-      const matchesNearby =
-        filters.nearby &&
-        getNearby(filters.location)
-          .map((s) => s.toLowerCase())
-          .includes(tutorLoc);
-      if (!matchesExact && !matchesNearby) return false;
-    }
-    if (filters.online && !t.online) return false;
     return true;
   });
 
@@ -155,28 +139,8 @@ export default function DirectoryClient({ viewer }) {
               <option value="">All subjects</option>
               {allSubjects.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
-            <SuburbAutocomplete
-              value={filters.location}
-              onChange={(loc) => setFilters((p) => ({ ...p, location: loc }))}
-              placeholder="Suburb"
-              width={200}
-            />
-            <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, color: filters.location ? c.textLight : c.textMuted, cursor: filters.location ? "pointer" : "not-allowed" }} title={filters.location ? "" : "Pick a suburb first"}>
-              <input
-                type="checkbox"
-                checked={filters.nearby}
-                disabled={!filters.location}
-                onChange={(e) => setFilters((p) => ({ ...p, nearby: e.target.checked }))}
-                style={{ accentColor: c.teal }}
-              />
-              Include nearby suburbs
-            </label>
-            <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, color: c.textLight, cursor: "pointer" }}>
-              <input type="checkbox" checked={filters.online} onChange={e => setFilters(p => ({ ...p, online: e.target.checked }))} style={{ accentColor: c.teal }} />
-              Online available
-            </label>
-            {(filters.subject || filters.location || filters.online) && (
-              <button onClick={() => setFilters({ subject: "", yearLevel: "", location: "", nearby: true, online: false })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
+            {filters.subject && (
+              <button onClick={() => setFilters({ subject: "", yearLevel: "" })} style={{ fontSize: 13, color: c.teal, fontWeight: 600, background: "none", border: "none", cursor: "pointer" }}>Clear filters</button>
             )}
             <p style={{ fontSize: 13, color: c.textMuted, marginLeft: "auto" }}>{filtered.length} tutor{filtered.length !== 1 ? "s" : ""} found</p>
           </div>
@@ -195,7 +159,6 @@ export default function DirectoryClient({ viewer }) {
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy }}>{t.name}</p>
                     {t.sessions >= 100 && <div style={{ background: c.tealPale, borderRadius: 4, padding: "1px 6px", fontSize: 9, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 0.5 }}>Verified</div>}
                   </div>
-                  <p style={{ fontSize: 12, color: c.textMuted }}>{t.location} {t.online && t.inPerson ? "· Online & In-person" : t.online ? "· Online only" : "· In-person only"}</p>
                 </div>
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 12 }}>
@@ -228,7 +191,6 @@ export default function DirectoryClient({ viewer }) {
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: c.navy }}>{selectedTutor.name}</p>
                     {selectedTutor.sessions >= 100 && <div style={{ background: c.tealPale, borderRadius: 4, padding: "2px 8px", fontSize: 10, fontWeight: 700, color: c.tealDark }}>Verified</div>}
                   </div>
-                  <p style={{ fontSize: 13, color: c.textMuted }}>{selectedTutor.location}</p>
                 </div>
               </div>
 
@@ -238,7 +200,6 @@ export default function DirectoryClient({ viewer }) {
                 <div><p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Subjects</p><div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>{selectedTutor.subjects.map((s, i) => <span key={i} style={{ fontSize: 12, fontWeight: 600, color: c.teal, background: c.tealPale, borderRadius: 6, padding: "4px 10px" }}>{s}</span>)}</div></div>
                 <div><p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Year levels</p><p style={{ fontSize: 14, fontWeight: 600, color: c.navy }}>{selectedTutor.yearLevels}</p></div>
                 <div><p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Languages</p><p style={{ fontSize: 14, fontWeight: 600, color: c.navy }}>{selectedTutor.languages.join(", ")}</p></div>
-                <div><p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Availability</p><p style={{ fontSize: 14, fontWeight: 600, color: c.navy }}>{selectedTutor.online && selectedTutor.inPerson ? "Online & In-person" : selectedTutor.online ? "Online only" : "In-person only"}</p></div>
               </div>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
