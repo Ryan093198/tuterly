@@ -68,6 +68,16 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
   const [trialError, setTrialError] = useState(null);
   const resultRef = useRef(null);
 
+  // Scroll to the generated worksheet once it actually paints. Keyed on
+  // `worksheet` (not a rAF in the click handler) so the ref is attached by
+  // the time we scroll - otherwise the result lands below the fold, hidden
+  // under the upsell card, and parents think nothing happened.
+  useEffect(() => {
+    if (worksheet) {
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [worksheet]);
+
   // Hydrate email from localStorage on mount so returning visitors skip the gate.
   // Also stash a `?ref=` query param into localStorage so the referral code
   // survives email-gate detours and lands in the Stripe checkout body when
@@ -237,11 +247,8 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
         topicLabel: data.topic_label || topicLabel,
         topicId,
       });
-      // Scroll the result into view on the next paint so the user sees
-      // where the page jumped to instead of landing mid-form.
-      requestAnimationFrame(() => {
-        resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+      // Scrolling to the result is handled by an effect keyed on `worksheet`,
+      // which runs after the result has painted.
     } catch (err) {
       setError(err.message || "Could not generate worksheet.");
     } finally {
@@ -374,13 +381,24 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
         </form>
       </div>
 
-      <FullTestUpsell onStart={() => setTrialPromptOpen(true)} />
+      {worksheet && (
+        <button
+          type="button"
+          onClick={() =>
+            resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+          }
+          style={readyPromptStyle}
+        >
+          Your worksheet is ready. Tap here to view it below ↓
+        </button>
+      )}
 
       {worksheet && (
-        <div ref={resultRef} style={{ marginTop: 28 }}>
-          <TrialBanner />
-
-          <div style={{ ...cardStyle, marginTop: 20 }}>
+        <div ref={resultRef} style={{ marginTop: 20 }}>
+          <div style={{ ...cardStyle }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 10 }}>
+              Your worksheet is ready
+            </p>
             <div
               style={{
                 display: "flex",
@@ -417,8 +435,12 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
               <MarkdownReport content={worksheet.content} />
             </div>
           </div>
+
+          <TrialBanner />
         </div>
       )}
+
+      <FullTestUpsell onStart={() => setTrialPromptOpen(true)} />
 
       {emailModalOpen && (
         <EmailGateModal
@@ -861,6 +883,21 @@ function TrialBanner() {
 }
 
 // --- Styles ---
+
+const readyPromptStyle = {
+  display: "block",
+  width: "100%",
+  marginTop: 16,
+  padding: "13px 16px",
+  borderRadius: 12,
+  border: "1px solid #0D9488",
+  background: "#ECFDFB",
+  color: "#0F766E",
+  fontSize: 14.5,
+  fontWeight: 600,
+  cursor: "pointer",
+  textAlign: "center",
+};
 
 const cardStyle = {
   background: c.white,
