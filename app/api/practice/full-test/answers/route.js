@@ -9,6 +9,7 @@ import {
   buildFullTestAnswersMessage,
 } from "@/lib/full-test-prompt";
 import { ANSWER_KEY_SENTINEL, splitFullTest } from "@/lib/full-test-split";
+import { sanitizeAnswerKey } from "@/lib/full-test-sanitize";
 
 export const runtime = "nodejs";
 // Second half of full-test generation: the answer key for an already-created
@@ -154,8 +155,11 @@ async function handle(request) {
   }
 
   // Single generation call, no validate-retry pass (keeps us under the 60s
-  // function limit). The prompt carries the anti-leak and KaTeX rules.
-  const { text: answersMd } = await generateOnce(baseMessages);
+  // function limit). The prompt carries the anti-leak and KaTeX rules, and
+  // sanitizeAnswerKey strips any chain-of-thought / self-correction the model
+  // still leaks so a parent never sees it.
+  const generated = await generateOnce(baseMessages);
+  const answersMd = sanitizeAnswerKey(generated.text);
 
   if (!answersMd) {
     return NextResponse.json(

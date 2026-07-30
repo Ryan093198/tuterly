@@ -9,6 +9,7 @@ import {
   SYSTEM_INSTRUCTIONS_FULL_TEST_QUESTIONS,
   buildFullTestQuestionsMessage,
 } from "@/lib/full-test-prompt";
+import { sanitizeQuestions } from "@/lib/full-test-sanitize";
 
 export const runtime = "nodejs";
 // This call now generates the QUESTIONS ONLY (the answer key is a separate
@@ -181,8 +182,9 @@ async function handle(request) {
   // solutions) is a smaller job than the worksheet generator already handles
   // in one call, so one pass is enough. The prompt carries the anti-leak and
   // KaTeX rules.
-  const { message, text: testMd } = await generateOnce(baseMessages);
-  const totalUsage = message.usage;
+  const generated = await generateOnce(baseMessages);
+  const testMd = sanitizeQuestions(generated.text);
+  const totalUsage = generated.message.usage;
 
   if (!testMd) {
     return NextResponse.json(
