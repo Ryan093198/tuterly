@@ -6,29 +6,23 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { hasSoftwareAccess } from "@/lib/entitlements";
 import { getCurriculumForStudent } from "@/lib/curriculum";
 import {
-  SYSTEM_INSTRUCTIONS_FULL_TEST,
-  buildFullTestUserMessage,
+  SYSTEM_INSTRUCTIONS_FULL_TEST_QUESTIONS,
+  buildFullTestQuestionsMessage,
 } from "@/lib/full-test-prompt";
-import { splitFullTest } from "@/lib/full-test-split";
 import {
   findKatexErrors,
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
 
 export const runtime = "nodejs";
-// A 25-question test plus a full answer key is a big single generation. Kept
-// at the platform 60s cap (matches the other AI routes). If you move to a
-// Vercel plan that allows longer functions, this can be raised to 120-300 for
-// more headroom. The retry-skip guard below protects the single 60s budget.
+// This call now generates the QUESTIONS ONLY (the answer key is a separate
+// request, /api/practice/full-test/answers). Splitting keeps each call well
+// under Vercel's 60s function limit - generating 25 questions plus a full
+// answer key in one call was overrunning it (FUNCTION_INVOCATION_TIMEOUT).
 export const maxDuration = 60;
 
-// Full tests are expensive to generate, and they're a paid-only feature, so
-// the quota is deliberately tighter than the free worksheet generator.
 const DAILY_LIMIT = Number(process.env.FULL_TEST_DAILY_LIMIT) || 8;
-
-// Skip the validate-and-retry pass if the first generation already ate this
-// much of the function budget - a second full pass on top would risk a timeout.
-const RETRY_BUDGET_MS = 20_000;
+const RETRY_BUDGET_MS = 30_000;
 
 export async function POST(request) {
   try {
@@ -76,8 +70,6 @@ async function handle(request) {
     return NextResponse.json({ error: "student_id required" }, { status: 400 });
   }
 
-  // Authorization: caller is the parent, the student themselves, or a linked
-  // tutor. Same rule as the worksheet generator.
   const [{ data: student }, { data: tutorLink }] = await Promise.all([
     supabase
       .from("students")
@@ -103,9 +95,8 @@ async function handle(request) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 
-  // HARD paywall. Full tests are a subscriber-only feature - unlike the
-  // worksheet generator there is no free weekly taste. Tutors are never gated
-  // (generating for their students is part of the paid tutoring service).
+  // HARD paywall. Full tests need an active Tuterly plan (subscription, trial,
+  // or a purchased pack). Tutors are never gated.
   if (!isTutor) {
     const payerId = isParent ? user.id : student.parent_id;
     const entitled = await hasSoftwareAccess(payerId);
@@ -113,7 +104,7 @@ async function handle(request) {
       return NextResponse.json(
         {
           error:
-            "Full practice tests are part of the Tuterly subscription. Start your free trial to unlock them.",
+            "Full practice tests need an active Tuterly plan. Please renew your subscription or top up a session pack to unlock them.",
           need_upgrade: true,
         },
         { status: 402 }
@@ -130,18 +121,14 @@ async function handle(request) {
     return NextResponse.json({ error: "topic_label required" }, { status: 400 });
   }
 
+  // topic_id is optional - full tests usually target a whole strand (no single
+  // curriculum code), so a descriptor lookup only happens when an id is passed.
   const topicId = body?.topic_id?.toString() || null;
   let topicDescription = null;
   if (topicId) {
-    topicDescription = lookupTopicDescription(
-      level,
-      subject,
-      topicId,
-      student.subjects
-    );
+    topicDescription = lookupTopicDescription(level, subject, topicId, student.subjects);
   }
 
-  // Best-effort recent-report context, same as the worksheet generator.
   let recentReportContext = null;
   try {
     const { data: latestReport } = await supabase
@@ -159,7 +146,7 @@ async function handle(request) {
     console.warn("[full-test] recent report fetch failed:", e?.message || e);
   }
 
-  const userMessage = buildFullTestUserMessage({
+  const userMessage = buildFullTestQuestionsMessage({
     studentName: `${student.first_name} ${student.last_name}`,
     yearLevel: student.year_level,
     workingLevel: student.working_level,
@@ -176,11 +163,11 @@ async function handle(request) {
   async function generateOnce(messages) {
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-6",
-      max_tokens: 8000,
+      max_tokens: 4000,
       system: [
         {
           type: "text",
-          text: SYSTEM_INSTRUCTIONS_FULL_TEST,
+          text: SYSTEM_INSTRUCTIONS_FULL_TEST_QUESTIONS,
           cache_control: { type: "ephemeral" },
         },
       ],
@@ -195,73 +182,52 @@ async function handle(request) {
   }
 
   const startedAt = Date.now();
-  let { message, text: fullMarkdown } = await generateOnce(baseMessages);
+  let { message, text: testMd } = await generateOnce(baseMessages);
   let totalUsage = message.usage;
 
-  // One combined validate-and-retry pass, only if we still have budget.
-  const leaks = detectLeaks(fullMarkdown);
-  const katexErrors = findKatexErrors(fullMarkdown);
+  const leaks = detectLeaks(testMd);
+  const katexErrors = findKatexErrors(testMd);
   const elapsedMs = Date.now() - startedAt;
   if ((leaks.length > 0 || katexErrors.length > 0) && elapsedMs >= RETRY_BUDGET_MS) {
-    console.warn(
-      "[full-test] issues found but skipping retry - elapsed",
-      elapsedMs,
-      "leaks:",
-      leaks.length,
-      "katex:",
-      katexErrors.length
-    );
+    console.warn("[full-test] issues found but skipping retry - elapsed", elapsedMs);
   } else if (leaks.length > 0 || katexErrors.length > 0) {
-    console.warn(
-      "[full-test] retry triggered - leaks:",
-      leaks,
-      "katex errors:",
-      katexErrors.length
-    );
     const corrections = [];
     if (leaks.length > 0) {
       corrections.push(
-        `Your previous test violated these content rules: ${leaks.join(
-          "; "
-        )}. Solutions must be clean final reasoning only - no "wait" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`
+        `Your previous test violated these content rules: ${leaks.join("; ")}. Emit clean questions only, no self-correction language, no notes to the parent/student.`
       );
     }
-    if (katexErrors.length > 0) {
-      corrections.push(formatErrorsForRetry(katexErrors));
-    }
+    if (katexErrors.length > 0) corrections.push(formatErrorsForRetry(katexErrors));
     const retryMessages = [
       ...baseMessages,
-      { role: "assistant", content: fullMarkdown },
+      { role: "assistant", content: testMd },
       {
         role: "user",
-        content: `Re-emit the ENTIRE test AND answer key from scratch, keeping all 25 questions and the exact structure, addressing every issue below.\n\n${corrections.join(
+        content: `Re-emit the ENTIRE test from scratch, keeping all 25 questions and the exact structure, addressing every issue below.\n\n${corrections.join(
           "\n\n"
         )}`,
       },
     ];
     const retry = await generateOnce(retryMessages);
     if (retry.text) {
-      fullMarkdown = retry.text;
+      testMd = retry.text;
       totalUsage = retry.message.usage;
     }
   }
 
-  if (!fullMarkdown) {
+  if (!testMd) {
     return NextResponse.json(
       { error: "Test generation returned empty content. Try again." },
       { status: 502 }
     );
   }
 
-  const { test: testMd, answers: answersMd } = splitFullTest(fullMarkdown);
-
   const dateLabel = new Date().toLocaleDateString("en-AU", {
     day: "numeric",
     month: "short",
     year: "numeric",
   });
-  const shortLabel =
-    topicLabel.length > 55 ? topicLabel.slice(0, 52) + "…" : topicLabel;
+  const shortLabel = topicLabel.length > 55 ? topicLabel.slice(0, 52) + "…" : topicLabel;
   const resourceName = `Practice test — ${shortLabel} (${dateLabel})`;
 
   const metadata = {
@@ -272,6 +238,9 @@ async function handle(request) {
     topic_label: topicLabel,
     question_count: 25,
     bands: { consolidating: 5, standard: 15, advanced: 5 },
+    // The answer key is generated by a follow-up request; until it lands the
+    // resource holds questions only.
+    answers_pending: true,
   };
 
   const admin = createAdminClient();
@@ -282,16 +251,12 @@ async function handle(request) {
       uploaded_by: user.id,
       name: resourceName,
       category: "practice_test",
-      // Persist the whole blob (test + sentinel + answer key) so the resource
-      // can be re-opened and both PDFs re-rendered later.
-      content: fullMarkdown,
+      content: testMd,
       file_url: null,
       notes: "25-question practice test with separate answer key",
       metadata,
     })
-    .select(
-      "id, name, category, content, file_url, notes, metadata, created_at, uploaded_by"
-    )
+    .select("id, name, category, content, file_url, notes, metadata, created_at, uploaded_by")
     .single();
   if (insertErr) {
     console.error("[full-test] insert failed:", insertErr);
@@ -304,13 +269,10 @@ async function handle(request) {
   return NextResponse.json({
     resource: inserted,
     test_md: testMd,
-    answers_md: answersMd,
     usage: totalUsage,
   });
 }
 
-// Reuse the worksheet generator's leak patterns - the model slips the same
-// self-correction phrases into answer keys.
 const LEAK_PATTERNS = [
   ["visible self-correction", /\b(?:let me|let'?s)\s+(?:redo|recheck|re-?check|re-?derive|be precise|choose|pick|use|try|fix)/i],
   ["scratch-work interjection", /(?:^|[\s>])(?:wait|hmm|oops|actually)\b\s*[,—\-:]/im],

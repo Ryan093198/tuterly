@@ -26,18 +26,18 @@ const YEAR_LEVELS = [
 ];
 
 const c = {
-  teal: "#0ABAB5",
-  tealLight: "#2DD4BF",
-  tealDark: "#0D9488",
-  tealPale: "#F0FDFA",
+  teal: "#0D9488",
+  tealLight: "#14B8A6",
+  tealDark: "#0F766E",
+  tealPale: "#ECFDFB",
   navy: "#0F172A",
   navyMid: "#1E293B",
-  text: "#1E293B",
+  text: "#334155",
   textLight: "#64748B",
   textMuted: "#94A3B8",
   white: "#FFFFFF",
   offWhite: "#F8FAFC",
-  border: "#E2E8F0",
+  border: "#E6EAF0",
   rose: "#F43F5E",
   amber: "#F59E0B",
 };
@@ -308,7 +308,7 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
   // --- Render ---
 
   return (
-    <div>
+    <div style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
@@ -867,12 +867,14 @@ const cardStyle = {
   border: `1px solid ${c.border}`,
   borderRadius: 20,
   padding: 32,
-  boxShadow: "0 4px 24px rgba(15, 23, 42, 0.04)",
+  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.06)",
 };
 
 const h2Style = {
-  fontFamily: "'DM Serif Display', serif",
+  fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
   fontSize: 28,
+  fontWeight: 800,
+  letterSpacing: "-0.6px",
   color: c.navy,
   margin: "0 0 8px",
 };
@@ -907,14 +909,15 @@ const inputStyle = {
 };
 
 const primaryButtonStyle = {
-  padding: "12px 24px",
-  borderRadius: 10,
+  padding: "14px 28px",
+  borderRadius: 12,
   background: c.navy,
   color: c.white,
   fontSize: 15,
-  fontWeight: 700,
+  fontWeight: 600,
   border: "none",
   cursor: "pointer",
+  boxShadow: "0 4px 14px rgba(15,27,45,0.18)",
 };
 
 const secondaryButtonStyle = {

@@ -6,7 +6,7 @@ import { CATEGORY_LABEL } from "@/components/ResourcesPanel";
 import { emailLessonPlanToParent } from "@/app/dashboard/lesson-plan-actions";
 import Button from "@/components/ui/Button";
 import Spinner from "@/components/ui/Spinner";
-import { splitFullTest } from "@/lib/full-test-split";
+import { splitFullTest, ANSWER_KEY_SENTINEL } from "@/lib/full-test-split";
 import { downloadFullTestPdf } from "@/lib/full-test-client";
 
 // Modal that renders the inline `content` of a resource as Markdown. Used
@@ -213,16 +213,18 @@ export default function ResourceViewer({
               {downloadingPart === "test" && <Spinner />}
               {downloadingPart === "test" ? "Preparing…" : "Download test (PDF)"}
             </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={() => handleDownloadTestPart("answers")}
-              disabled={downloadingPart !== null}
-            >
-              {downloadingPart === "answers" && <Spinner />}
-              {downloadingPart === "answers" ? "Preparing…" : "Download answer key (PDF)"}
-            </Button>
+            {(resource.content || "").includes(ANSWER_KEY_SENTINEL) && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() => handleDownloadTestPart("answers")}
+                disabled={downloadingPart !== null}
+              >
+                {downloadingPart === "answers" && <Spinner />}
+                {downloadingPart === "answers" ? "Preparing…" : "Download answer key (PDF)"}
+              </Button>
+            )}
             <span className="text-xs text-muted">
               {downloadError ? (
                 <span className="text-red-600">{downloadError}</span>
