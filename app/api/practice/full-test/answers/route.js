@@ -9,7 +9,7 @@ import {
   buildFullTestAnswersMessage,
 } from "@/lib/full-test-prompt";
 import { ANSWER_KEY_SENTINEL, splitFullTest } from "@/lib/full-test-split";
-import { sanitizeAnswerKey } from "@/lib/full-test-sanitize";
+import { sanitizeGenerated } from "@/lib/sanitize-generated";
 
 export const runtime = "nodejs";
 // Second half of full-test generation: the answer key for an already-created
@@ -159,7 +159,7 @@ async function handle(request) {
   // sanitizeAnswerKey strips any chain-of-thought / self-correction the model
   // still leaks so a parent never sees it.
   const generated = await generateOnce(baseMessages);
-  const answersMd = sanitizeAnswerKey(generated.text);
+  const answersMd = sanitizeGenerated(generated.text);
 
   if (!answersMd) {
     return NextResponse.json(

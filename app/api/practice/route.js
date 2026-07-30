@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase-admin";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { hasSoftwareAccess } from "@/lib/entitlements";
 import { getCurriculumForStudent } from "@/lib/curriculum";
+import { sanitizeGenerated } from "@/lib/sanitize-generated";
 
 // Free (non-subscribed, no pack) family accounts get this many practice sets
 // per week; a subscription or a purchased pack unlocks unlimited (still
@@ -303,6 +304,10 @@ async function handle(request) {
       totalUsage = retry.message.usage;
     }
   }
+
+  // Strip any leaked chain-of-thought / self-correction the model slipped
+  // into the questions or reveal-solutions before we save it.
+  worksheetMarkdown = sanitizeGenerated(worksheetMarkdown);
 
   if (!worksheetMarkdown) {
     return NextResponse.json(

@@ -14,6 +14,7 @@ import {
   findKatexErrors,
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
+import { sanitizeGenerated } from "@/lib/sanitize-generated";
 
 export const runtime = "nodejs";
 // 10 questions with worked solutions in LaTeX comfortably runs 30-50s on
@@ -330,6 +331,9 @@ async function handle(request) {
       RETRY_BUDGET_MS
     );
   }
+
+  // Strip any leaked chain-of-thought / self-correction before returning.
+  worksheetMarkdown = sanitizeGenerated(worksheetMarkdown);
 
   if (!worksheetMarkdown) {
     await releaseReservation();
