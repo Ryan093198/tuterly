@@ -3,20 +3,20 @@
 import { useState } from "react";
 import Fade from "./Fade";
 import { c } from "./theme";
+import { PRICING } from "@/lib/pricing";
 
 // Interactive comparison slider: drag the months and watch the
-// "save vs typical company" number update. Assumes 4 lessons/month,
-// $100/hr typical agency rate, $60/hr Tuterly avg directory rate,
-// plus $29/mo platform subscription.
-const LESSONS_PER_MONTH = 4;
-const COMPANY_HOURLY = 100;
-const TUTERLY_HOURLY = 60;
-const TUTERLY_SUB = 29;
+// "save vs typical company" number update. Current model: all-inclusive
+// session packs (Tuterly software included), compared against a typical
+// agency per-session rate. Prices come from lib/pricing.js.
+const LESSONS_PER_MONTH = PRICING.lessonsPerMonthAssumed;
+const COMPANY_PER_SESSION = PRICING.agencyPerSession;
+const TUTERLY_PER_SESSION = PRICING.sessionFrom;
 
 export default function SavingsCalculator() {
   const [months, setMonths] = useState(1);
-  const companyCost = COMPANY_HOURLY * LESSONS_PER_MONTH * months;
-  const tuterlyCost = TUTERLY_HOURLY * LESSONS_PER_MONTH * months + TUTERLY_SUB * months;
+  const companyCost = COMPANY_PER_SESSION * LESSONS_PER_MONTH * months;
+  const tuterlyCost = TUTERLY_PER_SESSION * LESSONS_PER_MONTH * months;
   const savings = companyCost - tuterlyCost;
 
   return (
@@ -57,12 +57,12 @@ export default function SavingsCalculator() {
           <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.border}` }}>
             <p style={{ fontSize: 11, color: c.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Typical company</p>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${companyCost.toLocaleString("en-AU")}</p>
-            <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr (typical agency rate) × {LESSONS_PER_MONTH * months} lessons</p>
+            <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${COMPANY_PER_SESSION} per session (typical agency rate) × {LESSONS_PER_MONTH * months} sessions</p>
           </div>
           <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
             <p style={{ fontSize: 11, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>With Tuterly</p>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 700, color: c.navy }}>${tuterlyCost.toLocaleString("en-AU")}</p>
-            <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${TUTERLY_HOURLY}/hr (avg tutor on our directory) × {LESSONS_PER_MONTH * months} lessons + ${TUTERLY_SUB}/mo subscription</p>
+            <p style={{ fontSize: 12, color: c.textLight, marginTop: 4 }}>${TUTERLY_PER_SESSION} per session, software included × {LESSONS_PER_MONTH * months} sessions</p>
           </div>
         </div>
       </div>
