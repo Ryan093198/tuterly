@@ -465,7 +465,7 @@ export async function sendReport(sessionId, role = "parent") {
   const { data: session } = await supabase
     .from("sessions")
     .select(
-      "id, date, student_id, students(first_name, last_name, parent_id, student_user_id)"
+      "id, date, duration_minutes, student_id, students(first_name, last_name, parent_id, student_user_id)"
     )
     .eq("id", sessionId)
     .eq("tutor_id", user.id)
@@ -533,12 +533,15 @@ export async function sendReport(sessionId, role = "parent") {
   const billingParentId =
     role === "parent" ? session.students?.parent_id ?? null : null;
   if (billingEnabled() && billingParentId) {
+    // 1 credit = 1 hour, so a longer session needs proportionally more.
+    const mins = session.duration_minutes || 60;
+    const requiredCredits = Math.round((mins / 60) * 100) / 100;
     const balance = await parentCreditBalance(admin, billingParentId);
-    if (balance < 1) {
+    if (balance < requiredCredits) {
       return {
         ok: false,
         error:
-          "This parent has no session credits left. Ask them to buy a pack before you send this report.",
+          `This parent doesn't have enough credits for a ${mins}-minute session (needs ${requiredCredits}, has ${balance}). Ask them to top up before you send this report.`,
       };
     }
   }
