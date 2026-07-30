@@ -1,6 +1,14 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Bundle the PDF fonts into the serverless functions / server actions that
+  // render PDFs (session reports, worksheets, full practice tests). Without
+  // this the render code falls back to fetching the .ttf over HTTP, which
+  // fails behind Vercel access protection.
+  outputFileTracingIncludes: {
+    "/api/**": ["./public/fonts/*.ttf"],
+    "/dashboard/**": ["./public/fonts/*.ttf"],
+  },
   experimental: {
     // Audio uploads (Whisper) and resource files can be larger than the
     // default 10MB. Cap matches the Whisper API limit so we reject early.
