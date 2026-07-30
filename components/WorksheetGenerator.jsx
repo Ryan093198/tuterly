@@ -374,6 +374,8 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
         </form>
       </div>
 
+      <FullTestUpsell onStart={() => setTrialPromptOpen(true)} />
+
       {worksheet && (
         <div ref={resultRef} style={{ marginTop: 28 }}>
           <TrialBanner />
@@ -711,6 +713,86 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
           Powered by Stripe · card not charged during trial
         </p>
       </div>
+    </div>
+  );
+}
+
+function FullTestUpsell({ onStart }) {
+  const points = [
+    "25 questions across the whole topic: 5 consolidating, 15 standard, 5 advanced",
+    "A printable test PDF, plus a separate answer key for marking",
+    "Unlimited tests on any topic, for every child on your account",
+  ];
+  return (
+    <div
+      style={{
+        marginTop: 20,
+        background: c.tealPale,
+        border: `1px solid ${c.tealLight}`,
+        borderRadius: 20,
+        padding: 32,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          flexWrap: "wrap",
+          marginBottom: 8,
+        }}
+      >
+        <h2 style={{ ...h2Style, margin: 0 }}>Full practice test</h2>
+        <span
+          style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: 1,
+            textTransform: "uppercase",
+            color: c.white,
+            background: c.tealDark,
+            padding: "4px 10px",
+            borderRadius: 999,
+          }}
+        >
+          Subscribers
+        </span>
+      </div>
+      <p style={pMutedStyle}>
+        Go beyond a worksheet with a full 25-question test covering a whole
+        topic, ready to print and sit at home.
+      </p>
+      <ul
+        style={{
+          margin: "16px 0 20px",
+          padding: 0,
+          listStyle: "none",
+          display: "grid",
+          gap: 8,
+        }}
+      >
+        {points.map((line) => (
+          <li
+            key={line}
+            style={{
+              display: "flex",
+              gap: 10,
+              fontSize: 15,
+              color: c.text,
+              lineHeight: 1.5,
+            }}
+          >
+            <span style={{ color: c.tealDark, fontWeight: 700 }}>&#10003;</span>
+            <span>{line}</span>
+          </li>
+        ))}
+      </ul>
+      <button type="button" onClick={onStart} style={primaryButtonStyle}>
+        Start your free trial to unlock
+      </button>
+      <p style={{ ...pMutedStyle, fontSize: 13, marginTop: 12 }}>
+        Part of Tuterly, $29/month after a 7-day free trial. Cancel anytime.
+      </p>
     </div>
   );
 }
