@@ -203,6 +203,7 @@ export default function WorksheetsPage() {
             <Link href="/directory" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Find a tutor</Link>
             <Link href="/privacy" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Privacy</Link>
             <Link href="/terms" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Terms</Link>
+            <a href="https://baysideacademics.com.au" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Bayside Academics</a>
           </div>
           <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
         </div>
