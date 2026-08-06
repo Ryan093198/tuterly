@@ -740,10 +740,14 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
 }
 
 function FullTestUpsell({ onStart }) {
+  // Problem-first CTA, kept deliberately tight: name the gap, then the fix.
+  // Feature-led copy buried the pitch, so this leads with the concern.
+  const PROBLEM =
+    "Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, can be timed, and focus on worded problems.";
   const points = [
-    "25 questions across the whole topic: 5 consolidating, 15 standard, 5 advanced",
-    "A printable test PDF, plus a separate answer key for marking",
-    "Unlimited tests on any topic, for every child on your account",
+    "25 questions on a whole topic, mixed difficulty, VCAA aligned",
+    "Printable test, plus a separate answer key for marking",
+    "Any topic, any time, for every child on your account",
   ];
   return (
     <div
@@ -752,41 +756,31 @@ function FullTestUpsell({ onStart }) {
         background: c.tealPale,
         border: `1px solid ${c.tealLight}`,
         borderRadius: 20,
-        padding: 32,
+        padding: 28,
       }}
     >
-      <div
+      <h2 style={{ ...h2Style, margin: "0 0 10px" }}>
+        Textbook questions won&apos;t lift a test mark.
+      </h2>
+
+      <p style={{ ...pMutedStyle, marginBottom: 12 }}>{PROBLEM}</p>
+
+      <p
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          flexWrap: "wrap",
-          marginBottom: 8,
+          fontSize: 15.5,
+          fontWeight: 600,
+          color: c.navy,
+          lineHeight: 1.6,
+          margin: "0 0 16px",
         }}
       >
-        <h2 style={{ ...h2Style, margin: 0 }}>Full practice test</h2>
-        <span
-          style={{
-            fontSize: 11,
-            fontWeight: 700,
-            letterSpacing: 1,
-            textTransform: "uppercase",
-            color: c.white,
-            background: c.tealDark,
-            padding: "4px 10px",
-            borderRadius: 999,
-          }}
-        >
-          Subscribers
-        </span>
-      </div>
-      <p style={pMutedStyle}>
-        Go beyond a worksheet with a full 25-question test covering a whole
-        topic, ready to print and sit at home.
+        That&apos;s where Tuterly comes in and closes the gap: more questions,
+        mixed up, under test conditions, with worded problems.
       </p>
+
       <ul
         style={{
-          margin: "16px 0 20px",
+          margin: "0 0 20px",
           padding: 0,
           listStyle: "none",
           display: "grid",
@@ -809,11 +803,12 @@ function FullTestUpsell({ onStart }) {
           </li>
         ))}
       </ul>
+
       <button type="button" onClick={onStart} style={primaryButtonStyle}>
-        Start your free trial to unlock
+        Build their first test free &rarr;
       </button>
       <p style={{ ...pMutedStyle, fontSize: 13, marginTop: 12 }}>
-        Part of Tuterly, $29/month after a 7-day free trial. Cancel anytime.
+        Free for 7 days, then $29/month. Cancel anytime.
       </p>
     </div>
   );
