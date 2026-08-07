@@ -1,7 +1,7 @@
 ---
 title: "How to read your child's NAPLAN results: a plain-English guide for Victorian parents"
 description: "NAPLAN results explained for Melbourne parents: what the proficiency levels mean, what to do next, and when to consider tutoring."
-date: "2026-05-21"
+date: "2026-08-05"
 audience: "Primary and Year 7-8 parents"
 published: true
 ---
@@ -15,6 +15,8 @@ This guide cuts through the jargon and gives you a plain-English framework for u
 ## What NAPLAN actually measures
 
 NAPLAN tests students in Years 3, 5, 7, and 9 across four areas: reading, writing, conventions of language (spelling, grammar, and punctuation), and numeracy. The test is a national snapshot, taken at a single point in time, under exam conditions. It is not a complete picture of your child's ability. But it is a useful data point, especially when you know how to read it.
+
+The 2026 individual student reports reached Victorian families in July, so this is the moment most parents are trying to work out what the result actually means.
 
 From 2023, NAPLAN moved away from numbered bands to four proficiency levels: Exceeding, Strong, Developing, and Needs Additional Support. That shift was meant to make results easier to interpret. For many parents, it created more confusion, not less.
 
@@ -71,6 +73,15 @@ A good tutor will not just re-run NAPLAN practice papers. They will identify the
 Tuterly connects Melbourne families with tutors who understand the Victorian Curriculum and can translate your child's NAPLAN result into a real learning plan. After every session, you get a report through the parent dashboard covering what was worked on and how your child responded, so you can track progress without guessing. Between sessions, your child can build on their skills with targeted practice questions on the platform.
 
 Whether your child needs to close a gap or get properly challenged, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
+
+## Start with a free practice test
+
+The fastest way to turn a NAPLAN level into something you can act on is to find out where your child sits right now. Build a free, printable practice test on the topic the report flagged, with full worked solutions so marking it together is easy:
+
+- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
+- [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
+
+Related reading: [your child's NAPLAN results were lower than expected, what now](/learn/naplan-results-lower-than-expected-what-to-do) and [how to improve NAPLAN results before the next test](/learn/how-to-improve-naplan-results-before-next-year).
 
 ---
 
