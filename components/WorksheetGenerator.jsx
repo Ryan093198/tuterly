@@ -42,7 +42,20 @@ const c = {
   amber: "#F59E0B",
 };
 
-export default function WorksheetGenerator({ topicsByYear, initialYearLevel, initialTopicId }) {
+export default function WorksheetGenerator({
+  topicsByYear,
+  initialYearLevel,
+  initialTopicId,
+  // Optional subset of year levels to offer (e.g. primary-only pages pass
+  // Years 3-6). Defaults to the full Year 3-10 range.
+  yearLevels,
+}) {
+  const years =
+    Array.isArray(yearLevels) && yearLevels.length ? yearLevels : YEAR_LEVELS;
+  const defaultYear =
+    initialYearLevel && years.includes(initialYearLevel)
+      ? initialYearLevel
+      : years[0];
   const [email, setEmail] = useState("");
   const [emailSaved, setEmailSaved] = useState(false);
   const [emailPending, setEmailPending] = useState(false);
@@ -52,9 +65,9 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
   // difficulty before being asked to part with their address.
   const [emailModalOpen, setEmailModalOpen] = useState(false);
   const [modalEmailInput, setModalEmailInput] = useState("");
-  const [modalYearInput, setModalYearInput] = useState(initialYearLevel || "Year 7");
+  const [modalYearInput, setModalYearInput] = useState(defaultYear);
 
-  const [yearLevel, setYearLevel] = useState(initialYearLevel || "Year 7");
+  const [yearLevel, setYearLevel] = useState(defaultYear);
   // Topic-specific landing pages preselect a curriculum code. We seed
   // topicId at mount and resolve its label from the dropdown source
   // once it's available so the picker reflects the preset.
@@ -332,7 +345,7 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
               disabled={generating}
               style={inputStyle}
             >
-              {YEAR_LEVELS.map((y) => (
+              {years.map((y) => (
                 <option key={y} value={y}>
                   {y}
                 </option>
@@ -446,6 +459,7 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
         <EmailGateModal
           email={modalEmailInput}
           year={modalYearInput}
+          yearLevels={years}
           pending={emailPending}
           error={emailError}
           onEmailChange={setModalEmailInput}
@@ -477,6 +491,7 @@ export default function WorksheetGenerator({ topicsByYear, initialYearLevel, ini
 function EmailGateModal({
   email,
   year,
+  yearLevels,
   pending,
   error,
   onEmailChange,
@@ -562,7 +577,7 @@ function EmailGateModal({
               disabled={pending}
               style={inputStyle}
             >
-              {YEAR_LEVELS.map((y) => (
+              {(yearLevels || YEAR_LEVELS).map((y) => (
                 <option key={y} value={y}>
                   {y}
                 </option>

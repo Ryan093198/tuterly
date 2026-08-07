@@ -199,6 +199,8 @@ export default function WorksheetsPage() {
             <span style={{ fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.45)" }}>tuterly</span>
           </div>
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            <Link href="/practice-maths-tests-primary" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Practice tests Years 3-6</Link>
+            <Link href="/practice-maths-tests-secondary" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Practice tests Years 7-10</Link>
             <Link href="/parents" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>For parents</Link>
             <Link href="/directory" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Find a tutor</Link>
             <Link href="/privacy" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Privacy</Link>
