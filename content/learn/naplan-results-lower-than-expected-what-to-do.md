@@ -3,6 +3,7 @@ title: "Your child's NAPLAN results were lower than expected. What now?"
 description: "A calm, practical guide for Victorian parents whose child came back Developing or Needs additional support, and what actually helps from here."
 date: "2026-08-04"
 audience: "Victorian parents"
+generator: "all"
 published: true
 ---
 
@@ -21,6 +22,8 @@ The two that warrant attention are the bottom two, and it is worth being precise
 The reason these matter more in numeracy and reading than elsewhere is compounding. Maths in particular is cumulative: Year 5 fractions feed Year 7 ratios, which feed Year 9 algebra, which is what VCE Methods assumes is automatic. A gap left alone does not stay the same size, it widens, because the curriculum keeps moving.
 
 The reassuring flip side is that gaps found early are usually small and specific. It is rarely "bad at maths". It is more often three or four sub-skills that never quite landed.
+
+<!--GENERATOR-->
 
 ## Do this before anything else: find out which skills
 

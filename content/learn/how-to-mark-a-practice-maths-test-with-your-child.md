@@ -3,6 +3,7 @@ title: "How to mark a practice maths test with your child"
 description: "The marking is where the learning happens. A simple method for going through a practice maths test with your child, even if you are rusty at the maths yourself."
 date: "2026-07-30"
 audience: "Parents"
+generator: "all"
 published: true
 ---
 
@@ -17,6 +18,8 @@ The good news is you do not need to be good at maths to do this well. You need t
 Hand your child the answer key and have them mark their own paper before you look at it. Two reasons. They engage with each mistake rather than just receiving a number from you, and it keeps the whole thing from feeling like a judgement.
 
 Ask them to put a mark next to every question they got wrong, and a question mark next to any they guessed and happened to get right. Lucky guesses are gaps too.
+
+<!--GENERATOR-->
 
 ## Step 2: sort every error into one of three buckets
 

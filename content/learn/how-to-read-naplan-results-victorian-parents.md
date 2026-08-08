@@ -3,6 +3,7 @@ title: "How to read your child's NAPLAN results: a plain-English guide for Victo
 description: "NAPLAN results explained for Melbourne parents: what the proficiency levels mean, what to do next, and when to consider tutoring."
 date: "2026-08-05"
 audience: "Primary and Year 7-8 parents"
+generator: "all"
 published: true
 ---
 
@@ -29,6 +30,8 @@ From 2023, NAPLAN moved away from numbered bands to four proficiency levels: Exc
 **Developing** means your child has some of the expected skills but not all of them. They are working toward the standard, and there are gaps worth paying attention to.
 
 **Needs Additional Support** means your child is working significantly below the expected standard and would benefit from targeted help. This is the level that warrants direct action.
+
+<!--GENERATOR-->
 
 ## How NAPLAN lines up with the Victorian Curriculum
 

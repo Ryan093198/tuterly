@@ -3,6 +3,7 @@ title: "How many practice maths tests should my child do?"
 description: "A practical answer for parents: how many practice tests actually help before a maths test, when to do them, and why more is not always better."
 date: "2026-07-31"
 audience: "Parents"
+generator: "all"
 published: true
 ---
 
@@ -21,6 +22,8 @@ A workable rhythm for a school test two weeks away:
 - **Two weeks out:** one test on the whole topic. This is a diagnostic, so expect a mediocre score. That is the point.
 - **One week out:** a second test, focused on whatever the first one exposed.
 - **Two or three days out:** a final full test under timed conditions.
+
+<!--GENERATOR-->
 
 ## The part most families skip
 

@@ -3,6 +3,7 @@ title: "How to improve NAPLAN results before the next test"
 description: "NAPLAN is sat in March, so the window opens the moment results land in July. A term-by-term plan for Victorian parents who want a better result next time."
 date: "2026-08-03"
 audience: "Victorian parents"
+generator: "all"
 published: true
 ---
 
@@ -23,6 +24,8 @@ Before the plan, it helps to know what NAPLAN is actually testing, because a lot
 **It is timed.** Careful and slow is a good habit until the clock runs out.
 
 If your child knows the content but underperformed, it is usually one of those three, and all three are trainable.
+
+<!--GENERATOR-->
 
 ## A term-by-term plan
 

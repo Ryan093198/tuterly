@@ -3,6 +3,7 @@ title: "NAPLAN maths practice: what actually helps in Years 3 and 5"
 description: "What NAPLAN numeracy actually tests, why confident students still stumble, and how to prepare without turning it into a stressful event."
 date: "2026-07-30"
 audience: "Primary parents"
+generator: "primary"
 published: true
 ---
 
@@ -21,6 +22,8 @@ The most common surprise for parents is a child who is doing fine in class maths
 **It leans heavily on worded problems.** Many questions are a short scenario rather than a bare calculation. A student who can compute perfectly can still lose marks translating the words into the sum.
 
 **It is timed.** Working slowly and carefully is a good habit right up until the clock runs out.
+
+<!--GENERATOR-->
 
 ## What to actually practise
 

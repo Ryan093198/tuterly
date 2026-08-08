@@ -3,6 +3,7 @@ title: "Why practice tests beat re-reading notes"
 description: "Re-reading feels like studying but rarely moves a maths mark. Here is the difference, and what to do instead."
 date: "2026-07-31"
 audience: "Parents"
+generator: "all"
 published: true
 ---
 
@@ -19,6 +20,8 @@ That gap, between how well we think we know something and how well we actually k
 Answering questions without the notes open. That is it. Retrieval practice, sometimes called the testing effect, is among the most consistently supported study techniques there is, and it works for a simple reason: the effort of pulling something out of memory is what strengthens the path back to it. Reading it again does not require that effort, so it does not build the same strength.
 
 There is a useful rule of thumb here. If it feels easy, it probably is not working. Productive study should feel effortful.
+
+<!--GENERATOR-->
 
 ## What this looks like in practice
 

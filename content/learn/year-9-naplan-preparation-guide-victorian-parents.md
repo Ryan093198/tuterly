@@ -3,6 +3,7 @@ title: "How to prepare your child for the Year 9 NAPLAN: what Victorian parents 
 description: "A practical guide for Victorian parents on what the Year 9 NAPLAN tests cover, how to read results, and how to help your child prepare."
 date: "2026-06-09"
 audience: "Year 8–9 parents in Victoria"
+generator: "secondary"
 published: true
 ---
 
@@ -19,6 +20,8 @@ The test covers the same four areas as every other year level: reading, writing,
 In numeracy, students are expected to work with algebra, geometry, statistics, and proportional reasoning. These are topics from the Victorian Curriculum Mathematics strands that your child's class has been building toward since upper primary. Students who struggled quietly in Years 7 and 8 often hit a wall here.
 
 In reading and writing, the demands are closer to what VCE will require. Texts are longer and more complex. The writing task expects a clear structure, controlled language, and developed ideas, not just a rough personal response.
+
+<!--GENERATOR-->
 
 ## How to read the proficiency levels at Year 9
 

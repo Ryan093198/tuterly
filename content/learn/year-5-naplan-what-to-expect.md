@@ -3,6 +3,7 @@ title: "Year 5 NAPLAN: what to expect and how to prepare"
 description: "What Year 5 NAPLAN actually tests, what scores mean, prep tips that work, and what not to do. A calm guide for Melbourne parents."
 date: "2026-06-08"
 audience: "Year 5 parents"
+generator: "primary"
 published: true
 ---
 
@@ -21,6 +22,8 @@ Reading passages are longer than in Year 3. Numeracy includes multi-step problem
 Results come back as a score on a scale, placed into bands. For Year 5, bands range from 1 to 10, with Band 6 being the national minimum standard. That means a child in Band 6 has met the baseline. Bands 7 and 8 represent proficient levels, which is where the majority of students sit.
 
 "At or above national minimum" sounds reassuring, but it's a low bar. The more useful question is whether your child is tracking at or above "proficient," which indicates they're well-placed for the work ahead in Years 6 and beyond.
+
+<!--GENERATOR-->
 
 ## Prep tips that actually work
 
