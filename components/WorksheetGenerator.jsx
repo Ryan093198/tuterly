@@ -758,11 +758,11 @@ function FullTestUpsell({ onStart }) {
   // Problem-first CTA, kept deliberately tight: name the gap, then the fix.
   // Feature-led copy buried the pitch, so this leads with the concern.
   const PROBLEM =
-    "Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, can be timed, and focus on worded problems.";
+    "They come sorted by topic, so your child knows the method before they read the question.";
   const points = [
-    "25 questions on a whole topic, mixed difficulty, VCAA aligned",
+    "Unlimited questions on entire topics, mixed difficulty, VCAA aligned",
     "Printable test, plus a separate answer key for marking",
-    "Any topic, any time, for every child on your account",
+    "Any topic, any time, designed to mimic actual test questions",
   ];
   return (
     <div
@@ -789,8 +789,8 @@ function FullTestUpsell({ onStart }) {
           margin: "0 0 16px",
         }}
       >
-        That&apos;s where Tuterly comes in and closes the gap: more questions,
-        mixed up, under test conditions, with worded problems.
+        That&apos;s where Tuterly comes in and closes the gap: unlimited
+        questions, mixed up, under test conditions, including worded problems.
       </p>
 
       <ul
