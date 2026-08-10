@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Illustrative NAPLAN result: a student sitting just below the national average in all four domains</title>
+  <desc id="d">Four proficiency bands shown as rows, from Needs additional support at the bottom to Exceeding at the top. Dots mark an example student's result in Numeracy, Reading, Writing and Conventions of language. A dashed line marks the national average. Every dot sits just below that line.</desc>
+
+  <style>
+    .f { font-family: Inter, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .band-label { font-size: 15px; fill: #334155; font-weight: 600; }
+    .band-sub { font-size: 12.5px; fill: #64748B; }
+    .domain { font-size: 16px; fill: #0F172A; font-weight: 700; }
+    .key { font-size: 13.5px; fill: #334155; }
+    .note { font-size: 12.5px; fill: #64748B; }
+    .callout { font-size: 13px; fill: #0F172A; font-weight: 600; }
+  </style>
+
+  <rect width="1000" height="560" fill="#FFFFFF"/>
+
+  <!-- Key -->
+  <g class="f">
+    <circle cx="180" cy="34" r="7" fill="#0F172A" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="196" y="39" class="key">Your child&#8217;s result</text>
+    <line x1="330" y1="34" x2="372" y2="34" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5"/>
+    <text x="382" y="39" class="key">National average</text>
+  </g>
+
+  <!-- Proficiency bands: sequential teal ramp, light (lowest) to dark (highest) -->
+  <g>
+    <rect x="170" y="90"  width="790" height="88" fill="#12897F" rx="3"/>
+    <rect x="170" y="180" width="790" height="88" fill="#5CC4B9" rx="3"/>
+    <rect x="170" y="270" width="790" height="88" fill="#B7E4DE" rx="3"/>
+    <rect x="170" y="360" width="790" height="88" fill="#EAF7F5" rx="3"/>
+  </g>
+
+  <!-- Band labels (left axis) -->
+  <g class="f" text-anchor="end">
+    <text x="156" y="139" class="band-label">Exceeding</text>
+    <text x="156" y="229" class="band-label">Strong</text>
+    <text x="156" y="319" class="band-label">Developing</text>
+    <text x="156" y="399" class="band-label">Needs additional</text>
+    <text x="156" y="416" class="band-label">support</text>
+  </g>
+
+  <!-- Domain headings -->
+  <g class="f" text-anchor="middle">
+    <text x="268" y="75" class="domain">Numeracy</text>
+    <text x="465" y="75" class="domain">Reading</text>
+    <text x="662" y="75" class="domain">Writing</text>
+    <text x="859" y="75" class="domain">Conventions</text>
+  </g>
+
+  <!-- National average -->
+  <line x1="170" y1="252" x2="960" y2="252" stroke="#64748B" stroke-width="2.5" stroke-dasharray="7 5"/>
+
+  <!-- Student results: all just below the national average -->
+  <g>
+    <circle cx="268" cy="284" r="9" fill="#0F172A" stroke="#FFFFFF" stroke-width="2.5"/>
+    <circle cx="465" cy="276" r="9" fill="#0F172A" stroke="#FFFFFF" stroke-width="2.5"/>
+    <circle cx="662" cy="277" r="9" fill="#0F172A" stroke="#FFFFFF" stroke-width="2.5"/>
+    <circle cx="859" cy="280" r="9" fill="#0F172A" stroke="#FFFFFF" stroke-width="2.5"/>
+  </g>
+
+  <!-- Callout -->
+  <g class="f">
+    <line x1="268" y1="298" x2="268" y2="470" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="268" y="492" class="callout" text-anchor="middle">Below average, and into &#8220;Developing&#8221;</text>
+  </g>
+
+  <!-- Caption -->
+  <g class="f">
+    <text x="170" y="528" class="note">Illustrative example only. Not an official ACARA or NAPLAN report, and not a real student&#8217;s result.</text>
+  </g>
+</svg>
