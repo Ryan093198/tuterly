@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
+import Testimonials from "@/components/marketing/Testimonials";
 import { SITE_URL } from "@/lib/site";
 
 // Public landing page for the free maths worksheet generator. Restyled to
@@ -129,6 +130,23 @@ export default function WorksheetsPage() {
       <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
         <WorksheetGenerator topicsByYear={topicsByYear} />
       </main>
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).
+          Leads with quotes about the practice questions, falling back to
+          general parent quotes only to fill the row. Renders nothing while
+          the list is empty. */}
+      <Testimonials
+        variant="grid"
+        tags={["practice", "parents"]}
+        limit={3}
+        palette={c}
+        background={c.white}
+        padding="64px 40px 72px"
+        headingFont={sans}
+        bodyFont={sans}
+        kicker="From our families"
+        heading="What parents say about the practice questions."
+      />
 
       {/* TOPIC GRID */}
       <section className="ws-section" style={{ background: c.paper, borderTop: `1px solid ${c.border}`, padding: "72px 40px 88px" }}>

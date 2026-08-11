@@ -14,6 +14,7 @@ import {
   getLandingPagesForYear,
 } from "@/lib/worksheet-landing-pages";
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
+import Testimonials from "@/components/marketing/Testimonials";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -310,6 +311,17 @@ export default async function WorksheetTopicLandingPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
+      <Testimonials
+        variant="grid"
+        tags={["practice", "parents"]}
+        limit={3}
+        background={c.offWhite}
+        padding="56px 24px"
+        kicker="From our families"
+        heading="Parents on the practice questions."
+      />
 
       {faqs.length > 0 && (
         <section style={{ padding: "48px 24px 56px", background: c.white }}>

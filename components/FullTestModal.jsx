@@ -308,7 +308,9 @@ export default function FullTestModal({
                   disabled={busy}
                   className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
                 >
-                  <option value="">, Choose a topic area, </option>
+                  <option value="" disabled hidden>
+                    Choose a topic area
+                  </option>
                   {strands.map((s) => (
                     <option key={s} value={s}>
                       {s}

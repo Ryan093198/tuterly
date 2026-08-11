@@ -501,7 +501,9 @@ export default function WorksheetGenerator({
               disabled={generating || yearGroups.length === 0}
               style={inputStyle}
             >
-              <option value="">, Choose a topic, </option>
+              <option value="" disabled hidden>
+                Choose a topic
+              </option>
               {yearGroups.map((g) => (
                 <optgroup key={g.strand} label={g.strand}>
                   {g.topics.map((t) => (
