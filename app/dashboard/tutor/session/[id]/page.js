@@ -112,14 +112,14 @@ export default async function SessionPage({ params, searchParams }) {
 
       <Section
         label="Your notes"
-        hint="Brief Dotpoints are enough — Tuterly will expand on them."
+        hint="Brief Dotpoints are enough, Tuterly will expand on them."
       >
         <NotesEditor sessionId={session.id} initialNotes={session.raw_notes ?? ""} />
       </Section>
 
       <Section
         label="Photos of working"
-        hint="Snap the whiteboard or any working out — Tuterly will summarise them for the report."
+        hint="Snap the whiteboard or any working out, Tuterly will summarise them for the report."
       >
         <SessionPhotos sessionId={session.id} photos={photos} canManage />
       </Section>

@@ -1,6 +1,6 @@
 ---
 title: "VCE English: what makes a 9/10 essay"
-description: "It's not vocabulary or length — it's structure and argument. Here's what VCE English assessors actually reward, broken down clearly."
+description: "It's not vocabulary or length, it's structure and argument. Here's what VCE English assessors actually reward, broken down clearly."
 date: "2026-06-11"
 audience: "Year 11–12 students and parents"
 published: true

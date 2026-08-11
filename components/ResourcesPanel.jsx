@@ -276,7 +276,7 @@ function Dropzone({ uploading, onPick, onTogglePaste, showPaste, fileInputRef })
         {uploading ? "Uploading…" : "Drop a file or click to upload"}
       </p>
       <p className="text-xs text-muted mt-1">
-        PDF, Word, text or image — auto-classified by filename. Max 25MB per file.{" "}
+        PDF, Word, text or image, auto-classified by filename. Max 25MB per file.{" "}
         <button
           type="button"
           onClick={(e) => {
@@ -331,7 +331,7 @@ function PasteForm({ studentId, onClose, onSaved }) {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Cambridge Y9 — Chapter 5 contents"
+            placeholder="e.g. Cambridge Y9, Chapter 5 contents"
             className="w-full h-10 px-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
           />
         </label>

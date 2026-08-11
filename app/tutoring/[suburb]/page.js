@@ -18,6 +18,7 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import ContactCTA from "@/components/marketing/ContactCTA";
+import Testimonials from "@/components/marketing/Testimonials";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
@@ -151,7 +152,7 @@ export default async function SuburbPage({ params }) {
               Free Year 7-10 maths worksheets, before you book a tutor.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Generate a fresh 10-question worksheet in any Year 7-10 topic, with full worked solutions. No signup needed for the first one.
+              Generate a fresh practice worksheet in any Year 7-10 topic, with full worked solutions. No signup needed for the first one.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
               {[7, 8, 9, 10].map((yr) => (
@@ -188,6 +189,20 @@ export default async function SuburbPage({ params }) {
 
       {/* SAMPLE REPORT */}
       <SampleReport background={c.white} padding="80px 24px" />
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).
+          Prefers quotes from this suburb, falls back to the general pool so
+          the section is never empty on a suburb with no quote yet. */}
+      <Testimonials
+        variant="grid"
+        tags={["suburb", "parents"]}
+        suburb={data.name}
+        limit={3}
+        background={c.offWhite}
+        padding="80px 24px"
+        kicker="From our families"
+        heading={`What parents in and around ${data.name} tell us.`}
+      />
 
       {/* PRICING - SAVINGS + COMPARISON */}
       <section style={{ padding: "80px 24px", background: c.offWhite }}>

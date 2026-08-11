@@ -199,7 +199,7 @@ async function handle(request) {
     year: "numeric",
   });
   const shortLabel = topicLabel.length > 55 ? topicLabel.slice(0, 52) + "…" : topicLabel;
-  const resourceName = `Practice test — ${shortLabel} (${dateLabel})`;
+  const resourceName = `Practice test, ${shortLabel} (${dateLabel})`;
 
   const metadata = {
     kind: "full_test",

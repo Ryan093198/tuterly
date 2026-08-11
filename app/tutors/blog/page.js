@@ -7,12 +7,12 @@ import Fade from "@/components/marketing/Fade";
 export const metadata = {
   title: "Tutor Blog | Tuterly",
   description:
-    "Advice for new and experienced tutors — how to get started, build your client base, and run better sessions.",
+    "Advice for new and experienced tutors: how to get started, build your client base, and run better sessions.",
   alternates: { canonical: `${SITE_URL}/tutors/blog` },
   openGraph: {
     title: "Tutor Blog | Tuterly",
     description:
-      "Advice for new and experienced tutors — how to get started, build your client base, and run better sessions.",
+      "Advice for new and experienced tutors: how to get started, build your client base, and run better sessions.",
     url: `${SITE_URL}/tutors/blog`,
     type: "website",
   },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 
@@ -13,6 +13,14 @@ import { readJsonOrFallback } from "@/lib/practice-client";
 // Topic data is pre-rendered server-side (see app/worksheets/page.js)
 // so the dropdown is instant.
 const STORAGE_KEY = "tuterly:worksheet_email";
+// Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
+// worksheet, opened a worked solution, or downloaded the PDF) rather than the
+// instant the worksheet paints - a modal thrown over the thing they just
+// waited 30s for reads as bait-and-switch and gets dismissed reflexively.
+const UPSELL_SESSION_KEY = "tuterly:worksheet_upsell_seen";
+// Floor on how soon after generation the modal may appear, so a fast scroll
+// or a stray toggle click cannot pre-empt them actually looking at it.
+const UPSELL_MIN_DWELL_MS = 4000;
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -79,6 +87,20 @@ export default function WorksheetGenerator({
   const [trialPromptOpen, setTrialPromptOpen] = useState(false);
   const [trialPending, setTrialPending] = useState(false);
   const [trialError, setTrialError] = useState(null);
+  const [upsellOpen, setUpsellOpen] = useState(false);
+  // Ref rather than state: the guard is read inside listeners that must not
+  // re-subscribe when it flips.
+  const upsellFiredRef = useRef(false);
+  const worksheetShownAtRef = useRef(0);
+  const upsellSentinelRef = useRef(null);
+  // Mirrors "some other modal is open" into a ref. Kept out of the
+  // maybeOpenUpsell dep list on purpose: if the callback changed identity
+  // whenever a modal opened or closed, the observer effect below would
+  // re-subscribe and drop any engagement during the gap.
+  const upsellBlockedRef = useRef(false);
+  // Pending delayed-open timer, so it can be cancelled and cannot outlive the
+  // component or the state it was scheduled under.
+  const upsellTimerRef = useRef(null);
   const resultRef = useRef(null);
 
   // Scroll to the generated worksheet once it actually paints. Keyed on
@@ -87,6 +109,7 @@ export default function WorksheetGenerator({
   // under the upsell card, and parents think nothing happened.
   useEffect(() => {
     if (worksheet) {
+      worksheetShownAtRef.current = Date.now();
       resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [worksheet]);
@@ -205,6 +228,112 @@ export default function WorksheetGenerator({
     }
   }
 
+  // Single gate for every engagement signal. Once per browser session, never
+  // stacked on top of another modal, and never before the dwell floor unless
+  // the signal is high-intent (a PDF download).
+  useEffect(() => {
+    upsellBlockedRef.current = emailModalOpen || trialPromptOpen || generating;
+  }, [emailModalOpen, trialPromptOpen, generating]);
+
+  // Spends the once-per-session budget and opens the modal. Guards are
+  // re-checked HERE rather than at schedule time, so a delayed open that is
+  // no longer appropriate (another modal went up, a regenerate started) is
+  // dropped without consuming the budget.
+  const commitUpsell = useCallback(() => {
+    if (upsellFiredRef.current) return;
+    if (upsellBlockedRef.current) return;
+    try {
+      if (window.sessionStorage.getItem(UPSELL_SESSION_KEY)) {
+        upsellFiredRef.current = true;
+        return;
+      }
+      window.sessionStorage.setItem(UPSELL_SESSION_KEY, "1");
+    } catch {}
+    upsellFiredRef.current = true;
+    setUpsellOpen(true);
+  }, []);
+
+  const cancelPendingUpsell = useCallback(() => {
+    if (upsellTimerRef.current) {
+      clearTimeout(upsellTimerRef.current);
+      upsellTimerRef.current = null;
+    }
+  }, []);
+
+  const maybeOpenUpsell = useCallback(
+    ({ force = false, delayMs = 0 } = {}) => {
+      if (upsellFiredRef.current) return;
+      if (upsellBlockedRef.current) return;
+      if (upsellTimerRef.current) return;
+      if (!force && Date.now() - worksheetShownAtRef.current < UPSELL_MIN_DWELL_MS) {
+        return;
+      }
+      if (delayMs > 0) {
+        upsellTimerRef.current = setTimeout(() => {
+          upsellTimerRef.current = null;
+          commitUpsell();
+        }, delayMs);
+        return;
+      }
+      commitUpsell();
+    },
+    [commitUpsell]
+  );
+
+  useEffect(() => cancelPendingUpsell, [cancelPendingUpsell]);
+
+  // Signal 1: they scrolled to the END of the worksheet.
+  //
+  // Only a not-visible -> visible TRANSITION counts. IntersectionObserver
+  // always delivers an initial callback describing the current state, so
+  // firing on any intersecting entry would trigger on short worksheets that
+  // already fit the viewport, with no scrolling at all - the opposite of the
+  // signal we want, and more likely now the worksheet is 6 questions rather
+  // than 10. A sentinel that was on screen from the start proves nothing;
+  // those parents reach the modal by opening a solution or downloading
+  // instead, both of which are real engagement.
+  useEffect(() => {
+    if (!worksheet) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    const el = upsellSentinelRef.current;
+    if (!el) return;
+    let seenOffScreen = false;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          seenOffScreen = true;
+          return;
+        }
+        if (!seenOffScreen) return;
+        // The transition IS the engagement signal, so never drop it just
+        // because the dwell floor has not elapsed - defer it by whatever is
+        // left instead. The deferred open re-checks every guard when it runs.
+        const remaining =
+          UPSELL_MIN_DWELL_MS - (Date.now() - worksheetShownAtRef.current);
+        maybeOpenUpsell(
+          remaining > 0 ? { force: true, delayMs: remaining } : {}
+        );
+      },
+      { threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [worksheet, maybeOpenUpsell]);
+
+  // Signal 2: they opened a worked solution. The `toggle` event does not
+  // bubble, so listen in the capture phase on the result container.
+  useEffect(() => {
+    if (!worksheet) return;
+    const el = resultRef.current;
+    if (!el) return;
+    const onToggle = (ev) => {
+      const t = ev.target;
+      if (t && t.tagName === "DETAILS" && t.open) maybeOpenUpsell();
+    };
+    el.addEventListener("toggle", onToggle, true);
+    return () => el.removeEventListener("toggle", onToggle, true);
+  }, [worksheet, maybeOpenUpsell]);
+
   function pickTopic(id) {
     setTopicId(id);
     const match = flatTopics.find((t) => t.id === id);
@@ -222,6 +351,8 @@ export default function WorksheetGenerator({
     // modal instead of the generate endpoint. Pre-fill the modal with
     // the year they currently have selected.
     if (!emailSaved) {
+      cancelPendingUpsell();
+      setUpsellOpen(false);
       setModalEmailInput(email || "");
       setModalYearInput(yearLevel);
       setEmailError(null);
@@ -229,6 +360,10 @@ export default function WorksheetGenerator({
       return;
     }
     const effectiveYear = opts.yearLevelOverride || yearLevel;
+    // Regenerating behind an open (or about-to-open) upsell would scroll the
+    // fresh worksheet in underneath the overlay.
+    cancelPendingUpsell();
+    setUpsellOpen(false);
     setGenerating(true);
     try {
       const res = await fetch("/api/worksheets/generate", {
@@ -320,6 +455,11 @@ export default function WorksheetGenerator({
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      // Signal 3: downloading the PDF. Highest intent of the three, so it
+      // skips the dwell floor - but it waits out the browser's own download
+      // UI rather than painting on top of it.
+      cancelPendingUpsell();
+      maybeOpenUpsell({ force: true, delayMs: 1500 });
     } catch (err) {
       setError(err.message || "Could not download PDF.");
     }
@@ -332,7 +472,7 @@ export default function WorksheetGenerator({
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
-          10 questions — 4 Foundation, 4 Standard, 2 Extension — with full
+          Six questions across Foundation, Standard and Extension, with full
           worked solutions, calibrated to the Victorian Curriculum.
         </p>
 
@@ -361,7 +501,7 @@ export default function WorksheetGenerator({
               disabled={generating || yearGroups.length === 0}
               style={inputStyle}
             >
-              <option value="">— Choose a topic —</option>
+              <option value="">, Choose a topic, </option>
               {yearGroups.map((g) => (
                 <optgroup key={g.strand} label={g.strand}>
                   {g.topics.map((t) => (
@@ -447,13 +587,21 @@ export default function WorksheetGenerator({
             <div style={worksheetBodyStyle}>
               <MarkdownReport content={worksheet.content} />
             </div>
+            {/* Engagement sentinel: crossing this means they read to the end. */}
+            <div ref={upsellSentinelRef} aria-hidden="true" style={{ height: 1 }} />
           </div>
 
           <TrialBanner />
         </div>
       )}
 
-      <FullTestUpsell onStart={() => setTrialPromptOpen(true)} />
+      <FullTestUpsell
+        onStart={() => {
+          cancelPendingUpsell();
+          setUpsellOpen(false);
+          setTrialPromptOpen(true);
+        }}
+      />
 
       {emailModalOpen && (
         <EmailGateModal
@@ -470,6 +618,18 @@ export default function WorksheetGenerator({
             setEmailModalOpen(false);
             setEmailError(null);
           }}
+        />
+      )}
+
+      {upsellOpen && (
+        <WorksheetUpsellModal
+          onClose={() => {
+            setUpsellOpen(false);
+            setTrialError(null);
+          }}
+          onStart={handleStartTrial}
+          pending={trialPending}
+          error={trialError}
         />
       )}
 
@@ -893,6 +1053,165 @@ function TrialBanner() {
 }
 
 // --- Styles ---
+
+function WorksheetUpsellModal({ onClose, onStart, pending, error }) {
+  // Lock the page behind the overlay. Mount-scoped: `onClose` is an inline
+  // arrow from the parent, so keying this on it would tear down and re-apply
+  // the lock on every parent render.
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape" && !pending) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, pending]);
+
+  const points = [
+    "Unlimited worksheets on every topic, Year 3 to Year 10",
+    "Test and exam style papers covering a whole topic, not one skill",
+    "Fresh questions every time, so nothing gets memorised",
+    "Fully worked solutions, plus a separate answer key for marking",
+  ];
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 24,
+        background: "rgba(15, 23, 42, 0.55)",
+      }}
+      onClick={pending ? undefined : onClose}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="worksheet-upsell-title"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: c.white,
+          borderRadius: 20,
+          padding: 32,
+          maxWidth: 470,
+          width: "100%",
+          maxHeight: "90vh",
+          overflowY: "auto",
+          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
+          border: `1px solid ${c.border}`,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            color: c.teal,
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            margin: 0,
+          }}
+        >
+          Keep going
+        </p>
+        <h2
+          id="worksheet-upsell-title"
+          style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: 26,
+            color: c.navy,
+            lineHeight: 1.2,
+            margin: "8px 0 12px",
+          }}
+        >
+          That&apos;s six questions on one topic.
+        </h2>
+        <p style={{ color: c.textLight, fontSize: 15, lineHeight: 1.65, margin: "0 0 16px" }}>
+          A term of maths is forty. With Tuterly your child can generate
+          unlimited worksheets on every topic in the curriculum, and sit full
+          test style papers across a whole topic when an assessment is coming
+          up.
+        </p>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: "0 0 20px",
+            padding: 0,
+            display: "grid",
+            gap: 6,
+            color: c.text,
+            fontSize: 14,
+          }}
+        >
+          {points.map((t) => (
+            <li key={t} style={{ display: "flex", gap: 10 }}>
+              <span style={{ color: c.teal, fontWeight: 700 }}>✓</span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+        {error && (
+          <p
+            style={{
+              color: c.rose,
+              fontSize: 13,
+              margin: "0 0 12px",
+              background: "#FFF1F2",
+              padding: "8px 10px",
+              borderRadius: 8,
+            }}
+          >
+            {error}
+          </p>
+        )}
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+          <button
+            type="button"
+            onClick={onStart}
+            disabled={pending}
+            style={{
+              ...primaryButtonStyle,
+              flex: "1 1 auto",
+              opacity: pending ? 0.7 : 1,
+              cursor: pending ? "wait" : "pointer",
+            }}
+          >
+            {pending ? "Starting…" : "Start the 7-day free trial"}
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            disabled={pending}
+            style={{ ...secondaryButtonStyle, flex: "0 0 auto" }}
+          >
+            Not now
+          </button>
+        </div>
+        <p
+          style={{
+            color: c.textMuted,
+            fontSize: 12,
+            margin: "14px 0 0",
+            textAlign: "center",
+          }}
+        >
+          $29 / month after the trial. Cancel any time before it ends and you
+          won&apos;t be charged.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 const readyPromptStyle = {
   display: "block",

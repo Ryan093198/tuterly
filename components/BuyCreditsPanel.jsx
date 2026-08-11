@@ -68,7 +68,7 @@ export default function BuyCreditsPanel({
               ? lowBalance
                 ? "Buy a pack so your child's next session can run uninterrupted."
                 : "One credit is used each time your tutor publishes a session report."
-              : "Buy a pack to book sessions with a tutor. Every pack includes full Tuterly software — reports, practice and progress tracking — at no extra cost."}
+              : "Buy a pack to book sessions with a tutor. Every pack includes full Tuterly software: reports, practice and progress tracking, at no extra cost."}
           </p>
         </div>
         {lowBalance && (
@@ -79,7 +79,7 @@ export default function BuyCreditsPanel({
       </div>
 
       {/* The key clarifier: for anyone on a paid path, spell out that the
-          software comes with it — so they never think they also owe $29/mo. */}
+          software comes with it, so they never think they also owe $29/mo. */}
       {softwareIncluded && (
         <div className="mt-4 flex items-start gap-2.5 rounded-2xl border border-brand/15 bg-brand-pale/40 px-4 py-3">
           <span className="mt-0.5 shrink-0 text-brand">
@@ -100,7 +100,7 @@ export default function BuyCreditsPanel({
           <p className="text-xs text-foreground leading-relaxed">
             <span className="font-semibold">Software included.</span> Session
             reports, the practice generator and progress tracking come with your
-            sessions — there&apos;s no separate $29/month membership to pay.
+            sessions, there&apos;s no separate $29/month membership to pay.
           </p>
         </div>
       )}

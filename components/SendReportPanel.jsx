@@ -40,9 +40,9 @@ const ROLE_COPY = {
     initialHeading: "Email a PDF copy to the parent",
     initialButton: "Email parent now",
     resendButton: "Re-send to parent",
-    linkedSuffix: " — they can already see this report in their dashboard.",
+    linkedSuffix: ", they can already see this report in their dashboard.",
     pendingSuffix:
-      " — invite hasn't been accepted yet, but the PDF will still arrive.",
+      ": invite hasn't been accepted yet, but the PDF will still arrive.",
   },
   student: {
     inviteCta: "Invite the student",
@@ -52,9 +52,9 @@ const ROLE_COPY = {
     initialHeading: "Email a PDF copy to the student",
     initialButton: "Email student now",
     resendButton: "Re-send to student",
-    linkedSuffix: " — they can already see this report in their dashboard.",
+    linkedSuffix: ", they can already see this report in their dashboard.",
     pendingSuffix:
-      " — invite hasn't been accepted yet, but the PDF will still arrive.",
+      ": invite hasn't been accepted yet, but the PDF will still arrive.",
   },
 };
 

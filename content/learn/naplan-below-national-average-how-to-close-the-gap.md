@@ -46,9 +46,9 @@ Fix those three and the dot moves, often without teaching a single new topic.
 **2. Diagnose where they are now.** The report is months old. Sit them down with a practice test on the flagged topic and mark it together. That twenty minutes will tell you more than the report did, because it is current.
 
 **3. Sort every mistake into three buckets.**
-- *Silly mistake* (knew it, slipped) — not a knowledge gap, do not re-teach.
-- *Method gap* (did not know how to start) — this is the real target.
-- *Ran out of time* — needs practice at speed, not more explanation.
+- *Silly mistake* (knew it, slipped): not a knowledge gap, do not re-teach.
+- *Method gap* (did not know how to start), this is the real target.
+- *Ran out of time*: needs practice at speed, not more explanation.
 
 Most families re-teach an entire topic when the child had two slips and one genuine gap.
 

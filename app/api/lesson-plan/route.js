@@ -24,11 +24,11 @@ const DEFAULT_WEEKS = 10;
 
 const SYSTEM_INSTRUCTIONS = `You are an experienced one-on-one tutor planning a sequence of weekly tutoring sessions for a single student. Each tutoring session is roughly an hour, occurring once per week.
 
-Schools typically spend 3–4 weeks on a major topic before moving on. Match that pacing — give each main topic enough time for the student to actually internalise it, with each week of the topic going deeper or covering a different sub-skill.
+Schools typically spend 3–4 weeks on a major topic before moving on. Match that pacing: give each main topic enough time for the student to actually internalise it, with each week of the topic going deeper or covering a different sub-skill.
 
 Produce a markdown lesson plan with EXACTLY this structure:
 
-# Lesson Plan — {Subject} — {N} weeks
+# Lesson Plan, {Subject}, {N} weeks
 
 ## Topic 1: {Main topic name} (Weeks 1–4)
 
@@ -51,16 +51,16 @@ Produce a markdown lesson plan with EXACTLY this structure:
 
 PLANNING RULES:
 - Each main topic spans 3–4 weeks. Don't power through a major topic in a single week.
-- Each week within a topic must focus on a DIFFERENT angle or sub-skill of that topic — don't repeat. Examples for "Quadratic Functions": Week 1 expanding/factorising, Week 2 solving equations and the null factor law, Week 3 graphing parabolas and key features, Week 4 applications and word problems.
+- Each week within a topic must focus on a DIFFERENT angle or sub-skill of that topic, don't repeat. Examples for "Quadratic Functions": Week 1 expanding/factorising, Week 2 solving equations and the null factor law, Week 3 graphing parabolas and key features, Week 4 applications and word problems.
 - 3–5 specific subtopics per week. Subtopics should be concrete (e.g. "Solving quadratic equations using the null factor law"), not vague (e.g. "Quadratics").
 - Order topics so prior knowledge supports later topics. Foundations first, harder material later.
-- If the tutor supplied a school term planner, mirror its sequence as closely as possible — the school's progression takes priority over the curriculum data. Match the school's pacing too.
+- If the tutor supplied a school term planner, mirror its sequence as closely as possible, the school's progression takes priority over the curriculum data. Match the school's pacing too.
 - If the tutor supplied a list of topics, prioritise those in roughly that order, still allocating 3–4 weeks per main topic.
 - Otherwise plan from the curriculum reference.
-- For shorter total durations (e.g. a 1–3 week plan), it's fine for a topic to span fewer weeks — but never just label every week as a separate main topic.
+- For shorter total durations (e.g. a 1–3 week plan), it's fine for a topic to span fewer weeks, but never just label every week as a separate main topic.
 - Use the exact "## Topic N: ... (Weeks A–B)" / "### Week N: ..." / "**Subtopics:**" / bulleted list structure. The PDF/email pipeline parses these markers.
 - Do NOT invent textbook page numbers, chapter numbers, or section references. Refer to topics by name only.
-- Keep it concise — this is a planning aid, not a full lesson script. No worked examples, no homework instructions, no padding.
+- Keep it concise: this is a planning aid, not a full lesson script. No worked examples, no homework instructions, no padding.
 - Output ONLY the markdown plan. No preamble, no closing remarks, no commentary about your own process.`;
 
 export async function POST(request) {
@@ -213,7 +213,7 @@ export async function POST(request) {
   );
   const curriculumBlock = curriculumLookup
     ? formatCurriculumForPrompt(curriculumLookup.curriculum, curriculumLookup.isVCE)
-    : "(No curriculum data available for this level/subject — plan from general knowledge of the subject at the student's year level.)";
+    : "(No curriculum data available for this level/subject, plan from general knowledge of the subject at the student's year level.)";
 
   const subjectLabel = levelOverride
     ? levelOverride
@@ -236,7 +236,7 @@ export async function POST(request) {
     `Generate a ${weeks}-week lesson plan.`,
     "",
     plannerText
-      ? `THE TUTOR SUPPLIED THE STUDENT'S SCHOOL TERM PLANNER. Mirror its progression — the school's sequence is the spine of the plan:\n\n${plannerText}`
+      ? `THE TUTOR SUPPLIED THE STUDENT'S SCHOOL TERM PLANNER. Mirror its progression, the school's sequence is the spine of the plan:\n\n${plannerText}`
       : customTopics
         ? `THE TUTOR WANTS TO COVER THESE TOPICS (in roughly this order):\n\n${customTopics}`
         : "NO SPECIFIC TOPICS OR PLANNER WERE SUPPLIED. Plan from the curriculum reference below, picking topics appropriate for the student's level.",
@@ -282,7 +282,7 @@ export async function POST(request) {
     month: "short",
     year: "numeric",
   });
-  const resourceName = `Lesson plan — ${subjectLabel} — ${weeks} ${
+  const resourceName = `Lesson plan, ${subjectLabel}, ${weeks} ${
     weeks === 1 ? "week" : "weeks"
   } (${dateLabel})`;
 

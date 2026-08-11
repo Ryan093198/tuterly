@@ -123,7 +123,7 @@ export async function requestParentEmailChange(formData) {
     .single();
   if (!student) throw new Error("student not found");
   if (!student.parent_id) {
-    throw new Error("no linked parent — use the invite flow instead");
+    throw new Error("no linked parent, use the invite flow instead");
   }
 
   const { data: parent } = await admin

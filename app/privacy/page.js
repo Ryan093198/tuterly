@@ -165,18 +165,18 @@ export default function PrivacyPolicy() {
           <Section title="Your rights">
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
-                <strong>Access</strong> — see what we hold about you. Email us.
+                <strong>Access</strong>, see what we hold about you. Email us.
               </li>
               <li>
-                <strong>Correction</strong> — most fields can be edited
+                <strong>Correction</strong>, most fields can be edited
                 directly in the app; otherwise email us.
               </li>
               <li>
-                <strong>Deletion</strong> — ask us to delete your account and
+                <strong>Deletion</strong>, ask us to delete your account and
                 associated data. Email us; we'll action within 14 days.
               </li>
               <li>
-                <strong>Withdraw consent</strong> — stop using the service at
+                <strong>Withdraw consent</strong>, stop using the service at
                 any time.
               </li>
             </ul>

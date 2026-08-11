@@ -33,7 +33,7 @@ export default function EmailChangeForm({ currentEmail }) {
 
     setStatus({
       type: "ok",
-      msg: `We've sent a confirmation link to ${next}. Click it to finish changing your email — your sign-in won't change until you do.`,
+      msg: `We've sent a confirmation link to ${next}. Click it to finish changing your email, your sign-in won't change until you do.`,
     });
     setEmail("");
     router.refresh();
@@ -43,7 +43,7 @@ export default function EmailChangeForm({ currentEmail }) {
     <form onSubmit={handleSubmit} className="space-y-3">
       <p className="text-sm text-muted leading-relaxed">
         Enter the new email you'd like to use for signing in. We'll send a
-        confirmation link to that address — click it to finish the change.
+        confirmation link to that address, click it to finish the change.
       </p>
       <label className="block space-y-1.5">
         <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">

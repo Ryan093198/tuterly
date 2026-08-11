@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
+import Testimonials from "@/components/marketing/Testimonials";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -134,6 +135,17 @@ export default function ClueyAlternativePage() {
           />
         </div>
       </section>
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
+      <Testimonials
+        variant="grid"
+        tags={["compare", "parents", "value"]}
+        limit={3}
+        background={c.offWhite}
+        padding="72px 24px"
+        kicker="From our families"
+        heading="Why families moved across."
+      />
 
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>

@@ -220,7 +220,7 @@ async function onPackPurchaseCompleted(session) {
     parent_id: userId,
     type: "session_pack",
     amount: pack.price,
-    description: `${pack.name} pack — ${pack.sessions} sessions`,
+    description: `${pack.name} pack, ${pack.sessions} sessions`,
     stripe_invoice_id: stripeInvoiceId,
     stripe_payment_intent_id: paymentIntentId,
     status: "paid",

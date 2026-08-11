@@ -158,7 +158,7 @@ export default function ParentResourcesIndex({ kids }) {
 
       {/* The generator modals destructure `student.subject` in their
           useState initialisers, so they MUST NOT render until a student
-          is chosen — otherwise we hit `Cannot read properties of
+          is chosen, otherwise we hit `Cannot read properties of
           undefined`. Conditional-mount keyed on the kid id so swapping
           kids resets the modal's internal state cleanly. */}
       {practiceFor && (

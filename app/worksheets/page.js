@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Free Maths Worksheets - Year 3 to Year 10 | Tuterly";
 const DESCRIPTION =
-  "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. 10 questions with worked solutions, downloadable as PDF.";
+  "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. Fully worked solutions, downloadable as PDF.";
 const URL = `${SITE_URL}/worksheets`;
 
 export const metadata = {
@@ -114,17 +114,12 @@ export default function WorksheetsPage() {
             <span style={{ color: c.teal }}>Year 3 to Year 10</span>.
           </h1>
           <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
-            10 questions with fully worked solutions, aligned to the Victorian
+            Six questions with fully worked solutions, aligned to the Victorian
             Curriculum. Generate one now, download the PDF, no signup required.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-            <div style={{ display: "flex", gap: 2 }}>
-              {[1, 2, 3, 4, 5].map((s) => (
-                <span key={s} style={{ color: c.amber, fontSize: 14 }}>★</span>
-              ))}
-            </div>
             <p style={{ fontSize: 13, color: c.textLight, fontWeight: 500 }}>
-              Trusted by Melbourne families · by Bayside Academics
+              Built by Bayside Academics, tutoring Melbourne families in person for years
             </p>
           </div>
         </div>

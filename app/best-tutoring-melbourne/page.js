@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
+import Testimonials from "@/components/marketing/Testimonials";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
@@ -200,6 +201,17 @@ export default function BestTutoringMelbournePage() {
           </Fade>
         </div>
       </section>
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
+      <Testimonials
+        variant="grid"
+        tags={["compare", "parents"]}
+        limit={3}
+        background={c.white}
+        padding="72px 24px"
+        kicker="From our families"
+        heading="What families say after making the switch."
+      />
 
       <section style={{ padding: "72px 24px", background: c.white }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>

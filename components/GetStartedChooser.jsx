@@ -67,7 +67,7 @@ export default function GetStartedChooser({ packs = [] }) {
           onFocus={(e) => (e.target.style.borderColor = c.teal)}
           onBlur={(e) => (e.target.style.borderColor = c.line)}
         />
-        <p style={{ fontSize: 12.5, color: c.muted, marginTop: 7 }}>We&apos;ll create your account and email a sign-in link after payment — no password to set up first.</p>
+        <p style={{ fontSize: 12.5, color: c.muted, marginTop: 7 }}>We&apos;ll create your account and email a sign-in link after payment, no password to set up first.</p>
         {error && <p style={{ fontSize: 13, color: c.rose, marginTop: 10, fontWeight: 500 }}>{error}</p>}
       </div>
 
@@ -100,7 +100,7 @@ export default function GetStartedChooser({ packs = [] }) {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>Credits never expire. Cancel anytime — no lock-in.</p>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>Credits never expire. Cancel anytime, no lock-in.</p>
         </div>
 
         {/* RIGHT COLUMN — trial + match */}
@@ -125,7 +125,7 @@ export default function GetStartedChooser({ packs = [] }) {
           <div style={{ background: c.cool, borderRadius: 20, padding: "26px 26px", border: `1px solid ${c.line}` }}>
             <p style={{ fontSize: 14.5, fontWeight: 800, color: c.ink, marginBottom: 6 }}>Not sure yet?</p>
             <p style={{ fontSize: 14, color: c.slateLight, lineHeight: 1.6, marginBottom: 16 }}>
-              Prefer to meet a tutor before paying? Tell us your child&apos;s year level and subject and we&apos;ll match you first — pay once you&apos;re comfortable.
+              Prefer to meet a tutor before paying? Tell us your child&apos;s year level and subject and we&apos;ll match you first, pay once you&apos;re comfortable.
             </p>
             <a href="/parents#talk" style={{ display: "inline-block", fontSize: 14.5, fontWeight: 700, color: c.tealDeep, textDecoration: "none" }}>Get matched first →</a>
           </div>

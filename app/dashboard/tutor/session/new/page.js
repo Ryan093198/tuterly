@@ -51,7 +51,7 @@ export default async function NewSessionPage({ searchParams }) {
           New session
         </h1>
         <p className="text-sm text-muted mt-1">
-          Capture notes, photos, or audio — Tuterly will turn them into the parent's report.
+          Capture notes, photos, or audio, Tuterly will turn them into the parent's report.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default async function NewSessionPage({ searchParams }) {
             className="block w-full text-sm file:h-9 file:px-3 file:rounded-lg file:border file:border-zinc-200 dark:file:border-zinc-800 file:bg-card file:text-sm file:font-medium file:mr-3 file:cursor-pointer hover:file:bg-surface-soft"
           />
           <span className="block text-xs text-muted mt-1.5">
-            Snap the whiteboard or the student's working — Tuterly will see them when generating the report. Max 10MB per photo; we'll resize large shots automatically.
+            Snap the whiteboard or the student's working, Tuterly will see them when generating the report. Max 10MB per photo; we'll resize large shots automatically.
           </span>
         </Label>
 

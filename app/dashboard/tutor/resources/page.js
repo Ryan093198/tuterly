@@ -48,7 +48,7 @@ export default async function TutorResourcesPage() {
       <header className="space-y-1">
         <h1 className="text-3xl font-semibold tracking-tight">Resources</h1>
         <p className="text-sm text-muted">
-          Everything uploaded by you, your students, or their parents — across
+          Everything uploaded by you, your students, or their parents, across
           all your students.
         </p>
       </header>

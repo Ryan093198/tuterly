@@ -132,12 +132,12 @@ export async function uploadResource(formData) {
         const ab = await file.arrayBuffer();
         content = (await extractPdfText(ab)).trim();
         if (!content) {
-          content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF text could not be extracted (likely scanned image)]`;
+          content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB), PDF text could not be extracted (likely scanned image)]`;
         }
         uploadBuffer = Buffer.from(ab);
       } catch (e) {
         console.warn(`[uploadResource] PDF extract failed for ${name}: ${e?.message || e}`);
-        content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — PDF, text extraction failed]`;
+        content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB): PDF, text extraction failed]`;
         uploadBuffer = Buffer.from(await file.arrayBuffer());
       }
     } else if (ALLOWED_IMAGE_TYPES.has(file.type)) {
@@ -150,9 +150,9 @@ export async function uploadResource(formData) {
       name = rewriteImageFilename(name);
       content = `[File: ${name} (${(uploadBuffer.length / 1024).toFixed(
         0
-      )}KB) — ${uploadContentType}]`;
+      )}KB), ${uploadContentType}]`;
     } else {
-      content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB) — ${file.type || "unknown type"}]`;
+      content = `[File: ${name} (${(file.size / 1024).toFixed(0)}KB), ${file.type || "unknown type"}]`;
       uploadBuffer = Buffer.from(await file.arrayBuffer());
     }
 

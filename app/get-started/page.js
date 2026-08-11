@@ -5,7 +5,7 @@ import GetStartedChooser from "@/components/GetStartedChooser";
 export const metadata = {
   title: "Get started",
   description:
-    "Book a tutor, try the Tuterly software free, or get matched first. Session reports, progress tracking, and practice — all in one place.",
+    "Book a tutor, try the Tuterly software free, or get matched first. Session reports, progress tracking, and practice, all in one place.",
 };
 
 const c = {
@@ -54,11 +54,11 @@ export default async function GetStartedPage({ searchParams }) {
                 Get started with Tuterly
               </h1>
               <p style={{ fontSize: 16.5, color: c.slateLight, lineHeight: 1.65, maxWidth: 560, margin: "0 auto" }}>
-                Book a tutor and see the reports for yourself, or try the software on its own. Pick what suits you — you can always change later.
+                Book a tutor and see the reports for yourself, or try the software on its own. Pick what suits you, you can always change later.
               </p>
               {cancelled && (
                 <p style={{ marginTop: 16, display: "inline-block", background: "#FEF3F2", color: "#B42318", borderRadius: 10, padding: "8px 14px", fontSize: 13.5, fontWeight: 500 }}>
-                  No worries — your checkout was cancelled and you haven&apos;t been charged.
+                  No worries, your checkout was cancelled and you haven&apos;t been charged.
                 </p>
               )}
             </div>
@@ -78,7 +78,7 @@ function SuccessPanel() {
       </div>
       <h1 style={{ fontSize: 28, fontWeight: 800, letterSpacing: "-0.8px", color: c.ink, marginBottom: 12 }}>Payment received</h1>
       <p style={{ fontSize: 15.5, color: c.slateLight, lineHeight: 1.7, marginBottom: 24 }}>
-        Your credits are ready. We&apos;ve emailed a <strong style={{ color: c.ink }}>secure sign-in link</strong> to the address you used — click it to sign in, add your child, and get matched with a tutor. No password needed.
+        Your credits are ready. We&apos;ve emailed a <strong style={{ color: c.ink }}>secure sign-in link</strong> to the address you used: click it to sign in, add your child, and get matched with a tutor. No password needed.
       </p>
       <p style={{ fontSize: 13.5, color: c.muted }}>
         Didn&apos;t get it within a few minutes? Check your spam folder, or email{" "}

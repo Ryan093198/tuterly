@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ContactCTA from "@/components/marketing/ContactCTA";
+import Testimonials from "@/components/marketing/Testimonials";
 
 // ─────────────────────────────────────────────────────────────────────────
 // Tuterly parents landing — v2 "evolved teal" identity.
@@ -236,7 +237,7 @@ function ComparisonReportCard() {
         <div style={{ padding: "22px" }}>
           <div style={{ background: c.paper, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.borderWarm}`, marginBottom: 16 }}>
             <p style={{ fontSize: 11.5, color: c.tealDeep, fontWeight: 700, marginBottom: 6 }}>What we covered</p>
-            <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.7 }}>Factorising quadratic expressions — monic quadratics with positive and negative constant terms. Worked through Cambridge Ch.5, exercises 5C and 5D…</p>
+            <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.7 }}>Factorising quadratic expressions, monic quadratics with positive and negative constant terms. Worked through Cambridge Ch.5, exercises 5C and 5D…</p>
             <div style={{ display: "flex", gap: 3, marginTop: 8, alignItems: "center" }}>
               {[1, 2, 3, 4].map(v => <div key={v} style={{ width: 8, height: 8, borderRadius: 2, background: c.teal }} />)}
               <div style={{ width: 8, height: 8, borderRadius: 2, background: `${c.teal}22` }} />
@@ -244,7 +245,7 @@ function ComparisonReportCard() {
             </div>
           </div>
           <div style={{ display: "grid", gap: 10, marginBottom: 16 }}>
-            {["Specific topics and subtopics identified", "Mapped to VCAA curriculum descriptors", "Confidence ratings tracked over time", "Practice questions with worked solutions", "Automatic reminders — reports every session", "Progress dashboard showing improvement"].map((text, i) => (
+            {["Specific topics and subtopics identified", "Mapped to VCAA curriculum descriptors", "Confidence ratings tracked over time", "Practice questions with worked solutions", "Automatic reminders, reports every session", "Progress dashboard showing improvement"].map((text, i) => (
               <div key={i} style={{ display: "flex", gap: 9, alignItems: "center" }}>
                 <Ic name="check" size={14} color={c.teal} />
                 <p style={{ fontSize: 13, color: c.text, fontWeight: 500 }}>{text}</p>
@@ -377,24 +378,23 @@ export default function ParentsLanding() {
       <section style={{ padding: "150px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div className="hero-grid" style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 64, alignItems: "center" }}>
           <div style={{ animation: "fadeUp 0.8s ease" }}>
-            {/* Social-proof row — PLACEHOLDER: star rating stands in for a real
-                Google review score; swap once reviews are collected. */}
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 26 }}>
-              <div style={{ display: "flex" }}>
-                {[["JW", "#5A6ACF"], ["ST", "#0D9488"], ["EK", "#C4587E"], ["TR", "#C98F42"]].map(([ini, col], i) => (
-                  <div key={i} style={{ width: 32, height: 32, borderRadius: "50%", background: col, border: "2px solid #fff", marginLeft: i ? -9 : 0, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 11, fontWeight: 700 }}>{ini}</div>
-                ))}
-              </div>
-              <div>
-                <div style={{ display: "flex", gap: 2, marginBottom: 1 }}>{[1, 2, 3, 4, 5].map(s => <span key={s} style={{ color: c.amber, fontSize: 13 }}>★</span>)}</div>
-                <p style={{ fontSize: 12.5, color: c.textLight, fontWeight: 500 }}>Trusted by Melbourne families · by Bayside Academics</p>
-              </div>
+            {/* Provenance badge. Deliberately NOT a star rating — we do not
+                have an aggregate review score, and implying one would be a
+                misleading representation under ACL s29. Only add stars here
+                when there is a real, linkable Google Business rating. */}
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 9, marginBottom: 26, padding: "7px 14px 7px 10px", background: c.tealPale, border: `1px solid ${c.borderWarm}`, borderRadius: 999 }}>
+              <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 20, height: 20, borderRadius: "50%", background: c.tealDeep }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+              </span>
+              <p style={{ fontSize: 12.5, color: c.inkMid, fontWeight: 600 }}>
+                Built by <strong style={{ color: c.ink }}>Bayside Academics</strong> · tutoring Melbourne families in person for years
+              </p>
             </div>
             <h1 style={{ fontWeight: 800, fontSize: 54, color: c.ink, lineHeight: 1.08, letterSpacing: "-1.6px", marginBottom: 22 }}>
               Tutoring you can actually <span style={{ color: c.teal }}>see</span> working.
             </h1>
             <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.75, marginBottom: 30, maxWidth: 470 }}>
-              High-achieving tutors, matched to your child. After every session you get a detailed report — what was covered, how they went, and exactly what to practise next. No more guessing what you&apos;re paying for.
+              High-achieving tutors, matched to your child. After every session you get a detailed report: what was covered, how they went, and exactly what to practise next. No more guessing what you&apos;re paying for.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 18 }}>
               <Link href="/get-started" style={btnPrimary}>Find your child&apos;s tutor →</Link>
@@ -407,14 +407,14 @@ export default function ParentsLanding() {
           </div>
         </div>
 
-        {/* TRUST STRIP — PLACEHOLDER STATS: replace with real Bayside figures */}
+        {/* TRUST STRIP — figures confirmed against Bayside records (10 Aug 2026).
+            Any change to these numbers must stay substantiable on request. */}
         <div className="trust-strip" style={{ maxWidth: 1120, margin: "64px auto 0", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, borderTop: `1px solid ${c.borderWarm}`, paddingTop: 28 }}>
           <p style={{ fontSize: 14, color: c.textLight, maxWidth: 300, lineHeight: 1.6 }}>
             Built by the team behind <strong style={{ color: c.ink }}>Bayside Academics</strong>, tutoring Melbourne families in person for years.
           </p>
           <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
             {[
-              /* PLACEHOLDER numbers — swap for real figures */
               { n: "1,000+", l: "sessions delivered" },
               { n: "98+", l: "average tutor ATAR" },
               { n: "VCAA", l: "curriculum aligned" },
@@ -504,7 +504,7 @@ export default function ParentsLanding() {
       <section id="sample-report" style={{ padding: "88px 40px", background: c.paper }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <Fade>
-            <SectionHead kicker="Sample report" title="This is what you'll receive after every session." sub="A real example of a Tuterly report. Our tutors are trained on the platform, so you're kept in the loop after every session — practice questions and worked solutions included." />
+            <SectionHead kicker="Sample report" title="This is what you'll receive after every session." sub="A real example of a Tuterly report. Our tutors are trained on the platform, so you're kept in the loop after every session, practice questions and worked solutions included." />
           </Fade>
           <Fade delay={0.15}>
             <div className="report-mock" style={{ background: c.white, borderRadius: 20, border: `1px solid ${c.borderWarm}`, overflow: "hidden", boxShadow: "0 16px 56px rgba(15,27,45,0.08)" }}>
@@ -523,7 +523,7 @@ export default function ParentsLanding() {
                 </div>
                 {[
                   { title: "What we covered today", content: "Today's session focused on factorising quadratic expressions. We started by reviewing how to expand brackets, then moved into factorising monic quadratics where the leading coefficient is 1. We worked through several examples from Chapter 5 of the Cambridge Essential Maths 10 textbook, progressing from simple positive constant terms to expressions with negative constants." },
-                  { title: "How Julian went", content: "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms — specifically identifying factor pairs where one factor is negative." },
+                  { title: "How Julian went", content: "Julian engaged well throughout the session and showed strong conceptual understanding. He was able to factorise standard monic quadratics independently by the end. He still needs practice with negative constant terms, specifically identifying factor pairs where one factor is negative." },
                 ].map((section, i) => (
                   <div key={i} style={{ borderTop: `1px solid ${c.border}`, paddingTop: 16, marginBottom: 16 }}>
                     <h4 style={{ fontSize: 13, fontWeight: 700, color: c.tealDeep, marginBottom: 8 }}>{section.title}</h4>
@@ -565,7 +565,7 @@ export default function ParentsLanding() {
             <SectionHead
               kicker="Simple pricing"
               title="One price per session. Everything included."
-              sub="Your session price covers the tutor, the session report, progress tracking, and full access to the Tuterly software — no separate platform fees, no lock-in contracts."
+              sub="Your session price covers the tutor, the session report, progress tracking, and full access to the Tuterly software: no separate platform fees, no lock-in contracts."
             />
           </Fade>
 
@@ -580,8 +580,8 @@ export default function ParentsLanding() {
                 },
                 {
                   name: "Term pack",
-                  price: 750, sessions: 10, per: 75, badge: "Best value — save $50",
-                  blurb: "Ten one-hour sessions — a full school term of weekly tutoring at our lowest per-session rate.",
+                  price: 750, sessions: 10, per: 75, badge: "Best value, save $50",
+                  blurb: "Ten one-hour sessions, a full school term of weekly tutoring at our lowest per-session rate.",
                 },
               ].map((p, i) => (
                 <div key={i} style={{ position: "relative", background: p.badge ? c.ink : c.paper, borderRadius: 20, padding: "34px 30px", border: `1px solid ${p.badge ? c.ink : c.borderWarm}`, textAlign: "left", display: "flex", flexDirection: "column" }}>
@@ -597,7 +597,7 @@ export default function ParentsLanding() {
                   </p>
                   <p style={{ fontSize: 14, color: p.badge ? "rgba(255,255,255,0.65)" : c.textLight, lineHeight: 1.7, marginBottom: 20 }}>{p.blurb}</p>
                   <div style={{ display: "grid", gap: 9, marginBottom: 26 }}>
-                    {["Report after every session", "Progress tracking over time", "Tuterly software included — $29/mo value", "Credits never expire"].map((f, j) => (
+                    {["Report after every session", "Progress tracking over time", "Tuterly software included, $29/mo value", "Credits never expire"].map((f, j) => (
                       <div key={j} style={{ display: "flex", gap: 9, alignItems: "center" }}>
                         <Ic name="check" size={14} color={p.badge ? c.tealBright : c.teal} />
                         <span style={{ fontSize: 13.5, color: p.badge ? "rgba(255,255,255,0.8)" : c.text }}>{f}</span>
@@ -618,7 +618,7 @@ export default function ParentsLanding() {
               <div style={{ maxWidth: 520 }}>
                 <p style={{ fontSize: 15, fontWeight: 700, color: c.ink, marginBottom: 4 }}>Just want the software?</p>
                 <p style={{ fontSize: 13.5, color: c.textLight, lineHeight: 1.65 }}>
-                  Use Tuterly alongside school work, your own study, or a tutor you already have — reports, progress tracking, and the practice generator. <strong style={{ color: c.ink }}>$29/month</strong>, 7-day free trial, cancel anytime.
+                  Use Tuterly alongside school work, your own study, or a tutor you already have: reports, progress tracking, and the practice generator. <strong style={{ color: c.ink }}>$29/month</strong>, 7-day free trial, cancel anytime.
                 </p>
               </div>
               <button type="button" onClick={startTrial} disabled={trialPending} style={{ ...btnGhost, padding: "12px 22px", fontSize: 14 }}>
@@ -648,12 +648,12 @@ export default function ParentsLanding() {
                 <div style={{ background: c.white, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.borderWarm}` }}>
                   <p style={{ fontSize: 11.5, color: c.textMuted, marginBottom: 6, fontWeight: 600 }}>Typical agency</p>
                   <p style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.ink }}>${companyCost.toLocaleString("en-AU")}</p>
-                  <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr agency rate × {LESSONS_PER_MONTH * savingsMonths} lessons — often with little to no session feedback</p>
+                  <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${COMPANY_HOURLY}/hr agency rate × {LESSONS_PER_MONTH * savingsMonths} lessons, often with little to no session feedback</p>
                 </div>
                 <div style={{ background: c.tealPale, borderRadius: 12, padding: "16px 18px", border: `1px solid ${c.teal}` }}>
                   <p style={{ fontSize: 11.5, color: c.tealDeep, marginBottom: 6, fontWeight: 700 }}>With Tuterly</p>
                   <p style={{ fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.ink }}>${tuterlyCost.toLocaleString("en-AU")}</p>
-                  <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${TUTERLY_SESSION}/session (Term pack) × {LESSONS_PER_MONTH * savingsMonths} lessons — reports, tracking and software included</p>
+                  <p style={{ fontSize: 12.5, color: c.textLight, marginTop: 4 }}>${TUTERLY_SESSION}/session (Term pack) × {LESSONS_PER_MONTH * savingsMonths} lessons: reports, tracking and software included</p>
                 </div>
               </div>
             </div>
@@ -686,6 +686,18 @@ export default function ParentsLanding() {
               </div>
             </div>
           </Fade>
+
+          {/* Last-look reassurance at the point of price. Prefers quotes
+              tagged "value" or "pricing"; renders nothing if none exist. */}
+          <div style={{ marginTop: 28 }}>
+            <Testimonials
+              variant="strip"
+              tags={["pricing", "value"]}
+              limit={3}
+              palette={c}
+              bodyFont={sans}
+            />
+          </div>
         </div>
       </section>
 
@@ -714,7 +726,7 @@ export default function ParentsLanding() {
               {
                 n: 3, title: "Report delivered to you",
                 items: [
-                  { icon: "report", t: "Detailed session report", d: "You receive a full report covering what was taught, how your child performed, areas to focus on, and curriculum alignment — in plain English." },
+                  { icon: "report", t: "Detailed session report", d: "You receive a full report covering what was taught, how your child performed, areas to focus on, and curriculum alignment, in plain English." },
                   { icon: "chart", t: "Progress tracking", d: "Confidence ratings build up over time so you can see exactly how your child is improving across every topic and subtopic." },
                 ],
               },
@@ -770,11 +782,11 @@ export default function ParentsLanding() {
                   </div>
                   <div style={{ display: "grid", gap: 10 }}>
                     {[
-                      "Vague — no specific topics or subtopics",
+                      "Vague, no specific topics or subtopics",
                       "No curriculum alignment",
                       "No confidence tracking over time",
                       "No practice questions or solutions",
-                      "Inconsistent — stops after a few weeks",
+                      "Inconsistent, stops after a few weeks",
                       "No way to track long-term progress",
                     ].map((text, i) => (
                       <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -795,7 +807,7 @@ export default function ParentsLanding() {
       <section style={{ padding: "88px 40px", background: c.sand }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <Fade>
-            <SectionHead kicker="Progress tracking" title="Watch your child improve over time." sub="Not just one report — a complete picture of your child's progress across every topic, every term." />
+            <SectionHead kicker="Progress tracking" title="Watch your child improve over time." sub="Not just one report: a complete picture of your child's progress across every topic, every term." />
           </Fade>
           <Fade delay={0.12}>
             <div style={{ background: c.white, borderRadius: 20, padding: 32, border: `1px solid ${c.borderWarm}` }}>
@@ -833,36 +845,21 @@ export default function ParentsLanding() {
         </div>
       </section>
 
-      {/* TESTIMONIALS — PLACEHOLDER QUOTES: swap with real Google reviews.
-          Keep the attribution style (first name + child's year level + area);
-          no invented school names, no star ratings until reviews are real. */}
-      <section style={{ padding: "88px 40px", background: c.white }}>
-        <div style={{ maxWidth: 940, margin: "0 auto" }}>
-          <Fade>
-            <SectionHead kicker="From our families" title="Parents finally know what's happening." />
-          </Fade>
-          <div className="features-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
-            {[
-              { q: "The session reports changed everything. I actually know what my son covered and where he needs help — no other tutoring we've tried gave us that.", p: "James", detail: "Parent of a Year 10 student, Bayside" },
-              { q: "My daughter's confidence in maths has completely turned around. She went from dreading it to asking to do extra practice between sessions.", p: "Sarah", detail: "Parent of a Year 8 student, Melbourne" },
-              { q: "Because the tutor sees the assessment schedule, sessions always line up with what's coming at school — tests, SACs, all of it.", p: "Michelle", detail: "Parent of a Year 11 student, Melbourne" },
-            ].map((t, i) => (
-              <Fade key={i} delay={i * 0.1}>
-                <div style={{ background: c.paper, borderRadius: 18, padding: "30px 26px", border: `1px solid ${c.borderWarm}`, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                  <div>
-                    <p style={{ fontFamily: serif, fontSize: 30, color: c.teal, lineHeight: 1, marginBottom: 10 }}>&ldquo;</p>
-                    <p style={{ fontSize: 14.5, color: c.text, lineHeight: 1.75 }}>{t.q}</p>
-                  </div>
-                  <div style={{ marginTop: 18, paddingTop: 14, borderTop: `1px solid ${c.borderWarm}` }}>
-                    <p style={{ fontWeight: 700, fontSize: 13.5, color: c.ink }}>{t.p}</p>
-                    <p style={{ fontSize: 12.5, color: c.textMuted }}>{t.detail}</p>
-                  </div>
-                </div>
-              </Fade>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* TESTIMONIALS — real, consented quotes only. Content lives in
+          lib/testimonials.js; this section renders nothing while that list
+          is empty, which is the intended behaviour. Never hard-code a quote
+          back into this file. */}
+      <Testimonials
+        variant="feature"
+        tags={["home", "parents"]}
+        limit={4}
+        palette={c}
+        background={c.white}
+        headingFont={serif}
+        bodyFont={sans}
+        kicker="From our families"
+        heading="Parents finally know what's happening."
+      />
 
       {/* TWO WAYS TO FIND A TUTOR */}
       <section style={{ padding: "88px 40px", background: c.paper }}>
@@ -885,7 +882,7 @@ export default function ParentsLanding() {
                   <Ic name="users" size={21} />
                 </div>
                 <h3 style={{ fontSize: 16.5, fontWeight: 700, color: c.ink, marginBottom: 8 }}>Let us match you</h3>
-                <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>Not sure where to start? Tell us your child&apos;s year level, subjects, and goals — our education team will personally match them with the right tutor. We handle everything.</p>
+                <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>Not sure where to start? Tell us your child&apos;s year level, subjects, and goals, our education team will personally match them with the right tutor. We handle everything.</p>
                 <Link href="/get-started" style={{ fontSize: 14.5, fontWeight: 600, color: c.tealDeep, textDecoration: "none" }}>Request a match →</Link>
               </div>
             </div>
@@ -903,11 +900,11 @@ export default function ParentsLanding() {
             <SectionHead kicker="Questions" title="Frequently asked." />
           </Fade>
           {[
-            { q: "What does a session cost?", a: "Sessions are sold in packs: 5 sessions for $400 ($80/session) or 10 sessions for $750 ($75/session). That price is all-inclusive — the tutor, the session report, progress tracking, and full access to the Tuterly software. There are no lock-in contracts, and your session credits never expire." },
-            { q: "How is this different from a tutoring agency?", a: "Typical agencies charge $90–110/hour and give you little visibility into what happens in each session. Tuterly sessions are $75–80 all-in, taught by high-achieving tutors we vet and train — and every single session produces a detailed report, confidence ratings, and practice questions, so you can see the value you're paying for." },
-            { q: "Do I have to use a tutor from your directory?", a: "No. If you already have a tutor you love, the Tuterly software works with them too — the $29/month software plan gives you reports, progress tracking, and the practice generator with any tutor, or for your child's own independent study." },
-            { q: "Does my tutor need to sign up too?", a: "If you're using your own tutor — yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out with a summary pack and offer a free info session. You don't need to explain anything." },
-            { q: "Can my child use the practice generator without a tutor?", a: "Yes. The software includes unlimited access to our VCAA-aligned question generator — any topic, any difficulty, with full worked solutions. Many families use it alongside school work even in weeks with no tutoring." },
+            { q: "What does a session cost?", a: "Sessions are sold in packs: 5 sessions for $400 ($80/session) or 10 sessions for $750 ($75/session). That price is all-inclusive: the tutor, the session report, progress tracking, and full access to the Tuterly software. There are no lock-in contracts, and your session credits never expire." },
+            { q: "How is this different from a tutoring agency?", a: "Typical agencies charge $90–110/hour and give you little visibility into what happens in each session. Tuterly sessions are $75–80 all-in, taught by high-achieving tutors we vet and train, and every single session produces a detailed report, confidence ratings, and practice questions, so you can see the value you're paying for." },
+            { q: "Do I have to use a tutor from your directory?", a: "No. If you already have a tutor you love, the Tuterly software works with them too: the $29/month software plan gives you reports, progress tracking, and the practice generator with any tutor, or for your child's own independent study." },
+            { q: "Does my tutor need to sign up too?", a: "If you're using your own tutor: yes, but it's free for them and takes 2 minutes. When you add your tutor's details, our team will personally reach out with a summary pack and offer a free info session. You don't need to explain anything." },
+            { q: "Can my child use the practice generator without a tutor?", a: "Yes. The software includes unlimited access to our VCAA-aligned question generator: any topic, any difficulty, with full worked solutions. Many families use it alongside school work even in weeks with no tutoring." },
             { q: "What subjects are covered?", a: "All subjects from Prep to Year 12, including Mathematics, English, Sciences, Humanities, and all VCE subjects. Reports and practice questions are aligned to the Victorian Curriculum (VCAA)." },
             { q: "What if we take a break from tutoring?", a: "Your session credits never expire, so a quiet month costs you nothing. If you're on the software-only plan, you can cancel or restart the $29/month subscription anytime from your dashboard." },
             { q: "Is my child's data private?", a: "Absolutely. Only you and your child's tutor can see the reports. We never share data with third parties." },
@@ -929,7 +926,7 @@ export default function ParentsLanding() {
       <section style={{ padding: "88px 40px", background: c.tealPale }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <SectionHead kicker="Free practice — no signup" title="Year 7–10 maths worksheets your child can use today." sub="Generate a fresh 10-question worksheet on any Victorian Curriculum topic, with fully worked solutions. Free — no signup needed for the first one." />
+            <SectionHead kicker="Free practice, no signup" title="Year 7–10 maths worksheets your child can use today." sub="Generate a fresh practice worksheet on any Victorian Curriculum topic, with fully worked solutions. Free, no signup needed for the first one." />
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 12 }}>
               {[7, 8, 9, 10].map((yr) => (
                 <Link key={yr} href={`/worksheets#year-${yr}`} style={{ display: "block", padding: "20px 22px", background: c.white, border: `1px solid ${c.borderWarm}`, borderRadius: 14, textDecoration: "none" }}>
@@ -953,7 +950,7 @@ export default function ParentsLanding() {
             <ContactCTA
               variant="card"
               headline="Want us to point you to the right tutor?"
-              subhead="Call or message us with your child's year level and subject — we'll match them to a tutor in your area or run you through how Tuterly works."
+              subhead="Call or message us with your child's year level and subject, we'll match them to a tutor in your area or run you through how Tuterly works."
               context="Parents landing page"
             />
           </Fade>
@@ -964,7 +961,7 @@ export default function ParentsLanding() {
       <section style={{ padding: "88px 40px", background: c.ink, textAlign: "center" }}>
         <Fade>
           <h2 style={{ fontSize: 38, fontWeight: 800, color: c.white, marginBottom: 14, lineHeight: 1.14, letterSpacing: "-1px" }}>Know what&apos;s happening, every session.</h2>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.7 }}>Get matched with a high-achieving tutor, or bring your own — either way, you&apos;ll see the progress.</p>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.7 }}>Get matched with a high-achieving tutor, or bring your own: either way, you&apos;ll see the progress.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 26 }}>
             <Link href="/get-started" style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.tealBright, color: c.ink, fontSize: 15, fontWeight: 700, textDecoration: "none", cursor: "pointer" }}>Find your child&apos;s tutor →</Link>
             <button type="button" onClick={startTrial} disabled={trialPending} style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: "transparent", color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", border: "1.5px solid rgba(255,255,255,0.25)", cursor: "pointer" }}>{trialPending ? "Redirecting…" : "Try the software free"}</button>

@@ -50,7 +50,7 @@ export default function FlagQuestion({
         {pending
           ? "Saving…"
           : flagged
-            ? "Flagged for your tutor — click to unflag"
+            ? "Flagged for your tutor, click to unflag"
             : "Still don't fully understand? Click here to flag with your tutor"}
       </button>
       {error && <p className="text-xs text-red-500 mt-1">{error}</p>}

@@ -1,6 +1,6 @@
 ---
 title: "EduTest vs ACER: which scholarship exam does your child need to sit?"
-description: "Different schools use different tests — and prep for the wrong one wastes time. A clear comparison of EduTest vs ACER for Melbourne parents."
+description: "Different schools use different tests, and prep for the wrong one wastes time. A clear comparison of EduTest vs ACER for Melbourne parents."
 date: "2026-06-18"
 audience: "Year 5–7 parents (scholarship)"
 published: true

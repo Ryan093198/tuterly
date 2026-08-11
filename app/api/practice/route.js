@@ -261,7 +261,7 @@ async function handle(request) {
   const elapsedMs = Date.now() - startedAt;
   if ((leaks.length > 0 || katexErrors.length > 0) && elapsedMs >= RETRY_BUDGET_MS) {
     console.warn(
-      "[practice] issues found but skipping retry — elapsed",
+      "[practice] issues found but skipping retry, elapsed",
       elapsedMs,
       "exceeds budget",
       RETRY_BUDGET_MS,
@@ -272,7 +272,7 @@ async function handle(request) {
     );
   } else if (leaks.length > 0 || katexErrors.length > 0) {
     console.warn(
-      "[practice] retry triggered — leaks:",
+      "[practice] retry triggered, leaks:",
       leaks,
       "katex errors:",
       katexErrors.length
@@ -282,7 +282,7 @@ async function handle(request) {
       corrections.push(
         `Your previous worksheet violated these content rules: ${leaks.join(
           "; "
-        )}. Solutions must be clean final reasoning only — no "wait" / "hmm" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`
+        )}. Solutions must be clean final reasoning only, no "wait" / "hmm" / "let me recheck" / "Answer (corrected)" language and no notes to the parent/student. If any question's arithmetic doesn't come out clean, REPLACE that question with a different one on the same topic whose answer is tidy.`
       );
     }
     if (katexErrors.length > 0) {
@@ -326,7 +326,7 @@ async function handle(request) {
   const shortLabel = topicLabel.length > 60
     ? topicLabel.slice(0, 57) + "…"
     : topicLabel;
-  const resourceName = `Practice — ${shortLabel} (${dateLabel})`;
+  const resourceName = `Practice, ${shortLabel} (${dateLabel})`;
 
   // Persist the exact generation parameters so a "Regenerate" click can
   // replay them without re-parsing the markdown or re-deriving the topic.

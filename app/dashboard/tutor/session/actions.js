@@ -626,7 +626,7 @@ export async function sendReport(sessionId, role = "parent") {
       });
       if (!settle.ok) {
         console.warn(
-          `[sendReport] billing settle returned "${settle.code}" after delivery of session ${sessionId} — reconcile manually`
+          `[sendReport] billing settle returned "${settle.code}" after delivery of session ${sessionId}, reconcile manually`
         );
       }
     } catch (e) {

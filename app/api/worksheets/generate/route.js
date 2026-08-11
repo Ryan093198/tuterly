@@ -17,7 +17,7 @@ import {
 import { sanitizeGenerated } from "@/lib/sanitize-generated";
 
 export const runtime = "nodejs";
-// 10 questions with worked solutions in LaTeX comfortably runs 30-50s on
+// 6 questions with worked solutions in LaTeX comfortably runs 20-35s on
 // Sonnet — same shape as /api/practice. 60s is the Vercel cap for non-pro.
 export const maxDuration = 60;
 
@@ -238,7 +238,7 @@ async function handle(request) {
         year_level: yearLevel,
         topic_id: topicId,
         topic_label: topicLabel,
-        question_count: 10,
+        question_count: 6,
       })
       .select("id")
       .maybeSingle();
@@ -325,7 +325,7 @@ async function handle(request) {
     }
   } else if (katexErrors.length > 0) {
     console.warn(
-      "[worksheets] katex errors but skipping retry — elapsed",
+      "[worksheets] katex errors but skipping retry, elapsed",
       elapsedMs,
       "exceeds budget",
       RETRY_BUDGET_MS

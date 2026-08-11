@@ -163,8 +163,8 @@ export default function ReportWorkbench({
           }
           description={
             isAutoRun
-              ? "Tuterly is reading your notes and any attached photos. This usually takes 10–20 seconds — feel free to leave this tab; the report will be here when you come back."
-              : "Tuterly turns your dot-point notes — and any photos of the working — into a parent-ready report in seconds."
+              ? "Tuterly is reading your notes and any attached photos. This usually takes 10–20 seconds, feel free to leave this tab; the report will be here when you come back."
+              : "Tuterly turns your dot-point notes, and any photos of the working, into a parent-ready report in seconds."
           }
           action={
             <div className="flex flex-col items-center gap-3">

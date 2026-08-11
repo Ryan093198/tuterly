@@ -267,7 +267,7 @@ export default function PracticeModal({
                 disabled={pending}
                 className="w-full h-10 px-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-card text-sm focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition"
               >
-                <option value="">— Choose a topic —</option>
+                <option value="">, Choose a topic, </option>
                 {activeTopicGroups.map((g) => (
                   <optgroup key={g.strand} label={g.strand}>
                     {g.topics.map((t) => (

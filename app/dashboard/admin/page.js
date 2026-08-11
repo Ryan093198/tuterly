@@ -129,7 +129,7 @@ export default async function AdminDashboard() {
         <p className="text-xs text-muted">
           Approving promotes the matching account (by email) to an approved
           tutor. If they haven&apos;t signed up yet, approve again once they have
-          — or they&apos;ll appear in the roster below when they do.
+, or they&apos;ll appear in the roster below when they do.
         </p>
       </section>
 
@@ -189,7 +189,7 @@ export default async function AdminDashboard() {
         )}
         <p className="text-xs text-muted">
           Each tutor&apos;s hourly wage defaults to $35. Set a higher rate here
-          for more experienced tutors — their future payouts calculate at that
+          for more experienced tutors, their future payouts calculate at that
           rate (super is added on top automatically).
         </p>
       </section>

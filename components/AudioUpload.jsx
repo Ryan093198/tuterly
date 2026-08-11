@@ -26,7 +26,7 @@ export default function AudioUpload({ onResult }) {
     }
     if (f.size > MAX_BYTES) {
       setError(
-        `That's ${(f.size / 1024 / 1024).toFixed(1)}MB — max 25MB. Trim or compress before uploading.`
+        `That's ${(f.size / 1024 / 1024).toFixed(1)}MB, max 25MB. Trim or compress before uploading.`
       );
       setFile(null);
       return;

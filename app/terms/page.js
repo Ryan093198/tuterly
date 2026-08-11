@@ -148,7 +148,7 @@ export default function TermsOfService() {
               The service is provided "as is". To the fullest extent permitted
               by law, Bayside Academics' total liability arising out of or in
               connection with these Terms is limited to the amount you have
-              paid us in the 12 months preceding the claim, or A$100 — whichever
+              paid us in the 12 months preceding the claim, or A$100, whichever
               is greater. We are not liable for indirect or consequential loss.
             </p>
           </Section>

@@ -122,7 +122,7 @@ export default function TutorsLanding() {
               Better pay. Better tools.<br />Less admin.
             </h1>
             <p style={{ fontSize: 17.5, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 30, maxWidth: 500 }}>
-              Join the Tuterly team and tutor with the tools of a premium service — session reports, progress tracking, and practice questions generated for you. We pay <strong style={{ color: "#fff" }}>above typical tutoring-company rates</strong>, your pay scales as you take on more students, and we handle all the invoicing.
+              Join the Tuterly team and tutor with the tools of a premium service: session reports, progress tracking, and practice questions generated for you. We pay <strong style={{ color: "#fff" }}>above typical tutoring-company rates</strong>, your pay scales as you take on more students, and we handle all the invoicing.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href="#apply" onClick={scrollApply} style={btnPrimary}>Start your application →</a>
@@ -195,7 +195,7 @@ export default function TutorsLanding() {
                     "Your pay scales up as you take on more students",
                     "Reports generated for you in 2 minutes",
                     "We find students for you through the directory",
-                    "We handle all invoicing — never chase a payment",
+                    "We handle all invoicing, never chase a payment",
                   ].map((t, i) => (
                     <div key={i} style={{ display: "flex", gap: 9, alignItems: "center" }}>
                       <Ic name="check" size={14} color={c.tealBright} />
@@ -213,13 +213,13 @@ export default function TutorsLanding() {
       <section style={{ padding: "88px 40px", background: c.paper }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <SectionHead kicker="How pay works" title="Paid well — and it grows." sub="We set a fair, competitive rate that's already higher than what most tutoring companies pay their tutors. From there, it goes up as you build a track record." />
+            <SectionHead kicker="How pay works" title="Paid well, and it grows." sub="We set a fair, competitive rate that's already higher than what most tutoring companies pay their tutors. From there, it goes up as you build a track record." />
           </Fade>
           <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
             {[
-              { icon: "check", tag: "From day one", title: "A strong starting rate", desc: "You start on a competitive hourly rate that's already above what most tutoring companies pay — plus superannuation on top." },
+              { icon: "check", tag: "From day one", title: "A strong starting rate", desc: "You start on a competitive hourly rate that's already above what most tutoring companies pay, plus superannuation on top." },
               { icon: "trend", tag: "As you grow", title: "Your rate scales up", desc: "Take on more students and build a track record of great sessions and happy families, and your rate increases." },
-              { icon: "badge", tag: "Top tutors", title: "Our best earn our most", desc: "Our most experienced, best-rated tutors earn our highest rates — and get first pick of new students coming through the directory." },
+              { icon: "badge", tag: "Top tutors", title: "Our best earn our most", desc: "Our most experienced, best-rated tutors earn our highest rates, and get first pick of new students coming through the directory." },
             ].map((s, i) => (
               <Fade key={i} delay={i * 0.1}>
                 <div style={{ background: c.white, borderRadius: 18, padding: "28px 24px", border: `1px solid ${c.border}`, height: "100%" }}>
@@ -236,7 +236,7 @@ export default function TutorsLanding() {
           <Fade delay={0.15}>
             <div style={{ marginTop: 20, background: c.ink, borderRadius: 16, padding: "22px 26px", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap", justifyContent: "center", textAlign: "center" }}>
               <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", lineHeight: 1.6 }}>
-                <strong style={{ color: "#fff" }}>Superannuation is paid on top of every rate</strong>, and we handle all parent billing and invoicing — so you&apos;re paid on time and never chasing a payment.
+                <strong style={{ color: "#fff" }}>Superannuation is paid on top of every rate</strong>, and we handle all parent billing and invoicing, so you&apos;re paid on time and never chasing a payment.
               </p>
             </div>
           </Fade>
@@ -249,8 +249,8 @@ export default function TutorsLanding() {
           <Fade><SectionHead kicker="How it works" title="Start getting students in 3 steps." /></Fade>
           <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
             {[
-              { num: "1", title: "Apply and get verified", desc: "Send your details — subjects, year levels, qualifications, and a short bio. We review every applicant and complete the checks required to work with students." },
-              { num: "2", title: "Get trained on the platform", desc: "We walk you through how Tuterly works — entering session notes, generating reports, and tracking student progress. Takes about 15 minutes." },
+              { num: "1", title: "Apply and get verified", desc: "Send your details: subjects, year levels, qualifications, and a short bio. We review every applicant and complete the checks required to work with students." },
+              { num: "2", title: "Get trained on the platform", desc: "We walk you through how Tuterly works: entering session notes, generating reports, and tracking student progress. Takes about 15 minutes." },
               { num: "3", title: "Start teaching", desc: "Parents find you in the directory and book sessions with you. After each session, enter your notes and Tuterly generates a professional report in seconds." },
             ].map((s, i) => (
               <Fade key={i} delay={i * 0.1}>
@@ -273,12 +273,12 @@ export default function TutorsLanding() {
             {[
               { icon: "search", title: "Listed in the Tuterly directory", desc: "Parents browse and find you by subject, year level, and location. We market the directory so students come to you." },
               { icon: "report", title: "Professional session reports", desc: "Type a few dot points or record a voice note after each session. Tuterly generates a detailed, curriculum-aligned report and sends it to the parent automatically." },
-              { icon: "chart", title: "Progress tracking", desc: "Confidence ratings per subtopic build up over time. Parents see their child improving — and you have data to back up your value." },
+              { icon: "chart", title: "Progress tracking", desc: "Confidence ratings per subtopic build up over time. Parents see their child improving, and you have data to back up your value." },
               { icon: "pencil", title: "Practice question generator", desc: "VCAA-aligned practice questions are generated and included in every report, so students can practise exactly what they need between sessions." },
-              { icon: "badge", title: "Verified tutor badge", desc: "After a run of sessions and strong parent ratings, earn a Verified badge on your profile — it builds trust and attracts more students." },
+              { icon: "badge", title: "Verified tutor badge", desc: "After a run of sessions and strong parent ratings, earn a Verified badge on your profile, it builds trust and attracts more students." },
               { icon: "mic", title: "Voice-to-report", desc: "Record a quick voice note after a session; our system transcribes it and generates the full report. Faster than typing." },
               { icon: "calendar", title: "Assessment awareness", desc: "When parents upload school assessment schedules, you can see what tests are coming up and plan your sessions accordingly." },
-              { icon: "chat", title: "Parent communication handled", desc: "Reports are sent automatically — no more awkward end-of-session summaries or forgotten follow-up texts." },
+              { icon: "chat", title: "Parent communication handled", desc: "Reports are sent automatically, no more awkward end-of-session summaries or forgotten follow-up texts." },
             ].map((f, i) => (
               <Fade key={i} delay={i * 0.05}>
                 <div style={{ display: "flex", gap: 16, padding: "24px 22px", borderRadius: 16, border: `1px solid ${c.border}`, background: c.white, height: "100%" }}>
@@ -317,13 +317,13 @@ export default function TutorsLanding() {
           <Fade><SectionHead kicker="Questions" title="Frequently asked." /></Fade>
           {[
             { q: "How does pay work?", a: "Tuterly pays you a set hourly rate that's above what most tutoring companies pay their tutors, with superannuation on top. Your rate increases over time as you take on more students and build a strong track record of great sessions. We handle all parent billing and invoicing, so you're paid reliably and never have to chase a payment." },
-            { q: "Do I need to pay anything to join?", a: "No. Applying, creating your profile, and getting listed in the directory is completely free. You're paid for the tutoring you do — we take care of the platform, the reports, and the invoicing." },
-            { q: "Can I still work for other companies or private students?", a: "Yes. Tuterly is not exclusive. You're free to work with other tutoring companies, take on private students, or use any other platform alongside Tuterly. We're here to give you tools, better pay, and students — not to restrict how you work." },
+            { q: "Do I need to pay anything to join?", a: "No. Applying, creating your profile, and getting listed in the directory is completely free. You're paid for the tutoring you do: we take care of the platform, the reports, and the invoicing." },
+            { q: "Can I still work for other companies or private students?", a: "Yes. Tuterly is not exclusive. You're free to work with other tutoring companies, take on private students, or use any other platform alongside Tuterly. We're here to give you tools, better pay, and students, not to restrict how you work." },
             { q: "Can I bring my existing students onto the platform?", a: "Absolutely. You can invite your current students' parents to Tuterly so they get session reports and progress tracking. It makes your existing service feel more premium without any extra work." },
-            { q: "What subjects can I tutor?", a: "All subjects from Prep to Year 12, including VCE — Mathematics, English, Sciences, Humanities, and all VCE subjects. Reports and practice are aligned to the VCAA Victorian Curriculum." },
+            { q: "What subjects can I tutor?", a: "All subjects from Prep to Year 12, including VCE: Mathematics, English, Sciences, Humanities, and all VCE subjects. Reports and practice are aligned to the VCAA Victorian Curriculum." },
             { q: "How do parents find me?", a: "Parents browse the Tuterly directory and filter by subject, year level, and location. We market the directory through ads and content, and as you complete more sessions and earn strong ratings, your profile becomes more visible." },
             { q: "Do you check tutors before they start?", a: "Yes. Every tutor is reviewed, and we complete the checks required to work with students (including a Working With Children Check) before you take on any student. It keeps families safe and the Tuterly bar high." },
-            { q: "Can I tutor online or in person?", a: "Both. You choose your availability and format — many tutors offer both." },
+            { q: "Can I tutor online or in person?", a: "Both. You choose your availability and format, many tutors offer both." },
           ].map((faq, i) => (
             <Fade key={i} delay={i * 0.04}>
               <div style={{ borderBottom: `1px solid ${c.border}`, padding: "18px 0", cursor: "pointer" }} onClick={() => setExpandedQ(expandedQ === i ? null : i)}>

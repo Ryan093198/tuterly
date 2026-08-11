@@ -104,7 +104,7 @@ export async function POST(request) {
       invoice_creation: {
         enabled: true,
         invoice_data: {
-          description: `Tuterly ${pack.name} — ${pack.sessions} session pack`,
+          description: `Tuterly ${pack.name}, ${pack.sessions} session pack`,
           metadata: {
             pack_id: pack.id,
             pack_name: pack.name,

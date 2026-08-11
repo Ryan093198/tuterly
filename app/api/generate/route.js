@@ -176,7 +176,7 @@ async function handle(request) {
     if (retry.text) content = retry.text;
   } else if (katexErrors.length > 0) {
     console.warn(
-      "[generate] katex errors but skipping retry — elapsed",
+      "[generate] katex errors but skipping retry, elapsed",
       elapsedMs,
       "exceeds budget",
       RETRY_BUDGET_MS
@@ -281,7 +281,7 @@ async function handle(request) {
       (ratings ?? [])
         .map((r) =>
           r.subtopic && r.subtopic !== r.topic
-            ? `${r.topic} — ${r.subtopic}`
+            ? `${r.topic}, ${r.subtopic}`
             : r.topic
         )
         .filter(Boolean)

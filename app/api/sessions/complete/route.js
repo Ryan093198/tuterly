@@ -74,7 +74,7 @@ async function handle(request) {
     return NextResponse.json(
       {
         error:
-          "Generate the session report before completing — no report on file for this session.",
+          "Generate the session report before completing, no report on file for this session.",
       },
       { status: 400 }
     );

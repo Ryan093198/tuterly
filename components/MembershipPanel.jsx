@@ -153,12 +153,12 @@ export default function MembershipPanel({ subscription, hasPack = false }) {
           </p>
           <p className="mt-1 text-xs text-muted max-w-md">
             Just want the software? Get session reports, progress tracking, the
-            practice generator and the tutor directory — without buying session
+            practice generator and the tutor directory, without buying session
             packs. Best if you&apos;re using your own tutor. Start with a 7-day
             free trial; cancel anytime.
           </p>
           <p className="mt-2 text-xs text-muted max-w-md">
-            Buying a session pack instead? The software is already included —
+            Buying a session pack instead? The software is already included, 
             you won&apos;t need this.
           </p>
         </div>

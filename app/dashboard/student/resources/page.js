@@ -75,7 +75,7 @@ export default async function StudentResourcesPage() {
         <h1 className="text-3xl font-semibold tracking-tight">Resources</h1>
         <p className="text-sm text-muted">
           Your lesson plans, practice worksheets and uploads. Generate new
-          ones any time — no tutor required.
+          ones any time, no tutor required.
         </p>
       </header>
 

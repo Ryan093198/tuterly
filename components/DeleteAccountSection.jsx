@@ -11,7 +11,7 @@ const CONSEQUENCE_BY_ROLE = {
   admin:
     "All your students, sessions, reports, photos, resources, and confidence ratings will be permanently deleted.",
   parent:
-    "Your children will stay on their tutor's account — only your parent access and pending invites are removed.",
+    "Your children will stay on their tutor's account, only your parent access and pending invites are removed.",
   student:
     "Your student account will be unlinked from your student profile. Your tutor can re-invite you later.",
 };

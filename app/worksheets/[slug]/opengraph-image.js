@@ -152,7 +152,7 @@ export default async function OpengraphImage({ params }) {
         >
           <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
             <p style={{ fontSize: 22, color: COLOURS.navy, fontWeight: 600 }}>
-              10 questions
+              Foundation to Extension
             </p>
             <p style={{ fontSize: 22, color: COLOURS.border }}>•</p>
             <p style={{ fontSize: 22, color: COLOURS.navy, fontWeight: 600 }}>

@@ -27,7 +27,7 @@ export default function OnboardingWelcome({
 
   const heading =
     welcomeType === "pack"
-      ? "You're all set — let's get your child started"
+      ? "You're all set, let's get your child started"
       : welcomeType === "trial"
         ? "Welcome to your free trial"
         : "Welcome to Tuterly";
@@ -107,7 +107,7 @@ export default function OnboardingWelcome({
         <Step
           index={3}
           title="Generate their first worksheet"
-          description="Instant, curriculum-aligned practice with worked solutions — as many as you like."
+          description="Instant, curriculum-aligned practice with worked solutions, as many as you like."
           locked={!hasChildren}
           lockedHint="Add your child first"
         >

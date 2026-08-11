@@ -54,7 +54,7 @@ export async function POST(request) {
   if (file.size > MAX_BYTES) {
     return NextResponse.json(
       {
-        error: `audio file is ${(file.size / 1024 / 1024).toFixed(1)}MB — max 25MB. Trim or compress before uploading.`,
+        error: `audio file is ${(file.size / 1024 / 1024).toFixed(1)}MB, max 25MB. Trim or compress before uploading.`,
       },
       { status: 413 }
     );

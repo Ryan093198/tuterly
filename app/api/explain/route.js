@@ -20,7 +20,7 @@ MATH FORMATTING RULES (the output renders Markdown with KaTeX):
 - Plain Unicode (½, x², √2, ×, ÷, ≈, π, θ) is fine for short standalone references outside math blocks.
 
 NEVER REFERENCE TEXTBOOK CHAPTERS, SECTIONS, OR PAGE NUMBERS:
-- Do NOT cite "§7D", "Chapter 6", "p.56", "Section 4.2", or any specific textbook locator. Recommend topics generically ("review the relevant section of your textbook on the sine rule") — never invent a section number.
+- Do NOT cite "§7D", "Chapter 6", "p.56", "Section 4.2", or any specific textbook locator. Recommend topics generically ("review the relevant section of your textbook on the sine rule"), never invent a section number.
 
 CRITICAL: Every calculation must be 100% correct. Verify each step. If unsure, use simpler numbers.
 Keep the total response under 500 words.`;
@@ -33,10 +33,10 @@ A clear 3-4 sentence explanation that the student would understand. Use simple l
 ## Practice Tasks
 Provide 4 practice tasks with sample answers. Label each as [Foundation], [Standard], or [Extension]. Tasks may be writing prompts, grammar/punctuation exercises, comprehension questions, vocabulary tasks, or short analytical responses.
 
-For each task, give a model answer or annotated example in the worked-solution block. Sample answers are exemplars — make it clear they are not the only correct response.
+For each task, give a model answer or annotated example in the worked-solution block. Sample answers are exemplars, make it clear they are not the only correct response.
 
 CRITICAL TEXTUAL ACCURACY:
-- NEVER fabricate quotations from named texts. If you give an example sentence, write your own — don't claim it's from a specific book unless you're certain of the exact wording.
+- NEVER fabricate quotations from named texts. If you give an example sentence, write your own, don't claim it's from a specific book unless you're certain of the exact wording.
 - NEVER invent character names, plot details, or scene/chapter references for texts you can't verify.
 - For grammar examples: double-check your "correct" sentences are actually correct.
 
