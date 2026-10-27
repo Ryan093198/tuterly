@@ -131,7 +131,7 @@ export default function StudyLanding() {
               Help your child get better <span className="sl-accent">maths marks</span>.
             </h1>
             <p className="tb-lead sl-hero__lead">
-              {`Better marks start with the questions they got wrong. Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
+              {`The self-learning maths app built from your child’s own mistakes. Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
             <ResultsProof />
             <ul className="sl-hero__trust" aria-label="About the app">

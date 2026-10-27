@@ -119,3 +119,11 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Removed from /parents: "Three questions worth asking at dinner" and "Linking takes a code, not a password".
 - New feature confirmed by Ryan (not in TUTERLY-STUDY-FEATURES.md yet; add it there): from a linked parent account, parents can upload marked school tests and practice tests/papers (photos, PDF, Word), which go into the child's bank like a student upload, and the term planner or course outline, which the app uses to focus topic tests on what's coming up this term.
 - Shown on /parents ("Upload their tests and term planner from your own phone", three cards), in the home page's For parents points, and as an FAQ ("Can I upload things as a parent?").
+
+## 28 Oct: positioning claims
+- Added: "The self-learning maths app built from your child’s own mistakes" (home hero lead and meta description); results card headline "Proof from Bayside Academics: marks are going up".
+- Not used, and why:
+  - "The only self-learning app aligned to the Australian Curriculum": Mathspace, Edrolo, StudyPug, Mathdingo and others also sell self-paced, curriculum-aligned maths.
+  - "The only app that creates questions from students’ mistakes": snap-and-solve apps such as SnapSolve/MathAI already suggest similar practice questions after a photo.
+  - "The best way to improve test results": one centre, one month, alongside tutoring, no figures yet; not enough to back "best".
+  "Only" and "best" claims have to be literally true and provable under the ACL.
