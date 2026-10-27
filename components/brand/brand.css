@@ -138,7 +138,11 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 /* Phone frame: drawn device outline, no notch of its own (the
  * screenshots already include the status bar and Dynamic Island). */
 .tb-phone {
-  position: relative; width: var(--phone-w, 280px); max-width: 100%;
+  position: relative; box-sizing: border-box;
+  width: min(var(--phone-w, 280px), 100%);
+  /* The frame is always exactly the screenshot plus the bezel: never let a
+   * grid or flex parent stretch it taller than the screen. */
+  height: auto; align-self: start; flex: none;
   padding: 9px; border-radius: 46px; background: #0b1a2c;
   box-shadow: inset 0 0 0 2px #22344c, 0 24px 48px -18px rgba(11, 26, 44, 0.35);
 }
@@ -150,9 +154,9 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 .tb-phone::after { right: -3px; top: 27%; height: 13%; }
 .tb-phone__screen {
   position: relative; overflow: hidden; border-radius: 38px;
-  aspect-ratio: 1206 / 2622; background: #f4f7fa;
+  width: 100%; height: auto; aspect-ratio: 1206 / 2622; background: #f4f7fa;
 }
-.tb-phone__screen img { object-fit: cover; }
+.tb-phone__screen img { object-fit: cover; object-position: top center; }
 .tb-phone__placeholder {
   position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center;
   font-weight: 800; color: var(--muted); background: repeating-linear-gradient(45deg, var(--surface-soft) 0 12px, var(--card) 12px 24px);
@@ -161,7 +165,7 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 /* Flow: numbered steps. A swipe carousel with dots on phones, a row of
  * phones on desktop. */
 .tb-flow { list-style: none; padding: 0; margin: 0; }
-.tb-flow__item { display: grid; justify-items: center; gap: 16px; text-align: center; }
+.tb-flow__item { display: grid; justify-items: center; align-content: start; gap: 16px; text-align: center; }
 .tb-flow__item .tb-phone { --phone-w: 236px; }
 .tb-flow__cap { display: grid; gap: 4px; max-width: 30ch; }
 .tb-flow__num {
