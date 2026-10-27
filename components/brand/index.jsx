@@ -117,7 +117,7 @@ export function CtaBand({ title, lead, children, quinn = false, id }) {
   return (
     <section className="tb-section" aria-labelledby={id}>
       <div className="tb-wrap">
-        <div className="tb-cta-band">
+        <div className={`tb-cta-band ${quinn ? "tb-cta-band--quinn" : ""}`}>
           <div>
             <h2 id={id} className="tb-h2">{title}</h2>
             {lead && <p className="tb-lead" style={{ marginTop: 12 }}>{lead}</p>}

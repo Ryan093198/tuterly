@@ -1,0 +1,39 @@
+/* /parents layout. Shared pieces: components/brand/brand.css. */
+.pp-hero { padding-block: 28px 56px; overflow: hidden; }
+.pp-hero__grid { display: grid; gap: 36px; align-items: center; }
+.pp-hero__grid > *, .pp-split > * { min-width: 0; }
+.pp-hero__lead { margin-top: 14px; }
+.pp-hero__cta { margin-top: 22px; }
+.pp-hero__visual { position: relative; display: grid; place-items: center; padding: 18px 0 8px; }
+.pp-hero__blob { position: absolute; inset: 6% 10% 0 10%; border-radius: 48px; background: var(--violet-soft); transform: rotate(-6deg); }
+.pp-hero__phone { position: relative; transform: rotate(4deg); }
+@media (max-width: 899px) { .pp-hero__phone { --phone-w: 236px !important; } }
+@media (min-width: 900px) {
+  .pp-hero { padding-block: 56px 96px; }
+  .pp-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; }
+}
+.pp-split { display: grid; gap: 36px; align-items: center; }
+.pp-split--top { align-items: start; }
+@media (min-width: 900px) { .pp-split { grid-template-columns: 1fr 1fr; gap: 56px; } }
+.pp-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.pp-item { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: center; font-size: 17px; line-height: 1.5; }
+.pp-list--plain { gap: 10px; margin-top: 12px; }
+.pp-list--plain li { font-size: 16px; line-height: 1.55; color: var(--muted); padding-left: 18px; position: relative; }
+.pp-list--plain li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 3px; background: var(--brand); }
+.pp-two { display: grid; gap: 16px; }
+@media (min-width: 760px) { .pp-two { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.pp-card-title { display: flex; align-items: center; gap: 10px; color: var(--foreground); }
+.pp-card-title svg { color: var(--brand-deep); }
+.pp-card-text { margin-top: 10px; font-size: 16px; line-height: 1.6; }
+.pp-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+@media (min-width: 900px) { .pp-steps { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.pp-step { display: grid; gap: 10px; align-content: start; }
+.pp-note { margin-top: 24px; max-width: 760px; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.pp-price { text-align: center; padding: 32px 24px; }
+.pp-price .tb-lead { margin-left: auto; margin-right: auto; }
+.pp-free { text-align: center; }
+.pp-free .tb-lead { margin-left: auto; margin-right: auto; }
+.pp-free__links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.pp-free__links .tb-btn { font-size: 15px; min-height: 48px; }
+.pp-tutor-actions { display: flex; gap: 12px 18px; flex-wrap: wrap; align-items: center; }
+.pp-tutor-actions .tb-btn { font-size: 16px; min-height: 48px; }

@@ -5,111 +5,130 @@ import Testimonials from "@/components/marketing/Testimonials";
 import ContactCTA from "@/components/marketing/ContactCTA";
 import FindTutorButton from "@/components/FindTutorButton";
 import StudyAppCTA from "@/components/StudyAppCTA";
-import WeeklySummaryCard from "@/components/study/WeeklySummaryCard";
-import { c } from "@/components/marketing/theme";
+import FlowSteps from "@/components/brand/FlowSteps";
+import { Button, Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import { getStudyFaqs } from "@/lib/study-faqs";
 import { PRICING } from "@/lib/pricing";
+import "./parents.css";
 
-// /parents: the parent's view of Tuterly Study, with tutoring kept as the
-// second option further down. Metadata lives in ./layout.js (unchanged).
-//
-// The previous tutoring-first version of this page is in git history
-// (commit before "Phase 3"). Product facts come from TUTERLY-STUDY-SPEC.md
-// sections 5, 7.6 and 14; testimonials only render from lib/testimonials.js
-// and the ones that exist are about tutoring, so they sit in the tutoring
-// section.
+// /parents: the parent's view of Tuterly Study, parent-first order:
+// the app in one screen, what you'll see each week, safety and privacy,
+// linking, price, then the CTA. Tutoring and the extras sit below the CTA.
+// Metadata lives in ./layout.js (unchanged). Product facts come from
+// TUTERLY-STUDY-FEATURES.md; screens from public/app-screens.
 
-const font = "var(--font-inter), 'Helvetica Neue', Arial, sans-serif";
-const wrap = { maxWidth: 1120, margin: "0 auto" };
-const eyebrow = { fontSize: 12.5, fontWeight: 700, letterSpacing: 1.4, textTransform: "uppercase", color: c.tealDark, margin: "0 0 12px" };
-const h2 = { fontSize: 34, lineHeight: 1.15, letterSpacing: "-0.8px", fontWeight: 800, color: c.navy, margin: "0 0 14px" };
-const lead = { fontSize: 17, lineHeight: 1.7, color: c.textLight, margin: 0, maxWidth: 660 };
-const card = { background: c.white, border: `1px solid ${c.border}`, borderRadius: 18, padding: 26 };
+const S = "/app-screens";
+
+const WEEK_FLOW = [
+  {
+    src: `${S}/flow-parent/01-week-in-review.png`,
+    alt: "Week in review: 35 questions added, 2 mastered, 11 similar ones right, 855 XP and a 1 week streak",
+    title: "Week in review",
+    text: "Your child’s weekly recap. You see the same numbers.",
+  },
+  {
+    src: `${S}/flow-parent/02-bank-by-topic.png`,
+    alt: "The bank by topic, with a mastery ring and star count for each topic",
+    title: "The bank by topic",
+    text: "Every question, with a progress ring for each topic.",
+  },
+];
 
 export default function ParentsPage() {
   const name = STUDY_APP.name;
   const live = isStudyAppLive();
+  const priceAnswer = getStudyFaqs().find((f) => f.q === "How much does it cost?")?.a;
 
   return (
-    <div className="pp" style={{ fontFamily: font, color: c.text, background: c.white }}>
-      <style>{`
-        .pp * { box-sizing: border-box; }
-        .pp h1, .pp h2, .pp h3, .pp p { margin-top: 0; }
-        .pp-2 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-        .pp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .pp-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .pp details > summary { cursor: pointer; list-style: none; }
-        .pp details > summary::-webkit-details-marker { display: none; }
-        @media (max-width: 900px) {
-          .pp-2, .pp-cols { grid-template-columns: 1fr; gap: 32px; }
-          .pp-3 { grid-template-columns: 1fr; }
-          .pp-h1 { font-size: 36px !important; letter-spacing: -1px !important; }
-          .pp-h2 { font-size: 28px !important; }
-          .pp-section { padding: 60px 16px !important; }
-        }
-      `}</style>
-
+    <div className="tb pp">
       <MarketingNav />
 
-      {/* HERO */}
-      <section className="pp-section" style={{ padding: "72px 24px 88px", background: "linear-gradient(180deg, #FFFFFF 0%, #F0FDFA 100%)" }}>
-        <div className="pp-2" style={wrap}>
+      {/* 1. THE APP IN ONE SCREEN */}
+      <section className="pp-hero" aria-labelledby="pp-title">
+        <div className="tb-wrap pp-hero__grid">
           <div>
-            <p style={eyebrow}>For parents · Years 7 to 10 maths</p>
-            <h1 className="pp-h1" style={{ fontSize: 50, lineHeight: 1.08, letterSpacing: "-1.4px", fontWeight: 800, color: c.navy, margin: "0 0 20px" }}>
-              Know what your child gets wrong in maths, and see it get fixed.
-            </h1>
-            <p style={{ ...lead, fontSize: 18, marginBottom: 28 }}>
-              With {`${name}, `}your child snaps the maths questions they get wrong and practises fresh versions until each one is fixed. You get a weekly summary of what they snapped, what they fixed and what’s left, plus their test score in each topic.
+            <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
+            <h1 id="pp-title" className="tb-h1">Know what your child gets wrong in maths, and see it get fixed.</h1>
+            <p className="tb-lead pp-hero__lead">
+              {`With ${name}, your child snaps the maths questions they get wrong and practises fresh versions until each one is mastered. Each week you see what they added, fixed and mastered, plus their test scores.`}
             </p>
-            <StudyAppCTA variant="hero" placement="parents_hero" />
+            <div className="pp-hero__cta">
+              <StudyAppCTA variant="hero" placement="parents_hero" slim />
+            </div>
           </div>
-          <WeeklySummaryCard />
+          <div className="pp-hero__visual">
+            <div className="pp-hero__blob" aria-hidden="true" />
+            <PhoneFrame
+              src={`${S}/home.png`}
+              alt="The Tuterly Study home screen: the Snap a question button, Fix my mistakes and this week’s goals"
+              width={290}
+              priority
+              sizes="(max-width: 899px) 60vw, 290px"
+              className="pp-hero__phone"
+            />
+          </div>
         </div>
       </section>
 
-      {/* WHAT YOU SEE */}
-      <section className="pp-section" style={{ padding: "88px 24px" }} aria-labelledby="see">
-        <div style={wrap}>
-          <p style={eyebrow}>The parent view</p>
-          <h2 id="see" className="pp-h2" style={h2}>What you see, and what you don’t.</h2>
-          <p style={{ ...lead, marginBottom: 32 }}>
-            Your child owns the account. You get enough to know how they’re going and what to ask about, without reading over their shoulder.
-          </p>
-          <div className="pp-cols">
-            <div style={card}>
-              <h3 style={{ fontSize: 18, fontWeight: 700, color: c.navy, margin: "0 0 14px" }}>You see</h3>
-              <List items={[
-                "A weekly summary: how many questions they snapped, how many they fixed, and how many are left.",
-                "Their latest test score in each topic, like “Algebra · Linear equations”.",
-                "Progress on any snap goal their tutor has set.",
-              ]} />
-            </div>
-            <div style={card}>
-              <h3 style={{ fontSize: 18, fontWeight: 700, color: c.navy, margin: "0 0 14px" }}>You don’t see</h3>
-              <List muted items={[
-                "The photos of their work. Those stay private to your child and any tutor they link (our AI service reads them to solve the question).",
-                "Every individual question. You see topics and scores instead.",
-              ]} />
-              <p style={{ fontSize: 14.5, lineHeight: 1.65, color: c.textLight, margin: "16px 0 0" }}>
+      {/* 2. WHAT YOU'LL SEE EACH WEEK */}
+      <section className="tb-section tb-section--card" aria-labelledby="see">
+        <div className="tb-wrap pp-split">
+          <div>
+            <Reveal>
+              <SectionHead
+                id="see"
+                eyebrow="The parent view"
+                title="What you see each week."
+                lead="Your child owns the account. You get enough to know how they’re going and what to ask about, without reading over their shoulder."
+              />
+            </Reveal>
+            <ul className="pp-list">
+              <Item icon="star">Week in review: the questions they added, fixed and mastered this week.</Item>
+              <Item icon="test">Their test scores, and their trickiest topic.</Item>
+              <Item icon="flag">You can set a test on any topic for your child.</Item>
+            </ul>
+          </div>
+          <FlowSteps steps={WEEK_FLOW} label="What a parent sees" />
+        </div>
+      </section>
+
+      {/* 3. SAFETY AND PRIVACY */}
+      <section className="tb-section" aria-labelledby="privacy">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead id="privacy" eyebrow="Safety and privacy" title="Progress, not photos." />
+          </Reveal>
+          <div className="pp-two">
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="privacy" /> What you don’t see</h3>
+              <ul className="pp-list pp-list--plain">
+                <li>The photos of their work. Those stay private to your child and any tutor they link (our AI service reads them to solve the question).</li>
+                <li>Every individual question. You see topics and scores instead.</li>
+              </ul>
+            </Card>
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="book" /> Their data stays theirs</h3>
+              <p className="tb-muted pp-card-text">
                 Photos and questions are never reused for anyone else. Your child can remove your link, delete a question, or delete their account at any time.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* HOW LINKING WORKS */}
-      <section className="pp-section" style={{ padding: "88px 24px", background: c.offWhite }} aria-labelledby="link">
-        <div style={wrap}>
-          <p style={eyebrow}>Getting set up</p>
-          <h2 id="link" className="pp-h2" style={h2}>Linking takes a code, not a password.</h2>
-          <div className="pp-3" style={{ marginTop: 28 }}>
+      {/* 4. LINKING */}
+      <section className="tb-section tb-section--card" aria-labelledby="link">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead id="link" eyebrow="Getting set up" title="Linking takes a code, not a password." />
+          </Reveal>
+          <ol className="pp-steps">
             <Step n="1" title="Your child signs up">They create their own account on their iPhone and pick their year level (7 to 10).</Step>
             <Step n="2" title="They share a code">In Settings they find a 6-character code, or invite you by email.</Step>
             <Step n="3" title="You see the summary">Install the app on your own iPhone, sign in, and enter the code. You’ll then see their weekly summary and topic scores.</Step>
-          </div>
-          <p style={{ fontSize: 15, lineHeight: 1.65, color: c.textLight, margin: "24px 0 0", maxWidth: 760 }}>
+          </ol>
+          <p className="pp-note">
             {live
               ? `${name} is on the App Store for iPhone.`
               : `${name} is in a small pilot with Bayside Academics students right now, and every student's parent gives written consent before they're added. It isn't on the App Store yet.`}
@@ -117,50 +136,68 @@ export default function ParentsPage() {
         </div>
       </section>
 
-      {/* AT HOME */}
-      <section className="pp-section" style={{ padding: "88px 24px" }} aria-labelledby="home">
-        <div style={{ ...wrap, maxWidth: 860 }}>
-          <p style={eyebrow}>Using the summary</p>
-          <h2 id="home" className="pp-h2" style={h2}>Three questions worth asking at dinner.</h2>
-          <List items={[
-            "“Which topic has the most to fix?” It’s usually the one to take a test in next.",
-            "“Did you snap the ones from the test you got back?” A marked school test is the best source of questions to fix.",
-            "“What did Explain this say?” Explaining a step out loud is a good check that it has stuck.",
-          ]} />
+      {/* 5. PRICE */}
+      <section className="tb-section" aria-labelledby="price">
+        <div className="tb-wrap tb-wrap--narrow">
+          <Card className="pp-price">
+            <Eyebrow>Price</Eyebrow>
+            <h2 id="price" className="tb-h2">{STUDY_APP.priceLine}</h2>
+            {priceAnswer && <p className="tb-lead" style={{ marginTop: 12 }}>{priceAnswer}</p>}
+          </Card>
         </div>
       </section>
 
-      {/* FREE RESOURCES */}
-      <section className="pp-section" style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ ...wrap, maxWidth: 860, textAlign: "center" }}>
-          <h2 className="pp-h2" style={{ ...h2, fontSize: 28 }}>Free maths practice, no app needed</h2>
-          <p style={{ ...lead, margin: "0 auto 22px" }}>Anything they get wrong on these is exactly what to snap.</p>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/worksheets" style={pill}>Free worksheets</Link>
-            <Link href="/practice-maths-tests-secondary" style={pill}>Practice tests, Years 7 to 10</Link>
-            <Link href="/practice-maths-tests-primary" style={pill}>Practice tests, Years 3 to 6</Link>
+      {/* 6. CTA */}
+      <CtaBand
+        id="pp-final"
+        title="Start with the next maths question they get wrong."
+        lead={`${name} is for Years 7 to 10 maths on iPhone. ${STUDY_APP.priceLine}.`}
+      >
+        <StudyAppCTA variant="hero" placement="parents_final" position="final" />
+      </CtaBand>
+
+      {/* Below the CTA: dinner questions, free practice, tutoring. */}
+      <section className="tb-section tb-section--card" aria-labelledby="home-qs">
+        <div className="tb-wrap tb-wrap--narrow">
+          <Reveal>
+            <SectionHead id="home-qs" eyebrow="Using the summary" title="Three questions worth asking at dinner." />
+          </Reveal>
+          <ul className="pp-list">
+            <Item icon="bank">“Which topic has the most to fix?” It’s usually the one to take a test in next.</Item>
+            <Item icon="snap">“Did you snap the ones from the test you got back?” A marked school test is the best source of questions to fix.</Item>
+            <Item icon="explain">“What did Explain this say?” Explaining a step out loud is a good check that it has stuck.</Item>
+          </ul>
+        </div>
+      </section>
+
+      <section className="tb-section" aria-labelledby="free">
+        <div className="tb-wrap tb-wrap--narrow pp-free">
+          <h2 id="free" className="tb-h2" style={{ fontSize: "clamp(26px, 2vw + 18px, 34px)" }}>Free maths practice, no app needed</h2>
+          <p className="tb-lead" style={{ margin: "10px auto 22px" }}>Anything they get wrong on these is exactly what to snap.</p>
+          <div className="pp-free__links">
+            <Button href="/worksheets" variant="secondary">Free worksheets</Button>
+            <Button href="/practice-maths-tests-secondary" variant="secondary">Practice tests, Years 7 to 10</Button>
+            <Button href="/practice-maths-tests-primary" variant="secondary">Practice tests, Years 3 to 6</Button>
           </div>
         </div>
       </section>
 
-      {/* TUTORING, SECOND OPTION */}
-      <section className="pp-section" style={{ padding: "88px 24px" }} aria-labelledby="tutor">
-        <div className="pp-cols" style={{ ...wrap, alignItems: "start" }}>
+      <section className="tb-section tb-section--card" aria-labelledby="tutor">
+        <div className="tb-wrap pp-split pp-split--top">
           <div>
-            <p style={eyebrow}>Prefer a real tutor?</p>
-            <h2 id="tutor" className="pp-h2" style={h2}>Bayside Academics can help.</h2>
-            <p style={{ ...lead, marginBottom: 18 }}>
-              Some children need a person: someone to explain it a different way, plan what comes next, or cover a subject the app doesn’t. Our tutors cover primary through VCE, with a written report after every session. Sessions from ${PRICING.sessionFrom} an hour, all-inclusive, no lock-in.
+            <SectionHead
+              id="tutor"
+              eyebrow="Prefer a real tutor?"
+              title="Bayside Academics can help."
+              lead={`Some children need a person: someone to explain it a different way, plan what comes next, or cover a subject the app doesn’t. Our tutors cover primary through VCE, with a written report after every session. Sessions from $${PRICING.sessionFrom} an hour, all-inclusive, no lock-in.`}
+            />
+            <p className="tb-muted pp-card-text" style={{ marginTop: -12, marginBottom: 20 }}>
+              {`Tutors can link to ${name} too, look through your child’s mistakes before a session and set snap goals.`}
             </p>
-            <p style={{ ...lead, fontSize: 15.5, marginBottom: 24 }}>
-              Tutors can link to {name} too, look through your child’s mistakes before a session and set snap goals.
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <FindTutorButton source="parents_page" style={{ padding: "12px 20px", borderRadius: 12, border: `1.5px solid ${c.navy}`, background: c.white, color: c.navy, fontSize: 14.5, fontWeight: 600 }}>
-                Find a local tutor
-              </FindTutorButton>
-              <Link href="/directory" style={{ padding: "12px 20px", borderRadius: 12, border: `1.5px solid ${c.border}`, color: c.navy, fontSize: 14.5, fontWeight: 600, textDecoration: "none" }}>Browse tutors</Link>
-              <Link href="/sample-report" style={{ padding: "12px 20px", borderRadius: 12, color: c.tealDark, fontSize: 14.5, fontWeight: 600, textDecoration: "none" }}>See a sample report →</Link>
+            <div className="pp-tutor-actions">
+              <FindTutorButton source="parents_page" className="tb-btn tb-btn--secondary">Find a local tutor</FindTutorButton>
+              <Link href="/directory" className="tb-textlink">Browse tutors →</Link>
+              <Link href="/sample-report" className="tb-textlink">See a sample report →</Link>
             </div>
           </div>
           <ContactCTA variant="card" headline="Not sure which is right for your child?" subhead="Tell us a bit about them and we'll give you a straight answer, app or tutor." context="parents page" />
@@ -173,51 +210,33 @@ export default function ParentsPage() {
         variant="feature"
         tags={["home", "parents"]}
         limit={4}
-        palette={c}
-        background={c.offWhite}
-        headingFont={font}
-        bodyFont={font}
+        background="var(--background)"
+        headingFont="var(--font-display)"
+        bodyFont="var(--font-display)"
         kicker="From our tutoring families"
         heading="What parents say about our tutors."
       />
-
-      {/* FINAL CTA */}
-      <section className="pp-section" style={{ padding: "88px 24px", background: c.navy }}>
-        <div style={{ ...wrap, maxWidth: 760 }}>
-          <h2 className="pp-h2" style={{ ...h2, color: c.white }}>Start with the next maths question they get wrong.</h2>
-          <p style={{ ...lead, color: "rgba(255,255,255,0.72)", marginBottom: 28 }}>
-            {name} is for Years 7 to 10 maths on iPhone. {STUDY_APP.priceLine}.
-          </p>
-          <StudyAppCTA variant="hero" placement="parents_final" tone="dark" />
-        </div>
-      </section>
 
       <MarketingFooter />
     </div>
   );
 }
 
-const pill = { padding: "11px 18px", borderRadius: 999, border: `1px solid ${c.border}`, background: c.white, color: c.navy, fontSize: 14.5, fontWeight: 600, textDecoration: "none" };
-
-function List({ items, muted }) {
+function Item({ icon, children }) {
   return (
-    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 12 }}>
-      {items.map((t) => (
-        <li key={t} style={{ display: "flex", gap: 12, fontSize: 15.5, lineHeight: 1.6, color: c.text }}>
-          <span aria-hidden="true" style={{ flex: "none", width: 22, height: 22, borderRadius: "50%", background: muted ? c.offWhite : c.tealPale, color: muted ? c.textMuted : c.tealDark, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 800, marginTop: 1 }}>{muted ? "–" : "✓"}</span>
-          <span>{t}</span>
-        </li>
-      ))}
-    </ul>
+    <li className="pp-item">
+      <span className="tb-tile__icon" aria-hidden="true"><Icon name={icon} /></span>
+      <span>{children}</span>
+    </li>
   );
 }
 
 function Step({ n, title, children }) {
   return (
-    <div style={card}>
-      <div aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: c.tealPale, color: c.tealDark, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>{n}</div>
-      <h3 style={{ fontSize: 18, fontWeight: 700, color: c.navy, margin: "0 0 8px" }}>{title}</h3>
-      <p style={{ fontSize: 15, lineHeight: 1.65, color: c.textLight, margin: 0 }}>{children}</p>
-    </div>
+    <li className="tb-card pp-step">
+      <span className="tb-flow__num" aria-hidden="true" style={{ margin: 0 }}>{n}</span>
+      <h3 className="tb-h3">{title}</h3>
+      <p className="tb-muted pp-card-text" style={{ marginTop: 0 }}>{children}</p>
+    </li>
   );
 }
