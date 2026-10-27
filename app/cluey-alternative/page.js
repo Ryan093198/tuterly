@@ -141,7 +141,7 @@ export default function ClueyAlternativePage() {
             </p>
             <ul style={{ display: "grid", gap: 10, listStyle: "none", padding: 0, margin: 0 }}>
               {[
-                ["Snap a question", "Your child takes a photo of a question they got wrong, or uploads a whole marked test. The ones marked wrong come pre-ticked."],
+                ["Snap a question", "Your child takes a photo of a question they got wrong, or uploads a whole marked test. The ones marked wrong are stored automatically."],
                 ["A worked solution, then a fresh question", "The full solution stays hidden until they want it, so they can try again first. Straight away there’s a similar question on the same idea, genuinely different, not just new numbers."],
                 ["Practised until it’s mastered", "Each similar question they get right earns a star. Three stars and it’s mastered, then they can try a harder one. Explain this shows the step that went wrong."],
                 ["Test any topic", "A short test on any topic in their year, one question from each part of the topic. Questions they miss go into their bank."],

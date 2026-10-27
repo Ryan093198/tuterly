@@ -2,7 +2,7 @@ import { Icon, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import "./made-by-educators.css";
 
-// "Not just an AI app": who designed it and which curriculum it follows.
+// Who designed it and which curriculum it follows.
 // Used on the home page and /parents. Curriculum wording checked against
 // VCAA: the Victorian Curriculum F–10 "incorporates and reflects much of
 // the Australian Curriculum". Don't claim more than that (e.g. NSW syllabus).
@@ -10,7 +10,7 @@ export const MADE_BY_POINTS = [
   {
     icon: "educator",
     title: "Designed by Australian educators",
-    text: "How it explains each step, what makes a good practice question, and when a question counts as mastered were set by Australian educators, not left to the AI.",
+    text: "How it explains each step, what makes a good practice question, and when a question counts as mastered were all set by Australian educators.",
   },
   {
     icon: "school",
@@ -37,8 +37,8 @@ export default function MadeByEducators({ id = "educators", className = "" }) {
           <SectionHead
             id={id}
             eyebrow="Made in Australia"
-            title="Designed by Australian educators. Not just an AI app."
-            lead={`${STUDY_APP.name} is designed by Australian educators at Bayside Academics, a tutoring business in Brighton, Melbourne. The AI reads the photos and writes the questions. Educators decided what it teaches and how.`}
+            title="Carefully designed by Australian educators."
+            lead={`Tuterly has been carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne.`}
           />
         </Reveal>
         <ul className="mbe">

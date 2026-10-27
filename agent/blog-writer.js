@@ -271,7 +271,7 @@ const STUDY_APP_FACTS_BLOCK = `- An iPhone app for Years 7 to 10 maths (Victoria
 - Each question goes To fix, then Learning, then Mastered: a star for each similar question right, mastered at three stars (or "I've got it"). Then they can try a harder one. A Practice tab has Test any topic (a short test on any topic in their year), Fix my mistakes, Study notes (a one-page revision sheet) and a weekly review. Students can upload a whole test. XP, stars, a weekly streak and weekly goals.
 - Wrong answers get "Explain this": a short explanation of the step that went wrong.
 - Parents link with a code and see a weekly summary and test scores, not their child's photos. Tutors can link too and set snap goals.
-- Price: a 1-week free trial, then $7.99 a week. Designed by Australian educators; topics follow the Victorian Curriculum 2.0. Students can also upload a whole school test (photos, a PDF or a Word document); the app finds each question, ticks the ones marked wrong and writes a fresh question on each.
+- Price: a 1-week free trial, then $7.99 a week. Carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne; topics follow the Victorian Curriculum 2.0. Students can also upload a whole school test (photos, a PDF or a Word document); the app finds each question, automatically stores the ones marked wrong and writes a fresh question on each.
 - ${STUDY_APP.stage === "live" ? "It is free to download on the App Store." : "It is not on the App Store yet: say it is coming soon to the App Store. Never say it can be downloaded now."}`;
 
 const STUDY_APP_CTA_BLOCK = `## Turn the questions they get wrong into practice

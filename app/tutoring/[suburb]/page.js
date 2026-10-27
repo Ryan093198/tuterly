@@ -32,7 +32,7 @@ const h2 = { fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, mar
 const body = { fontSize: 16, color: c.textLight, lineHeight: 1.7 };
 
 const APP_STEPS = [
-  { title: "Snap a question", text: "Take a photo of a maths question they got wrong, or upload a whole test as photos, a PDF or a Word document. The ones marked wrong come pre-ticked." },
+  { title: "Snap a question", text: "Take a photo of a maths question they got wrong, or upload a whole test as photos, a PDF or a Word document. The ones marked wrong are stored automatically." },
   { title: "See the worked solution", text: "A full worked solution, hidden behind Show solution so they can have another go first. Explain this shows the step that went wrong." },
   { title: "Practise a fresh version", text: "Straight away, a similar question on the same idea that’s genuinely different, not just new numbers. Every one is solved a second time by an independent check." },
   { title: "Until it’s mastered", text: "Each question moves from To fix to Learning to Mastered (three stars, or “I’ve got it”), then they can try a harder one." },

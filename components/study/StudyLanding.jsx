@@ -174,7 +174,7 @@ export default function StudyLanding() {
         </div>
       </section>
 
-      {/* 2b. MADE BY AUSTRALIAN EDUCATORS (not just an AI app) */}
+      {/* 2b. MADE BY AUSTRALIAN EDUCATORS */}
       <MadeByEducators />
 
       {/* 3. THEIR OWN SCHOOL TESTS */}
@@ -186,15 +186,15 @@ export default function StudyLanding() {
                 id="school"
                 eyebrow="Straight from school"
                 title="Upload a real test. It turns the ones they got wrong into practice."
-                lead={`Take a photo of each page of a school test or practice paper, or upload the PDF or Word document. ${name} finds every question, ticks the ones marked wrong, and writes a fresh question on each one. So their practice is about exactly what they’re doing at school.`}
+                lead={`Take a photo of each page of a school test or practice paper, or upload the PDF or Word document. ${name} finds every question, automatically stores the ones marked wrong, and writes a fresh question on each one. So their practice is about exactly what they’re doing at school.`}
               />
             </Reveal>
             <ul className="sl-points">
               <Point icon="upload" title="Photos, a PDF or a Word document">
                 A whole test at once. A photo with several questions is split into a checklist.
               </Point>
-              <Point icon="test" title="The wrong ones are already ticked">
-                For a marked test, the questions marked wrong come pre-ticked, so nothing gets missed.
+              <Point icon="test" title="The wrong ones are automatically included">
+                For a marked test, the questions marked wrong get automatically stored in the app.
               </Point>
               <Point icon="snap" title="New questions on the same ideas">
                 Each one gets a worked solution and a similar question to master, then a harder one.
@@ -329,7 +329,7 @@ export default function StudyLanding() {
             <OptionTile icon="notes" tone="violet" title="Study notes" text="A one-page revision sheet, to download or share as a PDF." />
             <OptionTile icon="drill" tone="success" title="Fix my mistakes" text="The questions they got wrong, one after another." />
             <OptionTile icon="streak" tone="streak" title="Streaks and goals" text="A weekly streak and this week’s goals, with XP and stars." />
-            <OptionTile icon="upload" title="Upload a whole test" text="Photos of each page, a PDF or a Word document. The wrong ones come pre-ticked." />
+            <OptionTile icon="upload" title="Upload a whole test" text="Photos of each page, a PDF or a Word document. The wrong ones are stored automatically." />
           </div>
         </div>
       </section>

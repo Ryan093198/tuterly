@@ -18,7 +18,7 @@ That gap is what some Victorian tutoring centres are now using {{STUDY_APP}} for
 {{STUDY_APP}} is an iPhone app for Years 7 to 10 maths, designed by Australian educators, with topics that follow the Victorian Curriculum 2.0.
 
 - **Snap a question they got wrong.** From homework, a textbook or a class quiz. The app reads it, files it under the right topic and saves a full worked solution, hidden so they can have another go first.
-- **Upload a whole school test.** Photos of each page, a PDF or a Word document. For a marked test, the questions marked wrong come pre-ticked.
+- **Upload a whole school test.** Photos of each page, a PDF or a Word document. For a marked test, the questions marked wrong get automatically stored in the app.
 - **Practise a fresh version straight away.** A similar question on the same idea that is genuinely different, not the same question with the numbers changed. Getting similar ones right earns stars, and three stars means the question is mastered.
 - **Test any topic.** A short test on any topic in their year, one question from each part of the topic. Anything they get wrong goes into their bank.
 

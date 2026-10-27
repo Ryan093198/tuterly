@@ -72,7 +72,7 @@ const CONCERNS = [
 const HOW_THE_APP_FITS = [
   {
     title: "Snap a question",
-    body: "Your child takes a photo of a maths question they got wrong, or uploads a whole marked test. The ones marked wrong come pre-ticked.",
+    body: "Your child takes a photo of a maths question they got wrong, or uploads a whole marked test. The ones marked wrong are stored automatically.",
   },
   {
     title: "See the worked solution",
