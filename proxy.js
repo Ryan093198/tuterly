@@ -56,13 +56,9 @@ export async function proxy(request) {
     if (pathMatchesPrefix(pathname, APP_PATH_PREFIXES)) {
       return NextResponse.redirect(`${APP_URL}${pathname}${search}`, 308);
     }
-    // Marketing root rewrites to /parents until we ship a dedicated
-    // multi-audience home (parents + tutors + centres tiles).
-    if (pathname === "/") {
-      const target = request.nextUrl.clone();
-      target.pathname = "/parents";
-      return NextResponse.rewrite(target);
-    }
+    // The marketing root is the Tuterly Study landing page, rendered by
+    // app/page.js (it shows the sign-in card only on the app host). It
+    // used to rewrite to /parents.
   }
 
   if (isAppDomain) {

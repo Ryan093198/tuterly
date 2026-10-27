@@ -88,6 +88,29 @@ export default function StudyAppCTA({
   const fg = dark ? c.white : c.navy;
   const muted = dark ? "rgba(255,255,255,0.7)" : c.textLight;
 
+  // Nav button: a single small link. The full form lives on the home page
+  // hero (#get-app), so the nav never grows a form.
+  if (variant === "nav") {
+    let href = "/#get-app";
+    let label = "Get notified";
+    if (live && platform !== "android") {
+      href = STUDY_APP.appStoreUrl;
+      label = "Get the app";
+    } else if (!live && platform === "iphone") {
+      href = STUDY_APP.testflightUrl || "/#get-app";
+      label = "Join the free pilot";
+    }
+    return (
+      <a
+        href={href}
+        onClick={() => track(href.startsWith("/#") ? "nav_to_form" : live ? "app_store" : "testflight")}
+        style={{ padding: "8px 16px", borderRadius: 8, fontSize: 13.5, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none", whiteSpace: "nowrap", ...style }}
+      >
+        {label}
+      </a>
+    );
+  }
+
   // ── What the action area shows ────────────────────────────────────
   let mode;
   if (live) mode = platform === "android" ? "android-form" : "store";
