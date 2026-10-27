@@ -1,0 +1,302 @@
+/* Tuterly brand components: the look of the Tuterly Study app (rounded,
+ * bold, the Duolingo-style "ledge" under buttons and cards), for the
+ * marketing site. All colours come from the tokens in app/globals.css, so
+ * light and dark both work. Class prefix: tb-. */
+
+.tb {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--foreground);
+  background: var(--background);
+}
+.tb *, .tb *::before, .tb *::after { box-sizing: border-box; }
+.tb :where(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+.tb img { max-width: 100%; }
+
+/* Layout */
+.tb-wrap { width: 100%; max-width: 1140px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+.tb-wrap--narrow { max-width: 820px; }
+.tb-section { padding-block: 64px; }
+.tb-section--card { background: var(--card); }
+.tb-section--soft { background: var(--brand-pale); }
+@media (min-width: 900px) { .tb-section { padding-block: 96px; } }
+.tb-stack { display: grid; gap: 16px; }
+
+/* Type */
+.tb-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 13px; line-height: 1.3;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--brand-deep);
+  margin: 0 0 12px;
+}
+.tb-h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(40px, 5.2vw + 18px, 70px);
+  line-height: 1.06; letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.tb-h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(30px, 2.4vw + 20px, 46px);
+  line-height: 1.1; letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.tb-h3 { font-family: var(--font-display); font-weight: 800; font-size: 20px; line-height: 1.25; letter-spacing: -0.01em; }
+.tb-lead { font-weight: 600; font-size: 17px; line-height: 1.55; color: var(--muted); max-width: 62ch; }
+@media (min-width: 900px) { .tb-lead { font-size: 18px; } }
+.tb-body { font-weight: 600; font-size: 17px; line-height: 1.55; }
+.tb-muted { color: var(--muted); }
+.tb-small { font-size: 14px; line-height: 1.5; }
+.tb-link { color: var(--brand-deep); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+.tb-head { display: grid; gap: 0; margin-bottom: 32px; }
+.tb-head .tb-lead { margin-top: 14px; }
+.tb-head--center { text-align: center; justify-items: center; }
+
+/* Buttons: a solid ledge, not a blurry shadow. Pressing moves the button
+ * down onto its ledge. Label size 19px/800 keeps white-on-teal at the
+ * WCAG "large text" level. */
+.tb-btn {
+  --ledge: 6px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 0 26px;
+  border-radius: 16px; border: 0;
+  font-family: var(--font-display); font-weight: 800; font-size: 19px; line-height: 1;
+  letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  margin-bottom: var(--ledge);
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 120ms ease;
+  user-select: none;
+}
+.tb-btn:disabled { cursor: default; opacity: 0.7; }
+.tb-btn--primary { background: var(--brand); color: var(--on-brand); box-shadow: 0 var(--ledge) 0 var(--brand-edge); }
+.tb-btn--secondary { --ledge: 4px; background: var(--card); color: var(--brand-deep); border: 2px solid var(--border); box-shadow: 0 var(--ledge) 0 var(--edge); }
+@media (hover: hover) {
+  .tb-btn:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 calc(var(--ledge) + 1px) 0 var(--tb-ledge-colour, var(--brand-edge)); }
+  .tb-btn--secondary:not(:disabled):hover { --tb-ledge-colour: var(--edge); }
+}
+.tb-btn:not(:disabled):active { transform: translateY(calc(var(--ledge) - 2px)); box-shadow: 0 2px 0 var(--brand-edge); }
+.tb-btn--secondary:not(:disabled):active { box-shadow: 0 1px 0 var(--edge); }
+/* Small (nav) buttons use the deeper teal so 15px labels still pass AA. */
+.tb-btn--sm {
+  --ledge: 4px;
+  min-height: 44px; padding: 0 16px; border-radius: 14px; font-size: 15px;
+  background: var(--brand-deep); box-shadow: 0 var(--ledge) 0 var(--brand-edge);
+}
+.tb-btn--sm:not(:disabled):active { box-shadow: 0 1px 0 var(--brand-edge); transform: translateY(3px); }
+@media (max-width: 599px) { .tb-btn--fluid { width: 100%; } }
+
+/* Text link with an arrow, for secondary actions. */
+.tb-textlink {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+  font-weight: 800; font-size: 16px; color: var(--brand-deep); text-decoration: none;
+}
+.tb-textlink:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Form fields in the app style. */
+.tb-input {
+  min-height: 56px; padding: 0 16px; border-radius: 14px;
+  border: 2px solid var(--border); background: var(--card); color: var(--foreground);
+  font-family: var(--font-display); font-weight: 700; font-size: 17px;
+  min-width: 0;
+}
+.tb-input::placeholder { color: var(--muted); font-weight: 600; }
+.tb-input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+
+/* Cards and option tiles */
+.tb-card {
+  background: var(--card); border: 2px solid var(--border); border-radius: 20px;
+  box-shadow: 0 4px 0 var(--edge); padding: 22px;
+}
+.tb-card--soft { background: var(--brand-soft); border-color: transparent; box-shadow: none; }
+.tb-tile {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) 18px; gap: 14px; align-items: center;
+  background: var(--card); border: 2px solid var(--border); border-radius: 18px;
+  box-shadow: 0 4px 0 var(--edge); padding: 16px 16px 16px 16px;
+  color: inherit; text-decoration: none;
+}
+a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); }
+.tb-tile__icon {
+  width: 44px; height: 44px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tile-soft, var(--brand-soft)); color: var(--tile-ink, var(--brand-deep));
+}
+.tb-tile__title { font-weight: 800; font-size: 16px; line-height: 1.3; color: var(--foreground); }
+.tb-tile__text { font-weight: 600; font-size: 14.5px; line-height: 1.45; color: var(--muted); margin-top: 2px; }
+.tb-tile__chev { color: var(--muted); }
+[data-tone="violet"] { --tile-soft: var(--violet-soft); --tile-ink: var(--violet-text); }
+[data-tone="streak"] { --tile-soft: var(--streak-soft); --tile-ink: var(--streak); }
+[data-tone="xp"] { --tile-soft: #fff4d6; --tile-ink: #8a5a00; }
+.dark [data-tone="xp"] { --tile-soft: #3a2c08; --tile-ink: var(--star); }
+[data-tone="success"] { --tile-soft: var(--success-soft); --tile-ink: var(--success); }
+.tb-tiles { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .tb-tiles { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .tb-tiles--3 { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* Phone frame: drawn device outline, no notch of its own (the
+ * screenshots already include the status bar and Dynamic Island). */
+.tb-phone {
+  position: relative; width: var(--phone-w, 280px); max-width: 100%;
+  padding: 9px; border-radius: 46px; background: #0b1a2c;
+  box-shadow: inset 0 0 0 2px #22344c, 0 24px 48px -18px rgba(11, 26, 44, 0.35);
+}
+.dark .tb-phone { background: #1d2a3d; box-shadow: inset 0 0 0 2px #31435d, 0 24px 48px -18px rgba(0, 0, 0, 0.6); }
+.tb-phone::before, .tb-phone::after {
+  content: ""; position: absolute; width: 3px; border-radius: 2px; background: #22344c;
+}
+.tb-phone::before { left: -3px; top: 22%; height: 9%; }
+.tb-phone::after { right: -3px; top: 27%; height: 13%; }
+.tb-phone__screen {
+  position: relative; overflow: hidden; border-radius: 38px;
+  aspect-ratio: 1206 / 2622; background: #f4f7fa;
+}
+.tb-phone__screen img { object-fit: cover; }
+.tb-phone__placeholder {
+  position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center;
+  font-weight: 800; color: var(--muted); background: repeating-linear-gradient(45deg, var(--surface-soft) 0 12px, var(--card) 12px 24px);
+}
+
+/* Flow: numbered steps. A swipe carousel with dots on phones, a row of
+ * phones on desktop. */
+.tb-flow { list-style: none; padding: 0; margin: 0; }
+.tb-flow__item { display: grid; justify-items: center; gap: 16px; text-align: center; }
+.tb-flow__item .tb-phone { --phone-w: 236px; }
+.tb-flow__cap { display: grid; gap: 4px; max-width: 30ch; }
+.tb-flow__num {
+  width: 32px; height: 32px; border-radius: 10px; margin: 0 auto 6px;
+  display: grid; place-items: center; font-weight: 900; font-size: 15px;
+  background: var(--brand-soft); color: var(--brand-foreground);
+}
+.tb-flow__title { font-weight: 800; font-size: 17px; line-height: 1.3; }
+.tb-flow__text { font-weight: 600; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.tb-flow__dots { display: flex; justify-content: center; gap: 2px; margin-top: 8px; }
+.tb-flow__dot {
+  width: 28px; height: 44px; border: 0; padding: 0; background: none; cursor: pointer;
+  display: grid; place-items: center;
+}
+.tb-flow__dot span { width: 9px; height: 9px; border-radius: 999px; background: var(--border); transition: width 160ms ease, background-color 160ms ease; }
+.tb-flow__dot[aria-current="true"] span { width: 22px; background: var(--brand); }
+@media (max-width: 899px) {
+  .tb-flow {
+    display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 4px 20px 8px; margin: 0 -20px; scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .tb-flow::-webkit-scrollbar { display: none; }
+  .tb-flow__item { flex: 0 0 76%; scroll-snap-align: center; }
+}
+@media (min-width: 900px) {
+  .tb-flow { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 28px; align-items: start; }
+  .tb-flow__dots { display: none; }
+}
+
+/* Final call-to-action band */
+.tb-cta-band {
+  position: relative; border-radius: 28px; padding: 36px 22px;
+  background: var(--brand-soft); border: 2px solid transparent;
+  display: grid; gap: 20px; align-items: center; overflow: hidden;
+}
+.tb-cta-band__quinn { width: 96px; height: auto; justify-self: start; }
+@media (min-width: 900px) {
+  .tb-cta-band { padding: 56px 56px; grid-template-columns: minmax(0, 1fr) auto; column-gap: 40px; }
+  .tb-cta-band__quinn { width: 120px; grid-column: 2; grid-row: 1 / span 2; justify-self: end; }
+}
+
+/* Scroll-in: fade and rise 12px, CSS only (scroll-driven animation where
+ * the browser supports it; elsewhere content is simply visible). */
+@keyframes tb-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .tb-reveal { animation: tb-rise linear both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
+  }
+}
+
+/* Nav */
+.tb-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  border-bottom: 2px solid var(--border);
+  font-family: var(--font-display);
+}
+.tb-nav__in { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.tb-logo { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--foreground); min-height: 44px; }
+.tb-logo__mark {
+  width: 32px; height: 32px; border-radius: 10px; background: var(--brand); color: var(--on-brand);
+  display: grid; place-items: center; font-weight: 900; font-size: 17px; box-shadow: 0 3px 0 var(--brand-edge);
+}
+.tb-logo__word { font-weight: 900; font-size: 21px; letter-spacing: -0.02em; }
+.tb-nav__links { display: flex; align-items: center; gap: 2px; }
+.tb-nav__link {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 12px;
+  font-weight: 800; font-size: 15px; color: var(--muted); text-decoration: none; white-space: nowrap;
+}
+.tb-nav__link:hover { background: var(--surface-soft); color: var(--foreground); }
+.tb-nav__right { display: flex; align-items: center; gap: 8px; }
+.tb-nav__menu { position: relative; display: none; }
+.tb-nav__menu > summary {
+  list-style: none; cursor: pointer; min-height: 44px; min-width: 44px; padding: 0 12px;
+  display: inline-flex; align-items: center; gap: 6px; border-radius: 12px;
+  border: 2px solid var(--border); background: var(--card); color: var(--foreground); font-weight: 800; font-size: 15px;
+}
+.tb-nav__menu > summary::-webkit-details-marker { display: none; }
+.tb-nav__panel {
+  position: absolute; right: 0; top: calc(100% + 10px); min-width: 230px; padding: 8px;
+  display: grid; background: var(--card); border: 2px solid var(--border); border-radius: 18px;
+  box-shadow: 0 4px 0 var(--edge), 0 18px 40px -20px rgba(11, 26, 44, 0.35);
+}
+@media (max-width: 899px) {
+  .tb-nav__links { display: none; }
+  .tb-nav__menu { display: block; }
+}
+@media (max-width: 380px) { .tb-logo__word { display: none; } }
+
+/* Footer */
+.tb-footer { background: var(--card); border-top: 2px solid var(--border); padding: 48px 0 32px; font-family: var(--font-display); }
+.tb-footer__grid { display: grid; gap: 32px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .tb-footer__grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; } }
+.tb-footer__title { font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); margin-bottom: 10px; }
+.tb-footer__list { list-style: none; padding: 0; margin: 0; display: grid; }
+.tb-footer__list a { display: inline-flex; align-items: center; min-height: 36px; font-weight: 700; font-size: 15px; color: var(--muted); text-decoration: none; }
+.tb-footer__list a:hover { color: var(--brand-deep); text-decoration: underline; }
+.tb-footer__legal { margin-top: 32px; font-size: 13.5px; color: var(--muted); }
+
+/* App call to action (components/StudyAppCTA.jsx) */
+.tb-appcta { font-family: var(--font-display); }
+.tb-appcta--box {
+  background: var(--brand-pale); border: 2px solid var(--brand-soft); border-radius: 22px;
+  box-shadow: 0 4px 0 var(--brand-soft); padding: 22px; margin: 28px 0;
+}
+.tb-appcta--card { background: var(--card); border: 2px solid var(--border); border-radius: 22px; box-shadow: 0 4px 0 var(--edge); padding: 22px; margin: 28px 0; }
+.tb-appcta__title { font-weight: 900; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 8px; color: var(--foreground); }
+.tb-appcta__sub { font-weight: 600; font-size: 16px; line-height: 1.55; color: var(--muted); margin: 0 0 16px; }
+.tb-appcta__meta { font-weight: 700; font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+.tb-appcta__note { font-weight: 600; font-size: 13.5px; color: var(--muted); margin: 10px 0 0; line-height: 1.5; }
+.tb-appcta__note a { color: inherit; }
+.tb-appcta__form { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+.tb-appcta__form .tb-input--email { grid-column: 1 / -1; }
+.tb-appcta__form .tb-btn { grid-column: 1 / -1; width: 100%; }
+@media (min-width: 720px) {
+  .tb-appcta__form--wide { grid-template-columns: minmax(0, 1.6fr) auto auto auto; align-items: start; }
+  .tb-appcta__form--wide .tb-input--email, .tb-appcta__form--wide .tb-btn { grid-column: auto; }
+  .tb-appcta__form--wide .tb-btn { width: auto; }
+}
+.tb-appcta__status { font-weight: 800; font-size: 16px; color: var(--success); margin: 0; }
+.tb-appcta__error { font-weight: 700; font-size: 14px; color: var(--danger); margin: 8px 0 0; }
+.tb-appcta__qr { display: flex; align-items: center; gap: 12px; }
+.tb-appcta__qr-code { width: 88px; height: 88px; padding: 4px; background: #fff; border-radius: 12px; border: 2px solid var(--border); }
+.tb-dark-band .tb-appcta__meta, .tb-dark-band .tb-appcta__note { color: var(--muted); }
+
+/* Slim app bar */
+.tb-appbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: var(--card); border-top: 2px solid var(--border);
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  box-shadow: 0 -10px 30px -18px rgba(11, 26, 44, 0.3);
+  font-family: var(--font-display);
+}
+.tb-appbar__in { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; justify-content: space-between; }
+.tb-appbar__text { flex: 1 1 220px; margin: 0; font-size: 15px; line-height: 1.4; color: var(--muted); }
+.tb-appbar__text strong { color: var(--foreground); font-weight: 800; }
+.tb-appbar__close { min-width: 44px; min-height: 44px; border: 0; background: none; color: var(--muted); font-size: 22px; cursor: pointer; border-radius: 12px; }

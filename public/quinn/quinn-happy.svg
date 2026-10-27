@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 112 112" width="1024" height="1024">
+  <title>Quinn the quokka (happy)</title>
+  <ellipse cx="50" cy="96.5" rx="24" ry="3.5" fill="#000" opacity="0.14"/>
+  <g transform="translate(1.5 0) scale(0.97)">
+    
+    <path d="M32 88 C24 90 17 93 11 95 C15 91 22 86 30 83 Z" fill="#735A44"/>
+    <g transform="rotate(-18 27 16)"><ellipse cx="27" cy="16" rx="7.5" ry="10" fill="#AE8E70"/><ellipse cx="27" cy="17" rx="4" ry="6.2" fill="#F4AE96"/></g>
+    <g transform="rotate(18 73 16)"><ellipse cx="73" cy="16" rx="7.5" ry="10" fill="#AE8E70"/><ellipse cx="73" cy="17" rx="4" ry="6.2" fill="#F4AE96"/></g>
+    <path d="M50 60 C63 60 70 68 73 78 C76 88 70 95 50 95 C30 95 24 88 27 78 C30 68 37 60 50 60 Z" fill="#AE8E70"/>
+    <ellipse cx="50" cy="84" rx="13" ry="9.5" fill="#F3E6D4"/>
+    <ellipse cx="36" cy="95.5" rx="13" ry="3.6" fill="#735A44"/>
+    <ellipse cx="64" cy="95.5" rx="13" ry="3.6" fill="#735A44"/>
+    <path d="M50 17 C72 17 85 29 85 44 C85 55 77 62 66 66 C60 68 56 72 50 72 C44 72 40 68 34 66 C23 62 15 55 15 44 C15 29 28 17 50 17 Z" fill="#AE8E70"/>
+    <path d="M50 52 C57 52 61 56 61 61 C61 67 56 71 50 71 C44 71 39 67 39 61 C39 56 43 52 50 52 Z" fill="#CDB69E"/>
+    
+    <path d="M31 71 C41 76 59 76 69 71 L70 76 C59 82 41 82 30 76 Z" fill="#14A9C8"/>
+    <path d="M59 77 L65 88 L59 86.5 L56 78 Z" fill="#0E87A1"/>
+    <g>
+    <g><ellipse cx="27" cy="57" rx="4.5" ry="2.6" fill="#F49A86" opacity="0.25"/><ellipse cx="73" cy="57" rx="4.5" ry="2.6" fill="#F49A86" opacity="0.25"/></g>
+    <g><ellipse cx="36" cy="48" rx="6" ry="6.8" fill="#2A1B12"/><circle cx="38" cy="45.6" r="2" fill="#fff"/></g><g><ellipse cx="64" cy="48" rx="6" ry="6.8" fill="#2A1B12"/><circle cx="66" cy="45.6" r="2" fill="#fff"/></g>
+    <g><path d="M31 37.5 Q36 35.5 41 37.5" stroke="#735A44" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M59 37.5 Q64 35.5 69 37.5" stroke="#735A44" stroke-width="2.4" fill="none" stroke-linecap="round"/></g>
+    
+    <path d="M46.5 56.5 Q50 55 53.5 56.5 Q53 59.2 50 60.2 Q47 59.2 46.5 56.5 Z" fill="#2A1B12"/>
+    <ellipse cx="48.8" cy="56.6" rx="1.1" ry="0.6" fill="#fff" opacity="0.55"/>
+    <path d="M44.5 61 Q47.3 64.6 50 61.4 Q52.7 64.6 55.5 61" stroke="#2A1B12" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+    
+    </g>
+  <g transform="rotate(-35 37 75.5)"><g transform="translate(32 74) scale(0.5)"><rect x="4" y="0" width="12" height="27" rx="6" fill="#AE8E70"/><ellipse cx="10" cy="25" rx="6" ry="4.6" fill="#735A44"/></g></g>
+  <g transform="rotate(-150 63 75.5)"><g transform="translate(58 74) scale(0.5)"><rect x="4" y="0" width="12" height="27" rx="6" fill="#AE8E70"/><ellipse cx="10" cy="25" rx="6" ry="4.6" fill="#735A44"/></g></g>
+  
+  
+</svg>

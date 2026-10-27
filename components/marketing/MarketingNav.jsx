@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { c } from "./theme";
+import { Menu } from "lucide-react";
 import { APP_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import "@/components/brand/brand.css";
 
-// Sticky top nav shared across the marketing pages. The primary button is
-// the Tuterly Study app CTA. "Find a Tutor" and "Apply as a Tutor" live in
-// the footer's Tutoring group (components/marketing/MarketingFooter.jsx).
-// On phones the text links fold into a Menu (no JS: <details>).
+// Sticky top nav for the marketing site, in the app's style. The primary
+// button is the Tuterly Study app CTA. "Find a Tutor" and "Apply as a
+// Tutor" live in the footer's Tutoring group. On phones: logo, the app
+// button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
   { href: "/", label: STUDY_APP.name },
   { href: "/worksheets", label: "Free worksheets" },
@@ -16,42 +17,39 @@ const LINKS = [
   { href: "/learn", label: "Learn" },
 ];
 
-const linkStyle = { padding: "8px 12px", borderRadius: 8, fontSize: 13.5, fontWeight: 600, color: c.textLight, textDecoration: "none", whiteSpace: "nowrap" };
+export function Logo() {
+  return (
+    <Link href="/" className="tb-logo" aria-label="Tuterly home">
+      <span className="tb-logo__mark" aria-hidden="true">t</span>
+      <span className="tb-logo__word">tuterly</span>
+    </Link>
+  );
+}
 
 export default function MarketingNav() {
   return (
-    <nav aria-label="Main" style={{ background: c.white, borderBottom: `1px solid ${c.border}`, padding: "14px 20px", position: "sticky", top: 0, zIndex: 20 }}>
-      <style>{`
-        .mn-menu { display: none; position: relative; }
-        .mn-menu > summary { list-style: none; cursor: pointer; }
-        .mn-menu > summary::-webkit-details-marker { display: none; }
-        @media (max-width: 860px) {
-          .mn-links { display: none !important; }
-          .mn-menu { display: block; }
-        }
-      `}</style>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{ width: 28, height: 28, borderRadius: 7, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: c.white }}>T</div>
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy }}>tuterly</span>
-        </Link>
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <div className="mn-links" style={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <nav aria-label="Main" className="tb-nav">
+      <div className="tb-nav__in">
+        <Logo />
+        <div className="tb-nav__right">
+          <div className="tb-nav__links">
             {LINKS.map((l) => (
-              <Link key={l.href} href={l.href} style={linkStyle}>{l.label}</Link>
+              <Link key={l.href} href={l.href} className="tb-nav__link">{l.label}</Link>
             ))}
-            <a href={APP_URL} style={linkStyle}>Log in</a>
+            <a href={APP_URL} className="tb-nav__link">Log in</a>
           </div>
-          <details className="mn-menu">
-            <summary aria-label="Menu" style={{ ...linkStyle, color: c.navy, border: `1px solid ${c.border}` }}>Menu</summary>
-            <div style={{ position: "absolute", right: 0, top: "calc(100% + 8px)", background: c.white, border: `1px solid ${c.border}`, borderRadius: 12, padding: 8, display: "grid", minWidth: 200, boxShadow: "0 16px 40px rgba(15,23,42,0.12)" }}>
+          <StudyAppCTA variant="nav" placement="nav" />
+          <details className="tb-nav__menu">
+            <summary aria-label="Menu">
+              <Menu size={20} strokeWidth={2.5} aria-hidden="true" />
+            </summary>
+            <div className="tb-nav__panel">
               {LINKS.map((l) => (
-                <Link key={l.href} href={l.href} style={{ ...linkStyle, padding: "10px 12px" }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} className="tb-nav__link">{l.label}</Link>
               ))}
-              <a href={APP_URL} style={{ ...linkStyle, padding: "10px 12px" }}>Log in</a>
+              <a href={APP_URL} className="tb-nav__link">Log in</a>
             </div>
           </details>
-          <StudyAppCTA variant="nav" placement="nav" />
         </div>
       </div>
     </nav>

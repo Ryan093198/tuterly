@@ -4,7 +4,7 @@ import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import { trackEvent } from "@/lib/analytics";
-import { c } from "@/components/marketing/theme";
+import "@/components/brand/brand.css";
 
 // The one app button used across the marketing site. Everything it says
 // and where it points comes from lib/study-app.js:
@@ -21,8 +21,13 @@ import { c } from "@/components/marketing/theme";
 //
 // Variants: hero (big, no heading of its own), inline (inside articles and
 // worksheets), card (sidebar / grid card), banner (slim sticky bottom bar).
-// Every primary click fires one `study_app_cta_click` event with
-// { placement, stage, page, action }.
+// Every primary click fires one `study_app_cta_click` GA4 event with
+// { placement, position, stage, page, action }. position is where on the
+// page it sits (nav, hero, inline, final, banner) so placements can be
+// compared; it comes from the variant unless passed.
+//
+// Styling: tb- classes in components/brand/brand.css (the app's ledged
+// buttons and rounded fields).
 
 const BANNER_DISMISS_KEY = "tuterly:study_banner_dismissed";
 // Same hidden field name the server checks (lib/public-form-guard.js).
@@ -54,7 +59,7 @@ export default function StudyAppCTA({
   placement,
   heading,
   sub,
-  tone = "light", // "light" | "dark" (for navy sections)
+  position,
   style,
 }) {
   const pathname = usePathname() || "/";
@@ -76,17 +81,17 @@ export default function StudyAppCTA({
     return () => root.style.removeProperty("--study-banner-h");
   }, [variant, bannerHidden]);
 
+  const pos =
+    position ||
+    (variant === "nav" ? "nav" : variant === "banner" ? "banner" : variant === "hero" ? (/final/.test(placement || "") ? "final" : "hero") : "inline");
   const track = (action) =>
     trackEvent("study_app_cta_click", {
       placement: placement || variant,
+      position: pos,
       stage,
       page: pathname,
       action,
     });
-
-  const dark = tone === "dark";
-  const fg = dark ? c.white : c.navy;
-  const muted = dark ? "rgba(255,255,255,0.7)" : c.textLight;
 
   // Nav button: a single small link. The full form lives on the home page
   // hero (#get-app), so the nav never grows a form.
@@ -103,8 +108,9 @@ export default function StudyAppCTA({
     return (
       <a
         href={href}
+        className="tb-btn tb-btn--primary tb-btn--sm"
         onClick={() => track(href.startsWith("/#") ? "nav_to_form" : live ? "app_store" : "testflight")}
-        style={{ padding: "8px 16px", borderRadius: 8, fontSize: 13.5, fontWeight: 600, background: c.navy, color: c.white, textDecoration: "none", whiteSpace: "nowrap", ...style }}
+        style={{ marginBottom: 4, whiteSpace: "nowrap", ...style }}
       >
         {label}
       </a>
@@ -127,37 +133,20 @@ export default function StudyAppCTA({
   }
 
   const big = variant === "hero";
-  const btn = {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 8,
-    padding: big ? "16px 28px" : compact ? "10px 16px" : "12px 20px",
-    borderRadius: 12,
-    border: "none",
-    background: compact || dark ? c.teal : c.navy,
-    color: c.white,
-    fontFamily: "inherit",
-    fontSize: big ? 16 : 14.5,
-    fontWeight: 600,
-    textDecoration: "none",
-    cursor: "pointer",
-    whiteSpace: "nowrap",
-  };
+  const btnClass = `tb-btn tb-btn--primary ${compact ? "tb-btn--sm" : "tb-btn--fluid"}`;
 
   let action;
   if (mode === "store") {
     action = (
       <StoreButton
-        btn={{ ...btn, background: "#000" }}
+        btnClass={btnClass}
         showQr={platform === "desktop" && variant !== "banner"}
-        muted={muted}
         onClick={() => track("app_store")}
       />
     );
   } else if (mode === "testflight") {
     action = (
-      <a href={STUDY_APP.testflightUrl} style={btn} onClick={() => track("testflight")} rel="noopener">
+      <a href={STUDY_APP.testflightUrl} className={btnClass} onClick={() => track("testflight")} rel="noopener">
         Join the free pilot
       </a>
     );
@@ -171,7 +160,7 @@ export default function StudyAppCTA({
     action = (
       <button
         type="button"
-        style={btn}
+        className={btnClass}
         onClick={() => {
           track(mode === "pilot-button" ? "open_pilot_form" : "open_waitlist_form");
           setFormOpen(true);
@@ -185,9 +174,8 @@ export default function StudyAppCTA({
     action = (
       <WaitlistForm
         kind={kind}
-        big={big}
-        dark={dark}
-        btn={btn}
+        wide={big}
+        btnClass={btnClass}
         placement={placement || variant}
         pathname={pathname}
         onSubmitClick={() => track("waitlist_submit")}
@@ -196,7 +184,7 @@ export default function StudyAppCTA({
   }
 
   const meta = (
-    <p style={{ fontSize: 13, color: muted, margin: "10px 0 0", lineHeight: 1.5 }}>
+    <p className="tb-appcta__meta">
       {live ? `${STUDY_APP.name} · iPhone · Years 7 to 10 maths` : `${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone`}
     </p>
   );
@@ -205,36 +193,18 @@ export default function StudyAppCTA({
   if (variant === "banner") {
     if (bannerHidden) return null;
     return (
-      <div
-        role="region"
-        aria-label={`${STUDY_APP.name} app`}
-        style={{
-          position: "fixed",
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 8999,
-          background: c.navy,
-          color: c.white,
-          padding: "10px 16px calc(10px + env(safe-area-inset-bottom))",
-          boxShadow: "0 -8px 24px rgba(15,23,42,0.18)",
-        }}
-      >
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "space-between" }}>
-          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.4, flex: "1 1 220px" }}>
-            <strong>{heading || STUDY_APP.name}</strong>
-            <span style={{ color: "rgba(255,255,255,0.7)" }}>
-              {" "}
-              {sub || "Snap the maths questions you get wrong. Practise fresh versions until they're fixed."}
-            </span>
+      <div role="region" aria-label={`${STUDY_APP.name} app`} className="tb-appbar">
+        <div className="tb-appbar__in">
+          <p className="tb-appbar__text">
+            <strong>{heading || STUDY_APP.name}</strong>{" "}
+            {sub || "Snap the maths questions you get wrong. Practise fresh versions until they're mastered."}
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
             {mode.endsWith("form") ? (
               <WaitlistForm
                 kind={mode === "pilot-form" ? "pilot" : mode === "android-form" ? "android" : "launch"}
-                dark
                 compact
-                btn={btn}
+                btnClass={btnClass}
                 placement={placement || "banner"}
                 pathname={pathname}
                 onSubmitClick={() => track("waitlist_submit")}
@@ -245,13 +215,13 @@ export default function StudyAppCTA({
             <button
               type="button"
               aria-label="Dismiss"
+              className="tb-appbar__close"
               onClick={() => {
                 try {
                   window.localStorage.setItem(BANNER_DISMISS_KEY, "1");
                 } catch {}
                 setDismissedNow(true);
               }}
-              style={{ background: "none", border: "none", color: "rgba(255,255,255,0.6)", fontSize: 20, cursor: "pointer", padding: "4px 8px", lineHeight: 1 }}
             >
               ×
             </button>
@@ -263,7 +233,7 @@ export default function StudyAppCTA({
 
   if (variant === "hero") {
     return (
-      <div style={style} data-study-cta={placement || "hero"}>
+      <div className="tb-appcta" style={style} data-study-cta={placement || "hero"}>
         {action}
         {meta}
       </div>
@@ -274,23 +244,13 @@ export default function StudyAppCTA({
   return (
     <aside
       data-study-cta={placement || variant}
-      style={{
-        background: dark ? c.navyMid : isCard ? c.white : c.tealPale,
-        border: `1px solid ${dark ? "rgba(255,255,255,0.1)" : isCard ? c.border : "rgba(10,186,181,0.25)"}`,
-        borderRadius: 16,
-        padding: isCard ? "22px 22px" : "24px 26px",
-        margin: "28px 0",
-        ...style,
-      }}
+      className={`tb-appcta ${isCard ? "tb-appcta--card" : "tb-appcta--box"}`}
+      style={style}
     >
-      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: 1.4, textTransform: "uppercase", color: dark ? c.tealLight : c.tealDark, margin: "0 0 8px" }}>
-        {STUDY_APP.name} · Years 7 to 10 maths
-      </p>
-      <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: isCard ? 21 : 24, lineHeight: 1.25, color: fg, margin: "0 0 8px" }}>
-        {heading || "Got some of these wrong?"}
-      </p>
-      <p style={{ fontSize: 15, lineHeight: 1.6, color: muted, margin: "0 0 16px" }}>
-        {sub || `Snap them in ${STUDY_APP.name} and get a fresh version to practise until they're fixed.`}
+      <p className="tb-eyebrow" style={{ marginBottom: 8 }}>{STUDY_APP.name} · Years 7 to 10 maths</p>
+      <p className="tb-appcta__title">{heading || "Got some of these wrong?"}</p>
+      <p className="tb-appcta__sub">
+        {sub || `Snap them in ${STUDY_APP.name} and get a fresh version to practise until they're mastered.`}
       </p>
       {action}
       {meta}
@@ -298,7 +258,7 @@ export default function StudyAppCTA({
   );
 }
 
-function StoreButton({ btn, showQr, muted, onClick }) {
+function StoreButton({ btnClass, showQr, onClick }) {
   const [qrSvg, setQrSvg] = useState(null);
   useEffect(() => {
     if (!showQr || !STUDY_APP.appStoreUrl) return;
@@ -315,20 +275,22 @@ function StoreButton({ btn, showQr, muted, onClick }) {
     };
   }, [showQr]);
 
+  // TODO when live: swap the text button for Apple's official badge
+  // (public/app-store-badge.svg from Apple's marketing site).
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-      <a href={STUDY_APP.appStoreUrl} style={btn} onClick={onClick} rel="noopener">
+      <a href={STUDY_APP.appStoreUrl} className={btnClass} onClick={onClick} rel="noopener">
         Download free on the App Store
       </a>
       {showQr && qrSvg && (
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div className="tb-appcta__qr">
           <div
             aria-label="QR code that opens the App Store on your phone"
             role="img"
-            style={{ width: 84, height: 84, background: "#fff", borderRadius: 8, padding: 2 }}
+            className="tb-appcta__qr-code"
             dangerouslySetInnerHTML={{ __html: qrSvg }}
           />
-          <span style={{ fontSize: 12.5, color: muted, maxWidth: 120, lineHeight: 1.4 }}>Scan with your iPhone camera</span>
+          <span className="tb-small tb-muted" style={{ maxWidth: 130 }}>Scan with your iPhone camera</span>
         </div>
       )}
     </div>
@@ -341,7 +303,7 @@ const ROLES = [
   { value: "tutor", label: "I'm a tutor" },
 ];
 
-function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSubmitClick }) {
+function WaitlistForm({ kind, wide, compact, btnClass, placement, pathname, onSubmitClick }) {
   const id = useId();
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("parent");
@@ -388,12 +350,9 @@ function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSu
     }
   }
 
-  const textColor = dark ? c.white : c.navy;
-  const muted = dark ? "rgba(255,255,255,0.7)" : c.textLight;
-
   if (state === "done" || state === "already") {
     return (
-      <p role="status" style={{ margin: 0, fontSize: compact ? 14 : 15, color: textColor, lineHeight: 1.5 }}>
+      <p role="status" className="tb-appcta__status">
         {state === "already"
           ? "You're already on the list. We'll be in touch."
           : "Thanks, you're on the list. Check your inbox for a confirmation."}
@@ -401,23 +360,13 @@ function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSu
     );
   }
 
-  const field = {
-    padding: big ? "14px 14px" : "11px 12px",
-    borderRadius: 10,
-    border: `1px solid ${dark ? "rgba(255,255,255,0.2)" : c.border}`,
-    background: dark ? "rgba(255,255,255,0.06)" : c.white,
-    color: textColor,
-    fontFamily: "inherit",
-    fontSize: big ? 15.5 : 14.5,
-    minWidth: 0,
-  };
-
   return (
     <form onSubmit={submit} style={{ margin: 0 }} aria-label={label}>
-      {!compact && (
-        <p style={{ fontSize: 14, color: muted, margin: "0 0 10px", lineHeight: 1.5 }}>{intro}</p>
-      )}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "stretch" }}>
+      {!compact && <p className="tb-appcta__sub" style={{ fontSize: 15, marginBottom: 12 }}>{intro}</p>}
+      <div
+        className={compact ? undefined : `tb-appcta__form ${wide ? "tb-appcta__form--wide" : ""}`}
+        style={compact ? { display: "flex", gap: 8, flexWrap: "wrap" } : undefined}
+      >
         <label htmlFor={`${id}-email`} style={srOnly}>Email address</label>
         <input
           id={`${id}-email`}
@@ -427,27 +376,30 @@ function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSu
           placeholder="Your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{ ...field, flex: compact ? "1 1 180px" : "1 1 220px" }}
+          className="tb-input tb-input--email"
+          style={compact ? { minHeight: 44, flex: "1 1 180px" } : undefined}
         />
         {!compact && (
           <>
             <label htmlFor={`${id}-role`} style={srOnly}>I am a</label>
-            <select id={`${id}-role`} value={role} onChange={(e) => setRole(e.target.value)} style={{ ...field, flex: "0 1 auto" }}>
+            <select id={`${id}-role`} value={role} onChange={(e) => setRole(e.target.value)} className="tb-input">
               {ROLES.map((r) => (
                 <option key={r.value} value={r.value}>{r.label}</option>
               ))}
             </select>
-            {role !== "tutor" && (
-              <>
-                <label htmlFor={`${id}-year`} style={srOnly}>Year level (optional)</label>
-                <select id={`${id}-year`} value={year} onChange={(e) => setYear(e.target.value)} style={{ ...field, flex: "0 1 auto" }}>
-                  <option value="">Year (optional)</option>
-                  {[7, 8, 9, 10].map((y) => (
-                    <option key={y} value={y}>Year {y}</option>
-                  ))}
-                </select>
-              </>
-            )}
+            <label htmlFor={`${id}-year`} style={srOnly}>Year level (optional)</label>
+            <select
+              id={`${id}-year`}
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              className="tb-input"
+              disabled={role === "tutor"}
+            >
+              <option value="">Year (optional)</option>
+              {[7, 8, 9, 10].map((y) => (
+                <option key={y} value={y}>Year {y}</option>
+              ))}
+            </select>
           </>
         )}
         {/* Honeypot: hidden from people, filled by bots. */}
@@ -457,21 +409,19 @@ function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSu
             <input tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} name={HONEYPOT_FIELD} />
           </label>
         </div>
-        <button type="submit" disabled={state === "pending"} style={{ ...btn, opacity: state === "pending" ? 0.7 : 1 }}>
+        <button type="submit" disabled={state === "pending"} className={btnClass}>
           {state === "pending" ? "Saving…" : label}
         </button>
       </div>
       {role === "student" && !compact && (
-        <p style={{ fontSize: 12.5, color: muted, margin: "8px 0 0", lineHeight: 1.5 }}>
-          Under 16? Ask a parent to sign up for you.
-        </p>
+        <p className="tb-appcta__note">Under 16? Ask a parent to sign up for you.</p>
       )}
       {error && (
-        <p role="alert" style={{ fontSize: 13, color: c.rose, margin: "8px 0 0" }}>{error}</p>
+        <p role="alert" className="tb-appcta__error">{error}</p>
       )}
       {!compact && (
-        <p style={{ fontSize: 12, color: muted, margin: "8px 0 0", lineHeight: 1.5 }}>
-          We only use your email for {STUDY_APP.name} updates. See our <a href="/privacy" style={{ color: "inherit" }}>privacy policy</a>.
+        <p className="tb-appcta__note">
+          We only use your email for {STUDY_APP.name} updates. See our <a href="/privacy">privacy policy</a>.
         </p>
       )}
     </form>

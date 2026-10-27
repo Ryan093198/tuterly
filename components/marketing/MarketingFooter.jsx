@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { c } from "./theme";
 import { APP_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
+import { Logo } from "./MarketingNav";
+import "@/components/brand/brand.css";
 
-// Shared footer for the marketing pages. Every link the footer and nav
-// used to carry is still here: the tutoring links (directory, find a local
-// tutor, areas we serve, apply as a tutor, ...) sit in the Tutoring group
-// so Google keeps a crawl path to the suburb pages and the directory.
+// Shared footer. Every link the footer and old nav carried is still here:
+// the tutoring links (directory, find a local tutor, areas we serve, apply
+// as a tutor, ...) sit in the Tutoring group so Google keeps a crawl path
+// to the suburb pages and the directory.
 const GROUPS = [
   {
     title: STUDY_APP.name,
@@ -44,37 +45,28 @@ const GROUPS = [
   },
 ];
 
-const linkStyle = { fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none", lineHeight: 1.4 };
-
 export default function MarketingFooter() {
   return (
-    <footer style={{ background: c.navy, borderTop: "1px solid rgba(255,255,255,0.06)", padding: "44px 24px 32px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 40, justifyContent: "space-between" }}>
-          <div style={{ minWidth: 180 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.6)" }}>tuterly</span>
-            </div>
+    <footer className="tb-footer">
+      <div className="tb-wrap">
+        <div className="tb-footer__grid">
+          <div>
+            <Logo />
           </div>
           {GROUPS.map((g) => (
-            <div key={g.title} style={{ minWidth: 160 }}>
-              <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: 1.2, textTransform: "uppercase", color: "rgba(255,255,255,0.8)", margin: "0 0 12px" }}>{g.title}</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 9 }}>
+            <div key={g.title}>
+              <p className="tb-footer__title">{g.title}</p>
+              <ul className="tb-footer__list">
                 {g.links.map((l) => (
                   <li key={l.href + l.label}>
-                    {l.external ? (
-                      <a href={l.href} style={linkStyle}>{l.label}</a>
-                    ) : (
-                      <Link href={l.href} style={linkStyle}>{l.label}</Link>
-                    )}
+                    {l.external ? <a href={l.href}>{l.label}</a> : <Link href={l.href}>{l.label}</Link>}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
-        <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: "32px 0 0" }}>© 2026 Tuterly by Bayside Academics</p>
+        <p className="tb-footer__legal">© 2026 Tuterly by Bayside Academics</p>
       </div>
     </footer>
   );
