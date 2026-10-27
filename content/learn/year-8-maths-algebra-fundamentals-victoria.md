@@ -62,6 +62,8 @@ A tutor who knows the Victorian Curriculum can pinpoint exactly which Year 8 alg
 
 Tuterly connects Melbourne families with tutors who work within the Victorian Curriculum and understand the progression from Year 8 through to VCE. After every session, you get a summary through the parent dashboard covering what was covered and how your child responded. Between sessions, your child can build fluency with targeted practice questions on the platform, so the work continues in a structured way, not just before the next test.
 
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+
 Whether your child is catching up or ready to get ahead, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
 
 ---

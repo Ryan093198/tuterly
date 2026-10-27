@@ -18,6 +18,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 import { COMPETITORS } from "./competitors.js";
+import { STUDY_APP_TOPICS } from "./study-topics.js";
+import { STUDY_APP } from "../lib/study-app.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.join(__dirname, "..", "content", "learn");
@@ -77,6 +79,10 @@ async function main() {
   // 4. Write the post
   console.log("[blog-writer] writing post...");
   const post = await writePost(client, topic, existingPosts);
+  if (!post) {
+    console.log("[blog-writer] post failed the claims check twice. Not publishing.");
+    return;
+  }
 
   if (isDryRun) {
     console.log("\n=== POST ===\n");
@@ -197,6 +203,7 @@ Pick a topic that:
 3. Hasn't been written already (check both existing posts and the topics-written registry)
 4. Is specific and actionable, not generic ("Year 8 maths: algebra fundamentals" not "Why maths matters")
 5. Covers the Victorian/Australian curriculum context
+6. Where it fits, prefer Years 7 to 10 maths topics where the natural next step for a parent is "have them practise the questions they got wrong". A list of priority ideas is included below; pick one of these when it beats the competitor gaps.
 
 Return your response as JSON with these fields:
 - title: The blog post title (clear, parent-facing, no clickbait)
@@ -226,6 +233,9 @@ ${competitorContent
   )
   .join("\n\n")}
 
+Priority topic ideas (Years 7 to 10 maths, pick one if it is the best option and not already covered):
+${STUDY_APP_TOPICS.map((t) => `- ${t}`).join("\n")}
+
 Pick the single best topic to write next. Return JSON only.`;
 
   const response = await client.messages.create({
@@ -253,6 +263,43 @@ Pick the single best topic to write next. Return JSON only.`;
 }
 
 // =====================================================================
+// Tuterly Study facts + CTA (single source: lib/study-app.js)
+// =====================================================================
+const STUDY_APP_FACTS_BLOCK = `- An iPhone app for Years 7 to 10 maths (Victorian Curriculum 2.0), made by Bayside Academics. No Android version yet.
+- A student snaps a photo of a question they got wrong. It is saved with a full worked solution, hidden behind "Show solution" so they can try again first.
+- Straight away the app makes a similar question on the same concept that is genuinely different, not the same question with the numbers changed, with its own worked solution. Each generated question is solved a second time by an independent check.
+- Topic practice tests are built from the student's own unfixed mistakes each time. A question counts as fixed when they get a new version right in two tests on different days. Fixed questions drop out, so tests get shorter.
+- Wrong answers get "Explain this": a short explanation of the step that went wrong.
+- Parents link with a code and see a weekly summary and test scores, not their child's photos. Tutors can link too and set snap goals.
+- ${STUDY_APP.stage === "live" ? "It is on the App Store." : "It is in a free pilot and not on the App Store yet. Never say it can be downloaded now and never quote a price."}`;
+
+const STUDY_APP_CTA_BLOCK = `## Turn the questions they get wrong into practice
+
+Got some of these wrong? Snap them in [{{STUDY_APP}}](/) and get a fresh version to practise until they're fixed. It works alongside a tutor or on its own.
+
+Prefer a real tutor? [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory).`;
+
+// Claims a post must not make. Checked after writing; one retry with the
+// problems listed, then the post is dropped rather than published.
+function findClaimProblems(text) {
+  const body = text.replace(/^---[\s\S]*?---/, "");
+  const problems = [];
+  const checks = [
+    [/\d+(\.\d+)?\s?%|\bper ?cent\b/i, "uses a percentage"],
+    [/guarantee/i, "uses 'guarantee'"],
+    [/more effective|most effective|proven to/i, "makes an effectiveness claim"],
+    [/(improve|boost|lift|raise)s? (their |your child's |)(marks|grades|results|atar|scores)/i, "promises better marks or results"],
+    [/\b\d[\d,]*\+? (students|families|parents|downloads|users)\b/i, "states a count of students/families/users"],
+    [/—/, "contains an em dash"],
+  ];
+  for (const [re, label] of checks) {
+    const m = body.match(re);
+    if (m) problems.push(`${label}: "${m[0]}"`);
+  }
+  return problems;
+}
+
+// =====================================================================
 // Post writing
 // =====================================================================
 async function writePost(client, topic, existingPosts) {
@@ -268,7 +315,7 @@ async function writePost(client, topic, existingPosts) {
     }
   }
 
-  const systemPrompt = `You are a blog writer for Tuterly, a Melbourne-based tutoring marketplace for parents. Write a blog post for the /learn section of the website.
+  const systemPrompt = `You are a blog writer for Tuterly, a Melbourne-based tutoring and learning company (part of Bayside Academics) whose main product is the ${STUDY_APP.name} app. Write a blog post for the /learn section of the website.
 
 STRICT STYLE RULES:
 - Write for Australian parents. Warm, direct, knowledgeable tone.
@@ -282,12 +329,22 @@ STRICT STYLE RULES:
 - DO NOT paraphrase or copy competitor content. Write entirely original material.
 - DO NOT include any em dashes (the character —). This is critical.
 
+FACTS AND HONESTY (Australian Consumer Law applies to this content):
+- NEVER invent statistics, percentages, survey results, study findings, school names, results or quotes. If you are not certain a figure comes from a named official source (VCAA, ACARA, the NAPLAN national report), describe it in words instead of giving a number.
+- Do not promise better marks, grades, ATARs or results, and do not say any product or service is "more effective" than another.
+- Do not cite research unless you link the real source.
+
+ABOUT ${STUDY_APP.name.toUpperCase()} (the only facts you may state about the app):
+${STUDY_APP_FACTS_BLOCK}
+
 CTA STRUCTURE (at the end):
-- Naturally bridge to Tuterly at the "so what do I do?" moment.
-- Mention the parent dashboard and session reports as value props.
-- Mention targeted practice questions on the platform.
-- Link to [Find a tutor near you](/tutoring) and [browse our tutor directory](/directory).
-- End with a tutor recruitment line: *Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*
+- Bridge naturally at the "so what do I do?" moment.
+- For posts about Years 7 to 10 maths, end with this exact block (keep {{STUDY_APP}} as written; the site fills in the name):
+
+${STUDY_APP_CTA_BLOCK}
+
+- For other posts (English, science, primary, VCE, choosing a tutor), do not pitch the app. Keep the tutoring bridge instead: link to [Find a tutor near you](/tutoring) and [browse our tutor directory](/directory).
+- Always end with a tutor recruitment line: *Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*
 
 FRONTMATTER FORMAT:
 ---
@@ -311,23 +368,37 @@ Angle: ${topic.angle}
 
 Write the complete markdown file including frontmatter. Return ONLY the markdown, no commentary.`;
 
-  const response = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 4000,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userPrompt }],
-  });
+  const messages = [{ role: "user", content: userPrompt }];
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const response = await client.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 4000,
+      system: systemPrompt,
+      messages,
+    });
 
-  let text = response.content
-    .filter((c) => c.type === "text")
-    .map((c) => c.text)
-    .join("");
+    let text = response.content
+      .filter((c) => c.type === "text")
+      .map((c) => c.text)
+      .join("");
 
-  // Strip markdown code fences if present
-  text = text.replace(/^```(?:markdown|md)?\n/, "").replace(/\n```$/, "");
+    // Strip markdown code fences if present
+    text = text.replace(/^```(?:markdown|md)?\n/, "").replace(/\n```$/, "");
 
-  // Safety: strip any em dashes that slipped through
-  text = text.replace(/—/g, ".");
+    // Safety: strip any em dashes that slipped through
+    text = text.replace(/—/g, ".");
+    text = text.trim();
 
-  return text.trim();
+    const problems = findClaimProblems(text);
+    if (problems.length === 0) return text;
+    console.warn(`[blog-writer] attempt ${attempt} failed the claims check:`, problems);
+    messages.push(
+      { role: "assistant", content: text },
+      {
+        role: "user",
+        content: `Rewrite the whole post fixing these problems. Remove the claims rather than rewording them into similar claims:\n${problems.map((p) => `- ${p}`).join("\n")}\n\nReturn ONLY the markdown.`,
+      }
+    );
+  }
+  return null;
 }

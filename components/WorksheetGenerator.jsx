@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 import TutorRequestCard from "@/components/TutorRequestCard";
+import StudyAppCTA from "@/components/StudyAppCTA";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -14,6 +15,9 @@ import TutorRequestCard from "@/components/TutorRequestCard";
 // Topic data is pre-rendered server-side (see app/worksheets/page.js)
 // so the dropdown is instant.
 const STORAGE_KEY = "tuterly:worksheet_email";
+// Tuterly Study covers Years 7 to 10 maths; younger year levels keep the
+// tutor offer instead of the app.
+const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 // Child's year from the gate, used to prefill the "Find a local tutor" form.
 const YEAR_STORAGE_KEY = "tuterly:worksheet_year";
 // Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
@@ -60,6 +64,9 @@ export default function WorksheetGenerator({
   // Optional subset of year levels to offer (e.g. primary-only pages pass
   // Years 3-6). Defaults to the full Year 3-10 range.
   yearLevels,
+  // Pages that place their own Tuterly Study card next to the generator
+  // (e.g. /worksheets) pass false to avoid two app CTAs side by side.
+  studyAppUnderGenerator = true,
 }) {
   const years =
     Array.isArray(yearLevels) && yearLevels.length ? yearLevels : YEAR_LEVELS;
@@ -476,11 +483,6 @@ export default function WorksheetGenerator({
 
   return (
     <div style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
-      {/* Returning worksheet users (email on file) see the tutor offer
-          up top. Once a worksheet is generated it moves under the result. */}
-      {emailSaved && !worksheet && (
-        <TutorRequestCard source="worksheet" initialYear={yearLevel} style={{ marginBottom: 16 }} />
-      )}
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
@@ -548,6 +550,20 @@ export default function WorksheetGenerator({
         </form>
       </div>
 
+      {/* Under the generator: the app for Years 7 to 10, the tutor offer
+          (returning users) for younger year levels. */}
+      {studyAppUnderGenerator && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
+        <StudyAppCTA
+          variant="inline"
+          placement="worksheet_generator"
+          heading="Already got some wrong at school?"
+          style={{ margin: "16px 0 0" }}
+        />
+      )}
+      {!worksheet && emailSaved && !STUDY_APP_YEARS.includes(yearLevel) && (
+        <TutorRequestCard source="worksheet" initialYear={yearLevel} style={{ marginTop: 16 }} />
+      )}
+
       {worksheet && (
         <button
           type="button"
@@ -598,17 +614,22 @@ export default function WorksheetGenerator({
               </div>
             </div>
 
-            <TutorRequestCard
-              source="worksheet"
-              initialYear={worksheet.yearLevel}
-              style={{ marginBottom: 20 }}
-            />
-
             <div style={worksheetBodyStyle}>
               <MarkdownReport content={worksheet.content} />
             </div>
             {/* Engagement sentinel: crossing this means they read to the end. */}
             <div ref={upsellSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+
+            {/* After the answers: the app first (Years 7 to 10), then the
+                tutor offer as the second option. */}
+            {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
+              <StudyAppCTA variant="inline" placement="worksheet_answers" />
+            )}
+            <TutorRequestCard
+              source="worksheet"
+              initialYear={worksheet.yearLevel}
+              style={{ marginTop: 20 }}
+            />
           </div>
 
           <TrialBanner />

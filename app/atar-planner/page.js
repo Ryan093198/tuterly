@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
+import StudyAppCTA from "@/components/StudyAppCTA";
+import { STUDY_APP } from "@/lib/study-app";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import Fade from "@/components/marketing/Fade";
@@ -111,6 +113,15 @@ export default function ATARPlannerPage() {
 
       <section style={{ padding: "40px 24px 80px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          {/* Soft card only: the planner is a senior-years tool and the app
+              covers Years 7 to 10. */}
+          <StudyAppCTA
+            variant="card"
+            placement="atar_planner"
+            heading="Still in Years 7 to 10?"
+            sub={`Maths in Years 9 and 10 sets up VCE Methods and Specialist. ${STUDY_APP.name} turns the questions your child gets wrong now into practice until they're fixed.`}
+            style={{ margin: "0 0 40px" }}
+          />
           <Fade>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
               Disclaimer

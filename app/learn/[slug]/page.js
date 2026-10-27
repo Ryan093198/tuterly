@@ -8,6 +8,9 @@ import { c } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
+import StudyAppCTA from "@/components/StudyAppCTA";
+import { STUDY_APP } from "@/lib/study-app";
+import { studyAppFit, splitAtThird } from "@/lib/learn-study-fit";
 
 // Year ranges an article can opt into via the `generator` frontmatter key.
 const GENERATOR_RANGES = {
@@ -64,6 +67,13 @@ export default async function LearnPost({ params }) {
       })()
     : [post.content, ""];
 
+  // Tuterly Study placement (see lib/learn-study-fit.js). Full-fit articles
+  // get an inline CTA about a third of the way in and a card at the end;
+  // soft-fit articles only the end card.
+  const fit = studyAppFit(post);
+  const split = fit === "full" ? splitAtThird(beforeGenerator) : null;
+  const [introPart, restPart] = split || [beforeGenerator, ""];
+
   return (
     <article style={{ padding: "72px 24px 80px" }}>
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
@@ -115,10 +125,28 @@ export default async function LearnPost({ params }) {
         <Fade>
           <div className="learn-prose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {beforeGenerator}
+              {introPart}
             </ReactMarkdown>
           </div>
         </Fade>
+
+        {split && (
+          <StudyAppCTA
+            variant="inline"
+            placement="learn_inline"
+            heading="Has your child got maths questions wrong this week?"
+          />
+        )}
+
+        {restPart.trim() && (
+          <Fade>
+            <div className="learn-prose">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {restPart}
+              </ReactMarkdown>
+            </div>
+          </Fade>
+        )}
 
         {range && (
           <div id={GENERATOR_ANCHOR} style={{ scrollMarginTop: 90, margin: "40px 0" }}>
@@ -133,6 +161,7 @@ export default async function LearnPost({ params }) {
               topicsByYear={topicsByYear}
               yearLevels={range.years}
               initialYearLevel={range.initial}
+              studyAppUnderGenerator={false}
             />
           </div>
         )}
@@ -145,6 +174,24 @@ export default async function LearnPost({ params }) {
               </ReactMarkdown>
             </div>
           </Fade>
+        )}
+
+        {fit === "full" && (
+          <StudyAppCTA
+            variant="card"
+            placement="learn_end"
+            heading="Turn the questions they get wrong into practice"
+            style={{ marginTop: 44 }}
+          />
+        )}
+        {fit === "soft" && (
+          <StudyAppCTA
+            variant="card"
+            placement="learn_end_soft"
+            heading={`For Years 7 to 10 maths, try ${STUDY_APP.name}`}
+            sub="Your child snaps the maths questions they get wrong and practises fresh versions until they're fixed."
+            style={{ marginTop: 44 }}
+          />
         )}
 
         {range && (

@@ -61,6 +61,8 @@ If your child is finding Year 7 straightforward, a tutor with an extension focus
 
 Tuterly's parent dashboard shows you what was covered in each session and what to practise next, so you are not left guessing whether progress is happening. The platform also includes targeted Year 7 maths practice questions matched to the Australian Curriculum, covering integers, ratio, algebra, and probability specifically.
 
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+
 [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with Victorian secondary maths experience.
 
 ---

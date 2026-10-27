@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
+import StudyAppCTA from "@/components/StudyAppCTA";
+import { STUDY_APP } from "@/lib/study-app";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -128,7 +130,13 @@ export default function WorksheetsPage() {
 
       {/* GENERATOR */}
       <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
-        <WorksheetGenerator topicsByYear={topicsByYear} />
+        <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
+        <StudyAppCTA
+          variant="card"
+          placement="worksheets_index"
+          heading="Years 7 to 10? Practise the ones they got wrong at school"
+          sub={`Worksheets give fresh practice on a topic. ${STUDY_APP.name} works on the exact questions your child got wrong: snap one, see the worked solution, then practise new versions until it's fixed.`}
+        />
       </main>
 
       {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).

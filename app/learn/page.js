@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/learn";
 import { SITE_URL } from "@/lib/site";
 import { c } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
+import StudyAppCTA from "@/components/StudyAppCTA";
 
 export const metadata = {
   title: "Learn | Tuterly",
@@ -57,6 +58,8 @@ export default function LearnIndex() {
           ))}
         </div>
       </div>
+      {/* Slim, dismissible app bar (remembers dismissal per browser). */}
+      <StudyAppCTA variant="banner" placement="learn_index_banner" />
     </section>
   );
 }

@@ -64,6 +64,8 @@ Tuterly connects Melbourne families with maths tutors who understand the Victori
 
 Whether your child is in Year 5 and just starting to wobble, or in Year 9 and genuinely dreading the subject, the right support can shift things significantly.
 
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+
 [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
 
 ---

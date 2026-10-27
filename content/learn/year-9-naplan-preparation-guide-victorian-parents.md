@@ -59,6 +59,8 @@ A good tutor at this stage does two things. They identify which specific gaps ar
 
 Tuterly connects Melbourne families with tutors who understand the Victorian Curriculum and the specific demands of Year 9. After every session, you'll receive a report through the parent dashboard covering what was worked on and how your child responded. Between sessions, your child can build on their skills with targeted practice questions on the platform, so progress doesn't stall between appointments.
 
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+
 Whether your child needs to close a gap before Year 10 or push into Exceeding territory before the test, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
 
 ---

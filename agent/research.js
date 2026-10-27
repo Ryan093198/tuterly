@@ -20,6 +20,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 import { COMPETITORS } from "./competitors.js";
+import { STUDY_APP } from "../lib/study-app.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SNAPSHOTS_DIR = path.join(__dirname, "snapshots");
@@ -274,6 +275,7 @@ Your report should:
 - Group findings per competitor, then a cross-competitor "patterns" section
 - Be specific: name new topics, page types, pricing changes, positioning shifts
 - Flag opportunities for Tuterly (topics they cover that we don't, angles we could improve on)
+- Tuterly's main product is now ${STUDY_APP.name}, an iPhone app for Years 7 to 10 maths where students snap questions they got wrong and practise fresh versions. Call out competitor Years 7 to 10 maths content (topic guides, common mistakes, test preparation) as blog opportunities, and any competitor apps or homework/practice tools
 - Skip noise (theme tweaks, generic blog SEO posts, unchanged content)
 - Use plain prose - no SEO jargon, no marketing fluff
 - Keep total length under ~800 words
