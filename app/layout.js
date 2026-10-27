@@ -6,6 +6,7 @@ import NavProgress from "../components/NavProgress";
 import { FloatingEnquireButton } from "../components/marketing/EnquireTriggers";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -48,6 +49,9 @@ export const metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
   },
+  // iPhone Safari Smart App Banner for Tuterly Study. Only rendered once
+  // lib/study-app.js has a real App Store id (i.e. the app is live).
+  ...(STUDY_APP.appStoreId ? { itunes: { appId: String(STUDY_APP.appStoreId) } } : {}),
 };
 
 // Runs before React hydrates. Reads the persisted theme choice and adds

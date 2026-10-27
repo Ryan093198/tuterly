@@ -146,6 +146,25 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
+          <Section title="Tuterly Study waitlist">
+            <p>
+              If you join the waitlist for our Tuterly Study app, we keep your
+              email, whether you&apos;re a parent, student or tutor, the year
+              level if you give one, and which page you signed up on. We use
+              it to send one confirmation email and to tell you when the app
+              is available (or when a pilot spot opens, if you asked about the
+              pilot). We don&apos;t share it with anyone. Reply to any of
+              these emails, or email{" "}
+              <a
+                href="mailto:learning@baysideacademics.com.au"
+                className="text-brand hover:text-brand-dark underline"
+              >
+                learning@baysideacademics.com.au
+              </a>
+              , to be removed.
+            </p>
+          </Section>
+
           <Section title="AI processing">
             <p>
               Tutor notes, session photos, audio, and uploaded resources are
