@@ -117,24 +117,6 @@ export default function ParentsPage() {
         </div>
       </section>
 
-      {/* 4. LINKING */}
-      <section className="tb-section tb-section--card" aria-labelledby="link">
-        <div className="tb-wrap">
-          <Reveal>
-            <SectionHead id="link" eyebrow="Getting set up" title="Linking takes a code, not a password." />
-          </Reveal>
-          <ol className="pp-steps">
-            <Step n="1" title="Your child signs up">They create their own account on their iPhone and pick their year level (7 to 10).</Step>
-            <Step n="2" title="They share a code">In Settings they find a 6-character code, or invite you by email.</Step>
-            <Step n="3" title="You see the summary">Install the app on your own iPhone, sign in, and enter the code. You’ll then see their weekly summary and topic scores.</Step>
-          </ol>
-          <p className="pp-note">
-            {live
-              ? `${name} is on the App Store for iPhone.`
-              : `${name} is in a small pilot with Bayside Academics students right now, and every student's parent gives written consent before they're added. It isn't on the App Store yet.`}
-          </p>
-        </div>
-      </section>
 
       {/* 5. PRICE */}
       <section className="tb-section" aria-labelledby="price">
@@ -152,19 +134,6 @@ export default function ParentsPage() {
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />
       </CtaBand>
 
-      {/* Below the CTA: dinner questions. */}
-      <section className="tb-section tb-section--card" aria-labelledby="home-qs">
-        <div className="tb-wrap tb-wrap--narrow">
-          <Reveal>
-            <SectionHead id="home-qs" eyebrow="Using the summary" title="Three questions worth asking at dinner." />
-          </Reveal>
-          <ul className="pp-list">
-            <Item icon="bank">“Which topic has the most to fix?” It’s usually the one to take a test in next.</Item>
-            <Item icon="snap">“Did you snap the ones from the test you got back?” A marked school test is the best source of questions to fix.</Item>
-            <Item icon="explain">“What did Explain this say?” Explaining a step out loud is a good check that it has stuck.</Item>
-          </ul>
-        </div>
-      </section>
 
 
       <MarketingFooter />
@@ -177,16 +146,6 @@ function Item({ icon, children }) {
     <li className="pp-item">
       <span className="tb-tile__icon" aria-hidden="true"><Icon name={icon} /></span>
       <span>{children}</span>
-    </li>
-  );
-}
-
-function Step({ n, title, children }) {
-  return (
-    <li className="tb-card pp-step">
-      <span className="tb-flow__num" aria-hidden="true" style={{ margin: 0 }}>{n}</span>
-      <h3 className="tb-h3">{title}</h3>
-      <p className="tb-muted pp-card-text" style={{ marginTop: 0 }}>{children}</p>
     </li>
   );
 }
