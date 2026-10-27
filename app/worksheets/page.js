@@ -135,7 +135,7 @@ export default function WorksheetsPage() {
           variant="card"
           placement="worksheets_index"
           heading="Years 7 to 10? Practise the ones they got wrong at school"
-          sub={`Worksheets give fresh practice on a topic. ${STUDY_APP.name} works on the exact questions your child got wrong: snap one, see the worked solution, then practise new versions until it's fixed.`}
+          sub={`Worksheets give fresh practice on a topic. ${STUDY_APP.name} works on the exact questions your child got wrong: snap one, see the worked solution, then practise new versions until it's mastered.`}
         />
       </main>
 

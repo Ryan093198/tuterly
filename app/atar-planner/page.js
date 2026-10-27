@@ -119,7 +119,7 @@ export default function ATARPlannerPage() {
             variant="card"
             placement="atar_planner"
             heading="Still in Years 7 to 10?"
-            sub={`Maths in Years 9 and 10 sets up VCE Methods and Specialist. ${STUDY_APP.name} turns the questions your child gets wrong now into practice until they're fixed.`}
+            sub={`Maths in Years 9 and 10 sets up VCE Methods and Specialist. ${STUDY_APP.name} turns the questions your child gets wrong now into practice until they're mastered.`}
             style={{ margin: "0 0 40px" }}
           />
           <Fade>

@@ -189,7 +189,7 @@ export default async function LearnPost({ params }) {
             variant="card"
             placement="learn_end_soft"
             heading={`For Years 7 to 10 maths, try ${STUDY_APP.name}`}
-            sub="Your child snaps the maths questions they get wrong and practises fresh versions until they're fixed."
+            sub="Your child snaps the maths questions they get wrong and practises fresh versions until they're mastered."
             style={{ marginTop: 44 }}
           />
         )}

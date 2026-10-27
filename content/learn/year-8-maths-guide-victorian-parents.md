@@ -48,7 +48,7 @@ At Tuterly, you can find Melbourne-based tutors who know the Victorian Curriculu
 
 Whether your child needs to catch up or be stretched further, the right support in Year 8 makes Year 9 significantly less stressful.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to get started.
 

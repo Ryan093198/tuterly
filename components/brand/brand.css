@@ -250,7 +250,10 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   .tb-nav__links { display: none; }
   .tb-nav__menu { display: block; }
 }
-@media (max-width: 380px) { .tb-logo__word { display: none; } }
+@media (max-width: 430px) {
+  .tb-logo__word { display: none; }
+  .tb-nav__in { padding-left: 16px; padding-right: 16px; }
+}
 
 /* Footer */
 .tb-footer { background: var(--card); border-top: 2px solid var(--border); padding: 48px 0 32px; font-family: var(--font-display); }
@@ -281,6 +284,11 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   .tb-appcta__form--wide { grid-template-columns: minmax(0, 1.6fr) auto auto auto; align-items: start; }
   .tb-appcta__form--wide .tb-input--email, .tb-appcta__form--wide .tb-btn { grid-column: auto; }
   .tb-appcta__form--wide .tb-btn { width: auto; }
+}
+.tb-appcta__form--slim { grid-template-columns: 1fr; }
+@media (min-width: 600px) {
+  .tb-appcta__form--slim { grid-template-columns: minmax(0, 1fr) auto; align-items: start; }
+  .tb-appcta__form--slim .tb-input--email, .tb-appcta__form--slim .tb-btn { grid-column: auto; width: auto; }
 }
 .tb-appcta__status { font-weight: 800; font-size: 16px; color: var(--success); margin: 0; }
 .tb-appcta__error { font-weight: 700; font-size: 14px; color: var(--danger); margin: 8px 0 0; }

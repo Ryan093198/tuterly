@@ -28,7 +28,7 @@ export default function FlowSteps({ steps, label, phoneWidth = 236 }) {
   }
 
   return (
-    <div>
+    <div style={{ minWidth: 0 }}>
       <ol
         ref={listRef}
         className="tb-flow"

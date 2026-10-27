@@ -24,7 +24,7 @@ const LOGIN_DESCRIPTION =
   "Tuterly turns tutoring into structured session reports, practice worksheets, and progress tracking. Built for families and tutors in Melbourne.";
 
 const HOME_TITLE = `${STUDY_APP.name}: fix the maths questions your child gets wrong`;
-const HOME_DESCRIPTION = `${STUDY_APP.name} is an iPhone app for Years 7 to 10 maths. Snap a question your child got wrong, see the worked solution, then practise fresh versions until it's fixed. ${STUDY_APP.priceLine}.`;
+const HOME_DESCRIPTION = `${STUDY_APP.name} is an iPhone app for Years 7 to 10 maths. Snap a question your child got wrong, see the worked solution, then practise fresh versions until it's mastered. ${STUDY_APP.priceLine}.`;
 const HOME_OG = "/og-tuterly-study.png";
 
 async function showLoginCard(sp) {

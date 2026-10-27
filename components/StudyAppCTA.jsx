@@ -60,6 +60,7 @@ export default function StudyAppCTA({
   heading,
   sub,
   position,
+  slim = false, // hero: email + button only, so the button stays above the fold on phones
   style,
 }) {
   const pathname = usePathname() || "/";
@@ -175,6 +176,7 @@ export default function StudyAppCTA({
       <WaitlistForm
         kind={kind}
         wide={big}
+        slim={slim}
         btnClass={btnClass}
         placement={placement || variant}
         pathname={pathname}
@@ -303,7 +305,7 @@ const ROLES = [
   { value: "tutor", label: "I'm a tutor" },
 ];
 
-function WaitlistForm({ kind, wide, compact, btnClass, placement, pathname, onSubmitClick }) {
+function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname, onSubmitClick }) {
   const id = useId();
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("parent");
@@ -362,9 +364,9 @@ function WaitlistForm({ kind, wide, compact, btnClass, placement, pathname, onSu
 
   return (
     <form onSubmit={submit} style={{ margin: 0 }} aria-label={label}>
-      {!compact && <p className="tb-appcta__sub" style={{ fontSize: 15, marginBottom: 12 }}>{intro}</p>}
+      {!compact && (!slim || kind === "pilot") && <p className="tb-appcta__sub" style={{ fontSize: 15, marginBottom: 12 }}>{intro}</p>}
       <div
-        className={compact ? undefined : `tb-appcta__form ${wide ? "tb-appcta__form--wide" : ""}`}
+        className={compact ? undefined : `tb-appcta__form ${slim ? "tb-appcta__form--slim" : wide ? "tb-appcta__form--wide" : ""}`}
         style={compact ? { display: "flex", gap: 8, flexWrap: "wrap" } : undefined}
       >
         <label htmlFor={`${id}-email`} style={srOnly}>Email address</label>
@@ -379,7 +381,7 @@ function WaitlistForm({ kind, wide, compact, btnClass, placement, pathname, onSu
           className="tb-input tb-input--email"
           style={compact ? { minHeight: 44, flex: "1 1 180px" } : undefined}
         />
-        {!compact && (
+        {!compact && !slim && (
           <>
             <label htmlFor={`${id}-role`} style={srOnly}>I am a</label>
             <select id={`${id}-role`} value={role} onChange={(e) => setRole(e.target.value)} className="tb-input">

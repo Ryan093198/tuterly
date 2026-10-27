@@ -18,7 +18,7 @@ export function AppHeroBlock({ placement, heading, sub }) {
         heading={heading || "Years 7 to 10 maths? Start with the questions they get wrong."}
         sub={
           sub ||
-          `${STUDY_APP.name} is an iPhone app: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is fixed.`
+          `${STUDY_APP.name} is an iPhone app: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`
         }
         style={{ margin: "0 0 22px" }}
       />
@@ -44,7 +44,7 @@ export function AppLowerCostSection({ competitor, placement }) {
           For Years 7 to 10 maths, there’s also {name}.
         </h2>
         <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 18 }}>
-          {`If what your child mostly needs is practice on the maths they keep getting wrong, ${name} can do that on its own, or alongside ${competitor} or any other tutor. It isn't a tutor. It's an iPhone app where your child snaps a question they got wrong, sees the worked solution, then practises fresh versions until it's fixed.`}
+          {`If what your child mostly needs is practice on the maths they keep getting wrong, ${name} can do that on its own, or alongside ${competitor} or any other tutor. It isn't a tutor. It's an iPhone app where your child snaps a question they got wrong, sees the worked solution, then practises fresh versions until it's mastered.`}
         </p>
         <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 8px" }}>
           {[
@@ -58,7 +58,7 @@ export function AppLowerCostSection({ competitor, placement }) {
             </li>
           ))}
         </ul>
-        <StudyAppCTA variant="inline" placement={placement} heading={`Try ${name}`} sub="Snap the questions they get wrong and practise fresh versions until they're fixed." />
+        <StudyAppCTA variant="inline" placement={placement} heading={`Try ${name}`} sub="Snap the questions they get wrong and practise fresh versions until they're mastered." />
       </div>
     </section>
   );

@@ -16,6 +16,8 @@ const FLOATING_HIDE_PREFIXES = [
   "/sample-report",
 ];
 
+const FLOATING_HIDE_EXACT = ["/", "/parents"];
+
 // Sticky bottom-right "Enquire" button mounted in the root layout so
 // it's available across every marketing page automatically. Hidden on
 // app/auth/onboarding routes where it would be out of place.
@@ -23,7 +25,9 @@ export function FloatingEnquireButton() {
   const pathname = usePathname() || "/";
   const [open, setOpen] = useState(false);
 
-  const hidden = FLOATING_HIDE_PREFIXES.some(
+  // Home and /parents have one primary action (the app), so no floating
+  // tutoring button there.
+  const hidden = FLOATING_HIDE_EXACT.includes(pathname) || FLOATING_HIDE_PREFIXES.some(
     (p) => pathname === p || pathname.startsWith(`${p}/`)
   );
   if (hidden) return null;

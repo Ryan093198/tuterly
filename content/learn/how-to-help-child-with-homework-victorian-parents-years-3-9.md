@@ -66,7 +66,7 @@ If homework battles are a regular feature in your household, or if your child is
 
 After every session, you receive a report through the parent dashboard covering exactly what was worked on and how your child is progressing. You do not have to guess whether things are improving. Between sessions, your child can continue building skills with targeted practice questions on the platform, so the work does not stop when the tutor logs off.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 Whether your child needs to close a gap or get properly challenged, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
 

@@ -54,7 +54,7 @@ If you're not sure where your child actually stands, that's a reasonable place t
 
 A Tuterly tutor can run a proper diagnostic in the first session and build a plan around the specific topics that need work, whether that's catching up on algebra fundamentals or extending a capable student into more demanding problem types. After every session you get a written report through the parent dashboard, so you can see exactly what was covered and what to practise next. The platform also includes targeted practice questions aligned to the Victorian curriculum, so there's no scrambling to find useful resources between sessions.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is fixed. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with specific Year 9 and VCE Mathematics experience.
 

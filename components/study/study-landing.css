@@ -1,0 +1,122 @@
+/* Home page (components/study/StudyLanding.jsx). Shared pieces are in
+ * components/brand/brand.css; this file is layout specific to the page. */
+
+.sl-accent { color: var(--brand); }
+
+/* Hero: phone-first. Copy then CTA on phones (the button sits above the
+ * fold at 390 x 844); copy left, tilted phone right on desktop. */
+.sl-hero { padding-block: 28px 56px; overflow: hidden; }
+.sl-hero__grid { display: grid; gap: 36px; align-items: center; }
+.sl-hero__copy { display: grid; gap: 0; }
+.sl-hero__lead { margin-top: 14px; }
+.sl-hero__pitch { margin-top: 12px; font-weight: 800; font-size: 16px; line-height: 1.45; color: var(--foreground); }
+.sl-hero__cta { margin-top: 22px; scroll-margin-top: 96px; }
+.sl-hero__copy .tb-textlink { margin-top: 4px; justify-self: start; }
+.sl-hero__visual { position: relative; display: grid; place-items: center; padding: 18px 0 8px; }
+.sl-hero__blob {
+  position: absolute; inset: 6% 8% 0 8%; border-radius: 48px;
+  background: var(--brand-soft); transform: rotate(6deg);
+}
+.sl-hero__phone { position: relative; transform: rotate(-4deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .sl-hero__phone { animation: sl-phone-in 700ms cubic-bezier(.2,.8,.2,1) both; }
+  .sl-hero__blob { animation: sl-blob-in 900ms cubic-bezier(.2,.8,.2,1) both; }
+}
+@keyframes sl-phone-in { from { transform: translateY(18px) rotate(0deg); } to { transform: rotate(-4deg); } }
+@keyframes sl-blob-in { from { transform: rotate(0deg) scale(.96); } to { transform: rotate(6deg); } }
+@media (max-width: 899px) {
+  .sl-hero__phone { --phone-w: 240px !important; }
+}
+@media (min-width: 900px) {
+  .sl-hero { padding-block: 56px 96px; }
+  .sl-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; }
+}
+
+.sl-note { margin-top: 28px; max-width: 760px; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.sl-note strong { color: var(--foreground); font-weight: 800; }
+
+/* Maths example */
+.sl-math { display: grid; gap: 16px; }
+@media (min-width: 900px) { .sl-math { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; } }
+.sl-mathcard { padding: 20px; font-size: 17px; line-height: 1.6; }
+.sl-mathcard__label { font-weight: 800; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; color: var(--mc, var(--foreground)); }
+.sl-mathcard[data-tone="danger"] { --mc: var(--danger); background: var(--danger-soft); border-color: transparent; box-shadow: none; }
+.sl-mathcard[data-tone="success"] { --mc: var(--success); }
+.sl-mathcard__body { display: grid; gap: 6px; overflow-x: auto; }
+.sl-mathcard .katex { font-size: 1.08em; }
+.sl-solution { margin-top: 8px; }
+.sl-solution > summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px;
+  border-radius: 12px; border: 2px solid var(--border); background: var(--card); box-shadow: 0 3px 0 var(--edge);
+  font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-deep);
+}
+.sl-solution > summary::-webkit-details-marker { display: none; }
+.sl-solution__body { margin-top: 12px; display: grid; gap: 4px; font-size: 16px; }
+
+/* Parents */
+.sl-parents { display: grid; gap: 36px; align-items: center; }
+.sl-parents > *, .sl-notes > *, .sl-hero__grid > * { min-width: 0; }
+@media (min-width: 900px) { .sl-parents { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; } }
+.sl-parents .tb-flow { --n: 2 !important; }
+.sl-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.sl-point { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; align-items: start; }
+.sl-point__title { font-weight: 800; font-size: 17px; margin-bottom: 2px; }
+.sl-point__text { font-size: 16px; line-height: 1.55; color: var(--muted); }
+
+/* Practice + notes */
+.sl-notes { margin-top: 56px; display: grid; gap: 28px; align-items: center; }
+.sl-notes__band {
+  border-radius: 24px; padding: 26px 22px;
+  background: linear-gradient(135deg, var(--brand-soft), var(--violet-soft));
+}
+@media (min-width: 900px) {
+  .sl-notes { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; }
+  .sl-notes__band { padding: 40px 36px; }
+  .sl-notes .tb-flow { --n: 2 !important; }
+}
+
+/* Comparison: a two-column card that stacks per row on phones. */
+.sl-compare { padding: 8px 22px; }
+.sl-compare__head { display: none; }
+.sl-compare__rows { margin: 0; }
+.sl-compare__row { display: grid; gap: 6px; padding: 16px 0; border-top: 2px solid var(--border); }
+.sl-compare__row:first-child { border-top: 0; }
+.sl-compare__row dt { font-weight: 900; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.sl-compare__row dd { margin: 0; font-size: 16px; line-height: 1.55; }
+.sl-compare__who { display: block; font-weight: 800; font-size: 13px; color: var(--muted); }
+.sl-compare__row dd.sl-compare__app { background: var(--brand-pale); border-radius: 14px; padding: 10px 12px; }
+.sl-compare__row dd.sl-compare__app .sl-compare__who { color: var(--brand-deep); }
+@media (min-width: 760px) {
+  .sl-compare { padding: 8px 28px 12px; }
+  .sl-compare__head, .sl-compare__row { display: grid; grid-template-columns: 0.7fr 1fr 1fr; gap: 20px; align-items: start; }
+  .sl-compare__head { padding: 16px 0 12px; font-weight: 900; font-size: 18px; }
+  .sl-compare__head .sl-compare__app { color: var(--brand-deep); }
+  .sl-compare__row:first-child { border-top: 2px solid var(--border); }
+  .sl-compare__who { display: none; }
+  .sl-compare__row dd.sl-compare__app { background: none; padding: 0; font-weight: 700; }
+}
+.sl-two { display: grid; gap: 16px; margin-top: 24px; }
+@media (min-width: 760px) { .sl-two { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.sl-card-text { margin-top: 10px; font-size: 16px; line-height: 1.6; }
+
+/* Free resources */
+.sl-resources { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .sl-resources { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1040px) { .sl-resources { grid-template-columns: repeat(4, 1fr); } }
+.sl-resource { display: grid; gap: 10px; align-content: start; text-decoration: none; color: inherit; }
+a.sl-resource:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); }
+.sl-resource__title { font-weight: 900; font-size: 18px; }
+.sl-resource__body { font-size: 15px; line-height: 1.5; color: var(--muted); }
+
+/* FAQ */
+.sl-faq { display: grid; gap: 12px; }
+.sl-faq__item { background: var(--card); border: 2px solid var(--border); border-radius: 18px; box-shadow: 0 4px 0 var(--edge); }
+.sl-faq__item > summary {
+  list-style: none; cursor: pointer; min-height: 56px; padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-weight: 800; font-size: 17px; line-height: 1.35;
+}
+.sl-faq__item > summary::-webkit-details-marker { display: none; }
+.sl-faq__plus { flex: none; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand-foreground); font-weight: 900; font-size: 20px; transition: transform 150ms ease; }
+.sl-faq__item[open] .sl-faq__plus { transform: rotate(45deg); }
+.sl-faq__item > p { padding: 0 20px 18px; font-size: 16px; line-height: 1.6; color: var(--muted); }
