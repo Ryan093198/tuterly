@@ -7,7 +7,7 @@ import FlowSteps from "@/components/brand/FlowSteps";
 import {
   Card, CtaBand, Eyebrow, Icon, OptionTile, PhoneFrame, Reveal, SectionHead,
 } from "@/components/brand";
-import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import { STUDY_APP } from "@/lib/study-app";
 import { PRICING } from "@/lib/pricing";
 import { getStudyFaqs } from "@/lib/study-faqs";
 import "./study-landing.css";
@@ -33,8 +33,8 @@ const S = "/app-screens";
 
 const SNAP_FLOW = [
   {
-    src: `${S}/flow-snap/02-snap-menu.png`,
-    alt: "The Snap a question sheet in Tuterly Study: take a photo, choose from photos, or upload a whole test",
+    src: `${S}/flow-snap/01-home.png`,
+    alt: "The Tuterly Study home screen with the big Snap a question button",
     title: "Snap the question",
     text: "Take a photo of the question. The app reads it and saves it with a full worked solution, hidden behind Show solution so they can have another go first.",
   },
@@ -77,20 +77,20 @@ const PRACTICE_FLOW = [
   {
     src: `${S}/flow-practice/02-test-any-topic-list.png`,
     alt: "Test any topic: a list of textbook topics to test",
-    title: "Test any topic",
-    text: "Pick a topic from their year.",
+    title: "Pick any topic",
+    text: "Any topic in their year, any time.",
   },
   {
     src: `${S}/flow-practice/03-test-question.png`,
     alt: "Question 1 of 8, a Pythagoras ladder problem, with an answer typed using the maths keys",
-    title: "Answer each question",
-    text: "With maths keys for the answer.",
+    title: "Take the test",
+    text: "One question from each part of the topic, with maths keys for the answers.",
   },
   {
     src: `${S}/flow-practice/04-test-score.png`,
     alt: "The test score: 6 out of 8",
     title: "See the score",
-    text: "The ones they got wrong go into their bank.",
+    text: "The ones they got wrong go straight into their bank to fix.",
   },
 ];
 
@@ -110,7 +110,6 @@ const NOTES_FLOW = [
 ];
 
 export default function StudyLanding() {
-  const live = isStudyAppLive();
   const faqs = getStudyFaqs();
   const name = STUDY_APP.name;
 
@@ -127,7 +126,7 @@ export default function StudyLanding() {
               Fix the maths questions your child gets <span className="sl-accent">wrong</span>.
             </h1>
             <p className="tb-lead sl-hero__lead">
-              {`Snap a photo of a question they missed. ${name} saves it with a full worked solution, then writes a fresh question on the same idea to practise until it’s mastered.`}
+              {`Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
             <p className="sl-hero__pitch">It drills the questions your child actually gets wrong, not generic worksheets.</p>
             <div id="get-app" className="sl-hero__cta">
@@ -166,6 +165,66 @@ export default function StudyLanding() {
               Got one wrong in a test? <strong>Explain this</strong> gives a short explanation of the one step that went wrong. Questions are sorted into topics like “Expressions and linear equations”, each with a progress ring.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* 3. THEIR OWN SCHOOL TESTS */}
+      <section className="tb-section" aria-labelledby="school">
+        <div className="tb-wrap sl-parents">
+          <div>
+            <Reveal>
+              <SectionHead
+                id="school"
+                eyebrow="Straight from school"
+                title="Upload a real test. It turns the ones they got wrong into practice."
+                lead={`Take a photo of each page of a school test or practice paper, or upload the PDF or Word document. ${name} finds every question, ticks the ones marked wrong, and writes a fresh question on each one. So their practice is about exactly what they’re doing at school.`}
+              />
+            </Reveal>
+            <ul className="sl-points">
+              <Point icon="upload" title="Photos, a PDF or a Word document">
+                A whole test at once. A photo with several questions is split into a checklist.
+              </Point>
+              <Point icon="test" title="The wrong ones are already ticked">
+                For a marked test, the questions marked wrong come pre-ticked, so nothing gets missed.
+              </Point>
+              <Point icon="snap" title="New questions on the same ideas">
+                Each one gets a worked solution and a similar question to master, then a harder one.
+              </Point>
+            </ul>
+          </div>
+          <div className="sl-school__phone">
+            <PhoneFrame
+              src={`${S}/flow-snap/02-snap-menu.png`}
+              alt="The Snap a question sheet: take a photo, choose from photos, or upload a whole test as photos, a PDF or a Word document"
+              width={270}
+              sizes="(max-width: 899px) 62vw, 270px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 4. PRACTICE TESTS ON ANY TOPIC + NOTES */}
+      <section className="tb-section" aria-labelledby="practice">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead
+              id="practice"
+              eyebrow="Practice tests on any topic"
+              title="A practice test on any topic, whenever they want."
+              lead="Test any topic writes a short practice test on any topic in their year, one question from each part of the topic, even if they haven’t snapped anything yet. Every question they get wrong goes straight into their bank to fix."
+            />
+          </Reveal>
+          <FlowSteps steps={PRACTICE_FLOW} label="Test any topic" />
+          <div className="sl-notes">
+            <div className="sl-notes__band">
+              <Reveal>
+                <Eyebrow>Study notes</Eyebrow>
+                <h3 className="tb-h3" style={{ fontSize: 26, fontWeight: 900 }}>A one-page revision sheet on any topic.</h3>
+                <p className="tb-lead" style={{ marginTop: 10 }}>On a whole topic, or on just the questions they find hard.</p>
+              </Reveal>
+            </div>
+            <FlowSteps steps={NOTES_FLOW} label="Study notes" />
+          </div>
         </div>
       </section>
 
@@ -249,31 +308,6 @@ export default function StudyLanding() {
         </div>
       </section>
 
-      {/* 4b. PRACTICE AND NOTES */}
-      <section className="tb-section" aria-labelledby="practice">
-        <div className="tb-wrap">
-          <Reveal>
-            <SectionHead
-              id="practice"
-              eyebrow="Practice and study notes"
-              title="Test any topic. Make study notes."
-              lead="A short test on any topic in their year, even with nothing snapped yet. The ones they get wrong go into their bank."
-            />
-          </Reveal>
-          <FlowSteps steps={PRACTICE_FLOW} label="Test any topic" />
-          <div className="sl-notes">
-            <div className="sl-notes__band">
-              <Reveal>
-                <Eyebrow>Study notes</Eyebrow>
-                <h3 className="tb-h3" style={{ fontSize: 26, fontWeight: 900 }}>A one-page revision sheet on any topic.</h3>
-                <p className="tb-lead" style={{ marginTop: 10 }}>On a whole topic, or on just the questions they find hard.</p>
-              </Reveal>
-            </div>
-            <FlowSteps steps={NOTES_FLOW} label="Study notes" />
-          </div>
-        </div>
-      </section>
-
       {/* 5. FEATURES */}
       <section className="tb-section tb-section--card" aria-labelledby="features">
         <div className="tb-wrap">
@@ -309,9 +343,9 @@ export default function StudyLanding() {
               <span className="sl-compare__app">{name}</span>
             </div>
             <dl className="sl-compare__rows">
-              <CompareRow label="Cost" tutor={<>About ${PRICING.secondaryHourlyLow} to ${PRICING.secondaryHourlyHigh} an hour for Years 7 to 10 in Melbourne (<Link href="/tutoring-prices-melbourne" className="tb-link">see our price guide</Link>).</>} app={live ? STUDY_APP.priceLine : "Free during the pilot. Pricing will be set after the pilot."} />
+              <CompareRow label="Cost" tutor={`Usually $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour in Melbourne.`} app={`A free trial, then $49 a month (${STUDY_APP.priceWeekly}).`} />
               <CompareRow label="When" tutor="Usually an hour a week, at a set time." app="Any day they snap a question or take a topic test." />
-              <CompareRow label="What it works on" tutor="What the tutor plans, plus whatever your child brings to the session." app="Only the questions your child got wrong, until each one is mastered." />
+              <CompareRow label="What it works on" tutor="What the tutor plans, plus whatever your child brings to the session." app="The difficult questions, and the ones your child hasn’t fully understood, until each one is fully mastered." />
               <CompareRow label="Explanations" tutor="A person who can explain it several ways and read how your child is going." app={<>A full worked solution for every question, and <strong>Explain this</strong> for the step that went wrong.</>} />
               <CompareRow label="Covers" tutor="Any year level and subject the tutor teaches." app="Years 7 to 10 maths only, on iPhone." />
             </dl>

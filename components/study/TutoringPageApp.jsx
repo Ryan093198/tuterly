@@ -1,7 +1,7 @@
 import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { c } from "@/components/marketing/theme";
-import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import { STUDY_APP } from "@/lib/study-app";
 
 // Tuterly Study blocks for the tutoring / SEO pages (suburbs, best-of,
 // online, prices, competitor comparisons). These pages keep their URLs,
@@ -33,7 +33,6 @@ export function AppHeroBlock({ placement, heading, sub }) {
 // app until there is one, no effectiveness claims.
 export function AppLowerCostSection({ competitor, placement }) {
   const name = STUDY_APP.name;
-  const live = isStudyAppLive();
   return (
     <section style={{ padding: "64px 24px", background: c.white }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
@@ -48,7 +47,7 @@ export function AppLowerCostSection({ competitor, placement }) {
         </p>
         <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 8px" }}>
           {[
-            live ? `Cost: ${STUDY_APP.priceLine}` : "Cost: free during the pilot. Pricing is set after the pilot.",
+            `Cost: a free trial, then $49 a month (${STUDY_APP.priceWeekly}).`,
             "Covers: Years 7 to 10 maths only, on iPhone. No Android yet.",
             "Parents see a weekly summary and topic test scores, not their child's photos.",
           ].map((t) => (

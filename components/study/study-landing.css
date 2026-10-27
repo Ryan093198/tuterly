@@ -57,6 +57,7 @@
 /* Parents */
 .sl-parents { display: grid; gap: 36px; align-items: center; }
 .sl-parents > *, .sl-notes > *, .sl-hero__grid > * { min-width: 0; }
+.sl-school__phone { display: grid; place-items: center; }
 @media (min-width: 900px) { .sl-parents { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; } }
 .sl-parents .tb-flow { --n: 2 !important; }
 .sl-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }

@@ -65,3 +65,12 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 
 ## SEO check
 156 pages compared with the funnel branch: titles, canonicals, meta descriptions, H1s and structured data are unchanged everywhere except the home page (description and FAQ schema now say "mastered"). The only new heading on SEO pages is the final CTA band's.
+
+## Changes from Ryan, 27 Oct (evening)
+- New home section "Straight from school": upload a real test (photos, PDF or Word), the wrong ones come pre-ticked, a fresh question on each. Hero line now mentions uploading a whole school test.
+- Practice tests on any topic moved up, straight after it, with a stronger heading ("A practice test on any topic, whenever they want.").
+- Two new FAQs: using actual school tests, and practising a topic before anything's wrong.
+- Price: "Free trial, then $49 a month" (about $11 a week) everywhere the app's price shows (lib/study-app.js priceLine / priceWeekly). Pilot students use it free.
+- Comparison: private tutor "Usually $80 to $100 an hour in Melbourne"; what it works on: "The difficult questions, and the ones your child hasn't fully understood, until each one is fully mastered."
+- How it works step 1 now shows the home screen (Snap a question); the snap menu moved to the school-tests section.
+- Still to reconcile: /tutoring-prices-melbourne says $50 to $80 an hour for Years 7 to 10, so the two pages disagree.
