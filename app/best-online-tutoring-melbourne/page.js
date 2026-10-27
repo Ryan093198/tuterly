@@ -133,14 +133,6 @@ export default function BestOnlineTutoringMelbournePage() {
               An honest look at online tutoring for Melbourne families. Most &quot;best online tutoring&quot; articles are written by companies recommending themselves - this one walks through the real options fairly, what separates the good ones, and how to pick the right fit for your child.
             </p>
             <AppHeroBlock placement="best_online_tutoring_melbourne_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse Tuterly tutors →
-              </Link>
-              <Link href="/online-tutoring-melbourne" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                How online tutoring works
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -246,26 +238,6 @@ export default function BestOnlineTutoringMelbournePage() {
         </div>
       </section>
 
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              See real tutors before you commit.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse Tuterly tutors with their actual hourly rates - no signup, no enquiry form. Or if you are outside the city, see our guide to the best online tutoring across Victoria.
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
-              <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-                Browse the directory →
-              </Link>
-              <Link href="/best-online-tutoring-victoria" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-                Online tutoring in Victoria
-              </Link>
-            </div>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="best_online_tutoring_melbourne_final" />
       <MarketingFooter />

@@ -82,8 +82,5 @@ A tutor who knows the Victorian Curriculum can take your child's report and turn
 
 Tuterly connects Melbourne families with tutors who understand exactly what these grades mean and what it takes to move them. After every session, parents receive a report through the dashboard showing what was covered and how their child responded. Between sessions, students can keep building with targeted practice questions on the platform, so progress continues week to week rather than only when the tutor is in the room.
 
-Whether you are working to close a gap before the end of the year or looking to extend a student who is already performing well, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

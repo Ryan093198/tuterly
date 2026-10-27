@@ -1,18 +1,16 @@
-import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
-import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
-import WorksheetGenerator from "@/components/WorksheetGenerator";
+import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import { SITE_URL } from "@/lib/site";
 
 // Transactional landing page for "primary maths practice tests" style
-// searches. The generator is the payload (the searcher wants the tests, not
-// an essay), with problem-first copy around it and the trial CTA below.
+// searches. The test builder was removed (Oct 2026): the tests now come
+// from the Tuterly Study app ("Test any topic"), so the app is the CTA.
 
-const TITLE = "Maths Practice Tests, Years 7-10 | Free | Tuterly";
+const TITLE = "Maths Practice Tests, Years 7-10 | Tuterly Study";
 const DESCRIPTION =
-  "Free printable maths practice tests for Years 7 to 10, aligned to the Victorian Curriculum. Mixed-topic questions with full worked solutions, ready to print.";
+  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly Study iPhone app.";
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
 
 export const metadata = {
@@ -23,7 +21,6 @@ export const metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
-const YEAR_LEVELS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 
 const c = {
   teal: "var(--brand-text)", tealDeep: "var(--brand-text)", tealBright: "var(--brand)", tealPale: "var(--brand-soft)",
@@ -51,15 +48,15 @@ const WHY = [
 const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
-    a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). Pick the year level and topic and the generator builds a fresh test with full worked solutions.",
+    a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). In Tuterly Study, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
   },
   {
-    q: "Are the practice tests free?",
-    a: "Yes. The generator on this page is free to use and every test comes with worked solutions you can print. A Tuterly subscription adds full 25-question topic tests with a separate answer key for marking.",
+    q: "How much does it cost?",
+    a: "Tuterly Study is free to download, with a 1-week free trial. After that it's $7.99 a week, and you can cancel any time.",
   },
   {
     q: "Do these match what my child is doing at school?",
-    a: "Topics come from the VCAA Foundation to Year 10 curriculum, which is what Victorian schools teach, so you can pick the exact topic their class is on.",
+    a: "Topics follow the Victorian Curriculum 2.0, so your child can pick the exact topic their class is on. They can also upload their actual school tests and practice papers, and the app writes fresh questions on the ones they got wrong.",
   },
   {
     q: "How many practice tests should a student do before a maths test?",
@@ -72,10 +69,6 @@ const FAQS = [
 ];
 
 export default function SecondaryPracticeTestsPage() {
-  const topicsByYear = Object.fromEntries(
-    YEAR_LEVELS.map((y) => [y, getTopicGroupsForLevel(y, "maths", [y])])
-  );
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -106,7 +99,7 @@ export default function SecondaryPracticeTestsPage() {
       <section className="pt-hero" style={{ padding: "56px 40px 44px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
-            Free practice tests
+            Practice tests
           </p>
           <h1 style={{ fontWeight: 800, fontSize: 50, color: c.ink, lineHeight: 1.1, letterSpacing: "-1.4px", marginBottom: 20 }}>
             Maths practice tests,{" "}
@@ -116,17 +109,13 @@ export default function SecondaryPracticeTestsPage() {
             Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, run to a clock, and lean on worded problems. That is why a student who follows everything in class can still come home with a mark that does not reflect what they know.
           </p>
           <p style={{ fontSize: 17.5, color: c.ink, fontWeight: 600, lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
-            Build a practice test below. Free, printable, with full worked solutions.
+            Tuterly Study writes a practice test on any topic in their year, with a worked solution for every question.
           </p>
         </div>
       </section>
 
-      <main className="pt-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
-        <WorksheetGenerator
-          topicsByYear={topicsByYear}
-          yearLevels={YEAR_LEVELS}
-          initialYearLevel="Year 8"
-        />
+      <main className="pt-section" style={{ maxWidth: 1028, margin: "0 auto", padding: "8px 24px 56px" }}>
+        <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
 
       <section className="pt-section" style={{ background: c.paper, borderTop: `1px solid ${c.border}`, padding: "64px 40px" }}>
@@ -167,26 +156,6 @@ export default function SecondaryPracticeTestsPage() {
         </div>
       </section>
 
-      <section className="pt-section" style={{ background: c.tealPale, borderTop: `1px solid ${c.border}`, padding: "64px 40px" }}>
-        <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: 30, fontWeight: 800, color: c.ink, letterSpacing: "-0.7px", lineHeight: 1.2, margin: "0 0 14px" }}>
-            Want full 25-question topic tests?
-          </h2>
-          <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, margin: "0 auto 24px", maxWidth: 520 }}>
-            Tuterly builds a complete practice test across a whole topic, mixed difficulty and VCAA aligned, with a separate answer key for marking. Any topic, any time, for every child on your account.
-          </p>
-          <Link href="/get-started" style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.ink, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 14px rgba(15,27,45,0.18)" }}>
-            Build their first test free &rarr;
-          </Link>
-          <p style={{ fontSize: 13, color: c.textLight, marginTop: 12 }}>Tuterly test builder (separate from the app): free for 7 days, then $29/month. Cancel anytime.</p>
-          <p style={{ fontSize: 14, color: c.textLight, marginTop: 20 }}>
-            Younger student?{" "}
-            <Link href="/practice-maths-tests-primary" style={{ color: c.tealDeep, fontWeight: 600, textDecoration: "none" }}>
-              Practice tests for Years 3 to 6 &rarr;
-            </Link>
-          </p>
-        </div>
-      </section>
 
       <AppCtaBand placement="practice_tests_secondary_final" />
       <MarketingFooter />

@@ -56,8 +56,5 @@ English Language is a subject where the right support makes a measurable differe
 
 Through the Tuterly parent dashboard, you receive a session report after every lesson outlining exactly what was covered and where your child is building confidence. Between sessions, your child can work through targeted practice questions on the platform, which is particularly useful for drilling metalanguage application and preparing for unseen text analysis tasks.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to connect with Melbourne tutors who specialise in VCE English Language.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

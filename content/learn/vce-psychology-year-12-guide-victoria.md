@@ -56,8 +56,5 @@ If your child has hit a wall with specific content, is nervous about the exam fo
 
 Tuterly's parent dashboard gives you visibility into every session, and written session reports tell you exactly what was covered and what to work on before the next one. You're not left guessing whether the sessions are having an effect. The platform also includes targeted practice questions aligned to VCAA-style exam conditions, so your child gets the right kind of repetition rather than generic worksheets.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with VCE Psychology experience in Melbourne.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

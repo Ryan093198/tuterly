@@ -50,6 +50,3 @@ Supporting your child through results day is important. Supporting them through 
 
 Tuterly's VCE tutors work across all major subjects and understand the VCAA study designs in detail. After every session, you get a written report showing what was covered and what needs attention next, so you are never guessing at progress. The platform also includes targeted practice questions built around the VCE exam format, which is the kind of preparation that actually moves study scores.
 
-If your child is heading into Year 12 and you want to start in the right place, [find a VCE tutor near you](/tutoring) or [browse our full tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

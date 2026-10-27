@@ -54,8 +54,5 @@ If you're noticing specific gaps or want your child genuinely extended beyond ye
 
 The platform also includes targeted practice questions aligned to the Victorian Curriculum, so there's no hunting around for the right worksheets.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with primary maths experience in Victoria.
-
 Also worth reading: our [Year 6 maths guide](/learn/year-6-maths-guide-victorian-parents) and [NAPLAN Year 5 prep guide](/learn/naplan-year-5-prep-guide) for what comes next.
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

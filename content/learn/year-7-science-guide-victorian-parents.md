@@ -48,6 +48,3 @@ Science notebooks and assessment feedback are worth looking at each term. The tr
 
 If your child needs targeted help, whether they are behind on particle theory or want to push further into science inquiry skills, a tutor who knows the Victorian Year 7 curriculum can make fast work of specific gaps. At Tuterly, you can [find a science tutor near you](/tutoring) who specialises in secondary science, and after every session you get a written report through the parent dashboard showing exactly what was covered and what to focus on next. The platform also includes targeted practice questions matched to the Australian Curriculum, so your child is working on the right material rather than generic worksheets.
 
-Browse our [tutor directory](/directory) to find someone with Year 7 science experience in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -66,8 +66,5 @@ If your child's writing is genuinely falling behind, or if they are capable of m
 
 Tuterly connects Melbourne families with tutors who understand exactly what the Victorian curriculum expects at each primary year level. After every session, the parent dashboard gives you a clear report on what was covered and how your child is progressing, so you are never guessing whether things are moving in the right direction. Between sessions, targeted practice questions on the platform keep the momentum going.
 
-Whether your child needs to build confidence with the basics or get genuinely extended beyond their year level, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

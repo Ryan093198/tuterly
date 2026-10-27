@@ -53,8 +53,5 @@ Tuterly tutors who specialise in VCE English can work through Section C specific
 
 If Term 3 is already underway and your child has not touched Section C yet, now is the right time to act.
 
-[Find a VCE English tutor near you](/tutoring) or [browse our tutor directory](/directory) to see specialists available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

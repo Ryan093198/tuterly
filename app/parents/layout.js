@@ -1,12 +1,11 @@
 import { SITE_URL } from "@/lib/site";
 
-// /parents is a client component (interactive nav, tutor gallery,
-// savings slider) so it can't export metadata directly. This layout
-// sits alongside it and provides the route-segment metadata.
+// Route-segment metadata for /parents (the parent page for the Tuterly
+// Study app since Oct 2026; it used to be the tutor marketplace page).
 
-const TITLE = "Tuterly - Find a Tutor & Track Every Session | Melbourne";
+const TITLE = "Tuterly Study for Parents: Years 7 to 10 Maths App | Tuterly";
 const DESCRIPTION =
-  "Find an experienced tutor through Tuterly. Detailed session reports, practice worksheets, and progress tracking after every lesson.";
+  "See the maths questions your child gets wrong, and watch them get mastered. A weekly summary, topic test scores, not their photos. Designed by Australian educators.";
 const URL = `${SITE_URL}/parents`;
 
 export const metadata = {

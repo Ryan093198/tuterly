@@ -3,7 +3,6 @@ title: "How to improve NAPLAN results before the next test"
 description: "NAPLAN is sat in March, so the window opens the moment results land in July. A term-by-term plan for Victorian parents who want a better result next time."
 date: "2026-08-03"
 audience: "Victorian parents"
-generator: "all"
 published: true
 ---
 
@@ -25,7 +24,6 @@ Before the plan, it helps to know what NAPLAN is actually testing, because a lot
 
 If your child knows the content but underperformed, it is usually one of those three, and all three are trainable.
 
-<!--GENERATOR-->
 
 ## A term-by-term plan
 
@@ -50,9 +48,8 @@ If you do nothing else: after every practice test, sort each wrong answer into s
 
 ## Build the first diagnostic test
 
-Free, printable, aligned to the Victorian Curriculum, with full worked solutions so the marking step is easy:
+In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question, aligned to the Victorian Curriculum:
 
-- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
 Related reading: [your child's NAPLAN results were lower than expected, what now](/learn/naplan-results-lower-than-expected-what-to-do) and [NAPLAN maths practice: what actually helps](/learn/naplan-maths-practice-what-actually-helps).

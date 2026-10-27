@@ -54,8 +54,5 @@ A tutor who understands what the Victorian Curriculum expects at each year level
 
 Tuterly connects Melbourne families with primary tutors who track progress and report back after every session through the parent dashboard. You will know what was covered, what clicked, and what needs more work, without having to quiz your child yourself. Between sessions, your child can keep building skills with targeted practice questions on the platform, all aligned to what they are doing in class.
 
-Whether your child needs to close a gap before NAPLAN or you want to extend a strong reader further, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

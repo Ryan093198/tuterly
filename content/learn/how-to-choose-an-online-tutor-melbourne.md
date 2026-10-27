@@ -38,4 +38,3 @@ Most tutoring pages list a dozen features. In practice, five things separate a t
 
 Line up two or three options and ask each the same short list: What did you score in this subject? Do I get a report after each session? Can I see your rate? Do you hold a current WWCC? The answers, and how readily they come, will usually make the decision for you.
 
-If you want to see tutors with their actual rates and subjects side by side, our [best online tutoring in Melbourne guide](/best-online-tutoring-melbourne) walks through the options, or you can [browse the Tuterly directory](/directory) with no signup required.

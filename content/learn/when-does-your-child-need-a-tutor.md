@@ -30,8 +30,5 @@ Whether your child needs to catch up or be pushed further, the tutor needs to be
 
 [Tuterly](https://www.tuterly.com.au/tutoring) matches your child with a trained tutor who reports back after every session, so you can see exactly what was covered and how your child is progressing. Between sessions, your child can practise with targeted questions on the platform to build confidence or stretch themselves further. It's not just tutoring. It's a system that keeps you in the loop and keeps your child moving forward.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

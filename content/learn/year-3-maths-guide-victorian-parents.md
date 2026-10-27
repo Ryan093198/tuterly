@@ -53,6 +53,3 @@ Consistent avoidance of maths homework, not being able to recall any multiplicat
 
 If you are at the "so what do I actually do?" point, Tuterly connects Melbourne families with tutors who know the Victorian Curriculum and work with Year 3 children regularly. The parent dashboard gives you a clear view of every session, and written session reports after each visit tell you exactly what was covered and what to practise before next time. Targeted practice questions on the platform are mapped to the specific Year 3 topics your child is working on, so there is no guesswork about what to focus on.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

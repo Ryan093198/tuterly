@@ -18,9 +18,7 @@ import TuterlyMethod from "@/components/marketing/TuterlyMethod";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
-import ContactCTA from "@/components/marketing/ContactCTA";
 import Testimonials from "@/components/marketing/Testimonials";
-import FindTutorButton from "@/components/FindTutorButton";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Match the
@@ -29,7 +27,6 @@ import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 // components blend in. Static content per suburb comes from
 // lib/seo-suburbs.js.
 
-const DIRECTORY_HREF = "/directory";
 
 export function generateStaticParams() {
   return SEO_SUBURBS.map((s) => ({ suburb: s.slug }));
@@ -98,21 +95,6 @@ export default async function SuburbPage({ params }) {
                 `Finding the right tutor in ${data.name} shouldn't be hard. Tuterly connects you with experienced tutors who know the curriculum and deliver results you can actually see.`}
             </p>
             <AppHeroBlock placement="suburb_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <FindTutorButton
-                source="suburb_page"
-                initialSuburb={data.name}
-                style={{ padding: "14px 28px", borderRadius: 10, background: c.white, color: c.navy, fontSize: 15, fontWeight: 600, border: `2px solid ${c.navy}`, display: "inline-block" }}
-              >
-                Find a tutor near you
-              </FindTutorButton>
-              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse tutors
-              </Link>
-              <a href="#sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See a sample report
-              </a>
-            </div>
           </Fade>
         </div>
       </section>
@@ -155,45 +137,6 @@ export default async function SuburbPage({ params }) {
       )}
 
       {/* FREE PRACTICE WORKSHEETS */}
-      <section style={{ padding: "56px 24px", background: c.tealPale, borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Free for {data.name} families</p>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25 }}>
-              Free Year 7-10 maths worksheets, before you book a tutor.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Generate a fresh practice worksheet in any Year 7-10 topic, with full worked solutions. No signup needed for the first one.
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
-              {[7, 8, 9, 10].map((yr) => (
-                <Link
-                  key={yr}
-                  href={`/worksheets#year-${yr}`}
-                  style={{
-                    display: "block",
-                    padding: "16px 18px",
-                    background: c.white,
-                    border: `1px solid ${c.border}`,
-                    borderRadius: 12,
-                    textDecoration: "none",
-                  }}
-                >
-                  <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
-                    Worksheets
-                  </p>
-                  <p style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy }}>
-                    Year {yr}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <p style={{ marginTop: 16, fontSize: 13, color: c.textMuted }}>
-              13 topic-specific generators per year level. Algebra, linear equations, geometry, statistics, and more.
-            </p>
-          </Fade>
-        </div>
-      </section>
 
       {/* THE TUTERLY METHOD */}
       <TuterlyMethod background={c.offWhite} padding="80px 24px" />
@@ -234,45 +177,7 @@ export default async function SuburbPage({ params }) {
         </div>
       </section>
 
-      {/* CONTACT CTA */}
-      <section style={{ padding: "56px 24px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <ContactCTA
-              variant="card"
-              headline={`Looking for a tutor in ${data.name}? Talk to us.`}
-              subhead="Call or message us with your child's year level and subject - we'll match them to a local tutor or run you through how Tuterly works."
-              context={`Tutoring in ${data.name} suburb page`}
-            />
-          </Fade>
-        </div>
-      </section>
 
-      {/* GET STARTED CTA */}
-      <section style={{ padding: "72px 24px", background: c.white }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to find a tutor in {data.name}?
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
-            </p>
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <FindTutorButton
-                source="suburb_page"
-                initialSuburb={data.name}
-                style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, border: "none" }}
-              >
-                Find a tutor near you
-              </FindTutorButton>
-              <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-                Get started - free to sign up
-              </Link>
-            </div>
-          </Fade>
-        </div>
-      </section>
 
       {/* NEARBY SUBURBS - INTERNAL LINKS */}
       {neighbours.length > 0 && (

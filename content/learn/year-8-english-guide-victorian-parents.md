@@ -62,6 +62,3 @@ Read alongside your child's class text if you can. Even a chapter or two gives y
 
 If you've reached the "so what do I do?" point, that's where a good tutor makes a real difference. Tuterly's parent dashboard gives you a written report after every session, so you can see exactly which skills are being worked on and how your child is tracking. Session reports mean you're never just trusting that something is improving. Tuterly also has targeted practice questions on the platform, built around the kinds of tasks Victorian students actually face.
 
-Whether your child is behind and needs to catch up on essay structure, or is ahead and ready to be extended, there's a tutor who can match that. [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available for Year 8 English in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

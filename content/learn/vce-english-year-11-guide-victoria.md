@@ -54,8 +54,5 @@ If your child has specific gaps or wants structured guidance through Units 1 and
 
 Year 11 is the right time to get this foundation right, not the week before Year 12 exams.
 
-[Find a VCE English tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with specific Units 1 and 2 experience.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

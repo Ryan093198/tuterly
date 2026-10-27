@@ -47,6 +47,3 @@ If your child is avoiding reading, struggling to complete written tasks at schoo
 
 This is where Tuterly can help. Our tutors work to the Victorian Curriculum and focus on the specific skills your child actually needs, whether that's building comprehension strategies, strengthening writing structure, or extending a strong student further. After every session you get a written report through the parent dashboard so you can see exactly what was covered and what to practise next. The platform also includes targeted practice questions aligned to Year 4 English skills, so the work continues between sessions.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with Year 4 English experience.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

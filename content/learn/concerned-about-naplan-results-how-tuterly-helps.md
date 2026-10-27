@@ -3,7 +3,6 @@ title: "Concerned about your child's NAPLAN results? Here's how Tuterly helps"
 description: "What we would actually do with a below-average NAPLAN result: diagnose the real gaps, practise them properly, and prove the progress. Plus what tutoring cannot fix."
 date: "2026-08-05"
 audience: "Victorian parents"
-generator: "all"
 published: true
 ---
 
@@ -23,9 +22,8 @@ So the useful question is not "how much more work?" It is "which work, exactly?"
 
 **2. Work the two or three real gaps.** Not the whole subject. A student who is shaky on fractions and multi-step worded problems does not need Year 5 maths re-taught. They need those two things, properly, with spacing so it sticks.
 
-**3. Practise the way the test actually asks.** This is the part schools rarely have time for. Class worksheets come sorted by topic, so your child knows the method before reading the question. Real tests mix topics, run to a clock, and lean on worded problems. Tuterly builds practice tests that do the same: mixed difficulty across a whole topic, VCAA aligned, printable, with a separate answer key so marking is quick.
+**3. Practise the way the test actually asks.** This is the part schools rarely have time for. Class worksheets come sorted by topic, so your child knows the method before reading the question. Real tests mix topics, run to a clock, and lean on worded problems. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a practice test across a whole topic, aligned to the Victorian Curriculum, with a worked solution for every question.
 
-<!--GENERATOR-->
 
 **4. Show you it is working.** After every tutoring session you get a written report: what was covered, how your child went, and exactly what to practise next. You should not have to wait for the next school report to find out whether the money is doing anything.
 

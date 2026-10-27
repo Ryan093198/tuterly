@@ -12,9 +12,9 @@ import "@/components/brand/brand.css";
 //   stage "live"   App Store button (plus a QR code on desktop). Android
 //                  visitors get an "Android is coming" email form instead,
 //                  since they can't install an iPhone app.
-//   stage "pilot"  iPhone: "Join the free pilot" (TestFlight link if one is
-//                  set, otherwise opens the waitlist form).
-//                  Everyone else: "Get notified when it launches" form.
+//   stage "pilot"  Not on the App Store yet: a "Coming soon to the App
+//                  Store" label and a "Get notified" email form, for
+//                  everyone (no pilot sign-up on the site).
 //
 // Platform detection is client-side only (user agent after mount). The
 // server render and first paint use the non-iPhone version.
@@ -102,15 +102,12 @@ export default function StudyAppCTA({
     if (live && platform !== "android") {
       href = STUDY_APP.appStoreUrl;
       label = "Get the app";
-    } else if (!live && platform === "iphone") {
-      href = STUDY_APP.testflightUrl || "/#get-app";
-      label = "Join the free pilot";
     }
     return (
       <a
         href={href}
         className="tb-btn tb-btn--primary tb-btn--sm"
-        onClick={() => track(href.startsWith("/#") ? "nav_to_form" : live ? "app_store" : "testflight")}
+        onClick={() => track(href.startsWith("/#") ? "nav_to_form" : "app_store")}
         style={{ marginBottom: 4, whiteSpace: "nowrap", ...style }}
       >
         {label}
@@ -121,7 +118,6 @@ export default function StudyAppCTA({
   // ── What the action area shows ────────────────────────────────────
   let mode;
   if (live) mode = platform === "android" ? "android-form" : "store";
-  else if (platform === "iphone") mode = STUDY_APP.testflightUrl ? "testflight" : "pilot-button";
   else mode = "launch-form";
   // Compact variants keep the form behind a button so they stay slim.
   const compact = variant === "banner";
@@ -187,7 +183,13 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {live ? `${STUDY_APP.name} · iPhone · Years 7 to 10 maths` : `${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone`}
+      {`Free to download · ${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone`}
+    </p>
+  );
+  // Until launch, say plainly where it will be.
+  const soon = !live && (
+    <p className="tb-appcta__soon">
+      <AppStoreGlyph /> Coming soon to the App Store
     </p>
   );
 
@@ -236,6 +238,7 @@ export default function StudyAppCTA({
   if (variant === "hero") {
     return (
       <div className="tb-appcta" style={style} data-study-cta={placement || "hero"}>
+        {soon}
         {action}
         {meta}
       </div>
@@ -254,9 +257,21 @@ export default function StudyAppCTA({
       <p className="tb-appcta__sub">
         {sub || `Snap them in ${STUDY_APP.name} and get a fresh version to practise until they're mastered.`}
       </p>
+      {soon}
       {action}
       {meta}
     </aside>
+  );
+}
+
+// A plain "A" mark in a rounded square (not Apple's logo or badge, which
+// can't be altered to say "coming soon").
+function AppStoreGlyph() {
+  return (
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+      <path d="M9 16.5l3-9 3 9M10 13.5h4" />
+    </svg>
   );
 }
 

@@ -3,7 +3,6 @@ title: "NAPLAN maths practice: what actually helps in Years 3 and 5"
 description: "What NAPLAN numeracy actually tests, why confident students still stumble, and how to prepare without turning it into a stressful event."
 date: "2026-07-30"
 audience: "Primary parents"
-generator: "primary"
 published: true
 ---
 
@@ -23,7 +22,6 @@ The most common surprise for parents is a child who is doing fine in class maths
 
 **It is timed.** Working slowly and carefully is a good habit right up until the clock runs out.
 
-<!--GENERATOR-->
 
 ## What to actually practise
 
@@ -44,10 +42,3 @@ Signs you have overdone it are easy to spot: dread before sessions, arguing abou
 
 What you say about NAPLAN matters more than the practice. Framing it as a check on what they have learned so far, rather than a judgement of how smart they are, makes a real difference to how they sit it. If your child gets anxious about tests, the practice itself helps, because familiarity with the format removes a lot of the fear.
 
-## Build a practice test
-
-You can generate a free, printable practice test on any Years 3 to 6 topic, mixed difficulty with full worked solutions, aligned to the Victorian Curriculum:
-
-[Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
-
-These are not official NAPLAN papers. They build the underlying skills the test draws on.

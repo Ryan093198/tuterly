@@ -3,7 +3,6 @@ title: "How to read your child's NAPLAN results: a plain-English guide for Victo
 description: "NAPLAN results explained for Melbourne parents: what the proficiency levels mean, what to do next, and when to consider tutoring."
 date: "2026-08-05"
 audience: "Primary and Year 7-8 parents"
-generator: "all"
 published: true
 ---
 
@@ -31,7 +30,6 @@ From 2023, NAPLAN moved away from numbered bands to four proficiency levels: Exc
 
 **Needs Additional Support** means your child is working significantly below the expected standard and would benefit from targeted help. This is the level that warrants direct action.
 
-<!--GENERATOR-->
 
 ## How NAPLAN lines up with the Victorian Curriculum
 
@@ -77,17 +75,13 @@ Tuterly connects Melbourne families with tutors who understand the Victorian Cur
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
-Whether your child needs to close a gap or get properly challenged, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
+## Start with a practice test
 
-## Start with a free practice test
+The fastest way to turn a NAPLAN level into something you can act on is to find out where your child sits right now. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a short practice test on the topic the report flagged, with a worked solution for every question:
 
-The fastest way to turn a NAPLAN level into something you can act on is to find out where your child sits right now. Build a free, printable practice test on the topic the report flagged, with full worked solutions so marking it together is easy:
-
-- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
 Related reading: [your child's NAPLAN results were lower than expected, what now](/learn/naplan-results-lower-than-expected-what-to-do) and [how to improve NAPLAN results before the next test](/learn/how-to-improve-naplan-results-before-next-year).
 
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -12,7 +12,6 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const DIRECTORY_HREF = "/directory";
 
 export const metadata = {
   title: "Tutoring across Melbourne | Tuterly",
@@ -49,11 +48,6 @@ export default function TutoringDirectory() {
               Finding the right tutor in Melbourne shouldn&apos;t be hard. Tuterly connects families with experienced tutors who know their child&apos;s curriculum and deliver results you can actually see - sessions can be online or in-person, depending on what works for your family.
             </p>
             <AppHeroBlock placement="tutoring_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find a tutor →
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -68,8 +62,8 @@ export default function TutoringDirectory() {
             </h2>
             {live.length === 0 ? (
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>
-                More suburb-specific pages are on the way. In the meantime, any Melbourne family can{" "}
-                <Link href={DIRECTORY_HREF} style={{ color: c.teal, fontWeight: 600 }}>find a tutor in our directory</Link>.
+                More suburb-specific pages are on the way. For Years 7 to 10 maths, any family can start with{" "}
+                <Link href="/" style={{ color: c.teal, fontWeight: 600 }}>Tuterly Study</Link>.
               </p>
             ) : (
               <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, listStyle: "none", padding: 0, margin: 0 }}>
@@ -93,21 +87,6 @@ export default function TutoringDirectory() {
       <TuterlyMethod background={c.white} padding="80px 24px" />
 
       {/* GET STARTED CTA */}
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to find a tutor?
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
-            </p>
-            <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started - free to sign up
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="tutoring_index_final" />
       <MarketingFooter />

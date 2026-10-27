@@ -58,8 +58,5 @@ Tuterly connects Melbourne families with tutors who know the VCAA Maths Methods 
 
 Between sessions, your child can continue building skills with targeted practice questions on the platform. Consistent practice between tutoring sessions is what makes the real difference in Methods.
 
-Whether your child needs to close a gap before the next SAC or is ready to push further ahead, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

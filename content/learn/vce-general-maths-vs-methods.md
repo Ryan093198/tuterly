@@ -34,4 +34,3 @@ Find a VCE maths tutor near you: [Glen Waverley](/tutoring/glen-waverley) | [Bal
 
 ---
 
-VCE maths tutor in Melbourne? [See open positions](/tutor-jobs).

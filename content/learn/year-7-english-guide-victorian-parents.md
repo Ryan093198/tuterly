@@ -48,8 +48,5 @@ For students who are thriving and want to stay ahead, a tutor experienced in Vic
 
 Tuterly matches Melbourne families with tutors who know the Victorian Curriculum and what secondary schools actually expect. After every session, you get a written report covering what was worked on and what to focus on next, so you are not left guessing whether progress is happening. The platform also includes targeted practice questions matched to Year 7 skills, useful for consolidating work between sessions.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to get started.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

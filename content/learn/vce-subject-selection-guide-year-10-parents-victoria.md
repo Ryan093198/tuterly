@@ -62,8 +62,5 @@ Tuterly connects Melbourne families with tutors who know the VCE inside out. Thr
 
 Subject selection closes fast. Getting the right support in place now means your child walks into Year 11 with confidence, not doubt.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

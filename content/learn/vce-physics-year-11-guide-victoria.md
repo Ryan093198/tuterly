@@ -62,8 +62,5 @@ If your child is finding VCE Physics harder than expected, or if they want to ma
 
 After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. You do not have to guess whether the sessions are making a difference. Between sessions, your child can keep building with targeted practice questions on the platform, working through the specific concepts that need the most attention.
 
-Whether your child needs to close a gap in Unit 1 motion or get ahead of the Unit 2 electricity content, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

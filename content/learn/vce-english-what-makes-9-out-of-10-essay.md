@@ -40,4 +40,3 @@ If you already know your texts but your scores aren't reflecting it, structure i
 
 ---
 
-*Looking for a VCE English tutor? [See open positions](/tutor-jobs).*

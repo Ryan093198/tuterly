@@ -42,4 +42,3 @@ The jump to secondary catches a lot of students off guard, not because they're n
 
 ---
 
-*Tutor in Melbourne's east? [See open positions](/tutor-jobs).*

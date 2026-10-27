@@ -60,8 +60,5 @@ A tutor who knows the VCE Psychology study design can work through SAC-style que
 
 Tuterly connects Victorian families with tutors who understand exactly what is expected at each stage of the VCE. After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can continue building skills with targeted practice questions on the platform, keeping the momentum going without waiting for the next session.
 
-Whether your child needs to get on top of research methods, sharpen their SAC writing, or push into extension territory ahead of Year 12, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

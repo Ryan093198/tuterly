@@ -66,8 +66,5 @@ If your child is struggling to keep up with Data Analysis, unsure how to structu
 
 Through the Tuterly parent dashboard, you receive a session report after every lesson covering what was covered and how your child is tracking. Between sessions, your child can work through targeted practice questions on the platform to keep the momentum going.
 
-Whether your child needs to close a gap before the next SAC or wants to push for the strongest possible foundation heading into Year 12, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

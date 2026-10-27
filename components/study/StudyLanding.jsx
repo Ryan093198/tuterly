@@ -371,9 +371,6 @@ export default function StudyLanding() {
               <p className="tb-muted sl-card-text">
                 Tutors can link to your child’s account with a code, look through their bank of mistakes before a session, and set snap goals like “5 questions by Thursday”.
               </p>
-              <p className="sl-card-text">
-                Prefer a real tutor? <Link href="/find-a-tutor" className="tb-link">Bayside Academics can help</Link>.
-              </p>
             </Card>
           </div>
         </div>
@@ -390,20 +387,6 @@ export default function StudyLanding() {
         </div>
       </section>
 
-      {/* 7. FREE RESOURCES */}
-      <section className="tb-section tb-section--card" aria-labelledby="free">
-        <div className="tb-wrap">
-          <Reveal>
-            <SectionHead id="free" eyebrow="Free, no app needed" title="Free maths resources" lead="Practise now. Anything they get wrong is exactly what to snap later." />
-          </Reveal>
-          <div className="sl-resources">
-            <Resource href="/worksheets" icon="notes" title="Free worksheets" body="Curriculum-matched maths worksheets for Years 3 to 10, with worked solutions." />
-            <Resource href="/practice-maths-tests-secondary" icon="test" title="Practice tests" body="Secondary maths practice tests, plus a primary set." />
-            <Resource href="/atar-planner" icon="flag" title="ATAR planner" body="Plan VCE subjects and see what scores a course needs." />
-            <Resource href="/learn" icon="book" title="Learn" body="Guides for parents on Victorian maths, NAPLAN and study habits." />
-          </div>
-        </div>
-      </section>
 
       {/* 8. FAQ (no app testimonials exist yet, so there's no testimonials section) */}
       <section className="tb-section" aria-labelledby="faq">
@@ -480,12 +463,3 @@ function CompareRow({ label, tutor, app }) {
   );
 }
 
-function Resource({ href, icon, title, body }) {
-  return (
-    <Link href={href} className="tb-card sl-resource">
-      <span className="tb-tile__icon" aria-hidden="true"><Icon name={icon} /></span>
-      <span className="sl-resource__title">{title} →</span>
-      <span className="sl-resource__body">{body}</span>
-    </Link>
-  );
-}

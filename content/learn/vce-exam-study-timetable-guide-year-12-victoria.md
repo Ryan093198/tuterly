@@ -62,8 +62,5 @@ Some students build a solid timetable and still feel stuck. The content isn't cl
 
 Tuterly connects Year 12 students with VCE-experienced tutors across Melbourne who know the VCAA curriculum and what examiners are looking for. After every session, parents can see exactly what was covered through the parent dashboard, including session reports that track progress over the exam period. Between sessions, students can work through targeted practice questions on the platform to keep momentum going.
 
-Whether your child needs to close a gap before the October exam block or wants to push their study score higher in a subject they're already strong in, [find a VCE tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

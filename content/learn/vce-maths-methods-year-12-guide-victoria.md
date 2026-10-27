@@ -54,6 +54,3 @@ For students targeting top scores, a tutor is not just remediation. Targeted ext
 
 Tuterly's parent dashboard and session reports mean you can see exactly which topics are being worked on and how your child is progressing, without having to interrogate them after every session. The platform also includes targeted practice questions aligned to the VCAA Methods course, so sessions are focused on what actually comes up in SACs and exams.
 
-[Find a VCE Maths Methods tutor near you](/tutoring) or [browse our tutor directory](/directory) to see experienced Methods tutors available in Victoria.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

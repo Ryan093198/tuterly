@@ -42,4 +42,3 @@ If you're in [Glen Waverley](/tutoring/glen-waverley), [Balwyn](/tutoring/balwyn
 
 ---
 
-*Maths tutor in Melbourne? [See open positions](/tutor-jobs).*

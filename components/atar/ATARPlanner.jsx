@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
+import StudyAppCTA from "@/components/StudyAppCTA";
+import { STUDY_APP } from "@/lib/study-app";
 import { c } from "@/components/marketing/theme";
 import courseData from "@/lib/course-data.json";
 import { ENGLISH_SUBJECTS, isEnglishSubject, rawToScaled, findSubject } from "@/lib/vce-subjects";
@@ -14,7 +15,6 @@ import {
   atarBand,
 } from "@/lib/atar-engine";
 import { savePlannerLead } from "@/app/atar-planner/actions";
-import ContactCTA from "@/components/marketing/ContactCTA";
 
 const COURSES = courseData.courses;
 const CATEGORIES = [...new Set(COURSES.map((c) => c.category))].sort();
@@ -802,32 +802,14 @@ export default function ATARPlanner() {
         )
       )}
 
-      {/* CTAs */}
+      {/* CTA: the app (the only call to action on the site). */}
       <div style={{ marginTop: 32 }}>
-        <ContactCTA
+        <StudyAppCTA
           variant="card"
-          headline="Need help getting to your target ATAR?"
-          subhead={
-            primaryCourse
-              ? `Talk to us about lifting your scores toward ${primaryCourse.guaranteedAtar.toFixed(2)} - we'll match you to a VCE tutor in your subject.`
-              : "Talk to us about lifting your scores - we'll match you to a VCE tutor in your weakest subject."
-          }
-          context="ATAR planner results"
+          placement="atar_planner_results"
+          heading="In Year 9 or 10? Get the maths ready for VCE."
+          sub={`Snap the maths questions you get wrong in ${STUDY_APP.name} and practise fresh versions until they're mastered. Years 7 to 10 maths.`}
         />
-        <div style={{ marginTop: 14, textAlign: "center" }}>
-          <Link
-            href="/directory"
-            style={{
-              color: c.tealDark,
-              fontFamily: "var(--font-display)",
-              fontSize: 13,
-              fontWeight: 600,
-              textDecoration: "none",
-            }}
-          >
-            Or browse the VCE tutor directory →
-          </Link>
-        </div>
       </div>
 
       <div style={{ marginTop: 18, display: "flex", justifyContent: "center" }}>

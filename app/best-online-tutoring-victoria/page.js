@@ -120,14 +120,6 @@ export default function BestOnlineTutoringVictoriaPage() {
               Wherever you are in the state - Melbourne, Geelong, Ballarat, Bendigo or a regional town - online tutoring gives your child access to the same specialist, high-achieving tutors. Here is how the options compare and what separates the good ones.
             </p>
             <AppHeroBlock placement="best_online_tutoring_victoria_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse Tuterly tutors →
-              </Link>
-              <Link href="/best-online-tutoring-melbourne" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Melbourne guide
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -239,21 +231,6 @@ export default function BestOnlineTutoringVictoriaPage() {
         </div>
       </section>
 
-      <section style={{ padding: "72px 24px", background: c.white }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              See real tutors before you commit.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse Tuterly tutors with their actual hourly rates - no signup, no enquiry form - and get matched with a specialist for your child, wherever you are in Victoria.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="best_online_tutoring_victoria_final" />
       <MarketingFooter />

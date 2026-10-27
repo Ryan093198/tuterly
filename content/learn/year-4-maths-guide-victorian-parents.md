@@ -69,6 +69,3 @@ Tuterly connects Melbourne families with local tutors who know the Victorian cur
 
 The platform also includes targeted practice questions pitched at Year 4 level, so your child is not working through generic primary school content but material matched to where they actually are.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

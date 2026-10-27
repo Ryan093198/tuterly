@@ -54,6 +54,3 @@ If your child is solid on the content but freezing on written responses, a tutor
 
 Tuterly tutors with VCE Economics experience work through exactly this kind of targeted practice. The parent dashboard keeps you across what has been covered in each session, and session reports show where the gaps are and how they are closing. Practice questions on the platform are structured around the VCE Economics framework, so your child is building the right skills for the actual assessment.
 
-[Find a VCE Economics tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

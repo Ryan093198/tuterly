@@ -48,10 +48,7 @@ Avoid framing the test as high stakes. Your child will take their cue from you. 
 
 If you've noticed specific gaps and want someone to address them properly, a tutor with NAPLAN experience can run a short diagnostic, identify the two or three skills worth focusing on, and build practice that fits your child's actual level. Tuterly's parent dashboard gives you a written report after every session so you can see exactly what's being covered and how your child is responding. The platform also includes targeted practice questions aligned to the NAPLAN format, so your child gets familiar with how questions are asked, not just what they cover.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with Year 3 NAPLAN experience in Melbourne.
-
 The test is one morning. The skills behind it matter for years. Getting those right, calmly and at the right pace, is always the better goal.
 
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AppSoftLine } from "@/components/study/TutoringPageApp";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import SampleReport from "@/components/marketing/SampleReport";
@@ -88,15 +88,7 @@ export default function VceTutoringPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Methods, English, Specialist, Chemistry, Physics, Biology - tutored by people who&apos;ve sat the exam themselves and know what a 40+ study score actually requires. Every session generates a structured report mapped to the VCAA study design, so you can see which areas of content are improving and which still need work.
             </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find a VCE tutor →
-              </Link>
-              <Link href="/sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See a sample report
-              </Link>
-            </div>
-            <AppSoftLine />
+            <AppHeroBlock placement="vce_tutoring_hero" />
           </Fade>
         </div>
       </section>
@@ -167,21 +159,6 @@ export default function VceTutoringPage() {
         </div>
       </section>
 
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Find a VCE tutor in our directory.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse tutors by subject and year level. Every Tuterly tutor uses the platform - so every session gets a structured report mapped to the VCAA study design.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Find a VCE tutor →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <MarketingFooter />
     </main>

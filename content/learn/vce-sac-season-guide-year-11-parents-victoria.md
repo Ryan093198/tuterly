@@ -58,8 +58,5 @@ A tutor who knows the VCE subject inside out can do something classroom teaching
 
 Tuterly connects Victorian families with tutors who understand VCE assessment and can build a clear preparation plan across SAC season. After every session, you get a report through the parent dashboard so you can see what was covered and where your child is improving. Between sessions, your child can work on targeted practice questions on the platform to keep building between tutoring sessions.
 
-Whether your child is trying to close a gap before a tough SAC or pushing for the top of the range, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

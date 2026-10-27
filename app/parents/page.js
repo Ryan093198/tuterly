@@ -1,16 +1,11 @@
-import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
-import Testimonials from "@/components/marketing/Testimonials";
-import ContactCTA from "@/components/marketing/ContactCTA";
-import FindTutorButton from "@/components/FindTutorButton";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import FlowSteps from "@/components/brand/FlowSteps";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
-import { Button, Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
+import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
-import { PRICING } from "@/lib/pricing";
 import "./parents.css";
 
 // /parents: the parent's view of Tuterly Study, parent-first order:
@@ -155,7 +150,7 @@ export default function ParentsPage() {
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />
       </CtaBand>
 
-      {/* Below the CTA: dinner questions, free practice, tutoring. */}
+      {/* Below the CTA: dinner questions. */}
       <section className="tb-section tb-section--card" aria-labelledby="home-qs">
         <div className="tb-wrap tb-wrap--narrow">
           <Reveal>
@@ -169,52 +164,6 @@ export default function ParentsPage() {
         </div>
       </section>
 
-      <section className="tb-section" aria-labelledby="free">
-        <div className="tb-wrap tb-wrap--narrow pp-free">
-          <h2 id="free" className="tb-h2" style={{ fontSize: "clamp(26px, 2vw + 18px, 34px)" }}>Free maths practice, no app needed</h2>
-          <p className="tb-lead" style={{ margin: "10px auto 22px" }}>Anything they get wrong on these is exactly what to snap.</p>
-          <div className="pp-free__links">
-            <Button href="/worksheets" variant="secondary">Free worksheets</Button>
-            <Button href="/practice-maths-tests-secondary" variant="secondary">Practice tests, Years 7 to 10</Button>
-            <Button href="/practice-maths-tests-primary" variant="secondary">Practice tests, Years 3 to 6</Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="tb-section tb-section--card" aria-labelledby="tutor">
-        <div className="tb-wrap pp-split pp-split--top">
-          <div>
-            <SectionHead
-              id="tutor"
-              eyebrow="Prefer a real tutor?"
-              title="Bayside Academics can help."
-              lead={`Some children need a person: someone to explain it a different way, plan what comes next, or cover a subject the app doesn’t. Our tutors cover primary through VCE, with a written report after every session. Sessions from $${PRICING.sessionFrom} an hour, all-inclusive, no lock-in.`}
-            />
-            <p className="tb-muted pp-card-text" style={{ marginTop: -12, marginBottom: 20 }}>
-              {`Tutors can link to ${name} too, look through your child’s mistakes before a session and set snap goals.`}
-            </p>
-            <div className="pp-tutor-actions">
-              <FindTutorButton source="parents_page" className="tb-btn tb-btn--secondary">Find a local tutor</FindTutorButton>
-              <Link href="/directory" className="tb-textlink">Browse tutors →</Link>
-              <Link href="/sample-report" className="tb-textlink">See a sample report →</Link>
-            </div>
-          </div>
-          <ContactCTA variant="card" headline="Not sure which is right for your child?" subhead="Tell us a bit about them and we'll give you a straight answer, app or tutor." context="parents page" />
-        </div>
-      </section>
-
-      {/* Real, consented tutoring testimonials only (lib/testimonials.js).
-          Renders nothing if none match. None are about the app yet. */}
-      <Testimonials
-        variant="feature"
-        tags={["home", "parents"]}
-        limit={4}
-        background="var(--background)"
-        headingFont="var(--font-display)"
-        bodyFont="var(--font-display)"
-        kicker="From our tutoring families"
-        heading="What parents say about our tutors."
-      />
 
       <MarketingFooter />
     </div>

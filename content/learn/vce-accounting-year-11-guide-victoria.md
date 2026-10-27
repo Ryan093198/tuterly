@@ -58,8 +58,5 @@ If your child is losing marks on tasks they thought they understood, or if they 
 
 After every session, you receive a report through the parent dashboard outlining exactly what was covered and how your child is tracking. Between sessions, your child can work through targeted practice questions on the platform to reinforce what they have learned with the tutor.
 
-Whether your child needs to close a gap in the fundamentals or push toward the highest levels of performance, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

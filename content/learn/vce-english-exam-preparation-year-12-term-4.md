@@ -62,8 +62,5 @@ For students who are already performing strongly, a tutor can push the writing q
 
 Tuterly connects Year 12 students with VCE English tutors who know what VCAA assessors are looking for. Through the parent dashboard, you can see what was covered in every session and track how the writing is developing. Between sessions, students can work through targeted practice questions on the platform, including essay prompts and Section B writing tasks, so preparation keeps moving between tutoring appointments.
 
-[Find a VCE English tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in Melbourne right now.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

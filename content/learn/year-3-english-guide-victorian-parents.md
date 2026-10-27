@@ -60,6 +60,3 @@ If your child is cruising through Year 3 English without much challenge, extensi
 
 Tuterly connects Melbourne families with tutors who know the Victorian Curriculum and can target exactly what your child needs, whether that is filling a specific gap or working ahead. The parent dashboard gives you a clear view of every session, and written session reports tell you what was covered and what to practise next. The platform also includes targeted practice questions so your child keeps building between sessions.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to get started.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

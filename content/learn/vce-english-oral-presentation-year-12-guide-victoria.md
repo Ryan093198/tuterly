@@ -56,8 +56,5 @@ For students who are strong writers but uncomfortable speakers, a tutor can help
 
 Tuterly connects Melbourne families with tutors who understand the VCE English curriculum and report back after every session through the parent dashboard. You will know exactly what was covered and where progress is being made. Between sessions, your child can work through targeted practice questions on the platform to keep building their skills.
 
-With Term 3 approaching, now is the right time to get support in place. [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -51,6 +51,3 @@ A good science tutor does two things a busy classroom cannot always do. They fin
 
 If you are weighing up whether to get support, Tuterly connects you with local Melbourne tutors who work specifically across Years 7 to 10. After each session, you receive a written report covering what was covered, how your child responded, and what to focus on next. The platform also includes targeted practice questions mapped to the Australian Curriculum, so your child can consolidate between sessions rather than waiting a week to try again.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

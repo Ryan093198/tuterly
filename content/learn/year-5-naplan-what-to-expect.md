@@ -3,7 +3,6 @@ title: "Year 5 NAPLAN: what to expect and how to prepare"
 description: "What Year 5 NAPLAN actually tests, what scores mean, prep tips that work, and what not to do. A calm guide for Melbourne parents."
 date: "2026-06-08"
 audience: "Year 5 parents"
-generator: "primary"
 published: true
 ---
 
@@ -23,7 +22,6 @@ Results come back as a score on a scale, placed into bands. For Year 5, bands ra
 
 "At or above national minimum" sounds reassuring, but it's a low bar. The more useful question is whether your child is tracking at or above "proficient," which indicates they're well-placed for the work ahead in Years 6 and beyond.
 
-<!--GENERATOR-->
 
 ## Prep tips that actually work
 
@@ -45,8 +43,5 @@ A tutor doesn't help much if your child is performing well and you're hoping to 
 
 If you've noticed consistent patterns in where your child struggles, a short block of targeted tutoring can make a genuine difference. [Tuterly](/) tutors are trained on the Victorian curriculum and know what Year 5 NAPLAN actually tests. You'll see what's being worked on through session reports, and your child can build confidence with the platform's practice questions at their own pace.
 
-Browse tutors in your area: [Tutoring in Glen Waverley](/tutoring/glen-waverley) | [Tutoring in Balwyn](/tutoring/balwyn) | [Find a primary tutor](/tutoring)
-
 ---
 
-Primary tutor in Melbourne? [See open positions](/tutor-jobs).

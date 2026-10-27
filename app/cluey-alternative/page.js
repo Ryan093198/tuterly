@@ -60,14 +60,6 @@ export default function ClueyAlternativePage() {
               Cluey is one of the more established online tutoring brands in Australia, and for a lot of families it&apos;s a perfectly good fit. This page is a factual comparison of the two approaches - so you can pick the right one rather than the louder one. We&apos;ll be honest about where Cluey is the better choice and where Tuterly is.
             </p>
             <AppHeroBlock placement="cluey_alternative_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse Tuterly tutors →
-              </Link>
-              <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                How Tuterly works
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -201,21 +193,6 @@ export default function ClueyAlternativePage() {
 
       <AppLowerCostSection competitor="Cluey" placement="cluey_alternative_lower_cost" />
 
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              See real tutors before you decide.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse Tuterly tutors in your area, see their rates upfront, and message them directly. No signup needed to look.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="cluey_alternative_final" />
       <MarketingFooter />

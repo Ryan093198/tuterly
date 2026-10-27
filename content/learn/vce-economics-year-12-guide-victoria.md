@@ -56,6 +56,3 @@ After each session, you get a written report through the parent dashboard coveri
 
 The platform also includes targeted practice questions mapped to the VCE Economics study design, so students can work on structured response technique and exam-style analysis between tutoring sessions rather than waiting for school assessments to find out where the gaps are.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone experienced in VCE Economics.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

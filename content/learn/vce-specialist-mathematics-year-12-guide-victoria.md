@@ -70,6 +70,3 @@ If your child needs a tutor, now is the time to look. Tutors with VCE Specialist
 
 Tuterly connects you with Melbourne tutors who know the VCAA study design and can focus specifically on the topics and question types your child finds hardest. The parent dashboard shows you what each session covered and where your child is progressing, so you are not left guessing. Targeted practice questions on the platform are aligned to the current study design, so nothing is wasted on irrelevant material.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available now.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

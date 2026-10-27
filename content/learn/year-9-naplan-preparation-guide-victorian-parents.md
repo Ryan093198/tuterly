@@ -3,7 +3,6 @@ title: "How to prepare your child for the Year 9 NAPLAN: what Victorian parents 
 description: "A practical guide for Victorian parents on what the Year 9 NAPLAN tests cover, how to read results, and how to help your child prepare."
 date: "2026-06-09"
 audience: "Year 8–9 parents in Victoria"
-generator: "secondary"
 published: true
 ---
 
@@ -21,7 +20,6 @@ In numeracy, students are expected to work with algebra, geometry, statistics, a
 
 In reading and writing, the demands are closer to what VCE will require. Texts are longer and more complex. The writing task expects a clear structure, controlled language, and developed ideas, not just a rough personal response.
 
-<!--GENERATOR-->
 
 ## How to read the proficiency levels at Year 9
 
@@ -61,8 +59,5 @@ Tuterly connects Melbourne families with tutors who understand the Victorian Cur
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
-Whether your child needs to close a gap before Year 10 or push into Exceeding territory before the test, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

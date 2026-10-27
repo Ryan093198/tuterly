@@ -54,8 +54,5 @@ A tutor closes that gap. They sit with your child, read the essay together, and 
 
 For students already scoring well, a tutor can push them from strong to exceptional. The difference between a 38 and a 43 in English often comes down to the sophistication of expression and depth of analysis. Both are trainable with the right guidance.
 
-[Find an English tutor near you](/tutoring) or [try a free practice worksheet](/worksheets) to get started.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -30,8 +30,5 @@ Check your target school's admissions or scholarship page directly, and do it fo
 
 Once you know which test your child is sitting, targeted preparation makes a real difference, but it needs to start early enough, ideally six months before. A [Tuterly](/tutoring) tutor experienced in scholarship prep builds a plan specific to the test format, and session reports show exactly which reasoning skills are developing. The platform's practice questions mirror the style of both EduTest and ACER, so your child arrives confident on test day.
 
-Start here: [Scholarship exam prep](/tutoring/scholarship-exam-prep) | [Find a tutor](/tutoring)
-
 ---
 
-Scholarship prep tutor in Melbourne? [See open positions](/tutor-jobs).

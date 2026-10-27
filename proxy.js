@@ -33,6 +33,23 @@ const MARKETING_PATH_PREFIXES = [
   "/get-started",
 ];
 
+// Paused while the Tuterly tutor marketplace is on hold (Oct 2026): the
+// site's only call to action is the Tuterly Study app, so these pages
+// send visitors to the home page. Temporary (307) so they can come back
+// by deleting entries here. Keep app/sitemap.js in step.
+const PAUSED_PREFIXES = [
+  "/directory",
+  "/maindirectory",
+  "/find-a-tutor",
+  "/get-started",
+  "/centres",
+  "/sample-report",
+  "/tutor-jobs",
+  "/tutoring-prices-melbourne",
+  "/practice-maths-tests-primary",
+];
+const PAUSED_EXACT = ["/tutors"];
+
 const APP_URL = "https://app.tuterly.com.au";
 const MARKETING_URL = "https://tuterly.com.au";
 
@@ -76,6 +93,16 @@ export async function proxy(request) {
         );
       }
     }
+  }
+
+  // Paused marketing pages go to the home page (the app). On the app
+  // domain they already bounced to the marketing domain above, or aren't
+  // marketing paths at all.
+  if (!isAppDomain && (PAUSED_EXACT.includes(pathname) || pathMatchesPrefix(pathname, PAUSED_PREFIXES))) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
+    url.search = "";
+    return NextResponse.redirect(url, 307);
   }
 
   // ── Supabase auth (existing behaviour, plus shared-domain cookies) ──

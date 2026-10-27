@@ -5,8 +5,8 @@ import { STUDY_APP } from "@/lib/study-app";
 
 // Tuterly Study blocks for the tutoring / SEO pages (suburbs, best-of,
 // online, prices, competitor comparisons). These pages keep their URLs,
-// titles and tutoring content; the app becomes the primary call to action
-// and the tutor options sit underneath as the second choice.
+// titles and tutoring content; since Oct 2026 the app is the only call to
+// action on them.
 
 // Goes in the hero, above the (now secondary) tutor buttons.
 export function AppHeroBlock({ placement, heading, sub }) {
@@ -22,9 +22,6 @@ export function AppHeroBlock({ placement, heading, sub }) {
         }
         style={{ margin: "0 0 22px" }}
       />
-      <p style={{ fontSize: 14.5, fontWeight: 600, color: c.navy, margin: "0 0 12px" }}>
-        Prefer a real tutor? Bayside Academics can help.
-      </p>
     </>
   );
 }

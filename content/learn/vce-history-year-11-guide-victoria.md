@@ -58,8 +58,5 @@ VCE History requires a very specific kind of teaching: someone who knows how VCA
 
 Tuterly connects Melbourne families with tutors experienced in VCE Humanities subjects. After every session, you can see exactly what was covered through the parent dashboard and session reports, so you always know whether your child is making progress on the skills that matter. The platform also includes targeted practice questions to keep your child building those essay and source analysis skills between sessions.
 
-Whether your child needs to get on top of SAC requirements or push toward the top of the grade, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

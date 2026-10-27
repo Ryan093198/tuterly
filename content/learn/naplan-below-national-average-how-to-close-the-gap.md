@@ -3,7 +3,6 @@ title: "Your child is below the national average in NAPLAN. Here's how to close 
 description: "The NAPLAN result that worries parents most is the one just below the national average. What it actually means, why it happens to capable students, and a practical plan to fix it."
 date: "2026-08-06"
 audience: "Victorian parents"
-generator: "all"
 published: true
 ---
 
@@ -25,7 +24,6 @@ That picture is the one a lot of Victorian families opened in July. Nothing on i
 
 That is the honest version: not a crisis, but not nothing, and cheapest to fix now.
 
-<!--GENERATOR-->
 
 ## Why this happens to students who are fine in class
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import {
   c,
@@ -8,12 +9,10 @@ import SampleReport from "@/components/marketing/SampleReport";
 import SavingsCalculator from "@/components/marketing/SavingsCalculator";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
 import TuterlyMethod from "@/components/marketing/TuterlyMethod";
-import EducourseCallout from "@/components/marketing/EducourseCallout";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const DIRECTORY_HREF = "/directory";
 const TITLE = "Private School Scholarship Exam Tutoring | Tuterly";
 const DESCRIPTION =
   "Online and in-person tutors for Year 7 and Year 9 private school scholarship exams - EduTest, ACER, and individual-school entry exams used by Melbourne's leading independent schools.";
@@ -93,14 +92,7 @@ export default function ScholarshipPrepPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Year 7 and Year 9 scholarship exams open doors to Melbourne&apos;s top private schools - and a meaningful fee reduction for the next six years. Tuterly connects families with tutors who&apos;ve prepared students for the EduTest, the ACER scholarship tests, and the individual-school entry exams that many schools run alongside.
             </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find a scholarship tutor →
-              </Link>
-              <a href="#sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See a sample report
-              </a>
-            </div>
+            <AppHeroBlock placement="scholarship_exam_prep_hero" />
           </Fade>
         </div>
       </section>
@@ -157,7 +149,6 @@ export default function ScholarshipPrepPage() {
         sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson - not just at the end of term."
       />
 
-      <EducourseCallout />
 
       {/* PRICING */}
       <section style={{ padding: "80px 24px", background: c.white }}>
@@ -179,21 +170,6 @@ export default function ScholarshipPrepPage() {
       </section>
 
       {/* GET STARTED CTA */}
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Ready to start scholarship prep?
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              No lock-in contracts. No agency markups. Browse tutors who&apos;ve prepared students for Melbourne&apos;s top private schools, message them directly, and start whenever you&apos;re ready.
-            </p>
-            <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started - free to sign up
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <MarketingFooter />
     </main>

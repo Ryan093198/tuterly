@@ -56,8 +56,5 @@ Specialist Maths is the subject where a good tutor makes the most visible differ
 
 Through the Tuterly parent dashboard, you receive a report after every session showing exactly what was covered and how your child is tracking. You do not have to wait until a SAC result to know whether things are going well. Between sessions, your child can continue building skills with targeted practice questions on the platform, keeping the momentum going across the week.
 
-Whether your child is trying to stay on top of the content or aiming for a study score that gives them real options in Year 12, [find a Specialist Maths tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

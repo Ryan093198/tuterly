@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import StudyAppCTA from "@/components/StudyAppCTA";
@@ -132,13 +131,6 @@ export default function ATARPlannerPage() {
                 vtac.edu.au
               </a>{" "}
               or directly on the university&apos;s course page before relying on these numbers for an enrolment decision.
-            </p>
-            <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.65, marginTop: 12 }}>
-              Want a real plan for the year ahead?{" "}
-              <Link href="/directory" style={{ color: c.tealDark, fontWeight: 600 }}>
-                Find a VCE tutor in our directory
-              </Link>
-              .
             </p>
           </Fade>
         </div>

@@ -74,8 +74,5 @@ Tuterly connects Melbourne families with tutors who know the selective entry pro
 
 Whether you are starting early in Year 5 or ramping up in Year 6, the right support makes the preparation more focused and less stressful for everyone.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

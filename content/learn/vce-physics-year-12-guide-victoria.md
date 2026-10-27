@@ -50,6 +50,3 @@ If you are at the "so what do I do?" stage, Tuterly connects Victorian students 
 
 The platform also includes targeted practice questions built around VCE content, which is useful both for SAC preparation and for building the exam technique that earns marks on written responses.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with VCE Physics experience.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

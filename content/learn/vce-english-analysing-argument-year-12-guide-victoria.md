@@ -56,8 +56,5 @@ If your child is working toward the October exam and Analysing Argument is a wea
 
 After every session, the parent dashboard shows you what was covered and where your child is progressing. Between sessions, targeted practice questions on the platform keep the skills sharp. You do not have to guess whether preparation is working.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see experienced VCE English tutors available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

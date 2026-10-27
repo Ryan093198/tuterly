@@ -110,14 +110,6 @@ export default function BestTutoringMelbournePage() {
               An honest look at your options. Most &quot;best tutoring&quot; articles online are written by tutoring companies recommending themselves - this one walks through every category fairly, what each is genuinely good at, and where each falls short. Pick what fits your family, not what fits a marketing budget.
             </p>
             <AppHeroBlock placement="best_tutoring_melbourne_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse Tuterly tutors →
-              </Link>
-              <Link href="/tutoring-prices-melbourne" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See pricing guide
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -216,21 +208,6 @@ export default function BestTutoringMelbournePage() {
         heading="What families say after making the switch."
       />
 
-      <section style={{ padding: "72px 24px", background: c.white }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Have a browse before you commit.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              You can see real tutors with their actual hourly rates in our directory - no signup, no enquiry form. Compare what&apos;s actually available before deciding which category suits your family.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="best_tutoring_melbourne_final" />
       <MarketingFooter />

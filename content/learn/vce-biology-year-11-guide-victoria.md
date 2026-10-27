@@ -52,8 +52,5 @@ VCE Biology is a subject where one-on-one guidance genuinely accelerates progres
 
 Tuterly connects Melbourne families with tutors who know the VCE Biology study design and can work through your child's actual SAC material with them. After every session, you'll see a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can keep building with targeted practice questions on the platform, so progress doesn't stall when the tutor logs off.
 
-Whether your child is finding Unit 1 harder than expected or is already thinking about maximising their score heading into Year 12, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

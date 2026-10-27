@@ -54,4 +54,3 @@ Find a VCE Methods tutor near you: [Glen Waverley](/tutoring/glen-waverley) | [M
 
 ---
 
-VCE Methods tutor? [See open positions](/tutor-jobs).

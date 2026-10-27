@@ -64,8 +64,5 @@ If your child is unsure which pathway fits, or if they have made their choice an
 
 Tuterly connects Melbourne families with tutors who know the VCAA curriculum in detail and can help Year 10 students build the foundations that Methods or Specialist demand, or make sure Further Maths students are set up to perform at their best. After every session you will see a report through the parent dashboard covering exactly what was worked on and where your child stands. Between sessions, targeted practice questions on the platform keep the momentum going.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

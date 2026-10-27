@@ -30,4 +30,3 @@ Online removes travel for the tutor, which widens the pool and keeps rates compe
 
 Start from the job, not the rate. For confidence-building and homework support at primary or junior-secondary level, the middle band is usually plenty. For VCE, selective-entry or scholarship prep, paying for a proven subject specialist is worth it, the stakes and the measurable payoff are higher.
 
-Then compare like with like: ask each option for its hourly rate and exactly what is included. For a fuller picture, see our [Melbourne tutoring prices guide](/tutoring-prices-melbourne), and our [best online tutoring in Victoria guide](/best-online-tutoring-victoria) for how the options compare across the state.

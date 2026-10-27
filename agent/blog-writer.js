@@ -271,14 +271,12 @@ const STUDY_APP_FACTS_BLOCK = `- An iPhone app for Years 7 to 10 maths (Victoria
 - Each question goes To fix, then Learning, then Mastered: a star for each similar question right, mastered at three stars (or "I've got it"). Then they can try a harder one. A Practice tab has Test any topic (a short test on any topic in their year), Fix my mistakes, Study notes (a one-page revision sheet) and a weekly review. Students can upload a whole test. XP, stars, a weekly streak and weekly goals.
 - Wrong answers get "Explain this": a short explanation of the step that went wrong.
 - Parents link with a code and see a weekly summary and test scores, not their child's photos. Tutors can link too and set snap goals.
-- - Price: a 1-week free trial, then $7.99 a week. Designed by Australian educators; topics follow the Victorian Curriculum 2.0. Students can also upload a whole school test (photos, a PDF or a Word document); the app finds each question, ticks the ones marked wrong and writes a fresh question on each.
-- ${STUDY_APP.stage === "live" ? "It is on the App Store." : "It is in a pilot and not on the App Store yet. Never say it can be downloaded now."}`;
+- Price: a 1-week free trial, then $7.99 a week. Designed by Australian educators; topics follow the Victorian Curriculum 2.0. Students can also upload a whole school test (photos, a PDF or a Word document); the app finds each question, ticks the ones marked wrong and writes a fresh question on each.
+- ${STUDY_APP.stage === "live" ? "It is free to download on the App Store." : "It is not on the App Store yet: say it is coming soon to the App Store. Never say it can be downloaded now."}`;
 
 const STUDY_APP_CTA_BLOCK = `## Turn the questions they get wrong into practice
 
-Got some of these wrong? Snap them in [{{STUDY_APP}}](/) and get a fresh version to practise until they're mastered. It works alongside a tutor or on its own.
-
-Prefer a real tutor? [Find a tutor near you](/tutoring) or [browse our tutor directory](/directory).`;
+Got some of these wrong? Snap them in [{{STUDY_APP}}](/) and get a fresh version to practise until they're mastered. It works alongside a tutor or on its own.`;
 
 // Claims a post must not make. Checked after writing; one retry with the
 // problems listed, then the post is dropped rather than published.
@@ -344,8 +342,8 @@ CTA STRUCTURE (at the end):
 
 ${STUDY_APP_CTA_BLOCK}
 
-- For other posts (English, science, primary, VCE, choosing a tutor), do not pitch the app. Keep the tutoring bridge instead: link to [Find a tutor near you](/tutoring) and [browse our tutor directory](/directory).
-- Always end with a tutor recruitment line: *Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*
+- For other posts (English, science, primary, VCE), end without a call to action of your own; the site adds the app card. The only call to action on the site is the ${STUDY_APP.name} app.
+- Never link to /directory, /find-a-tutor, /get-started, /tutor-jobs, /worksheets or /practice-maths-tests-primary, and never offer free worksheets, printable tests or a test builder: they are no longer on the site.
 
 FRONTMATTER FORMAT:
 ---

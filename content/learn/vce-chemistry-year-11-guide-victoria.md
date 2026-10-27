@@ -62,8 +62,5 @@ If your child is finding Unit 1 or 2 Chemistry hard going, or if they want to bu
 
 After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can keep working with targeted practice questions on the platform, so progress does not stop between tutoring appointments.
 
-Whether your child needs to close a gap in stoichiometry or push further into the content, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

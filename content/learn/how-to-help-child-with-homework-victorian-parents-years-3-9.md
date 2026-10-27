@@ -68,8 +68,5 @@ After every session, you receive a report through the parent dashboard covering 
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
-Whether your child needs to close a gap or get properly challenged, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

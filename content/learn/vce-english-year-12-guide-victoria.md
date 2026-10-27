@@ -62,8 +62,5 @@ This is true at both ends of the performance spectrum. A student struggling to p
 
 Tuterly connects Melbourne families with tutors who understand VCE English inside and out. After every session, you can see exactly what was worked on through the parent dashboard, so you are not left guessing whether things are improving. Between sessions, your child can continue building specific skills with targeted practice questions on the platform.
 
-Whether your child is finding Year 12 English overwhelming or wants to push their score higher, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -46,8 +46,5 @@ If you want a clearer picture of where your child actually stands, a Tuterly tut
 
 The platform also has targeted practice questions aligned to the Australian Curriculum at Year 10, so your child is working on the right material rather than generic revision.
 
-[Find a science tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 For more on what comes next, our VCE Biology, Chemistry, and Physics subject guides are worth reading before your child locks in their subject selections.
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

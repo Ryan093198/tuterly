@@ -3,7 +3,6 @@ title: "How many practice maths tests should my child do?"
 description: "A practical answer for parents: how many practice tests actually help before a maths test, when to do them, and why more is not always better."
 date: "2026-07-31"
 audience: "Parents"
-generator: "all"
 published: true
 ---
 
@@ -23,7 +22,6 @@ A workable rhythm for a school test two weeks away:
 - **One week out:** a second test, focused on whatever the first one exposed.
 - **Two or three days out:** a final full test under timed conditions.
 
-<!--GENERATOR-->
 
 ## The part most families skip
 
@@ -45,9 +43,8 @@ For younger students especially, one short test a week is plenty.
 
 ## Where to get them
 
-You can build a free practice test on any topic in seconds, with full worked solutions:
+In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question:
 
-- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
-Both are aligned to the Victorian Curriculum, so you can pick the exact topic their class is on.
+Topics follow the Victorian Curriculum, so they can pick the exact topic their class is on.

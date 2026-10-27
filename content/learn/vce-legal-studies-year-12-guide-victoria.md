@@ -52,6 +52,3 @@ At the "what do I actually do now?" moment, a tutor who knows the VCE Legal Stud
 
 The Tuterly parent dashboard shows you what was covered each session and what needs attention next. Session reports replace the guesswork of wondering whether the hour was useful. The platform also includes targeted practice questions aligned to the Units 3 and 4 study design, so practice between sessions stays focused.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with VCE Legal Studies experience in Melbourne.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

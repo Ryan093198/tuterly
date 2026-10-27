@@ -60,8 +60,5 @@ If your child is working hard but their SAC results are not reflecting it, or if
 
 Through the Tuterly parent dashboard, you receive a session report after every lesson covering exactly what was worked on and how your child is progressing. You do not have to rely on your child's summary of how it went. Targeted practice questions on the platform also let your child keep building skills between sessions, particularly around essay structure and legal terminology.
 
-Whether your child needs to close a gap before a SAC or develop the analytical depth to compete for strong scores in Year 12, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

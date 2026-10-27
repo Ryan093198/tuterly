@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { APP_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import "@/components/brand/brand.css";
@@ -11,9 +10,9 @@ import "@/components/brand/brand.css";
 // button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
   { href: "/", label: STUDY_APP.name },
-  { href: "/worksheets", label: "Free worksheets" },
+  { href: "/parents", label: "For parents" },
   { href: "/practice-maths-tests-secondary", label: "Practice tests" },
-  { href: "/atar-planner", label: "ATAR planner" },
+  { href: "/worksheets", label: "Maths by topic" },
   { href: "/learn", label: "Learn" },
 ];
 
@@ -36,7 +35,6 @@ export default function MarketingNav() {
             {LINKS.map((l) => (
               <Link key={l.href} href={l.href} className="tb-nav__link">{l.label}</Link>
             ))}
-            <a href={APP_URL} className="tb-nav__link">Log in</a>
           </div>
           <StudyAppCTA variant="nav" placement="nav" />
           <details className="tb-nav__menu">
@@ -47,8 +45,7 @@ export default function MarketingNav() {
               {LINKS.map((l) => (
                 <Link key={l.href} href={l.href} className="tb-nav__link">{l.label}</Link>
               ))}
-              <a href={APP_URL} className="tb-nav__link">Log in</a>
-            </div>
+              </div>
           </details>
         </div>
       </div>

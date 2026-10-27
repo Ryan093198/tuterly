@@ -32,4 +32,3 @@ Most online tutoring companies look similar from the homepage. The differences s
 
 You are listening for two things: substance, and how readily it comes. A company that answers all eight clearly and quickly is telling you it has nothing to hide. Hesitation, vague answers, or "fill in the form and we will discuss it" usually means the honest answer is not the one they want to lead with.
 
-If you would like a head start, our [best online tutoring in Melbourne guide](/best-online-tutoring-melbourne) applies these questions across the main types of provider, and you can [browse Tuterly tutors](/directory) with their rates and subjects visible up front.

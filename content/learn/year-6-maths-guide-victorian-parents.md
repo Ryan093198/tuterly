@@ -56,6 +56,3 @@ If your child has a specific gap, like fractions or order of operations, a few t
 
 This is the kind of thing Tuterly is built for. When you find a tutor through Tuterly, every session comes with a written report so you know exactly what was covered and what to practise next. The parent dashboard keeps everything in one place, and the platform includes targeted practice questions aligned to the Victorian Curriculum, so your child is working on the right material, not just more material.
 
-If you want to get ahead of the Year 7 transition, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with experience in upper primary and Year 7 maths.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

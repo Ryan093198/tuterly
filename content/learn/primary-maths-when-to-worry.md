@@ -42,4 +42,3 @@ On the other end, a child who finds everything too easy and finishes before the 
 
 ---
 
-*Are you a primary maths tutor? [See open positions](/tutor-jobs).*

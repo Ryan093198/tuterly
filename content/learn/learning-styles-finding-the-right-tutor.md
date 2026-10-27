@@ -54,8 +54,5 @@ If none of that is true after a few weeks, the issue is usually the match, not t
 
 It's not about finding a "visual" tutor or a "kinesthetic" tutor. It's about finding someone who pays attention, adjusts their approach, and keeps you in the loop.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

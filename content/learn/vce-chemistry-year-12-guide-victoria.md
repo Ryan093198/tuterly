@@ -54,6 +54,3 @@ After every session you receive a written report through the parent dashboard sh
 
 Whether your child needs to patch gaps before a SAC, build exam technique for October, or push from a 38 to a 43, a tutor who knows VCE Chemistry makes a measurable difference in the final year.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find a VCE Chemistry specialist in Melbourne.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

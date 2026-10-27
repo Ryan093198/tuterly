@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import SampleReport from "@/components/marketing/SampleReport";
-import EducourseCallout from "@/components/marketing/EducourseCallout";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -95,14 +95,7 @@ export default function ScholarshipTestPrepPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Year 7 and Year 9 scholarship exams open doors to Melbourne&apos;s top private schools - and a meaningful fee reduction for the next six years. Tuterly connects families with tutors who&apos;ve prepared students for both major test formats and the school-specific entry exams that often sit alongside them. We pair 1-on-1 tutoring with structured daily practice through Educourse, our sister platform built specifically for this niche.
             </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find a scholarship tutor →
-              </Link>
-              <Link href="/sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See a sample report
-              </Link>
-            </div>
+            <AppHeroBlock placement="scholarship_test_prep_hero" />
           </Fade>
         </div>
       </section>
@@ -184,23 +177,7 @@ export default function ScholarshipTestPrepPage() {
         sub="What a Year 6 scholarship-prep parent receives after every session. Topic confidence on the four exam sections, areas to focus on for the week ahead, and practice questions at three difficulty tiers."
       />
 
-      <EducourseCallout />
 
-      <section style={{ padding: "72px 24px", background: c.white }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Start scholarship preparation.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse Tuterly tutors who&apos;ve prepared students for ACER, EduTest, and individual-school entry exams. Pair with Educourse for daily structured practice.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Find a tutor →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <MarketingFooter />
     </main>

@@ -62,14 +62,6 @@ export default function TutorDoctorAlternativePage() {
               Tutor Doctor and Tuterly are built around two different ideas. Tutor Doctor is a global franchise: local franchisees run the matching, employ the tutors as contractors, and handle scheduling. Tuterly is a platform: independent tutors run their own practices and we provide the tooling. Both have their place - this page is an honest comparison.
             </p>
             <AppHeroBlock placement="tutor_doctor_alternative_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Browse Tuterly tutors →
-              </Link>
-              <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                How Tuterly works
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -186,21 +178,6 @@ export default function TutorDoctorAlternativePage() {
 
       <AppLowerCostSection competitor="Tutor Doctor" placement="tutor_doctor_alternative_lower_cost" />
 
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Have a browse before you commit.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              See real Tuterly tutors with their rates, subjects, and year levels in our directory. No enquiry form, no callback queue.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="tutor_doctor_alternative_final" />
       <MarketingFooter />

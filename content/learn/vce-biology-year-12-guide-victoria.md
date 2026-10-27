@@ -52,8 +52,5 @@ Tuterly connects Melbourne families with experienced VCE Biology tutors who work
 
 The platform also includes targeted practice questions aligned to the VCAA Biology study design, so your child is practising in the right format, not just reviewing content in the abstract.
 
-[Find a VCE Biology tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

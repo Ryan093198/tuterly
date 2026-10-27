@@ -3,7 +3,6 @@ title: "Your child's NAPLAN results were lower than expected. What now?"
 description: "A calm, practical guide for Victorian parents whose child came back Developing or Needs additional support, and what actually helps from here."
 date: "2026-08-04"
 audience: "Victorian parents"
-generator: "all"
 published: true
 ---
 
@@ -23,7 +22,6 @@ The reason these matter more in numeracy and reading than elsewhere is compoundi
 
 The reassuring flip side is that gaps found early are usually small and specific. It is rarely "bad at maths". It is more often three or four sub-skills that never quite landed.
 
-<!--GENERATOR-->
 
 ## Do this before anything else: find out which skills
 
@@ -57,15 +55,12 @@ Once you know the two or three real gaps, the fix is not mysterious. It is targe
 
 Consider a tutor if any of these are true: the gap is in numeracy or reading and sits at Developing or below; you have tried at home and it is creating conflict rather than progress; or your child has decided they are "bad at maths", because that belief does more long-term damage than the gap itself.
 
-## Start with a free practice test
+## Start with a practice test
 
-Pick the topic the report flagged and build a free, printable test with full worked solutions:
+In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question. Pick the topic the report flagged:
 
-- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
-
-If you would rather have someone else drive it, [browse our tutor directory](/directory) to see who is available, with rates shown upfront.
 
 Related reading: [how to read your child's NAPLAN results](/learn/how-to-read-naplan-results-victorian-parents).

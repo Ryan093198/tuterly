@@ -58,8 +58,5 @@ A tutor who knows the VCE English study design and the VCAA marking criteria can
 
 Tuterly has VCE English tutors across Melbourne who work with students on the exact skills tested in SACs and the exam. After every session, you receive a summary through the parent dashboard showing what was covered and how your child is progressing. Between sessions, students can keep building with targeted practice questions on the platform.
 
-Whether your child needs to close a gap before the next SAC or wants to push from a B to an A range, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

@@ -56,6 +56,3 @@ If you have identified a specific gap, fractions keep coming up wrong, or writin
 
 The platform also includes targeted practice questions aligned to the Year 5 content areas tested in NAPLAN, so your child gets the right kind of repetition between sessions.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to get started.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

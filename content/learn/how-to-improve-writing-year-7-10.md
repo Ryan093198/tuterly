@@ -44,8 +44,5 @@ A tutor who understands the Victorian English curriculum can do something that c
 
 For students who already write well, a tutor can push them further. Sharper arguments, more sophisticated language, the kind of writing that stands out in Year 10 and sets them up for VCE.
 
-[Find an English tutor near you](/tutoring) or [try a free practice worksheet](/worksheets) to see where your child's writing stands.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

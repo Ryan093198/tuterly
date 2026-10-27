@@ -50,6 +50,3 @@ If you are starting to think about support, Year 10 is exactly the right moment.
 
 Tuterly's parent dashboard gives you a clear view of what is covered each session, and the written session reports mean you are never guessing whether progress is being made. The platform includes targeted practice questions aligned to the kinds of analytical tasks your child will meet in VCE English.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with experience in both Year 10 and VCE English.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

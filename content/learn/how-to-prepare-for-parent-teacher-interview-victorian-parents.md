@@ -70,6 +70,3 @@ If the interview confirmed something you already suspected, or raised something 
 
 After every session, you get a written report through the parent dashboard showing what was covered and what to practise next. You're not left guessing whether it's working. The platform also includes targeted practice questions so your child is drilling the right material, not just doing more of everything.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who's available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

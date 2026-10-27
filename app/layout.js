@@ -3,7 +3,6 @@ import Script from "next/script";
 import { Inter, Nunito } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavProgress from "../components/NavProgress";
-import { FloatingEnquireButton } from "../components/marketing/EnquireTriggers";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
@@ -103,7 +102,6 @@ export default function RootLayout({ children }) {
         </Suspense>
         {children}
         <Suspense fallback={null}>
-          <FloatingEnquireButton />
         </Suspense>
         <SpeedInsights />
       </body>

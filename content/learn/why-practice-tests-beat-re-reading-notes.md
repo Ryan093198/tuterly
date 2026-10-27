@@ -3,7 +3,6 @@ title: "Why practice tests beat re-reading notes"
 description: "Re-reading feels like studying but rarely moves a maths mark. Here is the difference, and what to do instead."
 date: "2026-07-31"
 audience: "Parents"
-generator: "all"
 published: true
 ---
 
@@ -21,7 +20,6 @@ Answering questions without the notes open. That is it. Retrieval practice, some
 
 There is a useful rule of thumb here. If it feels easy, it probably is not working. Productive study should feel effortful.
 
-<!--GENERATOR-->
 
 ## What this looks like in practice
 
@@ -40,7 +38,6 @@ Retrieval practice works best once your child has actually been taught the mater
 
 ## Getting started
 
-Build a free practice test on any topic, with full worked solutions for the marking step:
+In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question:
 
-- [Primary maths practice tests, Years 3 to 6](/practice-maths-tests-primary)
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)

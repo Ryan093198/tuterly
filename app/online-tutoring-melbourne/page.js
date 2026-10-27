@@ -100,14 +100,6 @@ export default function OnlineTutoringPage() {
               Online tutoring used to be a fallback option. It isn&apos;t any more. For most subjects from Year 7 up, an online 1-on-1 session is as effective as in-person - and the access to a wider tutor pool often makes it better. Here&apos;s the honest version of how it works, when it&apos;s great, and when in-person is still the right call.
             </p>
             <AppHeroBlock placement="online_tutoring_melbourne_hero" />
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find an online tutor →
-              </Link>
-              <Link href="/sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See a sample report
-              </Link>
-            </div>
           </Fade>
         </div>
       </section>
@@ -193,21 +185,6 @@ export default function OnlineTutoringPage() {
         </div>
       </section>
 
-      <section style={{ padding: "72px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
-          <Fade>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Find an online tutor.
-            </h2>
-            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse experienced Tuterly tutors who offer online sessions across every subject and year level.
-            </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
-            </Link>
-          </Fade>
-        </div>
-      </section>
 
       <AppCtaBand placement="online_tutoring_melbourne_final" />
       <MarketingFooter />

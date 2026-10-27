@@ -50,8 +50,5 @@ Every session comes with a written report through the parent dashboard, so you c
 
 The goal isn't just to survive the school year. It's to build real skills that close the gap.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with the right experience for your child.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

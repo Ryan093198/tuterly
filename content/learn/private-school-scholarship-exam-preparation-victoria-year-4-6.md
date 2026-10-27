@@ -52,8 +52,5 @@ If you are beginning this process or want to work out where your child actually 
 
 After every session, you receive a detailed report through the parent dashboard covering what was worked on and how your child is progressing across each exam component. You will not be left wondering whether the preparation is on track. Between sessions, your child can continue building skills with targeted practice questions on the platform, so momentum carries through the week.
 
-Whether your child is a natural high achiever who needs to be stretched, or a capable student who needs structured support to perform at their best, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to get started.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

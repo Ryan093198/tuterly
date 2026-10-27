@@ -56,6 +56,3 @@ For students who are ahead, a tutor with VCE science experience can introduce Ye
 
 Tuterly's parent dashboard shows you exactly what was covered each session and what your child should practise before the next one. You are not left guessing whether the sessions are doing anything. The platform also includes targeted practice questions mapped to the Victorian Curriculum, so the work between sessions is specific rather than generic.
 
-[Find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to find someone with experience in Year 9 and VCE science in Victoria.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

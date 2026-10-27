@@ -60,8 +60,5 @@ Year 11 is exactly the right time to get structured support in place, before the
 
 Through the Tuterly parent dashboard, you get a report after every session covering what was covered and how your child is tracking. Your child can also work on targeted practice questions on the platform between sessions, keeping momentum going through the week.
 
-Whether your child needs to close a gap in a tough subject or get pushed further in one they are excelling at, [find a tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available.
-
 ---
 
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*

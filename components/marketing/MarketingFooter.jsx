@@ -1,44 +1,36 @@
 import Link from "next/link";
-import { APP_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
 import { Logo } from "./MarketingNav";
 import "@/components/brand/brand.css";
 
-// Shared footer. Every link the footer and old nav carried is still here:
-// the tutoring links (directory, find a local tutor, areas we serve, apply
-// as a tutor, ...) sit in the Tutoring group so Google keeps a crawl path
-// to the suburb pages and the directory.
+// Shared footer. Since Oct 2026 the site's only call to action is the
+// Tuterly Study app, so the footer carries no tutor sign-up, directory or
+// tutor-job links (those pages redirect home, see proxy.js). The tutoring
+// guides stay linked so Google keeps a crawl path to them.
 const GROUPS = [
   {
     title: STUDY_APP.name,
     links: [
       { href: "/", label: `About ${STUDY_APP.name}` },
       { href: "/parents", label: "For parents" },
-      { href: "/worksheets", label: "Free worksheets" },
-      { href: "/practice-maths-tests-secondary", label: "Secondary practice tests" },
-      { href: "/practice-maths-tests-primary", label: "Primary practice tests" },
-      { href: "/atar-planner", label: "ATAR planner" },
+      { href: "/practice-maths-tests-secondary", label: "Practice tests" },
+      { href: "/worksheets", label: "Maths by topic" },
       { href: "/learn", label: "Learn" },
+      { href: "/atar-planner", label: "ATAR planner" },
     ],
   },
   {
-    title: "Tutoring",
+    title: "Guides",
     links: [
-      { href: "/directory", label: "Find a Tutor" },
-      { href: "/find-a-tutor", label: "Find a local tutor" },
-      { href: "/tutoring", label: "Areas we serve" },
+      { href: "/tutoring", label: "Tutoring in Melbourne" },
       { href: "/best-online-tutoring-melbourne", label: "Online tutoring" },
       { href: "/vce-tutoring", label: "VCE tutoring" },
-      { href: "/tutoring-prices-melbourne", label: "Tutoring prices" },
-      { href: "/tutors", label: "Apply as a Tutor" },
-      { href: "/tutors/blog", label: "Tutor Blog" },
-      { href: "https://baysideacademics.com.au", label: "Bayside Academics", external: true },
+      { href: "/cluey-alternative", label: "Cluey alternative" },
     ],
   },
   {
     title: "Tuterly",
     links: [
-      { href: APP_URL, label: "Log in", external: true },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],
