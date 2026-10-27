@@ -354,7 +354,7 @@ function WaitlistForm({ kind, big, dark, compact, btn, placement, pathname, onSu
     kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Get notified";
   const intro =
     kind === "pilot"
-      ? "Pilot spots are limited. Leave your email and we'll be in touch if one opens, and when the app launches."
+      ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? "It's iPhone only for now. We'll email you once when Android is ready."
         : "Get notified when it launches. We'll email you once, when it's on the App Store.";

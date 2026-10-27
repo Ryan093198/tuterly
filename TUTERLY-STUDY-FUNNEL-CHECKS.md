@@ -52,3 +52,13 @@ rewrite to /parents, so Google saw the /parents page there.)
 - The blog writer was dry-run against a stub API: seed topics reach the picker, the facts and
   honesty rules reach the writer, and a draft with "40%" / "improve their marks" was rejected
   and rewritten.
+
+## Independent copy review
+A separate reviewer checked the new copy against the app spec and the honesty rules (maths
+examples verified: x = 13, c = 6, x = −5). Fixed after review: the pilot form now says the
+pilot is with Bayside students; photo statements mention AI processing; the waitlist privacy
+wording names service providers; no forward-looking app price; iPad answered in the FAQ;
+parent setup says they install and sign in; the $29 test-builder price is labelled as separate
+from the app; the PDF footer no longer implies the app is downloadable now.
+Still to confirm before going live: that the TestFlight pilot is actually running (the copy
+says it is), and `priceLine` plus the "Download free" label once pricing is set.

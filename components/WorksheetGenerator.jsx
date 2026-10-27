@@ -1048,7 +1048,7 @@ function FullTestUpsell({ onStart }) {
         Build their first test free &rarr;
       </button>
       <p style={{ ...pMutedStyle, fontSize: 13, marginTop: 12 }}>
-        Free for 7 days, then $29/month. Cancel anytime.
+        Tuterly test builder (separate from the app): free for 7 days, then $29/month. Cancel anytime.
       </p>
     </div>
   );

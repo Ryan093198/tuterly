@@ -230,7 +230,7 @@ export default async function LearnPost({ params }) {
                 Build their first test free &rarr;
               </Link>
               <p style={{ fontSize: 13, color: c.textLight, marginTop: 12 }}>
-                Free for 7 days, then $29/month. Cancel anytime.
+                Tuterly test builder (separate from the app): free for 7 days, then $29/month. Cancel anytime.
               </p>
             </div>
           </Fade>

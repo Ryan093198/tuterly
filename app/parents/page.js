@@ -88,7 +88,7 @@ export default function ParentsPage() {
             <div style={card}>
               <h3 style={{ fontSize: 18, fontWeight: 700, color: c.navy, margin: "0 0 14px" }}>You don’t see</h3>
               <List muted items={[
-                "The photos of their work. Those stay private to your child and any tutor they link.",
+                "The photos of their work. Those stay private to your child and any tutor they link (our AI service reads them to solve the question).",
                 "Every individual question. You see topics and scores instead.",
               ]} />
               <p style={{ fontSize: 14.5, lineHeight: 1.65, color: c.textLight, margin: "16px 0 0" }}>
@@ -107,7 +107,7 @@ export default function ParentsPage() {
           <div className="pp-3" style={{ marginTop: 28 }}>
             <Step n="1" title="Your child signs up">They create their own account on their iPhone and pick their year level (7 to 10).</Step>
             <Step n="2" title="They share a code">In Settings they find a 6-character code, or invite you by email.</Step>
-            <Step n="3" title="You see the summary">Enter the code in the app and you’ll see their weekly summary and topic scores.</Step>
+            <Step n="3" title="You see the summary">Install the app on your own iPhone, sign in, and enter the code. You’ll then see their weekly summary and topic scores.</Step>
           </div>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: c.textLight, margin: "24px 0 0", maxWidth: 760 }}>
             {live

@@ -190,7 +190,7 @@ export default function SecondaryPracticeTestsPage() {
           <Link href="/get-started" style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.ink, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 14px rgba(15,27,45,0.18)" }}>
             Build their first test free &rarr;
           </Link>
-          <p style={{ fontSize: 13, color: c.textLight, marginTop: 12 }}>Free for 7 days, then $29/month. Cancel anytime.</p>
+          <p style={{ fontSize: 13, color: c.textLight, marginTop: 12 }}>Tuterly test builder (separate from the app): free for 7 days, then $29/month. Cancel anytime.</p>
           <p style={{ fontSize: 14, color: c.textLight, marginTop: 20 }}>
             Younger student?{" "}
             <Link href="/practice-maths-tests-primary" style={{ color: c.tealDeep, fontWeight: 600, textDecoration: "none" }}>

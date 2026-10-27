@@ -195,7 +195,7 @@ export default function StudyLanding() {
                 Your child gives you a 6-character code from their settings. They can remove the link at any time.
               </Point>
               <Point title="Progress, not photos">
-                You see topics and scores, not every photo of their work. The photos stay private to your child and any tutor they link.
+                You see topics and scores, not every photo of their work. The photos stay private to your child and any tutor they link (our AI service reads them to solve the question).
               </Point>
             </ul>
           </div>
@@ -227,7 +227,7 @@ export default function StudyLanding() {
                     About ${PRICING.secondaryHourlyLow} to ${PRICING.secondaryHourlyHigh} an hour for Years 7 to 10 in Melbourne (<Link href="/tutoring-prices-melbourne" style={{ color: c.tealDark }}>see our price guide</Link>).
                   </td>
                   <td>
-                    {live ? STUDY_APP.priceLine : "Free during the pilot. Pricing is set after the pilot, and we're aiming for a small fraction of the cost of one session a month."}
+                    {live ? STUDY_APP.priceLine : "Free during the pilot. Pricing will be set after the pilot."}
                   </td>
                 </tr>
                 <tr>
@@ -402,7 +402,7 @@ function PhoneMockup() {
           <div style={{ border: `1px solid rgba(10,186,181,0.35)`, background: c.tealPale, borderRadius: 16, padding: 14 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 0.8, margin: "0 0 8px" }}>Try a similar one</p>
             <p style={{ fontSize: 13, lineHeight: 1.55, color: c.text, margin: 0 }}>
-              Mia’s phone plan costs a third of <TeX>{"(c+6)"}</TeX> dollars a week. Leo’s costs a quarter of <TeX>{"(3c-2)"}</TeX>. When do they pay the same?
+              Mia’s phone plan costs a third of <TeX>{"(c+6)"}</TeX> dollars a week. Leo’s costs a quarter of <TeX>{"(3c-2)"}</TeX> dollars. For what value of <TeX>c</TeX> do they pay the same?
             </p>
             <div style={{ marginTop: 12, background: c.navy, borderRadius: 10, padding: "10px 12px", fontSize: 13, fontWeight: 600, color: c.white, textAlign: "center" }}>Answer it</div>
           </div>

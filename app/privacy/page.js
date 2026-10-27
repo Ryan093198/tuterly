@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
               level if you give one, and which page you signed up on. We use
               it to send one confirmation email and to tell you when the app
               is available (or when a pilot spot opens, if you asked about the
-              pilot). We don&apos;t share it with anyone. Reply to any of
+              pilot). We don&apos;t sell it or share it, apart from the service providers that store it and send our emails. Reply to any of
               these emails, or email{" "}
               <a
                 href="mailto:learning@baysideacademics.com.au"
