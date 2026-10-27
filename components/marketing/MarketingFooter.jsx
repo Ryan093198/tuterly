@@ -12,7 +12,8 @@ export default function MarketingFooter() {
           <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
         </div>
-        <div style={{ display: "flex", gap: 16 }}>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <Link href="/find-a-tutor" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Find a local tutor</Link>
           <Link href="/tutoring" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
           <Link href="/best-online-tutoring-melbourne" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Online tutoring</Link>
           <Link href="/learn" style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Learn</Link>

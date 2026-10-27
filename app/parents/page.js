@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ContactCTA from "@/components/marketing/ContactCTA";
 import Testimonials from "@/components/marketing/Testimonials";
+import FindTutorButton from "@/components/FindTutorButton";
 
 // ─────────────────────────────────────────────────────────────────────────
 // Tuterly parents landing — v2 "evolved teal" identity.
@@ -939,6 +940,11 @@ export default function ParentsLanding() {
             <p style={{ marginTop: 18, textAlign: "center" }}>
               <Link href="/worksheets" style={{ fontSize: 14.5, color: c.tealDeep, fontWeight: 600, textDecoration: "none" }}>See every Year 3–10 topic →</Link>
             </p>
+            <p style={{ marginTop: 10, textAlign: "center" }}>
+              <FindTutorButton source="parents_page" style={{ background: "none", border: "none", padding: 0, fontSize: 14.5, color: c.tealDeep, fontWeight: 600 }}>
+                Find a local tutor →
+              </FindTutorButton>
+            </p>
           </Fade>
         </div>
       </section>
@@ -981,6 +987,7 @@ export default function ParentsLanding() {
             <div style={{ width: 24, height: 24, borderRadius: 7, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: c.tealBright, fontFamily: serif }}>t</div>
             <span style={{ fontFamily: serif, fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.45)" }}>tuterly</span>
           </div>
+          <Link href="/find-a-tutor?source=parents_page" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Find a local tutor</Link>
           <Link href="/tutoring" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Areas we serve</Link>
           <a href="https://baysideacademics.com.au" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Bayside Academics</a>
           <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>

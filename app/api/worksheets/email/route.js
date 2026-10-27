@@ -36,6 +36,13 @@ export async function POST(request) {
     last_seen_at: new Date().toISOString(),
   };
   if (yearLevel) upsertRow.year_level = yearLevel;
+  // Marketing consent (Spam Act): only recorded when ticked. An unticked
+  // resubmission never clears an earlier opt-in; unsubscribes are handled
+  // by the unsubscribe link, not by the gate.
+  if (body?.marketing_opt_in === true) {
+    upsertRow.marketing_opt_in = true;
+    upsertRow.marketing_opt_in_at = new Date().toISOString();
+  }
 
   const { error } = await admin
     .from("worksheet_email_signups")

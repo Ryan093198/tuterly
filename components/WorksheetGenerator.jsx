@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
+import TutorRequestCard from "@/components/TutorRequestCard";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -13,6 +14,8 @@ import { readJsonOrFallback } from "@/lib/practice-client";
 // Topic data is pre-rendered server-side (see app/worksheets/page.js)
 // so the dropdown is instant.
 const STORAGE_KEY = "tuterly:worksheet_email";
+// Child's year from the gate, used to prefill the "Find a local tutor" form.
+const YEAR_STORAGE_KEY = "tuterly:worksheet_year";
 // Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
 // worksheet, opened a worked solution, or downloaded the PDF) rather than the
 // instant the worksheet paints - a modal thrown over the thing they just
@@ -74,6 +77,8 @@ export default function WorksheetGenerator({
   const [emailModalOpen, setEmailModalOpen] = useState(false);
   const [modalEmailInput, setModalEmailInput] = useState("");
   const [modalYearInput, setModalYearInput] = useState(defaultYear);
+  // Marketing consent (Spam Act). Unticked by default; only these signups get emailed.
+  const [modalMarketingOptIn, setModalMarketingOptIn] = useState(false);
 
   const [yearLevel, setYearLevel] = useState(defaultYear);
   // Topic-specific landing pages preselect a curriculum code. We seed
@@ -204,12 +209,14 @@ export default function WorksheetGenerator({
         body: JSON.stringify({
           email: modalEmailInput,
           year_level: modalYearInput,
+          marketing_opt_in: modalMarketingOptIn,
         }),
       });
       const data = await readJsonOrFallback(res);
       if (!res.ok) throw new Error(data?.error || "Could not save email.");
       try {
         window.localStorage.setItem(STORAGE_KEY, modalEmailInput);
+        window.localStorage.setItem(YEAR_STORAGE_KEY, modalYearInput);
       } catch {}
       setEmail(modalEmailInput);
       setEmailSaved(true);
@@ -469,6 +476,11 @@ export default function WorksheetGenerator({
 
   return (
     <div style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
+      {/* Returning worksheet users (email on file) see the tutor offer
+          up top. Once a worksheet is generated it moves under the result. */}
+      {emailSaved && !worksheet && (
+        <TutorRequestCard source="worksheet" initialYear={yearLevel} style={{ marginBottom: 16 }} />
+      )}
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
@@ -586,6 +598,12 @@ export default function WorksheetGenerator({
               </div>
             </div>
 
+            <TutorRequestCard
+              source="worksheet"
+              initialYear={worksheet.yearLevel}
+              style={{ marginBottom: 20 }}
+            />
+
             <div style={worksheetBodyStyle}>
               <MarkdownReport content={worksheet.content} />
             </div>
@@ -609,6 +627,8 @@ export default function WorksheetGenerator({
         <EmailGateModal
           email={modalEmailInput}
           year={modalYearInput}
+          marketingOptIn={modalMarketingOptIn}
+          onMarketingOptInChange={setModalMarketingOptIn}
           yearLevels={years}
           pending={emailPending}
           error={emailError}
@@ -653,6 +673,8 @@ export default function WorksheetGenerator({
 function EmailGateModal({
   email,
   year,
+  marketingOptIn,
+  onMarketingOptInChange,
   yearLevels,
   pending,
   error,
@@ -745,6 +767,26 @@ function EmailGateModal({
                 </option>
               ))}
             </select>
+          </label>
+          <label
+            style={{
+              display: "flex",
+              gap: 10,
+              alignItems: "flex-start",
+              fontSize: 13,
+              lineHeight: 1.5,
+              color: c.textLight,
+              cursor: "pointer",
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={!!marketingOptIn}
+              onChange={(e) => onMarketingOptInChange(e.target.checked)}
+              disabled={pending}
+              style={{ width: 16, height: 16, margin: "2px 0 0", flex: "none", accentColor: c.teal }}
+            />
+            <span>Send me occasional learning tips and offers from Tuterly</span>
           </label>
         </div>
 

@@ -19,6 +19,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import ContactCTA from "@/components/marketing/ContactCTA";
 import Testimonials from "@/components/marketing/Testimonials";
+import FindTutorButton from "@/components/FindTutorButton";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
@@ -95,8 +96,15 @@ export default async function SuburbPage({ params }) {
                 `Finding the right tutor in ${data.name} shouldn't be hard. Tuterly connects you with experienced tutors who know the curriculum and deliver results you can actually see.`}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                Find a tutor in {data.name} →
+              <FindTutorButton
+                source="suburb_page"
+                initialSuburb={data.name}
+                style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, border: "none", display: "inline-block" }}
+              >
+                Find a tutor near you
+              </FindTutorButton>
+              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+                Browse tutors
               </Link>
               <a href="#sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 See a sample report
@@ -247,9 +255,18 @@ export default async function SuburbPage({ params }) {
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
               No lock-in contracts. No agency markups. Browse tutors, message them directly, and start whenever you&apos;re ready.
             </p>
-            <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Get started - free to sign up
-            </Link>
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+              <FindTutorButton
+                source="suburb_page"
+                initialSuburb={data.name}
+                style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, border: "none" }}
+              >
+                Find a tutor near you
+              </FindTutorButton>
+              <Link href={DIRECTORY_HREF} style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+                Get started - free to sign up
+              </Link>
+            </div>
           </Fade>
         </div>
       </section>

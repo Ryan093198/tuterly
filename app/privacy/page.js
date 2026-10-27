@@ -19,7 +19,7 @@ export const metadata = {
   },
 };
 
-const lastUpdated = "May 2026";
+const lastUpdated = "October 2026";
 
 export default function PrivacyPolicy() {
   return (
@@ -119,6 +119,33 @@ export default function PrivacyPolicy() {
             </ul>
           </Section>
 
+          <Section title="Finding a tutor">
+            <p>
+              If you ask us to find you a tutor, we share the details you give
+              us (your name, mobile, email, your child&apos;s first name and
+              year level, subjects, suburb and the times that suit) with up to
+              3 tutoring centres near you that use Tuterly, so they can contact
+              you about tutoring. Centres only see your contact details if they
+              choose to get in touch. We don&apos;t share them with anyone
+              else. To have your details deleted, email{" "}
+              <a
+                href="mailto:learning@baysideacademics.com.au"
+                className="text-brand hover:text-brand-dark underline"
+              >
+                learning@baysideacademics.com.au
+              </a>
+              .
+            </p>
+            <p>
+              Giving us your email for a free worksheet doesn&apos;t mean
+              you&apos;ve asked for a tutor: we only share details when you
+              fill in the &quot;Find a local tutor&quot; form and tick the
+              consent box. We only send learning tips and offers to people who
+              tick the box asking for them, and every email has an unsubscribe
+              link.
+            </p>
+          </Section>
+
           <Section title="AI processing">
             <p>
               Tutor notes, session photos, audio, and uploaded resources are
@@ -199,6 +226,19 @@ export default function PrivacyPolicy() {
               authority to enter student information into the platform. If you
               believe a student's data has been entered without consent, contact
               us and we will investigate and remove it.
+            </p>
+          </Section>
+
+          <Section title="Credits">
+            <p>
+              Suburb locations: GeoNames (
+              <a
+                href="https://www.geonames.org"
+                className="text-brand hover:text-brand-dark underline"
+              >
+                geonames.org
+              </a>
+              ), CC BY 4.0.
             </p>
           </Section>
 
