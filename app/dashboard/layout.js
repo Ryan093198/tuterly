@@ -111,15 +111,18 @@ export default async function DashboardLayout({ children }) {
   }
 
   return (
-    <DashboardShell
-      navItems={navItems}
-      user={{
-        full_name: profile?.full_name ?? user.email,
-        email: profile?.email ?? user.email,
-      }}
-    >
-      {children}
-    </DashboardShell>
+    // Inter for the logged-in product (see .app-ui in globals.css).
+    <div className="app-ui contents">
+      <DashboardShell
+        navItems={navItems}
+        user={{
+          full_name: profile?.full_name ?? user.email,
+          email: profile?.email ?? user.email,
+        }}
+      >
+        {children}
+      </DashboardShell>
+    </div>
   );
 }
 

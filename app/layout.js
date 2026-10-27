@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Inter, Nunito } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavProgress from "../components/NavProgress";
 import { FloatingEnquireButton } from "../components/marketing/EnquireTriggers";
@@ -13,6 +13,14 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// The Tuterly Study app's typeface, for the marketing site.
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -72,7 +80,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${nunito.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

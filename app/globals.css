@@ -7,35 +7,55 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --muted: #6b7280;
-  --border: #e4e4e7;
+  /* Tuterly Study app palette (light). Existing token names are kept so
+   * every Tailwind class (bg-brand, text-muted, border-border, ...) and the
+   * dashboard keep working; new names are added for the app's extra colours. */
+  --background: #f4f7fa;      /* bg */
+  --foreground: #0b1a2c;      /* text */
+  --muted: #5b6677;
+  --faint: #8b95a5;           /* decoration only: 2.8:1 on bg, too light for text */
+  --border: #e2e7ee;
+  --edge: #d5dce5;            /* the ledge under cards */
   --card: #ffffff;
-  --surface-soft: #f8fafc;
+  --surface-soft: #eef2f6;
 
-  --brand: #00c2e0;
-  --brand-soft: #d6f4fa;
-  --brand-pale: #ecfaff;
-  --brand-dark: #0099b0;
-  --brand-foreground: #003741;
+  --brand: #0e9fbf;
+  --brand-soft: #e3f6fa;      /* brandSoft */
+  --brand-pale: #f1fafc;
+  --brand-dark: #0a7f99;      /* brandDeep: teal text on white / light teal */
+  --brand-deep: #0a7f99;
+  --brand-edge: #0a7a93;      /* ledge under teal buttons */
+  --brand-foreground: #075a6c;/* teal text on brand-soft (AA at small sizes) */
+  --on-brand: #ffffff;        /* text on brand fills (use 19px+ bold for AA) */
+
+  --violet: #7f77dd;
+  --violet-soft: #eeedfe;
+  --violet-text: #3c3489;
+  --streak: #f26b1d;
+  --streak-soft: #ffe8da;
+  --xp: #e8a317;
+  --star: #f5b301;
 
   --sidebar: #0b1220;
   --sidebar-foreground: #e2e8f0;
   --sidebar-muted: #94a3b8;
   --sidebar-border: #1e293b;
-  --sidebar-active: rgba(0, 194, 224, 0.15);
+  --sidebar-active: rgba(14, 159, 191, 0.18);
 
-  --success: #22c55e;
-  --warning: #f59e0b;
-  --danger: #ef4444;
+  --success: #1e8e4e;
+  --success-soft: #e3f5ea;
+  --warning: #e8a317;
+  --danger: #d23b3b;
+  --danger-soft: #fdecec;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-border: var(--border);
+  --color-edge: var(--edge);
   --color-card: var(--card);
   --color-surface-soft: var(--surface-soft);
 
@@ -43,7 +63,18 @@
   --color-brand-soft: var(--brand-soft);
   --color-brand-pale: var(--brand-pale);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-edge: var(--brand-edge);
   --color-brand-foreground: var(--brand-foreground);
+  --color-on-brand: var(--on-brand);
+
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-violet-text: var(--violet-text);
+  --color-streak: var(--streak);
+  --color-streak-soft: var(--streak-soft);
+  --color-xp: var(--xp);
+  --color-star: var(--star);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -51,21 +82,54 @@
   --color-sidebar-border: var(--sidebar-border);
 
   --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
 
+  /* Nunito (the app's face) for the marketing site; Inter stays for the
+   * logged-in product (.app-ui), whose dense tables were set in it. */
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-nunito), ui-rounded, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --muted: #a1a1aa;
-  --border: #262626;
-  --card: #111113;
-  --surface-soft: #0e1117;
+  --background: #0a1220;
+  --foreground: #f2f5f9;
+  --muted: #9aa5b5;
+  --faint: #6f7b8d;
+  --border: #243146;
+  --edge: #0b1422;
+  --card: #131d2e;
+  --surface-soft: #0f1828;
+
+  --brand: #29c3e3;
+  --brand-soft: #0f3442;
+  --brand-pale: #0c2733;
+  --brand-dark: #5ed3eb;
+  --brand-deep: #5ed3eb;
+  --brand-edge: #1691ab;
+  --brand-foreground: #8fe3f2;
+  --on-brand: #0a1220;        /* dark text on the bright teal: 8.9:1 */
+
+  --violet: #a9a3f0;
+  --violet-soft: #25223f;
+  --violet-text: #d2cefa;
+  --streak: #ff8a47;
+  --streak-soft: #3a1e10;
+  --xp: #f5b301;
+  --star: #f5b301;
+
+  --sidebar-active: rgba(41, 195, 227, 0.18);
+
+  --success: #3fbf7a;
+  --success-soft: #12301f;
+  --warning: #f5b301;
+  --danger: #f06a6a;
+  --danger-soft: #3a1616;
 }
 
 * {
@@ -76,8 +140,32 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Logged-in product surfaces (dashboard, onboarding, auth, invite, the
+ * sign-in card) keep Inter at its normal weight. */
+.app-ui {
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
+  font-weight: 400;
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Reduced motion: switch off transitions and animations site-wide. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Subtle entrance animation for primary content. */
