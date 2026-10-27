@@ -22,6 +22,8 @@
 .pp-list--plain li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 3px; background: var(--brand); }
 .pp-two { display: grid; gap: 16px; }
 @media (min-width: 760px) { .pp-two { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.pp-three { display: grid; gap: 16px; }
+@media (min-width: 900px) { .pp-three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
 .pp-card-title { display: flex; align-items: center; gap: 10px; color: var(--foreground); }
 .pp-card-title svg { color: var(--brand-text); }
 .pp-card-text { margin-top: 10px; font-size: 16px; line-height: 1.6; }

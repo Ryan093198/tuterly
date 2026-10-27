@@ -84,7 +84,7 @@ export default function ParentsPage() {
               />
             </Reveal>
             <ul className="pp-list">
-              <Item icon="star">Week in review: the questions they added, fixed and mastered this week.</Item>
+              <Item icon="star">Week in review: the questions they added and mastered this week.</Item>
               <Item icon="test">Their test scores, and their trickiest topic.</Item>
               <Item icon="flag">You can set a test on any topic for your child.</Item>
             </ul>
@@ -93,8 +93,42 @@ export default function ParentsPage() {
         </div>
       </section>
 
+      {/* 2b. PARENTS CAN UPLOAD TOO */}
+      <section className="tb-section" aria-labelledby="upload">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead
+              id="upload"
+              eyebrow="You can add to it too"
+              title="Upload their tests and term planner from your own phone."
+              lead={`You don’t have to wait for your child to do it. From your linked account, upload what comes home from school and ${name} turns it into practice.`}
+            />
+          </Reveal>
+          <div className="pp-three">
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="test" /> Marked school tests</h3>
+              <p className="tb-muted pp-card-text">
+                Photos of each page, a PDF or a Word document. The questions go into your child’s bank, and the ones marked wrong are stored automatically, each with a worked solution and a fresh question to master.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="upload" /> Practice tests and papers</h3>
+              <p className="tb-muted pp-card-text">
+                A practice paper from school, a past test, a worksheet their teacher handed out. Upload it and they practise exactly what their class is doing.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="notes" /> The term planner</h3>
+              <p className="tb-muted pp-card-text">
+                Upload the term planner or course outline from school, and {name} focuses their topic tests on what’s coming up this term.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* 3. SAFETY AND PRIVACY */}
-      <section className="tb-section" aria-labelledby="privacy">
+      <section className="tb-section tb-section--card" aria-labelledby="privacy">
         <div className="tb-wrap">
           <Reveal>
             <SectionHead id="privacy" eyebrow="Safety and privacy" title="Progress, not photos." />
@@ -103,7 +137,7 @@ export default function ParentsPage() {
             <Card>
               <h3 className="tb-h3 pp-card-title"><Icon name="privacy" /> What you don’t see</h3>
               <ul className="pp-list pp-list--plain">
-                <li>The photos of their work. Those stay private to your child and any tutor they link (our AI service reads them to solve the question).</li>
+                <li>The photos your child takes of their work. Those stay private to your child and any tutor they link (our AI service reads them to solve the question).</li>
                 <li>Every individual question. You see topics and scores instead.</li>
               </ul>
             </Card>

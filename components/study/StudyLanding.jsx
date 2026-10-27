@@ -305,6 +305,9 @@ export default function StudyLanding() {
               <Point icon="star" title="Week in review">
                 The questions they added, fixed and mastered this week, their test scores and their trickiest topic.
               </Point>
+              <Point icon="upload" title="Upload what comes home">
+                Upload their marked tests, practice papers and the term planner from your own phone. {name} turns them into practice.
+              </Point>
               <Point icon="link" title="Link with a code">
                 Your child gives you a 6-character code from their settings. They can remove the link at any time.
               </Point>

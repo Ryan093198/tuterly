@@ -114,3 +114,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Ryan reported: all Bayside Academics students using Tuterly Study (Years 7 to 10) for the past month use it every day, and their school test and exam marks have improved. Parent quotes to follow.
 - Shown as a results card in the home and parents heroes ("Already lifting marks at Bayside Academics"), with fine print: "Bayside Academics students in Years 7 to 10, October 2026, using Tuterly Study alongside their tutoring." Plus an FAQ, "Does it actually improve marks?". Wording lives in lib/study-results.js.
 - Not used: "trusted by students, parents and teachers around Australia" (it has only been used at Bayside, in Melbourne, for a month). Keep each student's before and after marks: the ACCC can ask for them.
+
+## Changes from Ryan, 28 Oct: parents page and parent uploads
+- Removed from /parents: "Three questions worth asking at dinner" and "Linking takes a code, not a password".
+- New feature confirmed by Ryan (not in TUTERLY-STUDY-FEATURES.md yet; add it there): from a linked parent account, parents can upload marked school tests and practice tests/papers (photos, PDF, Word), which go into the child's bank like a student upload, and the term planner or course outline, which the app uses to focus topic tests on what's coming up this term.
+- Shown on /parents ("Upload their tests and term planner from your own phone", three cards), in the home page's For parents points, and as an FAQ ("Can I upload things as a parent?").
