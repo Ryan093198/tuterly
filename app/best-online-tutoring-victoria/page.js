@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
@@ -117,8 +118,9 @@ export default function BestOnlineTutoringVictoriaPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Wherever you are in the state - Melbourne, Geelong, Ballarat, Bendigo or a regional town - online tutoring gives your child access to the same specialist, high-achieving tutors. Here is how the options compare and what separates the good ones.
             </p>
+            <AppHeroBlock placement="best_online_tutoring_victoria_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Browse Tuterly tutors →
               </Link>
               <Link href="/best-online-tutoring-melbourne" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>

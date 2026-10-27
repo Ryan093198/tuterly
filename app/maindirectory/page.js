@@ -14,7 +14,7 @@ export const metadata = {
 };
 
 const MAIN_MARKETING = [
-  { path: "/", label: "Sign-in / home" },
+  { path: "/", label: "Home: study app landing (sign-in on app.tuterly.com.au/ or /?login)" },
   { path: "/parents", label: "For Parents (marketing)" },
   { path: "/tutors", label: "For Tutors (recruitment + apply form)" },
   { path: "/centres", label: "For Tutoring Centres" },

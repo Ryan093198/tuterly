@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppSoftLine } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import SampleReport from "@/components/marketing/SampleReport";
@@ -95,6 +96,7 @@ export default function VceTutoringPage() {
                 See a sample report
               </Link>
             </div>
+            <AppSoftLine />
           </Fade>
         </div>
       </section>

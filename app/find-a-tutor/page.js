@@ -3,6 +3,7 @@ import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import FindTutorButton from "@/components/FindTutorButton";
+import { AppSoftLine } from "@/components/study/TutoringPageApp";
 
 // /find-a-tutor - plain landing for the "Find a local tutor" form. Linked
 // from the worksheet PDF footer and the marketing footers.
@@ -50,6 +51,9 @@ export default async function FindATutorPage({ searchParams }) {
           <p style={{ fontSize: 13, color: c.textMuted, marginTop: 18 }}>
             Takes about a minute. We only share your details with centres if you tick the consent box.
           </p>
+          {/* This page is the "prefer a real tutor" destination, so the tutor
+              form stays primary and the app is the quiet alternative. */}
+          <AppSoftLine />
         </div>
       </section>
       <MarketingFooter />

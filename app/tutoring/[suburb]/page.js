@@ -20,6 +20,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import ContactCTA from "@/components/marketing/ContactCTA";
 import Testimonials from "@/components/marketing/Testimonials";
 import FindTutorButton from "@/components/FindTutorButton";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Match the
 // visual language of /parents (inline styles, marketing palette) so
@@ -95,11 +96,12 @@ export default async function SuburbPage({ params }) {
               {data.blurb ||
                 `Finding the right tutor in ${data.name} shouldn't be hard. Tuterly connects you with experienced tutors who know the curriculum and deliver results you can actually see.`}
             </p>
+            <AppHeroBlock placement="suburb_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <FindTutorButton
                 source="suburb_page"
                 initialSuburb={data.name}
-                style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, border: "none", display: "inline-block" }}
+                style={{ padding: "14px 28px", borderRadius: 10, background: c.white, color: c.navy, fontSize: 15, fontWeight: 600, border: `2px solid ${c.navy}`, display: "inline-block" }}
               >
                 Find a tutor near you
               </FindTutorButton>

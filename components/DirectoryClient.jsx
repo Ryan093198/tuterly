@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import EnquiryFormModal from "@/components/EnquiryFormModal";
+import StudyAppCTA from "@/components/StudyAppCTA";
 
 const c = {
   teal: "#0D9488", tealLight: "#14B8A6", tealDark: "#0F766E", tealPale: "#ECFDFB",
@@ -147,8 +148,26 @@ export default function DirectoryClient({ viewer }) {
         </div>
       </section>
 
-      {/* TUTOR GRID */}
+      {/* TUTOR GRID. When a filter leaves few or no tutors, lead with the
+          app instead of a thin list. */}
       <section style={{ padding: "32px 40px 80px", background: c.offWhite }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <StudyAppCTA
+            variant="inline"
+            placement={filtered.length < 3 ? "directory_thin" : "directory_top"}
+            heading={
+              filtered.length === 0
+                ? "No tutors match that yet. For Years 7 to 10 maths, try the app."
+                : filtered.length < 3
+                  ? "Only a few tutors match. For Years 7 to 10 maths, there's also the app."
+                  : "Years 7 to 10 maths? Start with the questions they get wrong."
+            }
+            style={{ margin: "0 0 24px" }}
+          />
+          {filtered.length > 0 && (
+            <p style={{ fontSize: 14.5, fontWeight: 600, color: c.navy, margin: "0 0 14px" }}>Prefer a real tutor? Bayside Academics can help.</p>
+          )}
+        </div>
         <div className="tutor-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
           {filtered.map((t, i) => (
             <div key={i} onClick={() => setSelectedTutor(t)} style={{ background: c.white, borderRadius: 16, padding: "24px 22px", border: `1px solid ${c.border}`, cursor: "pointer", transition: "all 0.2s", boxShadow: "0 2px 8px rgba(0,0,0,0.02)" }} onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.06)"; e.currentTarget.style.transform = "translateY(-2px)"; }} onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.02)"; e.currentTarget.style.transform = "translateY(0)"; }}>

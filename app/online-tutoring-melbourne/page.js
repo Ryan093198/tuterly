@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
@@ -97,8 +98,9 @@ export default function OnlineTutoringPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Online tutoring used to be a fallback option. It isn&apos;t any more. For most subjects from Year 7 up, an online 1-on-1 session is as effective as in-person - and the access to a wider tutor pool often makes it better. Here&apos;s the honest version of how it works, when it&apos;s great, and when in-person is still the right call.
             </p>
+            <AppHeroBlock placement="online_tutoring_melbourne_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Find an online tutor →
               </Link>
               <Link href="/sample-report" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>

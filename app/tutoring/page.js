@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SITE_URL } from "@/lib/site";
 import {
@@ -46,8 +47,9 @@ export default function TutoringDirectory() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Finding the right tutor in Melbourne shouldn&apos;t be hard. Tuterly connects families with experienced tutors who know their child&apos;s curriculum and deliver results you can actually see - sessions can be online or in-person, depending on what works for your family.
             </p>
+            <AppHeroBlock placement="tutoring_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href={DIRECTORY_HREF} style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Find a tutor →
               </Link>
             </div>

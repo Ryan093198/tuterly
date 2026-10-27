@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import SavingsCalculator from "@/components/marketing/SavingsCalculator";
@@ -108,8 +109,9 @@ export default function TutoringPricesPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Tutoring pricing in Melbourne is wildly inconsistent. Two tutors with identical backgrounds can charge $40 and $90 for the same hour. Below is what we actually see across the market - by year level, by provider type, and what a fair price looks like in 2026.
             </p>
+            <AppHeroBlock placement="tutoring_prices_melbourne_hero" heading="A lower-cost option for Years 7 to 10 maths" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 See Tuterly tutor rates →
               </Link>
               <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>

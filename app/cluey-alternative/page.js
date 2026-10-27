@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock, AppLowerCostSection } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
@@ -57,8 +58,9 @@ export default function ClueyAlternativePage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Cluey is one of the more established online tutoring brands in Australia, and for a lot of families it&apos;s a perfectly good fit. This page is a factual comparison of the two approaches - so you can pick the right one rather than the louder one. We&apos;ll be honest about where Cluey is the better choice and where Tuterly is.
             </p>
+            <AppHeroBlock placement="cluey_alternative_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Browse Tuterly tutors →
               </Link>
               <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -195,6 +197,8 @@ export default function ClueyAlternativePage() {
           </div>
         </div>
       </section>
+
+      <AppLowerCostSection competitor="Cluey" placement="cluey_alternative_lower_cost" />
 
       <section style={{ padding: "72px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>

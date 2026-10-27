@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppHeroBlock, AppLowerCostSection } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
@@ -59,8 +60,9 @@ export default function TutorDoctorAlternativePage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Tutor Doctor and Tuterly are built around two different ideas. Tutor Doctor is a global franchise: local franchisees run the matching, employ the tutors as contractors, and handle scheduling. Tuterly is a platform: independent tutors run their own practices and we provide the tooling. Both have their place - this page is an honest comparison.
             </p>
+            <AppHeroBlock placement="tutor_doctor_alternative_hero" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, background: c.navy, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 Browse Tuterly tutors →
               </Link>
               <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
@@ -180,6 +182,8 @@ export default function TutorDoctorAlternativePage() {
           </div>
         </div>
       </section>
+
+      <AppLowerCostSection competitor="Tutor Doctor" placement="tutor_doctor_alternative_lower_cost" />
 
       <section style={{ padding: "72px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
