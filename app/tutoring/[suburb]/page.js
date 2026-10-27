@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { notFound } from "next/navigation";
 import {
   SEO_SUBURBS,
@@ -75,7 +76,7 @@ export default async function SuburbPage({ params }) {
   };
 
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <script
         type="application/ld+json"
@@ -88,8 +89,8 @@ export default async function SuburbPage({ params }) {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring in {data.name}</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring in {data.name}</p>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
               Tutoring in {data.name}
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -121,14 +122,14 @@ export default async function SuburbPage({ params }) {
         <section style={{ padding: "56px 24px", background: c.offWhite }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Fade>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Schools in the area</p>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Schools in the area</p>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
                 We work with students across {data.name} and surrounds.
               </h2>
               <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
                 {data.schools.map((s) => (
                   <li key={s.name} style={{ background: c.white, borderRadius: 12, border: `1px solid ${c.border}`, padding: "14px 18px" }}>
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: s.note ? 2 : 0 }}>{s.name}</p>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: s.note ? 2 : 0 }}>{s.name}</p>
                     {s.note && <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.5 }}>{s.note}</p>}
                   </li>
                 ))}
@@ -143,8 +144,8 @@ export default async function SuburbPage({ params }) {
         <section style={{ padding: "56px 24px", background: c.white }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Fade>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What parents ask us about</p>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What parents ask us about</p>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
                 What parents in {data.name} typically need help with.
               </h2>
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>{data.parentNeeds}</p>
@@ -157,8 +158,8 @@ export default async function SuburbPage({ params }) {
       <section style={{ padding: "56px 24px", background: c.tealPale, borderTop: `1px solid ${c.border}`, borderBottom: `1px solid ${c.border}` }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Free for {data.name} families</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Free for {data.name} families</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25 }}>
               Free Year 7-10 maths worksheets, before you book a tutor.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -178,10 +179,10 @@ export default async function SuburbPage({ params }) {
                     textDecoration: "none",
                   }}
                 >
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
                     Worksheets
                   </p>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy }}>
                     Year {yr}
                   </p>
                 </Link>
@@ -218,8 +219,8 @@ export default async function SuburbPage({ params }) {
       <section style={{ padding: "80px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Simple pricing</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
               Structured tutoring without the agency markup.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
@@ -251,7 +252,7 @@ export default async function SuburbPage({ params }) {
       <section style={{ padding: "72px 24px", background: c.white }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Ready to find a tutor in {data.name}?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
@@ -277,7 +278,7 @@ export default async function SuburbPage({ params }) {
       {neighbours.length > 0 && (
         <section style={{ padding: "48px 24px 72px", background: c.offWhite }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Also serving nearby suburbs</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Also serving nearby suburbs</p>
             <ul style={{ display: "flex", flexWrap: "wrap", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
               {neighbours.map((n) => (
                 <li key={n.slug}>
@@ -291,6 +292,7 @@ export default async function SuburbPage({ params }) {
         </section>
       )}
 
+      <AppCtaBand placement="suburb_final" />
       <MarketingFooter />
     </main>
   );

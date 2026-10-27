@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
@@ -130,7 +131,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
   };
 
   return (
-    <main style={{ background: c.offWhite, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.offWhite, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <script
         type="application/ld+json"
@@ -195,10 +196,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
       <section style={{ padding: "60px 24px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
               {page.yearLevel} - {page.topic} - Free practice
             </p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 42, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 42, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
               {page.h1}
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
@@ -221,10 +222,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
       <section style={{ padding: "60px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
               About this worksheet
             </p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
               Why we built it
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
@@ -234,10 +235,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
 
           <Fade>
             <div style={{ marginTop: 40 }}>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
                 What&apos;s covered
               </p>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 26, color: c.navy, marginBottom: 14, lineHeight: 1.3 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, marginBottom: 14, lineHeight: 1.3 }}>
                 Sub-skills your student will practise
               </h2>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10 }}>
@@ -271,10 +272,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
         <section style={{ padding: "60px 24px", background: c.white }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Fade>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
                 More {page.yearLevel} topics
               </p>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 26, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
                 Other free {page.yearLevel} worksheet generators
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
@@ -291,7 +292,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
                       textDecoration: "none",
                     }}
                   >
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
                       {r.yearLevel}
                     </p>
                     <p style={{ fontSize: 15, fontWeight: 600, color: c.navy }}>
@@ -327,10 +328,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
         <section style={{ padding: "48px 24px 56px", background: c.white }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Fade>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
                 Frequently asked
               </p>
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 24, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
                 Questions parents ask about {page.topic.toLowerCase()}
               </h2>
               <div style={{ display: "grid", gap: 6 }}>
@@ -346,7 +347,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
                   >
                     <summary
                       style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontFamily: "var(--font-display)",
                         fontSize: 14,
                         fontWeight: 600,
                         color: c.navy,
@@ -370,7 +371,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
       <section style={{ padding: "60px 24px 80px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25, textAlign: "center" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 12, lineHeight: 1.25, textAlign: "center" }}>
               Want a real plan for the term?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 26px", textAlign: "center" }}>
@@ -387,7 +388,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
                 href="/directory"
                 style={{
                   color: c.tealDark,
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "var(--font-display)",
                   fontSize: 14,
                   fontWeight: 600,
                   textDecoration: "none",
@@ -400,6 +401,9 @@ export default async function WorksheetTopicLandingPage({ params }) {
         </div>
       </section>
 
+      {["Year 7", "Year 8", "Year 9", "Year 10"].includes(page.yearLevel) && (
+        <AppCtaBand placement="worksheet_page_final" />
+      )}
       <MarketingFooter />
     </main>
   );

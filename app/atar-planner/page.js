@@ -71,7 +71,7 @@ const FAQ_SCHEMA = {
 
 export default function ATARPlannerPage() {
   return (
-    <main style={{ background: c.offWhite, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.offWhite, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <script
         type="application/ld+json"
@@ -83,10 +83,10 @@ export default function ATARPlannerPage() {
       <section style={{ padding: "60px 24px 32px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
               ATAR Course Planner
             </p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
               Plan your VCE subjects against the courses you want.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
@@ -123,7 +123,7 @@ export default function ATARPlannerPage() {
             style={{ margin: "0 0 40px" }}
           />
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
               Disclaimer
             </p>
             <p style={{ fontSize: 13, color: c.textLight, lineHeight: 1.65 }}>

@@ -27,15 +27,15 @@ export default async function FindATutorPage({ searchParams }) {
     : "parents_page";
 
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <MarketingNav />
       <section style={{ padding: "80px 24px 96px" }}>
         <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
             Free, no obligation
           </p>
-          <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 42, color: c.navy, lineHeight: 1.15, marginBottom: 18 }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 42, color: c.navy, lineHeight: 1.15, marginBottom: 18 }}>
             Want help from a local tutor?
           </h1>
           <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>

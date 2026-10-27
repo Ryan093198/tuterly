@@ -41,20 +41,20 @@ const YEAR_LEVELS = [
 ];
 
 const c = {
-  teal: "#0D9488",
-  tealLight: "#14B8A6",
-  tealDark: "#0F766E",
-  tealPale: "#ECFDFB",
-  navy: "#0F172A",
-  navyMid: "#1E293B",
-  text: "#334155",
-  textLight: "#64748B",
-  textMuted: "#94A3B8",
-  white: "#FFFFFF",
-  offWhite: "#F8FAFC",
-  border: "#E6EAF0",
-  rose: "#F43F5E",
-  amber: "#F59E0B",
+  teal: "var(--brand-deep)",
+  tealLight: "var(--brand)",
+  tealDark: "var(--brand-deep)",
+  tealPale: "var(--brand-soft)",
+  navy: "var(--foreground)",
+  navyMid: "var(--foreground)",
+  text: "var(--foreground)",
+  textLight: "var(--muted)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  offWhite: "var(--background)",
+  border: "var(--border)",
+  rose: "var(--danger)",
+  amber: "var(--xp)",
 };
 
 export default function WorksheetGenerator({
@@ -482,7 +482,7 @@ export default function WorksheetGenerator({
   // --- Render ---
 
   return (
-    <div style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
+    <div style={{ fontFamily: "var(--font-display)" }}>
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
@@ -733,7 +733,7 @@ function EmailGateModal({
       >
         <p
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: 12,
             fontWeight: 600,
             color: c.teal,
@@ -746,7 +746,7 @@ function EmailGateModal({
         </p>
         <h2
           style={{
-            fontFamily: "'DM Serif Display', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 24,
             color: c.navy,
             lineHeight: 1.2,
@@ -873,7 +873,7 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
       >
         <p
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: 12,
             fontWeight: 600,
             color: c.teal,
@@ -886,7 +886,7 @@ function TrialSignupModal({ onClose, onStart, pending, error }) {
         </p>
         <h2
           style={{
-            fontFamily: "'DM Serif Display', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 26,
             color: c.navy,
             lineHeight: 1.2,
@@ -1072,7 +1072,7 @@ function TrialBanner() {
       <div style={{ minWidth: 0, flex: "1 1 280px" }}>
         <p
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: 12,
             fontWeight: 600,
             color: c.tealLight,
@@ -1085,7 +1085,7 @@ function TrialBanner() {
         </p>
         <h3
           style={{
-            fontFamily: "'DM Serif Display', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 22,
             margin: "4px 0 6px",
             color: c.white,
@@ -1178,7 +1178,7 @@ function WorksheetUpsellModal({ onClose, onStart, pending, error }) {
       >
         <p
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: 12,
             fontWeight: 600,
             color: c.teal,
@@ -1192,7 +1192,7 @@ function WorksheetUpsellModal({ onClose, onStart, pending, error }) {
         <h2
           id="worksheet-upsell-title"
           style={{
-            fontFamily: "'DM Serif Display', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 26,
             color: c.navy,
             lineHeight: 1.2,
@@ -1302,7 +1302,7 @@ const cardStyle = {
 };
 
 const h2Style = {
-  fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
+  fontFamily: "var(--font-display)",
   fontSize: 28,
   fontWeight: 800,
   letterSpacing: "-0.6px",

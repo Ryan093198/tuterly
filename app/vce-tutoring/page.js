@@ -73,7 +73,7 @@ const TIMING = [
 
 export default function VceTutoringPage() {
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
 
       <MarketingNav />
@@ -81,8 +81,8 @@ export default function VceTutoringPage() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>VCE tutoring</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>VCE tutoring</p>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
               VCE tutoring built around the study design.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -104,8 +104,8 @@ export default function VceTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What changes in VCE tutoring</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What changes in VCE tutoring</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               It&apos;s a different game from Year 7-10.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
@@ -121,8 +121,8 @@ export default function VceTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Subjects we cover</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 36, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Subjects we cover</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 36, lineHeight: 1.25 }}>
               The six subjects most families tutor.
             </h2>
           </Fade>
@@ -130,7 +130,7 @@ export default function VceTutoringPage() {
             {SUBJECTS.map((s, i) => (
               <Fade key={s.name} delay={0.04 + i * 0.03}>
                 <div style={{ background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}`, padding: "20px 22px" }}>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{s.name}</h3>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{s.name}</h3>
                   <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{s.body}</p>
                 </div>
               </Fade>
@@ -149,8 +149,8 @@ export default function VceTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>When to start</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>When to start</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               The honest timing answer.
             </h2>
           </Fade>
@@ -158,7 +158,7 @@ export default function VceTutoringPage() {
             {TIMING.map((t, i) => (
               <Fade key={t.when} delay={0.04 + i * 0.04}>
                 <div style={{ background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}`, padding: "20px 22px", display: "grid", gridTemplateColumns: "1fr 4fr", gap: 18 }}>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.teal }}>{t.when}</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.teal }}>{t.when}</p>
                   <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{t.body}</p>
                 </div>
               </Fade>
@@ -170,7 +170,7 @@ export default function VceTutoringPage() {
       <section style={{ padding: "72px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Find a VCE tutor in our directory.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>

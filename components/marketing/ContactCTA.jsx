@@ -56,7 +56,7 @@ export default function ContactCTA({
           <div style={{ flex: 1, minWidth: 240 }}>
             <p
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 12,
                 fontWeight: 600,
                 color: isDark ? c.teal : c.tealDark,
@@ -69,7 +69,7 @@ export default function ContactCTA({
             </p>
             <p
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 24,
                 color: fg,
                 lineHeight: 1.25,
@@ -103,7 +103,7 @@ export default function ContactCTA({
               borderRadius: 10,
               background: isDark ? c.teal : c.navy,
               color: c.white,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 15,
               fontWeight: 600,
               textDecoration: "none",
@@ -121,7 +121,7 @@ export default function ContactCTA({
               borderRadius: 10,
               background: isDark ? "rgba(255,255,255,0.08)" : c.tealPale,
               color: isDark ? c.white : c.tealDark,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 15,
               fontWeight: 600,
               border: `1px solid ${isDark ? "rgba(255,255,255,0.18)" : c.teal}`,
@@ -221,7 +221,7 @@ export function ContactModal({ context, onClose }) {
           borderRadius: 18,
           padding: "28px 28px 24px",
           boxShadow: "0 24px 64px rgba(15, 23, 42, 0.3)",
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "var(--font-display)",
         }}
       >
         <button
@@ -246,7 +246,7 @@ export function ContactModal({ context, onClose }) {
           <div style={{ paddingTop: 8 }}>
             <p
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 12,
                 fontWeight: 600,
                 color: c.tealDark,
@@ -259,7 +259,7 @@ export function ContactModal({ context, onClose }) {
             </p>
             <h2
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 26,
                 color: c.navy,
                 lineHeight: 1.25,
@@ -284,7 +284,7 @@ export function ContactModal({ context, onClose }) {
                 background: c.navy,
                 color: c.white,
                 border: "none",
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 14,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -308,7 +308,7 @@ export function ContactModal({ context, onClose }) {
             />
             <p
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 12,
                 fontWeight: 600,
                 color: c.tealDark,
@@ -321,7 +321,7 @@ export function ContactModal({ context, onClose }) {
             </p>
             <h2
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 26,
                 color: c.navy,
                 lineHeight: 1.25,
@@ -378,7 +378,7 @@ export function ContactModal({ context, onClose }) {
               <label style={{ display: "block" }}>
                 <span
                   style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: 12,
                     fontWeight: 600,
                     color: c.textLight,
@@ -401,7 +401,7 @@ export function ContactModal({ context, onClose }) {
                     borderRadius: 10,
                     border: `1px solid ${c.border}`,
                     fontSize: 14,
-                    fontFamily: "'DM Sans', sans-serif",
+                    fontFamily: "var(--font-display)",
                     background: c.white,
                     color: c.text,
                     resize: "vertical",
@@ -434,7 +434,7 @@ export function ContactModal({ context, onClose }) {
                   background: submitting ? c.border : c.navy,
                   color: c.white,
                   border: "none",
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "var(--font-display)",
                   fontSize: 14,
                   fontWeight: 600,
                   cursor: submitting ? "not-allowed" : "pointer",
@@ -452,7 +452,7 @@ export function ContactModal({ context, onClose }) {
                   background: c.tealPale,
                   color: c.tealDark,
                   border: `1px solid ${c.teal}`,
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "var(--font-display)",
                   fontSize: 14,
                   fontWeight: 600,
                   textDecoration: "none",
@@ -477,7 +477,7 @@ function Field({ label, value, onChange, type = "text", required, placeholder, a
     <label style={{ display: "block" }}>
       <span
         style={{
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: 12,
           fontWeight: 600,
           color: c.textLight,
@@ -503,7 +503,7 @@ function Field({ label, value, onChange, type = "text", required, placeholder, a
           borderRadius: 10,
           border: `1px solid ${c.border}`,
           fontSize: 14,
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "var(--font-display)",
           background: c.white,
           color: c.text,
           outline: "none",

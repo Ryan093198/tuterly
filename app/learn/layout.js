@@ -4,7 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 export default function LearnLayout({ children }) {
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
       <MarketingNav />
       <div style={{ flex: 1 }}>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SITE_URL } from "@/lib/site";
@@ -31,7 +32,7 @@ export default function TutoringDirectory() {
   const live = SEO_SUBURBS.filter(isPublishable);
 
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
 
       <MarketingNav />
@@ -40,8 +41,8 @@ export default function TutoringDirectory() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring across Melbourne</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring across Melbourne</p>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
               Tutoring across Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -61,8 +62,8 @@ export default function TutoringDirectory() {
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Suburbs we serve</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Suburbs we serve</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
               Find tutoring near you.
             </h2>
             {live.length === 0 ? (
@@ -76,7 +77,7 @@ export default function TutoringDirectory() {
                   <li key={s.slug}>
                     <Link
                       href={`/tutoring/${s.slug}`}
-                      style={{ display: "block", padding: "14px 18px", borderRadius: 12, background: c.white, border: `1px solid ${c.border}`, textDecoration: "none", color: c.navy, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15, transition: "border-color 0.2s" }}
+                      style={{ display: "block", padding: "14px 18px", borderRadius: 12, background: c.white, border: `1px solid ${c.border}`, textDecoration: "none", color: c.navy, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 15, transition: "border-color 0.2s" }}
                     >
                       {s.name}
                     </Link>
@@ -95,7 +96,7 @@ export default function TutoringDirectory() {
       <section style={{ padding: "72px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Ready to find a tutor?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
@@ -108,6 +109,7 @@ export default function TutoringDirectory() {
         </div>
       </section>
 
+      <AppCtaBand placement="tutoring_index_final" />
       <MarketingFooter />
     </main>
   );

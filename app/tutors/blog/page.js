@@ -25,10 +25,10 @@ export default function TutorBlogIndex() {
     <section style={{ padding: "72px 24px 80px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <Fade>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
             For Tutors
           </p>
-          <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 40, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 40, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
             Tutor Blog
           </h1>
           <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 48 }}>
@@ -44,7 +44,7 @@ export default function TutorBlogIndex() {
           {posts.map((post) => (
             <Fade key={post.slug}>
               <Link href={`/tutors/blog/${post.slug}`} style={{ textDecoration: "none", display: "block", padding: "24px 28px", borderRadius: 12, border: `1px solid ${c.border}`, transition: "box-shadow 0.2s, border-color 0.2s" }}>
-                <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, marginBottom: 8 }}>{post.title}</h2>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: 22, color: c.navy, marginBottom: 8 }}>{post.title}</h2>
                 <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.6 }}>{post.description}</p>
                 {post.date && (
                   <p style={{ fontSize: 12, color: c.textMuted, marginTop: 12 }}>{new Date(post.date).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}</p>

@@ -80,7 +80,7 @@ const WHAT_WORKS = [
 
 export default function ScholarshipTestPrepPage() {
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
 
       <MarketingNav />
@@ -88,8 +88,8 @@ export default function ScholarshipTestPrepPage() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Scholarship test prep</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Scholarship test prep</p>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
               ACER and EduTest scholarship preparation.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -110,8 +110,8 @@ export default function ScholarshipTestPrepPage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>The tests</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>The tests</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               Two main formats - which one your child sits depends on the school.
             </h2>
           </Fade>
@@ -119,7 +119,7 @@ export default function ScholarshipTestPrepPage() {
             {TESTS.map((t, i) => (
               <Fade key={t.name} delay={0.04 + i * 0.04}>
                 <div style={{ background: c.white, borderRadius: 14, border: `1px solid ${c.border}`, padding: "22px 22px" }}>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{t.name}</h3>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{t.name}</h3>
                   <p
                     style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}
                     dangerouslySetInnerHTML={{ __html: t.body }}
@@ -134,8 +134,8 @@ export default function ScholarshipTestPrepPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>When to start</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>When to start</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               Year-by-year timeline.
             </h2>
           </Fade>
@@ -143,7 +143,7 @@ export default function ScholarshipTestPrepPage() {
             {TIMING.map((t, i) => (
               <Fade key={t.when} delay={0.04 + i * 0.04}>
                 <div style={{ background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}`, padding: "20px 22px", display: "grid", gridTemplateColumns: "1fr 4fr", gap: 18 }}>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.teal }}>{t.when}</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.teal }}>{t.when}</p>
                   <p
                     style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}
                     dangerouslySetInnerHTML={{ __html: t.body }}
@@ -158,8 +158,8 @@ export default function ScholarshipTestPrepPage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What works</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What works</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               Four things that move scholarship scores most.
             </h2>
           </Fade>
@@ -167,7 +167,7 @@ export default function ScholarshipTestPrepPage() {
             {WHAT_WORKS.map((item, i) => (
               <Fade key={item.title} delay={0.04 + i * 0.04}>
                 <div style={{ background: c.white, borderRadius: 16, border: `1px solid ${c.border}`, padding: "22px 20px", height: "100%" }}>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{item.title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 8 }}>{item.title}</h3>
                   <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{item.body}</p>
                 </div>
               </Fade>
@@ -189,7 +189,7 @@ export default function ScholarshipTestPrepPage() {
       <section style={{ padding: "72px 24px", background: c.white }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Start scholarship preparation.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>

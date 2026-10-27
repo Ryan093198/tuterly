@@ -18,17 +18,17 @@ const WORKSHEET_EMAIL_KEY = "tuterly:worksheet_email";
 const WORKSHEET_YEAR_KEY = "tuterly:worksheet_year";
 
 const c = {
-  teal: "#0D9488",
-  tealPale: "#ECFDFB",
-  navy: "#0F172A",
-  text: "#334155",
-  textLight: "#64748B",
-  textMuted: "#94A3B8",
-  white: "#FFFFFF",
-  border: "#E6EAF0",
-  rose: "#E11D48",
-  roseBg: "#FFF1F2",
-  success: "#10B981",
+  teal: "var(--brand-deep)",
+  tealPale: "var(--brand-soft)",
+  navy: "var(--foreground)",
+  text: "var(--foreground)",
+  textLight: "var(--muted)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  border: "var(--border)",
+  rose: "var(--danger)",
+  roseBg: "var(--danger-soft)",
+  success: "var(--success)",
 };
 
 // "Want help from a local tutor?" request form. Posts to
@@ -438,7 +438,7 @@ function focusFirstError(errs) {
 }
 
 const css = `
-.tr-overlay { position: fixed; inset: 0; z-index: 9500; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(15,23,42,0.55); font-family: 'Inter','Helvetica Neue',Arial,sans-serif; }
+.tr-overlay { position: fixed; inset: 0; z-index: 9500; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(15,23,42,0.55); font-family: var(--font-display); }
 .tr-panel { position: relative; background: ${c.white}; border-radius: 20px; padding: 32px; max-width: 540px; width: 100%; max-height: 92vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(15,23,42,0.3); border: 1px solid ${c.border}; color: ${c.text}; text-align: left; }
 .tr-close { position: absolute; top: 12px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: none; background: transparent; font-size: 26px; line-height: 1; color: ${c.textLight}; cursor: pointer; }
 .tr-close:hover { background: #F1F5F9; }

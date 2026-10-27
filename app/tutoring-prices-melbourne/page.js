@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
@@ -94,7 +95,7 @@ const FAIR_PRICE = [
 
 export default function TutoringPricesPage() {
   return (
-    <main style={{ background: c.white, fontFamily: "'DM Sans', sans-serif", color: c.text }}>
+    <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
 
       <MarketingNav />
@@ -102,8 +103,8 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Pricing guide</p>
-            <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Pricing guide</p>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
               Tutoring prices in Melbourne (real numbers, no fluff).
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
@@ -125,8 +126,8 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By year level</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By year level</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               What you should expect to pay.
             </h2>
           </Fade>
@@ -135,8 +136,8 @@ export default function TutoringPricesPage() {
               <Fade key={row.level} delay={0.04 + i * 0.03}>
                 <div style={{ background: c.white, borderRadius: 14, border: `1px solid ${c.border}`, padding: "22px 22px" }}>
                   <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", gap: 12, marginBottom: 8 }}>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy }}>{row.level}</h3>
-                    <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 20, color: c.teal }}>{row.range}</p>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy }}>{row.level}</h3>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 20, color: c.teal }}>{row.range}</p>
                   </div>
                   <p
                     style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}
@@ -152,8 +153,8 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By provider type</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>By provider type</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               Five different ways to hire a tutor.
             </h2>
           </Fade>
@@ -162,8 +163,8 @@ export default function TutoringPricesPage() {
               <Fade key={row.type} delay={0.04 + i * 0.03}>
                 <div style={{ background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}`, padding: "22px 22px" }}>
                   <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", gap: 12, marginBottom: 8 }}>
-                    <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy }}>{row.type}</h3>
-                    <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 20, color: c.teal }}>{row.range}</p>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy }}>{row.type}</h3>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 20, color: c.teal }}>{row.range}</p>
                   </div>
                   <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{row.body}</p>
                 </div>
@@ -176,8 +177,8 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "80px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>What you&apos;d save</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>What you&apos;d save</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
               Tuterly vs a typical agency.
             </h2>
             <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", maxWidth: 600, margin: "0 auto 32px", lineHeight: 1.7 }}>
@@ -191,8 +192,8 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Fair-price guide</p>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 20, lineHeight: 1.25 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Fair-price guide</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 20, lineHeight: 1.25 }}>
               Four things worth knowing about pricing.
             </h2>
             <ul style={{ display: "grid", gap: 14, listStyle: "none", padding: 0, margin: 0 }}>
@@ -213,7 +214,7 @@ export default function TutoringPricesPage() {
       <section style={{ padding: "72px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               See real rates in the directory.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
@@ -226,6 +227,7 @@ export default function TutoringPricesPage() {
         </div>
       </section>
 
+      <AppCtaBand placement="tutoring_prices_melbourne_final" />
       <MarketingFooter />
     </main>
   );

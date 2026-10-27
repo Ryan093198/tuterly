@@ -1,4 +1,7 @@
 import Link from "next/link";
+import MarketingNav from "@/components/marketing/MarketingNav";
+import MarketingFooter from "@/components/marketing/MarketingFooter";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { STUDY_APP } from "@/lib/study-app";
@@ -47,23 +50,23 @@ const YEAR_LEVELS = [
 
 // Marketing palette, matched to app/parents/page.js.
 const c = {
-  teal: "#0D9488",
-  tealDeep: "#0F766E",
-  tealBright: "#14B8A6",
-  tealPale: "#ECFDFB",
-  ink: "#0F172A",
-  navy: "#0B1220",
-  text: "#334155",
-  textLight: "#64748B",
-  textMuted: "#94A3B8",
-  white: "#FFFFFF",
-  paper: "#F7F9FC",
-  sand: "#F1F5F9",
-  border: "#E6EAF0",
-  amber: "#F59E0B",
+  teal: "var(--brand-deep)",
+  tealDeep: "var(--brand-deep)",
+  tealBright: "var(--brand)",
+  tealPale: "var(--brand-soft)",
+  ink: "var(--foreground)",
+  navy: "var(--foreground)",
+  text: "var(--foreground)",
+  textLight: "var(--muted)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  paper: "var(--background)",
+  sand: "var(--surface-soft)",
+  border: "var(--border)",
+  amber: "var(--xp)",
 };
 
-const sans = "'Inter', 'Helvetica Neue', Arial, sans-serif";
+const sans = "var(--font-display)";
 
 // Year-level groups for the topic grid below the generator.
 const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
@@ -76,7 +79,6 @@ export default function WorksheetsPage() {
   return (
     <div style={{ fontFamily: sans, color: c.text, background: c.white, overflowX: "hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         ::selection { background: ${c.tealPale}; color: ${c.ink}; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @media(max-width:768px) {
@@ -89,25 +91,10 @@ export default function WorksheetsPage() {
       `}</style>
 
       {/* NAV */}
-      <nav className="ws-nav" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000, background: "rgba(255,255,255,0.9)", backdropFilter: "blur(16px)", borderBottom: `1px solid ${c.border}`, padding: "0 40px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: 66 }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 9 }}>
-            <div style={{ width: 32, height: 32, borderRadius: 9, background: c.navy, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 800, color: c.tealBright }}>t</div>
-            <span style={{ fontSize: 21, fontWeight: 800, color: c.ink, letterSpacing: "-0.8px" }}>tuterly</span>
-          </Link>
-          <div className="ws-nav-links" style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            <Link href="/parents" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 500, color: c.textLight, textDecoration: "none" }}>For parents</Link>
-            <Link href="/worksheets" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 600, color: c.teal, textDecoration: "none" }}>Free worksheets</Link>
-            <Link href="/directory" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 500, color: c.textLight, textDecoration: "none" }}>Find a tutor</Link>
-            <Link href="/tutors" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 500, color: c.textLight, textDecoration: "none" }}>Become a tutor</Link>
-            <a href="https://app.tuterly.com.au" style={{ padding: "9px 14px", borderRadius: 8, fontSize: 14.5, fontWeight: 500, color: c.textLight, textDecoration: "none" }}>Log in</a>
-            <Link className="ws-nav-cta" href="/get-started" style={{ padding: "10px 20px", borderRadius: 10, fontSize: 14.5, fontWeight: 600, background: c.ink, color: c.white, textDecoration: "none", marginLeft: 6 }}>Get started</Link>
-          </div>
-        </div>
-      </nav>
+      <MarketingNav />
 
       {/* HERO */}
-      <section className="ws-hero" style={{ padding: "150px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
+      <section className="ws-hero" style={{ padding: "56px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
             Free practice
@@ -213,24 +200,8 @@ export default function WorksheetsPage() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: c.ink, padding: "32px 40px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div style={{ width: 24, height: 24, borderRadius: 7, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: c.tealBright }}>t</div>
-            <span style={{ fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.45)" }}>tuterly</span>
-          </div>
-          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            <Link href="/practice-maths-tests-primary" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Practice tests Years 3-6</Link>
-            <Link href="/practice-maths-tests-secondary" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Practice tests Years 7-10</Link>
-            <Link href="/parents" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>For parents</Link>
-            <Link href="/directory" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Find a tutor</Link>
-            <Link href="/privacy" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Privacy</Link>
-            <Link href="/terms" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Terms</Link>
-            <a href="https://baysideacademics.com.au" style={{ fontSize: 12.5, color: "rgba(255,255,255,0.4)", textDecoration: "none" }}>Bayside Academics</a>
-          </div>
-          <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
-        </div>
-      </footer>
+      <AppCtaBand placement="worksheets_index_final" />
+      <MarketingFooter />
     </div>
   );
 }

@@ -37,10 +37,10 @@ export function AppLowerCostSection({ competitor, placement }) {
   return (
     <section style={{ padding: "64px 24px", background: c.white }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
           A lower-cost option
         </p>
-        <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
           For Years 7 to 10 maths, there’s also {name}.
         </h2>
         <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 18 }}>

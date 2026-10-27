@@ -26,8 +26,8 @@ export default function ComparisonTable({
   return (
     <Fade delay={0.1}>
       <div style={{ background: c.white, borderRadius: 20, padding: "32px 28px", border: `1px solid ${c.border}`, textAlign: "left" }}>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>{eyebrow}</p>
-        <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 22, color: c.navy, lineHeight: 1.3, marginBottom: 20 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>{eyebrow}</p>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 22, color: c.navy, lineHeight: 1.3, marginBottom: 20 }}>
           {heading}
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 0.7fr 0.7fr", borderTop: `1px solid ${c.border}` }}>

@@ -169,8 +169,8 @@ export default function SampleReport({
     <section id="sample-report" style={{ padding, background }}>
       <div style={{ maxWidth: 700, margin: "0 auto" }}>
         <Fade>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Sample report</p>
-          <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Sample report</p>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
             {heading}
           </h2>
           <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", marginBottom: 40, lineHeight: 1.7 }}>
@@ -212,7 +212,7 @@ export default function SampleReport({
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 0" }}>
                     <span style={{ fontSize: 13, color: c.textLight }}>{item.t}</span>
                     <div style={{ display: "flex", gap: 3 }}>
-                      {[1, 2, 3, 4, 5].map((v) => <div key={v} style={{ width: 10, height: 10, borderRadius: 3, background: v <= item.r ? c.teal : `${c.teal}20` }} />)}
+                      {[1, 2, 3, 4, 5].map((v) => <div key={v} style={{ width: 10, height: 10, borderRadius: 3, background: v <= item.r ? c.teal : `var(--brand-soft)` }} />)}
                     </div>
                   </div>
                 ))}

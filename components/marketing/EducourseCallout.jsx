@@ -15,8 +15,8 @@ export default function EducourseCallout({
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <Fade>
           <div style={{ background: c.white, borderRadius: 20, padding: "32px 28px", border: `2px solid ${c.teal}`, boxShadow: "0 12px 36px rgba(10,186,181,0.08)" }}>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 10 }}>Included with Tuterly</p>
-            <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 28, color: c.navy, marginBottom: 14, lineHeight: 1.3 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 10 }}>Included with Tuterly</p>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 28, color: c.navy, marginBottom: 14, lineHeight: 1.3 }}>
               Discounted Educourse - Australia&apos;s #1 selective entry &amp; scholarship platform.
             </h3>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>

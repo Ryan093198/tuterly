@@ -86,7 +86,7 @@ export default async function LearnPost({ params }) {
             <p style={{ fontSize: 12, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1, marginBottom: 8, marginTop: 16 }}>{post.audience}</p>
           )}
 
-          <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 38, color: c.navy, lineHeight: 1.2, marginBottom: 12 }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 38, color: c.navy, lineHeight: 1.2, marginBottom: 12 }}>
             {post.title}
           </h1>
 
@@ -150,7 +150,7 @@ export default async function LearnPost({ params }) {
 
         {range && (
           <div id={GENERATOR_ANCHOR} style={{ scrollMarginTop: 90, margin: "40px 0" }}>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 28, color: c.navy, lineHeight: 1.25, marginBottom: 8 }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, color: c.navy, lineHeight: 1.25, marginBottom: 8 }}>
               Build a free practice test
             </h2>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>
@@ -205,7 +205,7 @@ export default async function LearnPost({ params }) {
                 padding: 28,
               }}
             >
-              <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 26, color: c.navy, lineHeight: 1.25, marginBottom: 10 }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, lineHeight: 1.25, marginBottom: 10 }}>
                 Want a full 25-question test?
               </h2>
               <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 18 }}>
@@ -240,8 +240,8 @@ export default async function LearnPost({ params }) {
       {/* Prose styles for markdown content */}
       <style dangerouslySetInnerHTML={{ __html: `
         .learn-prose { font-size: 16px; line-height: 1.8; color: ${c.text}; }
-        .learn-prose h2 { font-family: 'DM Serif Display', serif; font-size: 26px; color: ${c.navy}; margin: 40px 0 16px; }
-        .learn-prose h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: ${c.navy}; margin: 32px 0 12px; }
+        .learn-prose h2 { font-family: var(--font-display); font-size: 26px; color: ${c.navy}; margin: 40px 0 16px; }
+        .learn-prose h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: ${c.navy}; margin: 32px 0 12px; }
         .learn-prose p { margin: 0 0 18px; color: ${c.text}; }
         .learn-prose ul, .learn-prose ol { margin: 0 0 18px; padding-left: 24px; }
         .learn-prose li { margin-bottom: 8px; }
@@ -251,7 +251,7 @@ export default async function LearnPost({ params }) {
         .learn-prose strong { font-weight: 600; color: ${c.navy}; }
         .learn-prose blockquote { border-left: 3px solid ${c.teal}; padding-left: 16px; margin: 24px 0; color: ${c.textLight}; font-style: italic; }
         .learn-prose hr { border: none; border-top: 1px solid ${c.border}; margin: 40px 0; }
-        .learn-prose .cta-box { background: ${c.tealPale}; border: 1px solid ${c.teal}20; border-radius: 12px; padding: 24px; margin: 32px 0; }
+        .learn-prose .cta-box { background: ${c.tealPale}; border: 2px solid var(--border); border-radius: 12px; padding: 24px; margin: 32px 0; }
         .learn-prose .cta-box a { font-weight: 600; }
       `}} />
     </article>

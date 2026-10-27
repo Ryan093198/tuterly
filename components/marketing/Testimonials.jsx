@@ -262,8 +262,8 @@ export default function Testimonials({
 }) {
   const k = resolve(palette);
   const fonts = {
-    heading: headingFont || "'DM Serif Display', serif",
-    body: bodyFont || "'DM Sans', sans-serif",
+    heading: headingFont || "var(--font-display)",
+    body: bodyFont || "var(--font-display)",
   };
 
   const defaultLimit = variant === "feature" ? 3 : variant === "strip" ? 3 : 3;

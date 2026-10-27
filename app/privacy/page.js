@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Logo from "@/components/Logo";
+import MarketingNav from "@/components/marketing/MarketingNav";
+import MarketingFooter from "@/components/marketing/MarketingFooter";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Privacy Policy | Tuterly";
@@ -23,21 +24,12 @@ const lastUpdated = "October 2026";
 
 export default function PrivacyPolicy() {
   return (
-    <main className="flex flex-1 flex-col items-center px-6 py-12 bg-surface-soft">
+    <>
+    <MarketingNav />
+    <main className="flex flex-1 flex-col items-center px-5 py-12 bg-background">
       <div className="w-full max-w-2xl">
-        <header className="flex items-center justify-between mb-10">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <Link
-            href="/"
-            className="text-sm text-muted hover:text-foreground transition"
-          >
-            ← Back to login
-          </Link>
-        </header>
 
-        <article className="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-card shadow-sm p-8 sm:p-10 space-y-6">
+        <article className="rounded-3xl border-2 border-border bg-card shadow-[0_4px_0_var(--edge)] p-6 sm:p-10 space-y-6">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">
               Privacy Policy
@@ -277,6 +269,8 @@ export default function PrivacyPolicy() {
         </p>
       </div>
     </main>
+    <MarketingFooter />
+    </>
   );
 }
 

@@ -5,12 +5,12 @@ import TutorRequestModal from "@/components/TutorRequestModal";
 import { DISMISSED_KEY, DISMISS_DAYS, SENT_KEY } from "@/lib/tutor-request";
 
 const c = {
-  teal: "#0D9488",
-  tealPale: "#ECFDFB",
-  tealBorder: "#B7EAE3",
-  navy: "#0F172A",
-  textLight: "#64748B",
-  white: "#FFFFFF",
+  teal: "var(--brand-deep)",
+  tealPale: "var(--brand-soft)",
+  tealBorder: "var(--border)",
+  navy: "var(--foreground)",
+  textLight: "var(--muted)",
+  white: "var(--card)",
 };
 
 // "Want help from a local tutor?" card. Shown on the worksheet success

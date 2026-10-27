@@ -118,7 +118,7 @@ export default function SubjectPicker({ value, onChange, placeholder = "Search o
           padding: "12px 14px",
           borderRadius: 10,
           border: `1px solid ${isOpen ? c.teal : c.border}`,
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: 14,
           background: c.white,
           color: c.text,
@@ -158,7 +158,7 @@ export default function SubjectPicker({ value, onChange, placeholder = "Search o
               <div key={group}>
                 <p
                   style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: 11,
                     fontWeight: 700,
                     color: c.tealDark,
@@ -201,7 +201,7 @@ export default function SubjectPicker({ value, onChange, placeholder = "Search o
                     >
                       <span>{s.name}</span>
                       {s.scaling && (
-                        <span style={{ fontSize: 11, color: c.textMuted, fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <span style={{ fontSize: 11, color: c.textMuted, fontFamily: "var(--font-display)" }}>
                           @30: {s.scaling[2]}
                           {s.scaling[2] > 30 && (
                             <span style={{ color: c.success, marginLeft: 4 }}>(+{s.scaling[2] - 30})</span>

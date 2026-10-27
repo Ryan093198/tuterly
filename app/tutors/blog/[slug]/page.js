@@ -41,7 +41,7 @@ export default async function TutorBlogPost({ params }) {
             &larr; All tutor posts
           </Link>
 
-          <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 38, color: c.navy, lineHeight: 1.2, marginBottom: 12, marginTop: 16 }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 38, color: c.navy, lineHeight: 1.2, marginBottom: 12, marginTop: 16 }}>
             {post.title}
           </h1>
 
@@ -64,8 +64,8 @@ export default async function TutorBlogPost({ params }) {
       {/* Prose styles for markdown content */}
       <style dangerouslySetInnerHTML={{ __html: `
         .tutor-prose { font-size: 16px; line-height: 1.8; color: ${c.text}; }
-        .tutor-prose h2 { font-family: 'DM Serif Display', serif; font-size: 26px; color: ${c.navy}; margin: 40px 0 16px; }
-        .tutor-prose h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 600; color: ${c.navy}; margin: 32px 0 12px; }
+        .tutor-prose h2 { font-family: var(--font-display); font-size: 26px; color: ${c.navy}; margin: 40px 0 16px; }
+        .tutor-prose h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: ${c.navy}; margin: 32px 0 12px; }
         .tutor-prose p { margin: 0 0 18px; color: ${c.text}; }
         .tutor-prose ul, .tutor-prose ol { margin: 0 0 18px; padding-left: 24px; }
         .tutor-prose li { margin-bottom: 8px; }

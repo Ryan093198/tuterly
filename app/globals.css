@@ -152,6 +152,17 @@ body {
   font-weight: 400;
 }
 
+/* Marketing headings in the app's face: Nunito Black, slightly tight.
+ * Zero specificity, so any inline style or class still wins; the
+ * logged-in product (.app-ui) is left alone. */
+:where(h1, h2, h3, h4):where(:not(.app-ui *)) {
+  font-family: var(--font-display);
+}
+:where(h1, h2):where(:not(.app-ui *)) {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
 /* Visible keyboard focus everywhere. */
 :focus-visible {
   outline: 3px solid var(--brand);

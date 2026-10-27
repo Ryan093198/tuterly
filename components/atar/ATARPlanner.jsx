@@ -211,7 +211,7 @@ export default function ATARPlanner() {
           }}
         >
           <div>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>
               Pick up to {MAX_COURSES} courses
             </p>
             <p style={{ fontSize: 14, color: c.text }}>
@@ -254,7 +254,7 @@ export default function ATARPlanner() {
               border: `1px solid ${c.border}`,
               background: c.white,
               cursor: "pointer",
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 14,
               fontWeight: 600,
               color: c.text,
@@ -301,7 +301,7 @@ export default function ATARPlanner() {
               justifyContent: "space-between",
             }}
           >
-            <p style={{ fontSize: 14, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+            <p style={{ fontSize: 14, fontFamily: "var(--font-display)", fontWeight: 600 }}>
               {count} {count === 1 ? "course" : "courses"} selected
               {atLimit ? " (max)" : ""}
             </p>
@@ -313,7 +313,7 @@ export default function ATARPlanner() {
                 borderRadius: 10,
                 background: c.teal,
                 color: c.white,
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 14,
                 fontWeight: 600,
                 border: "none",
@@ -359,7 +359,7 @@ export default function ATARPlanner() {
               marginBottom: 20,
             }}
           >
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>
               Planning for {selectedCourses.length} {selectedCourses.length === 1 ? "course" : "courses"}
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
@@ -378,7 +378,7 @@ export default function ATARPlanner() {
                   }}
                 >
                   <div>
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy }}>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: c.navy }}>
                       {cc.courseName}
                     </p>
                     <p style={{ fontSize: 12, color: c.textLight }}>
@@ -391,7 +391,7 @@ export default function ATARPlanner() {
 
             {mergedPrereqs.length > 0 ? (
               <div style={{ marginTop: 12 }}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 6 }}>
                   Combined subject prerequisites
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 6 }}>
@@ -411,7 +411,7 @@ export default function ATARPlanner() {
                       }}
                     >
                       <span style={{ color: c.navy, fontWeight: 600 }}>{p.subject}</span>
-                      <span style={{ color: c.textLight, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+                      <span style={{ color: c.textLight, fontFamily: "var(--font-display)", fontWeight: 600 }}>
                         Study score {p.minimumScore}+
                       </span>
                     </li>
@@ -447,7 +447,7 @@ export default function ATARPlanner() {
           </div>
         )}
 
-        <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 28, color: c.navy, marginBottom: 8, lineHeight: 1.25 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, color: c.navy, marginBottom: 8, lineHeight: 1.25 }}>
           Enter your Unit 3/4 scores.
         </h2>
         <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.6, marginBottom: 24 }}>
@@ -477,7 +477,7 @@ export default function ATARPlanner() {
               background: "none",
               border: `1px dashed ${c.border}`,
               color: c.tealDark,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 14,
               fontWeight: 600,
               padding: "10px 16px",
@@ -500,7 +500,7 @@ export default function ATARPlanner() {
               background:
                 !result.hasEnglish || !result.hasMinSubjects ? c.border : c.navy,
               color: c.white,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 15,
               fontWeight: 600,
               border: "none",
@@ -541,10 +541,10 @@ export default function ATARPlanner() {
           marginBottom: 20,
         }}
       >
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, color: bandColours.fg, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: bandColours.fg, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
           Estimated ATAR
         </p>
-        <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 76, lineHeight: 1, color: c.navy, marginBottom: 14 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 76, lineHeight: 1, color: c.navy, marginBottom: 14 }}>
           {result.atar.toFixed(2)}
         </p>
         <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.6 }}>
@@ -586,7 +586,7 @@ export default function ATARPlanner() {
                 }}
               >
                 <span style={{ fontSize: 14, color: c.text }}>{s.subject}</span>
-                <span style={{ fontSize: 13, color: c.textLight, fontFamily: "'Space Grotesk', sans-serif" }}>
+                <span style={{ fontSize: 13, color: c.textLight, fontFamily: "var(--font-display)" }}>
                   Raw <strong style={{ color: c.navy }}>{s.rawScore}</strong> → Scaled{" "}
                   <strong style={{ color: c.navy }}>{s.scaledScore.toFixed(1)}</strong>{" "}
                   {liftLabel && (
@@ -626,7 +626,7 @@ export default function ATARPlanner() {
                   >
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "space-between", alignItems: "baseline", marginBottom: 10 }}>
                       <div>
-                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                        <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: c.navy }}>
                           {course.courseName}
                         </p>
                         <p style={{ fontSize: 13, color: c.textLight }}>
@@ -634,10 +634,10 @@ export default function ATARPlanner() {
                         </p>
                       </div>
                       <div style={{ textAlign: "right" }}>
-                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: meets ? c.success : "#B45309", textTransform: "uppercase", letterSpacing: 1.5 }}>
+                        <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: meets ? c.success : "#B45309", textTransform: "uppercase", letterSpacing: 1.5 }}>
                           {meets ? "Above guaranteed" : "Below guaranteed"}
                         </p>
-                        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: meets ? c.success : "#B45309" }}>
+                        <p style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: meets ? c.success : "#B45309" }}>
                           {meets ? "+" : ""}{gap.toFixed(2)}
                         </p>
                       </div>
@@ -666,7 +666,7 @@ export default function ATARPlanner() {
                                 <span style={{ color: c.textMuted }}> (using {p.actualSubject})</span>
                               )}
                             </span>
-                            <span style={{ color: c.textLight, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
+                            <span style={{ color: c.textLight, fontFamily: "var(--font-display)", fontWeight: 600 }}>
                               {p.actualScore || "-"} / need {p.requiredScore}+
                             </span>
                           </li>
@@ -715,7 +715,7 @@ export default function ATARPlanner() {
                 }}
               >
                 <div>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: c.navy }}>
                     {course.courseName}
                   </p>
                   <p style={{ fontSize: 13, color: c.textLight, marginTop: 2 }}>
@@ -784,7 +784,7 @@ export default function ATARPlanner() {
                     borderRadius: 12,
                   }}
                 >
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: c.navy }}>
                     {s.subject}
                   </p>
                   <p style={{ fontSize: 13, color: c.textLight, marginTop: 4 }}>
@@ -819,7 +819,7 @@ export default function ATARPlanner() {
             href="/directory"
             style={{
               color: c.tealDark,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 13,
               fontWeight: 600,
               textDecoration: "none",
@@ -841,7 +841,7 @@ export default function ATARPlanner() {
             borderRadius: 10,
             color: c.text,
             fontSize: 13,
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             cursor: "pointer",
           }}
@@ -860,7 +860,7 @@ export default function ATARPlanner() {
 function Section({ title, children }) {
   return (
     <div style={{ marginTop: 24 }}>
-      <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: title }} />
+      <h3 style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: title }} />
       {children}
     </div>
   );
@@ -879,7 +879,7 @@ function SearchBox({ value, onChange }) {
         borderRadius: 12,
         border: `2px solid ${c.border}`,
         fontSize: 15,
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "var(--font-display)",
         background: c.white,
         outline: "none",
       }}
@@ -912,7 +912,7 @@ function CategoryTabs({ categories, active, onSelect }) {
               border: `1px solid ${isActive ? c.teal : c.border}`,
               background: isActive ? c.teal : c.white,
               color: isActive ? c.white : c.text,
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "var(--font-display)",
               fontSize: 13,
               fontWeight: 600,
               cursor: "pointer",
@@ -968,7 +968,7 @@ function CourseCard({ course, onToggle, selected, disabled }) {
         {selected ? "✓" : ""}
       </span>
       <div>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: c.navy, marginBottom: 4 }}>
           {course.courseName}
         </p>
         <p style={{ fontSize: 13, color: c.textLight }}>
@@ -984,10 +984,10 @@ function CourseCard({ course, onToggle, selected, disabled }) {
         )}
       </div>
       <div style={{ textAlign: "right" }}>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1 }}>
           Guaranteed
         </p>
-        <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 24, color: c.navy }}>
           {course.guaranteedAtar.toFixed(2)}
         </p>
       </div>
@@ -1031,7 +1031,7 @@ function SubjectRow({ row, onChange, onRemove, isFirst }) {
           padding: "12px 14px",
           borderRadius: 10,
           border: `1px solid ${c.border}`,
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: 15,
           fontWeight: 600,
           color: c.navy,
@@ -1095,10 +1095,10 @@ function LiveAtarPill({ result, selectedCourse }) {
       }}
     >
       <div>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: ready ? colours.fg : c.textMuted, textTransform: "uppercase", letterSpacing: 1.5 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: ready ? colours.fg : c.textMuted, textTransform: "uppercase", letterSpacing: 1.5 }}>
           Live estimated ATAR
         </p>
-        <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: 32, lineHeight: 1.1, color: c.navy, marginTop: 4 }}>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 32, lineHeight: 1.1, color: c.navy, marginTop: 4 }}>
           {ready ? result.atar.toFixed(2) : "--"}
         </p>
         {ready && (
@@ -1114,10 +1114,10 @@ function LiveAtarPill({ result, selectedCourse }) {
       </div>
       {ready && selectedCourse && (
         <div style={{ textAlign: "right" }}>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5 }}>
             Target
           </p>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy, marginTop: 2 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginTop: 2 }}>
             {selectedCourse.guaranteedAtar.toFixed(2)}
           </p>
           <p style={{ fontSize: 12, color: meetsCourse ? c.success : "#B45309", fontWeight: 600, marginTop: 2 }}>
@@ -1142,10 +1142,10 @@ function EmailGate({ email, setEmail, submitEmail, skipEmail, emailError }) {
         borderRadius: 16,
       }}
     >
-      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
+      <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
         Want a personalised lift plan?
       </p>
-      <h3 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 24, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>
+      <h3 style={{ fontFamily: "var(--font-display)", fontSize: 24, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>
         Enter your email to see which subjects move your ATAR the most.
       </h3>
       <p style={{ fontSize: 14, color: c.textLight, marginBottom: 18, lineHeight: 1.6 }}>
@@ -1164,7 +1164,7 @@ function EmailGate({ email, setEmail, submitEmail, skipEmail, emailError }) {
             borderRadius: 10,
             border: `1px solid ${c.border}`,
             fontSize: 15,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "var(--font-display)",
             background: c.white,
           }}
         />
@@ -1175,7 +1175,7 @@ function EmailGate({ email, setEmail, submitEmail, skipEmail, emailError }) {
             borderRadius: 10,
             background: c.navy,
             color: c.white,
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "var(--font-display)",
             fontSize: 14,
             fontWeight: 600,
             border: "none",

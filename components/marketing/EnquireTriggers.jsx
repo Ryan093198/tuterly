@@ -52,7 +52,7 @@ export function FloatingEnquireButton() {
           background: c.navy,
           color: c.white,
           border: "none",
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "var(--font-display)",
           fontSize: 14,
           fontWeight: 600,
           cursor: "pointer",

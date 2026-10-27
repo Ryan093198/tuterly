@@ -82,7 +82,7 @@ export default function DirectoryClient({ viewer }) {
   });
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", color: c.text, background: c.white, minHeight: "100vh" }}>
+    <div style={{ fontFamily: "var(--font-display)", color: c.text, background: c.white, minHeight: "100vh" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -100,7 +100,7 @@ export default function DirectoryClient({ viewer }) {
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", height: 64 }}>
           <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
             <div style={{ width: 32, height: 32, borderRadius: 9, background: "#0B1220", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 800, color: c.tealLight }}>t</div>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 21, fontWeight: 800, letterSpacing: "-0.8px", color: c.navy }}>tuterly</span>
+            <span style={{ fontFamily: "var(--font-display)", fontSize: 21, fontWeight: 800, letterSpacing: "-0.8px", color: c.navy }}>tuterly</span>
           </a>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <a href="/parents" style={{ padding: "9px 16px", borderRadius: 8, fontSize: 14, fontWeight: 600, color: c.textLight, textDecoration: "none" }}>For Parents</a>
@@ -116,7 +116,7 @@ export default function DirectoryClient({ viewer }) {
       {/* HEADER */}
       <section style={{ padding: "120px 40px 40px", background: c.offWhite }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: 36, fontWeight: 700, color: c.navy, marginBottom: 8 }}>Find a tutor</h1>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: 36, fontWeight: 700, color: c.navy, marginBottom: 8 }}>Find a tutor</h1>
           <p style={{ fontSize: 16, color: c.textLight, marginBottom: 16 }}>Every tutor on Tuterly is a high achiever in the subjects they teach, and trained to use the Tuterly platform.</p>
           <p style={{ fontSize: 14, color: c.textLight, marginBottom: 28, maxWidth: 700 }}>This means every lesson is structured, a detailed report is prepared after every session, progress is tracked over time, and you're always kept in the loop with exactly what's happening. No guesswork, no vague updates.</p>
 
@@ -175,7 +175,7 @@ export default function DirectoryClient({ viewer }) {
                 <div style={{ width: 48, height: 48, borderRadius: 12, background: t.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 700, color: c.white, flexShrink: 0 }}>{t.initials}</div>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: c.navy }}>{t.name}</p>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: c.navy }}>{t.name}</p>
                     {t.sessions >= 100 && <div style={{ background: c.tealPale, borderRadius: 4, padding: "1px 6px", fontSize: 9, fontWeight: 700, color: c.tealDark, textTransform: "uppercase", letterSpacing: 0.5 }}>Verified</div>}
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function DirectoryClient({ viewer }) {
                 <div style={{ width: 56, height: 56, borderRadius: 14, background: selectedTutor.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, fontWeight: 700, color: c.white }}>{selectedTutor.initials}</div>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: c.navy }}>{selectedTutor.name}</p>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: c.navy }}>{selectedTutor.name}</p>
                     {selectedTutor.sessions >= 100 && <div style={{ background: c.tealPale, borderRadius: 4, padding: "2px 8px", fontSize: 10, fontWeight: 700, color: c.tealDark }}>Verified</div>}
                   </div>
                 </div>
@@ -223,15 +223,15 @@ export default function DirectoryClient({ viewer }) {
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
                 <div style={{ background: c.offWhite, borderRadius: 10, padding: "12px", textAlign: "center" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: c.navy }}>{selectedTutor.sessions}</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: c.navy }}>{selectedTutor.sessions}</p>
                   <p style={{ fontSize: 11, color: c.textMuted }}>Sessions</p>
                 </div>
                 <div style={{ background: c.offWhite, borderRadius: 10, padding: "12px", textAlign: "center" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: c.amber }}>★ {selectedTutor.rating}</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: c.amber }}>★ {selectedTutor.rating}</p>
                   <p style={{ fontSize: 11, color: c.textMuted }}>Rating</p>
                 </div>
                 <div style={{ background: c.offWhite, borderRadius: 10, padding: "12px", textAlign: "center" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: c.success }}>+{selectedTutor.improvement}%</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 700, color: c.success }}>+{selectedTutor.improvement}%</p>
                   <p style={{ fontSize: 11, color: c.textMuted }}>Avg improvement</p>
                 </div>
               </div>
@@ -241,11 +241,11 @@ export default function DirectoryClient({ viewer }) {
             <div style={{ padding: "32px 28px", background: c.offWhite, display: "flex", flexDirection: "column", justifyContent: "center" }}>
               {!showSignup ? (
                 <div style={{ textAlign: "center" }}>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.navy, marginBottom: 6 }}>Book with {selectedTutor.name}</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 800, letterSpacing: "-0.6px", color: c.navy, marginBottom: 6 }}>Book with {selectedTutor.name}</p>
                   <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 24 }}>Reports, tracking and software included with every session.</p>
 
                   <div style={{ background: c.white, borderRadius: 14, padding: "24px 20px", border: `1px solid ${c.border}`, marginBottom: 20, textAlign: "left" }}>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 12 }}>What's included with Tuterly</p>
+                    <p style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: c.navy, marginBottom: 12 }}>What's included with Tuterly</p>
                     <div style={{ display: "grid", gap: 8 }}>
                       {["Connect directly with the tutor", "Detailed report after every session", "Progress tracking across all topics", "VCAA-aligned practice questions", "7-day free trial"].map((f, i) => (
                         <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -275,7 +275,7 @@ export default function DirectoryClient({ viewer }) {
                 </div>
               ) : (
                 <div>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 4 }}>Start your free trial</p>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 4 }}>Start your free trial</p>
                   <p style={{ fontSize: 13, color: c.textMuted, marginBottom: 20 }}>Connect with {selectedTutor.name} and get access to all Tuterly features.</p>
 
                   <div style={{ display: "grid", gap: 12 }}>
@@ -395,8 +395,8 @@ export default function DirectoryClient({ viewer }) {
 
       {/* TALK TO A CONSULTANT */}
       <section style={{ padding: "56px 40px", background: c.offWhite, textAlign: "center" }}>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Not sure where to start?</p>
-        <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, color: c.navy, lineHeight: 1.25, marginBottom: 10 }}>Speak to our educational consultant</h3>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>Not sure where to start?</p>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, lineHeight: 1.25, marginBottom: 10 }}>Speak to our educational consultant</h3>
         <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, maxWidth: 520, margin: "0 auto 18px" }}>Tell us about your child and we&apos;ll match you with the right tutor. No commitment, no cost.</p>
         <a href="tel:0426787978" style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "14px 28px", borderRadius: 12, background: c.navy, color: c.white, fontSize: 16, fontWeight: 700, textDecoration: "none" }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -409,7 +409,7 @@ export default function DirectoryClient({ viewer }) {
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <div style={{ width: 24, height: 24, borderRadius: 6, background: `linear-gradient(135deg, ${c.teal}, ${c.tealLight})`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: c.white }}>T</div>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
+            <span style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)" }}>tuterly</span>
           </div>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>© 2026 Tuterly by Bayside Academics</p>
         </div>

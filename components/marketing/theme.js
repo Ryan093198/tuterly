@@ -1,29 +1,40 @@
-// Shared colour palette and Google Font import for the marketing
-// pages (/parents, /centres, /tutors, /tutoring/*). These pages use
-// inline styles instead of Tailwind so their visual language can be
-// tuned independently from the in-app dashboard styling.
+// Shared colour palette for the inline-styled marketing pages
+// (/tutoring/*, best-of, comparison, prices, learn, tutor pages...).
+// Every value points at the Tuterly Study app tokens in app/globals.css,
+// so these pages follow the app's colours and switch with dark mode.
+//
+// Mapping notes:
+//   teal -> brand-deep (#0A7F99): the app's deeper teal, so teal text on
+//           white and white text on teal buttons both pass WCAG AA.
+//   navy / white swap in dark mode (navy = text colour, white = card), so
+//           a "navy button with white text" stays readable in both themes.
+//   Don't append hex alpha to these (e.g. `${c.teal}20`): they're CSS
+//   variables. Use color-mix() or a *Soft token instead.
 
 export const c = {
-  teal: "#0ABAB5",
-  tealLight: "#2DD4BF",
-  tealDark: "#0D9488",
-  tealPale: "#F0FDFA",
-  navy: "#0F172A",
-  navyMid: "#1E293B",
-  navyLight: "#334155",
-  text: "#1E293B",
-  textLight: "#64748B",
-  textMuted: "#94A3B8",
-  white: "#FFFFFF",
-  offWhite: "#F8FAFC",
-  cream: "#FFFBF5",
-  border: "#E2E8F0",
-  success: "#10B981",
-  amber: "#F59E0B",
-  rose: "#F43F5E",
+  teal: "var(--brand-deep)",
+  tealLight: "var(--brand)",
+  tealDark: "var(--brand-deep)",
+  tealPale: "var(--brand-soft)",
+  navy: "var(--foreground)",
+  navyMid: "var(--foreground)",
+  navyLight: "var(--muted)",
+  text: "var(--foreground)",
+  textLight: "var(--muted)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  offWhite: "var(--background)",
+  cream: "var(--background)",
+  border: "var(--border)",
+  success: "var(--success)",
+  amber: "var(--xp)",
+  rose: "var(--danger)",
 };
 
-// Drop once per page (inside a <style> block). Loads the marketing
-// fonts via @import - pragmatic given each marketing page is
-// self-contained inline styles.
-export const MARKETING_FONTS_IMPORT = `@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap');`;
+// The marketing pages used to @import DM Sans / DM Serif Display / Space
+// Grotesk here. The site now uses Nunito (loaded once via next/font in
+// app/layout.js), so this is empty and kept only so existing imports work.
+export const MARKETING_FONTS_IMPORT = "";
+
+// Font family for inline styles.
+export const FONT = "var(--font-display)";

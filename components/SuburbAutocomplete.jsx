@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { searchSuburbs } from "@/lib/suburbs";
 
 const c = {
-  text: "#1E293B",
-  textMuted: "#94A3B8",
-  white: "#FFFFFF",
-  border: "#E2E8F0",
-  teal: "#0ABAB5",
-  tealPale: "#F0FDFA",
+  text: "var(--foreground)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  border: "var(--border)",
+  teal: "var(--brand-deep)",
+  tealPale: "var(--brand-soft)",
 };
 
 // Search input + dropdown for the directory's location filter. As the

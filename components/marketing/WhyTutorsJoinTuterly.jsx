@@ -37,8 +37,8 @@ export default function WhyTutorsJoinTuterly({
     <section style={{ padding, background }}>
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
         <Fade>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Why tutors join Tuterly</p>
-          <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Why tutors join Tuterly</p>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 48, lineHeight: 1.25 }}>
             Free training and onboarding. Full independence.
           </h2>
         </Fade>
@@ -48,7 +48,7 @@ export default function WhyTutorsJoinTuterly({
             <Fade key={p.title} delay={0.05 + i * 0.05}>
               <div style={{ background: c.white, borderRadius: 18, border: `1px solid ${c.border}`, padding: "24px 22px", height: "100%" }}>
                 <div style={{ fontSize: 28, marginBottom: 12 }}>{p.icon}</div>
-                <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>{p.title}</h3>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 8, lineHeight: 1.3 }}>{p.title}</h3>
                 <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.65 }}>{p.body}</p>
               </div>
             </Fade>

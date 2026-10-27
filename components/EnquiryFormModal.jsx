@@ -135,7 +135,7 @@ export default function EnquiryFormModal({
             </div>
             <h2
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 26,
                 color: c.navy,
                 lineHeight: 1.2,
@@ -180,7 +180,7 @@ export default function EnquiryFormModal({
             />
             <p
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 12,
                 fontWeight: 600,
                 color: c.teal,
@@ -193,7 +193,7 @@ export default function EnquiryFormModal({
             </p>
             <h2
               style={{
-                fontFamily: "'DM Serif Display', serif",
+                fontFamily: "var(--font-display)",
                 fontSize: 24,
                 color: c.navy,
                 lineHeight: 1.2,
