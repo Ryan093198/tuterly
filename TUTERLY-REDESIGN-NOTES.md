@@ -74,3 +74,11 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Comparison: private tutor "Usually $80 to $100 an hour in Melbourne"; what it works on: "The difficult questions, and the ones your child hasn't fully understood, until each one is fully mastered."
 - How it works step 1 now shows the home screen (Snap a question); the snap menu moved to the school-tests section.
 - Still to reconcile: /tutoring-prices-melbourne says $50 to $80 an hour for Years 7 to 10, so the two pages disagree.
+
+## Changes from Ryan, 27 Oct (night): "not just an AI app"
+- New section on home (after How it works) and /parents: "Designed by Australian educators. Not just an AI app." Four cards: Designed by Australian educators / Built on the curriculum / Aligned with their school / Rules first, then a second check (components/study/MadeByEducators.jsx).
+- Home hero: two badges under the pitch, "Designed by Australian educators" and "Victorian Curriculum 2.0".
+- FAQ: new "Is it just another AI app?" and "Does it follow the Australian curriculum?"; "Who makes it?" now says Australian educators at Bayside Academics.
+- Tutoring pages: the app blurb and the competitor-page facts mention Australian educators and the Victorian Curriculum.
+- Curriculum wording: VCAA says the Victorian Curriculum F–10 "incorporates and reflects much of the Australian Curriculum", so the site says "incorporates much of the Australian Curriculum". It doesn't claim to follow NSW or other state syllabuses.
+- Phone frames: frames now always size to the screenshot (the step carousel on phones was stretching them).

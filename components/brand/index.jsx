@@ -3,6 +3,7 @@ import Image from "next/image";
 import {
   Camera, Inbox, Zap, FileQuestion, FileText, Flame, Star, BookOpen, Flag,
   ChevronRight, Upload, ShieldCheck, Link2, Lightbulb, ListChecks, Target,
+  GraduationCap, School, BadgeCheck,
 } from "lucide-react";
 import "./brand.css";
 
@@ -14,6 +15,7 @@ export const ICONS = {
   snap: Camera, bank: Inbox, practice: Zap, test: FileQuestion, notes: FileText,
   streak: Flame, star: Star, book: BookOpen, flag: Flag, upload: Upload,
   privacy: ShieldCheck, link: Link2, explain: Lightbulb, drill: ListChecks, goal: Target,
+  educator: GraduationCap, school: School, checked: BadgeCheck,
 };
 
 export function Icon({ name, size = 22, ...rest }) {

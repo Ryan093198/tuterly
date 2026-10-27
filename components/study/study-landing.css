@@ -10,6 +10,11 @@
 .sl-hero__copy { display: grid; gap: 0; }
 .sl-hero__lead { margin-top: 14px; }
 .sl-hero__pitch { margin-top: 12px; font-weight: 800; font-size: 16px; line-height: 1.45; color: var(--foreground); }
+.sl-hero__trust { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.sl-hero__trust li {
+  display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px;
+  background: var(--brand-soft); color: var(--brand-text); font-weight: 800; font-size: 14px; line-height: 1.2;
+}
 .sl-hero__cta { margin-top: 22px; scroll-margin-top: 96px; }
 .sl-hero__copy .tb-textlink { margin-top: 4px; justify-self: start; }
 .sl-hero__visual { position: relative; display: grid; place-items: center; padding: 18px 0 8px; }

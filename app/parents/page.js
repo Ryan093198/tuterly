@@ -6,6 +6,7 @@ import ContactCTA from "@/components/marketing/ContactCTA";
 import FindTutorButton from "@/components/FindTutorButton";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import FlowSteps from "@/components/brand/FlowSteps";
+import MadeByEducators from "@/components/study/MadeByEducators";
 import { Button, Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import { getStudyFaqs } from "@/lib/study-faqs";
@@ -70,6 +71,9 @@ export default function ParentsPage() {
           </div>
         </div>
       </section>
+
+      {/* 1b. MADE BY AUSTRALIAN EDUCATORS */}
+      <MadeByEducators id="educators" />
 
       {/* 2. WHAT YOU'LL SEE EACH WEEK */}
       <section className="tb-section tb-section--card" aria-labelledby="see">

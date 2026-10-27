@@ -7,9 +7,10 @@ import FlowSteps from "@/components/brand/FlowSteps";
 import {
   Card, CtaBand, Eyebrow, Icon, OptionTile, PhoneFrame, Reveal, SectionHead,
 } from "@/components/brand";
-import { STUDY_APP } from "@/lib/study-app";
+import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { PRICING } from "@/lib/pricing";
 import { getStudyFaqs } from "@/lib/study-faqs";
+import MadeByEducators from "@/components/study/MadeByEducators";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly Study app,
@@ -129,6 +130,10 @@ export default function StudyLanding() {
               {`Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
             <p className="sl-hero__pitch">It drills the questions your child actually gets wrong, not generic worksheets.</p>
+            <ul className="sl-hero__trust" aria-label="About the app">
+              <li><Icon name="educator" size={18} /> Designed by Australian educators</li>
+              <li><Icon name="school" size={18} /> {STUDY_APP_FACTS.curriculum}</li>
+            </ul>
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="home_hero" slim />
             </div>
@@ -168,8 +173,11 @@ export default function StudyLanding() {
         </div>
       </section>
 
+      {/* 2b. MADE BY AUSTRALIAN EDUCATORS (not just an AI app) */}
+      <MadeByEducators />
+
       {/* 3. THEIR OWN SCHOOL TESTS */}
-      <section className="tb-section" aria-labelledby="school">
+      <section className="tb-section tb-section--card" aria-labelledby="school">
         <div className="tb-wrap sl-parents">
           <div>
             <Reveal>
