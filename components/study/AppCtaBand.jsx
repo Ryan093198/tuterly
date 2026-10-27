@@ -8,7 +8,7 @@ export default function AppCtaBand({ placement, title, lead }) {
   return (
     <CtaBand
       id={`${placement}-title`}
-      title={title || "Start with the next question they get wrong."}
+      title={title || "Better maths marks start with the next question they get wrong."}
       lead={lead || `${STUDY_APP.name} turns every missed maths question into practice that’s about your child, not a generic worksheet.`}
     >
       <StudyAppCTA variant="hero" placement={placement} position="final" />

@@ -20,7 +20,9 @@ import "./study-landing.css";
 //
 // Copy rules (TUTERLY-STUDY-FUNNEL-PROMPT.md, TUTERLY-WEBSITE-REDESIGN-PROMPT.md):
 // no invented numbers, ratings, results or testimonials; no claim that the
-// app beats tutoring or lifts marks. Product facts come from
+// app beats tutoring. Better marks is the goal we lead with ("help your
+// child improve their maths marks"), never a promise: no "guaranteed", no
+// "the best way", no figures, until there's evidence. Product facts come from
 // TUTERLY-STUDY-FEATURES.md (build 11). Screens are real, from
 // public/app-screens (see its README).
 
@@ -125,10 +127,10 @@ export default function StudyLanding() {
           <div className="sl-hero__copy">
             <Eyebrow>{name} · Years 7 to 10 maths · iPhone</Eyebrow>
             <h1 id="hero-title" className="tb-h1">
-              Fix the maths questions your child gets <span className="sl-accent">wrong</span>.
+              Help your child get better <span className="sl-accent">maths marks</span>.
             </h1>
             <p className="tb-lead sl-hero__lead">
-              {`Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
+              {`Better marks start with the questions they got wrong. Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
             <p className="sl-hero__pitch">It drills the questions your child actually gets wrong, not generic worksheets.</p>
             <ul className="sl-hero__trust" aria-label="About the app">
@@ -161,7 +163,7 @@ export default function StudyLanding() {
             <SectionHead
               id="how"
               eyebrow="How it works"
-              title="Snap it. Try a fresh one. Practise until it’s mastered."
+              title="From a wrong answer to a mastered one, in four steps."
               lead="Homework, a textbook, a school test or a practice paper: any question they got wrong, or didn’t know how to start, goes into their own bank."
             />
           </Reveal>
@@ -185,7 +187,7 @@ export default function StudyLanding() {
               <SectionHead
                 id="school"
                 eyebrow="Straight from school"
-                title="Upload a real test. It turns the ones they got wrong into practice."
+                title="Upload a real test. Win back the marks they lost."
                 lead={`Take a photo of each page of a school test or practice paper, or upload the PDF or Word document. ${name} finds every question, automatically stores the ones marked wrong, and writes a fresh question on each one. So their practice is about exactly what they’re doing at school.`}
               />
             </Reveal>
@@ -321,7 +323,7 @@ export default function StudyLanding() {
       <section className="tb-section tb-section--card" aria-labelledby="features">
         <div className="tb-wrap">
           <Reveal>
-            <SectionHead id="features" eyebrow="In the app" title="Everything they need to fix their mistakes." />
+            <SectionHead id="features" eyebrow="In the app" title="Everything they need to turn mistakes into marks." />
           </Reveal>
           <div className="tb-tiles tb-tiles--3">
             <OptionTile icon="bank" title="The bank" text="Every question they’ve snapped, by topic, with a progress ring for each." />

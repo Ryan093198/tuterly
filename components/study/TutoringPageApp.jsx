@@ -15,7 +15,7 @@ export function AppHeroBlock({ placement, heading, sub }) {
       <StudyAppCTA
         variant="inline"
         placement={placement}
-        heading={heading || "Years 7 to 10 maths? Start with the questions they get wrong."}
+        heading={heading || "Want better maths marks in Years 7 to 10? Start with the questions they get wrong."}
         sub={
           sub ||
           `${STUDY_APP.name} is an iPhone app designed by Australian educators and built on the Victorian Curriculum: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`

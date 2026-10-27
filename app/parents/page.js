@@ -44,7 +44,7 @@ export default function ParentsPage() {
         <div className="tb-wrap pp-hero__grid">
           <div>
             <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
-            <h1 id="pp-title" className="tb-h1">Know what your child gets wrong in maths, and see it get fixed.</h1>
+            <h1 id="pp-title" className="tb-h1">Help your child improve their maths marks, and see the progress every week.</h1>
             <p className="tb-lead pp-hero__lead">
               {`With ${name}, your child snaps the maths questions they get wrong and practises fresh versions until each one is mastered. Each week you see what they added, fixed and mastered, plus their test scores.`}
             </p>
@@ -144,7 +144,7 @@ export default function ParentsPage() {
       {/* 6. CTA */}
       <CtaBand
         id="pp-final"
-        title="Start with the next maths question they get wrong."
+        title="Better maths marks start with the next question they get wrong."
         lead={`${name} is for Years 7 to 10 maths on iPhone. ${STUDY_APP.priceLine}.`}
       >
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />

@@ -105,3 +105,7 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - New article: /learn/how-tutoring-centres-use-tuterly-study (general, no named centres; waiting on Ryan for real centre details before writing case studies).
 - Titles: the root layout already appends " | Tuterly", so pages ending in "| Tuterly" showed it twice ("Tutoring in Brighton | Tuterly | Tuterly"). Those now use title.absolute; no title on the site shows it twice.
 - Not changed: the privacy policy (a legal document; it still describes data the old platform collected, so it needs a proper review rather than a marketing rewrite).
+
+## Changes from Ryan, 27 Oct (late night): lead with better marks
+- Headlines now lead with the outcome parents want, with the method second. Home H1 "Help your child get better maths marks." (lead: "Better marks start with the questions they got wrong."), home title "Tuterly Study: help your child improve their maths marks", parents H1 and title, the closing CTA bands ("Better maths marks start with the next question they get wrong."), the tutoring-page app block, and section headings ("Win back the marks they lost", "turn mistakes into marks").
+- Wording rule: better marks is the aim, never a promise. Not used: "the best way to improve marks", "guaranteed", or any figure, because those are claims the ACCC expects you to be able to prove. Once pilot results exist, they can be added with the evidence.
