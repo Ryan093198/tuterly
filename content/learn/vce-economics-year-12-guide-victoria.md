@@ -48,11 +48,11 @@ Extension work in VCE Economics is not about covering more content. It is about 
 
 The difference between a study score in the high 30s and one in the mid-40s is usually found in the quality of evaluation, the ability to consider multiple perspectives, acknowledge limitations, and reach a nuanced conclusion. That is a skill that improves with deliberate practice and targeted feedback.
 
-## Where Tuterly comes in
+## When a tutor helps
 
-If you are at the stage of asking "what exactly should my child be doing right now?", a Tuterly tutor with VCE Economics experience can answer that with a specific plan rather than general advice.
+If you are at the stage of asking "what exactly should my child be doing right now?", a tutor with VCE Economics experience should be able to answer that with a specific plan rather than general advice.
 
-After each session, you get a written report through the parent dashboard covering what was worked on, how your child performed, and what to focus on before the next session. You are not left guessing whether the sessions are making a difference.
+After each session you should know what was worked on, how your child performed, and what to focus on before the next one. If you are left guessing whether the sessions are making a difference, ask.
 
-The platform also includes targeted practice questions mapped to the VCE Economics study design, so students can work on structured response technique and exam-style analysis between tutoring sessions rather than waiting for school assessments to find out where the gaps are.
+Between sessions, practice questions mapped to the VCE Economics study design, including past VCAA exam questions, let students work on structured response technique and exam-style analysis rather than waiting for school assessments to find out where the gaps are.
 

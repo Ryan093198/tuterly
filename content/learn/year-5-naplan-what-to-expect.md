@@ -41,7 +41,7 @@ A tutor doesn't help much if your child is performing well and you're hoping to 
 
 ## If practice tests show real gaps
 
-If you've noticed consistent patterns in where your child struggles, a short block of targeted tutoring can make a genuine difference. [Tuterly](/) tutors are trained on the Victorian curriculum and know what Year 5 NAPLAN actually tests. You'll see what's being worked on through session reports, and your child can build confidence with the platform's practice questions at their own pace.
+If you've noticed consistent patterns in where your child struggles, a short block of targeted tutoring can make a genuine difference. Look for a tutor who knows the Victorian curriculum and what Year 5 NAPLAN actually tests, who tells you what's being worked on, and who sets practice your child can do at their own pace.
 
 ---
 

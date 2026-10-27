@@ -48,9 +48,9 @@ If your child seems to understand the content in general conversation but is not
 
 If your child is scoring well on SACs but struggling with the external exam format, a tutor who knows the VCAA Biology exam inside out can close that gap quickly. Likewise, if Unit 3 content did not land as solidly as it should have, the earlier you address it in the year, the less pressure it creates heading into October.
 
-Tuterly connects Melbourne families with experienced VCE Biology tutors who work to the Victorian curriculum. After each session, you receive a written report covering what was worked on, how your child performed, and exactly what to focus on next. You are not left guessing whether the sessions are doing anything.
+Look for a tutor who knows the VCAA Biology exam and study design well. After each session you should know what was worked on, how your child went, and what to focus on next. If you are left guessing whether the sessions are doing anything, ask.
 
-The platform also includes targeted practice questions aligned to the VCAA Biology study design, so your child is practising in the right format, not just reviewing content in the abstract.
+Practice in the right format matters too: past VCAA exams and exam-style questions, not just reviewing content in the abstract.
 
 ---
 

@@ -34,7 +34,7 @@ Over-quoting is one of the most frequent. If your quotes are longer than your an
 
 ## Closing the gap
 
-The gap between a 7 and a 9 is almost always structural, not knowledge. A [Tuterly English tutor](/tutoring/camberwell) works through your actual essays, marking, restructuring, and showing you the exact moves that lift a response. Session reports show parents which skills are being developed, and the platform's comprehension drills build the close-reading habits that feed better analysis. Whether you're in [Hawthorn](/tutoring/hawthorn), [Kew](/tutoring/kew), or anywhere across Melbourne, the process is the same: targeted feedback on your writing, not generic exam tips.
+The gap between a 7 and a 9 is almost always structural, not knowledge. A good English tutor works through your actual essays, marking, restructuring, and showing you the exact moves that lift a response. Whether you're in [Hawthorn](/tutoring/hawthorn), [Kew](/tutoring/kew), or anywhere across Melbourne, look for the same thing: targeted feedback on your writing, not generic exam tips.
 
 If you already know your texts but your scores aren't reflecting it, structure is almost certainly the reason.
 

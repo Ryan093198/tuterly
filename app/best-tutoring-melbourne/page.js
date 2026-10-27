@@ -1,16 +1,15 @@
-import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
-import Testimonials from "@/components/marketing/Testimonials";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Best Tutoring Services in Melbourne - 2026 Honest Guide";
+const TITLE = "Best Tutoring Services in Melbourne: 2026 Honest Guide";
 const DESCRIPTION =
-  "Honest guide to tutoring options in Melbourne - agencies, platforms, independent tutors, and tutoring centres. How to pick what's right for your family.";
+  "An honest guide to tutoring in Melbourne: agencies, local tutoring services, online tutoring, centres, independent tutors and practice apps. What each is good for and how to pick.";
 const URL = `${SITE_URL}/best-tutoring-melbourne`;
 
 export const metadata = {
@@ -37,58 +36,66 @@ const CATEGORIES = [
     goodFor:
       "Families who want a fully hands-off experience. The agency handles tutor matching, payment, and scheduling. Some have proprietary curriculum platforms.",
     tradeoffs:
-      "Highest prices ($90-150/hr typically). The tutor is a contractor on a smaller share, which means the strongest tutors often eventually move to platform or independent work.",
+      "Highest prices, typically $90 to $150 an hour. You’re usually assigned a tutor rather than choosing one, and the tutor is a contractor on a smaller share of what you pay.",
   },
   {
     name: "Local agencies and boutique services",
     examples: "Small Melbourne-based tutoring outfits, often run by ex-teachers",
     goodFor:
-      "Families wanting a more personal touch than a national chain. Better local school knowledge - the owner often personally knows the schools and exams you&apos;re aiming at.",
+      "Families wanting a more personal touch than a national chain. Better local school knowledge: the owner often personally knows the schools and exams you’re aiming at.",
     tradeoffs:
       "Variable quality and scale. The best ones are excellent; the weakest are just a website between you and a contracted tutor. Look for reviews from families you can actually speak to.",
   },
   {
-    name: "Online platforms",
-    examples: "Tuterly, Cluey (also online-focused), some learning apps",
+    name: "Online tutoring",
+    examples: "Cluey (online-focused), other online providers, and tutors who teach over video",
     goodFor:
-      "Families wanting wider tutor choice (no geographic constraint), built-in tooling like progress tracking and reports, and transparent pricing.",
+      "Families wanting wider tutor choice with no travel, which matters most for specialist subjects. Many providers add tools like progress tracking and reports.",
     tradeoffs:
-      "Less hand-holding than a managed agency - you choose your own tutor and message them directly. Most platforms now offer both online and in-person; some are online-only.",
+      "A screen after a full school day doesn’t suit every child, especially younger ones. How much hand-holding you get varies a lot between providers.",
   },
   {
-    name: "Tutoring centres / group classes",
+    name: "Tutoring centres and group classes",
     examples: "Kumon, NumberWorksnWords, Begin Bright, MathStar",
     goodFor:
-      "Reinforcing fundamentals through consistent repetition. Cheaper per hour ($25-50). Works well for primary maths and reading skills.",
+      "Reinforcing fundamentals through consistent repetition. Cheaper per hour, around $25 to $50. Works well for primary maths and reading skills.",
     tradeoffs:
-      "Not 1-on-1 - usually 6-12 kids per teacher. Less effective for targeted help on specific weak areas or for VCE-level work, where 1-on-1 attention is what moves scores.",
+      "Not 1-on-1: usually 6 to 12 kids per teacher. Less suited to targeted help on specific weak areas or to VCE-level work, where 1-on-1 attention matters most.",
   },
   {
     name: "Independent tutors (direct listings)",
     examples: "Gumtree, Facebook groups, uni noticeboards, word of mouth",
     goodFor:
-      "Cheapest option - and some genuinely excellent tutors run informal practices this way. Particularly common at uni-student rates ($30-50/hr).",
+      "Usually the cheapest tutoring, and some genuinely excellent tutors run informal practices this way. Particularly common at uni-student rates, around $30 to $50 an hour.",
     tradeoffs:
-      "No vetting, no review system, no platform tooling. Quality is unpredictable. Worth doing extra reference-checking before committing to weekly sessions.",
+      "No vetting, no review system, no extra tools. Quality is unpredictable. Worth doing extra reference-checking before committing to weekly sessions.",
+  },
+  {
+    name: "Practice apps (not tutoring)",
+    examples: "Tuterly Study, for Years 7 to 10 maths",
+    goodFor:
+      "The practice between lessons, or instead of them when that’s mostly what your child needs. In Tuterly Study they snap the maths questions they got wrong and practise similar ones until each is mastered. A 1-week free trial, then $7.99 a week.",
+    tradeoffs:
+      "An app doesn’t replace a person. There’s no live teacher to explain a brand-new topic, notice when your child is stuck or keep them motivated. Tuterly Study covers Years 7 to 10 maths only, on iPhone.",
   },
 ];
 
 const WHAT_TO_LOOK_FOR = [
   {
-    title: "Does the tutor send a structured report after every session?",
-    body: "Most tutoring still operates as a black box - you pay, your child sits through an hour, and you don&apos;t know what happened until the next school report. Reports change the whole dynamic.",
+    title: "What will your child do between sessions?",
+    body: "An hour a week with a tutor is a small slice of a school week. Ask what practice happens in between, and whether it’s based on the questions your child actually gets wrong or on a generic worksheet.",
   },
   {
-    title: "Is there any progress tracking across topics over time?",
-    body: "A tutor who can show you which topics are improving and which still need work, week by week, is genuinely different from one who can&apos;t. Particularly matters for VCE and selective entry prep where the topic list is fixed and progress is measurable.",
+    title: "Will you know what’s happening?",
+    body: "Most tutoring still operates as a black box: you pay, your child sits through an hour, and you don’t know what happened until the next school report. Ask how the provider keeps you in the loop, and how often.",
   },
   {
     title: "Are the hourly rates upfront, or hidden behind enquiry forms?",
-    body: "Rate transparency is rare in this industry. If the provider won&apos;t tell you their hourly rate without you filling out a form first, that&apos;s usually a sign their rate is higher than the market.",
+    body: "Rate transparency is rare in this industry. If the provider won’t tell you their hourly rate without you filling out a form first, that’s usually a sign their rate is higher than the market.",
   },
   {
     title: "Can you choose your own tutor, or are you assigned one?",
-    body: "Agencies typically assign. Platforms let you choose. The right answer depends on whether you trust your own judgment more than the agency&apos;s - and whether you want to be able to switch tutors easily if it&apos;s not working out.",
+    body: "Agencies typically assign. Independent tutors you choose yourself. The right answer depends on whether you trust your own judgement more than the agency’s, and whether you want to be able to switch tutors easily if it’s not working out.",
   },
 ];
 
@@ -107,7 +114,7 @@ export default function BestTutoringMelbournePage() {
               Best tutoring services in Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              An honest look at your options. Most &quot;best tutoring&quot; articles online are written by tutoring companies recommending themselves - this one walks through every category fairly, what each is genuinely good at, and where each falls short. Pick what fits your family, not what fits a marketing budget.
+              An honest look at your options. Most “best tutoring” articles online are written by tutoring companies recommending themselves. This one walks through every category fairly, what each is genuinely good at, and where each falls short. We make an app, Tuterly Study, and we’ll say plainly where it fits and where a tutor is the better call. Pick what fits your family, not what fits a marketing budget.
             </p>
             <AppHeroBlock placement="best_tutoring_melbourne_hero" />
           </Fade>
@@ -117,12 +124,12 @@ export default function BestTutoringMelbournePage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>The five categories</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>The six options</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Tutoring in Melbourne falls into five buckets.
+              Help with schoolwork in Melbourne falls into six buckets.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              Knowing which bucket fits your situation matters more than picking a specific provider. A primary student needing reading help wants something different from a Year 12 student aiming for a 99 ATAR. Here&apos;s what each category does well and where each falls short.
+              Knowing which bucket fits your situation matters more than picking a specific provider. A primary student needing reading help wants something different from a Year 12 student aiming high in VCE, and a Year 8 student who keeps losing marks on the same maths may not need a tutor at all. Here’s what each option does well and where each falls short.
             </p>
           </Fade>
         </div>
@@ -139,10 +146,7 @@ export default function BestTutoringMelbournePage() {
                   <div style={{ display: "grid", gap: 10 }}>
                     <div>
                       <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.success, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>Good for</p>
-                      <p
-                        style={{ fontSize: 14, color: c.text, lineHeight: 1.6 }}
-                        dangerouslySetInnerHTML={{ __html: cat.goodFor }}
-                      />
+                      <p style={{ fontSize: 14, color: c.text, lineHeight: 1.6 }}>{cat.goodFor}</p>
                     </div>
                     <div>
                       <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.amber, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 4 }}>Tradeoffs</p>
@@ -180,34 +184,22 @@ export default function BestTutoringMelbournePage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              The modern platform option.
+              The app option for Years 7 to 10 maths.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              Tuterly is in the &quot;online platform&quot; category. We&apos;re built around three observations: (1) the strongest tutors eventually leave agencies because of the commission, (2) most parents pay agency rates for what feels like a black-box service, and (3) the structured reporting and progress-tracking tools agencies use are easy to build into a platform that any independent tutor can use.
+              {STUDY_APP.name} is an iPhone app, not a tutoring service. It was designed by Australian educators at Bayside Academics, a tutoring business in Brighton, Melbourne, for one job: practising the exact maths questions your child gets wrong. They snap a question (or upload a whole marked test), see the full worked solution when they’re ready, and straight away get a similar question on the same idea that’s genuinely different. Three stars and it’s mastered. Topics follow the Victorian Curriculum 2.0.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              So we built that. Independent tutors set their own rates, parents pay them directly, and the platform handles the session reports, the practice worksheets, and the progress dashboards. The result is agency-quality tooling at independent-tutor prices, with the tutor seeing more of what you pay.
+              There’s also Test any topic for a short test on any topic in their year, and Study notes for a one-page revision sheet. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              It&apos;s not the right fit for every family. If you want a fully managed experience where someone else picks the tutor and handles every detail, a national agency is the better call. But if you&apos;d rather see your tutor&apos;s rate up front, pick someone who actually fits your child, and know what&apos;s happening every session - this is what we built.
+              It’s not the right fit for every family. If your child needs someone to teach them a topic from scratch, needs help with VCE, English or primary school work, or simply works better with a person beside them, choose a tutor from the categories above. Plenty of families use both: the tutor teaches, and the app keeps the questions they got wrong coming back until they’re mastered.
             </p>
           </Fade>
         </div>
       </section>
-
-      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
-      <Testimonials
-        variant="grid"
-        tags={["compare", "parents"]}
-        limit={3}
-        background={c.white}
-        padding="72px 24px"
-        kicker="From our families"
-        heading="What families say after making the switch."
-      />
-
 
       <AppCtaBand placement="best_tutoring_melbourne_final" />
       <MarketingFooter />

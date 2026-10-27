@@ -58,7 +58,7 @@ Psychology tutoring is not just for students who are behind. A student sitting c
 
 A tutor who knows the VCE Psychology study design can work through SAC-style questions with your child, give feedback on written responses, and help with the research methodology content that often comes unstuck in classroom settings.
 
-Tuterly connects Victorian families with tutors who understand exactly what is expected at each stage of the VCE. After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can continue building skills with targeted practice questions on the platform, keeping the momentum going without waiting for the next session.
+Look for a tutor who understands what is expected at each stage of the VCE, and ask how they will keep you across what was covered and how your child is tracking. Between sessions, regular short practice keeps the momentum going without waiting for the next session.
 
 ---
 

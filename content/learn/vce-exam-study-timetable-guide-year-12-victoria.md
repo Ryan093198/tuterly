@@ -60,7 +60,7 @@ For students chasing a high ATAR, the marginal gains come from precision. Knowin
 
 Some students build a solid timetable and still feel stuck. The content isn't clicking, or they're not sure if their practice responses are actually hitting the mark. That's when outside support makes a real difference.
 
-Tuterly connects Year 12 students with VCE-experienced tutors across Melbourne who know the VCAA curriculum and what examiners are looking for. After every session, parents can see exactly what was covered through the parent dashboard, including session reports that track progress over the exam period. Between sessions, students can work through targeted practice questions on the platform to keep momentum going.
+Look for a VCE-experienced tutor who knows the VCAA curriculum and what examiners are looking for in that subject. Ask how they will keep you across what was covered over the exam period, and build their practice tasks into the timetable rather than on top of it.
 
 ---
 

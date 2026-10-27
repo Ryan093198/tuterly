@@ -58,7 +58,9 @@ If your child is on the borderline of whether they can handle Maths Methods, or 
 
 Targeted work in Term 3 and Term 4 of Year 10 can consolidate the foundational skills that make a harder VCE subject viable. For extension students, a tutor can introduce Unit 1 and 2 content early so Year 11 does not come as a shock.
 
-Tuterly connects Melbourne families with tutors who know the VCE inside out. Through the parent dashboard, you get session reports after every lesson so you can track whether those gaps are genuinely closing. Between sessions, your child can work through targeted practice questions on the platform to build consistency, not just pre-exam cramming.
+Whoever you work with, ask how they will show you whether those gaps are genuinely closing, and what your child should practise between sessions to build consistency, not just pre-exam cramming.
+
+If the question is Maths Methods, the foundations are Year 9 and 10 algebra. [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths, lets your child snap the questions they get wrong and practise fresh versions until each one is mastered, and Test any topic gives a quick read on which Year 10 topics are secure.
 
 Subject selection closes fast. Getting the right support in place now means your child walks into Year 11 with confidence, not doubt.
 

@@ -46,11 +46,11 @@ Term 1 is for building solid foundations in Unit 3 content and nailing the first
 
 Starting past paper practice in Term 3 rather than the holidays before the exam gives students time to actually fix what they find, rather than just spotting problems and panicking.
 
-## How Tuterly can help
+## When a tutor helps
 
-If you have reached the "so what do we actually do?" point, that is exactly where a Tuterly tutor comes in. Our Chemistry tutors work specifically with the VCAA study design and current exam format, not a generic science curriculum.
+If you have reached the "so what do we actually do?" point, that is where a tutor who works specifically with the VCAA Chemistry study design and current exam format, not a generic science curriculum, earns their place.
 
-After every session you receive a written report through the parent dashboard showing what was covered, how your child went, and what to practise before the next session. The platform also includes targeted practice questions aligned to VCE Chemistry, so your child is not hunting down worksheets or relying on whatever comes up on a Google search.
+After each session you should know what was covered, how your child went, and what to practise before the next one. Good practice material is past VCAA exams and exam-style questions, not whatever comes up on a Google search.
 
-Whether your child needs to patch gaps before a SAC, build exam technique for October, or push from a 38 to a 43, a tutor who knows VCE Chemistry makes a measurable difference in the final year.
+Whether your child needs to patch gaps before a SAC, build exam technique for October, or aim for a stronger study score, a tutor who knows VCE Chemistry can help them use the final year well.
 

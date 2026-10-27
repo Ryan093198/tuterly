@@ -58,5 +58,5 @@ If your child is avoiding reading, guessing at words rather than working them ou
 
 If your child is cruising through Year 3 English without much challenge, extension work is genuinely valuable at this age. Building strong comprehension and writing habits now makes Years 5 and 7 considerably less stressful.
 
-Tuterly connects Melbourne families with tutors who know the Victorian Curriculum and can target exactly what your child needs, whether that is filling a specific gap or working ahead. The parent dashboard gives you a clear view of every session, and written session reports tell you what was covered and what to practise next. The platform also includes targeted practice questions so your child keeps building between sessions.
+Look for a tutor who knows the Victorian Curriculum and can target exactly what your child needs, whether that is filling a specific gap or working ahead. Ask how they will tell you what was covered and what to practise next, so your child keeps building between sessions.
 

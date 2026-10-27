@@ -50,7 +50,7 @@ If your child is also planning ahead for Units 3 and 4, know that the study desi
 
 VCE Biology is a subject where one-on-one guidance genuinely accelerates progress. A tutor can work through SAC preparation with your child, give detailed feedback on extended response answers, and help identify exactly which concepts are shaky before they become a problem in Units 3 and 4.
 
-Tuterly connects Melbourne families with tutors who know the VCE Biology study design and can work through your child's actual SAC material with them. After every session, you'll see a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can keep building with targeted practice questions on the platform, so progress doesn't stall when the tutor logs off.
+Look for a tutor who knows the current VCE Biology study design and will work through your child's actual SAC material with them. Ask how they will let you know what was covered and how your child is tracking, and what practice they will set between sessions so progress doesn't stall.
 
 ---
 

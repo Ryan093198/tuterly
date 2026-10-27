@@ -44,5 +44,5 @@ Talk about grammar in low-stakes moments. You do not need to run formal lessons.
 
 If you want to know specifically where your child sits against Level 6 expectations, a good tutor will tell you clearly after the first session. The diagnostic matters more than the hours.
 
-At Tuterly, you can find experienced English tutors who work with Year 6 students on exactly these transition skills. After every session, you get a written report through the parent dashboard covering what was practised, how your child went, and what to focus on before the next session. There are no surprises about whether the work is landing. The platform also includes targeted practice questions aligned to the Victorian Curriculum, so your child can work on inference, grammar, and analytical writing between sessions rather than waiting a week for the next one.
+Look for an experienced English tutor who works with Year 6 students on exactly these transition skills. After each session you should know what was practised, how your child went, and what to focus on before the next one. Practice on inference, grammar, and analytical writing between sessions keeps things moving rather than waiting a week for the next one.
 

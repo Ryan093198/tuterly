@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   const post = getTutorPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Tuterly`,
+    title: { absolute: `${post.title} | Tuterly` },
     description: post.description,
     alternates: { canonical: `${SITE_URL}/tutors/blog/${slug}` },
     openGraph: {

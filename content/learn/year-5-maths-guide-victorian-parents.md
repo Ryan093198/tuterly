@@ -48,11 +48,11 @@ Work on fluency with fractions and decimals in everyday contexts. Cooking, split
 
 If word problems are the sticking point, slow them down. Read the problem twice, identify what's being asked before touching numbers, then work through it step by step. That habit alone closes a lot of the gap.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-If you're noticing specific gaps or want your child genuinely extended beyond year level, a targeted tutor is worth considering. Tuterly's parent dashboard gives you visibility after every session: what was covered, how your child went, and what to practise next. You're not left guessing whether the sessions are working.
+If you're noticing specific gaps or want your child genuinely extended beyond year level, a targeted tutor is worth considering. After each session you should know what was covered, how your child went, and what to practise next, so you're not left guessing whether the sessions are working.
 
-The platform also includes targeted practice questions aligned to the Victorian Curriculum, so there's no hunting around for the right worksheets.
+Practice between sessions should match the Victorian Curriculum at your child's level, so there's no hunting around for the right worksheets.
 
 Also worth reading: our [Year 6 maths guide](/learn/year-6-maths-guide-victorian-parents) and [NAPLAN Year 5 prep guide](/learn/naplan-year-5-prep-guide) for what comes next.
 

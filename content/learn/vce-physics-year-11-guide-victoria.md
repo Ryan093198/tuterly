@@ -56,11 +56,11 @@ Keep an eye on the rhythm of assessments across the year. Physics tasks tend to 
 
 If your child's school offers Physics revision sessions or lunch-time help, push them to go. Teachers notice the students who ask for help, and that relationship matters.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-If your child is finding VCE Physics harder than expected, or if they want to make sure Year 11 sets them up properly for Year 12, Tuterly connects Melbourne families with tutors who know the Victorian curriculum and what VCE Physics actually demands at each stage.
+If your child is finding VCE Physics harder than expected, or if they want to make sure Year 11 sets them up properly for Year 12, a tutor who knows the Victorian curriculum and what VCE Physics actually demands at each stage can help.
 
-After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. You do not have to guess whether the sessions are making a difference. Between sessions, your child can keep building with targeted practice questions on the platform, working through the specific concepts that need the most attention.
+Ask how they will keep you across what was covered and how your child is tracking, so you do not have to guess whether the sessions are making a difference, and what practice they will set on the concepts that need the most attention.
 
 ---
 

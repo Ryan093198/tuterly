@@ -46,7 +46,7 @@ Avoid framing the test as high stakes. Your child will take their cue from you. 
 
 ## If you want more targeted support
 
-If you've noticed specific gaps and want someone to address them properly, a tutor with NAPLAN experience can run a short diagnostic, identify the two or three skills worth focusing on, and build practice that fits your child's actual level. Tuterly's parent dashboard gives you a written report after every session so you can see exactly what's being covered and how your child is responding. The platform also includes targeted practice questions aligned to the NAPLAN format, so your child gets familiar with how questions are asked, not just what they cover.
+If you've noticed specific gaps and want someone to address them properly, a tutor with NAPLAN experience can run a short diagnostic, identify the two or three skills worth focusing on, and build practice that fits your child's actual level. Ask them to tell you after each session what was covered and how your child is responding, and make sure some practice uses the NAPLAN format, so your child gets familiar with how questions are asked, not just what they cover.
 
 The test is one morning. The skills behind it matter for years. Getting those right, calmly and at the right pace, is always the better goal.
 

@@ -54,11 +54,11 @@ If your child is finding Units 1 and 2 straightforward, that is worth building o
 
 Students aiming for strong ATAR contributions from Legal Studies in Year 12 need to develop a genuine analytical habit now. Reading coverage of real cases in the news, listening to law-focused podcasts, and writing practice responses without being prompted are all habits that separate strong performers. The students who score well in Year 12 Legal Studies are not just knowledgeable. They are practised at forming and defending arguments under time pressure.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 If your child is working hard but their SAC results are not reflecting it, or if they are confident but not yet developing the analytical depth the subject requires, a tutor who knows VCE Legal Studies can make a targeted difference.
 
-Through the Tuterly parent dashboard, you receive a session report after every lesson covering exactly what was worked on and how your child is progressing. You do not have to rely on your child's summary of how it went. Targeted practice questions on the platform also let your child keep building skills between sessions, particularly around essay structure and legal terminology.
+Ask for a short note after each session covering what was worked on and how your child is progressing, so you do not have to rely on your child's summary of how it went. Practice between sessions should focus on essay structure and legal terminology.
 
 ---
 

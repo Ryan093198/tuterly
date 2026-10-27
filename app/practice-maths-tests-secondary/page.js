@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 // searches. The test builder was removed (Oct 2026): the tests now come
 // from the Tuterly Study app ("Test any topic"), so the app is the CTA.
 
-const TITLE = "Maths Practice Tests, Years 7-10 | Tuterly Study";
+const TITLE = "Maths Practice Tests, Years 7 to 10: Tuterly Study";
 const DESCRIPTION =
   "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly Study iPhone app.";
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;

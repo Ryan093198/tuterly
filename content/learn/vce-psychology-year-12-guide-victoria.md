@@ -50,11 +50,11 @@ You don't need to know the difference between the somatic and autonomic nervous 
 
 Ask your child to explain a concept to you in plain language. If they can teach it clearly, they know it well enough. If they stumble, they've found a gap worth revisiting.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 If your child has hit a wall with specific content, is nervous about the exam format, or wants to push their study score higher, a VCE Psychology tutor can make a real difference in the second half of the year.
 
-Tuterly's parent dashboard gives you visibility into every session, and written session reports tell you exactly what was covered and what to work on before the next one. You're not left guessing whether the sessions are having an effect. The platform also includes targeted practice questions aligned to VCAA-style exam conditions, so your child gets the right kind of repetition rather than generic worksheets.
+Ask how the tutor will show you what was covered and what to work on before the next session, so you're not left guessing whether the sessions are having an effect. Practice should be under VCAA-style exam conditions, so your child gets the right kind of repetition rather than generic worksheets.
 
 ---
 

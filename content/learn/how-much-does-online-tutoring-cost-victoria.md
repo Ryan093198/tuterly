@@ -11,7 +11,7 @@ published: true
 Online tutoring in Victoria generally falls into three price bands:
 
 - **National online agencies:** roughly $90 to $150 per hour. You pay a premium for a fully managed service where the company assigns and manages the tutor.
-- **Platforms and marketplaces:** typically more affordable, because you choose your own tutor and pay them more directly. Tuterly sessions, for example, start from $75 per hour, all-inclusive.
+- **Platforms and marketplaces:** typically more affordable, because you choose your own tutor and pay them more directly.
 - **Independent tutors:** often $30 to $60 per hour, especially high-achieving uni students. The lowest cost, but with no vetting, reviews or tooling included.
 
 ## What actually drives the price

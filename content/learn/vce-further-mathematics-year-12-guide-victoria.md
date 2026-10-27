@@ -58,5 +58,5 @@ Keep an eye on calculator fluency too. If your child is still hunting for functi
 
 ## Where to go from here
 
-If your child is struggling with a particular module, or if they are aiming for a study score that opens specific pathways, a tutor who knows the VCE Further Mathematics course well can target exactly what needs work. On Tuterly, the parent dashboard shows you what has been covered in each session and where your child's gaps are. Session reports mean you are not guessing whether the tutoring is actually helping, and the platform includes targeted practice questions aligned to the VCAA course.
+If your child is struggling with a particular module, or if they are aiming for a study score that opens specific pathways, a tutor who knows the VCE Further Mathematics course well can target exactly what needs work. Ask how they will show you what has been covered and where your child's gaps are, so you are not guessing whether the tutoring is actually helping, and make sure the practice is built from VCAA exam-style questions.
 

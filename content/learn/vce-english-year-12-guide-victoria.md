@@ -60,7 +60,7 @@ VCE English is a subject where one-on-one feedback on actual student work moves 
 
 This is true at both ends of the performance spectrum. A student struggling to pass needs someone to identify the fundamental skill that is missing. A student aiming for 40 or above needs someone who can push their analysis further and sharpen the precision of their writing.
 
-Tuterly connects Melbourne families with tutors who understand VCE English inside and out. After every session, you can see exactly what was worked on through the parent dashboard, so you are not left guessing whether things are improving. Between sessions, your child can continue building specific skills with targeted practice questions on the platform.
+Whichever end your child is at, choose a tutor who understands VCE English inside and out and who tells you after each session what was worked on, so you are not left guessing whether things are improving.
 
 ---
 

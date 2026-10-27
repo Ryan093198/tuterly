@@ -46,11 +46,11 @@ For students who are already strong academically, targeted scholarship prep can 
 
 This is also genuinely high-stakes preparation. Scholarship offers can mean significant fee reductions at schools that cost $30,000 or more per year. The investment in good preparation is modest by comparison.
 
-## Tuterly and scholarship preparation
+## Getting support for scholarship preparation
 
-If you are beginning this process or want to work out where your child actually stands, Tuterly connects Melbourne families with tutors who specialise in scholarship exam preparation across the Victorian private school landscape.
+If you are beginning this process or want to work out where your child actually stands, a tutor who specialises in scholarship exam preparation can assess your child across each exam component and build a plan from there.
 
-After every session, you receive a detailed report through the parent dashboard covering what was worked on and how your child is progressing across each exam component. You will not be left wondering whether the preparation is on track. Between sessions, your child can continue building skills with targeted practice questions on the platform, so momentum carries through the week.
+Ask how they will report progress on each component, and what your child should practise between sessions so momentum carries through the week. You should not be left wondering whether the preparation is on track.
 
 ---
 

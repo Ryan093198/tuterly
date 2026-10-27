@@ -42,11 +42,11 @@ Schools are doing a lot with limited time and staff. Even with the best intentio
 
 This is where outside support makes the biggest difference, and it's also where getting the right match matters enormously. A tutor who understands how ADHD affects working memory, or how dyslexia affects reading fluency, approaches a session completely differently from someone who just re-explains the classroom content.
 
-## How Tuterly can help
+## Finding the right tutor
 
-If you're at the "what do I actually do next?" stage, Tuterly connects Melbourne families with tutors who have experience supporting kids with learning difficulties. When you're looking through our directory, you can filter for tutors with specific experience, so you're not starting from scratch.
+If you're at the "what do I actually do next?" stage, look for a tutor with real experience supporting kids with learning difficulties, and ask about it directly before the first session. Experience with ADHD or dyslexia changes how a session is paced and structured.
 
-Every session comes with a written report through the parent dashboard, so you can see exactly what was worked on and what needs practice next. For kids who need a lot of repetition on specific skills, the platform's targeted practice questions let you keep that practice going between sessions without having to find your own materials.
+Ask for a short note after each session on what was worked on and what needs practice next. For kids who need a lot of repetition on specific skills, that note tells you exactly what to keep practising between sessions, without having to find your own materials. For Years 7 to 10 maths, [{{STUDY_APP}}](/) can help with that repetition: your child snaps a question they got wrong and practises fresh versions of it until it is mastered.
 
 The goal isn't just to survive the school year. It's to build real skills that close the gap.
 

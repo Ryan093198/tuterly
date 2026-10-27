@@ -48,5 +48,5 @@ If the number is higher than expected, remind your child that the subjects ahead
 
 Supporting your child through results day is important. Supporting them through Year 12 itself is where outcomes are actually shaped. Students who understand how scaling works make smarter subject and study decisions. Students who get targeted practice in their weakest VCE subjects in Terms 2 and 3 arrive at exams far better prepared than those who ramp up in the last few weeks.
 
-Tuterly's VCE tutors work across all major subjects and understand the VCAA study designs in detail. After every session, you get a written report showing what was covered and what needs attention next, so you are never guessing at progress. The platform also includes targeted practice questions built around the VCE exam format, which is the kind of preparation that actually moves study scores.
+If your child is heading into Year 12, that is the time to act on their weakest subject. A tutor who knows the current VCAA study design for that subject, and who works from past exams and your child's own SAC feedback, is worth more than extra hours of general study. Ask how they will show you what has been covered and what still needs attention, so you are not guessing at progress.
 

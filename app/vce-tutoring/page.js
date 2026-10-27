@@ -1,19 +1,20 @@
-import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
+import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
-import SampleReport from "@/components/marketing/SampleReport";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "VCE Tutoring Melbourne - Methods, English, Sciences | Tuterly";
+const TITLE = "VCE Tutoring Melbourne: Methods, English, Sciences | Tuterly";
 const DESCRIPTION =
-  "VCE tutoring in Melbourne for Methods, English, Specialist Maths, Chemistry, Physics. Detailed session reports aligned to VCE study designs.";
+  "VCE tutoring in Melbourne: what changes in VCE, the subjects families tutor most, when to start, and why Years 9 and 10 maths matters for Methods and Specialist.";
 const URL = `${SITE_URL}/vce-tutoring`;
 
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: {
@@ -32,46 +33,57 @@ export const metadata = {
 const SUBJECTS = [
   {
     name: "VCE Mathematical Methods",
-    body: "Functions and graphs, calculus, probability. The single highest-demand VCE subject for tutoring - and the one with the biggest gap between school pace and what's actually needed for a 35+ study score. Tutors who got 40+ in Methods themselves are the typical fit.",
+    body: "Functions and graphs, calculus, probability. One of the most tutored VCE subjects, because it moves quickly and leans hard on the algebra students learnt in Years 9 and 10. Good Methods tutoring keeps pace with the study design and builds exam technique on VCAA past papers.",
   },
   {
     name: "VCE English (and English Language / Literature)",
-    body: "Analytical essay, comparative essay, language analysis - the three pieces that decide the score. Tutoring is mostly structural: students often have the ideas but need help organising them into the essay forms VCAA actually rewards.",
+    body: "Analytical, comparative and language analysis writing. Tutoring here is mostly structural: students often have the ideas but need help organising them into the essay forms the VCAA assessment asks for.",
   },
   {
     name: "VCE Specialist Mathematics",
-    body: "Vectors, complex numbers, mechanics, differential equations. The hardest VCE subject and the rarest specialist tutoring market. Usually paired with Methods, with tutoring focused on bridging Methods-style problem solving to the more abstract Specialist proof style.",
+    body: "Vectors, complex numbers, mechanics, differential equations. Usually taken alongside Methods, and widely seen as the most demanding VCE maths subject. Tutoring tends to focus on moving from Methods-style problem solving to Specialist’s more abstract, proof-based style.",
   },
   {
     name: "VCE Chemistry",
-    body: "Units 3-4 organic chemistry, equilibrium, redox. Tutoring tends to be drilling past papers and developing the multi-step problem-solving instincts that the SACs and exams test.",
+    body: "Units 3 and 4 cover organic chemistry, equilibrium and redox. Tutoring tends to mean working through past papers and building the multi-step problem-solving habits that the SACs and exams test.",
   },
   {
     name: "VCE Physics",
-    body: "Motion, electricity, light and matter, fields. The interplay between conceptual understanding and quantitative calculation is where tutoring adds the most - particularly the longer-response questions that show up in the end-of-year exam.",
+    body: "Motion, electricity, light and matter, fields. The mix of conceptual understanding and calculation is where tutoring helps most, particularly with the longer-response questions in the end-of-year exam.",
   },
   {
     name: "VCE Biology",
-    body: "Nucleic acids, photosynthesis, immunity, evolution. Less calculation than Chemistry / Physics, more about the structured-response writing technique that the VCAA exam rewards.",
+    body: "Nucleic acids, photosynthesis, immunity, evolution. Less calculation than Chemistry or Physics, more about the structured written responses the VCAA exam asks for.",
   },
 ];
 
 const TIMING = [
   {
     when: "Year 10",
-    body: "Pre-VCE preparation. Algebra, indices, and structured essay writing are the three biggest predictors of Methods and English readiness. Worth bringing a tutor in for foundations work if there's any uncertainty - it pays off in Year 11.",
+    body: "Pre-VCE preparation. Algebra, indices and structured essay writing are the foundations Methods and English lean on most. If there’s any uncertainty in the maths, Year 10 is the time to sort it out, before Units 1 and 2 start.",
   },
   {
     when: "Year 11",
-    body: "Units 1-2. The year most families underestimate. The Unit 1-2 grades don't count toward ATAR but the content is the foundation for Units 3-4 - falling behind here is hard to recover from.",
+    body: "Units 1 and 2. The year many families underestimate. Unit 1 and 2 results don’t count directly towards the ATAR, but the content is the foundation for Units 3 and 4, and falling behind here is hard to recover from.",
   },
   {
     when: "Year 12",
-    body: "Units 3-4. The year that matters. Tutoring intensifies in Term 2 (heading into SACs), Term 3 (more SACs + writing past papers), and Term 4 (exam preparation). Most Year 12 students who tutor weekly start in February, not September.",
+    body: "Units 3 and 4. Tutoring usually picks up in Term 2 (heading into SACs), Term 3 (more SACs and past papers) and Term 4 (exam preparation). If weekly tutoring is the plan, starting early in the year leaves time to build up before the first SACs, rather than starting in September.",
   },
 ];
 
+const PRE_VCE_MATHS = [
+  "Algebra: expanding, factorising and rearranging without slips",
+  "Indices and surds",
+  "Linear and quadratic functions and their graphs",
+  "Trigonometry",
+  "Probability",
+];
+
+const sectionLabel = { fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 };
+
 export default function VceTutoringPage() {
+  const name = STUDY_APP.name;
   return (
     <main style={{ background: c.white, fontFamily: "var(--font-display)", color: c.text }}>
       <style dangerouslySetInnerHTML={{ __html: MARKETING_FONTS_IMPORT }} />
@@ -81,14 +93,18 @@ export default function VceTutoringPage() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>VCE tutoring</p>
+            <p style={sectionLabel}>VCE tutoring</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              VCE tutoring built around the study design.
+              VCE tutoring in Melbourne: what it’s for, and when to start.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Methods, English, Specialist, Chemistry, Physics, Biology - tutored by people who&apos;ve sat the exam themselves and know what a 40+ study score actually requires. Every session generates a structured report mapped to the VCAA study design, so you can see which areas of content are improving and which still need work.
+              Methods, English, Specialist, Chemistry, Physics, Biology. Here’s what changes when your child starts VCE, what good tutoring looks like in each subject, and when it’s worth starting. And if your child is still in Year 9 or 10, why getting their maths solid now matters for VCE Methods and Specialist.
             </p>
-            <AppHeroBlock placement="vce_tutoring_hero" />
+            <AppHeroBlock
+              placement="vce_tutoring_hero"
+              heading="In Year 9 or 10? Fix the maths gaps before VCE."
+              sub={`${name} is an iPhone app for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It doesn’t cover VCE subjects.`}
+            />
           </Fade>
         </div>
       </section>
@@ -96,15 +112,15 @@ export default function VceTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>What changes in VCE tutoring</p>
+            <p style={sectionLabel}>What changes in VCE</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              It&apos;s a different game from Year 7-10.
+              It’s a different game from Years 7 to 10.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              VCE is run by VCAA and assessed through SACs (School Assessed Coursework) plus end-of-year exams. The study scores get scaled into your ATAR, and the difference between a 35 and a 40 in Methods is the difference between a mid-90s and a high-90s ATAR for most cohorts.
+              VCE is run by the VCAA and assessed through SACs (School-assessed Coursework) plus end-of-year exams. Study scores are scaled and combined into the ATAR.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              That means VCE tutoring isn&apos;t about catching up. It&apos;s about pacing through the study design at a level above your school&apos;s teaching, building exam technique on actual VCAA past papers, and identifying the specific content areas where you&apos;re losing marks. A tutor who&apos;s done that themselves is genuinely different from a tutor who&apos;s just confident at the maths.
+              That means VCE tutoring usually isn’t about catching up. It’s about working through the study design with someone who knows it well, building exam technique on VCAA past papers, and finding the specific content areas where marks are being lost.
             </p>
           </Fade>
         </div>
@@ -113,7 +129,7 @@ export default function VceTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Subjects we cover</p>
+            <p style={sectionLabel}>VCE subjects</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 36, lineHeight: 1.25 }}>
               The six subjects most families tutor.
             </h2>
@@ -131,17 +147,44 @@ export default function VceTutoringPage() {
         </div>
       </section>
 
-      <SampleReport
-        background={c.offWhite}
-        padding="80px 24px"
-        heading="Reports map straight to the VCE study design."
-        sub="Every session report tracks topic confidence on a 1-5 scale across the specific content areas in the VCAA study design. Watch how an area of weakness becomes an area of strength session by session - or the opposite, when something needs intervention."
+      <section style={{ padding: "64px 24px", background: c.offWhite }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={sectionLabel}>Before VCE</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              Methods and Specialist assume Years 9 and 10 maths.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
+              VCE maths builds straight on what students learn in Years 9 and 10. When a Year 11 student struggles in Methods, the trouble is often an older gap showing up in new work, like a slip in factorising or a shaky grip on indices. Those gaps are much easier to fix before VCE starts. The Years 9 and 10 topics VCE maths leans on include:
+            </p>
+            <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 18px" }}>
+              {PRE_VCE_MATHS.map((t) => (
+                <li key={t} style={{ fontSize: 15, color: c.text, lineHeight: 1.55, paddingLeft: 18, position: "relative" }}>
+                  <span aria-hidden="true" style={{ position: "absolute", left: 0, color: c.teal }}>•</span>
+                  {t}
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
+              That’s what {name} is for. In Years 9 and 10, your child snaps the maths questions they get wrong in class, homework or tests. They see the full worked solution, then straight away get a similar question on the same idea, genuinely different rather than just new numbers. Each question moves from To fix to Learning to Mastered. <strong>Explain this</strong> shows the step that went wrong, and <strong>Test any topic</strong> gives a short test on any topic in their year.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
+              If your child is already in Year 11 or 12, {name} isn’t the tool for their VCE subjects: it covers Years 7 to 10 maths only, not Units 1 to 4. For VCE itself, their teacher, VCAA past papers and a good tutor are the right help.
+            </p>
+          </Fade>
+        </div>
+      </section>
+
+      <AppPracticeBlock
+        topic="any Year 9 or 10 maths topic"
+        placement="vce_tutoring_practice"
+        heading="Check the Years 9 and 10 maths VCE builds on."
       />
 
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>When to start</p>
+            <p style={sectionLabel}>When to start</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 28, lineHeight: 1.25 }}>
               The honest timing answer.
             </h2>
@@ -159,7 +202,28 @@ export default function VceTutoringPage() {
         </div>
       </section>
 
+      <section style={{ padding: "64px 24px", background: c.offWhite }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={sectionLabel}>What it costs</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              Tutoring and the app do different jobs.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
+              A private tutor in Melbourne usually costs $80 to $100 an hour. For VCE, a tutor who knows the study design can explain new content, read your child’s writing and work through past papers with them. An app can’t do that.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
+              For Years 7 to 10 maths, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store, on iPhone.
+            </p>
+          </Fade>
+        </div>
+      </section>
 
+      <AppCtaBand
+        placement="vce_tutoring_final"
+        title="Get Years 9 and 10 maths solid before VCE."
+        lead={`${name} turns every maths question they get wrong in Years 7 to 10 into practice that’s about your child, not a generic worksheet.`}
+      />
       <MarketingFooter />
     </main>
   );

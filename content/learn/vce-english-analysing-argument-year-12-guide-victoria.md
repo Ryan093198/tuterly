@@ -50,11 +50,11 @@ You do not need to be an English teacher to support your child through this. The
 
 If your child's responses are technically competent but not scoring as well as expected, the gap is usually in the depth of analysis rather than the surface features. A tutor who knows the VCAA English criteria well can identify exactly where the thinking needs to go deeper.
 
-## How Tuterly can help
+## When a tutor helps
 
-If your child is working toward the October exam and Analysing Argument is a weak point, this is exactly the kind of targeted gap that a good tutor closes quickly. Tuterly connects Melbourne families with tutors who know the VCE English Study Design and can work through real VCAA texts with your child.
+If your child is working toward the October exam and Analysing Argument is a weak point, this is exactly the kind of targeted gap that a good tutor closes quickly. Look for one who knows the VCE English Study Design and will work through real VCAA texts with your child.
 
-After every session, the parent dashboard shows you what was covered and where your child is progressing. Between sessions, targeted practice questions on the platform keep the skills sharp. You do not have to guess whether preparation is working.
+Ask how they will show you what was covered and where your child is progressing, and what practice they will set between sessions. Analysing a fresh opinion piece each week, written under time, keeps the skills sharp.
 
 ---
 

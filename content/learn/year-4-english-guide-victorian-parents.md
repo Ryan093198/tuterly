@@ -45,5 +45,5 @@ If your child is already meeting Year 4 expectations comfortably, that's worth b
 
 If your child is avoiding reading, struggling to complete written tasks at school, or coming home confused about spelling patterns, acting early is much easier than catching up later. Year 4 is early enough that targeted support makes a real difference before NAPLAN preparation becomes the focus.
 
-This is where Tuterly can help. Our tutors work to the Victorian Curriculum and focus on the specific skills your child actually needs, whether that's building comprehension strategies, strengthening writing structure, or extending a strong student further. After every session you get a written report through the parent dashboard so you can see exactly what was covered and what to practise next. The platform also includes targeted practice questions aligned to Year 4 English skills, so the work continues between sessions.
+Look for a tutor who works to the Victorian Curriculum and focuses on the specific skills your child actually needs, whether that's building comprehension strategies, strengthening writing structure, or extending a strong student further. Ask them to tell you after each session what was covered and what to practise next, so the work continues between sessions.
 

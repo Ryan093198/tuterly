@@ -52,11 +52,11 @@ Ask them to explain their essay argument to you out loud. If they cannot summari
 
 Help them manage their time around SAC dates. History SACs often involve extended writing under timed conditions, so practising under similar conditions at home builds genuine exam readiness.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 VCE History requires a very specific kind of teaching: someone who knows how VCAA structures source analysis tasks, understands what a well-constructed historical argument looks like at Year 11 level, and can give your child direct, honest feedback on their writing.
 
-Tuterly connects Melbourne families with tutors experienced in VCE Humanities subjects. After every session, you can see exactly what was covered through the parent dashboard and session reports, so you always know whether your child is making progress on the skills that matter. The platform also includes targeted practice questions to keep your child building those essay and source analysis skills between sessions.
+Look for a tutor experienced in VCE Humanities subjects, and ask how they will keep you across what was covered and whether your child is making progress on the skills that matter. Between sessions, short timed source analysis tasks and essay plans keep those skills building.
 
 ---
 

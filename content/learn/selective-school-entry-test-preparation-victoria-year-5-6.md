@@ -70,7 +70,7 @@ If your child is in Year 5, start by honestly assessing where they are across th
 
 If your child is already in Year 6, there is still time to prepare well. Focus on the areas with the most room to grow, and make sure they are doing timed practice, not just untimed worksheets.
 
-Tuterly connects Melbourne families with tutors who know the selective entry process and can build a preparation plan around your child's specific gaps. After every session, the parent dashboard shows you exactly what was covered and how your child responded. Between sessions, your child can work through targeted practice questions on the platform to keep the skills sharp.
+A tutor who knows the selective entry process can build a preparation plan around your child's specific gaps. Ask them to tell you after each session what was covered and how your child responded, and to set timed practice for between sessions to keep the skills sharp.
 
 Whether you are starting early in Year 5 or ramping up in Year 6, the right support makes the preparation more focused and less stressful for everyone.
 

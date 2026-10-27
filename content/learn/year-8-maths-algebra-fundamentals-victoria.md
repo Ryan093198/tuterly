@@ -60,9 +60,9 @@ The unravelling that many parents notice in Year 9 didn't start in Year 9. Catch
 
 A tutor who knows the Victorian Curriculum can pinpoint exactly which Year 8 algebra skills are secure and which ones need work, rather than guessing or covering everything from scratch. That specificity matters, because the goal isn't to redo all of Year 8. It's to close the right gaps before Year 9 begins.
 
-Tuterly connects Melbourne families with tutors who work within the Victorian Curriculum and understand the progression from Year 8 through to VCE. After every session, you get a summary through the parent dashboard covering what was covered and how your child responded. Between sessions, your child can build fluency with targeted practice questions on the platform, so the work continues in a structured way, not just before the next test.
+Ask for a short note after each session on what was covered and how your child responded, so the work continues in a structured way, not just before the next test.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 8 topic, including the algebra units. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

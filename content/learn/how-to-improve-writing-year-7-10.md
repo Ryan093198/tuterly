@@ -40,7 +40,7 @@ If your child is consistently getting feedback like "needs more analysis" or "to
 
 A tutor who understands the Victorian English curriculum can do something that classroom teaching often can't: sit with your child, read their writing together, and show them exactly where the argument breaks down and how to fix it. One-on-one feedback on their actual work is worth more than a hundred generic writing tips.
 
-[Tuterly](https://www.tuterly.com.au/tutoring) connects your child with a tutor who reports back after every session, so you can see what they worked on and where they're improving. Between sessions, your child can practise targeted skills on the platform. It's structured, it's visible, and it builds over time.
+Ask any tutor you are considering how they will keep you in the loop: what they worked on, where your child is improving, and what to practise before next time. Writing improves in small, visible steps, and a good tutor can show you those steps in your child's own drafts.
 
 For students who already write well, a tutor can push them further. Sharper arguments, more sophisticated language, the kind of writing that stands out in Year 10 and sets them up for VCE.
 

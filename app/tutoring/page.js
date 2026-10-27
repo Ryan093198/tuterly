@@ -3,25 +3,26 @@ import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
+import { PRICING } from "@/lib/pricing";
 import {
   c,
   MARKETING_FONTS_IMPORT,
 } from "@/components/marketing/theme";
-import TuterlyMethod from "@/components/marketing/TuterlyMethod";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
+const DESCRIPTION =
+  "Tutoring across Melbourne: a private tutor usually costs $80 to $100 an hour. For Years 7 to 10 maths, Tuterly Study lets your child practise the exact questions they get wrong.";
 
 export const metadata = {
-  title: "Tutoring across Melbourne | Tuterly",
-  description:
-    "Tutoring across Melbourne - Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
+  title: { absolute: "Tutoring across Melbourne | Tuterly" },
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/tutoring` },
   openGraph: {
     title: "Tutoring across Melbourne | Tuterly",
-    description:
-      "Tutoring across Melbourne - Tuterly connects families with experienced tutors who know the local curriculum. Online or in-person, with detailed reports after every session.",
+    description: DESCRIPTION,
     url: `${SITE_URL}/tutoring`,
     type: "website",
   },
@@ -45,7 +46,7 @@ export default function TutoringDirectory() {
               Tutoring across Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Finding the right tutor in Melbourne shouldn&apos;t be hard. Tuterly connects families with experienced tutors who know their child&apos;s curriculum and deliver results you can actually see - sessions can be online or in-person, depending on what works for your family.
+              Across Melbourne, help with maths usually comes down to two options: a private tutor, usually ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour, or regular practice on the exact questions your child gets wrong. For Years 7 to 10, {STUDY_APP.name} is an iPhone app that does the practice part, with a 1-week free trial, then ${STUDY_APP.priceWeek} a week.
             </p>
             <AppHeroBlock placement="tutoring_hero" />
           </Fade>
@@ -56,10 +57,13 @@ export default function TutoringDirectory() {
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Suburbs we serve</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Suburb guides</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
-              Find tutoring near you.
+              Tutoring in your suburb.
             </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>
+              Each guide covers the local schools, what families in that suburb usually look for, and where {STUDY_APP.name} fits.
+            </p>
             {live.length === 0 ? (
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>
                 More suburb-specific pages are on the way. For Years 7 to 10 maths, any family can start with{" "}
@@ -83,10 +87,24 @@ export default function TutoringDirectory() {
         </div>
       </section>
 
-      {/* THE TUTERLY METHOD */}
-      <TuterlyMethod background={c.white} padding="80px 24px" />
+      {/* TUTOR OR APP */}
+      <section style={{ padding: "64px 24px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where {STUDY_APP.name} fits</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              A tutor and the app do different jobs.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 16 }}>
+              A private tutor can explain a topic face to face and help with any subject or year level, including English, primary and VCE. {STUDY_APP.name} covers Years 7 to 10 maths only, and does one thing well: your child snaps a question they got wrong, sees the full worked solution, then practises fresh versions on the same idea until it’s mastered.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>
+              It’s designed by Australian educators at Bayside Academics in Brighton, with topics from the {STUDY_APP_FACTS.curriculum}. Parents link with a 6-character code and see Week in review, not their child’s photos. {STUDY_APP.priceVsTutor}
+            </p>
+          </Fade>
+        </div>
+      </section>
 
-      {/* GET STARTED CTA */}
 
       <AppCtaBand placement="tutoring_index_final" />
       <MarketingFooter />

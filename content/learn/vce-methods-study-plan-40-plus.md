@@ -48,9 +48,9 @@ Save VCAA past papers for August onwards. These test integrated skills across th
 
 ## Building a plan around your gaps
 
-A 40+ in Methods comes from targeted, consistent practice, not more hours. A [Tuterly Methods tutor](/tutoring/glen-waverley) builds a plan specific to your gaps, and session reports show exactly which skills are improving week to week. Between sessions, the platform's question drills let you practise the exact problem types you're getting wrong, not just random revision.
+A 40+ in Methods comes from targeted, consistent practice, not more hours. A good Methods tutor builds a plan specific to your gaps and shows you which skills are improving week to week. Between sessions, practise the exact problem types you're getting wrong, not just random revision.
 
-Find a VCE Methods tutor near you: [Glen Waverley](/tutoring/glen-waverley) | [Mount Waverley](/tutoring/mount-waverley) | [Box Hill](/tutoring/box-hill)
+Tutoring in your area: [Glen Waverley](/tutoring/glen-waverley) | [Mount Waverley](/tutoring/mount-waverley) | [Box Hill](/tutoring/box-hill)
 
 ---
 

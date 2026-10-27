@@ -40,11 +40,11 @@ If there are clear gaps, address them now rather than waiting for a school repor
 
 For students aiming at the more competitive VCE science pathways, extension work at this stage pays off significantly. Working through unfamiliar problems, not just practising familiar ones, builds the reasoning habits that VCE assessments are explicitly designed to reward.
 
-## Where Tuterly can help
+## When a tutor helps
 
-If you want a clearer picture of where your child actually stands, a Tuterly tutor who specialises in Year 10 science can run a diagnostic in the first session and give you a straight answer. After every session, you get a written report through the parent dashboard showing exactly what was covered and what to focus on next. You are not left guessing.
+If you want a clearer picture of where your child actually stands, a tutor who specialises in Year 10 science can run a diagnostic in the first session and give you a straight answer. After each session you should know what was covered and what to focus on next.
 
-The platform also has targeted practice questions aligned to the Australian Curriculum at Year 10, so your child is working on the right material rather than generic revision.
+Practice should be pitched at Year 10 science and the skills the VCE sciences build on, rather than generic revision.
 
 For more on what comes next, our VCE Biology, Chemistry, and Physics subject guides are worth reading before your child locks in their subject selections.
 

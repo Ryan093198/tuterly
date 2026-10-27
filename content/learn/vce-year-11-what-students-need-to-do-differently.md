@@ -54,11 +54,11 @@ You do not need to understand the VCE study design for Chemistry to support your
 
 Ask to see the SAC schedule at the start of each term. Help your child map out preparation time in advance rather than reacting when a SAC is a week away. And take seriously any feedback from teachers about work quality, even if the marks look acceptable. Acceptable in Year 11 with no adjustment in approach often becomes disappointing in Year 12.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 Year 11 is exactly the right time to get structured support in place, before the pressure of Year 12 makes everything harder to address. A tutor who understands the VCAA study designs can help your child prepare for SACs properly, identify gaps in their understanding early, and build the study habits that carry through to their final year.
 
-Through the Tuterly parent dashboard, you get a report after every session covering what was covered and how your child is tracking. Your child can also work on targeted practice questions on the platform between sessions, keeping momentum going through the week.
+Ask for a short note after each session on what was covered and how your child is tracking, and for practice to do between sessions, keeping momentum going through the week.
 
 ---
 

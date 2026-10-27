@@ -46,9 +46,9 @@ Past exam papers from VCAA are essential, and the examiner reports that accompan
 
 Regular practice on extended responses, with feedback on structure and argument quality, matters more than re-reading notes. If your child's study routine is mostly passive, reading and highlighting, they are not building the skill the exam is testing.
 
-## How Tuterly can help
+## When a tutor helps
 
-At the "what do I actually do now?" moment, a tutor who knows the VCE Legal Studies study design makes a real difference. Tuterly tutors work through practice SAC responses and exam questions, giving specific feedback on whether your child is actually answering the question or just discussing the topic.
+At the "what do I actually do now?" moment, a tutor who knows the VCE Legal Studies study design makes a real difference. A good tutor works through practice SAC responses and exam questions, giving specific feedback on whether your child is actually answering the question or just discussing the topic.
 
-The Tuterly parent dashboard shows you what was covered each session and what needs attention next. Session reports replace the guesswork of wondering whether the hour was useful. The platform also includes targeted practice questions aligned to the Units 3 and 4 study design, so practice between sessions stays focused.
+After each session you should know what was covered and what needs attention next. Ask for that, rather than wondering whether the hour was useful, and make sure practice between sessions is built around the Units 3 and 4 study design.
 

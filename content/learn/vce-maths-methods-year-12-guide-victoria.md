@@ -52,5 +52,5 @@ If your child is hitting a wall on a particular topic, do not wait for the next 
 
 For students targeting top scores, a tutor is not just remediation. Targeted extension work on harder VCAA questions and timed exam practice can make a real difference to the final score.
 
-Tuterly's parent dashboard and session reports mean you can see exactly which topics are being worked on and how your child is progressing, without having to interrogate them after every session. The platform also includes targeted practice questions aligned to the VCAA Methods course, so sessions are focused on what actually comes up in SACs and exams.
+Whoever you work with, you should be able to see which topics are being worked on and how your child is progressing without having to interrogate them after every session. Practice should be built from VCAA-style questions, so sessions are focused on what actually comes up in SACs and exams.
 

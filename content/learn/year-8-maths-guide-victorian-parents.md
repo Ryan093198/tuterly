@@ -44,9 +44,9 @@ Consistent short practice across the week beats a long Sunday session. Twenty mi
 
 If your child is avoiding maths homework, losing marks on assessments they thought they understood, or expressing that they are just not a maths person, these are the signals worth acting on in Year 8 rather than Year 9.
 
-At Tuterly, you can find Melbourne-based tutors who know the Victorian Curriculum at Year 8 level and can work through your child's specific gaps rather than reteaching the whole year. After each session, you receive a session report through the parent dashboard so you know exactly what was covered and what to practise next. The platform also includes targeted practice questions aligned to Year 8 content, so the work between sessions is focused and practical.
+Look for a tutor who knows the Victorian Curriculum at Year 8 level and can work through your child's specific gaps rather than reteaching the whole year. Ask for a short note after each session on what was covered and what to practise next, so you are not left guessing whether progress is happening.
 
 Whether your child needs to catch up or be stretched further, the right support in Year 8 makes Year 9 significantly less stressful.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 8 topic. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 

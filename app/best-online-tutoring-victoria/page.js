@@ -1,15 +1,15 @@
-import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Best Online Tutoring in Victoria - 2026 Guide | Tuterly";
+const TITLE = "Best Online Tutoring in Victoria: 2026 Guide";
 const DESCRIPTION =
-  "The best online tutoring in Victoria, from Melbourne to the regions. Why online levels the playing field for families outside the city, what to look for, and how to choose.";
+  "The best online tutoring in Victoria, from Melbourne to the regions. Why online levels the playing field outside the city, what to look for, and where a Years 7 to 10 maths practice app fits.";
 const URL = `${SITE_URL}/best-online-tutoring-victoria`;
 
 export const metadata = {
@@ -34,7 +34,7 @@ const REGIONS = [
 const WHY_ONLINE = [
   {
     title: "Access to specialist tutors, wherever you live",
-    body: "In a regional town the pool of local tutors is small, and a high-ATAR VCE Specialist Maths tutor may simply not exist within an hour&apos;s drive. Online removes the radius entirely - your child can work with a subject specialist based anywhere in the state.",
+    body: "In a regional town the pool of local tutors is small, and a high-ATAR VCE Specialist Maths tutor may simply not exist within an hour’s drive. Online removes the radius entirely: your child can work with a subject specialist based anywhere in the state.",
   },
   {
     title: "No travel, which matters more outside the city",
@@ -48,8 +48,8 @@ const WHY_ONLINE = [
 
 const LOOK_FOR = [
   {
-    title: "A report after every session",
-    body: "The best online tutoring gives you a clear write-up after each lesson - what was covered, how your child went, what to practise next. When you cannot be in the room, that visibility matters even more.",
+    title: "A clear picture of each session",
+    body: "The best online tutoring keeps you in the loop: what was covered, how your child went, what to practise next. When you cannot be in the room, that visibility matters even more.",
   },
   {
     title: "Progress tracking across topics",
@@ -72,11 +72,11 @@ const FAQS = [
   },
   {
     q: "What is the best online tutoring company in Victoria?",
-    a: "There is no single best for everyone. Fully managed national agencies suit families who want a hands-off service and do not mind paying a premium. If you would rather choose your own vetted tutor, see the rate upfront, and get a report after every session, a platform like Tuterly is a better fit. Match the type to your family.",
+    a: "There is no single best for everyone. Fully managed national agencies suit families who want a hands-off service and do not mind paying a premium. If you would rather choose your own tutor and see the rate upfront, look at platforms and independent tutors. Match the type to your family.",
   },
   {
     q: "How much does online tutoring cost in Victoria?",
-    a: "National online agencies typically charge $90-150 per hour. Independent tutors and platforms are usually more affordable - Tuterly sessions start from $75 per hour, all-inclusive, with no lock-in contracts.",
+    a: "National online agencies typically charge $90 to $150 an hour, and a private tutor usually costs $80 to $100 an hour. Independent tutors are often cheaper. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly Study is a 1-week free trial, then $7.99 a week, and works the same anywhere in Victoria.",
   },
   {
     q: "Can online tutoring cover VCE across all of Victoria?",
@@ -84,7 +84,11 @@ const FAQS = [
   },
   {
     q: "What do you need to get started online?",
-    a: "A laptop or tablet with a webcam and a reliable internet connection. A cheap stylus or a phone camera pointed at paper helps for handwritten maths working - nothing specialised is required.",
+    a: "A laptop or tablet with a webcam and a reliable internet connection. A cheap stylus or a phone camera pointed at paper helps for handwritten maths working. Nothing specialised is required.",
+  },
+  {
+    q: "Is Tuterly Study online tutoring?",
+    a: "No. Tuterly Study is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. Topics follow the Victorian Curriculum 2.0, so it fits the same course wherever you live in the state. It is coming soon to the App Store.",
   },
 ];
 
@@ -117,7 +121,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               Best online tutoring in Victoria.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Wherever you are in the state - Melbourne, Geelong, Ballarat, Bendigo or a regional town - online tutoring gives your child access to the same specialist, high-achieving tutors. Here is how the options compare and what separates the good ones.
+              Wherever you are in the state, from Melbourne to Geelong, Ballarat, Bendigo or a small regional town, online tutoring gives your child access to the same specialist tutors. Here is how the options compare, what separates the good ones, and where our Years 7 to 10 maths app, Tuterly Study, fits.
             </p>
             <AppHeroBlock placement="best_online_tutoring_victoria_hero" />
           </Fade>
@@ -132,7 +136,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               Online levels the playing field across the state.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              The biggest gap in tutoring is not price - it is access. A family in inner Melbourne can find a 99-ATAR Specialist Maths tutor down the road; a family in the regions often cannot. Online closes that gap.
+              The biggest gap in tutoring is not price. It is access. A family in inner Melbourne can find a 99-ATAR Specialist Maths tutor down the road; a family in the regions often cannot. Online closes that gap.
             </p>
           </Fade>
         </div>
@@ -158,10 +162,10 @@ export default function BestOnlineTutoringVictoriaPage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Across Victoria</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 18, lineHeight: 1.25 }}>
-              Tutoring for families right across the state.
+              Help for families right across the state.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 20 }}>
-              Because sessions run online, a Tuterly tutor can work with students in:
+              Because sessions run online, a good online tutor can work with students anywhere in the state, and {STUDY_APP.name} works the same on an iPhone in any of these places:
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {REGIONS.map((r) => (
@@ -196,15 +200,18 @@ export default function BestOnlineTutoringVictoriaPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Specialist tutors, statewide.
+              Years 7 to 10 maths practice, statewide.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              Tuterly is an online tutoring platform built by the team behind Bayside Academics in Melbourne. You choose your own vetted, high-achieving tutor and pay them directly, from $75 per hour, all-inclusive, with no lock-in contracts - and it works the same whether you are in the city or the country.
+              {STUDY_APP.name} is an iPhone app, not a tutoring service. It was designed by Australian educators at Bayside Academics in Brighton, Melbourne, and its topics follow the Victorian Curriculum 2.0, the same course whether your child is at school in the city or the country. Your child snaps the maths questions they got wrong (or uploads a whole marked test), sees the worked solution when they’re ready, and practises similar questions on the same idea until each one is mastered.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
+              There’s no travel and nothing to book, which matters most where tutors are hard to find. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week, cancel any time.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              After every session you get a structured report on what was covered and what to practise next, plus practice worksheets and a progress dashboard - so even from a distance you always know how your child is going.
+              It doesn’t replace a tutor. For VCE, English, or a child who needs someone to teach a topic live, an online tutor is the better choice. The app is for the practice in between, or instead, when practice is mostly what your child needs.
             </p>
           </Fade>
         </div>

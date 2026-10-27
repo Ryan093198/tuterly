@@ -56,11 +56,11 @@ Help them keep track of SAC dates and plan backwards from them. Year 11 SACs are
 
 Make sure they are doing problems, not just reading. Thirty minutes of worked practice is worth more than two hours of passive review.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-If your child is finding Unit 1 or 2 Chemistry hard going, or if they want to build a stronger foundation before Year 12, Tuterly connects Melbourne families with tutors who know the VCE Chemistry study design and understand exactly where Year 11 students get stuck.
+If your child is finding Unit 1 or 2 Chemistry hard going, or wants a stronger foundation before Year 12, a tutor who knows the VCE Chemistry study design and understands where Year 11 students get stuck can help.
 
-After every session, you get a report through the parent dashboard covering what was covered and how your child is tracking. Between sessions, your child can keep working with targeted practice questions on the platform, so progress does not stop between tutoring appointments.
+Ask how they will keep you across what was covered and how your child is tracking, and what they will set for practice between sessions so progress does not stop between appointments.
 
 ---
 

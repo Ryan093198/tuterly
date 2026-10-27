@@ -28,7 +28,7 @@ This is also where strong candidates pull ahead. The reasoning skills ACER prize
 
 Check your target school's admissions or scholarship page directly, and do it for the specific year your child will sit. Schools change providers, sitting dates, and formats from one year to the next, so last year's information and other parents' advice are both unreliable. If your child is applying to several schools, you may well be preparing for both.
 
-Once you know which test your child is sitting, targeted preparation makes a real difference, but it needs to start early enough, ideally six months before. A [Tuterly](/tutoring) tutor experienced in scholarship prep builds a plan specific to the test format, and session reports show exactly which reasoning skills are developing. The platform's practice questions mirror the style of both EduTest and ACER, so your child arrives confident on test day.
+Once you know which test your child is sitting, targeted preparation makes a real difference, but it needs to start early enough, ideally six months before. A tutor experienced in scholarship prep can build a plan around the specific test format and tell you which reasoning skills are developing and which still need work. Make sure the practice papers match the test your child will actually sit, because EduTest and ACER ask questions differently.
 
 ---
 

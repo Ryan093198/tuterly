@@ -52,11 +52,11 @@ If your child has had two or more weeks of confusion in a row, is dreading their
 
 A tutor who knows the VCAA Methods course can pinpoint exactly where the understanding broke down and rebuild it specifically, rather than re-teaching the whole topic from scratch. One-on-one work on the exact type of question your child is stuck on is far more efficient than group tutoring or generic online resources.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-Tuterly connects Melbourne families with tutors who know the VCAA Maths Methods course and understand exactly where Year 11 students typically hit trouble. After every session, you will receive a report through the parent dashboard covering what was worked on and how your child is progressing. You do not have to wait for a bad SAC result to know whether things are improving.
+A tutor who knows the VCAA Maths Methods course understands exactly where Year 11 students typically hit trouble. Ask for a short note after each session on what was worked on and how your child is progressing, so you do not have to wait for a bad SAC result to know whether things are improving.
 
-Between sessions, your child can continue building skills with targeted practice questions on the platform. Consistent practice between tutoring sessions is what makes the real difference in Methods.
+Between sessions, consistent practice is what makes the real difference in Methods: SAC-style and exam-style questions, done regularly rather than crammed.
 
 ---
 

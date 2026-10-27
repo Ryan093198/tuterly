@@ -44,9 +44,9 @@ Encourage them to use the VCAA resources directly. Past exams, marking guides, a
 
 If the wheels are starting to come off, an experienced VCE Physics tutor can diagnose which specific concepts are shaky and build a plan around the SAC calendar, not just the end-of-year exam.
 
-## How Tuterly can help
+## When a tutor helps
 
-If you are at the "so what do I do?" stage, Tuterly connects Victorian students with tutors who know the VCAA Physics study design and the specific demands of Units 3 and 4. After every session, you get a written report on what was covered and what to focus on next, so you are not left guessing whether the sessions are working. The parent dashboard keeps everything in one place.
+If you are at the "so what do I do?" stage, look for a tutor who knows the VCAA Physics study design and the specific demands of Units 3 and 4. After each session you should know what was covered and what to focus on next, so you are not left guessing whether the sessions are working.
 
-The platform also includes targeted practice questions built around VCE content, which is useful both for SAC preparation and for building the exam technique that earns marks on written responses.
+Practice should be built around VCE content and past exam questions, which is useful both for SAC preparation and for building the exam technique that earns marks on written responses.
 

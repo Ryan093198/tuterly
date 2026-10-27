@@ -50,11 +50,11 @@ Make sure they have protected time for Specialist each day, not just on nights b
 
 Those signals are worth acting on early.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 Specialist Maths is the subject where a good tutor makes the most visible difference, precisely because the content is so far outside what most parents can help with at home. A tutor who knows the VCAA course inside out can work through proof techniques, vector problems, and complex number applications in a way that a classroom session of 25 students simply cannot replicate.
 
-Through the Tuterly parent dashboard, you receive a report after every session showing exactly what was covered and how your child is tracking. You do not have to wait until a SAC result to know whether things are going well. Between sessions, your child can continue building skills with targeted practice questions on the platform, keeping the momentum going across the week.
+Ask for a short note after each session showing what was covered and how your child is tracking, so you do not have to wait until a SAC result to know whether things are going well. Regular practice between sessions keeps the momentum going across the week.
 
 ---
 

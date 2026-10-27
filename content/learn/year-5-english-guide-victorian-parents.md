@@ -52,5 +52,5 @@ If your child is avoiding writing tasks at home, producing very short work compa
 
 For students performing well but not being stretched, a tutor who works on extension tasks, rather than just reinforcing what school already covers, is worth finding specifically.
 
-Tuterly's primary English tutors understand the Victorian Curriculum and can pinpoint exactly which strand is causing difficulty. After every session, you get a written report showing what was worked on and what your child should practise before the next session. The platform also includes targeted practice questions built around reading comprehension and writing structure, so the work between sessions has clear direction rather than relying on random worksheets.
+A good primary English tutor understands the Victorian Curriculum and can pinpoint exactly which strand is causing difficulty. Ask them to tell you after each session what was worked on and what your child should practise before the next one, so the work between sessions has clear direction rather than relying on random worksheets.
 

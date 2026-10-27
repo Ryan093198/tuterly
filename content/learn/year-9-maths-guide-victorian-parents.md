@@ -48,13 +48,13 @@ Keep an eye on assessment feedback, not just marks. A 70% can mean very differen
 
 Encourage your child to attempt homework before looking for help. The productive struggle of working through a difficult problem is where a lot of real learning happens. Jumping to answers or worked solutions too quickly short-circuits that process.
 
-## How Tuterly can help
+## Getting the right support
 
 If you're not sure where your child actually stands, that's a reasonable place to be. Year 9 maths covers a lot of ground quickly, and the gaps aren't always obvious from school reports alone.
 
-A Tuterly tutor can run a proper diagnostic in the first session and build a plan around the specific topics that need work, whether that's catching up on algebra fundamentals or extending a capable student into more demanding problem types. After every session you get a written report through the parent dashboard, so you can see exactly what was covered and what to practise next. The platform also includes targeted practice questions aligned to the Victorian curriculum, so there's no scrambling to find useful resources between sessions.
+A good tutor can run a proper diagnostic in the first session and build a plan around the specific topics that need work, whether that's catching up on algebra fundamentals or extending a capable student into more demanding problem types. Ask for a short note after each session on what was covered and what to practise next, so you are not left guessing whether progress is happening.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 9 topic, which is a quick way to find the gaps a school report doesn't show. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 The students who arrive at Year 10 subject selection with real choices are almost always the ones whose parents paid attention in Year 9. It's not too late to make this the year that sets things up properly.
 

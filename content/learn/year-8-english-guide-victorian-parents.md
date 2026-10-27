@@ -58,7 +58,7 @@ Extension students often stall because they've mastered the basic formula and no
 
 Read alongside your child's class text if you can. Even a chapter or two gives you enough to ask useful questions. Focus on the "how" and "why" rather than the "what." Encourage your child to explain their essay argument to you out loud before they write it down. And take oral assessment seriously from the first practice.
 
-## How Tuterly can help
+## When a tutor helps
 
-If you've reached the "so what do I do?" point, that's where a good tutor makes a real difference. Tuterly's parent dashboard gives you a written report after every session, so you can see exactly which skills are being worked on and how your child is tracking. Session reports mean you're never just trusting that something is improving. Tuterly also has targeted practice questions on the platform, built around the kinds of tasks Victorian students actually face.
+If you've reached the "so what do I do?" point, that's where a good tutor makes a real difference. Ask how they will show you which skills are being worked on and how your child is tracking, so you're never just trusting that something is improving. Practice between sessions should look like the tasks Victorian students actually face: short text responses and persuasive pieces.
 

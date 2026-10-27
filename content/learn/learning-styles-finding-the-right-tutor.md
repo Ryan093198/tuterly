@@ -50,7 +50,7 @@ If none of that is true after a few weeks, the issue is usually the match, not t
 
 ## Finding the right fit
 
-[Tuterly](https://www.tuterly.com.au/tutoring) connects your child with tutors who understand the Victorian curriculum and adapt to how your child actually learns, not a label on a quiz. After every session, you get a report on what was covered and how your child went, so you're never guessing. Between sessions, your child can build on what they've learned with targeted practice questions on the platform.
+Look for a tutor who understands the Victorian curriculum and adapts to how your child actually learns, not a label on a quiz. Ask how they will report back after each session, and what your child should practise in between.
 
 It's not about finding a "visual" tutor or a "kinesthetic" tutor. It's about finding someone who pays attention, adjusts their approach, and keeps you in the loop.
 

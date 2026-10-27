@@ -60,11 +60,11 @@ The right response is not to muddle through together, or worse, to avoid the wor
 
 A good tutor does not just get the homework done. They fill the gap that caused the homework to be hard in the first place. That distinction matters enormously for a student who is falling behind.
 
-## Where Tuterly fits in
+## When to get outside help
 
-If homework battles are a regular feature in your household, or if your child is hitting a ceiling that your help alone cannot raise, Tuterly connects Melbourne families with tutors who understand the Victorian Curriculum at every year level.
+If homework battles are a regular feature in your household, or if your child is hitting a ceiling that your help alone cannot raise, a tutor who understands the Victorian Curriculum at your child's year level can take some of the pressure off, and take you out of the role of homework enforcer.
 
-After every session, you receive a report through the parent dashboard covering exactly what was worked on and how your child is progressing. You do not have to guess whether things are improving. Between sessions, your child can continue building skills with targeted practice questions on the platform, so the work does not stop when the tutor logs off.
+If you go down that path, ask the tutor for a short note after each session on what was worked on and what to practise before the next one. That way you can support the practice at home without having to re-teach anything yourself.
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 

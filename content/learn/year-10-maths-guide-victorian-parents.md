@@ -56,13 +56,11 @@ Ask your child to show you their last maths test or assignment and read the feed
 
 If your child cannot explain a concept to you in plain language, that is a reliable sign the understanding is surface-level rather than solid. Being able to do the steps and actually understanding them are not the same thing, and VCE separates them quickly.
 
-## How Tuterly can help
+## Getting the right support
 
-If you've identified gaps or you want your child pushed further before VCE, Tuterly connects you with tutors who know the Victorian curriculum and understand exactly what Year 10 needs to deliver.
+If you've identified gaps or you want your child pushed further before VCE, a tutor who knows the Victorian curriculum and understands what Year 10 needs to deliver can help. Ask for a short note after each session on what was covered and what to practise next, so you are not left guessing whether progress is happening.
 
-After every session, you get a written report through the parent dashboard: what was covered, how your child went, and what to focus on before the next session. You're not left guessing whether the tutoring is working. The platform also includes targeted practice questions aligned to the topics your child is working on, so the progress between sessions is structured rather than random.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 10 topic, so you can see which ones are secure before subject selection. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
-Whether your child needs gaps filled before subject selection or wants to get ahead of Methods, the right tutor makes a measurable difference at this stage.
-
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+Whether your child needs gaps filled before subject selection or wants to get ahead of Methods, Year 10 is the year to do it.
 

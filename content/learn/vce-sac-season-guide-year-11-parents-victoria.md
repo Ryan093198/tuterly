@@ -56,7 +56,7 @@ For high-performing students, Year 11 is a good time to go deeper than the minim
 
 A tutor who knows the VCE subject inside out can do something classroom teaching cannot always provide: work through your child's specific weaknesses in the weeks before a SAC, look at their practice responses, and give direct, personalised feedback.
 
-Tuterly connects Victorian families with tutors who understand VCE assessment and can build a clear preparation plan across SAC season. After every session, you get a report through the parent dashboard so you can see what was covered and where your child is improving. Between sessions, your child can work on targeted practice questions on the platform to keep building between tutoring sessions.
+Look for a tutor who understands VCE assessment and can build a clear preparation plan across SAC season. Ask how they will show you what was covered and where your child is improving, and what to practise between sessions.
 
 ---
 

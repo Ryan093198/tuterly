@@ -50,9 +50,9 @@ Keep it calm. A big push in the final days rarely helps and can knock confidence
 
 A good night's sleep and a proper breakfast matter more in that final week than any extra worksheet.
 
-## How Tuterly can help
+## When a tutor helps
 
-If you have identified a specific gap, fractions keep coming up wrong, or writing structure is shaky, that is exactly where a tutor adds value. At Tuterly, you can find Melbourne-based tutors who work specifically with Year 5 students on Victorian Curriculum content and NAPLAN-style questions. After every session, you receive a written report covering what was practised and what to work on before the next one. You are never left guessing whether the sessions are doing anything.
+If you have identified a specific gap, fractions keep coming up wrong, or writing structure is shaky, that is exactly where a tutor adds value. Look for one who works with Year 5 students on Victorian Curriculum content and NAPLAN-style questions. After each session you should know what was practised and what to work on before the next one.
 
-The platform also includes targeted practice questions aligned to the Year 5 content areas tested in NAPLAN, so your child gets the right kind of repetition between sessions.
+Practice between sessions should cover the Year 5 content areas tested in NAPLAN, so your child gets the right kind of repetition.
 

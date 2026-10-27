@@ -65,7 +65,7 @@ Ask your child to explain their working out to you, even if you can already see 
 
 If the gaps feel persistent or your child is starting to disengage from maths, that is a reasonable moment to bring in some targeted support. A good tutor does not reteach the whole year. They find the two or three specific things that have not landed and work those properly, with enough spaced practice for the knowledge to stick.
 
-Tuterly connects Melbourne families with local tutors who know the Victorian curriculum and work with Year 4 students regularly. After every session, you get a written report through the parent dashboard covering what was covered, how your child went, and what to practise before the next session. You are not left guessing whether anything is actually changing.
+Look for a tutor who knows the Victorian curriculum and works with Year 4 students regularly. After each session you should know what was covered, how your child went, and what to practise before the next one, so you are not left guessing whether anything is actually changing.
 
-The platform also includes targeted practice questions pitched at Year 4 level, so your child is not working through generic primary school content but material matched to where they actually are.
+Practice between sessions should be pitched at Year 4 level and matched to where your child actually is, not generic primary school content.
 

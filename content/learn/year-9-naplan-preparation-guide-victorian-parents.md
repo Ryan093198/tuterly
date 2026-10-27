@@ -55,9 +55,9 @@ The specific domains matter too. A weak numeracy result combined with an interes
 
 A good tutor at this stage does two things. They identify which specific gaps are showing up in your child's understanding, and they build those foundations systematically before Year 10 begins. That's different from generic exam coaching. It's targeted, it compounds over time, and it positions your child well for the subject selection decisions coming up.
 
-Tuterly connects Melbourne families with tutors who understand the Victorian Curriculum and the specific demands of Year 9. After every session, you'll receive a report through the parent dashboard covering what was worked on and how your child responded. Between sessions, your child can build on their skills with targeted practice questions on the platform, so progress doesn't stall between appointments.
+Ask for a short note after each session on what was worked on and how your child responded, so progress doesn't stall between appointments.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+For the numeracy side, there is [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 9 topic. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

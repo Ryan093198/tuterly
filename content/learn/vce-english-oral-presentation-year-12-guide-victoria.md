@@ -54,7 +54,7 @@ A tutor who knows the VCE English Study Design can do something general school s
 
 For students who are strong writers but uncomfortable speakers, a tutor can help them bridge that gap. For students who are confident presenters but have not built a properly reasoned argument, the focus shifts to structure and evidence. Both matter for the final mark.
 
-Tuterly connects Melbourne families with tutors who understand the VCE English curriculum and report back after every session through the parent dashboard. You will know exactly what was covered and where progress is being made. Between sessions, your child can work through targeted practice questions on the platform to keep building their skills.
+Ask the tutor how they will keep you across what was covered and where progress is being made, and what your child should practise between sessions, such as rehearsing the speech aloud against a timer.
 
 ---
 

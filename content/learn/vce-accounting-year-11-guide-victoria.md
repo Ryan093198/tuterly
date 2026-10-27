@@ -52,11 +52,11 @@ Units 3 and 4 are where VCE Accounting really counts. The content is more comple
 
 The investment in Year 11 is not just about passing. It is about building a foundation solid enough to carry the harder work ahead.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-If your child is losing marks on tasks they thought they understood, or if they are breezing through but you want them genuinely prepared for Year 12, Tuterly connects Melbourne families with tutors who know the VCE Accounting study design inside out.
+If your child is losing marks on tasks they thought they understood, or if they are breezing through but you want them genuinely prepared for Year 12, a tutor who knows the VCE Accounting study design inside out can help.
 
-After every session, you receive a report through the parent dashboard outlining exactly what was covered and how your child is tracking. Between sessions, your child can work through targeted practice questions on the platform to reinforce what they have learned with the tutor.
+Ask how the tutor will keep you across what was covered and how your child is tracking, and what practice they will set between sessions to reinforce it.
 
 ---
 

@@ -6,7 +6,7 @@ import Fade from "@/components/marketing/Fade";
 import StudyAppCTA from "@/components/StudyAppCTA";
 
 export const metadata = {
-  title: "Learn | Tuterly",
+  title: { absolute: "Learn | Tuterly" },
   description:
     "Guides for Melbourne parents - when to tutor, what to expect at each year level, and how to support your child's learning at home.",
   alternates: { canonical: `${SITE_URL}/learn` },

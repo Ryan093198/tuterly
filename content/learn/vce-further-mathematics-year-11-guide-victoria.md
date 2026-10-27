@@ -60,11 +60,11 @@ Ask them to explain what they studied that week in plain language. If they canno
 
 Make sure they are using VCAA past papers and not just textbook exercises. The exam question style is specific, and familiarity with it matters.
 
-## Where Tuterly fits in
+## When a tutor helps
 
 If your child is struggling to keep up with Data Analysis, unsure how to structure a modelling task response, or simply not using their CAS calculator as well as they should be, a tutor who knows the VCE Further Mathematics course can make a significant difference.
 
-Through the Tuterly parent dashboard, you receive a session report after every lesson covering what was covered and how your child is tracking. Between sessions, your child can work through targeted practice questions on the platform to keep the momentum going.
+Ask the tutor how they will keep you informed about what was covered and how your child is tracking, and what they will set for practice between sessions to keep the momentum going.
 
 ---
 

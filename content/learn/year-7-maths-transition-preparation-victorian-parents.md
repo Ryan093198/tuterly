@@ -46,7 +46,7 @@ This is genuinely one of the most common things parents tell us. You want to hel
 
 A good tutor bridges that gap in a way that is hard to replicate at home. The right tutor does not just re-teach what the school has already covered. They diagnose which specific concepts are shaky, explain them in a different way, and build the kind of fluency that lets your child keep up when the class moves fast.
 
-If you are looking for support, Tuterly's parent dashboard shows you exactly what was covered in each session and what your child should practise before the next one. You do not have to guess whether it is helping. Session reports give you that in writing after every lesson, and targeted practice questions on the platform let your child consolidate new skills between sessions.
+If you do bring in a tutor, ask them to tell you after each session what was covered and what your child should practise before the next one. You do not have to guess whether it is helping.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 7 topic. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 

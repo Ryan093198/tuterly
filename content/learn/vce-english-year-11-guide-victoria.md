@@ -48,9 +48,9 @@ Encourage regular reading of opinion and commentary, not just fiction. The Age, 
 
 Give honest feedback on drafts rather than just reassurance. A parent who reads a draft and says it sounds good is less useful than one who says they do not quite understand the point being made in paragraph two.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-If your child has specific gaps or wants structured guidance through Units 1 and 2, a tutor who knows the VCAA study design can move faster than classroom teaching allows. On Tuterly, you can see each tutor's subject experience before booking, and after every session you receive a written report covering what was worked on and what to practise next. The platform also includes targeted practice questions aligned to the VCE English structure, so your child is not just doing generic writing tasks.
+If your child has specific gaps or wants structured guidance through Units 1 and 2, a tutor who knows the VCAA study design can move faster than classroom teaching allows. Check their VCE English experience before you start, and ask for a short note after each session on what was worked on and what to practise next. Practice should follow the VCE English task types, not generic writing exercises.
 
 Year 11 is the right time to get this foundation right, not the week before Year 12 exams.
 

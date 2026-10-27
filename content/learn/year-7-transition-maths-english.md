@@ -36,7 +36,7 @@ The most effective thing you can do is establish routines early. Don't wait for 
 
 Talk about what's changing. Help them understand that needing to study differently isn't a sign of failure. It's a normal part of growing up academically. Build in regular homework time before it becomes urgent.
 
-The jump to secondary catches a lot of students off guard, not because they're not bright, but because nobody taught them the new study habits. A Tuterly tutor works with your child on both content and approach. You'll see exactly what's being covered through session reports, and your child can use the platform's drills to lock in new concepts before they pile up. For students who are already strong, a tutor can push them ahead and keep the work challenging from day one.
+The jump to secondary catches a lot of students off guard, not because they're not bright, but because nobody taught them the new study habits. A tutor can work with your child on both content and approach, and for students who are already strong, can push them ahead and keep the work challenging from day one. For maths, [{{STUDY_APP}}](/) helps lock in new concepts before they pile up: your child snaps the Year 7 questions they get wrong, sees a worked solution, and practises fresh versions until each one is mastered.
 
 [Tutoring in Balwyn](/tutoring/balwyn) | [Tutoring in Box Hill](/tutoring/box-hill) | [Tutoring in Glen Waverley](/tutoring/glen-waverley)
 

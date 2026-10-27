@@ -68,5 +68,5 @@ Check in on SAC dates and make sure your child has revision time built in, not j
 
 If your child needs a tutor, now is the time to look. Tutors with VCE Specialist Maths experience book out quickly in Term 3, well before the exam period crunch.
 
-Tuterly connects you with Melbourne tutors who know the VCAA study design and can focus specifically on the topics and question types your child finds hardest. The parent dashboard shows you what each session covered and where your child is progressing, so you are not left guessing. Targeted practice questions on the platform are aligned to the current study design, so nothing is wasted on irrelevant material.
+Look for a tutor who knows the VCAA study design and can focus specifically on the topics and question types your child finds hardest. Ask how they will show you what each session covered and where your child is progressing, and make sure practice is aligned to the current study design, so nothing is wasted on irrelevant material.
 

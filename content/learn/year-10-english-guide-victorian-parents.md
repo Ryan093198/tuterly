@@ -44,9 +44,9 @@ High-performing students often plateau in Year 10 because they are meeting the s
 
 Extension at this stage means working with harder texts, writing more sophisticated thesis statements, and getting detailed written feedback on essays rather than just a grade. The transition to Year 11 is much smoother when a capable student has already been asked to work at the edge of their ability.
 
-## How Tuterly can help
+## When to get support
 
 If you are starting to think about support, Year 10 is exactly the right moment. Finding a tutor now means your child builds genuine skills before VCE begins, rather than trying to patch gaps while Units 1 and 2 are already being assessed.
 
-Tuterly's parent dashboard gives you a clear view of what is covered each session, and the written session reports mean you are never guessing whether progress is being made. The platform includes targeted practice questions aligned to the kinds of analytical tasks your child will meet in VCE English.
+If you do find a tutor, ask how they will show you what was covered each session and whether progress is being made. Practice should look like the analytical tasks your child will meet in VCE English: short text responses and argument analysis, written under time.
 

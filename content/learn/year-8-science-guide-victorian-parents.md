@@ -49,5 +49,5 @@ You do not need a science degree to help. A few things make a real difference.
 
 A good science tutor does two things a busy classroom cannot always do. They find the specific concept or skill that is causing the mark to drop, and they build it properly rather than glossing over it. For Year 8 science, that is usually one chemistry unit plus the scientific reasoning skills underneath everything else.
 
-If you are weighing up whether to get support, Tuterly connects you with local Melbourne tutors who work specifically across Years 7 to 10. After each session, you receive a written report covering what was covered, how your child responded, and what to focus on next. The platform also includes targeted practice questions mapped to the Australian Curriculum, so your child can consolidate between sessions rather than waiting a week to try again.
+If you are weighing up whether to get support, look for a tutor who works across Years 7 to 10 science and who tells you after each session what was covered, how your child responded, and what to focus on next, so your child can consolidate between sessions rather than waiting a week to try again.
 

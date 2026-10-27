@@ -56,7 +56,7 @@ Term 3 is when the pressure is at its highest. SACs are happening, exam prep is 
 
 A tutor who knows the VCE English study design and the VCAA marking criteria can work through a student's actual writing, paragraph by paragraph, and show them exactly where the argument is breaking down. That kind of specific, text-level feedback is hard to get in a classroom of thirty students.
 
-Tuterly has VCE English tutors across Melbourne who work with students on the exact skills tested in SACs and the exam. After every session, you receive a summary through the parent dashboard showing what was covered and how your child is progressing. Between sessions, students can keep building with targeted practice questions on the platform.
+Look for a VCE English tutor who works with students on the exact skills tested in SACs and the exam, and who tells you after each session what was covered and how your child is progressing. Between sessions, timed essays on fresh prompts keep the skill building.
 
 ---
 

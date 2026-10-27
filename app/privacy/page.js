@@ -9,7 +9,7 @@ const DESCRIPTION =
 const URL = `${SITE_URL}/privacy`;
 
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: {

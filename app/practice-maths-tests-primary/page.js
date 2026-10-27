@@ -15,7 +15,7 @@ const DESCRIPTION =
 const URL = `${SITE_URL}/practice-maths-tests-primary`;
 
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: "website" },

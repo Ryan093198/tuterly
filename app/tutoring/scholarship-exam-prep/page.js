@@ -1,34 +1,32 @@
-import Link from "next/link";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 import {
   c,
   MARKETING_FONTS_IMPORT,
 } from "@/components/marketing/theme";
-import SampleReport from "@/components/marketing/SampleReport";
-import SavingsCalculator from "@/components/marketing/SavingsCalculator";
-import ComparisonTable from "@/components/marketing/ComparisonTable";
-import TuterlyMethod from "@/components/marketing/TuterlyMethod";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Private School Scholarship Exam Tutoring | Tuterly";
+const TITLE = "Private School Scholarship Exam Tutoring: Melbourne Guide | Tuterly";
 const DESCRIPTION =
-  "Online and in-person tutors for Year 7 and Year 9 private school scholarship exams - EduTest, ACER, and individual-school entry exams used by Melbourne's leading independent schools.";
+  "Year 7 and Year 9 private school scholarship exams in Melbourne: EduTest, ACER and school entry exams, what tutoring helps with, and where a Years 7 to 10 maths app fits.";
+const URL = `${SITE_URL}/tutoring/scholarship-exam-prep`;
 
 const TEST_FORMATS = [
   {
     title: "EduTest",
-    body: "Used by Camberwell Grammar, Carey Baptist, Wesley, Caulfield Grammar, MLC, and many others. Five sections: reading, mathematics, written expression, verbal reasoning, numerical reasoning.",
+    body: "Five sections: reading, mathematics, written expression, verbal reasoning and numerical reasoning.",
   },
   {
     title: "ACER Scholarship Tests",
-    body: "Used by Scotch College, Trinity Grammar, Genazzano, Loreto Mandeville Hall, Xavier, and Haileybury. Three papers: written expression, humanities (comprehension and interpretation), mathematics.",
+    body: "Three papers: written expression, humanities (comprehension and interpretation), and mathematics.",
   },
   {
     title: "Individual school entry exams",
-    body: "Several schools run their own entry process in addition to the standard tests, with their own essay prompts and maths problem sets. Worth specifically practising for if you've shortlisted a school.",
+    body: "Several schools run their own entry process in addition to the standard tests, with their own essay prompts and maths problem sets. Worth practising for specifically if you’ve shortlisted a school.",
   },
 ];
 
@@ -47,28 +45,56 @@ const SCHOOLS = [
   { name: "Haileybury" },
 ];
 
+const TUTOR_HELPS = [
+  "Reading and marking practice writing, and explaining what would make it stronger",
+  "Teaching the reasoning question types and working on speed",
+  "Running timed practice papers and going through them afterwards",
+  "Practising for the school interview, if there is one",
+];
+
+const APP_HELPS = [
+  "Years 7 to 10 school maths, with topics from the Victorian Curriculum 2.0",
+  "Snap a question they got wrong in class or a school test, see the worked solution, then master fresh versions",
+  "Test any topic and Fix my mistakes to keep their maths topics solid",
+  "Study notes: a one-page revision sheet on a topic, as a PDF",
+];
+
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: `${SITE_URL}/tutoring/scholarship-exam-prep` },
+  alternates: { canonical: URL },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: `${SITE_URL}/tutoring/scholarship-exam-prep`,
+    url: URL,
     type: "website",
   },
 };
 
+const sectionLabel = { fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 };
+
+function Bullets({ items, color }) {
+  return (
+    <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
+      {items.map((t) => (
+        <li key={t} style={{ fontSize: 14, color: c.text, lineHeight: 1.55, paddingLeft: 16, position: "relative" }}>
+          <span aria-hidden="true" style={{ position: "absolute", left: 0, color }}>•</span>
+          {t}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function ScholarshipPrepPage() {
+  const name = STUDY_APP.name;
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Private School Scholarship Exam Tutoring",
-    provider: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
-    areaServed: { "@type": "Place", name: "Victoria, Australia" },
-    serviceType:
-      "Private school scholarship exam preparation tutoring - EduTest, ACER, individual-school entry exams",
-    url: `${SITE_URL}/tutoring/scholarship-exam-prep`,
+    "@type": "WebPage",
+    name: "Private School Scholarship Exam Tutoring: Melbourne Guide",
+    description: DESCRIPTION,
+    url: URL,
+    publisher: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
   };
 
   return (
@@ -85,14 +111,18 @@ export default function ScholarshipPrepPage() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Scholarship exam prep</p>
+            <p style={sectionLabel}>Scholarship exam prep</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Tutoring for private school scholarship exams.
+              Private school scholarship exams: a guide for Melbourne parents.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Year 7 and Year 9 scholarship exams open doors to Melbourne&apos;s top private schools - and a meaningful fee reduction for the next six years. Tuterly connects families with tutors who&apos;ve prepared students for the EduTest, the ACER scholarship tests, and the individual-school entry exams that many schools run alongside.
+              Year 7 and Year 9 scholarship exams can open the door to a Melbourne private school, and to a fee reduction for the years that follow. Here’s what the EduTest, the ACER scholarship tests and individual school exams involve, what a tutor helps with, and where {name}, our Years 7 to 10 maths app, fits in.
             </p>
-            <AppHeroBlock placement="scholarship_exam_prep_hero" />
+            <AppHeroBlock
+              placement="scholarship_exam_prep_hero"
+              heading="In Year 7 or 8? Keep their school maths solid."
+              sub={`${name} is an iPhone app for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It isn’t a scholarship test-prep course.`}
+            />
           </Fade>
         </div>
       </section>
@@ -101,9 +131,9 @@ export default function ScholarshipPrepPage() {
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Test formats we prepare for</p>
+            <p style={sectionLabel}>The test formats</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
-              EduTest, ACER, and individual-school exams.
+              EduTest, ACER, and individual school exams.
             </h2>
             <div style={{ display: "grid", gap: 12 }}>
               {TEST_FORMATS.map((t) => (
@@ -113,20 +143,23 @@ export default function ScholarshipPrepPage() {
                 </div>
               ))}
             </div>
+            <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginTop: 20 }}>
+              Tests are usually sat the year before entry: in primary school for Year 7 entry, and in Year 8 for Year 9 entry. Dates vary by school, so check each one.
+            </p>
           </Fade>
         </div>
       </section>
 
-      {/* SCHOOLS WE PREPARE STUDENTS FOR */}
+      {/* SCHOOLS */}
       <section style={{ padding: "56px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Schools families ask us about</p>
+            <p style={sectionLabel}>Schools families ask us about</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Melbourne private schools we prepare students for.
+              Melbourne private schools families ask about.
             </h2>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>
-              Most Melbourne independent schools accept either EduTest or ACER results - sometimes both - for scholarships and entry. The tutoring approach is shaped by which test the school uses and by the school&apos;s own essay or interview round, if it runs one.
+              Most Melbourne independent schools use either EduTest or ACER results, sometimes both, for scholarships and entry. Which test a school uses, and whether it runs its own essay or interview round, can change from year to year, so check the school’s website before you plan.
             </p>
             <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
               {SCHOOLS.map((s) => (
@@ -139,38 +172,62 @@ export default function ScholarshipPrepPage() {
         </div>
       </section>
 
-      <TuterlyMethod background={c.offWhite} padding="80px 24px" />
-
-      <SampleReport
-        background={c.white}
-        padding="80px 24px"
-        preset="selective-numerical"
-        heading="A sample scholarship session report."
-        sub="A real example of what you'll receive after every prep session. Tutors are trained to use the platform so progress, weak spots, and what to practise next are visible after every lesson - not just at the end of term."
-      />
-
-
-      {/* PRICING */}
-      <section style={{ padding: "80px 24px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+      {/* TUTOR vs APP */}
+      <section style={{ padding: "64px 24px", background: c.offWhite }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Simple pricing</p>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 36, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
-              Scholarship prep without the agency markup.
+            <p style={sectionLabel}>Tutoring and the app</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
+              Different jobs, and it helps to be clear which is which.
             </h2>
-            <p style={{ fontSize: 16, color: c.textLight, textAlign: "center", lineHeight: 1.7, maxWidth: 600, margin: "0 auto 32px" }}>
-              Session reports, practice worksheets, and progress tracking on every topic - at a directly-paid hourly rate instead of an agency margin.
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28, maxWidth: 760 }}>
+              Scholarship tests reward reasoning, reading, writing and speed, as well as maths. A tutor can cover all of that. {name} covers one thing: the school maths a student in Years 7 to 10 is learning now, which the maths section of a Year 9 scholarship test builds on.
             </p>
           </Fade>
-          <div style={{ display: "grid", gap: 20 }}>
-            <SavingsCalculator />
-            <ComparisonTable />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
+            <Fade>
+              <div style={{ background: c.white, borderRadius: 16, border: `1px solid ${c.border}`, padding: "24px 24px", height: "100%" }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.amber, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>What a tutor helps with</p>
+                <Bullets items={TUTOR_HELPS} color={c.amber} />
+              </div>
+            </Fade>
+            <Fade delay={0.1}>
+              <div style={{ background: c.tealPale, borderRadius: 16, border: `2px solid ${c.teal}`, padding: "24px 24px", height: "100%" }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>What {name} covers</p>
+                <Bullets items={APP_HELPS} color={c.teal} />
+              </div>
+            </Fade>
           </div>
+          <Fade delay={0.14}>
+            <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginTop: 24, maxWidth: 760 }}>
+              {name} doesn’t cover the reasoning, reading or writing sections, doesn’t run timed scholarship papers, and isn’t built for primary school students sitting Year 7 entry tests.
+            </p>
+          </Fade>
         </div>
       </section>
 
-      {/* GET STARTED CTA */}
+      {/* COST */}
+      <section style={{ padding: "64px 24px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={sectionLabel}>What it costs</p>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
+              Tutoring by the hour, the app by the week.
+            </h2>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
+              A private tutor in Melbourne usually costs $80 to $100 an hour, and scholarship preparation often runs for months. That’s worth it for the writing and reasoning sections, where feedback from a person matters most.
+            </p>
+            <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
+              For keeping Years 7 to 10 maths solid between sessions, or on its own, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store, on iPhone.
+            </p>
+          </Fade>
+        </div>
+      </section>
 
+      <AppCtaBand
+        placement="scholarship_exam_prep_final"
+        title="Keep their school maths solid, one question at a time."
+      />
       <MarketingFooter />
     </main>
   );

@@ -18,21 +18,20 @@ So the useful question is not "how much more work?" It is "which work, exactly?"
 
 ## What we would actually do
 
-**1. Diagnose before teaching anything.** The report is months old and tells you a band, not a skill. The first session is finding out where your child is *now*: a short test on the flagged topic, marked properly, with every mistake sorted into a silly slip, a genuine method gap, or a timing problem. Those three need completely different responses, and treating them the same is the most common way home study wastes effort.
+**1. Diagnose before teaching anything.** The report is months old and tells you a band, not a skill. The first job is finding out where your child is *now*: a short test on the flagged topic, marked properly, with every mistake sorted into a silly slip, a genuine method gap, or a timing problem. Those three need completely different responses, and treating them the same is the most common way home study wastes effort.
 
 **2. Work the two or three real gaps.** Not the whole subject. A student who is shaky on fractions and multi-step worded problems does not need Year 5 maths re-taught. They need those two things, properly, with spacing so it sticks.
 
 **3. Practise the way the test actually asks.** This is the part schools rarely have time for. Class worksheets come sorted by topic, so your child knows the method before reading the question. Real tests mix topics, run to a clock, and lean on worded problems. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a practice test across a whole topic, aligned to the Victorian Curriculum, with a worked solution for every question.
 
-
-**4. Show you it is working.** After every tutoring session you get a written report: what was covered, how your child went, and exactly what to practise next. You should not have to wait for the next school report to find out whether the money is doing anything.
+**4. Check it is working.** Re-test the same topic a few weeks later with fresh questions and compare. If a tutor is involved, ask for a short note after each session on what was covered, how your child went and what to practise next. For Years 7 to 10 maths, linking to your child's {{STUDY_APP}} account gives you Week in review: what they added and mastered that week, their test scores and their trickiest topic. You should not have to wait for the next school report to find out whether the effort is paying off.
 
 ## What tutoring cannot fix
 
 Worth saying plainly, because plenty of tutoring companies will not.
 
 - **It will not turn a below-average result into Exceeding in a term.** Real movement in maths takes a couple of terms of consistent work. Anyone promising faster is selling something.
-- **It will not help if the sessions are not backed up between times.** An hour a week against five hours of school maths is not enough on its own. The practice between sessions is where most of the gain comes from, which is why we build the practice into the platform rather than leaving you to find worksheets.
+- **It will not help if the sessions are not backed up between times.** An hour a week against five hours of school maths is not enough on its own. The practice between sessions is where most of the gain comes from, so the practice needs a plan, not a pile of loose worksheets. For Years 7 to 10 maths, that is what {{STUDY_APP}} is built for: the questions your child gets wrong become fresh practice questions until each one is mastered.
 - **It will not fix a confidence problem by itself.** If your child has decided they are bad at maths, that belief needs addressing directly, and a good tutor spends real time on it.
 - **And plenty of children do not need a tutor at all.** If the gap is small and your child will work with you, the free generator on this page plus twenty minutes twice a week may be all it takes. That is a genuinely fine outcome.
 

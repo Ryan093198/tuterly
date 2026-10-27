@@ -36,9 +36,9 @@ On the other end, a child who finds everything too easy and finishes before the 
 
 **If the teacher confirms a gap**, try structured home practice. Ten minutes a day on the specific skill, not a general worksheet, can make a real difference over a term.
 
-**If your child is losing confidence or the gap is widening despite effort**, that's when outside support makes sense. A tutor who understands the Victorian curriculum can pinpoint exactly where things went off track and rebuild from there. Tuterly's parent dashboard shows you what was covered each session, and the platform's practice questions let your child build fluency between lessons without it feeling like extra homework. For students who need more challenge, the same system works in reverse: a tutor can push them beyond the classroom pace while you track exactly what they're working on.
+**If your child is losing confidence or the gap is widening despite effort**, that's when outside support makes sense. A tutor who understands the Victorian curriculum can pinpoint exactly where things went off track and rebuild from there. Ask for a short note after each session on what was covered, and keep practice between lessons short and specific so it doesn't feel like extra homework. For students who need more challenge, the same approach works in reverse: a tutor can push them beyond the classroom pace while you keep track of what they're working on.
 
-[Find a primary tutor in Glen Waverley](/tutoring/glen-waverley) | [Tutoring in Balwyn](/tutoring/balwyn)
+[Tutoring in Glen Waverley](/tutoring/glen-waverley) | [Tutoring in Balwyn](/tutoring/balwyn)
 
 ---
 

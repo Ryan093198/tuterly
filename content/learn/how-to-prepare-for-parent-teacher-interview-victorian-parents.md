@@ -66,7 +66,7 @@ Check in with your child after the interview too. You don't need to share everyt
 
 ## When you want more than the interview can give you
 
-If the interview confirmed something you already suspected, or raised something you're not sure how to address at home, a tutor can help bridge the gap. Tuterly matches Melbourne families with tutors who work on the specific skills named in that kind of feedback, not just general homework support.
+If the interview confirmed something you already suspected, or raised something you're not sure how to address at home, a tutor can help bridge the gap. Look for one who will work on the specific skills named in that kind of feedback, not just general homework support.
 
-After every session, you get a written report through the parent dashboard showing what was covered and what to practise next. You're not left guessing whether it's working. The platform also includes targeted practice questions so your child is drilling the right material, not just doing more of everything.
+Ask the tutor to tell you after each session what was covered and what to practise next, so you're not left guessing whether it's working. If the feedback was about Years 7 to 10 maths, [{{STUDY_APP}}](/) is another option: your child snaps the questions they get wrong and practises fresh versions until each one is mastered, and you can link to see their Week in review.
 

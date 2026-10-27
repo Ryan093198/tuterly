@@ -60,11 +60,11 @@ Reading widely is the most reliable way to build a stronger vocabulary and a mor
 
 For students aiming well above year level, exploring the Year 7 writing expectations in the Australian Curriculum gives a clear picture of where strong primary writers are heading.
 
-## Where Tuterly comes in
+## When one-on-one help makes sense
 
 If your child's writing is genuinely falling behind, or if they are capable of much more and not being stretched, targeted one-on-one work makes a significant difference. Writing is a skill that improves fastest with specific, structured feedback, and that is hard to provide consistently at home alongside everything else you are managing.
 
-Tuterly connects Melbourne families with tutors who understand exactly what the Victorian curriculum expects at each primary year level. After every session, the parent dashboard gives you a clear report on what was covered and how your child is progressing, so you are never guessing whether things are moving in the right direction. Between sessions, targeted practice questions on the platform keep the momentum going.
+If you do look for a tutor, find one who knows what the Victorian curriculum expects at your child's year level and who will tell you after each session what was covered and how your child is progressing. Short, regular writing practice at home between sessions is what makes the feedback stick.
 
 ---
 

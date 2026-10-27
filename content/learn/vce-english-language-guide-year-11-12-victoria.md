@@ -50,11 +50,11 @@ For students who are already performing well in English Language, the goal is no
 
 High-performing students learn to construct arguments about language use rather than just describing it. They can explain why a speaker makes certain linguistic choices, what those choices reveal about social identity or power, and how that connects to broader ideas in the course. That level of insight is what separates a high score from a very good one.
 
-## Where Tuterly fits in
+## When a tutor helps
 
-English Language is a subject where the right support makes a measurable difference. Whether your child is finding the metalanguage overwhelming in Year 11 or is pushing for a strong score in Year 12, working with a tutor who knows the VCAA English Language study design gives them a clear advantage.
+English Language is a subject where the right support helps. Whether your child is finding the metalanguage overwhelming in Year 11 or is pushing for a strong score in Year 12, working with a tutor who knows the VCAA English Language study design helps them know exactly what the assessors are looking for.
 
-Through the Tuterly parent dashboard, you receive a session report after every lesson outlining exactly what was covered and where your child is building confidence. Between sessions, your child can work through targeted practice questions on the platform, which is particularly useful for drilling metalanguage application and preparing for unseen text analysis tasks.
+Ask any tutor you are considering how they will report on what was covered and where your child is building confidence. Between sessions, short regular practice is particularly useful for drilling metalanguage application and preparing for unseen text analysis tasks.
 
 ---
 

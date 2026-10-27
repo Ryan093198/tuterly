@@ -50,7 +50,7 @@ VCE English is one of the hardest subjects to improve on your own because the fe
 
 A tutor closes that gap. They sit with your child, read the essay together, and point out exactly where the argument weakens, where the analysis stays on the surface, and where the expression could be sharper. That immediate, specific feedback is what drives improvement.
 
-[Tuterly](https://www.tuterly.com.au/tutoring) connects your child with an English tutor who reports back after every session. You can see what they worked on, what improved, and what's next. Between sessions, your child can practise with targeted exercises on the platform. It's feedback that compounds week after week.
+When you choose a tutor, look for one who reports back after every session: what they worked on, what improved, and what's next. Between sessions, your child should be writing, not just reading notes. That is feedback that compounds week after week.
 
 For students already scoring well, a tutor can push them from strong to exceptional. The difference between a 38 and a 43 in English often comes down to the sophistication of expression and depth of analysis. Both are trainable with the right guidance.
 

@@ -46,5 +46,5 @@ If your child's teacher is writing feedback like "needs more analysis" or "argum
 
 For students who are ahead, a tutor who pushes thinking rather than just confirming what they already know can be genuinely valuable in Year 9. The goal is arriving at Year 10 with analytical writing that is already strong, not scrambling to build it under VCE pressure.
 
-Tuterly connects Victorian families with tutors who know the curriculum at this level and understand what Year 10 and VCE English will actually require. After every session, you get a written report covering what was practised and what to focus on next, so you're not left guessing whether the sessions are making a difference. The platform also includes targeted practice questions for reading and writing tasks, so your child is working on the right skills between sessions.
+Look for a tutor who knows the curriculum at this level and what Year 10 and VCE English will actually require. After each session you should know what was practised and what to focus on next, so you're not left guessing whether the sessions are making a difference.
 

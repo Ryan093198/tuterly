@@ -52,5 +52,5 @@ Flashcards for key definitions are useful, but only as a foundation. The real wo
 
 If your child is solid on the content but freezing on written responses, a tutor who knows VCE Economics can make a significant difference in a short time. The same goes for students who want to push into the higher study score range. The difference between a good answer and a top one in Economics is almost always about how the argument is built, and that is very coachable.
 
-Tuterly tutors with VCE Economics experience work through exactly this kind of targeted practice. The parent dashboard keeps you across what has been covered in each session, and session reports show where the gaps are and how they are closing. Practice questions on the platform are structured around the VCE Economics framework, so your child is building the right skills for the actual assessment.
+That kind of targeted practice is what a tutor with VCE Economics experience should be doing. Ask how they will show you where the gaps are and how they are closing, and make sure the practice questions are built around the VCE Economics framework, so your child is building the right skills for the actual assessment.
 

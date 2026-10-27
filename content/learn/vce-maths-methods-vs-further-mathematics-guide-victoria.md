@@ -62,7 +62,9 @@ Subject selection in Victoria typically finalises in Term 3 of Year 10. That giv
 
 If your child is unsure which pathway fits, or if they have made their choice and want to arrive at Year 11 properly prepared, working through the gaps now is far more effective than trying to patch things in the middle of a VCE unit.
 
-Tuterly connects Melbourne families with tutors who know the VCAA curriculum in detail and can help Year 10 students build the foundations that Methods or Specialist demand, or make sure Further Maths students are set up to perform at their best. After every session you will see a report through the parent dashboard covering exactly what was worked on and where your child stands. Between sessions, targeted practice questions on the platform keep the momentum going.
+A tutor who knows the VCAA curriculum can help a Year 10 student build the foundations that Methods or Specialist demand, or make sure a Further Maths student is set up to perform at their best. Ask what they will cover and how you will know it is working.
+
+The foundations themselves are Year 10 maths, especially algebra and functions. For that part, there is [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 10 topic, which is a quick way to see which topics are secure before subject selection. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

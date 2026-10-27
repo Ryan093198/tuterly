@@ -28,9 +28,9 @@ Look at Year 9 and 10 results in algebra specifically, not the overall maths gra
 
 If your child starts Methods and it isn't working, switching to General mid-year is possible but costly. They join a class already part-way through different content and spend weeks catching up at exactly the moment they needed stability. It's recoverable, but it's a setback worth avoiding by getting the choice right up front.
 
-This decision is too important to make without good information. If your child is borderline, a few sessions with a Tuterly maths tutor can assess their readiness objectively, and you'll see that assessment clearly in the session reports. If they go with Methods, the platform's question drills keep them sharp on the algebraic foundations that trip most students up in Term 1.
+This decision is too important to make without good information. If your child is borderline, a few sessions with a maths tutor can assess their readiness objectively; ask for a straight answer at the end. Either way, the algebra that trips most Methods students up in Term 1 is Year 9 and 10 algebra. While your child is still in Year 10, [{{STUDY_APP}}](/) is one way to firm it up: they snap the questions they get wrong, see a worked solution, and practise fresh versions until each one is mastered, and Test any topic sets a short test on any Year 10 topic.
 
-Find a VCE maths tutor near you: [Glen Waverley](/tutoring/glen-waverley) | [Balwyn](/tutoring/balwyn) | [Box Hill](/tutoring/box-hill)
+Tutoring in your area: [Glen Waverley](/tutoring/glen-waverley) | [Balwyn](/tutoring/balwyn) | [Box Hill](/tutoring/box-hill)
 
 ---
 

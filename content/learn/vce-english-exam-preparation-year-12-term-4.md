@@ -60,7 +60,7 @@ If your child is sitting practice essays and still getting feedback like "too na
 
 For students who are already performing strongly, a tutor can push the writing quality from solid to the kind of response that assessors remember. The difference between a Study Score of 35 and 40 often comes down to the sophistication of the writing, not the quantity of preparation.
 
-Tuterly connects Year 12 students with VCE English tutors who know what VCAA assessors are looking for. Through the parent dashboard, you can see what was covered in every session and track how the writing is developing. Between sessions, students can work through targeted practice questions on the platform, including essay prompts and Section B writing tasks, so preparation keeps moving between tutoring appointments.
+Look for a VCE English tutor who knows what VCAA assessors are looking for, and who keeps you across what was covered in every session and how the writing is developing. Between sessions, timed practice on essay prompts and Section B writing tasks keeps preparation moving.
 
 ---
 

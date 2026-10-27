@@ -60,11 +60,11 @@ If the anxiety has been building for more than a term, if your child is actively
 
 A good maths tutor does two things at once: they find and close the skills gaps that are feeding the anxiety, and they create a low-pressure environment where your child can rebuild their confidence one session at a time. That combination is difficult to replicate in a classroom of 25 students with a fixed curriculum to cover.
 
-Tuterly connects Melbourne families with maths tutors who understand the Victorian Curriculum and know how to work with anxious learners, not just capable ones. After every session, you'll get a report through the parent dashboard so you can see exactly what was covered and how your child responded. Between sessions, your child can consolidate what they've learned with targeted practice questions on the platform, at their own pace, without the pressure of a ticking clock.
+Look for a maths tutor who understands the Victorian Curriculum and knows how to work with anxious learners, not just capable ones, and who tells you after each session what was covered and how your child responded. Between sessions, low-stakes practice at your child's own pace, without the pressure of a ticking clock, helps the confidence carry over.
 
 Whether your child is in Year 5 and just starting to wobble, or in Year 9 and genuinely dreading the subject, the right support can shift things significantly.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong, see a worked solution, and practise fresh versions at their own pace until each one is mastered. It works alongside a tutor or on its own.
 
 ---
 

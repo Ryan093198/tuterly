@@ -52,7 +52,7 @@ Sometimes the gap is specific enough that it needs more targeted work than a bus
 
 A tutor who understands what the Victorian Curriculum expects at each year level can pinpoint exactly where the comprehension breakdown is happening, whether it's inference, vocabulary, text structure, or something else, and work on that directly with your child.
 
-Tuterly connects Melbourne families with primary tutors who track progress and report back after every session through the parent dashboard. You will know what was covered, what clicked, and what needs more work, without having to quiz your child yourself. Between sessions, your child can keep building skills with targeted practice questions on the platform, all aligned to what they are doing in class.
+When choosing a primary tutor, look for one who tracks progress and reports back after every session: what was covered, what clicked, and what needs more work. That saves you quizzing your child yourself, and it lets you line up practice at home with what they are doing in class.
 
 ---
 

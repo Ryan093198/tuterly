@@ -54,5 +54,5 @@ A few practical things you can do at home:
 
 If your child has a specific gap, like fractions or order of operations, a few targeted sessions with a good tutor can do more than months of general practice. The key is making sure the tutor knows what to focus on, which requires diagnosing the actual problem first rather than just working through a textbook.
 
-This is the kind of thing Tuterly is built for. When you find a tutor through Tuterly, every session comes with a written report so you know exactly what was covered and what to practise next. The parent dashboard keeps everything in one place, and the platform includes targeted practice questions aligned to the Victorian Curriculum, so your child is working on the right material, not just more material.
+Whoever you choose, after each session you should know what was covered and what to practise next, so your child is working on the right material, not just more material. Once your child starts Year 7, [{{STUDY_APP}}](/) is another option for maths: they snap the questions they get wrong and practise fresh versions until each one is mastered.
 

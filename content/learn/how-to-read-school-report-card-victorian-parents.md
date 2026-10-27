@@ -80,7 +80,7 @@ If your child's grades are strong but their effort ratings are low, that convers
 
 A tutor who knows the Victorian Curriculum can take your child's report and turn it into a specific plan. Not more of the same. Targeted work on the exact skills the report is flagging, at the pace your child needs.
 
-Tuterly connects Melbourne families with tutors who understand exactly what these grades mean and what it takes to move them. After every session, parents receive a report through the dashboard showing what was covered and how their child responded. Between sessions, students can keep building with targeted practice questions on the platform, so progress continues week to week rather than only when the tutor is in the room.
+Ask any tutor you are considering how they will show you progress. A short note after each session on what was covered and how your child responded, plus practice to do in between, means progress continues week to week rather than only when the tutor is in the room.
 
 ---
 

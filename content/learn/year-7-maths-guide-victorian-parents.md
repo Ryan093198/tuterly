@@ -59,9 +59,9 @@ If your child comes home confused more than a couple of times in a row on the sa
 
 If your child is finding Year 7 straightforward, a tutor with an extension focus can move them ahead on algebraic thinking and problem-solving before those topics arrive in class. That kind of head start changes how confident a student feels in Years 9 and 10.
 
-Tuterly's parent dashboard shows you what was covered in each session and what to practise next, so you are not left guessing whether progress is happening. The platform also includes targeted Year 7 maths practice questions matched to the Australian Curriculum, covering integers, ratio, algebra, and probability specifically.
+If you do bring in a tutor, ask for a short note after each session on what was covered and what to practise next, so you are not left guessing whether progress is happening.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 7 topic, such as integers, ratio, algebra or probability. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

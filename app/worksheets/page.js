@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/site";
 // builder that used to live here was removed (Oct 2026): practice now
 // happens in the Tuterly Study app, so every call to action is the app.
 
-const TITLE = "Maths by Topic, Years 7 to 10 (Victorian Curriculum) | Tuterly Study";
+const TITLE = "Maths by Topic, Years 7 to 10 (Victorian Curriculum)";
 const DESCRIPTION =
   "Every major Years 7 to 10 maths topic in the Victorian Curriculum: what's covered, common mistakes, and practice tests with worked solutions in the Tuterly Study app.";
 const URL = `${SITE_URL}/worksheets`;

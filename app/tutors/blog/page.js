@@ -5,7 +5,7 @@ import { c } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
 
 export const metadata = {
-  title: "Tutor Blog | Tuterly",
+  title: { absolute: "Tutor Blog | Tuterly" },
   description:
     "Advice for new and experienced tutors: how to get started, build your client base, and run better sessions.",
   alternates: { canonical: `${SITE_URL}/tutors/blog` },

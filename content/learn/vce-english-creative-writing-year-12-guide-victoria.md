@@ -49,7 +49,7 @@ Your child's school will have covered the requirements, but Term 3 SACs and exam
 
 If the answer is vague or no, that is worth addressing now. November is close enough that targeted practice in the next eight weeks will move the needle, but not so close that there is nothing left to gain.
 
-Tuterly tutors who specialise in VCE English can work through Section C specifically, including practising prompts together, workshopping drafts, and building the toolkit of structural approaches students need in the exam. The parent dashboard shows what has been covered in each session, and session reports give you visibility into where your child's creative writing currently sits. Targeted practice questions on the platform are aligned to the VCE English requirements so nothing is wasted.
+A tutor who specialises in VCE English can work through Section C specifically, including practising prompts together, workshopping drafts, and building the toolkit of structural approaches students need in the exam. Ask them to tell you where your child's creative writing currently sits and what to practise between sessions, so nothing is wasted.
 
 If Term 3 is already underway and your child has not touched Section C yet, now is the right time to act.
 

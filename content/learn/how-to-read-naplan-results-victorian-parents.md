@@ -71,7 +71,7 @@ Tutoring is worth considering if your child has come back Developing or Needs Ad
 
 A good tutor will not just re-run NAPLAN practice papers. They will identify the specific gaps in your child's understanding and work on those foundations, week by week, in a way a classroom of 25 students cannot accommodate.
 
-Tuterly connects Melbourne families with tutors who understand the Victorian Curriculum and can translate your child's NAPLAN result into a real learning plan. After every session, you get a report through the parent dashboard covering what was worked on and how your child responded, so you can track progress without guessing. Between sessions, your child can build on their skills with targeted practice questions on the platform.
+Look for a tutor who understands the Victorian Curriculum and can translate your child's NAPLAN result into a real learning plan, and who tells you after each session what was worked on and how your child responded. That is how you track progress without guessing.
 
 If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
