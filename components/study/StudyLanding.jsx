@@ -12,6 +12,7 @@ import { PRICING } from "@/lib/pricing";
 import { getStudyFaqs } from "@/lib/study-faqs";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
+import ResultsProof from "@/components/study/ResultsProof";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly Study app,
@@ -132,7 +133,7 @@ export default function StudyLanding() {
             <p className="tb-lead sl-hero__lead">
               {`Better marks start with the questions they got wrong. Snap a question they missed, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
-            <p className="sl-hero__pitch">It drills the questions your child actually gets wrong, not generic worksheets.</p>
+            <ResultsProof />
             <ul className="sl-hero__trust" aria-label="About the app">
               <li><Icon name="educator" size={18} /> Designed by Australian educators</li>
               <li><Icon name="school" size={18} /> {STUDY_APP_FACTS.curriculum}</li>

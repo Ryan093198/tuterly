@@ -109,3 +109,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 ## Changes from Ryan, 27 Oct (late night): lead with better marks
 - Headlines now lead with the outcome parents want, with the method second. Home H1 "Help your child get better maths marks." (lead: "Better marks start with the questions they got wrong."), home title "Tuterly Study: help your child improve their maths marks", parents H1 and title, the closing CTA bands ("Better maths marks start with the next question they get wrong."), the tutoring-page app block, and section headings ("Win back the marks they lost", "turn mistakes into marks").
 - Wording rule: better marks is the aim, never a promise. Not used: "the best way to improve marks", "guaranteed", or any figure, because those are claims the ACCC expects you to be able to prove. Once pilot results exist, they can be added with the evidence.
+
+## Changes from Ryan, 28 Oct: Bayside results
+- Ryan reported: all Bayside Academics students using Tuterly Study (Years 7 to 10) for the past month use it every day, and their school test and exam marks have improved. Parent quotes to follow.
+- Shown as a results card in the home and parents heroes ("Already lifting marks at Bayside Academics"), with fine print: "Bayside Academics students in Years 7 to 10, October 2026, using Tuterly Study alongside their tutoring." Plus an FAQ, "Does it actually improve marks?". Wording lives in lib/study-results.js.
+- Not used: "trusted by students, parents and teachers around Australia" (it has only been used at Bayside, in Melbourne, for a month). Keep each student's before and after marks: the ACCC can ask for them.
