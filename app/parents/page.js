@@ -7,9 +7,9 @@ import FindTutorButton from "@/components/FindTutorButton";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import FlowSteps from "@/components/brand/FlowSteps";
 import MadeByEducators from "@/components/study/MadeByEducators";
+import PriceTrial from "@/components/study/PriceTrial";
 import { Button, Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
-import { getStudyFaqs } from "@/lib/study-faqs";
 import { PRICING } from "@/lib/pricing";
 import "./parents.css";
 
@@ -39,7 +39,6 @@ const WEEK_FLOW = [
 export default function ParentsPage() {
   const name = STUDY_APP.name;
   const live = isStudyAppLive();
-  const priceAnswer = getStudyFaqs().find((f) => f.q === "How much does it cost?")?.a;
 
   return (
     <div className="tb pp">
@@ -143,11 +142,7 @@ export default function ParentsPage() {
       {/* 5. PRICE */}
       <section className="tb-section" aria-labelledby="price">
         <div className="tb-wrap tb-wrap--narrow">
-          <Card className="pp-price">
-            <Eyebrow>Price</Eyebrow>
-            <h2 id="price" className="tb-h2">{STUDY_APP.priceLine}</h2>
-            {priceAnswer && <p className="tb-lead" style={{ marginTop: 12 }}>{priceAnswer}</p>}
-          </Card>
+          <PriceTrial id="price" />
         </div>
       </section>
 

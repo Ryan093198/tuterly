@@ -82,3 +82,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Tutoring pages: the app blurb and the competitor-page facts mention Australian educators and the Victorian Curriculum.
 - Curriculum wording: VCAA says the Victorian Curriculum F–10 "incorporates and reflects much of the Australian Curriculum", so the site says "incorporates much of the Australian Curriculum". It doesn't claim to follow NSW or other state syllabuses.
 - Phone frames: frames now always size to the screenshot (the step carousel on phones was stretching them).
+
+## Changes from Ryan, 27 Oct (late): price
+- Price is now a 1-week free trial, then $7.99 a week (lib/study-app.js). Removed $49 a month, "about $11 a week" and "Students in the current pilot use it free" everywhere, including the blog writer.
+- New price block on home (after the comparison) and /parents: "Try it free for a week.", $7.99 a week, about $1.14 a day, "A whole week costs less than 10 minutes with a private tutor" ($80 an hour = $13.33 per 10 minutes), and a three-step trial timeline (Today / Day 1 to 7 / Day 8). While the app isn't live it says "Not on the App Store yet. This is the price when it launches."
+- Don't add "we'll remind you before the trial ends" unless the app actually sends that reminder.

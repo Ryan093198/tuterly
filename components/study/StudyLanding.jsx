@@ -11,6 +11,7 @@ import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { PRICING } from "@/lib/pricing";
 import { getStudyFaqs } from "@/lib/study-faqs";
 import MadeByEducators from "@/components/study/MadeByEducators";
+import PriceTrial from "@/components/study/PriceTrial";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly Study app,
@@ -351,7 +352,7 @@ export default function StudyLanding() {
               <span className="sl-compare__app">{name}</span>
             </div>
             <dl className="sl-compare__rows">
-              <CompareRow label="Cost" tutor={`Usually $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour in Melbourne.`} app={`A free trial, then $49 a month (${STUDY_APP.priceWeekly}).`} />
+              <CompareRow label="Cost" tutor={`Usually $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour in Melbourne.`} app={`A 1-week free trial, then $7.99 a week. ${STUDY_APP.priceVsTutor}`} />
               <CompareRow label="When" tutor="Usually an hour a week, at a set time." app="Any day they snap a question or take a topic test." />
               <CompareRow label="What it works on" tutor="What the tutor plans, plus whatever your child brings to the session." app="The difficult questions, and the ones your child hasn’t fully understood, until each one is fully mastered." />
               <CompareRow label="Explanations" tutor="A person who can explain it several ways and read how your child is going." app={<>A full worked solution for every question, and <strong>Explain this</strong> for the step that went wrong.</>} />
@@ -375,6 +376,17 @@ export default function StudyLanding() {
               </p>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* 6b. PRICE AND FREE TRIAL */}
+      <section className="tb-section" aria-labelledby="price" style={{ paddingTop: 0 }}>
+        <div className="tb-wrap">
+          <PriceTrial id="price">
+            <div style={{ width: "100%", maxWidth: 460 }}>
+              <StudyAppCTA variant="hero" placement="home_price" position="inline" slim />
+            </div>
+          </PriceTrial>
         </div>
       </section>
 
