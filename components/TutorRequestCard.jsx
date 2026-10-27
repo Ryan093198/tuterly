@@ -5,7 +5,7 @@ import TutorRequestModal from "@/components/TutorRequestModal";
 import { DISMISSED_KEY, DISMISS_DAYS, SENT_KEY } from "@/lib/tutor-request";
 
 const c = {
-  teal: "var(--brand-deep)",
+  teal: "var(--brand-text)",
   tealPale: "var(--brand-soft)",
   tealBorder: "var(--border)",
   navy: "var(--foreground)",

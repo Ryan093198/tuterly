@@ -26,7 +26,7 @@ export const metadata = {
 const YEAR_LEVELS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 
 const c = {
-  teal: "var(--brand-deep)", tealDeep: "var(--brand-deep)", tealBright: "var(--brand)", tealPale: "var(--brand-soft)",
+  teal: "var(--brand-text)", tealDeep: "var(--brand-text)", tealBright: "var(--brand)", tealPale: "var(--brand-soft)",
   ink: "var(--foreground)", navy: "var(--foreground)", text: "var(--foreground)", textLight: "var(--muted)",
   textMuted: "var(--muted)", white: "var(--card)", paper: "var(--background)", border: "var(--border)",
   amber: "var(--xp)",

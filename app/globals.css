@@ -25,6 +25,7 @@
   --brand-dark: #0a7f99;      /* brandDeep: teal text on white / light teal */
   --brand-deep: #0a7f99;
   --brand-edge: #0a7a93;      /* ledge under teal buttons */
+  --brand-text: #0a7088;      /* small teal text on bg/white/soft teal: 5.1:1 or more (AA) */
   --brand-foreground: #075a6c;/* teal text on brand-soft (AA at small sizes) */
   --on-brand: #ffffff;        /* text on brand fills (use 19px+ bold for AA) */
 
@@ -44,9 +45,11 @@
 
   --success: #1e8e4e;
   --success-soft: #e3f5ea;
+  --success-text: #177a42;    /* small "correct" text: AA on white and bg */
   --warning: #e8a317;
   --danger: #d23b3b;
   --danger-soft: #fdecec;
+  --danger-text: #b32d2d;     /* small "wrong" text: AA on danger-soft */
 }
 
 @theme inline {
@@ -65,6 +68,7 @@
   --color-brand-dark: var(--brand-dark);
   --color-brand-deep: var(--brand-deep);
   --color-brand-edge: var(--brand-edge);
+  --color-brand-text: var(--brand-text);
   --color-brand-foreground: var(--brand-foreground);
   --color-on-brand: var(--on-brand);
 
@@ -112,6 +116,7 @@
   --brand-dark: #5ed3eb;
   --brand-deep: #5ed3eb;
   --brand-edge: #1691ab;
+  --brand-text: #5ed3eb;
   --brand-foreground: #8fe3f2;
   --on-brand: #0a1220;        /* dark text on the bright teal: 8.9:1 */
 
@@ -127,9 +132,11 @@
 
   --success: #3fbf7a;
   --success-soft: #12301f;
+  --success-text: #3fbf7a;
   --warning: #f5b301;
   --danger: #f06a6a;
   --danger-soft: #3a1616;
+  --danger-text: #f06a6a;
 }
 
 * {

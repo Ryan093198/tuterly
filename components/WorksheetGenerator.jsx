@@ -41,9 +41,9 @@ const YEAR_LEVELS = [
 ];
 
 const c = {
-  teal: "var(--brand-deep)",
+  teal: "var(--brand-text)",
   tealLight: "var(--brand)",
-  tealDark: "var(--brand-deep)",
+  tealDark: "var(--brand-text)",
   tealPale: "var(--brand-soft)",
   navy: "var(--foreground)",
   navyMid: "var(--foreground)",

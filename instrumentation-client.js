@@ -7,8 +7,10 @@ import * as Sentry from "@sentry/nextjs";
 Sentry.init({
   dsn: "https://30ec8bc1bc09c089fa239cddb1c36a97@o4511811150610432.ingest.de.sentry.io/4511811177087056",
 
-  // Add optional integrations for additional features
-  integrations: [Sentry.replayIntegration()],
+  // Session Replay is loaded after the page is idle (see below) instead
+  // of being bundled: it was most of the JavaScript on every marketing
+  // page and the main thing holding back mobile Lighthouse scores.
+  integrations: [],
 
   // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
   tracesSampleRate: 1,
@@ -30,5 +32,17 @@ Sentry.init({
     // httpBodies: [],
   },
 });
+
+// Lazy-load Replay from Sentry's CDN once the browser is idle. Same sample
+// rates as before; if the CDN can't be reached, Replay is simply skipped.
+if (typeof window !== "undefined") {
+  const loadReplay = () => {
+    Sentry.lazyLoadIntegration("replayIntegration")
+      .then((replayIntegration) => Sentry.addIntegration(replayIntegration()))
+      .catch(() => {});
+  };
+  if ("requestIdleCallback" in window) window.requestIdleCallback(loadReplay, { timeout: 5000 });
+  else window.setTimeout(loadReplay, 3000);
+}
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

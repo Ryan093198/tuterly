@@ -18,7 +18,7 @@ const WORKSHEET_EMAIL_KEY = "tuterly:worksheet_email";
 const WORKSHEET_YEAR_KEY = "tuterly:worksheet_year";
 
 const c = {
-  teal: "var(--brand-deep)",
+  teal: "var(--brand-text)",
   tealPale: "var(--brand-soft)",
   navy: "var(--foreground)",
   text: "var(--foreground)",

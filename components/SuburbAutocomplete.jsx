@@ -8,7 +8,7 @@ const c = {
   textMuted: "var(--muted)",
   white: "var(--card)",
   border: "var(--border)",
-  teal: "var(--brand-deep)",
+  teal: "var(--brand-text)",
   tealPale: "var(--brand-soft)",
 };
 

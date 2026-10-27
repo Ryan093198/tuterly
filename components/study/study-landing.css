@@ -1,7 +1,7 @@
 /* Home page (components/study/StudyLanding.jsx). Shared pieces are in
  * components/brand/brand.css; this file is layout specific to the page. */
 
-.sl-accent { color: var(--brand); }
+.sl-accent { color: var(--brand-deep); } /* large text: 4.3:1 on bg */
 
 /* Hero: phone-first. Copy then CTA on phones (the button sits above the
  * fold at 390 x 844); copy left, tilted phone right on desktop. */
@@ -40,15 +40,16 @@
 @media (min-width: 900px) { .sl-math { grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; } }
 .sl-mathcard { padding: 20px; font-size: 17px; line-height: 1.6; }
 .sl-mathcard__label { font-weight: 800; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; color: var(--mc, var(--foreground)); }
-.sl-mathcard[data-tone="danger"] { --mc: var(--danger); background: var(--danger-soft); border-color: transparent; box-shadow: none; }
-.sl-mathcard[data-tone="success"] { --mc: var(--success); }
+.sl-mathcard[data-tone="danger"] { --mc: var(--danger-text); background: var(--danger-soft); border-color: transparent; box-shadow: none; }
+.sl-mathcard[data-tone="success"] { --mc: var(--success-text); }
 .sl-mathcard__body { display: grid; gap: 6px; overflow-x: auto; }
-.sl-mathcard .katex { font-size: 1.08em; }
+.sl-mathcard math { font-size: 1.12em; }
+.sl-mathcard math[display="block"] { margin: 6px 0; }
 .sl-solution { margin-top: 8px; }
 .sl-solution > summary {
   list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px;
   border-radius: 12px; border: 2px solid var(--border); background: var(--card); box-shadow: 0 3px 0 var(--edge);
-  font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-deep);
+  font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-text);
 }
 .sl-solution > summary::-webkit-details-marker { display: none; }
 .sl-solution__body { margin-top: 12px; display: grid; gap: 4px; font-size: 16px; }
@@ -85,12 +86,12 @@
 .sl-compare__row dd { margin: 0; font-size: 16px; line-height: 1.55; }
 .sl-compare__who { display: block; font-weight: 800; font-size: 13px; color: var(--muted); }
 .sl-compare__row dd.sl-compare__app { background: var(--brand-pale); border-radius: 14px; padding: 10px 12px; }
-.sl-compare__row dd.sl-compare__app .sl-compare__who { color: var(--brand-deep); }
+.sl-compare__row dd.sl-compare__app .sl-compare__who { color: var(--brand-text); }
 @media (min-width: 760px) {
   .sl-compare { padding: 8px 28px 12px; }
   .sl-compare__head, .sl-compare__row { display: grid; grid-template-columns: 0.7fr 1fr 1fr; gap: 20px; align-items: start; }
   .sl-compare__head { padding: 16px 0 12px; font-weight: 900; font-size: 18px; }
-  .sl-compare__head .sl-compare__app { color: var(--brand-deep); }
+  .sl-compare__head .sl-compare__app { color: var(--brand-text); }
   .sl-compare__row:first-child { border-top: 2px solid var(--border); }
   .sl-compare__who { display: none; }
   .sl-compare__row dd.sl-compare__app { background: none; padding: 0; font-weight: 700; }

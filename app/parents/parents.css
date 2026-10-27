@@ -23,7 +23,7 @@
 .pp-two { display: grid; gap: 16px; }
 @media (min-width: 760px) { .pp-two { grid-template-columns: 1fr 1fr; gap: 20px; } }
 .pp-card-title { display: flex; align-items: center; gap: 10px; color: var(--foreground); }
-.pp-card-title svg { color: var(--brand-deep); }
+.pp-card-title svg { color: var(--brand-text); }
 .pp-card-text { margin-top: 10px; font-size: 16px; line-height: 1.6; }
 .pp-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
 @media (min-width: 900px) { .pp-steps { grid-template-columns: repeat(3, 1fr); gap: 20px; } }

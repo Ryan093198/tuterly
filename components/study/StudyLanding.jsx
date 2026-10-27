@@ -1,6 +1,5 @@
 import Link from "next/link";
 import katex from "katex";
-import "katex/dist/katex.min.css";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -24,7 +23,9 @@ import "./study-landing.css";
 // public/app-screens (see its README).
 
 function TeX({ children, display = false }) {
-  const html = katex.renderToString(children, { displayMode: display, throwOnError: false, output: "html" });
+  // Native MathML (no KaTeX stylesheet or fonts to download): keeps the
+  // home page light enough for a fast first paint on phones.
+  const html = katex.renderToString(children, { displayMode: display, throwOnError: false, output: "mathml" });
   return <span dangerouslySetInnerHTML={{ __html: html }} />;
 }
 

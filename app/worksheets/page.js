@@ -50,8 +50,8 @@ const YEAR_LEVELS = [
 
 // Marketing palette, matched to app/parents/page.js.
 const c = {
-  teal: "var(--brand-deep)",
-  tealDeep: "var(--brand-deep)",
+  teal: "var(--brand-text)",
+  tealDeep: "var(--brand-text)",
   tealBright: "var(--brand)",
   tealPale: "var(--brand-soft)",
   ink: "var(--foreground)",

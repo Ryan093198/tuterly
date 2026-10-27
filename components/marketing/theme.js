@@ -4,17 +4,18 @@
 // so these pages follow the app's colours and switch with dark mode.
 //
 // Mapping notes:
-//   teal -> brand-deep (#0A7F99): the app's deeper teal, so teal text on
-//           white and white text on teal buttons both pass WCAG AA.
+//   teal -> brand-text (#0A7088): a deeper teal, so small teal text on
+//           white or the grey page and white text on teal buttons both
+//           pass WCAG AA (the app's #0E9FBF is 3.1:1 on white).
 //   navy / white swap in dark mode (navy = text colour, white = card), so
 //           a "navy button with white text" stays readable in both themes.
 //   Don't append hex alpha to these (e.g. `${c.teal}20`): they're CSS
 //   variables. Use color-mix() or a *Soft token instead.
 
 export const c = {
-  teal: "var(--brand-deep)",
+  teal: "var(--brand-text)",
   tealLight: "var(--brand)",
-  tealDark: "var(--brand-deep)",
+  tealDark: "var(--brand-text)",
   tealPale: "var(--brand-soft)",
   navy: "var(--foreground)",
   navyMid: "var(--foreground)",
