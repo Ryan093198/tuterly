@@ -41,7 +41,7 @@ export function FloatingEnquireButton() {
         style={{
           position: "fixed",
           right: 20,
-          // Sits above the Tuterly Study banner when that is showing.
+          // Sits above the Tuterly banner when that is showing.
           bottom: "calc(20px + var(--study-banner-h, 0px))",
           zIndex: 9000,
           display: "inline-flex",

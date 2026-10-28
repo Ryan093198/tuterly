@@ -3,7 +3,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import { c } from "@/components/marketing/theme";
 import { STUDY_APP } from "@/lib/study-app";
 
-// Tuterly Study blocks for the tutoring / SEO pages (suburbs, best-of,
+// Tuterly blocks for the tutoring / SEO pages (suburbs, best-of,
 // online, prices, competitor comparisons). These pages keep their URLs,
 // titles and tutoring content; since Oct 2026 the app is the only call to
 // action on them.

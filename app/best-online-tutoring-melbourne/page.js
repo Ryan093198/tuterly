@@ -85,15 +85,15 @@ const FAQS = [
   },
   {
     q: "How much does online tutoring cost in Melbourne?",
-    a: "It ranges widely. A private tutor in Melbourne usually costs $80 to $100 an hour, national online agencies typically charge $90 to $150 an hour, and independent uni-student tutors are often $30 to $50. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly Study is a 1-week free trial, then $7.99 a week.",
+    a: "It ranges widely. A private tutor in Melbourne usually costs $80 to $100 an hour, national online agencies typically charge $90 to $150 an hour, and independent uni-student tutors are often $30 to $50. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week.",
   },
   {
     q: "What is the best online tutoring company in Melbourne?",
     a: "There is no single best for everyone. If you want a fully managed, hands-off service and do not mind paying a premium, a national agency suits you. If you would rather choose your own tutor and see the rate upfront, look at platforms and independent tutors. Match the type to your family rather than the loudest brand.",
   },
   {
-    q: "Is Tuterly Study online tutoring?",
-    a: "No. Tuterly Study is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. It works on its own or alongside any tutor, and it is coming soon to the App Store.",
+    q: "Is Tuterly online tutoring?",
+    a: "No. Tuterly is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. It works on its own or alongside any tutor, and it is coming soon to the App Store.",
   },
   {
     q: "What year levels and subjects can be tutored online?",
@@ -134,7 +134,7 @@ export default function BestOnlineTutoringMelbournePage() {
               Best online tutoring in Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              An honest look at online tutoring for Melbourne families. Most “best online tutoring” articles are written by companies recommending themselves. This one walks through the real options fairly, what separates the good ones, and how to pick the right fit for your child. We make Tuterly Study, a maths practice app, and we’ll be clear about where it fits and where a tutor is the better choice.
+              An honest look at online tutoring for Melbourne families. Most “best online tutoring” articles are written by companies recommending themselves. This one walks through the real options fairly, what separates the good ones, and how to pick the right fit for your child. We make Tuterly, a maths practice app, and we’ll be clear about where it fits and where a tutor is the better choice.
             </p>
             <AppHeroBlock placement="best_online_tutoring_melbourne_hero" />
           </Fade>
@@ -204,7 +204,7 @@ export default function BestOnlineTutoringMelbournePage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Not tutoring: practice for Years 7 to 10 maths.
             </h2>

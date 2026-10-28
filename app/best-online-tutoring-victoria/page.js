@@ -76,7 +76,7 @@ const FAQS = [
   },
   {
     q: "How much does online tutoring cost in Victoria?",
-    a: "National online agencies typically charge $90 to $150 an hour, and a private tutor usually costs $80 to $100 an hour. Independent tutors are often cheaper. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly Study is a 1-week free trial, then $7.99 a week, and works the same anywhere in Victoria.",
+    a: "National online agencies typically charge $90 to $150 an hour, and a private tutor usually costs $80 to $100 an hour. Independent tutors are often cheaper. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week, and works the same anywhere in Victoria.",
   },
   {
     q: "Can online tutoring cover VCE across all of Victoria?",
@@ -87,8 +87,8 @@ const FAQS = [
     a: "A laptop or tablet with a webcam and a reliable internet connection. A cheap stylus or a phone camera pointed at paper helps for handwritten maths working. Nothing specialised is required.",
   },
   {
-    q: "Is Tuterly Study online tutoring?",
-    a: "No. Tuterly Study is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. Topics follow the Victorian Curriculum 2.0, so it fits the same course wherever you live in the state. It is coming soon to the App Store.",
+    q: "Is Tuterly online tutoring?",
+    a: "No. Tuterly is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. Topics follow the Victorian Curriculum 2.0, so it fits the same course wherever you live in the state. It is coming soon to the App Store.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               Best online tutoring in Victoria.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Wherever you are in the state, from Melbourne to Geelong, Ballarat, Bendigo or a small regional town, online tutoring gives your child access to the same specialist tutors. Here is how the options compare, what separates the good ones, and where our Years 7 to 10 maths app, Tuterly Study, fits.
+              Wherever you are in the state, from Melbourne to Geelong, Ballarat, Bendigo or a small regional town, online tutoring gives your child access to the same specialist tutors. Here is how the options compare, what separates the good ones, and where our Years 7 to 10 maths app, Tuterly, fits.
             </p>
             <AppHeroBlock placement="best_online_tutoring_victoria_hero" />
           </Fade>
@@ -200,7 +200,7 @@ export default function BestOnlineTutoringVictoriaPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Years 7 to 10 maths practice, statewide.
             </h2>

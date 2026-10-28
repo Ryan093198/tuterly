@@ -9,11 +9,11 @@ import { SITE_URL } from "@/lib/site";
 
 // Hub for the Years 7 to 10 maths topic pages. The free worksheet
 // builder that used to live here was removed (Oct 2026): practice now
-// happens in the Tuterly Study app, so every call to action is the app.
+// happens in the Tuterly app, so every call to action is the app.
 
 const TITLE = "Maths by Topic, Years 7 to 10 (Victorian Curriculum)";
 const DESCRIPTION =
-  "Every major Years 7 to 10 maths topic in the Victorian Curriculum: what's covered, common mistakes, and practice tests with worked solutions in the Tuterly Study app.";
+  "Every major Years 7 to 10 maths topic in the Victorian Curriculum: what's covered, common mistakes, and practice tests with worked solutions in the Tuterly app.";
 const URL = `${SITE_URL}/worksheets`;
 
 export const metadata = {

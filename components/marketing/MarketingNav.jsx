@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { STUDY_APP } from "@/lib/study-app";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import "@/components/brand/brand.css";
 
 // Sticky top nav for the marketing site, in the app's style. The primary
-// button is the Tuterly Study app CTA. "Find a Tutor" and "Apply as a
+// button is the Tuterly app CTA. "Find a Tutor" and "Apply as a
 // Tutor" live in the footer's Tutoring group. On phones: logo, the app
 // button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
-  { href: "/", label: STUDY_APP.name },
+  { href: "/", label: "The app" },
   { href: "/parents", label: "For parents" },
   { href: "/practice-maths-tests-secondary", label: "Practice tests" },
   { href: "/worksheets", label: "Maths by topic" },

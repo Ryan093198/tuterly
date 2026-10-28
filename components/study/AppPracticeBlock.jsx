@@ -26,7 +26,7 @@ export default function AppPracticeBlock({ topic, placement, heading }) {
         <div className="apb__phone">
           <PhoneFrame
             src="/app-screens/flow-practice/03-test-question.png"
-            alt="A Tuterly Study topic test: question 1 of 8, a Pythagoras ladder problem, answered with the maths keys"
+            alt="A Tuterly topic test: question 1 of 8, a Pythagoras ladder problem, answered with the maths keys"
             width={240}
             sizes="(max-width: 899px) 60vw, 240px"
           />

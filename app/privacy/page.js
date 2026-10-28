@@ -138,9 +138,9 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
-          <Section title="Tuterly Study waitlist">
+          <Section title="Tuterly waitlist">
             <p>
-              If you join the waitlist for our Tuterly Study app, we keep your
+              If you join the waitlist for our Tuterly app, we keep your
               email, whether you&apos;re a parent, student or tutor, the year
               level if you give one, and which page you signed up on. We use
               it to send one confirmation email and to tell you when the app

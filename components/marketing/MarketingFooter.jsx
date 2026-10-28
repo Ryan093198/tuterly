@@ -4,12 +4,12 @@ import { Logo } from "./MarketingNav";
 import "@/components/brand/brand.css";
 
 // Shared footer. Since Oct 2026 the site's only call to action is the
-// Tuterly Study app, so the footer carries no tutor sign-up, directory or
+// Tuterly app, so the footer carries no tutor sign-up, directory or
 // tutor-job links (those pages redirect home, see proxy.js). The tutoring
 // guides stay linked so Google keeps a crawl path to them.
 const GROUPS = [
   {
-    title: STUDY_APP.name,
+    title: "The app",
     links: [
       { href: "/", label: `About ${STUDY_APP.name}` },
       { href: "/parents", label: "For parents" },

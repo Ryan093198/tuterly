@@ -15,7 +15,7 @@ import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof from "@/components/study/ResultsProof";
 import "./study-landing.css";
 
-// Home page for tuterly.com.au: the landing page for the Tuterly Study app,
+// Home page for tuterly.com.au: the landing page for the Tuterly app,
 // in the app's own look (components/brand). Server component; the only
 // client pieces are StudyAppCTA and the flow carousels.
 //
@@ -39,7 +39,7 @@ const S = "/app-screens";
 const SNAP_FLOW = [
   {
     src: `${S}/flow-snap/01-home.png`,
-    alt: "The Tuterly Study home screen with the big Snap a question button",
+    alt: "The Tuterly home screen with the big Snap a question button",
     title: "Snap the question",
     text: "Take a photo of the question. The app reads it and saves it with a full worked solution, hidden behind Show solution so they can have another go first.",
   },
@@ -147,7 +147,7 @@ export default function StudyLanding() {
             <div className="sl-hero__blob" aria-hidden="true" />
             <PhoneFrame
               src={`${S}/flow-snap/03-question-solution-hidden.png`}
-              alt="Tuterly Study showing a question the student got wrong, with a similar question to master"
+              alt="Tuterly showing a question the student got wrong, with a similar question to master"
               width={300}
               priority
               sizes="(max-width: 899px) 62vw, 300px"

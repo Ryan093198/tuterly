@@ -72,11 +72,11 @@ const CATEGORIES = [
   },
   {
     name: "Practice apps (not tutoring)",
-    examples: "Tuterly Study, for Years 7 to 10 maths",
+    examples: "Tuterly, for Years 7 to 10 maths",
     goodFor:
-      "The practice between lessons, or instead of them when that’s mostly what your child needs. In Tuterly Study they snap the maths questions they got wrong and practise similar ones until each is mastered. A 1-week free trial, then $7.99 a week.",
+      "The practice between lessons, or instead of them when that’s mostly what your child needs. In Tuterly they snap the maths questions they got wrong and practise similar ones until each is mastered. A 1-week free trial, then $7.99 a week.",
     tradeoffs:
-      "An app doesn’t replace a person. There’s no live teacher to explain a brand-new topic, notice when your child is stuck or keep them motivated. Tuterly Study covers Years 7 to 10 maths only, on iPhone.",
+      "An app doesn’t replace a person. There’s no live teacher to explain a brand-new topic, notice when your child is stuck or keep them motivated. Tuterly covers Years 7 to 10 maths only, on iPhone.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function BestTutoringMelbournePage() {
               Best tutoring services in Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              An honest look at your options. Most “best tutoring” articles online are written by tutoring companies recommending themselves. This one walks through every category fairly, what each is genuinely good at, and where each falls short. We make an app, Tuterly Study, and we’ll say plainly where it fits and where a tutor is the better call. Pick what fits your family, not what fits a marketing budget.
+              An honest look at your options. Most “best tutoring” articles online are written by tutoring companies recommending themselves. This one walks through every category fairly, what each is genuinely good at, and where each falls short. We make an app, Tuterly, and we’ll say plainly where it fits and where a tutor is the better call. Pick what fits your family, not what fits a marketing budget.
             </p>
             <AppHeroBlock placement="best_tutoring_melbourne_hero" />
           </Fade>
@@ -184,7 +184,7 @@ export default function BestTutoringMelbournePage() {
       <section style={{ padding: "64px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               The app option for Years 7 to 10 maths.
             </h2>

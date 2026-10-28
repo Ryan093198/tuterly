@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/site";
 // Route-segment metadata for /parents (the parent page for the Tuterly
 // Study app since Oct 2026; it used to be the tutor marketplace page).
 
-const TITLE = "Help Your Child Improve Their Maths Marks: Tuterly Study for Parents";
+const TITLE = "Help Your Child Improve Their Maths Marks: Tuterly for Parents";
 const DESCRIPTION =
   "See the maths questions your child gets wrong, and watch them get mastered. A weekly summary, topic test scores, not their photos. Designed by Australian educators.";
 const URL = `${SITE_URL}/parents`;

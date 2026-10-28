@@ -15,7 +15,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 // Topic data is pre-rendered server-side (see app/worksheets/page.js)
 // so the dropdown is instant.
 const STORAGE_KEY = "tuterly:worksheet_email";
-// Tuterly Study covers Years 7 to 10 maths; younger year levels keep the
+// Tuterly covers Years 7 to 10 maths; younger year levels keep the
 // tutor offer instead of the app.
 const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 // Child's year from the gate, used to prefill the "Find a local tutor" form.
@@ -64,7 +64,7 @@ export default function WorksheetGenerator({
   // Optional subset of year levels to offer (e.g. primary-only pages pass
   // Years 3-6). Defaults to the full Year 3-10 range.
   yearLevels,
-  // Pages that place their own Tuterly Study card next to the generator
+  // Pages that place their own Tuterly card next to the generator
   // (e.g. /worksheets) pass false to avoid two app CTAs side by side.
   studyAppUnderGenerator = true,
 }) {

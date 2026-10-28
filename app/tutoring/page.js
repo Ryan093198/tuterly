@@ -14,7 +14,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 const DESCRIPTION =
-  "Tutoring across Melbourne: a private tutor usually costs $80 to $100 an hour. For Years 7 to 10 maths, Tuterly Study lets your child practise the exact questions they get wrong.";
+  "Tutoring across Melbourne: a private tutor usually costs $80 to $100 an hour. For Years 7 to 10 maths, Tuterly lets your child practise the exact questions they get wrong.";
 
 export const metadata = {
   title: { absolute: "Tutoring across Melbourne | Tuterly" },
@@ -67,7 +67,7 @@ export default function TutoringDirectory() {
             {live.length === 0 ? (
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>
                 More suburb-specific pages are on the way. For Years 7 to 10 maths, any family can start with{" "}
-                <Link href="/" style={{ color: c.teal, fontWeight: 600 }}>Tuterly Study</Link>.
+                <Link href="/" style={{ color: c.teal, fontWeight: 600 }}>Tuterly</Link>.
               </p>
             ) : (
               <ul style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, listStyle: "none", padding: 0, margin: 0 }}>

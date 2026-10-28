@@ -9,7 +9,7 @@ import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import "./parents.css";
 
-// /parents: the parent's view of Tuterly Study, parent-first order:
+// /parents: the parent's view of Tuterly, parent-first order:
 // the app in one screen, what you'll see each week, safety and privacy,
 // linking, price, then the CTA. Tutoring and the extras sit below the CTA.
 // Metadata lives in ./layout.js (unchanged). Product facts come from
@@ -58,7 +58,7 @@ export default function ParentsPage() {
             <div className="pp-hero__blob" aria-hidden="true" />
             <PhoneFrame
               src={`${S}/home.png`}
-              alt="The Tuterly Study home screen: the Snap a question button, Fix my mistakes and this week’s goals"
+              alt="The Tuterly home screen: the Snap a question button, Fix my mistakes and this week’s goals"
               width={290}
               priority
               sizes="(max-width: 899px) 60vw, 290px"

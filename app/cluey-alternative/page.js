@@ -7,9 +7,9 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Cluey Alternative: Cluey Tutoring vs the Tuterly Study App";
+const TITLE = "Cluey Alternative: Cluey Tutoring vs the Tuterly App";
 const DESCRIPTION =
-  "Comparing Cluey Learning with Tuterly Study, an iPhone app for Years 7 to 10 maths. What each one does, what each costs, and when Cluey is the better choice.";
+  "Comparing Cluey Learning with Tuterly, an iPhone app for Years 7 to 10 maths. What each one does, what each costs, and when Cluey is the better choice.";
 const URL = `${SITE_URL}/cluey-alternative`;
 
 export const metadata = {
@@ -99,7 +99,7 @@ export default function ClueyAlternativePage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Cluey alternative</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Considering Cluey? Here’s how it compares with Tuterly Study.
+              Considering Cluey? Here’s how it compares with Tuterly.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Cluey is one of the more established online tutoring brands in Australia, and for a lot of families it’s a perfectly good fit. {STUDY_APP.name} isn’t a cheaper Cluey. It’s an iPhone app for Years 7 to 10 maths that does a different job: your child practises the exact questions they get wrong, a few minutes a day. This page is an honest look at both, including when Cluey is the better choice.
@@ -129,7 +129,7 @@ export default function ClueyAlternativePage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study is different</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly is different</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               An app for practice, not a tutor.
             </h2>
@@ -165,7 +165,7 @@ export default function ClueyAlternativePage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Side by side</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, textAlign: "center", marginBottom: 32, lineHeight: 1.25 }}>
-              Tuterly Study vs Cluey.
+              Tuterly vs Cluey.
             </h2>
           </Fade>
           <SideBySide rows={COMPARISON_ROWS} competitorName="Cluey" />
@@ -191,7 +191,7 @@ export default function ClueyAlternativePage() {
             </Fade>
             <Fade delay={0.1}>
               <div style={{ background: c.tealPale, borderRadius: 16, border: `2px solid ${c.teal}`, padding: "24px 24px", height: "100%" }}>
-                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>Try Tuterly Study if</p>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>Try Tuterly if</p>
                 <BulletList
                   color={c.teal}
                   items={[

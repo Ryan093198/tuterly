@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import "./brand.css";
 
-// Shared building blocks for the marketing site, in the Tuterly Study app's
+// Shared building blocks for the marketing site, in the Tuterly app's
 // style. Styling lives in ./brand.css (tb- classes, tokens from globals.css).
 
 // One icon set (Lucide, 2px stroke), with the app's meanings.
@@ -101,7 +101,7 @@ export function Quinn({ pose = "celebrate", size = 110, className = "" }) {
   return (
     <Image
       src={`/quinn/${file}.svg`}
-      alt="Quinn the quokka, the Tuterly Study mascot"
+      alt="Quinn the quokka, the Tuterly mascot"
       width={Math.min(size, 120)}
       height={Math.min(size, 120)}
       unoptimized

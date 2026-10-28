@@ -15,7 +15,7 @@ const inter = Inter({
   display: "swap",
 });
 
-// The Tuterly Study app's typeface, for the marketing site.
+// The Tuterly app's typeface, for the marketing site.
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
@@ -56,7 +56,7 @@ export const metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
   },
-  // iPhone Safari Smart App Banner for Tuterly Study. Only rendered once
+  // iPhone Safari Smart App Banner for Tuterly. Only rendered once
   // lib/study-app.js has a real App Store id (i.e. the app is live).
   ...(STUDY_APP.appStoreId ? { itunes: { appId: String(STUDY_APP.appStoreId) } } : {}),
 };

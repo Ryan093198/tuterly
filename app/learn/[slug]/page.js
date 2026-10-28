@@ -42,7 +42,7 @@ export default async function LearnPost({ params }) {
   // frontmatter key; both are ignored now.
   const beforeGenerator = post.content.replace(/<!--GENERATOR-->/g, "");
 
-  // Tuterly Study placement (see lib/learn-study-fit.js). Full-fit articles
+  // Tuterly placement (see lib/learn-study-fit.js). Full-fit articles
   // get an inline CTA about a third of the way in and a card at the end;
   // soft-fit articles only the end card.
   const fit = studyAppFit(post);

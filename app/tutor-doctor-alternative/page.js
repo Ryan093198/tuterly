@@ -7,9 +7,9 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Tutor Doctor Alternative: In-Home Tutoring vs the Tuterly Study App";
+const TITLE = "Tutor Doctor Alternative: In-Home Tutoring vs the Tuterly App";
 const DESCRIPTION =
-  "Comparing Tutor Doctor’s in-home tutoring franchise with Tuterly Study, an iPhone app for Years 7 to 10 maths practice. What each does, what each costs, and when Tutor Doctor is the better fit.";
+  "Comparing Tutor Doctor’s in-home tutoring franchise with Tuterly, an iPhone app for Years 7 to 10 maths practice. What each does, what each costs, and when Tutor Doctor is the better fit.";
 const URL = `${SITE_URL}/tutor-doctor-alternative`;
 
 export const metadata = {
@@ -99,7 +99,7 @@ export default function TutorDoctorAlternativePage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutor Doctor alternative</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Considering Tutor Doctor? Here’s how it compares with Tuterly Study.
+              Considering Tutor Doctor? Here’s how it compares with Tuterly.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Tutor Doctor and {STUDY_APP.name} do two different jobs. Tutor Doctor is a global tutoring franchise: a local franchisee matches a tutor to your child, often for in-home lessons. {STUDY_APP.name} is an iPhone app for Years 7 to 10 maths, where your child practises the exact questions they get wrong. Both have their place. This page is an honest comparison.
@@ -131,7 +131,7 @@ export default function TutorDoctorAlternativePage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>The app</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              How Tuterly Study works.
+              How Tuterly works.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
               {STUDY_APP.name} isn’t a tutor and doesn’t send one to your home. It’s for the practice that happens between lessons, or instead of them when that’s what your child mostly needs. They snap a maths question they got wrong (or upload a whole marked test), see the full worked solution when they’re ready, and straight away get a similar question on the same idea. Each one they get right earns a star, and three stars means it’s mastered.
@@ -151,7 +151,7 @@ export default function TutorDoctorAlternativePage() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>Side by side</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, textAlign: "center", marginBottom: 32, lineHeight: 1.25 }}>
-              Tuterly Study vs Tutor Doctor.
+              Tuterly vs Tutor Doctor.
             </h2>
           </Fade>
           <SideBySide rows={COMPARISON_ROWS} competitorName="Tutor Doctor" />
@@ -177,7 +177,7 @@ export default function TutorDoctorAlternativePage() {
             </Fade>
             <Fade delay={0.1}>
               <div style={{ background: c.tealPale, borderRadius: 16, border: `2px solid ${c.teal}`, padding: "24px 24px", height: "100%" }}>
-                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>Try Tuterly Study if</p>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 11, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 8 }}>Try Tuterly if</p>
                 <BulletList
                   color={c.teal}
                   items={[

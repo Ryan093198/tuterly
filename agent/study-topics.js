@@ -1,5 +1,5 @@
 // Seed topics for the blog writer: Years 7 to 10 maths problems where the
-// natural next step is "snap the questions you got wrong" in Tuterly Study.
+// natural next step is "snap the questions you got wrong" in Tuterly.
 // pickTopic() offers these as priority ideas alongside the competitor gaps.
 // Add to this list freely; each should be a specific, searchable problem.
 export const STUDY_APP_TOPICS = [

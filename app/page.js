@@ -11,7 +11,7 @@ import { getStudyFaqs } from "@/lib/study-faqs";
 // "/" serves two surfaces (see proxy.js):
 //   app.tuterly.com.au/      the sign-in card for existing Tuterly users
 //                            (dashboards redirect here when signed out)
-//   tuterly.com.au/          the Tuterly Study landing page
+//   tuterly.com.au/          the Tuterly landing page
 // Invite links (?inviter=&student=), ?next= redirects and ?login always
 // get the sign-in card, on any host, so nothing that links here breaks.
 // Localhost and Vercel previews show the landing page; add ?login to see

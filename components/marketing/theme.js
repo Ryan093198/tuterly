@@ -1,6 +1,6 @@
 // Shared colour palette for the inline-styled marketing pages
 // (/tutoring/*, best-of, comparison, prices, learn, tutor pages...).
-// Every value points at the Tuterly Study app tokens in app/globals.css,
+// Every value points at the Tuterly app tokens in app/globals.css,
 // so these pages follow the app's colours and switch with dark mode.
 //
 // Mapping notes:

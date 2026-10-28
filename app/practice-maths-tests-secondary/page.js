@@ -6,11 +6,11 @@ import { SITE_URL } from "@/lib/site";
 
 // Transactional landing page for "primary maths practice tests" style
 // searches. The test builder was removed (Oct 2026): the tests now come
-// from the Tuterly Study app ("Test any topic"), so the app is the CTA.
+// from the Tuterly app ("Test any topic"), so the app is the CTA.
 
 const TITLE = "Maths Practice Tests to Improve Marks, Years 7 to 10";
 const DESCRIPTION =
-  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly Study iPhone app.";
+  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly iPhone app.";
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
 
 export const metadata = {
@@ -48,11 +48,11 @@ const WHY = [
 const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
-    a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). In Tuterly Study, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
+    a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). In Tuterly, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
   },
   {
     q: "How much does it cost?",
-    a: "Tuterly Study is free to download, with a 1-week free trial. After that it's $7.99 a week, and you can cancel any time.",
+    a: "Tuterly is free to download, with a 1-week free trial. After that it's $7.99 a week, and you can cancel any time.",
   },
   {
     q: "Do these match what my child is doing at school?",
@@ -109,7 +109,7 @@ export default function SecondaryPracticeTestsPage() {
             Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, run to a clock, and lean on worded problems. That is why a student who follows everything in class can still come home with a mark that does not reflect what they know.
           </p>
           <p style={{ fontSize: 17.5, color: c.ink, fontWeight: 600, lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
-            Tuterly Study writes a practice test on any topic in their year, with a worked solution for every question.
+            Tuterly writes a practice test on any topic in their year, with a worked solution for every question.
           </p>
         </div>
       </section>

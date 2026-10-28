@@ -127,3 +127,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
   - "The only app that creates questions from students’ mistakes": snap-and-solve apps such as SnapSolve/MathAI already suggest similar practice questions after a photo.
   - "The best way to improve test results": one centre, one month, alongside tutoring, no figures yet; not enough to back "best".
   "Only" and "best" claims have to be literally true and provable under the ACL.
+
+## 28 Oct: the app is called Tuterly
+- The app's name is now "Tuterly" (it will be "Tuterly" on the App Store). STUDY_APP.name changed, and every hard-coded "Tuterly Study" in pages, Learn articles and the blog writer is now "Tuterly". Nav and footer: the first link is "The app" (the logo already says tuterly).
+- The centres article moved to /learn/how-tutoring-centres-use-tuterly (not live yet, so no redirect needed).
+- Internal names (STUDY_APP, components/study/, StudyAppCTA, the og-tuterly-study.png file) are unchanged; visitors don't see them.

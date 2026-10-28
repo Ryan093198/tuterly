@@ -1,6 +1,6 @@
 ---
-title: "How tutoring centres use Tuterly Study between sessions"
-description: "Some Victorian tutoring centres now use Tuterly Study with their Years 7 to 10 maths students. Here is how a centre can use it: what students do between lessons, what tutors see before a session, and what parents get."
+title: "How tutoring centres use Tuterly between sessions"
+description: "Some Victorian tutoring centres now use Tuterly with their Years 7 to 10 maths students. Here is how a centre can use it: what students do between lessons, what tutors see before a session, and what parents get."
 date: "2026-10-27"
 audience: "Tutoring centres"
 published: true

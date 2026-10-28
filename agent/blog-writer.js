@@ -263,7 +263,7 @@ Pick the single best topic to write next. Return JSON only.`;
 }
 
 // =====================================================================
-// Tuterly Study facts + CTA (single source: lib/study-app.js)
+// Tuterly facts + CTA (single source: lib/study-app.js)
 // =====================================================================
 const STUDY_APP_FACTS_BLOCK = `- An iPhone app for Years 7 to 10 maths (Victorian Curriculum 2.0), made by Bayside Academics. No Android version yet.
 - A student snaps a photo of a question they got wrong. It is saved with a full worked solution, hidden behind "Show solution" so they can try again first.

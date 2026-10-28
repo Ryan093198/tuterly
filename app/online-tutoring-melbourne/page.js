@@ -9,7 +9,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 const TITLE = "Online Tutoring Melbourne: How It Actually Works";
 const DESCRIPTION =
-  "Online tutoring for Melbourne students: why it works, the questions parents ask, when in-person is still better, and where Tuterly Study, a Years 7 to 10 maths practice app, fits.";
+  "Online tutoring for Melbourne students: why it works, the questions parents ask, when in-person is still better, and where Tuterly, a Years 7 to 10 maths practice app, fits.";
 const URL = `${SITE_URL}/online-tutoring-melbourne`;
 
 export const metadata = {
@@ -63,7 +63,7 @@ const CONCERNS = [
   },
   {
     title: "“What do they do between sessions?”",
-    body: "This is the part most families overlook. An hour a week is a small slice of the school week. For Years 7 to 10 maths, Tuterly Study covers the in-between: your child snaps the questions they got wrong and practises similar ones until each is mastered.",
+    body: "This is the part most families overlook. An hour a week is a small slice of the school week. For Years 7 to 10 maths, Tuterly covers the in-between: your child snaps the questions they got wrong and practises similar ones until each is mastered.",
   },
 ];
 
@@ -103,7 +103,7 @@ export default function OnlineTutoringPage() {
               Online tutoring across Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Online tutoring used to be a fallback option. It isn’t any more. For most subjects from Year 7 up, an online 1-on-1 session works well, and access to a wider tutor pool is a real advantage. Here’s the honest version of how it works, when it’s great, when in-person is still the right call, and where our maths practice app, Tuterly Study, fits in.
+              Online tutoring used to be a fallback option. It isn’t any more. For most subjects from Year 7 up, an online 1-on-1 session works well, and access to a wider tutor pool is a real advantage. Here’s the honest version of how it works, when it’s great, when in-person is still the right call, and where our maths practice app, Tuterly, fits in.
             </p>
             <AppHeroBlock placement="online_tutoring_melbourne_hero" />
           </Fade>
@@ -169,7 +169,7 @@ export default function OnlineTutoringPage() {
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly Study fits</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Where Tuterly fits</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
               Not a tutor. The practice in between.
             </h2>

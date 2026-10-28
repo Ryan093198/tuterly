@@ -24,7 +24,7 @@ import PriceTrial from "@/components/study/PriceTrial";
 // /tutoring/[suburb] - programmatic SEO landing pages. Each page still
 // answers "tutoring in <suburb>" for Melbourne parents, but since Oct 2026
 // the tutor marketplace is paused and the only call to action is the
-// Tuterly Study app (Years 7 to 10 maths). Static content per suburb comes
+// Tuterly app (Years 7 to 10 maths). Static content per suburb comes
 // from lib/seo-suburbs.js. App facts only from TUTERLY-STUDY-FEATURES.md.
 
 const kicker = { fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 };
