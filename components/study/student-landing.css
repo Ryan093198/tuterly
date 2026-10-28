@@ -1,0 +1,12 @@
+.swp { margin-top: 18px; display: grid; gap: 8px; }
+.swp__label { font-weight: 800; font-size: 14px; color: var(--muted); margin: 0; }
+.swp__btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.tb-cta-band .swp { margin-top: 14px; }
+.stl-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 16px; line-height: 1.55; color: var(--foreground); }
+.stl-points li { padding: 12px 16px; border-radius: 14px; background: var(--brand-soft); }
+.stl-topics { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.stl-topics--years { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.stl-topic { display: block; padding: 16px 18px; font-weight: 800; font-size: 16px; color: var(--foreground); text-decoration: none; }
+.stl-topic:hover { color: var(--brand-text); }
+.stl-other { margin-top: 20px; font-size: 15px; color: var(--muted); }
+.swp__btn { font-size: 15px; padding: 10px 18px; min-height: 0; }

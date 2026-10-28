@@ -26,6 +26,7 @@ const APP_PATH_PREFIXES = ["/dashboard", "/auth", "/onboarding", "/invite"];
 // dupe the same content across two URLs (SEO + ads canonical clarity).
 const MARKETING_PATH_PREFIXES = [
   "/parents",
+  "/students",
   "/tutors",
   "/centres",
   "/directory",

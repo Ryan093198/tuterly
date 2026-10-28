@@ -13,6 +13,7 @@ const GROUPS = [
     links: [
       { href: "/", label: `About ${STUDY_APP.name}` },
       { href: "/parents", label: "For parents" },
+      { href: "/students", label: "For students" },
       { href: "/practice-maths-tests-secondary", label: "Practice tests" },
       { href: "/worksheets", label: "Maths by topic" },
       { href: "/learn", label: "Learn" },

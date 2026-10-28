@@ -64,6 +64,7 @@ export default function StudyAppCTA({
   sub,
   position,
   slim = false, // hero: email + button only, so the button stays above the fold on phones
+  audience = "parent", // "student" on the student pages: the sign-up is saved as a student
   style,
 }) {
   const pathname = usePathname() || "/";
@@ -182,6 +183,7 @@ export default function StudyAppCTA({
         kind={kind}
         wide={big}
         slim={slim}
+        audience={audience}
         btnClass={btnClass}
         placement={placement || variant}
         pathname={pathname}
@@ -342,10 +344,10 @@ const ROLES = [
   { value: "tutor", label: "I'm a tutor" },
 ];
 
-function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname, onSubmitClick }) {
+function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass, placement, pathname, onSubmitClick }) {
   const id = useId();
   const [email, setEmail] = useState("");
-  const [role, setRole] = useState("parent");
+  const [role, setRole] = useState(audience === "student" ? "student" : "parent");
   const [year, setYear] = useState("");
   const [trap, setTrap] = useState("");
   const [state, setState] = useState("idle"); // idle | pending | done | already | error
@@ -453,7 +455,7 @@ function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname
         </button>
       </div>
       {role === "student" && !compact && (
-        <p className="tb-appcta__note">Under 16? Ask a parent to sign up for you.</p>
+        <p className="tb-appcta__note">Under 16? Ask a parent to sign up with you, or send them this page.</p>
       )}
       {error && (
         <p role="alert" className="tb-appcta__error">{error}</p>

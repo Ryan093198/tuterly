@@ -165,3 +165,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - 28 Oct: Ryan is a teacher and uses it, as do other teachers who tutor at Bayside, so the hook now says "Already used by tutoring centres and teachers in Victoria".
 
 - 28 Oct: top (nav) button says "Free to download" (it opens the sign-up form until launch, then the right store). Sign-up buttons say "Sign up early for 500ff".
+
+## 28 Oct: student pages
+- New /students and /students/year-7 to /students/year-10 (components/study/StudentLanding.jsx, copy in lib/student-pages.js), written to the student: hero "Better maths marks, starting with the ones you lost." (year pages: "Year 9 maths: get the marks back."), how it works, "Test coming up?" tools, streaks/XP/Quinn, the year's topics (linking to the topic pages), a student FAQ (not cheating, homework, parents don't see photos, cost, under 16) with FAQ schema, and a closing band.
+- Sign-ups from these pages are saved as role "student" and show "Under 16? Ask a parent to sign up with you, or send them this page." Plus "Text a parent" / "Email a parent" buttons that send /parents with a short prefilled message.
+- Added to nav ("For students"), footer and sitemap.

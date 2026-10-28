@@ -11,6 +11,11 @@ import { SITE_URL } from "@/lib/site";
 const STATIC_PAGES = [
   { path: "", priority: 1.0, changeFrequency: "weekly" },
   { path: "/parents", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/students", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/students/year-7", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/students/year-8", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/students/year-9", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/students/year-10", priority: 0.7, changeFrequency: "monthly" },
   { path: "/worksheets", priority: 0.7, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb

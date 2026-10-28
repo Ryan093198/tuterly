@@ -10,6 +10,7 @@ import "@/components/brand/brand.css";
 const LINKS = [
   { href: "/", label: "The app" },
   { href: "/parents", label: "For parents" },
+  { href: "/students", label: "For students" },
   { href: "/practice-maths-tests-secondary", label: "Practice tests" },
   { href: "/worksheets", label: "Maths by topic" },
   { href: "/learn", label: "Learn" },
