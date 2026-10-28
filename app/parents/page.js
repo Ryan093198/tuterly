@@ -4,7 +4,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import FlowSteps from "@/components/brand/FlowSteps";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
-import ResultsProof from "@/components/study/ResultsProof";
+import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import "./parents.css";
@@ -44,6 +44,7 @@ export default function ParentsPage() {
       <section className="pp-hero" aria-labelledby="pp-title">
         <div className="tb-wrap pp-hero__grid">
           <div>
+            <LaunchPill />
             <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
             <h1 id="pp-title" className="tb-h1">Help your child improve their maths marks, and see the progress every week.</h1>
             <p className="tb-lead pp-hero__lead">

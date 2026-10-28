@@ -12,7 +12,7 @@ import { PRICING } from "@/lib/pricing";
 import { getStudyFaqs } from "@/lib/study-faqs";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
-import ResultsProof from "@/components/study/ResultsProof";
+import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app,
@@ -126,6 +126,7 @@ export default function StudyLanding() {
       <section className="sl-hero" aria-labelledby="hero-title">
         <div className="tb-wrap sl-hero__grid">
           <div className="sl-hero__copy">
+            <LaunchPill />
             <Eyebrow>{name} · Years 7 to 10 maths · iPhone and Android</Eyebrow>
             <h1 id="hero-title" className="tb-h1">
               Help your child get better <span className="sl-accent">maths marks</span>.

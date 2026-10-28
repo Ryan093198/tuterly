@@ -15,3 +15,13 @@ export default function ResultsProof({ className = "" }) {
     </div>
   );
 }
+
+// "Now opening to the public · Already used by tutoring centres in Victoria"
+export function LaunchPill() {
+  return (
+    <p className="sl-launch">
+      <span className="sl-launch__dot" aria-hidden="true" />
+      {STUDY_RESULTS.launch} · {STUDY_RESULTS.launchProof}
+    </p>
+  );
+}
