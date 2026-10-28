@@ -34,7 +34,7 @@ const MARKETING_PATH_PREFIXES = [
 ];
 
 // Paused while the Tuterly tutor marketplace is on hold (Oct 2026): the
-// site's only call to action is the Tuterly Study app, so these pages
+// site's only call to action is the Tuterly app, so these pages
 // send visitors to the home page. Temporary (307) so they can come back
 // by deleting entries here. Keep app/sitemap.js in step.
 const PAUSED_PREFIXES = [
@@ -73,7 +73,7 @@ export async function proxy(request) {
     if (pathMatchesPrefix(pathname, APP_PATH_PREFIXES)) {
       return NextResponse.redirect(`${APP_URL}${pathname}${search}`, 308);
     }
-    // The marketing root is the Tuterly Study landing page, rendered by
+    // The marketing root is the Tuterly landing page, rendered by
     // app/page.js (it shows the sign-in card only on the app host). It
     // used to rewrite to /parents.
   }
