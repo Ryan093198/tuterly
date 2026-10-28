@@ -6,15 +6,27 @@ import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import Fade from "@/components/marketing/Fade";
+import WorksheetGenerator from "@/components/WorksheetGenerator";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
-import { practiceFaqs, withoutBuilderSentences, topicPageCopy } from "@/lib/practice-copy";
+import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import {
   WORKSHEET_LANDING_PAGES,
   getLandingPageBySlug,
   getLandingPagesForYear,
 } from "@/lib/worksheet-landing-pages";
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
+import Testimonials from "@/components/marketing/Testimonials";
 
+const YEAR_LEVELS = [
+  "Year 3",
+  "Year 4",
+  "Year 5",
+  "Year 6",
+  "Year 7",
+  "Year 8",
+  "Year 9",
+  "Year 10",
+];
 
 export function generateStaticParams() {
   return WORKSHEET_LANDING_PAGES.map((p) => ({ slug: p.slug }));
@@ -25,21 +37,21 @@ export async function generateMetadata({ params }) {
   const page = getLandingPageBySlug(slug);
   if (!page) return {};
   const url = `${SITE_URL}/worksheets/${page.slug}`;
-  const { metaTitle, metaDescription } = topicPageCopy(page);
   return {
-    title: metaTitle,
-    description: metaDescription,
+    title: { absolute: page.metaTitle },
+    description: page.metaDescription,
     alternates: { canonical: url },
-    openGraph: { images: ["/og-tuterly.png"],
-      title: metaTitle,
-      description: metaDescription,
+    openGraph: {
+      images: ["/og-tuterly.png"],
+      title: page.metaTitle,
+      description: page.metaDescription,
       url,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: metaTitle,
-      description: metaDescription,
+      title: page.metaTitle,
+      description: page.metaDescription,
     },
   };
 }
@@ -49,15 +61,16 @@ export default async function WorksheetTopicLandingPage({ params }) {
   const page = getLandingPageBySlug(slug);
   if (!page) notFound();
 
-  const copy = topicPageCopy(page);
-  const intro = withoutBuilderSentences(page.intro);
+  const topicsByYear = Object.fromEntries(
+    YEAR_LEVELS.map((y) => [y, getTopicGroupsForLevel(y, "maths", [y])])
+  );
 
   const related = getLandingPagesForYear(page.yearLevel).filter(
     (p) => p.slug !== page.slug
   );
 
   const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
-  const faqs = practiceFaqs(getFaqsForSlug(page.slug));
+  const faqs = getFaqsForSlug(page.slug);
 
   // Schema.org markup. BreadcrumbList matches the visible breadcrumb
   // below the nav. LearningResource is Google's official type for
@@ -71,7 +84,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Maths by topic", item: `${SITE_URL}/worksheets` },
+      { "@type": "ListItem", position: 2, name: "Free Worksheets", item: `${SITE_URL}/worksheets` },
       { "@type": "ListItem", position: 3, name: page.yearLevel, item: `${SITE_URL}/worksheets#year-${page.yearLevel.split(" ")[1]}` },
       { "@type": "ListItem", position: 4, name: page.topic, item: pageUrl },
     ],
@@ -89,6 +102,34 @@ export default async function WorksheetTopicLandingPage({ params }) {
       }
     : null;
 
+  const learningResourceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: page.h1,
+    description: page.metaDescription,
+    url: pageUrl,
+    inLanguage: "en-AU",
+    educationalLevel: page.yearLevel,
+    learningResourceType: "Worksheet",
+    educationalUse: ["practice", "assessment"],
+    teaches: page.topic,
+    about: {
+      "@type": "Thing",
+      name: page.topic,
+      description: page.topicLabel,
+    },
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+    },
+    isAccessibleForFree: true,
+    provider: {
+      "@type": "Organization",
+      name: "Tuterly",
+      url: SITE_URL,
+    },
+    competencyRequired: page.yearLevel,
+  };
 
   return (
     <main style={{ background: c.offWhite, fontFamily: "var(--font-display)", color: c.text }}>
@@ -96,6 +137,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(learningResourceSchema) }}
       />
       {faqSchema && (
         <script
@@ -132,7 +177,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/worksheets" style={{ color: c.textLight, textDecoration: "none" }}>
-              Maths by topic
+              Free Worksheets
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -153,13 +198,13 @@ export default async function WorksheetTopicLandingPage({ params }) {
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
-              {page.yearLevel} - {page.topic}
+              {page.yearLevel} - {page.topic} - Free practice
             </p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 42, color: c.navy, lineHeight: 1.15, marginBottom: 16 }}>
-              {copy.h1}
+              {page.h1}
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
-              {copy.subtitle}
+              {page.subtitle}
             </p>
           </Fade>
         </div>
@@ -167,6 +212,17 @@ export default async function WorksheetTopicLandingPage({ params }) {
 
       <section style={{ padding: "24px 24px 60px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <WorksheetGenerator
+            topicsByYear={topicsByYear}
+            initialYearLevel={page.yearLevel}
+            initialTopicId={page.topicId}
+            studyAppUnderGenerator={false}
+          />
+        </div>
+      </section>
+
+      <section style={{ padding: "0 24px 60px", background: c.white }}>
+        <div style={{ maxWidth: 1028, margin: "0 auto" }}>
           <AppPracticeBlock topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_practice" />
         </div>
       </section>
@@ -175,13 +231,13 @@ export default async function WorksheetTopicLandingPage({ params }) {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 12, fontWeight: 600, color: c.tealDark, textTransform: "uppercase", letterSpacing: 1.5, marginBottom: 10 }}>
-              About this topic
+              About this worksheet
             </p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 14, lineHeight: 1.25 }}>
-              {`${page.topic} in ${page.yearLevel}`}
+              Why we built it
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              {intro}
+              {page.intro}
             </p>
           </Fade>
 
@@ -228,7 +284,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
                 More {page.yearLevel} topics
               </p>
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, marginBottom: 18, lineHeight: 1.3 }}>
-                Other {page.yearLevel} maths topics
+                Other free {page.yearLevel} worksheet generators
               </h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 10 }}>
                 {related.map((r) => (
@@ -253,10 +309,28 @@ export default async function WorksheetTopicLandingPage({ params }) {
                   </Link>
                 ))}
               </div>
+              <p style={{ marginTop: 18, fontSize: 14, color: c.textLight }}>
+                Or generate any topic from the{" "}
+                <Link href="/worksheets" style={{ color: c.tealDark, fontWeight: 600 }}>
+                  full worksheet builder
+                </Link>
+                .
+              </p>
             </Fade>
           </div>
         </section>
       )}
+
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
+      <Testimonials
+        variant="grid"
+        tags={["practice", "parents"]}
+        limit={3}
+        background={c.offWhite}
+        padding="56px 24px"
+        kicker="From our families"
+        heading="Parents on the practice questions."
+      />
 
       {faqs.length > 0 && (
         <section style={{ padding: "48px 24px 56px", background: c.white }}>

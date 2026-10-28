@@ -15,7 +15,7 @@ const GROUPS = [
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },
       { href: "/practice-maths-tests-secondary", label: "Practice tests" },
-      { href: "/worksheets", label: "Maths by topic" },
+      { href: "/worksheets", label: "Free worksheets" },
       { href: "/learn", label: "Learn" },
       { href: "/atar-planner", label: "ATAR planner" },
     ],

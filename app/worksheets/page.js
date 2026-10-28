@@ -2,25 +2,29 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
-import { STUDY_APP } from "@/lib/study-app";
+import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
+import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
+import Testimonials from "@/components/marketing/Testimonials";
 import { SITE_URL } from "@/lib/site";
 
-// Hub for the Years 7 to 10 maths topic pages. The free worksheet
-// builder that used to live here was removed (Oct 2026): practice now
-// happens in the Tuterly app, so every call to action is the app.
+// Public landing page for the free maths worksheet generator. Restyled to
+// match the marketing home page (Inter, teal + ink palette, blur nav,
+// gradient hero, clean cards). Pre-computes the VCAA F-10 topic list for
+// every Year 3-10 level so the client-side dropdown is instant.
 
-const TITLE = "Maths by Topic, Years 7 to 10 (Victorian Curriculum)";
+const TITLE = "Free Maths Worksheets - Year 3 to Year 10 | Tuterly";
 const DESCRIPTION =
-  "Every major Years 7 to 10 maths topic in the Victorian Curriculum: what's covered, common mistakes, and practice tests with worked solutions in the Tuterly app.";
+  "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. Fully worked solutions, downloadable as PDF.";
 const URL = `${SITE_URL}/worksheets`;
 
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: { images: ["/og-tuterly.png"],
+  openGraph: {
+    images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -33,6 +37,16 @@ export const metadata = {
   },
 };
 
+const YEAR_LEVELS = [
+  "Year 3",
+  "Year 4",
+  "Year 5",
+  "Year 6",
+  "Year 7",
+  "Year 8",
+  "Year 9",
+  "Year 10",
+];
 
 // Marketing palette, matched to app/parents/page.js.
 const c = {
@@ -58,6 +72,10 @@ const sans = "var(--font-display)";
 const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
 
 export default function WorksheetsPage() {
+  const topicsByYear = Object.fromEntries(
+    YEAR_LEVELS.map((y) => [y, getTopicGroupsForLevel(y, "maths", [y])])
+  );
+
   return (
     <div style={{ fontFamily: sans, color: c.text, background: c.white, overflowX: "hidden" }}>
       <style>{`
@@ -79,15 +97,15 @@ export default function WorksheetsPage() {
       <section className="ws-hero" style={{ padding: "56px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
-            Years 7 to 10 maths
+            Free practice
           </p>
           <h1 style={{ fontWeight: 800, fontSize: 52, color: c.ink, lineHeight: 1.1, letterSpacing: "-1.4px", marginBottom: 20 }}>
-            Maths by topic,{" "}
-            <span style={{ color: c.teal }}>Years 7 to 10</span>.
+            Free maths worksheets,{" "}
+            <span style={{ color: c.teal }}>Year 3 to Year 10</span>.
           </h1>
           <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
-            Every major topic in the Victorian Curriculum, with what it covers and
-            where students usually slip. Practise any of them in {STUDY_APP.name}.
+            Six questions with fully worked solutions, aligned to the Victorian
+            Curriculum. Generate one now, download the PDF, no signup required.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
             <p style={{ fontSize: 13, color: c.textLight, fontWeight: 500 }}>
@@ -97,10 +115,31 @@ export default function WorksheetsPage() {
         </div>
       </section>
 
-      <div className="ws-section" style={{ padding: "8px 24px 56px" }}>
+      {/* GENERATOR */}
+      <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
+        <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
+      </main>
+
+      <div className="ws-section" style={{ padding: "0 24px 56px" }}>
         <AppPracticeBlock placement="worksheets_index_practice" />
       </div>
 
+      {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).
+          Leads with quotes about the practice questions, falling back to
+          general parent quotes only to fill the row. Renders nothing while
+          the list is empty. */}
+      <Testimonials
+        variant="grid"
+        tags={["practice", "parents"]}
+        limit={3}
+        palette={c}
+        background={c.white}
+        padding="64px 40px 72px"
+        headingFont={sans}
+        bodyFont={sans}
+        kicker="From our families"
+        heading="What parents say about the practice questions."
+      />
 
       {/* TOPIC GRID */}
       <section className="ws-section" style={{ background: c.paper, borderTop: `1px solid ${c.border}`, padding: "72px 40px 88px" }}>
@@ -110,11 +149,11 @@ export default function WorksheetsPage() {
               Browse by topic
             </p>
             <h2 style={{ fontSize: 34, fontWeight: 800, color: c.ink, letterSpacing: "-0.8px", lineHeight: 1.18, margin: "0 0 14px" }}>
-              Pick a topic
+              Topic-specific worksheet pages
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto" }}>
-              What each topic covers, the mistakes students usually make, and the
-              questions parents ask.
+              Pre-configured generators for every major Year 7-10 maths topic.
+              Tap a topic to land on a page with the generator already set up.
             </p>
           </div>
 
@@ -143,7 +182,7 @@ export default function WorksheetsPage() {
                         style={{ display: "block", padding: "18px 20px", background: c.white, border: `1px solid ${c.border}`, borderRadius: 14, textDecoration: "none", boxShadow: "0 1px 2px rgba(15,23,42,0.03)" }}
                       >
                         <p style={{ fontSize: 11, fontWeight: 700, color: c.tealDeep, textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: 6 }}>
-                          {year}
+                          Worksheet
                         </p>
                         <p style={{ fontSize: 15.5, fontWeight: 600, color: c.ink, lineHeight: 1.35, margin: 0 }}>
                           {p.topic}

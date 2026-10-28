@@ -291,16 +291,13 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 .tb-appcta__form { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
 .tb-appcta__form .tb-input--email { grid-column: 1 / -1; }
 .tb-appcta__form .tb-btn { grid-column: 1 / -1; width: 100%; }
-@media (min-width: 720px) {
-  .tb-appcta__form--wide { grid-template-columns: minmax(0, 1.6fr) auto auto auto; align-items: start; }
-  .tb-appcta__form--wide .tb-input--email, .tb-appcta__form--wide .tb-btn { grid-column: auto; }
-  .tb-appcta__form--wide .tb-btn { width: auto; }
-}
-.tb-appcta__form--slim { grid-template-columns: 1fr; }
-@media (min-width: 600px) {
-  .tb-appcta__form--slim { grid-template-columns: minmax(0, 1fr) auto; align-items: start; }
-  .tb-appcta__form--slim .tb-input--email, .tb-appcta__form--slim .tb-btn { grid-column: auto; width: auto; }
-}
+/* Slim and wide forms wrap by the space they actually have (not the
+ * viewport), so the email box is never squeezed in a narrow column: the
+ * button drops under the email box when they don't both fit. */
+.tb-appcta__form--slim, .tb-appcta__form--wide { display: flex; flex-wrap: wrap; align-items: stretch; }
+.tb-appcta__form--slim .tb-input--email, .tb-appcta__form--wide .tb-input--email { flex: 1 1 260px; min-width: 0; width: auto; }
+.tb-appcta__form--wide select.tb-input { flex: 1 1 150px; min-width: 0; width: auto; }
+.tb-appcta__form--slim .tb-btn, .tb-appcta__form--wide .tb-btn { flex: 1 0 auto; width: auto; }
 .tb-appcta__status { font-weight: 800; font-size: 16px; color: var(--success); margin: 0; }
 .tb-appcta__error { font-weight: 700; font-size: 14px; color: var(--danger); margin: 8px 0 0; }
 .tb-appcta__qr { display: flex; align-items: center; gap: 12px; }

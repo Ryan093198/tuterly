@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
-import TutorRequestCard from "@/components/TutorRequestCard";
 import StudyAppCTA from "@/components/StudyAppCTA";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
@@ -97,6 +96,7 @@ export default function WorksheetGenerator({
   const [error, setError] = useState(null);
   const [worksheet, setWorksheet] = useState(null);
   const [trialPromptOpen, setTrialPromptOpen] = useState(false);
+  const [limitReached, setLimitReached] = useState(false);
   const [trialPending, setTrialPending] = useState(false);
   const [trialError, setTrialError] = useState(null);
   const [upsellOpen, setUpsellOpen] = useState(false);
@@ -397,9 +397,12 @@ export default function WorksheetGenerator({
         // Rate-limit response triggers the trial-signup modal instead
         // of a plain error toast. Anonymous + already-used-free-quota
         // visitors see the conversion prompt.
-        if (res.status === 429 && data?.rate_limited) {
-          setTrialPromptOpen(true);
-          return;
+        // The free limit: show the server's message, plus the app (below
+        // the form) for Years 7 to 10. No paid trial offer since Oct 2026:
+        // the Tuterly app is the site's only call to action.
+        if ((res.status === 429 && data?.rate_limited) || res.status === 402) {
+          setLimitReached(true);
+          throw new Error(data?.error || "You've used your free worksheet for today. Come back tomorrow for another one.");
         }
         throw new Error(data?.error || "Could not generate worksheet.");
       }
@@ -415,30 +418,6 @@ export default function WorksheetGenerator({
       setError(err.message || "Could not generate worksheet.");
     } finally {
       setGenerating(false);
-    }
-  }
-
-  async function handleStartTrial() {
-    setTrialError(null);
-    setTrialPending(true);
-    try {
-      let ref = null;
-      try {
-        ref = window.localStorage.getItem("tuterly:ref");
-      } catch {}
-      const res = await fetch("/api/billing/checkout-session", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, ref }),
-      });
-      const data = await readJsonOrFallback(res);
-      if (!res.ok || !data?.url) {
-        throw new Error(data?.error || "Could not start checkout.");
-      }
-      window.location.href = data.url;
-    } catch (err) {
-      setTrialError(err.message || "Could not start checkout.");
-      setTrialPending(false);
     }
   }
 
@@ -552,16 +531,13 @@ export default function WorksheetGenerator({
 
       {/* Under the generator: the app for Years 7 to 10, the tutor offer
           (returning users) for younger year levels. */}
-      {studyAppUnderGenerator && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
+      {(studyAppUnderGenerator || limitReached) && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
         <StudyAppCTA
           variant="inline"
           placement="worksheet_generator"
           heading="Already got some wrong at school?"
           style={{ margin: "16px 0 0" }}
         />
-      )}
-      {!worksheet && emailSaved && !STUDY_APP_YEARS.includes(yearLevel) && (
-        <TutorRequestCard source="worksheet" initialYear={yearLevel} style={{ marginTop: 16 }} />
       )}
 
       {worksheet && (
@@ -625,24 +601,11 @@ export default function WorksheetGenerator({
             {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
               <StudyAppCTA variant="inline" placement="worksheet_answers" />
             )}
-            <TutorRequestCard
-              source="worksheet"
-              initialYear={worksheet.yearLevel}
-              style={{ marginTop: 20 }}
-            />
           </div>
 
-          <TrialBanner />
         </div>
       )}
 
-      <FullTestUpsell
-        onStart={() => {
-          cancelPendingUpsell();
-          setUpsellOpen(false);
-          setTrialPromptOpen(true);
-        }}
-      />
 
       {emailModalOpen && (
         <EmailGateModal
@@ -664,29 +627,7 @@ export default function WorksheetGenerator({
         />
       )}
 
-      {upsellOpen && (
-        <WorksheetUpsellModal
-          onClose={() => {
-            setUpsellOpen(false);
-            setTrialError(null);
-          }}
-          onStart={handleStartTrial}
-          pending={trialPending}
-          error={trialError}
-        />
-      )}
 
-      {trialPromptOpen && (
-        <TrialSignupModal
-          onClose={() => {
-            setTrialPromptOpen(false);
-            setTrialError(null);
-          }}
-          onStart={handleStartTrial}
-          pending={trialPending}
-          error={trialError}
-        />
-      )}
     </div>
   );
 }
@@ -844,439 +785,11 @@ function EmailGateModal({
   );
 }
 
-function TrialSignupModal({ onClose, onStart, pending, error }) {
-  return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 100,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 24,
-        background: "rgba(15, 23, 42, 0.55)",
-      }}
-      onClick={pending ? undefined : onClose}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          background: c.white,
-          borderRadius: 20,
-          padding: 32,
-          maxWidth: 460,
-          width: "100%",
-          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
-          border: `1px solid ${c.border}`,
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 12,
-            fontWeight: 600,
-            color: c.teal,
-            textTransform: "uppercase",
-            letterSpacing: 2,
-            margin: 0,
-          }}
-        >
-          7-day free trial
-        </p>
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 26,
-            color: c.navy,
-            lineHeight: 1.2,
-            margin: "8px 0 12px",
-          }}
-        >
-          You&apos;ve used your free worksheet for today.
-        </h2>
-        <p style={{ color: c.textLight, fontSize: 15, lineHeight: 1.65, margin: "0 0 16px" }}>
-          Start your free 7-day Tuterly trial for unlimited worksheets,
-          lesson plans, and progress tracking for your child. Cancel any
-          time before the trial ends and you won&apos;t be charged.
-        </p>
-        <ul
-          style={{
-            listStyle: "none",
-            margin: "0 0 20px",
-            padding: 0,
-            display: "grid",
-            gap: 6,
-            color: c.text,
-            fontSize: 14,
-          }}
-        >
-          {[
-            "Unlimited VCAA-aligned practice worksheets",
-            "Generate custom lesson plans, any topic or year level",
-            "Session reports and progress tracking",
-            "Full access to our directory of qualified Tutors",
-            "$29 / month after the trial - cancel any time",
-          ].map((t) => (
-            <li key={t} style={{ display: "flex", gap: 10 }}>
-              <span style={{ color: c.teal, fontWeight: 700 }}>✓</span>
-              <span>{t}</span>
-            </li>
-          ))}
-        </ul>
-        {error && (
-          <p
-            style={{
-              color: c.rose,
-              fontSize: 13,
-              margin: "0 0 12px",
-              background: "#FFF1F2",
-              padding: "8px 10px",
-              borderRadius: 8,
-            }}
-          >
-            {error}
-          </p>
-        )}
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <button
-            type="button"
-            onClick={onStart}
-            disabled={pending}
-            style={{
-              ...primaryButtonStyle,
-              flex: "1 1 auto",
-              opacity: pending ? 0.7 : 1,
-              cursor: pending ? "wait" : "pointer",
-            }}
-          >
-            {pending ? "Starting…" : "Start free trial"}
-          </button>
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={pending}
-            style={{
-              ...secondaryButtonStyle,
-              flex: "0 0 auto",
-            }}
-          >
-            Maybe later
-          </button>
-        </div>
-        <p
-          style={{
-            color: c.textMuted,
-            fontSize: 12,
-            margin: "14px 0 0",
-            textAlign: "center",
-          }}
-        >
-          Powered by Stripe · card not charged during trial
-        </p>
-      </div>
-    </div>
-  );
-}
 
-function FullTestUpsell({ onStart }) {
-  // Problem-first CTA, kept deliberately tight: name the gap, then the fix.
-  // Feature-led copy buried the pitch, so this leads with the concern.
-  const PROBLEM =
-    "They come sorted by topic, so your child knows the method before they read the question.";
-  const points = [
-    "Unlimited questions on entire topics, mixed difficulty, VCAA aligned",
-    "Printable test, plus a separate answer key for marking",
-    "Any topic, any time, designed to mimic actual test questions",
-  ];
-  return (
-    <div
-      style={{
-        marginTop: 20,
-        background: c.tealPale,
-        border: `1px solid ${c.tealLight}`,
-        borderRadius: 20,
-        padding: 28,
-      }}
-    >
-      <h2 style={{ ...h2Style, margin: "0 0 10px" }}>
-        Textbook questions won&apos;t lift a test mark.
-      </h2>
 
-      <p style={{ ...pMutedStyle, marginBottom: 12 }}>{PROBLEM}</p>
-
-      <p
-        style={{
-          fontSize: 15.5,
-          fontWeight: 600,
-          color: c.navy,
-          lineHeight: 1.6,
-          margin: "0 0 16px",
-        }}
-      >
-        That&apos;s where Tuterly comes in and closes the gap: unlimited
-        questions, mixed up, under test conditions, including worded problems.
-      </p>
-
-      <ul
-        style={{
-          margin: "0 0 20px",
-          padding: 0,
-          listStyle: "none",
-          display: "grid",
-          gap: 8,
-        }}
-      >
-        {points.map((line) => (
-          <li
-            key={line}
-            style={{
-              display: "flex",
-              gap: 10,
-              fontSize: 15,
-              color: c.text,
-              lineHeight: 1.5,
-            }}
-          >
-            <span style={{ color: c.tealDark, fontWeight: 700 }}>&#10003;</span>
-            <span>{line}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button type="button" onClick={onStart} style={primaryButtonStyle}>
-        Build their first test free &rarr;
-      </button>
-      <p style={{ ...pMutedStyle, fontSize: 13, marginTop: 12 }}>
-        Tuterly test builder (separate from the app): free for 7 days, then $29/month. Cancel anytime.
-      </p>
-    </div>
-  );
-}
-
-function TrialBanner() {
-  return (
-    <div
-      style={{
-        background: `linear-gradient(135deg, ${c.navy}, ${c.navyMid})`,
-        color: c.white,
-        borderRadius: 16,
-        padding: "20px 24px",
-        display: "flex",
-        gap: 16,
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      <div style={{ minWidth: 0, flex: "1 1 280px" }}>
-        <p
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 12,
-            fontWeight: 600,
-            color: c.tealLight,
-            textTransform: "uppercase",
-            letterSpacing: 2,
-            margin: 0,
-          }}
-        >
-          Tuterly
-        </p>
-        <h3
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 22,
-            margin: "4px 0 6px",
-            color: c.white,
-          }}
-        >
-          Want worksheets like this after every tutoring session?
-        </h3>
-        <p style={{ margin: 0, color: "rgba(255,255,255,0.75)", fontSize: 14 }}>
-          Tuterly gives parents detailed reports, weekly lesson plans and
-          unlimited practice between sessions. Start a 7-day free trial.
-        </p>
-      </div>
-      <a
-        href="https://app.tuterly.com.au"
-        style={{
-          padding: "12px 22px",
-          borderRadius: 10,
-          background: c.tealLight,
-          color: c.navy,
-          fontWeight: 700,
-          fontSize: 15,
-          textDecoration: "none",
-          whiteSpace: "nowrap",
-        }}
-      >
-        Start 7-day free trial
-      </a>
-    </div>
-  );
-}
 
 // --- Styles ---
 
-function WorksheetUpsellModal({ onClose, onStart, pending, error }) {
-  // Lock the page behind the overlay. Mount-scoped: `onClose` is an inline
-  // arrow from the parent, so keying this on it would tear down and re-apply
-  // the lock on every parent render.
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape" && !pending) onClose();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose, pending]);
-
-  const points = [
-    "Unlimited worksheets on every topic, Year 3 to Year 10",
-    "Test and exam style papers covering a whole topic, not one skill",
-    "Fresh questions every time, so nothing gets memorised",
-    "Fully worked solutions, plus a separate answer key for marking",
-  ];
-  return (
-    <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 100,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 24,
-        background: "rgba(15, 23, 42, 0.55)",
-      }}
-      onClick={pending ? undefined : onClose}
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="worksheet-upsell-title"
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          background: c.white,
-          borderRadius: 20,
-          padding: 32,
-          maxWidth: 470,
-          width: "100%",
-          maxHeight: "90vh",
-          overflowY: "auto",
-          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
-          border: `1px solid ${c.border}`,
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 12,
-            fontWeight: 600,
-            color: c.teal,
-            textTransform: "uppercase",
-            letterSpacing: 2,
-            margin: 0,
-          }}
-        >
-          Keep going
-        </p>
-        <h2
-          id="worksheet-upsell-title"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 26,
-            color: c.navy,
-            lineHeight: 1.2,
-            margin: "8px 0 12px",
-          }}
-        >
-          That&apos;s six questions on one topic.
-        </h2>
-        <p style={{ color: c.textLight, fontSize: 15, lineHeight: 1.65, margin: "0 0 16px" }}>
-          A term of maths is forty. With Tuterly your child can generate
-          unlimited worksheets on every topic in the curriculum, and sit full
-          test style papers across a whole topic when an assessment is coming
-          up.
-        </p>
-        <ul
-          style={{
-            listStyle: "none",
-            margin: "0 0 20px",
-            padding: 0,
-            display: "grid",
-            gap: 6,
-            color: c.text,
-            fontSize: 14,
-          }}
-        >
-          {points.map((t) => (
-            <li key={t} style={{ display: "flex", gap: 10 }}>
-              <span style={{ color: c.teal, fontWeight: 700 }}>✓</span>
-              <span>{t}</span>
-            </li>
-          ))}
-        </ul>
-        {error && (
-          <p
-            style={{
-              color: c.rose,
-              fontSize: 13,
-              margin: "0 0 12px",
-              background: "#FFF1F2",
-              padding: "8px 10px",
-              borderRadius: 8,
-            }}
-          >
-            {error}
-          </p>
-        )}
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <button
-            type="button"
-            onClick={onStart}
-            disabled={pending}
-            style={{
-              ...primaryButtonStyle,
-              flex: "1 1 auto",
-              opacity: pending ? 0.7 : 1,
-              cursor: pending ? "wait" : "pointer",
-            }}
-          >
-            {pending ? "Starting…" : "Start the 7-day free trial"}
-          </button>
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={pending}
-            style={{ ...secondaryButtonStyle, flex: "0 0 auto" }}
-          >
-            Not now
-          </button>
-        </div>
-        <p
-          style={{
-            color: c.textMuted,
-            fontSize: 12,
-            margin: "14px 0 0",
-            textAlign: "center",
-          }}
-        >
-          $29 / month after the trial. Cancel any time before it ends and you
-          won&apos;t be charged.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 const readyPromptStyle = {
   display: "block",

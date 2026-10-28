@@ -140,7 +140,7 @@ async function handle(request) {
         return NextResponse.json(
           {
             error:
-              "You've used your free worksheet for this week. Start a free trial or buy a session pack to unlock unlimited worksheets.",
+              "You've used your free worksheet for this week. Come back next week for another one.",
             need_upgrade: true,
           },
           { status: 402 }
@@ -195,7 +195,7 @@ async function handle(request) {
       return NextResponse.json(
         {
           error:
-            "You've used your free worksheet for today. Start a 7-day trial for unlimited worksheets and tutor-quality reports.",
+            "You've used your free worksheet for today. Come back tomorrow for another one.",
           rate_limited: true,
         },
         { status: 429 }
