@@ -26,7 +26,7 @@ That's not a position any student should be in. And it's entirely avoidable.
 
 ## Don't wait for Year 10 subject selection
 
-Most parents start thinking about VCE maths when the subject selection form comes home in Year 10. By then, the decision has largely been made by their child's Year 9 performance. If there are gaps in algebra, equations, or trig, those gaps need to be addressed now, not after the school recommends Further Maths instead.
+Most parents start thinking about VCE maths when the subject selection form comes home in Year 10. By then, the decision has largely been made by their child's Year 9 performance. If there are gaps in algebra, equations, or trig, those gaps need to be addressed now, not after the school recommends General Maths instead.
 
 ## A quick decision framework
 

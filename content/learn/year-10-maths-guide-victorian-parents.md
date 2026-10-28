@@ -18,7 +18,7 @@ Under the Australian Curriculum (Version 9, which Victorian schools are now impl
 
 **Trigonometry.** Right-angle and non-right-angle triangles, sine and cosine rules, and applications. Trig reappears constantly in both Methods and Specialist Maths.
 
-**Statistics and probability.** Data analysis, sampling, probability distributions, and interpreting results. This strand underpins Further Mathematics more than any other.
+**Statistics and probability.** Data analysis, sampling, probability distributions, and interpreting results. This strand underpins General Mathematics more than any other.
 
 **Financial mathematics.** Compound interest, depreciation, and loans. Often underestimated, but tested directly in Further and in real life.
 
@@ -44,9 +44,9 @@ Statistical reasoning is quietly neglected too. Schools can rush this strand, an
 
 Victorian students typically choose their VCE subjects during Year 10, often in Term 3. The maths decision is one of the most consequential choices on that form.
 
-The pathway options are roughly: Mathematical Methods (with or without Specialist), Further Mathematics, or Foundation Mathematics. Each leads somewhere different for university prerequisites.
+The pathway options are roughly: Mathematical Methods (with or without Specialist), General Mathematics, or Foundation Mathematics. Each leads somewhere different for university prerequisites.
 
-Methods requires solid algebra, strong function knowledge, and comfort with abstract reasoning. Further is more accessible but still demands real statistical literacy. Choosing either subject without the underlying skills is one of the most reliable ways to have a miserable Year 11.
+Methods requires solid algebra, strong function knowledge, and comfort with abstract reasoning. General Maths is more accessible but still demands real statistical literacy. Choosing either subject without the underlying skills is one of the most reliable ways to have a miserable Year 11.
 
 The conversation about subject selection should be happening now, not after the form is due. Talk to your child's teacher, look at their recent test results across all four strands, and be honest about where the gaps are.
 

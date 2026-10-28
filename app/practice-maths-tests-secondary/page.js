@@ -41,7 +41,7 @@ const WHY = [
   },
   {
     title: "Years 9 and 10 set up VCE",
-    body: "Algebra, indices and trigonometry in Years 9 and 10 are what Methods and Specialist assume are automatic. Gaps here quietly close off subject choices later, and a practice test surfaces them while there is still time.",
+    body: "Algebra, indices, trigonometry, statistics and financial maths in Years 9 and 10 are what VCE General Maths, Methods and Specialist assume are automatic. Gaps here quietly close off subject choices later, and a practice test surfaces them while there is still time.",
   },
 ];
 
@@ -64,7 +64,7 @@ const FAQS = [
   },
   {
     q: "Will this help with VCE maths preparation?",
-    a: "Indirectly, and importantly. Years 9 and 10 build the algebra, indices and trigonometry that VCE Methods and Specialist assume are second nature, so closing gaps now is the highest-value VCE preparation a Year 9 or 10 student can do.",
+    a: "Indirectly, and importantly. Years 9 and 10 build the algebra, indices, trigonometry, statistics and financial maths that VCE General Maths, Methods and Specialist assume are second nature, so closing gaps now is the highest-value VCE preparation a Year 9 or 10 student can do.",
   },
 ];
 

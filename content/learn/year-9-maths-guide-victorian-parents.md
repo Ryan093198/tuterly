@@ -6,7 +6,7 @@ audience: "Year 8–9 parents in Victoria"
 published: true
 ---
 
-Year 9 is the year most parents don't worry about, because it isn't Year 10. There's no subject selection form yet, no VCE countdown. But the maths your child gets right or wrong in Year 9 quietly closes or opens doors that don't reopen easily. By the time Year 10 subject selection arrives, the gap between a Methods-ready student and one heading toward Further Maths is almost always traceable back to this year.
+Year 9 is the year most parents don't worry about, because it isn't Year 10. There's no subject selection form yet, no VCE countdown. But the maths your child gets right or wrong in Year 9 quietly closes or opens doors that don't reopen easily. By the time Year 10 subject selection arrives, the gap between a Methods-ready student and one heading toward General Maths is almost always traceable back to this year.
 
 Here's what's actually being taught, where students tend to fall apart, and what you can do about it at home.
 

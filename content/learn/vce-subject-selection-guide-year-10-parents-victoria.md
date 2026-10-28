@@ -32,11 +32,11 @@ Medicine at the University of Melbourne currently requires a study score of at l
 
 ## The maths decision is the one most students regret
 
-Maths is where we see the most regret in hindsight. There are three main options in VCE: Further Mathematics, Mathematical Methods, and Specialist Mathematics. Each represents a significant step up in difficulty and scope.
+Maths is where we see the most regret in hindsight. There are three main options in VCE: General Mathematics, Mathematical Methods, and Specialist Mathematics. Each represents a significant step up in difficulty and scope.
 
-Further Mathematics is more accessible and suits students whose intended pathways do not require calculus. Methods introduces calculus and is a prerequisite for many science and commerce degrees. Specialist Mathematics goes further still and is almost always taken alongside Methods.
+General Mathematics is more accessible and suits students whose intended pathways do not require calculus. Methods introduces calculus and is a prerequisite for many science and commerce degrees. Specialist Mathematics goes further still and is almost always taken alongside Methods.
 
-The problem is that many students drop from Methods to Further partway through Year 11 after underestimating the jump. That can work out fine. But it closes off certain university pathways mid-stream. Having an honest conversation about maths readiness before Year 10 ends saves a lot of stress later.
+The problem is that many students drop from Methods to General Maths partway through Year 11 after underestimating the jump. That can work out fine. But it closes off certain university pathways mid-stream. Having an honest conversation about maths readiness before Year 10 ends saves a lot of stress later.
 
 ## Extension students need this conversation too
 

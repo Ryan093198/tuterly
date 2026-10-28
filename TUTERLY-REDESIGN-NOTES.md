@@ -132,3 +132,8 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - The app's name is now "Tuterly" (it will be "Tuterly" on the App Store). STUDY_APP.name changed, and every hard-coded "Tuterly Study" in pages, Learn articles and the blog writer is now "Tuterly". Nav and footer: the first link is "The app" (the logo already says tuterly).
 - The centres article moved to /learn/how-tutoring-centres-use-tuterly (not live yet, so no redirect needed).
 - Internal names (STUDY_APP, components/study/, StudyAppCTA, the og-tuterly-study.png file) are unchanged; visitors don't see them.
+
+## 28 Oct: VCE General Maths
+- VCE prep now names General Maths alongside Methods and Specialist: /vce-tutoring (title, description, intro, a new VCE General Mathematics subject card, the "Before VCE" heading, and statistics + financial maths added to the Years 9 and 10 topics VCE leans on), /practice-maths-tests-secondary, /atar-planner.
+- Learn: "Further Mathematics" (replaced by General Mathematics from 2023) renamed to General Mathematics in 7 articles, with a note in the three Further-specific guides. Slugs unchanged.
+- To fact-check: the Year 11 and Year 12 General Maths guides still describe Further’s structure ("application modules", exam formats). The current study design has four compulsory areas of study in Units 3 and 4; those two articles need checking against VCAA before launch.

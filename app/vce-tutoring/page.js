@@ -8,9 +8,9 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "VCE Tutoring Melbourne: Methods, English, Sciences | Tuterly";
+const TITLE = "VCE Tutoring Melbourne: Maths, English, Sciences | Tuterly";
 const DESCRIPTION =
-  "VCE tutoring in Melbourne: what changes in VCE, the subjects families tutor most, when to start, and why Years 9 and 10 maths matters for Methods and Specialist.";
+  "VCE tutoring in Melbourne: what changes in VCE, the subjects families tutor most, when to start, and why Years 9 and 10 maths matters for General Maths, Methods and Specialist.";
 const URL = `${SITE_URL}/vce-tutoring`;
 
 export const metadata = {
@@ -31,6 +31,10 @@ export const metadata = {
 };
 
 const SUBJECTS = [
+  {
+    name: "VCE General Mathematics",
+    body: "Data analysis, recursion and financial modelling, matrices, and networks and decision maths. Taken on its own or alongside Methods. It leans on Years 9 and 10 statistics, linear relations, percentages and rates, and on reading long worded problems carefully. Good tutoring builds the habit of setting out working the way the exam rewards.",
+  },
   {
     name: "VCE Mathematical Methods",
     body: "Functions and graphs, calculus, probability. One of the most tutored VCE subjects, because it moves quickly and leans hard on the algebra students learnt in Years 9 and 10. Good Methods tutoring keeps pace with the study design and builds exam technique on VCAA past papers.",
@@ -78,6 +82,8 @@ const PRE_VCE_MATHS = [
   "Linear and quadratic functions and their graphs",
   "Trigonometry",
   "Probability",
+  "Statistics and data displays",
+  "Percentages, rates and financial maths",
 ];
 
 const sectionLabel = { fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 };
@@ -98,7 +104,7 @@ export default function VceTutoringPage() {
               VCE tutoring in Melbourne: what it’s for, and when to start.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Methods, English, Specialist, Chemistry, Physics, Biology. Here’s what changes when your child starts VCE, what good tutoring looks like in each subject, and when it’s worth starting. And if your child is still in Year 9 or 10, why getting their maths solid now matters for VCE Methods and Specialist.
+              General Maths, Methods, Specialist, English, Chemistry, Physics, Biology. Here’s what changes when your child starts VCE, what good tutoring looks like in each subject, and when it’s worth starting. And if your child is still in Year 9 or 10, why getting their maths solid now matters for VCE General Maths, Methods and Specialist.
             </p>
             <AppHeroBlock
               placement="vce_tutoring_hero"
@@ -152,10 +158,10 @@ export default function VceTutoringPage() {
           <Fade>
             <p style={sectionLabel}>Before VCE</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              Methods and Specialist assume Years 9 and 10 maths.
+              General Maths, Methods and Specialist all build on Years 9 and 10 maths.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              VCE maths builds straight on what students learn in Years 9 and 10. When a Year 11 student struggles in Methods, the trouble is often an older gap showing up in new work, like a slip in factorising or a shaky grip on indices. Those gaps are much easier to fix before VCE starts. The Years 9 and 10 topics VCE maths leans on include:
+              VCE maths builds straight on what students learn in Years 9 and 10. When a Year 11 student struggles in General Maths or Methods, the trouble is often an older gap showing up in new work, like a slip in factorising or a shaky grip on indices. Those gaps are much easier to fix before VCE starts. The Years 9 and 10 topics VCE maths leans on include:
             </p>
             <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 18px" }}>
               {PRE_VCE_MATHS.map((t) => (

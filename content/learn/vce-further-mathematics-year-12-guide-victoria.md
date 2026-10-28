@@ -1,18 +1,21 @@
 ---
-title: "How to help your child with VCE Further Mathematics: what Year 12 students actually need to do in their final year"
-description: "A practical guide for Victorian parents and Year 12 students on what VCE Further Mathematics actually involves and how to get the best result."
+title: "How to help your child with VCE General Mathematics: what Year 12 students actually need to do in their final year"
+description: "A practical guide for Victorian parents and Year 12 students on what VCE General Mathematics actually involves and how to get the best result."
 date: "2026-08-09"
 audience: "Year 12 students and parents in Victoria"
 published: true
 ---
 
-Unit 3 and 4 Further Mathematics is the version that counts toward the ATAR. Everything in Year 11 was preparation. This is the real thing, and the structure of the course changes enough that parents who helped their child navigate Unit 1 and 2 often find Year 12 catches them off guard.
+*VCE General Mathematics replaced Further Mathematics from 2023. This guide uses the current name.*
+
+
+Unit 3 and 4 General Mathematics is the version that counts toward the ATAR. Everything in Year 11 was preparation. This is the real thing, and the structure of the course changes enough that parents who helped their child navigate Unit 1 and 2 often find Year 12 catches them off guard.
 
 Here is what your child is actually working toward, and how to support them through it.
 
 ## What the course looks like in Year 12
 
-VCE Further Mathematics Unit 3 and 4 has two compulsory areas of study plus a set of application modules. Data Analysis and Recursion and Financial Modelling are examined in every sitting. Then students study two application modules from a set of options, which typically include Matrices, Networks and Decision Mathematics, Geometry and Measurement, and Graphs and Relations. Your child's school chooses the two application modules, so find out early which ones they are covering.
+VCE General Mathematics Unit 3 and 4 has two compulsory areas of study plus a set of application modules. Data Analysis and Recursion and Financial Modelling are examined in every sitting. Then students study two application modules from a set of options, which typically include Matrices, Networks and Decision Mathematics, Geometry and Measurement, and Graphs and Relations. Your child's school chooses the two application modules, so find out early which ones they are covering.
 
 The course is calculator-active throughout. A CAS calculator is permitted in both exams, so students who are not fluent with their calculator are at a genuine disadvantage.
 
@@ -58,5 +61,5 @@ Keep an eye on calculator fluency too. If your child is still hunting for functi
 
 ## Where to go from here
 
-If your child is struggling with a particular module, or if they are aiming for a study score that opens specific pathways, a tutor who knows the VCE Further Mathematics course well can target exactly what needs work. Ask how they will show you what has been covered and where your child's gaps are, so you are not guessing whether the tutoring is actually helping, and make sure the practice is built from VCAA exam-style questions.
+If your child is struggling with a particular module, or if they are aiming for a study score that opens specific pathways, a tutor who knows the VCE General Mathematics course well can target exactly what needs work. Ask how they will show you what has been covered and where your child's gaps are, so you are not guessing whether the tutoring is actually helping, and make sure the practice is built from VCAA exam-style questions.
 
