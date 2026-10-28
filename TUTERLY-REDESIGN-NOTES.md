@@ -161,3 +161,5 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 ## 28 Oct: launch hook
 - Pill at the top of the home and parents heroes: "Now opening to the public · Already used by tutoring centres in Victoria". Educators section lead: "...designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, to help boost students’ test marks. It’s already used by tutoring centres in Victoria, and now it’s opening to the public."
 - Not used: "used by tutoring companies and teachers across Australia" and "highly in demand" (so far it's Bayside and other Victorian centres for about a month, with no waitlist or usage numbers to back "in demand"). Widen the wording in lib/study-results.js when that changes.
+
+- 28 Oct: Ryan is a teacher and uses it, as do other teachers who tutor at Bayside, so the hook now says "Already used by tutoring centres and teachers in Victoria".

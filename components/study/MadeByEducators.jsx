@@ -38,7 +38,7 @@ export default function MadeByEducators({ id = "educators", className = "" }) {
             id={id}
             eyebrow="Made in Australia"
             title="Carefully designed by Australian educators."
-            lead={`Tuterly has been carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, to help boost students’ test marks. It’s already used by tutoring centres in Victoria, and now it’s opening to the public.`}
+            lead={`Tuterly has been carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, to help boost students’ test marks. It’s already used by tutoring centres and teachers in Victoria, and now it’s opening to the public.`}
           />
         </Reveal>
         <ul className="mbe">
