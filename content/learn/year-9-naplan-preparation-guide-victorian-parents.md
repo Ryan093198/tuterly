@@ -57,7 +57,7 @@ A good tutor at this stage does two things. They identify which specific gaps ar
 
 Ask for a short note after each session on what was worked on and how your child responded, so progress doesn't stall between appointments.
 
-For the numeracy side, there is [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 9 topic. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
+For the numeracy side, there is [{{STUDY_APP}}](/), an app for iPhone and Android for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 9 topic. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

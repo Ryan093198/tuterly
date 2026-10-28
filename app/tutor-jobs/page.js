@@ -21,7 +21,7 @@ export const metadata = {
   title: METADATA_TITLE,
   description: METADATA_DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/tutor-jobs` },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: METADATA_TITLE,
     description: METADATA_DESCRIPTION,
     url: `${SITE_URL}/tutor-jobs`,

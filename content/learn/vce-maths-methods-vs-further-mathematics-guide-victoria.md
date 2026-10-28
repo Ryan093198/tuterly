@@ -21,9 +21,9 @@ Here is what you actually need to know before your child locks in their selectio
 
 The Victorian Curriculum and Assessment Authority (VCAA) offers three maths subjects at VCE level. Each one has a different level of complexity, a different assessment style, and different implications for tertiary study.
 
-**General Mathematics** is the most widely studied VCE maths subject in Victoria. It has a strong focus on statistics, financial maths, and applied problem-solving. Units 3 and 4 include a compulsory Core section covering data analysis and recursion, plus two elective modules. It is assessed partly through School-Assessed Coursework (SAC) and two end-of-year exams.
+**General Mathematics** is the most widely studied VCE maths subject in Victoria. It has a strong focus on statistics, financial maths, and applied problem-solving. Units 3 and 4 cover four compulsory topics: data analysis, recursion and financial modelling, matrices, and networks and decision mathematics. There are no elective modules. It is assessed through School-Assessed Coursework (SAC) and two end-of-year exams.
 
-**Mathematical Methods** moves into calculus, probability, and functions. It is more abstract than Further and demands a higher level of algebraic fluency. Methods is a prerequisite for many university courses, including engineering, commerce, science, and some health degrees. It is significantly more demanding than Further in terms of weekly study load.
+**Mathematical Methods** moves into calculus, probability, and functions. It is more abstract than General Mathematics and demands a higher level of algebraic fluency. Methods is a prerequisite for many university courses, including engineering, commerce, science, and some health degrees. It is significantly more demanding than General Mathematics in terms of weekly study load.
 
 **Specialist Mathematics** is designed to be taken alongside Methods. It covers proof, complex numbers, advanced calculus, and mechanics. Most students who take Specialist are already strong performers in Year 10 and have a firm interest in mathematics, engineering, or physics at university level.
 
@@ -57,7 +57,7 @@ Choosing the right subject is only part of the decision. The other part is arriv
 
 Students heading into Methods need to have Year 10 algebra, linear functions, and quadratics genuinely consolidated before the first week of class. Methods Unit 1 moves quickly and assumes fluency with foundational concepts. Students who arrive with shaky algebra spend the first term catching up rather than keeping pace.
 
-Students heading into General Maths benefit from being comfortable with data interpretation, basic probability, and financial maths concepts from Year 10. The early Units in Further are accessible, but students who build good study habits before Year 11 transition much more smoothly.
+Students heading into General Maths benefit from being comfortable with data interpretation, basic probability, and financial maths concepts from Year 10. The early units of General Mathematics are accessible, but students who build good study habits before Year 11 transition much more smoothly.
 
 ## Making the decision with confidence
 
@@ -67,7 +67,7 @@ If your child is unsure which pathway fits, or if they have made their choice an
 
 A tutor who knows the VCAA curriculum can help a Year 10 student build the foundations that Methods or Specialist demand, or make sure a General Maths student is set up to perform at their best. Ask what they will cover and how you will know it is working.
 
-The foundations themselves are Year 10 maths, especially algebra and functions. For that part, there is [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 10 topic, which is a quick way to see which topics are secure before subject selection. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
+The foundations themselves are Year 10 maths, especially algebra and functions. For that part, there is [{{STUDY_APP}}](/), an app for iPhone and Android for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 10 topic, which is a quick way to see which topics are secure before subject selection. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

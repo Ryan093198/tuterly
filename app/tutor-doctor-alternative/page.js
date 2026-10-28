@@ -9,14 +9,14 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 const TITLE = "Tutor Doctor Alternative: In-Home Tutoring vs the Tuterly App";
 const DESCRIPTION =
-  "Comparing Tutor Doctor’s in-home tutoring franchise with Tuterly, an iPhone app for Years 7 to 10 maths practice. What each does, what each costs, and when Tutor Doctor is the better fit.";
+  "Comparing Tutor Doctor’s in-home tutoring franchise with Tuterly, an app for iPhone and Android for Years 7 to 10 maths practice. What each does, what each costs, and when Tutor Doctor is the better fit.";
 const URL = `${SITE_URL}/tutor-doctor-alternative`;
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -32,13 +32,13 @@ export const metadata = {
 // Every cell must stay true. Tutor Doctor facts are limited to what this
 // page already said about Tutor Doctor; nothing new is claimed about them.
 const COMPARISON_ROWS = [
-  { label: "What it is", app: "An iPhone app for maths practice", competitor: "A tutoring franchise with local franchisees" },
+  { label: "What it is", app: "An app for iPhone and Android for maths practice", competitor: "A tutoring franchise with local franchisees" },
   { label: "Live sessions with a tutor", app: "No", competitor: "Yes" },
   { label: "In-home tutoring", app: "No", competitor: "Yes" },
   { label: "Who explains a new topic", app: "No live teacher. Worked solutions, Explain this and Study notes", competitor: "Your matched tutor" },
   { label: "Getting started", app: "Open the app and snap a question. Nothing to book", competitor: "Fill in a form, the local franchisee calls back and matches a tutor" },
   { label: "Practice on the exact questions your child got wrong", app: "Yes: snap it, then similar questions until it’s mastered", competitor: "You can bring them to a session" },
-  { label: "When it happens", app: "Any day, a few minutes at a time, on their iPhone", competitor: "At booked session times" },
+  { label: "When it happens", app: "Any day, a few minutes at a time, on their phone", competitor: "At booked session times" },
   { label: "What parents see", app: "Week in review: questions added and mastered, test scores, trickiest topic", competitor: "Ask your local franchisee" },
   { label: "Covers", app: "Years 7 to 10 maths only", competitor: "Check with your local franchisee" },
   { label: "Cost", app: "1-week free trial, then $7.99 a week", competitor: "Set by the franchisee, typically $80 to $130 an hour" },
@@ -102,7 +102,7 @@ export default function TutorDoctorAlternativePage() {
               Considering Tutor Doctor? Here’s how it compares with Tuterly.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Tutor Doctor and {STUDY_APP.name} do two different jobs. Tutor Doctor is a global tutoring franchise: a local franchisee matches a tutor to your child, often for in-home lessons. {STUDY_APP.name} is an iPhone app for Years 7 to 10 maths, where your child practises the exact questions they get wrong. Both have their place. This page is an honest comparison.
+              Tutor Doctor and {STUDY_APP.name} do two different jobs. Tutor Doctor is a global tutoring franchise: a local franchisee matches a tutor to your child, often for in-home lessons. {STUDY_APP.name} is an app for iPhone and Android for Years 7 to 10 maths, where your child practises the exact questions they get wrong. Both have their place. This page is an honest comparison.
             </p>
             <AppHeroBlock placement="tutor_doctor_alternative_hero" />
           </Fade>
@@ -140,7 +140,7 @@ export default function TutorDoctorAlternativePage() {
               They can also use Test any topic for a short test on any topic in their year, Fix my mistakes to work through the questions they got wrong, and Study notes for a revision sheet before a test. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic, not their child’s photos.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, with topics from the Victorian Curriculum 2.0. It’s a 1-week free trial, then $7.99 a week, cancel any time. Coming soon to the App Store.
+              It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, with topics from the Victorian Curriculum 2.0. It’s a 1-week free trial, then $7.99 a week, cancel any time. Coming soon to the App Store and Google Play.
             </p>
           </Fade>
         </div>

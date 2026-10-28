@@ -42,11 +42,11 @@ export const metadata = {
     type: "website",
     siteName: "Tuterly",
     locale: "en_AU",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-tuterly.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.png"],
+    images: ["/og-tuterly.png"],
   },
   icons: { icon: "/favicon.ico" },
   // Search-engine ownership verification. Codes come from the env so

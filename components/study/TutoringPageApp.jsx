@@ -18,7 +18,7 @@ export function AppHeroBlock({ placement, heading, sub }) {
         heading={heading || "Want better maths marks in Years 7 to 10? Start with the questions they get wrong."}
         sub={
           sub ||
-          `${STUDY_APP.name} is an iPhone app designed by Australian educators and built on the Victorian Curriculum: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`
+          `${STUDY_APP.name} is an app for iPhone and Android designed by Australian educators and built on the Victorian Curriculum: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`
         }
         style={{ margin: "0 0 22px" }}
       />
@@ -40,12 +40,12 @@ export function AppLowerCostSection({ competitor, placement }) {
           For Years 7 to 10 maths, there’s also {name}.
         </h2>
         <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 18 }}>
-          {`If what your child mostly needs is practice on the maths they keep getting wrong, ${name} can do that on its own, or alongside ${competitor} or any other tutor. It isn't a tutor. It's an iPhone app where your child snaps a question they got wrong, sees the worked solution, then practises fresh versions until it's mastered.`}
+          {`If what your child mostly needs is practice on the maths they keep getting wrong, ${name} can do that on its own, or alongside ${competitor} or any other tutor. It isn't a tutor. It's an app for iPhone and Android where your child snaps a question they got wrong, sees the worked solution, then practises fresh versions until it's mastered.`}
         </p>
         <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 8px" }}>
           {[
             `Cost: a 1-week free trial, then $7.99 a week.`,
-            "Covers: Years 7 to 10 maths only, on iPhone. No Android yet.",
+            "Covers: Years 7 to 10 maths only, on iPhone and Android.",
             "Designed by Australian educators at Bayside Academics, with topics from the Victorian Curriculum 2.0.",
             "Parents see a weekly summary and topic test scores, not their child's photos.",
           ].map((t) => (

@@ -9,10 +9,13 @@ import "@/components/brand/brand.css";
 // The one app button used across the marketing site. Everything it says
 // and where it points comes from lib/study-app.js:
 //
-//   stage "live"   App Store button (plus a QR code on desktop). Android
-//                  visitors get an "Android is coming" email form instead,
-//                  since they can't install an iPhone app.
-//   stage "pilot"  Not on the App Store yet: a "Coming soon to the App
+//   stage "live"   App Store and/or Google Play buttons for whichever
+//                  store URLs are set (iPhone sees App Store, Android sees
+//                  Google Play, desktop sees both, with a QR code). An
+//                  Android visitor before the Play listing exists gets an
+//                  email form instead,
+//                  since they can't install an app for iPhone and Android.
+//   stage "pilot"  Not on the App Store or Google Play yet: a "Coming soon to the App
 //                  Store" label and a "Get notified" email form, for
 //                  everyone (no pilot sign-up on the site).
 //
@@ -99,8 +102,9 @@ export default function StudyAppCTA({
   if (variant === "nav") {
     let href = "/#get-app";
     let label = "Get notified";
-    if (live && platform !== "android") {
-      href = STUDY_APP.appStoreUrl;
+    const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl || STUDY_APP.playStoreUrl;
+    if (live && storeUrl) {
+      href = storeUrl;
       label = "Get the app";
     }
     return (
@@ -117,7 +121,11 @@ export default function StudyAppCTA({
 
   // ── What the action area shows ────────────────────────────────────
   let mode;
-  if (live) mode = platform === "android" ? "android-form" : "store";
+  if (live) {
+    if (platform === "android") mode = STUDY_APP.playStoreUrl ? "store" : "android-form";
+    else if (platform === "iphone") mode = STUDY_APP.appStoreUrl ? "store" : "launch-form";
+    else mode = "store";
+  }
   else mode = "launch-form";
   // Compact variants keep the form behind a button so they stay slim.
   const compact = variant === "banner";
@@ -136,6 +144,7 @@ export default function StudyAppCTA({
   if (mode === "store") {
     action = (
       <StoreButton
+        platform={platform}
         btnClass={btnClass}
         showQr={platform === "desktop" && variant !== "banner"}
         onClick={() => track("app_store")}
@@ -183,13 +192,13 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {`Free to download · ${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone`}
+      {`Free to download · ${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone and Android`}
     </p>
   );
   // Until launch, say plainly where it will be.
   const soon = !live && (
     <p className="tb-appcta__soon">
-      <AppStoreGlyph /> Coming soon to the App Store
+      <AppStoreGlyph /> Coming soon on iPhone and Android
     </p>
   );
 
@@ -275,15 +284,19 @@ function AppStoreGlyph() {
   );
 }
 
-function StoreButton({ btnClass, showQr, onClick }) {
+function StoreButton({ platform, btnClass, showQr, onClick }) {
   const [qrSvg, setQrSvg] = useState(null);
+  const apple = platform !== "android" && STUDY_APP.appStoreUrl;
+  const google = platform !== "iphone" && STUDY_APP.playStoreUrl;
+  // The QR code opens tuterly.com.au, which sends each phone to its store.
+  const qrTarget = "https://www.tuterly.com.au/#get-app";
   useEffect(() => {
-    if (!showQr || !STUDY_APP.appStoreUrl) return;
+    if (!showQr) return;
     let cancelled = false;
     import("qrcode-generator").then((mod) => {
       const qrcode = mod.default || mod;
       const qr = qrcode(0, "M");
-      qr.addData(STUDY_APP.appStoreUrl);
+      qr.addData(qrTarget);
       qr.make();
       if (!cancelled) setQrSvg(qr.createSvgTag({ cellSize: 3, margin: 2, scalable: true }));
     });
@@ -296,18 +309,25 @@ function StoreButton({ btnClass, showQr, onClick }) {
   // (public/app-store-badge.svg from Apple's marketing site).
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-      <a href={STUDY_APP.appStoreUrl} className={btnClass} onClick={onClick} rel="noopener">
-        Download free on the App Store
-      </a>
+      {apple && (
+        <a href={STUDY_APP.appStoreUrl} className={btnClass} onClick={onClick} rel="noopener">
+          Download free on the App Store
+        </a>
+      )}
+      {google && (
+        <a href={STUDY_APP.playStoreUrl} className={btnClass} onClick={onClick} rel="noopener">
+          Get it free on Google Play
+        </a>
+      )}
       {showQr && qrSvg && (
         <div className="tb-appcta__qr">
           <div
-            aria-label="QR code that opens the App Store on your phone"
+            aria-label="QR code that opens Tuterly on your phone"
             role="img"
             className="tb-appcta__qr-code"
             dangerouslySetInnerHTML={{ __html: qrSvg }}
           />
-          <span className="tb-small tb-muted" style={{ maxWidth: 130 }}>Scan with your iPhone camera</span>
+          <span className="tb-small tb-muted" style={{ maxWidth: 130 }}>Scan with your phone camera</span>
         </div>
       )}
     </div>
@@ -335,7 +355,7 @@ function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
-        ? "It's iPhone only for now. We'll email you once when Android is ready."
+        ? "It's coming to Android soon. We'll email you once when it's ready."
         : "Get notified when it launches. We'll email you once, when it's on the App Store.";
 
   async function submit(e) {

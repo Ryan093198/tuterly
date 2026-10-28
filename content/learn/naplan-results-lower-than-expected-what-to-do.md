@@ -61,6 +61,6 @@ In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 
 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an app for iPhone and Android from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 Related reading: [how to read your child's NAPLAN results](/learn/how-to-read-naplan-results-victorian-parents).

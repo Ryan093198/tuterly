@@ -64,7 +64,7 @@ Look for a maths tutor who understands the Victorian Curriculum and knows how to
 
 Whether your child is in Year 5 and just starting to wobble, or in Year 9 and genuinely dreading the subject, the right support can shift things significantly.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong, see a worked solution, and practise fresh versions at their own pace until each one is mastered. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an app for iPhone and Android from Bayside Academics: they snap the maths questions they get wrong, see a worked solution, and practise fresh versions at their own pace until each one is mastered. It works alongside a tutor or on its own.
 
 ---
 

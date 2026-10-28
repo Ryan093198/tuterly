@@ -10,14 +10,14 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Maths Practice Tests to Improve Marks, Years 7 to 10";
 const DESCRIPTION =
-  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly iPhone app.";
+  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly app for iPhone and Android.";
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: "website" },
+  openGraph: { images: ["/og-tuterly.png"], title: TITLE, description: DESCRIPTION, url: URL, type: "website" },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 

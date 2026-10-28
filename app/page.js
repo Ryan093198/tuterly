@@ -25,7 +25,7 @@ const LOGIN_DESCRIPTION =
 
 const HOME_TITLE = `${STUDY_APP.name}: help your child improve their maths marks`;
 const HOME_DESCRIPTION = `Help your child improve their maths marks in Years 7 to 10. ${STUDY_APP.name} is the self-learning maths app built based on your child’s level and understanding: it turns the questions they haven’t fully understood into practice until each one is mastered. Designed by Australian educators. ${STUDY_APP.priceLine}.`;
-const HOME_OG = "/og-tuterly-study.png";
+const HOME_OG = "/og-tuterly.png";
 
 async function showLoginCard(sp) {
   const h = await headers();
@@ -76,7 +76,7 @@ function homeSchema() {
     name: "Tuterly",
     url: SITE_URL,
     logo: `${SITE_URL}/og-image.png`,
-    description: `Tuterly makes ${STUDY_APP.name}, an iPhone app for Years 7 to 10 maths, and free maths resources for Victorian families.`,
+    description: `Tuterly makes ${STUDY_APP.name}, an app for iPhone and Android for Years 7 to 10 maths, and free maths resources for Victorian families.`,
     areaServed: { "@type": "Place", name: "Melbourne, Victoria, Australia" },
     parentOrganization: { "@type": "Organization", name: "Bayside Academics", url: "https://baysideacademics.com.au" },
   };

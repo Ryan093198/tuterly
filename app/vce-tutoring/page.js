@@ -17,7 +17,7 @@ export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -109,7 +109,7 @@ export default function VceTutoringPage() {
             <AppHeroBlock
               placement="vce_tutoring_hero"
               heading="In Year 9 or 10? Fix the maths gaps before VCE."
-              sub={`${name} is an iPhone app for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It doesn’t cover VCE subjects.`}
+              sub={`${name} is an app for iPhone and Android for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It doesn’t cover VCE subjects.`}
             />
           </Fade>
         </div>
@@ -219,7 +219,7 @@ export default function VceTutoringPage() {
               A private tutor in Melbourne usually costs $80 to $100 an hour. For VCE, a tutor who knows the study design can explain new content, read your child’s writing and work through past papers with them. An app can’t do that.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              For Years 7 to 10 maths, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store, on iPhone.
+              For Years 7 to 10 maths, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store and Google Play, on iPhone and Android.
             </p>
           </Fade>
         </div>

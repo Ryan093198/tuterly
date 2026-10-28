@@ -69,7 +69,7 @@ export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -114,7 +114,7 @@ export default function SelectiveEntryPrepPage() {
             <AppHeroBlock
               placement="selective_entry_hero"
               heading="In Year 7 or 8? Get their school maths solid first."
-              sub={`${name} is an iPhone app for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It covers school maths, not the reasoning or writing sections.`}
+              sub={`${name} is an app for iPhone and Android for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It covers school maths, not the reasoning or writing sections.`}
             />
           </Fade>
         </div>
@@ -213,7 +213,7 @@ export default function SelectiveEntryPrepPage() {
               A private tutor in Melbourne usually costs $80 to $100 an hour. For the reasoning and writing sections, a tutor’s feedback is hard to replace.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              For school maths in Years 7 and 8, between sessions or on its own, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store, on iPhone.
+              For school maths in Years 7 and 8, between sessions or on its own, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store and Google Play, on iPhone and Android.
             </p>
           </Fade>
         </div>

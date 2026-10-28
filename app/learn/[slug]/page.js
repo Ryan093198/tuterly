@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
     title: { absolute: `${post.title} | Tuterly` },
     description: post.description,
     alternates: { canonical: `${SITE_URL}/learn/${slug}` },
-    openGraph: {
+    openGraph: { images: ["/og-tuterly.png"],
       title: `${post.title} | Tuterly`,
       description: post.description,
       url: `${SITE_URL}/learn/${slug}`,

@@ -66,7 +66,7 @@ If homework battles are a regular feature in your household, or if your child is
 
 If you go down that path, ask the tutor for a short note after each session on what was worked on and what to practise before the next one. That way you can support the practice at home without having to re-teach anything yourself.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an app for iPhone and Android from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 ---
 

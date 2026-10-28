@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
     title: metaTitle,
     description: metaDescription,
     alternates: { canonical: url },
-    openGraph: {
+    openGraph: { images: ["/og-tuterly.png"],
       title: metaTitle,
       description: metaDescription,
       url,

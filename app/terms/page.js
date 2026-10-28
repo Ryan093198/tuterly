@@ -12,7 +12,7 @@ export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,

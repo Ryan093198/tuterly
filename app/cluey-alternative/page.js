@@ -9,14 +9,14 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 const TITLE = "Cluey Alternative: Cluey Tutoring vs the Tuterly App";
 const DESCRIPTION =
-  "Comparing Cluey Learning with Tuterly, an iPhone app for Years 7 to 10 maths. What each one does, what each costs, and when Cluey is the better choice.";
+  "Comparing Cluey Learning with Tuterly, an app for iPhone and Android for Years 7 to 10 maths. What each one does, what each costs, and when Cluey is the better choice.";
 const URL = `${SITE_URL}/cluey-alternative`;
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -32,12 +32,12 @@ export const metadata = {
 // Every cell must stay true. Cluey facts are limited to what this page
 // already said about Cluey; nothing new is claimed about them.
 const COMPARISON_ROWS = [
-  { label: "What it is", app: "An iPhone app for maths practice", competitor: "Online tutoring with a tutor" },
+  { label: "What it is", app: "An app for iPhone and Android for maths practice", competitor: "Online tutoring with a tutor" },
   { label: "Live sessions with a tutor", app: "No", competitor: "Yes" },
   { label: "Who explains a new topic", app: "No live teacher. Worked solutions, Explain this and Study notes", competitor: "A tutor, live, in Cluey’s online classroom" },
   { label: "Lesson content", app: "Your child’s own wrong answers, with topics from the Victorian Curriculum 2.0", competitor: "Cluey’s own structured lesson content" },
   { label: "Practice on the exact questions your child got wrong", app: "Yes: snap it, then similar questions until it’s mastered", competitor: "You can bring them to a session" },
-  { label: "When it happens", app: "Any day, a few minutes at a time, on their iPhone", competitor: "At booked session times" },
+  { label: "When it happens", app: "Any day, a few minutes at a time, on their phone", competitor: "At booked session times" },
   { label: "Scheduling and payment", app: "Nothing to schedule. A weekly subscription, cancel any time", competitor: "Handled by Cluey" },
   { label: "What parents see", app: "Week in review: questions added and mastered, test scores, trickiest topic", competitor: "Reports after sessions" },
   { label: "Covers", app: "Years 7 to 10 maths only", competitor: "Check with Cluey for subjects and year levels" },
@@ -102,7 +102,7 @@ export default function ClueyAlternativePage() {
               Considering Cluey? Here’s how it compares with Tuterly.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Cluey is one of the more established online tutoring brands in Australia, and for a lot of families it’s a perfectly good fit. {STUDY_APP.name} isn’t a cheaper Cluey. It’s an iPhone app for Years 7 to 10 maths that does a different job: your child practises the exact questions they get wrong, a few minutes a day. This page is an honest look at both, including when Cluey is the better choice.
+              Cluey is one of the more established online tutoring brands in Australia, and for a lot of families it’s a perfectly good fit. {STUDY_APP.name} isn’t a cheaper Cluey. It’s an app for iPhone and Android for Years 7 to 10 maths that does a different job: your child practises the exact questions they get wrong, a few minutes a day. This page is an honest look at both, including when Cluey is the better choice.
             </p>
             <AppHeroBlock placement="cluey_alternative_hero" />
           </Fade>
@@ -154,7 +154,7 @@ export default function ClueyAlternativePage() {
               ))}
             </ul>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginTop: 18 }}>
-              It’s a 1-week free trial, then $7.99 a week, cancel any time. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor. {STUDY_APP.name} is coming soon to the App Store.
+              It’s a 1-week free trial, then $7.99 a week, cancel any time. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor. {STUDY_APP.name} is coming soon to the App Store and Google Play.
             </p>
           </Fade>
         </div>

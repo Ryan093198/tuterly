@@ -265,14 +265,14 @@ Pick the single best topic to write next. Return JSON only.`;
 // =====================================================================
 // Tuterly facts + CTA (single source: lib/study-app.js)
 // =====================================================================
-const STUDY_APP_FACTS_BLOCK = `- An iPhone app for Years 7 to 10 maths (Victorian Curriculum 2.0), made by Bayside Academics. No Android version yet.
+const STUDY_APP_FACTS_BLOCK = `- An app for iPhone and Android for Years 7 to 10 maths (Victorian Curriculum 2.0), made by Bayside Academics.
 - A student snaps a photo of a question they got wrong. It is saved with a full worked solution, hidden behind "Show solution" so they can try again first.
 - Straight away the app makes a similar question on the same concept that is genuinely different, not the same question with the numbers changed, with its own worked solution. Each generated question is solved a second time by an independent check.
 - Each question goes To fix, then Learning, then Mastered: a star for each similar question right, mastered at three stars (or "I've got it"). Then they can try a harder one. A Practice tab has Test any topic (a short test on any topic in their year), Fix my mistakes, Study notes (a revision sheet) and a weekly review. Students can upload a whole test. XP, stars, a weekly streak and weekly goals.
 - Wrong answers get "Explain this": a short explanation of the step that went wrong.
 - Parents link with a code and see a weekly summary and test scores, not their child's photos. Tutors can link too and set snap goals.
 - Price: a 1-week free trial, then $7.99 a week. Carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne; topics follow the Victorian Curriculum 2.0. Students can also upload a whole school test (photos, a PDF or a Word document); the app finds each question, automatically stores the ones marked wrong and writes a fresh question on each.
-- ${STUDY_APP.stage === "live" ? "It is free to download on the App Store." : "It is not on the App Store yet: say it is coming soon to the App Store. Never say it can be downloaded now."}`;
+- ${STUDY_APP.stage === "live" ? "It is free to download on the App Store." : "It is not on the App Store or Google Play yet: say it is coming soon to the App Store and Google Play. Never say it can be downloaded now."}`;
 
 const STUDY_APP_CTA_BLOCK = `## Turn the questions they get wrong into practice
 

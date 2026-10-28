@@ -25,14 +25,14 @@ export default function PriceTrial({ id = "price", children }) {
         </li>
         <li>
           <span className="pt__when">Day 1 to 7</span>
-          <span className="pt__what">Cancel in your iPhone settings before the week ends and you pay nothing.</span>
+          <span className="pt__what">Cancel in your phone’s subscription settings before the week ends and you pay nothing.</span>
         </li>
         <li>
           <span className="pt__when">Day 8</span>
           <span className="pt__what">${STUDY_APP.priceWeek} a week starts. Cancel any time.</span>
         </li>
       </ol>
-      {!live && <p className="pt__note">Not on the App Store yet. This is the price when it launches.</p>}
+      {!live && <p className="pt__note">Not on the App Store or Google Play yet. This is the price when it launches.</p>}
       {children}
     </div>
   );

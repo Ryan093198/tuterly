@@ -73,7 +73,7 @@ A good tutor will not just re-run NAPLAN practice papers. They will identify the
 
 Look for a tutor who understands the Victorian Curriculum and can translate your child's NAPLAN result into a real learning plan, and who tells you after each session what was worked on and how your child responded. That is how you track progress without guessing.
 
-If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
+If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an app for iPhone and Android from Bayside Academics: they snap the maths questions they get wrong and practise fresh versions until each one is mastered. It works alongside a tutor or on its own.
 
 ## Start with a practice test
 

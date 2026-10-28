@@ -62,7 +62,7 @@ A tutor who knows the Victorian Curriculum can pinpoint exactly which Year 8 alg
 
 Ask for a short note after each session on what was covered and how your child responded, so the work continues in a structured way, not just before the next test.
 
-[{{STUDY_APP}}](/) is an iPhone app for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 8 topic, including the algebra units. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
+[{{STUDY_APP}}](/) is an app for iPhone and Android for Years 7 to 10 maths from Bayside Academics, built for the practice between lessons, alongside a tutor or on its own. Your child snaps a question they got wrong, tries it again, checks the full worked solution if they need it, then gets a fresh question on the same idea, genuinely different rather than the same numbers swapped, until it is mastered. Test any topic sets a short test on any Year 8 topic, including the algebra units. If you link with your child's code, Week in review shows you what they added and mastered that week, their test scores and their trickiest topic.
 
 ---
 

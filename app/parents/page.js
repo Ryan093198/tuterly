@@ -163,7 +163,7 @@ export default function ParentsPage() {
       <CtaBand
         id="pp-final"
         title="Better maths marks start with the next question they get wrong."
-        lead={`${name} is for Years 7 to 10 maths on iPhone. ${STUDY_APP.priceLine}.`}
+        lead={`${name} is for Years 7 to 10 maths on iPhone and Android. ${STUDY_APP.priceLine}.`}
       >
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />
       </CtaBand>

@@ -28,7 +28,7 @@ This is where tutoring becomes about extension, not remediation. A tutor can int
 
 Whether your child needs to catch up or be pushed further, the tutor needs to be the right match. Someone who understands the Victorian curriculum, communicates clearly about what they're working on, and adapts to your child rather than running a one-size-fits-all program.
 
-Ask any tutor you are considering how they will report back after each session, so you can see what was covered and how your child is progressing, and what your child should practise in between. For Years 7 to 10 maths, there is also [{{STUDY_APP}}](/), an iPhone app from Bayside Academics: your child snaps the questions they get wrong, sees a worked solution, and practises fresh versions until each one is mastered. It works alongside a tutor or, for smaller gaps, on its own.
+Ask any tutor you are considering how they will report back after each session, so you can see what was covered and how your child is progressing, and what your child should practise in between. For Years 7 to 10 maths, there is also [{{STUDY_APP}}](/), an app for iPhone and Android from Bayside Academics: your child snaps the questions they get wrong, sees a worked solution, and practises fresh versions until each one is mastered. It works alongside a tutor or, for smaller gaps, on its own.
 
 ---
 

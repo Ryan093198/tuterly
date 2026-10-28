@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       alternates: { canonical: url },
-      openGraph: { title, description, url, type: "website" },
+      openGraph: { images: ["/og-tuterly.png"], title, description, url, type: "website" },
     };
   }
   const suburb = getSeoSuburb(slug);
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       alternates: { canonical: url },
-      openGraph: { title, description, url, type: "website" },
+      openGraph: { images: ["/og-tuterly.png"], title, description, url, type: "website" },
       ...(robots ? { robots } : {}),
     };
   }

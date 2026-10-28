@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "Guides for Melbourne parents - when to tutor, what to expect at each year level, and how to support your child's learning at home.",
   alternates: { canonical: `${SITE_URL}/learn` },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: "Learn | Tuterly",
     description:
       "Guides for Melbourne parents - when to tutor, what to expect at each year level, and how to support your child's learning at home.",

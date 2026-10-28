@@ -137,3 +137,18 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - VCE prep now names General Maths alongside Methods and Specialist: /vce-tutoring (title, description, intro, a new VCE General Mathematics subject card, the "Before VCE" heading, and statistics + financial maths added to the Years 9 and 10 topics VCE leans on), /practice-maths-tests-secondary, /atar-planner.
 - Learn: "Further Mathematics" (replaced by General Mathematics from 2023) renamed to General Mathematics in 7 articles, with a note in the three Further-specific guides. Slugs unchanged.
 - To fact-check: the Year 11 and Year 12 General Maths guides still describe Further’s structure ("application modules", exam formats). The current study design has four compulsory areas of study in Units 3 and 4; those two articles need checking against VCAA before launch.
+
+## 28 Oct: pre-launch fixes
+- Deleted the two stray duplicate articles ("primary-maths-when-to-worry 2.md", "year-7-transition-maths-english 2.md").
+- New social sharing image public/og-tuterly.png (current headline, real app screenshot, no invented numbers), used by the home page and as the site default. The old og-tuterly-study.png is deleted; og-image.png is still referenced only as the logo in structured data.
+- Privacy policy rewritten to cover the Tuterly app (what's collected, how it's used, who sees what, children, Apple payments, AI processing, the waitlist), with the tutoring platform and the paused find-a-tutor service kept, plus an OAIC complaints line. **Ryan to confirm before launch** (or have a lawyer check):
+  - Where the app's data is stored (which Supabase region; the policy only names Singapore for the tutoring platform).
+  - That the app uses Sentry for crash reports, and email sign-in codes and notifications as described.
+  - "Students under 16 need a parent or guardian’s permission": the app needs a consent step to match (TUTERLY_STUDY_SPEC lists it as a must before public release).
+  - The draft Children’s Online Privacy Code (due by 10 Dec 2026) may add requirements.
+- Sharing image added to every page's openGraph (pages that set their own openGraph were dropping the site default, so most pages shared with no image).
+- General Maths Year 11 and Year 12 guides rewritten against the VCAA Mathematics Study Design (2023) and the General Mathematics exam specifications (March 2025): four compulsory Units 3 and 4 topics, SAC 24% + 16%, two exams at 30% each; no Further "modules". The Methods vs General comparison article updated to match.
+
+## 28 Oct: iPhone and Android
+- Ryan: the app is being built for both iPhone and Android and will be available soon on both. Every "iPhone app", "on iPhone", "No Android yet", the Android FAQ, "Coming soon to the App Store" (now "...and Google Play"), the price timeline ("phone's subscription settings"), the privacy policy's payments section (App Store or Google Play) and the blog writer's facts now say iPhone and Android.
+- Going live: set stage "live" and fill in appStoreUrl and/or playStoreUrl in lib/study-app.js. iPhone visitors then see "Download free on the App Store", Android visitors "Get it free on Google Play", desktop both, plus a QR code that opens tuterly.com.au on the phone.

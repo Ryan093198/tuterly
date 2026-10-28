@@ -16,7 +16,7 @@ export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: "website" },
+  openGraph: { images: ["/og-tuterly.png"], title: TITLE, description: DESCRIPTION, url: URL, type: "website" },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
@@ -88,7 +88,7 @@ const FAQS = [
   },
   {
     q: "Is Tuterly online tutoring?",
-    a: "No. Tuterly is an iPhone app for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. Topics follow the Victorian Curriculum 2.0, so it fits the same course wherever you live in the state. It is coming soon to the App Store.",
+    a: "No. Tuterly is an app for iPhone and Android for Years 7 to 10 maths, not a tutor. Your child snaps the questions they got wrong, sees the worked solution, and practises similar questions until each one is mastered. Topics follow the Victorian Curriculum 2.0, so it fits the same course wherever you live in the state. It is coming soon to the App Store and Google Play.",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               Help for families right across the state.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 20 }}>
-              Because sessions run online, a good online tutor can work with students anywhere in the state, and {STUDY_APP.name} works the same on an iPhone in any of these places:
+              Because sessions run online, a good online tutor can work with students anywhere in the state, and {STUDY_APP.name} works the same on a phone in any of these places:
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {REGIONS.map((r) => (
@@ -205,7 +205,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               Years 7 to 10 maths practice, statewide.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              {STUDY_APP.name} is an iPhone app, not a tutoring service. It was designed by Australian educators at Bayside Academics in Brighton, Melbourne, and its topics follow the Victorian Curriculum 2.0, the same course whether your child is at school in the city or the country. Your child snaps the maths questions they got wrong (or uploads a whole marked test), sees the worked solution when they’re ready, and practises similar questions on the same idea until each one is mastered.
+              {STUDY_APP.name} is an app for iPhone and Android, not a tutoring service. It was designed by Australian educators at Bayside Academics in Brighton, Melbourne, and its topics follow the Victorian Curriculum 2.0, the same course whether your child is at school in the city or the country. Your child snaps the maths questions they got wrong (or uploads a whole marked test), sees the worked solution when they’re ready, and practises similar questions on the same idea until each one is mastered.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
               There’s no travel and nothing to book, which matters most where tutors are hard to find. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week, cancel any time.

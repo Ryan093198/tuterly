@@ -16,7 +16,7 @@ export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: URL },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: TITLE,
     description: DESCRIPTION,
     url: URL,
@@ -174,7 +174,7 @@ export default function OnlineTutoringPage() {
               Not a tutor. The practice in between.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 28 }}>
-              {STUDY_APP.name} is an iPhone app for Years 7 to 10 maths, designed by Australian educators at Bayside Academics in Brighton, Melbourne, with topics from the Victorian Curriculum 2.0. It doesn’t run sessions or teach new topics live. It works alongside online tutoring, or on its own when practice is mostly what your child needs. A 1-week free trial, then $7.99 a week: a whole week costs less than 10 minutes with a private tutor.
+              {STUDY_APP.name} is an app for iPhone and Android for Years 7 to 10 maths, designed by Australian educators at Bayside Academics in Brighton, Melbourne, with topics from the Victorian Curriculum 2.0. It doesn’t run sessions or teach new topics live. It works alongside online tutoring, or on its own when practice is mostly what your child needs. A 1-week free trial, then $7.99 a week: a whole week costs less than 10 minutes with a private tutor.
             </p>
           </Fade>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>

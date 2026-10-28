@@ -9,7 +9,7 @@ export const metadata = {
   description:
     "Advice for new and experienced tutors: how to get started, build your client base, and run better sessions.",
   alternates: { canonical: `${SITE_URL}/tutors/blog` },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: "Tutor Blog | Tuterly",
     description:
       "Advice for new and experienced tutors: how to get started, build your client base, and run better sessions.",

@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website" },
+    openGraph: { images: ["/og-tuterly.png"], title, description, url, type: "website" },
     ...(robots ? { robots } : {}),
   };
 }
@@ -87,7 +87,7 @@ export default async function SuburbPage({ params }) {
       name,
       operatingSystem: "iOS",
       applicationCategory: "EducationalApplication",
-      description: `An iPhone app for ${STUDY_APP_FACTS.years} ${STUDY_APP_FACTS.subject}: students snap the questions they get wrong and practise fresh versions until each one is mastered.`,
+      description: `An app for iPhone and Android for ${STUDY_APP_FACTS.years} ${STUDY_APP_FACTS.subject}: students snap the questions they get wrong and practise fresh versions until each one is mastered.`,
       publisher: { "@type": "Organization", name: "Tuterly", url: SITE_URL },
     },
   };
@@ -112,7 +112,7 @@ export default async function SuburbPage({ params }) {
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               {data.blurb ||
-                `Looking for tutoring in ${data.name}? Help with maths usually comes down to a private tutor or regular practice on the exact questions they get wrong. For Years 7 to 10, ${name} is an iPhone app that does the practice part.`}
+                `Looking for tutoring in ${data.name}? Help with maths usually comes down to a private tutor or regular practice on the exact questions they get wrong. For Years 7 to 10, ${name} is an app for iPhone and Android that does the practice part.`}
             </p>
             <AppHeroBlock placement="suburb_hero" />
           </Fade>
@@ -141,7 +141,7 @@ export default async function SuburbPage({ params }) {
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 6 }}>{name}</h3>
               <p style={{ fontSize: 15, fontWeight: 700, color: c.text, marginBottom: 10 }}>1-week free trial, then ${STUDY_APP.priceWeek} a week</p>
               <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65 }}>
-                An iPhone app for Years 7 to 10 maths. Your child snaps the questions they got wrong and practises fresh versions until each one is mastered, any day of the week. {STUDY_APP.priceVsTutor}
+                An app for iPhone and Android for Years 7 to 10 maths. Your child snaps the questions they got wrong and practises fresh versions until each one is mastered, any day of the week. {STUDY_APP.priceVsTutor}
               </p>
             </div>
           </div>

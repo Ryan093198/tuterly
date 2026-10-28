@@ -20,7 +20,7 @@ export const metadata = {
   title: { absolute: "Tutoring across Melbourne | Tuterly" },
   description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/tutoring` },
-  openGraph: {
+  openGraph: { images: ["/og-tuterly.png"],
     title: "Tutoring across Melbourne | Tuterly",
     description: DESCRIPTION,
     url: `${SITE_URL}/tutoring`,
@@ -46,7 +46,7 @@ export default function TutoringDirectory() {
               Tutoring across Melbourne.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Across Melbourne, help with maths usually comes down to two options: a private tutor, usually ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour, or regular practice on the exact questions your child gets wrong. For Years 7 to 10, {STUDY_APP.name} is an iPhone app that does the practice part, with a 1-week free trial, then ${STUDY_APP.priceWeek} a week.
+              Across Melbourne, help with maths usually comes down to two options: a private tutor, usually ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour, or regular practice on the exact questions your child gets wrong. For Years 7 to 10, {STUDY_APP.name} is an app for iPhone and Android that does the practice part, with a 1-week free trial, then ${STUDY_APP.priceWeek} a week.
             </p>
             <AppHeroBlock placement="tutoring_hero" />
           </Fade>

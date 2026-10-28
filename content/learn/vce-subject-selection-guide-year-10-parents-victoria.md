@@ -60,7 +60,7 @@ Targeted work in Term 3 and Term 4 of Year 10 can consolidate the foundational s
 
 Whoever you work with, ask how they will show you whether those gaps are genuinely closing, and what your child should practise between sessions to build consistency, not just pre-exam cramming.
 
-If the question is Maths Methods, the foundations are Year 9 and 10 algebra. [{{STUDY_APP}}](/), an iPhone app for Years 7 to 10 maths, lets your child snap the questions they get wrong and practise fresh versions until each one is mastered, and Test any topic gives a quick read on which Year 10 topics are secure.
+If the question is Maths Methods, the foundations are Year 9 and 10 algebra. [{{STUDY_APP}}](/), an app for iPhone and Android for Years 7 to 10 maths, lets your child snap the questions they get wrong and practise fresh versions until each one is mastered, and Test any topic gives a quick read on which Year 10 topics are secure.
 
 Subject selection closes fast. Getting the right support in place now means your child walks into Year 11 with confidence, not doubt.
 
