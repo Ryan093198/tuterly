@@ -44,7 +44,7 @@ export function AppLowerCostSection({ competitor, placement }) {
         </p>
         <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: "0 0 8px" }}>
           {[
-            `Cost: a 1-week free trial, then $7.99 a week.`,
+            `Cost: a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99).`,
             "Covers: Years 7 to 10 maths only, on iPhone and Android.",
             "Designed by Australian educators at Bayside Academics, with topics from the Victorian Curriculum 2.0.",
             "Parents see a weekly summary and topic test scores, not their child's photos.",

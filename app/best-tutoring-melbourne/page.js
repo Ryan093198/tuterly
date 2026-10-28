@@ -74,7 +74,7 @@ const CATEGORIES = [
     name: "Practice apps (not tutoring)",
     examples: "Tuterly, for Years 7 to 10 maths",
     goodFor:
-      "The practice between lessons, or instead of them when that’s mostly what your child needs. In Tuterly they snap the maths questions they got wrong and practise similar ones until each is mastered. A 1-week free trial, then $7.99 a week.",
+      "The practice between lessons, or instead of them when that’s mostly what your child needs. In Tuterly they snap the maths questions they got wrong and practise similar ones until each is mastered. A 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99).",
     tradeoffs:
       "An app doesn’t replace a person. There’s no live teacher to explain a brand-new topic, notice when your child is stuck or keep them motivated. Tuterly covers Years 7 to 10 maths only, on iPhone and Android.",
   },
@@ -192,7 +192,7 @@ export default function BestTutoringMelbournePage() {
               {STUDY_APP.name} is an app for iPhone and Android, not a tutoring service. It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, for one job: practising the exact maths questions your child gets wrong. They snap a question (or upload a whole marked test), see the full worked solution when they’re ready, and straight away get a similar question on the same idea that’s genuinely different. Three stars and it’s mastered. Topics follow the Victorian Curriculum 2.0.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              There’s also Test any topic for a short test on any topic in their year, and Study notes for a revision sheet. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor.
+              There’s also Test any topic for a short test on any topic in their year, and Study notes for a revision sheet. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99). A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
               It’s not the right fit for every family. If your child needs someone to teach them a topic from scratch, needs help with VCE, English or primary school work, or simply works better with a person beside them, choose a tutor from the categories above. Plenty of families use both: the tutor teaches, and the app keeps the questions they got wrong coming back until they’re mastered.

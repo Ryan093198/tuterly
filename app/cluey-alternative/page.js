@@ -41,7 +41,7 @@ const COMPARISON_ROWS = [
   { label: "Scheduling and payment", app: "Nothing to schedule. A weekly subscription, cancel any time", competitor: "Handled by Cluey" },
   { label: "What parents see", app: "Week in review: questions added and mastered, test scores, trickiest topic", competitor: "Reports after sessions" },
   { label: "Covers", app: "Years 7 to 10 maths only", competitor: "Check with Cluey for subjects and year levels" },
-  { label: "Cost", app: "1-week free trial, then $7.99 a week", competitor: "Per session. Check Cluey for current prices" },
+  { label: "Cost", app: "1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99)", competitor: "Per session. Check Cluey for current prices" },
 ];
 
 function SideBySide({ rows, competitorName }) {
@@ -154,7 +154,7 @@ export default function ClueyAlternativePage() {
               ))}
             </ul>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginTop: 18 }}>
-              It’s a 1-week free trial, then $7.99 a week, cancel any time. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor. {STUDY_APP.name} is coming soon to the App Store and Google Play.
+              It’s a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99), cancel any time. A private tutor in Melbourne usually costs $80 to $100 an hour, so a whole week costs less than 10 minutes with a private tutor. {STUDY_APP.name} is coming soon to the App Store and Google Play.
             </p>
           </Fade>
         </div>

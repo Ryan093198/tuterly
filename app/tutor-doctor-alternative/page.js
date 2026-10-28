@@ -41,7 +41,7 @@ const COMPARISON_ROWS = [
   { label: "When it happens", app: "Any day, a few minutes at a time, on their phone", competitor: "At booked session times" },
   { label: "What parents see", app: "Week in review: questions added and mastered, test scores, trickiest topic", competitor: "Ask your local franchisee" },
   { label: "Covers", app: "Years 7 to 10 maths only", competitor: "Check with your local franchisee" },
-  { label: "Cost", app: "1-week free trial, then $7.99 a week", competitor: "Set by the franchisee, typically $80 to $130 an hour" },
+  { label: "Cost", app: "1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99)", competitor: "Set by the franchisee, typically $80 to $130 an hour" },
 ];
 
 function SideBySide({ rows, competitorName }) {
@@ -140,7 +140,7 @@ export default function TutorDoctorAlternativePage() {
               They can also use Test any topic for a short test on any topic in their year, Fix my mistakes to work through the questions they got wrong, and Study notes for a revision sheet before a test. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic, not their child’s photos.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, with topics from the Victorian Curriculum 2.0. It’s a 1-week free trial, then $7.99 a week, cancel any time. Coming soon to the App Store and Google Play.
+              It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, with topics from the Victorian Curriculum 2.0. It’s a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99), cancel any time. Coming soon to the App Store and Google Play.
             </p>
           </Fade>
         </div>

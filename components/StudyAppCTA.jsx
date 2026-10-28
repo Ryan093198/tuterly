@@ -101,7 +101,7 @@ export default function StudyAppCTA({
   // hero (#get-app), so the nav never grows a form.
   if (variant === "nav") {
     let href = "/#get-app";
-    let label = "Get notified";
+    let label = "Get 50% off";
     const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl || STUDY_APP.playStoreUrl;
     if (live && storeUrl) {
       href = storeUrl;
@@ -162,7 +162,7 @@ export default function StudyAppCTA({
         ? "Join the free pilot"
         : mode === "android-button"
           ? "Get notified for Android"
-          : "Get notified when it launches";
+          : "Get 50% off when it launches";
     action = (
       <button
         type="button"
@@ -192,7 +192,9 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {`Free to download · ${STUDY_APP.priceLine} · Years 7 to 10 maths · iPhone and Android`}
+      {live
+        ? `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`
+        : `Free to download · 1-week free trial · ${STUDY_APP.offerShort}`}
     </p>
   );
   // Until launch, say plainly where it will be.
@@ -350,13 +352,13 @@ function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname
   const [error, setError] = useState("");
 
   const label =
-    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Get notified";
+    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Get 50% off";
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? "It's coming to Android soon. We'll email you once when it's ready."
-        : "Get notified when it launches. We'll email you once, when it's on the App Store.";
+        : `Sign up before launch and get ${STUDY_APP.name} for $${STUDY_APP.earlyPriceWeek} a week for life, 50% off the $${STUDY_APP.priceWeek} public price. We'll email you when it's ready.`;
 
   async function submit(e) {
     e.preventDefault();

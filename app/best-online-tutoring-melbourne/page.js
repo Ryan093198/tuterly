@@ -85,7 +85,7 @@ const FAQS = [
   },
   {
     q: "How much does online tutoring cost in Melbourne?",
-    a: "It ranges widely. A private tutor in Melbourne usually costs $80 to $100 an hour, national online agencies typically charge $90 to $150 an hour, and independent uni-student tutors are often $30 to $50. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week.",
+    a: "It ranges widely. A private tutor in Melbourne usually costs $80 to $100 an hour, national online agencies typically charge $90 to $150 an hour, and independent uni-student tutors are often $30 to $50. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99).",
   },
   {
     q: "What is the best online tutoring company in Melbourne?",
@@ -212,7 +212,7 @@ export default function BestOnlineTutoringMelbournePage() {
               {STUDY_APP.name} is an app for iPhone and Android designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne. It does a different job from a tutor: your child snaps the maths questions they got wrong (or uploads a whole marked test), sees the full worked solution when they’re ready, and straight away practises a similar question on the same idea, until each one is mastered. Topics follow the Victorian Curriculum 2.0.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              It also has Test any topic, Fix my mistakes and Study notes, and parents see a Week in review of what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week, cancel any time. A whole week costs less than 10 minutes with a private tutor.
+              It also has Test any topic, Fix my mistakes and Study notes, and parents see a Week in review of what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99), cancel any time. A whole week costs less than 10 minutes with a private tutor.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
               It is not for everyone. If your child needs someone to teach a topic live, needs help with VCE, English or primary work, or does better with a person keeping them on track, an online tutor is the better call. Many families use both: the tutor teaches, the app handles the practice in between.

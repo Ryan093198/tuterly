@@ -76,7 +76,7 @@ const FAQS = [
   },
   {
     q: "How much does online tutoring cost in Victoria?",
-    a: "National online agencies typically charge $90 to $150 an hour, and a private tutor usually costs $80 to $100 an hour. Independent tutors are often cheaper. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week, and works the same anywhere in Victoria.",
+    a: "National online agencies typically charge $90 to $150 an hour, and a private tutor usually costs $80 to $100 an hour. Independent tutors are often cheaper. If what your child mainly needs is Years 7 to 10 maths practice rather than lessons, Tuterly is a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99), and works the same anywhere in Victoria.",
   },
   {
     q: "Can online tutoring cover VCE across all of Victoria?",
@@ -208,7 +208,7 @@ export default function BestOnlineTutoringVictoriaPage() {
               {STUDY_APP.name} is an app for iPhone and Android, not a tutoring service. It was designed by Australian educators at Bayside Academics in Brighton, Melbourne, and its topics follow the Victorian Curriculum 2.0, the same course whether your child is at school in the city or the country. Your child snaps the maths questions they got wrong (or uploads a whole marked test), sees the worked solution when they’re ready, and practises similar questions on the same idea until each one is mastered.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              There’s no travel and nothing to book, which matters most where tutors are hard to find. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week, cancel any time.
+              There’s no travel and nothing to book, which matters most where tutors are hard to find. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic. It’s a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99), cancel any time.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
               It doesn’t replace a tutor. For VCE, English, or a child who needs someone to teach a topic live, an online tutor is the better choice. The app is for the practice in between, or instead, when practice is mostly what your child needs.

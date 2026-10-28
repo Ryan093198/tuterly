@@ -139,7 +139,7 @@ export default async function SuburbPage({ params }) {
             </div>
             <div style={{ background: c.white, borderRadius: 18, border: `2px solid ${c.teal}`, padding: "24px 22px" }}>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 6 }}>{name}</h3>
-              <p style={{ fontSize: 15, fontWeight: 700, color: c.text, marginBottom: 10 }}>1-week free trial, then ${STUDY_APP.priceWeek} a week</p>
+              <p style={{ fontSize: 15, fontWeight: 700, color: c.text, marginBottom: 10 }}>1-week free trial, then ${STUDY_APP.earlyPriceWeek} a week if you sign up before launch</p>
               <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65 }}>
                 An app for iPhone and Android for Years 7 to 10 maths. Your child snaps the questions they got wrong and practises fresh versions until each one is mastered, any day of the week. {STUDY_APP.priceVsTutor}
               </p>
