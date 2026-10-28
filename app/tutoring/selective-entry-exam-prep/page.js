@@ -189,7 +189,7 @@ export default function SelectiveEntryPrepPage() {
               The exam’s maths questions build on Years 7 and 8 school maths. Gaps there, like fractions, negative numbers or rearranging equations, show up in harder problems too. {name} works on exactly those gaps, from the questions your child gets wrong in class, homework and school tests.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              They snap a question they got wrong and see the full worked solution. Straight away they get a similar question on the same idea, genuinely different rather than just new numbers, and each question moves from To fix to Learning to Mastered. <strong>Test any topic</strong> gives a short test on any topic in their year, and <strong>Study notes</strong> makes a one-page revision sheet.
+              They snap a question they got wrong and see the full worked solution. Straight away they get a similar question on the same idea, genuinely different rather than just new numbers, and each question moves from To fix to Learning to Mastered. <strong>Test any topic</strong> gives a short test on any topic in their year, and <strong>Study notes</strong> makes a revision sheet.
             </p>
           </Fade>
         </div>

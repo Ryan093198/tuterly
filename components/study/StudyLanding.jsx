@@ -108,9 +108,9 @@ const NOTES_FLOW = [
   },
   {
     src: `${S}/flow-notes/03-notes-sheet.png`,
-    alt: "A one-page revision sheet with a summary and the key ideas",
+    alt: "A revision sheet with a summary and the key ideas",
     title: "Get a revision sheet",
-    text: "One page, to download or share as a PDF.",
+    text: "A revision sheet, to download or share as a PDF.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function StudyLanding() {
             <div className="sl-notes__band">
               <Reveal>
                 <Eyebrow>Study notes</Eyebrow>
-                <h3 className="tb-h3" style={{ fontSize: 26, fontWeight: 900 }}>A one-page revision sheet on any topic.</h3>
+                <h3 className="tb-h3" style={{ fontSize: 26, fontWeight: 900 }}>A revision sheet on any topic.</h3>
                 <p className="tb-lead" style={{ marginTop: 10 }}>On a whole topic, or on just the questions they find hard.</p>
               </Reveal>
             </div>
@@ -332,7 +332,7 @@ export default function StudyLanding() {
           <div className="tb-tiles tb-tiles--3">
             <OptionTile icon="bank" title="The bank" text="Every question they’ve snapped, by topic, with a progress ring for each." />
             <OptionTile icon="test" tone="violet" title="Test any topic" text="A short test on any topic in their year, even with nothing snapped." />
-            <OptionTile icon="notes" tone="violet" title="Study notes" text="A one-page revision sheet, to download or share as a PDF." />
+            <OptionTile icon="notes" tone="violet" title="Study notes" text="A revision sheet, to download or share as a PDF." />
             <OptionTile icon="drill" tone="success" title="Fix my mistakes" text="The questions they got wrong, one after another." />
             <OptionTile icon="streak" tone="streak" title="Streaks and goals" text="A weekly streak and this week’s goals, with XP and stars." />
             <OptionTile icon="upload" title="Upload a whole test" text="Photos of each page, a PDF or a Word document. The wrong ones are stored automatically." />

@@ -56,7 +56,7 @@ const APP_HELPS = [
   "Years 7 to 10 school maths, with topics from the Victorian Curriculum 2.0",
   "Snap a question they got wrong in class or a school test, see the worked solution, then master fresh versions",
   "Test any topic and Fix my mistakes to keep their maths topics solid",
-  "Study notes: a one-page revision sheet on a topic, as a PDF",
+  "Study notes: a revision sheet on a topic, as a PDF",
 ];
 
 export const metadata = {

@@ -137,7 +137,7 @@ export default function TutorDoctorAlternativePage() {
               {STUDY_APP.name} isn’t a tutor and doesn’t send one to your home. It’s for the practice that happens between lessons, or instead of them when that’s what your child mostly needs. They snap a maths question they got wrong (or upload a whole marked test), see the full worked solution when they’re ready, and straight away get a similar question on the same idea. Each one they get right earns a star, and three stars means it’s mastered.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              They can also use Test any topic for a short test on any topic in their year, Fix my mistakes to work through the questions they got wrong, and Study notes for a one-page revision sheet before a test. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic, not their child’s photos.
+              They can also use Test any topic for a short test on any topic in their year, Fix my mistakes to work through the questions they got wrong, and Study notes for a revision sheet before a test. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic, not their child’s photos.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
               It was designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, with topics from the Victorian Curriculum 2.0. It’s a 1-week free trial, then $7.99 a week, cancel any time. Coming soon to the App Store.

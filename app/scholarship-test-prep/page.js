@@ -82,7 +82,7 @@ const APP_DOES = [
   "Years 7 to 10 school maths, with topics from the Victorian Curriculum 2.0",
   "Snap a maths question they got wrong, see the worked solution, then master fresh versions of it",
   "Test any topic: a short test on any maths topic in their year",
-  "Study notes: a one-page revision sheet on a topic, as a PDF",
+  "Study notes: a revision sheet on a topic, as a PDF",
 ];
 
 const APP_DOESNT = [

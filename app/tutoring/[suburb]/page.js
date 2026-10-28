@@ -36,7 +36,7 @@ const APP_STEPS = [
   { title: "See the worked solution", text: "A full worked solution, hidden behind Show solution so they can have another go first. Explain this shows the step that went wrong." },
   { title: "Practise a fresh version", text: "Straight away, a similar question on the same idea that’s genuinely different, not just new numbers. Every one is solved a second time by an independent check." },
   { title: "Until it’s mastered", text: "Each question moves from To fix to Learning to Mastered (three stars, or “I’ve got it”), then they can try a harder one." },
-  { title: "Before a test", text: "Test any topic writes a short test on any topic in their year. Fix my mistakes drills the ones they got wrong, and Study notes makes a one-page revision sheet." },
+  { title: "Before a test", text: "Test any topic writes a short test on any topic in their year. Fix my mistakes drills the ones they got wrong, and Study notes makes a revision sheet." },
   { title: "Parents see the week", text: "Link with a 6-character code to see Week in review: what was added and mastered, test scores and the trickiest topic. Not their photos." },
 ];
 
