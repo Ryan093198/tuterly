@@ -47,15 +47,19 @@
 .sl-mathcard__label { font-weight: 800; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; color: var(--mc, var(--foreground)); }
 .sl-mathcard[data-tone="danger"] { --mc: var(--danger-text); background: var(--danger-soft); border-color: transparent; box-shadow: none; }
 .sl-mathcard[data-tone="success"] { --mc: var(--success-text); }
-.sl-mathcard__body { display: grid; gap: 6px; overflow-x: auto; }
+.sl-mathcard__body { display: grid; gap: 6px; min-width: 0; }
+.sl-mathcard math[display="block"] { max-width: 100%; padding: 2px 0; }
 .sl-mathcard math { font-size: 1.12em; }
 .sl-mathcard math[display="block"] { margin: 6px 0; }
 .sl-solution { margin-top: 8px; }
 .sl-solution > summary {
-  list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px;
-  border-radius: 12px; border: 2px solid var(--border); background: var(--card); box-shadow: 0 3px 0 var(--edge);
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px;
+  border-radius: 999px; border: 0; background: var(--brand-soft); box-shadow: none;
   font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-text);
 }
+.sl-solution > summary:hover { background: var(--brand-pale); }
+.sl-solution > summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.sl-solution[open] > summary { background: var(--brand-pale); }
 .sl-solution > summary::-webkit-details-marker { display: none; }
 .sl-solution__body { margin-top: 12px; display: grid; gap: 4px; font-size: 16px; }
 

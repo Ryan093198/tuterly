@@ -248,7 +248,7 @@ export default function StudyLanding() {
             <SectionHead
               id="different"
               eyebrow="The part that matters"
-              title="Not the same question with the numbers changed."
+              title="Different questions every time."
               lead={`A question with only the numbers swapped can be answered by copying the steps from the last one. ${name} keeps the same concepts and changes at least two other things: the context, the structure, the layout, the type of numbers, or how it’s shown. Here is the example from the rules its question writer follows.`}
             />
           </Reveal>
@@ -265,7 +265,8 @@ export default function StudyLanding() {
                 </Solution>
               </MathCard>
               <MathCard label="Not this: only the numbers changed" tone="danger">
-                <p>Solve for <TeX>x</TeX>: <TeX>{"\\frac{x+4}{3} = \\frac{2x-3}{5}"}</TeX></p>
+                <p>Solve for <TeX>x</TeX>:</p>
+                <p className="sl-math__display"><TeX display>{"\\frac{x+4}{3} = \\frac{2x-3}{5}"}</TeX></p>
               </MathCard>
             </div>
             <div className="tb-stack">
@@ -276,17 +277,21 @@ export default function StudyLanding() {
                 <Solution>
                   <TeX display>{"\\frac{c+6}{3} = \\frac{3c-2}{4}"}</TeX>
                   <p>Multiply both sides by 12:</p>
-                  <TeX display>{"4(c+6) = 3(3c-2) \\quad\\Rightarrow\\quad 4c + 24 = 9c - 6 \\quad\\Rightarrow\\quad c = 6"}</TeX>
+                  <TeX display>{"4(c+6) = 3(3c-2)"}</TeX>
+                  <TeX display>{"4c + 24 = 9c - 6 \\quad\\Rightarrow\\quad c = 6"}</TeX>
                   <p>Both pay $4 a week.</p>
                 </Solution>
               </MathCard>
               <MathCard label="Or this: new structure, same concepts" tone="success">
                 <p>
-                  Sam solved <TeX>{"\\frac{x+1}{2} = \\frac{x-3}{4}"}</TeX> and got <TeX>{"x = 1"}</TeX>. Find his mistake and give the correct answer.
+                  Sam solved this equation and got <TeX>{"x = 1"}</TeX>.
                 </p>
+                <p className="sl-math__display"><TeX display>{"\\frac{x+1}{2} = \\frac{x-3}{4}"}</TeX></p>
+                <p>Find his mistake and give the correct answer.</p>
                 <Solution>
                   <p>Multiply both sides by 4:</p>
-                  <TeX display>{"2(x+1) = x - 3 \\quad\\Rightarrow\\quad 2x + 2 = x - 3 \\quad\\Rightarrow\\quad x = -5"}</TeX>
+                  <TeX display>{"2(x+1) = x - 3"}</TeX>
+                  <TeX display>{"2x + 2 = x - 3 \\quad\\Rightarrow\\quad x = -5"}</TeX>
                   <p>Sam’s <TeX>{"x = 1"}</TeX> comes from writing <TeX>{"x + 3"}</TeX> instead of <TeX>{"x - 3"}</TeX> on the right.</p>
                 </Solution>
               </MathCard>
