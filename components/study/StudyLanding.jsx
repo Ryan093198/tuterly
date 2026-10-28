@@ -47,7 +47,7 @@ const SNAP_FLOW = [
     src: `${S}/flow-snap/03-question-solution-hidden.png`,
     alt: "A question the student got wrong, Solve the inequality 4 − 2x > 10, with a similar question to master underneath",
     title: "Try a fresh version",
-    text: "Straight away it writes a similar question on the same concept that is genuinely different, not the same question with the numbers changed. Every generated question is solved a second time by an independent check before your child sees it.",
+    text: "Tuterly writes similar questions based on the same concepts. Questions are reworded and numbers are changed, so that students learn from their previous errors.",
   },
   {
     src: `${S}/flow-snap/04-solution-shown.png`,
@@ -59,7 +59,7 @@ const SNAP_FLOW = [
     src: `${S}/flow-snap/05-similar-question-correct.png`,
     alt: "The similar question marked right, with a star and +5 XP",
     title: "Master it",
-    text: "Getting a similar one right earns a star. Three stars, or tapping I’ve got it, and the question is mastered. Then they can try a harder one.",
+    text: "Getting a similar one right earns a star. Three stars and the concept is mastered. Students can also move on to more challenging ones.",
   },
 ];
 
