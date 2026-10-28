@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import TuterlyMark from "@/components/brand/TuterlyMark";
 import "@/components/brand/brand.css";
 
 // Sticky top nav for the marketing site, in the app's style. The primary
@@ -19,7 +20,7 @@ const LINKS = [
 export function Logo() {
   return (
     <Link href="/" className="tb-logo" aria-label="Tuterly home">
-      <span className="tb-logo__mark" aria-hidden="true">t</span>
+      <TuterlyMark height={30} />
       <span className="tb-logo__word">tuterly</span>
     </Link>
   );

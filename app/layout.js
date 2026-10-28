@@ -48,7 +48,7 @@ export const metadata = {
     card: "summary_large_image",
     images: ["/og-tuterly.png"],
   },
-  icons: { icon: "/favicon.ico" },
+  // Icons come from app/icon.svg, app/apple-icon.png and app/favicon.ico (the app icon).
   // Search-engine ownership verification. Codes come from the env so
   // the actual tokens never land in git. Set GOOGLE_SITE_VERIFICATION
   // in Vercel (Production + Preview) once Google Search Console hands

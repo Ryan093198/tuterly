@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { TUTERLY_MARK_SRC } from "@/lib/og-mark";
 import { getLandingPageBySlug } from "@/lib/worksheet-landing-pages";
 
 // Per-topic OG image, generated at build time. Lifts shared-link CTR
@@ -52,23 +53,8 @@ export default async function OpengraphImage({ params }) {
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <div
-              style={{
-                width: 56,
-                height: 56,
-                borderRadius: 14,
-                background: `linear-gradient(135deg, ${COLOURS.teal}, #2DD4BF)`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: COLOURS.white,
-                fontSize: 30,
-                fontWeight: 800,
-              }}
-            >
-              T
-            </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <img src={TUTERLY_MARK_SRC} width={52} height={56} alt="" />
             <p
               style={{
                 fontSize: 32,

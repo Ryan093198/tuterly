@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Tuterly">
+  <title>Tuterly</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#33C7B5"/>
+      <stop offset="0.25" stop-color="#20B6B2"/>
+      <stop offset="0.5" stop-color="#0DA4AF"/>
+      <stop offset="0.75" stop-color="#0A98B1"/>
+      <stop offset="1" stop-color="#088CB3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="url(#g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M399 302V648.5Q399 747.5 498 747.5H534" stroke-width="104.5"/>
+    <path d="M299 462.5H521.5" stroke-width="104.5"/>
+    <path d="M739 267Q682 465 634.5 450.5" stroke-width="53"/>
+    <path d="M625.5 267L693 380" stroke-width="53"/>
+  </g>
+</svg>

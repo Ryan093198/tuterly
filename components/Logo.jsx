@@ -1,11 +1,18 @@
-export default function Logo({ size = "md", className = "" }) {
-  const dim = size === "lg" ? "text-2xl" : size === "sm" ? "text-base" : "text-xl";
-  const dot = size === "lg" ? "w-2.5 h-2.5" : size === "sm" ? "w-1.5 h-1.5" : "w-2 h-2";
+import TuterlyMark from "@/components/brand/TuterlyMark";
+
+// Dashboard, auth, onboarding and report logo: the tʸ mark followed by the
+// "Tuterly" wordmark. Mark is about 1.3 times the wordmark's cap height.
+const SIZES = {
+  sm: { text: "text-base", mark: 22 },
+  md: { text: "text-xl", mark: 27 },
+  lg: { text: "text-2xl", mark: 32 },
+};
+
+export default function Logo({ size = "md", onTeal = false, className = "" }) {
+  const s = SIZES[size] || SIZES.md;
   return (
-    <span
-      className={`inline-flex items-center gap-2 font-semibold tracking-tight ${dim} ${className}`}
-    >
-      <span className={`${dot} rounded-full bg-brand`} aria-hidden="true" />
+    <span className={`inline-flex items-center gap-2 font-semibold tracking-tight ${s.text} ${className}`}>
+      <TuterlyMark height={s.mark} onTeal={onTeal} />
       <span>Tuterly</span>
     </span>
   );

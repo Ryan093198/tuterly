@@ -227,11 +227,7 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   font-family: var(--font-display);
 }
 .tb-nav__in { max-width: 1200px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
-.tb-logo { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--foreground); min-height: 44px; }
-.tb-logo__mark {
-  width: 32px; height: 32px; border-radius: 10px; background: var(--brand); color: var(--on-brand);
-  display: grid; place-items: center; font-weight: 900; font-size: 17px; box-shadow: 0 3px 0 var(--brand-edge);
-}
+.tb-logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--foreground); min-height: 44px; }
 .tb-logo__word { font-weight: 900; font-size: 21px; letter-spacing: -0.02em; }
 .tb-nav__links { display: flex; align-items: center; gap: 2px; }
 .tb-nav__link {
