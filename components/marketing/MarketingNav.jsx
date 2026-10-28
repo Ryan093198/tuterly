@@ -10,9 +10,9 @@ import "@/components/brand/brand.css";
 // button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
   { href: "/", label: "The app" },
+  { href: "/features", label: "Features" },
   { href: "/parents", label: "For parents" },
   { href: "/students", label: "For students" },
-  { href: "/practice-maths-tests-secondary", label: "Practice tests" },
   { href: "/worksheets", label: "Free worksheets" },
   { href: "/learn", label: "Learn" },
 ];
