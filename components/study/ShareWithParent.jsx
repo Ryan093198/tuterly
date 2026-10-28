@@ -9,7 +9,7 @@ export default function ShareWithParent() {
   const mail = `mailto:?subject=${encodeURIComponent(`Can we get ${STUDY_APP.name}?`)}&body=${encodeURIComponent(text)}`;
   return (
     <div className="swp">
-      <p className="swp__label">Need a parent to sign up?</p>
+      <p className="swp__label">Want a parent to sign up for you?</p>
       <div className="swp__btns">
         <a href={sms} className="tb-btn tb-btn--secondary swp__btn">Text a parent</a>
         <a href={mail} className="tb-btn tb-btn--secondary swp__btn">Email a parent</a>

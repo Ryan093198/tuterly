@@ -454,9 +454,6 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
           {state === "pending" ? "Saving…" : label}
         </button>
       </div>
-      {role === "student" && !compact && (
-        <p className="tb-appcta__note">Under 16? Ask a parent to sign up with you, or send them this page.</p>
-      )}
       {error && (
         <p role="alert" className="tb-appcta__error">{error}</p>
       )}

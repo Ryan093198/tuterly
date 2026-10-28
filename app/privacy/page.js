@@ -152,8 +152,7 @@ export default function PrivacyPolicy() {
           <Section title="The Tuterly app: children and parents">
             <p>
               The app is built for students in Years 7 to 10, so most users are
-              children. Students under 16 need a parent or guardian’s
-              permission to use it. We collect only what the app needs to work,
+              children. We collect only what the app needs to work,
               and a parent can ask us at any time what we hold about their child
               or ask for it to be deleted, by emailing{" "}
               <a

@@ -231,7 +231,7 @@ export default function StudentLanding({ year = null }) {
       <CtaBand
         id={`${placement}-final-title`}
         title="Your next test starts with the last one."
-        lead={`Sign up early and ${name} is 50% off for life. Under 16? Send this page to a parent.`}
+        lead={`Sign up early and ${name} is 50% off for life.`}
       >
         <StudyAppCTA variant="hero" placement={`${placement}_final`} position="final" audience="student" />
         <ShareWithParent />
