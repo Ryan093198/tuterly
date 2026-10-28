@@ -129,7 +129,7 @@ export default function StudyLanding() {
             <LaunchPill />
             <Eyebrow>{name} · Years 7 to 10 maths · iPhone and Android</Eyebrow>
             <h1 id="hero-title" className="tb-h1">
-              Help your child get better <span className="sl-accent">maths marks</span>.
+              Boost your child’s <span className="sl-accent">maths marks</span>.
             </h1>
             <p className="tb-lead sl-hero__lead">
               {`The self-learning maths app built based on your child’s level and understanding. Snap a question not fully understood, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}

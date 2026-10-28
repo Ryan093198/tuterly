@@ -177,3 +177,5 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Sign-up forms now wrap by the space they have, so the email box is never squeezed (it was cut off in the narrow column of the "Maths by topic" block).
 
 - 28 Oct: worksheet topic names shortened. Every Year 3 to 10 topic in the generator now has a hand-written label of one to four words (max 26 characters), e.g. "Unit fractions", "Index laws", "Simultaneous equations", in lib/curriculum-topics.js. The full VCAA description still goes to the question writer, so worksheets stay on-curriculum.
+
+- 28 Oct (after launch): home H1 changed to "Boost your child’s maths marks."
