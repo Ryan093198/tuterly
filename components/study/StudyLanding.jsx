@@ -419,8 +419,8 @@ export default function StudyLanding() {
       <CtaBand
         id="final-cta"
         quinn
-        title="Start with the next question they get wrong."
-        lead={`${name} turns every missed maths question into practice that’s about your child, not a generic worksheet.`}
+        title="Better maths marks start with the next wrong answer."
+        lead={`${name} turns every missed maths question into practice tailored towards the student, not just a generic worksheet.`}
       >
         <StudyAppCTA variant="hero" placement="home_final" position="final" />
       </CtaBand>
