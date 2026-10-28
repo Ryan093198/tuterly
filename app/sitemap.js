@@ -1,6 +1,7 @@
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SITE_URL } from "@/lib/site";
+import { getAllPosts } from "@/lib/learn";
 
 // Public marketing pages Google should be aware of. Anything under
 // /dashboard, /auth, /onboarding, /api, /invite is excluded — those
@@ -75,9 +76,24 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
+  // The Learn hub and every published article (content/learn/*.md).
+  const learn = [
+    { url: `${SITE_URL}/learn`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    ...getAllPosts().map((p) => {
+      const d = p.date ? new Date(p.date) : null;
+      return {
+        url: `${SITE_URL}/learn/${p.slug}`,
+        lastModified: d && !Number.isNaN(d.getTime()) ? d : now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      };
+    }),
+  ];
+
   return [
     ...statics,
     ...parentSuburbs,
     ...worksheetTopics,
+    ...learn,
   ];
 }

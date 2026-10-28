@@ -131,6 +131,9 @@ export default async function LearnPost({ params }) {
         .learn-prose li { margin-bottom: 8px; }
         .learn-prose a { color: ${c.teal}; text-decoration: underline; text-underline-offset: 2px; }
         .learn-prose a:hover { color: ${c.tealDark}; }
+        .learn-prose table { display: block; width: 100%; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0 0 24px; font-size: 14.5px; line-height: 1.5; }
+        .learn-prose th, .learn-prose td { border: 1px solid ${c.border}; padding: 8px 10px; text-align: left; vertical-align: top; min-width: 110px; }
+        .learn-prose th { background: ${c.tealPale}; font-weight: 700; }
         .learn-prose img { display: block; width: 100%; height: auto; margin: 28px 0; border: 1px solid ${c.border}; border-radius: 12px; background: #fff; }
         .learn-prose strong { font-weight: 600; color: ${c.navy}; }
         .learn-prose blockquote { border-left: 3px solid ${c.teal}; padding-left: 16px; margin: 24px 0; color: ${c.textLight}; font-style: italic; }
