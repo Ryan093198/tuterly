@@ -133,7 +133,12 @@ export default function ExamPrepLanding({ year = null }) {
         <section className="tb-section" aria-labelledby="ep-why">
           <div className="tb-wrap">
             <Reveal>
-              <SectionHead id="ep-why" eyebrow="Why it works" title="Re-reading feels like revision. Testing is revision." />
+              <SectionHead
+                id="ep-why"
+                eyebrow="What tutoring has taught us"
+                title="Practice tests, then drill what they got wrong."
+                lead={`Years of tutoring at Bayside Academics have taught us that the most reliable way to lift test marks is to sit practice tests, find the questions a student can’t fully do yet, and drill exactly those. Re-reading notes feels productive, but the marks are in the questions they skip. ${name} is built to give students that extra practice, and the confidence that comes with it, before every test and exam.`}
+              />
             </Reveal>
             <div className="ep-slips">
               <Card>
