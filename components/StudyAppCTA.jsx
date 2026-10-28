@@ -101,11 +101,11 @@ export default function StudyAppCTA({
   // hero (#get-app), so the nav never grows a form.
   if (variant === "nav") {
     let href = "/#get-app";
-    let label = "Get 50% off";
+    let label = "Free to download";
     const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl || STUDY_APP.playStoreUrl;
     if (live && storeUrl) {
       href = storeUrl;
-      label = "Get the app";
+      label = "Free to download";
     }
     return (
       <a
@@ -162,7 +162,7 @@ export default function StudyAppCTA({
         ? "Join the free pilot"
         : mode === "android-button"
           ? "Get notified for Android"
-          : "Get 50% off when it launches";
+          : "Sign up early for 50% off";
     action = (
       <button
         type="button"
@@ -194,7 +194,7 @@ export default function StudyAppCTA({
     <p className="tb-appcta__meta">
       {live
         ? `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`
-        : `Free to download · 1-week free trial · ${STUDY_APP.offerShort}`}
+        : `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`}
     </p>
   );
   // Until launch, say plainly where it will be.
@@ -352,7 +352,7 @@ function WaitlistForm({ kind, wide, slim, compact, btnClass, placement, pathname
   const [error, setError] = useState("");
 
   const label =
-    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Get 50% off";
+    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Sign up early for 50% off";
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."

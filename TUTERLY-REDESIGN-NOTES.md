@@ -163,3 +163,5 @@ LCP is under 2.5s, but Performance is short of 90. What's left is JavaScript tha
 - Not used: "used by tutoring companies and teachers across Australia" and "highly in demand" (so far it's Bayside and other Victorian centres for about a month, with no waitlist or usage numbers to back "in demand"). Widen the wording in lib/study-results.js when that changes.
 
 - 28 Oct: Ryan is a teacher and uses it, as do other teachers who tutor at Bayside, so the hook now says "Already used by tutoring centres and teachers in Victoria".
+
+- 28 Oct: top (nav) button says "Free to download" (it opens the sign-up form until launch, then the right store). Sign-up buttons say "Sign up early for 500ff".
