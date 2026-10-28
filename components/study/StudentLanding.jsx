@@ -182,6 +182,10 @@ export default function StudentLanding({ year = null }) {
                 ))}
               </ul>
               <p className="stl-other">
+                Exam coming up? Here’s the{" "}
+                <Link href={`/maths-exam-preparation/${year.slug}`} className="tb-link">{year.year} maths exam preparation plan</Link>.
+              </p>
+              <p className="stl-other">
                 Other years:{" "}
                 {STUDENT_YEARS.filter((y) => y.slug !== year.slug).map((y, i, a) => (
                   <span key={y.slug}>

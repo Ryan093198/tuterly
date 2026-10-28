@@ -16,6 +16,11 @@ const STATIC_PAGES = [
   { path: "/students/year-8", priority: 0.7, changeFrequency: "monthly" },
   { path: "/students/year-9", priority: 0.7, changeFrequency: "monthly" },
   { path: "/students/year-10", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/maths-exam-preparation", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths-exam-preparation/year-7", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/maths-exam-preparation/year-8", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/maths-exam-preparation/year-9", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/maths-exam-preparation/year-10", priority: 0.7, changeFrequency: "monthly" },
   { path: "/worksheets", priority: 0.7, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb

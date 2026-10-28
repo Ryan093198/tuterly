@@ -27,6 +27,7 @@ const APP_PATH_PREFIXES = ["/dashboard", "/auth", "/onboarding", "/invite"];
 const MARKETING_PATH_PREFIXES = [
   "/parents",
   "/students",
+  "/maths-exam-preparation",
   "/tutors",
   "/centres",
   "/directory",

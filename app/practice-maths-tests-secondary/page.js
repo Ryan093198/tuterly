@@ -8,9 +8,16 @@ import { SITE_URL } from "@/lib/site";
 // searches. The test builder was removed (Oct 2026): the tests now come
 // from the Tuterly app ("Test any topic"), so the app is the CTA.
 
-const TITLE = "Maths Practice Tests to Improve Marks, Years 7 to 10";
+const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Victorian Curriculum)";
 const DESCRIPTION =
-  "Maths practice tests on any Years 7 to 10 topic, aligned to the Victorian Curriculum, with a worked solution for every question. In the Tuterly app for iPhone and Android.";
+  "A maths practice test generator for Years 7 to 10. Pick any topic and Tuterly writes a new test, one question from each part of the topic, with a worked solution for every question. iPhone and Android.";
+
+const HOW = [
+  { n: "1", title: "Pick any topic in their year", body: "Every Years 7 to 10 maths topic in the Victorian Curriculum 2.0. They don't need to have snapped anything first." },
+  { n: "2", title: "Get a new test every time", body: "One question from each part of the topic, written fresh, so a second attempt is a genuine retest and not a memory test." },
+  { n: "3", title: "Check every answer", body: "Each question has a full worked solution, and a short explanation of the step that went wrong if they miss it." },
+  { n: "4", title: "Wrong answers become practice", body: "Anything they get wrong goes into their bank, ready for Fix my mistakes, with fresh questions on the same idea until it's mastered." },
+];
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
 
 export const metadata = {
@@ -49,6 +56,10 @@ const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
     a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). In Tuterly, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
+  },
+  {
+    q: "Is there a free maths practice test generator?",
+    a: "Tuterly is free to download with a 1-week free trial, so your child can try the practice test generator free for a week. For quick free practice, our free worksheet generator makes a six-question sheet with worked solutions on any Year 3 to 10 topic.",
   },
   {
     q: "How much does it cost?",
@@ -99,17 +110,17 @@ export default function SecondaryPracticeTestsPage() {
       <section className="pt-hero" style={{ padding: "56px 40px 44px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
-            Practice tests
+            Practice test generator
           </p>
           <h1 style={{ fontWeight: 800, fontSize: 50, color: c.ink, lineHeight: 1.1, letterSpacing: "-1.4px", marginBottom: 20 }}>
-            Maths practice tests,{" "}
+            Maths practice test generator,{" "}
             <span style={{ color: c.teal }}>Years 7 to 10</span>.
           </h1>
           <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 580, margin: "0 auto 14px" }}>
             Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, run to a clock, and lean on worded problems. That is why a student who follows everything in class can still come home with a mark that does not reflect what they know.
           </p>
           <p style={{ fontSize: 17.5, color: c.ink, fontWeight: 600, lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
-            Tuterly writes a practice test on any topic in their year, with a worked solution for every question.
+            Tuterly generates a new practice test on any topic in their year, with a worked solution for every question.
           </p>
         </div>
       </section>
@@ -117,6 +128,23 @@ export default function SecondaryPracticeTestsPage() {
       <main className="pt-section" style={{ maxWidth: 1028, margin: "0 auto", padding: "8px 24px 56px" }}>
         <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
+
+      <section className="pt-section" aria-labelledby="pt-how" style={{ background: c.white, padding: "8px 40px 64px" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <h2 id="pt-how" style={{ fontSize: 30, fontWeight: 800, color: c.ink, letterSpacing: "-0.7px", lineHeight: 1.2, margin: "0 0 20px", textAlign: "center" }}>
+            How the practice test generator works
+          </h2>
+          <ol style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 12 }}>
+            {HOW.map((h) => (
+              <li key={h.n} style={{ background: c.paper, border: `1px solid ${c.border}`, borderRadius: 14, padding: "18px 20px" }}>
+                <p style={{ fontSize: 13, fontWeight: 800, color: c.tealDeep, margin: "0 0 6px" }}>Step {h.n}</p>
+                <h3 style={{ fontSize: 16.5, fontWeight: 700, color: c.ink, margin: "0 0 6px" }}>{h.title}</h3>
+                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.6, margin: 0 }}>{h.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <section className="pt-section" style={{ background: c.paper, borderTop: `1px solid ${c.border}`, padding: "64px 40px" }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>

@@ -10,3 +10,6 @@
 .stl-topic:hover { color: var(--brand-text); }
 .stl-other { margin-top: 20px; font-size: 15px; color: var(--muted); }
 .swp__btn { font-size: 15px; padding: 10px 18px; min-height: 0; }
+.ep-slips { display: grid; gap: 14px; }
+@media (min-width: 700px) { .ep-slips { grid-template-columns: 1fr 1fr; } }
+.ep-slip__text { margin-top: 6px; font-size: 15.5px; line-height: 1.6; }

@@ -14,9 +14,22 @@ import { SITE_URL } from "@/lib/site";
 // gradient hero, clean cards). Pre-computes the VCAA F-10 topic list for
 // every Year 3-10 level so the client-side dropdown is instant.
 
-const TITLE = "Free Maths Worksheets - Year 3 to Year 10 | Tuterly";
+const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 (Victorian Curriculum) | Tuterly";
 const DESCRIPTION =
-  "Generate a free, VCAA-aligned maths worksheet for Year 3 through Year 10. Fully worked solutions, downloadable as PDF.";
+  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Victorian Curriculum aligned.";
+
+const HOW = [
+  { n: "1", title: "Pick the year and topic", body: "Every Year 3 to 10 maths topic in the Victorian Curriculum 2.0, grouped by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
+  { n: "2", title: "Generate six new questions", body: "Two Foundation, two Standard and two Extension, written fresh each time, so you never get the same sheet twice." },
+  { n: "3", title: "Download the PDF", body: "Print it or work from the screen. Every question comes with a fully worked solution to check against." },
+];
+
+const FAQS = [
+  { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day. There's nothing to pay and no card needed." },
+  { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Victorian Curriculum 2.0, which follows the Australian Curriculum closely. Choose the year, then the topic your child's class is on." },
+  { q: "Are the worksheets the same every time?", a: "No. The generator writes six new questions each time, across Foundation, Standard and Extension, each with a fully worked solution." },
+  { q: "Can it make a worksheet from my child's own mistakes?", a: "That's what the Tuterly app does for Years 7 to 10. Your child snaps the questions they got wrong, or uploads a marked test, and the app writes fresh questions on the same ideas until each one is mastered." },
+];
 const URL = `${SITE_URL}/worksheets`;
 
 export const metadata = {
@@ -97,15 +110,16 @@ export default function WorksheetsPage() {
       <section className="ws-hero" style={{ padding: "56px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
-            Free practice
+            Free worksheet generator
           </p>
           <h1 style={{ fontWeight: 800, fontSize: 52, color: c.ink, lineHeight: 1.1, letterSpacing: "-1.4px", marginBottom: 20 }}>
-            Free maths worksheets,{" "}
+            Free maths worksheet generator,{" "}
             <span style={{ color: c.teal }}>Year 3 to Year 10</span>.
           </h1>
           <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
-            Six questions with fully worked solutions, aligned to the Victorian
-            Curriculum. Generate one now, download the PDF, no signup required.
+            Pick the year and topic and get six new questions, from Foundation
+            to Extension, with fully worked solutions. Aligned to the Victorian
+            Curriculum. Free with your email, one worksheet a day.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
             <p style={{ fontSize: 13, color: c.textLight, fontWeight: 500 }}>
@@ -119,6 +133,24 @@ export default function WorksheetsPage() {
       <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
         <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
       </main>
+
+      {/* HOW THE GENERATOR WORKS */}
+      <section className="ws-section" aria-labelledby="ws-how" style={{ padding: "0 24px 56px" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <h2 id="ws-how" style={{ fontSize: 28, fontWeight: 800, color: c.ink, letterSpacing: "-0.6px", lineHeight: 1.2, margin: "0 0 20px", textAlign: "center" }}>
+            How the worksheet generator works
+          </h2>
+          <ol style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12 }}>
+            {HOW.map((h) => (
+              <li key={h.n} style={{ background: c.white, border: `1px solid ${c.border}`, borderRadius: 14, padding: "18px 20px" }}>
+                <p style={{ fontSize: 13, fontWeight: 800, color: c.tealDeep, margin: "0 0 6px" }}>Step {h.n}</p>
+                <h3 style={{ fontSize: 16.5, fontWeight: 700, color: c.ink, margin: "0 0 6px" }}>{h.title}</h3>
+                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.6, margin: 0 }}>{h.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <div className="ws-section" style={{ padding: "0 24px 56px" }}>
         <AppPracticeBlock placement="worksheets_index_practice" />
@@ -152,7 +184,7 @@ export default function WorksheetsPage() {
               Topic-specific worksheet pages
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto" }}>
-              Pre-configured generators for every major Year 7-10 maths topic.
+              Ready-made generators for every major Year 7 to 10 maths topic.
               Tap a topic to land on a page with the generator already set up.
             </p>
           </div>
@@ -193,6 +225,24 @@ export default function WorksheetsPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="ws-section" aria-labelledby="ws-faq" style={{ background: c.white, padding: "64px 40px" }}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }) }} />
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <h2 id="ws-faq" style={{ fontSize: 28, fontWeight: 800, color: c.ink, letterSpacing: "-0.6px", lineHeight: 1.2, margin: "0 0 20px" }}>
+            Worksheet generator questions
+          </h2>
+          <div style={{ display: "grid", gap: 12 }}>
+            {FAQS.map((f) => (
+              <div key={f.q} style={{ background: c.paper, borderRadius: 14, border: `1px solid ${c.border}`, padding: "18px 20px" }}>
+                <h3 style={{ fontSize: 16, fontWeight: 700, color: c.ink, margin: "0 0 6px" }}>{f.q}</h3>
+                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65, margin: 0 }}>{f.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
