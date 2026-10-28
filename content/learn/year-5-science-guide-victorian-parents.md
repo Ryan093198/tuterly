@@ -2,7 +2,7 @@
 title: "How to help your child with Year 5 science: what Victorian parents need to know"
 description: "A plain-English guide for Victorian parents on what Year 5 science covers, what to watch for, and how to support your child at home."
 date: "2026-10-28"
-audience: "Year 4–5 parents in Victoria"
+audience: "Year 4 and 5 parents in Victoria"
 published: true
 ---
 
@@ -52,8 +52,4 @@ If your child is disengaged from science, consistently confused after class, or 
 
 For high-performing students, a tutor can introduce extension thinking that goes well beyond what class time allows, including more complex ecosystems, deeper physics concepts, or the kind of experimental design thinking that builds strong skills for secondary science.
 
-Tuterly has tutors who work across primary science in Victoria and understand the Australian Curriculum at this level. After every session, you receive a written report covering what was worked on and what to focus on next. The platform also includes targeted practice questions so your child is not just reviewing notes but actually applying what they have learned.
-
-[Find a science tutor near you](/tutoring) or [browse our tutor directory](/directory) to see who is available in your area.
-
-*Are you a tutor in Melbourne? [See open positions](/tutor-jobs).*
+A good primary science tutor understands the Victorian Curriculum and can tell whether the gap is understanding, vocabulary or inquiry skills. Look for [tutoring near you](/tutoring), and ask the tutor to tell you after each session what was covered and what your child should practise before the next one, so the work in between has a clear direction.
