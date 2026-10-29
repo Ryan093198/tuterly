@@ -190,7 +190,7 @@ export default function TryQuestion() {
           <input type="text" name="company_website" tabIndex={-1} autoComplete="off" className="tq-hp" aria-hidden="true" />
 
           <button type="submit" className="tb-btn tb-btn--primary tq-go" disabled={loading}>
-            {loading ? STAGES[stage] : "Make me a fresh version"}
+            {loading ? STAGES[stage] : "Generate"}
           </button>
           {preview && mode === "photo" && !loading && (
             <button type="button" className="tq-link" onClick={() => { setPreview(null); if (fileRef.current) fileRef.current.value = ""; }}>Use a different photo</button>
