@@ -93,7 +93,7 @@ function homeSchema() {
   };
   const faq = {
     "@type": "FAQPage",
-    mainEntity: getStudyFaqs().map((f) => ({
+    mainEntity: getStudyFaqs({ home: true }).map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },

@@ -8,6 +8,7 @@ import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import TryCta from "@/components/study/TryCta";
+import TutorCompare from "@/components/study/TutorCompare";
 import "./parents.css";
 
 // /parents: the parent's view of Tuterly, parent-first order:
@@ -159,6 +160,9 @@ export default function ParentsPage() {
         </div>
       </section>
 
+
+      {/* 4. COMPARED WITH TUTORING (moved from the home page) */}
+      <TutorCompare />
 
       {/* 5. PRICE */}
       <section className="tb-section" aria-labelledby="price">

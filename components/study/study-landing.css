@@ -171,3 +171,25 @@ a.sl-resource:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edg
 .sl-counter { margin: 18px auto 0; max-width: 640px; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 10px; text-align: center; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 .sl-counter__num { font-weight: 900; font-size: 30px; line-height: 1.1; color: var(--brand-text); font-variant-numeric: tabular-nums; }
 .sl-counter__text { max-width: 44ch; }
+
+/* ---- Home layout, simplified 29 Oct 2026 ---- */
+/* Hero: sign-up, a text link to the demo, then the result in one line. */
+.sl-hero__trytext { display: inline-block; justify-self: start; margin-top: 14px; font-weight: 800; font-size: 15.5px; }
+.sl-hero__proof { margin-top: 22px; max-width: 520px; }
+/* How it works: the three steps sit straight on the white section. */
+.sl-how .sl-steps__list { margin-top: 8px; padding: 0; background: none; border: 0; box-shadow: none; }
+/* Text and one phone side by side (answers, parents). */
+.sl-split { display: grid; gap: 36px; align-items: center; }
+.sl-split > * { min-width: 0; }
+.sl-split__phone { display: grid; place-items: center; }
+@media (min-width: 900px) { .sl-split { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; } }
+/* One style for every "more" link under a section. */
+.sl-more { margin: 22px 0 0; font-size: 15.5px; color: var(--muted); }
+/* The answers phone repeats the hero's screen: desktop only. */
+@media (max-width: 899px) {
+  .sl-split__phone--desktop { display: none; }
+  .sl-split__parentphone.tb-phone { --phone-w: 230px; }
+}
+/* Everything left-aligned to the same edge. */
+.sl #try-it .tq { margin-left: 0; }
+.sl .sl-faq { max-width: 780px; }
