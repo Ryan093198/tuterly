@@ -151,12 +151,14 @@ export default function TermsOfService() {
             <p>
               Tuterly Study has a free plan and a paid plan, Tuterly Study
               Plus, sold as a weekly or monthly subscription through the App
-              Store or Google Play. The price is shown before you buy.
+              Store or Google Play, or on our website (billed by Bayside
+              Academics through Stripe). The price is shown before you buy.
             </p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
-                Payment is charged to your Apple or Google account when you
-                confirm the purchase, or at the end of a free trial.
+                Payment is charged to your Apple or Google account (or, on our
+                website, your card) when you confirm the purchase, or at the
+                end of a free trial. A free trial is once per person.
               </li>
               <li>
                 Subscriptions renew automatically at the same price for the
@@ -165,12 +167,16 @@ export default function TermsOfService() {
               </li>
               <li>
                 You can manage or cancel your subscription in your Apple
-                Account or Google Play settings. Cancelling stops the next
-                renewal; Plus stays on until the end of the period you&apos;ve
-                paid for.
+                Account or Google Play settings, or, if you bought it on our
+                website, at tuterly.com.au/study/manage. Cancelling stops the
+                next renewal; Plus stays on until the end of the period
+                you&apos;ve paid for.
               </li>
               <li>
-                Refunds are handled by Apple or Google under their policies.
+                Refunds for App Store or Google Play purchases are handled by
+                Apple or Google under their policies. For website purchases,
+                email us within 14 days of a charge and we&apos;ll refund it if
+                you haven&apos;t been able to use Plus.
               </li>
               <li>
                 If a free trial is offered, any unused part of it ends when you
