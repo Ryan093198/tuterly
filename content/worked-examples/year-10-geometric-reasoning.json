@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Congruence proof using SAS",
+   "question": "Triangle $ABC$ has $AB = 5$ cm, $BC = 7$ cm and $\\angle ABC = 48°$. Triangle $DEF$ has $DE = 5$ cm, $EF = 7$ cm and $\\angle DEF = 48°$. Prove that $\\triangle ABC \\cong \\triangle DEF$.",
+   "solution": "**Key idea:** Two triangles are congruent by SAS if two pairs of corresponding sides and the included angle are equal.\n\n1. $AB = DE = 5$ cm (given)\n2. $BC = EF = 7$ cm (given)\n3. $\\angle ABC = \\angle DEF = 48°$ (given), and this angle is included between the two known sides in each triangle.\n4. Therefore $\\triangle ABC \\cong \\triangle DEF$ (SAS).\n\n**Answer:** $\\triangle ABC \\cong \\triangle DEF$ by SAS.",
+   "answer": "$\\triangle ABC \\cong \\triangle DEF$ by SAS."
+  },
+  {
+   "title": "Congruence proof using ASA",
+   "question": "In triangles $PQR$ and $XYZ$, $\\angle QPR = \\angle YXZ$, $PQ = XY$ and $\\angle PQR = \\angle XYZ$. Prove that $\\triangle PQR \\cong \\triangle XYZ$.",
+   "solution": "**Key idea:** Two triangles are congruent by ASA if two pairs of corresponding angles and the included side are equal.\n\n1. $\\angle QPR = \\angle YXZ$ (given).\n2. $\\angle PQR = \\angle XYZ$ (given).\n3. $PQ = XY$ (given), and this side lies between $\\angle QPR$ and $\\angle PQR$ in $\\triangle PQR$, and between $\\angle YXZ$ and $\\angle XYZ$ in $\\triangle XYZ$, so it is the included side in each triangle.\n4. Therefore $\\triangle PQR \\cong \\triangle XYZ$ (ASA).\n\n**Answer:** $\\triangle PQR \\cong \\triangle XYZ$ by ASA.",
+   "answer": "$\\triangle PQR \\cong \\triangle XYZ$ by ASA."
+  },
+  {
+   "title": "Proving a property of a parallelogram",
+   "question": "Quadrilateral $ABCD$ has two pairs of parallel sides: $AB \\parallel DC$ and $AD \\parallel BC$. The diagonal $AC$ is drawn, forming triangles $ABC$ and $CDA$. Prove that $AB = DC$.",
+   "solution": "**Key idea:** Use alternate angle theorems with the diagonal as a transversal to establish congruent triangles, then conclude equal sides.\n\n1. Since $AB \\parallel DC$ and $AC$ is a transversal, $\\angle BAC = \\angle DCA$ (alternate angles).\n2. Since $AD \\parallel BC$ and $AC$ is a transversal, $\\angle BCA = \\angle DAC$ (alternate angles).\n3. $AC = CA$ (common side), and this side is included between $\\angle BAC$ and $\\angle BCA$ in $\\triangle ABC$, and between $\\angle DCA$ and $\\angle DAC$ in $\\triangle CDA$.\n4. Therefore $\\triangle ABC \\cong \\triangle CDA$ (ASA).\n5. Hence $AB = DC$ (corresponding sides of congruent triangles).\n\n**Answer:** $AB = DC$, proven via $\\triangle ABC \\cong \\triangle CDA$ by ASA.",
+   "answer": "$AB = DC$, proven via $\\triangle ABC \\cong \\triangle CDA$ by ASA."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing ASA and AAS",
+   "wrong": "Two angles and a side are given, so I will use ASA.",
+   "fix": "ASA requires the known side to be between the two known angles (the included side). AAS requires the known side to be not between the two known angles. Always check exactly where the side sits relative to the two angles before choosing the condition."
+  },
+  {
+   "title": "Listing facts without linking them to the condition",
+   "wrong": "$AB = DE$, $\\angle A = \\angle D$, $\\angle B = \\angle E$, therefore congruent.",
+   "fix": "A valid proof must name the congruence condition (SSS, SAS, ASA, AAS or RHS) and match each fact to a specific part of that condition. State which angle is included, or which side is not included, so the reader can see why the condition applies."
+  },
+  {
+   "title": "Using SSS when a side is not actually given",
+   "wrong": "Both triangles share side $AC$, so I know three sides and can use SSS.",
+   "fix": "Sharing a common side gives you only one pair of equal sides. You need all three pairs of sides to be equal for SSS. If you only have one or two pairs of sides, look for angle information and consider SAS, ASA or AAS instead."
+  },
+  {
+   "title": "Assuming rather than proving parallel lines give equal angles",
+   "wrong": "$\\angle BAC = \\angle DCA$ because the lines look parallel.",
+   "fix": "You must state the theorem explicitly: for example, 'alternate angles, $AB \\parallel DC$, transversal $AC$'. Parallel lines must be given or already proven before you can apply co-interior, alternate or corresponding angle theorems."
+  }
+ ],
+ "practice": {
+  "question": "In triangles $ABC$ and $DEF$, $\\angle BAC = \\angle EDF$, $\\angle ABC = \\angle DEF$, and $BC = EF$. Prove that $\\triangle ABC \\cong \\triangle DEF$.",
+  "answer": "$\\triangle ABC \\cong \\triangle DEF$ by AAS.",
+  "solution": "**Key idea:** AAS applies when two pairs of corresponding angles and a non-included side are equal.\n\n1. $\\angle BAC = \\angle EDF$ (given).\n2. $\\angle ABC = \\angle DEF$ (given).\n3. $BC = EF$ (given). The side $BC$ is opposite $\\angle BAC$ in $\\triangle ABC$, and $EF$ is opposite $\\angle EDF$ in $\\triangle DEF$, so the side is not between the two known angles in either triangle.\n4. Therefore $\\triangle ABC \\cong \\triangle DEF$ (AAS)."
+ },
+ "checked": true,
+ "attempts": 3
+}

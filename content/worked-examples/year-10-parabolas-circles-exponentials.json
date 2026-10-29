@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Sketching a parabola from its equation",
+   "question": "Sketch the parabola $y = x^2 - 4x + 3$ and find its turning point, axis of symmetry, and intercepts.",
+   "solution": "**Key idea:** For $y = ax^2 + bx + c$, the axis of symmetry is $x = -\\dfrac{b}{2a}$, and the turning point lies on this line.\n\n1. Find the axis of symmetry: $x = -\\dfrac{-4}{2(1)} = 2$\n2. Find the turning point by substituting $x = 2$: $y = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$, so the turning point is $(2,\\,-1)$.\n3. Find the $y$-intercept (set $x = 0$): $y = 0 - 0 + 3 = 3$, so the $y$-intercept is $(0, 3)$.\n4. Find the $x$-intercepts (set $y = 0$): $x^2 - 4x + 3 = 0 \\Rightarrow (x-1)(x-3) = 0$, so $x = 1$ or $x = 3$; the $x$-intercepts are $(1, 0)$ and $(3, 0)$.\n5. The parabola opens upward ($a = 1 > 0$), has turning point $(2, -1)$, axis of symmetry $x = 2$, $y$-intercept $(0, 3)$, and $x$-intercepts $(1, 0)$ and $(3, 0)$.\n\n**Answer:** Turning point $(2, -1)$; axis of symmetry $x = 2$; $x$-intercepts $(1, 0)$ and $(3, 0)$; $y$-intercept $(0, 3)$.",
+   "answer": "Turning point $(2, -1)$, axis of symmetry $x = 2$, $x$-intercepts $(1, 0)$ and $(3, 0)$, $y$-intercept $(0, 3)$."
+  },
+  {
+   "title": "Identifying and comparing curve types from equations",
+   "question": "For each equation below, state the type of curve, then write down one key feature.\n\n(a) $x^2 + y^2 = 25$ \n(b) $y = \\dfrac{6}{x}$ \n(c) $y = 2^x$",
+   "solution": "**Key idea:** Match the algebraic form to the family: $x^2 + y^2 = r^2$ is a circle; $y = \\tfrac{k}{x}$ is a hyperbola; $y = a^x$ ($a > 1$) is an exponential growth curve.\n\n1. **(a)** $x^2 + y^2 = 25$ matches $x^2 + y^2 = r^2$ with $r^2 = 25$, so $r = 5$. This is a **circle** centred at the origin with radius $5$.\n2. **(b)** $y = \\dfrac{6}{x}$ matches $y = \\dfrac{k}{x}$ with $k = 6 > 0$. This is a **hyperbola** with asymptotes along the $x$-axis ($y = 0$) and $y$-axis ($x = 0$), lying in the first and third quadrants.\n3. **(c)** $y = 2^x$ matches $y = a^x$ with $a = 2 > 1$. This is an **exponential growth** curve with horizontal asymptote $y = 0$ and $y$-intercept $(0, 1)$.\n\n**Answer:** (a) Circle, centre $(0, 0)$, radius $5$. (b) Hyperbola, asymptotes $x = 0$ and $y = 0$. (c) Exponential growth, horizontal asymptote $y = 0$.",
+   "answer": "(a) Circle, radius $5$. (b) Hyperbola, asymptotes $x = 0$ and $y = 0$. (c) Exponential growth, asymptote $y = 0$."
+  },
+  {
+   "title": "Real-life exponential decay",
+   "question": "A scientist measures the mass of a radioactive sample. At time $t = 0$ the mass is $80$ grams. The mass halves every hour, so the mass in grams after $t$ hours is modelled by $M = 80 \\times \\left(\\dfrac{1}{2}\\right)^t$.\n\n(a) Write the mass when $t = 0$, $t = 1$, $t = 2$ and $t = 3$.\n(b) State the horizontal asymptote of the graph of $M$ against $t$ and explain what it means in this context.\n(c) After how many hours is the mass first below $15$ grams?",
+   "solution": "**Key idea:** $M = 80 \\times \\left(\\dfrac{1}{2}\\right)^t$ is an exponential decay model. The base $\\tfrac{1}{2} < 1$, so $M$ decreases and approaches $0$ but never reaches it.\n\n1. Evaluate at each time: $$\\begin{aligned} t=0:&\\quad M = 80 \\times 1 = 80 \\text{ g}\\\\ t=1:&\\quad M = 80 \\times \\tfrac{1}{2} = 40 \\text{ g}\\\\ t=2:&\\quad M = 80 \\times \\tfrac{1}{4} = 20 \\text{ g}\\\\ t=3:&\\quad M = 80 \\times \\tfrac{1}{8} = 10 \\text{ g} \\end{aligned}$$\n2. The horizontal asymptote is $M = 0$. This means the mass gets closer and closer to zero grams but, according to the model, never actually reaches zero.\n3. From step 1, at $t = 2$ the mass is $20$ g (not yet below $15$ g), and at $t = 3$ the mass is $10$ g (below $15$ g). So the mass is first below $15$ grams after **$3$ hours**.\n\n**Answer:** (a) $80$ g, $40$ g, $20$ g, $10$ g. (b) Asymptote $M = 0$; the mass never reaches zero. (c) After $3$ hours.",
+   "answer": "(a) $80$ g, $40$ g, $20$ g, $10$ g. (b) $M = 0$; mass never reaches zero. (c) $3$ hours."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the wrong sign in the axis of symmetry formula",
+   "wrong": "For $y = x^2 - 4x + 3$, writing the axis of symmetry as $x = \\dfrac{-4}{2(1)} = -2$ instead of $x = 2$.",
+   "fix": "The formula is $x = -\\dfrac{b}{2a}$. Because there is a negative sign in front of the fraction, a negative $b$ gives a positive result. Always substitute $b$ first, then apply the negative: $x = -\\dfrac{(-4)}{2} = 2$."
+  },
+  {
+   "title": "Confusing the radius with $r^2$ in a circle equation",
+   "wrong": "Reading $x^2 + y^2 = 25$ as a circle with radius $25$ instead of radius $5$.",
+   "fix": "In $x^2 + y^2 = r^2$, the number on the right is $r^2$, not $r$. Always take the positive square root: $r = \\sqrt{25} = 5$."
+  },
+  {
+   "title": "Forgetting the asymptotes of a hyperbola",
+   "wrong": "Plotting points for $y = \\dfrac{6}{x}$ and joining them with a single continuous curve that crosses the axes.",
+   "fix": "The $x$-axis and $y$-axis are both asymptotes for $y = \\dfrac{k}{x}$: the curve gets closer and closer to each axis but never touches or crosses it. Draw the two separate branches, one in the first quadrant and one in the third quadrant (for $k > 0$)."
+  },
+  {
+   "title": "Thinking an exponential graph crosses its horizontal asymptote",
+   "wrong": "Stating that $y = 2^x$ eventually equals $0$ for large negative $x$, or drawing the curve touching the $x$-axis.",
+   "fix": "The horizontal asymptote $y = 0$ is a line the curve approaches but never reaches. For $y = 2^x$, substituting any real value of $x$ always gives $y > 0$, so the curve stays strictly above the $x$-axis."
+  }
+ ],
+ "practice": {
+  "question": "Consider the hyperbola $y = \\dfrac{-12}{x}$.\n\n(a) State the equations of both asymptotes.\n(b) Find the coordinates of the point on the curve where $x = 3$.\n(c) In which two quadrants does this hyperbola lie? Explain why.",
+  "answer": "(a) $x = 0$ and $y = 0$. (b) $(3, -4)$. (c) Second and fourth quadrants, because $k = -12 < 0$ makes $x$ and $y$ always have opposite signs.",
+  "solution": "**Key idea:** For $y = \\dfrac{k}{x}$, the asymptotes are always the coordinate axes. When $k < 0$, the two branches lie in the second and fourth quadrants because $x$ and $y$ always have opposite signs.\n\n1. **Asymptotes:** The denominator is zero when $x = 0$ (vertical asymptote), and as $\\lvert x \\rvert \\to \\infty$, $y \\to 0$ (horizontal asymptote). So the asymptotes are $x = 0$ and $y = 0$.\n2. **Point at $x = 3$:** $y = \\dfrac{-12}{3} = -4$, giving the point $(3, -4)$.\n3. **Quadrants:** Because $k = -12 < 0$, for any positive $x$ the value $y$ is negative (fourth quadrant), and for any negative $x$ the value $y$ is positive (second quadrant). The curve lies entirely in the **second and fourth quadrants**."
+ },
+ "checked": true,
+ "attempts": 1
+}

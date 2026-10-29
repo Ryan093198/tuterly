@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding unknown angles in a quadrilateral",
+   "question": "A quadrilateral has three known interior angles of $112°$, $75°$ and $96°$. Find the fourth interior angle.",
+   "solution": "**Key idea:** The interior angles of any quadrilateral add to $360°$.\n\n1. Write the angle sum equation:\n$$112 + 75 + 96 + x = 360$$\n2. Add the three known angles:\n$$283 + x = 360$$\n3. Solve for $x$:\n$$x = 360 - 283 = 77$$\n\n**Answer:** The fourth angle is $77°$.",
+   "answer": "$77°$"
+  },
+  {
+   "title": "Using parallelogram properties to find side lengths and angles",
+   "question": "In parallelogram $ABCD$, side $AB = 3x - 1$ cm, side $CD = 2x + 4$ cm, and angle $DAB = 65°$. Find the value of $x$, the length of $AB$, and the size of angle $BCD$.",
+   "solution": "**Key idea:** In a parallelogram, opposite sides are equal and co-interior (same-side) angles are supplementary, adding to $180°$.\n\n1. Set opposite sides equal and solve for $x$:\n$$3x - 1 = 2x + 4$$\n$$x = 5$$\n2. Find the length of $AB$:\n$$AB = 3(5) - 1 = 14 \\text{ cm}$$\n3. Angle $BCD$ is opposite to angle $DAB$, so opposite angles in a parallelogram are equal:\n$$\\angle BCD = \\angle DAB = 65°$$\n\n**Answer:** $x = 5$, $AB = 14$ cm, $\\angle BCD = 65°$.",
+   "answer": "$x = 5$, $AB = 14$ cm, $\\angle BCD = 65°$"
+  },
+  {
+   "title": "Applying diagonal properties of a rhombus",
+   "question": "A garden bed is shaped as a rhombus $PQRS$ with side length $8$ m. The gardener stretches two string lines along the diagonals, which cross at point $M$. She measures $PM = 6$ m. Find the length of the other half-diagonal $QM$, and find the full length of diagonal $QS$.",
+   "solution": "**Key idea:** The diagonals of a rhombus bisect each other at right angles, so triangle $PMQ$ is right-angled at $M$.\n\n1. In right-angled triangle $PMQ$, the hypotenuse is the side of the rhombus:\n$$PQ = 8 \\text{ m}, \\quad PM = 6 \\text{ m}$$\n2. Apply Pythagoras' theorem to find $QM$:\n$$QM^2 = PQ^2 - PM^2 = 8^2 - 6^2 = 64 - 36 = 28$$\n$$QM = \\sqrt{28} = 2\\sqrt{7} \\approx 5.29 \\text{ m}$$\n3. The diagonals bisect each other, so $SM = QM$. The full length of diagonal $QS$ is:\n$$QS = 2 \\times QM = 4\\sqrt{7} \\approx 10.58 \\text{ m}$$\n\n**Answer:** $QM = 2\\sqrt{7}$ m (approximately $5.29$ m); diagonal $QS = 4\\sqrt{7}$ m (approximately $10.58$ m).",
+   "answer": "$QM = 2\\sqrt{7}$ m $\\approx 5.29$ m; $QS = 4\\sqrt{7}$ m $\\approx 10.58$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing co-interior and opposite angles in a parallelogram",
+   "wrong": "In parallelogram $ABCD$, if $\\angle DAB = 70°$, a student writes $\\angle ABC = 70°$ (same as the opposite angle).",
+   "fix": "Opposite angles in a parallelogram are equal, but adjacent angles are co-interior (between parallel lines) and add to $180°$. Always check whether the angles share a side: if they do, they add to $180°$; if they face each other, they are equal."
+  },
+  {
+   "title": "Assuming all parallelograms have equal diagonals",
+   "wrong": "A student states that the diagonals of a parallelogram are equal because \"diagonals always bisect each other.\"",
+   "fix": "Diagonals bisect each other in any parallelogram, but they are only equal in length in rectangles and squares. In a general parallelogram or rhombus the two diagonals have different lengths. Always check which special properties belong to which shape."
+  },
+  {
+   "title": "Forgetting that the angle sum of a quadrilateral is $360°$, not $180°$",
+   "wrong": "A student writes $x + 80 + 90 + 75 = 180$ to find the missing angle in a quadrilateral.",
+   "fix": "The angle sum of $180°$ applies to triangles. A quadrilateral is made of two triangles, so its interior angles add to $2 \\times 180° = 360°$. Always write the equation $\\text{angle sum} = 360°$ first."
+  },
+  {
+   "title": "Applying parallelogram properties to a trapezium",
+   "wrong": "In a trapezium with one pair of parallel sides, a student assumes both pairs of opposite sides are equal.",
+   "fix": "A trapezium has only one pair of parallel sides, so opposite sides are not generally equal and opposite angles are not generally equal. Only use parallelogram properties (opposite sides equal, opposite angles equal, diagonals bisect each other) when you have confirmed both pairs of opposite sides are parallel."
+  }
+ ],
+ "practice": {
+  "question": "In parallelogram $WXYZ$, $WX = 5m - 3$ cm, $YZ = 3m + 7$ cm, and $\\angle XWZ = 118°$. Find $m$, the length of $WX$, and the size of $\\angle WXY$.",
+  "answer": "$m = 5$, $WX = 22$ cm, $\\angle WXY = 62°$",
+  "solution": "**Key idea:** In a parallelogram, opposite sides are equal and adjacent angles are co-interior, adding to $180°$.\n\n1. Set opposite sides equal:\n$$5m - 3 = 3m + 7$$\n$$2m = 10$$\n$$m = 5$$\n2. Find the length of $WX$:\n$$WX = 5(5) - 3 = 22 \\text{ cm}$$\n3. Angles $XWZ$ and $WXY$ are adjacent (co-interior) angles, so they add to $180°$:\n$$\\angle WXY = 180° - 118° = 62°$$\n\n**Answer:** $m = 5$, $WX = 22$ cm, $\\angle WXY = 62°$."
+ },
+ "checked": true,
+ "attempts": 1
+}

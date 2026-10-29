@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding a missing side length using a scale factor",
+   "question": "Triangle $ABC$ is enlarged by a scale factor of $3$ to produce triangle $A'B'C'$. Triangle $ABC$ has side lengths $4$ cm, $6$ cm and $9$ cm. Find the side lengths of triangle $A'B'C'$.",
+   "solution": "**Key idea:** Under an enlargement with scale factor $k$, every side length of the image is $k$ times the corresponding side length of the original shape.\n\n1. Multiply each side length by the scale factor $k = 3$:\n$$4 \\times 3 = 12 \\text{ cm}$$\n$$6 \\times 3 = 18 \\text{ cm}$$\n$$9 \\times 3 = 27 \\text{ cm}$$\n2. The side lengths of triangle $A'B'C'$ are $12$ cm, $18$ cm and $27$ cm.\n\n**Answer:** $12$ cm, $18$ cm and $27$ cm.",
+   "answer": "12 cm, 18 cm and 27 cm"
+  },
+  {
+   "title": "Applying an enlargement on the coordinate plane",
+   "question": "Rectangle $ABCD$ has vertices $A(1, 1)$, $B(3, 1)$, $C(3, 2)$ and $D(1, 2)$. It is enlarged by a scale factor of $4$ from the centre of enlargement at the origin $(0, 0)$. Find the coordinates of the image $A'B'C'D'$.",
+   "solution": "**Key idea:** To enlarge from the origin by scale factor $k$, multiply every coordinate by $k$.\n\n1. Multiply each coordinate by $4$:\n$$\\begin{aligned} A(1,1) &\\to A'(4, 4) \\\\ B(3,1) &\\to B'(12, 4) \\\\ C(3,2) &\\to C'(12, 8) \\\\ D(1,2) &\\to D'(4, 8) \\end{aligned}$$\n2. Check one side length to confirm: $AB = 3 - 1 = 2$ units; $A'B' = 12 - 4 = 8$ units; $8 = 2 \\times 4$. ✓\n\n**Answer:** $A'(4,4)$, $B'(12,4)$, $C'(12,8)$, $D'(4,8)$.",
+   "answer": "A'(4, 4), B'(12, 4), C'(12, 8), D'(4, 8)"
+  },
+  {
+   "title": "Scale factor and area in a real-life context",
+   "question": "A landscape architect is designing two similar rectangular gardens. The smaller garden measures $3$ m by $5$ m. She enlarges the design by a scale factor of $3$ to create the larger garden. How much larger is the area of the bigger garden than the area of the smaller garden? Give your answer in square metres.",
+   "solution": "**Key idea:** When a shape is enlarged by scale factor $k$, its area is multiplied by $k^2$.\n\n1. Find the area of the smaller garden:\n$$3 \\times 5 = 15 \\text{ m}^2$$\n2. Find the area of the larger garden using the scale factor:\n$$\\text{Area of larger garden} = 15 \\times 3^2 = 15 \\times 9 = 135 \\text{ m}^2$$\n3. Find how much larger the bigger garden is:\n$$135 - 15 = 120 \\text{ m}^2$$\n\n**Answer:** The larger garden has an area $120$ m$^2$ greater than the smaller garden.",
+   "answer": "120 m²"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying only some sides by the scale factor",
+   "wrong": "Scale factor $3$, sides $4$ cm and $6$ cm: student writes $12$ cm and $6$ cm (forgets to scale the second side).",
+   "fix": "Every side length must be multiplied by the scale factor. Go through the sides one by one and check that each has been multiplied."
+  },
+  {
+   "title": "Thinking area scales by the same factor as length",
+   "wrong": "Scale factor $3$, original area $10$ m$^2$: student writes new area $= 10 \\times 3 = 30$ m$^2$ instead of $10 \\times 9 = 90$ m$^2$.",
+   "fix": "Area scales by the square of the scale factor, $k^2$, not by $k$ itself. If side lengths triple, the area becomes $9$ times as large, not $3$ times."
+  },
+  {
+   "title": "Forgetting to enlarge from the given centre (not the origin)",
+   "wrong": "Centre of enlargement $(2, 1)$, scale factor $2$, point $A(4, 3)$: student writes $A'(8, 6)$ instead of $A'(6, 5)$.",
+   "fix": "When the centre of enlargement is not the origin, subtract the centre first, multiply by $k$, then add the centre back. The formula is: image $=$ centre $+ k \\times$(point $-$ centre)."
+  },
+  {
+   "title": "Thinking a scale factor less than 1 produces a larger shape",
+   "wrong": "Scale factor $0.5$: student says the image is twice the size of the original.",
+   "fix": "A scale factor between $0$ and $1$ produces a reduction, so the image is smaller than the original. Only scale factors greater than $1$ produce enlargements that are bigger."
+  }
+ ],
+ "practice": {
+  "question": "Triangle $PQR$ has vertices $P(2, 1)$, $Q(6, 1)$ and $R(2, 4)$. It is enlarged by a scale factor of $2$ from the centre of enlargement at the origin $(0, 0)$. Find the coordinates of $P'$, $Q'$ and $R'$, then find the side length $P'Q'$.",
+  "answer": "P'(4, 2), Q'(12, 2), R'(4, 8); P'Q' = 8 units",
+  "solution": "**Key idea:** Multiply every coordinate by the scale factor $k = 2$.\n\n1. Multiply each vertex by $2$:\n$$\\begin{aligned} P(2,1) &\\to P'(4, 2) \\\\ Q(6,1) &\\to Q'(12, 2) \\\\ R(2,4) &\\to R'(4, 8) \\end{aligned}$$\n2. Find $P'Q'$ using the coordinates (both points share $y$-coordinate $2$):\n$$P'Q' = 12 - 4 = 8 \\text{ units}$$\n3. Check: original $PQ = 6 - 2 = 4$ units; $4 \\times 2 = 8$. ✓\n\n**Answer:** $P'(4,2)$, $Q'(12,2)$, $R'(4,8)$; $P'Q' = 8$ units."
+ },
+ "checked": true,
+ "attempts": 2
+}

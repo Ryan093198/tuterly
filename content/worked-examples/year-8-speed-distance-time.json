@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding speed, distance, and time",
+   "question": "A cyclist travels 72 km in 3 hours at a constant speed. Find the cyclist's speed in km/h. Then find how far the cyclist would travel in 5 hours at the same speed.",
+   "solution": "**Key idea:** The formula connecting speed, distance and time is $s = \\dfrac{d}{t}$. Rearranging gives $d = s \\times t$ and $t = \\dfrac{d}{s}$.\n\n1. Find the speed: $$s = \\frac{d}{t} = \\frac{72}{3} = 24 \\text{ km/h}$$\n2. Find the distance in 5 hours: $$d = s \\times t = 24 \\times 5 = 120 \\text{ km}$$\n\n**Answer:** The cyclist's speed is 24 km/h and the distance travelled in 5 hours is 120 km.",
+   "answer": "Speed = 24 km/h; distance in 5 hours = 120 km"
+  },
+  {
+   "title": "Converting units and finding time",
+   "question": "A car travels at a constant speed of 90 km/h. A road sign shows the next town is 600 m away. Convert the car's speed to m/s, then find how many seconds it will take to reach the town.",
+   "solution": "**Key idea:** To convert km/h to m/s, multiply by $\\dfrac{1000}{3600} = \\dfrac{5}{18}$. Then use $t = \\dfrac{d}{s}$, making sure distance and speed are in the same units.\n\n1. Convert speed to m/s: $$90 \\times \\frac{5}{18} = \\frac{450}{18} = 25 \\text{ m/s}$$\n2. Distance is already in metres: $d = 600$ m.\n3. Find the time: $$t = \\frac{d}{s} = \\frac{600}{25} = 24 \\text{ s}$$\n\n**Answer:** The car's speed is 25 m/s and it will reach the town in 24 seconds.",
+   "answer": "25 m/s; 24 seconds"
+  },
+  {
+   "title": "Multi-stage journey problem",
+   "question": "Priya drives from Melbourne to a friend's house. She drives the first 180 km at 90 km/h, stops for a 30-minute rest, then drives the remaining 120 km at 80 km/h. Find the total time, in hours and minutes, for the entire trip from start to finish.",
+   "solution": "**Key idea:** For a multi-stage journey, find the time for each stage separately using $t = \\dfrac{d}{s}$, then add all times including any stops.\n\n1. Time for the first stage: $$t_1 = \\frac{180}{90} = 2 \\text{ h}$$\n2. Rest time: $t_2 = 0.5$ h\n3. Time for the second stage: $$t_3 = \\frac{120}{80} = 1.5 \\text{ h}$$\n4. Total time: $$t = 2 + 0.5 + 1.5 = 4 \\text{ h}$$\n\n**Answer:** The total trip takes 4 hours.",
+   "answer": "4 hours"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Mixing up units of distance or time",
+   "wrong": "Speed = 90 km/h, distance = 600 m, so time = 600 ÷ 90 = 6.67 h",
+   "fix": "Always check that distance and speed use the same unit before substituting into the formula. Convert everything to matching units first: either both in kilometres and hours, or both in metres and seconds."
+  },
+  {
+   "title": "Confusing which quantity to find",
+   "wrong": "To find time, a student writes $t = s \\times d$ instead of $t = \\dfrac{d}{s}$",
+   "fix": "Write out the triangle or all three rearrangements of the formula before starting: $s = \\dfrac{d}{t}$, $d = s \\times t$, and $t = \\dfrac{d}{s}$. Identify what you are solving for, then pick the correct version."
+  },
+  {
+   "title": "Forgetting to include stop or rest time",
+   "wrong": "In a two-stage trip with a 30-minute rest, a student adds only the two driving times and forgets the 0.5 h stop.",
+   "fix": "List every stage of the journey, including stops, before you calculate. Add all times at the end."
+  },
+  {
+   "title": "Incorrect km/h to m/s conversion",
+   "wrong": "$90 \\text{ km/h} = 90 \\div 100 = 0.9 \\text{ m/s}$",
+   "fix": "To convert km/h to m/s, multiply by $\\dfrac{1000}{3600} = \\dfrac{5}{18}$, because 1 km = 1000 m and 1 hour = 3600 s. Dividing by 100 is a common but incorrect shortcut."
+  }
+ ],
+ "practice": {
+  "question": "A train travels at a constant speed of 108 km/h. Convert this speed to m/s, then find how long it takes the train to travel 750 m. Give your answer in seconds.",
+  "answer": "30 m/s; 25 seconds",
+  "solution": "**Key idea:** Convert km/h to m/s by multiplying by $\\dfrac{5}{18}$, then use $t = \\dfrac{d}{s}$ with distance and speed both in metres and m/s.\n\n1. Convert speed to m/s: $$108 \\times \\frac{5}{18} = \\frac{540}{18} = 30 \\text{ m/s}$$\n2. Distance is already in metres: $d = 750$ m.\n3. Find the time: $$t = \\frac{d}{s} = \\frac{750}{30} = 25 \\text{ s}$$\n\n**Answer:** The train's speed is 30 m/s and it takes 25 seconds to travel 750 m."
+ },
+ "checked": true,
+ "attempts": 1
+}

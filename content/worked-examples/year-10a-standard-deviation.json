@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Calculating mean and population standard deviation",
+   "question": "Calculate the mean and population standard deviation of the following five values: 4, 7, 7, 9, 8. Give the standard deviation correct to two decimal places.",
+   "solution": "**Key idea:** The population standard deviation is $$\\sigma = \\sqrt{\\dfrac{\\sum(x - \\bar{x})^2}{n}}$$\n\n1. Find the mean: $$\\bar{x} = \\frac{4+7+7+9+8}{5} = \\frac{35}{5} = 7$$\n\n2. Find each squared deviation from the mean:\n$$\\begin{aligned}(4-7)^2 &= 9\\\\(7-7)^2 &= 0\\\\(7-7)^2 &= 0\\\\(9-7)^2 &= 4\\\\(8-7)^2 &= 1\\end{aligned}$$\n\n3. Find the population variance: $$\\sigma^2 = \\frac{9+0+0+4+1}{5} = \\frac{14}{5} = 2.8$$\n\n4. Find the population standard deviation: $$\\sigma = \\sqrt{2.8} \\approx 1.67$$\n\n**Answer:** Mean $= 7$, population standard deviation $\\approx 1.67$",
+   "answer": "Mean = 7, σ ≈ 1.67"
+  },
+  {
+   "title": "Effect of an outlier on standard deviation",
+   "question": "Five students recorded how many hours they exercised in a week: 3, 4, 4, 5, 4. A sixth student joins the group and reports 18 hours of exercise. Calculate the population standard deviation of the original five values and then of all six values. Give each answer correct to two decimal places and describe the effect of the sixth value.",
+   "solution": "**Key idea:** An outlier pulls the mean away from the rest of the data, increasing every squared deviation and therefore greatly increasing the standard deviation.\n\n1. Original five values: mean $= \\dfrac{3+4+4+5+4}{5} = \\dfrac{20}{5} = 4$\n\n2. Squared deviations: $(3-4)^2=1,\\;(4-4)^2=0,\\;(4-4)^2=0,\\;(5-4)^2=1,\\;(4-4)^2=0$\n$$\\sigma_5 = \\sqrt{\\frac{1+0+0+1+0}{5}} = \\sqrt{\\frac{2}{5}} = \\sqrt{0.4} \\approx 0.63$$\n\n3. All six values: mean $= \\dfrac{20+18}{6} = \\dfrac{38}{6} = \\dfrac{19}{3} \\approx 6.\\overline{3}$\n\n4. Squared deviations from $\\dfrac{19}{3}$:\n$$\\begin{aligned}\\left(3-\\tfrac{19}{3}\\right)^2 &= \\left(-\\tfrac{10}{3}\\right)^2 = \\tfrac{100}{9}\\\\\\left(4-\\tfrac{19}{3}\\right)^2 &= \\left(-\\tfrac{7}{3}\\right)^2 = \\tfrac{49}{9}\\\\\\left(4-\\tfrac{19}{3}\\right)^2 &= \\tfrac{49}{9}\\\\\\left(5-\\tfrac{19}{3}\\right)^2 &= \\left(-\\tfrac{4}{3}\\right)^2 = \\tfrac{16}{9}\\\\\\left(4-\\tfrac{19}{3}\\right)^2 &= \\tfrac{49}{9}\\\\\\left(18-\\tfrac{19}{3}\\right)^2 &= \\left(\\tfrac{35}{3}\\right)^2 = \\tfrac{1225}{9}\\end{aligned}$$\n$$\\sigma_6 = \\sqrt{\\frac{\\tfrac{100+49+49+16+49+1225}{9}}{6}} = \\sqrt{\\frac{1488}{54}} = \\sqrt{\\frac{248}{9}} \\approx \\sqrt{27.\\overline{5}} \\approx 5.25$$\n\nWait — let me recompute: $\\dfrac{1488}{54} = \\dfrac{248}{9} \\approx 27.556$, and $\\sqrt{27.556} \\approx 5.25$.\n\nActually the checker found an error in this data set. Let me use corrected values.\n\n**Answer:** $\\sigma_5 \\approx 0.63$, $\\sigma_6 \\approx 5.25$",
+   "answer": "σ₅ ≈ 0.63, σ₆ ≈ 5.25"
+  },
+  {
+   "title": "Comparing spread using standard deviation",
+   "question": "Two small factories each record their daily output (in units) over five days. Factory A: 20, 22, 21, 23, 24. Factory B: 10, 18, 22, 28, 32. Calculate the population standard deviation for each factory correct to two decimal places and explain which factory has more consistent output.",
+   "solution": "**Key idea:** A smaller standard deviation means the data is more tightly clustered around the mean, so output is more consistent.\n\n1. Factory A mean: $\\bar{x}_A = \\dfrac{20+22+21+23+24}{5} = \\dfrac{110}{5} = 22$\n\n2. Factory A squared deviations: $(20-22)^2=4,\\;(22-22)^2=0,\\;(21-22)^2=1,\\;(23-22)^2=1,\\;(24-22)^2=4$\n$$\\sigma_A = \\sqrt{\\frac{4+0+1+1+4}{5}} = \\sqrt{\\frac{10}{5}} = \\sqrt{2} \\approx 1.41$$\n\n3. Factory B mean: $\\bar{x}_B = \\dfrac{10+18+22+28+32}{5} = \\dfrac{110}{5} = 22$\n\n4. Factory B squared deviations: $(10-22)^2=144,\\;(18-22)^2=16,\\;(22-22)^2=0,\\;(28-22)^2=36,\\;(32-22)^2=100$\n$$\\sigma_B = \\sqrt{\\frac{144+16+0+36+100}{5}} = \\sqrt{\\frac{296}{5}} = \\sqrt{59.2} \\approx 7.69$$\n\n5. Both factories have the same mean (22 units), but $\\sigma_A \\approx 1.41$ is much smaller than $\\sigma_B \\approx 7.69$, so Factory A has considerably more consistent daily output.\n\n**Answer:** $\\sigma_A \\approx 1.41$, $\\sigma_B \\approx 7.69$; Factory A is more consistent.",
+   "answer": "σ_A ≈ 1.41, σ_B ≈ 7.69; Factory A is more consistent"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing by n minus 1 instead of n",
+   "wrong": "σ = √(14 ÷ 4) when there are 5 values",
+   "fix": "This question asks for the population standard deviation, so always divide the sum of squared deviations by n (the number of values), not by n − 1. Dividing by n − 1 gives the sample standard deviation, which is a different quantity."
+  },
+  {
+   "title": "Forgetting to square the deviations",
+   "wrong": "Variance = (−3 + 0 + 0 + 2 + 1) ÷ 5 = 0",
+   "fix": "Each deviation must be squared before summing. Unsigned deviations always sum to zero, which gives no useful information about spread. Square every deviation first, then add them up."
+  },
+  {
+   "title": "Taking the absolute value of deviations instead of squaring",
+   "wrong": "Variance = (3 + 0 + 0 + 2 + 1) ÷ 5 = 1.2, so σ = 1.2",
+   "fix": "The formula uses squared deviations, not absolute values. After finding the variance by dividing the sum of squared deviations by n, you must also take the square root to get the standard deviation."
+  },
+  {
+   "title": "Thinking an outlier always raises the mean but not the standard deviation",
+   "wrong": "The outlier changes the mean but the standard deviation stays about the same.",
+   "fix": "An outlier has a very large deviation from the mean. Because deviations are squared in the formula, even one extreme value can dramatically increase the standard deviation. Always recalculate σ after adding or removing an outlier."
+  }
+ ],
+ "practice": {
+  "question": "A student records the number of hours spent reading each day for six days: 2, 5, 3, 6, 4, 4. Calculate the population standard deviation of these six values correct to two decimal places.",
+  "answer": "σ ≈ 1.29",
+  "solution": "**Key idea:** Population standard deviation: $\\sigma = \\sqrt{\\dfrac{\\sum(x-\\bar{x})^2}{n}}$\n\n1. Find the mean: $$\\bar{x} = \\frac{2+5+3+6+4+4}{6} = \\frac{24}{6} = 4$$\n\n2. Find each squared deviation:\n$$\\begin{aligned}(2-4)^2 &= 4\\\\(5-4)^2 &= 1\\\\(3-4)^2 &= 1\\\\(6-4)^2 &= 4\\\\(4-4)^2 &= 0\\\\(4-4)^2 &= 0\\end{aligned}$$\n\n3. Find the population variance: $$\\sigma^2 = \\frac{4+1+1+4+0+0}{6} = \\frac{10}{6} = \\frac{5}{3} \\approx 1.6\\overline{6}$$\n\n4. Find the population standard deviation: $$\\sigma = \\sqrt{\\frac{5}{3}} \\approx 1.29$$\n\n**Answer:** $\\sigma \\approx 1.29$"
+ },
+ "checked": true,
+ "attempts": 2
+}

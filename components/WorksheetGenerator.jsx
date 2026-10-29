@@ -16,7 +16,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 const STORAGE_KEY = "tuterly:worksheet_email";
 // Tuterly covers Years 7 to 10 maths; younger year levels keep the
 // tutor offer instead of the app.
-const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
+const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 // Child's year from the gate, used to prefill the "Find a local tutor" form.
 const YEAR_STORAGE_KEY = "tuterly:worksheet_year";
 // Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
@@ -37,6 +37,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 const c = {

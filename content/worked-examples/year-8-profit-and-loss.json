@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Profit, loss and percentage of cost price",
+   "question": "Hamid buys a second-hand bicycle for \\$240 and sells it for \\$300. Find his profit in dollars and express it as a percentage of the cost price.",
+   "solution": "**Key idea:** Profit = selling price − cost price. Percentage profit = $\\dfrac{\\text{profit}}{\\text{cost price}} \\times 100$.\n\n1. Find the profit: $$300 - 240 = 60$$\n   So the profit is \\$60.\n2. Express as a percentage of cost price: $$\\frac{60}{240} \\times 100 = 25$$\n\n**Answer:** Hamid makes a profit of \\$60, which is $25\\%$ of the cost price.",
+   "answer": "\\$60 profit; $25\\%$ of cost price"
+  },
+  {
+   "title": "Finding the original price before a discount",
+   "question": "A pair of shoes is on sale for \\$126 after a $30\\%$ discount. What was the original price?",
+   "solution": "**Key idea:** After a $30\\%$ discount, the sale price is $70\\%$ of the original price. Divide the sale price by $0.70$ to find the original.\n\n1. Write the equation: $$\\text{original price} \\times 0.70 = 126$$\n2. Solve for the original price: $$\\text{original price} = \\frac{126}{0.70}$$\n3. Calculate: $$126 \\div 0.70 = 180$$\n\n**Answer:** The original price was \\$180.",
+   "answer": "\\$180"
+  },
+  {
+   "title": "Multi-step financial problem: mark-up then discount",
+   "question": "A sports store buys a jacket from a supplier for \\$80. The store marks the price up by $60\\%$ to set the retail price. During a sale, the jacket is sold at a $25\\%$ discount off the retail price. Does the store make a profit or a loss on the jacket, and by how many dollars?",
+   "solution": "**Key idea:** Apply the mark-up to find the retail price, then apply the discount to find the selling price, then compare to the cost price.\n\n1. Find the retail price after a $60\\%$ mark-up: $$80 \\times 1.60 = 128$$ The retail price is \\$128.\n2. Find the selling price after a $25\\%$ discount: $$128 \\times 0.75 = 96$$ The selling price is \\$96.\n3. Compare to the cost price: $$96 - 80 = 16$$ The selling price is greater than the cost price.\n\n**Answer:** The store makes a profit of \\$16.",
+   "answer": "\\$16 profit"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using selling price instead of cost price for percentage profit or loss",
+   "wrong": "Profit $\\% = \\dfrac{60}{300} \\times 100 = 20\\%$ (using selling price as the denominator)",
+   "fix": "Percentage profit and percentage loss are always calculated as a percentage of the cost price, not the selling price. Use $\\dfrac{\\text{profit}}{\\text{cost price}} \\times 100$."
+  },
+  {
+   "title": "Subtracting the percentage from the price instead of multiplying",
+   "wrong": "$180 - 30\\% = 150\\%$ (treating the percentage as if it has the same units as dollars)",
+   "fix": "Convert the percentage to a decimal multiplier first. A $30\\%$ discount means you multiply by $0.70$, so the sale price is $180 \\times 0.70 = 126$."
+  },
+  {
+   "title": "Finding the original price before a discount by adding the percentage back onto the sale price",
+   "wrong": "Original price $= 126 + 30\\% = 126 + 37.80 = 163.80$ (taking $30\\%$ of the sale price instead of the original)",
+   "fix": "After a $30\\%$ discount the sale price is $70\\%$ of the original, so divide: $126 \\div 0.70 = 180$. Adding a percentage of the already-reduced price does not undo the discount."
+  },
+  {
+   "title": "Applying a mark-up and a discount by just combining the percentages",
+   "wrong": "$60\\% - 25\\% = 35\\%$ mark-up overall, so selling price $= 80 \\times 1.35 = 108$",
+   "fix": "The two percentages apply to different base amounts, so you cannot simply subtract them. Apply each step in order: first multiply by $1.60$, then multiply that result by $0.75$."
+  }
+ ],
+ "practice": {
+  "question": "An online store sells a set of headphones for \\$189 after marking the cost price up by $35\\%$. What was the cost price?",
+  "answer": "\\$140",
+  "solution": "**Key idea:** A $35\\%$ mark-up means the selling price is $135\\%$ of the cost price. Divide the selling price by $1.35$ to find the cost price.\n\n1. Write the equation: $$\\text{cost price} \\times 1.35 = 189$$\n2. Solve: $$\\text{cost price} = \\frac{189}{1.35}$$\n3. Calculate: $$189 \\div 1.35 = 140$$\n\n**Answer:** The cost price was \\$140."
+ },
+ "checked": true,
+ "attempts": 1
+}

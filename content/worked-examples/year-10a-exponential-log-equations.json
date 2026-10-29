@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Converting between exponential and logarithmic form",
+   "question": "Write each statement in the equivalent form.\n\n(a) $5^3 = 125$ in logarithmic form\n\n(b) $\\log_4 64 = 3$ in exponential form",
+   "solution": "**Key idea:** $a^x = y$ and $\\log_a y = x$ are two ways of saying the same thing — the base stays the base, and the exponent and the result swap roles.\n\n1. For $5^3 = 125$: the base is $5$, the exponent is $3$, and the result is $125$, so the logarithmic form is $\\log_5 125 = 3$.\n2. For $\\log_4 64 = 3$: the base is $4$, the logarithm equals $3$, and the input is $64$, so the exponential form is $4^3 = 64$.\n\n**Answer:** (a) $\\log_5 125 = 3$ and (b) $4^3 = 64$",
+   "answer": "(a) $\\log_5 125 = 3$ and (b) $4^3 = 64$"
+  },
+  {
+   "title": "Solving a logarithmic equation using log laws",
+   "question": "Solve for $x$, checking that your answer is valid:\n$$\\log_3(x + 6) + \\log_3 x = 3$$",
+   "solution": "**Key idea:** Use the product law $\\log_a m + \\log_a n = \\log_a(mn)$ to combine the left side, then convert to exponential form to solve.\n\n1. Apply the product law:\n$$\\log_3\\bigl(x(x+6)\\bigr) = 3$$\n2. Convert to exponential form:\n$$x(x + 6) = 3^3 = 27$$\n3. Expand and rearrange:\n$$x^2 + 6x - 27 = 0$$\n4. Factorise:\n$$(x + 9)(x - 3) = 0 \\implies x = -9 \\text{ or } x = 3$$\n5. Validity check: both $\\log_3(x+6)$ and $\\log_3 x$ require their arguments to be positive, so $x > 0$. Reject $x = -9$.\n\n**Answer:** $x = 3$",
+   "answer": "$x = 3$"
+  },
+  {
+   "title": "Solving a real-life exponential equation using logarithms",
+   "question": "A town's population is currently $8\\,000$ and is growing at $6\\%$ per year, so after $t$ years the population is given by $P = 8000 \\times 1.06^t$. After how many complete years will the population first exceed $12\\,000$? Give your answer to the nearest whole year.",
+   "solution": "**Key idea:** When the unknown is in the exponent, take the logarithm of both sides and use the power law $\\log(a^t) = t\\log a$.\n\n1. Set up the inequality and solve the equation $8000 \\times 1.06^t = 12000$:\n$$1.06^t = \\frac{12000}{8000} = 1.5$$\n2. Take $\\log_{10}$ of both sides:\n$$\\log(1.06^t) = \\log(1.5)$$\n3. Apply the power law:\n$$t\\log(1.06) = \\log(1.5)$$\n4. Solve for $t$:\n$$t = \\frac{\\log(1.5)}{\\log(1.06)} = \\frac{0.17609\\ldots}{0.02531\\ldots} \\approx 6.96$$\n5. Since the population must *first exceed* $12\\,000$, take the next whole year: $t = 7$.\n\n**Answer:** After $7$ complete years.",
+   "answer": "After $7$ complete years."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding logs instead of using the product law",
+   "wrong": "$\\log_3 6 + \\log_3 9 = \\log_3 15$ (adding the arguments instead of multiplying)",
+   "fix": "The product law says $\\log_a m + \\log_a n = \\log_a(mn)$. Always multiply the arguments: $\\log_3 6 + \\log_3 9 = \\log_3 54$."
+  },
+  {
+   "title": "Forgetting to check the validity of logarithmic solutions",
+   "wrong": "Keeping $x = -9$ as a solution of $\\log_3(x+6) + \\log_3 x = 3$ without checking",
+   "fix": "The argument of a logarithm must be strictly positive. Substitute every solution back and reject any value that makes an argument zero or negative."
+  },
+  {
+   "title": "Confusing the base and the result when converting forms",
+   "wrong": "$\\log_3 81 = 4$ written in exponential form as $4^3 = 81$",
+   "fix": "The base of the logarithm is always the base of the power. $\\log_3 81 = 4$ means $3^4 = 81$, not $4^3 = 81$."
+  },
+  {
+   "title": "Misapplying the power law by multiplying the base instead of bringing down the exponent",
+   "wrong": "$\\log(3^2) = 3^2 \\times \\log(1) = 0$",
+   "fix": "The power law states $\\log(a^n) = n\\log a$. Bring the exponent down as a coefficient in front of the log: $\\log(3^2) = 2\\log 3$."
+  }
+ ],
+ "practice": {
+  "question": "Solve for $x$, checking that your answer is valid:\n$$\\log_5(2x + 1) - \\log_5(x - 1) = 1$$",
+  "answer": "$x = 2$",
+  "solution": "**Key idea:** Use the quotient law $\\log_a m - \\log_a n = \\log_a\\!\\left(\\dfrac{m}{n}\\right)$ to combine the left side, then convert to exponential form.\n\n1. Apply the quotient law:\n$$\\log_5\\!\\left(\\frac{2x+1}{x-1}\\right) = 1$$\n2. Convert to exponential form:\n$$\\frac{2x+1}{x-1} = 5^1 = 5$$\n3. Multiply both sides by $(x-1)$:\n$$2x + 1 = 5(x - 1) = 5x - 5$$\n4. Solve for $x$:\n$$6 = 3x \\implies x = 2$$\n5. Validity check: we need $2x + 1 > 0$ and $x - 1 > 0$, so $x > 1$. Since $2 > 1$, $x = 2$ is valid. ✓\n\n**Answer:** $x = 2$"
+ },
+ "checked": true,
+ "attempts": 2
+}

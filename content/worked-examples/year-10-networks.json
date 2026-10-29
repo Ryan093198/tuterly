@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Vertices, edges and degree",
+   "question": "A network has five vertices: A, B, C, D and E. The edges are: A–B, A–C, B–C, B–D, and D–E. State the number of vertices, the number of edges, and the degree of each vertex.",
+   "solution": "**Key idea:** The degree of a vertex is the number of edges connected to it. The sum of all degrees equals twice the number of edges.\n\n1. Count the vertices: A, B, C, D, E gives **5 vertices**.\n2. Count the edges: A–B, A–C, B–C, B–D, D–E gives **5 edges**.\n3. Find the degree of each vertex by counting how many edges meet it:\n   - A appears in A–B and A–C: $\\deg(A) = 2$\n   - B appears in A–B, B–C and B–D: $\\deg(B) = 3$\n   - C appears in A–C and B–C: $\\deg(C) = 2$\n   - D appears in B–D and D–E: $\\deg(D) = 2$\n   - E appears in D–E: $\\deg(E) = 1$\n4. Check: sum of degrees $= 2 + 3 + 2 + 2 + 1 = 10 = 2 \\times 5$ ✓\n\n**Answer:** 5 vertices, 5 edges; $\\deg(A)=2,\\; \\deg(B)=3,\\; \\deg(C)=2,\\; \\deg(D)=2,\\; \\deg(E)=1$.",
+   "answer": "5 vertices, 5 edges; deg(A) = 2, deg(B) = 3, deg(C) = 2, deg(D) = 2, deg(E) = 1"
+  },
+  {
+   "title": "Eulerian paths and connectedness",
+   "question": "A network has six vertices: P, Q, R, S, T and U. The edges are: P–Q, P–R, Q–R, Q–S, R–T, S–T, S–U and T–U.\n(a) State the degree of each vertex and determine whether the network is connected.\n(b) Determine whether an Eulerian path exists. If it does, state a valid starting and finishing vertex.",
+   "solution": "**Key idea:** An Eulerian path (which travels every edge exactly once) exists if and only if the network is connected and has exactly 0 or 2 vertices of odd degree. With 0 odd-degree vertices, the path is a circuit (starts and ends at the same vertex); with exactly 2, it starts at one odd-degree vertex and ends at the other.\n\n1. Find the degree of each vertex:\n$$\\begin{aligned}\n\\deg(P) &= 2 \\quad (\\text{P–Q, P–R})\\\\\n\\deg(Q) &= 3 \\quad (\\text{P–Q, Q–R, Q–S})\\\\\n\\deg(R) &= 3 \\quad (\\text{P–R, Q–R, R–T})\\\\\n\\deg(S) &= 3 \\quad (\\text{Q–S, S–T, S–U})\\\\\n\\deg(T) &= 3 \\quad (\\text{R–T, S–T, T–U})\\\\\n\\deg(U) &= 2 \\quad (\\text{S–U, T–U})\n\\end{aligned}$$\n2. Check connectivity: every vertex can be reached from every other vertex by tracing the edges, so the network **is connected**.\n3. Identify odd-degree vertices: Q, R, S and T each have degree 3 — that is **4 odd-degree vertices**.\n4. Because there are more than 2 odd-degree vertices, **no Eulerian path exists**.\n\n**Answer:** The network is connected. The odd-degree vertices are Q, R, S and T (four in total), so no Eulerian path exists.",
+   "answer": "The network is connected but has 4 odd-degree vertices (Q, R, S, T), so no Eulerian path exists."
+  },
+  {
+   "title": "Shortest path in a weighted network",
+   "question": "A parks ranger needs to travel between five rest stops in a national park. The rest stops are labelled A, B, C, D and E. The walking trail distances in kilometres between them are: A–B: 3 km, A–C: 7 km, B–C: 2 km, B–D: 5 km, C–E: 4 km and D–E: 6 km. The ranger starts at A and must reach E. Find the shortest total distance the ranger can walk, and state the route.",
+   "solution": "**Key idea:** In a weighted network, the shortest path is found by comparing the total weights of all possible routes between the two vertices.\n\n1. List all routes from A to E and calculate their total distances:\n$$\\begin{aligned}\n\\text{A} \\to \\text{B} \\to \\text{C} \\to \\text{E} &= 3 + 2 + 4 = 9 \\text{ km}\\\\\n\\text{A} \\to \\text{B} \\to \\text{D} \\to \\text{E} &= 3 + 5 + 6 = 14 \\text{ km}\\\\\n\\text{A} \\to \\text{C} \\to \\text{E} &= 7 + 4 = 11 \\text{ km}\n\\end{aligned}$$\n2. Compare: $9 < 11 < 14$, so the shortest route is A $\\to$ B $\\to$ C $\\to$ E.\n3. Check: $3 + 2 + 4 = 9$ km ✓\n\n**Answer:** The shortest route is A $\\to$ B $\\to$ C $\\to$ E, with a total distance of 9 km.",
+   "answer": "A → B → C → E, total distance 9 km"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing degree with number of vertices",
+   "wrong": "Vertex B has 3 neighbours, so the network has degree 3.",
+   "fix": "Degree belongs to an individual vertex, not the whole network. Each vertex has its own degree equal to the number of edges directly connected to it. Always state degree for each vertex separately."
+  },
+  {
+   "title": "Miscounting edges in the degree sum",
+   "wrong": "The edges are A–B, A–C, B–C so the sum of degrees is 3.",
+   "fix": "Every edge contributes 2 to the total degree sum because it connects two vertices. Three edges give a degree sum of $3 \\times 2 = 6$. Always check that your degrees add up to twice the number of edges."
+  },
+  {
+   "title": "Applying Euler's rule incorrectly",
+   "wrong": "There are 2 odd-degree vertices, so a Hamiltonian path exists.",
+   "fix": "The rule about odd-degree vertices applies to Eulerian paths (which cover every edge once), not Hamiltonian paths (which visit every vertex once). These are different concepts with different conditions. Keep them clearly separate."
+  },
+  {
+   "title": "Assuming the shortest path uses the fewest edges",
+   "wrong": "A–C–E uses only 2 edges so it must be shorter than A–B–C–E which uses 3 edges.",
+   "fix": "In a weighted network, a path with more edges can still have a smaller total weight. Always add up the weights on each route and compare the totals rather than counting edges."
+  }
+ ],
+ "practice": {
+  "question": "A network has five vertices: J, K, L, M and N. The edges are: J–K, J–L, K–L, K–M, L–M, and M–N.\n(a) Find the degree of each vertex.\n(b) Determine whether the network is connected.\n(c) Determine whether an Eulerian path or Eulerian circuit exists. Justify your answer.",
+  "answer": "deg(J) = 2, deg(K) = 3, deg(L) = 3, deg(M) = 3, deg(N) = 1. The network is connected. There are 4 odd-degree vertices (K, L, M, N), so no Eulerian path or circuit exists.",
+  "solution": "**Key idea:** An Eulerian circuit needs 0 odd-degree vertices; an Eulerian path needs exactly 2. Check connectivity first.\n\n1. Count the degree of each vertex:\n$$\\begin{aligned}\n\\deg(J) &= 2 \\quad (\\text{J–K, J–L})\\\\\n\\deg(K) &= 3 \\quad (\\text{J–K, K–L, K–M})\\\\\n\\deg(L) &= 3 \\quad (\\text{J–L, K–L, L–M})\\\\\n\\deg(M) &= 3 \\quad (\\text{K–M, L–M, M–N})\\\\\n\\deg(N) &= 1 \\quad (\\text{M–N})\n\\end{aligned}$$\n2. Check: sum of degrees $= 2+3+3+3+1 = 12 = 2 \\times 6$ ✓\n3. Check connectivity: starting from J, you can reach K and L directly, then M via K or L, then N via M. All vertices are reachable, so the network **is connected**.\n4. Identify odd-degree vertices: K, L, M and N each have odd degree — that is **4 odd-degree vertices**.\n5. Since there are more than 2 odd-degree vertices, **neither an Eulerian path nor an Eulerian circuit exists**."
+ },
+ "checked": true,
+ "attempts": 1
+}

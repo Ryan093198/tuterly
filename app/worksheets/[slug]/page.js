@@ -28,6 +28,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 export function generateStaticParams() {

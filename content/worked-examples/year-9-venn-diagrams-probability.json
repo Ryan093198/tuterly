@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Reading probabilities from a two-way table",
+   "question": "A group of 40 students were surveyed about whether they play sport and whether they play a musical instrument. The results are shown in the two-way table below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Plays instrument | 9 | 6 | 15 |\n| Does not play instrument | 17 | 8 | 25 |\n| **Total** | 26 | 14 | 40 |\n\nUse the table to estimate:\n(a) $P(\\text{plays sport and plays instrument})$\n(b) $P(\\text{plays sport or plays instrument})$, using inclusive or\n(c) $P(\\text{does not play sport})$",
+   "solution": "**Key idea:** Relative frequency $= \\dfrac{\\text{frequency of event}}{\\text{total number of observations}}$ estimates probability. For inclusive or, use $P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$.\n\n1. There are 40 students in total.\n2. **(a)** 9 students play both sport and an instrument.\n$$P(\\text{sport and instrument}) = \\frac{9}{40}$$\n3. **(b)** 26 play sport, 15 play instrument, 9 play both.\n$$P(\\text{sport or instrument}) = \\frac{26}{40} + \\frac{15}{40} - \\frac{9}{40} = \\frac{32}{40} = \\frac{4}{5}$$\n4. **(c)** 14 students do not play sport.\n$$P(\\text{not sport}) = \\frac{14}{40} = \\frac{7}{20}$$\n\n**Answer:** (a) $\\dfrac{9}{40}$, (b) $\\dfrac{4}{5}$, (c) $\\dfrac{7}{20}$",
+   "answer": "(a) $\\dfrac{9}{40}$, (b) $\\dfrac{4}{5}$, (c) $\\dfrac{7}{20}$"
+  },
+  {
+   "title": "Building and using a Venn diagram",
+   "question": "In a class of 30 students, 18 have a library card, 14 have a bus pass, and 7 have both. Use this information to construct a Venn diagram and then find:\n(a) $P(\\text{library card only, and not bus pass})$\n(b) $P(\\text{library card or bus pass, but not both})$ — exclusive or\n(c) $P(\\text{neither library card nor bus pass})$",
+   "solution": "**Key idea:** Fill in a Venn diagram from the inside out. Exclusive or means one event or the other, but not both.\n\n1. Both: 7. Library card only: $18 - 7 = 11$. Bus pass only: $14 - 7 = 7$. Neither: $30 - 11 - 7 - 7 = 5$.\n2. **(a)** Library card only (not bus pass): 11 students.\n$$P(\\text{library only}) = \\frac{11}{30}$$\n3. **(b)** Exclusive or means library only or bus pass only.\n$$P(\\text{library or bus pass, not both}) = \\frac{11 + 7}{30} = \\frac{18}{30} = \\frac{3}{5}$$\n4. **(c)** Neither: 5 students.\n$$P(\\text{neither}) = \\frac{5}{30} = \\frac{1}{6}$$\n\n**Answer:** (a) $\\dfrac{11}{30}$, (b) $\\dfrac{3}{5}$, (c) $\\dfrac{1}{6}$",
+   "answer": "(a) $\\dfrac{11}{30}$, (b) $\\dfrac{3}{5}$, (c) $\\dfrac{1}{6}$"
+  },
+  {
+   "title": "Real-life problem: estimating probabilities from survey data",
+   "question": "A café owner surveys 60 customers on a Saturday about their orders. 35 customers order coffee, 28 order food, and 15 order both coffee and food. One of the 60 customers is chosen at random.\n\n(a) Estimate the probability that the chosen customer ordered coffee or food (inclusive or).\n(b) Estimate the probability that the chosen customer ordered coffee or food, but not both (exclusive or).\n(c) The café owner says: \"More than half of my customers order neither coffee nor food on Saturdays.\" Is this claim correct? Justify your answer using probability.",
+   "solution": "**Key idea:** Use relative frequencies from the survey as probability estimates. Organise the data with a Venn diagram, then apply the or rules.\n\n1. Coffee only: $35 - 15 = 20$. Food only: $28 - 15 = 13$. Both: 15. Neither: $60 - 20 - 13 - 15 = 12$.\n2. **(a)** Inclusive or (coffee or food or both):\n$$P(\\text{coffee or food}) = \\frac{20 + 13 + 15}{60} = \\frac{48}{60} = \\frac{4}{5}$$\n3. **(b)** Exclusive or (coffee only or food only):\n$$P(\\text{coffee or food, not both}) = \\frac{20 + 13}{60} = \\frac{33}{60} = \\frac{11}{20}$$\n4. **(c)** Customers who ordered neither: 12.\n$$P(\\text{neither}) = \\frac{12}{60} = \\frac{1}{5} = 0.2$$\nSince $0.2 < 0.5$, the claim is incorrect. Only $\\frac{1}{5}$ of customers ordered neither, which is well below half.\n\n**Answer:** (a) $\\dfrac{4}{5}$, (b) $\\dfrac{11}{20}$, (c) The claim is incorrect; only $\\dfrac{1}{5}$ of customers ordered neither.",
+   "answer": "(a) $\\dfrac{4}{5}$, (b) $\\dfrac{11}{20}$, (c) Incorrect — only $\\dfrac{1}{5}$ ordered neither, which is less than half."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Double-counting with inclusive or",
+   "wrong": "P(A or B) = P(A) + P(B), ignoring the overlap.",
+   "fix": "When A and B can both happen at the same time, simply adding P(A) and P(B) counts the overlap twice. Always subtract the overlap: $P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$."
+  },
+  {
+   "title": "Confusing inclusive or with exclusive or",
+   "wrong": "Treating \"coffee or food\" as meaning only one of them, not both.",
+   "fix": "In mathematics (and in this course), \"or\" is inclusive by default, meaning one, the other, or both. Exclusive or specifically means one or the other but not both. Read the question carefully to see which is required."
+  },
+  {
+   "title": "Forgetting to complete the Venn diagram from the inside out",
+   "wrong": "Writing 18 in the left circle and 14 in the right circle instead of 11 and 7.",
+   "fix": "Always place the \"both\" value in the overlapping region first, then subtract it from each total to get the values for each non-overlapping region. The numbers in each circle region should add up to the correct group total."
+  },
+  {
+   "title": "Using the total instead of the correct cell in a two-way table",
+   "wrong": "$P(\\text{sport and instrument}) = \\dfrac{26}{40}$ (using the sport total instead of the overlap cell).",
+   "fix": "P(A and B) always comes from the cell where row A and column B intersect, not from a row or column total. Row and column totals give P(A) or P(B) on their own."
+  }
+ ],
+ "practice": {
+  "question": "In a group of 50 teenagers, 22 have a social media account, 30 have a streaming service subscription, and 10 have both. A teenager is chosen at random from the group.\n\n(a) Find $P(\\text{social media and streaming})$.\n(b) Find $P(\\text{social media or streaming})$ using inclusive or.\n(c) Find $P(\\text{social media or streaming, but not both})$ using exclusive or.\n(d) Find $P(\\text{neither social media nor streaming})$.",
+  "answer": "(a) $\\dfrac{10}{50} = \\dfrac{1}{5}$, (b) $\\dfrac{42}{50} = \\dfrac{21}{25}$, (c) $\\dfrac{32}{50} = \\dfrac{16}{25}$, (d) $\\dfrac{8}{50} = \\dfrac{4}{25}$",
+  "solution": "**Key idea:** Fill in the Venn diagram from the inside out, then use relative frequencies for each probability.\n\n1. Both: 10. Social media only: $22 - 10 = 12$. Streaming only: $30 - 10 = 20$. Neither: $50 - 12 - 10 - 20 = 8$.\n2. **(a)** $P(\\text{social media and streaming}) = \\dfrac{10}{50} = \\dfrac{1}{5}$\n3. **(b)** $P(\\text{social media or streaming}) = \\dfrac{12 + 10 + 20}{50} = \\dfrac{42}{50} = \\dfrac{21}{25}$\n4. **(c)** $P(\\text{social media or streaming, not both}) = \\dfrac{12 + 20}{50} = \\dfrac{32}{50} = \\dfrac{16}{25}$\n5. **(d)** $P(\\text{neither}) = \\dfrac{8}{50} = \\dfrac{4}{25}$"
+ },
+ "checked": true,
+ "attempts": 1
+}

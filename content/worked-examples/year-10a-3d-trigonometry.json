@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Space diagonal of a rectangular prism",
+   "question": "A rectangular prism has length $12$ cm, width $5$ cm and height $4$ cm. Find the length of the space diagonal (the diagonal from one corner to the opposite corner through the inside of the prism). Give your answer correct to two decimal places.",
+   "solution": "**Key idea:** The space diagonal $d$ can be found using the 3D extension of Pythagoras' theorem: $d = \\sqrt{l^2 + w^2 + h^2}$.\n\n1. Write the formula and substitute the dimensions:\n$$d = \\sqrt{12^2 + 5^2 + 4^2}$$\n2. Evaluate each square:\n$$d = \\sqrt{144 + 25 + 16}$$\n3. Add and take the square root:\n$$d = \\sqrt{185} \\approx 13.60 \\text{ cm}$$\n\n**Answer:** The space diagonal is approximately $13.60$ cm.",
+   "answer": "$d \\approx 13.60$ cm"
+  },
+  {
+   "title": "Angle between a space diagonal and the base",
+   "question": "A rectangular prism has length $8$ m, width $6$ m and height $5$ m. Find the angle that the space diagonal makes with the base of the prism, correct to one decimal place.",
+   "solution": "**Key idea:** First find the diagonal of the base, then use trigonometry in the vertical right-angled triangle formed by that base diagonal and the space diagonal.\n\n1. Find the base diagonal $b$ using Pythagoras' theorem:\n$$b = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10 \\text{ m}$$\n2. The space diagonal, the base diagonal and the height form a right-angled triangle. The side opposite the required angle $\\theta$ is the height ($5$ m) and the side adjacent is the base diagonal ($10$ m).\n3. Apply the tangent ratio:\n$$\\tan\\theta = \\frac{5}{10} = 0.5$$\n4. Solve for $\\theta$:\n$$\\theta = \\tan^{-1}(0.5) \\approx 26.6°$$\n\n**Answer:** The space diagonal makes an angle of approximately $26.6°$ with the base.",
+   "answer": "$\\theta \\approx 26.6°$"
+  },
+  {
+   "title": "Angle of elevation to a pyramid apex",
+   "question": "A square pyramid has a square base with side length $10$ m. Its apex is directly above the centre of the base at a height of $12$ m. A visitor stands at the midpoint of one side of the base. Find the angle of elevation from the visitor to the apex of the pyramid, correct to one decimal place.",
+   "solution": "**Key idea:** Identify the right-angled triangle formed by the horizontal distance from the visitor to the point directly below the apex, the vertical height, and the slant line of sight to the apex.\n\n1. The visitor stands at the midpoint of one side of the square base. The centre of the base is directly below the apex. The horizontal distance from the midpoint of a side to the centre of a square with side length $10$ m is half the side length:\n$$d = \\frac{10}{2} = 5 \\text{ m}$$\n2. The vertical height to the apex is $12$ m. These two lengths form the two shorter sides of a right-angled triangle, with the line of sight to the apex as the hypotenuse.\n3. Apply the tangent ratio, where the opposite side is the height and the adjacent side is the horizontal distance:\n$$\\tan\\theta = \\frac{12}{5} = 2.4$$\n4. Solve for $\\theta$:\n$$\\theta = \\tan^{-1}(2.4) \\approx 67.4°$$\n\n**Answer:** The angle of elevation from the visitor to the apex is approximately $67.4°$.",
+   "answer": "$\\theta \\approx 67.4°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Skipping the base diagonal step",
+   "wrong": "Finding the angle to the space diagonal using $\\tan\\theta = \\dfrac{h}{l}$, ignoring the width entirely.",
+   "fix": "The angle a space diagonal makes with the base involves a two-step process. You must first find the base diagonal using Pythagoras' theorem, and then use that diagonal as the adjacent side in your trigonometric ratio. Using just one base dimension misses a whole triangle."
+  },
+  {
+   "title": "Using the wrong side as the horizontal distance in a pyramid",
+   "wrong": "Using the full side length $10$ m as the horizontal distance instead of $5$ m when the observer is at the midpoint of a side.",
+   "fix": "Always read the problem carefully to identify exactly where the observer or point of interest is located. If a point is at the midpoint of a side, the horizontal distance to the centre of the base is half the side length, not the full side length."
+  },
+  {
+   "title": "Rounding too early",
+   "wrong": "Rounding $\\sqrt{185} \\approx 13.6$ cm then using $13.6$ in a further trigonometric step, getting a slightly wrong final angle.",
+   "fix": "Keep full calculator precision throughout all steps and only round your final answer. Rounding an intermediate result such as a side length before using it in another calculation can accumulate error and give an incorrect final answer."
+  },
+  {
+   "title": "Confusing opposite and adjacent in 3D triangles",
+   "wrong": "Writing $\\tan\\theta = \\dfrac{\\text{base diagonal}}{\\text{height}}$ instead of $\\dfrac{\\text{height}}{\\text{base diagonal}}$.",
+   "fix": "Always label your triangle clearly with the angle you want, then identify opposite (the side across from that angle) and adjacent (the side next to it, not the hypotenuse) before writing any ratio. Drawing and labelling a 2D sketch of the identified triangle helps avoid this swap."
+  }
+ ],
+ "practice": {
+  "question": "A rectangular prism has length $9$ cm, width $40$ cm and height $12$ cm. Find the angle that the space diagonal makes with the base of the prism, correct to one decimal place.",
+  "answer": "$\\theta \\approx 16.3°$",
+  "solution": "**Key idea:** Find the base diagonal first, then use trigonometry in the right-angled triangle formed by the base diagonal, the height and the space diagonal.\n\n1. Find the base diagonal $b$:\n$$b = \\sqrt{9^2 + 40^2} = \\sqrt{81 + 1600} = \\sqrt{1681} = 41 \\text{ cm}$$\n2. The height of the prism is $12$ cm. The angle $\\theta$ between the space diagonal and the base satisfies:\n$$\\tan\\theta = \\frac{12}{41}$$\n3. Solve for $\\theta$:\n$$\\theta = \\tan^{-1}\\!\\left(\\frac{12}{41}\\right) \\approx 16.3°$$\n\n**Answer:** The space diagonal makes an angle of approximately $16.3°$ with the base."
+ },
+ "checked": true,
+ "attempts": 1
+}

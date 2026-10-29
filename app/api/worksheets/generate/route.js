@@ -30,6 +30,7 @@ const ALLOWED_YEARS = new Set([
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ]);
 
 // Per-IP daily cap. Signed-in users (any role) bypass it.

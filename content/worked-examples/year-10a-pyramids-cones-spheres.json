@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Slant height and surface area of a square pyramid",
+   "question": "A right pyramid has a square base with side length 8 m and a perpendicular height of 3 m. Find the total surface area of the pyramid.",
+   "solution": "**Key idea:** The slant height of each triangular face is found using Pythagoras' theorem with the perpendicular height and the distance from the centre of the base to the midpoint of a side.\n\n1. Distance from centre of base to midpoint of a side: $\\frac{8}{2} = 4$ m\n2. Slant height: $l = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$ m\n3. Area of one triangular face: $\\frac{1}{2} \\times 8 \\times 5 = 20$ m²\n4. Total area of 4 triangular faces: $4 \\times 20 = 80$ m²\n5. Base area: $8^2 = 64$ m²\n6. Total surface area: $64 + 80 = 144$ m²\n\n**Answer:** $144$ m²",
+   "answer": "144 m²"
+  },
+  {
+   "title": "Surface area of a right cone",
+   "question": "A right cone has a base radius of 5 cm and a perpendicular height of 12 cm. Find the total surface area of the cone. Give your answer correct to one decimal place.",
+   "solution": "**Key idea:** Find the slant height using Pythagoras' theorem, then apply the cone surface area formula $\\pi r l + \\pi r^2$.\n\n1. Slant height: $l = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13$ cm\n2. Curved surface area: $\\pi \\times 5 \\times 13 = 65\\pi$ cm²\n3. Base area: $\\pi \\times 5^2 = 25\\pi$ cm²\n4. Total surface area: $65\\pi + 25\\pi = 90\\pi \\approx 282.7$ cm²\n\n**Answer:** $282.7$ cm²",
+   "answer": "282.7 cm²"
+  },
+  {
+   "title": "Volume of a composite solid (cone on a cylinder)",
+   "question": "A grain silo is made up of a cylinder topped with a right cone. The cylinder has a radius of 3 m and a height of 10 m. The cone sits on top of the cylinder, has the same radius of 3 m, and has a perpendicular height of 4 m. Find the total volume of the silo. Give your answer correct to one decimal place.",
+   "solution": "**Key idea:** The total volume is the volume of the cylinder plus the volume of the cone, using $V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h$.\n\n1. Volume of cylinder: $\\pi \\times 3^2 \\times 10 = 90\\pi$ m³\n2. Volume of cone: $\\frac{1}{3} \\times \\pi \\times 3^2 \\times 4 = \\frac{1}{3} \\times 36\\pi = 12\\pi$ m³\n3. Total volume: $90\\pi + 12\\pi = 102\\pi \\approx 320.4$ m³\n\n**Answer:** $320.4$ m³",
+   "answer": "320.4 m³"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the perpendicular height instead of the slant height",
+   "wrong": "Area of cone curved surface $= \\pi \\times 5 \\times 12$ (using the height 12 instead of slant height 13)",
+   "fix": "Always find the slant height $l$ using Pythagoras' theorem first: $l = \\sqrt{h^2 + r^2}$. The formulas $\\pi r l$ (cone) and $\\frac{1}{2} \\times \\text{base} \\times l$ (pyramid face) require the slant height, not the perpendicular height."
+  },
+  {
+   "title": "Wrong distance for the slant height of a rectangular pyramid",
+   "wrong": "Slant height for the 10 m face $= \\sqrt{12^2 + 5^2}$, using half of 10 m instead of half of 6 m",
+   "fix": "The slant height to a triangular face uses the distance from the centre of the base to the midpoint of that face's base edge. For the face with base 10 m, the relevant distance is half the width of the other dimension (half of 6 m = 3 m), not half of 10 m."
+  },
+  {
+   "title": "Forgetting to include the base in the surface area",
+   "wrong": "Surface area of pyramid $= 4 \\times 20 = 80$ m² (base area not added)",
+   "fix": "Total surface area includes all faces. Unless the question asks only for the lateral (curved or slant) surface area, always add the base area."
+  },
+  {
+   "title": "Using $\\frac{4}{3}\\pi r^3$ for surface area of a sphere",
+   "wrong": "Surface area of sphere $= \\frac{4}{3} \\pi \\times 6^3$",
+   "fix": "Surface area of a sphere is $4\\pi r^2$ and volume is $\\frac{4}{3}\\pi r^3$. Check which formula you need before substituting."
+  }
+ ],
+ "practice": {
+  "question": "A right pyramid has a rectangular base measuring 10 m by 6 m. The perpendicular height of the pyramid is 12 m, and the apex sits directly above the centre of the base. Calculate the total surface area of the pyramid. Give your answer correct to one decimal place.",
+  "answer": "261.7 m²",
+  "solution": "**Key idea:** A rectangular pyramid has two pairs of triangular faces, each pair with a different slant height. Find each slant height using Pythagoras' theorem with the perpendicular height and the distance from the centre of the base to the midpoint of that edge.\n\n1. **Base area:** $10 \\times 6 = 60$ m²\n2. **Slant height to the two faces with base 10 m** (distance from centre to midpoint of 10 m edge $= \\frac{6}{2} = 3$ m): $$l_1 = \\sqrt{12^2 + 3^2} = \\sqrt{144 + 9} = \\sqrt{153}$$ Area of these two faces: $2 \\times \\frac{1}{2} \\times 10 \\times \\sqrt{153} = 10\\sqrt{153}$ m²\n3. **Slant height to the two faces with base 6 m** (distance from centre to midpoint of 6 m edge $= \\frac{10}{2} = 5$ m): $$l_2 = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13 \\text{ m}$$ Area of these two faces: $2 \\times \\frac{1}{2} \\times 6 \\times 13 = 78$ m²\n4. **Total surface area:** $$60 + 10\\sqrt{153} + 78 = 138 + 10\\sqrt{153} \\approx 138 + 123.7 = 261.7 \\text{ m}^2$$"
+ },
+ "checked": true,
+ "attempts": 3
+}

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Prime factorisation using a factor tree",
+   "question": "Express $72$ as a product of prime factors using exponent notation.",
+   "solution": "**Key idea:** A factor tree splits a number into factor pairs, working down until every branch ends in a prime number. Collect repeated primes using exponent notation.\n\n1. Split $72$ into $8 \\times 9$.\n2. Split $8$ into $2 \\times 4$, then $4$ into $2 \\times 2$. So $8 = 2 \\times 2 \\times 2$.\n3. Split $9$ into $3 \\times 3$.\n4. Collect all prime factors: $2, 2, 2, 3, 3$.\n5. Write using exponents:\n$$72 = 2^3 \\times 3^2$$\n**Answer:** $72 = 2^3 \\times 3^2$",
+   "answer": "$72 = 2^3 \\times 3^2$"
+  },
+  {
+   "title": "Prime factorisation using repeated division",
+   "question": "Express $360$ as a product of prime factors using exponent notation. Use repeated division to find the prime factors.",
+   "solution": "**Key idea:** Divide repeatedly by the smallest prime that goes in exactly, starting with $2$, then $3$, then $5$, and so on, until the result is $1$.\n\n1. $360 \\div 2 = 180$\n2. $180 \\div 2 = 90$\n3. $90 \\div 2 = 45$\n4. $45 \\div 3 = 15$\n5. $15 \\div 3 = 5$\n6. $5 \\div 5 = 1$\n\nPrime factors used: $2, 2, 2, 3, 3, 5$. Writing with exponents:\n$$360 = 2^3 \\times 3^2 \\times 5$$\n**Answer:** $360 = 2^3 \\times 3^2 \\times 5$",
+   "answer": "$360 = 2^3 \\times 3^2 \\times 5$"
+  },
+  {
+   "title": "Prime factorisation in a real-life context",
+   "question": "A school canteen orders $180$ muesli bars to pack into identical bags. The canteen manager wants every bag to contain the same number of bars, and also wants to know every possible bag size that divides $180$ exactly. To find these, she first writes $180$ as a product of prime factors. Express $180$ as a product of prime factors using exponent notation, then use your answer to state how many factors $180$ has in total.",
+   "solution": "**Key idea:** The prime factorisation of a number lets you count its total number of factors using the exponent rule: if $n = p^a \\times q^b \\times \\ldots$, then the number of factors is $(a+1)(b+1)\\ldots$\n\n1. Divide repeatedly by primes:\n$$\\begin{aligned} 180 \\div 2 &= 90 \\\\ 90 \\div 2 &= 45 \\\\ 45 \\div 3 &= 15 \\\\ 15 \\div 3 &= 5 \\\\ 5 \\div 5 &= 1 \\end{aligned}$$\n2. Write using exponents: $180 = 2^2 \\times 3^2 \\times 5$.\n3. Count the factors: $(2+1)(2+1)(1+1) = 3 \\times 3 \\times 2 = 18$.\n4. So there are $18$ possible bag sizes (for example $1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 18, 20, 30, 36, 45, 60, 90, 180$ bars per bag).\n\n**Answer:** $180 = 2^2 \\times 3^2 \\times 5$; there are $18$ possible bag sizes.",
+   "answer": "$180 = 2^2 \\times 3^2 \\times 5$; $18$ factors in total"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Stopping the factor tree too early",
+   "wrong": "Student writes $72 = 8 \\times 9$, then stops because $8$ and $9$ look like small numbers.",
+   "fix": "Keep splitting every branch until every number at the end is prime. $8$ and $9$ are not prime ($8 = 2^3$ and $9 = 3^2$), so they must be split further."
+  },
+  {
+   "title": "Including $1$ as a prime factor",
+   "wrong": "Student writes $72 = 1 \\times 2^3 \\times 3^2$ and counts $1$ as a prime.",
+   "fix": "By definition, $1$ is neither prime nor composite. Prime factorisation only uses primes ($2, 3, 5, 7, \\ldots$), so $1$ is never listed as a factor."
+  },
+  {
+   "title": "Confusing the base and the exponent",
+   "wrong": "Student reads $2^3$ as $2 \\times 3 = 6$ instead of $2 \\times 2 \\times 2 = 8$.",
+   "fix": "The exponent (the small raised number) tells you how many times to multiply the base by itself, not what to multiply it by. So $2^3 = 2 \\times 2 \\times 2 = 8$."
+  },
+  {
+   "title": "Not dividing by the smallest prime first",
+   "wrong": "Student divides $360 \\div 6 = 60$ first, then has trouble because $6$ is not prime.",
+   "fix": "Always start with the smallest prime, $2$, and only move to the next prime ($3$, then $5$, and so on) when the current prime no longer divides in exactly. This guarantees every divisor you use is prime."
+  }
+ ],
+ "practice": {
+  "question": "Express $126$ as a product of prime factors using exponent notation. Use repeated division to find the prime factors.",
+  "answer": "$126 = 2 \\times 3^2 \\times 7$",
+  "solution": "**Key idea:** Divide repeatedly by the smallest prime that goes in exactly, until the result is $1$.\n\n1. $126 \\div 2 = 63$\n2. $63 \\div 3 = 21$\n3. $21 \\div 3 = 7$\n4. $7 \\div 7 = 1$\n\nPrime factors used: $2, 3, 3, 7$. Writing with exponents:\n$$126 = 2 \\times 3^2 \\times 7$$\nCheck: $2 \\times 9 \\times 7 = 2 \\times 63 = 126$ ✓"
+ },
+ "checked": true,
+ "attempts": 1
+}

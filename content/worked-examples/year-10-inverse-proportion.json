@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding the constant of proportionality",
+   "question": "The cost $C$ (in dollars) of buying bags of mulch is directly proportional to the number of bags $n$. When $n = 4$, $C = 30$. Find the equation relating $C$ and $n$, then find the cost of 10 bags.",
+   "solution": "**Key idea:** If $C$ is directly proportional to $n$, then $C = kn$ for some constant $k$. Substitute a known pair to find $k$.\n\n1. Write the proportion equation: $C = kn$\n2. Substitute $n = 4$, $C = 30$: $$30 = k \\times 4$$\n3. Solve for $k$: $$k = \\frac{30}{4} = 7.5$$\n4. The equation is $C = 7.5n$.\n5. Substitute $n = 10$: $$C = 7.5 \\times 10 = 75$$\n\n**Answer:** The equation is $C = 7.5n$, and 10 bags cost \\$75.",
+   "answer": "$C = 7.5n$; cost of 10 bags is \\$75"
+  },
+  {
+   "title": "Solving an inverse proportion problem",
+   "question": "The time $t$ (in hours) taken to complete a delivery route is inversely proportional to the average speed $v$ (in km/h). When $v = 60$, $t = 3$. Find the equation relating $t$ and $v$, then find the time taken when $v = 45$.",
+   "solution": "**Key idea:** If $t$ is inversely proportional to $v$, then $t = \\dfrac{k}{v}$ for some constant $k$. Substitute a known pair to find $k$.\n\n1. Write the proportion equation: $t = \\dfrac{k}{v}$\n2. Substitute $v = 60$, $t = 3$: $$3 = \\frac{k}{60}$$\n3. Solve for $k$: $$k = 3 \\times 60 = 180$$\n4. The equation is $t = \\dfrac{180}{v}$.\n5. Substitute $v = 45$: $$t = \\frac{180}{45} = 4$$\n\n**Answer:** The equation is $t = \\dfrac{180}{v}$, and the journey takes 4 hours at 45 km/h.",
+   "answer": "$t = \\dfrac{180}{v}$; time is 4 hours"
+  },
+  {
+   "title": "Scaling area and volume of a 3D object",
+   "question": "A garden shed is modelled by a rectangular prism with length 3 m, width 2 m and height 2.5 m. A scale model of the shed is built using a scale factor of $\\dfrac{1}{20}$ (that is, every length on the model is $\\dfrac{1}{20}$ of the real length). Find the surface area and volume of the model, and compare them with the real shed's surface area and volume by stating the scale factors for area and volume.",
+   "solution": "**Key idea:** When lengths scale by a factor of $s$, areas scale by $s^2$ and volumes scale by $s^3$.\n\n1. Find the real shed's surface area. The six faces of the rectangular prism have areas: two $3 \\times 2.5 = 7.5 \\text{ m}^2$ faces, two $2 \\times 2.5 = 5 \\text{ m}^2$ faces, and two $3 \\times 2 = 6 \\text{ m}^2$ faces.\n$$SA_{\\text{real}} = 2(7.5) + 2(5) + 2(6) = 15 + 10 + 12 = 37 \\text{ m}^2$$\n2. Find the real shed's volume:\n$$V_{\\text{real}} = 3 \\times 2 \\times 2.5 = 15 \\text{ m}^3$$\n3. The length scale factor is $s = \\dfrac{1}{20}$, so the area scale factor is $s^2 = \\dfrac{1}{400}$ and the volume scale factor is $s^3 = \\dfrac{1}{8000}$.\n4. Model surface area:\n$$SA_{\\text{model}} = \\frac{37}{400} = 0.0925 \\text{ m}^2$$\n5. Model volume:\n$$V_{\\text{model}} = \\frac{15}{8000} = 0.001875 \\text{ m}^3$$\n\n**Answer:** The model's surface area is $0.0925 \\text{ m}^2$ (area scale factor $\\tfrac{1}{400}$) and its volume is $0.001875 \\text{ m}^3$ (volume scale factor $\\tfrac{1}{8000}$).",
+   "answer": "Model surface area $= 0.0925 \\text{ m}^2$; model volume $= 0.001875 \\text{ m}^3$; area scales by $\\tfrac{1}{400}$, volume scales by $\\tfrac{1}{8000}$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the wrong proportion equation",
+   "wrong": "Student writes $t = kv$ for an inverse relationship instead of $t = \\dfrac{k}{v}$.",
+   "fix": "Check whether the relationship is direct (as one quantity increases, so does the other) or inverse (as one increases, the other decreases). Direct proportion gives $y = kx$; inverse proportion gives $y = \\dfrac{k}{x}$. A quick check with the given values will confirm which equation is correct."
+  },
+  {
+   "title": "Forgetting to square or cube the scale factor",
+   "wrong": "A shape with scale factor $\\dfrac{1}{5}$ is said to have an area scale factor of $\\dfrac{1}{5}$ as well.",
+   "fix": "Lengths scale by $s$, but areas always scale by $s^2$ and volumes always scale by $s^3$. For a scale factor of $\\dfrac{1}{5}$, the area scale factor is $\\dfrac{1}{25}$ and the volume scale factor is $\\dfrac{1}{125}$."
+  },
+  {
+   "title": "Finding $k$ incorrectly by adding or subtracting",
+   "wrong": "From $30 = k \\times 4$, a student writes $k = 30 - 4 = 26$.",
+   "fix": "To isolate $k$, divide both sides by the number next to it. Here, $k = \\dfrac{30}{4} = 7.5$. Always use inverse operations: if $k$ is multiplied by a number, divide to undo it."
+  },
+  {
+   "title": "Mixing up which quantity is in the numerator for inverse proportion",
+   "wrong": "From $t = \\dfrac{k}{v}$ with $v = 60$ and $t = 3$, a student writes $k = \\dfrac{60}{3} = 20$ instead of $k = 3 \\times 60$.",
+   "fix": "Rearrange $t = \\dfrac{k}{v}$ to get $k = t \\times v$ before substituting. Multiplying both sides of the equation by $v$ makes it clear that $k$ equals the product of both known values."
+  }
+ ],
+ "practice": {
+  "question": "The pressure $P$ (in pascals) of a fixed amount of gas is inversely proportional to its volume $V$ (in litres). When $V = 8$, $P = 150$. Find the equation relating $P$ and $V$, then find the pressure when $V = 12$.",
+  "answer": "$P = \\dfrac{1200}{V}$; pressure is 100 pascals when $V = 12$",
+  "solution": "**Key idea:** If $P$ is inversely proportional to $V$, then $P = \\dfrac{k}{V}$. Substitute the known pair to find $k$, then use the equation to find the unknown value.\n\n1. Write the proportion equation: $P = \\dfrac{k}{V}$\n2. Substitute $V = 8$, $P = 150$: $$150 = \\frac{k}{8}$$\n3. Solve for $k$: $$k = 150 \\times 8 = 1200$$\n4. The equation is $P = \\dfrac{1200}{V}$.\n5. Substitute $V = 12$: $$P = \\frac{1200}{12} = 100$$\n\n**Answer:** The equation is $P = \\dfrac{1200}{V}$, and when $V = 12$ litres the pressure is 100 pascals."
+ },
+ "checked": true,
+ "attempts": 1
+}

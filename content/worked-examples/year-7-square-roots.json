@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Squaring a number",
+   "question": "Find the value of $8^2$.",
+   "solution": "**Key idea:** $8^2$ means $8 \\times 8$, not $8 \\times 2$.\n\n1. Write the meaning of the notation: $8^2 = 8 \\times 8$\n2. Multiply: $8 \\times 8 = 64$\n\n**Answer:** $8^2 = 64$",
+   "answer": "$64$"
+  },
+  {
+   "title": "Finding the square root of a perfect square",
+   "question": "Find the value of $\\sqrt{144}$.",
+   "solution": "**Key idea:** $\\sqrt{144}$ asks \"what number multiplied by itself equals $144$?\"\n\n1. Recall or check perfect squares: $10^2 = 100$, $11^2 = 121$, $12^2 = 144$.\n2. Since $12 \\times 12 = 144$, we have $\\sqrt{144} = 12$.\n3. Check by squaring: $12^2 = 144$ ✓\n\n**Answer:** $\\sqrt{144} = 12$",
+   "answer": "$12$"
+  },
+  {
+   "title": "Solving a real-life problem using square roots",
+   "question": "A square courtyard has an area of $196$ square metres. What is the side length of the courtyard?",
+   "solution": "**Key idea:** The area of a square is side length squared, so the side length is the square root of the area.\n\n1. Write the relationship: $\\text{side length} = \\sqrt{\\text{area}} = \\sqrt{196}$\n2. Find which number multiplied by itself gives $196$: $14 \\times 14 = 196$, so $\\sqrt{196} = 14$.\n3. Check: $14^2 = 196$ ✓\n\n**Answer:** The side length of the courtyard is $14$ metres.",
+   "answer": "$14$ metres"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying by 2 instead of by itself",
+   "wrong": "$6^2 = 6 \\times 2 = 12$",
+   "fix": "$6^2$ means $6$ multiplied by itself, not by $2$. The correct working is $6^2 = 6 \\times 6 = 36$. Read the notation as \"six squared\", which always means \"six groups of six\"."
+  },
+  {
+   "title": "Forgetting perfect squares when finding square roots",
+   "wrong": "$\\sqrt{81} = 40.5$ (halving $81$ instead of finding the square root)",
+   "fix": "Finding a square root is not the same as dividing by $2$. Memorise the perfect squares up to $12^2 = 144$ so you can recognise that $9 \\times 9 = 81$, giving $\\sqrt{81} = 9$."
+  },
+  {
+   "title": "Thinking every whole number has a whole-number square root",
+   "wrong": "$\\sqrt{20} = 10$ (halving $20$) or $\\sqrt{20} = 4$ (guessing)",
+   "fix": "Only perfect square numbers have whole-number square roots. Because $20$ is not a perfect square, $\\sqrt{20}$ is not a whole number. Check by listing perfect squares: $16, 25, 36, \\ldots$ and notice $20$ is not among them."
+  },
+  {
+   "title": "Confusing the inverse relationship direction",
+   "wrong": "\"Squaring and square roots are inverses, so $\\sqrt{7^2} = 49$\"",
+   "fix": "Applying squaring then square rooting (or vice versa) returns you to the starting number, not a new one. $\\sqrt{7^2} = \\sqrt{49} = 7$, right back to where you started. The operations undo each other."
+  }
+ ],
+ "practice": {
+  "question": "Find the value of $\\sqrt{169}$, then use your answer to write down the value of $\\left(\\sqrt{169}\\right)^2$ without any further calculation. Explain in one sentence how the two results show that squaring and finding the square root are inverse operations.",
+  "answer": "$\\sqrt{169} = 13$; $\\left(\\sqrt{169}\\right)^2 = 13^2 = 169$.",
+  "solution": "**Key idea:** Squaring and finding the square root are inverse operations, meaning each one undoes the other.\n\n1. Find $\\sqrt{169}$: ask \"what number multiplied by itself equals $169$?\" Since $13 \\times 13 = 169$, we get $\\sqrt{169} = 13$.\n2. Check: $13^2 = 169$ ✓\n3. Write down $\\left(\\sqrt{169}\\right)^2$: substituting the result from step 1, $\\left(\\sqrt{169}\\right)^2 = 13^2 = 169$.\n4. Explanation: starting with $169$, taking the square root gave $13$, and then squaring returned to $169$, showing the two operations undo each other and are therefore inverse operations."
+ },
+ "checked": true,
+ "attempts": 2
+}

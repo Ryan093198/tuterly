@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Using the sine rule to find an unknown side",
+   "question": "In triangle $ABC$, angle $A = 47°$, angle $B = 63°$, and side $a = 14$ cm. Find side $b$, correct to one decimal place.",
+   "solution": "**Key idea:** When two angles and one opposite side are known, use the sine rule $\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}$.\n\n1. Write the sine rule with the known values:\n$$\\frac{14}{\\sin 47°} = \\frac{b}{\\sin 63°}$$\n2. Solve for $b$:\n$$b = \\frac{14 \\times \\sin 63°}{\\sin 47°}$$\n3. Evaluate:\n$$b = \\frac{14 \\times 0.8910}{0.7314} \\approx \\frac{12.474}{0.7314} \\approx 17.1 \\text{ cm}$$\n\n**Answer:** $b \\approx 17.1$ cm",
+   "answer": "$b \\approx 17.1$ cm"
+  },
+  {
+   "title": "Using the cosine rule to find an unknown angle",
+   "question": "In triangle $PQR$, $p = 9$ cm, $q = 11$ cm, and $r = 7$ cm. Find angle $R$, correct to the nearest degree.",
+   "solution": "**Key idea:** When all three sides are known, use the cosine rule in the form $\\cos R = \\dfrac{p^2 + q^2 - r^2}{2pq}$.\n\n1. Substitute the known values:\n$$\\cos R = \\frac{9^2 + 11^2 - 7^2}{2 \\times 9 \\times 11}$$\n2. Simplify the numerator and denominator:\n$$\\cos R = \\frac{81 + 121 - 49}{198} = \\frac{153}{198}$$\n3. Divide:\n$$\\cos R \\approx 0.7727$$\n4. Find angle $R$:\n$$R = \\cos^{-1}(0.7727) \\approx 39.6° \\approx 40°$$\n\n**Answer:** $R \\approx 40°$",
+   "answer": "$R \\approx 40°$"
+  },
+  {
+   "title": "Area and the cosine rule in a real-life problem",
+   "question": "Two fences meet at a corner post. One fence is 23 m long and the other is 18 m long. The angle between the fences at the corner post is $74°$. A third fence is to be built to join the far ends of the two fences, enclosing a triangular paddock. Find the area of the triangular paddock, correct to the nearest square metre, and the length of the third fence, correct to the nearest metre.",
+   "solution": "**Key idea:** Use the area formula $\\text{Area} = \\tfrac{1}{2}ab\\sin C$ when two sides and the included angle are known, then use the cosine rule to find the third side.\n\n1. Label the two known sides $a = 23$ m, $b = 18$ m, and the included angle $C = 74°$.\n2. Calculate the area:\n$$\\text{Area} = \\frac{1}{2} \\times 23 \\times 18 \\times \\sin 74°$$\n$$= \\frac{1}{2} \\times 23 \\times 18 \\times 0.9613 \\approx 199.0 \\approx 199 \\text{ m}^2$$\n3. Apply the cosine rule to find the third side $c$:\n$$c^2 = 23^2 + 18^2 - 2 \\times 23 \\times 18 \\times \\cos 74°$$\n$$= 529 + 324 - 828 \\times 0.2756$$\n$$= 853 - 228.2 = 624.8$$\n4. Take the square root:\n$$c = \\sqrt{624.8} \\approx 25 \\text{ m}$$\n\n**Answer:** Area $\\approx 199$ m², third fence $\\approx 25$ m",
+   "answer": "Area $\\approx 199$ m², third fence $\\approx 25$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the sine rule when the cosine rule is needed",
+   "wrong": "Given sides 8, 11, 15 and no angles, writing $\\dfrac{8}{\\sin A} = \\dfrac{11}{\\sin B}$ with no known angle.",
+   "fix": "The sine rule requires a matched side-angle pair to start. When you have three sides and no angles (SSS), or two sides and the included angle (SAS), use the cosine rule instead."
+  },
+  {
+   "title": "Ignoring the ambiguous case (SSA)",
+   "wrong": "Finding $\\sin X = 0.797$ and writing $X = 53°$ as the only answer without checking $X = 127°$.",
+   "fix": "When using the sine rule to find an angle from two sides and a non-included angle, always check whether the supplement $180° - X$ also gives a valid triangle by verifying the remaining angle would be positive."
+  },
+  {
+   "title": "Subtracting instead of adding when rearranging the cosine rule",
+   "wrong": "$a^2 = b^2 + c^2 - 2bc\\cos A$, but when solving for $\\cos A$ writing $\\cos A = \\dfrac{a^2 - b^2 - c^2}{2bc}$ (wrong sign on $b^2$ and $c^2$).",
+   "fix": "Rearrange carefully: $2bc\\cos A = b^2 + c^2 - a^2$, so $\\cos A = \\dfrac{b^2 + c^2 - a^2}{2bc}$. Both $b^2$ and $c^2$ are positive in the numerator."
+  },
+  {
+   "title": "Using degrees in a calculator set to radians",
+   "wrong": "Evaluating $\\sin 74°$ on a calculator in radian mode, getting $\\approx 0.9999$ instead of $\\approx 0.9613$.",
+   "fix": "Always check your calculator is in degree mode (DEG) before entering any angle in these problems. A quick check: $\\sin 30°$ should equal exactly $0.5$."
+  }
+ ],
+ "practice": {
+  "question": "In triangle $XYZ$, side $x = 22$ cm, side $z = 17$ cm, and angle $Z = 38°$. Find angle $X$, correct to the nearest degree, and determine whether the ambiguous case applies.",
+  "answer": "$X \\approx 53°$ or $X \\approx 127°$; the ambiguous case applies and both solutions are valid.",
+  "solution": "**Key idea:** With two sides and a non-included angle (SSA), use the sine rule and always test the supplement for the ambiguous case.\n\n1. Write the sine rule and solve for $\\sin X$:\n$$\\frac{x}{\\sin X} = \\frac{z}{\\sin Z} \\implies \\sin X = \\frac{x \\sin Z}{z} = \\frac{22 \\times \\sin 38°}{17}$$\n2. Evaluate:\n$$\\sin X = \\frac{22 \\times 0.6157}{17} = \\frac{13.545}{17} \\approx 0.7968$$\n3. First solution:\n$$X = \\sin^{-1}(0.7968) \\approx 52.8° \\approx 53°$$\n4. Test the supplement:\n$$X = 180° - 53° = 127°$$\nRemaining angle: $180° - 38° - 127° = 15° > 0°$ ✓\n5. Both triangles are valid: Solution 1 gives $Y = 180° - 38° - 53° = 89°$; Solution 2 gives $Y = 15°$. The ambiguous case applies.\n\n**Answer:** $X \\approx 53°$ or $X \\approx 127°$; both form valid triangles."
+ },
+ "checked": true,
+ "attempts": 2
+}

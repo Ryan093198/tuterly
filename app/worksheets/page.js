@@ -60,6 +60,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 // Marketing palette, matched to app/parents/page.js.
@@ -83,7 +84,7 @@ const c = {
 const sans = "var(--font-display)";
 
 // Year-level groups for the topic grid below the generator.
-const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
+const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 
 export default function WorksheetsPage() {
   const topicsByYear = Object.fromEntries(

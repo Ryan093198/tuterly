@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Rounding decimals to a given decimal place",
+   "question": "Round $47.3862$ to 2 decimal places.",
+   "solution": "**Key idea:** Look at the digit in the third decimal place to decide whether to round up or keep the second decimal place the same.\n\n1. The second decimal place digit is $8$.\n2. The third decimal place digit is $6$, which is $5$ or more, so round up.\n3. $47.3862$ rounded to 2 decimal places is $47.39$.\n\n**Answer:** $47.39$",
+   "answer": "$47.39$"
+  },
+  {
+   "title": "Estimating a sum using rounding",
+   "question": "Round each number to the nearest ten, then estimate $63.4 + 28.7 + 41.2$.",
+   "solution": "**Key idea:** Round each number to the nearest ten first, then add the rounded values to get the estimate.\n\n1. $63.4$ rounded to the nearest ten is $60$.\n2. $28.7$ rounded to the nearest ten is $30$.\n3. $41.2$ rounded to the nearest ten is $40$.\n4. Estimate: $60 + 30 + 40 = 130$.\n\n**Answer:** $130$",
+   "answer": "$130$"
+  },
+  {
+   "title": "Choosing appropriate accuracy in a real-world context",
+   "question": "Layla is buying ribbon to decorate gift boxes. She measures the ribbon she needs for each box: $0.346$ m, $0.512$ m, and $0.279$ m. She adds these to find the total length of ribbon needed. Round each measurement to 1 decimal place, then find the total length to 1 decimal place, in metres.",
+   "solution": "**Key idea:** Round each measurement to 1 decimal place before adding, then round the total to 1 decimal place.\n\n1. $0.346$ m rounded to 1 decimal place is $0.3$ m.\n2. $0.512$ m rounded to 1 decimal place is $0.5$ m.\n3. $0.279$ m rounded to 1 decimal place is $0.3$ m.\n4. Total: $0.3 + 0.5 + 0.3 = 1.1$ m.\n\n**Answer:** $1.1$ m",
+   "answer": "$1.1$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Rounding the wrong digit",
+   "wrong": "To round $3.768$ to 1 decimal place, a student looks at the digit $6$ (the second decimal place) and rounds the whole number up to $4$.",
+   "fix": "Always identify the correct decimal place first. To round to 1 decimal place, look only at the second decimal place digit to decide whether to round the first decimal place digit up or leave it the same."
+  },
+  {
+   "title": "Forgetting to round up when the next digit is exactly 5",
+   "wrong": "A student rounds $2.450$ to 1 decimal place and writes $2.4$, thinking only digits above $5$ cause rounding up.",
+   "fix": "The rule is: if the next digit is $5$ or more, round up. So $2.450$ rounded to 1 decimal place is $2.5$."
+  },
+  {
+   "title": "Dropping a zero in a decimal answer",
+   "wrong": "A student rounds $5.804$ to 2 decimal places and writes $5.8$ instead of $5.80$.",
+   "fix": "When rounding to 2 decimal places, the answer must always show 2 decimal digits. Write $5.80$, not $5.8$, so the level of accuracy is clear."
+  },
+  {
+   "title": "Using the exact answer instead of an estimate to check reasonableness",
+   "wrong": "A student checks whether $58.3 + 41.9 = 100.2$ is reasonable by recalculating the exact sum again.",
+   "fix": "To check reasonableness, use a quick estimate with rounded numbers. Round $58.3$ to $60$ and $41.9$ to $40$, giving $60 + 40 = 100$. Since $100.2$ is close to $100$, the answer is reasonable."
+  }
+ ],
+ "practice": {
+  "question": "Round each number to the nearest whole number, then estimate $18.6 + 43.2 + 9.8$. Give your estimate as a whole number.",
+  "answer": "$72$",
+  "solution": "**Key idea:** Round each number to the nearest whole number first, then add the rounded values.\n\n1. $18.6$ rounded to the nearest whole number is $19$.\n2. $43.2$ rounded to the nearest whole number is $43$.\n3. $9.8$ rounded to the nearest whole number is $10$.\n4. Estimate: $19 + 43 + 10 = 72$.\n\n**Answer:** $72$"
+ },
+ "checked": true,
+ "attempts": 3
+}

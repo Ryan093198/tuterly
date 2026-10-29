@@ -33,4 +33,4 @@
 .wx-tryline { margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: var(--foreground); }
 .wx-tryline a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .wx-md .katex { max-width: 100%; }
-.wx-md p:has(> .katex) { overflow-x: auto; overflow-y: hidden; }
+.wx-md p, .wx-md li { overflow-x: auto; overflow-y: hidden; }
