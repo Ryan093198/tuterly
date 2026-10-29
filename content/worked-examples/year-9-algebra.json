@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Expanding a binomial product",
+   "question": "Expand and simplify $(x + 5)(x - 3)$.",
+   "solution": "**Key idea:** Use the distributive law (FOIL) to multiply every term in the first bracket by every term in the second bracket, then collect like terms.\n\n1. Multiply the First terms: $x \\times x = x^2$\n2. Multiply the Outer terms: $x \\times (-3) = -3x$\n3. Multiply the Inner terms: $5 \\times x = 5x$\n4. Multiply the Last terms: $5 \\times (-3) = -15$\n5. Collect like terms: $$x^2 - 3x + 5x - 15 = x^2 + 2x - 15$$\n\n**Answer:** $x^2 + 2x - 15$",
+   "answer": "$x^2 + 2x - 15$"
+  },
+  {
+   "title": "Factorising a monic quadratic",
+   "question": "Factorise $x^2 - x - 12$.",
+   "solution": "**Key idea:** Find two integers that multiply to the constant term and add to the coefficient of $x$. Write the expression as a product of two binomial factors.\n\n1. Find two numbers that multiply to $-12$ and add to $-1$.\n2. Test factor pairs of $-12$: $3 \\times (-4) = -12$ and $3 + (-4) = -1$. ✓\n3. Write the factorised form: $$(x + 3)(x - 4)$$\n4. Check by expanding: $(x + 3)(x - 4) = x^2 - 4x + 3x - 12 = x^2 - x - 12$ ✓\n\n**Answer:** $(x + 3)(x - 4)$",
+   "answer": "$(x + 3)(x - 4)$"
+  },
+  {
+   "title": "Real-life area problem using expansion and factorisation",
+   "question": "A rectangular garden has a length of $(x + 7)$ metres and a width of $(x - 2)$ metres. A gardener expands the expression for the area and finds it equals $x^2 + bx - 14$. Find the value of $b$. Then, a second rectangular garden has area $x^2 + 3x - 10$ square metres. Write the dimensions of the second garden as two binomial expressions.",
+   "solution": "**Key idea:** Area of a rectangle equals length times width. Expand the binomial product to find $b$, then factorise the second quadratic to find the dimensions of the second garden.\n\n1. Expand $(x + 7)(x - 2)$ using the distributive law:\n$$\\begin{aligned}(x + 7)(x - 2) &= x^2 - 2x + 7x - 14 \\\\ &= x^2 + 5x - 14\\end{aligned}$$\n2. Comparing with $x^2 + bx - 14$: $b = 5$.\n3. Factorise $x^2 + 3x - 10$: find two numbers that multiply to $-10$ and add to $3$.\n4. $5 \\times (-2) = -10$ and $5 + (-2) = 3$ ✓\n5. So $x^2 + 3x - 10 = (x + 5)(x - 2)$, meaning the second garden has dimensions $(x + 5)$ metres and $(x - 2)$ metres.\n\n**Answer:** $b = 5$; dimensions of the second garden are $(x + 5)$ metres and $(x - 2)$ metres.",
+   "answer": "$b = 5$; dimensions $(x + 5)$ m and $(x - 2)$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to multiply every pair of terms (incomplete FOIL)",
+   "wrong": "$(x + 4)(x + 3) = x^2 + 12$ (only multiplying the first and last terms)",
+   "fix": "There are four multiplications: First, Outer, Inner, Last. Write out all four products before collecting like terms to make sure none are skipped."
+  },
+  {
+   "title": "Sign errors with negative terms",
+   "wrong": "$(x - 5)(x - 2) = x^2 - 7x + (-10) = x^2 - 7x - 10$",
+   "fix": "A negative times a negative is positive: $(-5) \\times (-2) = +10$, so the constant term is $+10$. Always write the sign with each term before multiplying."
+  },
+  {
+   "title": "Choosing factor pairs that add to the wrong sign",
+   "wrong": "Factorising $x^2 - 5x + 6$ as $(x + 2)(x + 3)$ because $2 \\times 3 = 6$",
+   "fix": "Both the product and the sum must match. Here you need two numbers that multiply to $+6$ and add to $-5$, which are $-2$ and $-3$, giving $(x - 2)(x - 3)$. Always check both conditions."
+  },
+  {
+   "title": "Missing the difference of two squares pattern",
+   "wrong": "Expanding $(x + 6)(x - 6)$ as $x^2 + 12x - 36$ by including a middle term",
+   "fix": "When a binomial product has the form $(x + a)(x - a)$, the outer and inner terms cancel exactly, leaving $x^2 - a^2$ with no $x$ term. Recognise this pattern to expand and factorise more quickly."
+  }
+ ],
+ "practice": {
+  "question": "Factorise $x^2 + 4x - 21$.",
+  "answer": "$(x + 7)(x - 3)$",
+  "solution": "**Key idea:** Find two integers that multiply to $-21$ and add to $+4$, then write the expression as a product of two binomial factors.\n\n1. List factor pairs of $-21$: $(-1, 21),\\, (1, -21),\\, (-3, 7),\\, (3, -7)$.\n2. Check which pair adds to $4$: $-3 + 7 = 4$ ✓\n3. Write the factorised form: $(x + 7)(x - 3)$\n4. Check by expanding: $(x + 7)(x - 3) = x^2 - 3x + 7x - 21 = x^2 + 4x - 21$ ✓\n\n**Answer:** $(x + 7)(x - 3)$"
+ },
+ "checked": true,
+ "attempts": 1
+}

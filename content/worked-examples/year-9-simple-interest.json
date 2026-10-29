@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Calculating simple interest",
+   "question": "Mia invests \\$4500 at a simple interest rate of 6\\% per annum for 3 years. Calculate the interest she earns.",
+   "solution": "**Key idea:** Simple interest is calculated using $I = PRT$, where $P$ is the principal, $R$ is the annual interest rate as a decimal, and $T$ is the time in years.\n\n1. Identify the values: $P = 4500$, $R = 0.06$, $T = 3$.\n2. Substitute into the formula:\n$$I = PRT = 4500 \\times 0.06 \\times 3$$\n3. Calculate:\n$$I = 4500 \\times 0.18 = 810$$\n\n**Answer:** Mia earns \\$810 in interest.",
+   "answer": "\\$810"
+  },
+  {
+   "title": "Rearranging for the interest rate",
+   "question": "Jake borrows \\$7200 and repays a total of \\$9576 after 4 years with simple interest. Find the annual interest rate as a percentage.",
+   "solution": "**Key idea:** First find $I$ from the total amount using $I = \\text{Total} - P$, then rearrange $I = PRT$ to get $R = \\dfrac{I}{PT}$.\n\n1. Find the interest earned:\n$$I = 9576 - 7200 = 2376$$\n2. Write the rearranged formula:\n$$R = \\frac{I}{PT}$$\n3. Substitute $P = 7200$, $T = 4$:\n$$R = \\frac{2376}{7200 \\times 4} = \\frac{2376}{28800}$$\n4. Calculate and convert to a percentage:\n$$R = 0.0825 = 8.25\\%$$\n\n**Answer:** The annual interest rate is $8.25\\%$.",
+   "answer": "8.25\\% per annum"
+  },
+  {
+   "title": "Comparing simple interest scenarios",
+   "question": "Priya has \\$5000 to invest. Bank A offers a simple interest rate of 4.8\\% per annum for 5 years. Bank B offers a simple interest rate of 5.5\\% per annum for 4 years. Which bank gives Priya a greater total amount at the end of the investment period, and by how much?",
+   "solution": "**Key idea:** Calculate the total amount $A = P + I = P + PRT$ for each bank, then compare.\n\n1. Bank A: $P = 5000$, $R = 0.048$, $T = 5$:\n$$I_A = 5000 \\times 0.048 \\times 5 = 1200$$\n$$A_A = 5000 + 1200 = 6200$$\n2. Bank B: $P = 5000$, $R = 0.055$, $T = 4$:\n$$I_B = 5000 \\times 0.055 \\times 4 = 1100$$\n$$A_B = 5000 + 1100 = 6100$$\n3. Compare:\n$$A_A - A_B = 6200 - 6100 = 100$$\n\n**Answer:** Bank A gives a greater total amount by \\$100.",
+   "answer": "Bank A, by \\$100"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the rate as a percentage instead of a decimal",
+   "wrong": "I = 4500 × 6 × 3 = 81000",
+   "fix": "Always convert the percentage rate to a decimal before substituting into $I = PRT$. Divide the percentage by 100, so $6\\% = 0.06$."
+  },
+  {
+   "title": "Forgetting to add principal to find the total amount",
+   "wrong": "Total amount = I = $810, so Mia has $810 at the end.",
+   "fix": "$I$ is only the interest earned, not the final balance. The total amount is $A = P + I$, so always add the original principal back."
+  },
+  {
+   "title": "Using months instead of years (or vice versa) for time",
+   "wrong": "For an 18-month loan: T = 18 when the rate is per annum.",
+   "fix": "The time $T$ must match the period of the rate $R$. If $R$ is an annual rate, convert months to years by dividing by 12. So 18 months $= 1.5$ years."
+  },
+  {
+   "title": "Rearranging the formula incorrectly",
+   "wrong": "To find P: P = I - RT",
+   "fix": "Use inverse operations carefully. Starting from $I = PRT$, divide both sides by $RT$ to get $P = \\dfrac{I}{RT}$. Writing the formula out before substituting helps avoid errors."
+  }
+ ],
+ "practice": {
+  "question": "Lena takes out a simple interest loan of \\$6000 at an annual interest rate of 7.5\\% and repays a total of \\$8250. Find the length of the loan in years.",
+  "answer": "5 years",
+  "solution": "**Key idea:** Find $I$ from the total amount, then rearrange $I = PRT$ to solve for $T = \\dfrac{I}{PR}$.\n\n1. Find the interest paid:\n$$I = 8250 - 6000 = 2250$$\n2. Write the rearranged formula:\n$$T = \\frac{I}{PR}$$\n3. Substitute $P = 6000$, $R = 0.075$:\n$$T = \\frac{2250}{6000 \\times 0.075} = \\frac{2250}{450}$$\n4. Calculate:\n$$T = 5$$\n\n**Answer:** The loan is for 5 years."
+ },
+ "checked": true,
+ "attempts": 1
+}

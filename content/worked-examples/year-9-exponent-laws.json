@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Product and quotient laws with variables",
+   "question": "Simplify each expression.\n\n(a) $x^3 \\times x^5$\n\n(b) $\\dfrac{y^8}{y^3}$\n\n(c) $3a^4 \\times 2a^2$",
+   "solution": "**Key idea:** When multiplying powers with the same base, add the exponents. When dividing, subtract the exponents.\n\n1. (a) $x^3 \\times x^5 = x^{3+5} = x^8$\n2. (b) $\\dfrac{y^8}{y^3} = y^{8-3} = y^5$\n3. (c) Multiply the coefficients and apply the product law to the variable: $3a^4 \\times 2a^2 = (3 \\times 2)a^{4+2} = 6a^6$\n\n**Answer:** (a) $x^8$ (b) $y^5$ (c) $6a^6$",
+   "answer": "(a) $x^8$ (b) $y^5$ (c) $6a^6$"
+  },
+  {
+   "title": "Power-of-a-power and zero exponent",
+   "question": "Simplify each expression.\n\n(a) $(m^3)^4$\n\n(b) $(2p^2)^3$\n\n(c) $5x^0 + (3y)^0$",
+   "solution": "**Key idea:** For a power of a power, multiply the exponents. Any non-zero base raised to the power of zero equals 1.\n\n1. (a) $(m^3)^4 = m^{3 \\times 4} = m^{12}$\n2. (b) Apply the power to both the coefficient and the variable: $(2p^2)^3 = 2^3 \\times p^{2 \\times 3} = 8p^6$\n3. (c) $x^0 = 1$ and $(3y)^0 = 1$, so $5x^0 + (3y)^0 = 5(1) + 1 = 6$\n\n**Answer:** (a) $m^{12}$ (b) $8p^6$ (c) $6$",
+   "answer": "(a) $m^{12}$ (b) $8p^6$ (c) $6$"
+  },
+  {
+   "title": "Multi-step exponent problem in context",
+   "question": "A rectangular garden bed has a length of $4b^4$ metres and a width of $3b$ metres.\n\n(a) Write a simplified expression for the area of the garden bed in square metres.\n\n(b) A second garden bed has area $(2b^2)^3$ square metres. Write a simplified expression for how many times larger the second garden bed's area is than the first garden bed's area.",
+   "solution": "**Key idea:** Find each area using the exponent laws, then divide to find the ratio.\n\n1. (a) Area of first garden bed: $4b^4 \\times 3b = 12b^5$ m²\n2. (b) Area of second garden bed: $(2b^2)^3 = 2^3 \\times b^{2 \\times 3} = 8b^6$ m²\n3. Divide the second area by the first:\n$$\\frac{8b^6}{12b^5} = \\frac{8}{12} \\times b^{6-5} = \\frac{2}{3}b$$\n4. The second garden bed's area is $\\dfrac{2b}{3}$ times that of the first.\n\n**Answer:** (a) $12b^5$ m² (b) $\\dfrac{2b}{3}$ times larger",
+   "answer": "(a) $12b^5$ m² (b) $\\dfrac{2b}{3}$ times larger"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying exponents instead of adding in the product law",
+   "wrong": "$x^3 \\times x^5 = x^{15}$",
+   "fix": "When multiplying powers with the same base, add the exponents, not multiply them. The rule is $x^m \\times x^n = x^{m+n}$, so $x^3 \\times x^5 = x^8$."
+  },
+  {
+   "title": "Forgetting to raise the coefficient to the power",
+   "wrong": "$(2p^2)^3 = 2p^6$",
+   "fix": "The power outside the brackets applies to every factor inside, including the number. Raise the coefficient as well: $(2p^2)^3 = 2^3 \\times p^6 = 8p^6$."
+  },
+  {
+   "title": "Thinking $x^0 = 0$ instead of 1",
+   "wrong": "$5x^0 = 0$",
+   "fix": "Any non-zero base raised to the power zero equals 1, never 0. So $x^0 = 1$ and $5x^0 = 5 \\times 1 = 5$."
+  },
+  {
+   "title": "Subtracting coefficients instead of dividing when using the quotient law",
+   "wrong": "$\\dfrac{6a^6}{3a^2} = 3a^{6-2}$ but then writing $3a^3$ by subtracting coefficients too",
+   "fix": "Only the exponents are subtracted when using the quotient law. The coefficients must be divided: $\\dfrac{6a^6}{3a^2} = \\dfrac{6}{3} \\times a^{6-2} = 2a^4$."
+  }
+ ],
+ "practice": {
+  "question": "Simplify each expression.\n\n(a) $(3k^3)^2$\n\n(b) $\\dfrac{(3k^3)^2}{3k^4}$",
+  "answer": "(a) $9k^6$ (b) $3k^2$",
+  "solution": "**Key idea:** Apply the power-of-a-power law first, then use the quotient law.\n\n1. (a) Raise both the coefficient and the variable to the power of 2: $(3k^3)^2 = 3^2 \\times k^{3 \\times 2} = 9k^6$\n2. (b) Substitute the result from (a) into the numerator:\n$$\\frac{9k^6}{3k^4} = \\frac{9}{3} \\times k^{6-4} = 3k^2$$\n\n**Answer:** (a) $9k^6$ (b) $3k^2$"
+ },
+ "checked": true,
+ "attempts": 2
+}

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Area of a triangle",
+   "question": "Find the area of a triangle with a base of $8$ cm and a perpendicular height of $5$ cm.",
+   "solution": "**Key idea:** The area of a triangle is $A = \\dfrac{1}{2} \\times b \\times h$, where $b$ is the base and $h$ is the perpendicular height.\n\n1. Write the formula: $$A = \\frac{1}{2} \\times b \\times h$$\n2. Substitute $b = 8$ and $h = 5$: $$A = \\frac{1}{2} \\times 8 \\times 5$$\n3. Calculate: $$A = \\frac{1}{2} \\times 40 = 20$$\n\n**Answer:** The area of the triangle is $20$ cm².",
+   "answer": "$20$ cm²"
+  },
+  {
+   "title": "Perimeter and area of a compound shape",
+   "question": "A compound shape is made by joining a rectangle and a square. The rectangle is $10$ m long and $4$ m wide. The square has a side length of $4$ m and is attached to the right end of the rectangle, so the two shapes share one $4$ m edge. Find the total perimeter and total area of the compound shape.",
+   "solution": "**Key idea:** For a compound shape, split it into simpler shapes to find the area, and trace the outside edges carefully to find the perimeter.\n\n1. Find the area of the rectangle: $$A_{\\text{rect}} = 10 \\times 4 = 40 \\text{ m}^2$$\n2. Find the area of the square: $$A_{\\text{sq}} = 4 \\times 4 = 16 \\text{ m}^2$$\n3. Add the areas: $$A_{\\text{total}} = 40 + 16 = 56 \\text{ m}^2$$\n4. Trace the outside edges. The overall shape is a rectangle $14$ m long and $4$ m wide (the shared edge is internal, not on the boundary): $$P = 2 \\times (14 + 4) = 2 \\times 18 = 36 \\text{ m}$$\n\n**Answer:** Total area $= 56$ m²; total perimeter $= 36$ m.",
+   "answer": "Area $= 56$ m²; perimeter $= 36$ m"
+  },
+  {
+   "title": "Fencing and floor area",
+   "question": "Mia is setting up a vegetable garden in her backyard. The garden is in the shape of a parallelogram with a base of $6$ m and a perpendicular height of $3.5$ m. She also wants to put a fence all the way around the garden. The parallelogram has two sides of length $6$ m and two sides of length $4$ m. Fencing costs \\$12 per metre and soil costs \\$8 per square metre. How much will Mia spend in total?",
+   "solution": "**Key idea:** Use the parallelogram area formula for the soil cost and the perimeter for the fencing cost, then add both costs.\n\n1. Find the area of the garden: $$A = b \\times h = 6 \\times 3.5 = 21 \\text{ m}^2$$\n2. Find the perimeter of the garden: $$P = 2 \\times (6 + 4) = 2 \\times 10 = 20 \\text{ m}$$\n3. Calculate the cost of soil: $$21 \\times 8 = \\$168$$\n4. Calculate the cost of fencing: $$20 \\times 12 = \\$240$$\n5. Find the total cost: $$168 + 240 = \\$408$$\n\n**Answer:** Mia will spend \\$408 in total.",
+   "answer": "\\$408"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using slant height instead of perpendicular height",
+   "wrong": "Triangle with base $6$ cm, slant side $5$ cm, perpendicular height $4$ cm: $A = \\frac{1}{2} \\times 6 \\times 5 = 15$ cm²",
+   "fix": "Always use the perpendicular (right-angle) height in the formula $A = \\frac{1}{2} \\times b \\times h$, not the length of the slanted side. The perpendicular height is the straight-up measurement from the base to the top."
+  },
+  {
+   "title": "Forgetting the $\\frac{1}{2}$ in the triangle formula",
+   "wrong": "Triangle with base $8$ cm, height $5$ cm: $A = 8 \\times 5 = 40$ cm²",
+   "fix": "A triangle is exactly half of a rectangle with the same base and height, so you must always multiply by $\\frac{1}{2}$. The correct answer here is $\\frac{1}{2} \\times 8 \\times 5 = 20$ cm²."
+  },
+  {
+   "title": "Counting shared edges in the perimeter of a compound shape",
+   "wrong": "Two $4$ m $\\times$ $4$ m squares joined along one side: $P = 4 \\times 4 + 4 \\times 4 = 32$ m",
+   "fix": "The shared edge is inside the shape, so it is not part of the perimeter. Trace only the outer boundary of the compound shape to count the correct edges."
+  },
+  {
+   "title": "Mixing up perimeter and area",
+   "wrong": "Finding how much carpet is needed for a room but calculating $P = 2 \\times (5 + 3) = 16$ m instead of area",
+   "fix": "Perimeter measures the distance around the outside (used for fencing, edging). Area measures the surface inside (used for carpet, paint, tiles). Read the question carefully to decide which one you need."
+  }
+ ],
+ "practice": {
+  "question": "A parallelogram has a base of $9$ m and a perpendicular height of $6$ m. A triangle has a base of $8$ m and a perpendicular height of $9$ m. Find the total combined area of both shapes.",
+  "answer": "$90$ m²",
+  "solution": "**Key idea:** Use $A = b \\times h$ for the parallelogram and $A = \\frac{1}{2} \\times b \\times h$ for the triangle, then add the two areas.\n\n1. Area of the parallelogram: $$A_{\\text{para}} = 9 \\times 6 = 54 \\text{ m}^2$$\n2. Area of the triangle: $$A_{\\text{tri}} = \\frac{1}{2} \\times 8 \\times 9 = \\frac{1}{2} \\times 72 = 36 \\text{ m}^2$$\n3. Total area: $$A_{\\text{total}} = 54 + 36 = 90 \\text{ m}^2$$\n\n**Answer:** The total combined area is $90$ m²."
+ },
+ "checked": true,
+ "attempts": 1
+}

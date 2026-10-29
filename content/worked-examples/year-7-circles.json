@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Calculating circumference from diameter",
+   "question": "A circle has a diameter of $10$ cm. Calculate its circumference. Use $\\pi \\approx 3.14$ and give your answer rounded to one decimal place.",
+   "solution": "**Key idea:** The circumference of a circle is $C = \\pi d$, where $d$ is the diameter.\n\n1. Write the formula: $C = \\pi d$\n2. Substitute $d = 10$ and $\\pi \\approx 3.14$:\n$$C = 3.14 \\times 10$$\n3. Calculate:\n$$C = 31.4 \\text{ cm}$$\n\n**Answer:** The circumference is $31.4$ cm.",
+   "answer": "$31.4$ cm"
+  },
+  {
+   "title": "Finding radius from circumference",
+   "question": "A circle has a circumference of $94.2$ cm. Find its radius. Use $\\pi \\approx 3.14$.",
+   "solution": "**Key idea:** Use $C = 2\\pi r$ and rearrange to find $r$.\n\n1. Write the formula: $C = 2\\pi r$\n2. Rearrange to make $r$ the subject:\n$$r = \\frac{C}{2\\pi}$$\n3. Substitute $C = 94.2$ and $\\pi \\approx 3.14$:\n$$r = \\frac{94.2}{2 \\times 3.14} = \\frac{94.2}{6.28}$$\n4. Calculate:\n$$r = 15 \\text{ cm}$$\n\n**Answer:** The radius is $15$ cm.",
+   "answer": "$15$ cm"
+  },
+  {
+   "title": "Distance travelled by a rolling wheel",
+   "question": "Aisha rides her bike to school. Each wheel on her bike has a diameter of $60$ cm. The school is $1{,}884$ m away. How many full rotations does each wheel make on the trip to school? Use $\\pi \\approx 3.14$.",
+   "solution": "**Key idea:** Each time a wheel makes one full rotation, it travels a distance equal to its circumference. Divide the total distance by the circumference to find the number of rotations.\n\n1. Find the circumference of the wheel:\n$$C = \\pi d = 3.14 \\times 60 = 188.4 \\text{ cm}$$\n2. Convert the distance to school into centimetres:\n$$1{,}884 \\text{ m} = 188{,}400 \\text{ cm}$$\n3. Divide the total distance by the circumference:\n$$\\text{Rotations} = \\frac{188{,}400}{188.4} = 1{,}000$$\n\n**Answer:** Each wheel makes $1{,}000$ full rotations.",
+   "answer": "$1{,}000$ rotations"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Mixing up radius and diameter",
+   "wrong": "Diameter = 10 cm, so $C = 2 \\times 3.14 \\times 10 = 62.8$ cm (using the diameter as if it were the radius).",
+   "fix": "Always check which measurement you have been given. If you have the diameter, use $C = \\pi d$. If you have the radius, use $C = 2\\pi r$. Remember that the diameter is twice the radius, so $d = 2r$."
+  },
+  {
+   "title": "Rounding pi too early",
+   "wrong": "$\\pi \\approx 3$ (rounded too soon), giving $C = 3 \\times 8 = 24$ cm instead of $25.1$ cm.",
+   "fix": "Only round your final answer, not $\\pi$ itself mid-calculation. Use the value of $\\pi$ given in the question (such as $3.14$) all the way through, and round only at the very last step."
+  },
+  {
+   "title": "Forgetting to convert units",
+   "wrong": "Diameter = 50 cm, distance = 500 m, so rotations $= 500 \\div 157 = 3.18\\ldots$ (mixing metres and centimetres).",
+   "fix": "Before dividing, make sure the circumference and the total distance are in the same units. Convert everything to centimetres or everything to metres before you calculate."
+  },
+  {
+   "title": "Dividing by $\\pi$ instead of $2\\pi$ when finding the radius",
+   "wrong": "$r = \\frac{C}{\\pi} = \\frac{62.8}{3.14} = 20$ cm (this actually gives the diameter, not the radius).",
+   "fix": "The formula is $C = 2\\pi r$, so rearranging gives $r = \\dfrac{C}{2\\pi}$. Do not forget the factor of $2$. If you use this formula and get a suspiciously large answer, check whether you accidentally found the diameter."
+  }
+ ],
+ "practice": {
+  "question": "A circular garden bed has a circumference of $43.96$ m. Find the diameter and radius of the garden bed. Use $\\pi \\approx 3.14$.",
+  "answer": "Diameter $= 14$ m, radius $= 7$ m.",
+  "solution": "**Key idea:** Use $C = \\pi d$ to find the diameter, then halve it to find the radius.\n\n1. Write the formula and rearrange for $d$:\n$$d = \\frac{C}{\\pi}$$\n2. Substitute $C = 43.96$ and $\\pi \\approx 3.14$:\n$$d = \\frac{43.96}{3.14} = 14 \\text{ m}$$\n3. Find the radius by halving the diameter:\n$$r = \\frac{d}{2} = \\frac{14}{2} = 7 \\text{ m}$$\n\n**Answer:** The diameter is $14$ m and the radius is $7$ m."
+ },
+ "checked": true,
+ "attempts": 1
+}

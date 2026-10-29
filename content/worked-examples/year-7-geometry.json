@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Classifying a triangle by sides and angles",
+   "question": "A triangle has sides of length 5 cm, 5 cm and 6 cm. Classify this triangle by its sides and by its angles.",
+   "solution": "**Key idea:** Classify by sides first (count equal sides), then by angles (check whether any angle is 90° or greater).\n\n1. **By sides:** Two sides are equal (both 5 cm), so the triangle is **isosceles**.\n2. **By angles:** Use the cosine rule to find the largest angle, which is opposite the longest side (6 cm):\n$$\\cos C = \\frac{5^2 + 5^2 - 6^2}{2 \\times 5 \\times 5} = \\frac{25 + 25 - 36}{50} = \\frac{14}{50} = 0.28$$\n3. Since $\\cos C = 0.28 > 0$, angle $C$ is acute. The other two angles are equal and also acute (they must each be less than 90° because the triangle's angles sum to 180° and $C$ is already acute with the two remaining angles sharing what is left).\n4. All three angles are acute, so the triangle is **acute**.\n\n**Answer:** Isosceles and acute-angled triangle.",
+   "answer": "Isosceles and acute-angled triangle."
+  },
+  {
+   "title": "Classifying a quadrilateral from its properties",
+   "question": "A quadrilateral has two pairs of parallel sides, all four sides equal in length, and four right angles. Name all the quadrilateral types that this shape belongs to, and state its most specific name.",
+   "solution": "**Key idea:** Work through the hierarchy of quadrilateral properties to find every type that fits, then choose the most specific.\n\n1. It has two pairs of parallel sides, so it is a **parallelogram**.\n2. All four sides are equal, so it is also a **rhombus**.\n3. It has four right angles, so it is also a **rectangle**.\n4. A shape that is both a rhombus and a rectangle is a **square**.\n5. The most specific name is therefore **square**.\n\n**Answer:** It is a parallelogram, rhombus, rectangle, and most specifically a square.",
+   "answer": "Square (also a rectangle, rhombus and parallelogram)."
+  },
+  {
+   "title": "Identifying a shape from a real-life description",
+   "question": "A farmer marks out a flat paddock in the shape of a quadrilateral. The paddock has exactly one pair of parallel sides. The parallel sides measure 40 m and 60 m. The other two sides are 35 m and 50 m, and no angles are right angles. What type of quadrilateral is the paddock? State one property that makes it that type and not a parallelogram.",
+   "solution": "**Key idea:** A quadrilateral with exactly one pair of parallel sides is a trapezium. A parallelogram has two pairs of parallel sides.\n\n1. Count the pairs of parallel sides: the paddock has exactly **one** pair, so it cannot be a parallelogram (which needs two pairs).\n2. A quadrilateral with exactly one pair of parallel sides is a **trapezium**.\n3. The property that distinguishes it from a parallelogram is that **only one pair of opposite sides is parallel**, not both pairs.\n\n**Answer:** The paddock is a trapezium. It has exactly one pair of parallel sides, whereas a parallelogram has two pairs.",
+   "answer": "Trapezium; it has exactly one pair of parallel sides (a parallelogram has two)."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Calling any triangle with two equal sides equilateral",
+   "wrong": "Two sides are 5 cm and 5 cm, so the triangle is equilateral.",
+   "fix": "Equilateral means all three sides are equal. If only two sides match, the triangle is isosceles. Always count how many sides are equal before naming the type."
+  },
+  {
+   "title": "Confusing right-angled and obtuse triangles",
+   "wrong": "One angle looks big, so the triangle must be right-angled.",
+   "fix": "A right-angled triangle has an angle of exactly 90°. An obtuse triangle has one angle greater than 90°. These are different types. If no angle is exactly 90°, the triangle cannot be right-angled."
+  },
+  {
+   "title": "Thinking a square is not a rectangle",
+   "wrong": "The shape has four equal sides, so it is a square, not a rectangle.",
+   "fix": "A rectangle is any quadrilateral with four right angles. A square has four right angles and four equal sides, so it is a special rectangle. Quadrilateral types are not mutually exclusive; a shape can belong to several categories at once."
+  },
+  {
+   "title": "Mixing up a rhombus and a kite",
+   "wrong": "The shape has two pairs of equal adjacent sides, so it is a rhombus.",
+   "fix": "A kite has two pairs of equal sides that are adjacent (next to each other). A rhombus has all four sides equal. Check whether it is all four sides or just two pairs of neighbours before choosing the name."
+  }
+ ],
+ "practice": {
+  "question": "A quadrilateral has two pairs of equal adjacent sides. The two longer sides each measure 9 cm and the two shorter sides each measure 4 cm. Opposite sides are not equal, and the diagonals are not both equal in length. Classify this quadrilateral and state two of its properties.",
+  "answer": "Kite. Two properties (any two of): two pairs of equal adjacent sides; one diagonal bisects the other at right angles; one pair of equal opposite angles.",
+  "solution": "**Key idea:** Identify the quadrilateral from its side pattern, then recall its properties.\n\n1. The sides in order around the shape are 9 cm, 9 cm, 4 cm, 4 cm (or 9 cm, 4 cm, 4 cm, 9 cm), so two pairs of sides are equal and each pair is **adjacent**.\n2. Because the equal sides are adjacent (not opposite), this is not a parallelogram or rhombus.\n3. A quadrilateral with two pairs of equal adjacent sides is a **kite**.\n4. Two properties of a kite: (i) the two pairs of equal sides meet at the ends of one diagonal, and that diagonal bisects the other diagonal at right angles; (ii) the pair of angles between the unequal sides are equal to each other.\n\n**Answer:** The quadrilateral is a kite. Two properties: two pairs of equal adjacent sides, and one diagonal meets the other at right angles."
+ },
+ "checked": true,
+ "attempts": 2
+}

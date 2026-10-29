@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Adding integers with opposite signs",
+   "question": "Calculate $-8 + 3$.",
+   "solution": "**Key idea:** When adding integers with opposite signs, find the difference between their absolute values and keep the sign of the integer with the larger absolute value.\n\n1. Find the absolute values: $\\lvert -8 \\rvert = 8$ and $\\lvert 3 \\rvert = 3$.\n2. Subtract the smaller from the larger: $8 - 3 = 5$.\n3. Keep the sign of the integer with the larger absolute value (negative, since $\\lvert -8 \\rvert > \\lvert 3 \\rvert$): the answer is $-5$.\n\n**Answer:** $-8 + 3 = -5$",
+   "answer": "$-5$"
+  },
+  {
+   "title": "Subtracting a negative integer",
+   "question": "Calculate $-4 - (-9)$.",
+   "solution": "**Key idea:** Subtracting a negative is the same as adding the positive: $a - (-b) = a + b$.\n\n1. Rewrite the subtraction of a negative as addition: $-4 - (-9) = -4 + 9$.\n2. The two integers now have opposite signs. Find the difference of the absolute values: $\\lvert 9 \\rvert - \\lvert -4 \\rvert = 9 - 4 = 5$.\n3. Keep the sign of the integer with the larger absolute value (positive, since $\\lvert 9 \\rvert > \\lvert -4 \\rvert$): the answer is $5$.\n\n**Answer:** $-4 - (-9) = 5$",
+   "answer": "$5$"
+  },
+  {
+   "title": "Multi-step temperature problem",
+   "question": "At midnight, the temperature in Canberra was $-3^\\circ\\text{C}$. By 6 am it had dropped a further $5^\\circ\\text{C}$, and by noon it had risen $12^\\circ\\text{C}$ from the 6 am temperature. What was the temperature at noon?",
+   "solution": "**Key idea:** A drop is subtraction and a rise is addition. Work through each change in order, keeping track of the running temperature.\n\n1. Write the starting temperature: $-3^\\circ\\text{C}$.\n2. Apply the drop of $5^\\circ\\text{C}$ by 6 am:\n$$-3 - 5 = -8^\\circ\\text{C}$$\n3. Apply the rise of $12^\\circ\\text{C}$ from the 6 am temperature:\n$$-8 + 12 = 4^\\circ\\text{C}$$\n4. The temperature at noon was $4^\\circ\\text{C}$.\n\n**Answer:** $4^\\circ\\text{C}$",
+   "answer": "$4^\\circ\\text{C}$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing the sign of the answer when adding opposite signs",
+   "wrong": "Student writes $-8 + 3 = 5$ (positive) instead of $-5$.",
+   "fix": "Look at which integer has the larger absolute value. The answer takes that integer's sign. Here $\\lvert -8 \\rvert > \\lvert 3 \\rvert$, so the answer must be negative."
+  },
+  {
+   "title": "Treating \"minus a minus\" as \"minus a plus\"",
+   "wrong": "Student writes $-4 - (-9) = -4 - 9 = -13$ instead of $-4 + 9 = 5$.",
+   "fix": "Two negatives next to each other (a subtraction sign and a negative sign) always combine to make a positive. Rewrite $-(-9)$ as $+9$ before doing anything else."
+  },
+  {
+   "title": "Adding absolute values instead of subtracting them",
+   "wrong": "Student writes $-3 + 7 = -10$ by adding $3 + 7$ and keeping the negative sign.",
+   "fix": "Only add the absolute values when both integers have the same sign. When the signs are different, subtract the smaller absolute value from the larger one, then apply the sign of the larger."
+  },
+  {
+   "title": "Mixing up the direction of change in word problems",
+   "wrong": "Student writes $-3 + 5$ for \"the temperature dropped $5^\\circ\\text{C}$\" and gets $2^\\circ\\text{C}$.",
+   "fix": "A drop or decrease means subtract; a rise or increase means add. Underline the key word in the problem and decide the direction before writing the calculation."
+  }
+ ],
+ "practice": {
+  "question": "Calculate $5 - (-6) + (-8)$.",
+  "answer": "$3$",
+  "solution": "**Key idea:** Rewrite any subtraction of a negative as addition first, then work left to right.\n\n1. Rewrite $-(-6)$ as $+6$:\n$$5 - (-6) + (-8) = 5 + 6 + (-8)$$\n2. Add the first two terms:\n$$5 + 6 = 11$$\n3. Add $(-8)$ (opposite signs, so subtract absolute values and keep the sign of the larger):\n$$11 + (-8) = 11 - 8 = 3$$\n\n**Answer:** $5 - (-6) + (-8) = 3$"
+ },
+ "checked": true,
+ "attempts": 1
+}

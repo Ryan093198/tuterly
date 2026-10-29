@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Calculating compound interest",
+   "question": "Calculate the value of an investment of \\$8000 after 3 years at an interest rate of 5\\% per annum, compounded annually.",
+   "solution": "**Key idea:** Use the compound interest formula $A = P(1 + r)^n$, where $P$ is the principal, $r$ is the annual interest rate as a decimal, and $n$ is the number of compounding periods.\n\n1. Identify the values: $P = 8000$, $r = 0.05$, $n = 3$.\n2. Substitute into the formula:\n$$A = 8000(1 + 0.05)^3$$\n3. Simplify:\n$$A = 8000 \\times (1.05)^3 = 8000 \\times 1.157625 = 9261.00$$\n4. Find the interest earned: $9261.00 - 8000 = 1261.00$.\n\n**Answer:** The investment is worth \\$9261.00, so the compound interest earned is \\$1261.00.",
+   "answer": "\\$9261.00 (interest = \\$1261.00)"
+  },
+  {
+   "title": "Finding the principal",
+   "question": "After 4 years of earning 6\\% per annum compound interest (compounded annually), an investment is worth \\$15 000. What was the original principal? Give your answer to the nearest dollar.",
+   "solution": "**Key idea:** Rearrange $A = P(1 + r)^n$ to make $P$ the subject: $P = \\dfrac{A}{(1 + r)^n}$.\n\n1. Identify the values: $A = 15000$, $r = 0.06$, $n = 4$.\n2. Calculate $(1.06)^4$:\n$$(1.06)^4 = 1.26247696$$\n3. Divide to find $P$:\n$$P = \\frac{15000}{1.26247696} \\approx 11881.40$$\n\n**Answer:** The original principal was approximately \\$11 881.",
+   "answer": "\\$11 881"
+  },
+  {
+   "title": "Compound interest in context",
+   "question": "Mia borrows \\$12 000 to pay for a car. The loan charges 8\\% per annum compound interest, compounded annually. Mia makes no repayments. After 5 years, how much more does she owe compared with what she would owe under a simple interest loan at the same rate over the same period? Give your answer to the nearest dollar.",
+   "solution": "**Key idea:** Calculate each type of interest separately and find the difference.\n\n1. Compound interest final amount:\n$$A = 12000 \\times (1.08)^5 = 12000 \\times 1.46932807 \\approx 17631.94$$\n2. Simple interest final amount:\n$$A = P(1 + rn) = 12000 \\times (1 + 0.08 \\times 5) = 12000 \\times 1.4 = 16800.00$$\n3. Find the difference:\n$$17631.94 - 16800.00 = 831.94$$\n\n**Answer:** Mia owes approximately \\$832 more under compound interest than under simple interest.",
+   "answer": "\\$832 more"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the rate as a percentage instead of a decimal",
+   "wrong": "$A = 8000 \\times (1 + 5)^3$",
+   "fix": "Always convert the percentage to a decimal before substituting. An interest rate of 5\\% becomes $r = 0.05$, so you write $(1 + 0.05)$, not $(1 + 5)$."
+  },
+  {
+   "title": "Confusing $n$ with the number of years",
+   "wrong": "For monthly compounding over 2 years, writing $n = 2$ instead of $n = 24$.",
+   "fix": "$n$ is the total number of compounding periods, not the number of years. Multiply the number of years by the number of compounding periods per year. Two years compounded monthly gives $n = 2 \\times 12 = 24$."
+  },
+  {
+   "title": "Reporting interest instead of the total amount (or vice versa)",
+   "wrong": "The question asks for the total amount but the student writes only the interest earned.",
+   "fix": "Read the question carefully. $A = P(1 + r)^n$ gives the total amount. To find only the interest, subtract the principal: $I = A - P$."
+  },
+  {
+   "title": "Rounding too early",
+   "wrong": "$(1.05)^3 \\approx 1.158$, then $8000 \\times 1.158 = 9264$ instead of \\$9261.",
+   "fix": "Keep all decimal places in your calculator throughout the calculation and round only your final answer. Early rounding builds up errors, especially over many compounding periods."
+  }
+ ],
+ "practice": {
+  "question": "Priya invests \\$6000 at 3\\% per annum compound interest, compounded annually. After how many whole years will her investment first exceed \\$7000?",
+  "answer": "6 years",
+  "solution": "**Key idea:** Substitute known values into $A = P(1 + r)^n$ and test increasing whole-number values of $n$ until $A$ exceeds \\$7000.\n\n1. Identify the values: $P = 6000$, $r = 0.03$, and find the smallest whole number $n$ such that $A > 7000$.\n2. Set up the inequality: $6000 \\times (1.03)^n > 7000$, so $(1.03)^n > \\dfrac{7000}{6000} = 1.1\\overline{6}$.\n3. Test values systematically:\n$$\\begin{aligned} n = 4&: \\quad (1.03)^4 = 1.12550881 \\quad (< 1.1\\overline{6}) \\\\ n = 5&: \\quad (1.03)^5 = 1.15927407 \\quad (< 1.1\\overline{6}) \\\\ n = 6&: \\quad (1.03)^6 = 1.19405230 \\quad (> 1.1\\overline{6}) \\end{aligned}$$\n4. Verify for $n = 6$: $A = 6000 \\times 1.19405230 \\approx 7164.31 > 7000$. ✓\n5. Verify $n = 5$ does not work: $A = 6000 \\times 1.15927407 \\approx 6955.64 < 7000$. ✓\n\n**Answer:** Priya's investment first exceeds \\$7000 after **6 years**."
+ },
+ "checked": true,
+ "attempts": 2
+}

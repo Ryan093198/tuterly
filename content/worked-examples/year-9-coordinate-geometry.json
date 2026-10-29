@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Gradient, midpoint and distance between two points",
+   "question": "Two points are $A(1, 2)$ and $B(5, 10)$. Find: (a) the gradient of $AB$, (b) the midpoint of $AB$, and (c) the distance $AB$.",
+   "solution": "**Key idea:** Use the gradient formula $m = \\dfrac{y_2 - y_1}{x_2 - x_1}$, the midpoint formula $M = \\left(\\dfrac{x_1+x_2}{2},\\, \\dfrac{y_1+y_2}{2}\\right)$, and the distance formula $d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$.\n\n1. **Gradient:** $$m = \\frac{10 - 2}{5 - 1} = \\frac{8}{4} = 2$$\n2. **Midpoint:** $$M = \\left(\\frac{1+5}{2},\\, \\frac{2+10}{2}\\right) = (3,\\, 6)$$\n3. **Distance:** $$d = \\sqrt{(5-1)^2 + (10-2)^2} = \\sqrt{16 + 64} = \\sqrt{80} = 4\\sqrt{5}$$\n\n**Answer:** Gradient $= 2$, midpoint $= (3, 6)$, distance $= 4\\sqrt{5}$ units.",
+   "answer": "Gradient $= 2$, midpoint $= (3, 6)$, distance $= 4\\sqrt{5}$ units"
+  },
+  {
+   "title": "Identifying parallel and perpendicular lines",
+   "question": "Line $\\ell_1$ passes through $P(-2, 1)$ and $Q(4, 4)$. Line $\\ell_2$ passes through $R(0, 5)$ and $S(6, -7)$. Determine whether $\\ell_1$ and $\\ell_2$ are parallel, perpendicular, or neither.",
+   "solution": "**Key idea:** Two lines are parallel if their gradients are equal, and perpendicular if the product of their gradients is $-1$.\n\n1. **Gradient of $\\ell_1$:** $$m_1 = \\frac{4 - 1}{4 - (-2)} = \\frac{3}{6} = \\frac{1}{2}$$\n2. **Gradient of $\\ell_2$:** $$m_2 = \\frac{-7 - 5}{6 - 0} = \\frac{-12}{6} = -2$$\n3. **Check parallel:** $m_1 \\neq m_2$, so not parallel.\n4. **Check perpendicular:** $$m_1 \\times m_2 = \\frac{1}{2} \\times (-2) = -1 \\checkmark$$\n\n**Answer:** $\\ell_1$ and $\\ell_2$ are perpendicular.",
+   "answer": "$\\ell_1$ and $\\ell_2$ are perpendicular"
+  },
+  {
+   "title": "Multi-step coordinate geometry problem",
+   "question": "A park has two water fountains located at $F(1, 3)$ and $G(7, 11)$ on a map, where each unit represents 10 metres. A garden bed is to be planted exactly halfway between the two fountains. A path also runs through the points $H(0, 6)$ and $K(3, 0)$. (a) Find the coordinates of the garden bed. (b) Find the actual straight-line distance between the two fountains in metres. (c) Determine the gradient of the path $HK$ and explain what it means in context.",
+   "solution": "**Key idea:** Apply the midpoint, distance and gradient formulas, then interpret the answers using the map scale.\n\n1. **Midpoint (garden bed):** $$M = \\left(\\frac{1+7}{2},\\, \\frac{3+11}{2}\\right) = (4,\\, 7)$$\n2. **Distance $FG$ in map units:** $$d = \\sqrt{(7-1)^2 + (11-3)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10 \\text{ units}$$\n3. **Actual distance:** $10 \\times 10 = 100$ metres.\n4. **Gradient of path $HK$:** $$m = \\frac{0 - 6}{3 - 0} = \\frac{-6}{3} = -2$$\n5. **Interpretation:** A gradient of $-2$ means the path falls 2 units on the map for every 1 unit across, so it runs steeply downward from left to right.\n\n**Answer:** Garden bed at $(4, 7)$; distance between fountains is 100 metres; gradient of path $HK$ is $-2$ (steeply downward from left to right).",
+   "answer": "Garden bed at $(4, 7)$; distance $= 100$ metres; gradient of $HK = -2$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Subtracting coordinates in different orders",
+   "wrong": "$m = \\dfrac{y_2 - y_1}{x_1 - x_2}$ (numerator and denominator subtracted in opposite orders)",
+   "fix": "Always subtract in the same order: $(y_2 - y_1)$ on top and $(x_2 - x_1)$ on the bottom. Swapping the order in one of them flips the sign of the gradient."
+  },
+  {
+   "title": "Forgetting to square-root in the distance formula",
+   "wrong": "$d = (x_2 - x_1)^2 + (y_2 - y_1)^2 = 80$, so $d = 80$",
+   "fix": "The distance formula comes from Pythagoras: $d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$, so you must take the square root at the end. The answer here would be $d = \\sqrt{80} = 4\\sqrt{5}$."
+  },
+  {
+   "title": "Adding instead of averaging in the midpoint formula",
+   "wrong": "$M = (x_1 + x_2,\\; y_1 + y_2) = (6, 12)$ instead of $(3, 6)$",
+   "fix": "The midpoint is the average of each coordinate, so divide each sum by 2: $M = \\left(\\dfrac{x_1+x_2}{2},\\, \\dfrac{y_1+y_2}{2}\\right)$."
+  },
+  {
+   "title": "Confusing the condition for perpendicular lines",
+   "wrong": "\"The gradients are negative, so the lines must be perpendicular.\"",
+   "fix": "For perpendicular lines, the product of the gradients must equal $-1$: $m_1 \\times m_2 = -1$. Having a negative gradient alone tells you nothing about perpendicularity. Check the product, not just the sign."
+  }
+ ],
+ "practice": {
+  "question": "Line $\\ell_1$ passes through $A(-3, 4)$ and $B(5, 0)$. Line $\\ell_2$ passes through $C(1, -1)$ and $D(3, 3)$. (a) Find the gradient of each line. (b) State whether the lines are parallel, perpendicular, or neither.",
+  "answer": "$m_1 = -\\dfrac{1}{2}$, $m_2 = 2$; the lines are perpendicular.",
+  "solution": "**Key idea:** Calculate each gradient, then compare them using the parallel and perpendicular tests.\n\n1. **Gradient of $\\ell_1$:** $$m_1 = \\frac{0 - 4}{5 - (-3)} = \\frac{-4}{8} = -\\frac{1}{2}$$\n2. **Gradient of $\\ell_2$:** $$m_2 = \\frac{3 - (-1)}{3 - 1} = \\frac{4}{2} = 2$$\n3. **Check parallel:** $-\\dfrac{1}{2} \\neq 2$, so not parallel.\n4. **Check perpendicular:** $$m_1 \\times m_2 = -\\frac{1}{2} \\times 2 = -1 \\checkmark$$\n\n**Answer:** $m_1 = -\\dfrac{1}{2}$, $m_2 = 2$; the lines are perpendicular."
+ },
+ "checked": true,
+ "attempts": 1
+}

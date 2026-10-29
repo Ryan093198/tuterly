@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Identifying population, sample and sampling method",
+   "question": "A school of 800 students wants to find out the most popular sport among its students. The school captain surveys every 10th student on the school roll. State (a) the population, (b) the sample, and (c) the sampling method used.",
+   "solution": "**Key idea:** The population is the entire group being studied. The sample is the smaller group actually surveyed. The sampling method describes how the sample was chosen.\n\n1. The study is about students at this school, so the **population** is all 800 students at the school.\n2. Only the students selected from the roll are surveyed, so the **sample** is the students chosen (every 10th student on the roll).\n3. Students are selected at a fixed interval (every 10th), so the **sampling method** is systematic sampling.\n\n**Answer:** (a) All 800 students at the school. (b) Every 10th student on the school roll. (c) Systematic sampling.",
+   "answer": "(a) All 800 students at the school. (b) Every 10th student on the school roll. (c) Systematic sampling."
+  },
+  {
+   "title": "Identifying bias in data collection",
+   "question": "A shopping centre manager wants to find out how often local residents visit the shopping centre each month. She surveys 60 people who are inside the shopping centre on a Tuesday morning. Identify one source of bias in this method and explain how it could affect the results.",
+   "solution": "**Key idea:** A sample is biased when it does not fairly represent the population, which can make results misleading.\n\n1. The population is all local residents, but the sample is drawn only from people already inside the shopping centre on a Tuesday morning.\n2. People found in the shopping centre are more likely to visit frequently than the average resident, so frequent visitors are over-represented.\n3. Tuesday morning shoppers may also not represent people who work full-time and can only visit on weekends.\n4. Because of this bias, the results will likely overestimate how often local residents visit the shopping centre.\n\n**Answer:** The sample is biased because it only includes people who are already at the shopping centre. These people are more likely to be frequent visitors, so the results will overestimate how often local residents visit.",
+   "answer": "The sample only includes people already at the shopping centre, over-representing frequent visitors, so results will overestimate how often local residents visit."
+  },
+  {
+   "title": "Evaluating a statistical claim in the media",
+   "question": "A news article states: \"9 out of 10 dentists recommend ShineBright toothpaste.\" The survey contacted 10 dentists by email and received responses from 10 of them. All 10 were dentists employed by the company that makes ShineBright. Identify two problems with this statistical claim.",
+   "solution": "**Key idea:** When evaluating a statistical claim, consider whether the sample is representative of the population, whether the sample size is large enough, and whether there are any conflicts of interest that could introduce bias.\n\n1. The sample size is only 10 dentists. This is far too small to represent the views of all dentists, so the claim cannot be reliably generalised.\n2. All 10 dentists are employed by the company that makes ShineBright. This is a conflict of interest: they may feel pressure to recommend their employer's product, introducing strong bias into the results.\n3. Together, these problems mean the claim \"9 out of 10 dentists recommend ShineBright\" is not a reliable or fair representation of dentists' opinions in general.\n\n**Answer:** (1) The sample of 10 dentists is far too small to represent all dentists. (2) All dentists surveyed work for the company that makes ShineBright, creating a conflict of interest and strong bias in favour of the product.",
+   "answer": "(1) The sample size of 10 is too small to be reliable. (2) All dentists surveyed work for the company making the product, creating a conflict of interest and bias."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing population and sample",
+   "wrong": "\"The population is the 60 people who were surveyed.\"",
+   "fix": "The population is the entire group you want to find out about, not the group you actually measured. The sample is the smaller group you collect data from. Ask yourself: who does the study want to learn about? That is the population."
+  },
+  {
+   "title": "Thinking a larger sample always means no bias",
+   "wrong": "\"We surveyed 500 people, so the results must be accurate and unbiased.\"",
+   "fix": "A large sample can still be biased if it is collected in a way that excludes or over-represents part of the population. Size and bias are separate issues. Always check how the sample was selected, not just how many people were included."
+  },
+  {
+   "title": "Mixing up census and sample",
+   "wrong": "\"A census is when you survey a large sample of the population.\"",
+   "fix": "A census collects data from every single member of the population, with no one left out. A sample only collects data from a selected part of the population. A survey of 10,000 people out of a population of 1,000,000 is still a sample, not a census."
+  },
+  {
+   "title": "Confusing random and systematic sampling",
+   "wrong": "\"Picking every 5th person on the list is random sampling because anyone could be chosen.\"",
+   "fix": "Random sampling means every member of the population has an equal chance of being selected independently, for example by drawing names from a hat or using a random number generator. Systematic sampling uses a fixed rule such as selecting every 5th person. They are different methods."
+  }
+ ],
+ "practice": {
+  "question": "A Year 8 coordinator wants to find out how much time students at her school spend on homework each week. The school has 600 students across Years 7 to 10. The coordinator divides the students into their four year levels (150 students each) and randomly selects 15 students from each year level to survey. (a) What is the population? (b) What sampling method is being used? (c) Give one reason why this method is better than simply surveying the first 60 students who arrive at school in the morning.",
+  "answer": "(a) All 600 students at the school (Years 7 to 10). (b) Stratified sampling. (c) Stratified sampling ensures every year level is represented fairly, whereas surveying the first arrivals would over-represent students who arrive early and may exclude certain groups, introducing bias.",
+  "solution": "**Key idea:** Stratified sampling divides the population into groups (strata) and randomly selects from each group in proportion, ensuring all parts of the population are represented.\n\n1. The study aims to learn about all students at the school, so the **population** is all 600 students in Years 7 to 10.\n2. The coordinator splits students into four year levels (the strata) and randomly selects 15 from each. This is **stratified sampling**.\n3. Surveying the first 60 arrivals is a convenience sample. Students who arrive earliest may share characteristics (for example, those who travel by a particular bus route or those who have before-school activities) that make them unrepresentative of all students.\n4. Stratified sampling guarantees each year level contributes equally to the sample, reducing bias and giving a fairer picture of homework time across the whole school.\n\n**Answer:** (a) All 600 students at the school (Years 7 to 10). (b) Stratified sampling. (c) Stratified sampling ensures every year level is fairly represented. Surveying only the first arrivals would over-represent early-arriving students and introduce bias."
+ },
+ "checked": true,
+ "attempts": 1
+}

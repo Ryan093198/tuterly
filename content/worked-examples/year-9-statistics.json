@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding the median from a dot plot",
+   "question": "A dot plot shows the number of hours of screen time per day for 8 students. The values in order are: 1, 2, 2, 3, 4, 5, 6, 6. Find the median.",
+   "solution": "**Key idea:** For an even number of values, the median is the mean of the two middle values.\n\n1. There are $n = 8$ values, already in order: $1, 2, 2, 3, 4, 5, 6, 6$.\n2. The two middle values are the 4th and 5th: $3$ and $4$.\n3. Median $= \\dfrac{3 + 4}{2} = 3.5$ hours.\n\n**Answer:** $3.5$ hours.",
+   "answer": "3.5 hours"
+  },
+  {
+   "title": "Finding the interquartile range",
+   "question": "The ages (in years) of 8 members of a sports team are listed below.\n\n$$14,\\; 15,\\; 15,\\; 16,\\; 17,\\; 18,\\; 19,\\; 21$$\n\nFind the interquartile range (IQR) of these ages.",
+   "solution": "**Key idea:** Split the data into a lower half and an upper half, then find the median of each half.\n\n1. There are $n = 8$ values in order: $14, 15, 15, 16, 17, 18, 19, 21$.\n2. Lower half (first 4 values): $14, 15, 15, 16$ $\\Rightarrow Q_1 = \\dfrac{15 + 15}{2} = 15$.\n3. Upper half (last 4 values): $17, 18, 19, 21$ $\\Rightarrow Q_3 = \\dfrac{18 + 19}{2} = 18.5$.\n4. $\\text{IQR} = Q_3 - Q_1 = 18.5 - 15 = 3.5$ years.\n\n**Answer:** $3.5$ years.",
+   "answer": "3.5 years"
+  },
+  {
+   "title": "Identifying an outlier in a real-life context",
+   "question": "A school canteen records the number of sandwiches sold each day for 8 days.\n\n$$18,\\; 21,\\; 22,\\; 24,\\; 25,\\; 26,\\; 27,\\; 56$$\n\nA value is an outlier if it is more than $1.5 \\times \\text{IQR}$ above $Q_3$ or below $Q_1$. Find the lower and upper outlier boundaries, then state which value is the outlier.",
+   "solution": "**Key idea:** Calculate $Q_1$, $Q_3$ and the IQR, then apply the outlier rule.\n\n1. Lower half (first 4 values): $18, 21, 22, 24$ $\\Rightarrow Q_1 = \\dfrac{21 + 22}{2} = 21.5$.\n2. Upper half (last 4 values): $25, 26, 27, 56$ $\\Rightarrow Q_3 = \\dfrac{26 + 27}{2} = 26.5$.\n3. $\\text{IQR} = 26.5 - 21.5 = 5$.\n4. Lower boundary: $Q_1 - 1.5 \\times \\text{IQR} = 21.5 - 7.5 = 14$. Upper boundary: $Q_3 + 1.5 \\times \\text{IQR} = 26.5 + 7.5 = 34$.\n5. The value $56$ is above $34$, so $56$ is the outlier.\n\n**Answer:** $56$ sandwiches is the outlier.",
+   "answer": "56 sandwiches"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Including the median in both halves when finding quartiles",
+   "wrong": "Data: 14, 15, 16, 17, 18, 19 — student uses 14, 15, 16, 17 as the lower half and 16, 17, 18, 19 as the upper half.",
+   "fix": "When the data set has an even number of values, split it cleanly into a lower half and an upper half with no overlap. Neither half should contain values from the other."
+  },
+  {
+   "title": "Forgetting to sort the data before finding the median or quartiles",
+   "wrong": "Data given as 5, 1, 8, 3 — student writes Q1 = 5 because it is the first value listed.",
+   "fix": "Always arrange the data in ascending order before locating the median, Q1 or Q3. The order the values are listed in a question is not always sorted."
+  },
+  {
+   "title": "Subtracting the wrong way for IQR or range",
+   "wrong": "$\\text{IQR} = Q_1 - Q_3 = 15 - 18.5 = -3.5$",
+   "fix": "The IQR is always $Q_3 - Q_1$ (larger minus smaller), so it must be a positive number. If your answer is negative, you have subtracted in the wrong order."
+  },
+  {
+   "title": "Using the wrong formula for the outlier boundary",
+   "wrong": "Upper boundary $= Q_3 + \\text{IQR} = 26.5 + 5 = 31.5$ (leaving out the factor of 1.5).",
+   "fix": "The outlier rule multiplies the IQR by $1.5$ before adding or subtracting. Always use $Q_3 + 1.5 \\times \\text{IQR}$ for the upper boundary and $Q_1 - 1.5 \\times \\text{IQR}$ for the lower boundary."
+  }
+ ],
+ "practice": {
+  "question": "The heights (in centimetres) of 8 plants grown in a science experiment are listed below.\n\n$$12,\\; 15,\\; 17,\\; 19,\\; 23,\\; 26,\\; 29,\\; 34$$\n\nFind the interquartile range (IQR) of these heights.",
+  "answer": "IQR = 11.5 cm",
+  "solution": "**Key idea:** Split the 8 values evenly into a lower half and an upper half, find the median of each, then subtract.\n\n1. The values are already in order: $12, 15, 17, 19, 23, 26, 29, 34$.\n2. Lower half (first 4 values): $12, 15, 17, 19$ $\\Rightarrow Q_1 = \\dfrac{15 + 17}{2} = 16$.\n3. Upper half (last 4 values): $23, 26, 29, 34$ $\\Rightarrow Q_3 = \\dfrac{26 + 29}{2} = 27.5$.\n4. $\\text{IQR} = Q_3 - Q_1 = 27.5 - 16 = 11.5$ cm.\n\n**Answer:** $11.5$ cm."
+ },
+ "checked": true,
+ "attempts": 2
+}

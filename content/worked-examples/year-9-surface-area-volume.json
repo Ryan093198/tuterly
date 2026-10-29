@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Surface area of a cylinder",
+   "question": "A cylinder has a radius of $4$ cm and a height of $10$ cm. Find its total surface area. Give your answer correct to one decimal place.",
+   "solution": "**Key idea:** The total surface area of a cylinder is the curved surface (a rectangle when unrolled) plus two circular ends: $\\text{TSA} = 2\\pi r h + 2\\pi r^2$.\n\n1. Write the formula: $\\text{TSA} = 2\\pi r h + 2\\pi r^2$\n2. Substitute $r = 4$ and $h = 10$:\n$$\\text{TSA} = 2\\pi(4)(10) + 2\\pi(4)^2$$\n3. Simplify each term:\n$$\\text{TSA} = 80\\pi + 32\\pi = 112\\pi$$\n4. Evaluate:\n$$\\text{TSA} = 112\\pi \\approx 351.9 \\text{ cm}^2$$\n\n**Answer:** $351.9$ cm²",
+   "answer": "$351.9$ cm²"
+  },
+  {
+   "title": "Volume of a composite solid (prism and cylinder)",
+   "question": "A composite solid is made by placing a cylinder on top of a rectangular prism. The rectangular prism has a length of $12$ cm, a width of $12$ cm and a height of $8$ cm. The cylinder sits centred on top and has a radius of $3$ cm and a height of $5$ cm. Find the total volume of the solid. Give your answer correct to one decimal place.",
+   "solution": "**Key idea:** The total volume of a composite solid is the sum of the volumes of each part: $V_{\\text{total}} = V_{\\text{prism}} + V_{\\text{cylinder}}$.\n\n1. Find the volume of the rectangular prism:\n$$V_{\\text{prism}} = l \\times w \\times h = 12 \\times 12 \\times 8 = 1152 \\text{ cm}^3$$\n2. Find the volume of the cylinder:\n$$V_{\\text{cylinder}} = \\pi r^2 h = \\pi \\times 3^2 \\times 5 = 45\\pi \\text{ cm}^3$$\n3. Add the two volumes:\n$$V_{\\text{total}} = 1152 + 45\\pi \\approx 1152 + 141.4 = 1293.4 \\text{ cm}^3$$\n\n**Answer:** $1293.4$ cm³",
+   "answer": "$1293.4$ cm³"
+  },
+  {
+   "title": "Real-world problem: painting a room",
+   "question": "Mia wants to paint the four walls and the ceiling of a rectangular room. The room is $6$ m long, $4$ m wide and $2.5$ m high. The room has one door measuring $2$ m by $0.9$ m and one window measuring $1.2$ m by $1$ m, which are not painted. One litre of paint covers $12$ m² and costs \\$8.50. How much will Mia spend on paint? Round up to the nearest whole litre when buying paint.",
+   "solution": "**Key idea:** Find the total area to be painted by calculating the area of all four walls and the ceiling, then subtract the unpainted door and window. Use the coverage rate to find litres needed, then calculate the cost.\n\n1. Find the area of the four walls:\n$$A_{\\text{walls}} = 2(lh + wh) = 2(6 \\times 2.5 + 4 \\times 2.5) = 2(15 + 10) = 50 \\text{ m}^2$$\n2. Find the area of the ceiling:\n$$A_{\\text{ceiling}} = 6 \\times 4 = 24 \\text{ m}^2$$\n3. Subtract the door and window:\n$$A_{\\text{painted}} = 50 + 24 - (2 \\times 0.9) - (1.2 \\times 1) = 74 - 1.8 - 1.2 = 71 \\text{ m}^2$$\n4. Find litres needed, rounding up:\n$$\\text{Litres} = \\lceil 71 \\div 12 \\rceil = \\lceil 5.916\\ldots \\rceil = 6 \\text{ L}$$\n5. Calculate the cost:\n$$\\text{Cost} = 6 \\times \\$8.50 = \\$51.00$$\n\n**Answer:** \\$51.00",
+   "answer": "\\$51.00"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using diameter instead of radius",
+   "wrong": "Cylinder with diameter $8$ cm: $V = \\pi \\times 8^2 \\times h$ ✗",
+   "fix": "Always halve the diameter before substituting into a formula. If the diameter is $8$ cm, the radius is $r = 4$ cm, so use $r = 4$ in $V = \\pi r^2 h$ and $\\text{TSA} = 2\\pi r h + 2\\pi r^2$."
+  },
+  {
+   "title": "Forgetting the two circular ends on a cylinder",
+   "wrong": "$\\text{TSA} = 2\\pi r h$ only ✗",
+   "fix": "A closed cylinder has three faces: one curved surface and two circular ends. The full formula is $\\text{TSA} = 2\\pi r h + 2\\pi r^2$. If the cylinder is open at one or both ends (such as a pipe), adjust accordingly, but always check the question."
+  },
+  {
+   "title": "Adding surface areas instead of volumes for composite solids",
+   "wrong": "$V_{\\text{total}} = \\text{TSA}_1 + \\text{TSA}_2$ ✗",
+   "fix": "For the total volume of a composite solid, add the volumes of each part: $V_{\\text{total}} = V_1 + V_2$. Surface area and volume are different measures. Be careful not to mix them up, especially when a question asks specifically for volume."
+  },
+  {
+   "title": "Not subtracting the joined face in composite surface area problems",
+   "wrong": "$\\text{TSA} = \\text{TSA}_1 + \\text{TSA}_2$ without removing the shared face ✗",
+   "fix": "When two solids are joined face-to-face, that shared face is hidden and is no longer part of the outer surface. Subtract the area of the shared face once from each solid, so subtract it twice in total: $\\text{TSA} = \\text{TSA}_1 + \\text{TSA}_2 - 2 \\times A_{\\text{shared}}$."
+  }
+ ],
+ "practice": {
+  "question": "A composite solid is formed by placing a smaller rectangular prism on top of a larger rectangular prism. The larger prism has a length of $10$ cm, a width of $6$ cm and a height of $4$ cm. The smaller prism has a length of $5$ cm, a width of $6$ cm and a height of $3$ cm, and sits flush against one end of the top of the larger prism. Find the total volume of the composite solid.",
+  "answer": "$330$ cm³",
+  "solution": "**Key idea:** The total volume of a composite solid made from two prisms is the sum of their individual volumes.\n\n1. Find the volume of the larger prism:\n$$V_{\\text{large}} = 10 \\times 6 \\times 4 = 240 \\text{ cm}^3$$\n2. Find the volume of the smaller prism:\n$$V_{\\text{small}} = 5 \\times 6 \\times 3 = 90 \\text{ cm}^3$$\n3. Add the two volumes:\n$$V_{\\text{total}} = 240 + 90 = 330 \\text{ cm}^3$$\n\n**Answer:** $330$ cm³"
+ },
+ "checked": true,
+ "attempts": 1
+}

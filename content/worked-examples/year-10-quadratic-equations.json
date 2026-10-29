@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Null factor law from factorised form",
+   "question": "Solve $(x - 3)(x + 7) = 0$.",
+   "solution": "**Key idea:** If a product of two factors equals zero, then at least one factor must equal zero (null factor law).\n\n1. Set each factor equal to zero:\n$$x - 3 = 0 \\quad \\text{or} \\quad x + 7 = 0$$\n2. Solve each equation:\n$$x = 3 \\quad \\text{or} \\quad x = -7$$\n\n**Answer:** $x = 3$ or $x = -7$",
+   "answer": "$x = 3$ or $x = -7$"
+  },
+  {
+   "title": "Solving by factorising a monic quadratic",
+   "question": "Solve $x^2 - 2x - 15 = 0$.",
+   "solution": "**Key idea:** Factorise the monic quadratic first, then apply the null factor law.\n\n1. Find two numbers that multiply to $-15$ and add to $-2$: those numbers are $-5$ and $3$.\n2. Factorise:\n$$(x - 5)(x + 3) = 0$$\n3. Apply the null factor law:\n$$x - 5 = 0 \\quad \\text{or} \\quad x + 3 = 0$$\n4. Solve:\n$$x = 5 \\quad \\text{or} \\quad x = -3$$\n\n**Answer:** $x = 5$ or $x = -3$",
+   "answer": "$x = 5$ or $x = -3$"
+  },
+  {
+   "title": "Word problem: area of a rectangle",
+   "question": "A rectangular garden has a length that is 3 metres more than its width. The area of the garden is 40 square metres. Find the width of the garden.",
+   "solution": "**Key idea:** Write an equation for the area using the relationship between length and width, then solve the resulting quadratic.\n\n1. Let the width be $x$ metres. Then the length is $(x + 3)$ metres.\n2. Write the area equation:\n$$x(x + 3) = 40$$\n3. Expand and rearrange:\n$$x^2 + 3x - 40 = 0$$\n4. Factorise by finding two numbers that multiply to $-40$ and add to $3$: those numbers are $8$ and $-5$:\n$$(x + 8)(x - 5) = 0$$\n5. Apply the null factor law:\n$$x = -8 \\quad \\text{or} \\quad x = 5$$\nSince width must be positive, $x = 5$.\n\n**Answer:** The width is 5 metres.",
+   "answer": "5 metres"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing both sides by $x$ and losing a solution",
+   "wrong": "$x^2 = 5x \\Rightarrow x = 5$ (divided both sides by $x$)",
+   "fix": "Never divide both sides by a variable, because it removes $x = 0$ as a solution. Instead, rearrange to $x^2 - 5x = 0$, factorise as $x(x - 5) = 0$, and apply the null factor law to get $x = 0$ or $x = 5$."
+  },
+  {
+   "title": "Applying null factor law when the equation does not equal zero",
+   "wrong": "$(x-2)(x+5) = 8 \\Rightarrow x - 2 = 8$ or $x + 5 = 8$",
+   "fix": "The null factor law only works when the product equals zero. Expand the left side, rearrange so the equation equals zero, factorise again, then apply the null factor law."
+  },
+  {
+   "title": "Sign errors when reading off solutions",
+   "wrong": "$(x - 4)(x + 6) = 0 \\Rightarrow x = -4$ or $x = 6$",
+   "fix": "Check each factor separately: $x - 4 = 0$ gives $x = 4$, and $x + 6 = 0$ gives $x = -6$. The sign of the solution is always opposite to the sign of the constant term inside the bracket."
+  },
+  {
+   "title": "Forgetting to rearrange before factorising",
+   "wrong": "$x^2 + 3x = 10 \\Rightarrow x(x+3) = 10 \\Rightarrow x = 10$ or $x + 3 = 10$",
+   "fix": "Always rearrange so that one side is zero before factorising: $x^2 + 3x - 10 = 0$, then factorise as $(x+5)(x-2) = 0$ and apply the null factor law."
+  }
+ ],
+ "practice": {
+  "question": "Solve $x^2 + 3x - 28 = 0$.",
+  "answer": "$x = 4$ or $x = -7$",
+  "solution": "**Key idea:** Factorise the monic quadratic, then apply the null factor law.\n\n1. Find two numbers that multiply to $-28$ and add to $3$: those numbers are $7$ and $-4$.\n2. Factorise:\n$$(x + 7)(x - 4) = 0$$\n3. Apply the null factor law:\n$$x + 7 = 0 \\quad \\text{or} \\quad x - 4 = 0$$\n4. Solve:\n$$x = -7 \\quad \\text{or} \\quad x = 4$$"
+ },
+ "checked": true,
+ "attempts": 1
+}

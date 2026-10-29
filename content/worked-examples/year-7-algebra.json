@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Substituting into a formula",
+   "question": "The perimeter of a rectangle is given by the formula $P = 2l + 2w$. Find $P$ when $l = 9$ and $w = 4$.",
+   "solution": "**Key idea:** Replace each pronumeral with its given value, then evaluate.\n\n1. Write the formula: $P = 2l + 2w$\n2. Substitute $l = 9$ and $w = 4$: $P = 2 \\times 9 + 2 \\times 4$\n3. Multiply: $P = 18 + 8$\n4. Add: $P = 26$\n\n**Answer:** $P = 26$",
+   "answer": "$P = 26$"
+  },
+  {
+   "title": "Writing and evaluating an algebraic expression",
+   "question": "A shop charges a flat booking fee of \\$5 plus \\$12 per ticket. Write an expression for the total cost $C$ in dollars for $n$ tickets, then find the cost of buying 7 tickets.",
+   "solution": "**Key idea:** Identify the fixed part and the part that changes with $n$, then substitute.\n\n1. The cost is a flat \\$5 plus \\$12 for each of the $n$ tickets, so $C = 12n + 5$.\n2. Substitute $n = 7$: $C = 12 \\times 7 + 5$\n3. Multiply: $C = 84 + 5$\n4. Add: $C = 89$\n\n**Answer:** $C = 12n + 5$; the cost for 7 tickets is \\$89.",
+   "answer": "$C = 12n + 5$; cost for 7 tickets is \\$89"
+  },
+  {
+   "title": "Real-life formula problem",
+   "question": "A community garden has a rectangular section with a length of $12$ m and a width of $7$ m. Fertiliser costs \\$3 per square metre. Using the formula for the area of a rectangle $A = l \\times w$, find the area of the section, then calculate the total cost of fertilising it.",
+   "solution": "**Key idea:** First use the area formula to find $A$, then multiply by the cost per square metre.\n\n1. Write the area formula: $A = l \\times w$\n2. Substitute $l = 12$ and $w = 7$: $A = 12 \\times 7 = 84$ square metres\n3. Write the cost expression: $\\text{Cost} = 3 \\times A$\n4. Substitute $A = 84$: $\\text{Cost} = 3 \\times 84 = 252$\n\n**Answer:** The area is $84$ m² and the total fertiliser cost is \\$252.",
+   "answer": "Area $= 84$ m²; total cost $=$ \\$252"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying before adding the constant",
+   "wrong": "$C = 12n + 5$ with $n = 7$ worked as $C = 12 \\times (7 + 5) = 144$",
+   "fix": "Only substitute the value for the pronumeral, then follow the order of operations. The constant $5$ is added after the multiplication: $12 \\times 7 + 5 = 89$."
+  },
+  {
+   "title": "Confusing the formula for perimeter with area",
+   "wrong": "Finding the perimeter of a rectangle by calculating $P = l \\times w$ instead of $P = 2l + 2w$",
+   "fix": "Perimeter is the total distance around the shape (add all sides), while area is the space inside (multiply length by width). Always check which formula the question is asking you to use."
+  },
+  {
+   "title": "Forgetting to multiply both terms when using the distributive law",
+   "wrong": "$3(x + 4) = 3x + 4$",
+   "fix": "Every term inside the brackets must be multiplied by the number outside. The correct expansion is $3(x + 4) = 3x + 12$."
+  },
+  {
+   "title": "Writing the expression in the wrong order from a word problem",
+   "wrong": "\"5 more than three times a number\" written as $5n + 3$ instead of $3n + 5$",
+   "fix": "Read the problem carefully and match each part to its role: the multiplier goes with the pronumeral and the extra amount is added separately. \"Three times a number\" means $3n$, and \"5 more than\" means add 5, giving $3n + 5$."
+  }
+ ],
+ "practice": {
+  "question": "A mobile phone plan charges a monthly fee of \\$15 plus \\$0.08 per text message sent. Write an expression for the total monthly cost $C$ in dollars when $t$ text messages are sent. Then find the total cost in a month when 150 text messages are sent.",
+  "answer": "$C = 0.08t + 15$; cost for 150 texts is \\$27",
+  "solution": "**Key idea:** Identify the fixed fee and the per-message charge, write the expression, then substitute.\n\n1. The monthly cost is a fixed \\$15 plus \\$0.08 for each of the $t$ texts, so $C = 0.08t + 15$.\n2. Substitute $t = 150$: $C = 0.08 \\times 150 + 15$\n3. Multiply: $C = 12 + 15$\n4. Add: $C = 27$\n\n**Answer:** $C = 0.08t + 15$; the total cost for 150 text messages is \\$27."
+ },
+ "checked": true,
+ "attempts": 3
+}

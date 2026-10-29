@@ -4,7 +4,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { trustedClientIp } from "@/lib/client-ip";
 import { isHoneypotTripped } from "@/lib/public-form-guard";
-import { sanitizeGenerated } from "@/lib/sanitize-generated";
+import { dashes, fixMoney, fixRender, cleanMathText } from "@/lib/math-text-fixes";
 import { findKatexErrors } from "@/lib/markdown-katex-validate";
 import { TRY_SYSTEM, TRY_TOOL, CHECK_SYSTEM, CHECK_TOOL } from "@/lib/try-question-prompt";
 import { sendTryResultEmail } from "@/lib/email";
@@ -39,29 +39,7 @@ const MAX_IMAGE_CHARS = 7_000_000; // ~5 MB of base64
 const MAX_TEXT = 1200;
 const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 
-const dashes = (s) => (typeof s === "string" ? s.replace(/\s*[–—]\s*/g, ", ") : s);
-// Money written as maths ($\$120$) or with a stray $ breaks the maths
-// renderer; normalise it to prose money (\$120), as the worksheets do.
-const fixMoney = (s) =>
-  typeof s === "string"
-    ? s.replace(/\$\\\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)\s*\$/g, "\\$$$1").replace(/\$\\text\{\\\$\}\s*([0-9][0-9,]*(?:\.[0-9]+)?)\$/g, "\\$$$1")
-    : s;
-// Other things that look fine to the maths checker but render wrong:
-//  - % inside $...$ is a LaTeX comment, so "$20%$" shows as "20".
-//  - | inside $...$ on a table row (|x|) splits the table cell.
-//  - 3*4 outside maths turns into italics.
-const fixMathSpans = (s, fn) => s.replace(/(?<!\\)\$\$[\s\S]+?\$\$|(?<!\\)\$(?:\\.|[^$\\\n])+\$/g, fn);
-const fixRender = (s) => {
-  if (typeof s !== "string") return s;
-  let out = fixMathSpans(s, (m) => m.replace(/(^|[^\\])%/g, "$1\\%"));
-  out = out
-    .split("\n")
-    .map((line) => (line.trim().startsWith("|") ? fixMathSpans(line, (m) => m.replace(/(?<!\\)\|/g, "\\vert ")) : line))
-    .join("\n");
-  out = out.replace(/(\d)\s*\*\s*(?=\d)/g, "$1 × ");
-  return out;
-};
-const clean = (s) => dashes(sanitizeGenerated(fixRender(fixMoney(String(s || "").trim()))));
+const clean = cleanMathText;
 
 export async function POST(request) {
   let body;

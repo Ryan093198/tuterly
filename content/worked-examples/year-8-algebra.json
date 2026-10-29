@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Collecting like terms and expanding brackets",
+   "question": "Expand and simplify $3(2x + 5) - 4x + 7$.",
+   "solution": "**Key idea:** Use the distributive law to expand the bracket first, then collect like terms.\n\n1. Expand the bracket: $3(2x + 5) = 6x + 15$\n2. Rewrite the full expression: $6x + 15 - 4x + 7$\n3. Collect the $x$ terms: $6x - 4x = 2x$\n4. Collect the constant terms: $15 + 7 = 22$\n5. Write the simplified answer: $2x + 22$\n\n**Answer:** $2x + 22$",
+   "answer": "$2x + 22$"
+  },
+  {
+   "title": "Factorising by taking out a common factor",
+   "question": "Factorise fully $12x^2 - 8x$.",
+   "solution": "**Key idea:** Find the highest common factor (HCF) of all terms, write it outside the bracket, then divide each term by it.\n\n1. Find the HCF of $12x^2$ and $8x$: the HCF of 12 and 8 is 4, and both terms share a factor of $x$, so HCF $= 4x$.\n2. Divide each term by $4x$: $12x^2 \\div 4x = 3x$ and $8x \\div 4x = 2$.\n3. Write the factorised form: $4x(3x - 2)$.\n4. Check by expanding: $4x(3x - 2) = 12x^2 - 8x$ ✓\n\n**Answer:** $4x(3x - 2)$",
+   "answer": "$4x(3x - 2)$"
+  },
+  {
+   "title": "Simplifying and substituting in a real-life context",
+   "question": "A school canteen sells pies for $p$ dollars each and drinks for $d$ dollars each. On Monday, Aisha buys 3 pies and 2 drinks. On Tuesday, she buys 1 pie and 4 drinks. Write a single simplified expression for her total spending over both days. Then find the total when $p = 4$ and $d = 2.50$.",
+   "solution": "**Key idea:** Write an expression for each day, add them, collect like terms, then substitute.\n\n1. Monday's cost: $3p + 2d$\n2. Tuesday's cost: $p + 4d$\n3. Total: $(3p + 2d) + (p + 4d) = 3p + p + 2d + 4d$\n4. Simplify: $4p + 6d$\n5. Substitute $p = 4$ and $d = 2.50$: $4(4) + 6(2.50) = 16 + 15 = 31$\n\n**Answer:** The simplified expression is $4p + 6d$; the total is \\$31.",
+   "answer": "$4p + 6d$; total is \\$31"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to multiply every term inside the bracket",
+   "wrong": "$3(2x + 5) = 6x + 5$",
+   "fix": "The distributive law requires you to multiply every term inside the bracket by the number outside. Here, both $2x$ and $5$ must be multiplied by 3, giving $6x + 15$."
+  },
+  {
+   "title": "Treating unlike terms as like terms",
+   "wrong": "$5x + 3x^2 = 8x^3$",
+   "fix": "$5x$ and $3x^2$ have different powers of $x$, so they are unlike terms and cannot be added together. Only terms with exactly the same variable and power can be combined."
+  },
+  {
+   "title": "Taking out a factor that is not the highest common factor",
+   "wrong": "Factorising $12x^2 - 8x$ as $2(6x^2 - 4x)$",
+   "fix": "While 2 is a common factor, the expression is not fully factorised. Always find the highest common factor of both the coefficients and the variables. Here the HCF is $4x$, giving $4x(3x - 2)$."
+  },
+  {
+   "title": "Sign errors when expanding a bracket with a negative multiplier",
+   "wrong": "$-2(x - 3) = -2x - 6$",
+   "fix": "When the multiplier is negative, multiplying a negative term inside the bracket gives a positive result. Here, $-2 \\times (-3) = +6$, so the correct expansion is $-2x + 6$. Write out each multiplication separately if you are unsure."
+  }
+ ],
+ "practice": {
+  "question": "Factorise fully $15ab - 10b^2$.",
+  "answer": "$5b(3a - 2b)$",
+  "solution": "**Key idea:** Find the HCF of all terms, write it outside the bracket, then divide each term by it.\n\n1. Find the HCF of $15ab$ and $10b^2$: the HCF of 15 and 10 is 5, and both terms share a factor of $b$, so HCF $= 5b$.\n2. Divide each term by $5b$: $15ab \\div 5b = 3a$ and $10b^2 \\div 5b = 2b$.\n3. Write the factorised form: $5b(3a - 2b)$.\n4. Check by expanding: $5b(3a - 2b) = 15ab - 10b^2$ ✓\n\n**Answer:** $5b(3a - 2b)$"
+ },
+ "checked": true,
+ "attempts": 1
+}

@@ -15,6 +15,8 @@ import {
   getLandingPagesForYear,
 } from "@/lib/worksheet-landing-pages";
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
+import { getWorkedExamples } from "@/lib/worked-examples";
+import WorkedExamples from "@/components/study/WorkedExamples";
 import Testimonials from "@/components/marketing/Testimonials";
 
 const YEAR_LEVELS = [
@@ -71,6 +73,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
 
   const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
   const faqs = getFaqsForSlug(page.slug);
+  const worked = getWorkedExamples(page.slug);
 
   // Schema.org markup. BreadcrumbList matches the visible breadcrumb
   // below the nav. LearningResource is Google's official type for
@@ -220,6 +223,12 @@ export default async function WorksheetTopicLandingPage({ params }) {
           />
         </div>
       </section>
+
+      {worked && (
+        <section style={{ padding: "24px 24px 64px", background: c.white }}>
+          <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} />
+        </section>
+      )}
 
       <section style={{ padding: "0 24px 60px", background: c.white }}>
         <div style={{ maxWidth: 1028, margin: "0 auto" }}>

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Percentage of a quantity",
+   "question": "Find $15\\%$ of $80$.",
+   "solution": "**Key idea:** Convert the percentage to a decimal by dividing by $100$, then multiply by the quantity.\n\n1. Convert the percentage to a decimal: $15\\% = 15 \\div 100 = 0.15$\n2. Multiply by the quantity: $0.15 \\times 80$\n3. Calculate: $$0.15 \\times 80 = 12$$\n\n**Answer:** $15\\%$ of $80$ is $12$.",
+   "answer": "$12$"
+  },
+  {
+   "title": "Expressing one quantity as a percentage of another",
+   "question": "A student scored $36$ out of $48$ on a maths test. Express the student's score as a percentage of the total, rounded to one decimal place.",
+   "solution": "**Key idea:** Write the score as a fraction of the total, then multiply by $100$ to convert to a percentage.\n\n1. Write as a fraction: $\\dfrac{36}{48}$\n2. Multiply by $100$: $$\\frac{36}{48} \\times 100$$\n3. Simplify the fraction first: $\\dfrac{36}{48} = 0.75$\n4. Calculate: $$0.75 \\times 100 = 75$$\n\n**Answer:** The student scored $75\\%$.",
+   "answer": "$75\\%$"
+  },
+  {
+   "title": "Discount word problem",
+   "question": "A pair of sneakers is priced at \\$120. A shop is offering a $25\\%$ discount. How much does a customer pay after the discount?",
+   "solution": "**Key idea:** Find the discount amount by calculating the percentage of the original price, then subtract it from the original price.\n\n1. Find the discount amount: $25\\%$ of \\$120\n2. Convert to a decimal: $25\\% = 0.25$\n3. Calculate the discount: $$0.25 \\times 120 = 30$$\n4. Subtract the discount from the original price: $$120 - 30 = 90$$\n\n**Answer:** The customer pays \\$90.",
+   "answer": "\\$90"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing instead of multiplying after converting",
+   "wrong": "15% of 80: $80 \\div 0.15 = 533.3\\ldots$",
+   "fix": "Once you have converted the percentage to a decimal, you multiply the decimal by the quantity. Division goes the other way and gives a much larger number, which should be a clue something is wrong. Always ask: is my answer smaller than what I started with? For a percentage less than $100\\%$, it should be."
+  },
+  {
+   "title": "Forgetting to subtract the discount",
+   "wrong": "25% discount on \\$120: answer is \\$30",
+   "fix": "\\$30 is the discount amount, not the sale price. You must subtract the discount from the original price: $120 - 30 = 90$, so the customer pays \\$90. Read the question carefully to check whether it asks for the discount amount or the final price."
+  },
+  {
+   "title": "Flipping the fraction when expressing one quantity as a percentage of another",
+   "wrong": "36 out of 48: $\\dfrac{48}{36} \\times 100 = 133.3\\ldots\\%$",
+   "fix": "The part always goes on top (numerator) and the total always goes on the bottom (denominator). Write the fraction as $\\dfrac{\\text{part}}{\\text{total}}$, which here is $\\dfrac{36}{48}$, not the other way around. A percentage over $100\\%$ would mean the student scored more than the maximum, which is impossible here."
+  },
+  {
+   "title": "Treating percent as a whole number in calculations",
+   "wrong": "$15\\%$ of $80 = 15 \\times 80 = 1200$",
+   "fix": "The symbol $\\%$ means 'out of $100$', so you must divide by $100$ before multiplying. Convert $15\\%$ to $0.15$ (or the fraction $\\dfrac{15}{100}$) first. A result of $1200$ is far larger than the original quantity of $80$, which is a clear sign the conversion step was missed."
+  }
+ ],
+ "practice": {
+  "question": "In a class of $32$ students, $20$ students walk to school. Express the number of students who walk to school as a percentage of the whole class, rounded to one decimal place.",
+  "answer": "$62.5\\%$",
+  "solution": "**Key idea:** Write the part as a fraction of the total, then multiply by $100$.\n\n1. Write as a fraction: $\\dfrac{20}{32}$\n2. Multiply by $100$: $$\\frac{20}{32} \\times 100$$\n3. Divide: $20 \\div 32 = 0.625$\n4. Multiply by $100$: $$0.625 \\times 100 = 62.5$$\n\n**Answer:** $62.5\\%$ of the class walk to school."
+ },
+ "checked": true,
+ "attempts": 1
+}

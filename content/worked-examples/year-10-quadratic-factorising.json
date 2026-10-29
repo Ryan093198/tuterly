@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Factorising x² + bx + c",
+   "question": "Factorise $x^2 + 7x + 12$.",
+   "solution": "**Key idea:** Find two integers that multiply to $12$ and add to $7$.\n\n1. List factor pairs of $12$: $(1, 12),\\ (2, 6),\\ (3, 4)$.\n2. Check which pair adds to $7$: $3 + 4 = 7$. ✓\n3. Write the factorised form: $(x + 3)(x + 4)$.\n4. **Verify by expanding:** $(x + 3)(x + 4) = x^2 + 4x + 3x + 12 = x^2 + 7x + 12$. ✓\n\n**Answer:** $(x + 3)(x + 4)$",
+   "answer": "$(x + 3)(x + 4)$"
+  },
+  {
+   "title": "Difference of two squares and perfect-square trinomials",
+   "question": "Factorise each expression.\n\n(a) $x^2 - 49$\n\n(b) $x^2 - 10x + 25$",
+   "solution": "**Key idea:** Recognise special quadratic forms: $a^2 - b^2 = (a-b)(a+b)$ and $a^2 - 2ab + b^2 = (a - b)^2$.\n\n**Part (a)**\n1. Write $x^2 - 49$ as $x^2 - 7^2$.\n2. Apply the difference of two squares rule: $(x - 7)(x + 7)$.\n\n**Part (b)**\n1. Check: $\\sqrt{25} = 5$ and the middle term $-10x = -2 \\times x \\times 5$. ✓\n2. This is a perfect-square trinomial: $(x - 5)^2$.\n3. **Verify:** $(x-5)^2 = x^2 - 10x + 25$. ✓\n\n**Answer:** (a) $(x - 7)(x + 7)$ (b) $(x - 5)^2$",
+   "answer": "(a) $(x - 7)(x + 7)$   (b) $(x - 5)^2$"
+  },
+  {
+   "title": "Real-life area problem",
+   "question": "A rectangular garden has an area of $x^2 + 11x + 28$ square metres, where $x$ is a positive number. The length of the garden is $(x + 7)$ metres. Write an expression for the width of the garden by factorising the area expression, then find the width when $x = 3$.",
+   "solution": "**Key idea:** Area of a rectangle equals length multiplied by width, so width equals area divided by length. Factorise the area expression first.\n\n1. Find two integers that multiply to $28$ and add to $11$: $4 + 7 = 11$ and $4 \\times 7 = 28$. ✓\n2. Factorise: $x^2 + 11x + 28 = (x + 4)(x + 7)$.\n3. Width $= \\dfrac{(x + 4)(x + 7)}{(x + 7)} = x + 4$ metres.\n4. Substitute $x = 3$: width $= 3 + 4 = 7$ metres.\n\n**Answer:** Width $= (x + 4)$ metres; when $x = 3$, the width is $7$ metres.",
+   "answer": "Width $= (x + 4)$ m; when $x = 3$, width $= 7$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Wrong signs when factorising",
+   "wrong": "$x^2 - 5x + 6 = (x + 2)(x + 3)$ (ignoring the negative signs)",
+   "fix": "Always check both the product and the sum with their signs. Here you need two numbers that multiply to $+6$ and add to $-5$, which are $-2$ and $-3$, giving $(x - 2)(x - 3)$. Expand your answer to check."
+  },
+  {
+   "title": "Difference of two squares applied to a sum",
+   "wrong": "$x^2 + 49 = (x - 7)(x + 7)$ (treating a sum as a difference of squares)",
+   "fix": "The difference of two squares rule only works when there is a subtraction: $a^2 - b^2$. The expression $x^2 + 49$ has no real factors and cannot be factorised over the integers."
+  },
+  {
+   "title": "Forgetting to check the middle term for a perfect square",
+   "wrong": "$x^2 + 12x + 36$ written as $(x + 6)(x + 7)$ because $6 \\times 7 = 42$, not $36$",
+   "fix": "Before using the standard method, check whether the expression is a perfect-square trinomial: is the last term a perfect square, and does the middle term equal $2 \\times x \\times \\sqrt{\\text{last term}}$? Here $2 \\times 6 = 12$ ✓, so the answer is $(x + 6)^2$."
+  },
+  {
+   "title": "Not fully factorising",
+   "wrong": "$2x^2 + 6x + 4$ factorised as $(x + 1)(2x + 4)$, leaving a common factor inside",
+   "fix": "Always take out any common numerical factor first. Here, take out $2$: $2(x^2 + 3x + 2) = 2(x + 1)(x + 2)$. Check every bracket to make sure no further factorisation is possible."
+  }
+ ],
+ "practice": {
+  "question": "Factorise each expression.\n\n(a) $x^2 - 4$\n\n(b) $x^2 + 4x - 21$",
+  "answer": "(a) $(x - 2)(x + 2)$   (b) $(x - 3)(x + 7)$",
+  "solution": "**Part (a)**\n1. Recognise $x^2 - 4 = x^2 - 2^2$, a difference of two squares.\n2. Apply the rule: $(x - 2)(x + 2)$.\n\n**Part (b)**\n1. Find two integers that multiply to $-21$ and add to $4$.\n2. Try $-3$ and $7$: $(-3) \\times 7 = -21$ ✓ and $-3 + 7 = 4$ ✓.\n3. Factorise: $(x - 3)(x + 7)$.\n4. **Verify:** $(x - 3)(x + 7) = x^2 + 7x - 3x - 21 = x^2 + 4x - 21$. ✓"
+ },
+ "checked": true,
+ "attempts": 1
+}

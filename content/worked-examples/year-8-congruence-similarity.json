@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Identifying a congruence condition (SAS)",
+   "question": "Triangle $ABC$ has $AB = 5$ cm, $BC = 8$ cm and $\\angle ABC = 47°$. Triangle $PQR$ has $PQ = 5$ cm, $QR = 8$ cm and $\\angle PQR = 47°$. State whether the two triangles are congruent and give the condition that applies.",
+   "solution": "**Key idea:** Two triangles are congruent if they satisfy one of the four conditions: SSS, SAS, AAS or RHS.\n\n1. List the matching information: $AB = PQ = 5$ cm, $BC = QR = 8$ cm, and the included angles $\\angle ABC = \\angle PQR = 47°$.\n2. The equal angle is **between** the two pairs of equal sides in each triangle.\n3. This matches the **SAS** (Side-Angle-Side) condition.\n4. Therefore $\\triangle ABC \\equiv \\triangle PQR$ (SAS).\n\n**Answer:** The triangles are congruent by SAS.",
+   "answer": "Congruent by SAS"
+  },
+  {
+   "title": "Using similarity to find a missing side length",
+   "question": "Triangle $DEF$ is similar to triangle $XYZ$, with $\\angle D = \\angle X$ and $\\angle E = \\angle Y$. The side lengths of $\\triangle DEF$ are $DE = 6$ cm, $EF = 9$ cm and $DF = 12$ cm. In $\\triangle XYZ$, $XY = 10$ cm. Find the length of $YZ$.",
+   "solution": "**Key idea:** In similar triangles, matching sides are in the same ratio (the scale factor).\n\n1. Identify the matching sides: $DE$ matches $XY$, and $EF$ matches $YZ$.\n2. Find the scale factor: $$k = \\frac{XY}{DE} = \\frac{10}{6} = \\frac{5}{3}$$\n3. Apply the scale factor to find $YZ$: $$YZ = EF \\times k = 9 \\times \\frac{5}{3} = 15 \\text{ cm}$$\n4. **Check:** The ratio $\\dfrac{YZ}{EF} = \\dfrac{15}{9} = \\dfrac{5}{3}$ matches the scale factor. ✓\n\n**Answer:** $YZ = 15$ cm",
+   "answer": "$YZ = 15$ cm"
+  },
+  {
+   "title": "Real-life problem: using similar triangles to find a height",
+   "question": "Layla stands next to a flagpole on flat ground. She is 1.6 m tall and casts a shadow 2.0 m long. At the same time, the flagpole casts a shadow 15.0 m long. Layla's triangle (formed by her height and shadow) and the flagpole's triangle (formed by its height and shadow) are similar because they share the same sun angle. Find the height of the flagpole.",
+   "solution": "**Key idea:** In similar triangles, matching sides are in the same ratio.\n\n1. The matching sides are: Layla's height matches the flagpole's height, and Layla's shadow matches the flagpole's shadow.\n2. Write the ratio of matching sides: $$\\frac{\\text{flagpole height}}{\\text{Layla's height}} = \\frac{\\text{flagpole shadow}}{\\text{Layla's shadow}}$$\n3. Substitute the known values: $$\\frac{h}{1.6} = \\frac{15.0}{2.0}$$\n4. Solve for $h$: $$h = 1.6 \\times \\frac{15.0}{2.0} = 1.6 \\times 7.5 = 12 \\text{ m}$$\n5. **Check:** $\\dfrac{12}{1.6} = 7.5$ and $\\dfrac{15.0}{2.0} = 7.5$ ✓\n\n**Answer:** The flagpole is 12 m tall.",
+   "answer": "12 m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Mixing up included and non-included angles",
+   "wrong": "Claiming SSA (two sides and a non-included angle) proves congruence.",
+   "fix": "SSA is not a valid congruence condition because two different triangles can share the same two side lengths and the same non-included angle. The angle in SAS must sit directly between the two given sides."
+  },
+  {
+   "title": "Matching sides in the wrong order for similar triangles",
+   "wrong": "Writing $\\dfrac{DE}{XY} = \\dfrac{EF}{XZ}$ when $\\angle E = \\angle Y$ (so $EF$ should match $YZ$, not $XZ$).",
+   "fix": "Always pair sides that are opposite (or adjacent to) equal angles. Write the vertices of both triangles in matching order, then read off the ratios from those matching positions."
+  },
+  {
+   "title": "Confusing the congruence symbol with the similarity symbol",
+   "wrong": "Writing $\\triangle ABC \\sim \\triangle PQR$ when the triangles are the same size and shape (congruent).",
+   "fix": "Use $\\equiv$ for congruence (same shape and same size) and $\\sim$ for similarity (same shape, possibly different size). Congruent triangles are a special case of similar triangles with a scale factor of 1."
+  },
+  {
+   "title": "Forgetting to state the condition in a congruence proof",
+   "wrong": "Concluding \"therefore $\\triangle ABC \\equiv \\triangle PQR$\" without writing which condition (SSS, SAS, AAS or RHS) was used.",
+   "fix": "A formal congruence proof always ends with the condition in brackets, for example: $\\triangle ABC \\equiv \\triangle PQR$ (AAS). Without the reason, the proof is incomplete."
+  }
+ ],
+ "practice": {
+  "question": "Triangle $LMN$ is similar to triangle $PQR$, with $\\angle L = \\angle P$ and $\\angle M = \\angle Q$. The side lengths of $\\triangle LMN$ are $LM = 8$ cm, $MN = 6$ cm and $LN = 10$ cm. In $\\triangle PQR$, $PQ = 12$ cm. Find the length of $QR$.",
+  "answer": "$QR = 9$ cm",
+  "solution": "**Key idea:** In similar triangles, matching sides are in the same ratio.\n\n1. Identify matching sides: $LM$ matches $PQ$, and $MN$ matches $QR$.\n2. Find the scale factor: $$k = \\frac{PQ}{LM} = \\frac{12}{8} = \\frac{3}{2}$$\n3. Apply the scale factor: $$QR = MN \\times k = 6 \\times \\frac{3}{2} = 9 \\text{ cm}$$\n4. **Check:** $\\dfrac{QR}{MN} = \\dfrac{9}{6} = \\dfrac{3}{2}$ matches the scale factor. ✓\n\n**Answer:** $QR = 9$ cm"
+ },
+ "checked": true,
+ "attempts": 1
+}

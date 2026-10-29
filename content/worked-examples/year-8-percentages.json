@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Percentage increase and decrease",
+   "question": "A jacket has a original price of \\$120. It is discounted by 35%. What is the sale price?",
+   "solution": "**Key idea:** Multiply the original amount by the percentage kept (as a decimal).\n\n1. A 35% discount means the customer pays $100\\% - 35\\% = 65\\%$ of the original price.\n2. Convert to a decimal: $65\\% = 0.65$\n3. Calculate the sale price: $$120 \\times 0.65 = 78$$\n\n**Answer:** The sale price is \\$78.",
+   "answer": "\\$78"
+  },
+  {
+   "title": "Reverse-percentage problem",
+   "question": "After a 20% increase, the price of a concert ticket is \\$66. What was the original price?",
+   "solution": "**Key idea:** After a 20% increase, the new price equals 120% of the original. Divide by 1.20 to reverse this.\n\n1. A 20% increase means the new price is $100\\% + 20\\% = 120\\%$ of the original.\n2. Write an equation, letting $p$ be the original price in dollars: $$p \\times 1.20 = 66$$\n3. Solve for $p$: $$p = 66 \\div 1.20 = 55$$\n4. Check: $55 \\times 1.20 = 66$ ✓\n\n**Answer:** The original price was \\$55.",
+   "answer": "\\$55"
+  },
+  {
+   "title": "Commission and mark-up in a real-life context",
+   "question": "Priya sells cars and earns a 4% commission on every sale, plus a weekly base pay of \\$320. In one week she sells a car for \\$18 500 and a car for \\$7 250. How much does Priya earn that week in total?",
+   "solution": "**Key idea:** Commission is a percentage of the total sales value. Add base pay separately.\n\n1. Find total sales: $$18\\,500 + 7\\,250 = 25\\,750$$\n2. Calculate 4% commission on total sales: $$25\\,750 \\times 0.04 = 1\\,030$$\n3. Add base pay: $$1\\,030 + 320 = 1\\,350$$\n\n**Answer:** Priya earns \\$1 350 that week.",
+   "answer": "\\$1 350"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Finding the percentage, not the new amount",
+   "wrong": "35% of 120 = 42, so the sale price is \\$42.",
+   "fix": "The percentage change (\\$42) is the amount taken off, not the final price. Always subtract the discount from (or add the increase to) the original: $120 - 42 = 78$, giving \\$78."
+  },
+  {
+   "title": "Reversing a percentage by subtracting from 100 incorrectly",
+   "wrong": "Price after 20% increase is \\$66, so original = $66 - 20\\% = 66 - 20 = 46$.",
+   "fix": "You cannot subtract the percentage number from the dollar amount directly. Divide by the multiplier: $66 \\div 1.20 = 55$, so the original price was \\$55."
+  },
+  {
+   "title": "Applying successive percentages by adding them",
+   "wrong": "A 10% increase then a 10% decrease gives 0% change overall.",
+   "fix": "Each percentage applies to a different base amount, so they do not cancel. Apply them one step at a time: after a 10% increase, $100 \\times 1.10 = 110$; after a 10% decrease, $110 \\times 0.90 = 99$, which is a net decrease."
+  },
+  {
+   "title": "Calculating percentage error with the wrong denominator",
+   "wrong": "$\\text{Percentage error} = \\dfrac{\\lvert\\text{measured} - \\text{actual}\\rvert}{\\text{measured}} \\times 100$",
+   "fix": "Percentage error is always calculated using the actual (true) value as the denominator: $$\\text{Percentage error} = \\dfrac{\\lvert\\text{measured} - \\text{actual}\\rvert}{\\text{actual}} \\times 100\\%$$"
+  }
+ ],
+ "practice": {
+  "question": "A pair of shoes is sold for \\$189 after the store applied a 40% mark-up on the wholesale cost. What was the wholesale cost?",
+  "answer": "\\$135",
+  "solution": "**Key idea:** A 40% mark-up means the selling price equals 140% of the wholesale cost. Divide by 1.40 to reverse.\n\n1. A 40% mark-up means the selling price is $100\\% + 40\\% = 140\\%$ of the wholesale cost.\n2. Let $w$ be the wholesale cost in dollars: $$w \\times 1.40 = 189$$\n3. Solve: $$w = 189 \\div 1.40 = 135$$\n4. Check: $135 \\times 1.40 = 189$ ✓\n\n**Answer:** The wholesale cost was \\$135."
+ },
+ "checked": true,
+ "attempts": 1
+}

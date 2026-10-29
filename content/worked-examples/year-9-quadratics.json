@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Solving a quadratic by null factor law",
+   "question": "Solve $x^2 - 5x + 6 = 0$.",
+   "solution": "**Key idea:** Factorise the quadratic into two brackets, then use the null factor law: if $a \\times b = 0$, then $a = 0$ or $b = 0$.\n\n1. Find two integers that multiply to $6$ and add to $-5$: these are $-2$ and $-3$.\n2. Factorise: $(x - 2)(x - 3) = 0$\n3. Apply the null factor law:\n$$x - 2 = 0 \\quad \\text{or} \\quad x - 3 = 0$$\n4. Solve each equation:\n$$x = 2 \\quad \\text{or} \\quad x = 3$$\n5. **Check** by substituting back: $(2)^2 - 5(2) + 6 = 4 - 10 + 6 = 0$ ✓ and $(3)^2 - 5(3) + 6 = 9 - 15 + 6 = 0$ ✓\n\n**Answer:** $x = 2$ or $x = 3$",
+   "answer": "$x = 2$ or $x = 3$"
+  },
+  {
+   "title": "Describing transformations of a parabola",
+   "question": "The graph of $y = x^2$ is transformed to give $y = -3x^2 + 4$. Describe the transformations applied to the standard parabola, state whether the new parabola opens upward or downward, give its vertex, and find the $y$-intercept.",
+   "solution": "**Key idea:** In $y = ax^2 + c$, the value of $a$ controls the stretch and reflection, and $c$ shifts the graph vertically.\n\n1. Compare with the standard form $y = ax^2 + c$: here $a = -3$ and $c = 4$.\n2. **Reflection:** Because $a = -3 < 0$, the parabola is reflected in the $x$-axis (opens downward).\n3. **Vertical stretch:** $\\lvert a \\rvert = 3 > 1$, so the parabola is narrower than $y = x^2$ by a factor of $3$.\n4. **Vertical translation:** $c = 4$, so the graph is shifted $4$ units upward.\n5. The vertex is at $(0,\\ 4)$ and the $y$-intercept is also $(0,\\ 4)$.\n\n**Answer:** Reflected in the $x$-axis, stretched vertically by factor $3$, shifted $4$ units up; opens downward; vertex and $y$-intercept at $(0, 4)$.",
+   "answer": "Reflected in the $x$-axis, stretched by factor $3$, shifted $4$ units up; opens downward; vertex $(0, 4)$; $y$-intercept $(0, 4)$"
+  },
+  {
+   "title": "Setting up and solving a quadratic from a worded problem",
+   "question": "A rectangular garden has a length that is $5$ metres more than its width. The area of the garden is $36$ square metres. Find the dimensions of the garden.",
+   "solution": "**Key idea:** Write an equation for the area of the rectangle, rearrange to equal zero, then factorise and apply the null factor law. Reject any negative solution since a length must be positive.\n\n1. Let the width be $x$ metres. Then the length is $(x + 5)$ metres.\n2. Set up the area equation:\n$$x(x + 5) = 36$$\n3. Expand and rearrange:\n$$x^2 + 5x - 36 = 0$$\n4. Factorise: find two integers that multiply to $-36$ and add to $5$: these are $9$ and $-4$.\n$$(x + 9)(x - 4) = 0$$\n5. Apply the null factor law: $x = -9$ or $x = 4$. Since width must be positive, $x = 4$.\n6. Width $= 4$ m, Length $= 4 + 5 = 9$ m. **Check:** $4 \\times 9 = 36$ ✓\n\n**Answer:** The garden is $4$ metres wide and $9$ metres long.",
+   "answer": "Width $= 4$ m, length $= 9$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to set the equation equal to zero before factorising",
+   "wrong": "$x^2 - x = 6 \\Rightarrow x(x-1) = 6 \\Rightarrow x = 6$ or $x - 1 = 6$",
+   "fix": "The null factor law only works when one side equals zero. Always rearrange first to get $x^2 - x - 6 = 0$, then factorise to get $(x-3)(x+2) = 0$."
+  },
+  {
+   "title": "Giving only one solution when there are two",
+   "wrong": "$(x-4)(x+1) = 0 \\Rightarrow x = 4$ (forgetting $x = -1$)",
+   "fix": "Each bracket gives its own solution. Always write $x - 4 = 0$ or $x + 1 = 0$ and solve both equations separately."
+  },
+  {
+   "title": "Getting the sign wrong when reading roots from factorised form",
+   "wrong": "$(x - 3)(x + 5) = 0 \\Rightarrow x = 3$ or $x = 5$",
+   "fix": "Set each bracket equal to zero and solve: $x - 3 = 0$ gives $x = 3$, and $x + 5 = 0$ gives $x = -5$ (not $+5$). The sign in the bracket flips when you solve."
+  },
+  {
+   "title": "Misreading the effect of $a$ on the parabola's width",
+   "wrong": "\"$y = 5x^2$ is wider than $y = x^2$ because $5$ is a big number.\"",
+   "fix": "A larger positive value of $a$ makes the parabola narrower, not wider. The graph is steeper because $y$ values grow faster. A value of $a$ between $0$ and $1$ makes the parabola wider."
+  }
+ ],
+ "practice": {
+  "question": "The graph of $y = 2x^2 - 8$ crosses the $x$-axis at two points. Find the $x$-intercepts algebraically by solving $2x^2 - 8 = 0$, and state the vertex of the parabola.",
+  "answer": "$x$-intercepts at $(-2, 0)$ and $(2, 0)$; vertex at $(0, -8)$",
+  "solution": "**Key idea:** Set $y = 0$ and solve for $x$. The vertex of $y = ax^2 + c$ is at $(0, c)$.\n\n1. Set the equation equal to zero:\n$$2x^2 - 8 = 0$$\n2. Divide both sides by $2$:\n$$x^2 - 4 = 0$$\n3. Factorise as a difference of two squares:\n$$(x - 2)(x + 2) = 0$$\n4. Apply the null factor law:\n$$x = 2 \\quad \\text{or} \\quad x = -2$$\n5. The $x$-intercepts are $(-2, 0)$ and $(2, 0)$. The vertex is at $(0, -8)$."
+ },
+ "checked": true,
+ "attempts": 1
+}

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Multiplying and dividing with the same base",
+   "question": "Simplify each expression. Give your answer in exponent form.\n\n(a) $3^4 \\times 3^5$\n\n(b) $\\dfrac{2^9}{2^3}$",
+   "solution": "**Key idea:** When multiplying powers with the same base, add the exponents. When dividing, subtract the exponents.\n\n1. (a) $3^4 \\times 3^5 = 3^{4+5} = 3^9$\n2. (b) $\\dfrac{2^9}{2^3} = 2^{9-3} = 2^6$\n\n**Answer:** (a) $3^9$ (b) $2^6$",
+   "answer": "(a) $3^9$ (b) $2^6$"
+  },
+  {
+   "title": "Mixed rules including power-of-a-power and zero index",
+   "question": "Simplify each expression.\n\n(a) $(5^3)^4$\n\n(b) $\\dfrac{(2^3)^4 \\times 2^0}{2^5}$",
+   "solution": "**Key idea:** For a power of a power, multiply the exponents. Any base raised to the power of zero equals 1.\n\n1. (a) $(5^3)^4 = 5^{3 \\times 4} = 5^{12}$\n2. (b) Simplify the numerator first: $(2^3)^4 = 2^{12}$ and $2^0 = 1$, so the numerator is $2^{12} \\times 1 = 2^{12}$.\n3. Now divide: $\\dfrac{2^{12}}{2^5} = 2^{12-5} = 2^7$\n\n**Answer:** (a) $5^{12}$ (b) $2^7$",
+   "answer": "(a) $5^{12}$ (b) $2^7$"
+  },
+  {
+   "title": "Exponent laws in a real-life context",
+   "question": "A factory produces $6^8$ small bolts on Monday and uses $6^3$ bolts to fill each crate. How many full crates can the factory fill? Write your answer as a power of 6.",
+   "solution": "**Key idea:** Dividing quantities with the same base means subtracting the exponents.\n\n1. Number of crates $= \\dfrac{6^8}{6^3}$\n2. Apply the division law: $6^8 \\div 6^3 = 6^{8-3} = 6^5$\n3. Check: $6^5 \\times 6^3 = 6^{5+3} = 6^8$ ✓\n\n**Answer:** $6^5$ crates",
+   "answer": "$6^5$ crates"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying the bases instead of adding the exponents",
+   "wrong": "$3^4 \\times 3^5 = 9^9$",
+   "fix": "When multiplying powers with the same base, keep the base and add the exponents: $3^4 \\times 3^5 = 3^{4+5} = 3^9$. The base never changes."
+  },
+  {
+   "title": "Multiplying exponents instead of adding them",
+   "wrong": "$2^3 \\times 2^4 = 2^{12}$",
+   "fix": "Multiplying exponents is the rule for a power of a power, such as $(2^3)^4 = 2^{12}$. For $2^3 \\times 2^4$, you add the exponents: $2^{3+4} = 2^7$."
+  },
+  {
+   "title": "Thinking $a^0 = 0$",
+   "wrong": "$7^0 = 0$",
+   "fix": "Any non-zero number raised to the power of zero equals 1, not 0. For example, $7^0 = 1$. You can see why from the division law: $7^3 \\div 7^3 = 7^{3-3} = 7^0$, and any number divided by itself is 1."
+  },
+  {
+   "title": "Subtracting exponents in the wrong order when dividing",
+   "wrong": "$\\dfrac{5^7}{5^3} = 5^{3-7} = 5^{-4}$",
+   "fix": "Always subtract the exponent of the denominator from the exponent of the numerator: $\\dfrac{5^7}{5^3} = 5^{7-3} = 5^4$."
+  }
+ ],
+ "practice": {
+  "question": "Simplify $\\dfrac{(3^2)^5 \\times 3^0}{3^4}$. Write your answer in exponent form.",
+  "answer": "$3^6$",
+  "solution": "**Key idea:** Apply the power-of-a-power rule first, then use the zero index and division laws.\n\n1. Simplify the power of a power: $(3^2)^5 = 3^{2 \\times 5} = 3^{10}$\n2. Apply the zero index: $3^0 = 1$\n3. Simplify the numerator: $3^{10} \\times 1 = 3^{10}$\n4. Divide: $\\dfrac{3^{10}}{3^4} = 3^{10-4} = 3^6$\n\n**Answer:** $3^6$"
+ },
+ "checked": true,
+ "attempts": 2
+}

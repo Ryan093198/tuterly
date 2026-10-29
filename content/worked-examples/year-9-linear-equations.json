@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Sketching a line from gradient-intercept form",
+   "question": "Sketch the line $y = 2x - 3$ by identifying the gradient and $y$-intercept.",
+   "solution": "**Key idea:** In $y = mx + c$, $m$ is the gradient and $c$ is the $y$-intercept. Plot the $y$-intercept, then use the gradient to find a second point.\n\n1. Identify $m = 2$ and $c = -3$, so the $y$-intercept is $(0, -3)$.\n2. From $(0, -3)$, apply the gradient: rise $= 2$, run $= 1$, giving the second point $(1, -1)$.\n3. Plot $(0, -3)$ and $(1, -1)$ and draw a straight line through them.\n\n**Answer:** A straight line passing through $(0, -3)$ and $(1, -1)$.",
+   "answer": "Line through $(0, -3)$ and $(1, -1)$"
+  },
+  {
+   "title": "Solving a linear equation algebraically",
+   "question": "Solve $3(2x - 4) = 2x + 8$.",
+   "solution": "**Key idea:** Expand brackets first, then collect like terms and isolate $x$.\n\n1. Expand the left side: $6x - 12 = 2x + 8$.\n2. Subtract $2x$ from both sides: $4x - 12 = 8$.\n3. Add $12$ to both sides: $4x = 20$.\n4. Divide both sides by $4$: $x = 5$.\n5. Check: $3(2(5) - 4) = 3(6) = 18$ and $2(5) + 8 = 18$. ✓\n\n**Answer:** $x = 5$",
+   "answer": "$x = 5$"
+  },
+  {
+   "title": "Finding where two lines intersect",
+   "question": "A phone plan from Company A costs \\$20 per month plus \\$0.10 per minute of calls. Company B charges \\$35 per month with no call costs. Write an equation for the total monthly cost of each plan in terms of $m$ minutes, then find the number of minutes at which both plans cost the same.",
+   "solution": "**Key idea:** Write a linear equation for each plan, then set them equal and solve for $m$.\n\n1. Company A: $C = 0.10m + 20$. Company B: $C = 35$.\n2. Set the costs equal: $0.10m + 20 = 35$.\n3. Subtract $20$ from both sides: $0.10m = 15$.\n4. Divide both sides by $0.10$: $m = 150$.\n5. Check: $0.10(150) + 20 = 15 + 20 = 35$. ✓\n\n**Answer:** The plans cost the same at $150$ minutes per month.",
+   "answer": "$150$ minutes"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Swapping gradient and intercept",
+   "wrong": "For $y = 2x - 3$, student writes $y$-intercept $= 2$ and gradient $= -3$.",
+   "fix": "In $y = mx + c$, the gradient is always the coefficient of $x$ (the number multiplying $x$), and the $y$-intercept is the constant term $c$. Check by substituting $x = 0$: the result should equal $c$."
+  },
+  {
+   "title": "Applying gradient in the wrong direction",
+   "wrong": "Gradient $= 2$ is used as run $= 2$, rise $= 1$, giving an incorrect second point.",
+   "fix": "Gradient $= \\dfrac{\\text{rise}}{\\text{run}}$, so a gradient of $2 = \\dfrac{2}{1}$ means move $2$ units up and $1$ unit right. Always write the gradient as a fraction to identify rise over run clearly."
+  },
+  {
+   "title": "Forgetting to expand brackets before solving",
+   "wrong": "$3(2x - 4) = 2x + 8 \\Rightarrow 6x - 4 = 2x + 8$ (only the $2x$ is multiplied by $3$).",
+   "fix": "Every term inside the brackets must be multiplied by the factor outside. Write out each multiplication separately: $3 \\times 2x = 6x$ and $3 \\times (-4) = -12$, giving $6x - 12$."
+  },
+  {
+   "title": "Adding instead of subtracting when rearranging",
+   "wrong": "$4x - 12 = 8 \\Rightarrow 4x = 8 - 12 = -4$ (subtracting $12$ from the right instead of adding).",
+   "fix": "To remove $-12$ from the left side, add $12$ to both sides: $4x - 12 + 12 = 8 + 12$, so $4x = 20$. Always perform the same operation on both sides."
+  }
+ ],
+ "practice": {
+  "question": "Solve $4(x + 3) = 3x + 17$ and check your answer.",
+  "answer": "$x = 5$",
+  "solution": "**Key idea:** Expand brackets, then collect like terms and isolate $x$.\n\n1. Expand the left side: $4x + 12 = 3x + 17$.\n2. Subtract $3x$ from both sides: $x + 12 = 17$.\n3. Subtract $12$ from both sides: $x = 5$.\n4. Check: $4(5 + 3) = 4(8) = 32$ and $3(5) + 17 = 15 + 17 = 32$. ✓"
+ },
+ "checked": true,
+ "attempts": 2
+}

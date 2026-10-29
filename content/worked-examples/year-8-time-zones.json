@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Converting between 12-hour and 24-hour time",
+   "question": "Convert these times: (a) 7:45 am to 24-hour time, (b) 20:30 to 12-hour time.",
+   "solution": "**Key idea:** In 24-hour time, hours run from 00 to 23. For pm times after 12 noon, add 12 to the hour. For 24-hour times from 13:00 onwards, subtract 12 and write pm.\n\n1. (a) 7:45 am is before noon, so the hour stays the same. Write the hour with two digits: $07{:}45$.\n2. (b) $20 - 12 = 8$, so 20:30 is **8:30 pm**.\n\n**Answer:** (a) $07{:}45$ and (b) 8:30 pm",
+   "answer": "(a) 07:45 and (b) 8:30 pm"
+  },
+  {
+   "title": "Adding a duration across midnight",
+   "question": "A movie starts at 10:45 pm and runs for 2 hours 35 minutes. What time does it finish? Give your answer in 12-hour time.",
+   "solution": "**Key idea:** Add hours first, then minutes, and regroup if minutes exceed 60. Remember midnight is 12:00 am and the day changes.\n\n1. Start time: 10:45 pm.\n2. Add 2 hours: $10\\text{ pm} + 2\\text{ h} = 12\\text{ am (midnight)}$, so the time is 12:45 am.\n3. Add 35 minutes: $$12{:}45\\text{ am} + 35\\text{ min} = 1{:}20\\text{ am}$$\n4. The day has moved to the next day, so the movie finishes at **1:20 am**.\n\n**Answer:** 1:20 am",
+   "answer": "1:20 am"
+  },
+  {
+   "title": "International flight arrival time",
+   "question": "A flight departs Sydney at 9:15 am on Wednesday. Sydney is on AEST (UTC+10). The flight takes 9 hours 50 minutes and lands in Dubai, where the local time zone is GST (UTC+4). What is the local time and day in Dubai when the plane lands?",
+   "solution": "**Key idea:** Convert departure to UTC by subtracting the offset, add the flight duration to get arrival in UTC, then convert to the destination's local time by adding its offset.\n\n1. Departure in UTC: $$9{:}15\\text{ am} - 10\\text{ h} = 11{:}15\\text{ pm Tuesday (UTC)}$$\n2. Add flight duration of 9 h 50 min: $$11{:}15\\text{ pm} + 9\\text{ h} = 8{:}15\\text{ am Wednesday (UTC)}$$ $$8{:}15\\text{ am} + 50\\text{ min} = 9{:}05\\text{ am Wednesday (UTC)}$$\n3. Convert UTC to Dubai local time (UTC+4): $$9{:}05\\text{ am} + 4\\text{ h} = 1{:}05\\text{ pm Wednesday (GST)}$$\n\n**Answer:** 1:05 pm Wednesday (Dubai local time)",
+   "answer": "1:05 pm Wednesday"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding instead of subtracting when converting to UTC",
+   "wrong": "Sydney is UTC+10, so UTC = 9:15 am + 10 h = 7:15 pm",
+   "fix": "To convert a local time to UTC, subtract the UTC offset. UTC+10 means the local clock is 10 hours ahead of UTC, so you subtract: $9{:}15\\text{ am} - 10\\text{ h} = 11{:}15\\text{ pm}$ (previous day)."
+  },
+  {
+   "title": "Forgetting that the day changes at midnight",
+   "wrong": "11:50 pm + 2 h = 1:50 pm",
+   "fix": "When adding time pushes you past midnight (12:00 am), the date moves forward by one day. Keep track of the day label, especially in multi-step problems involving flights or overnight events."
+  },
+  {
+   "title": "Confusing 12:00 am and 12:00 pm",
+   "wrong": "12:00 pm is midnight and 12:00 am is noon",
+   "fix": "12:00 am is midnight (the very start of the day) and 12:00 pm is noon (midday). In 24-hour time, midnight is 00:00 and noon is 12:00, which removes any confusion."
+  },
+  {
+   "title": "Ignoring the difference between two Australian time zones",
+   "wrong": "ACDT (UTC+10:30) and AEST (UTC+10) are the same, so no conversion is needed",
+   "fix": "ACDT and AEST differ by 30 minutes. Always convert both times to UTC first, then convert to the destination's local time. Never assume two Australian time zones are identical just because they look similar."
+  }
+ ],
+ "practice": {
+  "question": "A train departs Melbourne at 11:40 pm on Friday. Melbourne is on AEST (UTC+10). The journey takes 3 hours 25 minutes and the train arrives in a city where the local time zone is ACST (UTC+9:30). What is the local arrival time and day at the destination?",
+  "answer": "2:35 am Saturday (ACST)",
+  "solution": "**Key idea:** Convert departure to UTC, add the journey time to get arrival in UTC, then convert to the destination's local time.\n\n1. Convert Melbourne departure to UTC (subtract UTC+10 offset): $$11{:}40\\text{ pm Friday} - 10\\text{ h} = 1{:}40\\text{ pm Friday (UTC)}$$\n2. Add journey time of 3 h 25 min: $$1{:}40\\text{ pm} + 3\\text{ h} = 4{:}40\\text{ pm Friday (UTC)}$$ $$4{:}40\\text{ pm} + 25\\text{ min} = 5{:}05\\text{ pm Friday (UTC)}$$\n3. Convert UTC arrival to destination local time (add UTC+9:30 offset): $$5{:}05\\text{ pm} + 9\\text{ h} = 2{:}05\\text{ am Saturday (ACST)}$$ $$2{:}05\\text{ am} + 30\\text{ min} = 2{:}35\\text{ am Saturday (ACST)}$$\n\n**Answer:** 2:35 am Saturday (ACST)"
+ },
+ "checked": true,
+ "attempts": 2
+}

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Solving a one-variable linear inequality",
+   "question": "Solve $3x - 4 > 11$ and represent the solution on a number line.",
+   "solution": "**Key idea:** Solve a linear inequality the same way as a linear equation, keeping the inequality sign pointing the same direction (as long as you only add or subtract, or multiply/divide by a positive number).\n\n1. Add 4 to both sides: $$3x - 4 + 4 > 11 + 4 \\implies 3x > 15$$\n2. Divide both sides by 3 (positive, so the sign stays): $$x > 5$$\n3. On a number line, draw an open circle at 5 (since $x = 5$ is not included) and shade the ray going to the right.\n\n**Answer:** $x > 5$",
+   "answer": "$x > 5$"
+  },
+  {
+   "title": "Inequality with a fraction and sign flip",
+   "question": "Solve $\\dfrac{-2x}{3} + 1 \\leq 5$ and represent the solution on a number line.",
+   "solution": "**Key idea:** When you multiply or divide both sides of an inequality by a negative number, the inequality sign must flip direction.\n\n1. Subtract 1 from both sides: $$\\dfrac{-2x}{3} \\leq 4$$\n2. Multiply both sides by 3 (positive, sign stays): $$-2x \\leq 12$$\n3. Divide both sides by $-2$ (negative, so flip the sign): $$x \\geq -6$$\n4. On a number line, draw a closed circle at $-6$ (since $x = -6$ is included) and shade the ray going to the right.\n\n**Answer:** $x \\geq -6$",
+   "answer": "$x \\geq -6$"
+  },
+  {
+   "title": "Inequality in context: saving for a purchase",
+   "question": "Anika has already saved \\$85. She earns \\$12 per hour working at a cafe and wants to save enough to buy a jacket that costs at least \\$181. Write and solve an inequality to find the minimum number of whole hours she must work.",
+   "solution": "**Key idea:** Translate the real-life situation into an inequality, solve it, then interpret the answer in context.\n\n1. Let $h$ be the number of hours Anika works. Her total savings will be $85 + 12h$ dollars. She needs this to be at least \\$181: $$85 + 12h \\geq 181$$\n2. Subtract 85 from both sides: $$12h \\geq 96$$\n3. Divide both sides by 12 (positive, sign stays): $$h \\geq 8$$\n4. Since $h$ must be a whole number and $h \\geq 8$, the minimum number of hours is 8.\n\n**Answer:** Anika must work at least 8 hours.",
+   "answer": "At least 8 hours"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to flip the inequality sign",
+   "wrong": "$-3x > 12 \\implies x > -4$ (sign not flipped when dividing by $-3$)",
+   "fix": "Whenever you multiply or divide both sides by a negative number, the inequality sign must reverse direction. Here the correct result is $x < -4$. A good habit is to circle the sign as a reminder to flip it whenever you use a negative multiplier or divisor."
+  },
+  {
+   "title": "Using a closed circle instead of an open circle (or vice versa)",
+   "wrong": "Drawing a closed circle at 5 for $x > 5$, suggesting $x = 5$ is a solution.",
+   "fix": "Use an open circle when the endpoint is not included (strict inequalities $<$ and $>$) and a closed circle when it is included ($\\leq$ and $\\geq$). Ask yourself: does the boundary value actually satisfy the inequality?"
+  },
+  {
+   "title": "Treating the inequality like an equation and losing the sign",
+   "wrong": "$2x - 3 < 7 \\implies 2x - 3 = 7 \\implies x = 5$, then writing $x < 5$ without checking.",
+   "fix": "While the algebraic steps are similar, always carry the inequality symbol through every line of working. Write $<$ (or whichever sign applies) in every step, not just at the end, so you can spot if a sign flip is needed."
+  },
+  {
+   "title": "Multiplying only one term when clearing a fraction",
+   "wrong": "$\\dfrac{x-2}{3} > 4 \\implies x - 2 > 4$ (multiplied 3 into the numerator but forgot to multiply the right-hand side by 3)",
+   "fix": "When you multiply both sides by a number to clear a fraction, every term on both sides must be multiplied. The correct step is $\\dfrac{x-2}{3} \\times 3 > 4 \\times 3$, giving $x - 2 > 12$."
+  }
+ ],
+ "practice": {
+  "question": "Solve $\\dfrac{3 - 4x}{2} < 7$ and represent the solution on a number line.",
+  "answer": "$x > -\\dfrac{11}{4}$",
+  "solution": "**Key idea:** Clear the fraction first by multiplying both sides by the (positive) denominator, then isolate $x$, remembering to flip the sign if you divide by a negative.\n\n1. Multiply both sides by 2 (positive, sign stays): $$3 - 4x < 14$$\n2. Subtract 3 from both sides: $$-4x < 11$$\n3. Divide both sides by $-4$ (negative, so flip the sign): $$x > -\\dfrac{11}{4}$$\n4. On a number line, draw an open circle at $-\\dfrac{11}{4}$ (that is, $-2.75$) and shade the ray going to the right.\n\n**Answer:** $x > -\\dfrac{11}{4}$"
+ },
+ "checked": true,
+ "attempts": 3
+}

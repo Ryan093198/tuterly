@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Simplifying a ratio",
+   "question": "Simplify the ratio $24 : 36$.",
+   "solution": "**Key idea:** Divide both parts of the ratio by their highest common factor (HCF).\n\n1. Find the HCF of $24$ and $36$: the HCF is $12$.\n2. Divide both parts by $12$:\n$$24 : 36 = (24 \\div 12) : (36 \\div 12)$$\n3. Simplify:\n$$= 2 : 3$$\n\n**Answer:** $2 : 3$",
+   "answer": "$2:3$"
+  },
+  {
+   "title": "Dividing a quantity in a ratio",
+   "question": "Divide \\$90 between Priya and Joel in the ratio $2 : 3$.",
+   "solution": "**Key idea:** Find the value of one part by dividing the total by the number of parts, then multiply for each share.\n\n1. Count the total number of parts: $2 + 3 = 5$ parts.\n2. Find the value of one part: $90 \\div 5 = 18$, so one part is worth \\$18.\n3. Calculate Priya's share ($2$ parts): $2 \\times 18 = 36$, so Priya gets \\$36.\n4. Calculate Joel's share ($3$ parts): $3 \\times 18 = 54$, so Joel gets \\$54.\n5. Check: $36 + 54 = 90$. ✓\n\n**Answer:** Priya gets \\$36 and Joel gets \\$54.",
+   "answer": "Priya gets \\$36, Joel gets \\$54."
+  },
+  {
+   "title": "Ratio in a real-life context",
+   "question": "A baker makes a batch of dough using flour and water in the ratio $5 : 2$ by weight. She wants to make $980$ grams of dough in total. How many grams of flour and how many grams of water does she need?",
+   "solution": "**Key idea:** The total weight is split into parts according to the ratio, so find the value of one part first.\n\n1. Count the total number of parts: $5 + 2 = 7$ parts.\n2. Find the value of one part: $980 \\div 7 = 140$ grams per part.\n3. Calculate the flour ($5$ parts): $5 \\times 140 = 700$ grams.\n4. Calculate the water ($2$ parts): $2 \\times 140 = 280$ grams.\n5. Check: $700 + 280 = 980$ grams. ✓\n\n**Answer:** The baker needs $700$ g of flour and $280$ g of water.",
+   "answer": "$700$ g of flour and $280$ g of water."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Not dividing both parts by the HCF",
+   "wrong": "$24 : 36 = 12 : 18$ (divided by $2$ instead of the HCF of $12$)",
+   "fix": "Always find the highest common factor, not just any common factor. Keep dividing until the two parts share no common factor other than $1$."
+  },
+  {
+   "title": "Adding the ratio instead of finding parts",
+   "wrong": "Ratio is $2:3$, so Priya gets $2$ dollars and Joel gets $3$ dollars from \\$90.",
+   "fix": "The numbers in a ratio show parts, not the actual amounts. Always divide the total by the sum of the parts first to find what one part is worth."
+  },
+  {
+   "title": "Mixing up which quantity goes first",
+   "wrong": "\"Flour to water is $5:2$\" written as water $:$ flour $= 5 : 2$.",
+   "fix": "Write the ratio in the same order as the words. If the question says flour to water, the flour number comes first. Re-read the question carefully before writing the ratio."
+  },
+  {
+   "title": "Forgetting to check the parts add up to the total",
+   "wrong": "Priya gets \\$36 and Joel gets \\$54, no check performed, so an arithmetic error goes unnoticed.",
+   "fix": "Always add the two shares at the end and confirm they equal the original total. This catches arithmetic mistakes before they cost you marks."
+  }
+ ],
+ "practice": {
+  "question": "Divide $\\$$ 120 between two friends, Anika and Ben, in the ratio $3 : 5$. How much does each person receive?",
+  "answer": "Anika gets \\$45 and Ben gets \\$75.",
+  "solution": "**Key idea:** Divide the total by the number of parts, then multiply for each person's share.\n\n1. Count the total number of parts: $3 + 5 = 8$ parts.\n2. Find the value of one part: $120 \\div 8 = 15$, so one part is worth \\$15.\n3. Calculate Anika's share ($3$ parts): $3 \\times 15 = 45$, so Anika gets \\$45.\n4. Calculate Ben's share ($5$ parts): $5 \\times 15 = 75$, so Ben gets \\$75.\n5. Check: $45 + 75 = 120$. ✓"
+ },
+ "checked": true,
+ "attempts": 1
+}

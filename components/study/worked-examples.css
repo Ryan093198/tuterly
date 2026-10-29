@@ -1,0 +1,36 @@
+/* Topic page worked examples (WorkedExamples.jsx). */
+.wx { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; font-family: var(--font-display); }
+.wx-sec, .wx-card, .wx-md { min-width: 0; }
+.wx-eyebrow { margin: 0 0 8px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-text); }
+.wx-h2 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 34px); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--foreground); }
+.wx-h3 { margin: 0 0 8px; font-size: 17px; font-weight: 800; color: var(--foreground); }
+.wx-lead { margin: 0 0 20px; font-size: 16.5px; line-height: 1.6; color: var(--muted); max-width: 62ch; }
+.wx-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.wx-card { background: var(--card); border: 2px solid var(--border); border-radius: 18px; padding: 18px 20px; box-shadow: 0 3px 0 var(--edge); }
+.wx-num { margin: 0 0 8px; font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.wx-md { font-size: 16.5px; line-height: 1.6; color: var(--foreground); overflow-wrap: anywhere; }
+.wx-md p { margin: 0 0 8px; }
+.wx-md ol { list-style: decimal; margin: 0 0 8px; padding-left: 22px; }
+.wx-md ul { list-style: disc; margin: 0 0 8px; padding-left: 22px; }
+.wx-md li { margin: 2px 0; }
+.wx-md .katex-display { margin: 6px 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+.wx-table { max-width: 100%; overflow-x: auto; margin: 6px 0 10px; }
+.wx-table table { border-collapse: collapse; font-size: 15px; }
+.wx-table th, .wx-table td { border: 1px solid var(--border); padding: 6px 12px; text-align: center; }
+.wx-table th { background: var(--surface-soft); }
+.wx-sol { margin-top: 10px; }
+.wx-sol > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--brand-soft); font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-text); }
+.wx-sol > summary::-webkit-details-marker { display: none; }
+.wx-sol[open] > summary { margin-bottom: 12px; background: var(--brand-pale); }
+.wx-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+@media (min-width: 760px) { .wx-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.wx-mistake .wx-md { font-size: 15.5px; color: var(--muted); }
+.wx-wrong { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; padding: 8px 10px; border-radius: 10px; background: var(--danger-soft); }
+.wx-wrong .wx-md { color: var(--foreground); }
+.wx-x { color: var(--danger-text); font-weight: 900; line-height: 1.6; }
+.wx-practice { border-color: var(--brand); }
+.wx-answer { margin: 0 0 4px; }
+.wx-tryline { margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: var(--foreground); }
+.wx-tryline a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.wx-md .katex { max-width: 100%; }
+.wx-md p:has(> .katex) { overflow-x: auto; overflow-y: hidden; }

@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Circumference and area from a radius",
+   "question": "A circle has a radius of $9$ cm. Find its circumference and area. Give both answers correct to one decimal place.",
+   "solution": "**Key idea:** Circumference $C = 2\\pi r$ and area $A = \\pi r^2$, where $r$ is the radius.\n\n1. Write the radius: $r = 9$ cm.\n2. Find the circumference:\n$$C = 2\\pi r = 2 \\times \\pi \\times 9 = 18\\pi \\approx 56.5 \\text{ cm}$$\n3. Find the area:\n$$A = \\pi r^2 = \\pi \\times 9^2 = 81\\pi \\approx 254.5 \\text{ cm}^2$$\n\n**Answer:** Circumference $\\approx 56.5$ cm, Area $\\approx 254.5$ cm$^2$",
+   "answer": "Circumference $\\approx 56.5$ cm, Area $\\approx 254.5$ cm$^2$"
+  },
+  {
+   "title": "Area of a composite shape (semicircle and rectangle)",
+   "question": "A shape is made from a rectangle and a semicircle. The rectangle is $10$ cm long and $6$ cm wide. The semicircle sits on top of one of the $6$ cm sides, with that side as its diameter. Find the total area of the shape, correct to one decimal place.",
+   "solution": "**Key idea:** The total area is the area of the rectangle plus the area of the semicircle. The semicircle has diameter $6$ cm, so its radius is $3$ cm.\n\n1. Find the radius of the semicircle: $r = 6 \\div 2 = 3$ cm.\n2. Find the area of the rectangle:\n$$A_{\\text{rect}} = 10 \\times 6 = 60 \\text{ cm}^2$$\n3. Find the area of the semicircle:\n$$A_{\\text{semi}} = \\frac{1}{2}\\pi r^2 = \\frac{1}{2} \\times \\pi \\times 3^2 = \\frac{9\\pi}{2} \\approx 14.1 \\text{ cm}^2$$\n4. Add the areas:\n$$A_{\\text{total}} = 60 + 14.1 = 74.1 \\text{ cm}^2$$\n\n**Answer:** Total area $\\approx 74.1$ cm$^2$",
+   "answer": "Total area $\\approx 74.1$ cm$^2$"
+  },
+  {
+   "title": "Real-world problem: circular garden border",
+   "question": "A gardener wants to put a circular garden bed in a park. The garden bed has a radius of $3$ m, and there is a circular path $1$ m wide that runs around the outside of it, forming a larger circle with radius $4$ m. The garden bed will be planted with flowers, and the path will be paved. Find the area of the path only, correct to two decimal places.",
+   "solution": "**Key idea:** The path is an annulus (a ring shape). Its area equals the area of the large circle minus the area of the small circle.\n\n1. Write the radii: outer radius $R = 4$ m, inner radius $r = 3$ m.\n2. Find the area of the large circle:\n$$A_{\\text{large}} = \\pi R^2 = \\pi \\times 4^2 = 16\\pi \\text{ m}^2$$\n3. Find the area of the small circle:\n$$A_{\\text{small}} = \\pi r^2 = \\pi \\times 3^2 = 9\\pi \\text{ m}^2$$\n4. Find the area of the path:\n$$A_{\\text{path}} = 16\\pi - 9\\pi = 7\\pi \\approx 21.99 \\text{ m}^2$$\n\n**Answer:** The area of the path is $\\approx 21.99$ m$^2$",
+   "answer": "Area of path $\\approx 21.99$ m$^2$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing radius and diameter",
+   "wrong": "Diameter $= 10$ cm, so $A = \\pi \\times 10^2 = 100\\pi$ cm$^2$",
+   "fix": "Always halve the diameter before substituting into $A = \\pi r^2$ or $C = 2\\pi r$. Here $r = 5$ cm, so $A = \\pi \\times 5^2 = 25\\pi$ cm$^2$."
+  },
+  {
+   "title": "Forgetting to square the radius when finding area",
+   "wrong": "$A = \\pi \\times 6 = 6\\pi$ cm$^2$ (with $r = 6$ cm)",
+   "fix": "The area formula is $A = \\pi r^2$, so you must square $r$ first. With $r = 6$ cm: $A = \\pi \\times 6^2 = 36\\pi$ cm$^2$."
+  },
+  {
+   "title": "Using the wrong fraction for a semicircle or quadrant",
+   "wrong": "Area of a quadrant $= \\frac{1}{2}\\pi r^2$",
+   "fix": "A semicircle is half a circle ($\\frac{1}{2}\\pi r^2$) and a quadrant is a quarter of a circle ($\\frac{1}{4}\\pi r^2$). Always think about what fraction of the full circle you have."
+  },
+  {
+   "title": "Subtracting areas the wrong way around for an annulus",
+   "wrong": "Area of annulus $= \\pi r_{\\text{small}}^2 - \\pi R_{\\text{large}}^2$",
+   "fix": "Always subtract the smaller (inner) area from the larger (outer) area: $A = \\pi R^2 - \\pi r^2$. Doing it backwards gives a negative answer, which is impossible for an area."
+  }
+ ],
+ "practice": {
+  "question": "A shape is made by cutting a quadrant (quarter circle) from a square. The square has a side length of $8$ cm. The quadrant has its corner at one corner of the square, and its radius equals the side length of the square, so $r = 8$ cm. Find the area of the shape that remains after the quadrant is removed. Give your answer correct to one decimal place.",
+  "answer": "Area $\\approx 13.7$ cm$^2$",
+  "solution": "**Key idea:** Subtract the area of the quadrant from the area of the square.\n\n1. Find the area of the square:\n$$A_{\\text{square}} = 8^2 = 64 \\text{ cm}^2$$\n2. Find the area of the quadrant (radius $r = 8$ cm):\n$$A_{\\text{quadrant}} = \\frac{1}{4}\\pi r^2 = \\frac{1}{4} \\times \\pi \\times 8^2 = \\frac{64\\pi}{4} = 16\\pi \\approx 50.3 \\text{ cm}^2$$\n3. Subtract to find the remaining area:\n$$A = 64 - 16\\pi \\approx 64 - 50.3 = 13.7 \\text{ cm}^2$$\n\n**Answer:** Area $\\approx 13.7$ cm$^2$"
+ },
+ "checked": true,
+ "attempts": 1
+}

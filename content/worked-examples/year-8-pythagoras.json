@@ -1,0 +1,51 @@
+{
+ "examples": [
+  {
+   "title": "Finding the hypotenuse",
+   "question": "A right-angled triangle has shorter sides of length $9$ m and $12$ m. Find the length of the hypotenuse.",
+   "solution": "**Key idea:** In a right-angled triangle, $c^2 = a^2 + b^2$, where $c$ is the hypotenuse.\n\n1. Substitute the known sides: $$c^2 = 9^2 + 12^2$$\n2. Evaluate: $$c^2 = 81 + 144 = 225$$\n3. Take the square root: $$c = \\sqrt{225} = 15$$\n\n**Answer:** The hypotenuse is $15$ m.",
+   "answer": "$15$ m"
+  },
+  {
+   "title": "Finding a shorter side",
+   "question": "A right-angled triangle has a hypotenuse of $10$ m and one shorter side of $6$ m. Find the exact length of the other shorter side, then round your answer to two decimal places.",
+   "solution": "**Key idea:** Rearrange $a^2 + b^2 = c^2$ to find a shorter side: $b^2 = c^2 - a^2$.\n\n1. Substitute the known values: $$b^2 = 10^2 - 6^2$$\n2. Evaluate: $$b^2 = 100 - 36 = 64$$\n3. Take the square root: $$b = \\sqrt{64} = 8$$\n4. The exact answer is $8$ m, which rounds to $8.00$ m.\n\n**Answer:** The other shorter side is exactly $8$ m (or $8.00$ m to two decimal places).",
+   "answer": "$8$ m (exact), $8.00$ m (2 d.p.)"
+  },
+  {
+   "title": "Ladder reaching a wall",
+   "question": "A ladder is leaning against a vertical wall. The base of the ladder is $1.5$ m from the wall along flat ground, and the ladder reaches $3.6$ m up the wall. Find the length of the ladder, correct to two decimal places.",
+   "solution": "**Key idea:** The ladder, wall, and ground form a right-angled triangle. The ladder is the hypotenuse.\n\n1. Substitute into $c^2 = a^2 + b^2$: $$c^2 = 1.5^2 + 3.6^2$$\n2. Evaluate: $$c^2 = 2.25 + 12.96 = 15.21$$\n3. Take the square root: $$c = \\sqrt{15.21} \\approx 3.90$$\n\n**Answer:** The ladder is approximately $3.90$ m long.",
+   "answer": "$3.90$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding instead of subtracting when finding a shorter side",
+   "wrong": "Student writes $b^2 = 10^2 + 6^2 = 136$, even though the hypotenuse is known.",
+   "fix": "When finding a shorter side, subtract the square of the known shorter side from the square of the hypotenuse: $b^2 = c^2 - a^2$. Only add when finding the hypotenuse."
+  },
+  {
+   "title": "Choosing the wrong side as the hypotenuse",
+   "wrong": "Student uses the longest given side as $a$ or $b$ rather than as $c$.",
+   "fix": "The hypotenuse is always the side opposite the right angle, and it is always the longest side. Label $c$ first, then assign $a$ and $b$ to the other two sides."
+  },
+  {
+   "title": "Forgetting to take the square root",
+   "wrong": "Student writes $c^2 = 225$ and gives the answer as $225$ m.",
+   "fix": "After finding $c^2$, always take the positive square root to get the length: $c = \\sqrt{225} = 15$."
+  },
+  {
+   "title": "Rounding $\\sqrt{b^2}$ when $b$ is a whole number",
+   "wrong": "Student writes $\\sqrt{64} \\approx 8.00$ and concludes the answer is not exact.",
+   "fix": "Check whether the square root is a whole number before rounding. If $b^2 = 64$, then $b = 8$ exactly, and no rounding is needed (or the rounded form is simply $8.00$)."
+  }
+ ],
+ "practice": {
+  "question": "A right-angled triangle has a hypotenuse of $15$ cm and one shorter side of $9$ cm. Find the length of the other shorter side, correct to two decimal places.",
+  "answer": "$12$ cm (exact), $12.00$ cm (2 d.p.)",
+  "solution": "**Key idea:** Rearrange $a^2 + b^2 = c^2$ to find the unknown shorter side: $b^2 = c^2 - a^2$.\n\n1. Substitute the known values: $$b^2 = 15^2 - 9^2$$\n2. Evaluate: $$b^2 = 225 - 81 = 144$$\n3. Take the square root: $$b = \\sqrt{144} = 12$$\n4. The exact answer is $12$ cm, which rounds to $12.00$ cm.\n\n**Answer:** The other shorter side is exactly $12$ cm (or $12.00$ cm to two decimal places)."
+ },
+ "checked": true,
+ "attempts": 2
+}
