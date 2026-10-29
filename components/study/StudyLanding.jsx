@@ -239,6 +239,44 @@ export default function StudyLanding() {
         </div>
       </section>
 
+      {/* 2a. DOES IT JUST GIVE ANSWERS? */}
+      <section className="tb-section" aria-labelledby="answers">
+        <div className="tb-wrap sl-parents">
+          <div>
+            <Reveal>
+              <SectionHead
+                id="answers"
+                eyebrow="A fair question"
+                title="Does it just give them the answers?"
+                lead={`No. Seeing how a question is solved is only step one. The marks come from your child doing the next one on their own, and that’s what ${name} is built around.`}
+              />
+            </Reveal>
+            <ul className="sl-points">
+              <Point icon="explain" title="The solution stays hidden until they ask">
+                Every question has a full worked solution, hidden at first so they can have another go before they look.
+              </Point>
+              <Point icon="drill" title="Then they solve a new one themselves">
+                A similar question on the same idea, with a different context and numbers. They type the answer and the app checks it.
+              </Point>
+              <Point icon="star" title="Mastered means right more than once">
+                Each similar question they get right earns a star. Three stars and the question is mastered, then they can try a harder one.
+              </Point>
+              <Point icon="checked" title="You can see the work, not just the time spent">
+                Week in review shows how many similar questions they got right, what they mastered and their test scores.
+              </Point>
+            </ul>
+          </div>
+          <div className="sl-school__phone">
+            <PhoneFrame
+              src={`${S}/flow-snap/04-solution-shown.png`}
+              alt="A worked solution in Tuterly: the key idea, three steps and the answer, opened after the student chose to see it"
+              width={270}
+              sizes="(max-width: 899px) 62vw, 270px"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 2b. MADE BY AUSTRALIAN EDUCATORS */}
       <MadeByEducators />
 
