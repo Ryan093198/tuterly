@@ -16,6 +16,9 @@ import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import TryQuestion from "@/components/study/TryQuestion";
 import TryHeroLink from "@/components/study/TryHeroLink";
 import QuestionCounter from "@/components/study/QuestionCounter";
+import TopicGrid from "@/components/study/TopicGrid";
+import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
+import "./topic-grid.css";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app,
@@ -38,6 +41,12 @@ function TeX({ children, display = false }) {
 }
 
 const S = "/app-screens";
+
+// "Maths, explained": the topic pages grouped by year (in the order of lib/worksheet-landing-pages.js).
+const TOPIC_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"].map((year) => ({
+  year,
+  topics: WORKSHEET_LANDING_PAGES.filter((p) => p.yearLevel === year).map((p) => ({ slug: p.slug, topic: p.topic })),
+}));
 
 // The three-step strip under the hero. Each step jumps to its section.
 const THREE_STEPS = [
@@ -444,6 +453,24 @@ export default function StudyLanding() {
             <OptionTile icon="streak" tone="streak" title="Streaks and goals" text="A weekly streak and this week’s goals, with XP and stars." />
             <OptionTile icon="upload" title="Upload a whole test" text="Photos of each page, a PDF or a Word document. The wrong ones are stored automatically." />
           </div>
+        </div>
+      </section>
+
+      {/* 5b. MATHS, EXPLAINED: every topic page */}
+      <section className="tb-section" aria-labelledby="explained" id="topics">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead
+              id="explained"
+              eyebrow="Every topic, Years 7 to 10A"
+              title="Maths, explained."
+              lead="Worked examples, the common mistakes to watch for, and a question to try, for every topic in the Victorian Curriculum. Free, no sign-up."
+            />
+          </Reveal>
+          <TopicGrid years={TOPIC_YEARS} />
+          <p className="tg__more">
+            Need more practice? <Link href="/worksheets">Make a free worksheet on any topic</Link>.
+          </p>
         </div>
       </section>
 
