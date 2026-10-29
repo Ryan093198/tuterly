@@ -51,8 +51,8 @@ const THREE_STEPS = [
   {
     title: "Practise it.",
     text: "Fresh questions on the same idea, until it clicks.",
-    src: `${S}/flow-snap/05-similar-question-correct.png`,
-    alt: "A similar question answered correctly in Tuterly, marked right with a star",
+    src: `${S}/flow-practice/03-test-question.png`,
+    alt: "A Tuterly practice question: find the length of a ladder leaning against a wall, with the answer typed in",
     href: "#different",
   },
   {
