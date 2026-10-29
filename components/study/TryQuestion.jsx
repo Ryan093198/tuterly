@@ -42,7 +42,7 @@ function fileToDataUrl(file) {
       URL.revokeObjectURL(url);
       resolve(c.toDataURL("image/jpeg", 0.85));
     };
-    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("We couldn’t open that image. Try a JPG or PNG.")); };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("We couldn’t open that photo here. Try a screenshot of it, or a JPG or PNG.")); };
     img.src = url;
   });
 }
@@ -57,6 +57,7 @@ export default function TryQuestion() {
   const [stage, setStage] = useState(0);
   const [error, setError] = useState("");
   const [result, setResult] = useState(null);
+  const [photo, setPhoto] = useState(null);
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("parent");
   const [gateBusy, setGateBusy] = useState(false);
@@ -104,6 +105,7 @@ export default function TryQuestion() {
       if (!res.ok) throw new Error(data.error || "Something went wrong. Try again.");
       if (!data.ok) throw new Error(data.reason || "We couldn’t read a maths question there.");
       setResult(data);
+      setPhoto(payload.image || null);
       setStatus("done");
       setTimeout(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
     } catch (err) {
@@ -236,6 +238,11 @@ export default function TryQuestion() {
         <div className="tq-result" ref={resultRef}>
           <div className="tq-card">
             <p className="tq-label">Your question{result.topic ? ` · ${result.topic}` : ""}</p>
+            {photo && (
+              // Their own photo, so any diagram in the question is still visible.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={photo} alt="The photo you uploaded" className="tq-photo" />
+            )}
             <MathText md={result.question} />
             <details className="tq-sol">
               <summary>Show worked solution</summary>

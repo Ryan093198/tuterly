@@ -29,7 +29,9 @@ export const maxDuration = 60;
 const ENDPOINT = "try_question";
 const EMAIL_ENDPOINT = "try_question_email";
 const PER_EMAIL = Number(process.env.TRY_PER_EMAIL_DAILY) || 2;
-const PER_IP = Number(process.env.TRY_PER_IP_DAILY) || 6;
+// Schools and libraries share one IP, so this is generous; the per-email
+// limit and the site cap do the real work.
+const PER_IP = Number(process.env.TRY_PER_IP_DAILY) || 20;
 const SITE_DAILY_CAP = Number(process.env.TRY_SITE_DAILY_CAP) || 300;
 const MAX_IMAGE_CHARS = 7_000_000; // ~5 MB of base64
 const MAX_TEXT = 1200;
@@ -42,7 +44,22 @@ const fixMoney = (s) =>
   typeof s === "string"
     ? s.replace(/\$\\\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)\s*\$/g, "\\$$$1").replace(/\$\\text\{\\\$\}\s*([0-9][0-9,]*(?:\.[0-9]+)?)\$/g, "\\$$$1")
     : s;
-const clean = (s) => dashes(sanitizeGenerated(fixMoney(String(s || "").trim())));
+// Other things that look fine to the maths checker but render wrong:
+//  - % inside $...$ is a LaTeX comment, so "$20%$" shows as "20".
+//  - | inside $...$ on a table row (|x|) splits the table cell.
+//  - 3*4 outside maths turns into italics.
+const fixMathSpans = (s, fn) => s.replace(/(?<!\\)\$\$[\s\S]+?\$\$|(?<!\\)\$(?:\\.|[^$\\\n])+\$/g, fn);
+const fixRender = (s) => {
+  if (typeof s !== "string") return s;
+  let out = fixMathSpans(s, (m) => m.replace(/(^|[^\\])%/g, "$1\\%"));
+  out = out
+    .split("\n")
+    .map((line) => (line.trim().startsWith("|") ? fixMathSpans(line, (m) => m.replace(/(?<!\\)\|/g, "\\vert ")) : line))
+    .join("\n");
+  out = out.replace(/(\d)\s*\*\s*(?=\d)/g, "$1 × ");
+  return out;
+};
+const clean = (s) => dashes(sanitizeGenerated(fixRender(fixMoney(String(s || "").trim()))));
 
 export async function POST(request) {
   let body;
@@ -158,7 +175,7 @@ export async function POST(request) {
   // Solve the new question again, independently, and compare answers.
   const check = (o) =>
     callTool(CHECK_SYSTEM, CHECK_TOOL, [{ role: "user", content: `Question:\n${o.new_question}\n\nProposed answer: ${o.new_answer}` }], 1200);
-  const latexOk = (o) => findKatexErrors([o.question, o.solution, o.new_question, o.new_solution, o.new_answer].map(fixMoney).join("\n\n")).length === 0;
+  const latexOk = (o) => findKatexErrors([o.question, o.solution, o.new_question, o.new_solution, o.new_answer].map((x) => fixRender(fixMoney(x))).join("\n\n")).length === 0;
 
   let out;
   let verified = false;
