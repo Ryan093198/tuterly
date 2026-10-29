@@ -187,8 +187,9 @@ export default function PrivacyPolicy() {
             <p>
               The “Try it” demo on our home page works the same way: the photo
               or text you add is sent to <strong>Anthropic Claude</strong> to
-              read the question and write a fresh version. We don’t save the
-              photo or the question. To limit misuse we keep a record of your IP
+              read the question and write a fresh version. We email the result
+              to the address you entered, and we don’t save the photo, the
+              question or the result. To limit misuse we keep a record of your IP
               address and the time, and delete it after a few days.
             </p>
           </Section>

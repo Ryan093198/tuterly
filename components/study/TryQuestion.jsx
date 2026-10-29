@@ -3,12 +3,19 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 import { Icon } from "@/components/brand";
+import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
 
 // The "Try it" demo (home page and /try). Enter an email first (it joins
 // the early sign-up list), then snap or upload one maths question (or type
 // it) and get it back with a worked solution plus a fresh question on the
 // same idea to try. 2 a day per email. API: /api/try-question.
+//
+// Funnel events (GA4, lib/analytics.js), all with { page }:
+//   try_view, try_email_submit, try_email_ok, try_email_error,
+//   try_generate { mode }, try_result { emailed }, try_fail { kind },
+//   try_check_answer, try_signup_click, try_another.
+// No question content is ever sent to analytics.
 
 const MathText = dynamic(() => import("./TryMath"), { ssr: false, loading: () => <p className="tq-muted">Loading…</p> });
 
@@ -82,7 +89,25 @@ export default function TryQuestion() {
     try { setPreview(await fileToDataUrl(f)); } catch (err) { setError(err.message); }
   }
 
+  const ev = (name, params = {}) => trackEvent(name, { page: typeof window !== "undefined" ? window.location.pathname : "", ...params });
+
+  // try_view once, when the demo first scrolls into view.
+  const rootRef = useRef(null);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        trackEvent("try_view", { page: window.location.pathname });
+        io.disconnect();
+      }
+    }, { threshold: 0.3 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   async function send(payload) {
+    ev("try_generate", { mode: payload.image ? "photo" : "typed" });
     setStage(0);
     setStatus("loading");
     setError("");
@@ -97,18 +122,27 @@ export default function TryQuestion() {
       });
       const data = await res.json().catch(() => ({}));
       if (res.status === 402 && data.need_email) {
+        ev("try_fail", { kind: "need_email" });
         pending.current = payload;
         setEmail((e) => e || readEmail());
         setStatus("need_email");
         return;
       }
-      if (!res.ok) throw new Error(data.error || "Something went wrong. Try again.");
-      if (!data.ok) throw new Error(data.reason || "We couldn’t read a maths question there.");
+      if (!res.ok) {
+        ev("try_fail", { kind: data.limit ? "limit" : res.status === 503 ? "busy" : res.status === 429 ? "rate" : "error" });
+        throw new Error(data.error || "Something went wrong. Try again.");
+      }
+      if (!data.ok) {
+        ev("try_fail", { kind: data.kind || "unreadable" });
+        throw new Error(data.reason || "We couldn’t read a maths question there.");
+      }
+      ev("try_result", { emailed: !!data.emailed });
       setResult(data);
       setPhoto(payload.image || null);
       setStatus("done");
       setTimeout(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
     } catch (err) {
+      if (err?.name === "TypeError") ev("try_fail", { kind: "network" });
       setError(err.message);
       setStatus("error");
     }
@@ -127,6 +161,7 @@ export default function TryQuestion() {
 
   async function onUnlock(e) {
     e.preventDefault();
+    ev("try_email_submit", { role });
     setGateBusy(true);
     setError("");
     try {
@@ -138,6 +173,7 @@ export default function TryQuestion() {
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Please check your email address.");
       saveEmail(email.trim().toLowerCase());
+      ev("try_email_ok", { role });
       setGateBusy(false);
       if (pending.current) {
         const p = pending.current;
@@ -147,6 +183,7 @@ export default function TryQuestion() {
         setStatus("idle");
       }
     } catch (err) {
+      ev("try_email_error");
       setGateBusy(false);
       setError(err.message);
     }
@@ -164,7 +201,7 @@ export default function TryQuestion() {
   const loading = status === "loading";
 
   return (
-    <div className="tq">
+    <div className="tq" ref={rootRef}>
       {unlocked && status !== "done" && (
         <form className="tq-card" onSubmit={onSubmit}>
           <div className="tq-tabs" role="tablist" aria-label="How to add the question">
@@ -255,7 +292,7 @@ export default function TryQuestion() {
             <MathText md={result.new_question} />
             {result.what_changed && <MathText md={result.what_changed} inline />}
             {!checked ? (
-              <form className="tq-answer" onSubmit={(e) => { e.preventDefault(); setChecked(true); }}>
+              <form className="tq-answer" onSubmit={(e) => { e.preventDefault(); ev("try_check_answer", { answered: !!answer.trim() }); setChecked(true); }}>
                 <input className="tb-input" placeholder="Your answer" value={answer} onChange={(e) => setAnswer(e.target.value)} aria-label="Your answer" />
                 <button type="submit" className="tb-btn tb-btn--primary">Check</button>
               </form>
@@ -273,13 +310,15 @@ export default function TryQuestion() {
             )}
           </div>
 
+          {result.emailed && <p className="tq-small tq-emailed">We’ve emailed you a copy, so you can come back to it or send it to your child.</p>}
+
           <div className="tq-next">
             <p>
               <strong>In the app, every question they get wrong works like this,</strong> with fresh versions until it’s mastered.
             </p>
             <div className="tq-next__btns">
-              <a href="#get-app" className="tb-btn tb-btn--primary">Sign up early for 50% off</a>
-              <button type="button" className="tq-link" onClick={reset}>Try another question</button>
+              <a href="#get-app" className="tb-btn tb-btn--primary" onClick={() => ev("try_signup_click")}>Sign up early for 50% off</a>
+              <button type="button" className="tq-link" onClick={() => { ev("try_another"); reset(); }}>Try another question</button>
             </div>
             {typeof result.tries_left_today === "number" && (
               <p className="tq-small">

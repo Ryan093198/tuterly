@@ -7,6 +7,8 @@ import { isHoneypotTripped } from "@/lib/public-form-guard";
 import { sanitizeGenerated } from "@/lib/sanitize-generated";
 import { findKatexErrors } from "@/lib/markdown-katex-validate";
 import { TRY_SYSTEM, TRY_TOOL, CHECK_SYSTEM, CHECK_TOOL } from "@/lib/try-question-prompt";
+import { sendTryResultEmail } from "@/lib/email";
+import { SITE_URL } from "@/lib/site";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -217,6 +219,7 @@ export async function POST(request) {
     await release();
     return NextResponse.json({
       ok: false,
+      kind: "unsure",
       reason: "We couldn’t write a fresh version we were sure of this time. Try again, or try a different question.",
     });
   }
@@ -225,12 +228,12 @@ export async function POST(request) {
     await release(); // not maths or unreadable: doesn't use up a try
     return NextResponse.json({
       ok: false,
+      kind: "unreadable",
       reason: dashes(out?.reason) || "We couldn’t read a maths question there. Try a clearer photo of one question, or type it in.",
     });
   }
 
-  return NextResponse.json({
-    ok: true,
+  const result = {
     topic: clean(out.topic),
     question: clean(out.question),
     solution: clean(out.solution),
@@ -239,6 +242,20 @@ export async function POST(request) {
     what_changed: clean(out.what_changed),
     new_solution: clean(out.new_solution),
     new_answer: clean(out.new_answer),
+  };
+  // Email them a copy. Best effort: never fails the request.
+  let emailed = false;
+  try {
+    const r = await sendTryResultEmail({ to: email, result, siteUrl: SITE_URL });
+    emailed = !r?.skipped;
+  } catch (e) {
+    console.warn("[try-question] result email failed:", e?.message || e);
+  }
+
+  return NextResponse.json({
+    ok: true,
+    ...result,
+    emailed,
     tries_left_today: Math.max(0, PER_EMAIL - usedByEmail - 1),
   });
 }

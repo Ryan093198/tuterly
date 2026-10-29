@@ -317,3 +317,11 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 .tb-appcta__try { display: inline-block; margin-top: 8px; font-weight: 800; font-size: 15px; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
 .tb-nav__link--try { color: var(--brand-text); }
 .sl-hero__copy .sl-hero__try + .sl-hero__cta { margin-top: 16px; }
+/* Seasonal bar above the nav (SeasonBanner.jsx). */
+.tb-season { position: relative; display: flex; align-items: center; justify-content: center; background: #0a7088; color: #ffffff; font-family: var(--font-display); } /* fixed deep teal: 5.6:1 with white in both themes */
+.tb-season__link { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; padding: 10px 48px; color: inherit; text-decoration: none; font-weight: 700; font-size: 15px; line-height: 1.35; text-align: center; min-height: 44px; }
+.tb-season__cta { font-weight: 900; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.tb-season__short { display: none; }
+@media (max-width: 640px) { .tb-season__long { display: none; } .tb-season__short { display: inline; } .tb-season__link { font-size: 14px; padding-left: 16px; } }
+.tb-season__close { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; display: grid; place-items: center; border: 0; background: transparent; color: inherit; cursor: pointer; border-radius: 10px; }
+.tb-season__close:hover { background: rgba(255, 255, 255, 0.15); }

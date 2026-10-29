@@ -42,7 +42,9 @@ export default function TryPage() {
         title="In the app, every wrong answer works like this."
         lead="Snap the questions they get wrong all term, and Tuterly keeps writing fresh ones until each idea is mastered."
       >
-        <StudyAppCTA variant="hero" placement="try_final" position="final" />
+        <div id="get-app" style={{ scrollMarginTop: 80 }}>
+          <StudyAppCTA variant="hero" placement="try_final" position="final" />
+        </div>
       </CtaBand>
       <MarketingFooter />
     </div>

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Icon } from "@/components/brand";
+import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
 
 // A short, eye-catching pointer to the Try it demo (/try). Used on the
@@ -14,7 +17,7 @@ export default function TryCta({ title = "Got a question wrong? Try Tuterly on i
           {text || "Upload a photo of one maths question. You’ll get the worked solution and a fresh question on the same idea to practise. Free, 2 a day."}
         </p>
       </div>
-      <Link href={href} className="tb-btn tb-btn--primary tq-cta__btn">{label}</Link>
+      <Link href={href} className="tb-btn tb-btn--primary tq-cta__btn" onClick={() => trackEvent("try_cta_click", { page: window.location.pathname, where: "card" })}>{label}</Link>
     </div>
   );
 }

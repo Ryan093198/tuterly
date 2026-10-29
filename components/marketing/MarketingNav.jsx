@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import TuterlyMark from "@/components/brand/TuterlyMark";
+import SeasonBanner from "@/components/marketing/SeasonBanner";
 import "@/components/brand/brand.css";
 
 // Sticky top nav for the marketing site, in the app's style. The primary
@@ -28,6 +29,8 @@ export function Logo() {
 
 export default function MarketingNav() {
   return (
+    <>
+    <SeasonBanner />
     <nav aria-label="Main" className="tb-nav">
       <div className="tb-nav__in">
         <Logo />
@@ -51,5 +54,6 @@ export default function MarketingNav() {
         </div>
       </div>
     </nav>
+    </>
   );
 }

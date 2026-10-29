@@ -14,6 +14,7 @@ import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import TryQuestion from "@/components/study/TryQuestion";
+import TryHeroLink from "@/components/study/TryHeroLink";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app,
@@ -135,7 +136,7 @@ export default function StudyLanding() {
             <p className="tb-lead sl-hero__lead">
               {`The self-learning maths app built based on your child’s level and understanding. Snap a question not fully understood, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
-            <a href="#try-it" className="tb-btn tb-btn--secondary sl-hero__try"><Icon name="snap" size={20} /> Try it free on a question</a>
+            <TryHeroLink />
             <ResultsProof />
             <ul className="sl-hero__trust" aria-label="About the app">
               <li><Icon name="educator" size={18} /> Designed by Australian educators</li>
