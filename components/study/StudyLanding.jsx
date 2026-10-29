@@ -13,6 +13,7 @@ import { getStudyFaqs } from "@/lib/study-faqs";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
+import TryQuestion from "@/components/study/TryQuestion";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app,
@@ -142,7 +143,7 @@ export default function StudyLanding() {
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="home_hero" slim />
             </div>
-            <a href="#how" className="tb-textlink">See how it works →</a>
+            <a href="#try-it" className="tb-textlink">Try it free with your own question →</a>
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
@@ -155,6 +156,20 @@ export default function StudyLanding() {
               className="sl-hero__phone"
             />
           </div>
+        </div>
+      </section>
+
+      {/* 1b. TRY IT */}
+      <section className="tb-section" aria-labelledby="try-title" id="try-it" style={{ scrollMarginTop: 66 }}>
+        <div className="tb-wrap">
+          <SectionHead
+            id="try-title"
+            eyebrow="Try it now"
+            title="Got a question wrong? Snap it and see."
+            lead={`Upload one maths question your child got wrong. ${name} shows the worked solution, then writes a fresh question on the same idea to try. The first one is free, with no sign-up.`}
+            align="center"
+          />
+          <TryQuestion />
         </div>
       </section>
 

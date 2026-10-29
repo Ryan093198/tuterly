@@ -184,6 +184,13 @@ export default function PrivacyPolicy() {
               providers process the data on our behalf and don’t use it to
               train their models.
             </p>
+            <p>
+              The “Try it” demo on our home page works the same way: the photo
+              or text you add is sent to <strong>Anthropic Claude</strong> to
+              read the question and write a fresh version. We don’t save the
+              photo or the question. To limit misuse we keep a record of your IP
+              address and the time, and delete it after a few days.
+            </p>
           </Section>
 
           <Section title="Where data is stored">

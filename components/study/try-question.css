@@ -1,0 +1,47 @@
+/* Home page "Try it" demo (TryQuestion.jsx). */
+.tq { max-width: 640px; margin: 0 auto; display: grid; gap: 16px; }
+.tq-card { background: var(--card); border: 2px solid var(--border); border-radius: 20px; padding: 20px; display: grid; gap: 14px; box-shadow: 0 4px 0 var(--edge); }
+.tq-tabs { display: inline-flex; gap: 6px; padding: 4px; background: var(--surface-soft); border-radius: 999px; justify-self: start; }
+.tq-tabs button { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; font: inherit; font-weight: 800; font-size: 14.5px; color: var(--muted); cursor: pointer; }
+.tq-tabs button.is-on { background: var(--card); color: var(--brand-text); box-shadow: 0 1px 3px rgba(11, 26, 44, 0.12); }
+.tq-drop { position: relative; display: grid; place-items: center; min-height: 190px; border: 2px dashed var(--border); border-radius: 16px; background: var(--surface-soft); cursor: pointer; overflow: hidden; }
+.tq-drop:hover { border-color: var(--brand); }
+.tq-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.tq-drop__hint { display: grid; justify-items: center; gap: 4px; padding: 24px; text-align: center; color: var(--muted); font-size: 14.5px; pointer-events: none; }
+.tq-drop__hint strong { color: var(--foreground); font-size: 16.5px; }
+.tq-drop__hint svg { color: var(--brand-text); }
+.tq-drop.has-img { min-height: 0; background: var(--card); }
+.tq-drop img { display: block; max-width: 100%; max-height: 320px; object-fit: contain; pointer-events: none; }
+.tq-text { width: 100%; padding: 14px; border: 2px solid var(--border); border-radius: 14px; background: var(--card); color: var(--foreground); font: inherit; font-size: 16px; resize: vertical; }
+.tq-text:focus { outline: 3px solid var(--brand); outline-offset: 1px; }
+.tq-go { width: 100%; }
+.tq-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.tq-small { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.tq-muted { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.tq-error { margin: 0; color: var(--danger-text); font-weight: 700; font-size: 14.5px; }
+.tq-link { justify-self: center; border: 0; background: none; padding: 6px; font: inherit; font-weight: 800; font-size: 14.5px; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.tq-gate__row { display: flex; flex-wrap: wrap; gap: 10px; }
+.tq-gate__row input { flex: 1 1 240px; }
+.tq-gate__row select { flex: 0 1 170px; }
+.tq-label { margin: 0; font-weight: 800; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.tq-label--fresh { color: var(--brand-text); }
+.tq-card--fresh { border-color: var(--brand); }
+.tq-math { font-size: 17px; line-height: 1.6; color: var(--foreground); overflow-wrap: anywhere; }
+.tq-math p { margin: 0 0 8px; }
+.tq-math ol, .tq-math ul { margin: 0 0 8px; padding-left: 22px; }
+.tq-math .katex-display { margin: 8px 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+.tq-changed { margin: 0; font-size: 14px; color: var(--muted); font-style: italic; }
+.tq-sol > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--brand-soft); font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-text); }
+.tq-sol > summary::-webkit-details-marker { display: none; }
+.tq-sol[open] > summary { margin-bottom: 10px; background: var(--brand-pale); }
+.tq-answer { display: flex; gap: 10px; flex-wrap: wrap; }
+.tq-answer input { flex: 1 1 180px; }
+.tq-check { display: grid; gap: 6px; }
+.tq-check__line { margin: 0; font-size: 15.5px; }
+.tq-next { display: grid; gap: 12px; text-align: center; padding: 8px 4px; }
+.tq-next p { margin: 0; font-size: 16px; line-height: 1.55; }
+.tq-next__btns { display: grid; gap: 8px; justify-items: center; }
+.tq-math ol { list-style: decimal; }
+.tq-math ul { list-style: disc; }
+.tq-math li { margin: 2px 0; }
+.tq-result { scroll-margin-top: 80px; }
