@@ -46,7 +46,7 @@ export default function FeaturePage({ feature }) {
         </div>
       </section>
 
-      <section className="tb-section tb-section--card" aria-labelledby="ft-how">
+      <section id="how-it-works" className="tb-section tb-section--card ft-anchor" aria-labelledby="ft-how">
         <div className="tb-wrap">
           <Reveal>
             <SectionHead id="ft-how" eyebrow="How it works" title={`${f.name}, step by step.`} />

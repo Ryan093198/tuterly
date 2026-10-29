@@ -43,7 +43,7 @@ export default function FeaturesHub() {
                 <span className="ft-row__icon" aria-hidden="true"><Icon name={f.icon} /></span>
                 <h2 className="tb-h2 ft-row__title">{f.name}</h2>
                 <p className="ft-row__text">{f.short}</p>
-                <Link href={`/features/${f.slug}`} className="tb-link">See how {f.name.toLowerCase()} works →</Link>
+                <Link href={`/features/${f.slug}#how-it-works`} className="tb-link">See how {f.name.toLowerCase()} works →</Link>
               </div>
               <div className="ft-row__phone">
                 <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={250} sizes="(max-width: 899px) 60vw, 250px" />
