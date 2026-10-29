@@ -15,6 +15,7 @@ import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import TryQuestion from "@/components/study/TryQuestion";
 import TryHeroLink from "@/components/study/TryHeroLink";
+import QuestionCounter from "@/components/study/QuestionCounter";
 import "./study-landing.css";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app,
@@ -202,6 +203,7 @@ export default function StudyLanding() {
               </li>
             ))}
           </ol>
+          <QuestionCounter />
         </div>
       </section>
 

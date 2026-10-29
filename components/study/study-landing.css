@@ -168,3 +168,6 @@ a.sl-resource:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edg
   .sl-steps__title { font-size: 23px; }
   .sl-steps__text { max-width: 26ch; }
 }
+.sl-counter { margin: 18px auto 0; max-width: 640px; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 10px; text-align: center; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
+.sl-counter__num { font-weight: 900; font-size: 30px; line-height: 1.1; color: var(--brand-text); font-variant-numeric: tabular-nums; }
+.sl-counter__text { max-width: 44ch; }
