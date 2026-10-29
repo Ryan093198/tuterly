@@ -36,7 +36,13 @@ const MAX_TEXT = 1200;
 const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 
 const dashes = (s) => (typeof s === "string" ? s.replace(/\s*[–—]\s*/g, ", ") : s);
-const clean = (s) => dashes(sanitizeGenerated(String(s || "").trim()));
+// Money written as maths ($\$120$) or with a stray $ breaks the maths
+// renderer; normalise it to prose money (\$120), as the worksheets do.
+const fixMoney = (s) =>
+  typeof s === "string"
+    ? s.replace(/\$\\\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)\s*\$/g, "\\$$$1").replace(/\$\\text\{\\\$\}\s*([0-9][0-9,]*(?:\.[0-9]+)?)\$/g, "\\$$$1")
+    : s;
+const clean = (s) => dashes(sanitizeGenerated(fixMoney(String(s || "").trim())));
 
 export async function POST(request) {
   let body;
@@ -152,7 +158,7 @@ export async function POST(request) {
   // Solve the new question again, independently, and compare answers.
   const check = (o) =>
     callTool(CHECK_SYSTEM, CHECK_TOOL, [{ role: "user", content: `Question:\n${o.new_question}\n\nProposed answer: ${o.new_answer}` }], 1200);
-  const latexOk = (o) => findKatexErrors([o.question, o.solution, o.new_question, o.new_solution].join("\n\n")).length === 0;
+  const latexOk = (o) => findKatexErrors([o.question, o.solution, o.new_question, o.new_solution, o.new_answer].map(fixMoney).join("\n\n")).length === 0;
 
   let out;
   let verified = false;
