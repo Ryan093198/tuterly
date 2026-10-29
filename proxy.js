@@ -30,6 +30,7 @@ const MARKETING_PATH_PREFIXES = [
   "/maths-exam-preparation",
   "/features",
   "/try",
+  "/guarantee",
   "/tutors",
   "/centres",
   "/directory",

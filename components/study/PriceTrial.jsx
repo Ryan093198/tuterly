@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { GUARANTEE } from "@/lib/guarantee";
 import { Eyebrow } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import "./price-trial.css";
@@ -38,6 +40,9 @@ export default function PriceTrial({ id = "price", children }) {
           Not on the App Store or Google Play yet. The ${STUDY_APP.earlyPriceWeek} price is for people who sign up before launch, and stays for as long as your subscription is active.
         </p>
       )}
+      <p className="pt__guarantee">
+        <strong>{GUARANTEE.headline}.</strong> Use it every week for {GUARANTEE.months} months, and if their school maths marks haven’t improved, we refund what you paid. <Link href="/guarantee">Conditions apply</Link>.
+      </p>
       {children}
     </div>
   );

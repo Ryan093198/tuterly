@@ -35,6 +35,7 @@ const GROUPS = [
   {
     title: "Tuterly",
     links: [
+      { href: "/guarantee", label: "Results guarantee" },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],
