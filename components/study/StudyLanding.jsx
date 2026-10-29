@@ -193,7 +193,7 @@ export default function StudyLanding() {
             {THREE_STEPS.map((s, i) => (
               <li key={s.title} className="sl-steps__item">
                 <a href={s.href} className="sl-steps__link">
-                  <PhoneFrame src={s.src} alt={s.alt} width={180} sizes="(max-width: 759px) 84px, 180px" className="sl-steps__phone" />
+                  <PhoneFrame src={s.src} alt={s.alt} width={180} sizes="(max-width: 759px) 76px, 150px" className="sl-steps__phone" />
                   <span className="sl-steps__cap">
                     <span className="sl-steps__num" aria-hidden="true">{i + 1}</span>
                     <span className="sl-steps__title">{s.title}</span>
@@ -270,8 +270,8 @@ export default function StudyLanding() {
           </div>
           <div className="sl-school__phone">
             <PhoneFrame
-              src={`${S}/flow-snap/04-solution-shown.png`}
-              alt="A worked solution in Tuterly: the key idea, three steps and the answer, opened after the student chose to see it"
+              src={`${S}/flow-snap/03-question-solution-hidden.png`}
+              alt="A question the student got wrong, with its solution hidden, and a similar question to answer themselves"
               width={270}
               sizes="(max-width: 899px) 62vw, 270px"
             />
