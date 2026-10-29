@@ -4,6 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
+import TryCta from "@/components/study/TryCta";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -151,6 +152,10 @@ export default function WorksheetsPage() {
           </ol>
         </div>
       </section>
+
+      <div className="ws-section" style={{ padding: "0 24px 32px", maxWidth: 1028, margin: "0 auto" }}>
+        <TryCta title="Got a question wrong in class? Try it on Tuterly." />
+      </div>
 
       <div className="ws-section" style={{ padding: "0 24px 56px" }}>
         <AppPracticeBlock placement="worksheets_index_practice" />

@@ -2,6 +2,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
+import TryCta from "@/components/study/TryCta";
 import { SITE_URL } from "@/lib/site";
 
 // Transactional landing page for "primary maths practice tests" style
@@ -125,7 +126,8 @@ export default function SecondaryPracticeTestsPage() {
         </div>
       </section>
 
-      <main className="pt-section" style={{ maxWidth: 1028, margin: "0 auto", padding: "8px 24px 56px" }}>
+      <main className="pt-section" style={{ maxWidth: 1028, margin: "0 auto", padding: "8px 24px 56px", display: "grid", gap: 28 }}>
+        <TryCta />
         <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
 

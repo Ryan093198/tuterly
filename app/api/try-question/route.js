@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createHash } from "node:crypto";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { trustedClientIp } from "@/lib/client-ip";
@@ -15,16 +16,20 @@ export const maxDuration = 60;
 //   in; the question as read, a worked solution, and one reworked question
 //   with its own solution out.
 //
-// Cost and abuse limits (public_request_log, endpoint "try_question"):
-//   - First try per IP per 24 hours: no email needed.
-//   - After that: an email that is already on study_waitlist (the client
-//     signs it up through /api/study-waitlist first) unlocks EXTRA more.
-//   - At most 2 a minute per IP, and a site-wide daily cap.
+// Access and limits (public_request_log):
+//   - An email is needed first. It must already be on study_waitlist (the
+//     client signs it up through /api/study-waitlist), and it joins the
+//     early sign-up list.
+//   - PER_EMAIL tries per email per 24 hours (endpoint "try_question_email",
+//     keyed by a hash of the email, never the email itself).
+//   - PER_IP tries per IP per 24 hours, at most 2 a minute, and a site-wide
+//     daily cap (endpoint "try_question").
 // Photos are sent to the model to read the question and are never stored.
 
 const ENDPOINT = "try_question";
-const FREE_TRIES = 1;
-const EXTRA_WITH_EMAIL = Number(process.env.TRY_EXTRA_WITH_EMAIL) || 3;
+const EMAIL_ENDPOINT = "try_question_email";
+const PER_EMAIL = Number(process.env.TRY_PER_EMAIL_DAILY) || 2;
+const PER_IP = Number(process.env.TRY_PER_IP_DAILY) || 6;
 const SITE_DAILY_CAP = Number(process.env.TRY_SITE_DAILY_CAP) || 300;
 const MAX_IMAGE_CHARS = 7_000_000; // ~5 MB of base64
 const MAX_TEXT = 1200;
@@ -70,53 +75,60 @@ export async function POST(request) {
   const admin = createAdminClient();
   const dayAgo = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
   const minAgo = new Date(Date.now() - 60 * 1000).toISOString();
-  const countSince = async (since, byIp) => {
-    let q = admin.from("public_request_log").select("id", { count: "exact", head: true }).eq("endpoint", ENDPOINT).gte("created_at", since);
-    if (byIp) q = q.eq("ip", ip);
+  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+  if (!email || email.length > 254) {
+    return NextResponse.json({ need_email: true }, { status: 402 });
+  }
+  const emailKey = "e:" + createHash("sha256").update(email).digest("hex").slice(0, 40);
+
+  const countSince = async (endpoint, since, key) => {
+    let q = admin.from("public_request_log").select("id", { count: "exact", head: true }).eq("endpoint", endpoint).gte("created_at", since);
+    if (key) q = q.eq("ip", key);
     const { count, error } = await q;
     if (error) throw error;
     return count ?? 0;
   };
 
-  let usedToday;
+  let usedByEmail;
   try {
-    const [siteToday, ipToday, ipMinute] = await Promise.all([countSince(dayAgo, false), countSince(dayAgo, true), countSince(minAgo, true)]);
+    const pattern = email.replace(/[\\%_]/g, (c) => `\\${c}`);
+    const [{ data: listed }, siteToday, ipToday, ipMinute, emailToday] = await Promise.all([
+      admin.from("study_waitlist").select("id").ilike("email", pattern).limit(1),
+      countSince(ENDPOINT, dayAgo, null),
+      countSince(ENDPOINT, dayAgo, ip),
+      countSince(ENDPOINT, minAgo, ip),
+      countSince(EMAIL_ENDPOINT, dayAgo, emailKey),
+    ]);
+    if (!(listed && listed.length)) {
+      return NextResponse.json({ need_email: true }, { status: 402 });
+    }
     if (siteToday >= SITE_DAILY_CAP) {
       return NextResponse.json({ error: "Lots of people are trying this right now. Please try again tomorrow." }, { status: 503 });
     }
     if (ipMinute >= 2) {
       return NextResponse.json({ error: "One at a time, please. Try again in a minute." }, { status: 429 });
     }
-    usedToday = ipToday;
+    if (emailToday >= PER_EMAIL || ipToday >= PER_IP) {
+      return NextResponse.json(
+        { limit: true, error: `That’s your ${PER_EMAIL} free questions for today. Come back tomorrow, or sign up early for the app to practise as many as you like.` },
+        { status: 429 }
+      );
+    }
+    usedByEmail = emailToday;
   } catch (e) {
     console.error("[try-question] limiter error:", e?.message || e);
     return NextResponse.json({ error: "Something went wrong. Try again in a moment." }, { status: 500 });
   }
 
-  if (usedToday >= FREE_TRIES) {
-    const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
-    let onList = false;
-    if (email) {
-      const pattern = email.replace(/[\\%_]/g, (c) => `\\${c}`);
-      const { data } = await admin.from("study_waitlist").select("id").ilike("email", pattern).limit(1);
-      onList = !!(data && data.length);
-    }
-    if (!onList) {
-      return NextResponse.json({ need_email: true }, { status: 402 });
-    }
-    if (usedToday >= FREE_TRIES + EXTRA_WITH_EMAIL) {
-      return NextResponse.json(
-        { limit: true, error: "That’s all the free tries for today. Come back tomorrow, or sign up early for the app to practise as many as you like." },
-        { status: 429 }
-      );
-    }
-  }
-
   // Reserve this try before the model call so parallel requests can't
   // skip the limit; released if the call fails.
-  const { data: reserved } = await admin.from("public_request_log").insert({ ip, endpoint: ENDPOINT }).select("id").single();
+  const { data: reserved } = await admin
+    .from("public_request_log")
+    .insert([{ ip, endpoint: ENDPOINT }, { ip: emailKey, endpoint: EMAIL_ENDPOINT }])
+    .select("id");
   const release = async () => {
-    if (reserved?.id) await admin.from("public_request_log").delete().eq("id", reserved.id);
+    const ids = (reserved || []).map((r) => r.id);
+    if (ids.length) await admin.from("public_request_log").delete().in("id", ids);
   };
 
   const content = [];
@@ -204,6 +216,6 @@ export async function POST(request) {
     what_changed: clean(out.what_changed),
     new_solution: clean(out.new_solution),
     new_answer: clean(out.new_answer),
-    tries_left_today: Math.max(0, (usedToday >= FREE_TRIES ? FREE_TRIES + EXTRA_WITH_EMAIL : FREE_TRIES) - usedToday - 1),
+    tries_left_today: Math.max(0, PER_EMAIL - usedByEmail - 1),
   });
 }

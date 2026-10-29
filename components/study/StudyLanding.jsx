@@ -135,6 +135,7 @@ export default function StudyLanding() {
             <p className="tb-lead sl-hero__lead">
               {`The self-learning maths app built based on your child’s level and understanding. Snap a question not fully understood, or upload a whole school test. ${name} saves each one with a full worked solution, then writes fresh questions on the same idea to practise until they’re mastered.`}
             </p>
+            <a href="#try-it" className="tb-btn tb-btn--secondary sl-hero__try"><Icon name="snap" size={20} /> Try it free on a question</a>
             <ResultsProof />
             <ul className="sl-hero__trust" aria-label="About the app">
               <li><Icon name="educator" size={18} /> Designed by Australian educators</li>
@@ -143,7 +144,6 @@ export default function StudyLanding() {
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="home_hero" slim />
             </div>
-            <a href="#try-it" className="tb-textlink">Try it free with your own question →</a>
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
@@ -166,7 +166,7 @@ export default function StudyLanding() {
             id="try-title"
             eyebrow="Try it now"
             title="Got a question wrong? Snap it and see."
-            lead={`Upload one maths question your child got wrong. ${name} shows the worked solution, then writes a fresh question on the same idea to try. The first one is free, with no sign-up.`}
+            lead={`Upload one maths question your child got wrong. ${name} shows the worked solution, then writes a fresh question on the same idea to try. Free with your email, 2 questions a day.`}
             align="center"
           />
           <TryQuestion />

@@ -6,6 +6,7 @@ import FlowSteps from "@/components/brand/FlowSteps";
 import { Card, CtaBand, Eyebrow, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { EXAM_PLAN, EXAM_YEARS, examFaqs, examTopics } from "@/lib/exam-prep-pages";
+import TryCta from "@/components/study/TryCta";
 import "./study-landing.css";
 import "./student-landing.css";
 
@@ -68,6 +69,12 @@ export default function ExamPrepLanding({ year = null }) {
               className="sl-hero__phone"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="sl-try-band" aria-label="Try it free">
+        <div className="tb-wrap">
+          <TryCta />
         </div>
       </section>
 

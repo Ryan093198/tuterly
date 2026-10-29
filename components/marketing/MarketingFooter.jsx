@@ -12,6 +12,7 @@ const GROUPS = [
     title: "The app",
     links: [
       { href: "/", label: `About ${STUDY_APP.name}` },
+      { href: "/try", label: "Try it free" },
       { href: "/features", label: "Features" },
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },

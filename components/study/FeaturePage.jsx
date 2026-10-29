@@ -5,6 +5,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import FlowSteps from "@/components/brand/FlowSteps";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { FEATURES } from "@/lib/feature-pages";
+import TryCta from "@/components/study/TryCta";
 import "./study-landing.css";
 import "./features.css";
 
@@ -43,6 +44,12 @@ export default function FeaturePage({ feature }) {
             <div className="sl-hero__blob" aria-hidden="true" />
             <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={290} priority sizes="(max-width: 899px) 60vw, 290px" className="sl-hero__phone" />
           </div>
+        </div>
+      </section>
+
+      <section className="sl-try-band" aria-label="Try it free">
+        <div className="tb-wrap">
+          <TryCta />
         </div>
       </section>
 

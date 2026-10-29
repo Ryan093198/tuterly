@@ -6,6 +6,7 @@ import FlowSteps from "@/components/brand/FlowSteps";
 import { CtaBand, Eyebrow, OptionTile, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import ShareWithParent from "@/components/study/ShareWithParent";
 import { LaunchPill } from "@/components/study/ResultsProof";
+import TryCta from "@/components/study/TryCta";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { STUDENT_YEARS, studentFaqs, topicsForYear } from "@/lib/student-pages";
 import "./study-landing.css";
@@ -97,6 +98,12 @@ export default function StudentLanding({ year = null }) {
               className="sl-hero__phone"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="sl-try-band" aria-label="Try it free">
+        <div className="tb-wrap">
+          <TryCta />
         </div>
       </section>
 

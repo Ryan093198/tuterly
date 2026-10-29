@@ -7,6 +7,7 @@ import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import TryCta from "@/components/study/TryCta";
 import "./parents.css";
 
 // /parents: the parent's view of Tuterly, parent-first order:
@@ -66,6 +67,12 @@ export default function ParentsPage() {
               className="pp-hero__phone"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="sl-try-band" aria-label="Try it free">
+        <div className="tb-wrap">
+          <TryCta />
         </div>
       </section>
 

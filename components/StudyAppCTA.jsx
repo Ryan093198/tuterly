@@ -197,6 +197,12 @@ export default function StudyAppCTA({
       {live
         ? `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`
         : `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`}
+      {pos === "final" && pathname !== "/try" && (
+        <>
+          <br />
+          <a href="/try" className="tb-appcta__try" onClick={() => track("try_link")}>Or try it free now with your own question →</a>
+        </>
+      )}
     </p>
   );
   // Until launch, say plainly where it will be.

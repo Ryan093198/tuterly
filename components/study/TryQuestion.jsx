@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 import { Icon } from "@/components/brand";
 import "./try-question.css";
 
-// The home page "Try it" demo. Snap or upload one maths question (or type
-// it), and get it back with a worked solution plus a fresh question on the
-// same idea to try. First one free with no email; then an email (which
-// joins the early sign-up list) unlocks a few more. API: /api/try-question.
+// The "Try it" demo (home page and /try). Enter an email first (it joins
+// the early sign-up list), then snap or upload one maths question (or type
+// it) and get it back with a worked solution plus a fresh question on the
+// same idea to try. 2 a day per email. API: /api/try-question.
 
 const MathText = dynamic(() => import("./TryMath"), { ssr: false, loading: () => <p className="tq-muted">Loading…</p> });
 
@@ -18,8 +18,14 @@ const MAX_SIDE = 1600;
 function readEmail() {
   try { return localStorage.getItem(EMAIL_KEY) || ""; } catch { return ""; }
 }
+const listeners = new Set();
 function saveEmail(e) {
   try { localStorage.setItem(EMAIL_KEY, e); } catch {}
+  listeners.forEach((l) => l());
+}
+function subscribe(l) {
+  listeners.add(l);
+  return () => listeners.delete(l);
 }
 
 // Shrink big phone photos before upload (JPEG, longest side 1600px).
@@ -59,6 +65,8 @@ export default function TryQuestion() {
   const fileRef = useRef(null);
   const resultRef = useRef(null);
   const pending = useRef(null);
+  const savedEmail = useSyncExternalStore(subscribe, readEmail, () => "");
+  const unlocked = !!savedEmail && status !== "need_email";
 
   useEffect(() => {
     if (status !== "loading") return;
@@ -129,7 +137,13 @@ export default function TryQuestion() {
       if (!res.ok) throw new Error(data.error || "Please check your email address.");
       saveEmail(email.trim().toLowerCase());
       setGateBusy(false);
-      if (pending.current) send(pending.current);
+      if (pending.current) {
+        const p = pending.current;
+        pending.current = null;
+        send(p);
+      } else {
+        setStatus("idle");
+      }
     } catch (err) {
       setGateBusy(false);
       setError(err.message);
@@ -149,7 +163,7 @@ export default function TryQuestion() {
 
   return (
     <div className="tq">
-      {status !== "done" && status !== "need_email" && (
+      {unlocked && status !== "done" && (
         <form className="tq-card" onSubmit={onSubmit}>
           <div className="tq-tabs" role="tablist" aria-label="How to add the question">
             <button type="button" role="tab" aria-selected={mode === "photo"} className={mode === "photo" ? "is-on" : ""} onClick={() => setMode("photo")}>
@@ -195,23 +209,24 @@ export default function TryQuestion() {
           {preview && mode === "photo" && !loading && (
             <button type="button" className="tq-link" onClick={() => { setPreview(null); if (fileRef.current) fileRef.current.value = ""; }}>Use a different photo</button>
           )}
-          <p className="tq-small">Your first one’s free, no email needed. Photos are only used to read the question and aren’t saved (<a href="/privacy" className="tb-link">privacy</a>).</p>
+          <p className="tq-small">2 free questions a day. Photos are only used to read the question and aren’t saved (<a href="/privacy" className="tb-link">privacy</a>).</p>
           {error && <p className="tq-error" role="alert">{error}</p>}
         </form>
       )}
 
-      {status === "need_email" && (
+      {!unlocked && (
         <form className="tq-card tq-gate" onSubmit={onUnlock}>
-          <h3 className="tb-h3">Want to try a few more?</h3>
-          <p className="tq-muted">Enter your email to unlock 3 more today. You’ll also lock in Tuterly for $7.99 a week for life (50% off) when it launches.</p>
+          <h3 className="tb-h3">Try it free</h3>
+          <p className="tq-muted">Enter your email to try 2 questions a day, free. You’ll also lock in Tuterly for $7.99 a week for life (50% off the $15.99 price) when it launches.</p>
           <div className="tq-gate__row">
-            <input type="email" required className="tb-input" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" />
+            <input type="email" required className="tb-input" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" autoComplete="email" />
             <select className="tb-input" value={role} onChange={(e) => setRole(e.target.value)} aria-label="I'm a">
               <option value="parent">I’m a parent</option>
               <option value="student">I’m a student</option>
             </select>
           </div>
-          <button type="submit" className="tb-btn tb-btn--primary tq-go" disabled={gateBusy}>{gateBusy ? "Unlocking…" : "Unlock 3 more"}</button>
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" className="tq-hp" aria-hidden="true" />
+          <button type="submit" className="tb-btn tb-btn--primary tq-go" disabled={gateBusy}>{gateBusy ? "One moment…" : "Start"}</button>
           <p className="tq-small">We only use your email for Tuterly updates. See our <a href="/privacy" className="tb-link">privacy policy</a>.</p>
           {error && <p className="tq-error" role="alert">{error}</p>}
         </form>
@@ -262,10 +277,8 @@ export default function TryQuestion() {
             {typeof result.tries_left_today === "number" && (
               <p className="tq-small">
                 {result.tries_left_today > 0
-                  ? `${result.tries_left_today} more free ${result.tries_left_today === 1 ? "try" : "tries"} today.`
-                  : readEmail()
-                    ? "That’s your free tries for today."
-                    : "Want to try another? Add your email to unlock 3 more today."}
+                  ? `${result.tries_left_today} more free ${result.tries_left_today === 1 ? "question" : "questions"} today.`
+                  : "That’s your free questions for today. Come back tomorrow for 2 more."}
               </p>
             )}
           </div>

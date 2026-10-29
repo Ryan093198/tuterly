@@ -29,6 +29,7 @@ const MARKETING_PATH_PREFIXES = [
   "/students",
   "/maths-exam-preparation",
   "/features",
+  "/try",
   "/tutors",
   "/centres",
   "/directory",

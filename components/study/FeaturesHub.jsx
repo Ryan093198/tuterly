@@ -4,6 +4,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { FEATURES, STICKS } from "@/lib/feature-pages";
+import TryCta from "@/components/study/TryCta";
 import "./study-landing.css";
 import "./features.css";
 
@@ -32,6 +33,12 @@ export default function FeaturesHub() {
             <div className="sl-hero__blob" aria-hidden="true" />
             <PhoneFrame src="/app-screens/home.png" alt="The Tuterly home screen: Snap a question, Fix my mistakes and this week’s goals" width={290} priority sizes="(max-width: 899px) 60vw, 290px" className="sl-hero__phone" />
           </div>
+        </div>
+      </section>
+
+      <section className="sl-try-band" aria-label="Try it free">
+        <div className="tb-wrap">
+          <TryCta />
         </div>
       </section>
 
