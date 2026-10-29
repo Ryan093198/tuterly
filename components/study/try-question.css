@@ -52,3 +52,9 @@
 .tq-cta__text { margin: 4px 0 0; font-size: 15.5px; line-height: 1.5; color: var(--muted); }
 .tq-cta__btn { white-space: nowrap; justify-self: start; }
 @media (min-width: 760px) { .tq-cta__btn { justify-self: end; } }
+.tq-table { max-width: 100%; overflow-x: auto; margin: 6px 0 10px; }
+.tq-table table { border-collapse: collapse; font-size: 15.5px; }
+.tq-table th, .tq-table td { border: 1px solid var(--border); padding: 6px 12px; text-align: center; min-width: 42px; }
+.tq-table th { background: var(--surface-soft); font-weight: 800; }
+.tq-math--inline { font-size: 14px; color: var(--muted); font-style: italic; }
+.tq-math--inline p { margin: 0; }

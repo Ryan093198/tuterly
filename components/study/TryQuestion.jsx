@@ -246,7 +246,7 @@ export default function TryQuestion() {
           <div className="tq-card tq-card--fresh">
             <p className="tq-label tq-label--fresh">Now try a fresh version</p>
             <MathText md={result.new_question} />
-            {result.what_changed && <p className="tq-changed">{result.what_changed}</p>}
+            {result.what_changed && <MathText md={result.what_changed} inline />}
             {!checked ? (
               <form className="tq-answer" onSubmit={(e) => { e.preventDefault(); setChecked(true); }}>
                 <input className="tb-input" placeholder="Your answer" value={answer} onChange={(e) => setAnswer(e.target.value)} aria-label="Your answer" />
