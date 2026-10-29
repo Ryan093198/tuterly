@@ -38,6 +38,31 @@ function TeX({ children, display = false }) {
 
 const S = "/app-screens";
 
+// The three-step strip under the hero. Each step jumps to its section.
+const THREE_STEPS = [
+  {
+    title: "Snap it.",
+    text: "A photo of any question they got wrong, or a whole school test.",
+    src: `${S}/flow-snap/02-snap-menu.png`,
+    alt: "Tuterly's Snap a question menu: take a photo, choose from photos, or upload a whole test",
+    href: "#how-section",
+  },
+  {
+    title: "Practise it.",
+    text: "Fresh questions on the same idea, until it clicks.",
+    src: `${S}/flow-snap/05-similar-question-correct.png`,
+    alt: "A similar question answered correctly in Tuterly, marked right with a star",
+    href: "#different",
+  },
+  {
+    title: "Nail the test.",
+    text: "A practice test on any topic before the real one.",
+    src: `${S}/flow-practice/04-test-score.png`,
+    alt: "A Tuterly practice test result: 6 out of 8",
+    href: "#practice",
+  },
+];
+
 const SNAP_FLOW = [
   {
     src: `${S}/flow-snap/01-home.png`,
@@ -157,6 +182,26 @@ export default function StudyLanding() {
               className="sl-hero__phone"
             />
           </div>
+        </div>
+      </section>
+
+      {/* 1a. THREE STEPS: the whole idea at a glance */}
+      <section className="sl-steps" aria-label={`How ${name} works, in three steps`}>
+        <div className="tb-wrap">
+          <ol className="sl-steps__list">
+            {THREE_STEPS.map((s, i) => (
+              <li key={s.title} className="sl-steps__item">
+                <a href={s.href} className="sl-steps__link">
+                  <PhoneFrame src={s.src} alt={s.alt} width={180} sizes="(max-width: 759px) 84px, 180px" className="sl-steps__phone" />
+                  <span className="sl-steps__cap">
+                    <span className="sl-steps__num" aria-hidden="true">{i + 1}</span>
+                    <span className="sl-steps__title">{s.title}</span>
+                    <span className="sl-steps__text">{s.text}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
