@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
+import { bumpQuestionTally } from "@/lib/question-tally";
 import { getCurriculumForStudent } from "@/lib/curriculum";
 import { trustedClientIp } from "@/lib/client-ip";
 import { checkRateLimit } from "@/lib/rate-limit";
@@ -344,8 +345,9 @@ async function handle(request) {
     );
   }
 
-  // The generation was reserved (logged) before the model call — see above —
-  // so there's nothing to log here on success.
+  // The generation was reserved (logged) before the model call — see above.
+  // Add its six questions to the running total for the home page counter.
+  await bumpQuestionTally(admin, "worksheets", 6);
 
   return NextResponse.json({
     content: worksheetMarkdown,

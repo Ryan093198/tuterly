@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createHash } from "node:crypto";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAdminClient } from "@/lib/supabase-admin";
+import { bumpQuestionTally } from "@/lib/question-tally";
 import { trustedClientIp } from "@/lib/client-ip";
 import { isHoneypotTripped } from "@/lib/public-form-guard";
 import { dashes, fixMoney, fixRender, cleanMathText } from "@/lib/math-text-fixes";
@@ -221,6 +222,7 @@ export async function POST(request) {
     new_solution: clean(out.new_solution),
     new_answer: clean(out.new_answer),
   };
+  await bumpQuestionTally(admin, "try", 1);
   // Email them a copy. Best effort: never fails the request.
   let emailed = false;
   try {
