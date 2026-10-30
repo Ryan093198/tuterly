@@ -1,0 +1,9 @@
+/* Comparison pages (/mathspace-alternative, /photomath-alternative, /quizlet-maths-australia).
+   Builds on parent-guides/guides.css (pg-* classes); only the extras live here. */
+.cp-disclaimer { margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--muted); max-width: 760px; }
+.cp-table td:last-child { background: var(--brand-soft); }
+.cp-table thead th:last-child { color: var(--brand-text); }
+.cp-choose { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cp-choose .pg-box h3 { display: flex; align-items: center; gap: 8px; }
+.cp-tag { display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); background: var(--brand-soft); border-radius: 999px; padding: 3px 9px; }
+.cp-limits { margin-top: 22px; }

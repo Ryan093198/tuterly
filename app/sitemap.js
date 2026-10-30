@@ -70,6 +70,9 @@ const STATIC_PAGES = [
   // queries so they get a high sitemap priority.
   { path: "/cluey-alternative", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutor-doctor-alternative", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/mathspace-alternative", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/photomath-alternative", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/quizlet-maths-australia", priority: 0.8, changeFrequency: "monthly" },
   { path: "/best-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
   { path: "/vce-tutoring", priority: 0.8, changeFrequency: "monthly" },
   { path: "/online-tutoring-melbourne", priority: 0.8, changeFrequency: "monthly" },
