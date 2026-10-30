@@ -100,7 +100,7 @@ export default function TurnChecker({ slug, topic, kind, accept, question, hint,
           </p>
           <div className="tc__next-btns">
             <Link href="/#get-app" className="tc__cta" onClick={() => trackEvent("turn_cta_click", { slug, to: "app", result: result || "solution" })}>
-              Sign up early for 50% off
+              Sign up early for a free trial
             </Link>
             <Link href="/try" className="tc__cta2" onClick={() => trackEvent("turn_cta_click", { slug, to: "try", result: result || "solution" })}>
               Try it free on a question they got wrong →

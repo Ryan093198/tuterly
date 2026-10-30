@@ -85,7 +85,7 @@ export default function NaplanTest({ year, questions, appYears }) {
                     : "Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered. Built for Years 7 to 10 and the Victorian Curriculum."}
                 </p>
                 <div className="nt-next__btns">
-                  <Link href="/#get-app" className="nt-btn" onClick={() => trackEvent("naplan_cta_click", { year, to: "app", score: marked.score })}>Sign up early for 50% off</Link>
+                  <Link href="/#get-app" className="nt-btn" onClick={() => trackEvent("naplan_cta_click", { year, to: "app", score: marked.score })}>Sign up early for a free trial</Link>
                   <Link href="/try" className="nt-link" onClick={() => trackEvent("naplan_cta_click", { year, to: "try", score: marked.score })}>Try it free on one question →</Link>
                 </div>
               </>
