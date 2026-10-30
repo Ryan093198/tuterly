@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Rotating $180°$ about the origin maps every point $(x, y)$ to $(-x, -y)$, regardless of direction (clockwise or anticlockwise gives the same result).\n\n1. Apply the rule $(x, y) \\to (-x, -y)$ to each vertex.\n2. $A(1, 2) \\to (-1, -2)$, so $A' = (-1, -2)$.\n3. $B(4, 2) \\to (-4, -2)$, so $B' = (-4, -2)$.\n4. $C(4, 5) \\to (-4, -5)$, so $C' = (-4, -5)$.\n5. $D(1, 5) \\to (-1, -5)$, so $D' = (-1, -5)$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are transformations on the Cartesian plane?",
+  "a": "Transformations move or flip or turn points and shapes on the Cartesian plane. The three main types are translation (sliding by a number of units horizontally and/or vertically), reflection (flipping across the x-axis or y-axis) and rotation (turning 90°, 180° or 270° about the origin). Each type changes the coordinates in a predictable way."
+ },
+ "turn": {
+  "question": "Point $P$ has coordinates $(3, -5)$. It is reflected across the $y$-axis and then translated $4$ units up. What is the $y$-coordinate of the final image point?",
+  "kind": "number",
+  "accept": {
+   "value": -1,
+   "tol": 0
+  },
+  "answer_display": "$-1$",
+  "hint": "Reflecting across the $y$-axis changes the sign of the $x$-coordinate but leaves the $y$-coordinate unchanged. Then apply the vertical translation.",
+  "solution": "**Key idea:** Each transformation changes the coordinates in a predictable way: reflecting across the $y$-axis negates the $x$-coordinate, and translating up adds to the $y$-coordinate.\n\n1. Start with $P = (3, -5)$.\n2. **Reflect across the $y$-axis:** the $x$-coordinate changes sign, the $y$-coordinate stays the same. $$(3, -5) \\longrightarrow (-3, -5)$$\n3. **Translate 4 units up:** add 4 to the $y$-coordinate. $$(-3, -5) \\longrightarrow (-3, -5 + 4) = (-3, -1)$$\n4. The final image point is $(-3, -1)$.\n5. The question asks for the $y$-coordinate only.\n\n**Answer:** $-1$"
+ },
+ "turn_checked": {
+  "my_answer": "-1",
+  "attempts": 1
+ }
 }

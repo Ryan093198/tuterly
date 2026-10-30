@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Multiply both sides by the lowest common multiple of the denominators to eliminate fractions.\n\n1. The LCM of $4$ and $2$ is $4$. Multiply both sides by $4$:\n$$3x + 1 = 2(x - 3)$$\n2. Expand the right side: $3x + 1 = 2x - 6$\n3. Subtract $2x$ from both sides: $x + 1 = -6$\n4. Subtract $1$ from both sides: $x = -7$\n\n**Check:** LHS $= \\dfrac{3(-7)+1}{4} = \\dfrac{-20}{4} = -5$ and RHS $= \\dfrac{-7-3}{2} = \\dfrac{-10}{2} = -5$ ✓"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you solve linear equations in Year 10?",
+  "a": "Solve linear equations by undoing operations in reverse order: clear fractions by multiplying both sides by the lowest common denominator, expand any brackets, then collect like terms and isolate the pronumeral. For example, 2(x + 3) = 14 gives x + 3 = 7, so x = 4."
+ },
+ "turn": {
+  "question": "Solve for $x$: $\\dfrac{2x - 3}{5} = 7$",
+  "kind": "number",
+  "accept": {
+   "value": 19,
+   "tol": 0
+  },
+  "answer_display": "$x = 19$",
+  "hint": "Multiply both sides by 5 first to clear the fraction, then solve the resulting linear equation.",
+  "solution": "**Key idea:** Multiply both sides by the denominator to eliminate the fraction, then isolate $x$.\n\n1. Start with $\\dfrac{2x - 3}{5} = 7$.\n2. Multiply both sides by $5$: $2x - 3 = 35$.\n3. Add $3$ to both sides: $2x = 38$.\n4. Divide both sides by $2$: $x = 19$.\n5. Check: $\\dfrac{2(19) - 3}{5} = \\dfrac{35}{5} = 7$ ✓\n\n**Answer:** $x = 19$"
+ },
+ "turn_checked": {
+  "my_answer": "19",
+  "attempts": 2
+ }
 }

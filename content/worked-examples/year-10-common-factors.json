@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Find the full HCF of the coefficients and variable parts, then take out a negative factor so the first term inside the brackets is positive.\n\n1. HCF of the coefficients $15$, $10$ and $5$ is $5$; include the negative sign to give $-5$.\n2. HCF of the variable parts: lowest power of $m$ is $m^2$; lowest power of $n$ is $n^1 = n$. Variable HCF is $m^2n$.\n3. Overall factor: $-5m^2n$.\n4. Divide each term by $-5m^2n$: $$\\frac{-15m^3n^2}{-5m^2n} = 3mn, \\quad \\frac{10m^2n^3}{-5m^2n} = -2n^2, \\quad \\frac{-5m^2n}{-5m^2n} = 1$$\n5. Write the factorised form: $$-15m^3n^2 + 10m^2n^3 - 5m^2n = -5m^2n(3mn - 2n^2 + 1)$$\n6. Check by expanding: $-5m^2n(3mn - 2n^2 + 1) = -15m^3n^2 + 10m^2n^3 - 5m^2n$ ✓"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you factorise an expression by taking out a common factor?",
+  "a": "Find the highest common factor (HCF) of all terms, then divide each term by it and write the result in brackets. For example, 6x² + 9x has HCF 3x, so it factorises to 3x(2x + 3). Check by expanding: the brackets should reproduce the original expression."
+ },
+ "turn": {
+  "question": "Factorise $12a^3 - 8a^2$ by taking out the highest common factor. Enter your answer as an expression.",
+  "kind": "expression",
+  "accept": {
+   "expr": "4*a^2*(3*a - 2)",
+   "vars": [
+    "a"
+   ]
+  },
+  "answer_display": "$4a^2(3a - 2)$",
+  "hint": "Find the HCF of 12 and 8, then find the highest power of $a$ common to both terms.",
+  "solution": "**Key idea:** The HCF of all terms is taken outside the brackets, and each term is divided by it.\n\n1. Find the HCF of the coefficients: $\\text{HCF}(12, 8) = 4$.\n2. Find the HCF of the variable parts: the lowest power of $a$ in both terms is $a^2$.\n3. So the overall HCF is $4a^2$.\n4. Divide each term by $4a^2$: $12a^3 \\div 4a^2 = 3a$ and $8a^2 \\div 4a^2 = 2$.\n5. Write in factorised form: $4a^2(3a - 2)$.\n6. Check by expanding: $4a^2 \\times 3a - 4a^2 \\times 2 = 12a^3 - 8a^2$ ✓\n\n**Answer:** $4a^2(3a - 2)$"
+ },
+ "turn_checked": {
+  "my_answer": "4a^2*(3a-2)",
+  "attempts": 2
+ }
 }

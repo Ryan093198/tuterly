@@ -47,5 +47,27 @@
   "solution": "**Key idea:** Factorise the monic quadratic, then apply the null factor law.\n\n1. Find two numbers that multiply to $-28$ and add to $3$: those numbers are $7$ and $-4$.\n2. Factorise:\n$$(x + 7)(x - 4) = 0$$\n3. Apply the null factor law:\n$$x + 7 = 0 \\quad \\text{or} \\quad x - 4 = 0$$\n4. Solve:\n$$x = -7 \\quad \\text{or} \\quad x = 4$$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve quadratic equations in Year 10?",
+  "a": "Factorise the quadratic, then apply the null factor law: if two factors multiply to zero, at least one must be zero. For example, x² + x − 6 = 0 becomes (x + 3)(x − 2) = 0, giving x = −3 or x = 2. Non-monic quadratics and completing the square follow the same logic."
+ },
+ "turn": {
+  "question": "Solve $x^2 - 7x + 10 = 0$. Enter both solutions below, separated by a comma (order does not matter).",
+  "kind": "values",
+  "accept": {
+   "values": [
+    2,
+    5
+   ],
+   "tol": 0
+  },
+  "answer_display": "$x = 2$ or $x = 5$",
+  "hint": "Factorise the quadratic by finding two numbers that multiply to 10 and add to −7, then apply the null factor law.",
+  "solution": "**Key idea:** Factorise the quadratic, then use the null factor law to find each solution.\n\n1. Find two numbers that multiply to $10$ and add to $-7$: those numbers are $-2$ and $-5$.\n2. Write the factorised form: $x^2 - 7x + 10 = (x - 2)(x - 5) = 0$.\n3. Apply the null factor law: $x - 2 = 0$ or $x - 5 = 0$.\n4. Solve each linear equation: $x = 2$ or $x = 5$.\n5. Check by substituting back: $(2)^2 - 7(2) + 10 = 4 - 14 + 10 = 0$ ✓ and $(5)^2 - 7(5) + 10 = 25 - 35 + 10 = 0$ ✓.\n\n**Answer:** $x = 2$ or $x = 5$"
+ },
+ "turn_checked": {
+  "my_answer": "2, 5",
+  "attempts": 2
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Expand brackets, then collect like terms and isolate $x$.\n\n1. Expand the left side: $4x + 12 = 3x + 17$.\n2. Subtract $3x$ from both sides: $x + 12 = 17$.\n3. Subtract $12$ from both sides: $x = 5$.\n4. Check: $4(5 + 3) = 4(8) = 32$ and $3(5) + 17 = 15 + 17 = 32$. ✓"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you sketch linear graphs and solve linear equations?",
+  "a": "A linear equation in the form y = mx + c has gradient m and y-intercept c. Plot the y-intercept, use the gradient to find a second point, then draw the line. To solve a linear equation, use inverse operations to isolate the pronumeral. For example, 2x + 3 = 11 gives x = 4."
+ },
+ "turn": {
+  "question": "Solve the equation $3x - 7 = 2x + 5$ for $x$.",
+  "kind": "number",
+  "accept": {
+   "value": 12,
+   "tol": 0
+  },
+  "answer_display": "$x = 12$",
+  "hint": "Collect the $x$ terms on one side and the numbers on the other by using inverse operations.",
+  "solution": "**Key idea:** To solve a linear equation, collect pronumerals on one side and constants on the other using inverse operations.\n\n1. Start with the equation: $$3x - 7 = 2x + 5$$\n2. Subtract $2x$ from both sides: $$x - 7 = 5$$\n3. Add $7$ to both sides: $$x = 12$$\n4. Check: $3(12) - 7 = 29$ and $2(12) + 5 = 29$ ✓\n\n**Answer:** $x = 12$"
+ },
+ "turn_checked": {
+  "my_answer": "12",
+  "attempts": 2
+ }
 }

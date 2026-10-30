@@ -47,5 +47,24 @@
   "solution": "**Key idea:** An Eulerian circuit needs 0 odd-degree vertices; an Eulerian path needs exactly 2. Check connectivity first.\n\n1. Count the degree of each vertex:\n$$\\begin{aligned}\n\\deg(J) &= 2 \\quad (\\text{J–K, J–L})\\\\\n\\deg(K) &= 3 \\quad (\\text{J–K, K–L, K–M})\\\\\n\\deg(L) &= 3 \\quad (\\text{J–L, K–L, L–M})\\\\\n\\deg(M) &= 3 \\quad (\\text{K–M, L–M, M–N})\\\\\n\\deg(N) &= 1 \\quad (\\text{M–N})\n\\end{aligned}$$\n2. Check: sum of degrees $= 2+3+3+3+1 = 12 = 2 \\times 6$ ✓\n3. Check connectivity: starting from J, you can reach K and L directly, then M via K or L, then N via M. All vertices are reachable, so the network **is connected**.\n4. Identify odd-degree vertices: K, L, M and N each have odd degree — that is **4 odd-degree vertices**.\n5. Since there are more than 2 odd-degree vertices, **neither an Eulerian path nor an Eulerian circuit exists**."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are networks and how do you interpret network diagrams?",
+  "a": "A network is a set of vertices (points) connected by edges (lines) used to represent real-world relationships such as roads, pipes or friendships. To interpret one, identify the vertices and edges, find each vertex's degree (number of edges meeting it), and describe connections or paths. For example, a vertex with 3 edges has degree 3."
+ },
+ "turn": {
+  "question": "A small network has five vertices: $A$, $B$, $C$, $D$ and $E$. The edges are $AB$, $AC$, $BC$, $BD$, $CD$ and $DE$. What is the sum of the degrees of all five vertices?",
+  "kind": "number",
+  "accept": {
+   "value": 12,
+   "tol": 0
+  },
+  "answer_display": "$12$",
+  "hint": "The degree of a vertex is the number of edges connected to it. Count the edges at each vertex, then add all five degrees together.",
+  "solution": "**Key idea:** The degree of a vertex is the number of edges incident to it. By the handshaking lemma, the sum of all degrees equals twice the number of edges.\n\n1. List the edges: $AB$, $AC$, $BC$, $BD$, $CD$, $DE$. There are **6 edges**.\n2. By the handshaking lemma: sum of degrees $= 2 \\times \\text{number of edges}$.\n3. Sum of degrees $= 2 \\times 6 = 12$.\n4. We can verify by counting each vertex: $\\deg(A)=2$, $\\deg(B)=3$, $\\deg(C)=3$, $\\deg(D)=3$, $\\deg(E)=1$.\n5. Total: $2+3+3+3+1 = 12$. ✓\n\n**Answer:** $12$"
+ },
+ "turn_checked": {
+  "my_answer": "12",
+  "attempts": 2
+ }
 }

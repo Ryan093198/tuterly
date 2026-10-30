@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find $I$ from the total amount, then rearrange $I = PRT$ to solve for $T = \\dfrac{I}{PR}$.\n\n1. Find the interest paid:\n$$I = 8250 - 6000 = 2250$$\n2. Write the rearranged formula:\n$$T = \\frac{I}{PR}$$\n3. Substitute $P = 6000$, $R = 0.075$:\n$$T = \\frac{2250}{6000 \\times 0.075} = \\frac{2250}{450}$$\n4. Calculate:\n$$T = 5$$\n\n**Answer:** The loan is for 5 years."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate simple interest?",
+  "a": "Simple interest is calculated using I = PRT, where P is the principal (amount borrowed or invested), R is the annual interest rate as a decimal, and T is the time in years. For example, investing $2000 at 5% per year for 3 years earns I = 2000 × 0.05 × 3 = $300 in interest."
+ },
+ "turn": {
+  "question": "Anika invests $\\$4500$ at a simple interest rate of $6\\%$ per year for $4$ years. What is the total amount, in dollars, in her account at the end of the $4$ years?",
+  "kind": "number",
+  "accept": {
+   "value": 5580,
+   "tol": 0,
+   "unit": "dollars"
+  },
+  "answer_display": "$\\$5580$",
+  "hint": "Calculate the interest using $I = PRT$, then add it to the principal to find the total amount.",
+  "solution": "**Key idea:** Simple interest is found using $I = PRT$, then total amount $A = P + I$.\n\n1. Identify the values: $P = 4500$, $R = 0.06$ (converting $6\\%$ to a decimal), $T = 4$.\n2. Calculate the interest:\n$$I = PRT = 4500 \\times 0.06 \\times 4$$\n3. $$I = 4500 \\times 0.24 = 1080$$\n4. Find the total amount:\n$$A = P + I = 4500 + 1080$$\n5. $$A = 5580$$\n\n**Answer:** $\\$5580$"
+ },
+ "turn_checked": {
+  "my_answer": "5580",
+  "attempts": 1
+ }
 }

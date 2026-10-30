@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Rewrite any subtraction of a negative as addition first, then work left to right.\n\n1. Rewrite $-(-6)$ as $+6$:\n$$5 - (-6) + (-8) = 5 + 6 + (-8)$$\n2. Add the first two terms:\n$$5 + 6 = 11$$\n3. Add $(-8)$ (opposite signs, so subtract absolute values and keep the sign of the larger):\n$$11 + (-8) = 11 - 8 = 3$$\n\n**Answer:** $5 - (-6) + (-8) = 3$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add and subtract integers?",
+  "a": "Integers are whole numbers that can be positive, negative or zero. To add a negative integer, move left on the number line; to add a positive, move right. Subtracting a negative is the same as adding a positive: for example, 3 − (−2) = 3 + 2 = 5. Order integers by their position on the number line."
+ },
+ "turn": {
+  "question": "The temperature in Canberra was $-3^\\circ\\text{C}$ at midnight. By noon it had risen by $11^\\circ\\text{C}$. What was the temperature at noon, in $^\\circ\\text{C}$?",
+  "kind": "number",
+  "accept": {
+   "value": 8,
+   "tol": 0,
+   "unit": "°C"
+  },
+  "answer_display": "$8^\\circ\\text{C}$",
+  "hint": "Start at $-3$ on the number line and count up $11$ steps.",
+  "solution": "**Key idea:** Adding a positive integer moves you to the right (higher) on the number line.\n\n1. Starting temperature: $-3^\\circ\\text{C}$\n2. Rise in temperature: $+11^\\circ\\text{C}$\n3. Calculation: $-3 + 11$\n4. $-3 + 11 = 11 - 3 = 8$\n\n**Answer:** $8^\\circ\\text{C}$"
+ },
+ "turn_checked": {
+  "my_answer": "8",
+  "attempts": 1
+ }
 }

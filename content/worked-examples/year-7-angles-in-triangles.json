@@ -47,5 +47,25 @@
   "solution": "**Key idea:** The interior angles of a quadrilateral sum to $360°$.\n\n1. Write the angle sum equation: $$102 + 67 + 95 + x = 360$$\n2. Add the known angles: $$264 + x = 360$$\n3. Subtract $264$ from both sides: $$x = 360 - 264 = 96$$\n\n**Answer:** The fourth angle is $96°$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What do the angles in a triangle and quadrilateral add up to?",
+  "a": "The interior angles of any triangle always add up to 180°. A quadrilateral can be split into two triangles, so its angles add up to 360°. To find a missing angle, subtract the known angles from the total. For example, if two angles in a triangle are 65° and 80°, the third is 180° − 65° − 80° = 35°."
+ },
+ "turn": {
+  "question": "A triangle has two angles of $47°$ and $82°$. What is the size of the third angle in degrees?",
+  "kind": "number",
+  "accept": {
+   "value": 51,
+   "tol": 0,
+   "unit": "degrees"
+  },
+  "answer_display": "$51°$",
+  "hint": "The three interior angles of any triangle add up to $180°$, so subtract the two known angles from $180°$.",
+  "solution": "**Key idea:** The interior angles of a triangle sum to $180°$.\n\n1. Write the angle sum equation: $47° + 82° + x = 180°$\n2. Add the two known angles: $47 + 82 = 129$\n3. Subtract from $180°$: $x = 180° - 129° = 51°$\n4. Check: $47° + 82° + 51° = 180°$ ✓\n\n**Answer:** $51°$"
+ },
+ "turn_checked": {
+  "my_answer": "51",
+  "attempts": 1
+ }
 }

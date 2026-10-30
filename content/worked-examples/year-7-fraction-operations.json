@@ -47,5 +47,25 @@
   "solution": "**Key idea:** To divide by a fraction, keep the first fraction, change the division sign to multiplication, and flip the second fraction.\n\n1. Keep $\\dfrac{7}{8}$, change $\\div$ to $\\times$, flip $\\dfrac{1}{4}$ to $\\dfrac{4}{1}$:\n$$\\frac{7}{8} \\times \\frac{4}{1}$$\n2. Simplify before multiplying: the 8 and the 4 share a common factor of 4:\n$$\\frac{7}{\\cancel{8}^{\\,2}} \\times \\frac{\\cancel{4}^{\\,1}}{1} = \\frac{7}{2} \\times \\frac{1}{1}$$\n3. Multiply numerators and denominators:\n$$\\frac{7 \\times 1}{2 \\times 1} = \\frac{7}{2}$$\n4. Convert to a mixed number:\n$$\\frac{7}{2} = 3\\frac{1}{2}$$\n\n**Answer:** $3\\dfrac{1}{2}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add, subtract, multiply and divide fractions?",
+  "a": "Find a common denominator to add or subtract fractions, multiply numerators and denominators straight across to multiply, and use keep-change-flip (multiply by the reciprocal) to divide. For example, 1/2 + 2/3 = 3/6 + 4/6 = 7/6 = 1 1/6, and 3/4 ÷ 1/2 = 3/4 × 2/1 = 3/2 = 1 1/2."
+ },
+ "turn": {
+  "question": "Calculate $\\dfrac{5}{6} \\div \\dfrac{1}{4}$. Give your answer as a decimal correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 3.33,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$3.33$",
+  "hint": "To divide by a fraction, keep the first fraction, change the division to multiplication, and flip the second fraction.",
+  "solution": "**Key idea:** Dividing by a fraction is the same as multiplying by its reciprocal.\n\n1. Keep the first fraction: $\\dfrac{5}{6}$\n2. Change $\\div$ to $\\times$ and flip the second fraction: $\\dfrac{5}{6} \\times \\dfrac{4}{1}$\n3. Multiply numerators and denominators: $\\dfrac{5 \\times 4}{6 \\times 1} = \\dfrac{20}{6}$\n4. Simplify: $\\dfrac{20}{6} = \\dfrac{10}{3}$\n5. Convert to a decimal: $10 \\div 3 = 3.3333\\ldots \\approx 3.33$\n\n**Answer:** $3.33$"
+ },
+ "turn_checked": {
+  "my_answer": "3.33",
+  "attempts": 2
+ }
 }

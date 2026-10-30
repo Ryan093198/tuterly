@@ -47,5 +47,25 @@
   "solution": "**Key idea:** List all outcomes from the two independent steps, then use the sample space to count favourable outcomes.\n\n1. Set up a table with the spinner result (A, B, C) as rows and the card drawn (1, 2) as columns:\n\n| Spinner \\ Card | 1 | 2 |\n|---|---|---|\n| **A** | (A, 1) | (A, 2) |\n| **B** | (B, 1) | (B, 2) |\n| **C** | (C, 1) | (C, 2) |\n\n2. Count the total number of equally likely outcomes: $6$.\n3. Identify outcomes that include B or 2 (or both): (A, 2), (B, 1), (B, 2), (C, 2). That is 4 outcomes.\n4. Calculate the probability:\n$$P(B \\text{ or } 2) = \\frac{4}{6} = \\frac{2}{3}$$\n**Answer:** $\\dfrac{2}{3}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you list all outcomes for two-step chance experiments with and without replacement?",
+  "a": "Draw a tree diagram or table showing every possible outcome at each step. With replacement, the options reset each step (e.g. drawing a card then replacing it before drawing again). Without replacement, the second step has one fewer option. Count favourable outcomes over total outcomes to find the probability."
+ },
+ "turn": {
+  "question": "A bag contains 3 red marbles and 2 blue marbles. Two marbles are drawn **without replacement**. Using a tree diagram or table to list all outcomes, what is the probability of drawing two red marbles? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.3,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.30$",
+  "hint": "After the first red marble is drawn, count how many marbles (and how many red ones) remain for the second draw.",
+  "solution": "**Key idea:** Without replacement means the second draw depends on the first. Multiply the probabilities along each branch of the tree diagram.\n\n1. On the first draw there are 5 marbles: $P(\\text{red}_1) = \\dfrac{3}{5}$.\n2. After drawing one red marble, 4 marbles remain: 2 red and 2 blue. So $P(\\text{red}_2 \\mid \\text{red}_1) = \\dfrac{2}{4} = \\dfrac{1}{2}$.\n3. Multiply along the branch: $$P(\\text{two reds}) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$$\n4. Convert to a decimal: $\\dfrac{3}{10} = 0.30$.\n\n**Answer:** $0.30$"
+ },
+ "turn_checked": {
+  "my_answer": "0.30",
+  "attempts": 1
+ }
 }

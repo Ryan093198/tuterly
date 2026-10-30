@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Subtract the area of the quadrant from the area of the square.\n\n1. Find the area of the square:\n$$A_{\\text{square}} = 8^2 = 64 \\text{ cm}^2$$\n2. Find the area of the quadrant (radius $r = 8$ cm):\n$$A_{\\text{quadrant}} = \\frac{1}{4}\\pi r^2 = \\frac{1}{4} \\times \\pi \\times 8^2 = \\frac{64\\pi}{4} = 16\\pi \\approx 50.3 \\text{ cm}^2$$\n3. Subtract to find the remaining area:\n$$A = 64 - 16\\pi \\approx 64 - 50.3 = 13.7 \\text{ cm}^2$$\n\n**Answer:** Area $\\approx 13.7$ cm$^2$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the circumference and area of a circle?",
+  "a": "Use the formulas $C = 2\\pi r$ (or $\\pi d$) for circumference and $A = \\pi r^2$ for area, where $r$ is the radius and $d$ is the diameter. For example, a circle with radius 5 cm has circumference $2\\pi(5) \\approx 31.42$ cm and area $\\pi(5)^2 \\approx 78.54$ cm²."
+ },
+ "turn": {
+  "question": "A circular garden has a diameter of 8 m. What is the area of the garden in square metres, correct to 2 decimal places?",
+  "kind": "number",
+  "accept": {
+   "value": 50.27,
+   "tol": 0.005,
+   "unit": "m²"
+  },
+  "answer_display": "$50.27$ m²",
+  "hint": "The radius is half the diameter. Then substitute into $A = \\pi r^2$.",
+  "solution": "**Key idea:** The area of a circle is $A = \\pi r^2$, where $r$ is the radius.\n\n1. Find the radius: $r = \\dfrac{d}{2} = \\dfrac{8}{2} = 4$ m.\n2. Substitute into the formula: $A = \\pi r^2 = \\pi \\times 4^2$.\n3. Evaluate: $A = 16\\pi$.\n4. Round to 2 decimal places: $A = 50.2654\\ldots \\approx 50.27$ m².\n\n**Answer:** $50.27$ m²"
+ },
+ "turn_checked": {
+  "my_answer": "50.27",
+  "attempts": 1
+ }
 }

@@ -34,3 +34,44 @@
 .wx-tryline a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .wx-md .katex { max-width: 100%; }
 .wx-md p, .wx-md li { overflow-x: auto; overflow-y: hidden; }
+
+/* Quick answer (top of topic pages) */
+.qa-box { margin: 28px auto 0; max-width: 680px; text-align: left; padding: 18px 20px; border-radius: 16px; background: #f0fbfd; border: 1.5px solid #bfe9f1; }
+.qa-eyebrow { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #0a7088; }
+.qa-q { margin: 0 0 6px; font-size: 18px; font-weight: 800; line-height: 1.35; color: #0b1a2c; }
+.qa-a { font-size: 16px; line-height: 1.65; color: #334155; overflow-wrap: anywhere; }
+.qa-a p { margin: 0; }
+
+/* Your turn checker */
+.tc__form { margin-top: 14px; }
+.tc__label { display: block; font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 6px; }
+.tc__row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tc__input { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 0 14px; border: 2px solid #d6dee7; border-radius: 12px; font: inherit; font-size: 17px; background: #fff; color: #0b1a2c; }
+.tc__input:focus { outline: 3px solid #0e9fb9; outline-offset: 1px; }
+.tc__btn { min-height: 48px; padding: 0 22px; border: 0; border-radius: 12px; background: #0e9fb9; color: #fff; font: inherit; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 3px 0 #0a7088; }
+.tc__btn:disabled { opacity: 0.55; cursor: default; }
+.tc__msg { margin: 12px 0 0; font-weight: 700; font-size: 15.5px; color: #475569; }
+.tc__msg--right { color: #15803d; }
+.tc__msg--wrong { color: #b45309; }
+.tc__links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; }
+.tc__link { padding: 4px 0; border: 0; background: none; font: inherit; font-weight: 800; font-size: 14.5px; color: #0a7088; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.tc__hint { margin-top: 10px; padding: 12px 14px; border-radius: 12px; background: #fffbeb; font-size: 15px; }
+.tc__hint .wx-md, .tc__hint .wx-md p { display: inline; margin: 0; }
+.tc__solution { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+.tc__answer { margin-bottom: 8px; }
+.tc__answer .wx-md, .tc__answer .wx-md p { display: inline; margin: 0; }
+.tc__next { margin-top: 16px; padding: 16px 18px; border-radius: 14px; background: #e6f6fa; border: 1.5px solid #0e9fb9; }
+.tc__next.is-right { background: #ecfdf3; border-color: #22c55e; }
+.tc__next-title { margin: 0; font-weight: 900; font-size: 17px; color: #0b1a2c; }
+.tc__next-text { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: #334155; }
+.tc__next-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 12px; }
+.tc__cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: #0e9fb9; color: #fff; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 3px 0 #0a7088; }
+.tc__cta2 { font-weight: 800; font-size: 14.5px; color: #0a7088; text-decoration: underline; text-underline-offset: 3px; }
+.tc__solution ol { list-style: decimal; padding-left: 22px; margin: 6px 0; }
+.tc__solution ul { list-style: disc; padding-left: 22px; margin: 6px 0; }
+.tc__solution li { margin: 4px 0; }
+/* Steps: list items scroll sideways on narrow screens (long maths), which
+   clips an outside number in Chrome, so the numbers sit inside. */
+.wx-md ol, .tc__solution ol { list-style-position: inside; padding-left: 0; }
+.wx-md ul, .tc__solution ul { list-style-position: inside; padding-left: 0; }
+.wx-md li > p:first-child { display: inline; }

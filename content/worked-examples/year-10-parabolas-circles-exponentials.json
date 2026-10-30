@@ -47,5 +47,25 @@
   "solution": "**Key idea:** For $y = \\dfrac{k}{x}$, the asymptotes are always the coordinate axes. When $k < 0$, the two branches lie in the second and fourth quadrants because $x$ and $y$ always have opposite signs.\n\n1. **Asymptotes:** The denominator is zero when $x = 0$ (vertical asymptote), and as $\\lvert x \\rvert \\to \\infty$, $y \\to 0$ (horizontal asymptote). So the asymptotes are $x = 0$ and $y = 0$.\n2. **Point at $x = 3$:** $y = \\dfrac{-12}{3} = -4$, giving the point $(3, -4)$.\n3. **Quadrants:** Because $k = -12 < 0$, for any positive $x$ the value $y$ is negative (fourth quadrant), and for any negative $x$ the value $y$ is positive (second quadrant). The curve lies entirely in the **second and fourth quadrants**."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are the graphs of parabolas, circles, hyperbolas and exponentials in Year 10?",
+  "a": "These are four families of curves defined by specific equations. A parabola comes from y = ax² + bx + c, a circle from x² + y² = r², a hyperbola from y = k/x, and an exponential from y = aˣ. Each has key features: turning points, centres, asymptotes or intercepts that link the equation directly to the graph."
+ },
+ "turn": {
+  "question": "The circle $x^2 + y^2 = 49$ has its centre at the origin. What is its radius?",
+  "kind": "number",
+  "accept": {
+   "value": 7,
+   "tol": 0,
+   "unit": "units"
+  },
+  "answer_display": "$7$",
+  "hint": "The equation $x^2 + y^2 = r^2$ tells you $r^2$ directly — take the square root to find the radius.",
+  "solution": "**Key idea:** A circle with centre $(0, 0)$ and radius $r$ has equation $x^2 + y^2 = r^2$.\n\n1. Compare $x^2 + y^2 = 49$ with the standard form $x^2 + y^2 = r^2$.\n2. Identify $r^2 = 49$.\n3. Take the positive square root: $r = \\sqrt{49} = 7$.\n4. Check: a point on the circle such as $(7, 0)$ satisfies $7^2 + 0^2 = 49$. ✓\n\n**Answer:** $7$ units"
+ },
+ "turn_checked": {
+  "my_answer": "7",
+  "attempts": 1
+ }
 }

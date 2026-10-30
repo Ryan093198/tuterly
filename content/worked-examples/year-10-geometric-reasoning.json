@@ -47,5 +47,25 @@
   "solution": "**Key idea:** AAS applies when two pairs of corresponding angles and a non-included side are equal.\n\n1. $\\angle BAC = \\angle EDF$ (given).\n2. $\\angle ABC = \\angle DEF$ (given).\n3. $BC = EF$ (given). The side $BC$ is opposite $\\angle BAC$ in $\\triangle ABC$, and $EF$ is opposite $\\angle EDF$ in $\\triangle DEF$, so the side is not between the two known angles in either triangle.\n4. Therefore $\\triangle ABC \\cong \\triangle DEF$ (AAS)."
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you write geometric proofs involving triangles and quadrilaterals?",
+  "a": "State a known fact (given information or a theorem), then chain logical steps until you reach the conclusion. For triangles, use SSS, SAS, AAS or RHS to prove congruence, or AA, SAS or SSS to prove similarity. For quadrilaterals, use properties such as opposite sides equal or parallel to prove a shape is a parallelogram or rhombus."
+ },
+ "turn": {
+  "question": "In $\\triangle ABC$, $AB = AC$ and $M$ is the midpoint of $BC$. It can be proved that $\\triangle ABM \\equiv \\triangle ACM$ by SSS. If $AB = 10$ cm and $BC = 12$ cm, what is the length of $AM$ in centimetres, correct to 2 decimal places?",
+  "kind": "number",
+  "accept": {
+   "value": 8,
+   "tol": 0.005,
+   "unit": "cm"
+  },
+  "answer_display": "$8.00$ cm",
+  "hint": "Use Pythagoras' theorem in one of the right triangles formed when AM meets BC at a right angle.",
+  "solution": "**Key idea:** Because $\\triangle ABM \\equiv \\triangle ACM$ (SSS), $AM$ is the perpendicular bisector of $BC$, so $\\angle AMB = 90°$.\n\n1. $BM = \\dfrac{BC}{2} = \\dfrac{12}{2} = 6$ cm\n2. Apply Pythagoras' theorem in $\\triangle ABM$: $AM^2 + BM^2 = AB^2$\n3. $AM^2 = AB^2 - BM^2 = 10^2 - 6^2 = 100 - 36 = 64$\n4. $AM = \\sqrt{64} = 8$ cm\n\n**Answer:** $8.00$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "8",
+  "attempts": 2
+ }
 }

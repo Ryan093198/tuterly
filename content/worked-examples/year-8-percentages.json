@@ -47,5 +47,25 @@
   "solution": "**Key idea:** A 40% mark-up means the selling price equals 140% of the wholesale cost. Divide by 1.40 to reverse.\n\n1. A 40% mark-up means the selling price is $100\\% + 40\\% = 140\\%$ of the wholesale cost.\n2. Let $w$ be the wholesale cost in dollars: $$w \\times 1.40 = 189$$\n3. Solve: $$w = 189 \\div 1.40 = 135$$\n4. Check: $135 \\times 1.40 = 189$ ✓\n\n**Answer:** The wholesale cost was \\$135."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve percentage increase, decrease and error problems?",
+  "a": "Multiply the original by (1 + r/100) to increase or (1 − r/100) to decrease, where r is the rate. For reverse problems, divide the final amount by the multiplier to find the original. Percentage error = (|measured − actual| ÷ actual) × 100. For example, a 20% increase on $50 gives $50 × 1.20 = $60."
+ },
+ "turn": {
+  "question": "A jacket is marked at \\$184 after a 15% increase on its original price. What was the original price of the jacket, in dollars, correct to 2 decimal places?",
+  "kind": "number",
+  "accept": {
+   "value": 160,
+   "tol": 0.005,
+   "unit": "dollars"
+  },
+  "answer_display": "$\\$160.00$",
+  "hint": "A 15% increase means the marked price is 115% of the original, so divide by 1.15 to find the original.",
+  "solution": "**Key idea:** A percentage increase of 15% means the new price equals the original multiplied by 1.15, so reverse the process by dividing.\n\n1. Write the relationship: $\\text{new price} = \\text{original} \\times 1.15$\n2. Substitute the known value: $184 = \\text{original} \\times 1.15$\n3. Solve for the original: $\\text{original} = \\dfrac{184}{1.15}$\n4. Calculate: $\\dfrac{184}{1.15} = 160$\n5. Check: $160 \\times 1.15 = 184$ ✓\n\n**Answer:** \\$160.00"
+ },
+ "turn_checked": {
+  "my_answer": "160",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Rearrange using inverse operations, working from the outside in to isolate $L$.\n\n1. Divide both sides by $2\\pi$: $$\\frac{T}{2\\pi} = \\sqrt{\\frac{L}{g}}$$\n2. Square both sides to remove the square root: $$\\frac{T^2}{4\\pi^2} = \\frac{L}{g}$$\n3. Multiply both sides by $g$: $$L = \\frac{T^2 g}{4\\pi^2}$$\n\n**Answer:** $L = \\dfrac{T^2 g}{4\\pi^2}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you substitute into and rearrange formulas?",
+  "a": "Substituting means replacing each pronumeral with its given value and evaluating. Rearranging means using inverse operations to isolate a chosen variable. For example, given v = u + at, making a the subject gives a = (v − u) / t. Always check by substituting your answer back into the original formula."
+ },
+ "turn": {
+  "question": "The formula for the area of a trapezium is $$A = \\frac{1}{2}(a + b)h$$ where $a$ and $b$ are the parallel sides and $h$ is the perpendicular height. A trapezium has an area of $96 \\text{ cm}^2$, one parallel side $a = 10 \\text{ cm}$ and height $h = 8 \\text{ cm}$. Find the length of the other parallel side $b$, in cm.",
+  "kind": "number",
+  "accept": {
+   "value": 14,
+   "tol": 0,
+   "unit": "cm"
+  },
+  "answer_display": "$14 \\text{ cm}$",
+  "hint": "Substitute the known values into the formula first, then solve the resulting equation for $b$.",
+  "solution": "**Key idea:** Substitute all known values into the formula, then use inverse operations to solve for the unknown.\n\n1. Write the formula: $$A = \\frac{1}{2}(a + b)h$$\n2. Substitute $A = 96$, $a = 10$, $h = 8$: $$96 = \\frac{1}{2}(10 + b) \\times 8$$\n3. Simplify the right side: $$96 = 4(10 + b)$$\n4. Divide both sides by 4: $$24 = 10 + b$$\n5. Subtract 10 from both sides: $$b = 14$$\n6. Check: $\\frac{1}{2}(10 + 14) \\times 8 = \\frac{1}{2} \\times 24 \\times 8 = 96$ ✓\n\n**Answer:** $b = 14 \\text{ cm}$"
+ },
+ "turn_checked": {
+  "my_answer": "14",
+  "attempts": 1
+ }
 }

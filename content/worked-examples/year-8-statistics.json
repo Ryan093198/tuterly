@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Stratified sampling divides the population into groups (strata) and randomly selects from each group in proportion, ensuring all parts of the population are represented.\n\n1. The study aims to learn about all students at the school, so the **population** is all 600 students in Years 7 to 10.\n2. The coordinator splits students into four year levels (the strata) and randomly selects 15 from each. This is **stratified sampling**.\n3. Surveying the first 60 arrivals is a convenience sample. Students who arrive earliest may share characteristics (for example, those who travel by a particular bus route or those who have before-school activities) that make them unrepresentative of all students.\n4. Stratified sampling guarantees each year level contributes equally to the sample, reducing bias and giving a fairer picture of homework time across the whole school.\n\n**Answer:** (a) All 600 students at the school (Years 7 to 10). (b) Stratified sampling. (c) Stratified sampling ensures every year level is fairly represented. Surveying only the first arrivals would over-represent early-arriving students and introduce bias."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What is the difference between a population and a sample in statistics?",
+  "a": "A population is the entire group being studied; a sample is a smaller group selected from it. When a population is too large to survey everyone, researchers collect data from a sample instead. For example, asking 50 students from a school of 800 about their lunch preferences is sampling the population of 800 students."
+ },
+ "turn": {
+  "question": "A survey asks every 10th person on an electoral roll of 5000 voters about their transport habits. What is the size of the sample?",
+  "kind": "number",
+  "accept": {
+   "value": 500,
+   "tol": 0
+  },
+  "answer_display": "$500$",
+  "hint": "Divide the total population size by the sampling interval to find how many people are selected.",
+  "solution": "**Key idea:** In systematic sampling, every $k$th person is selected from the population, so the sample size equals the population size divided by the interval $k$.\n\n1. The population size is $5000$ voters.\n2. Every $10$th person is selected, so the sampling interval is $k = 10$.\n3. Sample size $= 5000 \\div 10 = 500$.\n4. Check: $500 \\times 10 = 5000$ ✓\n\n**Answer:** $500$"
+ },
+ "turn_checked": {
+  "my_answer": "500",
+  "attempts": 2
+ }
 }

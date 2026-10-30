@@ -47,5 +47,24 @@
   "solution": "**Part (a)**\n1. Recognise $x^2 - 4 = x^2 - 2^2$, a difference of two squares.\n2. Apply the rule: $(x - 2)(x + 2)$.\n\n**Part (b)**\n1. Find two integers that multiply to $-21$ and add to $4$.\n2. Try $-3$ and $7$: $(-3) \\times 7 = -21$ ✓ and $-3 + 7 = 4$ ✓.\n3. Factorise: $(x - 3)(x + 7)$.\n4. **Verify:** $(x - 3)(x + 7) = x^2 + 7x - 3x - 21 = x^2 + 4x - 21$. ✓"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you factorise quadratic expressions?",
+  "a": "To factorise a monic quadratic like x² + bx + c, find two numbers that multiply to c and add to b, then write it as (x + p)(x + q). For a difference of two squares, use a² - b² = (a + b)(a - b). For example, x² + 5x + 6 = (x + 2)(x + 3) because 2 × 3 = 6 and 2 + 3 = 5."
+ },
+ "turn": {
+  "question": "Factorise $x^2 - 3x - 28$ and find the positive value of $x$ for which the expression equals zero.",
+  "kind": "number",
+  "accept": {
+   "value": 7,
+   "tol": 0
+  },
+  "answer_display": "$7$",
+  "hint": "Find two numbers that multiply to $-28$ and add to $-3$, then set the matching factor equal to zero.",
+  "solution": "**Key idea:** Factorise by finding two numbers with product $-28$ and sum $-3$, then use the zero-product rule.\n\n1. List factor pairs of $-28$: $(-1, 28),\\,(1, -28),\\,(-4, 7),\\,(4, -7)$.\n2. The pair that adds to $-3$ is $4$ and $-7$, since $4 + (-7) = -3$ and $4 \\times (-7) = -28$.\n3. Factorise: $x^2 - 3x - 28 = (x + 4)(x - 7)$.\n4. Set each factor equal to zero: $x + 4 = 0 \\Rightarrow x = -4$, or $x - 7 = 0 \\Rightarrow x = 7$.\n5. The positive solution is $x = 7$.\n\n**Answer:** $7$"
+ },
+ "turn_checked": {
+  "my_answer": "7",
+  "attempts": 1
+ }
 }

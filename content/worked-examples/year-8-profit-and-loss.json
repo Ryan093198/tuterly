@@ -47,5 +47,25 @@
   "solution": "**Key idea:** A $35\\%$ mark-up means the selling price is $135\\%$ of the cost price. Divide the selling price by $1.35$ to find the cost price.\n\n1. Write the equation: $$\\text{cost price} \\times 1.35 = 189$$\n2. Solve: $$\\text{cost price} = \\frac{189}{1.35}$$\n3. Calculate: $$189 \\div 1.35 = 140$$\n\n**Answer:** The cost price was \\$140."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate profit, loss and discounts using percentages?",
+  "a": "Profit or loss is the difference between selling price and cost price; express it as a percentage of the cost price. For a mark-up or discount, multiply the original price by the percentage and add or subtract. For example, a 20% discount on $80 gives a selling price of $64."
+ },
+ "turn": {
+  "question": "A shopkeeper buys a jacket for $\\$150$ and sells it at a $35\\%$ mark-up. What is the selling price, in dollars?",
+  "kind": "number",
+  "accept": {
+   "value": 202.5,
+   "tol": 0.005,
+   "unit": "dollars"
+  },
+  "answer_display": "$\\$202.50$",
+  "hint": "Find 35% of the cost price and add it to $\\$150$.",
+  "solution": "**Key idea:** Selling price after a percentage mark-up = cost price $\\times$ $(1 + \\text{mark-up rate})$.\n\n1. Write the cost price: $\\$150$.\n2. Convert the mark-up to a decimal: $35\\% = 0.35$.\n3. Multiply to find the mark-up amount: $150 \\times 0.35 = \\$52.50$.\n4. Add to the cost price: $150 + 52.50 = \\$202.50$.\n5. Check using the multiplier: $150 \\times 1.35 = \\$202.50$. ✓\n\n**Answer:** $\\$202.50$"
+ },
+ "turn_checked": {
+  "my_answer": "202.50",
+  "attempts": 2
+ }
 }

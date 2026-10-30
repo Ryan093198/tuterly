@@ -47,5 +47,24 @@
   "solution": "**Key idea:** A difference of $d$ units on the pH scale corresponds to a factor of $10^d$ difference in hydrogen ion concentration. Because pH increases as concentration decreases, the lower pH has the higher concentration.\n\n1. Find the difference in pH values: $$6 - 4 = 2 \\text{ units}$$\n2. Calculate the factor: $$10^2 = 100$$\n3. Identify which product has the higher concentration: Product A has the lower pH, so it has the higher $[\\text{H}^+]$.\n4. Interpret: Product A's hydrogen ion concentration is 100 times greater than Product B's.\n\n**Answer:** Product A has a hydrogen ion concentration $100$ times greater than Product B."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are logarithmic scales and how do you use them?",
+  "a": "A logarithmic scale spaces numbers so each equal step represents multiplying by the same factor (often 10), not adding. To convert a log scale reading to the original quantity, calculate 10 to the power of that reading. For example, a pH of 3 means a hydrogen ion concentration of 10⁻³ mol/L, which is 10 times more acidic than pH 4."
+ },
+ "turn": {
+  "question": "The Richter scale measures earthquake magnitude logarithmically (base 10). An earthquake measures $6.5$ on the Richter scale. How many times greater is the ground shaking amplitude of this earthquake than one measuring $4.5$? Give your answer as a whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 100,
+   "tol": 0
+  },
+  "answer_display": "$100$",
+  "hint": "A difference of 1 on the Richter scale means the amplitude is multiplied by 10, so think about what a difference of 2 means.",
+  "solution": "**Key idea:** On a base-10 logarithmic scale, each 1-unit increase represents a ×10 increase in the actual quantity, so a difference of $n$ units means the amplitude is $10^n$ times greater.\n\n1. Find the difference in magnitude: $6.5 - 4.5 = 2$.\n2. The amplitude ratio is $10^{\\text{difference}} = 10^2$.\n3. Calculate: $10^2 = 100$.\n4. Check: going from 4.5 to 5.5 multiplies amplitude by 10, then from 5.5 to 6.5 multiplies by another 10, giving $10 \\times 10 = 100$. ✓\n\n**Answer:** The earthquake measuring 6.5 has a ground shaking amplitude $100$ times greater than the one measuring 4.5."
+ },
+ "turn_checked": {
+  "my_answer": "100",
+  "attempts": 1
+ }
 }

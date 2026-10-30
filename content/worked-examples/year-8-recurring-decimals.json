@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Divide the numerator by the denominator, identify the repeating block, and place dots above the first and last digits of that block.\n\n1. Check the denominator: $11$ is prime and not 2 or 5, so the decimal **recurs**.\n2. Perform the division $7 \\div 11$:\n$$\\begin{aligned} 7 \\div 11 &= 0.636363\\ldots \\end{aligned}$$\n3. The block 63 repeats forever.\n4. Place a dot above the 6 (first repeating digit) and a dot above the 3 (last repeating digit): $0.\\dot{6}\\dot{3}$\n5. Verify: $0.\\dot{6}\\dot{3} \\times 11 = 6.\\dot{9}\\dot{3} \\div \\ldots$ Quick check: $0.6363\\ldots \\times 11 = 7$ ✓\n\n**Answer:** $\\dfrac{7}{11} = 0.\\dot{6}\\dot{3}$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you convert fractions to terminating or recurring decimals?",
+  "a": "Divide the numerator by the denominator. If the denominator's only prime factors are 2s and 5s, the decimal terminates (e.g. 3/8 = 0.375). Otherwise it recurs. Write recurring decimals with a dot above the first and last digit of the repeating block (e.g. 1/3 = 0.3̇, 1/7 = 0.1̇4285̇7)."
+ },
+ "turn": {
+  "question": "Convert $\\dfrac{9}{16}$ to a decimal.",
+  "kind": "number",
+  "accept": {
+   "value": 0.5625,
+   "tol": 0
+  },
+  "answer_display": "$0.5625$",
+  "hint": "Check the prime factors of 16 first, then divide 9 by 16.",
+  "solution": "**Key idea:** A fraction whose denominator has only factors of 2 and 5 produces a terminating decimal.\n\n1. Factorise the denominator: $16 = 2^4$, so the only prime factor is 2. The decimal will terminate.\n2. Perform the division: $9 \\div 16$.\n3. $9 \\div 16 = 0.5625$ (multiply numerator and denominator by $5^4 = 625$ to see it clearly: $\\dfrac{9 \\times 625}{16 \\times 625} = \\dfrac{5625}{10000}$).\n4. Verify: $0.5625 \\times 16 = 9$. ✓\n\n**Answer:** $0.5625$"
+ },
+ "turn_checked": {
+  "my_answer": "0.5625",
+  "attempts": 2
+ }
 }

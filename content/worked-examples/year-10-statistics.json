@@ -47,5 +47,25 @@
   "solution": "**Key idea:** For an even-numbered dataset, split into two equal halves to find Q1 and Q3, then apply the outlier fences.\n\n1. The data is already sorted: $4, 9, 13, 17, 22, 26, 31, 58$ ($n = 8$).\n2. Lower half: $4, 9, 13, 17$. $$Q1 = \\frac{9 + 13}{2} = 11.$$\n3. Upper half: $22, 26, 31, 58$. $$Q3 = \\frac{26 + 31}{2} = 28.5.$$\n4. $$\\text{IQR} = 28.5 - 11 = 17.5.$$\n5. Calculate the fences: $$\\text{Lower fence} = 11 - 1.5 \\times 17.5 = 11 - 26.25 = -15.25.$$ $$\\text{Upper fence} = 28.5 + 1.5 \\times 17.5 = 28.5 + 26.25 = 54.75.$$ Since $58 > 54.75$, the value $58$ is an outlier. No values fall below $-15.25$.\n\n**Answer:** $Q1 = 11$, $Q3 = 28.5$, $\\text{IQR} = 17.5$; $58$ is an outlier (upper fence is $54.75$)."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you compare data distributions using quartiles, IQR and boxplots?",
+  "a": "Split an ordered dataset into four equal parts using Q1, Q2 (median) and Q3. The interquartile range (IQR = Q3 − Q1) measures the spread of the middle 50% of data. Outliers are values more than 1.5 × IQR beyond Q1 or Q3. Boxplots display these five-number summaries side by side for easy comparison."
+ },
+ "turn": {
+  "question": "The daily temperatures (in °C) recorded over 12 days are listed below.\n\n$$3,\\ 7,\\ 9,\\ 12,\\ 14,\\ 16,\\ 18,\\ 21,\\ 24,\\ 27,\\ 31,\\ 35$$\n\nWhat is the interquartile range (IQR) of this dataset?",
+  "kind": "number",
+  "accept": {
+   "value": 18,
+   "tol": 0,
+   "unit": "°C"
+  },
+  "answer_display": "$18$",
+  "hint": "Split the 12 values into a lower half and an upper half, find the median of each half to get Q1 and Q3, then subtract.",
+  "solution": "**Key idea:** For an even-numbered dataset, split the ordered values into two equal halves. Q1 is the median of the lower half and Q3 is the median of the upper half. IQR = Q3 − Q1.\n\n1. The data is already ordered: $3, 7, 9, 12, 14, 16, 18, 21, 24, 27, 31, 35$. There are $n = 12$ values.\n2. **Median (Q2):** Average of the 6th and 7th values $= \\dfrac{16 + 18}{2} = 17$.\n3. **Lower half** (first 6 values): $3, 7, 9, 12, 14, 16$. Q1 $= \\dfrac{9 + 12}{2} = 10.5$.\n4. **Upper half** (last 6 values): $18, 21, 24, 27, 31, 35$. Q3 $= \\dfrac{24 + 27}{2} = 25.5$.\n5. **IQR** $= Q3 - Q1 = 25.5 - 10.5 = 18$.\n\n**Answer:** $18$ °C"
+ },
+ "turn_checked": {
+  "my_answer": "18",
+  "attempts": 3
+ }
 }

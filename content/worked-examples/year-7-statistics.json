@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Sort the data first, then find the middle value(s) for the median and the most frequent value for the mode.\n\n1. Sort the values in ascending order: $$5, 5, 5, 9, 9, 11, 13, 17$$\n2. **Median:** There are $8$ values (even count), so the median is the average of the 4th and 5th values: $$\\text{Median} = \\frac{9 + 9}{2} = 9$$\n3. **Mode:** The value that appears most often is $5$ (appears $3$ times, more than any other value): $\\text{Mode} = 5.$\n\n**Answer:** Median $= 9$, Mode $= 5.$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you find the mean, median, mode and range?",
+  "a": "The mean is the sum of all values divided by the count. The median is the middle value when data is ordered (or the average of the two middle values if there is an even count). The mode is the most frequent value. The range is the maximum minus the minimum. For example, in {2, 4, 4, 6, 9}: mean = 5, median = 4, mode = 4, range = 7."
+ },
+ "turn": {
+  "question": "The ages (in years) of eight players on a basketball team are: 14, 15, 13, 16, 15, 14, 15, 12. What is the median age?",
+  "kind": "number",
+  "accept": {
+   "value": 14.5,
+   "tol": 0.005,
+   "unit": "years"
+  },
+  "answer_display": "$14.5$ years",
+  "hint": "Order the values from smallest to largest, then average the two middle values since there are eight (an even count) of them.",
+  "solution": "**Key idea:** For an even number of values, the median is the mean of the two middle values once the data is ordered.\n\n1. Order the ages from smallest to largest: $12, 13, 14, 14, 15, 15, 15, 16$.\n2. There are 8 values (an even count), so the median lies between the 4th and 5th values.\n3. The 4th value is $14$ and the 5th value is $15$.\n4. Median $= \\dfrac{14 + 15}{2} = \\dfrac{29}{2} = 14.5$.\n\n**Answer:** $14.5$ years"
+ },
+ "turn_checked": {
+  "my_answer": "14.5",
+  "attempts": 2
+ }
 }

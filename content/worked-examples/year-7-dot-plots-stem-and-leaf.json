@@ -47,5 +47,25 @@
   "solution": "**Key idea:** List all values in order and find the average of the two middle values for an even-sized data set.\n\n1. List all 10 values in order: $142, 145, 148, 149, 151, 153, 156, 157, 160, 164$\n2. With 10 values, the median is the average of the 5th and 6th values.\n3. The 5th value is $151$ and the 6th value is $153$.\n4. $$\\text{Median} = \\frac{151 + 153}{2} = \\frac{304}{2} = 152$$\n**Answer:** The median height is $152$ cm."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are dot plots and stem-and-leaf plots?",
+  "a": "Dot plots and stem-and-leaf plots are ways to display numerical data. A dot plot places one dot above a number line for each data value. A stem-and-leaf plot splits each value into a stem (leading digit/s) and a leaf (last digit), keeping the actual values while showing the distribution's shape, spread and centre."
+ },
+ "turn": {
+  "question": "The ages of players in a basketball squad are listed below.\n\n$$14, 15, 13, 16, 14, 15, 15, 14, 13, 16, 15, 14$$\n\nA stem-and-leaf plot is drawn with stems 13 and 14 and 15 and 16 (using tens and units). What is the median age of the squad?",
+  "kind": "number",
+  "accept": {
+   "value": 14.5,
+   "tol": 0.005,
+   "unit": "years"
+  },
+  "answer_display": "$14.5$",
+  "hint": "Arrange all 12 values in order, then find the middle value. With an even number of data points, the median is the average of the two middle values.",
+  "solution": "**Key idea:** The median is the middle value when data is ordered. For an even number of values, average the two middle ones.\n\n1. Write all 12 ages in order: $13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 16, 16$\n2. Count the values: there are 12, which is even, so the median lies between the 6th and 7th values.\n3. The 6th value is $14$ and the 7th value is $15$.\n4. Median $= \\dfrac{14 + 15}{2} = \\dfrac{29}{2} = 14.5$\n\n**Answer:** $14.5$ years"
+ },
+ "turn_checked": {
+  "my_answer": "14.5",
+  "attempts": 1
+ }
 }

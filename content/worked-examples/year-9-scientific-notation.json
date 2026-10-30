@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Multiply the coefficients together and add the indices, then adjust if the coefficient is outside $[1, 10)$.\n\n1. Multiply the coefficients: $7.5 \\times 8.0 = 60$.\n2. Add the indices: $10^{-3} \\times 10^{6} = 10^{-3+6} = 10^{3}$.\n3. Combine: $60 \\times 10^{3}$.\n4. Adjust the coefficient: $60 = 6.0 \\times 10^{1}$, so $$6.0 \\times 10^{1} \\times 10^{3} = 6.0 \\times 10^{4}$$\n\n**Answer:** $6.0 \\times 10^{4}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What is scientific notation and how do you use it in Year 9?",
+  "a": "Scientific notation expresses very large or very small numbers as a number between 1 and 10 multiplied by a power of 10, written as $a \\times 10^n$. To convert, count how many places the decimal point moves. For example, 0.000047 = $4.7 \\times 10^{-5}$ and 93 000 000 = $9.3 \\times 10^7$."
+ },
+ "turn": {
+  "question": "The mass of a proton is $1.673 \\times 10^{-27}$ kg and the mass of an electron is $9.109 \\times 10^{-31}$ kg. How many times heavier is a proton than an electron? Give your answer correct to the nearest whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 1836,
+   "tol": 0.5
+  },
+  "answer_display": "$1836$",
+  "hint": "Divide the mass of the proton by the mass of the electron, and handle the powers of 10 separately.",
+  "solution": "**Key idea:** When dividing numbers in scientific notation, divide the decimal parts and subtract the exponents.\n\n1. Write the division: $$\\frac{1.673 \\times 10^{-27}}{9.109 \\times 10^{-31}}$$\n2. Divide the decimal parts: $$\\frac{1.673}{9.109} \\approx 0.18366$$\n3. Divide the powers of 10: $$\\frac{10^{-27}}{10^{-31}} = 10^{-27-(-31)} = 10^{4}$$\n4. Combine: $$0.18366 \\times 10^{4} = 1836.6$$\n5. Round to the nearest whole number: $1837$. \n\nWait, let me recompute: $1.673 \\div 9.109 = 0.183665...$, and $0.183665 \\times 10^4 = 1836.65...$, which rounds to $1837$.\n\nActually, using more precise values: $1.673 \\div 9.109$. $9.109 \\times 0.1836 = 1.6728...$, so $1.673 \\div 9.109 \\approx 0.18368$, giving $1836.8$, which rounds to $\\mathbf{1837}$.\n\n**Answer:** $1837$"
+ },
+ "turn_checked": {
+  "my_answer": "1836",
+  "attempts": 1
+ }
 }

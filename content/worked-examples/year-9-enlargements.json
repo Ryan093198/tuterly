@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Multiply every coordinate by the scale factor $k = 2$.\n\n1. Multiply each vertex by $2$:\n$$\\begin{aligned} P(2,1) &\\to P'(4, 2) \\\\ Q(6,1) &\\to Q'(12, 2) \\\\ R(2,4) &\\to R'(4, 8) \\end{aligned}$$\n2. Find $P'Q'$ using the coordinates (both points share $y$-coordinate $2$):\n$$P'Q' = 12 - 4 = 8 \\text{ units}$$\n3. Check: original $PQ = 6 - 2 = 4$ units; $4 \\times 2 = 8$. ✓\n\n**Answer:** $P'(4,2)$, $Q'(12,2)$, $R'(4,8)$; $P'Q' = 8$ units."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "What are enlargements and scale factors in geometry?",
+  "a": "An enlargement transforms a shape into a similar shape by multiplying every side length by a scale factor from a fixed centre of enlargement. Angles stay the same and shape is preserved, but side lengths and area change. For example, a scale factor of 3 triples every side length and multiplies the area by 9."
+ },
+ "turn": {
+  "question": "Triangle $ABC$ has side lengths 4 cm, 7 cm and 9 cm. It is enlarged using a scale factor of 5. What is the perimeter of the image triangle, in cm?",
+  "kind": "number",
+  "accept": {
+   "value": 100,
+   "tol": 0,
+   "unit": "cm"
+  },
+  "answer_display": "$100$ cm",
+  "hint": "Find the perimeter of the original triangle first, then multiply by the scale factor.",
+  "solution": "**Key idea:** Under an enlargement with scale factor $k$, every side length is multiplied by $k$, so the perimeter is also multiplied by $k$.\n\n1. Find the perimeter of triangle $ABC$: $$4 + 7 + 9 = 20 \\text{ cm}$$\n2. The scale factor is $k = 5$.\n3. Multiply the original perimeter by the scale factor: $$20 \\times 5 = 100 \\text{ cm}$$\n4. Check: the image side lengths are $20$ cm, $35$ cm and $45$ cm, and $20 + 35 + 45 = 100$ cm. ✓\n\n**Answer:** $100$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "100",
+  "attempts": 2
+ }
 }

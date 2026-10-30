@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Use the tangent ratio because you know the adjacent side (50 m) and want the opposite side (the height of the cliff).\n\n1. Label the triangle: adjacent $= 50$ m, opposite $= h$ m, angle $= 38°$.\n2. Write the trig equation:\n$$\\tan(38°) = \\frac{h}{50}$$\n3. Solve for $h$:\n$$h = 50 \\times \\tan(38°)$$\n4. Calculate:\n$$h \\approx 50 \\times 0.7813 \\approx 39.1 \\text{ m}$$\n\n**Answer:** The height of the cliff is approximately $39.1$ m."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use trigonometry and Pythagoras' theorem to solve practical problems involving right-angled triangles?",
+  "a": "Choose Pythagoras' theorem when you know two sides and need the third. Use sine, cosine or tangent when an angle is involved. Angles of elevation and depression are measured from the horizontal. For 3D problems, find an intermediate length first, then apply trig or Pythagoras again."
+ },
+ "turn": {
+  "question": "A person stands 45 m from the base of a vertical tower. The angle of elevation to the top of the tower is $32°$. Find the height of the tower in metres, correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 28.12,
+   "tol": 0.005,
+   "unit": "m"
+  },
+  "answer_display": "$28.12$ m",
+  "hint": "The horizontal distance and the height of the tower form the two legs of a right-angled triangle. Which trigonometric ratio connects the opposite side, the adjacent side, and the angle?",
+  "solution": "**Key idea:** In a right-angled triangle, $\\tan(\\theta) = \\dfrac{\\text{opposite}}{\\text{adjacent}}$, where the angle of elevation is measured from the horizontal.\n\n1. Draw the situation: horizontal distance = 45 m, angle of elevation = $32°$, height = $h$.\n2. Identify the ratio: the height is opposite the $32°$ angle, and 45 m is adjacent, so use tangent.\n3. Write the equation: $$\\tan(32°) = \\frac{h}{45}$$\n4. Solve for $h$: $$h = 45 \\times \\tan(32°)$$\n5. Calculate: $$h = 45 \\times 0.62487\\ldots = 28.119\\ldots \\approx 28.12 \\text{ m}$$\n\n**Answer:** $28.12$ m"
+ },
+ "turn_checked": {
+  "my_answer": "28.12",
+  "attempts": 2
+ }
 }

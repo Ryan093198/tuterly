@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Apply the power-of-a-power rule first, then use the zero index and division laws.\n\n1. Simplify the power of a power: $(3^2)^5 = 3^{2 \\times 5} = 3^{10}$\n2. Apply the zero index: $3^0 = 1$\n3. Simplify the numerator: $3^{10} \\times 1 = 3^{10}$\n4. Divide: $\\dfrac{3^{10}}{3^4} = 3^{10-4} = 3^6$\n\n**Answer:** $3^6$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "What are the exponent laws for multiplying and dividing powers?",
+  "a": "When multiplying powers with the same base, add the exponents: $a^m \\times a^n = a^{m+n}$. When dividing, subtract them: $a^m \\div a^n = a^{m-n}$. Raising a power to a power means multiplying exponents: $(a^m)^n = a^{mn}$. Any base to the power of zero equals 1: $a^0 = 1$. For example, $2^3 \\times 2^4 = 2^7 = 128$."
+ },
+ "turn": {
+  "question": "Simplify the following expression and write your answer as a single power of $3$. $$\\frac{(3^4)^3}{3^5 \\times 3^2}$$",
+  "kind": "expression",
+  "accept": {
+   "expr": "3^5",
+   "vars": [
+    "3"
+   ]
+  },
+  "answer_display": "$3^5$",
+  "hint": "Apply the power-of-a-power rule to the numerator first, then use the multiplication rule on the denominator, and finally use the division rule.",
+  "solution": "**Key idea:** Apply the exponent laws step by step: power-of-a-power $(a^m)^n = a^{mn}$, product rule $a^m \\times a^n = a^{m+n}$, and quotient rule $a^m \\div a^n = a^{m-n}$.\n\n1. Simplify the numerator using the power-of-a-power rule: $(3^4)^3 = 3^{4 \\times 3} = 3^{12}$.\n2. Simplify the denominator using the multiplication rule: $3^5 \\times 3^2 = 3^{5+2} = 3^7$.\n3. Rewrite the expression: $\\dfrac{3^{12}}{3^7}$.\n4. Apply the division rule: $3^{12} \\div 3^7 = 3^{12-7} = 3^5$.\n\n**Answer:** $3^5$"
+ },
+ "turn_checked": {
+  "my_answer": "3^5",
+  "attempts": 1
+ }
 }

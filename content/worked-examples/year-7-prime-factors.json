@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Divide repeatedly by the smallest prime that goes in exactly, until the result is $1$.\n\n1. $126 \\div 2 = 63$\n2. $63 \\div 3 = 21$\n3. $21 \\div 3 = 7$\n4. $7 \\div 7 = 1$\n\nPrime factors used: $2, 3, 3, 7$. Writing with exponents:\n$$126 = 2 \\times 3^2 \\times 7$$\nCheck: $2 \\times 9 \\times 7 = 2 \\times 63 = 126$ ✓"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are powers and prime factors in Year 7 maths?",
+  "a": "Every natural number can be written as a product of prime numbers using exponent notation. Find the prime factors with a factor tree or repeated division, then group repeated factors as powers. For example, 72 = 2³ × 3² because 72 = 2 × 2 × 2 × 3 × 3."
+ },
+ "turn": {
+  "question": "Express $180$ as a product of prime factors using exponent notation. What is the value of the largest exponent in your answer?",
+  "kind": "number",
+  "accept": {
+   "value": 2,
+   "tol": 0
+  },
+  "answer_display": "$2$",
+  "hint": "Build a factor tree for 180 and count how many times each prime factor appears.",
+  "solution": "**Key idea:** Every composite number can be written as a product of primes; repeated primes are grouped using exponent notation.\n\n1. Divide 180 by the smallest prime: $180 = 2 \\times 90$\n2. Continue dividing: $90 = 2 \\times 45$\n3. Continue dividing: $45 = 3 \\times 15$\n4. Continue dividing: $15 = 3 \\times 5$\n5. So $180 = 2 \\times 2 \\times 3 \\times 3 \\times 5 = 2^2 \\times 3^2 \\times 5$\n6. The exponents are $2$, $2$, and $1$. The largest exponent is $2$.\n\n**Answer:** $2$"
+ },
+ "turn_checked": {
+  "my_answer": "2",
+  "attempts": 2
+ }
 }

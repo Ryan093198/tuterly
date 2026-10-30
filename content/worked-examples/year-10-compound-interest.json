@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Substitute known values into $A = P(1 + r)^n$ and test increasing whole-number values of $n$ until $A$ exceeds \\$7000.\n\n1. Identify the values: $P = 6000$, $r = 0.03$, and find the smallest whole number $n$ such that $A > 7000$.\n2. Set up the inequality: $6000 \\times (1.03)^n > 7000$, so $(1.03)^n > \\dfrac{7000}{6000} = 1.1\\overline{6}$.\n3. Test values systematically:\n$$\\begin{aligned} n = 4&: \\quad (1.03)^4 = 1.12550881 \\quad (< 1.1\\overline{6}) \\\\ n = 5&: \\quad (1.03)^5 = 1.15927407 \\quad (< 1.1\\overline{6}) \\\\ n = 6&: \\quad (1.03)^6 = 1.19405230 \\quad (> 1.1\\overline{6}) \\end{aligned}$$\n4. Verify for $n = 6$: $A = 6000 \\times 1.19405230 \\approx 7164.31 > 7000$. ✓\n5. Verify $n = 5$ does not work: $A = 6000 \\times 1.15927407 \\approx 6955.64 < 7000$. ✓\n\n**Answer:** Priya's investment first exceeds \\$7000 after **6 years**."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you calculate compound interest?",
+  "a": "Use A = P(1 + r/m)^(mn), where P is the principal, r is the annual interest rate as a decimal, m is the number of compounding periods per year, and n is the number of years. For annual compounding m = 1, so the formula simplifies to A = P(1 + r)^n. For example, 1000 dollars at 5% compounded annually for 3 years gives A = 1000 × 1.05^3 = 1157.63 dollars."
+ },
+ "turn": {
+  "question": "Anika invests \\$4000 at an annual interest rate of 6%, compounded quarterly, for 5 years. What is the value of the investment at the end of 5 years, correct to 2 decimal places? Give your answer in dollars.",
+  "kind": "number",
+  "accept": {
+   "value": 5387.42,
+   "tol": 0.005,
+   "unit": "dollars"
+  },
+  "answer_display": "$5387.42$",
+  "hint": "For quarterly compounding, divide the annual rate by 4 to get the rate per period, and multiply the number of years by 4 to get the total number of periods.",
+  "solution": "**Key idea:** When interest is compounded $m$ times per year, use $A = P\\!\\left(1 + \\dfrac{r}{m}\\right)^{mn}$, where $r$ is the annual rate as a decimal and $n$ is the number of years.\n\n1. Identify the values: $P = 4000$, $r = 0.06$, $m = 4$ (quarterly), $n = 5$.\n2. Calculate the rate per period: $\\dfrac{r}{m} = \\dfrac{0.06}{4} = 0.015$.\n3. Calculate the total number of periods: $mn = 4 \\times 5 = 20$.\n4. Substitute into the formula: $A = 4000 \\times (1 + 0.015)^{20} = 4000 \\times 1.015^{20}$.\n5. Evaluate: $A = 4000 \\times 1.34685500\\ldots = 5387.42\\ldots$\n\n**Answer:** $\\$5387.42$"
+ },
+ "turn_checked": {
+  "my_answer": "5387.42",
+  "attempts": 2
+ }
 }

@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Identify the fixed fee and the per-message charge, write the expression, then substitute.\n\n1. The monthly cost is a fixed \\$15 plus \\$0.08 for each of the $t$ texts, so $C = 0.08t + 15$.\n2. Substitute $t = 150$: $C = 0.08 \\times 150 + 15$\n3. Multiply: $C = 12 + 15$\n4. Add: $C = 27$\n\n**Answer:** $C = 0.08t + 15$; the total cost for 150 text messages is \\$27."
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you use variables and substitute values into formulas in Year 7 algebra?",
+  "a": "A variable (pronumeral) is a letter that stands for an unknown number. To use a formula, replace each variable with its given value and calculate. For example, the perimeter of a rectangle is P = 2l + 2w, so when l = 5 and w = 3, P = 2(5) + 2(3) = 16."
+ },
+ "turn": {
+  "question": "A plumber charges a call-out fee of $\\$80$ plus $\\$35$ for each hour worked. The total cost in dollars is given by the formula $C = 80 + 35h$, where $h$ is the number of hours worked. Find the value of $C$ when $h = 4$.",
+  "kind": "number",
+  "accept": {
+   "value": 220,
+   "tol": 0,
+   "unit": "dollars"
+  },
+  "answer_display": "$220$",
+  "hint": "Substitute $h = 4$ into the formula and work out the arithmetic step by step.",
+  "solution": "**Key idea:** Substituting means replacing the variable with its given value, then calculating.\n\n1. Write the formula: $C = 80 + 35h$\n2. Substitute $h = 4$: $C = 80 + 35 \\times 4$\n3. Multiply first (order of operations): $35 \\times 4 = 140$\n4. Add: $C = 80 + 140 = 220$\n\n**Answer:** $C = 220$, so the plumber charges \\$220."
+ },
+ "turn_checked": {
+  "my_answer": "220",
+  "attempts": 3
+ }
 }

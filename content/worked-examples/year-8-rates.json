@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find the price per 100 g for each brand, then compare.\n\n1. Convert Brand A to grams: $2 \\text{ kg} = 2000 \\text{ g}$\n2. Price per 100 g for Brand A: $$\\frac{560}{2000} \\times 100 = 28 \\text{ cents per 100 g}$$\n3. Price per 100 g for Brand B: $$\\frac{225}{750} \\times 100 = 30 \\text{ cents per 100 g}$$\n4. Compare: $28 < 30$, so Brand A is cheaper per 100 g.\n\n**Answer:** Brand A is the better buy at 28 cents/100 g."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are rates and how do you use them to solve problems?",
+  "a": "A rate compares two quantities with different units, such as km/h, $/kg or people/km². To solve rate problems, write the rate as a fraction and multiply or divide to find the missing quantity. For example, at 60 km/h for 2.5 hours, distance = 60 × 2.5 = 150 km."
+ },
+ "turn": {
+  "question": "A 750 g box of cereal costs \\$4.50 and a 1.2 kg box of the same cereal costs \\$6.96. What is the unit price of the **cheaper** box in cents per 100 g? Give your answer in cents per 100 g, correct to 1 decimal place.",
+  "kind": "number",
+  "accept": {
+   "value": 58,
+   "tol": 0.05,
+   "unit": "cents per 100 g"
+  },
+  "answer_display": "$58.0$ cents per 100 g",
+  "hint": "Find the price per 100 g for each box separately, then compare.",
+  "solution": "**Key idea:** Convert each price to the same unit rate (cents per 100 g) and compare.\n\n1. Convert prices to cents: \\$4.50 = 450 c and \\$6.96 = 696 c.\n2. Find the unit price for the 750 g box: $$\\frac{450}{750} \\times 100 = 60.0 \\text{ c per 100 g}$$\n3. Find the unit price for the 1.2 kg box. Convert 1.2 kg to grams: $1.2 \\text{ kg} = 1200 \\text{ g}$. $$\\frac{696}{1200} \\times 100 = 58.0 \\text{ c per 100 g}$$\n4. Compare: $58.0 < 60.0$, so the 1.2 kg box is cheaper.\n\n**Answer:** $58.0$ cents per 100 g"
+ },
+ "turn_checked": {
+  "my_answer": "58.0",
+  "attempts": 1
+ }
 }

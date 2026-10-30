@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Population standard deviation: $\\sigma = \\sqrt{\\dfrac{\\sum(x-\\bar{x})^2}{n}}$\n\n1. Find the mean: $$\\bar{x} = \\frac{2+5+3+6+4+4}{6} = \\frac{24}{6} = 4$$\n\n2. Find each squared deviation:\n$$\\begin{aligned}(2-4)^2 &= 4\\\\(5-4)^2 &= 1\\\\(3-4)^2 &= 1\\\\(6-4)^2 &= 4\\\\(4-4)^2 &= 0\\\\(4-4)^2 &= 0\\end{aligned}$$\n\n3. Find the population variance: $$\\sigma^2 = \\frac{4+1+1+4+0+0}{6} = \\frac{10}{6} = \\frac{5}{3} \\approx 1.6\\overline{6}$$\n\n4. Find the population standard deviation: $$\\sigma = \\sqrt{\\frac{5}{3}} \\approx 1.29$$\n\n**Answer:** $\\sigma \\approx 1.29$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you calculate the mean and standard deviation of a data set?",
+  "a": "The mean is the sum of all values divided by the number of values. The population standard deviation measures spread: find the mean, subtract it from each value and square the results, average those squared differences, then take the square root. For example, the data set {2, 4, 4, 4, 6} has a mean of 4 and a population standard deviation of approximately 1.41."
+ },
+ "turn": {
+  "question": "The five members of a rowing team recorded their training distances (in km) for one session: $3, 7, 8, 10, 12$. Using the **population standard deviation** formula (divide by $n$), find the standard deviation of these distances correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 3.03,
+   "tol": 0.005,
+   "unit": "km"
+  },
+  "answer_display": "$3.03$",
+  "hint": "Start by finding the mean, then calculate each squared deviation from the mean, average those squared deviations, and finally take the square root.",
+  "solution": "**Key idea:** The population standard deviation is $\\sigma = \\sqrt{\\dfrac{\\sum(x_i - \\bar{x})^2}{n}}$, where $n$ is the number of values.\n\n1. **Find the mean:** $$\\bar{x} = \\frac{3 + 7 + 8 + 10 + 12}{5} = \\frac{40}{5} = 8$$\n2. **Find each deviation from the mean and square it:** $$\\begin{aligned}(3-8)^2 &= (-5)^2 = 25\\\\(7-8)^2 &= (-1)^2 = 1\\\\(8-8)^2 &= 0^2 = 0\\\\(10-8)^2 &= 2^2 = 4\\\\(12-8)^2 &= 4^2 = 16\\end{aligned}$$\n3. **Sum the squared deviations:** $$25 + 1 + 0 + 4 + 16 = 46$$\n4. **Divide by $n = 5$ (population standard deviation):** $$\\frac{46}{5} = 9.2$$\n5. **Take the square root:** $$\\sigma = \\sqrt{9.2} \\approx 3.03$$\n\n**Answer:** $3.03$ km"
+ },
+ "turn_checked": {
+  "my_answer": "3.03",
+  "attempts": 1
+ }
 }

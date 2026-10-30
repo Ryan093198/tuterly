@@ -47,5 +47,25 @@
   "solution": "**Key idea:** The total volume equals the volume of the rectangular prism plus the volume of the cylinder.\n\n1. **Volume of the rectangular prism:**\n$$V_{\\text{rect}} = 20 \\times 10 \\times 10 = 2000 \\text{ cm}^3$$\n2. **Radius of the cylinder:** $r = 10 \\div 2 = 5$ cm.\n3. **Volume of the cylinder:**\n$$V_{\\text{cyl}} = \\pi r^2 h = \\pi \\times 5^2 \\times 8 = 200\\pi \\approx 628.3 \\text{ cm}^3$$\n4. **Total volume:**\n$$V = 2000 + 200\\pi \\approx 2000 + 628.3 = 2628.3 \\text{ cm}^3$$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the surface area and volume of composite solids?",
+  "a": "Break the solid into familiar shapes (prisms, cylinders, cones, etc.), then add or subtract their areas and volumes. For surface area, include only exposed faces: where two shapes join, remove the joining area from each shape's total. For example, a cylinder sitting on a prism hides one circular face of the cylinder and an equal circular portion of the prism's top."
+ },
+ "turn": {
+  "question": "A solid is made by placing a rectangular prism on top of another rectangular prism. The bottom prism is 10 cm long, 8 cm wide, and 4 cm tall. The top prism is 6 cm long, 4 cm wide, and 5 cm tall. What is the total volume of the composite solid, in cm³?",
+  "kind": "number",
+  "accept": {
+   "value": 440,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$440$",
+  "hint": "Find the volume of each rectangular prism separately using $V = l \\times w \\times h$, then add them together.",
+  "solution": "**Key idea:** The volume of a composite solid made of two non-overlapping prisms is the sum of their individual volumes.\n\n1. Volume of the bottom prism: $V_1 = 10 \\times 8 \\times 4 = 320 \\text{ cm}^3$\n2. Volume of the top prism: $V_2 = 6 \\times 4 \\times 5 = 120 \\text{ cm}^3$\n3. Total volume: $V = V_1 + V_2 = 320 + 120 = 440 \\text{ cm}^3$\n\n**Answer:** $440 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "440",
+  "attempts": 2
+ }
 }

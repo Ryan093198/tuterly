@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Find the LCD of both denominators, multiply every term by it to eliminate all fractions, then solve.\n\n1. The LCD of $5$ and $3$ is $15$. Multiply both sides by $15$:\n$$15 \\times \\frac{2x-3}{5} = 15 \\times \\frac{x+2}{3}$$\n$$3(2x - 3) = 5(x + 2)$$\n2. Expand both sides:\n$$6x - 9 = 5x + 10$$\n3. Subtract $5x$ from both sides:\n$$x - 9 = 10$$\n4. Add $9$ to both sides:\n$$x = 19$$\n5. **Check:** $\\dfrac{2(19)-3}{5} = \\dfrac{35}{5} = 7$ and $\\dfrac{19+2}{3} = \\dfrac{21}{3} = 7$ ✓"
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you solve linear equations with algebraic fractions?",
+  "a": "Multiply both sides of the equation by the lowest common denominator (LCD) to eliminate all fractions, then solve the resulting linear equation. For example, to solve x/3 + x/4 = 7, multiply every term by 12 to get 4x + 3x = 84, giving x = 12."
+ },
+ "turn": {
+  "question": "Solve the equation $$\\frac{x+1}{3} = \\frac{2x-1}{5}$$",
+  "kind": "number",
+  "accept": {
+   "value": 8,
+   "tol": 0
+  },
+  "answer_display": "$x = 8$",
+  "hint": "Multiply both sides by the lowest common denominator of 3 and 5 to eliminate the fractions.",
+  "solution": "**Key idea:** Multiply both sides by the LCD to clear all fractions, then solve the resulting linear equation.\n\n1. Find the LCD of 3 and 5: $\\text{LCD} = 15$.\n2. Multiply every term on both sides by 15:\n$$15 \\times \\frac{x+1}{3} = 15 \\times \\frac{2x-1}{5}$$\n3. Simplify each side:\n$$5(x+1) = 3(2x-1)$$\n4. Expand the brackets:\n$$5x + 5 = 6x - 3$$\n5. Solve for $x$:\n$$\\begin{aligned} 5 + 3 &= 6x - 5x \\\\ 8 &= x \\end{aligned}$$\n6. Check by substituting $x = 8$ back into the original equation: $\\dfrac{8+1}{3} = \\dfrac{9}{3} = 3$ and $\\dfrac{2(8)-1}{5} = \\dfrac{15}{5} = 3$. Both sides are equal.\n\n**Answer:** $x = 8$"
+ },
+ "turn_checked": {
+  "my_answer": "8",
+  "attempts": 1
+ }
 }

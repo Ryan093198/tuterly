@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Find the HCF of all terms, write it outside the bracket, then divide each term by it.\n\n1. Find the HCF of $15ab$ and $10b^2$: the HCF of 15 and 10 is 5, and both terms share a factor of $b$, so HCF $= 5b$.\n2. Divide each term by $5b$: $15ab \\div 5b = 3a$ and $10b^2 \\div 5b = 2b$.\n3. Write the factorised form: $5b(3a - 2b)$.\n4. Check by expanding: $5b(3a - 2b) = 15ab - 10b^2$ ✓\n\n**Answer:** $5b(3a - 2b)$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you simplify and expand algebraic expressions in Year 8?",
+  "a": "Simplify by collecting like terms (same variable and power), expand brackets using the distributive law, and factorise by taking out the highest common factor. For example, 3(2x + 4) expands to 6x + 12, and 6x + 12 factorises back to 3(2x + 4)."
+ },
+ "turn": {
+  "question": "Expand and simplify the expression $4(3x + 2) + 5x$.",
+  "kind": "expression",
+  "accept": {
+   "expr": "17*x + 8",
+   "vars": [
+    "x"
+   ]
+  },
+  "answer_display": "$17x + 8$",
+  "hint": "First use the distributive law to expand the bracket, then collect any like terms.",
+  "solution": "**Key idea:** The distributive law states $a(b + c) = ab + ac$. After expanding, collect like terms by adding the coefficients of $x$.\n\n1. Expand the bracket: $4(3x + 2) = 12x + 8$\n2. Rewrite the full expression: $12x + 8 + 5x$\n3. Identify like terms: $12x$ and $5x$ are like terms; $8$ is a constant.\n4. Collect like terms: $12x + 5x = 17x$\n5. Write the simplified expression: $17x + 8$\n\n**Answer:** $17x + 8$"
+ },
+ "turn_checked": {
+  "my_answer": "17x+8",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** The four positions in the code are distinct and no digit can be repeated, so order matters. Use the multiplication principle.\n\n1. Choose the first digit: 10 options (0 through 9).\n2. Choose the second digit from the remaining 9 digits: 9 options.\n3. Choose the third digit from the remaining 8 digits: 8 options.\n4. Choose the fourth digit from the remaining 7 digits: 7 options.\n5. Multiply:\n$$10 \\times 9 \\times 8 \\times 7 = 5040$$\n\nThis equals $\\dfrac{10!}{(10-4)!} = \\dfrac{10!}{6!} = 5040$.\n\n**Answer:** 5040 codes"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you count arrangements using factorials and the multiplication principle?",
+  "a": "The multiplication principle says: if one stage has m choices and the next has n choices, there are m × n total arrangements. Factorial notation gives the number of ways to order n distinct objects as n! = n × (n−1) × … × 1. For example, 4! = 24 ways to arrange 4 books."
+ },
+ "turn": {
+  "question": "Eight different runners finish a race in a random order. How many different arrangements of all eight runners are possible?",
+  "kind": "number",
+  "accept": {
+   "value": 40320,
+   "tol": 0
+  },
+  "answer_display": "$40320$",
+  "hint": "The number of ways to arrange $n$ distinct objects in a row is $n!$",
+  "solution": "**Key idea:** The number of ordered arrangements of $n$ distinct objects is $n!$\n\n1. There are 8 distinct runners to be placed in 8 positions.\n2. Apply the factorial formula: the number of arrangements $= 8!$\n3. Evaluate: $$8! = 8 \\times 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1$$\n4. $$\\begin{aligned}8 \\times 7 &= 56 \\\\ 56 \\times 6 &= 336 \\\\ 336 \\times 5 &= 1680 \\\\ 1680 \\times 4 &= 6720 \\\\ 6720 \\times 3 &= 20160 \\\\ 20160 \\times 2 &= 40320\\end{aligned}$$\n5. Check: each step fills one finishing position, and the multiplication principle confirms the total is the product of all choices.\n\n**Answer:** $40320$"
+ },
+ "turn_checked": {
+  "my_answer": "40320",
+  "attempts": 1
+ }
 }

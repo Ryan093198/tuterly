@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Apply the power-of-a-power law first, then use the quotient law.\n\n1. (a) Raise both the coefficient and the variable to the power of 2: $(3k^3)^2 = 3^2 \\times k^{3 \\times 2} = 9k^6$\n2. (b) Substitute the result from (a) into the numerator:\n$$\\frac{9k^6}{3k^4} = \\frac{9}{3} \\times k^{6-4} = 3k^2$$\n\n**Answer:** (a) $9k^6$ (b) $3k^2$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "What are the exponent laws and how do you apply them to algebraic expressions?",
+  "a": "The exponent laws let you simplify expressions with powers. The key rules are: product law $a^m \\times a^n = a^{m+n}$, quotient law $a^m \\div a^n = a^{m-n}$, power law $(a^m)^n = a^{mn}$, and zero exponent $a^0 = 1$. For example, $x^3 \\times x^4 = x^7$ and $(2x^2)^3 = 8x^6$."
+ },
+ "turn": {
+  "question": "Simplify $\\dfrac{(m^3)^4}{m^5}$, giving your answer as a power of $m$.",
+  "kind": "expression",
+  "accept": {
+   "expr": "m^7",
+   "vars": [
+    "m"
+   ]
+  },
+  "answer_display": "$m^7$",
+  "hint": "First apply the power-of-a-power law to the numerator, then use the quotient law.",
+  "solution": "**Key idea:** Apply the power-of-a-power law $(a^m)^n = a^{mn}$ first, then the quotient law $a^m \\div a^n = a^{m-n}$.\n\n1. Simplify the numerator: $(m^3)^4 = m^{3 \\times 4} = m^{12}$\n2. Rewrite the expression: $\\dfrac{m^{12}}{m^5}$\n3. Apply the quotient law: $m^{12} \\div m^5 = m^{12-5}$\n4. Evaluate the exponent: $12 - 5 = 7$\n\n**Answer:** $m^7$"
+ },
+ "turn_checked": {
+  "my_answer": "m^7",
+  "attempts": 1
+ }
 }

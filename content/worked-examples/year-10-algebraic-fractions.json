@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Find the lowest common denominator of $6x$ and $4x$, rewrite each fraction, then subtract the numerators.\n\n1. The lowest common denominator of $6x$ and $4x$ is $12x$.\n2. Rewrite each fraction: $$\\frac{5}{6x} = \\frac{10}{12x}, \\qquad \\frac{1}{4x} = \\frac{3}{12x}$$\n3. Subtract the numerators: $$\\frac{10}{12x} - \\frac{3}{12x} = \\frac{7}{12x}$$\n4. Check that $\\dfrac{7}{12x}$ cannot be simplified further (7 is prime and does not divide 12).\n\n**Answer:** $\\dfrac{7}{12x}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add, subtract, multiply and divide algebraic fractions?",
+  "a": "Treat algebraic fractions like numerical fractions. To multiply, multiply numerators and denominators then simplify. To divide, multiply by the reciprocal. To add or subtract, find a common denominator first, then combine numerators. For example, x/3 + x/6 = 2x/6 + x/6 = 3x/6 = x/2."
+ },
+ "turn": {
+  "question": "Simplify the following expression. $$\\frac{x}{4} + \\frac{3x}{8}$$",
+  "kind": "expression",
+  "accept": {
+   "expr": "5*x/8",
+   "vars": [
+    "x"
+   ]
+  },
+  "answer_display": "$\\dfrac{5x}{8}$",
+  "hint": "Find the lowest common denominator of 4 and 8, then rewrite both fractions before adding the numerators.",
+  "solution": "**Key idea:** To add algebraic fractions, rewrite them with a common denominator, then add the numerators.\n\n1. The denominators are 4 and 8. The lowest common denominator (LCD) is **8**.\n2. Rewrite the first fraction with denominator 8: $$\\frac{x}{4} = \\frac{2x}{8}$$\n3. The second fraction already has denominator 8: $$\\frac{3x}{8}$$\n4. Add the numerators: $$\\frac{2x}{8} + \\frac{3x}{8} = \\frac{2x + 3x}{8} = \\frac{5x}{8}$$\n5. There are no common factors to cancel, so the expression is fully simplified.\n\n**Answer:** $\\dfrac{5x}{8}$"
+ },
+ "turn_checked": {
+  "my_answer": "5x/8",
+  "attempts": 1
+ }
 }

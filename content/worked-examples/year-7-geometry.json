@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Identify the quadrilateral from its side pattern, then recall its properties.\n\n1. The sides in order around the shape are 9 cm, 9 cm, 4 cm, 4 cm (or 9 cm, 4 cm, 4 cm, 9 cm), so two pairs of sides are equal and each pair is **adjacent**.\n2. Because the equal sides are adjacent (not opposite), this is not a parallelogram or rhombus.\n3. A quadrilateral with two pairs of equal adjacent sides is a **kite**.\n4. Two properties of a kite: (i) the two pairs of equal sides meet at the ends of one diagonal, and that diagonal bisects the other diagonal at right angles; (ii) the pair of angles between the unequal sides are equal to each other.\n\n**Answer:** The quadrilateral is a kite. Two properties: two pairs of equal adjacent sides, and one diagonal meets the other at right angles."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you classify triangles and quadrilaterals by their sides and angles?",
+  "a": "Classify triangles by sides (scalene: no equal sides; isosceles: two equal sides; equilateral: three equal sides) or by angles (acute, right, obtuse). Classify quadrilaterals by their side lengths, parallel sides, and angles: for example, a rhombus has four equal sides with opposite angles equal, while a rectangle has four right angles with opposite sides equal."
+ },
+ "turn": {
+  "question": "An isosceles triangle has two equal angles. One of the equal angles is $58°$. What is the size of the third angle, in degrees?",
+  "kind": "number",
+  "accept": {
+   "value": 64,
+   "tol": 0,
+   "unit": "degrees"
+  },
+  "answer_display": "$64°$",
+  "hint": "The three angles in any triangle add up to $180°$. Two of the angles are already equal to $58°$ each.",
+  "solution": "**Key idea:** The angle sum of a triangle is $180°$, and an isosceles triangle has two equal base angles.\n\n1. The two equal angles are both $58°$.\n2. Add the two equal angles: $58° + 58° = 116°$.\n3. Subtract from $180°$: $180° - 116° = 64°$.\n4. Check: $58° + 58° + 64° = 180°$. ✓\n\n**Answer:** $64°$"
+ },
+ "turn_checked": {
+  "my_answer": "64",
+  "attempts": 1
+ }
 }

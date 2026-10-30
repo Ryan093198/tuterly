@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find the hypotenuse of the smaller triangle using Pythagoras, then scale it up using the similarity ratio.\n\n1. Find the hypotenuse of the smaller triangle:\n$$c^2 = 9^2 + 12^2 = 81 + 144 = 225 \\implies c = 15 \\text{ cm}$$\n2. The shorter side of $9$ cm in the smaller triangle corresponds to $15$ cm in the larger triangle. Find the scale factor:\n$$k = \\frac{15}{9} = \\frac{5}{3}$$\n3. Multiply the smaller hypotenuse by the scale factor:\n$$\\text{Larger hypotenuse} = 15 \\times \\frac{5}{3} = 25 \\text{ cm}$$\n\n**Answer:** The hypotenuse of the larger triangle is $25$ cm."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you apply Pythagoras' theorem to real-world and 3D problems in Year 9?",
+  "a": "Identify a right-angled triangle within the situation, label the two shorter sides and the hypotenuse, then use a² + b² = c². In 3D problems such as finding a box's space diagonal, apply Pythagoras twice: first across the base to get the base diagonal, then use that result as one leg of a second triangle with the height."
+ },
+ "turn": {
+  "question": "A rectangular box has a length of $9$ cm, a width of $6$ cm and a height of $6$ cm. Find the length of the space diagonal of the box, correct to 2 decimal places. Give your answer in cm.",
+  "kind": "number",
+  "accept": {
+   "value": 12.37,
+   "tol": 0.005,
+   "unit": "cm"
+  },
+  "answer_display": "$12.37$ cm",
+  "hint": "First use Pythagoras to find the diagonal across the base, then use that diagonal and the height as the two legs of a second right-angled triangle.",
+  "solution": "**Key idea:** The space diagonal of a rectangular box is found by applying Pythagoras' theorem twice.\n\n1. Find the base diagonal $d$, where the base has length $9$ cm and width $6$ cm:\n$$d = \\sqrt{9^2 + 6^2} = \\sqrt{81 + 36} = \\sqrt{117}$$\n2. The space diagonal $s$ forms a right-angled triangle with $d$ as one leg and the height $6$ cm as the other:\n$$s = \\sqrt{d^2 + 6^2} = \\sqrt{117 + 36} = \\sqrt{153}$$\n3. Evaluate using a calculator:\n$$s = \\sqrt{153} \\approx 12.3693\\ldots$$\n4. Round to 2 decimal places:\n$$s \\approx 12.37 \\text{ cm}$$\n\n**Answer:** $12.37$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "12.37",
+  "attempts": 1
+ }
 }

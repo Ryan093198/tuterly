@@ -47,5 +47,25 @@
   "solution": "**Key idea:** The total volume of a composite solid made from two prisms is the sum of their individual volumes.\n\n1. Find the volume of the larger prism:\n$$V_{\\text{large}} = 10 \\times 6 \\times 4 = 240 \\text{ cm}^3$$\n2. Find the volume of the smaller prism:\n$$V_{\\text{small}} = 5 \\times 6 \\times 3 = 90 \\text{ cm}^3$$\n3. Add the two volumes:\n$$V_{\\text{total}} = 240 + 90 = 330 \\text{ cm}^3$$\n\n**Answer:** $330$ cm³"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the surface area and volume of prisms and cylinders?",
+  "a": "Add the areas of every face for surface area, or multiply the base area by the height for volume. For a cylinder: surface area = 2πr² + 2πrh and volume = πr²h. For a rectangular prism with length 5 cm, width 3 cm and height 4 cm: volume = 5 × 3 × 4 = 60 cm³."
+ },
+ "turn": {
+  "question": "A cylindrical tin has a radius of 4 cm and a height of 10 cm. What is the total surface area of the tin, correct to 2 decimal places, in cm²?",
+  "kind": "number",
+  "accept": {
+   "value": 351.86,
+   "tol": 0.005,
+   "unit": "cm²"
+  },
+  "answer_display": "$351.86$",
+  "hint": "The total surface area of a cylinder has three parts: two circular ends and one curved surface. Write out the formula $2\\pi r^2 + 2\\pi r h$ and substitute the values.",
+  "solution": "**Key idea:** The total surface area of a cylinder is $SA = 2\\pi r^2 + 2\\pi r h$, where $r$ is the radius and $h$ is the height.\n\n1. Identify the values: $r = 4$ cm, $h = 10$ cm.\n2. Calculate the area of the two circular ends: $2\\pi r^2 = 2 \\times \\pi \\times 4^2 = 2 \\times \\pi \\times 16 = 32\\pi$.\n3. Calculate the curved surface area: $2\\pi r h = 2 \\times \\pi \\times 4 \\times 10 = 80\\pi$.\n4. Add the parts: $SA = 32\\pi + 80\\pi = 112\\pi$.\n5. Evaluate: $SA = 112\\pi \\approx 351.858\\ldots$ cm².\n\n**Answer:** $351.86$ cm² (correct to 2 decimal places)"
+ },
+ "turn_checked": {
+  "my_answer": "351.86",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Expand the brackets first, then solve the two-step equation.\n\n1. Expand the brackets:\n$$4(x + 3) = 4x + 12$$\nSo the equation becomes $4x + 12 = 32$.\n2. Subtract $12$ from both sides:\n$$4x = 32 - 12 = 20$$\n3. Divide both sides by $4$:\n$$x = \\frac{20}{4} = 5$$\n4. **Verify** by substituting $x = 5$ into the original equation:\n$$4(5 + 3) = 4 \\times 8 = 32 \\checkmark$$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve linear equations in Year 7?",
+  "a": "To solve a one-variable linear equation, use inverse operations to get the pronumeral alone on one side. For a two-step equation like 2x + 5 = 17, subtract 5 from both sides to get 2x = 12, then divide both sides by 2 to get x = 6. Always check by substituting your answer back in."
+ },
+ "turn": {
+  "question": "Solve the equation $3(x + 2) = 21$. What is the value of $x$?",
+  "kind": "number",
+  "accept": {
+   "value": 5,
+   "tol": 0
+  },
+  "answer_display": "$x = 5$",
+  "hint": "Start by dividing both sides by 3 to remove the brackets, then solve the simpler equation that remains.",
+  "solution": "**Key idea:** Use inverse operations to isolate $x$, one step at a time.\n\n1. Start with the equation: $$3(x + 2) = 21$$\n2. Divide both sides by $3$: $$x + 2 = 7$$\n3. Subtract $2$ from both sides: $$x = 5$$\n4. **Verify by substitution:** Replace $x$ with $5$ in the original equation: $$3(5 + 2) = 3 \\times 7 = 21 \\checkmark$$\n\n**Answer:** $x = 5$"
+ },
+ "turn_checked": {
+  "my_answer": "5",
+  "attempts": 1
+ }
 }

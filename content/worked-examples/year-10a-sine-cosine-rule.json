@@ -47,5 +47,25 @@
   "solution": "**Key idea:** With two sides and a non-included angle (SSA), use the sine rule and always test the supplement for the ambiguous case.\n\n1. Write the sine rule and solve for $\\sin X$:\n$$\\frac{x}{\\sin X} = \\frac{z}{\\sin Z} \\implies \\sin X = \\frac{x \\sin Z}{z} = \\frac{22 \\times \\sin 38°}{17}$$\n2. Evaluate:\n$$\\sin X = \\frac{22 \\times 0.6157}{17} = \\frac{13.545}{17} \\approx 0.7968$$\n3. First solution:\n$$X = \\sin^{-1}(0.7968) \\approx 52.8° \\approx 53°$$\n4. Test the supplement:\n$$X = 180° - 53° = 127°$$\nRemaining angle: $180° - 38° - 127° = 15° > 0°$ ✓\n5. Both triangles are valid: Solution 1 gives $Y = 180° - 38° - 53° = 89°$; Solution 2 gives $Y = 15°$. The ambiguous case applies.\n\n**Answer:** $X \\approx 53°$ or $X \\approx 127°$; both form valid triangles."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you use the sine rule, cosine rule and area rule for any triangle?",
+  "a": "The sine rule (a/sin A = b/sin B = c/sin C) finds unknown sides or angles when you know a side-angle pair. The cosine rule (c² = a² + b² − 2ab cos C) works when you know two sides and the included angle, or all three sides. The area of any triangle is ½ab sin C."
+ },
+ "turn": {
+  "question": "Triangle $PQR$ has $PQ = 9$ cm, $PR = 13$ cm and angle $P = 47°$. Using the cosine rule, find $QR$ correct to 2 decimal places. Give your answer in cm.",
+  "kind": "number",
+  "accept": {
+   "value": 9.58,
+   "tol": 0.005,
+   "unit": "cm"
+  },
+  "answer_display": "$9.58$ cm",
+  "hint": "The cosine rule is $a^2 = b^2 + c^2 - 2bc\\cos A$; substitute the two known sides and the angle between them.",
+  "solution": "**Key idea:** When two sides and the included angle are known, use the cosine rule $QR^2 = PQ^2 + PR^2 - 2 \\cdot PQ \\cdot PR \\cdot \\cos P$.\n\n1. Write the cosine rule for side $QR$: $$QR^2 = PQ^2 + PR^2 - 2 \\cdot PQ \\cdot PR \\cdot \\cos P$$\n2. Substitute the known values: $$QR^2 = 9^2 + 13^2 - 2 \\times 9 \\times 13 \\times \\cos 47°$$\n3. Evaluate each term: $$QR^2 = 81 + 169 - 234 \\times \\cos 47°$$\n4. Calculate $\\cos 47° \\approx 0.68200$: $$QR^2 = 250 - 234 \\times 0.68200 = 250 - 159.59 = 90.41$$\n5. Take the square root: $$QR = \\sqrt{90.41} \\approx 9.58 \\text{ cm}$$\n\n**Answer:** $9.58$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "9.58",
+  "attempts": 3
+ }
 }

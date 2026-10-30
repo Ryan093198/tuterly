@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Corresponding angles on parallel lines are equal.\n\n1. Set the two expressions equal: $3x + 15 = 60$\n2. Subtract $15$ from both sides: $3x = 45$\n3. Divide both sides by $3$: $x = 15$\n4. Check: $3(15) + 15 = 45 + 15 = 60°$ ✓"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are corresponding, alternate and co-interior angles on parallel lines?",
+  "a": "When a transversal crosses parallel lines, corresponding angles are equal (F-shape), alternate angles are equal (Z-shape), and co-interior angles add to 180° (C-shape). For example, if one co-interior angle is 110°, the other is 70°, because 110° + 70° = 180°."
+ },
+ "turn": {
+  "question": "Two parallel lines are cut by a transversal. One co-interior angle is $63°$. Find the other co-interior angle, in degrees.",
+  "kind": "number",
+  "accept": {
+   "value": 117,
+   "tol": 0,
+   "unit": "degrees"
+  },
+  "answer_display": "$117°$",
+  "hint": "Co-interior angles sit on the same side of the transversal between the parallel lines, and they always add to $180°$.",
+  "solution": "**Key idea:** Co-interior angles (C-shape) between parallel lines are supplementary, meaning they add to $180°$.\n\n1. Write the co-interior angle relationship: $$\\text{angle}_1 + \\text{angle}_2 = 180°$$\n2. Substitute the known angle: $$63° + \\text{angle}_2 = 180°$$\n3. Solve for the unknown angle: $$\\text{angle}_2 = 180° - 63°$$\n4. Calculate: $$\\text{angle}_2 = 117°$$\n5. Check: $63° + 117° = 180°$ ✓\n\n**Answer:** $117°$"
+ },
+ "turn_checked": {
+  "my_answer": "117",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** All probabilities in a sample space sum to 1, so use the complement rule to find the missing value.\n\n1. Add all known probabilities:\n$$0.05 + 0.1 + 0.25 + 0.3 + 0.15 = 0.85$$\n2. Apply the complement rule:\n$$P(5) = 1 - 0.85$$\n3. Subtract:\n$$P(5) = 0.15$$\n\n**Answer:** $0.15$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are complementary events in probability?",
+  "a": "Complementary events are two outcomes that together cover every possibility, so their probabilities always add to 1. Use P(not A) = 1 − P(A) to find a missing probability. For example, if the probability of rain is 0.3, the probability of no rain is 1 − 0.3 = 0.7."
+ },
+ "turn": {
+  "question": "A bag contains only red and blue marbles. The probability of picking a red marble is $\\dfrac{3}{8}$. What is the probability of picking a blue marble? Give your answer as a fraction.",
+  "kind": "number",
+  "accept": {
+   "value": 0.625,
+   "tol": 0
+  },
+  "answer_display": "$\\dfrac{5}{8}$",
+  "hint": "A red marble and a blue marble are complementary events, so their probabilities must add to 1.",
+  "solution": "**Key idea:** Complementary events have probabilities that sum to 1, so P(blue) = 1 − P(red).\n\n1. Identify the two complementary events: picking red and picking blue are the only two outcomes.\n2. Write the complement rule: $P(\\text{blue}) = 1 - P(\\text{red})$.\n3. Substitute the known probability: $P(\\text{blue}) = 1 - \\dfrac{3}{8}$.\n4. Calculate: $P(\\text{blue}) = \\dfrac{8}{8} - \\dfrac{3}{8} = \\dfrac{5}{8}$.\n5. Check: $\\dfrac{3}{8} + \\dfrac{5}{8} = \\dfrac{8}{8} = 1$ ✓\n\n**Answer:** $\\dfrac{5}{8}$"
+ },
+ "turn_checked": {
+  "my_answer": "5/8",
+  "attempts": 2
+ }
 }

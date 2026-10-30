@@ -47,5 +47,25 @@
   "solution": "**Key idea:** With replacement, branch probabilities stay the same for each draw. Find the probability of the complementary event (no yellow counters) and subtract from 1.\n\n1. Each draw: $P(\\text{Yellow}) = \\dfrac{1}{5}$, $P(\\text{Green}) = \\dfrac{4}{5}$.\n2. The only outcome with no yellow counter is GG:\n$$P(\\text{GG}) = \\tfrac{4}{5} \\times \\tfrac{4}{5} = \\tfrac{16}{25}$$\n3. Use the complement:\n$$P(\\text{at least one Yellow}) = 1 - P(\\text{GG}) = 1 - \\tfrac{16}{25} = \\tfrac{9}{25}$$\n4. Check by adding all outcomes: $P(\\text{YY}) + P(\\text{YG}) + P(\\text{GY}) = \\tfrac{1}{25} + \\tfrac{4}{25} + \\tfrac{4}{25} = \\tfrac{9}{25}$ ✓\n**Answer:** $\\dfrac{9}{25}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use tree diagrams to find probabilities in multi-step experiments?",
+  "a": "Draw a branch for each outcome at every step, write the probability on each branch, then multiply along the branches to find the probability of each combined outcome. All outcome probabilities must sum to 1. For example, flipping a coin twice: P(HH) = 0.5 × 0.5 = 0.25."
+ },
+ "turn": {
+  "question": "A bag contains 3 red and 2 blue marbles. A marble is drawn, its colour is recorded, and it is **not** replaced. A second marble is then drawn. What is the probability that both marbles are red? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.3,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.30$",
+  "hint": "After the first red marble is removed, how many marbles are left in the bag, and how many of them are red?",
+  "solution": "**Key idea:** Multiply the probabilities along the branches of the tree diagram. Because the marble is not replaced, the probabilities change at the second step (the events are dependent).\n\n1. At the first draw there are 5 marbles: 3 red and 2 blue. So $$P(\\text{1st red}) = \\frac{3}{5}.$$\n2. If the first marble was red, 4 marbles remain: 2 red and 2 blue. So $$P(\\text{2nd red} \\mid \\text{1st red}) = \\frac{2}{4} = \\frac{1}{2}.$$\n3. Multiply along the branches: $$P(\\text{both red}) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}.$$\n4. Convert to a decimal: $$\\frac{3}{10} = 0.30.$$\n\n**Answer:** $0.30$"
+ },
+ "turn_checked": {
+  "my_answer": "0.30",
+  "attempts": 1
+ }
 }

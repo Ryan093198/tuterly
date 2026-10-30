@@ -47,5 +47,27 @@
   "solution": "**Key idea:** Rearrange to isolate $\\tan(x)$, find the reference angle from exact values, then use the unit circle to find all solutions in the interval.\n\n1. Rearrange: $2\\tan(x) = 2$, so $\\tan(x) = 1$.\n2. Recall the exact value: $\\tan(45°) = 1$, so the reference angle is $45°$.\n3. Tangent is positive in the first and third quadrants.\n4. First quadrant solution: $x = 45°$.\n5. Third quadrant solution: $x = 180° + 45° = 225°$.\n\n**Answer:** $x = 45°$ or $x = 225°$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve trigonometric equations?",
+  "a": "To solve a trigonometric equation such as sin(x) = k, find the reference angle using the inverse trig function, then use the unit circle's symmetry and periodicity to find all solutions in the given interval. For example, sin(x) = 0.5 gives x = 30° and x = 150° in [0°, 360°]."
+ },
+ "turn": {
+  "question": "Find all solutions to $\\cos(x) = -\\dfrac{\\sqrt{3}}{2}$ in the interval $0^\\circ \\leq x \\leq 360^\\circ$. Enter both solutions separated by a comma (smaller value first). Give each answer in degrees as an exact whole number.",
+  "kind": "values",
+  "accept": {
+   "values": [
+    150,
+    210
+   ],
+   "tol": 0
+  },
+  "answer_display": "$x = 150^\\circ, \\; 210^\\circ$",
+  "hint": "Find the reference angle where $\\cos(\\theta) = \\dfrac{\\sqrt{3}}{2}$, then decide which quadrants give a negative cosine.",
+  "solution": "**Key idea:** Cosine is negative in the second and third quadrants. Use the reference angle to find both solutions.\n\n1. Find the reference angle: $\\cos(\\theta) = \\dfrac{\\sqrt{3}}{2}$ gives $\\theta = 30^\\circ$.\n2. Cosine is negative in quadrants 2 and 3, so solutions come from $180^\\circ - 30^\\circ$ and $180^\\circ + 30^\\circ$.\n3. Second quadrant: $x = 180^\\circ - 30^\\circ = 150^\\circ$.\n4. Third quadrant: $x = 180^\\circ + 30^\\circ = 210^\\circ$.\n5. Both values lie in $[0^\\circ, 360^\\circ]$, so both are valid solutions.\n\n**Answer:** $x = 150^\\circ, \\; 210^\\circ$"
+ },
+ "turn_checked": {
+  "my_answer": "150, 210",
+  "attempts": 1
+ }
 }

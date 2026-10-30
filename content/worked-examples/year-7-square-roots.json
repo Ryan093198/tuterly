@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Squaring and finding the square root are inverse operations, meaning each one undoes the other.\n\n1. Find $\\sqrt{169}$: ask \"what number multiplied by itself equals $169$?\" Since $13 \\times 13 = 169$, we get $\\sqrt{169} = 13$.\n2. Check: $13^2 = 169$ ✓\n3. Write down $\\left(\\sqrt{169}\\right)^2$: substituting the result from step 1, $\\left(\\sqrt{169}\\right)^2 = 13^2 = 169$.\n4. Explanation: starting with $169$, taking the square root gave $13$, and then squaring returned to $169$, showing the two operations undo each other and are therefore inverse operations."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "What are square numbers and square roots?",
+  "a": "A perfect square is the result of multiplying a whole number by itself, e.g. 5² = 5 × 5 = 25. The square root reverses this: √25 = 5. To find the square root of a perfect square, ask which number multiplied by itself gives that value."
+ },
+ "turn": {
+  "question": "A square patio has an area of $144 \\text{ m}^2$. What is the side length of the patio, in metres?",
+  "kind": "number",
+  "accept": {
+   "value": 12,
+   "tol": 0,
+   "unit": "m"
+  },
+  "answer_display": "$12$",
+  "hint": "The side length of a square is the square root of its area. Which whole number multiplied by itself gives 144?",
+  "solution": "**Key idea:** The area of a square is side length squared, so the side length is the square root of the area.\n\n1. We need to find $\\sqrt{144}$.\n2. Think: which whole number multiplied by itself equals 144?\n3. $12 \\times 12 = 144$ ✓\n4. So $\\sqrt{144} = 12$.\n\n**Answer:** The side length is $12$ m."
+ },
+ "turn_checked": {
+  "my_answer": "12",
+  "attempts": 2
+ }
 }

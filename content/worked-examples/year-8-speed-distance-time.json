@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Convert km/h to m/s by multiplying by $\\dfrac{5}{18}$, then use $t = \\dfrac{d}{s}$ with distance and speed both in metres and m/s.\n\n1. Convert speed to m/s: $$108 \\times \\frac{5}{18} = \\frac{540}{18} = 30 \\text{ m/s}$$\n2. Distance is already in metres: $d = 750$ m.\n3. Find the time: $$t = \\frac{d}{s} = \\frac{750}{30} = 25 \\text{ s}$$\n\n**Answer:** The train's speed is 30 m/s and it takes 25 seconds to travel 750 m."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate speed, distance and time?",
+  "a": "Use the formula: speed = distance ÷ time, rearranged as distance = speed × time or time = distance ÷ speed. Choose the version that has the unknown on its own. For example, travelling at 60 km/h for 2.5 hours covers 60 × 2.5 = 150 km. Always check that units are consistent before calculating."
+ },
+ "turn": {
+  "question": "A cyclist travels 78 km at a constant speed of 24 km/h. How long does the journey take? Give your answer in hours, correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 3.25,
+   "tol": 0.005,
+   "unit": "hours"
+  },
+  "answer_display": "$3.25$ hours",
+  "hint": "Rearrange the formula to make time the subject: time = distance ÷ speed.",
+  "solution": "**Key idea:** Rearrange speed = distance ÷ time to get time = distance ÷ speed.\n\n1. Write the formula: $\\text{time} = \\dfrac{\\text{distance}}{\\text{speed}}$\n2. Substitute the known values: $\\text{time} = \\dfrac{78}{24}$\n3. Calculate: $\\text{time} = 3.25$ hours\n4. Check: $24 \\times 3.25 = 78$ km ✓\n\n**Answer:** $3.25$ hours"
+ },
+ "turn_checked": {
+  "my_answer": "3.25",
+  "attempts": 1
+ }
 }

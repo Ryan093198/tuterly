@@ -47,5 +47,27 @@
   "solution": "**Key idea:** Set $y = 0$ and solve for $x$. The vertex of $y = ax^2 + c$ is at $(0, c)$.\n\n1. Set the equation equal to zero:\n$$2x^2 - 8 = 0$$\n2. Divide both sides by $2$:\n$$x^2 - 4 = 0$$\n3. Factorise as a difference of two squares:\n$$(x - 2)(x + 2) = 0$$\n4. Apply the null factor law:\n$$x = 2 \\quad \\text{or} \\quad x = -2$$\n5. The $x$-intercepts are $(-2, 0)$ and $(2, 0)$. The vertex is at $(0, -8)$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve quadratic equations using the null factor law?",
+  "a": "A quadratic equation is solved by the null factor law when you factorise it so that two brackets multiply to zero, then set each bracket equal to zero. For example, x² + x − 6 = 0 becomes (x + 3)(x − 2) = 0, giving x = −3 or x = 2. The solutions are also called the roots of the equation."
+ },
+ "turn": {
+  "question": "Solve $x^2 - 7x + 10 = 0$ using the null factor law. Enter the two solutions as a pair of numbers.",
+  "kind": "values",
+  "accept": {
+   "values": [
+    2,
+    5
+   ],
+   "tol": 0
+  },
+  "answer_display": "$x = 2$ or $x = 5$",
+  "hint": "Find two integers that multiply to $10$ and add to $-7$, then factorise and set each bracket equal to zero.",
+  "solution": "**Key idea:** If a product of two factors equals zero, then at least one factor must be zero.\n\n1. Find two integers that multiply to $10$ and add to $-7$: these are $-2$ and $-5$.\n2. Factorise: $x^2 - 7x + 10 = (x - 2)(x - 5)$.\n3. Apply the null factor law: $(x-2)(x-5) = 0$ means $x - 2 = 0$ or $x - 5 = 0$.\n4. Solve each: $x = 2$ or $x = 5$.\n5. Check by substituting back: $(2)^2 - 7(2) + 10 = 4 - 14 + 10 = 0$ ✓ and $(5)^2 - 7(5) + 10 = 25 - 35 + 10 = 0$ ✓\n\n**Answer:** $x = 2$ or $x = 5$"
+ },
+ "turn_checked": {
+  "my_answer": "2, 5",
+  "attempts": 1
+ }
 }

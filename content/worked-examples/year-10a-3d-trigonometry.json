@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find the base diagonal first, then use trigonometry in the right-angled triangle formed by the base diagonal, the height and the space diagonal.\n\n1. Find the base diagonal $b$:\n$$b = \\sqrt{9^2 + 40^2} = \\sqrt{81 + 1600} = \\sqrt{1681} = 41 \\text{ cm}$$\n2. The height of the prism is $12$ cm. The angle $\\theta$ between the space diagonal and the base satisfies:\n$$\\tan\\theta = \\frac{12}{41}$$\n3. Solve for $\\theta$:\n$$\\theta = \\tan^{-1}\\!\\left(\\frac{12}{41}\\right) \\approx 16.3°$$\n\n**Answer:** The space diagonal makes an angle of approximately $16.3°$ with the base."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use Pythagoras' theorem and trigonometry to solve 3D problems?",
+  "a": "Identify a right-angled triangle embedded in the 3D shape, then apply Pythagoras' theorem or trigonometric ratios (sin, cos, tan) to find unknown sides or angles. Multi-step problems require finding an intermediate length first. For example, the space diagonal of a 3 m × 4 m × 5 m box is √(3² + 4² + 5²) = √50 ≈ 7.07 m."
+ },
+ "turn": {
+  "question": "A rectangular prism has length $9$ cm, width $4$ cm and height $6$ cm. A straight rod is placed along the space diagonal of the prism. Find the length of the rod correct to 2 decimal places. Give your answer in centimetres.",
+  "kind": "number",
+  "accept": {
+   "value": 11.53,
+   "tol": 0.005,
+   "unit": "cm"
+  },
+  "answer_display": "$11.53$ cm",
+  "hint": "First find the diagonal of the rectangular base using Pythagoras' theorem, then use that diagonal and the height to find the space diagonal.",
+  "solution": "**Key idea:** The space diagonal of a rectangular prism with dimensions $l$, $w$ and $h$ is $d = \\sqrt{l^2 + w^2 + h^2}$.\n\n1. Identify the dimensions: $l = 9$ cm, $w = 4$ cm, $h = 6$ cm.\n2. Find the base diagonal: $d_{\\text{base}} = \\sqrt{9^2 + 4^2} = \\sqrt{81 + 16} = \\sqrt{97}$ cm.\n3. Use $d_{\\text{base}}$ and the height to find the space diagonal: $d = \\sqrt{(\\sqrt{97})^2 + 6^2} = \\sqrt{97 + 36} = \\sqrt{133}$.\n4. Evaluate: $d = \\sqrt{133} \\approx 11.53$ cm (correct to 2 decimal places).\n\n**Answer:** $11.53$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "11.53",
+  "attempts": 3
+ }
 }

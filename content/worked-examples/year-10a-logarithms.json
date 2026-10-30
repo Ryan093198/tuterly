@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Use the product and quotient laws to combine all terms into a single logarithm, then evaluate using the definition.\n\n1. Apply the product law to the first two terms:\n$$\\log_4 8 + \\log_4 2 = \\log_4(8 \\times 2) = \\log_4 16$$\n\n2. Apply the quotient law:\n$$\\log_4 16 - \\log_4 \\frac{1}{4} = \\log_4\\!\\left(16 \\div \\frac{1}{4}\\right) = \\log_4(16 \\times 4) = \\log_4 64$$\n\n3. Evaluate using the definition ($\\log_4 64 = y$ means $4^y = 64$). Since $4^3 = 64$:\n$$\\log_4 64 = 3$$\n\n**Answer:** $3$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are logarithms and the log laws?",
+  "a": "A logarithm answers \"what power?\": log base b of x equals y means b to the power y equals x. The three key laws are the product law (log mn = log m + log n), the quotient law (log(m÷n) = log m − log n), and the power law (log m^n = n log m). For example, log base 2 of 8 = 3 because 2³ = 8."
+ },
+ "turn": {
+  "question": "Use the log laws to simplify the following expression as a single logarithm, then evaluate it.\n\n$$\\log_3 54 - \\log_3 2$$\n\nWhat is the value?",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0
+  },
+  "answer_display": "$3$",
+  "hint": "Use the quotient law to combine the two logarithms into one, then think about what power of 3 gives you that result.",
+  "solution": "**Key idea:** The quotient law states that $\\log_b m - \\log_b n = \\log_b\\!\\left(\\dfrac{m}{n}\\right)$.\n\n1. Apply the quotient law: $\\log_3 54 - \\log_3 2 = \\log_3\\!\\left(\\dfrac{54}{2}\\right)$\n2. Simplify the fraction: $\\dfrac{54}{2} = 27$\n3. Evaluate the logarithm: $\\log_3 27 = y$ means $3^y = 27$\n4. Since $3^3 = 27$, we get $y = 3$\n\n**Answer:** $3$"
+ },
+ "turn_checked": {
+  "my_answer": "3",
+  "attempts": 1
+ }
 }

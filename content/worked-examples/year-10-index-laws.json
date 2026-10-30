@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Expand the numerator using the power law, then apply the quotient law to each base.\n\n1. Expand the numerator: $(2m^3n)^4 = 2^4 \\cdot m^{3 \\times 4} \\cdot n^4 = 16m^{12}n^4$.\n2. Write the full expression: $\\dfrac{16m^{12}n^4}{4m^6n^2}$.\n3. Divide the coefficients: $\\dfrac{16}{4} = 4$.\n4. Apply the quotient law: $m^{12-6} = m^6$ and $n^{4-2} = n^2$.\n5. Write the result: $4m^6n^2$."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you simplify algebraic expressions using index laws?",
+  "a": "Apply the index laws to the coefficients and each base separately. Product law: add indices when multiplying (aᵐ × aⁿ = aᵐ⁺ⁿ). Quotient law: subtract when dividing. Power law: multiply when raising a power to a power. For example, 2x³ × 3x² = 6x⁵."
+ },
+ "turn": {
+  "question": "Simplify $\\dfrac{(2x^3)^4}{x^5}$, giving your answer as a coefficient times a power of $x$.\n\nWhat is the exponent of $x$ in the simplified expression?",
+  "kind": "number",
+  "accept": {
+   "value": 7,
+   "tol": 0
+  },
+  "answer_display": "$16x^{7}$",
+  "hint": "First apply the power law to expand $(2x^3)^4$, then use the quotient law to simplify the division.",
+  "solution": "**Key idea:** Apply the power law $(a^m)^n = a^{mn}$ first, then the quotient law $a^m \\div a^n = a^{m-n}$.\n\n1. Apply the power law to the numerator:\n$$\\begin{aligned}(2x^3)^4 &= 2^4 \\times x^{3 \\times 4} \\\\ &= 16x^{12}\\end{aligned}$$\n2. Rewrite the expression:\n$$\\frac{16x^{12}}{x^5}$$\n3. Apply the quotient law to the $x$ terms:\n$$x^{12} \\div x^5 = x^{12-5} = x^7$$\n4. Combine with the coefficient:\n$$16x^7$$\n\n**Answer:** $16x^7$, so the exponent of $x$ is $7$."
+ },
+ "turn_checked": {
+  "my_answer": "7",
+  "attempts": 1
+ }
 }

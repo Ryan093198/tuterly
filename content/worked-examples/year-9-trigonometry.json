@@ -47,5 +47,25 @@
   "solution": "**Key idea:** When the adjacent side and hypotenuse are involved, use cosine, then apply inverse cosine to find the angle.\n\n1. Write the cosine ratio: $$\\cos\\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}}$$\n2. Substitute the known values: $$\\cos\\theta = \\frac{9}{14}$$\n3. Simplify: $$\\cos\\theta \\approx 0.6429$$\n4. Apply inverse cosine: $$\\theta = \\cos^{-1}(0.6429) \\approx 49.99° \\approx 50°$$\n\n**Answer:** The unknown angle is approximately $50°$."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you use trigonometry to find missing sides and angles in right-angled triangles?",
+  "a": "Label the triangle's sides as opposite, adjacent, or hypotenuse relative to the known angle, then choose sin, cos, or tan: sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent. Rearrange to find a missing side, or use an inverse ratio (e.g. sin⁻¹) to find a missing angle. For example, if the opposite side is 5 and hypotenuse is 10, the angle is sin⁻¹(0.5) = 30°."
+ },
+ "turn": {
+  "question": "A ramp rises $1.8$ m vertically over a horizontal distance of $4.5$ m. Find the angle the ramp makes with the horizontal, correct to 2 decimal places. Give your answer in degrees.",
+  "kind": "number",
+  "accept": {
+   "value": 21.8,
+   "tol": 0.005,
+   "unit": "degrees"
+  },
+  "answer_display": "$21.80°$",
+  "hint": "The vertical rise is opposite the angle and the horizontal distance is adjacent, so use the inverse tangent ratio.",
+  "solution": "**Key idea:** When you know the opposite and adjacent sides, use $\\tan\\theta = \\dfrac{\\text{opposite}}{\\text{adjacent}}$, then apply $\\tan^{-1}$ to find the angle.\n\n1. Label the sides: opposite $= 1.8$ m, adjacent $= 4.5$ m.\n2. Write the ratio: $$\\tan\\theta = \\frac{1.8}{4.5}$$\n3. Simplify: $$\\tan\\theta = 0.4$$\n4. Apply the inverse tangent: $$\\theta = \\tan^{-1}(0.4)$$\n5. Evaluate: $$\\theta \\approx 21.80°$$\n\n**Answer:** $21.80°$"
+ },
+ "turn_checked": {
+  "my_answer": "21.80",
+  "attempts": 1
+ }
 }

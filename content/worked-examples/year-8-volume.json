@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find the area of the trapezoidal cross-section, then multiply by the length of the prism.\n\n1. Find the area of the trapezoidal cross-section:\n$$A = \\frac{1}{2}(a + b) \\times h = \\frac{1}{2}(8 + 14) \\times 5 = \\frac{1}{2} \\times 22 \\times 5 = 55 \\text{ cm}^2$$\n2. Multiply by the length of the prism:\n$$V = 55 \\times 20 = 1100 \\text{ cm}^3$$\n\n**Answer:** $1100 \\text{ cm}^3$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the volume of a right prism?",
+  "a": "Multiply the area of the cross-sectional face by the length (or height) of the prism: V = A × l. First find the area of the base shape (rectangle, triangle, trapezium, etc.), then multiply by how far the prism extends. For example, a triangular prism with base area 12 cm² and length 5 cm has volume 60 cm³."
+ },
+ "turn": {
+  "question": "A trapezoidal prism has a cross-section with parallel sides of $6$ cm and $10$ cm and a perpendicular height of $4$ cm. The prism is $9$ cm long. Find the volume of the prism in cm³.",
+  "kind": "number",
+  "accept": {
+   "value": 288,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$288 \\text{ cm}^3$",
+  "hint": "Find the area of the trapezium first using $A = \\tfrac{1}{2}(a + b)h$, then multiply by the length of the prism.",
+  "solution": "**Key idea:** Volume of a right prism = area of cross-section × length.\n\n1. Identify the cross-section: a trapezium with parallel sides $a = 6$ cm and $b = 10$ cm, and perpendicular height $h = 4$ cm.\n2. Find the area of the trapezium: $$A = \\frac{1}{2}(a + b)h = \\frac{1}{2}(6 + 10) \\times 4 = \\frac{1}{2} \\times 16 \\times 4 = 32 \\text{ cm}^2$$\n3. Multiply by the length of the prism: $$V = A \\times l = 32 \\times 9 = 288 \\text{ cm}^3$$\n4. Check units: all measurements were in cm, so volume is in cm³.\n\n**Answer:** $288 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "288",
+  "attempts": 1
+ }
 }

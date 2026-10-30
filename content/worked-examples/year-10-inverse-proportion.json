@@ -47,5 +47,25 @@
   "solution": "**Key idea:** If $P$ is inversely proportional to $V$, then $P = \\dfrac{k}{V}$. Substitute the known pair to find $k$, then use the equation to find the unknown value.\n\n1. Write the proportion equation: $P = \\dfrac{k}{V}$\n2. Substitute $V = 8$, $P = 150$: $$150 = \\frac{k}{8}$$\n3. Solve for $k$: $$k = 150 \\times 8 = 1200$$\n4. The equation is $P = \\dfrac{1200}{V}$.\n5. Substitute $V = 12$: $$P = \\frac{1200}{12} = 100$$\n\n**Answer:** The equation is $P = \\dfrac{1200}{V}$, and when $V = 12$ litres the pressure is 100 pascals."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are direct and inverse proportion?",
+  "a": "In direct proportion, y = kx: as one quantity increases, the other increases at the same rate. In inverse proportion, y = k/x: as one quantity increases, the other decreases. The constant k is found from a known pair of values. For example, if y is inversely proportional to x and y = 6 when x = 4, then k = 24 and y = 24/x."
+ },
+ "turn": {
+  "question": "The time $t$ hours to fill a reservoir is inversely proportional to the number of pumps $n$ used. When 3 pumps are used, the reservoir fills in 20 hours. How many hours does it take when 5 pumps are used?",
+  "kind": "number",
+  "accept": {
+   "value": 12,
+   "tol": 0,
+   "unit": "hours"
+  },
+  "answer_display": "$12$",
+  "hint": "Find the constant of proportionality k = t × n first, then use it with n = 5.",
+  "solution": "**Key idea:** In inverse proportion, $t = \\dfrac{k}{n}$, so the product $t \\times n$ is always equal to $k$.\n\n1. Use the known values to find $k$: $k = t \\times n = 20 \\times 3 = 60$.\n2. Write the equation: $t = \\dfrac{60}{n}$.\n3. Substitute $n = 5$: $t = \\dfrac{60}{5} = 12$.\n4. Check: as the number of pumps increases from 3 to 5, the time decreases from 20 to 12 hours, which makes sense for inverse proportion.\n\n**Answer:** 12 hours"
+ },
+ "turn_checked": {
+  "my_answer": "12",
+  "attempts": 2
+ }
 }

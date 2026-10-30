@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Expand each bracket using the distributive law, taking care with the negative sign, then collect like terms.\n\n1. Expand $5(3x + 2)$: $5 \\times 3x + 5 \\times 2 = 15x + 10$\n2. Expand $-3(x - 4)$: $-3 \\times x + (-3) \\times (-4) = -3x + 12$\n3. Write the full expression: $15x + 10 - 3x + 12$\n4. Collect like terms: $(15x - 3x) + (10 + 12) = 12x + 22$\n\n**Answer:** $12x + 22$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you expand brackets using the distributive law?",
+  "a": "Multiply the term outside the bracket by every term inside it. For example, 3(x + 4) = 3×x + 3×4 = 3x + 12. If the term outside is negative, every sign inside flips: −2(x + 5) = −2x − 10. After expanding, collect any like terms to simplify fully."
+ },
+ "turn": {
+  "question": "Expand and simplify: $4(2x + 3) + 5x$",
+  "kind": "expression",
+  "accept": {
+   "expr": "13*x + 12",
+   "vars": [
+    "x"
+   ]
+  },
+  "answer_display": "$13x + 12$",
+  "hint": "First multiply $4$ by each term inside the brackets, then collect the like terms in $x$.",
+  "solution": "**Key idea:** Use the distributive law to expand the bracket, then collect like terms.\n\n1. Expand the bracket: $4(2x + 3) = 4 \\times 2x + 4 \\times 3 = 8x + 12$\n2. Rewrite the full expression: $8x + 12 + 5x$\n3. Identify like terms: $8x$ and $5x$ are like terms; $12$ is a constant.\n4. Collect like terms: $8x + 5x = 13x$\n5. Write the simplified expression: $13x + 12$\n\n**Answer:** $13x + 12$"
+ },
+ "turn_checked": {
+  "my_answer": "13x+12",
+  "attempts": 1
+ }
 }

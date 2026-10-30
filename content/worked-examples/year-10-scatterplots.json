@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Describe association using direction, form and strength; find the line equation using gradient and $y$-intercept; substitute to predict.\n\n1. **Association:** As absences increase, exam marks decrease. The points follow a close linear trend, so the association is **strong, negative and linear**.\n2. **Gradient** using $(0, 74)$ and $(10, 37)$:\n$$m = \\frac{37 - 74}{10 - 0} = \\frac{-37}{10} = -3.7$$\n3. **$y$-intercept:** The line passes through $(0, 74)$, so $c = 74$.\n4. **Equation:**\n$$y = -3.7x + 74$$\n5. **Prediction** for $x = 5$:\n$$y = -3.7 \\times 5 + 74 = -18.5 + 74 = 55.5$$\n\n**Answer:** (a) Strong negative linear association. (b) $y = -3.7x + 74$. (c) The predicted exam mark is $55.5$ out of 80."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you construct a scatterplot and draw a line of good fit?",
+  "a": "Plot each pair of numerical values as a point on a graph, with one variable on each axis. Describe any association by its direction (positive or negative), form (linear or non-linear) and strength (strong, moderate or weak). Draw a line of good fit by eye so roughly equal numbers of points lie on each side, then use it to make predictions."
+ },
+ "turn": {
+  "question": "The table below shows the number of hours studied and the score (out of 100) achieved by 6 students on a test.\n\n| Hours studied | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Test score | 42 | 51 | 55 | 64 | 72 | 78 |\n\nA line of good fit is drawn and its equation is found to be $\\text{score} = 7.4 \\times \\text{hours} + 33$. Using this equation, what score (out of 100) does the line of good fit predict for a student who studies for 7 hours? Give your answer correct to the nearest whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 85,
+   "tol": 0.5,
+   "unit": "marks"
+  },
+  "answer_display": "$85$",
+  "hint": "Substitute 7 into the equation in place of hours studied and evaluate.",
+  "solution": "**Key idea:** A line of good fit can be used to make predictions by substituting a value into its equation.\n\n1. Write the equation of the line of good fit: $\\text{score} = 7.4 \\times \\text{hours} + 33$\n2. Substitute $\\text{hours} = 7$: $\\text{score} = 7.4 \\times 7 + 33$\n3. Calculate the product: $7.4 \\times 7 = 51.8$\n4. Add the constant: $51.8 + 33 = 84.8$\n5. Round to the nearest whole number: $84.8 \\approx 85$\n\n**Answer:** $85$"
+ },
+ "turn_checked": {
+  "my_answer": "85",
+  "attempts": 1
+ }
 }

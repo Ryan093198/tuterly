@@ -17,6 +17,8 @@ import {
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
 import { getWorkedExamples } from "@/lib/worked-examples";
 import WorkedExamples from "@/components/study/WorkedExamples";
+import QuickAnswer from "@/components/study/QuickAnswer";
+import { mathToReadable } from "@/lib/try-email";
 import Testimonials from "@/components/marketing/Testimonials";
 
 const YEAR_LEVELS = [
@@ -94,11 +96,15 @@ export default async function WorksheetTopicLandingPage({ params }) {
     ],
   };
 
-  const faqSchema = faqs.length
+  // The quick answer at the top of the page leads the FAQ schema.
+  const schemaFaqs = worked?.summary
+    ? [{ q: worked.summary.q, a: mathToReadable(worked.summary.a) }, ...faqs]
+    : faqs;
+  const faqSchema = schemaFaqs.length
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
+        mainEntity: schemaFaqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -211,6 +217,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
               {page.subtitle}
             </p>
           </Fade>
+          {worked?.summary && <QuickAnswer q={worked.summary.q} a={worked.summary.a} />}
         </div>
       </section>
 
@@ -233,7 +240,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
 
       {worked && (
         <section style={{ padding: "24px 24px 64px", background: c.white }}>
-          <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} />
+          <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} slug={page.slug} />
         </section>
       )}
 

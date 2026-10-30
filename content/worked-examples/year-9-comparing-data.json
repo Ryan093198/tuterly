@@ -47,5 +47,24 @@
   "solution": "**Key idea:** With $10$ values, split into a lower half (first 5) and upper half (last 5). $Q_1$ and $Q_3$ are the medians of those halves.\n\n1. Class X lower half: $14, 18, 21, 25, 28$ so $Q_1 = 21$. Upper half: $33, 37, 41, 44, 48$ so $Q_3 = 41$.\n$$\\text{IQR}_X = 41 - 21 = 20$$\n2. Class Y lower half: $16, 20, 23, 26, 30$ so $Q_1 = 23$. Upper half: $34, 38, 42, 45, 49$ so $Q_3 = 42$.\n$$\\text{IQR}_Y = 42 - 23 = 19$$\n3. Difference between IQRs: $20 - 19 = 1$.\n\n**Answer:** The difference between the two IQRs is $1$."
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you compare data sets in Year 9 maths?",
+  "a": "Compare data sets by displaying them side by side using back-to-back stem-and-leaf plots or parallel box plots, then describe each distribution's shape (symmetric, skewed or bi-modal), centre (median) and spread (IQR or range). For example, if one group's median is 65 and another's is 80, you can conclude the second group typically scored higher."
+ },
+ "turn": {
+  "question": "The results of a fitness test for two classes are summarised below.\n\n| | Class A | Class B |\n|---|---|---|\n| Minimum | 42 | 38 |\n| Lower quartile ($Q_1$) | 55 | 60 |\n| Median | 68 | 74 |\n| Upper quartile ($Q_3$) | 76 | 85 |\n| Maximum | 90 | 97 |\n\nWhat is the interquartile range (IQR) of Class B?",
+  "kind": "number",
+  "accept": {
+   "value": 25,
+   "tol": 0
+  },
+  "answer_display": "$25$",
+  "hint": "The IQR is the difference between the upper quartile and the lower quartile.",
+  "solution": "**Key idea:** The interquartile range (IQR) measures the spread of the middle 50% of data. It is calculated as $IQR = Q_3 - Q_1$.\n\n1. Identify the quartiles for Class B from the table: $Q_1 = 60$ and $Q_3 = 85$.\n2. Apply the formula: $IQR = Q_3 - Q_1$.\n3. Substitute the values: $IQR = 85 - 60$.\n4. Calculate: $IQR = 25$.\n\n**Answer:** $25$"
+ },
+ "turn_checked": {
+  "my_answer": "25",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,26 @@
   "solution": "**Key idea:** Find two integers that multiply to $-21$ and add to $+4$, then write the expression as a product of two binomial factors.\n\n1. List factor pairs of $-21$: $(-1, 21),\\, (1, -21),\\, (-3, 7),\\, (3, -7)$.\n2. Check which pair adds to $4$: $-3 + 7 = 4$ ✓\n3. Write the factorised form: $(x + 7)(x - 3)$\n4. Check by expanding: $(x + 7)(x - 3) = x^2 - 3x + 7x - 21 = x^2 + 4x - 21$ ✓\n\n**Answer:** $(x + 7)(x - 3)$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you expand and factorise quadratic expressions in Year 9?",
+  "a": "Expand binomial products like (x + a)(x + b) using the distributive law (FOIL): multiply each term in the first bracket by each term in the second, then collect like terms. To factorise a monic quadratic x² + bx + c, find two numbers that multiply to c and add to b. For example, x² + 5x + 6 = (x + 2)(x + 3)."
+ },
+ "turn": {
+  "question": "Factorise $x^2 - 3x - 18$.",
+  "kind": "expression",
+  "accept": {
+   "expr": "(x - 6)*(x + 3)",
+   "vars": [
+    "x"
+   ]
+  },
+  "answer_display": "$(x-6)(x+3)$",
+  "hint": "Find two numbers that multiply to $-18$ and add to $-3$.",
+  "solution": "**Key idea:** To factorise a monic quadratic $x^2 + bx + c$, find two numbers that multiply to $c$ and add to $b$.\n\n1. Identify $b = -3$ and $c = -18$.\n2. List factor pairs of $-18$: $(1, -18),\\, (-1, 18),\\, (2, -9),\\, (-2, 9),\\, (3, -6),\\, (-6, 3)$.\n3. Find the pair that adds to $-3$: $-6 + 3 = -3$. ✓\n4. Write the factorised form: $x^2 - 3x - 18 = (x - 6)(x + 3)$.\n5. **Check** by expanding: $(x-6)(x+3) = x^2 + 3x - 6x - 18 = x^2 - 3x - 18$. ✓\n\n**Answer:** $(x-6)(x+3)$"
+ },
+ "turn_checked": {
+  "my_answer": "(x-6)*(x+3)",
+  "attempts": 1
+ }
 }

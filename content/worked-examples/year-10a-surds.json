@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Expand using FOIL, then use $\\sqrt{3} \\times \\sqrt{3} = 3$ and collect like terms.\n\n1. First terms: $4 \\times 1 = 4$\n2. Outer terms: $4 \\times 2\\sqrt{3} = 8\\sqrt{3}$\n3. Inner terms: $-\\sqrt{3} \\times 1 = -\\sqrt{3}$\n4. Last terms: $-\\sqrt{3} \\times 2\\sqrt{3} = -2 \\times 3 = -6$\n5. Collect like terms: $$\\begin{aligned}4 + 8\\sqrt{3} - \\sqrt{3} - 6 &= (4 - 6) + (8 - 1)\\sqrt{3} \\\\ &= -2 + 7\\sqrt{3}\\end{aligned}$$\n\n**Answer:** $-2 + 7\\sqrt{3}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are surds and fractional indices?",
+  "a": "A surd is an irrational root that cannot be simplified to a whole number or fraction, such as √2 or ∛5. You simplify surds by factoring out perfect squares (e.g. √72 = √(36×2) = 6√2), combine like surds by adding coefficients, and write roots as fractional indices using x^(1/n) = ⁿ√x."
+ },
+ "turn": {
+  "question": "Expand and simplify $(3 + \\sqrt{5})(3 - \\sqrt{5})$.",
+  "kind": "number",
+  "accept": {
+   "value": 4,
+   "tol": 0
+  },
+  "answer_display": "$4$",
+  "hint": "This is a difference of two squares: $(a+b)(a-b) = a^2 - b^2$.",
+  "solution": "**Key idea:** The difference of two squares identity $(a+b)(a-b) = a^2 - b^2$ eliminates the surd.\n\n1. Identify $a = 3$ and $b = \\sqrt{5}$.\n2. Apply the identity: $(3 + \\sqrt{5})(3 - \\sqrt{5}) = 3^2 - (\\sqrt{5})^2$\n3. Evaluate each square: $3^2 = 9$ and $(\\sqrt{5})^2 = 5$\n4. Subtract: $9 - 5 = 4$\n\n**Answer:** $4$"
+ },
+ "turn_checked": {
+  "my_answer": "4",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** In a parallelogram, opposite sides are equal and adjacent angles are co-interior, adding to $180°$.\n\n1. Set opposite sides equal:\n$$5m - 3 = 3m + 7$$\n$$2m = 10$$\n$$m = 5$$\n2. Find the length of $WX$:\n$$WX = 5(5) - 3 = 22 \\text{ cm}$$\n3. Angles $XWZ$ and $WXY$ are adjacent (co-interior) angles, so they add to $180°$:\n$$\\angle WXY = 180° - 118° = 62°$$\n\n**Answer:** $m = 5$, $WX = 22$ cm, $\\angle WXY = 62°$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are the properties of quadrilaterals and how do you prove them?",
+  "a": "Quadrilateral properties follow from congruent triangles and angle rules. A parallelogram's opposite sides and angles are equal, and its diagonals bisect each other — provable by showing the diagonal creates two congruent triangles (AAS or SAS). Rectangles, rhombuses and squares add extra properties. The angle sum of any quadrilateral is 360°."
+ },
+ "turn": {
+  "question": "In a parallelogram $ABCD$, the diagonal $AC$ divides it into two triangles. It is known that $AB = 13$ cm, $BC = 7$ cm and $\\angle ABC = 74°$. Using the property that opposite angles of a parallelogram are equal, find $\\angle ADC$ in degrees.",
+  "kind": "number",
+  "accept": {
+   "value": 74,
+   "tol": 0
+  },
+  "answer_display": "$74°$",
+  "hint": "Opposite angles in a parallelogram are always equal to each other.",
+  "solution": "**Key idea:** Opposite angles in a parallelogram are equal. This follows from the fact that the diagonal creates two congruent triangles (by SAS), so matching angles are equal.\n\n1. In parallelogram $ABCD$, angles $\\angle ABC$ and $\\angle ADC$ are opposite angles.\n2. By the property of parallelograms, opposite angles are equal.\n3. Therefore $\\angle ADC = \\angle ABC = 74°$.\n\n**Answer:** $74°$"
+ },
+ "turn_checked": {
+  "my_answer": "74",
+  "attempts": 1
+ }
 }

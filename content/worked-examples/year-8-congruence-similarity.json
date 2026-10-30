@@ -47,5 +47,25 @@
   "solution": "**Key idea:** In similar triangles, matching sides are in the same ratio.\n\n1. Identify matching sides: $LM$ matches $PQ$, and $MN$ matches $QR$.\n2. Find the scale factor: $$k = \\frac{PQ}{LM} = \\frac{12}{8} = \\frac{3}{2}$$\n3. Apply the scale factor: $$QR = MN \\times k = 6 \\times \\frac{3}{2} = 9 \\text{ cm}$$\n4. **Check:** $\\dfrac{QR}{MN} = \\dfrac{9}{6} = \\dfrac{3}{2}$ matches the scale factor. ✓\n\n**Answer:** $QR = 9$ cm"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are the conditions for congruence and similarity of triangles?",
+  "a": "Two triangles are congruent if they match by SSS (three equal sides), SAS (two sides and the included angle), AAS (two angles and a matching side), or RHS (right angle, hypotenuse, one side). They are similar if they match by AA (two equal angles), SSS in ratio, or SAS in ratio. Similar triangles have proportional sides, so you can use a scale factor to find missing lengths."
+ },
+ "turn": {
+  "question": "Triangle $ABC$ is similar to triangle $DEF$. The sides of triangle $ABC$ are $AB = 4$ cm, $BC = 6$ cm, and $AC = 8$ cm. The side $DE = 6$ cm corresponds to $AB = 4$ cm. Find the length of $EF$ in centimetres, which corresponds to $BC$.",
+  "kind": "number",
+  "accept": {
+   "value": 9,
+   "tol": 0,
+   "unit": "cm"
+  },
+  "answer_display": "$9$ cm",
+  "hint": "Find the scale factor by dividing the known side of triangle $DEF$ by the corresponding side of triangle $ABC$, then multiply $BC$ by that scale factor.",
+  "solution": "**Key idea:** Corresponding sides of similar triangles are in the same ratio (the scale factor).\n\n1. Identify the corresponding sides: $AB$ corresponds to $DE$, and $BC$ corresponds to $EF$.\n2. Find the scale factor: $$k = \\frac{DE}{AB} = \\frac{6}{4} = 1.5$$\n3. Apply the scale factor to find $EF$: $$EF = k \\times BC = 1.5 \\times 6 = 9 \\text{ cm}$$\n4. Check using the ratio: $\\dfrac{EF}{BC} = \\dfrac{9}{6} = 1.5$ ✓\n\n**Answer:** $EF = 9$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "9",
+  "attempts": 1
+ }
 }

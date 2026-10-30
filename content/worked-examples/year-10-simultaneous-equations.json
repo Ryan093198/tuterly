@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Add the equations to eliminate $y$, since the $y$-coefficients are already opposites.\n\n1. Add the two equations:\n$$\\begin{aligned}(4x + 3y) + (2x - 3y) &= 5 + 7 \\\\ 6x &= 12 \\\\ x &= 2\\end{aligned}$$\n2. Substitute $x = 2$ into $4x + 3y = 5$:\n$$\\begin{aligned}8 + 3y &= 5 \\\\ 3y &= -3 \\\\ y &= -1\\end{aligned}$$\n3. Check in $2x - 3y = 7$: $2(2) - 3(-1) = 4 + 3 = 7$ ✓\n\n**Answer:** $x = 2,\\; y = -1$"
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you solve simultaneous equations?",
+  "a": "Simultaneous equations are two equations with two unknowns solved together to find values that satisfy both at once. Use substitution (rearrange one equation and sub into the other), elimination (add or subtract to remove one variable), or find the intersection point on a graph. For example, x + y = 5 and x - y = 1 gives x = 3, y = 2."
+ },
+ "turn": {
+  "question": "Solve the following pair of simultaneous equations using any method.\n\n$$3x + 2y = 16$$\n$$x - y = 2$$\n\nFind the value of $x$.",
+  "kind": "number",
+  "accept": {
+   "value": 4,
+   "tol": 0
+  },
+  "answer_display": "$x = 4$",
+  "hint": "Try rearranging the second equation to express $x$ in terms of $y$, then substitute into the first equation.",
+  "solution": "**Key idea:** Use substitution by rearranging the simpler equation, then substitute into the other equation.\n\n1. From the second equation, rearrange for $x$:\n$$x = y + 2$$\n2. Substitute $x = y + 2$ into the first equation:\n$$3(y + 2) + 2y = 16$$\n3. Expand and simplify:\n$$\\begin{aligned}3y + 6 + 2y &= 16 \\\\ 5y &= 10 \\\\ y &= 2\\end{aligned}$$\n4. Substitute $y = 2$ back into $x = y + 2$:\n$$x = 2 + 2 = 4$$\n5. Check in the first equation: $3(4) + 2(2) = 12 + 4 = 16$ ✓\n\n**Answer:** $x = 4$"
+ },
+ "turn_checked": {
+  "my_answer": "4",
+  "attempts": 1
+ }
 }

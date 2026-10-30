@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Follow BODMAS: power first, then division, then addition and subtraction left to right.\n\n1. Evaluate the power: $(-3)^2 = 9$, giving $$9 - 20 \\div (-4) + (-7)$$\n2. Division: $20 \\div (-4) = -5$, giving $$9 - (-5) + (-7)$$\n3. Rewrite: $9 - (-5) = 9 + 5 = 14$, giving $$14 + (-7)$$\n4. Evaluate: $$14 + (-7) = 7$$\n\n**Answer:** $7$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add, subtract, multiply and divide integers?",
+  "a": "Integers are whole numbers including negatives and zero. Add and subtract by moving along the number line, noting that subtracting a negative means adding. For multiplication and division, same signs give a positive result and different signs give a negative result. For example, −3 × −4 = 12 and −12 ÷ 3 = −4."
+ },
+ "turn": {
+  "question": "Calculate $(-5) \\times (-3) + (-8) \\div 2$.",
+  "kind": "number",
+  "accept": {
+   "value": 11,
+   "tol": 0
+  },
+  "answer_display": "$11$",
+  "hint": "Follow order of operations: work out the multiplication and division before the addition.",
+  "solution": "**Key idea:** Apply order of operations (multiplication and division before addition), then use sign rules for each step.\n\n1. Work out the multiplication first: $(-5) \\times (-3) = 15$ (same signs give a positive result).\n2. Work out the division next: $(-8) \\div 2 = -4$ (different signs give a negative result).\n3. Now add the two results: $15 + (-4) = 15 - 4 = 11$.\n\n**Answer:** $11$"
+ },
+ "turn_checked": {
+  "my_answer": "11",
+  "attempts": 2
+ }
 }

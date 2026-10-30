@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Use row totals to find missing cells, then convert to row percentages to compare groups and identify a possible relationship.\n\n1. Missing \"No popcorn\" cell for Under 25: $90 - 63 = 27$\n2. Missing \"Popcorn\" cell for 25 and over: $90 - 42 = 48$\n3. Column totals: Popcorn $= 63 + 48 = 111$; No popcorn $= 27 + 42 = 69$. Check: $111 + 69 = 180$ ✓\n4. Percentage of Under 25 who chose popcorn:\n$$\\frac{63}{90} \\times 100 = 70\\%$$\n5. Percentage of 25 and over who chose popcorn:\n$$\\frac{48}{90} \\times 100 \\approx 53.3\\%$$\n6. The conditional percentages differ by about $16.7$ percentage points ($70\\%$ vs $53.3\\%$), suggesting that younger customers are more likely to choose popcorn. This indicates a possible relationship between age group and snack choice.\n\n**Answer:** (a) 27, 48, 111, 69; (b) $70\\%$; (c) $\\approx 53.3\\%$; (d) Yes, the difference in conditional percentages suggests a relationship, with Under 25 customers more likely to choose popcorn."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are two-way tables and how do you use them to find relationships between categorical variables?",
+  "a": "A two-way table displays the frequencies of two categorical variables at once, with one variable across the rows and the other across the columns. To find a relationship, compare conditional frequencies (row or column percentages) across groups. For example, if 80% of one group prefers option A but only 30% of another does, a relationship likely exists."
+ },
+ "turn": {
+  "question": "A survey of 200 students recorded their year level and whether they own a pet. The results are shown in the table below.\n\n| | Owns a pet | Does not own a pet | Total |\n|---|---|---|---|\n| Year 9 | 54 | 36 | 90 |\n| Year 10 | 63 | 47 | 110 |\n| **Total** | 117 | 83 | 200 |\n\nWhat percentage of Year 9 students own a pet? Give your answer correct to 1 decimal place.",
+  "kind": "number",
+  "accept": {
+   "value": 60,
+   "tol": 0.05,
+   "unit": "%"
+  },
+  "answer_display": "$60.0\\%$",
+  "hint": "Divide the number of Year 9 students who own a pet by the total number of Year 9 students, then multiply by 100.",
+  "solution": "**Key idea:** A conditional frequency (as a percentage) is found by dividing the frequency in a cell by the row total (or column total) for that group, then multiplying by 100.\n\n1. Identify the number of Year 9 students who own a pet: $54$.\n2. Identify the total number of Year 9 students: $90$.\n3. Calculate the conditional frequency: $$\\frac{54}{90} \\times 100$$\n4. Evaluate: $$\\begin{aligned} \\frac{54}{90} \\times 100 &= 0.6 \\times 100 \\\\ &= 60.0\\% \\end{aligned}$$\n5. This means 60.0% of Year 9 students own a pet. (For comparison, $\\frac{63}{110} \\times 100 \\approx 57.3\\%$ of Year 10 students own a pet, suggesting only a weak relationship between year level and pet ownership.)\n\n**Answer:** $60.0\\%$"
+ },
+ "turn_checked": {
+  "my_answer": "60.0",
+  "attempts": 1
+ }
 }

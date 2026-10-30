@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Absolute error is the size of the gap between the measured and true values. Relative error scales that gap against the true value, and percentage error expresses it per hundred.\n\n1. Find the absolute error: $$\\lvert 95 - 98 \\rvert = 3 \\text{ cm}$$\n2. Find the relative error: $$\\frac{3}{98}$$\n3. Convert to percentage error: $$\\frac{3}{98} \\times 100 \\approx 3.06\\%$$\n4. **Answer:** Absolute error $= 3$ cm, relative error $= \\dfrac{3}{98}$, percentage error $\\approx 3.06\\%$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate absolute, relative and percentage error in measurements?",
+  "a": "Absolute error is the size of the difference between a measured value and the true value: |measured − true|. Relative error divides that by the true value, and percentage error multiplies the result by 100. For example, measuring 48 cm when the true length is 50 cm gives an absolute error of 2 cm, relative error of 0.04, and percentage error of 4%."
+ },
+ "turn": {
+  "question": "A student measures the mass of a rock as $47.6$ g. The true mass is $50.0$ g. What is the percentage error in the student's measurement? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 4.8,
+   "tol": 0.005,
+   "unit": "%"
+  },
+  "answer_display": "$4.80\\%$",
+  "hint": "Find the absolute error first (|measured − true|), then divide by the true value and multiply by 100.",
+  "solution": "**Key idea:** Percentage error $= \\dfrac{|\\text{measured} - \\text{true}|}{\\text{true}} \\times 100\\%$\n\n1. Find the absolute error: $|47.6 - 50.0| = 2.4$ g\n2. Find the relative error: $\\dfrac{2.4}{50.0} = 0.048$\n3. Convert to a percentage: $0.048 \\times 100 = 4.8\\%$\n4. Rounded to 2 decimal places: $4.80\\%$\n\n**Answer:** $4.80\\%$"
+ },
+ "turn_checked": {
+  "my_answer": "4.80",
+  "attempts": 1
+ }
 }

@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Angles in the same segment are equal: angles standing on the same chord from the same side of the chord are equal.\n\n1. Both $\\angle ADB$ and $\\angle ACB$ are angles at the circumference standing on chord $AB$, and both $D$ and $C$ lie on the same arc (the arc $AB$ not containing the other two points).\n2. Therefore $\\angle ACB = \\angle ADB = 34°$.\n3. The value of $\\angle DAB = 81°$ is extra information not needed for this result.\n\n**Answer:** $\\angle ACB = 34°$"
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "What are the circle theorems for Year 10?",
+  "a": "Circle theorems are proven rules about angles and lengths in circles. Key results: the angle at the centre is twice the angle at the circumference; angles in the same segment are equal; the angle in a semicircle is 90°; opposite angles of a cyclic quadrilateral sum to 180°; a tangent is perpendicular to the radius; and tangent segments from an external point are equal."
+ },
+ "turn": {
+  "question": "A cyclic quadrilateral has one pair of opposite angles measuring $74°$ and $x°$. What is the value of $x$?",
+  "kind": "number",
+  "accept": {
+   "value": 106,
+   "tol": 0
+  },
+  "answer_display": "$106$",
+  "hint": "Opposite angles in a cyclic quadrilateral always add up to a fixed total.",
+  "solution": "**Key idea:** Opposite angles of a cyclic quadrilateral sum to $180°$.\n\n1. A cyclic quadrilateral is a quadrilateral with all four vertices on a circle.\n2. The theorem states that each pair of opposite angles sums to $180°$.\n3. The two opposite angles here are $74°$ and $x°$.\n4. Set up the equation: $74 + x = 180$.\n5. Solve: $x = 180 - 74 = 106$.\n\n**Answer:** $x = 106$"
+ },
+ "turn_checked": {
+  "my_answer": "106",
+  "attempts": 1
+ }
 }

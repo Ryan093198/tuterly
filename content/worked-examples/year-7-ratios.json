@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Divide the total by the number of parts, then multiply for each person's share.\n\n1. Count the total number of parts: $3 + 5 = 8$ parts.\n2. Find the value of one part: $120 \\div 8 = 15$, so one part is worth \\$15.\n3. Calculate Anika's share ($3$ parts): $3 \\times 15 = 45$, so Anika gets \\$45.\n4. Calculate Ben's share ($5$ parts): $5 \\times 15 = 75$, so Ben gets \\$75.\n5. Check: $45 + 75 = 120$. ✓"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What are ratios and how do you use them in Year 7?",
+  "a": "A ratio compares two or more quantities of the same kind. Write it as a:b, simplify by dividing by the highest common factor, and scale up or down by multiplying or dividing both parts by the same number. For example, 12:8 simplifies to 3:2. Use equivalent ratios to divide quantities or solve recipe and scale problems."
+ },
+ "turn": {
+  "question": "A recipe uses flour and sugar in the ratio $3:2$. If you use $360\\text{ g}$ of flour, how many grams of sugar do you need?",
+  "kind": "number",
+  "accept": {
+   "value": 240,
+   "tol": 0,
+   "unit": "g"
+  },
+  "answer_display": "$240$",
+  "hint": "Find how many grams each part of the ratio is worth by dividing the flour amount by the flour part of the ratio.",
+  "solution": "**Key idea:** Scale the ratio so that the flour part equals 360 g.\n\n1. The ratio of flour to sugar is $3:2$.\n2. Find the value of one part: $360 \\div 3 = 120$ g per part.\n3. Sugar is $2$ parts: $2 \\times 120 = 240$ g.\n4. Check: flour to sugar is $360:240 = 3:2$ ✓\n\n**Answer:** $240$ g"
+ },
+ "turn_checked": {
+  "my_answer": "240",
+  "attempts": 1
+ }
 }

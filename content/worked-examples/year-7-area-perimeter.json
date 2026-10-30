@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Use $A = b \\times h$ for the parallelogram and $A = \\frac{1}{2} \\times b \\times h$ for the triangle, then add the two areas.\n\n1. Area of the parallelogram: $$A_{\\text{para}} = 9 \\times 6 = 54 \\text{ m}^2$$\n2. Area of the triangle: $$A_{\\text{tri}} = \\frac{1}{2} \\times 8 \\times 9 = \\frac{1}{2} \\times 72 = 36 \\text{ m}^2$$\n3. Total area: $$A_{\\text{total}} = 54 + 36 = 90 \\text{ m}^2$$\n\n**Answer:** The total combined area is $90$ m²."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the area and perimeter of rectangles, triangles and parallelograms?",
+  "a": "Perimeter is the total distance around a shape. Area measures the space inside it. For rectangles, Area = length × width. For triangles, Area = ½ × base × height. For parallelograms, Area = base × height. For example, a triangle with base 8 cm and height 5 cm has area ½ × 8 × 5 = 20 cm²."
+ },
+ "turn": {
+  "question": "A rectangular room is 7 m long and 4 m wide. What is the area of the room in square metres?",
+  "kind": "number",
+  "accept": {
+   "value": 28,
+   "tol": 0,
+   "unit": "m²"
+  },
+  "answer_display": "$28 \\text{ m}^2$",
+  "hint": "The area of a rectangle is length multiplied by width.",
+  "solution": "**Key idea:** Area of a rectangle = length × width\n\n1. Write the formula: $A = l \\times w$\n2. Substitute the values: $A = 7 \\times 4$\n3. Calculate: $A = 28$\n\n**Answer:** $28 \\text{ m}^2$"
+ },
+ "turn_checked": {
+  "my_answer": "28",
+  "attempts": 3
+ }
 }

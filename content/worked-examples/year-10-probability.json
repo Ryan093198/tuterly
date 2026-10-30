@@ -47,5 +47,25 @@
   "solution": "**Key idea:** The condition (first counter was green) changes the contents of the jar for the second draw.\n\n1. The condition is that the first counter drawn was green. Remove one green counter from the jar: the jar now contains 3 green and 6 yellow counters, giving 9 counters in total.\n2. On the second draw, the number of yellow counters is still 6 and the total is 9.\n3. $$P(\\text{2nd yellow} \\mid \\text{1st green}) = \\frac{6}{9} = \\frac{2}{3}$$\n\n**Answer:** $\\dfrac{2}{3}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "What is conditional probability and how do you calculate it?",
+  "a": "Conditional probability is the probability of event A occurring given that event B has already occurred, written P(A|B). Calculate it using P(A|B) = P(A and B) / P(B). For example, if P(A and B) = 0.3 and P(B) = 0.5, then P(A|B) = 0.6."
+ },
+ "turn": {
+  "question": "A group of 50 students were surveyed about whether they play sport and whether they play a musical instrument. The results are shown in the table below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Plays instrument | 12 | 8 | 20 |\n| Does not play instrument | 18 | 12 | 30 |\n| **Total** | 30 | 20 | 50 |\n\nGiven that a randomly chosen student plays sport, what is the probability that they also play a musical instrument? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.4,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.40$",
+  "hint": "Use the conditional probability formula: divide the number of students who play both sport and an instrument by the total number of students who play sport.",
+  "solution": "**Key idea:** Conditional probability P(A|B) = P(A and B) / P(B), or equivalently, restrict your count to only those in the given condition.\n\n1. Identify the condition: the student plays sport. There are 30 students who play sport in total.\n2. Identify the favourable outcome: the student plays sport AND plays an instrument. From the table, this is 12 students.\n3. Apply the conditional probability formula:\n$$P(\\text{instrument} \\mid \\text{sport}) = \\frac{12}{30}$$\n4. Simplify:\n$$\\frac{12}{30} = 0.4$$\n5. Rounded to 2 decimal places, the answer is $0.40$.\n\n**Answer:** $0.40$"
+ },
+ "turn_checked": {
+  "my_answer": "0.40",
+  "attempts": 2
+ }
 }

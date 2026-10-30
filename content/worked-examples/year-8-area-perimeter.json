@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Use the subtraction method — find the area of the whole rectangle, then subtract the cut-out.\n\n1. Area of the whole rectangle:\n$$12 \\times 7 = 84 \\text{ m}^2$$\n2. Area of the cut-out rectangle:\n$$4 \\times 3 = 12 \\text{ m}^2$$\n3. Area of the composite shape:\n$$84 - 12 = 72 \\text{ m}^2$$\n\n**Answer:** The area of the composite shape is $72$ m$^2$."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the area and perimeter of composite shapes?",
+  "a": "Break the composite shape into simpler parts (rectangles, triangles, parallelograms), find each area separately, then add or subtract. For perimeter, add only the outer edges, calculating any missing side lengths first. For example, an L-shape can be split into two rectangles whose areas are added together."
+ },
+ "turn": {
+  "question": "An L-shaped room has a large rectangle measuring $10$ m by $6$ m, with a rectangular section of $4$ m by $3$ m removed from one corner. What is the area of the room in square metres?",
+  "kind": "number",
+  "accept": {
+   "value": 48,
+   "tol": 0,
+   "unit": "m²"
+  },
+  "answer_display": "$48 \\text{ m}^2$",
+  "hint": "Find the area of the full large rectangle, then subtract the area of the removed corner section.",
+  "solution": "**Key idea:** Use the subtraction method: area of composite shape = area of whole rectangle minus area of the cut-out.\n\n1. Find the area of the full large rectangle: $10 \\times 6 = 60 \\text{ m}^2$\n2. Find the area of the removed corner rectangle: $4 \\times 3 = 12 \\text{ m}^2$\n3. Subtract: $60 - 12 = 48 \\text{ m}^2$\n\n**Answer:** $48 \\text{ m}^2$"
+ },
+ "turn_checked": {
+  "my_answer": "48",
+  "attempts": 3
+ }
 }

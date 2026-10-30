@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Write the part as a fraction of the total, then multiply by $100$.\n\n1. Write as a fraction: $\\dfrac{20}{32}$\n2. Multiply by $100$: $$\\frac{20}{32} \\times 100$$\n3. Divide: $20 \\div 32 = 0.625$\n4. Multiply by $100$: $$0.625 \\times 100 = 62.5$$\n\n**Answer:** $62.5\\%$ of the class walk to school."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find a percentage of a quantity?",
+  "a": "Convert the percentage to a decimal or fraction, then multiply by the quantity. For example, 15% of 80 = 0.15 × 80 = 12. To express one quantity as a percentage of another, divide the part by the whole and multiply by 100. For example, 18 out of 24 = (18 ÷ 24) × 100 = 75%."
+ },
+ "turn": {
+  "question": "A jacket has a marked price of \\$140. It is discounted by 35%. What is the sale price of the jacket, in dollars?",
+  "kind": "number",
+  "accept": {
+   "value": 91,
+   "tol": 0,
+   "unit": "dollars"
+  },
+  "answer_display": "$\\$91$",
+  "hint": "First calculate the discount amount by finding 35% of \\$140, then subtract it from the original price.",
+  "solution": "**Key idea:** A 35% discount means you pay 100% − 35% = 65% of the original price.\n\n1. Convert 65% to a decimal: $65\\% = 0.65$\n2. Multiply by the original price: $0.65 \\times 140$\n3. Calculate: $$0.65 \\times 140 = 91$$\n4. The sale price is \\$91.\n\n**Answer:** $\\$91$"
+ },
+ "turn_checked": {
+  "my_answer": "91",
+  "attempts": 1
+ }
 }

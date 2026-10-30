@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find each unit cost by dividing the price by the number of units, then compare.\n\n1. Find Brand A's cost per 100 mL: $$\\frac{6.80}{500} \\times 100 = \\$1.36 \\text{ per 100 mL}$$\n2. Find Brand B's cost per 100 mL: $$\\frac{9.50}{750} \\times 100 \\approx \\$1.267 \\text{ per 100 mL}$$\n3. Compare: $1.267 < 1.36$, so Brand B has the lower unit cost.\n\n**Answer:** Brand A costs \\$1.36 per 100 mL and Brand B costs approximately \\$1.27 per 100 mL, so Brand B is better value."
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you solve problems involving direct proportion, rates and scale?",
+  "a": "Direct proportion means two quantities increase together at a constant ratio, written y = kx, where k is the constant of proportionality. Find k by dividing a known y by its matching x, then use it to solve for unknowns. For example, if 4 litres of paint covers 24 m², then k = 6 m²/L, so 7 litres covers 42 m²."
+ },
+ "turn": {
+  "question": "A car travels at a constant speed and covers 270 km in 3 hours. A map of the route uses a scale of 1 : 4 000 000. How long, in centimetres correct to 1 decimal place, is the route on the map?",
+  "kind": "number",
+  "accept": {
+   "value": 6.8,
+   "tol": 0.05,
+   "unit": "cm"
+  },
+  "answer_display": "$6.8 \\text{ cm}$",
+  "hint": "Convert the real distance to centimetres, then divide by the scale factor.",
+  "solution": "**Key idea:** In a scale of 1 : 4 000 000, every 1 cm on the map represents 4 000 000 cm in real life, so real distance (cm) ÷ 4 000 000 = map distance (cm).\n\n1. Find the real distance: the car covers 270 km.\n2. Convert to centimetres: $270 \\text{ km} = 270 \\times 1000 \\times 100 \\text{ cm} = 27\\,000\\,000 \\text{ cm}$.\n3. Apply the scale: $\\text{map distance} = \\dfrac{27\\,000\\,000}{4\\,000\\,000} \\text{ cm}$.\n4. Calculate: $\\dfrac{27\\,000\\,000}{4\\,000\\,000} = 6.75 \\text{ cm}$.\n5. Round to 1 decimal place: $6.75 \\approx 6.8 \\text{ cm}$.\n\n**Answer:** $6.8 \\text{ cm}$"
+ },
+ "turn_checked": {
+  "my_answer": "6.8",
+  "attempts": 1
+ }
 }

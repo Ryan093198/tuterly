@@ -47,5 +47,24 @@
   "solution": "**Key idea:** Split the 8 values evenly into a lower half and an upper half, find the median of each, then subtract.\n\n1. The values are already in order: $12, 15, 17, 19, 23, 26, 29, 34$.\n2. Lower half (first 4 values): $12, 15, 17, 19$ $\\Rightarrow Q_1 = \\dfrac{15 + 17}{2} = 16$.\n3. Upper half (last 4 values): $23, 26, 29, 34$ $\\Rightarrow Q_3 = \\dfrac{26 + 29}{2} = 27.5$.\n4. $\\text{IQR} = Q_3 - Q_1 = 27.5 - 16 = 11.5$ cm.\n\n**Answer:** $11.5$ cm."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you choose the right graph for data in Year 9 Statistics?",
+  "a": "Match the display to the data type and purpose. Use dot plots or stem-and-leaf plots for small datasets to show every value; histograms for large datasets to show distribution shape; and boxplots to summarise spread and compare two or more groups. Always justify your choice by the insight the display gives."
+ },
+ "turn": {
+  "question": "A class of 25 students recorded how many hours they spent on screens last weekend. The results are listed below.\n\n| Hours | Frequency |\n|---|---|\n| 0 | 2 |\n| 1 | 3 |\n| 2 | 5 |\n| 3 | 7 |\n| 4 | 5 |\n| 5 | 2 |\n| 6 | 1 |\n\nWhat is the interquartile range (IQR) of this dataset?",
+  "kind": "number",
+  "accept": {
+   "value": 2,
+   "tol": 0
+  },
+  "answer_display": "$2$",
+  "hint": "List all 25 values in order, find the median, then find the median of the lower half (Q1) and the median of the upper half (Q3), and subtract.",
+  "solution": "**Key idea:** The IQR = Q3 − Q1, where Q1 and Q3 are the medians of the lower and upper halves of the ordered dataset.\n\n1. Write out all 25 values in order using the frequency table:\n$$0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 6$$\n\n2. The median is the 13th value: $3$.\n\n3. The lower half is the first 12 values:\n$$0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3$$\nQ1 = average of 6th and 7th values $= \\dfrac{2 + 2}{2} = 2$\n\n4. The upper half is the last 12 values:\n$$3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5$$\nQ3 = average of 6th and 7th values $= \\dfrac{4 + 4}{2} = 4$\n\n5. $\\text{IQR} = \\text{Q3} - \\text{Q1} = 4 - 2 = 2$\n\n**Answer:** $2$"
+ },
+ "turn_checked": {
+  "my_answer": "2",
+  "attempts": 2
+ }
 }

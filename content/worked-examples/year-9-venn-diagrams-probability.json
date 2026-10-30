@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Fill in the Venn diagram from the inside out, then use relative frequencies for each probability.\n\n1. Both: 10. Social media only: $22 - 10 = 12$. Streaming only: $30 - 10 = 20$. Neither: $50 - 12 - 10 - 20 = 8$.\n2. **(a)** $P(\\text{social media and streaming}) = \\dfrac{10}{50} = \\dfrac{1}{5}$\n3. **(b)** $P(\\text{social media or streaming}) = \\dfrac{12 + 10 + 20}{50} = \\dfrac{42}{50} = \\dfrac{21}{25}$\n4. **(c)** $P(\\text{social media or streaming, not both}) = \\dfrac{12 + 20}{50} = \\dfrac{32}{50} = \\dfrac{16}{25}$\n5. **(d)** $P(\\text{neither}) = \\dfrac{8}{50} = \\dfrac{4}{25}$"
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use Venn diagrams and two-way tables to find probabilities of and, or and not?",
+  "a": "Read counts from a two-way table or Venn diagram and divide by the total to get relative frequencies as probability estimates. P(A and B) uses the overlap, P(A or B) adds both regions without double-counting, and P(not A) = 1 minus P(A). For example, if 12 out of 50 students play both sport and music, P(both) = 12/50 = 0.24."
+ },
+ "turn": {
+  "question": "A survey of 80 students found the following results about whether they have a pet dog (D) and a pet cat (C).\n\n| | Has cat | No cat | Total |\n|---|---|---|---|\n| Has dog | 15 | 28 | 43 |\n| No dog | 12 | 25 | 37 |\n| **Total** | 27 | 53 | 80 |\n\nUsing relative frequencies, estimate $P(\\text{dog or cat})$, that is, the probability that a randomly chosen student has a dog, a cat, or both. Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.69,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.69$",
+  "hint": "Count every student who has at least one of dog or cat, then divide by the total number of students.",
+  "solution": "**Key idea:** $P(D \\text{ or } C)$ (inclusive or) counts everyone in the dog region, the cat region, or both, which is every student except those with neither pet.\n\n1. Read the count with neither dog nor cat from the table: the \"No dog, No cat\" cell is $25$.\n2. So the number with a dog, a cat, or both is $80 - 25 = 55$.\n3. Alternatively, use the addition rule: $P(D \\text{ or } C) = P(D) + P(C) - P(D \\text{ and } C)$.\n$$P(D) = \\frac{43}{80}, \\quad P(C) = \\frac{27}{80}, \\quad P(D \\text{ and } C) = \\frac{15}{80}$$\n4. Applying the rule:\n$$P(D \\text{ or } C) = \\frac{43}{80} + \\frac{27}{80} - \\frac{15}{80} = \\frac{55}{80}$$\n5. Convert to a decimal: $\\dfrac{55}{80} = 0.6875 \\approx 0.69$ (correct to 2 decimal places).\n\n**Answer:** $0.69$"
+ },
+ "turn_checked": {
+  "my_answer": "0.69",
+  "attempts": 1
+ }
 }

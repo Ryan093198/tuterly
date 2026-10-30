@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Use $C = \\pi d$ to find the diameter, then halve it to find the radius.\n\n1. Write the formula and rearrange for $d$:\n$$d = \\frac{C}{\\pi}$$\n2. Substitute $C = 43.96$ and $\\pi \\approx 3.14$:\n$$d = \\frac{43.96}{3.14} = 14 \\text{ m}$$\n3. Find the radius by halving the diameter:\n$$r = \\frac{d}{2} = \\frac{14}{2} = 7 \\text{ m}$$\n\n**Answer:** The diameter is $14$ m and the radius is $7$ m."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate the circumference of a circle?",
+  "a": "The circumference of a circle equals pi times the diameter: C = πd, or equivalently C = 2πr. Pi (π ≈ 3.14159) is the ratio of any circle's circumference to its diameter. For example, a circle with radius 5 cm has circumference 2 × π × 5 ≈ 31.42 cm."
+ },
+ "turn": {
+  "question": "A circular garden bed has a diameter of 8 m. What is its circumference, correct to 2 decimal places? Give your answer in metres.",
+  "kind": "number",
+  "accept": {
+   "value": 25.13,
+   "tol": 0.005,
+   "unit": "m"
+  },
+  "answer_display": "$25.13 \\text{ m}$",
+  "hint": "Use the formula $C = \\pi d$ and substitute the diameter directly.",
+  "solution": "**Key idea:** The circumference of a circle is $C = \\pi d$, where $d$ is the diameter.\n\n1. Write the formula: $C = \\pi d$\n2. Substitute $d = 8$: $C = \\pi \\times 8$\n3. Calculate: $C = 8\\pi \\approx 8 \\times 3.14159\\ldots$\n4. $C \\approx 25.13274\\ldots$ m\n5. Round to 2 decimal places: $C \\approx 25.13$ m\n\n**Answer:** $25.13 \\text{ m}$"
+ },
+ "turn_checked": {
+  "my_answer": "25.13",
+  "attempts": 1
+ }
 }

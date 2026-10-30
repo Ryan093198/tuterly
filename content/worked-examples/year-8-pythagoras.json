@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Rearrange $a^2 + b^2 = c^2$ to find the unknown shorter side: $b^2 = c^2 - a^2$.\n\n1. Substitute the known values: $$b^2 = 15^2 - 9^2$$\n2. Evaluate: $$b^2 = 225 - 81 = 144$$\n3. Take the square root: $$b = \\sqrt{144} = 12$$\n4. The exact answer is $12$ cm, which rounds to $12.00$ cm.\n\n**Answer:** The other shorter side is exactly $12$ cm (or $12.00$ cm to two decimal places)."
  },
  "checked": true,
- "attempts": 2
+ "attempts": 2,
+ "summary": {
+  "q": "How do you use Pythagoras' theorem to find a missing side of a right-angled triangle?",
+  "a": "Pythagoras' theorem states that in a right-angled triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: $a^2 + b^2 = c^2$, where $c$ is the hypotenuse. To find a missing side, substitute the known sides and solve. For example, if $a = 3$ and $b = 4$, then $c = \\sqrt{9 + 16} = 5$."
+ },
+ "turn": {
+  "question": "A ladder leans against a wall. The base of the ladder is $1.8$ m from the wall and the ladder reaches $2.4$ m up the wall. How long is the ladder, correct to 2 decimal places? Give your answer in metres.",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0.005,
+   "unit": "m"
+  },
+  "answer_display": "$3.00$ m",
+  "hint": "The ladder, the wall, and the ground form a right-angled triangle. The ladder is the hypotenuse, so use $c = \\sqrt{a^2 + b^2}$.",
+  "solution": "**Key idea:** The ladder is the hypotenuse of a right-angled triangle with legs $1.8$ m and $2.4$ m.\n\n1. Write Pythagoras' theorem: $c^2 = a^2 + b^2$\n2. Substitute the known values: $c^2 = 1.8^2 + 2.4^2$\n3. Evaluate the squares: $c^2 = 3.24 + 5.76 = 9.00$\n4. Take the square root: $c = \\sqrt{9.00} = 3$\n5. Round to 2 decimal places: $c = 3.00$ m\n\n**Answer:** $3.00$ m"
+ },
+ "turn_checked": {
+  "my_answer": "3.00",
+  "attempts": 1
+ }
 }

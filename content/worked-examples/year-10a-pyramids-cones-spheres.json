@@ -47,5 +47,25 @@
   "solution": "**Key idea:** A rectangular pyramid has two pairs of triangular faces, each pair with a different slant height. Find each slant height using Pythagoras' theorem with the perpendicular height and the distance from the centre of the base to the midpoint of that edge.\n\n1. **Base area:** $10 \\times 6 = 60$ m²\n2. **Slant height to the two faces with base 10 m** (distance from centre to midpoint of 10 m edge $= \\frac{6}{2} = 3$ m): $$l_1 = \\sqrt{12^2 + 3^2} = \\sqrt{144 + 9} = \\sqrt{153}$$ Area of these two faces: $2 \\times \\frac{1}{2} \\times 10 \\times \\sqrt{153} = 10\\sqrt{153}$ m²\n3. **Slant height to the two faces with base 6 m** (distance from centre to midpoint of 6 m edge $= \\frac{10}{2} = 5$ m): $$l_2 = \\sqrt{12^2 + 5^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13 \\text{ m}$$ Area of these two faces: $2 \\times \\frac{1}{2} \\times 6 \\times 13 = 78$ m²\n4. **Total surface area:** $$60 + 10\\sqrt{153} + 78 = 138 + 10\\sqrt{153} \\approx 138 + 123.7 = 261.7 \\text{ m}^2$$"
  },
  "checked": true,
- "attempts": 3
+ "attempts": 3,
+ "summary": {
+  "q": "How do you find the surface area and volume of pyramids, cones and spheres?",
+  "a": "Use specific formulas for each solid. For a cone: surface area = πrl + πr² (l is slant height, found with Pythagoras) and volume = ⅓πr²h. For a sphere: surface area = 4πr² and volume = 4/3 πr³. For a right pyramid: surface area = base area + ½ × perimeter × slant height, and volume = ⅓ × base area × height."
+ },
+ "turn": {
+  "question": "A sphere has a radius of $6.5$ cm. Calculate the volume of the sphere correct to 2 decimal places. Give your answer in cm³.",
+  "kind": "number",
+  "accept": {
+   "value": 1150.35,
+   "tol": 0.005,
+   "unit": "cm³"
+  },
+  "answer_display": "$1150.35$ cm³",
+  "hint": "The volume of a sphere is $V = \\dfrac{4}{3}\\pi r^3$. Substitute $r = 6.5$ and evaluate using the calculator value of $\\pi$.",
+  "solution": "**Key idea:** The volume of a sphere is $V = \\dfrac{4}{3}\\pi r^3$.\n\n1. Write the formula: $V = \\dfrac{4}{3}\\pi r^3$\n2. Substitute $r = 6.5$: $V = \\dfrac{4}{3} \\times \\pi \\times 6.5^3$\n3. Evaluate $6.5^3$: $6.5^3 = 274.625$\n4. Multiply: $V = \\dfrac{4}{3} \\times \\pi \\times 274.625 = \\dfrac{4 \\times \\pi \\times 274.625}{3}$\n5. Using the calculator value of $\\pi$: $V = \\dfrac{3454.2194\\ldots}{3} \\approx 1150.3464\\ldots$\n6. Round to 2 decimal places: $V \\approx 1150.35$ cm³\n\n**Answer:** $1150.35$ cm³"
+ },
+ "turn_checked": {
+  "my_answer": "1150.35",
+  "attempts": 1
+ }
 }

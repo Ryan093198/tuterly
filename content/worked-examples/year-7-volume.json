@@ -47,5 +47,25 @@
   "solution": "**Key idea:** Find the area of the triangular cross-section first, then multiply by the length of the prism.\n\n1. Find the area of the triangular cross-section: $A = \\frac{1}{2} \\times 8 \\times 3 = 12$ cm²\n2. Write the volume formula: $V = A \\times l$\n3. Substitute the values: $V = 12 \\times 15$\n4. Calculate: $V = 180$\n\n**Answer:** The volume is $180$ cm³."
  },
  "checked": true,
- "attempts": 1
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the volume of a prism in Year 7?",
+  "a": "Volume of a right prism = area of cross-section × length. For a rectangular prism use length × width × height; for a triangular prism use ½ × base × height of triangle × length. For example, a rectangular prism 5 cm × 3 cm × 4 cm has volume 60 cm³."
+ },
+ "turn": {
+  "question": "A triangular prism has a triangular face with base $8$ cm and perpendicular height $5$ cm. The prism is $12$ cm long. What is the volume of the prism in cm³?",
+  "kind": "number",
+  "accept": {
+   "value": 240,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$240 \\text{ cm}^3$",
+  "hint": "Find the area of the triangular cross-section first, then multiply by the length of the prism.",
+  "solution": "**Key idea:** Volume of a prism = area of cross-section × length, and the cross-section here is a triangle.\n\n1. Write the formula for the area of the triangular face: $A = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$\n2. Substitute the values: $A = \\frac{1}{2} \\times 8 \\times 5 = 20 \\text{ cm}^2$\n3. Write the volume formula: $V = A \\times \\text{length}$\n4. Substitute: $V = 20 \\times 12 = 240 \\text{ cm}^3$\n\n**Answer:** $240 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "240",
+  "attempts": 1
+ }
 }
