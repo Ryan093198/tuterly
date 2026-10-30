@@ -66,3 +66,28 @@ _rui_tmp/
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+# Private files that must never reach this public repo
+# Apple / signing keys
+*.p8
+*.p12
+*.mobileprovision
+# Git bundles and tarballs used to move work between machines
+*.bundle
+*.tgz
+.we-out/
+# Internal docs and data (customer data, runbooks, plans)
+rate-card.json
+VERIFY-PRODUCTION.sql
+/LAUNCH-*.md
+/MARKETING-*.md
+/SMS-TRIAGE*.md
+/STATE-PAGES-CHANGES.*
+/TUTERLY-*.md
+/TESTIMONIAL-COLLECTION.md
+/LOGO-UPDATE-PROMPT.md
+/PARKED.md
+/THURSDAY-RUNBOOK.md
+/TUTOR-PIPELINE.md
+/CLAUDE-CODE-HANDOVER.md
+_sound-preview/
