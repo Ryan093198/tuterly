@@ -1,0 +1,314 @@
+{
+ "year": 5,
+ "questions": [
+  {
+   "strand": "Number",
+   "skill": "Place value to 100 000",
+   "calculator": false,
+   "format": "choice",
+   "question": "What is the value of the digit 7 in the number 47 382?",
+   "options": [
+    "7",
+    "7 000",
+    "700",
+    "70 000"
+   ],
+   "answer_index": 1,
+   "solution": "In 47 382, the digits from right to left are: 2 ones, 8 tens, 3 hundreds, 7 thousands, 4 ten-thousands. The digit 7 is in the thousands place, so its value is $7 \\times 1000 = 7\\,000$. **Answer:** 7 000",
+   "accept": null,
+   "n": 1
+  },
+  {
+   "strand": "Number",
+   "skill": "Multiplication of whole numbers",
+   "calculator": false,
+   "format": "number",
+   "question": "A school tuck shop sells 48 pies each day for 5 days. How many pies does it sell in total?",
+   "solution": "Multiply $48 \\times 5$. $40 \\times 5 = 200$ and $8 \\times 5 = 40$. $200 + 40 = 240$. **Answer:** 240",
+   "accept": {
+    "value": 240,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 2
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Perimeter of a rectangle",
+   "calculator": false,
+   "format": "number",
+   "question": "A rectangular football oval is 85 metres long and 60 metres wide. What is the perimeter of the oval in metres?",
+   "solution": "Perimeter of a rectangle $= 2 \\times (\\text{length} + \\text{width}) = 2 \\times (85 + 60) = 2 \\times 145 = 290$ metres. **Answer:** 290",
+   "accept": {
+    "value": 290,
+    "tol": 0,
+    "unit": "metres"
+   },
+   "n": 3
+  },
+  {
+   "strand": "Space",
+   "skill": "Identifying angle types",
+   "calculator": false,
+   "format": "choice",
+   "question": "A clock shows 3 o'clock. The angle between the hour hand and the minute hand is best described as which type of angle?",
+   "options": [
+    "Straight",
+    "Acute",
+    "Right",
+    "Obtuse"
+   ],
+   "answer_index": 2,
+   "solution": "At 3 o'clock the hour hand points to 3 and the minute hand points to 12, making an angle of exactly $90^\\circ$. An angle of exactly $90^\\circ$ is a right angle. **Answer:** Right",
+   "accept": null,
+   "n": 4
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Probability as a fraction",
+   "calculator": false,
+   "format": "choice",
+   "question": "A bag contains 3 red marbles, 2 blue marbles and 1 yellow marble. If one marble is chosen at random, what is the probability of choosing a blue marble?",
+   "options": [
+    "$\\dfrac{1}{2}$",
+    "$\\dfrac{1}{3}$",
+    "$\\dfrac{1}{6}$",
+    "$\\dfrac{2}{3}$"
+   ],
+   "answer_index": 1,
+   "solution": "There are $3 + 2 + 1 = 6$ marbles in total. 2 of them are blue, so the probability is $\\dfrac{2}{6} = \\dfrac{1}{3}$. **Answer:** $\\dfrac{1}{3}$",
+   "accept": null,
+   "n": 5
+  },
+  {
+   "strand": "Number",
+   "skill": "Comparing and ordering decimals to hundredths",
+   "calculator": false,
+   "format": "choice",
+   "question": "Which of the following numbers is the largest?\n\n$4.7$, $4.07$, $4.73$, $4.37$",
+   "options": [
+    "$4.37$",
+    "$4.73$",
+    "$4.07$",
+    "$4.7$"
+   ],
+   "answer_index": 1,
+   "solution": "Compare the tenths digit first. $4.07$ has 0 tenths, $4.37$ has 3 tenths, $4.7$ has 7 tenths, and $4.73$ has 7 tenths.\n\nBoth $4.7$ and $4.73$ have 7 tenths, so compare the hundredths: $4.7 = 4.70$ has 0 hundredths, $4.73$ has 3 hundredths.\n\nSo $4.73 > 4.70$.\n\n**Answer:** $4.73$",
+   "n": 6
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Number patterns and missing numbers",
+   "calculator": false,
+   "format": "number",
+   "question": "Look at the number pattern below.\n\n$6, 11, 16, 21, \\square, 31$\n\nWhat is the missing number?",
+   "solution": "The pattern adds 5 each time: $6, 11, 16, 21, \\ldots, 31$.\n\n$21 + 5 = 26$.\n\nCheck: $26 + 5 = 31$. ✓\n\n**Answer:** 26",
+   "accept": {
+    "value": 26,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 7
+  },
+  {
+   "strand": "Measurement",
+   "skill": "24-hour time and durations",
+   "calculator": false,
+   "format": "choice",
+   "question": "A swimming carnival at Bondi Aquatic Centre starts at 13:15 and finishes at 15:45. How long does the swimming carnival last?",
+   "options": [
+    "3 hours 15 minutes",
+    "3 hours 30 minutes",
+    "2 hours 30 minutes",
+    "2 hours 15 minutes"
+   ],
+   "answer_index": 2,
+   "solution": "From 13:15 to 15:15 is 2 hours.\n\nFrom 15:15 to 15:45 is another 30 minutes.\n\nTotal duration: 2 hours 30 minutes.\n\n**Answer:** 2 hours 30 minutes",
+   "n": 8
+  },
+  {
+   "strand": "Space",
+   "skill": "Transformations (reflection)",
+   "calculator": false,
+   "format": "choice",
+   "question": "A shape is reflected across a vertical mirror line. Which of the following statements about the reflected shape is correct?",
+   "options": [
+    "It is smaller than the original shape.",
+    "It is larger than the original shape.",
+    "It is the same size and shape but faces the opposite direction.",
+    "It is rotated 90 degrees from the original shape."
+   ],
+   "answer_index": 2,
+   "solution": "A reflection flips a shape across a mirror line. The reflected shape is exactly the same size and shape as the original, but it faces the opposite direction (like a mirror image).\n\nThe size does not change, and it is not rotated.\n\n**Answer:** It is the same size and shape but faces the opposite direction.",
+   "n": 9
+  },
+  {
+   "strand": "Number",
+   "skill": "Equivalent fractions",
+   "calculator": false,
+   "format": "choice",
+   "question": "Which fraction is equivalent to $\\dfrac{3}{4}$?",
+   "options": [
+    "$\\dfrac{9}{16}$",
+    "$\\dfrac{4}{5}$",
+    "$\\dfrac{6}{10}$",
+    "$\\dfrac{6}{8}$"
+   ],
+   "answer_index": 3,
+   "solution": "Multiply both the numerator and denominator of $\\dfrac{3}{4}$ by 2:\n\n$\\dfrac{3 \\times 2}{4 \\times 2} = \\dfrac{6}{8}$.\n\nCheck the others: $\\dfrac{6}{10} = \\dfrac{3}{5}$, $\\dfrac{9}{16}$ does not simplify to $\\dfrac{3}{4}$, and $\\dfrac{4}{5}$ is not equal to $\\dfrac{3}{4}$.\n\n**Answer:** $\\dfrac{6}{8}$",
+   "n": 10
+  },
+  {
+   "strand": "Number",
+   "skill": "Division with whole numbers",
+   "calculator": false,
+   "format": "number",
+   "question": "A farmer picks 336 apples and packs them equally into boxes of 8. How many boxes does the farmer fill?",
+   "solution": "Divide the total number of apples by the number per box.\n$336 \\div 8 = 42$\n**Answer:** 42",
+   "accept": {
+    "value": 42,
+    "tol": 0,
+    "unit": "boxes"
+   },
+   "n": 11
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Factors of a whole number",
+   "calculator": false,
+   "format": "choice",
+   "question": "Which of the following numbers is a factor of 36?",
+   "options": [
+    "9",
+    "8",
+    "14",
+    "10"
+   ],
+   "answer_index": 0,
+   "solution": "A factor of 36 divides into 36 with no remainder.\n$36 \\div 8 = 4$ remainder $4$ (not a factor)\n$36 \\div 9 = 4$ exactly, so 9 is a factor.\n$36 \\div 10 = 3$ remainder $6$ (not a factor)\n$36 \\div 14 = 2$ remainder $8$ (not a factor)\n**Answer:** 9",
+   "n": 12
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Reading and interpreting a table",
+   "calculator": false,
+   "format": "choice",
+   "question": "The table below shows the number of goals scored by four players in a netball season.\n\n| Player | Goals |\n|--------|-------|\n| Aisha  | 34    |\n| Bridie | 27    |\n| Carmen | 41    |\n| Donna  | 38    |\n\nHow many more goals did Carmen score than Bridie?",
+   "options": [
+    "7",
+    "14",
+    "11",
+    "4"
+   ],
+   "answer_index": 1,
+   "solution": "Subtract Bridie's goals from Carmen's goals.\n$41 - 27 = 14$\n**Answer:** 14",
+   "n": 13
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Area of a rectangle",
+   "calculator": false,
+   "format": "number",
+   "question": "A school vegetable garden is in the shape of a rectangle. It is 12 metres long and 7 metres wide. What is the area of the garden in square metres?",
+   "solution": "Multiply length by width to find the area.\n$12 \\times 7 = 84$\n**Answer:** 84",
+   "accept": {
+    "value": 84,
+    "tol": 0,
+    "unit": "square metres"
+   },
+   "n": 14
+  },
+  {
+   "strand": "Number",
+   "skill": "Adding fractions with the same denominator",
+   "calculator": false,
+   "format": "choice",
+   "question": "Lachlan ate $\\dfrac{2}{8}$ of a pizza and his sister ate $\\dfrac{3}{8}$ of the same pizza. What fraction of the pizza did they eat altogether?",
+   "options": [
+    "$\\dfrac{1}{4}$",
+    "$\\dfrac{5}{16}$",
+    "$\\dfrac{6}{8}$",
+    "$\\dfrac{5}{8}$"
+   ],
+   "answer_index": 3,
+   "solution": "Add the numerators and keep the denominator the same.\n$\\dfrac{2}{8} + \\dfrac{3}{8} = \\dfrac{5}{8}$\n**Answer:** $\\dfrac{5}{8}$",
+   "n": 15
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Finding the rule and missing value in a number pattern",
+   "calculator": false,
+   "format": "number",
+   "question": "A number pattern follows a rule. The first five terms are shown below.\n\n$4, 12, 36, 108, \\square$\n\nWhat is the missing fifth term?",
+   "solution": "Find the rule by dividing each term by the one before it: $12 \\div 4 = 3$, $36 \\div 12 = 3$, $108 \\div 36 = 3$. The rule is multiply by 3 each time. $108 \\times 3 = 324$. **Answer:** 324",
+   "accept": {
+    "value": 324,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 16
+  },
+  {
+   "strand": "Number",
+   "skill": "Multiples of a number",
+   "calculator": false,
+   "format": "choice",
+   "question": "Zara is setting up chairs in rows for a school assembly. She wants exactly 9 chairs in every row with no chairs left over. She has 214 chairs. Which of the following numbers of chairs, all less than 214, can she arrange perfectly into rows of 9?",
+   "options": [
+    "$189$",
+    "$196$",
+    "$205$",
+    "$200$"
+   ],
+   "answer_index": 0,
+   "solution": "A number is a multiple of 9 when its digits add up to 9 (or a multiple of 9). Check each: $1+8+9=18$ which is a multiple of 9, so $189 = 9 \\times 21$ ✓. $1+9+6=16$ (no). $2+0+0=2$ (no). $2+0+5=7$ (no). **Answer:** 189",
+   "n": 17
+  },
+  {
+   "strand": "Space",
+   "skill": "Describing a translation (slide) on a grid",
+   "calculator": false,
+   "format": "choice",
+   "question": "On a grid, a triangle has one vertex at point $\\text{C3}$ (column C, row 3). The triangle is translated (slid) 4 columns to the right and 2 rows up. Which grid reference does that vertex move to?",
+   "options": [
+    "G5",
+    "G3",
+    "G1",
+    "E5"
+   ],
+   "answer_index": 0,
+   "solution": "Moving 4 columns to the right from column C: C, D, E, F, G — so column G. Moving 2 rows up from row 3: row 5. The new position is G5. **Answer:** G5",
+   "n": 18
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Probability on a 0 to 1 scale",
+   "calculator": false,
+   "format": "choice",
+   "question": "A spinner is divided into 8 equal sections. Five sections are green, two sections are yellow, and one section is red. A student spins the spinner once. Which of the following best describes the probability of landing on yellow?",
+   "options": [
+    "It is less than $\\dfrac{1}{2}$ but greater than 0",
+    "It is greater than $\\dfrac{1}{2}$",
+    "It is exactly $\\dfrac{1}{2}$",
+    "It is impossible (0)"
+   ],
+   "answer_index": 0,
+   "solution": "There are 2 yellow sections out of 8, so the probability of yellow is $\\dfrac{2}{8} = \\dfrac{1}{4}$. Since $\\dfrac{1}{4}$ is greater than 0 but less than $\\dfrac{1}{2}$, the first option is correct. **Answer:** It is less than $\\dfrac{1}{2}$ but greater than 0",
+   "n": 19
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Calculating elapsed time using 12-hour and 24-hour time",
+   "calculator": false,
+   "format": "number",
+   "question": "A train departs Melbourne at 08:47 and arrives in Geelong at 09:35. How many minutes does the journey take?",
+   "solution": "From 08:47 to 09:35. Count from 08:47 to 09:00 — that is 13 minutes. Then from 09:00 to 09:35 is 35 minutes. $13 + 35 = 48$ minutes. **Answer:** 48",
+   "accept": {
+    "value": 48,
+    "tol": 0,
+    "unit": "minutes"
+   },
+   "n": 20
+  }
+ ]
+}

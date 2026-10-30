@@ -1,0 +1,315 @@
+{
+ "year": 7,
+ "questions": [
+  {
+   "strand": "Number",
+   "skill": "Percentage of an amount",
+   "calculator": false,
+   "format": "choice",
+   "question": "At Bankstown Public School, 25% of the 320 students walk to school. How many students walk to school?",
+   "options": [
+    "80",
+    "125",
+    "100",
+    "60"
+   ],
+   "answer_index": 0,
+   "solution": "25% means one quarter, so divide 320 by 4.\n$320 \\div 4 = 80$\n**Answer:** 80",
+   "accept": {
+    "value": 80,
+    "unit": "",
+    "tol": 0
+   },
+   "n": 1
+  },
+  {
+   "strand": "Number",
+   "skill": "Order of operations",
+   "calculator": false,
+   "format": "number",
+   "question": "Calculate $3 + 4 \\times 5 - 2$.",
+   "solution": "Multiplication is done before addition and subtraction.\n$4 \\times 5 = 20$\n$3 + 20 - 2 = 21$\n**Answer:** 21",
+   "accept": {
+    "value": 21,
+    "unit": "",
+    "tol": 0
+   },
+   "n": 2
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Area of a triangle",
+   "calculator": false,
+   "format": "choice",
+   "question": "A triangular garden bed has a base of 8 m and a perpendicular height of 5 m. What is the area of the garden bed?",
+   "options": [
+    "$20 \\text{ m}^2$",
+    "$13 \\text{ m}^2$",
+    "$80 \\text{ m}^2$",
+    "$40 \\text{ m}^2$"
+   ],
+   "answer_index": 0,
+   "solution": "Use the formula: Area $= \\dfrac{1}{2} \\times base \\times height$\nArea $= \\dfrac{1}{2} \\times 8 \\times 5 = \\dfrac{1}{2} \\times 40 = 20$\n**Answer:** $20 \\text{ m}^2$",
+   "n": 3
+  },
+  {
+   "strand": "Space",
+   "skill": "Angles in a triangle",
+   "calculator": false,
+   "format": "number",
+   "question": "A triangle has two angles of 47° and 65°. What is the size of the third angle in degrees?",
+   "solution": "Angles in a triangle add up to 180°.\n$47 + 65 = 112$\n$180 - 112 = 68$\n**Answer:** 68°",
+   "accept": {
+    "value": 68,
+    "unit": "degrees",
+    "tol": 0
+   },
+   "n": 4
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Mean of a data set",
+   "calculator": false,
+   "format": "choice",
+   "question": "Five friends scored the following points in a trivia game: 12, 8, 15, 10, and 5. What is the mean score?",
+   "options": [
+    "12",
+    "8",
+    "10",
+    "9"
+   ],
+   "answer_index": 2,
+   "solution": "Add all the scores: $12 + 8 + 15 + 10 + 5 = 50$\nDivide by the number of scores: $50 \\div 5 = 10$\n**Answer:** 10",
+   "n": 5
+  },
+  {
+   "strand": "Number",
+   "skill": "Fraction of an amount",
+   "calculator": true,
+   "format": "number",
+   "question": "A bag contains 240 marbles. Three-eighths of the marbles are blue. How many marbles are blue?",
+   "solution": "Find $\\frac{3}{8}$ of 240.\n$240 \\div 8 = 30$\n$30 \\times 3 = 90$\n**Answer:** 90",
+   "accept": {
+    "value": 90,
+    "tol": 0,
+    "unit": "marbles"
+   },
+   "n": 6
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Number patterns and rules",
+   "calculator": true,
+   "format": "choice",
+   "question": "The first four terms of a number pattern are 5, 9, 13, 17, ... Which rule describes this pattern?",
+   "options": [
+    "Start at 9, subtract 4 each time",
+    "Start at 5, multiply by 4 each time",
+    "Start at 5, add 5 each time",
+    "Start at 5, add 4 each time"
+   ],
+   "answer_index": 3,
+   "solution": "Check the difference between consecutive terms: $9 - 5 = 4$, $13 - 9 = 4$, $17 - 13 = 4$. The pattern starts at 5 and increases by 4 each time.\n**Answer:** Start at 5, add 4 each time",
+   "n": 7
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Volume of a rectangular prism",
+   "calculator": true,
+   "format": "choice",
+   "question": "A storage box is 60 cm long, 40 cm wide and 30 cm tall. What is the volume of the box?",
+   "options": [
+    "$5400 \\text{ cm}^3$",
+    "$7200 \\text{ cm}^3$",
+    "$72000 \\text{ cm}^3$",
+    "$2600 \\text{ cm}^3$"
+   ],
+   "answer_index": 2,
+   "solution": "Volume of a rectangular prism $= l \\times w \\times h$.\n$V = 60 \\times 40 \\times 30$\n$= 2400 \\times 30 = 72\\,000 \\text{ cm}^3$\n**Answer:** $72000 \\text{ cm}^3$",
+   "n": 8
+  },
+  {
+   "strand": "Space",
+   "skill": "Plotting and reading points on the Cartesian plane",
+   "calculator": true,
+   "format": "choice",
+   "question": "Point $A$ is at $(2, 5)$ and point $B$ is at $(2, -3)$ on the Cartesian plane. What is the distance between point $A$ and point $B$?",
+   "options": [
+    "8 units",
+    "6 units",
+    "10 units",
+    "2 units"
+   ],
+   "answer_index": 0,
+   "solution": "Both points have the same $x$-coordinate, so the distance is the difference in $y$-coordinates.\n$5 - (-3) = 5 + 3 = 8$ units\n**Answer:** 8 units",
+   "n": 9
+  },
+  {
+   "strand": "Number",
+   "skill": "Ratio and rates",
+   "calculator": true,
+   "format": "number",
+   "question": "At a swimming carnival in Brisbane, the ratio of Year 7 students to Year 8 students is $3 : 5$. There are 120 Year 8 students at the carnival. How many Year 7 students are there?",
+   "solution": "If 5 parts $= 120$ students, then 1 part $= 120 \\div 5 = 24$ students.\nYear 7 students $= 3 \\times 24 = 72$\n**Answer:** 72",
+   "accept": {
+    "value": 72,
+    "tol": 0,
+    "unit": "students"
+   },
+   "n": 10
+  },
+  {
+   "strand": "Number",
+   "skill": "Square numbers and square roots",
+   "calculator": true,
+   "format": "choice",
+   "question": "Which of the following is a perfect square number?",
+   "options": [
+    "90",
+    "81",
+    "54",
+    "72"
+   ],
+   "answer_index": 1,
+   "solution": "A perfect square is the result of multiplying a whole number by itself. Check each option: $\\sqrt{54} \\approx 7.3$, $\\sqrt{72} \\approx 8.5$, $\\sqrt{81} = 9$ (since $9 \\times 9 = 81$), $\\sqrt{90} \\approx 9.5$. Only 81 is a perfect square. **Answer:** 81",
+   "accept": null,
+   "n": 11
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Substitution into a formula",
+   "calculator": true,
+   "format": "number",
+   "question": "The formula for the perimeter of a rectangle is $P = 2(l + w)$, where $l$ is the length and $w$ is the width. A rectangular netball court has a length of $30.5$ m and a width of $15.25$ m. What is the perimeter of the court in metres?",
+   "solution": "Substitute $l = 30.5$ and $w = 15.25$ into the formula. $P = 2(30.5 + 15.25) = 2 \\times 45.75 = 91.5$ m. **Answer:** 91.5 m",
+   "accept": {
+    "value": 91.5,
+    "tol": 0,
+    "unit": "m"
+   },
+   "n": 12
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Probability as a fraction",
+   "calculator": true,
+   "format": "choice",
+   "question": "A bag contains 5 red marbles, 3 blue marbles and 2 green marbles. One marble is picked at random. What is the probability that it is blue?",
+   "options": [
+    "$\\dfrac{3}{10}$",
+    "$\\dfrac{1}{5}$",
+    "$\\dfrac{3}{7}$",
+    "$\\dfrac{1}{3}$"
+   ],
+   "answer_index": 0,
+   "solution": "The total number of marbles is $5 + 3 + 2 = 10$. There are 3 blue marbles, so the probability of picking a blue marble is $\\dfrac{3}{10}$. **Answer:** $\\dfrac{3}{10}$",
+   "n": 13
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Area of a parallelogram",
+   "calculator": true,
+   "format": "number",
+   "question": "A parallelogram-shaped sign has a base of $14$ m and a perpendicular height of $6$ m. What is the area of the sign in square metres?",
+   "solution": "The area of a parallelogram is $A = \\text{base} \\times \\text{height}$. $A = 14 \\times 6 = 84$ m$^2$. **Answer:** 84 m²",
+   "accept": {
+    "value": 84,
+    "tol": 0,
+    "unit": "m²"
+   },
+   "n": 14
+  },
+  {
+   "strand": "Number",
+   "skill": "Identifying prime numbers",
+   "calculator": true,
+   "format": "choice",
+   "question": "Layla says that 91 is a prime number because it is odd and does not end in 5. Is she correct, and why?",
+   "options": [
+    "Yes, because 91 has no even factors",
+    "No, because 91 is divisible by 7",
+    "Yes, because 91 cannot be divided by 2 or 3",
+    "No, because 91 is divisible by 9"
+   ],
+   "answer_index": 1,
+   "solution": "A prime number has exactly two factors: 1 and itself. Check whether 91 has other factors. $91 \\div 7 = 13$, so $91 = 7 \\times 13$. This means 91 is NOT a prime number. Layla is wrong. **Answer:** No, because 91 is divisible by 7",
+   "n": 15
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Simple linear equations",
+   "calculator": true,
+   "format": "number",
+   "question": "Solve for $x$: $\\dfrac{x}{4} + 7 = 13$",
+   "solution": "Subtract 7 from both sides: $\\dfrac{x}{4} = 6$.\n\nMultiply both sides by 4: $x = 24$.\n\n**Answer:** 24",
+   "accept": {
+    "value": 24,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 16
+  },
+  {
+   "strand": "Number",
+   "skill": "Integers: order of operations with negative numbers",
+   "calculator": true,
+   "format": "choice",
+   "question": "Calculate $-3 \\times (4 - 9) + 2^2$.",
+   "options": [
+    "$-19$",
+    "$19$",
+    "$11$",
+    "$-11$"
+   ],
+   "answer_index": 1,
+   "solution": "Work out the bracket first: $4 - 9 = -5$.\n\nMultiply: $-3 \\times -5 = 15$.\n\nEvaluate the power: $2^2 = 4$.\n\nAdd: $15 + 4 = 19$.\n\n**Answer:** $19$",
+   "n": 17
+  },
+  {
+   "strand": "Space",
+   "skill": "Angles on a straight line",
+   "calculator": true,
+   "format": "number",
+   "question": "Three angles meet at a point on a straight line. Two of the angles are $63°$ and $48°$. What is the size of the third angle in degrees?",
+   "solution": "Angles on a straight line add to $180°$.\n\nAdd the two known angles: $63 + 48 = 111°$.\n\nSubtract from $180°$: $180 - 111 = 69°$.\n\n**Answer:** 69",
+   "accept": {
+    "value": 69,
+    "tol": 0,
+    "unit": "degrees"
+   },
+   "n": 18
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Median of a data set",
+   "calculator": true,
+   "format": "choice",
+   "question": "A group of seven athletes recorded the following distances (in metres) thrown in a shot put event: $9.4, 11.2, 8.7, 13.5, 10.1, 9.8, 12.0$. What is the median distance?",
+   "options": [
+    "$11.2$ m",
+    "$10.7$ m",
+    "$9.8$ m",
+    "$10.1$ m"
+   ],
+   "answer_index": 3,
+   "solution": "Arrange the values in order: $8.7, 9.4, 9.8, 10.1, 11.2, 12.0, 13.5$.\n\nThere are 7 values, so the median is the 4th value.\n\nThe 4th value is $10.1$.\n\n**Answer:** $10.1$ m",
+   "n": 19
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Volume of a rectangular prism with unit conversion",
+   "calculator": true,
+   "format": "choice",
+   "question": "A fish tank is $80$ cm long, $35$ cm wide and $40$ cm tall. Water fills the tank to a height of $30$ cm. What is the volume of water in the tank in litres? (1 litre $= 1000$ cm³)",
+   "options": [
+    "$112$ L",
+    "$72$ L",
+    "$96$ L",
+    "$84$ L"
+   ],
+   "answer_index": 3,
+   "solution": "Volume of water $= $ length $\\times$ width $\\times$ water height.\n\n$= 80 \\times 35 \\times 30 = 84\\,000$ cm³.\n\nConvert to litres: $84\\,000 \\div 1000 = 84$ L.\n\n**Answer:** $84$ L",
+   "n": 20
+  }
+ ]
+}
