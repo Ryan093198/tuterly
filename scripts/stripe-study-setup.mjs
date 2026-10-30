@@ -12,7 +12,7 @@ const PRICES = [
   { lookup_key: "study_plus_weekly", unit_amount: 899, interval: "week", nickname: "Plus weekly (launch special)" },
 ];
 
-const existing = await stripe.products.search({ query: "metadata['app']:'tuterly_study' AND -metadata['product']:'sch_pass'" });
+const existing = await stripe.products.search({ query: "metadata['app']:'tuterly_study' AND -metadata['product']:'sch_pass_y5' AND -metadata['product']:'sch_pass_y6' AND -metadata['product']:'sch_pass_y7'" });
 const product = existing.data[0] ?? await stripe.products.create({
   name: "Tuterly Study Plus",
   description: "Unlimited snaps, drills, tests, notes and term plans in Tuterly Study.",
@@ -20,16 +20,16 @@ const product = existing.data[0] ?? await stripe.products.create({
 });
 console.log(`${mode} product: ${product.id}`);
 
-// The Scholarship Pass (Year 7 entry): a one-off payment.
-const passKey = "study_sch_pass_y7";
-const passFound = await stripe.prices.list({ lookup_keys: [passKey], limit: 1 });
-if (passFound.data[0]) console.log(`${passKey}: ${passFound.data[0].id} (already there)`);
-else {
-  const passProduct = (await stripe.products.search({ query: "metadata['app']:'tuterly_study' AND metadata['product']:'sch_pass'" })).data[0]
-    ?? await stripe.products.create({ name: "Tuterly Study Scholarship Pass (Year 7 entry)", description: "The full diagnostic and unlimited Scholarship practice. One payment.", metadata: { app: "tuterly_study", product: "sch_pass" } });
+// The Scholarship Pass (one per entry level): a one-off payment.
+for (const entry of [5, 6, 7]) {
+  const passKey = `study_sch_pass_y${entry}`;
+  const passFound = await stripe.prices.list({ lookup_keys: [passKey], limit: 1 });
+  if (passFound.data[0]) { console.log(`${passKey}: ${passFound.data[0].id} (already there)`); continue; }
+  const passProduct = (await stripe.products.search({ query: `metadata['app']:'tuterly_study' AND metadata['product']:'sch_pass_y${entry}'` })).data[0]
+    ?? await stripe.products.create({ name: `Tuterly Study Scholarship Pass (Year ${entry} entry)`, description: "The full diagnostic and unlimited Scholarship practice. One payment.", metadata: { app: "tuterly_study", product: `sch_pass_y${entry}` } });
   const price = await stripe.prices.create({
     product: passProduct.id, currency: "aud", unit_amount: 9900, tax_behavior: "inclusive", lookup_key: passKey,
-    nickname: "Scholarship Pass Y7 (launch special)", metadata: { app: "tuterly_study", product: "sch_pass" },
+    nickname: `Scholarship Pass Y${entry} (launch special)`, metadata: { app: "tuterly_study", product: "sch_pass" },
   });
   console.log(`${passKey}: ${price.id}`);
 }

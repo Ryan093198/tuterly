@@ -4,12 +4,13 @@ import PassForm from "./PassForm";
 
 export const metadata = {
   title: "Scholarship Pass",
-  description: "Get ready for Year 7 scholarship and selective-entry tests with Tuterly Study: a full diagnostic and practice on every skill. One payment, yours to keep.",
+  description: "Get ready for Year 5, 6 and 7 entry scholarship and selective tests with Tuterly Study: a full diagnostic and practice on every skill. One payment, yours to keep.",
   alternates: { canonical: "/study/scholarship" },
 };
 
 const PERKS = [
   "The full 40-question numerical reasoning diagnostic and report",
+  "Ace it? A harder next-level diagnostic is included",
   "Unlimited practice on every skill your child missed",
   "New similar questions until each one is mastered",
   "Snap questions from any prep book or past paper",
@@ -27,8 +28,8 @@ export default function SchPassPage() {
           <div className="space-y-2">
             <h1 className="text-3xl font-semibold tracking-tight">Scholarship Pass</h1>
             <p className="text-muted">
-              For Year 5 and 6 students preparing for Year 7 scholarship and selective-entry tests: ACER, Edutest,
-              AAS and selective schools. Try the first 10 diagnostic questions free in the app.
+              For Year 4 to 6 students preparing for Year 5, 6 or 7 entry scholarship and selective tests: ACER,
+              Edutest, AAS and selective schools. Try the first 10 diagnostic questions free in the app.
             </p>
           </div>
           <ul className="space-y-1.5 text-[15px]">

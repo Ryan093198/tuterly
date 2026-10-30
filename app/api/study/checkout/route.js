@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { cleanEmail, familyCode, priceFor, SCH_PASS, STUDY_APP, STUDY_TRIAL_DAYS, studySubscriptionsFor } from "@/lib/study-plus";
+import { cleanEmail, familyCode, priceFor, SCH_PASS_LEVELS, STUDY_APP, STUDY_TRIAL_DAYS, studySubscriptionsFor } from "@/lib/study-plus";
 
 export const runtime = "nodejs";
 
@@ -60,11 +60,13 @@ async function passCheckout(request, body, kind) {
   if (!kind) return NextResponse.json({ error: "Pick who it's for." }, { status: 400 });
   if (!email) return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   if (body?.agreed !== true) return NextResponse.json({ error: "Tick the box to continue." }, { status: 400 });
+  const entryYear = Number(body?.entry_year);
+  if (!SCH_PASS_LEVELS.includes(entryYear)) return NextResponse.json({ error: "Pick which entry test." }, { status: 400 });
   try {
-    const price = await priceFor("sch_pass");
+    const price = await priceFor(`sch_pass_y${entryYear}`);
     if (!price) return NextResponse.json({ error: "The Scholarship Pass isn't on sale here just yet." }, { status: 503 });
     const code = kind === "family" ? familyCode() : null;
-    const metadata = { app: STUDY_APP, product: "sch_pass", kind, email, entry_year: String(SCH_PASS.entryYear), ...(code ? { family_code: code } : {}) };
+    const metadata = { app: STUDY_APP, product: "sch_pass", kind, email, entry_year: String(entryYear), ...(code ? { family_code: code } : {}) };
     const site = process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
     const session = await stripe().checkout.sessions.create({
       mode: "payment",

@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function PassForm() {
   const [kind, setKind] = useState("family");
+  const [entry, setEntry] = useState(7);
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -17,7 +18,7 @@ export default function PassForm() {
       const res = await fetch("/api/study/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product: "sch_pass", kind, email: email.trim(), agreed }),
+        body: JSON.stringify({ product: "sch_pass", entry_year: entry, kind, email: email.trim(), agreed }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.url) {
@@ -47,6 +48,18 @@ export default function PassForm() {
             <div className="font-semibold">Me</div>
             <div className="text-xs text-muted">Sign in to the app with the same email</div>
           </button>
+        </div>
+      </fieldset>
+
+      <fieldset className="space-y-2">
+        <legend className="text-sm font-medium mb-1">Which test?</legend>
+        <div className="grid grid-cols-3 gap-2">
+          {[5, 6, 7].map((y) => (
+            <button key={y} type="button" className={choice(entry === y)} onClick={() => setEntry(y)}>
+              <div className="font-semibold">Year {y} entry</div>
+              <div className="text-xs text-muted">In Year {y - 1} now</div>
+            </button>
+          ))}
         </div>
       </fieldset>
 
