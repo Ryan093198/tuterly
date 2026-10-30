@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import QuinnWorking from "@/components/brand/QuinnWorking";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -513,9 +514,16 @@ export default function WorksheetGenerator({
           {error && <p style={errorTextStyle}>{error}</p>}
 
           {generating && (
-            <p style={infoTextStyle}>
-              Generating… usually 20–40 seconds. Don&apos;t close the tab.
-            </p>
+            <QuinnWorking
+              steps={[
+                `Picking questions on ${topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
+                "Writing two Foundation questions",
+                "Writing two Standard questions",
+                "Writing two Extension questions",
+                "Writing the worked solutions",
+                "Checking the maths renders properly",
+              ]}
+            />
           )}
 
           <div>
