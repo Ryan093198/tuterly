@@ -14,7 +14,7 @@ export default async function QuestionCounter() {
     <p className="sl-counter">
       <strong className="sl-counter__num">{shown}+</strong>
       <span className="sl-counter__text">
-        maths practice questions written by Tuterly so far, in the app and on our free worksheets.
+        maths practice questions written by Tuterly so far, all accessible via the app.
       </span>
     </p>
   );
