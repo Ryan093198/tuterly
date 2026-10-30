@@ -40,6 +40,11 @@ const MARKETING_PATH_PREFIXES = [
   "/directory",
   "/worksheets",
   "/get-started",
+  "/years",
+  "/scholarship",
+  "/mathspace-alternative",
+  "/photomath-alternative",
+  "/quizlet-maths-australia",
 ];
 
 // Paused while the Tuterly tutor marketplace is on hold (Oct 2026): the
