@@ -600,7 +600,12 @@ export default function WorksheetGenerator({
             {/* After the answers: the app first (Years 7 to 10), then the
                 tutor offer as the second option. */}
             {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
-              <StudyAppCTA variant="inline" placement="worksheet_answers" />
+              <StudyAppCTA
+                variant="inline"
+                placement="worksheet_answers"
+                heading="Finished the sheet? Now practise the ones they got wrong."
+                sub="Snap them in Tuterly for the worked solution, then fresh questions on the same idea until each one is mastered. No more hunting for the next worksheet."
+              />
             )}
           </div>
 

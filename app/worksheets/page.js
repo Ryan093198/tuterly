@@ -3,8 +3,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
-import AppPracticeBlock from "@/components/study/AppPracticeBlock";
-import TryCta from "@/components/study/TryCta";
+import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -136,6 +135,11 @@ export default function WorksheetsPage() {
         <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
       </main>
 
+      {/* THE APP: the main call to action, straight after the generator */}
+      <div className="ws-section" style={{ padding: "0 24px 56px", maxWidth: 1076, margin: "0 auto" }}>
+        <WorksheetUpgrade placement="worksheets_index_upgrade" />
+      </div>
+
       {/* HOW THE GENERATOR WORKS */}
       <section className="ws-section" aria-labelledby="ws-how" style={{ padding: "0 24px 56px" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
@@ -154,13 +158,6 @@ export default function WorksheetsPage() {
         </div>
       </section>
 
-      <div className="ws-section" style={{ padding: "0 24px 32px", maxWidth: 1028, margin: "0 auto" }}>
-        <TryCta title="Got a question wrong in class? Try it on Tuterly." />
-      </div>
-
-      <div className="ws-section" style={{ padding: "0 24px 56px" }}>
-        <AppPracticeBlock placement="worksheets_index_practice" />
-      </div>
 
       {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).
           Leads with quotes about the practice questions, falling back to

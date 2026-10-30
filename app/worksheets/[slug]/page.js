@@ -7,7 +7,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import Fade from "@/components/marketing/Fade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
-import AppPracticeBlock from "@/components/study/AppPracticeBlock";
+import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import {
   WORKSHEET_LANDING_PAGES,
@@ -225,17 +225,17 @@ export default async function WorksheetTopicLandingPage({ params }) {
         </div>
       </section>
 
+      <section style={{ padding: "0 24px 56px", background: c.white }}>
+        <div style={{ maxWidth: 1028, margin: "0 auto" }}>
+          <WorksheetUpgrade topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_upgrade" />
+        </div>
+      </section>
+
       {worked && (
         <section style={{ padding: "24px 24px 64px", background: c.white }}>
           <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} />
         </section>
       )}
-
-      <section style={{ padding: "0 24px 60px", background: c.white }}>
-        <div style={{ maxWidth: 1028, margin: "0 auto" }}>
-          <AppPracticeBlock topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_practice" />
-        </div>
-      </section>
 
       <section style={{ padding: "60px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
