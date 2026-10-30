@@ -22,6 +22,7 @@ const STATIC_PAGES = [
   { path: "/guarantee", priority: 0.5, changeFrequency: "monthly" },
   { path: "/naplan", priority: 0.8, changeFrequency: "monthly" },
   { path: "/formula-sheets", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/exam-generator", priority: 0.8, changeFrequency: "monthly" },
   { path: "/formula-sheets/year-7-maths", priority: 0.7, changeFrequency: "monthly" },
   { path: "/formula-sheets/year-8-maths", priority: 0.7, changeFrequency: "monthly" },
   { path: "/formula-sheets/year-9-maths", priority: 0.7, changeFrequency: "monthly" },

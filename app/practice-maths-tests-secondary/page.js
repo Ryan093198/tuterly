@@ -2,22 +2,24 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
-import TryCta from "@/components/study/TryCta";
+import ExamGenerator from "@/components/exam/ExamGenerator";
+import { getExamCatalogue } from "@/lib/exam-bank";
 import { SITE_URL } from "@/lib/site";
 
-// Transactional landing page for "primary maths practice tests" style
-// searches. The test builder was removed (Oct 2026): the tests now come
-// from the Tuterly app ("Test any topic"), so the app is the CTA.
+// Transactional landing page for "maths practice test" searches. The free
+// practice exam generator (components/exam) is the payload: pick a year and
+// topics, get an exam built from the topic pages' checked questions. The
+// app (Test any topic, Fix my mistakes) is the follow-on CTA.
 
 const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Australian Curriculum)";
 const DESCRIPTION =
-  "A maths practice test generator for Years 7 to 10. Pick any topic and Tuterly writes a new test, one question from each part of the topic, with a worked solution for every question. iPhone and Android.";
+  "Free maths practice exam generator for Years 7 to 10A. Pick the year and the topics, and get a printable exam with marks, a suggested time and fully worked solutions. Australian Curriculum.";
 
 const HOW = [
-  { n: "1", title: "Pick any topic in their year", body: "Every Years 7 to 10 maths topic in the Australian Curriculum. They don't need to have snapped anything first." },
-  { n: "2", title: "Get a new test every time", body: "One question from each part of the topic, written fresh, so a second attempt is a genuine retest and not a memory test." },
-  { n: "3", title: "Check every answer", body: "Each question has a full worked solution, and a short explanation of the step that went wrong if they miss it." },
-  { n: "4", title: "Wrong answers become practice", body: "Anything they get wrong goes into their bank, ready for Fix my mistakes, with fresh questions on the same idea until it's mastered." },
+  { n: "1", title: "Pick the year and topics", body: "Tick a main topic like Algebra to include all of it, or pick the exact subtopics their next test covers." },
+  { n: "2", title: "Get an exam in exam format", body: "Up to 20 questions in short answer and extended response sections, with marks for each and a suggested time." },
+  { n: "3", title: "Sit it, then mark it", body: "Print it or save it as a PDF, with or without the answers. Every question has a fully worked solution." },
+  { n: "4", title: "Wrong answers become practice", body: "Snap the ones they got wrong in the Tuterly app for fresh questions on the same idea until each one is mastered." },
 ];
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
 
@@ -56,11 +58,11 @@ const WHY = [
 const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
-    a: "Years 7 through 10, following the Australian Curriculum, including the Victorian Curriculum 2.0. In Tuterly, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
+    a: "Years 7 through 10, plus Year 10A extension topics, following the Australian Curriculum. Pick any mix of topics in their year and the generator builds an exam of up to 20 questions with a worked solution for every question.",
   },
   {
-    q: "Is there a free maths practice test generator?",
-    a: "Tuterly is free to download with a 1-week free trial, so your child can try the practice test generator free for a week. For quick free practice, our free worksheet generator makes a six-question sheet with worked solutions on any Year 3 to 10 topic.",
+    q: "Is the practice exam generator free?",
+    a: "Yes. Enter your email to unlock it and you can make one free practice exam a day. The questions come from our topic pages, and each one was checked by an independent second solve. For more, the Tuterly app's Test any topic writes a new test on any topic whenever they want one.",
   },
   {
     q: "How much does it cost?",
@@ -121,13 +123,15 @@ export default function SecondaryPracticeTestsPage() {
             Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, run to a clock, and lean on worded problems. That is why a student who follows everything in class can still come home with a mark that does not reflect what they know.
           </p>
           <p style={{ fontSize: 17.5, color: c.ink, fontWeight: 600, lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
-            Tuterly generates a new practice test on any topic in their year, with a worked solution for every question.
+            Build a free practice exam on the topics their next test covers, with marks, a suggested time and a worked solution for every question.
           </p>
         </div>
       </section>
 
       <main className="pt-section" style={{ maxWidth: 1028, margin: "0 auto", padding: "8px 24px 56px", display: "grid", gap: 28 }}>
-        <TryCta />
+        <div id="exam-generator" style={{ scrollMarginTop: 90 }}>
+          <ExamGenerator catalogue={getExamCatalogue()} placement="practice_tests_secondary" />
+        </div>
         <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
 
