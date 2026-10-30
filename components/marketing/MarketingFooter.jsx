@@ -18,6 +18,7 @@ const GROUPS = [
       { href: "/students", label: "For students" },
       { href: "/maths-exam-preparation", label: "Exam preparation" },
       { href: "/naplan", label: "NAPLAN practice tests" },
+      { href: "/formula-sheets", label: "Formula sheets" },
       { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
       { href: "/worksheets", label: "Free worksheet generator" },
       { href: "/learn", label: "Learn" },

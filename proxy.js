@@ -32,6 +32,7 @@ const MARKETING_PATH_PREFIXES = [
   "/try",
   "/guarantee",
   "/naplan",
+  "/formula-sheets",
   "/tutors",
   "/centres",
   "/directory",
