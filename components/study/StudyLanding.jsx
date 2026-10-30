@@ -80,8 +80,8 @@ export default function StudyLanding() {
         <div className="tb-wrap sl-hero__grid">
           <div className="sl-hero__copy">
             <LaunchPill />
-            <h1 id="hero-title" className="tb-h1">
-              Boost your child’s <span className="sl-accent">maths marks</span>.
+            <h1 id="hero-title" className="tb-h1 sl-hero__h1">
+              The secret tool for <br /><span className="sl-accent">better maths marks</span>!
             </h1>
             <p className="tb-lead sl-hero__lead">
               {`The self-learning maths app for Years 7 to 10. Snap a question they got wrong, or upload a whole school test, and ${name} writes fresh questions on the same idea until it’s mastered.`}
