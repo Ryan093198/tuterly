@@ -16,6 +16,7 @@ export default async function StudyPlusDone({ searchParams }) {
   }
   const ok = s && s.metadata?.app === STUDY_APP && s.status === "complete";
   const family = ok && s.metadata.kind === "family";
+  const pass = ok && s.metadata.product === "sch_pass";
 
   return (
     <main className="flex flex-1 flex-col items-center px-6 py-12 bg-surface-soft">
@@ -39,23 +40,23 @@ export default async function StudyPlusDone({ searchParams }) {
               <p className="text-4xl font-extrabold tracking-[0.2em] text-center py-2 select-all">{s.metadata.family_code}</p>
               <ol className="list-decimal pl-5 space-y-1.5">
                 <li>Download <a className="underline font-medium" href={STUDY_APP_STORE_URL}>Tuterly Study</a> on your child&apos;s phone.</li>
-                <li>When they set it up, they enter this code and Plus switches on straight away.</li>
+                <li>When they set it up, they enter this code and {pass ? "the Scholarship Pass is theirs" : "Plus switches on straight away"}.</li>
                 <li>Already using the app? Me, then Link a tutor or parent, then Got a family code.</li>
               </ol>
-              <p className="text-sm text-muted">Up to 3 children can use one code. We&apos;ve emailed it to {s.metadata.email} too.</p>
+              <p className="text-sm text-muted">{pass ? "The code works for one child." : "Up to 3 children can use one code."} We&apos;ve emailed it to {s.metadata.email} too.</p>
             </>
           ) : (
             <>
-              <h1 className="text-3xl font-semibold tracking-tight">You&apos;re on Plus!</h1>
+              <h1 className="text-3xl font-semibold tracking-tight">{pass ? "You've got the Scholarship Pass!" : "You're on Plus!"}</h1>
               <ol className="list-decimal pl-5 space-y-1.5">
                 <li>Download <a className="underline font-medium" href={STUDY_APP_STORE_URL}>Tuterly Study</a>.</li>
-                <li>Sign in with <b>{s.metadata.email}</b>. Plus is on as soon as you do.</li>
+                <li>Sign in with <b>{s.metadata.email}</b>. {pass ? "The full diagnostic and all the practice are unlocked" : "Plus is on"} as soon as you do.</li>
               </ol>
             </>
           )}
-          <p className="text-sm text-muted">
+          {pass ? null : <p className="text-sm text-muted">
             Change or cancel any time at <Link className="underline" href="/study/manage">tuterly.com.au/study/manage</Link>.
-          </p>
+          </p>}
         </article>
       </div>
     </main>

@@ -154,6 +154,12 @@ export default function TermsOfService() {
               Store or Google Play, or on our website (billed by Bayside
               Academics through Stripe). The price is shown before you buy.
             </p>
+            <p>
+              The Scholarship Pass is a one-off purchase for one entry level
+              (for example, Year 7 entry). It is not a subscription and does
+              not renew. It stays on the account it was bought for, or redeemed
+              by with a family code.
+            </p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
                 Payment is charged to your Apple or Google account (or, on our
@@ -176,7 +182,7 @@ export default function TermsOfService() {
                 Refunds for App Store or Google Play purchases are handled by
                 Apple or Google under their policies. For website purchases,
                 email us within 14 days of a charge and we&apos;ll refund it if
-                you haven&apos;t been able to use Plus.
+                you haven&apos;t been able to use Plus or the Scholarship Pass.
               </li>
               <li>
                 If a free trial is offered, any unused part of it ends when you

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { cleanEmail, familyCode, priceFor, STUDY_APP, STUDY_TRIAL_DAYS, studySubscriptionsFor } from "@/lib/study-plus";
+import { cleanEmail, familyCode, priceFor, SCH_PASS, STUDY_APP, STUDY_TRIAL_DAYS, studySubscriptionsFor } from "@/lib/study-plus";
 
 export const runtime = "nodejs";
 
@@ -11,6 +11,8 @@ export async function POST(request) {
   let body;
   try { body = await request.json(); } catch { body = {}; }
   const kind = body?.kind === "family" ? "family" : body?.kind === "self" ? "self" : null;
+  // The Scholarship Pass is a one-off payment (no subscription, no trial).
+  if (body?.product === "sch_pass") return passCheckout(request, body, kind);
   const plan = body?.plan === "weekly" ? "weekly" : body?.plan === "monthly" ? "monthly" : null;
   const email = cleanEmail(body?.email);
   if (!kind || !plan) return NextResponse.json({ error: "Pick who it's for and a plan." }, { status: 400 });
@@ -49,6 +51,34 @@ export async function POST(request) {
     return NextResponse.json({ url: session.url });
   } catch (e) {
     console.error("[study/checkout]", e?.message);
+    return NextResponse.json({ error: "Couldn't start checkout. Try again in a moment." }, { status: 500 });
+  }
+}
+
+async function passCheckout(request, body, kind) {
+  const email = cleanEmail(body?.email);
+  if (!kind) return NextResponse.json({ error: "Pick who it's for." }, { status: 400 });
+  if (!email) return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+  if (body?.agreed !== true) return NextResponse.json({ error: "Tick the box to continue." }, { status: 400 });
+  try {
+    const price = await priceFor("sch_pass");
+    if (!price) return NextResponse.json({ error: "The Scholarship Pass isn't on sale here just yet." }, { status: 503 });
+    const code = kind === "family" ? familyCode() : null;
+    const metadata = { app: STUDY_APP, product: "sch_pass", kind, email, entry_year: String(SCH_PASS.entryYear), ...(code ? { family_code: code } : {}) };
+    const site = process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
+    const session = await stripe().checkout.sessions.create({
+      mode: "payment",
+      line_items: [{ price: price.id, quantity: 1 }],
+      customer_email: email,
+      metadata,
+      payment_intent_data: { metadata },
+      allow_promotion_codes: false,
+      success_url: `${site}/study/plus/done?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${site}/study/scholarship`,
+    });
+    return NextResponse.json({ url: session.url });
+  } catch (e) {
+    console.error("[study/checkout pass]", e?.message);
     return NextResponse.json({ error: "Couldn't start checkout. Try again in a moment." }, { status: 500 });
   }
 }
