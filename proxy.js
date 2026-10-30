@@ -45,6 +45,8 @@ const MARKETING_PATH_PREFIXES = [
   "/mathspace-alternative",
   "/photomath-alternative",
   "/quizlet-maths-australia",
+  // Tuterly Study checkout, manage and parent consent (linked from app emails)
+  "/study",
 ];
 
 // Paused while the Tuterly tutor marketplace is on hold (Oct 2026): the

@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Terms of Service | Tuterly";
 const DESCRIPTION =
-  "Terms of service for Tuterly users - parents, tutors, students, and tutoring centres.";
+  "Terms of service for Tuterly users - parents, tutors, students, and tutoring centres, including the Tuterly Study app.";
 const URL = `${SITE_URL}/terms`;
 
 export const metadata = {
@@ -20,7 +20,7 @@ export const metadata = {
   },
 };
 
-const lastUpdated = "May 2026";
+const lastUpdated = "October 2026";
 
 export default function TermsOfService() {
   return (
@@ -126,13 +126,69 @@ export default function TermsOfService() {
             </p>
           </Section>
 
+          <Section title="The Tuterly Study app">
+            <p>
+              Tuterly Study is our app for iPhone and Android that helps
+              students in Years 7 to 10 fix the maths questions they got wrong.
+              Students under 16 need a parent or guardian&apos;s OK to use it;
+              we ask for it by email when they sign up.
+            </p>
+            <p>
+              Practice questions, solutions, marking and study notes are
+              written with AI and checked automatically, but they can still be
+              wrong. Treat them as practice, not as a replacement for your
+              teacher.
+            </p>
+          </Section>
+
           <Section title="Pricing and billing">
             <p>
-              During the pilot period the service is free. We will give clear
-              notice before introducing any paid plans, and will not
+              The tutoring platform is free during the pilot period. We will
+              give clear notice before introducing any paid plans, and will not
               automatically charge accounts created during the pilot without
               opt-in.
             </p>
+            <p>
+              Tuterly Study has a free plan and a paid plan, Tuterly Study
+              Plus, sold as a weekly or monthly subscription through the App
+              Store or Google Play, or on our website (billed by Bayside
+              Academics through Stripe). The price is shown before you buy.
+            </p>
+            <p>
+              The Scholarship Pass is a one-off purchase for one entry level
+              (for example, Year 7 entry). It is not a subscription and does
+              not renew. It stays on the account it was bought for, or redeemed
+              by with a family code.
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5">
+              <li>
+                Payment is charged to your Apple or Google account (or, on our
+                website, your card) when you confirm the purchase, or at the
+                end of a free trial. A free trial is once per person.
+              </li>
+              <li>
+                Subscriptions renew automatically at the same price for the
+                same period unless cancelled at least 24 hours before the end
+                of the current period.
+              </li>
+              <li>
+                You can manage or cancel your subscription in your Apple
+                Account or Google Play settings, or, if you bought it on our
+                website, at tuterly.com.au/study/manage. Cancelling stops the
+                next renewal; Plus stays on until the end of the period
+                you&apos;ve paid for.
+              </li>
+              <li>
+                Refunds for App Store or Google Play purchases are handled by
+                Apple or Google under their policies. For website purchases,
+                email us within 14 days of a charge and we&apos;ll refund it if
+                you haven&apos;t been able to use Plus or the Scholarship Pass.
+              </li>
+              <li>
+                If a free trial is offered, any unused part of it ends when you
+                buy a subscription.
+              </li>
+            </ul>
           </Section>
 
           <Section title="Liability">
@@ -142,6 +198,11 @@ export default function TermsOfService() {
               connection with these Terms is limited to the amount you have
               paid us in the 12 months preceding the claim, or A$100, whichever
               is greater. We are not liable for indirect or consequential loss.
+            </p>
+            <p>
+              Nothing in these Terms excludes, restricts or modifies any right
+              or remedy you have under the Australian Consumer Law that cannot
+              lawfully be excluded.
             </p>
           </Section>
 

@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
               <li>
                 <strong>Account details:</strong> first name, email address (or
                 your Sign in with Apple identifier), whether you’re a student,
-                parent or tutor, and for students their year level and,
+                parent or tutor, and for students their year level, their age and,
                 optionally, their school.
               </li>
               <li>
@@ -162,6 +162,14 @@ export default function PrivacyPolicy() {
                 learning@baysideacademics.com.au
               </a>
               .
+            </p>
+            <p>
+              Students tell us their age when they sign up. If they&apos;re under
+              16, we ask them for a parent or guardian&apos;s email and send that
+              parent a link explaining the app. The parent says yes on our
+              website, and we record their name, the time and their IP address
+              as a record of the consent. We use the parent&apos;s email only for
+              this, and to reply if they contact us.
             </p>
           </Section>
 
