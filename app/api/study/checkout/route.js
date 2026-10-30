@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { guardPublicForm } from "@/lib/public-form-guard";
 import { stripe } from "@/lib/stripe";
 import { cleanEmail, familyCode, priceFor, SCH_PASS_LEVELS, STUDY_APP, STUDY_TRIAL_DAYS, studySubscriptionsFor } from "@/lib/study-plus";
 
@@ -10,6 +11,9 @@ export const runtime = "nodejs";
 export async function POST(request) {
   let body;
   try { body = await request.json(); } catch { body = {}; }
+  // Per-IP limit: each call makes Stripe requests and a checkout session.
+  const guard = await guardPublicForm(request, body ?? {}, "study-checkout", { perMinute: 5, perHour: 20, perDay: 40 });
+  if (guard.blocked) return NextResponse.json({ error: "Too many tries. Please wait a minute and try again." }, { status: 429 });
   const kind = body?.kind === "family" ? "family" : body?.kind === "self" ? "self" : null;
   // The Scholarship Pass is a one-off payment (no subscription, no trial).
   if (body?.product === "sch_pass") return passCheckout(request, body, kind);

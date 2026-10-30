@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LAUNCH_SPECIAL_LINE } from "@/lib/study-launch";
 
 export default function PassForm() {
   const [kind, setKind] = useState("family");
@@ -64,7 +65,7 @@ export default function PassForm() {
       </fieldset>
 
       <div className="rounded-xl border-2 border-[#0e9fc1] bg-[#e3f6fa] p-4 text-center">
-        <p className="text-xs font-semibold text-amber-700 mb-1">Launch special: 50% off</p>
+        <p className="text-xs font-semibold text-amber-700 mb-1">{LAUNCH_SPECIAL_LINE}</p>
         <p className="text-3xl font-bold">$99</p>
         <p className="text-xs text-muted"><s>$198</s> once, yours to keep</p>
       </div>

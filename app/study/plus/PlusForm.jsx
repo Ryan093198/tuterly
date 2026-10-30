@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { LAUNCH_SPECIAL_LINE } from "@/lib/study-launch";
 
 const PLANS = [
   { key: "monthly", label: "Monthly", price: "$29.99", per: "a month", usual: "$59.99", note: "7 days free, then $29.99 a month" },
@@ -77,7 +78,7 @@ export default function PlusForm() {
             </span>
           </button>
         ))}
-        <p className="text-xs font-semibold text-amber-700">Launch special: 50% off</p>
+        <p className="text-xs font-semibold text-amber-700">{LAUNCH_SPECIAL_LINE}</p>
       </fieldset>
 
       <label className="block space-y-1.5">
