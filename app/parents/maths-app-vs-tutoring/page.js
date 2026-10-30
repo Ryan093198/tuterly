@@ -67,7 +67,7 @@ export default function Page() {
         ["faq", "FAQ"],
       ]}
       ctaTitle="Practice built from your child’s mistakes"
-      ctaText="Tuterly turns each maths question your child gets wrong into a worked solution and fresh practice on the same skill, aligned to the Australian Curriculum."
+      ctaText="Tuterly turns each maths question your child gets wrong into a worked solution and fresh practice on the same skill. It covers the same maths as the Australian Curriculum."
       placement="parents_app_vs_tutor"
       faqs={FAQS}
       faqTitle="App or tutor: questions parents ask"

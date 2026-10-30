@@ -22,7 +22,7 @@ So the useful question is not "how much more work?" It is "which work, exactly?"
 
 **2. Work the two or three real gaps.** Not the whole subject. A student who is shaky on fractions and multi-step worded problems does not need Year 5 maths re-taught. They need those two things, properly, with spacing so it sticks.
 
-**3. Practise the way the test actually asks.** This is the part schools rarely have time for. Class worksheets come sorted by topic, so your child knows the method before reading the question. Real tests mix topics, run to a clock, and lean on worded problems. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a practice test across a whole topic, aligned to the Victorian Curriculum, with a worked solution for every question.
+**3. Practise the way the test actually asks.** This is the part schools rarely have time for. Class worksheets come sorted by topic, so your child knows the method before reading the question. Real tests mix topics, run to a clock, and lean on worded problems. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a practice test across a whole topic, covering the same maths as the Victorian Curriculum, with a worked solution for every question.
 
 **4. Check it is working.** Re-test the same topic a few weeks later with fresh questions and compare. If a tutor is involved, ask for a short note after each session on what was covered, how your child went and what to practise next. For Years 7 to 10 maths, linking to your child's {{STUDY_APP}} account gives you Week in review: what they added and mastered that week, their test scores and their trickiest topic. You should not have to wait for the next school report to find out whether the effort is paying off.
 

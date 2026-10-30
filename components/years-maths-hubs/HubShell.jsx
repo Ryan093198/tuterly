@@ -159,7 +159,7 @@ export default function HubShell({
               ))}
             </ol>
             <p className="ym-small">
-              Tuterly is designed by Australian educators at Bayside Academics and aligned to the Australian Curriculum (including the Victorian Curriculum 2.0) for Years 7 to 10 maths. See how it works on <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
+              Tuterly is designed by Australian educators at Bayside Academics and covers the same Years 7 to 10 maths as the Australian Curriculum (and the Victorian Curriculum 2.0). See how it works on <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
             </p>
           </div>
         </section>

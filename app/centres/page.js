@@ -426,7 +426,7 @@ export default function CentresLanding() {
             { q: "How long does it take to set up?", a: "Under an hour. Create your account, invite your tutors via email, and they can start adding session notes immediately. No technical setup required." },
             { q: "Will my tutors actually use it?", a: "It takes under 2 minutes per session. They record, type dot points, or snap a photo. Most tutors prefer it to writing manual notes because the system generates a professional report they'd never have time to write themselves." },
             { q: "Can parents see reports for free?", a: "Yes. Parents get free access to view their child's reports and progress dashboard. You decide whether to offer this as a free value-add or charge a premium for it." },
-            { q: "What subjects and year levels are supported?", a: "All subjects from Prep to Year 12, aligned to the VCAA Victorian Curriculum. VCE subjects including Methods, Specialist, General Maths, and English are all covered." },
+            { q: "What subjects and year levels are supported?", a: "All subjects from Prep to Year 12, covering the Victorian Curriculum. VCE subjects including Methods, Specialist, General Maths, and English are all covered." },
             { q: "Can I try it before committing?", a: "Absolutely. Every plan includes a 30-day free trial with full features. Pick 3-5 students, run it for a month, and see what your parents say." },
             { q: "Is my centre's data private?", a: "Yes. Each centre's data is completely isolated. Your tutors, students, and reports are only visible to your team and the relevant parents." },
           ].map((faq, i) => (

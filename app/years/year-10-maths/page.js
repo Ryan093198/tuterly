@@ -27,7 +27,7 @@ const STRANDS = [
   },
   {
     name: "Algebra",
-    summary: "The heaviest strand of Year 10, and the best predictor of senior maths readiness.",
+    summary: "The heaviest strand of Year 10, and the one senior maths builds on most.",
     items: [
       "Expanding and factorising quadratic expressions",
       "Solving quadratic equations",

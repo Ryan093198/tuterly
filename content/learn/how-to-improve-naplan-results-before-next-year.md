@@ -48,7 +48,7 @@ If you do nothing else: after every practice test, sort each wrong answer into s
 
 ## Build the first diagnostic test
 
-In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question, aligned to the Victorian Curriculum:
+In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question, covering the same maths as the Victorian Curriculum:
 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 

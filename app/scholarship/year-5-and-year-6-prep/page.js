@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly Scholarship work for Year 5 and Year 6 entry?",
-    a: "Choose the entry level, and the first 10 diagnostic questions are free. Scholarship Pass (launch special A$99 one-off per entry level, usual A$198) unlocks the full diagnostic, worked solutions and follow-up practice on missed questions.",
+    a: "Choose the entry level, and the first 10 diagnostic questions are free. Scholarship Pass (launch special A$99 one-off per entry level, usual price A$198 from 1 April 2027) unlocks the full diagnostic, worked solutions and follow-up practice on missed questions.",
   },
 ];
 
@@ -161,7 +161,7 @@ export default function Page() {
           <ol className="sg-steps">
             <li><strong>Pick the level</strong>Year 5 entry (child in Year 4) or Year 6 entry (child in Year 5).</li>
             <li><strong>Try 10 free questions</strong>The first 10 diagnostic questions are free, a gentle first look at the style.</li>
-            <li><strong>Unlock Scholarship Pass if useful</strong>Launch special A$99 one-off per entry level (usual A$198): full diagnostic and worked solutions.</li>
+            <li><strong>Unlock Scholarship Pass if useful</strong>Launch special A$99 one-off per entry level (usual price A$198 from 1 April 2027): full diagnostic and worked solutions.</li>
             <li><strong>Practise little and often</strong>Follow-up practice on missed questions, in short sessions that suit younger children.</li>
           </ol>
           <div className="sg-prose" style={{ marginTop: 18 }}>

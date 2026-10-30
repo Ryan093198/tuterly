@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "Where does Tuterly Scholarship fit for Year 7 entry?",
-    a: "Start with the 10 free diagnostic questions for Year 7 entry to see the style and an early picture of strengths. Scholarship Pass (launch special A$99 one-off per entry level, usual A$198) unlocks the full diagnostic, worked solutions and follow-up practice on everything your child misses.",
+    a: "Start with the 10 free diagnostic questions for Year 7 entry to see the style and an early picture of strengths. Scholarship Pass (launch special A$99 one-off per entry level, usual price A$198 from 1 April 2027) unlocks the full diagnostic, worked solutions and follow-up practice on everything your child misses.",
   },
 ];
 
@@ -172,7 +172,7 @@ export default function Page() {
               <strong>At the start of Year 6 (or late Year 5):</strong> use the 10 free Year 7 entry diagnostic questions for an early picture of strengths and gaps, and to show your child what the questions look like.
             </p>
             <p>
-              <strong>When you are ready to plan properly:</strong> Scholarship Pass, a launch special of A$99 one-off for the Year 7 entry level (usual A$198), unlocks the full diagnostic, worked solutions for every question and follow-up practice on everything missed. It is designed to complement provider-specific papers and writing feedback, not replace them.
+              <strong>When you are ready to plan properly:</strong> Scholarship Pass, a launch special of A$99 one-off for the Year 7 entry level (usual price A$198 from 1 April 2027), unlocks the full diagnostic, worked solutions for every question and follow-up practice on everything missed. It is designed to complement provider-specific papers and writing feedback, not replace them.
             </p>
             <p>
               Today you can already try the <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link> (choose Year 6 for Year 7 entry). Younger child? See <Link href="/scholarship/year-5-and-year-6-prep">Year 5 and Year 6 prep</Link>, or go back to the <Link href="/scholarship">scholarship hub</Link>.

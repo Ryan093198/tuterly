@@ -235,7 +235,7 @@ export default function Page() {
               An app does not replace the routine, the encouragement, or the note to the teacher. It works best when your child is roughly keeping up and needs more practice on specific skills. If a whole topic has not made sense, the teacher, or sometimes a tutor, needs to re-teach it first. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link> covers how to tell the difference.
             </p>
             <p>
-              Tuterly covers Years 7 to 10 maths, is aligned to the Australian Curriculum, and is designed by Australian educators at Bayside Academics. See how <Link href="/features/snap-a-question">snap a question</Link> works.
+              Tuterly covers the same Years 7 to 10 maths as the Australian Curriculum and is designed by Australian educators at Bayside Academics. See how <Link href="/features/snap-a-question">snap a question</Link> works.
             </p>
           </div>
         </div>

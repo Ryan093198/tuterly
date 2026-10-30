@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How much is Scholarship Pass?",
-    a: "Scholarship Pass is a launch special of A$99, one-off, per entry level (usual A$198). It is not a subscription. Join the Scholarship list to hear when it opens.",
+    a: "Scholarship Pass is a launch special of A$99, one-off, per entry level (usual price A$198 from 1 April 2027). It is not a subscription. Join the Scholarship list to hear when it opens.",
   },
   {
     q: "Can Tuterly tell me my child's chances of a scholarship?",
@@ -57,7 +57,7 @@ export default function Page() {
         ["Entry years covered", "Year 5, Year 6 and Year 7 entry"],
         ["Main providers", "ACER, Edutest, AAS"],
         ["Free to start", "First 10 diagnostic questions"],
-        ["Scholarship Pass", "A$99 launch special per entry level (usual A$198)"],
+        ["Scholarship Pass", "A$99 launch special per entry level (usual price A$198 from 1 April 2027)"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-vs">
@@ -161,7 +161,7 @@ export default function Page() {
           <ol className="sg-steps">
             <li><strong>Pick the entry level</strong>Choose Year 5, 6 or 7 entry. The questions are pitched at the year your child is in now.</li>
             <li><strong>Try 10 questions free</strong>The first 10 diagnostic questions are free, so you see the style and an early picture of strengths and gaps.</li>
-            <li><strong>Unlock Scholarship Pass</strong>Launch special A$99, one-off per entry level (usual A$198). Full diagnostic with worked solutions for every question.</li>
+            <li><strong>Unlock Scholarship Pass</strong>Launch special A$99, one-off per entry level (usual price A$198 from 1 April 2027). Full diagnostic with worked solutions for every question.</li>
             <li><strong>Practise what was missed</strong>Each missed question becomes follow-up practice on the same skill, so time goes where it counts.</li>
           </ol>
           <div className="sg-prose" style={{ marginTop: 18 }}>

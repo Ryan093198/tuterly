@@ -65,7 +65,7 @@ const FAQS = [
     a: "For most primary students, one short test a week per subject area is plenty. Consistency matters far more than volume, and a stressed child learns less, so keep it light and mark it together.",
   },
   {
-    q: "Are the questions aligned to the curriculum?",
+    q: "Do the questions follow the curriculum?",
     a: "Yes. Topics come from the Victorian Curriculum 2.0, Victoria's version of the Australian Curriculum, so what your child practises matches what schools teach across Australia. NSW and WA have their own syllabuses that cover much the same maths.",
   },
 ];

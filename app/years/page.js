@@ -129,7 +129,7 @@ export default function Page() {
           <h2 id="h-app" className="tb-h2 pg-h2">How Tuterly fits alongside school maths</h2>
           <div className="pg-prose">
             <p>
-              Tuterly is a study app for Years 7 to 10 maths, designed by Australian educators at Bayside Academics and aligned to the Australian Curriculum. It does not replace your child&rsquo;s teacher or textbook. It works on the part of learning that is easiest to skip: going back to the questions they got wrong.
+              Tuterly is a study app for Years 7 to 10 maths, designed by Australian educators at Bayside Academics. It covers the same maths as the Australian Curriculum. It does not replace your child&rsquo;s teacher or textbook. It works on the part of learning that is easiest to skip: going back to the questions they got wrong.
             </p>
           </div>
           <ol className="pg-steps" style={{ marginTop: 18 }}>

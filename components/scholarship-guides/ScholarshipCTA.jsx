@@ -67,7 +67,7 @@ export default function ScholarshipCTA({ sourcePage, variant = "band", defaultEn
           <p className="sg-cta__text">
             Tuterly Scholarship opens with a diagnostic for Year 5, 6 and 7 entry. <strong>The first 10 questions are free.</strong>{" "}
             Scholarship Pass then unlocks full worked solutions and follow-up practice on every question your child misses:{" "}
-            <strong>launch special A$99 one-off per entry level</strong> (usual A$198). Join the list to hear when it opens.
+            <strong>launch special A$99 one-off per entry level</strong> (usual price A$198 from 1 April 2027). Join the list to hear when it opens.
           </p>
           <div className="sg-cta__row">
             <input
