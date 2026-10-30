@@ -515,13 +515,15 @@ export default function WorksheetGenerator({
 
           {generating && (
             <QuinnWorking
+              seconds={48}
+              note="This can take up to a minute. Please don't close the tab."
               steps={[
                 `Picking questions on ${topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
                 "Writing two Foundation questions",
                 "Writing two Standard questions",
                 "Writing two Extension questions",
                 "Writing the worked solutions",
-                "Checking the maths renders properly",
+                "Checking the maths and the layout",
               ]}
             />
           )}

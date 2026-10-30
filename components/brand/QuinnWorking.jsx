@@ -11,7 +11,7 @@ import "./quinn-working.css";
 //
 // steps: status lines shown in turn across `seconds`.
 export default function QuinnWorking({
-  title = "Quinn is writing your worksheet",
+  title = "Tuterly is preparing your worksheet",
   note = "This usually takes 30 to 40 seconds. Please don't close the tab.",
   steps = [],
   seconds = 35,

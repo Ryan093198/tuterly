@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase-server";
 import { createAdminClient } from "@/lib/supabase-admin";
@@ -16,11 +16,19 @@ import {
   formatErrorsForRetry,
 } from "@/lib/markdown-katex-validate";
 import { sanitizeGenerated } from "@/lib/sanitize-generated";
+import { worksheetStructureProblems } from "@/lib/worksheet-structure";
+import { topicKey, viewerKeys, pickFromPool, recordServe, saveToPool } from "@/lib/worksheet-pool";
 
 export const runtime = "nodejs";
-// 6 questions with worked solutions in LaTeX comfortably runs 20-35s on
-// Sonnet — same shape as /api/practice. 60s is the Vercel cap for non-pro.
-export const maxDuration = 60;
+// A fresh worksheet is written with extended thinking (the model works each
+// question out before writing it), which takes 40-55s, plus at most one
+// retry if the layout comes back wrong. Reused (pooled) worksheets return
+// instantly. Vercel Pro allows up to 300s.
+export const maxDuration = 120;
+
+// Thinking budget for a fresh worksheet. Tested Oct 2026: without thinking
+// 3 of 5 sample worksheets had a wrong or contradictory answer; with it, 1 of 6.
+const THINKING_BUDGET = 3000;
 
 const ALLOWED_YEARS = new Set([
   "Year 3",
@@ -41,10 +49,9 @@ const DAILY_IP_LIMIT = Number(process.env.WORKSHEET_DAILY_IP_LIMIT) || 1;
 // visitors keep the public per-IP daily funnel (DAILY_IP_LIMIT) below.
 const FREE_WORKSHEET_PER_WEEK = 1;
 
-// If the first generation took longer than this, skip the validate-and-retry
-// pass — a second Sonnet call on top would risk Vercel's 60s timeout. Leaves
-// ~25s of headroom for the retry to finish if it does fire.
-const RETRY_BUDGET_MS = 30_000;
+// Only retry (bad layout or maths that won't render) if the first attempt
+// finished within this, so the retry still fits inside maxDuration.
+const RETRY_BUDGET_MS = 60_000;
 
 export async function POST(request) {
   try {
@@ -256,6 +263,21 @@ async function handle(request) {
     await admin.from("worksheet_generations").delete().eq("id", reservationId);
   }
 
+  // A checked worksheet on this topic that this visitor hasn't had yet?
+  // Serve it straight away. (It still counts as their worksheet for today.)
+  const key = topicKey(topicId, topicLabel);
+  const viewers = viewerKeys({ email: email || user?.email, ip, userId: user?.id });
+  const pooled = await pickFromPool(admin, { yearLevel, key, viewers });
+  if (pooled) {
+    await recordServe(admin, pooled.id, viewers, pooled.served_count);
+    return NextResponse.json({
+      content: pooled.content,
+      year_level: yearLevel,
+      topic_label: topicLabel,
+      checked: true,
+    });
+  }
+
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const userMessage = buildWorksheetUserMessage({
     yearLevel,
@@ -268,7 +290,8 @@ async function handle(request) {
   async function generateOnce(messages) {
     const m = await anthropic.messages.create({
       model: "claude-sonnet-4-6",
-      max_tokens: 3500,
+      max_tokens: 3500 + THINKING_BUDGET,
+      thinking: { type: "enabled", budget_tokens: THINKING_BUDGET },
       system: [
         {
           type: "text",
@@ -295,43 +318,41 @@ async function handle(request) {
     throw e;
   }
 
-  // Validate every math block via KaTeX. If anything won't render, the
-  // user would see red error text or italicised prose, so we send the
-  // bad output back to the model with the exact KaTeX errors and ask for
-  // a single redo. Cheaper than serving broken content and forcing a
-  // human-triggered regenerate.
-  //
-  // Skip the retry if the first call already used more than half the
-  // function budget — a second 30-40s call on top would hit Vercel's
-  // 60s maxDuration cap and the user would see a 504 with nothing
-  // saved. Better to ship the slightly-broken first attempt.
-  const katexErrors = findKatexErrors(worksheetMarkdown);
+  // Two cheap checks with no model call: every maths block must render
+  // (KaTeX), and the layout must be right (six questions numbered 1 to 6
+  // under Foundation / Standard / Extension, one solution each, no
+  // answer line that disagrees with another). If either fails and there's
+  // time, write the worksheet again from scratch and keep whichever is
+  // better.
+  const problemsOf = (md) => {
+    const katex = findKatexErrors(md);
+    const layout = worksheetStructureProblems(sanitizeGenerated(md));
+    return { katex, layout, total: katex.length + layout.length };
+  };
+  let problems = problemsOf(worksheetMarkdown);
   const elapsedMs = Date.now() - startedAt;
-  if (katexErrors.length > 0 && elapsedMs < RETRY_BUDGET_MS) {
-    console.warn(
-      "[worksheets] katex errors, retrying:",
-      katexErrors.length,
-      "elapsed:",
-      elapsedMs
-    );
+  if (problems.total > 0 && elapsedMs < RETRY_BUDGET_MS) {
+    console.warn("[worksheets] retrying:", JSON.stringify({ katex: problems.katex.length, layout: problems.layout }), "elapsed:", elapsedMs);
     try {
-      const retry = await generateOnce([
-        ...baseMessages,
-        { role: "assistant", content: worksheetMarkdown },
-        { role: "user", content: formatErrorsForRetry(katexErrors) },
-      ]);
-      if (retry.text) worksheetMarkdown = retry.text;
+      const retry = problems.layout.length
+        ? await generateOnce(baseMessages)
+        : await generateOnce([
+            ...baseMessages,
+            { role: "assistant", content: worksheetMarkdown },
+            { role: "user", content: formatErrorsForRetry(problems.katex) },
+          ]);
+      if (retry.text) {
+        const p2 = problemsOf(retry.text);
+        if (p2.total <= problems.total) {
+          worksheetMarkdown = retry.text;
+          problems = p2;
+        }
+      }
     } catch (e) {
-      // Keep the (valid-enough) first attempt if the retry call fails.
-      console.warn("[worksheets] katex retry failed:", e?.message || e);
+      console.warn("[worksheets] retry failed:", e?.message || e);
     }
-  } else if (katexErrors.length > 0) {
-    console.warn(
-      "[worksheets] katex errors but skipping retry, elapsed",
-      elapsedMs,
-      "exceeds budget",
-      RETRY_BUDGET_MS
-    );
+  } else if (problems.total > 0) {
+    console.warn("[worksheets] problems but no time to retry, elapsed", elapsedMs);
   }
 
   // Strip any leaked chain-of-thought / self-correction before returning.
@@ -348,6 +369,30 @@ async function handle(request) {
   // The generation was reserved (logged) before the model call — see above.
   // Add its six questions to the running total for the home page counter.
   await bumpQuestionTally(admin, "worksheets", 6);
+
+  // Save it to the pool and, once the visitor has it, have a second model
+  // check every answer. Only worksheets that pass are reused for others.
+  // Ones with layout problems aren't saved at all.
+  if (problems.total === 0) {
+    const poolId = await saveToPool(admin, { yearLevel, key, topicLabel, content: worksheetMarkdown, viewers });
+    const secret = process.env.CRON_SECRET;
+    if (poolId && secret) {
+      const verifyUrl = new URL("/api/worksheets/verify", request.url).toString();
+      after(async () => {
+        try {
+          await fetch(verifyUrl, {
+            method: "POST",
+            headers: { authorization: `Bearer ${secret}`, "content-type": "application/json" },
+            body: JSON.stringify({ id: poolId }),
+            signal: AbortSignal.timeout(58_000),
+          });
+        } catch (e) {
+          // Stays 'pending' (never reused) if the check couldn't run.
+          console.warn("[worksheets] verify call failed:", e?.message || e);
+        }
+      });
+    }
+  }
 
   return NextResponse.json({
     content: worksheetMarkdown,
