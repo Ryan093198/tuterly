@@ -17,6 +17,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "katex": "^0.16.45",
     "lucide-react": "0.511.0",
+    "mathjs": "^13.2.3",
     "next": "16.2.4",
     "openai": "^6.36.0",
     "qrcode-generator": "^1.4.4",

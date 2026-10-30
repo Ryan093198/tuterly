@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Finding speed using distance and time",
+   "question": "A cyclist travels 72 km in 3 hours. Find the cyclist's average speed in km/h.",
+   "solution": "**Key idea:** Speed is a rate that compares distance to time. Use $\\text{speed} = \\dfrac{\\text{distance}}{\\text{time}}$.\n\n1. Write the formula: $$\\text{speed} = \\frac{\\text{distance}}{\\text{time}}$$\n2. Substitute the known values: $$\\text{speed} = \\frac{72}{3}$$\n3. Calculate: $$\\text{speed} = 24 \\text{ km/h}$$\n4. Check: $24 \\times 3 = 72$ km. ✓\n\n**Answer:** The cyclist's average speed is 24 km/h.",
+   "answer": "24 km/h"
+  },
+  {
+   "title": "Best-buy comparison using unit pricing",
+   "question": "Orange juice is sold in two sizes. A 600 mL bottle costs \\$3.00 and a 1.5 L bottle costs \\$6.60. Which size is the better buy?",
+   "solution": "**Key idea:** Convert both options to the same unit, then find the cost per millilitre (unit price) for each. The lower unit price is the better buy.\n\n1. Convert 1.5 L to millilitres: $1.5 \\text{ L} = 1500 \\text{ mL}$\n2. Unit price of the 600 mL bottle: $$\\frac{300}{600} = 0.50 \\text{ cents/mL}$$\n3. Unit price of the 1500 mL bottle: $$\\frac{660}{1500} = 0.44 \\text{ cents/mL}$$\n4. Compare: $0.44 < 0.50$, so the 1.5 L bottle has the lower unit price.\n\n**Answer:** The 1.5 L bottle is the better buy at 0.44 cents/mL.",
+   "answer": "The 1.5 L bottle (0.44 cents/mL vs 0.50 cents/mL)"
+  },
+  {
+   "title": "Multi-step rate problem: road trip fuel cost",
+   "question": "Priya drives from Melbourne to Ballarat, a distance of 112 km. Her car uses fuel at a rate of 8 litres per 100 km. Petrol costs \\$2.10 per litre. How much does the petrol for this trip cost in total?",
+   "solution": "**Key idea:** Use the fuel rate to find the total litres used, then use the price rate to find the total cost.\n\n1. Find the fuel used for 112 km using the rate of 8 litres per 100 km: $$\\text{fuel} = \\frac{8}{100} \\times 112 = 8.96 \\text{ litres}$$\n2. Find the total cost using 210 cents per litre (keeping numbers as plain amounts): $$\\text{cost} = 8.96 \\times 2.10 = 18.816$$\n3. Round to the nearest cent: $18.816 \\approx 18.82$\n\n**Answer:** The petrol for the trip costs \\$18.82.",
+   "answer": "\\$18.82"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing in the wrong order for speed",
+   "wrong": "Speed $= \\dfrac{\\text{time}}{\\text{distance}} = \\dfrac{3}{72} = 0.04\\overline{1}$ km/h",
+   "fix": "Always divide distance by time, not the other way around. Check that your answer is a reasonable speed: 0.04 km/h for a cyclist makes no sense."
+  },
+  {
+   "title": "Comparing prices without matching units",
+   "wrong": "Comparing \\$3.00 for 600 mL directly with \\$6.60 for 1.5 L and concluding the cheaper price means the better buy.",
+   "fix": "You must find the price for the same amount (such as per mL or per 100 mL) before comparing. Convert all quantities to the same unit first."
+  },
+  {
+   "title": "Forgetting to convert units before calculating a rate",
+   "wrong": "Converting km/h to m/s by dividing only by 3600, giving $72 \\div 3600 = 0.02$ m/s instead of 20 m/s.",
+   "fix": "To convert km/h to m/s, multiply by 1000 (km to m) and divide by 3600 (hours to seconds): $$\\frac{\\times 1000}{\\div 3600} = \\times \\frac{1000}{3600} = \\times \\frac{5}{18}$$"
+  },
+  {
+   "title": "Using the wrong operation in a multi-step rate problem",
+   "wrong": "Adding the fuel rate and the distance instead of multiplying: $8 + 112 = 120$ litres.",
+   "fix": "Read what each rate means carefully. 'Litres per 100 km' means you multiply the rate by the number of hundreds of kilometres travelled: $\\dfrac{8}{100} \\times 112$."
+  }
+ ],
+ "practice": {
+  "question": "Two brands of rice are on sale. Brand A comes in a 2 kg bag for \\$5.60. Brand B comes in a 750 g bag for \\$2.25. Which brand is the better buy? Show your working.",
+  "answer": "Brand A is the better buy at 28 cents/100 g, compared with Brand B at 30 cents/100 g.",
+  "solution": "**Key idea:** Find the price per 100 g for each brand, then compare.\n\n1. Convert Brand A to grams: $2 \\text{ kg} = 2000 \\text{ g}$\n2. Price per 100 g for Brand A: $$\\frac{560}{2000} \\times 100 = 28 \\text{ cents per 100 g}$$\n3. Price per 100 g for Brand B: $$\\frac{225}{750} \\times 100 = 30 \\text{ cents per 100 g}$$\n4. Compare: $28 < 30$, so Brand A is cheaper per 100 g.\n\n**Answer:** Brand A is the better buy at 28 cents/100 g."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are rates and how do you use them to solve problems?",
+  "a": "A rate compares two quantities with different units, such as km/h, $/kg or people/km². To solve rate problems, write the rate as a fraction and multiply or divide to find the missing quantity. For example, at 60 km/h for 2.5 hours, distance = 60 × 2.5 = 150 km."
+ },
+ "turn": {
+  "question": "A 750 g box of cereal costs \\$4.50 and a 1.2 kg box of the same cereal costs \\$6.96. What is the unit price of the **cheaper** box in cents per 100 g? Give your answer in cents per 100 g, correct to 1 decimal place.",
+  "kind": "number",
+  "accept": {
+   "value": 58,
+   "tol": 0.05,
+   "unit": "cents per 100 g"
+  },
+  "answer_display": "$58.0$ cents per 100 g",
+  "hint": "Find the price per 100 g for each box separately, then compare.",
+  "solution": "**Key idea:** Convert each price to the same unit rate (cents per 100 g) and compare.\n\n1. Convert prices to cents: \\$4.50 = 450 c and \\$6.96 = 696 c.\n2. Find the unit price for the 750 g box: $$\\frac{450}{750} \\times 100 = 60.0 \\text{ c per 100 g}$$\n3. Find the unit price for the 1.2 kg box. Convert 1.2 kg to grams: $1.2 \\text{ kg} = 1200 \\text{ g}$. $$\\frac{696}{1200} \\times 100 = 58.0 \\text{ c per 100 g}$$\n4. Compare: $58.0 < 60.0$, so the 1.2 kg box is cheaper.\n\n**Answer:** $58.0$ cents per 100 g"
+ },
+ "turn_checked": {
+  "my_answer": "58.0",
+  "attempts": 1
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Two-step equations",
+   "question": "Solve $2x + 5 = 17$, then verify your solution by substitution.",
+   "solution": "**Key idea:** Undo the operations in reverse order — subtract first, then divide.\n\n1. Subtract $5$ from both sides:\n$$2x + 5 - 5 = 17 - 5 \\implies 2x = 12$$\n2. Divide both sides by $2$:\n$$x = \\frac{12}{2} = 6$$\n3. **Verify** by substituting $x = 6$ back into the original equation:\n$$2(6) + 5 = 12 + 5 = 17 \\checkmark$$\n\n**Answer:** $x = 6$",
+   "answer": "$x = 6$"
+  },
+  {
+   "title": "Equations with brackets",
+   "question": "Solve $3(x + 2) = 21$.",
+   "solution": "**Key idea:** Expand the brackets first, then solve the two-step equation.\n\n1. Expand the brackets:\n$$3(x + 2) = 3x + 6$$\nSo the equation becomes $3x + 6 = 21$.\n2. Subtract $6$ from both sides:\n$$3x = 21 - 6 = 15$$\n3. Divide both sides by $3$:\n$$x = \\frac{15}{3} = 5$$\n4. **Verify** by substituting $x = 5$ into the original equation:\n$$3(5 + 2) = 3 \\times 7 = 21 \\checkmark$$\n\n**Answer:** $x = 5$",
+   "answer": "$x = 5$"
+  },
+  {
+   "title": "Word problem — equations from a real-life situation",
+   "question": "Aisha is saving up to buy a book that costs \\$29. She already has \\$11 saved and earns \\$6 per hour doing odd jobs. How many hours does Aisha need to work to have exactly enough money to buy the book?",
+   "solution": "**Key idea:** Translate the situation into a linear equation, solve it, then verify.\n\n1. Let $h$ be the number of hours Aisha needs to work. Her total savings will be $6h + 11$ dollars. Set this equal to $29$:\n$$6h + 11 = 29$$\n2. Subtract $11$ from both sides:\n$$6h = 29 - 11 = 18$$\n3. Divide both sides by $6$:\n$$h = \\frac{18}{6} = 3$$\n4. **Verify** by substituting $h = 3$:\n$$6(3) + 11 = 18 + 11 = 29 \\checkmark$$\n\n**Answer:** Aisha needs to work $3$ hours.",
+   "answer": "$3$ hours"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing before subtracting in a two-step equation",
+   "wrong": "$2x + 5 = 17 \\implies x + 5 = 8.5$  (divided by $2$ first)",
+   "fix": "Always undo addition or subtraction before multiplication or division. Subtract the constant term from both sides first, then divide."
+  },
+  {
+   "title": "Forgetting to expand brackets fully",
+   "wrong": "$3(x + 2) = 21 \\implies 3x + 2 = 21$  (only multiplied the $x$, not the $2$)",
+   "fix": "Every term inside the brackets must be multiplied by the number outside. Here, $3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$."
+  },
+  {
+   "title": "Not applying the operation to both sides",
+   "wrong": "$2x = 12 \\implies 2x - 2 = 12$  (subtracted $2$ from the left side only)",
+   "fix": "Whatever you do to one side of an equation, you must do exactly the same to the other side. This keeps the equation balanced."
+  },
+  {
+   "title": "Skipping or rushing the substitution check",
+   "wrong": "Substituting $x = 5$ into $2x + 5 = 17$ gives $2(5) = 10$, so it checks out.  (forgot to add the $5$)",
+   "fix": "Replace every $x$ with the answer and evaluate the full expression step by step. Only tick the answer if both sides give exactly the same number."
+  }
+ ],
+ "practice": {
+  "question": "Solve $4(x + 3) = 32$.",
+  "answer": "$x = 5$",
+  "solution": "**Key idea:** Expand the brackets first, then solve the two-step equation.\n\n1. Expand the brackets:\n$$4(x + 3) = 4x + 12$$\nSo the equation becomes $4x + 12 = 32$.\n2. Subtract $12$ from both sides:\n$$4x = 32 - 12 = 20$$\n3. Divide both sides by $4$:\n$$x = \\frac{20}{4} = 5$$\n4. **Verify** by substituting $x = 5$ into the original equation:\n$$4(5 + 3) = 4 \\times 8 = 32 \\checkmark$$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve linear equations in Year 7?",
+  "a": "To solve a one-variable linear equation, use inverse operations to get the pronumeral alone on one side. For a two-step equation like 2x + 5 = 17, subtract 5 from both sides to get 2x = 12, then divide both sides by 2 to get x = 6. Always check by substituting your answer back in."
+ },
+ "turn": {
+  "question": "Solve the equation $3(x + 2) = 21$. What is the value of $x$?",
+  "kind": "number",
+  "accept": {
+   "value": 5,
+   "tol": 0
+  },
+  "answer_display": "$x = 5$",
+  "hint": "Start by dividing both sides by 3 to remove the brackets, then solve the simpler equation that remains.",
+  "solution": "**Key idea:** Use inverse operations to isolate $x$, one step at a time.\n\n1. Start with the equation: $$3(x + 2) = 21$$\n2. Divide both sides by $3$: $$x + 2 = 7$$\n3. Subtract $2$ from both sides: $$x = 5$$\n4. **Verify by substitution:** Replace $x$ with $5$ in the original equation: $$3(5 + 2) = 3 \\times 7 = 21 \\checkmark$$\n\n**Answer:** $x = 5$"
+ },
+ "turn_checked": {
+  "my_answer": "5",
+  "attempts": 1
+ }
+}

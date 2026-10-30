@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Tree diagram with replacement",
+   "question": "A bag contains one red (R) marble and one blue (B) marble. A marble is drawn at random, its colour is recorded, and it is placed back in the bag. A second marble is then drawn. List all possible outcomes using a tree diagram and find the probability of drawing two marbles of the same colour.",
+   "solution": "**Key idea:** When drawing with replacement, the bag is returned to its original state before the second draw, so the probabilities on each branch stay the same.\n\n1. Draw the first branch: outcomes R or B, each with probability $\\dfrac{1}{2}$.\n2. From each first outcome, draw a second branch: outcomes R or B, each again with probability $\\dfrac{1}{2}$ (bag reset).\n3. List all four equally likely outcomes: RR, RB, BR, BB.\n4. Identify outcomes where both marbles match: RR and BB.\n5. Calculate the probability:\n$$P(\\text{same colour}) = \\frac{2}{4} = \\frac{1}{2}$$\n**Answer:** $\\dfrac{1}{2}$",
+   "answer": "1/2"
+  },
+  {
+   "title": "Two-step experiment without replacement",
+   "question": "A box contains cards labelled 1, 2 and 3. One card is drawn at random and not replaced. A second card is then drawn. Using a table, list all possible outcomes and find the probability that the sum of the two cards is greater than 4.",
+   "solution": "**Key idea:** Without replacement, the first card drawn cannot be drawn again, so it does not appear as a second draw.\n\n1. Set up a table with the first draw as rows and the second draw as columns, leaving out pairs where both cards are the same (since the first card is not replaced):\n\n| First \\ Second | 1 | 2 | 3 |\n|---|---|---|---|\n| **1** | — | (1, 2) | (1, 3) |\n| **2** | (2, 1) | — | (2, 3) |\n| **3** | (3, 1) | (3, 2) | — |\n\n2. Count the total number of possible outcomes: $6$.\n3. Find the sums: $(1,2)\\to3$, $(1,3)\\to4$, $(2,1)\\to3$, $(2,3)\\to5$, $(3,1)\\to4$, $(3,2)\\to5$.\n4. Outcomes with sum greater than 4: $(2,3)$ and $(3,2)$, giving 2 outcomes.\n5. Calculate the probability:\n$$P(\\text{sum} > 4) = \\frac{2}{6} = \\frac{1}{3}$$\n**Answer:** $\\dfrac{1}{3}$",
+   "answer": "1/3"
+  },
+  {
+   "title": "Real-life probability: choosing without replacement",
+   "question": "At a school lunch stall, a box holds 3 ham rolls and 2 cheese rolls. Layla picks one roll at random and eats it. Her friend Marcus then picks one roll at random from the remaining rolls. Find the probability that Layla gets a ham roll and Marcus also gets a ham roll.",
+   "solution": "**Key idea:** Because Layla eats her roll, the total number of rolls decreases and the remaining mix changes for Marcus, so this is a without-replacement situation.\n\n1. Find the probability Layla picks a ham roll:\n$$P(\\text{Layla gets ham}) = \\frac{3}{5}$$\n2. If Layla has taken a ham roll, 2 ham rolls and 2 cheese rolls remain (4 rolls total). Find the probability Marcus picks a ham roll:\n$$P(\\text{Marcus gets ham} \\mid \\text{Layla got ham}) = \\frac{2}{4} = \\frac{1}{2}$$\n3. Multiply the probabilities along the branch (both events must occur):\n$$P(\\text{both get ham}) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}$$\n**Answer:** $\\dfrac{3}{10}$",
+   "answer": "3/10"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to reduce the total after drawing without replacement",
+   "wrong": "P(second is ham) = 2/5 even after one ham roll has already been removed.",
+   "fix": "When a item is not replaced, both the count of that type and the total number of items decrease by 1 before the second draw. Always update both the numerator and the denominator."
+  },
+  {
+   "title": "Including impossible outcomes in the sample space",
+   "wrong": "Writing (1,1), (2,2), (3,3) in the table for a without-replacement experiment.",
+   "fix": "If an item is not replaced, it cannot be selected again on the second draw. Cross out or leave blank the diagonal cells in your table where both draws would be the same item."
+  },
+  {
+   "title": "Adding probabilities instead of multiplying for AND questions",
+   "wrong": "$P(\\text{ham AND ham}) = \\dfrac{3}{5} + \\dfrac{1}{2} = \\dfrac{11}{10}$",
+   "fix": "When two events must both happen (AND), multiply the probabilities along the branches of the tree diagram. Adding is used only when combining separate OR outcomes that cannot happen at the same time."
+  },
+  {
+   "title": "Treating a without-replacement experiment as if it were with replacement",
+   "wrong": "Using probability 3/5 for both the first and second draw of a ham roll when the first roll is not returned.",
+   "fix": "Check the problem carefully for phrases like \"does not replace\", \"keeps\", or \"eats it\". If the first item is not returned, the second set of branches on your tree diagram must use updated numbers."
+  }
+ ],
+ "practice": {
+  "question": "A spinner has three equal sections labelled A, B and C. The spinner is spun once and the result is recorded. Then one card is drawn at random from two cards labelled 1 and 2, without any replacement consideration (the cards are separate from the spinner). Using a table or tree diagram, list all possible outcomes and find the probability that the result is the letter B or the number 2 (or both).",
+  "answer": "2/3",
+  "solution": "**Key idea:** List all outcomes from the two independent steps, then use the sample space to count favourable outcomes.\n\n1. Set up a table with the spinner result (A, B, C) as rows and the card drawn (1, 2) as columns:\n\n| Spinner \\ Card | 1 | 2 |\n|---|---|---|\n| **A** | (A, 1) | (A, 2) |\n| **B** | (B, 1) | (B, 2) |\n| **C** | (C, 1) | (C, 2) |\n\n2. Count the total number of equally likely outcomes: $6$.\n3. Identify outcomes that include B or 2 (or both): (A, 2), (B, 1), (B, 2), (C, 2). That is 4 outcomes.\n4. Calculate the probability:\n$$P(B \\text{ or } 2) = \\frac{4}{6} = \\frac{2}{3}$$\n**Answer:** $\\dfrac{2}{3}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you list all outcomes for two-step chance experiments with and without replacement?",
+  "a": "Draw a tree diagram or table showing every possible outcome at each step. With replacement, the options reset each step (e.g. drawing a card then replacing it before drawing again). Without replacement, the second step has one fewer option. Count favourable outcomes over total outcomes to find the probability."
+ },
+ "turn": {
+  "question": "A bag contains 3 red marbles and 2 blue marbles. Two marbles are drawn **without replacement**. Using a tree diagram or table to list all outcomes, what is the probability of drawing two red marbles? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.3,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.30$",
+  "hint": "After the first red marble is drawn, count how many marbles (and how many red ones) remain for the second draw.",
+  "solution": "**Key idea:** Without replacement means the second draw depends on the first. Multiply the probabilities along each branch of the tree diagram.\n\n1. On the first draw there are 5 marbles: $P(\\text{red}_1) = \\dfrac{3}{5}$.\n2. After drawing one red marble, 4 marbles remain: 2 red and 2 blue. So $P(\\text{red}_2 \\mid \\text{red}_1) = \\dfrac{2}{4} = \\dfrac{1}{2}$.\n3. Multiply along the branch: $$P(\\text{two reds}) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{6}{20} = \\frac{3}{10}$$\n4. Convert to a decimal: $\\dfrac{3}{10} = 0.30$.\n\n**Answer:** $0.30$"
+ },
+ "turn_checked": {
+  "my_answer": "0.30",
+  "attempts": 1
+ }
+}

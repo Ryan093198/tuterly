@@ -1,0 +1,310 @@
+{
+ "year": 3,
+ "questions": [
+  {
+   "strand": "Number",
+   "skill": "Place value to 1000",
+   "calculator": false,
+   "format": "choice",
+   "question": "What is the value of the digit 4 in the number 347?",
+   "options": [
+    "4",
+    "40",
+    "400",
+    "34"
+   ],
+   "answer_index": 1,
+   "solution": "In the number 347, the digits are: 3 hundreds, 4 tens, 7 ones. The digit 4 is in the tens place. 4 tens = 40. **Answer:** 40",
+   "accept": null,
+   "n": 1
+  },
+  {
+   "strand": "Number",
+   "skill": "Multiplication facts for 5",
+   "calculator": false,
+   "format": "number",
+   "question": "There are 5 players in each basketball team. How many players are there altogether in 6 teams?",
+   "solution": "6 teams with 5 players each: $6 \\times 5 = 30$. **Answer:** 30",
+   "accept": {
+    "value": 30,
+    "tol": 0,
+    "unit": "players"
+   },
+   "n": 2
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Telling time (quarter past and half past)",
+   "calculator": false,
+   "format": "choice",
+   "question": "Mia starts swimming lessons at half past 2 in the afternoon. Which clock time shows when her lessons start?",
+   "options": [
+    "2:15",
+    "3:30",
+    "2:45",
+    "2:30"
+   ],
+   "answer_index": 3,
+   "solution": "Half past 2 means 30 minutes after 2 o'clock. That is 2:30. **Answer:** 2:30",
+   "n": 3
+  },
+  {
+   "strand": "Space",
+   "skill": "Identifying 2D shapes",
+   "calculator": false,
+   "format": "choice",
+   "question": "A shape has 4 straight sides that are all the same length and 4 square corners. What is the name of this shape?",
+   "options": [
+    "Rectangle",
+    "Triangle",
+    "Square",
+    "Pentagon"
+   ],
+   "answer_index": 2,
+   "solution": "A shape with 4 equal sides and 4 square corners is a square. A rectangle also has square corners but does not need all sides to be equal. **Answer:** Square",
+   "n": 4
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Chance words",
+   "calculator": false,
+   "format": "choice",
+   "question": "A bag contains 10 red marbles and no marbles of any other colour. Lily picks one marble without looking. Which word best describes the chance that she picks a red marble?",
+   "options": [
+    "Likely",
+    "Unlikely",
+    "Impossible",
+    "Certain"
+   ],
+   "answer_index": 3,
+   "solution": "Every marble in the bag is red, so Lily must pick a red marble no matter what. This means it is certain to happen. **Answer:** Certain",
+   "n": 5
+  },
+  {
+   "strand": "Number",
+   "skill": "Adding 2-digit numbers",
+   "calculator": false,
+   "format": "number",
+   "question": "There are 47 students in the school library. Then 35 more students walk in. How many students are in the library altogether?",
+   "solution": "Add the ones: $7 + 5 = 12$, write down 2 and carry 1.\nAdd the tens: $4 + 3 + 1 = 8$.\nSo $47 + 35 = 82$.\n**Answer:** 82",
+   "accept": {
+    "value": 82,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 6
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Continuing a number pattern",
+   "calculator": false,
+   "format": "choice",
+   "question": "Look at this number pattern.\n\n$4, 8, 12, 16, \\square$\n\nWhat is the missing number?",
+   "options": [
+    "24",
+    "22",
+    "20",
+    "18"
+   ],
+   "answer_index": 2,
+   "solution": "Each number is 4 more than the one before. $16 + 4 = 20$.\n**Answer:** 20",
+   "n": 7
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Measuring length in centimetres",
+   "calculator": false,
+   "format": "choice",
+   "question": "Lena has a piece of ribbon that is 1 metre long. She cuts off 35 centimetres. How many centimetres of ribbon are left?\n\n(Hint: 1 metre = 100 centimetres)",
+   "options": [
+    "85 cm",
+    "75 cm",
+    "65 cm",
+    "55 cm"
+   ],
+   "answer_index": 2,
+   "solution": "$1$ metre $= 100$ centimetres.\n$100 - 35 = 65$ centimetres.\n**Answer:** 65 cm",
+   "n": 8
+  },
+  {
+   "strand": "Space",
+   "skill": "Identifying lines of symmetry",
+   "calculator": false,
+   "format": "choice",
+   "question": "An equilateral triangle has all three sides the same length and all three angles the same size. How many lines of symmetry does an equilateral triangle have?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "1"
+   ],
+   "answer_index": 2,
+   "solution": "An equilateral triangle can be folded in half through each vertex and the midpoint of the opposite side. There are 3 such folds, so it has 3 lines of symmetry.\n**Answer:** 3",
+   "n": 9
+  },
+  {
+   "strand": "Number",
+   "skill": "Simple sharing (division)",
+   "calculator": false,
+   "format": "number",
+   "question": "A teacher has 24 pencils to share equally among 3 groups. How many pencils does each group get?",
+   "solution": "Share 24 pencils equally into 3 groups. $24 \\div 3 = 8$.\n**Answer:** 8",
+   "accept": {
+    "value": 8,
+    "tol": 0,
+    "unit": ""
+   },
+   "n": 10
+  },
+  {
+   "strand": "Number",
+   "skill": "Subtracting 3-digit numbers",
+   "calculator": false,
+   "format": "number",
+   "question": "The school canteen made 253 sandwiches on Monday. By lunchtime, 128 sandwiches had been sold. How many sandwiches were left?",
+   "solution": "Subtract 128 from 253.\n253 minus 100 = 153.\n153 minus 28 = 125.\n**Answer:** 125",
+   "accept": {
+    "value": 125,
+    "tol": 0,
+    "unit": "sandwiches"
+   },
+   "n": 11
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Continuing a number pattern (counting back)",
+   "calculator": false,
+   "format": "choice",
+   "question": "Look at this number pattern.\n\n$95, 85, 75, 65, \\square$\n\nWhat is the missing number?",
+   "options": [
+    "55",
+    "60",
+    "50",
+    "45"
+   ],
+   "answer_index": 0,
+   "solution": "The pattern counts back by 10 each time.\n65 minus 10 = 55.\n**Answer:** 55",
+   "n": 12
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Reading a picture graph",
+   "calculator": false,
+   "format": "choice",
+   "question": "The picture graph below shows how many goals four students kicked at soccer training. Each ⚽ stands for 2 goals.\n\n| Student | Goals |\n|---------|-------|\n| Aiden | ⚽ ⚽ ⚽ |\n| Bridie | ⚽ ⚽ ⚽ ⚽ ⚽ |\n| Carlo | ⚽ ⚽ |\n| Dana | ⚽ ⚽ ⚽ ⚽ |\n\nHow many goals did Bridie kick?",
+   "options": [
+    "10",
+    "8",
+    "12",
+    "5"
+   ],
+   "answer_index": 0,
+   "solution": "Bridie has 5 footballs. Each football stands for 2 goals.\n5 times 2 = 10.\n**Answer:** 10",
+   "n": 13
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Calculating time duration",
+   "calculator": false,
+   "format": "choice",
+   "question": "Zara's soccer training starts at quarter past 3 in the afternoon and finishes at half past 4 in the afternoon. How long is soccer training?",
+   "options": [
+    "1 hour 30 minutes",
+    "45 minutes",
+    "1 hour 15 minutes",
+    "1 hour"
+   ],
+   "answer_index": 2,
+   "solution": "Quarter past 3 is 3:15. Half past 4 is 4:30.\nFrom 3:15 to 4:15 is 1 hour. From 4:15 to 4:30 is 15 more minutes.\n1 hour and 15 minutes altogether.\n**Answer:** 1 hour 15 minutes",
+   "n": 14
+  },
+  {
+   "strand": "Number",
+   "skill": "Multiplication facts for 3",
+   "calculator": false,
+   "format": "number",
+   "question": "A farmer plants 3 rows of corn. Each row has 9 plants. How many corn plants are there altogether?",
+   "solution": "Multiply 3 by 9.\n3 times 9 = 27.\n**Answer:** 27",
+   "accept": {
+    "value": 27,
+    "tol": 0,
+    "unit": "plants"
+   },
+   "n": 15
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Continuing a number pattern (doubling)",
+   "calculator": false,
+   "format": "number",
+   "question": "Look at this number pattern.\n\n$3, 6, 12, 24, \\square$\n\nWhat is the missing number?",
+   "solution": "Each number is doubled to get the next number. $24 \\times 2 = 48$. **Answer:** 48",
+   "accept": {
+    "value": 48,
+    "tol": 0
+   },
+   "n": 16
+  },
+  {
+   "strand": "Number",
+   "skill": "Adding 3-digit numbers",
+   "calculator": false,
+   "format": "choice",
+   "question": "A school collected 364 cans of food in Week 1 and 258 cans in Week 2. How many cans did the school collect altogether?",
+   "solution": "Add the ones: $4 + 8 = 12$, write 2 carry 1. Add the tens: $6 + 5 + 1 = 12$, write 2 carry 1. Add the hundreds: $3 + 2 + 1 = 6$. So $364 + 258 = 622$. **Answer:** 622",
+   "options": [
+    "622",
+    "612",
+    "512",
+    "722"
+   ],
+   "answer_index": 0,
+   "n": 17
+  },
+  {
+   "strand": "Space",
+   "skill": "Properties of 3D objects",
+   "calculator": false,
+   "format": "choice",
+   "question": "A shape has 6 flat faces, 12 edges and 8 corners (vertices). All faces are rectangles. What is the name of this shape?",
+   "solution": "A rectangular prism has 6 rectangular faces, 12 edges and 8 vertices. A cube is a special rectangular prism, but the general name for this shape is a rectangular prism. **Answer:** Rectangular prism",
+   "options": [
+    "Square pyramid",
+    "Rectangular prism",
+    "Triangular prism",
+    "Cylinder"
+   ],
+   "answer_index": 1,
+   "n": 18
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Reading a table",
+   "calculator": false,
+   "format": "number",
+   "question": "The table below shows the number of books four students read during the school holidays.\n\n| Student | Books read |\n|---------|------------|\n| Chloe   | 7          |\n| Marcus  | 4          |\n| Priya   | 9          |\n| Liam    | 5          |\n\nHow many books did Chloe and Priya read altogether?",
+   "solution": "Add Chloe's books and Priya's books: $7 + 9 = 16$. **Answer:** 16",
+   "accept": {
+    "value": 16,
+    "tol": 0
+   },
+   "n": 19
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Reading a calendar",
+   "calculator": false,
+   "format": "choice",
+   "question": "Jake's birthday is on the third Wednesday of March. The 1st of March is a Sunday. On what date is Jake's birthday?\n\n(Hint: write out the Wednesdays in March.)",
+   "solution": "If 1 March is a Sunday, the first Wednesday is 4 March, the second Wednesday is 11 March, and the third Wednesday is 18 March. **Answer:** 18 March",
+   "options": [
+    "21 March",
+    "11 March",
+    "18 March",
+    "25 March"
+   ],
+   "answer_index": 2,
+   "n": 20
+  }
+ ]
+}

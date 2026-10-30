@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import QuinnWorking from "@/components/brand/QuinnWorking";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -16,7 +17,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 const STORAGE_KEY = "tuterly:worksheet_email";
 // Tuterly covers Years 7 to 10 maths; younger year levels keep the
 // tutor offer instead of the app.
-const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
+const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 // Child's year from the gate, used to prefill the "Find a local tutor" form.
 const YEAR_STORAGE_KEY = "tuterly:worksheet_year";
 // Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
@@ -37,6 +38,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 const c = {
@@ -466,7 +468,7 @@ export default function WorksheetGenerator({
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
           Six questions across Foundation, Standard and Extension, with full
-          worked solutions, calibrated to the Victorian Curriculum.
+          worked solutions, written to the Australian Curriculum.
         </p>
 
         <form onSubmit={handleGenerate} style={{ marginTop: 20, display: "grid", gap: 16 }}>
@@ -512,9 +514,18 @@ export default function WorksheetGenerator({
           {error && <p style={errorTextStyle}>{error}</p>}
 
           {generating && (
-            <p style={infoTextStyle}>
-              Generating… usually 20–40 seconds. Don&apos;t close the tab.
-            </p>
+            <QuinnWorking
+              seconds={48}
+              note="This can take up to a minute. Please don't close the tab."
+              steps={[
+                `Picking questions on ${topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
+                "Writing two Foundation questions",
+                "Writing two Standard questions",
+                "Writing two Extension questions",
+                "Writing the worked solutions",
+                "Checking the maths and the layout",
+              ]}
+            />
           )}
 
           <div>
@@ -599,7 +610,12 @@ export default function WorksheetGenerator({
             {/* After the answers: the app first (Years 7 to 10), then the
                 tutor offer as the second option. */}
             {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
-              <StudyAppCTA variant="inline" placement="worksheet_answers" />
+              <StudyAppCTA
+                variant="inline"
+                placement="worksheet_answers"
+                heading="Finished the sheet? Now practise the ones they got wrong."
+                sub="Snap them in Tuterly for the worked solution, then fresh questions on the same idea until each one is mastered. No more hunting for the next worksheet."
+              />
             )}
           </div>
 

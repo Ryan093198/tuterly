@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Solving by matching bases",
+   "question": "Solve $2^{x+1} = 32$.",
+   "solution": "**Key idea:** Write both sides as powers of the same base, then equate the exponents.\n\n1. Write 32 as a power of 2: $32 = 2^5$, so the equation becomes $$2^{x+1} = 2^5$$\n2. Equate the exponents: $$x + 1 = 5$$\n3. Solve for $x$: $$x = 4$$\n4. **Check:** $2^{4+1} = 2^5 = 32$ ✓\n\n**Answer:** $x = 4$",
+   "answer": "$x = 4$"
+  },
+  {
+   "title": "Equation with a negative exponent",
+   "question": "Solve $3^{2x-1} = \\dfrac{1}{27}$.",
+   "solution": "**Key idea:** Write the fraction as a power of 3 using a negative exponent, then equate the exponents.\n\n1. Write $\\dfrac{1}{27}$ as a power of 3: $\\dfrac{1}{27} = 3^{-3}$, so the equation becomes $$3^{2x-1} = 3^{-3}$$\n2. Equate the exponents: $$2x - 1 = -3$$\n3. Solve: $$2x = -2 \\implies x = -1$$\n4. **Check:** $3^{2(-1)-1} = 3^{-3} = \\dfrac{1}{27}$ ✓\n\n**Answer:** $x = -1$",
+   "answer": "$x = -1$"
+  },
+  {
+   "title": "Exponential decay word problem",
+   "question": "A scientist stores a sample of a radioactive substance. Its mass in grams after $t$ years is given by $M = 800 \\times 2^{-t/5}$. After how many years will the mass first reach 100 grams?",
+   "solution": "**Key idea:** Substitute the target mass into the equation, then write both sides as powers of 2 and equate the exponents.\n\n1. Substitute $M = 100$: $$100 = 800 \\times 2^{-t/5}$$\n2. Divide both sides by 800: $$2^{-t/5} = \\frac{100}{800} = \\frac{1}{8}$$\n3. Write $\\dfrac{1}{8}$ as a power of 2: $\\dfrac{1}{8} = 2^{-3}$, so $$2^{-t/5} = 2^{-3}$$\n4. Equate the exponents: $$-\\frac{t}{5} = -3$$\n5. Solve: $$t = 15$$\n6. **Check:** $800 \\times 2^{-15/5} = 800 \\times 2^{-3} = 800 \\times \\dfrac{1}{8} = 100$ ✓\n\n**Answer:** The mass reaches 100 grams after 15 years.",
+   "answer": "15 years"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding bases instead of equating exponents",
+   "wrong": "$2^x = 2^5 \\implies x = 5 + 2 = 7$",
+   "fix": "When both sides are written as the same base, only the exponents are set equal. The base is not involved in the equation you solve. Write $2^x = 2^5 \\implies x = 5$."
+  },
+  {
+   "title": "Misreading a fraction as a positive power",
+   "wrong": "$\\dfrac{1}{8} = 2^3$ instead of $2^{-3}$",
+   "fix": "A fraction $\\dfrac{1}{a^n}$ equals $a^{-n}$, not $a^n$. Always rewrite the fraction using a negative exponent before equating: $\\dfrac{1}{8} = 2^{-3}$."
+  },
+  {
+   "title": "Forgetting to divide before equating",
+   "wrong": "$100 = 800 \\times 2^{-t/5} \\implies 2^{-t/5} = 100 \\implies \\text{write } 100 \\text{ as a power of } 2$",
+   "fix": "Isolate the exponential term first by dividing both sides by any coefficient. Here, divide by 800 to get $2^{-t/5} = \\dfrac{1}{8}$ before converting to a matching base."
+  },
+  {
+   "title": "Equating exponents when bases are different",
+   "wrong": "$2^x = 3^2 \\implies x = 2$",
+   "fix": "You can only equate exponents after both sides are expressed as the same base. If the bases cannot be matched, this method does not apply and logarithms (studied later) are needed instead."
+  }
+ ],
+ "practice": {
+  "question": "Solve $5^{3x+2} = \\dfrac{1}{125}$.",
+  "answer": "$x = -\\dfrac{5}{3}$",
+  "solution": "**Key idea:** Write the right-hand side as a power of 5, then equate the exponents.\n\n1. Write $\\dfrac{1}{125}$ as a power of 5: $\\dfrac{1}{125} = 5^{-3}$, so the equation becomes $$5^{3x+2} = 5^{-3}$$\n2. Equate the exponents: $$3x + 2 = -3$$\n3. Solve: $$3x = -5 \\implies x = -\\frac{5}{3}$$\n4. **Check:** $3\\left(-\\dfrac{5}{3}\\right) + 2 = -5 + 2 = -3$, so $5^{-3} = \\dfrac{1}{125}$ ✓"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve exponential equations?",
+  "a": "To solve a simple exponential equation, rewrite both sides as powers of the same base, then equate the exponents. For example, to solve 2^x = 32, write 32 as 2^5, giving x = 5. For harder cases, a substitution can reduce the equation to a quadratic."
+ },
+ "turn": {
+  "question": "Solve $3^{2x-1} = 81$. What is the value of $x$?",
+  "kind": "number",
+  "accept": {
+   "value": 2.5,
+   "tol": 0
+  },
+  "answer_display": "$x = 2.5$",
+  "hint": "Write 81 as a power of 3, then equate the exponents and solve the resulting linear equation.",
+  "solution": "**Key idea:** If both sides have the same base, the exponents must be equal.\n\n1. Write 81 as a power of 3: $81 = 3^4$.\n2. The equation becomes $3^{2x-1} = 3^4$.\n3. Equate the exponents: $2x - 1 = 4$.\n4. Solve: $2x = 5$, so $x = 2.5$.\n5. Check: $3^{2(2.5)-1} = 3^4 = 81$ ✓\n\n**Answer:** $x = 2.5$"
+ },
+ "turn_checked": {
+  "my_answer": "2.5",
+  "attempts": 1
+ }
+}

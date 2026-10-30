@@ -8,6 +8,8 @@ const nextConfig = {
   outputFileTracingIncludes: {
     "/api/**": ["./public/fonts/*.ttf"],
     "/dashboard/**": ["./public/fonts/*.ttf"],
+    // The practice exam generator reads the topic pages' checked questions.
+    "/api/exam/**": ["./content/worked-examples/*.json"],
   },
   experimental: {
     // Audio uploads (Whisper) and resource files can be larger than the

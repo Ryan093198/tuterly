@@ -15,7 +15,7 @@ export const MADE_BY_POINTS = [
   {
     icon: "school",
     title: "Built on the curriculum",
-    text: `Topics follow the ${STUDY_APP_FACTS.curriculum} for Years 7 to 10 maths, which incorporates much of the Australian Curriculum. Every question is filed under a topic from their year level.`,
+    text: `Topics follow the ${STUDY_APP_FACTS.curriculum}, for Years 7 to 10 maths. Every question is filed under a topic from their year level.`,
   },
   {
     icon: "upload",

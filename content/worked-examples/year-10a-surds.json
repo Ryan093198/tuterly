@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Simplifying and adding like surds",
+   "question": "Simplify $\\sqrt{50} + \\sqrt{8}$.",
+   "solution": "**Key idea:** Break each surd into a perfect-square factor, simplify, then collect like surds.\n\n1. Simplify $\\sqrt{50}$: $$\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2}$$\n2. Simplify $\\sqrt{8}$: $$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$$\n3. Add like surds: $$5\\sqrt{2} + 2\\sqrt{2} = 7\\sqrt{2}$$\n\n**Answer:** $7\\sqrt{2}$",
+   "answer": "$7\\sqrt{2}$"
+  },
+  {
+   "title": "Expanding brackets involving surds",
+   "question": "Expand and simplify $(3 + \\sqrt{5})(2 - 3\\sqrt{5})$.",
+   "solution": "**Key idea:** Expand using FOIL (First, Outer, Inner, Last), then simplify using $\\sqrt{5} \\times \\sqrt{5} = 5$.\n\n1. First terms: $3 \\times 2 = 6$\n2. Outer terms: $3 \\times (-3\\sqrt{5}) = -9\\sqrt{5}$\n3. Inner terms: $\\sqrt{5} \\times 2 = 2\\sqrt{5}$\n4. Last terms: $\\sqrt{5} \\times (-3\\sqrt{5}) = -3 \\times 5 = -15$\n5. Collect like terms: $$\\begin{aligned}6 - 9\\sqrt{5} + 2\\sqrt{5} - 15 &= (6 - 15) + (-9 + 2)\\sqrt{5} \\\\ &= -9 - 7\\sqrt{5}\\end{aligned}$$\n\n**Answer:** $-9 - 7\\sqrt{5}$",
+   "answer": "$-9 - 7\\sqrt{5}$"
+  },
+  {
+   "title": "Fractional indices in a real-life context",
+   "question": "A storage container is a cube with a volume of $200$ cubic metres. The side length of a cube with volume $V$ is given by $s = V^{\\frac{1}{3}}$. Write the exact side length of this container in surd form, and then evaluate it correct to two decimal places.",
+   "solution": "**Key idea:** $V^{\\frac{1}{3}}$ means the cube root of $V$, so $V^{\\frac{1}{3}} = \\sqrt[3]{V}$.\n\n1. Substitute $V = 200$: $$s = 200^{\\frac{1}{3}} = \\sqrt[3]{200}$$\n2. Write $200 = 8 \\times 25$, so: $$\\sqrt[3]{200} = \\sqrt[3]{8 \\times 25} = \\sqrt[3]{8} \\times \\sqrt[3]{25} = 2\\sqrt[3]{25}$$\n3. Evaluate numerically: $$2\\sqrt[3]{25} \\approx 2 \\times 2.9240 \\approx 5.85 \\text{ m}$$\n\n**Answer:** Exact side length is $2\\sqrt[3]{25}$ m, which is approximately $5.85$ m.",
+   "answer": "$2\\sqrt[3]{25}$ m $\\approx 5.85$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding surds without simplifying first",
+   "wrong": "$\\sqrt{50} + \\sqrt{8} = \\sqrt{58}$",
+   "fix": "You cannot add surds by adding the numbers under the root sign. Always simplify each surd fully first, then collect like surds. Here, $\\sqrt{50} + \\sqrt{8} = 5\\sqrt{2} + 2\\sqrt{2} = 7\\sqrt{2}$."
+  },
+  {
+   "title": "Forgetting that $\\sqrt{a} \\times \\sqrt{a} = a$, not $\\sqrt{a^2}$ left unsimplified",
+   "wrong": "$(\\sqrt{5})^2 = \\sqrt{25} = 5$ written as $\\sqrt{25}$ and left there, or wrongly as $(\\sqrt{5})^2 = 5^2 = 25$",
+   "fix": "When you square a surd, the result is simply the number under the root sign: $(\\sqrt{5})^2 = 5$. Do not square the number inside as well."
+  },
+  {
+   "title": "Confusing fractional index notation",
+   "wrong": "$x^{\\frac{1}{3}} = \\frac{x}{3}$ or $x^{\\frac{2}{3}} = \\frac{x^2}{3}$",
+   "fix": "A fractional index is not a fraction of $x$. The denominator of the index is the root and the numerator is the power: $x^{\\frac{m}{n}} = (\\sqrt[n]{x})^m$. For example, $x^{\\frac{2}{3}} = (\\sqrt[3]{x})^2$."
+  },
+  {
+   "title": "Incorrect expansion with a negative sign inside brackets",
+   "wrong": "$(3 + \\sqrt{5})(3 - \\sqrt{5}) = 9 - 5\\sqrt{5}$ (forgetting the difference of two squares pattern gives an integer)",
+   "fix": "Use the difference of two squares identity: $(a + b)(a - b) = a^2 - b^2$. So $(3 + \\sqrt{5})(3 - \\sqrt{5}) = 9 - 5 = 4$. The surd terms cancel, leaving a rational number."
+  }
+ ],
+ "practice": {
+  "question": "Expand and simplify $(4 - \\sqrt{3})(1 + 2\\sqrt{3})$.",
+  "answer": "$-2 + 7\\sqrt{3}$",
+  "solution": "**Key idea:** Expand using FOIL, then use $\\sqrt{3} \\times \\sqrt{3} = 3$ and collect like terms.\n\n1. First terms: $4 \\times 1 = 4$\n2. Outer terms: $4 \\times 2\\sqrt{3} = 8\\sqrt{3}$\n3. Inner terms: $-\\sqrt{3} \\times 1 = -\\sqrt{3}$\n4. Last terms: $-\\sqrt{3} \\times 2\\sqrt{3} = -2 \\times 3 = -6$\n5. Collect like terms: $$\\begin{aligned}4 + 8\\sqrt{3} - \\sqrt{3} - 6 &= (4 - 6) + (8 - 1)\\sqrt{3} \\\\ &= -2 + 7\\sqrt{3}\\end{aligned}$$\n\n**Answer:** $-2 + 7\\sqrt{3}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are surds and fractional indices?",
+  "a": "A surd is an irrational root that cannot be simplified to a whole number or fraction, such as √2 or ∛5. You simplify surds by factoring out perfect squares (e.g. √72 = √(36×2) = 6√2), combine like surds by adding coefficients, and write roots as fractional indices using x^(1/n) = ⁿ√x."
+ },
+ "turn": {
+  "question": "Expand and simplify $(3 + \\sqrt{5})(3 - \\sqrt{5})$.",
+  "kind": "number",
+  "accept": {
+   "value": 4,
+   "tol": 0
+  },
+  "answer_display": "$4$",
+  "hint": "This is a difference of two squares: $(a+b)(a-b) = a^2 - b^2$.",
+  "solution": "**Key idea:** The difference of two squares identity $(a+b)(a-b) = a^2 - b^2$ eliminates the surd.\n\n1. Identify $a = 3$ and $b = \\sqrt{5}$.\n2. Apply the identity: $(3 + \\sqrt{5})(3 - \\sqrt{5}) = 3^2 - (\\sqrt{5})^2$\n3. Evaluate each square: $3^2 = 9$ and $(\\sqrt{5})^2 = 5$\n4. Subtract: $9 - 5 = 4$\n\n**Answer:** $4$"
+ },
+ "turn_checked": {
+  "my_answer": "4",
+  "attempts": 1
+ }
+}

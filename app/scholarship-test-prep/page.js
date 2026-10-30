@@ -124,6 +124,10 @@ export default function ScholarshipTestPrepPage() {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
               Year 7 and Year 9 scholarship tests can open the door to a Melbourne private school, and to a fee reduction for the years that follow. This guide covers the two main test formats, when to start, and what helps most. It also explains where {name}, our Years 7 to 10 maths app, fits in: the school maths side of things, for students already in secondary school.
             </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, margin: "0 0 24px", padding: "14px 18px", background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}` }}>
+              <strong>Free practice:</strong> try 10 scholarship-style numerical reasoning questions for Years 4, 5 and 6, marked with worked solutions.{" "}
+              <a href="/scholarship-practice" style={{ color: c.teal, fontWeight: 700 }}>Start the practice questions →</a>
+            </p>
             <AppHeroBlock
               placement="scholarship_test_prep_hero"
               heading="Aiming for a Year 9 scholarship? Keep their school maths solid."

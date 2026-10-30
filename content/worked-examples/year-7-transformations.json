@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Translating and reflecting a point",
+   "question": "Point $A$ has coordinates $(3, -2)$.\n\n(a) Translate $A$ by 4 units left and 3 units up. Write the new coordinates.\n\n(b) Reflect your answer from (a) across the $y$-axis. Write the final coordinates.",
+   "solution": "**Key idea:** A translation left subtracts from the $x$-coordinate; a translation up adds to the $y$-coordinate. Reflecting across the $y$-axis changes the sign of the $x$-coordinate only.\n\n1. Start with $A = (3, -2)$.\n2. Translate 4 left and 3 up: $x$-coordinate $= 3 - 4 = -1$, $y$-coordinate $= -2 + 3 = 1$. So the translated point is $(-1, 1)$.\n3. Reflect $(-1, 1)$ across the $y$-axis: change the sign of the $x$-coordinate. $x$-coordinate $= -(-1) = 1$, $y$-coordinate stays $1$.\n4. Final coordinates: $(1, 1)$.\n\n**Answer:** (a) $(-1, 1)$ (b) $(1, 1)$",
+   "answer": "(a) $(-1, 1)$ (b) $(1, 1)$"
+  },
+  {
+   "title": "Rotating a shape 90° about the origin",
+   "question": "A triangle has vertices at $P(2, 1)$, $Q(5, 1)$ and $R(5, 4)$. Rotate the triangle $90°$ anticlockwise about the origin. Write the coordinates of the image vertices $P'$, $Q'$ and $R'$.",
+   "solution": "**Key idea:** Rotating $90°$ anticlockwise about the origin maps every point $(x, y)$ to $(-y, x)$.\n\n1. Apply the rule $(x, y) \\to (-y, x)$ to each vertex.\n2. $P(2, 1) \\to (-1, 2)$, so $P' = (-1, 2)$.\n3. $Q(5, 1) \\to (-1, 5)$, so $Q' = (-1, 5)$.\n4. $R(5, 4) \\to (-4, 5)$, so $R' = (-4, 5)$.\n\n**Answer:** $P'(-1, 2)$, $Q'(-1, 5)$, $R'(-4, 5)$",
+   "answer": "$P'(-1, 2)$, $Q'(-1, 5)$, $R'(-4, 5)$"
+  },
+  {
+   "title": "Combining transformations in a real-life context",
+   "question": "A park ranger marks the location of a water tank on a map using a coordinate grid, where each unit represents 1 kilometre. The tank is at position $(4, -3)$. A new road means the tank must first be relocated 6 units left and 2 units up, then the map is updated by reflecting the new position across the $x$-axis to match a revised grid system. What are the final coordinates of the tank on the revised map?",
+   "solution": "**Key idea:** Apply each transformation in order, one step at a time. A translation left subtracts from $x$ and a translation up adds to $y$. Reflecting across the $x$-axis changes the sign of the $y$-coordinate only.\n\n1. Start at $(4, -3)$.\n2. Translate 6 left and 2 up:\n$$\\begin{aligned} x &= 4 - 6 = -2 \\\\ y &= -3 + 2 = -1 \\end{aligned}$$\nPosition after translation: $(-2, -1)$.\n3. Reflect $(-2, -1)$ across the $x$-axis: change the sign of the $y$-coordinate. $x$-coordinate stays $-2$, $y$-coordinate $= -(-1) = 1$.\n4. Final coordinates: $(-2, 1)$.\n\n**Answer:** $(-2, 1)$",
+   "answer": "$(-2, 1)$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Mixing up which coordinate changes when reflecting",
+   "wrong": "Reflecting $(3, -2)$ across the $y$-axis gives $(3, 2)$ (changing the $y$-coordinate instead of $x$).",
+   "fix": "Reflecting across the $y$-axis only changes the sign of the $x$-coordinate; the $y$-coordinate stays the same. Reflecting across the $x$-axis only changes the sign of the $y$-coordinate. Ask yourself: which axis am I flipping over, and which coordinate measures the distance to that axis?"
+  },
+  {
+   "title": "Getting the direction of a translation wrong",
+   "wrong": "Translating $(5, 3)$ by 4 units left gives $(9, 3)$ (adding instead of subtracting from $x$).",
+   "fix": "Moving left means the $x$-coordinate gets smaller, so subtract. Moving right means it gets larger, so add. The same logic applies vertically: up adds to $y$, down subtracts from $y$."
+  },
+  {
+   "title": "Confusing the 90° clockwise and anticlockwise rotation rules",
+   "wrong": "Rotating $(3, 2)$ by $90°$ anticlockwise gives $(2, -3)$, which is actually the clockwise rule.",
+   "fix": "The rule for $90°$ anticlockwise is $(x, y) \\to (-y, x)$. The rule for $90°$ clockwise is $(x, y) \\to (y, -x)$. Write the rule you need at the top of your working before you substitute any numbers."
+  },
+  {
+   "title": "Applying transformations in the wrong order when combining two steps",
+   "wrong": "Doing the reflection before the translation when the question asks for the translation first, giving a different final answer.",
+   "fix": "Always carry out the transformations in exactly the order stated in the question. Write the result of the first transformation clearly before starting the second, so you do not lose track of which point you are transforming."
+  }
+ ],
+ "practice": {
+  "question": "A rectangle has vertices at $A(1, 2)$, $B(4, 2)$, $C(4, 5)$ and $D(1, 5)$. Rotate the rectangle $180°$ about the origin. Write the coordinates of the image vertices $A'$, $B'$, $C'$ and $D'$.",
+  "answer": "$A'(-1, -2)$, $B'(-4, -2)$, $C'(-4, -5)$, $D'(-1, -5)$",
+  "solution": "**Key idea:** Rotating $180°$ about the origin maps every point $(x, y)$ to $(-x, -y)$, regardless of direction (clockwise or anticlockwise gives the same result).\n\n1. Apply the rule $(x, y) \\to (-x, -y)$ to each vertex.\n2. $A(1, 2) \\to (-1, -2)$, so $A' = (-1, -2)$.\n3. $B(4, 2) \\to (-4, -2)$, so $B' = (-4, -2)$.\n4. $C(4, 5) \\to (-4, -5)$, so $C' = (-4, -5)$.\n5. $D(1, 5) \\to (-1, -5)$, so $D' = (-1, -5)$."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are transformations on the Cartesian plane?",
+  "a": "Transformations move or flip or turn points and shapes on the Cartesian plane. The three main types are translation (sliding by a number of units horizontally and/or vertically), reflection (flipping across the x-axis or y-axis) and rotation (turning 90°, 180° or 270° about the origin). Each type changes the coordinates in a predictable way."
+ },
+ "turn": {
+  "question": "Point $P$ has coordinates $(3, -5)$. It is reflected across the $y$-axis and then translated $4$ units up. What is the $y$-coordinate of the final image point?",
+  "kind": "number",
+  "accept": {
+   "value": -1,
+   "tol": 0
+  },
+  "answer_display": "$-1$",
+  "hint": "Reflecting across the $y$-axis changes the sign of the $x$-coordinate but leaves the $y$-coordinate unchanged. Then apply the vertical translation.",
+  "solution": "**Key idea:** Each transformation changes the coordinates in a predictable way: reflecting across the $y$-axis negates the $x$-coordinate, and translating up adds to the $y$-coordinate.\n\n1. Start with $P = (3, -5)$.\n2. **Reflect across the $y$-axis:** the $x$-coordinate changes sign, the $y$-coordinate stays the same. $$(3, -5) \\longrightarrow (-3, -5)$$\n3. **Translate 4 units up:** add 4 to the $y$-coordinate. $$(-3, -5) \\longrightarrow (-3, -5 + 4) = (-3, -1)$$\n4. The final image point is $(-3, -1)$.\n5. The question asks for the $y$-coordinate only.\n\n**Answer:** $-1$"
+ },
+ "turn_checked": {
+  "my_answer": "-1",
+  "attempts": 1
+ }
+}

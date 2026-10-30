@@ -122,7 +122,7 @@ export default async function OpengraphImage({ params }) {
               lineHeight: 1.35,
             }}
           >
-            Worksheets &amp; practice tests, Victorian Curriculum aligned.
+            Worksheets &amp; practice tests, Australian Curriculum.
           </p>
         </div>
 

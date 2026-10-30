@@ -1,0 +1,22 @@
+/* "Maths, explained" topic grid (TopicGrid.jsx). */
+.tg { display: grid; gap: 18px; }
+.tg__tabs { display: flex; gap: 6px; padding: 4px; background: var(--surface-soft); border-radius: 999px; overflow-x: auto; scrollbar-width: none; justify-self: start; max-width: 100%; }
+.tg__tabs::-webkit-scrollbar { display: none; }
+.tg__tab { flex: none; min-height: 42px; padding: 0 18px; border: 0; border-radius: 999px; background: transparent; font: inherit; font-weight: 800; font-size: 15px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.tg__tab.is-on { background: var(--card); color: var(--brand-text); box-shadow: 0 1px 3px rgba(11, 26, 44, 0.12); }
+.tg__tab:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.tg__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 10px; }
+.tg__topic { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; height: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 14px; background: var(--card); color: var(--foreground); font-weight: 800; font-size: 15px; line-height: 1.35; text-decoration: none; box-shadow: 0 3px 0 var(--edge); }
+.tg__topic::after { content: "›"; font-size: 20px; line-height: 1; color: var(--brand-text); flex: none; }
+.tg__topic:hover { border-color: var(--brand); }
+.tg__topic:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.tg__more { margin: 4px 0 0; font-size: 15px; color: var(--muted); }
+.tg__more a { font-weight: 800; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
+.tg__more { margin-top: 8px; }
+@media (max-width: 599px) {
+  .tg__tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-self: stretch; gap: 2px; }
+  .tg__tab { padding: 0 4px; font-size: 13.5px; min-height: 40px; }
+  .tg__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tg__topic { min-height: 48px; padding: 10px 10px 10px 12px; font-size: 13.5px; border-radius: 12px; }
+  .tg__topic::after { font-size: 17px; }
+}

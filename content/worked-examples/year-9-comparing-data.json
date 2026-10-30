@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Reading a back-to-back stem-and-leaf plot",
+   "question": "A back-to-back stem-and-leaf plot shows the scores of two groups of students on a quiz. The stems are in the middle, with Group A leaves on the left and Group B leaves on the right.\n\n| Group A | Stem | Group B |\n|---|---|---|\n| 8 4 | 1 | 2 6 |\n| 9 5 3 1 | 2 | 0 3 7 |\n| 7 2 | 3 | 1 5 8 |\n\nFind the median score for Group B.",
+   "solution": "**Key idea:** In a stem-and-leaf plot, each leaf is combined with its stem to form a data value. Read Group B leaves from left to right.\n\n1. List Group B values in order: $12, 16, 20, 23, 27, 31, 35, 38$\n2. There are $8$ values, so the median is the mean of the 4th and 5th values.\n3. The 4th value is $23$ and the 5th value is $27$.\n$$\\text{Median} = \\frac{23 + 27}{2} = \\frac{50}{2} = 25$$\n**Answer:** The median score for Group B is $25$.",
+   "answer": "25"
+  },
+  {
+   "title": "Finding the IQR from a data set",
+   "question": "Two basketball players recorded their points scored in $8$ games each.\n\nPlayer A: $5, 9, 12, 15, 18, 22, 25, 28$\n\nPlayer B: $3, 7, 10, 14, 19, 21, 26, 30$\n\nFind the interquartile range (IQR) for each player, then find the difference between their IQRs.",
+   "solution": "**Key idea:** With $8$ values, split into a lower half (first 4) and upper half (last 4). $Q_1$ is the median of the lower half and $Q_3$ is the median of the upper half.\n\n1. Player A lower half: $5, 9, 12, 15$ and upper half: $18, 22, 25, 28$.\n$$Q_1 = \\frac{9+12}{2} = 10.5, \\quad Q_3 = \\frac{22+25}{2} = 23.5$$\n$$\\text{IQR}_A = 23.5 - 10.5 = 13$$\n2. Player B lower half: $3, 7, 10, 14$ and upper half: $19, 21, 26, 30$.\n$$Q_1 = \\frac{7+10}{2} = 8.5, \\quad Q_3 = \\frac{21+26}{2} = 23.5$$\n$$\\text{IQR}_B = 23.5 - 8.5 = 15$$\n3. Difference between IQRs: $15 - 13 = 2$.\n\n**Answer:** The difference between the IQRs is $2$.",
+   "answer": "2"
+  },
+  {
+   "title": "Comparing data sets in a real-life context",
+   "question": "A gym tracks the number of minutes two groups of members spend exercising in a week. The data for $8$ members in each group is listed below.\n\nGroup A: $20, 35, 40, 45, 50, 60, 65, 75$\n\nGroup B: $15, 25, 30, 45, 55, 70, 80, 90$\n\nFind the median for each group, then find the difference between the two medians.",
+   "solution": "**Key idea:** With $8$ values, the median is the mean of the 4th and 5th values.\n\n1. Group A values are already in order: $20, 35, 40, 45, 50, 60, 65, 75$.\n$$\\text{Median}_A = \\frac{45 + 50}{2} = \\frac{95}{2} = 47.5$$\n2. Group B values are already in order: $15, 25, 30, 45, 55, 70, 80, 90$.\n$$\\text{Median}_B = \\frac{45 + 55}{2} = \\frac{100}{2} = 50$$\n3. Difference between medians: $50 - 47.5 = 2.5$.\n\n**Answer:** The difference between the two medians is $2.5$ minutes.",
+   "answer": "2.5"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Reading leaves in the wrong direction",
+   "wrong": "Group A leaf row '9 5 3 1 | 2' is read as 29, 25, 23, 21 instead of 21, 23, 25, 29.",
+   "fix": "For the left-hand group in a back-to-back plot, always read the leaves from the stem outward (right to left), then list the values from smallest to largest to find the median or IQR correctly."
+  },
+  {
+   "title": "Including the median value in both halves when finding quartiles",
+   "wrong": "For the data set 3, 7, 11, 15, 19, 23, a student includes 11 and 15 in both halves when finding Q1 and Q3.",
+   "fix": "With an even number of values, split the list exactly in half. The lower half is the first half of the list and the upper half is the second half. No value appears in both halves."
+  },
+  {
+   "title": "Confusing IQR with range",
+   "wrong": "IQR = highest value − lowest value = 28 − 5 = 23.",
+   "fix": "The range uses the maximum and minimum of the whole data set. The IQR uses only $Q_3$ and $Q_1$: $\\text{IQR} = Q_3 - Q_1$. The IQR measures the spread of the middle $50\\%$ of the data."
+  },
+  {
+   "title": "Forgetting to order the data before finding the median or quartiles",
+   "wrong": "For 15, 3, 9, 22, 7, 18, a student takes Q1 = 9 without sorting first.",
+   "fix": "Always arrange all values from smallest to largest before finding the median, Q1 or Q3. Skipping this step produces incorrect quartiles and an incorrect IQR."
+  }
+ ],
+ "practice": {
+  "question": "Two classes completed a maths test. Their scores out of $50$ are listed below.\n\nClass X: $14, 18, 21, 25, 28, 33, 37, 41, 44, 48$\n\nClass Y: $16, 20, 23, 26, 30, 34, 38, 42, 45, 49$\n\nFind the IQR for each class, then find the difference between the two IQRs.",
+  "answer": "1",
+  "solution": "**Key idea:** With $10$ values, split into a lower half (first 5) and upper half (last 5). $Q_1$ and $Q_3$ are the medians of those halves.\n\n1. Class X lower half: $14, 18, 21, 25, 28$ so $Q_1 = 21$. Upper half: $33, 37, 41, 44, 48$ so $Q_3 = 41$.\n$$\\text{IQR}_X = 41 - 21 = 20$$\n2. Class Y lower half: $16, 20, 23, 26, 30$ so $Q_1 = 23$. Upper half: $34, 38, 42, 45, 49$ so $Q_3 = 42$.\n$$\\text{IQR}_Y = 42 - 23 = 19$$\n3. Difference between IQRs: $20 - 19 = 1$.\n\n**Answer:** The difference between the two IQRs is $1$."
+ },
+ "checked": true,
+ "attempts": 3,
+ "summary": {
+  "q": "How do you compare data sets in Year 9 maths?",
+  "a": "Compare data sets by displaying them side by side using back-to-back stem-and-leaf plots or parallel box plots, then describe each distribution's shape (symmetric, skewed or bi-modal), centre (median) and spread (IQR or range). For example, if one group's median is 65 and another's is 80, you can conclude the second group typically scored higher."
+ },
+ "turn": {
+  "question": "The results of a fitness test for two classes are summarised below.\n\n| | Class A | Class B |\n|---|---|---|\n| Minimum | 42 | 38 |\n| Lower quartile ($Q_1$) | 55 | 60 |\n| Median | 68 | 74 |\n| Upper quartile ($Q_3$) | 76 | 85 |\n| Maximum | 90 | 97 |\n\nWhat is the interquartile range (IQR) of Class B?",
+  "kind": "number",
+  "accept": {
+   "value": 25,
+   "tol": 0
+  },
+  "answer_display": "$25$",
+  "hint": "The IQR is the difference between the upper quartile and the lower quartile.",
+  "solution": "**Key idea:** The interquartile range (IQR) measures the spread of the middle 50% of data. It is calculated as $IQR = Q_3 - Q_1$.\n\n1. Identify the quartiles for Class B from the table: $Q_1 = 60$ and $Q_3 = 85$.\n2. Apply the formula: $IQR = Q_3 - Q_1$.\n3. Substitute the values: $IQR = 85 - 60$.\n4. Calculate: $IQR = 25$.\n\n**Answer:** $25$"
+ },
+ "turn_checked": {
+  "my_answer": "25",
+  "attempts": 1
+ }
+}

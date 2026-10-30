@@ -1,0 +1,40 @@
+/* WorksheetUpgrade.jsx: the app's call to action on the worksheet pages. */
+.wu { background: var(--card); border: 2px solid var(--brand); border-radius: 28px; box-shadow: 0 6px 0 var(--edge); overflow: hidden; }
+.wu__in { padding: 26px 20px; display: grid; gap: 24px; }
+@media (min-width: 760px) { .wu__in { padding: 40px 44px; gap: 30px; } }
+
+.wu__head { display: grid; gap: 24px; align-items: center; }
+.wu__head > * { min-width: 0; }
+@media (min-width: 900px) { .wu__head { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 40px; } }
+.wu__title { margin-top: 6px; }
+.wu__lead { margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+.wu__proof { margin-top: 18px; }
+.wu__phone { display: grid; place-items: center; }
+@media (max-width: 899px) { .wu__phone { display: none; } }
+
+/* Side-by-side: label, worksheet, app. Stacks into cards on phones. */
+.wu__table { display: grid; border: 2px solid var(--border); border-radius: 18px; overflow: hidden; }
+.wu__row { display: grid; gap: 4px; padding: 14px 16px; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.5; }
+.wu__row:first-child { border-top: 0; }
+.wu__row--head { display: none; }
+.wu__label { font-weight: 900; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.wu__sheet { color: var(--muted); }
+.wu__app { color: var(--foreground); font-weight: 700; }
+.wu__who { display: inline-block; min-width: 0; margin-right: 6px; font-size: 12.5px; font-weight: 900; color: var(--brand-text); }
+.wu__sheet .wu__who { color: var(--muted); }
+@media (min-width: 760px) {
+  .wu__row { grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1.2fr); gap: 20px; align-items: start; padding: 14px 20px; }
+  .wu__row--head { display: grid; background: var(--surface-soft); font-weight: 900; font-size: 15px; color: var(--foreground); }
+  .wu__row--head .wu__app { display: inline-flex; align-items: center; gap: 6px; color: var(--brand-text); }
+  .wu__row:not(.wu__row--head) .wu__app { background: var(--brand-pale); margin: -14px -20px -14px 0; padding: 14px 20px; }
+  .wu__who { display: none; }
+}
+
+.wu__cta { display: grid; gap: 18px; padding: 20px; border-radius: 20px; background: var(--brand-soft); }
+@media (min-width: 900px) { .wu__cta { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; padding: 26px 30px; } }
+.wu__cta-title { margin: 0; font-weight: 900; font-size: 22px; line-height: 1.25; color: var(--foreground); }
+.wu__cta-text { margin: 8px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--foreground); }
+.wu__cta-text a, .wu__cta-try a { font-weight: 800; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
+.wu__cta-try { margin: 10px 0 0; font-size: 15.5px; }
+.wu__cta-form { min-width: 0; }
+.wu__foot { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--muted); }

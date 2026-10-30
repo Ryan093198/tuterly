@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Labelling sides and choosing a ratio",
+   "question": "A right-angled triangle has an acute angle of $35°$. The hypotenuse is $12$ cm. Find the side opposite the $35°$ angle, correct to two decimal places.",
+   "solution": "**Key idea:** Identify the sides relative to the given angle, then choose the ratio that links those two sides.\n\n1. The known side is the hypotenuse ($12$ cm). The unknown side is opposite the $35°$ angle. Use sine: $$\\sin\\theta = \\frac{\\text{opposite}}{\\text{hypotenuse}}$$\n2. Substitute the known values: $$\\sin 35° = \\frac{x}{12}$$\n3. Solve for $x$: $$x = 12 \\times \\sin 35°$$\n4. Calculate: $$x = 12 \\times 0.5736 \\approx 6.88 \\text{ cm}$$\n\n**Answer:** The opposite side is approximately $6.88$ cm.",
+   "answer": "$6.88$ cm"
+  },
+  {
+   "title": "Finding a missing side using tangent",
+   "question": "In a right-angled triangle, an acute angle measures $52°$. The side adjacent to that angle is $9$ m. Find the length of the side opposite the $52°$ angle, correct to two decimal places.",
+   "solution": "**Key idea:** When the opposite and adjacent sides are involved, use tangent.\n\n1. Write the tangent ratio: $$\\tan\\theta = \\frac{\\text{opposite}}{\\text{adjacent}}$$\n2. Substitute the known values: $$\\tan 52° = \\frac{x}{9}$$\n3. Solve for $x$: $$x = 9 \\times \\tan 52°$$\n4. Calculate: $$x = 9 \\times 1.2799 \\approx 11.52 \\text{ m}$$\n\n**Answer:** The opposite side is approximately $11.52$ m.",
+   "answer": "$11.52$ m"
+  },
+  {
+   "title": "Finding the angle of a ramp",
+   "question": "A loading ramp rises $1.4$ m vertically over a horizontal distance of $5$ m. Find the angle the ramp makes with the horizontal, correct to the nearest degree.",
+   "solution": "**Key idea:** The vertical rise is opposite the unknown angle and the horizontal distance is adjacent to it, so use inverse tangent.\n\n1. Write the tangent ratio: $$\\tan\\theta = \\frac{\\text{opposite}}{\\text{adjacent}} = \\frac{1.4}{5}$$\n2. Simplify: $$\\tan\\theta = 0.28$$\n3. Apply inverse tangent: $$\\theta = \\tan^{-1}(0.28)$$\n4. Calculate: $$\\theta \\approx 15.64° \\approx 16°$$\n\n**Answer:** The ramp makes an angle of approximately $16°$ with the horizontal.",
+   "answer": "$16°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Labelling opposite and adjacent from the wrong angle",
+   "wrong": "Using the side next to the right angle as the opposite instead of checking which angle is $\\theta$.",
+   "fix": "Always label opposite, adjacent, and hypotenuse relative to the angle you are working with, not the right angle. The opposite side is the one that does not touch $\\theta$ at all."
+  },
+  {
+   "title": "Choosing the wrong trigonometric ratio",
+   "wrong": "Writing $\\sin\\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}}$ when the opposite side is known.",
+   "fix": "Identify which two sides are involved (opposite, adjacent, or hypotenuse), then match them to SOH-CAH-TOA. Only pick your ratio after labelling the sides."
+  },
+  {
+   "title": "Forgetting to use inverse trig when finding an angle",
+   "wrong": "Writing $\\tan\\theta = 0.75$, then stating $\\theta = 0.75°$.",
+   "fix": "When the ratio is known and the angle is unknown, apply the inverse function: $\\theta = \\tan^{-1}(0.75)$. The ratio and the angle are different things."
+  },
+  {
+   "title": "Dividing instead of multiplying when solving for a missing side",
+   "wrong": "From $\\sin 40° = \\frac{x}{15}$, writing $x = 15 \\div \\sin 40°$ instead of $x = 15 \\times \\sin 40°$.",
+   "fix": "Rearrange the equation carefully before reaching for the calculator. Multiply both sides by the hypotenuse to isolate the opposite side: $x = 15 \\times \\sin 40°$."
+  }
+ ],
+ "practice": {
+  "question": "In a right-angled triangle, the hypotenuse is $14$ m and the side adjacent to an unknown acute angle is $9$ m. Find the unknown angle correct to the nearest degree.",
+  "answer": "$50°$",
+  "solution": "**Key idea:** When the adjacent side and hypotenuse are involved, use cosine, then apply inverse cosine to find the angle.\n\n1. Write the cosine ratio: $$\\cos\\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}}$$\n2. Substitute the known values: $$\\cos\\theta = \\frac{9}{14}$$\n3. Simplify: $$\\cos\\theta \\approx 0.6429$$\n4. Apply inverse cosine: $$\\theta = \\cos^{-1}(0.6429) \\approx 49.99° \\approx 50°$$\n\n**Answer:** The unknown angle is approximately $50°$."
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you use trigonometry to find missing sides and angles in right-angled triangles?",
+  "a": "Label the triangle's sides as opposite, adjacent, or hypotenuse relative to the known angle, then choose sin, cos, or tan: sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent. Rearrange to find a missing side, or use an inverse ratio (e.g. sin⁻¹) to find a missing angle. For example, if the opposite side is 5 and hypotenuse is 10, the angle is sin⁻¹(0.5) = 30°."
+ },
+ "turn": {
+  "question": "A ramp rises $1.8$ m vertically over a horizontal distance of $4.5$ m. Find the angle the ramp makes with the horizontal, correct to 2 decimal places. Give your answer in degrees.",
+  "kind": "number",
+  "accept": {
+   "value": 21.8,
+   "tol": 0.005,
+   "unit": "degrees"
+  },
+  "answer_display": "$21.80°$",
+  "hint": "The vertical rise is opposite the angle and the horizontal distance is adjacent, so use the inverse tangent ratio.",
+  "solution": "**Key idea:** When you know the opposite and adjacent sides, use $\\tan\\theta = \\dfrac{\\text{opposite}}{\\text{adjacent}}$, then apply $\\tan^{-1}$ to find the angle.\n\n1. Label the sides: opposite $= 1.8$ m, adjacent $= 4.5$ m.\n2. Write the ratio: $$\\tan\\theta = \\frac{1.8}{4.5}$$\n3. Simplify: $$\\tan\\theta = 0.4$$\n4. Apply the inverse tangent: $$\\theta = \\tan^{-1}(0.4)$$\n5. Evaluate: $$\\theta \\approx 21.80°$$\n\n**Answer:** $21.80°$"
+ },
+ "turn_checked": {
+  "my_answer": "21.80",
+  "attempts": 1
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Adding and subtracting integers",
+   "question": "Evaluate $-14 + 9 - (-5)$.",
+   "solution": "**Key idea:** Subtracting a negative is the same as adding its positive. Then work left to right.\n\n1. Rewrite the subtraction of a negative: $$-14 + 9 - (-5) = -14 + 9 + 5$$\n2. Add the positive integers first as a mental strategy: $9 + 5 = 14$, so $$-14 + 14$$\n3. Evaluate: $$-14 + 14 = 0$$\n\n**Answer:** $0$",
+   "answer": "$0$"
+  },
+  {
+   "title": "Order of operations with negative numbers",
+   "question": "Evaluate $3 - (-2)^3 \\div 4 \\times (-1)$.",
+   "solution": "**Key idea:** Follow BODMAS: evaluate the power first, then division and multiplication left to right, then subtraction.\n\n1. Evaluate the power: $(-2)^3 = -8$, so the expression becomes $$3 - (-8) \\div 4 \\times (-1)$$\n2. Division (left to right): $(-8) \\div 4 = -2$, giving $$3 - (-2) \\times (-1)$$\n3. Multiplication: $(-2) \\times (-1) = 2$, giving $$3 - 2$$\n4. Subtract: $$3 - 2 = 1$$\n\n**Answer:** $1$",
+   "answer": "$1$"
+  },
+  {
+   "title": "Real-life problem: temperature change",
+   "question": "At midnight the temperature in a town was $-6{°}$C. By noon it had risen by $11{°}$C, then during the afternoon it fell by $3{°}$C for each of the next $4$ hours. What was the temperature at the end of those $4$ hours?",
+   "solution": "**Key idea:** Rise means add, fall means subtract. A repeated fall can be written as multiplication.\n\n1. Temperature at noon after the rise: $$-6 + 11 = 5 \\text{ °C}$$\n2. Total drop over 4 hours: $$3 \\times 4 = 12 \\text{ °C}$$\n3. Temperature after the fall: $$5 - 12 = -7 \\text{ °C}$$\n\n**Answer:** $-7{°}$C",
+   "answer": "$-7{°}$C"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing $(-2)^2$ with $-2^2$",
+   "wrong": "Student writes $(-2)^2 = -4$ (treats it the same as $-2^2$).",
+   "fix": "The brackets matter. $(-2)^2 = (-2) \\times (-2) = 4$, whereas $-2^2 = -(2 \\times 2) = -4$. Always apply the exponent to everything inside the brackets."
+  },
+  {
+   "title": "Subtracting a negative gives a negative",
+   "wrong": "Student writes $7 - (-3) = 4$ instead of $10$.",
+   "fix": "Subtracting a negative flips the sign, making it an addition: $7 - (-3) = 7 + 3 = 10$. Think of it as removing a debt, which makes you richer."
+  },
+  {
+   "title": "Ignoring sign rules in multiplication and division",
+   "wrong": "Student writes $(-4) \\times (-5) = -20$ (keeps the negative).",
+   "fix": "When two integers with the same sign are multiplied or divided, the result is always positive. When the signs differ, the result is negative. Check: negative $\\times$ negative $=$ positive, so $(-4) \\times (-5) = 20$."
+  },
+  {
+   "title": "Applying BODMAS incorrectly with negatives",
+   "wrong": "Student evaluates $10 - 3 \\times (-2)$ as $10 - 3 = 7$, then $7 \\times (-2) = -14$.",
+   "fix": "Multiplication must be done before subtraction. First find $3 \\times (-2) = -6$, then $10 - (-6) = 10 + 6 = 16$. Write out each step to avoid rushing into left-to-right working."
+  }
+ ],
+ "practice": {
+  "question": "Evaluate $(-3)^2 - 20 \\div (-4) + (-7)$.",
+  "answer": "$7$",
+  "solution": "**Key idea:** Follow BODMAS: power first, then division, then addition and subtraction left to right.\n\n1. Evaluate the power: $(-3)^2 = 9$, giving $$9 - 20 \\div (-4) + (-7)$$\n2. Division: $20 \\div (-4) = -5$, giving $$9 - (-5) + (-7)$$\n3. Rewrite: $9 - (-5) = 9 + 5 = 14$, giving $$14 + (-7)$$\n4. Evaluate: $$14 + (-7) = 7$$\n\n**Answer:** $7$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add, subtract, multiply and divide integers?",
+  "a": "Integers are whole numbers including negatives and zero. Add and subtract by moving along the number line, noting that subtracting a negative means adding. For multiplication and division, same signs give a positive result and different signs give a negative result. For example, −3 × −4 = 12 and −12 ÷ 3 = −4."
+ },
+ "turn": {
+  "question": "Calculate $(-5) \\times (-3) + (-8) \\div 2$.",
+  "kind": "number",
+  "accept": {
+   "value": 11,
+   "tol": 0
+  },
+  "answer_display": "$11$",
+  "hint": "Follow order of operations: work out the multiplication and division before the addition.",
+  "solution": "**Key idea:** Apply order of operations (multiplication and division before addition), then use sign rules for each step.\n\n1. Work out the multiplication first: $(-5) \\times (-3) = 15$ (same signs give a positive result).\n2. Work out the division next: $(-8) \\div 2 = -4$ (different signs give a negative result).\n3. Now add the two results: $15 + (-4) = 15 - 4 = 11$.\n\n**Answer:** $11$"
+ },
+ "turn_checked": {
+  "my_answer": "11",
+  "attempts": 2
+ }
+}

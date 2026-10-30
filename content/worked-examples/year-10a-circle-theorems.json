@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Angle at the centre and angle at the circumference",
+   "question": "Points $A$, $B$ and $C$ lie on a circle with centre $O$. The angle at the centre is $\\angle AOC = 124°$. Find the angle at the circumference $\\angle ABC$.",
+   "solution": "**Key idea:** The angle at the centre is twice the angle at the circumference standing on the same arc.\n\n1. $\\angle ABC$ and $\\angle AOC$ both stand on arc $AC$.\n2. $$\\angle ABC = \\frac{\\angle AOC}{2} = \\frac{124°}{2} = 62°$$\n\n**Answer:** $\\angle ABC = 62°$",
+   "answer": "$\\angle ABC = 62°$"
+  },
+  {
+   "title": "Cyclic quadrilateral: opposite angles",
+   "question": "Points $A$, $B$, $C$ and $D$ lie on a circle in order, forming cyclic quadrilateral $ABCD$. Given that $\\angle DAB = 73°$ and $\\angle ABC = 105°$, find $\\angle BCD$ and $\\angle CDA$.",
+   "solution": "**Key idea:** Opposite angles of a cyclic quadrilateral sum to $180°$.\n\n1. $\\angle DAB$ and $\\angle BCD$ are opposite angles, so:\n$$\\angle BCD = 180° - 73° = 107°$$\n2. $\\angle ABC$ and $\\angle CDA$ are opposite angles, so:\n$$\\angle CDA = 180° - 105° = 75°$$\n3. Check: $73° + 107° = 180°$ ✓ and $105° + 75° = 180°$ ✓\n\n**Answer:** $\\angle BCD = 107°$, $\\angle CDA = 75°$",
+   "answer": "$\\angle BCD = 107°$, $\\angle CDA = 75°$"
+  },
+  {
+   "title": "Tangent and radius at the point of contact",
+   "question": "A straight fence is built so that it just touches a circular pond at a single point $P$. The centre of the pond is $O$ and the radius is $8$ metres. A post is placed at point $T$ on the fence, $15$ metres from $P$. Find the distance from the post at $T$ to the centre $O$.",
+   "solution": "**Key idea:** A tangent to a circle is perpendicular to the radius at the point of contact, so $OP \\perp TP$ and $\\angle OPT = 90°$.\n\n1. Triangle $OPT$ is right-angled at $P$.\n2. $OP = 8$ m (radius), $TP = 15$ m.\n3. By Pythagoras' theorem:\n$$OT^2 = OP^2 + TP^2 = 8^2 + 15^2 = 64 + 225 = 289$$\n4. $$OT = \\sqrt{289} = 17 \\text{ m}$$\n\n**Answer:** The distance from the post to the centre is $17$ metres.",
+   "answer": "$OT = 17$ metres"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Halving the wrong angle",
+   "wrong": "Centre angle $= 124°$, so circumference angle $= 124° \\times 2 = 248°$",
+   "fix": "The angle at the circumference is half the angle at the centre, not double. Always divide the centre angle by 2 to find the circumference angle standing on the same arc."
+  },
+  {
+   "title": "Using the centre theorem when there is no centre marked",
+   "wrong": "Treating a vertex of a triangle inscribed in a circle as the centre $O$ and doubling its angle",
+   "fix": "The doubling rule only applies when one angle is genuinely at the centre of the circle. Check that $O$ is the centre before using this theorem; if no centre is given, look for another theorem such as angles in the same segment."
+  },
+  {
+   "title": "Forgetting that the angle in a semicircle is 90 degrees",
+   "wrong": "Trying to use Pythagoras without first establishing the right angle, or missing that a chord is a diameter",
+   "fix": "Whenever a triangle is inscribed in a circle and one side is a diameter, the angle at the circumference opposite that side is always $90°$. Identify diameters first before looking for right angles."
+  },
+  {
+   "title": "Adding opposite angles of a cyclic quadrilateral instead of subtracting",
+   "wrong": "$\\angle DAB = 73°$, so $\\angle BCD = 180° + 73° = 253°$",
+   "fix": "Opposite angles of a cyclic quadrilateral sum to $180°$, so subtract the known angle from $180°$ to find the opposite one. An angle greater than $180°$ is impossible for an interior angle of a quadrilateral."
+  }
+ ],
+ "practice": {
+  "question": "Points $A$, $B$, $C$ and $D$ lie on a circle in order, forming cyclic quadrilateral $ABCD$. Given that $\\angle DAB = 81°$ and $\\angle ADB = 34°$, find $\\angle ACB$.",
+  "answer": "$\\angle ACB = 34°$",
+  "solution": "**Key idea:** Angles in the same segment are equal: angles standing on the same chord from the same side of the chord are equal.\n\n1. Both $\\angle ADB$ and $\\angle ACB$ are angles at the circumference standing on chord $AB$, and both $D$ and $C$ lie on the same arc (the arc $AB$ not containing the other two points).\n2. Therefore $\\angle ACB = \\angle ADB = 34°$.\n3. The value of $\\angle DAB = 81°$ is extra information not needed for this result.\n\n**Answer:** $\\angle ACB = 34°$"
+ },
+ "checked": true,
+ "attempts": 3,
+ "summary": {
+  "q": "What are the circle theorems for Year 10?",
+  "a": "Circle theorems are proven rules about angles and lengths in circles. Key results: the angle at the centre is twice the angle at the circumference; angles in the same segment are equal; the angle in a semicircle is 90°; opposite angles of a cyclic quadrilateral sum to 180°; a tangent is perpendicular to the radius; and tangent segments from an external point are equal."
+ },
+ "turn": {
+  "question": "A cyclic quadrilateral has one pair of opposite angles measuring $74°$ and $x°$. What is the value of $x$?",
+  "kind": "number",
+  "accept": {
+   "value": 106,
+   "tol": 0
+  },
+  "answer_display": "$106$",
+  "hint": "Opposite angles in a cyclic quadrilateral always add up to a fixed total.",
+  "solution": "**Key idea:** Opposite angles of a cyclic quadrilateral sum to $180°$.\n\n1. A cyclic quadrilateral is a quadrilateral with all four vertices on a circle.\n2. The theorem states that each pair of opposite angles sums to $180°$.\n3. The two opposite angles here are $74°$ and $x°$.\n4. Set up the equation: $74 + x = 180$.\n5. Solve: $x = 180 - 74 = 106$.\n\n**Answer:** $x = 106$"
+ },
+ "turn_checked": {
+  "my_answer": "106",
+  "attempts": 1
+ }
+}

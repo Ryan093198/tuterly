@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Finding quartiles and IQR",
+   "question": "Find the median, Q1, Q3 and interquartile range for the dataset: $12, 7, 15, 3, 9, 18, 11, 5, 14$.",
+   "solution": "**Key idea:** Sort the data, find the median, then find Q1 and Q3 as the medians of the lower and upper halves.\n\n1. Sort the data: $3, 5, 7, 9, 11, 12, 14, 15, 18$ (9 values).\n2. The median (Q2) is the 5th value: $Q2 = 11$.\n3. Lower half (values below the median): $3, 5, 7, 9$. Q1 is the median of these four values: $$Q1 = \\frac{5 + 7}{2} = 6.$$\n4. Upper half (values above the median): $12, 14, 15, 18$. Q3 is the median of these four values: $$Q3 = \\frac{14 + 15}{2} = 14.5.$$\n5. Calculate the IQR: $$\\text{IQR} = Q3 - Q1 = 14.5 - 6 = 8.5.$$\n\n**Answer:** $Q2 = 11$, $Q1 = 6$, $Q3 = 14.5$, $\\text{IQR} = 8.5$.",
+   "answer": "$Q2 = 11$, $Q1 = 6$, $Q3 = 14.5$, $\\text{IQR} = 8.5$"
+  },
+  {
+   "title": "Identifying outliers using the 1.5 × IQR rule",
+   "question": "A dataset of ten reaction times (in milliseconds) is: $210, 230, 245, 250, 260, 275, 280, 290, 310, 480$. For this dataset, $Q1 = 245$, $Q3 = 290$, and $\\text{IQR} = 45$. Use the $1.5 \\times \\text{IQR}$ rule to determine whether any values are outliers.",
+   "solution": "**Key idea:** A value is an outlier if it lies below $Q1 - 1.5 \\times \\text{IQR}$ or above $Q3 + 1.5 \\times \\text{IQR}$.\n\n1. Calculate the lower fence: $$Q1 - 1.5 \\times \\text{IQR} = 245 - 1.5 \\times 45 = 245 - 67.5 = 177.5.$$\n2. Calculate the upper fence: $$Q3 + 1.5 \\times \\text{IQR} = 290 + 1.5 \\times 45 = 290 + 67.5 = 357.5.$$\n3. Any value below $177.5$ or above $357.5$ is an outlier. Check the extremes: the minimum is $210 > 177.5$ (not an outlier), and the maximum is $480 > 357.5$ (outlier).\n\n**Answer:** $480$ ms is an outlier. No values fall below the lower fence.",
+   "answer": "$480$ ms is an outlier; no lower outliers."
+  },
+  {
+   "title": "Comparing two boxplots",
+   "question": "Two classes each sat the same maths test scored out of 100. Their results are summarised below.\n\n| | Class A | Class B |\n|---|---|---|\n| Minimum | 42 | 55 |\n| Q1 | 58 | 62 |\n| Median (Q2) | 70 | 71 |\n| Q3 | 80 | 76 |\n| Maximum | 95 | 88 |\n\nCompare the two distributions by commenting on centre, spread and skewness. Identify which class performed more consistently.",
+   "solution": "**Key idea:** Compare boxplots by commenting on centre (median), spread (IQR and range) and skewness (symmetry of the box and whiskers).\n\n1. **Centre:** The medians are almost identical (Class A: $70$, Class B: $71$), so both classes performed similarly on average.\n2. **Spread:** $$\\text{IQR}_A = 80 - 58 = 22, \\quad \\text{IQR}_B = 76 - 62 = 14.$$ $$\\text{Range}_A = 95 - 42 = 53, \\quad \\text{Range}_B = 88 - 55 = 33.$$ Class B has a smaller IQR and smaller range, so Class B performed more consistently.\n3. **Skewness:** For Class A: $Q2 - Q1 = 12$ and $Q3 - Q2 = 10$, with a longer lower whisker ($70 - 42 = 28$) than upper whisker ($95 - 70 = 25$), indicating slight negative skew. For Class B: $Q2 - Q1 = 9$ and $Q3 - Q2 = 5$, with the upper half of the box compressed and whiskers roughly equal ($71 - 55 = 16$, $88 - 71 = 17$), indicating negative skew within the box (scores bunched toward the upper end).\n\n**Answer:** Both classes have nearly the same median (70 vs 71). Class B is more consistent (IQR of 14 vs 22, range of 33 vs 53). Both distributions are slightly negatively skewed, with Class B showing more compression in the upper half of the box.",
+   "answer": "Same centre (medians 70 and 71); Class B more consistent (IQR 14 vs 22, range 33 vs 53); both slightly negatively skewed."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Including the median in both halves when finding Q1 and Q3",
+   "wrong": "Data: $3, 5, 7, 9, 11, 12, 14, 15, 18$; lower half taken as $3, 5, 7, 9, 11$, giving $Q1 = 7$.",
+   "fix": "When the dataset has an odd number of values, exclude the median itself before finding Q1 and Q3. The lower half is the group of values strictly below the median, and the upper half is the group strictly above it."
+  },
+  {
+   "title": "Forgetting to sort the data first",
+   "wrong": "Data: $12, 7, 15, 3, 9$; median taken as the 3rd value, giving $\\text{median} = 15$.",
+   "fix": "Always sort the data from smallest to largest before finding any quartile. The median and quartiles are positional measures, so order matters."
+  },
+  {
+   "title": "Using the wrong fence formula for the outlier rule",
+   "wrong": "$\\text{Upper fence} = Q3 + 1.5 \\times Q3$ instead of $Q3 + 1.5 \\times \\text{IQR}$.",
+   "fix": "The $1.5 \\times \\text{IQR}$ rule uses the interquartile range, not Q3 itself. Write the fences as $Q1 - 1.5 \\times \\text{IQR}$ and $Q3 + 1.5 \\times \\text{IQR}$ every time."
+  },
+  {
+   "title": "Drawing the whiskers to the minimum and maximum instead of to the fences",
+   "wrong": "Whisker drawn all the way to $480$ even though $480$ is an outlier.",
+   "fix": "When outliers are present, the whisker extends only to the most extreme value that is still within the fence, and outliers are plotted as separate dots beyond the whisker."
+  }
+ ],
+ "practice": {
+  "question": "A dataset of eight values is: $4, 9, 13, 17, 22, 26, 31, 58$. Find Q1, Q3 and the IQR, then use the $1.5 \\times \\text{IQR}$ rule to determine whether $58$ is an outlier.",
+  "answer": "$Q1 = 11$, $Q3 = 28.5$, $\\text{IQR} = 17.5$; upper fence $= 54.75$; $58$ is an outlier.",
+  "solution": "**Key idea:** For an even-numbered dataset, split into two equal halves to find Q1 and Q3, then apply the outlier fences.\n\n1. The data is already sorted: $4, 9, 13, 17, 22, 26, 31, 58$ ($n = 8$).\n2. Lower half: $4, 9, 13, 17$. $$Q1 = \\frac{9 + 13}{2} = 11.$$\n3. Upper half: $22, 26, 31, 58$. $$Q3 = \\frac{26 + 31}{2} = 28.5.$$\n4. $$\\text{IQR} = 28.5 - 11 = 17.5.$$\n5. Calculate the fences: $$\\text{Lower fence} = 11 - 1.5 \\times 17.5 = 11 - 26.25 = -15.25.$$ $$\\text{Upper fence} = 28.5 + 1.5 \\times 17.5 = 28.5 + 26.25 = 54.75.$$ Since $58 > 54.75$, the value $58$ is an outlier. No values fall below $-15.25$.\n\n**Answer:** $Q1 = 11$, $Q3 = 28.5$, $\\text{IQR} = 17.5$; $58$ is an outlier (upper fence is $54.75$)."
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you compare data distributions using quartiles, IQR and boxplots?",
+  "a": "Split an ordered dataset into four equal parts using Q1, Q2 (median) and Q3. The interquartile range (IQR = Q3 − Q1) measures the spread of the middle 50% of data. Outliers are values more than 1.5 × IQR beyond Q1 or Q3. Boxplots display these five-number summaries side by side for easy comparison."
+ },
+ "turn": {
+  "question": "The daily temperatures (in °C) recorded over 12 days are listed below.\n\n$$3,\\ 7,\\ 9,\\ 12,\\ 14,\\ 16,\\ 18,\\ 21,\\ 24,\\ 27,\\ 31,\\ 35$$\n\nWhat is the interquartile range (IQR) of this dataset?",
+  "kind": "number",
+  "accept": {
+   "value": 18,
+   "tol": 0,
+   "unit": "°C"
+  },
+  "answer_display": "$18$",
+  "hint": "Split the 12 values into a lower half and an upper half, find the median of each half to get Q1 and Q3, then subtract.",
+  "solution": "**Key idea:** For an even-numbered dataset, split the ordered values into two equal halves. Q1 is the median of the lower half and Q3 is the median of the upper half. IQR = Q3 − Q1.\n\n1. The data is already ordered: $3, 7, 9, 12, 14, 16, 18, 21, 24, 27, 31, 35$. There are $n = 12$ values.\n2. **Median (Q2):** Average of the 6th and 7th values $= \\dfrac{16 + 18}{2} = 17$.\n3. **Lower half** (first 6 values): $3, 7, 9, 12, 14, 16$. Q1 $= \\dfrac{9 + 12}{2} = 10.5$.\n4. **Upper half** (last 6 values): $18, 21, 24, 27, 31, 35$. Q3 $= \\dfrac{24 + 27}{2} = 25.5$.\n5. **IQR** $= Q3 - Q1 = 25.5 - 10.5 = 18$.\n\n**Answer:** $18$ °C"
+ },
+ "turn_checked": {
+  "my_answer": "18",
+  "attempts": 3
+ }
+}

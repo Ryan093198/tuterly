@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Missing angle in a triangle",
+   "question": "A triangle has interior angles of $47°$ and $86°$. Find the third interior angle.",
+   "solution": "**Key idea:** The interior angles of any triangle add to $180°$.\n\n1. Write the angle sum equation: $$47 + 86 + x = 180$$\n2. Add the known angles: $$133 + x = 180$$\n3. Subtract $133$ from both sides: $$x = 180 - 133 = 47$$\n\n**Answer:** The third angle is $47°$.",
+   "answer": "$47°$"
+  },
+  {
+   "title": "Missing angle in a quadrilateral",
+   "question": "A quadrilateral has interior angles of $115°$, $83°$, and $74°$. Find the fourth interior angle.",
+   "solution": "**Key idea:** A quadrilateral can be split into two triangles, so its interior angles sum to $2 \\times 180° = 360°$.\n\n1. Write the angle sum equation: $$115 + 83 + 74 + x = 360$$\n2. Add the known angles: $$272 + x = 360$$\n3. Subtract $272$ from both sides: $$x = 360 - 272 = 88$$\n\n**Answer:** The fourth angle is $88°$.",
+   "answer": "$88°$"
+  },
+  {
+   "title": "Unknown angle in a real-life triangular frame",
+   "question": "A builder is making a triangular roof frame. One angle at the base of the triangle is $54°$ and the other base angle is $38°$. The timber at the top of the frame must be cut so that the pieces meet at exactly the right angle. What is the angle at the top of the frame?",
+   "solution": "**Key idea:** The three interior angles of any triangle sum to $180°$.\n\n1. Let the angle at the top be $x$.\n2. Write the angle sum equation: $$54 + 38 + x = 180$$\n3. Add the known angles: $$92 + x = 180$$\n4. Subtract $92$ from both sides: $$x = 180 - 92 = 88$$\n\n**Answer:** The angle at the top of the frame is $88°$.",
+   "answer": "$88°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using 360° for a triangle",
+   "wrong": "Wrong: $47 + 86 + x = 360$, so $x = 227°$",
+   "fix": "The angle sum of $360°$ applies to quadrilaterals, not triangles. Always use $180°$ for a triangle."
+  },
+  {
+   "title": "Using 180° for a quadrilateral",
+   "wrong": "Wrong: $115 + 83 + 74 + x = 180$, giving a negative answer",
+   "fix": "A quadrilateral's angles sum to $360°$, not $180°$. Remember: split it into two triangles and double the triangle sum."
+  },
+  {
+   "title": "Adding instead of subtracting to find the unknown",
+   "wrong": "Wrong: $47 + 86 = 133$, so $x = 180 + 133 = 313°$",
+   "fix": "Once you have the sum of the known angles, subtract it from the total angle sum to find the missing angle."
+  },
+  {
+   "title": "Forgetting that all angles in a rectangle are 90°",
+   "wrong": "Wrong: treating a rectangle as if only two angles are $90°$ and solving for two unknowns",
+   "fix": "A rectangle has four right angles, each equal to $90°$. Use this fact first before writing any equation."
+  }
+ ],
+ "practice": {
+  "question": "A quadrilateral has interior angles of $102°$, $67°$, and $95°$. Find the fourth interior angle.",
+  "answer": "$96°$",
+  "solution": "**Key idea:** The interior angles of a quadrilateral sum to $360°$.\n\n1. Write the angle sum equation: $$102 + 67 + 95 + x = 360$$\n2. Add the known angles: $$264 + x = 360$$\n3. Subtract $264$ from both sides: $$x = 360 - 264 = 96$$\n\n**Answer:** The fourth angle is $96°$."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What do the angles in a triangle and quadrilateral add up to?",
+  "a": "The interior angles of any triangle always add up to 180°. A quadrilateral can be split into two triangles, so its angles add up to 360°. To find a missing angle, subtract the known angles from the total. For example, if two angles in a triangle are 65° and 80°, the third is 180° − 65° − 80° = 35°."
+ },
+ "turn": {
+  "question": "A triangle has two angles of $47°$ and $82°$. What is the size of the third angle in degrees?",
+  "kind": "number",
+  "accept": {
+   "value": 51,
+   "tol": 0,
+   "unit": "degrees"
+  },
+  "answer_display": "$51°$",
+  "hint": "The three interior angles of any triangle add up to $180°$, so subtract the two known angles from $180°$.",
+  "solution": "**Key idea:** The interior angles of a triangle sum to $180°$.\n\n1. Write the angle sum equation: $47° + 82° + x = 180°$\n2. Add the two known angles: $47 + 82 = 129$\n3. Subtract from $180°$: $x = 180° - 129° = 51°$\n4. Check: $47° + 82° + 51° = 180°$ ✓\n\n**Answer:** $51°$"
+ },
+ "turn_checked": {
+  "my_answer": "51",
+  "attempts": 1
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Complementary and supplementary angles",
+   "question": "Angle $a$ and angle $b$ are supplementary. Angle $a = 113°$. Find angle $b$.",
+   "solution": "**Key idea:** Supplementary angles add to $180°$.\n\n1. Write the relationship: $a + b = 180°$\n2. Substitute the known angle: $113° + b = 180°$\n3. Solve for $b$: $b = 180° - 113° = 67°$\n\n**Answer:** $b = 67°$",
+   "answer": "$b = 67°$"
+  },
+  {
+   "title": "Angles formed by a transversal and parallel lines",
+   "question": "Two parallel lines are crossed by a transversal. One co-interior angle is $74°$. Find the other co-interior angle, giving a reason.",
+   "solution": "**Key idea:** Co-interior angles (also called C-angles) are between the parallel lines on the same side of the transversal, and they add to $180°$.\n\n1. Write the co-interior angle relationship: $74° + x = 180°$\n2. Solve for $x$: $x = 180° - 74° = 106°$\n3. State the reason: co-interior angles on parallel lines are supplementary.\n\n**Answer:** The other co-interior angle is $106°$.",
+   "answer": "$106°$"
+  },
+  {
+   "title": "Finding an unknown angle in a real-life triangle",
+   "question": "A builder cuts a triangular wooden brace. One corner of the triangle is a right angle ($90°$) and another corner measures $37°$. What is the size of the third angle of the brace?",
+   "solution": "**Key idea:** The interior angles of a triangle add to $180°$.\n\n1. Write the angle sum: $90° + 37° + x = 180°$\n2. Add the known angles: $127° + x = 180°$\n3. Solve for $x$: $x = 180° - 127° = 53°$\n4. Check: $90° + 37° + 53° = 180°$ ✓\n\n**Answer:** The third angle is $53°$.",
+   "answer": "$53°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Mixing up co-interior and alternate angles",
+   "wrong": "Two alternate angles add to $180°$, so $x = 180° - 65° = 115°$.",
+   "fix": "Alternate angles (Z-angles) on parallel lines are equal, not supplementary. It is co-interior angles (C-angles) that add to $180°$. Always check which shape the angle pair forms: Z for alternate, C for co-interior."
+  },
+  {
+   "title": "Confusing complementary and supplementary",
+   "wrong": "Angles are supplementary, so $35° + x = 90°$.",
+   "fix": "Complementary angles add to $90°$, and supplementary angles add to $180°$. A helpful memory trick: C comes before S in the alphabet, and $90$ comes before $180$, so Complementary goes with $90°$ and Supplementary goes with $180°$."
+  },
+  {
+   "title": "Assuming corresponding angles without checking the lines are parallel",
+   "wrong": "These must be corresponding angles, so they are equal.",
+   "fix": "Corresponding angles are equal only when the two lines cut by the transversal are parallel. If the question does not state the lines are parallel, you cannot use this rule."
+  },
+  {
+   "title": "Forgetting that the angle sum applies to the interior angles of a triangle",
+   "wrong": "A triangle has three angles, so each angle is $180° \\div 3 = 60°$.",
+   "fix": "The interior angles of any triangle add to $180°$, but that does not mean they are all equal. Only an equilateral triangle has three $60°$ angles. Always use the known angles to find the unknown one."
+  }
+ ],
+ "practice": {
+  "question": "Two parallel lines are crossed by a transversal. One corresponding angle is $(3x + 15)°$ and the other corresponding angle is $60°$. Find the value of $x$.",
+  "answer": "$x = 15$",
+  "solution": "**Key idea:** Corresponding angles on parallel lines are equal.\n\n1. Set the two expressions equal: $3x + 15 = 60$\n2. Subtract $15$ from both sides: $3x = 45$\n3. Divide both sides by $3$: $x = 15$\n4. Check: $3(15) + 15 = 45 + 15 = 60°$ ✓"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are corresponding, alternate and co-interior angles on parallel lines?",
+  "a": "When a transversal crosses parallel lines, corresponding angles are equal (F-shape), alternate angles are equal (Z-shape), and co-interior angles add to 180° (C-shape). For example, if one co-interior angle is 110°, the other is 70°, because 110° + 70° = 180°."
+ },
+ "turn": {
+  "question": "Two parallel lines are cut by a transversal. One co-interior angle is $63°$. Find the other co-interior angle, in degrees.",
+  "kind": "number",
+  "accept": {
+   "value": 117,
+   "tol": 0,
+   "unit": "degrees"
+  },
+  "answer_display": "$117°$",
+  "hint": "Co-interior angles sit on the same side of the transversal between the parallel lines, and they always add to $180°$.",
+  "solution": "**Key idea:** Co-interior angles (C-shape) between parallel lines are supplementary, meaning they add to $180°$.\n\n1. Write the co-interior angle relationship: $$\\text{angle}_1 + \\text{angle}_2 = 180°$$\n2. Substitute the known angle: $$63° + \\text{angle}_2 = 180°$$\n3. Solve for the unknown angle: $$\\text{angle}_2 = 180° - 63°$$\n4. Calculate: $$\\text{angle}_2 = 117°$$\n5. Check: $63° + 117° = 180°$ ✓\n\n**Answer:** $117°$"
+ },
+ "turn_checked": {
+  "my_answer": "117",
+  "attempts": 1
+ }
+}

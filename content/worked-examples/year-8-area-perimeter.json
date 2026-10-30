@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Perimeter of an L-shape",
+   "question": "An L-shaped garden bed has the following side lengths, going clockwise from the top-left corner: 5 m, 2 m, 3 m, 4 m, 2 m, and 6 m. Find the perimeter of the garden bed.",
+   "solution": "**Key idea:** The perimeter is the total distance around the outside of the shape. Add every side length together.\n\n1. List all six side lengths: $5, 2, 3, 4, 2, 6$ (in metres).\n2. Add them:\n$$5 + 2 + 3 + 4 + 2 + 6 = 22$$\n\n**Answer:** The perimeter is $22$ m.",
+   "answer": "22 m"
+  },
+  {
+   "title": "Area of a composite shape using subtraction",
+   "question": "A composite shape is made by starting with a rectangle that is 10 cm wide and 8 cm tall, then removing a smaller rectangle from the top-right corner that is 4 cm wide and 3 cm tall. Find the area of the composite shape.",
+   "solution": "**Key idea:** Use the subtraction method — find the area of the whole rectangle, then subtract the cut-out rectangle.\n\n1. Area of the whole rectangle:\n$$10 \\times 8 = 80 \\text{ cm}^2$$\n2. Area of the cut-out rectangle:\n$$4 \\times 3 = 12 \\text{ cm}^2$$\n3. Subtract to find the composite area:\n$$80 - 12 = 68 \\text{ cm}^2$$\n\n**Answer:** The area of the composite shape is $68$ cm$^2$.",
+   "answer": "68 cm²"
+  },
+  {
+   "title": "Calculating paving cost for an L-shaped courtyard",
+   "question": "A family wants to pave an L-shaped courtyard. The courtyard can be thought of as a large rectangle 9 m wide and 6 m long, with a rectangular section 3 m wide and 4 m long removed from one corner. Paving costs \\$35 per square metre. Find the total cost to pave the courtyard.",
+   "solution": "**Key idea:** Find the area of the L-shape using the subtraction method, then multiply by the cost per square metre.\n\n1. Area of the large rectangle:\n$$9 \\times 6 = 54 \\text{ m}^2$$\n2. Area of the removed section:\n$$3 \\times 4 = 12 \\text{ m}^2$$\n3. Area of the L-shaped courtyard:\n$$54 - 12 = 42 \\text{ m}^2$$\n4. Total cost:\n$$42 \\times 35 = 1470$$\n\n**Answer:** The total cost to pave the courtyard is \\$1470.",
+   "answer": "\\$1470"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting a missing side on the perimeter",
+   "wrong": "Student adds only the given side lengths and misses one or two sides that were not labelled.",
+   "fix": "For composite shapes, not every side length is always labelled. Use subtraction or addition to work out any missing side before you add up the perimeter. For example, if the shape has a step in it, a missing horizontal side equals the difference between the two horizontal sides you already know."
+  },
+  {
+   "title": "Using the wrong dimensions for the cut-out",
+   "wrong": "Student writes $10 \\times 3$ for the cut-out instead of $4 \\times 3$, using a full side of the whole shape.",
+   "fix": "The cut-out is a separate, smaller rectangle. Read its own width and height from the question carefully. Do not accidentally carry across a dimension from the whole shape."
+  },
+  {
+   "title": "Adding the cut-out area instead of subtracting",
+   "wrong": "Student writes $80 + 12 = 92$ cm$^2$ when they should subtract the cut-out.",
+   "fix": "When part of a shape is removed, the leftover area must be smaller than the whole. Always subtract the cut-out: Area $=$ whole $-$ cut-out. If your answer is bigger than the whole rectangle, check your operation."
+  },
+  {
+   "title": "Mixing up area and perimeter",
+   "wrong": "Student multiplies all the side lengths together instead of adding them when finding perimeter.",
+   "fix": "Perimeter is the total length around the outside, so you add all the side lengths. Area is the space inside, so you multiply. Check which quantity the question is asking for before you start."
+  }
+ ],
+ "practice": {
+  "question": "A composite shape is made by starting with a rectangle that is 12 m wide and 7 m tall, then removing a rectangle from the top-left corner that is 4 m wide and 3 m tall. Find the area of the composite shape.",
+  "answer": "72 m²",
+  "solution": "**Key idea:** Use the subtraction method — find the area of the whole rectangle, then subtract the cut-out.\n\n1. Area of the whole rectangle:\n$$12 \\times 7 = 84 \\text{ m}^2$$\n2. Area of the cut-out rectangle:\n$$4 \\times 3 = 12 \\text{ m}^2$$\n3. Area of the composite shape:\n$$84 - 12 = 72 \\text{ m}^2$$\n\n**Answer:** The area of the composite shape is $72$ m$^2$."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the area and perimeter of composite shapes?",
+  "a": "Break the composite shape into simpler parts (rectangles, triangles, parallelograms), find each area separately, then add or subtract. For perimeter, add only the outer edges, calculating any missing side lengths first. For example, an L-shape can be split into two rectangles whose areas are added together."
+ },
+ "turn": {
+  "question": "An L-shaped room has a large rectangle measuring $10$ m by $6$ m, with a rectangular section of $4$ m by $3$ m removed from one corner. What is the area of the room in square metres?",
+  "kind": "number",
+  "accept": {
+   "value": 48,
+   "tol": 0,
+   "unit": "m²"
+  },
+  "answer_display": "$48 \\text{ m}^2$",
+  "hint": "Find the area of the full large rectangle, then subtract the area of the removed corner section.",
+  "solution": "**Key idea:** Use the subtraction method: area of composite shape = area of whole rectangle minus area of the cut-out.\n\n1. Find the area of the full large rectangle: $10 \\times 6 = 60 \\text{ m}^2$\n2. Find the area of the removed corner rectangle: $4 \\times 3 = 12 \\text{ m}^2$\n3. Subtract: $60 - 12 = 48 \\text{ m}^2$\n\n**Answer:** $48 \\text{ m}^2$"
+ },
+ "turn_checked": {
+  "my_answer": "48",
+  "attempts": 3
+ }
+}

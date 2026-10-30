@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Evaluating a function",
+   "question": "A function is defined as $f(x) = 3x^2 - 2x + 1$. Find $f(4)$.",
+   "solution": "**Key idea:** To evaluate $f(4)$, substitute $x = 4$ into the rule and simplify.\n\n1. Write the function: $f(x) = 3x^2 - 2x + 1$\n2. Substitute $x = 4$:\n$$f(4) = 3(4)^2 - 2(4) + 1$$\n3. Evaluate each term:\n$$\\begin{aligned} f(4) &= 3 \\times 16 - 8 + 1 \\\\ &= 48 - 8 + 1 \\end{aligned}$$\n4. Simplify:\n$$f(4) = 41$$\n\n**Answer:** $f(4) = 41$",
+   "answer": "$f(4) = 41$"
+  },
+  {
+   "title": "Finding x given f(x)",
+   "question": "A function is defined as $f(x) = 2x^2 - 3x - 9$. Find all values of $x$ for which $f(x) = 0$.",
+   "solution": "**Key idea:** Set the function equal to zero and solve the resulting equation.\n\n1. Set up the equation:\n$$2x^2 - 3x - 9 = 0$$\n2. Find two numbers that multiply to $2 \\times (-9) = -18$ and add to $-3$: these are $3$ and $-6$. Split the middle term:\n$$2x^2 + 3x - 6x - 9 = 0$$\n3. Factor by grouping:\n$$\\begin{aligned} x(2x + 3) - 3(2x + 3) &= 0 \\\\ (x - 3)(2x + 3) &= 0 \\end{aligned}$$\n4. Apply the null factor law:\n$$x = 3 \\quad \\text{or} \\quad x = -\\tfrac{3}{2}$$\n\n**Answer:** $x = 3$ or $x = -\\dfrac{3}{2}$",
+   "answer": "$x = 3$ or $x = -\\dfrac{3}{2}$"
+  },
+  {
+   "title": "Function notation in a real-world model",
+   "question": "A company models its weekly profit (in dollars) from selling $x$ handmade candles using the function $P(x) = -2x^2 + 80x - 300$, where $x$ is the number of candles sold and $x \\geq 0$.\n\n(a) Find $P(10)$ and interpret what it means.\n\n(b) Find the value of $x$ for which $P(x) = 0$, and interpret the smaller of the two values.",
+   "solution": "**Key idea:** Use function notation to substitute values and solve equations; interpret each answer in context.\n\n**Part (a)**\n1. Substitute $x = 10$:\n$$P(10) = -2(10)^2 + 80(10) - 300$$\n2. Evaluate:\n$$\\begin{aligned} P(10) &= -2 \\times 100 + 800 - 300 \\\\ &= -200 + 800 - 300 \\\\ &= 300 \\end{aligned}$$\nWhen the company sells 10 candles, the weekly profit is \\$300.\n\n**Part (b)**\n3. Set $P(x) = 0$:\n$$-2x^2 + 80x - 300 = 0$$\nDivide every term by $-2$:\n$$x^2 - 40x + 150 = 0$$\n4. Use the quadratic formula with $a = 1$, $b = -40$, $c = 150$:\n$$x = \\frac{40 \\pm \\sqrt{1600 - 600}}{2} = \\frac{40 \\pm \\sqrt{1000}}{2} = \\frac{40 \\pm 10\\sqrt{10}}{2} = 20 \\pm 5\\sqrt{10}$$\n5. Evaluate both values ($\\sqrt{10} \\approx 3.162$):\n$$x \\approx 20 - 15.81 \\approx 4.19 \\quad \\text{or} \\quad x \\approx 20 + 15.81 \\approx 35.81$$\nThe smaller value $x \\approx 4.19$ means the company must sell at least 5 candles before it begins to make a profit (i.e. the break-even point on the way up).\n\n**Answer:** (a) $P(10) = 300$; selling 10 candles gives a weekly profit of \\$300. (b) $x = 20 - 5\\sqrt{10} \\approx 4.19$ and $x = 20 + 5\\sqrt{10} \\approx 35.81$; the smaller value is the lower break-even point.",
+   "answer": "(a) \\$300 profit. (b) $x = 20 \\pm 5\\sqrt{10}$; the lower break-even point is $x = 20 - 5\\sqrt{10} \\approx 4.19$ candles."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing f(x) with multiplication",
+   "wrong": "Student writes $f(3) = f \\times 3$, treating $f$ as a variable.",
+   "fix": "Remember that $f(x)$ is function notation, not multiplication. The letter $f$ names the function, and the value inside the brackets is the input. Read $f(3)$ as \"$f$ of $3$\", meaning substitute $x = 3$ into the rule."
+  },
+  {
+   "title": "Sign errors when substituting negative values",
+   "wrong": "For $f(x) = x^2 - 4x$, student writes $f(-3) = -3^2 - 4(-3) = -9 + 12 = 3$.",
+   "fix": "Always place a negative input inside its own brackets before squaring: $(-3)^2 = 9$, not $-9$. Write $f(-3) = (-3)^2 - 4(-3) = 9 + 12 = 21$."
+  },
+  {
+   "title": "Swapping the dependent and independent variables",
+   "wrong": "Student says \"$x$ depends on $f(x)$\" or labels the horizontal axis $f(x)$ and the vertical axis $x$.",
+   "fix": "The independent variable $x$ is the input (you choose it freely), and the dependent variable $f(x)$ is the output (it depends on $x$). Plot $x$ on the horizontal axis and $f(x)$ on the vertical axis."
+  },
+  {
+   "title": "Solving f(x) = k by substituting instead of forming an equation",
+   "wrong": "Asked to find $x$ when $f(x) = 7$, student substitutes $7$ into the rule and calculates $f(7)$ instead.",
+   "fix": "\"Find $x$ when $f(x) = 7$\" means set the rule equal to $7$ and solve for $x$. Write $\\text{rule} = 7$ and use algebra, not $f(7)$."
+  }
+ ],
+ "practice": {
+  "question": "A function is defined as $g(x) = x^2 + x - 6$. Find all values of $x$ for which $g(x) = 6$.",
+  "answer": "$x = 3$ or $x = -4$",
+  "solution": "**Key idea:** Set $g(x) = 6$, rearrange to zero, then solve the quadratic.\n\n1. Set up the equation:\n$$x^2 + x - 6 = 6$$\n2. Rearrange to zero:\n$$x^2 + x - 12 = 0$$\n3. Factorise (find two numbers that multiply to $-12$ and add to $1$: these are $4$ and $-3$):\n$$(x + 4)(x - 3) = 0$$\n4. Apply the null factor law:\n$$x = -4 \\quad \\text{or} \\quad x = 3$$\n5. Check by substituting back: $g(3) = 9 + 3 - 6 = 6$ ✓ and $g(-4) = 16 - 4 - 6 = 6$ ✓\n\n**Answer:** $x = 3$ or $x = -4$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is function notation and how do you use it?",
+  "a": "Function notation writes a rule as f(x), where x is the independent variable and f(x) is the dependent variable. To evaluate, substitute the value: if f(x) = 3x − 2, then f(4) = 3(4) − 2 = 10. To find x given f(x) = k, solve the equation formed by substituting k."
+ },
+ "turn": {
+  "question": "A function is defined as $f(x) = 2x^2 - 5x + 1$. Find the value of $f(3)$.",
+  "kind": "number",
+  "accept": {
+   "value": 4,
+   "tol": 0
+  },
+  "answer_display": "$4$",
+  "hint": "Substitute $x = 3$ into the rule and evaluate each term.",
+  "solution": "**Key idea:** To evaluate $f(a)$, replace every $x$ in the rule with $a$ and simplify.\n\n1. Write the function: $f(x) = 2x^2 - 5x + 1$\n2. Substitute $x = 3$: $f(3) = 2(3)^2 - 5(3) + 1$\n3. Evaluate the squared term: $2 \\times 9 = 18$\n4. Evaluate the linear term: $5 \\times 3 = 15$\n5. Combine: $f(3) = 18 - 15 + 1 = 4$\n\n**Answer:** $4$"
+ },
+ "turn_checked": {
+  "my_answer": "4",
+  "attempts": 1
+ }
+}

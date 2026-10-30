@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Parallel and perpendicular gradients",
+   "question": "Line $\\ell$ has equation $y = 3x - 5$. Write down the gradient of any line that is (a) parallel to $\\ell$, and (b) perpendicular to $\\ell$.",
+   "solution": "**Key idea:** Parallel lines have equal gradients. Perpendicular lines have gradients whose product is $-1$, so the perpendicular gradient is the negative reciprocal.\n\n1. The gradient of $\\ell$ is $m = 3$.\n2. **(a) Parallel gradient:** A parallel line has the same gradient, so $m_{\\parallel} = 3$.\n3. **(b) Perpendicular gradient:** Flip and negate: $m_{\\perp} = -\\dfrac{1}{3}$.\n4. **Check:** $3 \\times \\left(-\\dfrac{1}{3}\\right) = -1$ ✓\n\n**Answer:** Parallel gradient $= 3$; perpendicular gradient $= -\\dfrac{1}{3}$.",
+   "answer": "Parallel gradient $= 3$; perpendicular gradient $= -\\dfrac{1}{3}$"
+  },
+  {
+   "title": "Equation of a perpendicular line through a point",
+   "question": "Find the equation of the line that passes through the point $(2, -1)$ and is perpendicular to the line $2x - 4y + 3 = 0$. Write your answer in the form $y = mx + c$.",
+   "solution": "**Key idea:** Rearrange the given line to find its gradient, then use the negative reciprocal for the perpendicular gradient, and substitute the point into $y - y_1 = m(x - x_1)$.\n\n1. Rearrange $2x - 4y + 3 = 0$: $\\;4y = 2x + 3 \\Rightarrow y = \\dfrac{1}{2}x + \\dfrac{3}{4}$, so $m = \\dfrac{1}{2}$.\n2. Perpendicular gradient: $m_{\\perp} = -\\dfrac{1}{\\frac{1}{2}} = -2$.\n3. Substitute $(2,\\,-1)$ and $m = -2$ into $y - y_1 = m(x - x_1)$:\n$$y - (-1) = -2(x - 2)$$\n4. Expand and simplify:\n$$\\begin{aligned} y + 1 &= -2x + 4 \\\\ y &= -2x + 3 \\end{aligned}$$\n5. **Check:** Substitute $(2, -1)$: $-2(2) + 3 = -1$ ✓\n\n**Answer:** $y = -2x + 3$",
+   "answer": "$y = -2x + 3$"
+  },
+  {
+   "title": "Real-life perpendicular path problem",
+   "question": "A straight walking track runs through the points $A(1, 3)$ and $B(5, 7)$, where units are in kilometres. A ranger station is located at $C(6, 2)$. A supply path is to be built from $C$ to the nearest point on track $AB$, meeting the track at a right angle. Find the equation of the supply path, and find the coordinates of the point where it meets the track.",
+   "solution": "**Key idea:** The supply path is perpendicular to $AB$ and passes through $C$. Its equation combined with the equation of $AB$ gives the meeting point.\n\n1. Gradient of $AB$: $m_{AB} = \\dfrac{7 - 3}{5 - 1} = \\dfrac{4}{4} = 1$.\n2. Perpendicular gradient: $m_{\\perp} = -1$.\n3. Equation of supply path through $C(6, 2)$:\n$$\\begin{aligned} y - 2 &= -1(x - 6) \\\\ y &= -x + 8 \\end{aligned}$$\n4. Equation of track $AB$ through $A(1,3)$ with $m = 1$: $y = x + 2$.\n5. Solve simultaneously to find the meeting point:\n$$\\begin{aligned} -x + 8 &= x + 2 \\\\ 6 &= 2x \\\\ x &= 3,\\quad y = 5 \\end{aligned}$$\n6. **Check:** Point $(3, 5)$: on $AB$: $3 + 2 = 5$ ✓; on supply path: $-3 + 8 = 5$ ✓\n\n**Answer:** Supply path equation: $y = -x + 8$; meeting point: $(3, 5)$.",
+   "answer": "Supply path: $y = -x + 8$; meeting point: $(3,5)$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to flip when finding the perpendicular gradient",
+   "wrong": "Gradient is $2$, so perpendicular gradient is $-2$ (only negated, not flipped).",
+   "fix": "The perpendicular gradient is the negative reciprocal: negate AND flip the fraction. If $m = 2 = \\frac{2}{1}$, then $m_{\\perp} = -\\frac{1}{2}$, not $-2$. Always check that $m \\times m_{\\perp} = -1$."
+  },
+  {
+   "title": "Using the gradient of the original line instead of the new gradient",
+   "wrong": "Line is $y = 4x + 1$, so the parallel line through $(2, 3)$ is written as $y = 4x + 1$ without updating the $y$-intercept.",
+   "fix": "The gradient stays the same for a parallel line, but the $y$-intercept will usually change. Always substitute the new point into $y - y_1 = m(x - x_1)$ to find the correct equation."
+  },
+  {
+   "title": "Sign errors when rearranging to $y = mx + c$",
+   "wrong": "$3x - 6y + 12 = 0 \\Rightarrow y = 3x + 12$ (forgetting to divide every term by $6$).",
+   "fix": "When you move terms across and divide, every single term must be divided by the same number. Write $6y = 3x + 12$, then divide both sides by $6$ to get $y = \\frac{1}{2}x + 2$."
+  },
+  {
+   "title": "Swapping $x$ and $y$ coordinates when substituting a point",
+   "wrong": "For the point $(3, -4)$, writing $y - 3 = m(x - (-4))$ instead of $y - (-4) = m(x - 3)$.",
+   "fix": "In the point $(x_1, y_1)$, the first number is always $x_1$ and the second is always $y_1$. Substitute carefully: $y - y_1 = m(x - x_1)$ becomes $y - (-4) = m(x - 3)$."
+  }
+ ],
+ "practice": {
+  "question": "Find the equation of the line that passes through the point $(-3, 4)$ and is parallel to the line $3x + y - 2 = 0$. Write your answer in the form $y = mx + c$.",
+  "answer": "$y = -3x - 5$",
+  "solution": "**Key idea:** Rearrange the given line to find its gradient. A parallel line has the same gradient. Substitute the point into $y - y_1 = m(x - x_1)$.\n\n1. Rearrange $3x + y - 2 = 0$: $y = -3x + 2$, so $m = -3$.\n2. Parallel gradient: $m_{\\parallel} = -3$.\n3. Substitute $(-3,\\,4)$ and $m = -3$:\n$$\\begin{aligned} y - 4 &= -3(x - (-3)) \\\\ y - 4 &= -3(x + 3) \\\\ y - 4 &= -3x - 9 \\\\ y &= -3x - 5 \\end{aligned}$$\n4. **Check:** Substitute $(-3, 4)$: $-3(-3) - 5 = 9 - 5 = 4$ ✓\n\n**Answer:** $y = -3x - 5$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the equation of a line parallel or perpendicular to another line?",
+  "a": "Parallel lines have equal gradients; perpendicular lines have gradients that multiply to -1 (negative reciprocals). Find the required gradient, then substitute a known point into y = mx + c to find c. For example, a line perpendicular to y = 2x + 1 through (0, 3) has gradient -1/2, giving y = -x/2 + 3."
+ },
+ "turn": {
+  "question": "Line $\\ell$ has equation $y = 3x - 4$. A line perpendicular to $\\ell$ passes through the point $(6, 1)$. What is the $y$-intercept of this perpendicular line?",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0
+  },
+  "answer_display": "$3$",
+  "hint": "The gradient of a line perpendicular to $y = 3x - 4$ is the negative reciprocal of $3$. Use the point $(6, 1)$ and $y = mx + c$ to find $c$.",
+  "solution": "**Key idea:** Two lines are perpendicular when their gradients multiply to $-1$, so the perpendicular gradient is the negative reciprocal of the original.\n\n1. Identify the gradient of $\\ell$: $m = 3$.\n2. Find the perpendicular gradient: $m_\\perp = -\\dfrac{1}{3}$.\n3. Write the equation of the perpendicular line as $y = -\\dfrac{1}{3}x + c$.\n4. Substitute the point $(6, 1)$: $$1 = -\\dfrac{1}{3}(6) + c = -2 + c.$$\n5. Solve for $c$: $c = 3$.\n\n**Answer:** The $y$-intercept is $3$."
+ },
+ "turn_checked": {
+  "my_answer": "3",
+  "attempts": 1
+ }
+}

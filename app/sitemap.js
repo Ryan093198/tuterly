@@ -1,3 +1,4 @@
+import { STATE_CODES } from "@/lib/state-curriculum";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SITE_URL } from "@/lib/site";
@@ -18,6 +19,23 @@ const STATIC_PAGES = [
   { path: "/students/year-9", priority: 0.7, changeFrequency: "monthly" },
   { path: "/students/year-10", priority: 0.7, changeFrequency: "monthly" },
   { path: "/try", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/guarantee", priority: 0.5, changeFrequency: "monthly" },
+  { path: "/naplan", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/formula-sheets", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/exam-generator", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/scholarship-practice", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/scholarship-practice/acer", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/scholarship-practice/edutest", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/scholarship-practice/aas", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/formula-sheets/year-7-maths", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/formula-sheets/year-8-maths", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/formula-sheets/year-9-maths", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/formula-sheets/year-10-maths", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/formula-sheets/year-10a-maths", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/naplan/year-3-numeracy", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/naplan/year-5-numeracy", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/naplan/year-7-numeracy", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/naplan/year-9-numeracy", priority: 0.8, changeFrequency: "monthly" },
   { path: "/features", priority: 0.8, changeFrequency: "monthly" },
   { path: "/features/snap-a-question", priority: 0.7, changeFrequency: "monthly" },
   { path: "/features/test-any-topic", priority: 0.7, changeFrequency: "monthly" },
@@ -81,6 +99,9 @@ export default function sitemap() {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
+  for (const code of STATE_CODES) {
+    worksheetTopics.push({ url: `${SITE_URL}/worksheets/${code}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
+  }
 
   // The Learn hub and every published article (content/learn/*.md).
   const learn = [

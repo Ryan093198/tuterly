@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Volume of a triangular prism",
+   "question": "A triangular prism has a right-angled triangular cross-section with base $6$ cm and perpendicular height $4$ cm. The prism is $10$ cm long. Find its volume.",
+   "solution": "**Key idea:** The volume of any right prism is $V = A_{\\text{cross-section}} \\times \\text{length}$.\n\n1. Find the area of the triangular cross-section:\n$$A = \\frac{1}{2} \\times base \\times height = \\frac{1}{2} \\times 6 \\times 4 = 12 \\text{ cm}^2$$\n2. Multiply by the length of the prism:\n$$V = 12 \\times 10 = 120 \\text{ cm}^3$$\n\n**Answer:** $120 \\text{ cm}^3$",
+   "answer": "$120 \\text{ cm}^3$"
+  },
+  {
+   "title": "Volume of a trapezoidal prism",
+   "question": "A trapezoidal prism has a cross-section that is a trapezium with parallel sides of $5$ cm and $9$ cm, and a perpendicular height of $6$ cm. The prism has a length of $12$ cm. Find its volume.",
+   "solution": "**Key idea:** Find the area of the trapezoidal cross-section first, then multiply by the length.\n\n1. Find the area of the trapezoidal cross-section:\n$$A = \\frac{1}{2}(a + b) \\times h = \\frac{1}{2}(5 + 9) \\times 6 = \\frac{1}{2} \\times 14 \\times 6 = 42 \\text{ cm}^2$$\n2. Multiply by the length of the prism:\n$$V = 42 \\times 12 = 504 \\text{ cm}^3$$\n\n**Answer:** $504 \\text{ cm}^3$",
+   "answer": "$504 \\text{ cm}^3$"
+  },
+  {
+   "title": "Capacity of a swimming pool",
+   "question": "A swimming pool has a cross-section that is a trapezium. The pool is $1.2$ m deep at the shallow end and $2.0$ m deep at the deep end. The pool is $25$ m long and $10$ m wide. Water is filled to the top. How many litres of water does the pool hold? ($1 \\text{ m}^3 = 1000 \\text{ L}$)",
+   "solution": "**Key idea:** Model the pool as a trapezoidal prism. Find the volume in cubic metres, then convert to litres.\n\n1. Find the area of the trapezoidal cross-section (the side face, length $\\times$ depth):\n$$A = \\frac{1}{2}(d_1 + d_2) \\times l = \\frac{1}{2}(1.2 + 2.0) \\times 25 = \\frac{1}{2} \\times 3.2 \\times 25 = 40 \\text{ m}^2$$\n2. Multiply by the width to get the volume:\n$$V = 40 \\times 10 = 400 \\text{ m}^3$$\n3. Convert to litres:\n$$400 \\times 1000 = 400\\,000 \\text{ L}$$\n\n**Answer:** $400\\,000$ L",
+   "answer": "$400\\,000$ L"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the wrong area formula for the cross-section",
+   "wrong": "Area of trapezium $= (a + b) \\times h$ (forgetting to halve)",
+   "fix": "The correct formula is $A = \\frac{1}{2}(a + b) \\times h$. Always write the formula in full before substituting numbers, so you do not accidentally leave out the $\\frac{1}{2}$."
+  },
+  {
+   "title": "Multiplying the wrong dimension by the cross-section area",
+   "wrong": "Finding the area of a face that is not the cross-section, then multiplying by an incorrect dimension",
+   "fix": "Always identify the cross-section (the shape that stays the same all the way along the prism) first. The length you multiply by must be the dimension going perpendicular to that cross-section."
+  },
+  {
+   "title": "Forgetting to convert units before calculating",
+   "wrong": "Mixing cm and m in the same calculation, e.g. $V = 40 \\times 10 \\text{ cm}$ when the other dimensions are in metres",
+   "fix": "Convert all lengths to the same unit before you start. If the answer needs to be in cm$^3$, convert everything to cm first; if in m$^3$, convert everything to m."
+  },
+  {
+   "title": "Incorrect capacity conversion",
+   "wrong": "$1 \\text{ m}^3 = 100 \\text{ L}$ or $1 \\text{ cm}^3 = 10 \\text{ mL}$",
+   "fix": "Remember: $1 \\text{ cm}^3 = 1 \\text{ mL}$, $1000 \\text{ cm}^3 = 1 \\text{ L}$, and $1 \\text{ m}^3 = 1000 \\text{ L}$. Write these conversions at the top of your working as a reminder."
+  }
+ ],
+ "practice": {
+  "question": "A trapezoidal prism has a cross-section that is a trapezium with parallel sides of $8$ cm and $14$ cm, and a perpendicular height of $5$ cm. The prism has a length of $20$ cm. Find its volume.",
+  "answer": "$1100 \\text{ cm}^3$",
+  "solution": "**Key idea:** Find the area of the trapezoidal cross-section, then multiply by the length of the prism.\n\n1. Find the area of the trapezoidal cross-section:\n$$A = \\frac{1}{2}(a + b) \\times h = \\frac{1}{2}(8 + 14) \\times 5 = \\frac{1}{2} \\times 22 \\times 5 = 55 \\text{ cm}^2$$\n2. Multiply by the length of the prism:\n$$V = 55 \\times 20 = 1100 \\text{ cm}^3$$\n\n**Answer:** $1100 \\text{ cm}^3$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the volume of a right prism?",
+  "a": "Multiply the area of the cross-sectional face by the length (or height) of the prism: V = A × l. First find the area of the base shape (rectangle, triangle, trapezium, etc.), then multiply by how far the prism extends. For example, a triangular prism with base area 12 cm² and length 5 cm has volume 60 cm³."
+ },
+ "turn": {
+  "question": "A trapezoidal prism has a cross-section with parallel sides of $6$ cm and $10$ cm and a perpendicular height of $4$ cm. The prism is $9$ cm long. Find the volume of the prism in cm³.",
+  "kind": "number",
+  "accept": {
+   "value": 288,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$288 \\text{ cm}^3$",
+  "hint": "Find the area of the trapezium first using $A = \\tfrac{1}{2}(a + b)h$, then multiply by the length of the prism.",
+  "solution": "**Key idea:** Volume of a right prism = area of cross-section × length.\n\n1. Identify the cross-section: a trapezium with parallel sides $a = 6$ cm and $b = 10$ cm, and perpendicular height $h = 4$ cm.\n2. Find the area of the trapezium: $$A = \\frac{1}{2}(a + b)h = \\frac{1}{2}(6 + 10) \\times 4 = \\frac{1}{2} \\times 16 \\times 4 = 32 \\text{ cm}^2$$\n3. Multiply by the length of the prism: $$V = A \\times l = 32 \\times 9 = 288 \\text{ cm}^3$$\n4. Check units: all measurements were in cm, so volume is in cm³.\n\n**Answer:** $288 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "288",
+  "attempts": 1
+ }
+}

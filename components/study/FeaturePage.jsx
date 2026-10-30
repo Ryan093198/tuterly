@@ -6,6 +6,7 @@ import FlowSteps from "@/components/brand/FlowSteps";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { FEATURES } from "@/lib/feature-pages";
 import TryCta from "@/components/study/TryCta";
+import DifferentQuestions from "@/components/study/DifferentQuestions";
 import "./study-landing.css";
 import "./features.css";
 
@@ -61,6 +62,8 @@ export default function FeaturePage({ feature }) {
           <FlowSteps steps={f.steps} label={`${f.name}, how it works`} />
         </div>
       </section>
+
+      {f.slug === "snap-a-question" && <DifferentQuestions className="tb-section--soft" />}
 
       <section className="tb-section" aria-labelledby="ft-why">
         <div className="tb-wrap">

@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Finding the complement of an event",
+   "question": "A bag contains 20 marbles. The probability of picking a red marble at random is $\\dfrac{3}{20}$. Find the probability of not picking a red marble.",
+   "solution": "**Key idea:** Complementary events cover all possible outcomes, so $P(\\text{not A}) = 1 - P(A)$.\n\n1. Identify the given probability: $P(\\text{red}) = \\dfrac{3}{20}$\n2. Apply the complement rule:\n$$P(\\text{not red}) = 1 - \\dfrac{3}{20}$$\n3. Subtract:\n$$P(\\text{not red}) = \\dfrac{20}{20} - \\dfrac{3}{20} = \\dfrac{17}{20}$$\n\n**Answer:** $\\dfrac{17}{20}$",
+   "answer": "$\\dfrac{17}{20}$"
+  },
+  {
+   "title": "Finding a probability using the complement rule",
+   "question": "The probabilities of spinning a spinner and landing on each colour are shown below.\n\n| Colour | Red | Blue | Green | Yellow |\n|--------|-----|------|-------|--------|\n| Probability | $0.35$ | $0.2$ | $0.3$ | ? |\n\nFind the probability of landing on yellow.",
+   "solution": "**Key idea:** All probabilities in a sample space must sum to 1, so the missing probability equals $1$ minus the sum of the rest.\n\n1. Add the known probabilities:\n$$0.35 + 0.2 + 0.3 = 0.85$$\n2. Apply the complement rule:\n$$P(\\text{yellow}) = 1 - 0.85$$\n3. Subtract:\n$$P(\\text{yellow}) = 0.15$$\n\n**Answer:** $0.15$",
+   "answer": "$0.15$"
+  },
+  {
+   "title": "Applying the complement rule in a real-world context",
+   "question": "A school raffle sells 250 tickets. Mia buys 8 tickets. All tickets are equally likely to win. Find the probability that Mia does not win, giving your answer as a fraction, a decimal and a percentage.",
+   "solution": "**Key idea:** It is easier to find $P(\\text{win})$ first, then use the complement to find $P(\\text{not win})$.\n\n1. Find $P(\\text{Mia wins})$:\n$$P(\\text{win}) = \\dfrac{8}{250} = \\dfrac{4}{125}$$\n2. Apply the complement rule:\n$$P(\\text{not win}) = 1 - \\dfrac{4}{125} = \\dfrac{125}{125} - \\dfrac{4}{125} = \\dfrac{121}{125}$$\n3. Convert to a decimal:\n$$\\dfrac{121}{125} = 0.968$$\n4. Convert to a percentage:\n$$0.968 \\times 100 = 96.8\\%$$\n\n**Answer:** $\\dfrac{121}{125}$, $0.968$, $96.8\\%$",
+   "answer": "$\\dfrac{121}{125}$, $0.968$, $96.8\\%$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Subtracting from the wrong starting value",
+   "wrong": "Student writes $P(\\text{not red}) = 20 - 3 = 17$ instead of $\\dfrac{17}{20}$",
+   "fix": "Always subtract from 1, not from the total number of outcomes. Probability is always a value between 0 and 1, so $P(\\text{not A}) = 1 - P(A)$."
+  },
+  {
+   "title": "Forgetting that all probabilities must sum to 1",
+   "wrong": "Student finds a missing probability by guessing or leaving it blank when a table of probabilities is given.",
+   "fix": "Add all the known probabilities first, then subtract their total from 1. This always gives the missing probability, because every sample space must have probabilities that sum to exactly 1."
+  },
+  {
+   "title": "Confusing the event with its complement",
+   "wrong": "For the event 'not rolling a 6', the student writes $P(6) = \\dfrac{5}{6}$ instead of $P(\\text{not } 6) = \\dfrac{5}{6}$.",
+   "fix": "Read the question carefully and check exactly which event you need. The complement of rolling a 6 is rolling any other number (1, 2, 3, 4 or 5), which has 5 favourable outcomes out of 6."
+  },
+  {
+   "title": "Converting incorrectly between fractions, decimals and percentages",
+   "wrong": "Student writes $\\dfrac{17}{20} = 17.20\\%$ instead of $85\\%$.",
+   "fix": "To convert a fraction to a percentage, divide the numerator by the denominator to get a decimal, then multiply by 100. For example, $\\dfrac{17}{20} = 0.85 = 85\\%$."
+  }
+ ],
+ "practice": {
+  "question": "The probabilities of four possible outcomes when a biased die is rolled are shown below.\n\n| Outcome | 1 | 2 | 3 | 4 | 5 | 6 |\n|---------|---|---|---|---|---|---|\n| Probability | $0.05$ | $0.1$ | $0.25$ | $0.3$ | ? | $0.15$ |\n\nFind the probability of rolling a 5.",
+  "answer": "$0.15$",
+  "solution": "**Key idea:** All probabilities in a sample space sum to 1, so use the complement rule to find the missing value.\n\n1. Add all known probabilities:\n$$0.05 + 0.1 + 0.25 + 0.3 + 0.15 = 0.85$$\n2. Apply the complement rule:\n$$P(5) = 1 - 0.85$$\n3. Subtract:\n$$P(5) = 0.15$$\n\n**Answer:** $0.15$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are complementary events in probability?",
+  "a": "Complementary events are two outcomes that together cover every possibility, so their probabilities always add to 1. Use P(not A) = 1 − P(A) to find a missing probability. For example, if the probability of rain is 0.3, the probability of no rain is 1 − 0.3 = 0.7."
+ },
+ "turn": {
+  "question": "A bag contains only red and blue marbles. The probability of picking a red marble is $\\dfrac{3}{8}$. What is the probability of picking a blue marble? Give your answer as a fraction.",
+  "kind": "number",
+  "accept": {
+   "value": 0.625,
+   "tol": 0
+  },
+  "answer_display": "$\\dfrac{5}{8}$",
+  "hint": "A red marble and a blue marble are complementary events, so their probabilities must add to 1.",
+  "solution": "**Key idea:** Complementary events have probabilities that sum to 1, so P(blue) = 1 − P(red).\n\n1. Identify the two complementary events: picking red and picking blue are the only two outcomes.\n2. Write the complement rule: $P(\\text{blue}) = 1 - P(\\text{red})$.\n3. Substitute the known probability: $P(\\text{blue}) = 1 - \\dfrac{3}{8}$.\n4. Calculate: $P(\\text{blue}) = \\dfrac{8}{8} - \\dfrac{3}{8} = \\dfrac{5}{8}$.\n5. Check: $\\dfrac{3}{8} + \\dfrac{5}{8} = \\dfrac{8}{8} = 1$ ✓\n\n**Answer:** $\\dfrac{5}{8}$"
+ },
+ "turn_checked": {
+  "my_answer": "5/8",
+  "attempts": 2
+ }
+}

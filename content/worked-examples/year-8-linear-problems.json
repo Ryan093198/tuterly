@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Writing a linear equation from a word problem",
+   "question": "A plumber charges a call-out fee of \\$80 plus \\$60 for each hour worked. Write a linear equation for the total cost $C$ (in dollars) in terms of the number of hours worked $h$.",
+   "solution": "**Key idea:** A linear equation has the form $C = mh + b$, where $m$ is the rate of change (cost per hour) and $b$ is the fixed starting value (call-out fee).\n\n1. Identify the fixed cost (intercept): the call-out fee is \\$80, so $b = 80$.\n2. Identify the rate of change (slope): the cost increases by \\$60 per hour, so $m = 60$.\n3. Write the equation:\n$$C = 60h + 80$$\n4. Check: for $h = 1$, $C = 60(1) + 80 = 140$. One hour should cost \\$80 + \\$60 = \\$140. ✓\n\n**Answer:** $C = 60h + 80$",
+   "answer": "$C = 60h + 80$"
+  },
+  {
+   "title": "Interpreting slope and intercept in context",
+   "question": "Maya is saving money. She already has \\$150 in her bank account and saves \\$25 each week. Her savings $S$ (in dollars) after $w$ weeks is modelled by $S = 25w + 150$. How many weeks will it take Maya to save \\$500?",
+   "solution": "**Key idea:** Substitute the target value for $S$ and solve the linear equation for $w$.\n\n1. The slope $25$ means savings grow by \\$25 per week; the intercept $150$ is the amount she starts with.\n2. Set $S = 500$:\n$$500 = 25w + 150$$\n3. Subtract 150 from both sides:\n$$350 = 25w$$\n4. Divide both sides by 25:\n$$w = 14$$\n5. Check: $S = 25(14) + 150 = 350 + 150 = 500$. ✓\n\n**Answer:** 14 weeks",
+   "answer": "14 weeks"
+  },
+  {
+   "title": "Comparing two plans to find the best-value point",
+   "question": "A school is hiring a bus for an excursion. Company A charges a flat fee of \\$320 plus \\$4 per student. Company B charges a flat fee of \\$200 plus \\$6 per student. Write a linear equation for the total cost of each company in terms of the number of students $n$, find the number of students at which both companies charge the same amount, and state which company is cheaper when 80 students attend.",
+   "solution": "**Key idea:** Write an equation for each option, set them equal to find the break-even point, then compare for the given number of students.\n\n1. Write the equations:\n$$A = 4n + 320 \\qquad B = 6n + 200$$\n2. Set $A = B$ to find the break-even point:\n$$4n + 320 = 6n + 200$$\n3. Subtract $4n$ from both sides:\n$$320 = 2n + 200$$\n4. Subtract 200, then divide by 2:\n$$\\begin{aligned} 120 &= 2n \\\\ n &= 60 \\end{aligned}$$\n5. For $n = 80$: $A = 4(80) + 320 = 640$; $B = 6(80) + 200 = 680$. Since $640 < 680$, Company A is cheaper.\n6. Check break-even: $A = 4(60) + 320 = 560$; $B = 6(60) + 200 = 560$. ✓\n\n**Answer:** Both companies charge the same for 60 students. For 80 students, Company A is cheaper at \\$640.",
+   "answer": "Break-even at 60 students; Company A is cheaper (\\$640) for 80 students."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Swapping the slope and intercept",
+   "wrong": "The plumber charges \\$60 call-out and \\$80 per hour, so $C = 80h + 60$.",
+   "fix": "Always match each number to its meaning in the problem. The flat fee that is charged regardless of time is the intercept $b$, and the amount charged per unit of time is the slope $m$. Re-read the question and label each value before writing the equation."
+  },
+  {
+   "title": "Forgetting to include the fixed cost",
+   "wrong": "The plumber charges \\$60 per hour, so $C = 60h$.",
+   "fix": "Check whether the problem mentions any starting amount, joining fee, or flat charge. If it does, that value must be added as the intercept. A linear model with no fixed cost only applies when the total is zero when the variable is zero."
+  },
+  {
+   "title": "Setting up the break-even equation incorrectly",
+   "wrong": "To compare Company A and Company B, add them: $(4n + 320) + (6n + 200) = 0$.",
+   "fix": "To find when two options cost the same, set the two expressions equal to each other: $4n + 320 = 6n + 200$. You are looking for the value of $n$ that makes both costs identical, not a sum."
+  },
+  {
+   "title": "Misreading which model is cheaper after the break-even point",
+   "wrong": "Company B has a smaller flat fee so it is always cheaper.",
+   "fix": "A smaller flat fee does not mean a plan is always cheaper. After the break-even point, the plan with the higher slope (rate per unit) becomes more expensive. Always substitute the actual number into both equations and compare the results."
+  }
+ ],
+ "practice": {
+  "question": "An electrician charges a call-out fee of \\$50 plus \\$75 per hour. Write a linear equation for the total cost $C$ (in dollars) after $h$ hours of work, then find how many hours were worked if the total bill was \\$350.",
+  "answer": "Equation: $C = 75h + 50$; hours worked: $h = 4$",
+  "solution": "**Key idea:** Write the linear equation from the fixed fee and hourly rate, then substitute the known total cost and solve for $h$.\n\n1. The call-out fee is the intercept: $b = 50$. The hourly rate is the slope: $m = 75$.\n2. Write the equation: $C = 75h + 50$.\n3. Substitute $C = 350$:\n$$350 = 75h + 50$$\n4. Subtract 50 from both sides:\n$$300 = 75h$$\n5. Divide both sides by 75:\n$$h = 4$$\n6. Check: $C = 75(4) + 50 = 300 + 50 = 350$. ✓\n\n**Answer:** The electrician worked for 4 hours."
+ },
+ "checked": true,
+ "attempts": 3,
+ "summary": {
+  "q": "How do you use linear equations to solve real-life problems?",
+  "a": "Write a linear equation by identifying a starting value (the intercept) and a constant rate of change (the slope). Then substitute known values to solve for the unknown. For example, if a plumber charges a 60 dollar call-out fee plus 80 dollars per hour, the total cost is C = 80h + 60, so 3 hours costs 300 dollars."
+ },
+ "turn": {
+  "question": "A mobile plan charges a flat monthly fee of $15 and $0.08 per text message sent. In a month where Maya sends $n$ messages, her bill is given by $C = 0.08n + 15$. How many text messages did Maya send if her bill was $36.20? Give your answer as a whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 265,
+   "tol": 0
+  },
+  "answer_display": "$265$",
+  "hint": "Substitute $C = 36.20$ into the equation and solve for $n$.",
+  "solution": "**Key idea:** Substitute the known value of $C$ into the linear equation and solve for the unknown $n$.\n\n1. Write the equation with $C = 36.20$:\n$$0.08n + 15 = 36.20$$\n2. Subtract 15 from both sides:\n$$0.08n = 21.20$$\n3. Divide both sides by $0.08$:\n$$n = \\frac{21.20}{0.08} = 265$$\n4. Check: $0.08 \\times 265 + 15 = 21.20 + 15 = 36.20$ ✓\n\n**Answer:** Maya sent $265$ text messages."
+ },
+ "turn_checked": {
+  "my_answer": "265",
+  "attempts": 1
+ }
+}

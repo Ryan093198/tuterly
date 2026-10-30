@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Calculating the mean",
+   "question": "Find the mean of the following data set: $8, 3, 6, 5, 8.$",
+   "solution": "**Key idea:** The mean is the sum of all values divided by the number of values.\n\n1. Count the values: there are $5$ values.\n2. Add all values: $$8 + 3 + 6 + 5 + 8 = 30$$\n3. Divide the sum by the count: $$\\text{Mean} = \\frac{30}{5} = 6$$\n\n**Answer:** The mean is $6.$",
+   "answer": "Mean $= 6$"
+  },
+  {
+   "title": "Median, mode and range",
+   "question": "Find the median, mode and range of this data set: $4, 7, 2, 7, 9, 1, 4, 7, 3.$",
+   "solution": "**Key idea:** Sort the data first, then apply each definition.\n\n1. Sort the values in ascending order: $$1, 2, 3, 4, 4, 7, 7, 7, 9$$\n2. **Median:** There are $9$ values (odd count), so the median is the $5$th value: $\\text{Median} = 4.$\n3. **Mode:** The value that appears most often is $7$ (appears $3$ times): $\\text{Mode} = 7.$\n4. **Range:** $$\\text{Range} = 9 - 1 = 8$$\n\n**Answer:** Median $= 4$, Mode $= 7$, Range $= 8.$",
+   "answer": "Median $= 4$, Mode $= 7$, Range $= 8$"
+  },
+  {
+   "title": "Comparing two data sets",
+   "question": "Two students each recorded how many pages they read per day for $6$ days. Anika's results were: $12, 20, 15, 18, 10, 13.$ Ben's results were: $8, 25, 14, 22, 9, 16.$ Calculate the mean and range for each student, and use these to compare their reading habits.",
+   "solution": "**Key idea:** The mean compares typical values; the range compares spread.\n\n1. **Anika's mean:** $$\\frac{12 + 20 + 15 + 18 + 10 + 13}{6} = \\frac{88}{6} \\approx 14.7 \\text{ pages}$$\n2. **Ben's mean:** $$\\frac{8 + 25 + 14 + 22 + 9 + 16}{6} = \\frac{94}{6} \\approx 15.7 \\text{ pages}$$\n3. **Anika's range:** $20 - 10 = 10$\n4. **Ben's range:** $25 - 8 = 17$\n5. Ben reads slightly more pages per day on average (about $15.7$ compared to Anika's $14.7$), but Anika is more consistent because her range ($10$) is much smaller than Ben's ($17$).\n\n**Answer:** Anika: mean $\\approx 14.7$, range $= 10$. Ben: mean $\\approx 15.7$, range $= 17$. Ben reads more on average but is less consistent.",
+   "answer": "Anika: mean $\\approx 14.7$, range $= 10$; Ben: mean $\\approx 15.7$, range $= 17$. Ben reads more on average; Anika is more consistent."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to sort before finding the median",
+   "wrong": "Median of $3, 7, 1, 5, 9$ is the 3rd value $= 1$ (unsorted).",
+   "fix": "Always sort the data in ascending order first. The median of $1, 3, 5, 7, 9$ is the 3rd value, which is $5.$"
+  },
+  {
+   "title": "Even data count: taking one middle value instead of averaging two",
+   "wrong": "Median of $2, 5, 8, 11$ is $5$ (just the 2nd value).",
+   "fix": "When there is an even number of values, the median is the average of the two middle values. Here it is $\\frac{5 + 8}{2} = 6.5.$"
+  },
+  {
+   "title": "Dividing by the number of different values instead of the total count for the mean",
+   "wrong": "Mean of $4, 4, 6, 8$ is $\\frac{4 + 6 + 8}{3} = 6$ (ignoring the repeated $4$).",
+   "fix": "Every value in the list counts, including repeats. The correct mean is $\\frac{4 + 4 + 6 + 8}{4} = 5.5.$"
+  },
+  {
+   "title": "Confusing range with the list of all values",
+   "wrong": "Range of $3, 7, 10$ is $3, 7, 10.$",
+   "fix": "The range is a single number: subtract the smallest value from the largest. Here, $\\text{range} = 10 - 3 = 7.$"
+  }
+ ],
+ "practice": {
+  "question": "Find the median and mode of this data set: $13, 5, 9, 5, 17, 11, 9, 5.$",
+  "answer": "Median $= 9$, Mode $= 5$",
+  "solution": "**Key idea:** Sort the data first, then find the middle value(s) for the median and the most frequent value for the mode.\n\n1. Sort the values in ascending order: $$5, 5, 5, 9, 9, 11, 13, 17$$\n2. **Median:** There are $8$ values (even count), so the median is the average of the 4th and 5th values: $$\\text{Median} = \\frac{9 + 9}{2} = 9$$\n3. **Mode:** The value that appears most often is $5$ (appears $3$ times, more than any other value): $\\text{Mode} = 5.$\n\n**Answer:** Median $= 9$, Mode $= 5.$"
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you find the mean, median, mode and range?",
+  "a": "The mean is the sum of all values divided by the count. The median is the middle value when data is ordered (or the average of the two middle values if there is an even count). The mode is the most frequent value. The range is the maximum minus the minimum. For example, in {2, 4, 4, 6, 9}: mean = 5, median = 4, mode = 4, range = 7."
+ },
+ "turn": {
+  "question": "The ages (in years) of eight players on a basketball team are: 14, 15, 13, 16, 15, 14, 15, 12. What is the median age?",
+  "kind": "number",
+  "accept": {
+   "value": 14.5,
+   "tol": 0.005,
+   "unit": "years"
+  },
+  "answer_display": "$14.5$ years",
+  "hint": "Order the values from smallest to largest, then average the two middle values since there are eight (an even count) of them.",
+  "solution": "**Key idea:** For an even number of values, the median is the mean of the two middle values once the data is ordered.\n\n1. Order the ages from smallest to largest: $12, 13, 14, 14, 15, 15, 15, 16$.\n2. There are 8 values (an even count), so the median lies between the 4th and 5th values.\n3. The 4th value is $14$ and the 5th value is $15$.\n4. Median $= \\dfrac{14 + 15}{2} = \\dfrac{29}{2} = 14.5$.\n\n**Answer:** $14.5$ years"
+ },
+ "turn_checked": {
+  "my_answer": "14.5",
+  "attempts": 2
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Substituting into a formula",
+   "question": "The formula for the area of a trapezium is $$A = \\frac{1}{2}(a + b)h$$ where $a$ and $b$ are the parallel sides and $h$ is the perpendicular height. Find $A$ when $a = 5$ cm, $b = 11$ cm and $h = 8$ cm.",
+   "solution": "**Key idea:** Replace each variable with its given value, then evaluate using the correct order of operations.\n\n1. Write the formula: $$A = \\frac{1}{2}(a + b)h$$\n2. Substitute the values: $$A = \\frac{1}{2}(5 + 11) \\times 8$$\n3. Simplify inside the brackets: $$A = \\frac{1}{2} \\times 16 \\times 8$$\n4. Evaluate: $$A = 64$$\n\n**Answer:** The area of the trapezium is $64$ cm².",
+   "answer": "$A = 64$ cm²"
+  },
+  {
+   "title": "Rearranging a formula with a square root",
+   "question": "The formula $v = \\sqrt{u^2 + 2as}$ relates the final velocity $v$, initial velocity $u$, acceleration $a$ and displacement $s$ of an object. Rearrange the formula to make $s$ the subject.",
+   "solution": "**Key idea:** Use inverse operations in reverse order to isolate the desired variable, undoing the outermost operation first.\n\n1. Square both sides to remove the square root: $$v^2 = u^2 + 2as$$\n2. Subtract $u^2$ from both sides: $$v^2 - u^2 = 2as$$\n3. Divide both sides by $2a$: $$s = \\frac{v^2 - u^2}{2a}$$\n\n**Answer:** $s = \\dfrac{v^2 - u^2}{2a}$",
+   "answer": "$s = \\dfrac{v^2 - u^2}{2a}$"
+  },
+  {
+   "title": "Applying formula rearrangement in context",
+   "question": "A scientist uses the formula $E = \\frac{mv^2}{2}$ to find the kinetic energy $E$ (in joules) of an object with mass $m$ kg moving at speed $v$ m/s. A ball has a kinetic energy of $360$ J and a mass of $5$ kg. Find the speed of the ball.",
+   "solution": "**Key idea:** Rearrange the formula to make the unknown variable the subject, then substitute the known values.\n\n1. Write the formula and rearrange to make $v$ the subject. Multiply both sides by $2$: $$2E = mv^2$$\n2. Divide both sides by $m$: $$v^2 = \\frac{2E}{m}$$\n3. Take the positive square root (speed is positive): $$v = \\sqrt{\\frac{2E}{m}}$$\n4. Substitute $E = 360$ and $m = 5$: $$v = \\sqrt{\\frac{2 \\times 360}{5}} = \\sqrt{\\frac{720}{5}} = \\sqrt{144}$$\n5. Evaluate: $$v = 12$$\n6. Check by substituting back: $E = \\frac{5 \\times 12^2}{2} = \\frac{5 \\times 144}{2} = \\frac{720}{2} = 360$ ✓\n\n**Answer:** The speed of the ball is $12$ m/s.",
+   "answer": "$v = 12$ m/s"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to square root at the end",
+   "wrong": "From $v^2 = 144$, writing the answer as $v = 144$.",
+   "fix": "When you reach $v^2 = \\text{number}$, you must take the square root of both sides to find $v$. Always check what operation was applied to your variable and undo it fully."
+  },
+  {
+   "title": "Squaring only part of the expression",
+   "wrong": "From $v = \\sqrt{u^2 + 2as}$, squaring to get $v^2 = u + 2as$ (forgetting to square $u$).",
+   "fix": "Squaring removes the square root from the whole expression under the root sign. Every term inside the root is squared together, not individually. In this case $v^2 = u^2 + 2as$."
+  },
+  {
+   "title": "Dividing by only part of the denominator",
+   "wrong": "From $2E = mv^2$, dividing by $m$ to get $v^2 = 2E - m$ instead of $v^2 = \\frac{2E}{m}$.",
+   "fix": "When you divide both sides by $m$, every term on the other side is divided by $m$ as a whole. Write it as a fraction: $v^2 = \\frac{2E}{m}$."
+  },
+  {
+   "title": "Substituting before rearranging",
+   "wrong": "Putting numbers in first and then trying to rearrange an equation full of decimals.",
+   "fix": "Rearrange the formula with letters first, then substitute numbers into the rearranged version. This keeps working tidy and reduces arithmetic errors."
+  }
+ ],
+ "practice": {
+  "question": "The formula for the period of a pendulum is $$T = 2\\pi\\sqrt{\\frac{L}{g}}$$ where $T$ is the period in seconds, $L$ is the length of the pendulum in metres and $g$ is the acceleration due to gravity in m/s². Rearrange the formula to make $L$ the subject.",
+  "answer": "$L = \\dfrac{T^2 g}{4\\pi^2}$",
+  "solution": "**Key idea:** Rearrange using inverse operations, working from the outside in to isolate $L$.\n\n1. Divide both sides by $2\\pi$: $$\\frac{T}{2\\pi} = \\sqrt{\\frac{L}{g}}$$\n2. Square both sides to remove the square root: $$\\frac{T^2}{4\\pi^2} = \\frac{L}{g}$$\n3. Multiply both sides by $g$: $$L = \\frac{T^2 g}{4\\pi^2}$$\n\n**Answer:** $L = \\dfrac{T^2 g}{4\\pi^2}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you substitute into and rearrange formulas?",
+  "a": "Substituting means replacing each pronumeral with its given value and evaluating. Rearranging means using inverse operations to isolate a chosen variable. For example, given v = u + at, making a the subject gives a = (v − u) / t. Always check by substituting your answer back into the original formula."
+ },
+ "turn": {
+  "question": "The formula for the area of a trapezium is $$A = \\frac{1}{2}(a + b)h$$ where $a$ and $b$ are the parallel sides and $h$ is the perpendicular height. A trapezium has an area of $96 \\text{ cm}^2$, one parallel side $a = 10 \\text{ cm}$ and height $h = 8 \\text{ cm}$. Find the length of the other parallel side $b$, in cm.",
+  "kind": "number",
+  "accept": {
+   "value": 14,
+   "tol": 0,
+   "unit": "cm"
+  },
+  "answer_display": "$14 \\text{ cm}$",
+  "hint": "Substitute the known values into the formula first, then solve the resulting equation for $b$.",
+  "solution": "**Key idea:** Substitute all known values into the formula, then use inverse operations to solve for the unknown.\n\n1. Write the formula: $$A = \\frac{1}{2}(a + b)h$$\n2. Substitute $A = 96$, $a = 10$, $h = 8$: $$96 = \\frac{1}{2}(10 + b) \\times 8$$\n3. Simplify the right side: $$96 = 4(10 + b)$$\n4. Divide both sides by 4: $$24 = 10 + b$$\n5. Subtract 10 from both sides: $$b = 14$$\n6. Check: $\\frac{1}{2}(10 + 14) \\times 8 = \\frac{1}{2} \\times 24 \\times 8 = 96$ ✓\n\n**Answer:** $b = 14 \\text{ cm}$"
+ },
+ "turn_checked": {
+  "my_answer": "14",
+  "attempts": 1
+ }
+}

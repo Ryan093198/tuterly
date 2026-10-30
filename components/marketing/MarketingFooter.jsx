@@ -17,6 +17,10 @@ const GROUPS = [
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },
       { href: "/maths-exam-preparation", label: "Exam preparation" },
+      { href: "/naplan", label: "NAPLAN practice tests" },
+      { href: "/formula-sheets", label: "Formula sheets" },
+      { href: "/exam-generator", label: "Practice exam generator" },
+      { href: "/scholarship-practice", label: "Scholarship practice" },
       { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
       { href: "/worksheets", label: "Free worksheet generator" },
       { href: "/learn", label: "Learn" },
@@ -35,6 +39,7 @@ const GROUPS = [
   {
     title: "Tuterly",
     links: [
+      { href: "/guarantee", label: "Results guarantee" },
       { href: "/privacy", label: "Privacy" },
       { href: "/terms", label: "Terms" },
     ],

@@ -73,6 +73,6 @@ function sanitizeYearLevel(raw) {
   const t = raw.trim();
   // Accept "Year 3" through "Year 10"; reject anything else so we don't
   // pollute the list with freeform input.
-  if (!/^Year (3|4|5|6|7|8|9|10)$/.test(t)) return null;
+  if (!/^Year (3|4|5|6|7|8|9|10|10A)$/.test(t)) return null;
   return t;
 }

@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Finding the constant of proportionality",
+   "question": "A tap fills a tank at a constant rate. After 3 hours the tank holds 480 litres. Write an equation in the form $y = kx$ relating the volume of water $y$ (in litres) to the time $x$ (in hours), and find the volume after 7 hours.",
+   "solution": "**Key idea:** In a direct proportion relationship $y = kx$, the constant $k$ is found by dividing a known $y$-value by the matching $x$-value.\n\n1. Find $k$: $$k = \\frac{y}{x} = \\frac{480}{3} = 160$$\n2. Write the equation: $$y = 160x$$\n3. Substitute $x = 7$: $$y = 160 \\times 7 = 1120$$\n\n**Answer:** The equation is $y = 160x$ and the volume after 7 hours is 1120 litres.",
+   "answer": "$y = 160x$; 1120 litres after 7 hours"
+  },
+  {
+   "title": "Converting and comparing rates",
+   "question": "Runner A completes 10 km in 48 minutes. Runner B runs at 13.5 km/h. Which runner is faster, and by how much (in km/h)?",
+   "solution": "**Key idea:** Convert both speeds to the same units before comparing.\n\n1. Convert Runner A's time to hours: $$48 \\text{ min} = \\frac{48}{60} \\text{ h} = 0.8 \\text{ h}$$\n2. Find Runner A's speed: $$\\text{Speed} = \\frac{10}{0.8} = 12.5 \\text{ km/h}$$\n3. Compare: Runner B runs at 13.5 km/h and Runner A at 12.5 km/h, so Runner B is faster.\n4. Find the difference: $$13.5 - 12.5 = 1 \\text{ km/h}$$\n\n**Answer:** Runner B is faster by 1 km/h.",
+   "answer": "Runner B is faster by 1 km/h"
+  },
+  {
+   "title": "Scale diagrams in a real-life context",
+   "question": "A landscape architect draws a plan of a rectangular garden using a scale of 1 : 250. On the plan, the garden measures 8 cm long and 5 cm wide. Paving costs \\$34 per square metre. Find the total cost to pave the entire garden.",
+   "solution": "**Key idea:** Use the scale factor to convert plan measurements to real measurements, then calculate area and cost.\n\n1. Convert plan dimensions to real dimensions (1 cm on the plan = 250 cm = 2.5 m in real life): $$\\text{Length} = 8 \\times 2.5 = 20 \\text{ m}, \\quad \\text{Width} = 5 \\times 2.5 = 12.5 \\text{ m}$$\n2. Find the real area: $$\\text{Area} = 20 \\times 12.5 = 250 \\text{ m}^2$$\n3. Calculate the cost: $$\\text{Cost} = 250 \\times 34 = 8500$$\n\n**Answer:** The total cost to pave the garden is \\$8500.",
+   "answer": "\\$8500"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing in the wrong order to find k",
+   "wrong": "Given $y = 480$ when $x = 3$, a student writes $k = 3 \\div 480 = 0.00625$.",
+   "fix": "Always divide the $y$-value by the $x$-value: $k = y \\div x$. Check that $k$ makes sense in context; here, $k$ should be the number of litres per hour, which must be greater than 1."
+  },
+  {
+   "title": "Forgetting to convert units before calculating a rate",
+   "wrong": "A runner completes 10 km in 48 minutes, so speed $= 10 \\div 48 \\approx 0.208$ km/h.",
+   "fix": "Convert time to hours before dividing: 48 minutes $= 0.8$ hours, giving $10 \\div 0.8 = 12.5$ km/h. Always check that your units match the rate units required."
+  },
+  {
+   "title": "Squaring the scale factor incorrectly for area",
+   "wrong": "Scale is 1 : 250, plan area is $8 \\times 5 = 40$ cm², so real area $= 40 \\times 250 = 10\\,000$ cm².",
+   "fix": "When scaling an area, the scale factor must be applied to each dimension separately before multiplying, or the scale factor must be squared: real area $= 40 \\times 250^2$ cm². It is safer to convert each length first, then find the area."
+  },
+  {
+   "title": "Assuming a relationship is proportional when it is not",
+   "wrong": "A taxi charges a \\$3.50 flag fall plus \\$2.10 per km, so a student writes the direct proportion equation $y = 2.10x$.",
+   "fix": "A direct proportion relationship must pass through the origin (when $x = 0$, $y = 0$). A fixed starting fee means the relationship is linear but not directly proportional. The correct equation here is $y = 2.10x + 3.50$."
+  }
+ ],
+ "practice": {
+  "question": "Two brands of olive oil are sold at a supermarket. Brand A costs \\$6.80 for 500 mL. Brand B costs \\$9.50 for 750 mL. Find the unit cost of each brand in dollars per 100 mL, and determine which brand is better value.",
+  "answer": "Brand A costs \\$1.36 per 100 mL; Brand B costs \\$1.267 per 100 mL (rounded to the nearest tenth of a cent); Brand B is better value.",
+  "solution": "**Key idea:** Find each unit cost by dividing the price by the number of units, then compare.\n\n1. Find Brand A's cost per 100 mL: $$\\frac{6.80}{500} \\times 100 = \\$1.36 \\text{ per 100 mL}$$\n2. Find Brand B's cost per 100 mL: $$\\frac{9.50}{750} \\times 100 \\approx \\$1.267 \\text{ per 100 mL}$$\n3. Compare: $1.267 < 1.36$, so Brand B has the lower unit cost.\n\n**Answer:** Brand A costs \\$1.36 per 100 mL and Brand B costs approximately \\$1.27 per 100 mL, so Brand B is better value."
+ },
+ "checked": true,
+ "attempts": 3,
+ "summary": {
+  "q": "How do you solve problems involving direct proportion, rates and scale?",
+  "a": "Direct proportion means two quantities increase together at a constant ratio, written y = kx, where k is the constant of proportionality. Find k by dividing a known y by its matching x, then use it to solve for unknowns. For example, if 4 litres of paint covers 24 m², then k = 6 m²/L, so 7 litres covers 42 m²."
+ },
+ "turn": {
+  "question": "A car travels at a constant speed and covers 270 km in 3 hours. A map of the route uses a scale of 1 : 4 000 000. How long, in centimetres correct to 1 decimal place, is the route on the map?",
+  "kind": "number",
+  "accept": {
+   "value": 6.8,
+   "tol": 0.05,
+   "unit": "cm"
+  },
+  "answer_display": "$6.8 \\text{ cm}$",
+  "hint": "Convert the real distance to centimetres, then divide by the scale factor.",
+  "solution": "**Key idea:** In a scale of 1 : 4 000 000, every 1 cm on the map represents 4 000 000 cm in real life, so real distance (cm) ÷ 4 000 000 = map distance (cm).\n\n1. Find the real distance: the car covers 270 km.\n2. Convert to centimetres: $270 \\text{ km} = 270 \\times 1000 \\times 100 \\text{ cm} = 27\\,000\\,000 \\text{ cm}$.\n3. Apply the scale: $\\text{map distance} = \\dfrac{27\\,000\\,000}{4\\,000\\,000} \\text{ cm}$.\n4. Calculate: $\\dfrac{27\\,000\\,000}{4\\,000\\,000} = 6.75 \\text{ cm}$.\n5. Round to 1 decimal place: $6.75 \\approx 6.8 \\text{ cm}$.\n\n**Answer:** $6.8 \\text{ cm}$"
+ },
+ "turn_checked": {
+  "my_answer": "6.8",
+  "attempts": 1
+ }
+}

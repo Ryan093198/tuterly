@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Angle of depression",
+   "question": "A lifeguard sits in a tower 8 m above the ground and looks down at a swimmer on the beach. The swimmer is 15 m from the base of the tower along flat ground. Find the angle of depression from the lifeguard to the swimmer, correct to one decimal place.",
+   "solution": "**Key idea:** The angle of depression equals the angle inside the right-angled triangle at the top (alternate angles with the horizontal). Use the tangent ratio because you have the opposite side (8 m) and the adjacent side (15 m).\n\n1. Label the triangle: opposite $= 8$ m, adjacent $= 15$ m.\n2. Write the trig equation:\n$$\\tan(\\theta) = \\frac{8}{15}$$\n3. Solve for $\\theta$:\n$$\\theta = \\tan^{-1}\\!\\left(\\frac{8}{15}\\right)$$\n4. Calculate:\n$$\\theta \\approx 28.1°$$\n\n**Answer:** The angle of depression is approximately $28.1°$.",
+   "answer": "$28.1°$"
+  },
+  {
+   "title": "Three-figure bearings",
+   "question": "A ship sails 40 km due east, then turns and sails 30 km due north. Find the bearing of the ship from its starting point, correct to the nearest degree.",
+   "solution": "**Key idea:** Draw the right-angled triangle formed by the two legs of the journey. The bearing is measured clockwise from north at the starting point, so find the angle the direct path makes with north, then convert to a three-figure bearing.\n\n1. Identify the right-angled triangle: the eastward leg is 40 km (opposite the required angle from north) and the northward leg is 30 km (adjacent to the required angle from north).\n2. Find the angle east of north:\n$$\\tan(\\theta) = \\frac{40}{30}$$\n3. Solve:\n$$\\theta = \\tan^{-1}\\!\\left(\\frac{40}{30}\\right) \\approx 53°$$\n4. Convert to a three-figure bearing (clockwise from north):\n$$\\text{Bearing} = 053°$$\n\n**Answer:** The bearing of the ship from its starting point is $053°$.",
+   "answer": "$053°$"
+  },
+  {
+   "title": "3D trigonometry in a rectangular prism",
+   "question": "A rectangular room is 6 m long, 4 m wide and 3 m high. A cable is to be run in a straight line from one bottom corner of the room to the opposite top corner. Find the length of the cable and the angle it makes with the floor, correct to one decimal place.",
+   "solution": "**Key idea:** First use Pythagoras' theorem to find the diagonal of the floor, then use that diagonal and the height to find the length of the cable and the angle with the floor.\n\n1. Find the floor diagonal $d$:\n$$d = \\sqrt{6^2 + 4^2} = \\sqrt{36 + 16} = \\sqrt{52}$$\n2. Find the cable length $L$ using the height of 3 m:\n$$L = \\sqrt{(\\sqrt{52})^2 + 3^2} = \\sqrt{52 + 9} = \\sqrt{61} \\approx 7.8 \\text{ m}$$\n3. Find the angle $\\theta$ the cable makes with the floor (opposite $= 3$ m, adjacent $= \\sqrt{52}$ m):\n$$\\tan(\\theta) = \\frac{3}{\\sqrt{52}}$$\n4. Solve:\n$$\\theta = \\tan^{-1}\\!\\left(\\frac{3}{\\sqrt{52}}\\right) \\approx 22.6°$$\n\n**Answer:** The cable is approximately $7.8$ m long and makes an angle of approximately $22.6°$ with the floor.",
+   "answer": "Length $\\approx 7.8$ m; angle $\\approx 22.6°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing angle of elevation with angle of depression",
+   "wrong": "Student measures the angle of depression from the base of the triangle rather than from the horizontal at the observer.",
+   "fix": "Both angles are always measured from the horizontal, not from the vertical or the slope. Draw a horizontal line at the observer's eye level and measure the angle from that line down (depression) or up (elevation) to the line of sight."
+  },
+  {
+   "title": "Mixing up opposite and adjacent in the trig ratio",
+   "wrong": "$\\tan(\\theta) = \\frac{15}{8}$ instead of $\\frac{8}{15}$ when the opposite side is 8 and the adjacent is 15.",
+   "fix": "Always label O (opposite), A (adjacent) and H (hypotenuse) relative to the angle you are working with before writing the ratio. SOH CAH TOA only works when O and A are matched to the correct angle."
+  },
+  {
+   "title": "Measuring a bearing from south or from the wrong direction",
+   "wrong": "Writing a bearing of 053° as 53° E of S or measuring anticlockwise from north.",
+   "fix": "Three-figure bearings are always measured clockwise from north and written with three digits (e.g. 053°, not 53°). Sketch a north arrow at the starting point and count clockwise."
+  },
+  {
+   "title": "Forgetting the two-step process in 3D problems",
+   "wrong": "Using $\\sqrt{6^2 + 4^2 + 3^2}$ directly to find the angle with the floor.",
+   "fix": "Find the floor diagonal first using Pythagoras, then use that result with the height to find the final length or angle. Skipping to a single 3D step gives the correct space diagonal length but the wrong angle, because the angle with the floor uses the floor diagonal, not any single side."
+  }
+ ],
+ "practice": {
+  "question": "A surveyor stands 50 m from the base of a vertical cliff on flat ground. She measures the angle of elevation to the top of the cliff as 38°. Find the height of the cliff, correct to one decimal place.",
+  "answer": "$39.1$ m",
+  "solution": "**Key idea:** Use the tangent ratio because you know the adjacent side (50 m) and want the opposite side (the height of the cliff).\n\n1. Label the triangle: adjacent $= 50$ m, opposite $= h$ m, angle $= 38°$.\n2. Write the trig equation:\n$$\\tan(38°) = \\frac{h}{50}$$\n3. Solve for $h$:\n$$h = 50 \\times \\tan(38°)$$\n4. Calculate:\n$$h \\approx 50 \\times 0.7813 \\approx 39.1 \\text{ m}$$\n\n**Answer:** The height of the cliff is approximately $39.1$ m."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use trigonometry and Pythagoras' theorem to solve practical problems involving right-angled triangles?",
+  "a": "Choose Pythagoras' theorem when you know two sides and need the third. Use sine, cosine or tangent when an angle is involved. Angles of elevation and depression are measured from the horizontal. For 3D problems, find an intermediate length first, then apply trig or Pythagoras again."
+ },
+ "turn": {
+  "question": "A person stands 45 m from the base of a vertical tower. The angle of elevation to the top of the tower is $32°$. Find the height of the tower in metres, correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 28.12,
+   "tol": 0.005,
+   "unit": "m"
+  },
+  "answer_display": "$28.12$ m",
+  "hint": "The horizontal distance and the height of the tower form the two legs of a right-angled triangle. Which trigonometric ratio connects the opposite side, the adjacent side, and the angle?",
+  "solution": "**Key idea:** In a right-angled triangle, $\\tan(\\theta) = \\dfrac{\\text{opposite}}{\\text{adjacent}}$, where the angle of elevation is measured from the horizontal.\n\n1. Draw the situation: horizontal distance = 45 m, angle of elevation = $32°$, height = $h$.\n2. Identify the ratio: the height is opposite the $32°$ angle, and 45 m is adjacent, so use tangent.\n3. Write the equation: $$\\tan(32°) = \\frac{h}{45}$$\n4. Solve for $h$: $$h = 45 \\times \\tan(32°)$$\n5. Calculate: $$h = 45 \\times 0.62487\\ldots = 28.119\\ldots \\approx 28.12 \\text{ m}$$\n\n**Answer:** $28.12$ m"
+ },
+ "turn_checked": {
+  "my_answer": "28.12",
+  "attempts": 2
+ }
+}

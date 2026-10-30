@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Remainder theorem",
+   "question": "Find the remainder when $P(x) = 2x^3 - 5x^2 + x + 3$ is divided by $(x - 2)$.",
+   "solution": "**Key idea:** The remainder theorem states that when $P(x)$ is divided by $(x - a)$, the remainder is $P(a)$.\n\n1. The divisor is $(x - 2)$, so $a = 2$.\n2. Substitute $x = 2$ into $P(x)$:\n$$P(2) = 2(2)^3 - 5(2)^2 + (2) + 3$$\n3. Evaluate each term:\n$$\\begin{aligned} P(2) &= 2(8) - 5(4) + 2 + 3 \\\\ &= 16 - 20 + 2 + 3 \\end{aligned}$$\n4. Simplify:\n$$P(2) = 1$$\n\n**Answer:** The remainder is $1$.",
+   "answer": "Remainder $= 1$"
+  },
+  {
+   "title": "Factor theorem and full factorisation of a cubic",
+   "question": "Show that $(x + 1)$ is a factor of $P(x) = x^3 + 2x^2 - x - 2$, then fully factorise $P(x)$.",
+   "solution": "**Key idea:** By the factor theorem, $(x - a)$ is a factor of $P(x)$ if and only if $P(a) = 0$. Once one factor is found, use polynomial long division to find the remaining quadratic, then factorise it.\n\n1. Test $x = -1$ (since the factor is $(x + 1)$, so $a = -1$):\n$$P(-1) = (-1)^3 + 2(-1)^2 - (-1) - 2 = -1 + 2 + 1 - 2 = 0$$\nSince $P(-1) = 0$, $(x + 1)$ is a factor.\n2. Divide $P(x)$ by $(x + 1)$ using long division:\n$$\\begin{aligned} x^3 + 2x^2 - x - 2 &\\div (x + 1) \\\\ x^3 + 2x^2 - x - 2 &= (x+1)(x^2 + x - 2) \\end{aligned}$$\n3. Factorise the quadratic $x^2 + x - 2$:\n$$x^2 + x - 2 = (x + 2)(x - 1)$$\n4. Write the full factorisation:\n$$P(x) = (x + 1)(x + 2)(x - 1)$$\n\n**Answer:** $P(x) = (x+1)(x+2)(x-1)$",
+   "answer": "$P(x) = (x+1)(x+2)(x-1)$"
+  },
+  {
+   "title": "Solving a cubic equation in context",
+   "question": "A storage company designs an open-top rectangular box by cutting squares of side length $x$ cm from each corner of a 12 cm by 18 cm rectangular sheet of cardboard, then folding up the sides. The volume of the box is given by $V(x) = x(12 - 2x)(18 - 2x)$. The company needs a volume of 160 cm³. Show that this requirement leads to the equation $x^3 - 15x^2 + 54x - 40 = 0$, then find all valid values of $x$.",
+   "solution": "**Key idea:** Expand the volume expression and rearrange to form a cubic equation equal to zero, then use the factor theorem and long division to fully factorise and solve.\n\n1. Expand $V(x) = x(12 - 2x)(18 - 2x)$ and set it equal to 160:\n$$\\begin{aligned} (12 - 2x)(18 - 2x) &= 216 - 24x - 36x + 4x^2 = 4x^2 - 60x + 216 \\\\ V(x) &= x(4x^2 - 60x + 216) = 4x^3 - 60x^2 + 216x \\end{aligned}$$\nSetting $V(x) = 160$: $\\quad 4x^3 - 60x^2 + 216x = 160$\nDivide everything by 4: $\\quad x^3 - 15x^2 + 54x - 40 = 0$ ✓\n2. Test integer factors of 40. Try $x = 1$:\n$$1 - 15 + 54 - 40 = 0 \\checkmark$$\nSo $(x - 1)$ is a factor.\n3. Divide $x^3 - 15x^2 + 54x - 40$ by $(x - 1)$:\n$$x^3 - 15x^2 + 54x - 40 = (x - 1)(x^2 - 14x + 40)$$\n4. Factorise $x^2 - 14x + 40 = (x - 4)(x - 10)$, so:\n$$(x-1)(x-4)(x-10) = 0 \\implies x = 1, \\; x = 4, \\; x = 10$$\n5. Check validity: the shorter side of the sheet is 12 cm, so the cut must satisfy $2x < 12$, meaning $x < 6$. Also $x > 0$. So $x = 10$ is rejected.\n\n**Answer:** The valid values are $x = 1$ cm and $x = 4$ cm.",
+   "answer": "$x = 1$ cm or $x = 4$ cm"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Wrong sign when applying the remainder or factor theorem",
+   "wrong": "Dividing by $(x + 3)$, student substitutes $x = 3$ instead of $x = -3$.",
+   "fix": "When the divisor is $(x - a)$, substitute $x = a$. For $(x + 3)$, rewrite it as $(x - (-3))$ and substitute $x = -3$."
+  },
+  {
+   "title": "Forgetting to include a zero placeholder term in long division",
+   "wrong": "Dividing $x^3 + 2x - 5$ by $(x - 1)$, student writes only three terms and misaligns columns, getting a wrong quotient.",
+   "fix": "Always write the polynomial with every power present before dividing. Insert $0x^2$ as a placeholder: $x^3 + 0x^2 + 2x - 5$."
+  },
+  {
+   "title": "Stopping factorisation too early",
+   "wrong": "After finding $P(x) = (x - 2)(x^2 - x - 6)$, student gives this as the final answer without factorising the quadratic.",
+   "fix": "Always check whether the remaining quadratic or higher-degree factor can be factorised further. Here $x^2 - x - 6 = (x-3)(x+2)$, giving the complete factorisation."
+  },
+  {
+   "title": "Confusing the remainder theorem with the factor theorem",
+   "wrong": "Student says $(x - 2)$ is a factor because $P(2) = 3$, since 'the remainder is a factor'.",
+   "fix": "$(x - a)$ is a factor only when $P(a) = 0$. If $P(a) \\neq 0$, that value is merely the remainder when dividing, and $(x - a)$ is not a factor."
+  }
+ ],
+ "practice": {
+  "question": "Use the factor theorem to show that $(x - 3)$ is a factor of $P(x) = x^3 - 4x^2 - 3x + 18$, then fully factorise $P(x)$.",
+  "answer": "$P(x) = (x-3)^2(x+2)$",
+  "solution": "**Key idea:** Confirm the factor using the factor theorem, divide to find the remaining quadratic, then factorise that quadratic.\n\n1. Test $x = 3$:\n$$P(3) = (3)^3 - 4(3)^2 - 3(3) + 18 = 27 - 36 - 9 + 18 = 0 \\checkmark$$\nSo $(x - 3)$ is a factor.\n2. Divide $P(x)$ by $(x - 3)$ using long division:\n$$x^3 - 4x^2 - 3x + 18 = (x - 3)(x^2 - x - 6)$$\n3. Factorise $x^2 - x - 6$:\n$$x^2 - x - 6 = (x - 3)(x + 2)$$\n4. Write the full factorisation:\n$$P(x) = (x - 3)^2(x + 2)$$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are the factor and remainder theorems for polynomials?",
+  "a": "The remainder theorem says that when a polynomial P(x) is divided by (x − a), the remainder equals P(a). The factor theorem follows: (x − a) is a factor of P(x) if and only if P(a) = 0. To factorise a cubic, find a root by testing integer values, then divide out the linear factor and factorise the quotient."
+ },
+ "turn": {
+  "question": "The polynomial $P(x) = x^3 - 2x^2 - 5x + 6$ has $(x - 3)$ as a factor. Fully factorise $P(x)$ and hence find all values of $x$ for which $P(x) = 0$. Enter the largest solution.",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0
+  },
+  "answer_display": "$x = 3$",
+  "hint": "Divide $P(x)$ by $(x-3)$ using polynomial long division (or inspection) to find a quadratic factor, then factorise that quadratic.",
+  "solution": "**Key idea:** Once one linear factor is known, divide it out to get a quadratic, then factorise the quadratic to find all roots.\n\n1. Confirm the factor: $P(3) = 27 - 18 - 15 + 6 = 0$ ✓\n2. Divide $x^3 - 2x^2 - 5x + 6$ by $(x - 3)$ using long division:\n$$\\begin{aligned} x^3 - 2x^2 - 5x + 6 &\\div (x-3)\\\\ x^3 - 3x^2 &\\text{ (}x^2 \\times (x-3)\\text{)}\\\\ \\hline x^2 - 5x + 6 &\\\\ x^2 - 3x &\\text{ (}x \\times (x-3)\\text{)}\\\\ \\hline -2x + 6 &\\\\ -2x + 6 &\\text{ (}-2 \\times (x-3)\\text{)}\\\\ \\hline 0 & \\end{aligned}$$\n3. So $P(x) = (x-3)(x^2 + x - 2)$.\n4. Factorise the quadratic: $x^2 + x - 2 = (x+2)(x-1)$.\n5. Therefore $P(x) = (x-3)(x+2)(x-1)$, giving solutions $x = -2,\\, 1,\\, 3$.\n\n**Answer:** The largest solution is $x = 3$."
+ },
+ "turn_checked": {
+  "my_answer": "3",
+  "attempts": 1
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Reading a dot plot",
+   "question": "A dot plot shows the number of books read by 10 students during the school holidays. The values are: 1, 1, 2, 2, 2, 3, 4, 4, 5, 6. Find the median number of books read.",
+   "solution": "**Key idea:** The median is the middle value when data is ordered. For an even number of values, average the two middle values.\n\n1. Write the 10 values in order: $1, 1, 2, 2, 2, 3, 4, 4, 5, 6$\n2. With 10 values, the median is the average of the 5th and 6th values.\n3. The 5th value is $2$ and the 6th value is $3$.\n4. $$\\text{Median} = \\frac{2 + 3}{2} = \\frac{5}{2} = 2.5$$\n**Answer:** The median is $2.5$ books.",
+   "answer": "2.5"
+  },
+  {
+   "title": "Reading a stem-and-leaf plot",
+   "question": "A stem-and-leaf plot displays the ages of 12 people at a community event.\n\nStem | Leaves\n--- | ---\n1 | 4 5 7 8\n2 | 0 3 3 6\n3 | 1 2 5 9\n\nThe stem represents tens and the leaves represent ones. Find the range and the median age.",
+   "solution": "**Key idea:** Read each data value by combining its stem and leaf. The range is the difference between the maximum and minimum values. The median is the average of the two middle values when there are an even number of data values.\n\n1. List all 12 values in order: $14, 15, 17, 18, 20, 23, 23, 26, 31, 32, 35, 39$\n2. Range: $$39 - 14 = 25$$\n3. With 12 values, the median is the average of the 6th and 7th values.\n4. The 6th value is $23$ and the 7th value is $23$.\n5. $$\\text{Median} = \\frac{23 + 23}{2} = 23$$\n**Answer:** The range is $25$ and the median age is $23$ years.",
+   "answer": "Range = 25, Median = 23"
+  },
+  {
+   "title": "Comparing two groups using a back-to-back stem-and-leaf plot",
+   "question": "A PE teacher records the distances (in metres) thrown in a softball event by students in two classes.\n\nClass A | Stem | Class B\n--- | --- | ---\n8 5 2 | 1 | 3 6 9\n9 7 4 1 | 2 | 0 2 5 8\n6 3 | 3 | 1 4\n\nLeaves for Class A are read right to left. The stem represents tens. Find the median distance for each class, then write one sentence comparing the two classes.",
+   "solution": "**Key idea:** In a back-to-back stem-and-leaf plot, read each side separately. List values in order to find each median.\n\n1. Class A values in order: $12, 15, 18, 21, 24, 27, 29, 33, 36$ — that is 9 values, so the median is the 5th value.\n2. Class A median: $24$ m\n3. Class B values in order: $13, 16, 19, 20, 22, 25, 28, 31, 34$ — that is 9 values, so the median is the 5th value.\n4. Class B median: $22$ m\n5. Both distributions are roughly similar in spread, but Class A has a higher median ($24$ m compared to $22$ m), so Class A students typically threw further.\n**Answer:** Class A median $= 24$ m; Class B median $= 22$ m. Class A students typically threw further.",
+   "answer": "Class A median = 24 m, Class B median = 22 m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to order the data before finding the median",
+   "wrong": "Data: 3, 1, 4, 2, 5 — student picks the middle value as 4 because it is in the middle of the list as written.",
+   "fix": "Always sort the data from smallest to largest first. The median of $1, 2, 3, 4, 5$ is correctly $3$, the middle value."
+  },
+  {
+   "title": "Reading a back-to-back stem-and-leaf plot in the wrong direction",
+   "wrong": "For the left side of a back-to-back plot, a student reads the leaf 8 on stem 2 as 28 but writes it as 82.",
+   "fix": "On the left side, leaves are read from the stem outward (right to left), but you still combine the stem and leaf in the normal order: stem first, then leaf. So stem 2, leaf 8 is always 28."
+  },
+  {
+   "title": "Miscounting dots on a dot plot",
+   "wrong": "A student counts the column with dots at 3, 3, 3 as two dots instead of three, giving a wrong total frequency.",
+   "fix": "Count each dot individually and keep a tally. Double-check that your total number of dots equals the number of data values you were told about."
+  },
+  {
+   "title": "Using the wrong middle value for an even-sized data set",
+   "wrong": "For 8 values, a student picks only the 4th value as the median instead of averaging the 4th and 5th values.",
+   "fix": "When the data set has an even number of values, the median is the mean of the two middle values. For $n = 8$, average the 4th and 5th values."
+  }
+ ],
+ "practice": {
+  "question": "A stem-and-leaf plot shows the heights (in centimetres) of 10 Year 7 students.\n\nStem | Leaves\n--- | ---\n14 | 2 5 8 9\n15 | 1 3 6 7\n16 | 0 4\n\nThe stem represents hundreds and tens, and the leaves represent ones (for example, stem 14 and leaf 2 means 142 cm). Find the median height.",
+  "answer": "152 cm",
+  "solution": "**Key idea:** List all values in order and find the average of the two middle values for an even-sized data set.\n\n1. List all 10 values in order: $142, 145, 148, 149, 151, 153, 156, 157, 160, 164$\n2. With 10 values, the median is the average of the 5th and 6th values.\n3. The 5th value is $151$ and the 6th value is $153$.\n4. $$\\text{Median} = \\frac{151 + 153}{2} = \\frac{304}{2} = 152$$\n**Answer:** The median height is $152$ cm."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are dot plots and stem-and-leaf plots?",
+  "a": "Dot plots and stem-and-leaf plots are ways to display numerical data. A dot plot places one dot above a number line for each data value. A stem-and-leaf plot splits each value into a stem (leading digit/s) and a leaf (last digit), keeping the actual values while showing the distribution's shape, spread and centre."
+ },
+ "turn": {
+  "question": "The ages of players in a basketball squad are listed below.\n\n$$14, 15, 13, 16, 14, 15, 15, 14, 13, 16, 15, 14$$\n\nA stem-and-leaf plot is drawn with stems 13 and 14 and 15 and 16 (using tens and units). What is the median age of the squad?",
+  "kind": "number",
+  "accept": {
+   "value": 14.5,
+   "tol": 0.005,
+   "unit": "years"
+  },
+  "answer_display": "$14.5$",
+  "hint": "Arrange all 12 values in order, then find the middle value. With an even number of data points, the median is the average of the two middle values.",
+  "solution": "**Key idea:** The median is the middle value when data is ordered. For an even number of values, average the two middle ones.\n\n1. Write all 12 ages in order: $13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 16, 16$\n2. Count the values: there are 12, which is even, so the median lies between the 6th and 7th values.\n3. The 6th value is $14$ and the 7th value is $15$.\n4. Median $= \\dfrac{14 + 15}{2} = \\dfrac{29}{2} = 14.5$\n\n**Answer:** $14.5$ years"
+ },
+ "turn_checked": {
+  "my_answer": "14.5",
+  "attempts": 1
+ }
+}

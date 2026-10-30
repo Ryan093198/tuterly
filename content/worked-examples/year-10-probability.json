@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Conditional probability from a two-way table",
+   "question": "A group of 80 students were surveyed about whether they play sport and whether they have a part-time job. The results are shown below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Has a job | 18 | 12 | 30 |\n| No job | 35 | 15 | 50 |\n| **Total** | 53 | 27 | 80 |\n\nFind the probability that a randomly chosen student plays sport, given that they have a job. Write your answer as a fraction in simplest form.",
+   "solution": "**Key idea:** $P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)}$, which in a table means: restrict to the row (or column) that matches the given condition, then find the fraction who also satisfy $A$.\n\n1. The condition is \"has a job\", so restrict to the \"Has a job\" row. There are 30 students with a job.\n2. Of those 30, the number who also play sport is 18.\n3. $$P(\\text{plays sport} \\mid \\text{has a job}) = \\frac{18}{30} = \\frac{3}{5}$$\n\n**Answer:** $\\dfrac{3}{5}$",
+   "answer": "$\\dfrac{3}{5}$"
+  },
+  {
+   "title": "Tree diagram with conditional branches",
+   "question": "A bag contains 5 red marbles and 3 blue marbles. A marble is drawn at random and not replaced. A second marble is then drawn. Find the probability that the second marble is red, given that the first marble was blue.",
+   "solution": "**Key idea:** When drawing without replacement, the probabilities on the second set of branches depend on what happened on the first draw, making this a conditional probability problem.\n\n1. The condition is that the first marble drawn was blue. After removing one blue marble, the bag contains 5 red and 2 blue marbles, giving 7 marbles total.\n2. On the second draw, the probability of red is now based on these 7 remaining marbles.\n3. $$P(\\text{2nd red} \\mid \\text{1st blue}) = \\frac{5}{7}$$\n\n**Answer:** $\\dfrac{5}{7}$",
+   "answer": "$\\dfrac{5}{7}$"
+  },
+  {
+   "title": "Conditional probability in a real-life context",
+   "question": "At a school, $60\\%$ of students study French. Of the students who study French, $40\\%$ also study Japanese. Of the students who do not study French, $25\\%$ study Japanese. A student is chosen at random and is found to be studying Japanese. Find the probability that this student also studies French. Give your answer as a decimal rounded to two decimal places.",
+   "solution": "**Key idea:** Use a tree diagram and the conditional probability formula $P(F \\mid J) = \\dfrac{P(F \\cap J)}{P(J)}$.\n\n1. Define events: $F$ = studies French, $J$ = studies Japanese. Set up the known probabilities: $P(F) = 0.6$, $P(F') = 0.4$, $P(J \\mid F) = 0.4$, $P(J \\mid F') = 0.25$.\n2. Find the probability of each path that leads to Japanese:\n$$\\begin{aligned} P(F \\cap J) &= 0.6 \\times 0.4 = 0.24 \\\\ P(F' \\cap J) &= 0.4 \\times 0.25 = 0.10 \\end{aligned}$$\n3. Find the total probability of studying Japanese:\n$$P(J) = 0.24 + 0.10 = 0.34$$\n4. Apply the conditional probability formula:\n$$P(F \\mid J) = \\frac{P(F \\cap J)}{P(J)} = \\frac{0.24}{0.34} = \\frac{12}{17} \\approx 0.71$$\n\n**Answer:** $0.71$",
+   "answer": "$0.71$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Reversing the condition",
+   "wrong": "\"$P(A \\mid B)$\" calculated as $P(B \\mid A)$ instead",
+   "fix": "The event after the vertical bar is the condition, meaning that is what you already know has happened. Always ask yourself: what is the given information? That goes after the bar. The event you want the probability of goes before the bar. $P(A \\mid B)$ and $P(B \\mid A)$ are almost never equal."
+  },
+  {
+   "title": "Not updating the sample space when drawing without replacement",
+   "wrong": "Second draw: $P(\\text{red}) = \\frac{5}{8}$ even though one marble has already been removed",
+   "fix": "When items are not replaced, the total number of items in the bag decreases by one after each draw, and so does the count of whichever colour was removed. Always update both the numerator and denominator before writing the probability for the next branch."
+  },
+  {
+   "title": "Reading the wrong cell from a two-way table",
+   "wrong": "Using the overall total (e.g. 80) as the denominator instead of the row or column total for the given condition",
+   "fix": "When a condition is given, your denominator must be the total for that condition's row or column, not the grand total. The condition shrinks the sample space to just the people who satisfy it."
+  },
+  {
+   "title": "Confusing independence with mutually exclusive events",
+   "wrong": "\"$A$ and $B$ cannot both happen, so they must be independent\"",
+   "fix": "Mutually exclusive events (they cannot happen at the same time) are actually the opposite of independent: if one occurs you know for certain the other did not, so they influence each other strongly. Two events are independent when $P(A \\mid B) = P(A)$, meaning knowing $B$ occurred gives no information about $A$."
+  }
+ ],
+ "practice": {
+  "question": "A jar contains 4 green counters and 6 yellow counters. Two counters are drawn one at a time without replacement. Complete the following using a tree diagram.\n\nFind the probability that the second counter is yellow, given that the first counter was green. Write your answer as a fraction in simplest form.",
+  "answer": "$\\dfrac{2}{3}$",
+  "solution": "**Key idea:** The condition (first counter was green) changes the contents of the jar for the second draw.\n\n1. The condition is that the first counter drawn was green. Remove one green counter from the jar: the jar now contains 3 green and 6 yellow counters, giving 9 counters in total.\n2. On the second draw, the number of yellow counters is still 6 and the total is 9.\n3. $$P(\\text{2nd yellow} \\mid \\text{1st green}) = \\frac{6}{9} = \\frac{2}{3}$$\n\n**Answer:** $\\dfrac{2}{3}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is conditional probability and how do you calculate it?",
+  "a": "Conditional probability is the probability of event A occurring given that event B has already occurred, written P(A|B). Calculate it using P(A|B) = P(A and B) / P(B). For example, if P(A and B) = 0.3 and P(B) = 0.5, then P(A|B) = 0.6."
+ },
+ "turn": {
+  "question": "A group of 50 students were surveyed about whether they play sport and whether they play a musical instrument. The results are shown in the table below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Plays instrument | 12 | 8 | 20 |\n| Does not play instrument | 18 | 12 | 30 |\n| **Total** | 30 | 20 | 50 |\n\nGiven that a randomly chosen student plays sport, what is the probability that they also play a musical instrument? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.4,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.40$",
+  "hint": "Use the conditional probability formula: divide the number of students who play both sport and an instrument by the total number of students who play sport.",
+  "solution": "**Key idea:** Conditional probability P(A|B) = P(A and B) / P(B), or equivalently, restrict your count to only those in the given condition.\n\n1. Identify the condition: the student plays sport. There are 30 students who play sport in total.\n2. Identify the favourable outcome: the student plays sport AND plays an instrument. From the table, this is 12 students.\n3. Apply the conditional probability formula:\n$$P(\\text{instrument} \\mid \\text{sport}) = \\frac{12}{30}$$\n4. Simplify:\n$$\\frac{12}{30} = 0.4$$\n5. Rounded to 2 decimal places, the answer is $0.40$.\n\n**Answer:** $0.40$"
+ },
+ "turn_checked": {
+  "my_answer": "0.40",
+  "attempts": 2
+ }
+}

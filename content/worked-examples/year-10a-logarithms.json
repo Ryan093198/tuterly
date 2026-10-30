@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Converting between logarithmic and exponential form",
+   "question": "Write each statement in the equivalent form.\n\n(a) Convert $\\log_3 81 = 4$ to exponential form.\n\n(b) Convert $5^{-2} = 0.04$ to logarithmic form.\n\n(c) Find the value of $\\log_2 32$.",
+   "solution": "**Key idea:** $\\log_b x = y$ means exactly the same as $b^y = x$. You can swap between the two forms freely.\n\n1. **(a)** The base is $3$, the logarithm is $4$, and the number is $81$, so the exponential form is:\n$$3^4 = 81$$\n\n2. **(b)** The base is $5$, the exponent is $-2$, and the result is $0.04$, so the logarithmic form is:\n$$\\log_5 0.04 = -2$$\n\n3. **(c)** Let $\\log_2 32 = y$. This means $2^y = 32$. Since $2^5 = 32$:\n$$y = 5$$\n\n**Answer:** (a) $3^4 = 81$, (b) $\\log_5 0.04 = -2$, (c) $\\log_2 32 = 5$",
+   "answer": "(a) $3^4 = 81$, (b) $\\log_5 0.04 = -2$, (c) $5$"
+  },
+  {
+   "title": "Simplifying expressions using log laws",
+   "question": "Simplify the following expression, writing your answer as a single logarithm or integer.\n$$2\\log_5 10 - \\log_5 4 + \\log_5 2$$",
+   "solution": "**Key idea:** Apply the power law first ($n\\log_b m = \\log_b m^n$), then combine using the product and quotient laws ($\\log_b m + \\log_b n = \\log_b(mn)$ and $\\log_b m - \\log_b n = \\log_b\\!\\left(\\dfrac{m}{n}\\right)$).\n\n1. Apply the power law to the first term:\n$$2\\log_5 10 = \\log_5 10^2 = \\log_5 100$$\n\n2. The expression becomes:\n$$\\log_5 100 - \\log_5 4 + \\log_5 2$$\n\n3. Apply the quotient law to the first two terms:\n$$\\log_5 \\frac{100}{4} + \\log_5 2 = \\log_5 25 + \\log_5 2$$\n\n4. Apply the product law:\n$$\\log_5(25 \\times 2) = \\log_5 50$$\n\nCheck: $\\log_5 50$ does not simplify further since $50$ is not an integer power of $5$.\n\n**Answer:** $\\log_5 50$",
+   "answer": "$\\log_5 50$"
+  },
+  {
+   "title": "Logarithmic scales: comparing earthquake magnitudes",
+   "question": "The Richter scale measures earthquake magnitude using the formula $M = \\log_{10}\\!\\left(\\dfrac{I}{I_0}\\right)$, where $I$ is the intensity of the earthquake and $I_0$ is a fixed reference intensity. An earthquake in regional Victoria is recorded at magnitude $4.2$. A second earthquake near Mildura is recorded at magnitude $6.0$. How many times more intense is the Mildura earthquake than the Victorian earthquake? Give your answer to the nearest whole number.",
+   "solution": "**Key idea:** Rearrange the Richter formula to express intensity, then find the ratio of the two intensities.\n\n1. For an earthquake of magnitude $M$, the formula $M = \\log_{10}\\!\\left(\\dfrac{I}{I_0}\\right)$ rearranges to:\n$$\\frac{I}{I_0} = 10^M$$\n\n2. Write the intensity of each earthquake relative to $I_0$:\n$$\\begin{aligned} I_{\\text{Victoria}} &= I_0 \\times 10^{4.2} \\\\ I_{\\text{Mildura}} &= I_0 \\times 10^{6.0} \\end{aligned}$$\n\n3. Find the ratio of the two intensities:\n$$\\frac{I_{\\text{Mildura}}}{I_{\\text{Victoria}}} = \\frac{I_0 \\times 10^{6.0}}{I_0 \\times 10^{4.2}} = 10^{6.0 - 4.2} = 10^{1.8}$$\n\n4. Evaluate:\n$$10^{1.8} \\approx 63.1$$\n\n**Answer:** The Mildura earthquake is approximately $63$ times more intense.",
+   "answer": "Approximately $63$ times more intense"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing the base and the result when converting forms",
+   "wrong": "$\\log_3 81 = 4$ is rewritten as $4^3 = 81$ (swapping the base and exponent).",
+   "fix": "In $\\log_b x = y$, the base $b$ is always the base of the power, so the correct exponential form is $b^y = x$. Here, $3^4 = 81$. Write out \"base to the power of log equals the number\" as a reminder."
+  },
+  {
+   "title": "Adding instead of multiplying inside the log for the product law",
+   "wrong": "$\\log(3) + \\log(5) = \\log(3 + 5) = \\log(8)$.",
+   "fix": "The product law says $\\log(m) + \\log(n) = \\log(m \\times n)$, not $\\log(m + n)$. The numbers inside the logarithms are multiplied: $\\log(3) + \\log(5) = \\log(15)$."
+  },
+  {
+   "title": "Applying the power law in the wrong direction",
+   "wrong": "$\\log_2(8^3)$ is rewritten as $(\\log_2 8)^3 = 3^3 = 27$ instead of $3 \\times \\log_2 8$.",
+   "fix": "The power law moves the exponent out as a multiplying factor in front: $\\log_b(m^n) = n \\times \\log_b m$. The exponent becomes a coefficient, not a power of the entire logarithm. So $\\log_2(8^3) = 3 \\times \\log_2 8 = 3 \\times 3 = 9$."
+  },
+  {
+   "title": "Thinking a difference in logarithmic scale values is a difference in intensity",
+   "wrong": "Magnitudes $5$ and $7$ differ by $2$, so the second earthquake is $2$ times more intense.",
+   "fix": "A logarithmic scale is based on powers of $10$ (or another base), not on simple differences. A difference of $2$ on the Richter scale means the intensity ratio is $10^2 = 100$, not $2$. Always convert the difference back using the base: $\\text{ratio} = 10^{\\Delta M}$."
+  }
+ ],
+ "practice": {
+  "question": "Simplify the following expression, writing your answer as a single integer.\n$$\\log_4 8 + \\log_4 2 - \\log_4 \\frac{1}{4}$$",
+  "answer": "$3$",
+  "solution": "**Key idea:** Use the product and quotient laws to combine all terms into a single logarithm, then evaluate using the definition.\n\n1. Apply the product law to the first two terms:\n$$\\log_4 8 + \\log_4 2 = \\log_4(8 \\times 2) = \\log_4 16$$\n\n2. Apply the quotient law:\n$$\\log_4 16 - \\log_4 \\frac{1}{4} = \\log_4\\!\\left(16 \\div \\frac{1}{4}\\right) = \\log_4(16 \\times 4) = \\log_4 64$$\n\n3. Evaluate using the definition ($\\log_4 64 = y$ means $4^y = 64$). Since $4^3 = 64$:\n$$\\log_4 64 = 3$$\n\n**Answer:** $3$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are logarithms and the log laws?",
+  "a": "A logarithm answers \"what power?\": log base b of x equals y means b to the power y equals x. The three key laws are the product law (log mn = log m + log n), the quotient law (log(m÷n) = log m − log n), and the power law (log m^n = n log m). For example, log base 2 of 8 = 3 because 2³ = 8."
+ },
+ "turn": {
+  "question": "Use the log laws to simplify the following expression as a single logarithm, then evaluate it.\n\n$$\\log_3 54 - \\log_3 2$$\n\nWhat is the value?",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0
+  },
+  "answer_display": "$3$",
+  "hint": "Use the quotient law to combine the two logarithms into one, then think about what power of 3 gives you that result.",
+  "solution": "**Key idea:** The quotient law states that $\\log_b m - \\log_b n = \\log_b\\!\\left(\\dfrac{m}{n}\\right)$.\n\n1. Apply the quotient law: $\\log_3 54 - \\log_3 2 = \\log_3\\!\\left(\\dfrac{54}{2}\\right)$\n2. Simplify the fraction: $\\dfrac{54}{2} = 27$\n3. Evaluate the logarithm: $\\log_3 27 = y$ means $3^y = 27$\n4. Since $3^3 = 27$, we get $y = 3$\n\n**Answer:** $3$"
+ },
+ "turn_checked": {
+  "my_answer": "3",
+  "attempts": 1
+ }
+}

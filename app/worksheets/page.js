@@ -3,31 +3,31 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
-import AppPracticeBlock from "@/components/study/AppPracticeBlock";
-import TryCta from "@/components/study/TryCta";
+import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
 import { SITE_URL } from "@/lib/site";
+import { StateSwitcher } from "@/components/state/StateHub";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
 // gradient hero, clean cards). Pre-computes the VCAA F-10 topic list for
 // every Year 3-10 level so the client-side dropdown is instant.
 
-const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 (Victorian Curriculum) | Tuterly";
+const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 (Australian Curriculum) | Tuterly";
 const DESCRIPTION =
-  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Victorian Curriculum aligned.";
+  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Australian Curriculum, for every state.";
 
 const HOW = [
-  { n: "1", title: "Pick the year and topic", body: "Every Year 3 to 10 maths topic in the Victorian Curriculum 2.0, grouped by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
+  { n: "1", title: "Pick the year and topic", body: "Every Year 3 to 10 maths topic in the Australian Curriculum (as set out in the Victorian Curriculum 2.0), grouped by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
   { n: "2", title: "Generate six new questions", body: "Two Foundation, two Standard and two Extension, written fresh each time, so you never get the same sheet twice." },
   { n: "3", title: "Download the PDF", body: "Print it or work from the screen. Every question comes with a fully worked solution to check against." },
 ];
 
 const FAQS = [
   { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day. There's nothing to pay and no card needed." },
-  { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Victorian Curriculum 2.0, which follows the Australian Curriculum closely. Choose the year, then the topic your child's class is on." },
+  { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Australian Curriculum. Topics are organised as in the Victorian Curriculum 2.0, Victoria's version of it, and cover the same maths taught in the other states, including NSW and WA, which have their own syllabuses. Choose the year, then the topic your child's class is on." },
   { q: "Are the worksheets the same every time?", a: "No. The generator writes six new questions each time, across Foundation, Standard and Extension, each with a fully worked solution." },
   { q: "Can it make a worksheet from my child's own mistakes?", a: "That's what the Tuterly app does for Years 7 to 10. Your child snaps the questions they got wrong, or uploads a marked test, and the app writes fresh questions on the same ideas until each one is mastered." },
 ];
@@ -60,6 +60,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 // Marketing palette, matched to app/parents/page.js.
@@ -83,7 +84,7 @@ const c = {
 const sans = "var(--font-display)";
 
 // Year-level groups for the topic grid below the generator.
-const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10"];
+const GRID_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 
 export default function WorksheetsPage() {
   const topicsByYear = Object.fromEntries(
@@ -119,8 +120,8 @@ export default function WorksheetsPage() {
           </h1>
           <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
             Pick the year and topic and get six new questions, from Foundation
-            to Extension, with fully worked solutions. Aligned to the Victorian
-            Curriculum. Free with your email, one worksheet a day.
+            to Extension, with fully worked solutions. Australian Curriculum,
+            for every state. Free with your email, one worksheet a day.
           </p>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
             <p style={{ fontSize: 13, color: c.textLight, fontWeight: 500 }}>
@@ -130,10 +131,18 @@ export default function WorksheetsPage() {
         </div>
       </section>
 
+      {/* STATE HUBS */}
+      <StateSwitcher title="Topics, term dates and tests for your state" />
+
       {/* GENERATOR */}
       <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
         <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
       </main>
+
+      {/* THE APP: the main call to action, straight after the generator */}
+      <div className="ws-section" style={{ padding: "0 24px 56px", maxWidth: 1076, margin: "0 auto" }}>
+        <WorksheetUpgrade placement="worksheets_index_upgrade" />
+      </div>
 
       {/* HOW THE GENERATOR WORKS */}
       <section className="ws-section" aria-labelledby="ws-how" style={{ padding: "0 24px 56px" }}>
@@ -153,13 +162,6 @@ export default function WorksheetsPage() {
         </div>
       </section>
 
-      <div className="ws-section" style={{ padding: "0 24px 32px", maxWidth: 1028, margin: "0 auto" }}>
-        <TryCta title="Got a question wrong in class? Try it on Tuterly." />
-      </div>
-
-      <div className="ws-section" style={{ padding: "0 24px 56px" }}>
-        <AppPracticeBlock placement="worksheets_index_practice" />
-      </div>
 
       {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js).
           Leads with quotes about the practice questions, falling back to

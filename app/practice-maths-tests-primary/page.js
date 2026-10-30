@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Primary Maths Practice Tests, Years 3-6 | Free | Tuterly";
 const DESCRIPTION =
-  "Free printable maths practice tests for Years 3 to 6, aligned to the Victorian Curriculum. Fresh questions every time, with full worked solutions.";
+  "Free printable maths practice tests for Years 3 to 6, following the Australian Curriculum. Fresh questions every time, with full worked solutions.";
 const URL = `${SITE_URL}/practice-maths-tests-primary`;
 
 export const metadata = {
@@ -50,7 +50,7 @@ const WHY = [
 const FAQS = [
   {
     q: "What year levels are these primary maths practice tests for?",
-    a: "Years 3 through 6, aligned to the Victorian Curriculum (VCAA). Choose the year level and topic and the generator builds a fresh test with full worked solutions.",
+    a: "Years 3 through 6, following the Australian Curriculum (built on the Victorian Curriculum 2.0). Choose the year level and topic and the generator builds a fresh test with full worked solutions.",
   },
   {
     q: "Are the practice tests free?",
@@ -65,8 +65,8 @@ const FAQS = [
     a: "For most primary students, one short test a week per subject area is plenty. Consistency matters far more than volume, and a stressed child learns less, so keep it light and mark it together.",
   },
   {
-    q: "Are the questions aligned to the Victorian Curriculum?",
-    a: "Yes. Topics come from the VCAA Foundation to Year 10 curriculum, so what your child practises matches what their school is teaching.",
+    q: "Are the questions aligned to the curriculum?",
+    a: "Yes. Topics come from the Victorian Curriculum 2.0, Victoria's version of the Australian Curriculum, so what your child practises matches what schools teach across Australia. NSW and WA have their own syllabuses that cover much the same maths.",
   },
 ];
 
@@ -172,7 +172,7 @@ export default function PrimaryPracticeTestsPage() {
             Want full 25-question topic tests?
           </h2>
           <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, margin: "0 auto 24px", maxWidth: 520 }}>
-            Tuterly builds a complete practice test across a whole topic, mixed difficulty and VCAA aligned, with a separate answer key for marking. Any topic, any time, for every child on your account.
+            Tuterly builds a complete practice test across a whole topic, mixed difficulty and curriculum aligned, with a separate answer key for marking. Any topic, any time, for every child on your account.
           </p>
           <Link href="/get-started" style={{ display: "inline-block", padding: "15px 32px", borderRadius: 12, background: c.ink, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none", boxShadow: "0 4px 14px rgba(15,27,45,0.18)" }}>
             Build their first test free &rarr;

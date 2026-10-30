@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Converting a log scale reading to the original quantity",
+   "question": "The pH scale is a base-10 logarithmic scale defined by $\\text{pH} = -\\log_{10}[\\text{H}^+]$, where $[\\text{H}^+]$ is the hydrogen ion concentration in moles per litre. A solution has a pH of 3. Find its hydrogen ion concentration.",
+   "solution": "**Key idea:** On a base-10 log scale, if the log scale reading is $L$, the original quantity is $10^L$. Here, $\\text{pH} = -\\log_{10}[\\text{H}^+]$, so rearrange to find $[\\text{H}^+]$.\n\n1. Write the equation with the known pH: $$3 = -\\log_{10}[\\text{H}^+]$$\n2. Multiply both sides by $-1$: $$\\log_{10}[\\text{H}^+] = -3$$\n3. Convert from logarithmic form to index form: $$[\\text{H}^+] = 10^{-3}$$\n4. Evaluate: $$[\\text{H}^+] = 0.001 \\text{ mol/L}$$\n\n**Answer:** The hydrogen ion concentration is $0.001$ mol/L.",
+   "answer": "$[\\text{H}^+] = 0.001$ mol/L"
+  },
+  {
+   "title": "Interpreting a one-unit increase on a log scale",
+   "question": "The Richter scale measures earthquake magnitude using a base-10 logarithmic scale. Earthquake A has magnitude 5 and Earthquake B has magnitude 7. How many times greater is the ground shaking intensity of Earthquake B than Earthquake A?",
+   "solution": "**Key idea:** On a base-10 log scale, each one-unit increase in the reading corresponds to a tenfold (multiply by 10) increase in the actual quantity. A difference of $d$ units means the actual quantity increases by a factor of $10^d$.\n\n1. Find the difference in magnitudes: $$7 - 5 = 2 \\text{ units}$$\n2. Calculate the factor of increase: $$10^2 = 100$$\n3. Interpret: Earthquake B has a ground shaking intensity 100 times greater than Earthquake A.\n\n**Answer:** Earthquake B's intensity is $100$ times greater than Earthquake A's.",
+   "answer": "$100$ times greater"
+  },
+  {
+   "title": "Choosing and applying a log scale in context",
+   "question": "A sound's loudness in decibels is given by $L = 10\\log_{10}\\left(\\dfrac{I}{I_0}\\right)$, where $I$ is the sound intensity in watts per square metre and $I_0 = 10^{-12}$ W/m² is the reference intensity. A lawnmower produces a sound level of 90 dB. A normal conversation produces a sound level of 60 dB. How many times more intense is the lawnmower than the normal conversation?",
+   "solution": "**Key idea:** The decibel scale is base-10 logarithmic. A difference of $d$ decibels between two sounds corresponds to an intensity ratio of $10^{d/10}$, because the formula uses $10\\log_{10}$, so dividing the decibel difference by 10 gives the exponent.\n\n1. Find the difference in decibel levels: $$90 - 60 = 30 \\text{ dB}$$\n2. Divide by 10 to find the exponent (because the formula has the factor of 10 in front of the log): $$\\frac{30}{10} = 3$$\n3. Calculate the intensity ratio: $$10^3 = 1000$$\n4. Interpret: The lawnmower is 1000 times more intense than a normal conversation.\n\n**Answer:** The lawnmower is $1000$ times more intense.",
+   "answer": "$1000$ times more intense"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding instead of multiplying across log scale intervals",
+   "wrong": "Moving 2 units up a base-10 log scale means the quantity increases by $2 \\times 10 = 20$.",
+   "fix": "Equal steps on a log scale represent equal multiplication, not equal addition. Moving 2 units up a base-10 log scale multiplies the quantity by $10^2 = 100$, not by 20."
+  },
+  {
+   "title": "Forgetting the negative sign in the pH formula",
+   "wrong": "$\\text{pH} = 3 \\Rightarrow \\log_{10}[\\text{H}^+] = 3 \\Rightarrow [\\text{H}^+] = 1000$ mol/L.",
+   "fix": "The pH formula is $\\text{pH} = -\\log_{10}[\\text{H}^+]$, so $\\log_{10}[\\text{H}^+] = -\\text{pH}$. Always apply the negative sign before converting to index form, giving $[\\text{H}^+] = 10^{-3} = 0.001$ mol/L for pH 3."
+  },
+  {
+   "title": "Dividing the decibel difference by 10 when it is not needed",
+   "wrong": "Two sounds differ by 20 dB, so the intensity ratio is $10^{20/10} = 10^2$... but then using the same step for the Richter scale: two earthquakes differ by 2 on the Richter scale, so the ratio is $10^{2/10}$.",
+   "fix": "Only the decibel formula uses a factor of 10 in front of the log, so you divide the dB difference by 10 to get the exponent. The Richter scale uses $\\log_{10}$ with no extra factor, so a difference of 2 gives a ratio of $10^2 = 100$ directly. Always check the formula for the scale you are using."
+  },
+  {
+   "title": "Thinking a log scale is useful for quantities of similar size",
+   "wrong": "Plotting the heights of five students (between 150 cm and 190 cm) on a log scale to show the differences more clearly.",
+   "fix": "A log scale is most useful when the quantities span several orders of magnitude (very large range). When values are close together, a log scale compresses the differences and makes them harder to read. Use a linear scale for data with a small range."
+  }
+ ],
+ "practice": {
+  "question": "Two cleaning products are tested for acidity. Product A has a pH of 4 and Product B has a pH of 6. Using the relationship $\\text{pH} = -\\log_{10}[\\text{H}^+]$, how many times greater is the hydrogen ion concentration of Product A than Product B?",
+  "answer": "Product A has a hydrogen ion concentration $100$ times greater than Product B.",
+  "solution": "**Key idea:** A difference of $d$ units on the pH scale corresponds to a factor of $10^d$ difference in hydrogen ion concentration. Because pH increases as concentration decreases, the lower pH has the higher concentration.\n\n1. Find the difference in pH values: $$6 - 4 = 2 \\text{ units}$$\n2. Calculate the factor: $$10^2 = 100$$\n3. Identify which product has the higher concentration: Product A has the lower pH, so it has the higher $[\\text{H}^+]$.\n4. Interpret: Product A's hydrogen ion concentration is 100 times greater than Product B's.\n\n**Answer:** Product A has a hydrogen ion concentration $100$ times greater than Product B."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are logarithmic scales and how do you use them?",
+  "a": "A logarithmic scale spaces numbers so each equal step represents multiplying by the same factor (often 10), not adding. To convert a log scale reading to the original quantity, calculate 10 to the power of that reading. For example, a pH of 3 means a hydrogen ion concentration of 10⁻³ mol/L, which is 10 times more acidic than pH 4."
+ },
+ "turn": {
+  "question": "The Richter scale measures earthquake magnitude logarithmically (base 10). An earthquake measures $6.5$ on the Richter scale. How many times greater is the ground shaking amplitude of this earthquake than one measuring $4.5$? Give your answer as a whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 100,
+   "tol": 0
+  },
+  "answer_display": "$100$",
+  "hint": "A difference of 1 on the Richter scale means the amplitude is multiplied by 10, so think about what a difference of 2 means.",
+  "solution": "**Key idea:** On a base-10 logarithmic scale, each 1-unit increase represents a ×10 increase in the actual quantity, so a difference of $n$ units means the amplitude is $10^n$ times greater.\n\n1. Find the difference in magnitude: $6.5 - 4.5 = 2$.\n2. The amplitude ratio is $10^{\\text{difference}} = 10^2$.\n3. Calculate: $10^2 = 100$.\n4. Check: going from 4.5 to 5.5 multiplies amplitude by 10, then from 5.5 to 6.5 multiplies by another 10, giving $10 \\times 10 = 100$. ✓\n\n**Answer:** The earthquake measuring 6.5 has a ground shaking amplitude $100$ times greater than the one measuring 4.5."
+ },
+ "turn_checked": {
+  "my_answer": "100",
+  "attempts": 1
+ }
+}

@@ -1,0 +1,85 @@
+/* Topic page worked examples (WorkedExamples.jsx). */
+.wx { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 56px; font-family: var(--font-display); }
+.wx-sec, .wx-card, .wx-md { min-width: 0; }
+.wx-eyebrow { margin: 0 0 8px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-text); }
+.wx-h2 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 34px); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--foreground); }
+.wx-h3 { margin: 0 0 8px; font-size: 17px; font-weight: 800; color: var(--foreground); }
+.wx-lead { margin: 0 0 20px; font-size: 16.5px; line-height: 1.6; color: var(--muted); max-width: 62ch; }
+.wx-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.wx-card { background: var(--card); border: 2px solid var(--border); border-radius: 18px; padding: 18px 20px; box-shadow: 0 3px 0 var(--edge); }
+.wx-num { margin: 0 0 8px; font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.wx-md { font-size: 16.5px; line-height: 1.6; color: var(--foreground); overflow-wrap: anywhere; }
+.wx-md p { margin: 0 0 8px; }
+.wx-md ol { list-style: decimal; margin: 0 0 8px; padding-left: 22px; }
+.wx-md ul { list-style: disc; margin: 0 0 8px; padding-left: 22px; }
+.wx-md li { margin: 2px 0; }
+.wx-md .katex-display { margin: 6px 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+.wx-table { max-width: 100%; overflow-x: auto; margin: 6px 0 10px; }
+.wx-table table { border-collapse: collapse; font-size: 15px; }
+.wx-table th, .wx-table td { border: 1px solid var(--border); padding: 6px 12px; text-align: center; }
+.wx-table th { background: var(--surface-soft); }
+.wx-sol { margin-top: 10px; }
+.wx-sol > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--brand-soft); font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--brand-text); }
+.wx-sol > summary::-webkit-details-marker { display: none; }
+.wx-sol[open] > summary { margin-bottom: 12px; background: var(--brand-pale); }
+.wx-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+@media (min-width: 760px) { .wx-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.wx-mistake .wx-md { font-size: 15.5px; color: var(--muted); }
+.wx-wrong { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; padding: 8px 10px; border-radius: 10px; background: var(--danger-soft); }
+.wx-wrong .wx-md { color: var(--foreground); }
+.wx-x { color: var(--danger-text); font-weight: 900; line-height: 1.6; }
+.wx-practice { border-color: var(--brand); }
+.wx-answer { margin: 0 0 4px; }
+.wx-tryline { margin: 16px 0 0; font-size: 16px; line-height: 1.6; color: var(--foreground); }
+.wx-tryline a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.wx-md .katex { max-width: 100%; }
+.wx-md p, .wx-md li { overflow-x: auto; overflow-y: hidden; }
+
+/* Quick answer (top of topic pages) */
+.qa-box { margin: 28px auto 0; max-width: 680px; text-align: left; padding: 18px 20px; border-radius: 16px; background: #f0fbfd; border: 1.5px solid #bfe9f1; }
+.qa-eyebrow { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #0a7088; }
+.qa-q { margin: 0 0 6px; font-size: 18px; font-weight: 800; line-height: 1.35; color: #0b1a2c; }
+.qa-a { font-size: 16px; line-height: 1.65; color: #334155; overflow-wrap: anywhere; }
+.qa-a p { margin: 0; }
+
+/* Your turn checker */
+.tc__form { margin-top: 14px; }
+.tc__label { display: block; font-size: 13px; font-weight: 800; color: #475569; margin-bottom: 6px; }
+.tc__row { display: flex; gap: 8px; flex-wrap: wrap; }
+.tc__input { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 0 14px; border: 2px solid #d6dee7; border-radius: 12px; font: inherit; font-size: 17px; background: #fff; color: #0b1a2c; }
+.tc__input:focus { outline: 3px solid #0e9fb9; outline-offset: 1px; }
+.tc__btn { min-height: 48px; padding: 0 22px; border: 0; border-radius: 12px; background: #0e9fb9; color: #fff; font: inherit; font-weight: 800; font-size: 16px; cursor: pointer; box-shadow: 0 3px 0 #0a7088; }
+.tc__btn:disabled { opacity: 0.55; cursor: default; }
+.tc__msg { margin: 12px 0 0; font-weight: 700; font-size: 15.5px; color: #475569; }
+.tc__msg--right { color: #15803d; }
+.tc__msg--wrong { color: #b45309; }
+.tc__links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; }
+.tc__link { padding: 4px 0; border: 0; background: none; font: inherit; font-weight: 800; font-size: 14.5px; color: #0a7088; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.tc__hint { margin-top: 10px; padding: 12px 14px; border-radius: 12px; background: #fffbeb; font-size: 15px; }
+.tc__hint .wx-md, .tc__hint .wx-md p { display: inline; margin: 0; }
+.tc__solution { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+.tc__answer { margin-bottom: 8px; }
+.tc__answer .wx-md, .tc__answer .wx-md p { display: inline; margin: 0; }
+.tc__next { margin-top: 16px; padding: 16px 18px; border-radius: 14px; background: #e6f6fa; border: 1.5px solid #0e9fb9; }
+.tc__next.is-right { background: #ecfdf3; border-color: #22c55e; }
+.tc__next-title { margin: 0; font-weight: 900; font-size: 17px; color: #0b1a2c; }
+.tc__next-text { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: #334155; }
+.tc__next-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 12px; }
+.tc__cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: #0e9fb9; color: #fff; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 3px 0 #0a7088; }
+.tc__cta2 { font-weight: 800; font-size: 14.5px; color: #0a7088; text-decoration: underline; text-underline-offset: 3px; }
+.tc__solution ol { list-style: decimal; padding-left: 22px; margin: 6px 0; }
+.tc__solution ul { list-style: disc; padding-left: 22px; margin: 6px 0; }
+.tc__solution li { margin: 4px 0; }
+/* Steps: list items scroll sideways on narrow screens (long maths), which
+   clips an outside number in Chrome, so the numbers sit inside. */
+.wx-md ol, .tc__solution ol { list-style-position: inside; padding-left: 0; }
+.wx-md ul, .tc__solution ul { list-style-position: inside; padding-left: 0; }
+.wx-md li > p:first-child { display: inline; }
+
+/* State note on shared topic pages */
+.tsn { max-width: 640px; margin: 22px auto 0; text-align: left; background: var(--surface-soft, #f6f8fb); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+.tsn__title { margin: 0 0 4px; font-weight: 700; color: var(--foreground); font-size: 14.5px; }
+.tsn__text { margin: 0 0 6px; }
+.tsn__list { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.tsn__state { font-weight: 700; color: var(--brand-text); text-decoration: none; }
+.tsn__state:hover { text-decoration: underline; }

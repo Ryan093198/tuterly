@@ -163,7 +163,7 @@ export default function StudyAppCTA({
         ? "Join the free pilot"
         : mode === "android-button"
           ? "Get notified for Android"
-          : "Sign up early for 50% off";
+          : "Sign up early for a free trial";
     action = (
       <button
         type="button"
@@ -360,7 +360,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
   const [error, setError] = useState("");
 
   const label =
-    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Sign up early for 50% off";
+    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Sign up early for a free trial";
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."

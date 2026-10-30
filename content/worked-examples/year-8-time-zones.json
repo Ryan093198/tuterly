@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Converting between 12-hour and 24-hour time",
+   "question": "Convert these times: (a) 7:45 am to 24-hour time, (b) 20:30 to 12-hour time.",
+   "solution": "**Key idea:** In 24-hour time, hours run from 00 to 23. For pm times after 12 noon, add 12 to the hour. For 24-hour times from 13:00 onwards, subtract 12 and write pm.\n\n1. (a) 7:45 am is before noon, so the hour stays the same. Write the hour with two digits: $07{:}45$.\n2. (b) $20 - 12 = 8$, so 20:30 is **8:30 pm**.\n\n**Answer:** (a) $07{:}45$ and (b) 8:30 pm",
+   "answer": "(a) 07:45 and (b) 8:30 pm"
+  },
+  {
+   "title": "Adding a duration across midnight",
+   "question": "A movie starts at 10:45 pm and runs for 2 hours 35 minutes. What time does it finish? Give your answer in 12-hour time.",
+   "solution": "**Key idea:** Add hours first, then minutes, and regroup if minutes exceed 60. Remember midnight is 12:00 am and the day changes.\n\n1. Start time: 10:45 pm.\n2. Add 2 hours: $10\\text{ pm} + 2\\text{ h} = 12\\text{ am (midnight)}$, so the time is 12:45 am.\n3. Add 35 minutes: $$12{:}45\\text{ am} + 35\\text{ min} = 1{:}20\\text{ am}$$\n4. The day has moved to the next day, so the movie finishes at **1:20 am**.\n\n**Answer:** 1:20 am",
+   "answer": "1:20 am"
+  },
+  {
+   "title": "International flight arrival time",
+   "question": "A flight departs Sydney at 9:15 am on Wednesday. Sydney is on AEST (UTC+10). The flight takes 9 hours 50 minutes and lands in Dubai, where the local time zone is GST (UTC+4). What is the local time and day in Dubai when the plane lands?",
+   "solution": "**Key idea:** Convert departure to UTC by subtracting the offset, add the flight duration to get arrival in UTC, then convert to the destination's local time by adding its offset.\n\n1. Departure in UTC: $$9{:}15\\text{ am} - 10\\text{ h} = 11{:}15\\text{ pm Tuesday (UTC)}$$\n2. Add flight duration of 9 h 50 min: $$11{:}15\\text{ pm} + 9\\text{ h} = 8{:}15\\text{ am Wednesday (UTC)}$$ $$8{:}15\\text{ am} + 50\\text{ min} = 9{:}05\\text{ am Wednesday (UTC)}$$\n3. Convert UTC to Dubai local time (UTC+4): $$9{:}05\\text{ am} + 4\\text{ h} = 1{:}05\\text{ pm Wednesday (GST)}$$\n\n**Answer:** 1:05 pm Wednesday (Dubai local time)",
+   "answer": "1:05 pm Wednesday"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding instead of subtracting when converting to UTC",
+   "wrong": "Sydney is UTC+10, so UTC = 9:15 am + 10 h = 7:15 pm",
+   "fix": "To convert a local time to UTC, subtract the UTC offset. UTC+10 means the local clock is 10 hours ahead of UTC, so you subtract: $9{:}15\\text{ am} - 10\\text{ h} = 11{:}15\\text{ pm}$ (previous day)."
+  },
+  {
+   "title": "Forgetting that the day changes at midnight",
+   "wrong": "11:50 pm + 2 h = 1:50 pm",
+   "fix": "When adding time pushes you past midnight (12:00 am), the date moves forward by one day. Keep track of the day label, especially in multi-step problems involving flights or overnight events."
+  },
+  {
+   "title": "Confusing 12:00 am and 12:00 pm",
+   "wrong": "12:00 pm is midnight and 12:00 am is noon",
+   "fix": "12:00 am is midnight (the very start of the day) and 12:00 pm is noon (midday). In 24-hour time, midnight is 00:00 and noon is 12:00, which removes any confusion."
+  },
+  {
+   "title": "Ignoring the difference between two Australian time zones",
+   "wrong": "ACDT (UTC+10:30) and AEST (UTC+10) are the same, so no conversion is needed",
+   "fix": "ACDT and AEST differ by 30 minutes. Always convert both times to UTC first, then convert to the destination's local time. Never assume two Australian time zones are identical just because they look similar."
+  }
+ ],
+ "practice": {
+  "question": "A train departs Melbourne at 11:40 pm on Friday. Melbourne is on AEST (UTC+10). The journey takes 3 hours 25 minutes and the train arrives in a city where the local time zone is ACST (UTC+9:30). What is the local arrival time and day at the destination?",
+  "answer": "2:35 am Saturday (ACST)",
+  "solution": "**Key idea:** Convert departure to UTC, add the journey time to get arrival in UTC, then convert to the destination's local time.\n\n1. Convert Melbourne departure to UTC (subtract UTC+10 offset): $$11{:}40\\text{ pm Friday} - 10\\text{ h} = 1{:}40\\text{ pm Friday (UTC)}$$\n2. Add journey time of 3 h 25 min: $$1{:}40\\text{ pm} + 3\\text{ h} = 4{:}40\\text{ pm Friday (UTC)}$$ $$4{:}40\\text{ pm} + 25\\text{ min} = 5{:}05\\text{ pm Friday (UTC)}$$\n3. Convert UTC arrival to destination local time (add UTC+9:30 offset): $$5{:}05\\text{ pm} + 9\\text{ h} = 2{:}05\\text{ am Saturday (ACST)}$$ $$2{:}05\\text{ am} + 30\\text{ min} = 2{:}35\\text{ am Saturday (ACST)}$$\n\n**Answer:** 2:35 am Saturday (ACST)"
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you solve problems with time and time zones?",
+  "a": "Convert between 12-hour and 24-hour time, then add or subtract durations carefully. For time zones, find the offset between locations and add or subtract it. For example, if Melbourne (AEDT, UTC+11) is 11 hours ahead of UTC, and it is 14:00 in Melbourne, it is 03:00 UTC."
+ },
+ "turn": {
+  "question": "A flight departs Sydney at 21:45 on Monday and arrives in Dubai 14 hours and 20 minutes later. Sydney is at UTC+11 and Dubai is at UTC+4. What is the local arrival time in Dubai? Give your answer as a 4-digit 24-hour time (e.g. 0930 means 9:30 am).",
+  "kind": "number",
+  "accept": {
+   "value": 1205,
+   "tol": 0
+  },
+  "answer_display": "$1205$",
+  "hint": "First find the arrival time in Sydney time, then adjust for the difference in time zones between Sydney (UTC+11) and Dubai (UTC+4).",
+  "solution": "**Key idea:** Add the flight duration to the departure time to get the arrival time in local (Sydney) time, then convert to Dubai time by applying the time-zone offset.\n\n1. **Departure time in Sydney:** 21:45 Monday.\n2. **Add the flight duration:** $21{:}45 + 14\\text{ h } 20\\text{ min}$.\n$$\\begin{aligned} 21{:}45 + 14\\text{ h} &= 35{:}45 \\\\ 35{:}45 - 24{:}00 &= 11{:}45 \\text{ (Tuesday, Sydney time)} \\\\ 11{:}45 + 20\\text{ min} &= 12{:}05 \\text{ Tuesday (Sydney time)} \\end{aligned}$$\n3. **Find the time-zone offset:** Sydney is UTC+11 and Dubai is UTC+4, so Dubai is $11 - 4 = 7$ hours **behind** Sydney.\n4. **Convert to Dubai local time:** $12{:}05 - 7\\text{ h} = 05{:}05$... wait, let me recheck: $12{:}05 - 7{:}00 = 05{:}05$ Tuesday (Dubai time).\n\nWait, let me recompute carefully.\n\n- Departure Sydney: 21:45\n- $+14$ h: $21{:}45 + 14{:}00 = 35{:}45 = 11{:}45$ next day (Sydney)\n- $+20$ min: $11{:}45 + 0{:}20 = 12{:}05$ Tuesday (Sydney)\n- Dubai offset vs Sydney: $\\text{UTC+4} - \\text{UTC+11} = -7$ h\n- Dubai time: $12{:}05 - 7{:}00 = 05{:}05$ Tuesday\n\n**Answer:** $0505$"
+ },
+ "turn_checked": {
+  "my_answer": "1205",
+  "attempts": 1
+ }
+}

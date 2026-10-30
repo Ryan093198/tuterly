@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Surface area of a composite solid (prism on top of prism)",
+   "question": "A solid is made by placing a triangular prism on top of a rectangular prism. The rectangular prism is 10 cm long, 6 cm wide and 4 cm tall. The triangular prism sits exactly on the top face of the rectangular prism and runs the full 10 cm length. Its cross-section is an isosceles triangle with base 6 cm and perpendicular height 3 cm; each sloping face has a slant height of 3.35 cm. Find the total surface area of the composite solid.",
+   "solution": "**Key idea:** Add the surface areas of each part, then subtract any faces that are joined (hidden) and therefore no longer on the outside.\n\n1. **Rectangular prism faces.** The two ends ($6 \\times 4$), two long sides ($10 \\times 4$), and the bottom ($10 \\times 6$). The top face is hidden where the triangular prism sits, so omit it.\n$$\\text{SA}_{\\text{rect}} = 2(6 \\times 4) + 2(10 \\times 4) + (10 \\times 6) = 48 + 80 + 60 = 188 \\text{ cm}^2$$\n2. **Triangular prism faces.** Two triangular ends and two sloping rectangles. The base of the triangular prism is hidden (joined to the rectangular prism), so omit it.\n$$\\text{Area of each triangle} = \\tfrac{1}{2} \\times 6 \\times 3 = 9 \\text{ cm}^2$$\n$$\\text{Two sloping rectangles} = 2 \\times (3.35 \\times 10) = 67 \\text{ cm}^2$$\n$$\\text{SA}_{\\text{tri}} = 2(9) + 67 = 18 + 67 = 85 \\text{ cm}^2$$\n3. **Total surface area:**\n$$\\text{SA} = 188 + 85 = 273 \\text{ cm}^2$$\n**Answer:** $273 \\text{ cm}^2$",
+   "answer": "273 cm²"
+  },
+  {
+   "title": "Volume of a composite solid (cylinder on top of rectangular prism)",
+   "question": "A solid ornament is made from a rectangular prism with a half-cylinder on top. The rectangular prism is 14 cm long, 8 cm wide and 5 cm tall. The half-cylinder runs along the full 14 cm length and has a diameter of 8 cm. Find the total volume of the ornament. Give your answer correct to one decimal place.",
+   "solution": "**Key idea:** The total volume equals the volume of the rectangular prism plus the volume of the half-cylinder.\n\n1. **Volume of the rectangular prism:**\n$$V_{\\text{rect}} = 14 \\times 8 \\times 5 = 560 \\text{ cm}^3$$\n2. **Radius of the half-cylinder:** $r = 8 \\div 2 = 4$ cm.\n3. **Volume of the half-cylinder:**\n$$V_{\\text{half-cyl}} = \\tfrac{1}{2} \\times \\pi r^2 \\times h = \\tfrac{1}{2} \\times \\pi \\times 4^2 \\times 14 = \\tfrac{1}{2} \\times 16\\pi \\times 14 = 112\\pi \\approx 351.9 \\text{ cm}^3$$\n4. **Total volume:**\n$$V = 560 + 112\\pi \\approx 560 + 351.9 = 911.9 \\text{ cm}^3$$\n**Answer:** $911.9 \\text{ cm}^3$",
+   "answer": "911.9 cm³"
+  },
+  {
+   "title": "Capacity of a water tank with a cylindrical pipe drilled through it",
+   "question": "A rectangular water tank is 1.2 m long, 0.8 m wide and 0.6 m tall. A cylindrical pipe with a diameter of 0.2 m is drilled horizontally through the full 1.2 m length of the tank, removing material from the solid. Find the volume of water the tank can hold, in litres. Give your answer correct to the nearest litre. (Use $1 \\text{ m}^3 = 1000 \\text{ L}$.)",
+   "solution": "**Key idea:** Use the subtraction method. The usable volume equals the volume of the rectangular tank minus the volume removed by the cylindrical pipe.\n\n1. **Volume of the rectangular tank:**\n$$V_{\\text{rect}} = 1.2 \\times 0.8 \\times 0.6 = 0.576 \\text{ m}^3$$\n2. **Radius of the cylinder:** $r = 0.2 \\div 2 = 0.1$ m.\n3. **Volume of the cylindrical pipe:**\n$$V_{\\text{cyl}} = \\pi r^2 h = \\pi \\times 0.1^2 \\times 1.2 = 0.012\\pi \\approx 0.03770 \\text{ m}^3$$\n4. **Volume of water the tank holds:**\n$$V = 0.576 - 0.012\\pi \\approx 0.576 - 0.03770 = 0.53830 \\text{ m}^3$$\n5. **Convert to litres:**\n$$0.53830 \\times 1000 \\approx 538 \\text{ L}$$\n**Answer:** $538 \\text{ L}$",
+   "answer": "538 L"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to remove hidden (joined) faces from the surface area",
+   "wrong": "SA = SA of prism + SA of cylinder (full surface areas added together)",
+   "fix": "When two solids are joined, the faces at the join are inside the solid and must be subtracted from both parts. Identify which faces are touching before you add anything up."
+  },
+  {
+   "title": "Using diameter instead of radius in circle formulas",
+   "wrong": "$V = \\pi \\times 8^2 \\times h$ when the diameter is 8 cm",
+   "fix": "The formulas $A = \\pi r^2$ and $V = \\pi r^2 h$ require the radius. Always halve the diameter before substituting: $r = 8 \\div 2 = 4$ cm."
+  },
+  {
+   "title": "Forgetting to halve for a half-cylinder",
+   "wrong": "$V_{\\text{half-cyl}} = \\pi r^2 h$ (full cylinder formula used)",
+   "fix": "A half-cylinder is exactly half of a full cylinder, so multiply the full formula by $\\tfrac{1}{2}$: $V = \\tfrac{1}{2}\\pi r^2 h$. The same applies to surface area: only half the curved surface is exposed."
+  },
+  {
+   "title": "Mixing up units when converting volume to capacity",
+   "wrong": "$1.5 \\text{ m}^3 = 1500 \\text{ mL}$",
+   "fix": "One cubic metre equals 1000 litres, not 1000 millilitres. Convert step by step: $1 \\text{ m}^3 = 1000 \\text{ L}$, then $1 \\text{ L} = 1000 \\text{ mL}$ if you need millilitres."
+  }
+ ],
+ "practice": {
+  "question": "A solid is formed by attaching a cylinder to one end of a rectangular prism. The rectangular prism is 20 cm long, 10 cm wide and 10 cm tall. The cylinder has a diameter of 10 cm and a height (length) of 8 cm, and it is attached so its circular face sits flush against one of the 10 cm by 10 cm ends of the prism. Find the total volume of the composite solid. Give your answer correct to one decimal place.",
+  "answer": "2628.3 cm³",
+  "solution": "**Key idea:** The total volume equals the volume of the rectangular prism plus the volume of the cylinder.\n\n1. **Volume of the rectangular prism:**\n$$V_{\\text{rect}} = 20 \\times 10 \\times 10 = 2000 \\text{ cm}^3$$\n2. **Radius of the cylinder:** $r = 10 \\div 2 = 5$ cm.\n3. **Volume of the cylinder:**\n$$V_{\\text{cyl}} = \\pi r^2 h = \\pi \\times 5^2 \\times 8 = 200\\pi \\approx 628.3 \\text{ cm}^3$$\n4. **Total volume:**\n$$V = 2000 + 200\\pi \\approx 2000 + 628.3 = 2628.3 \\text{ cm}^3$$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the surface area and volume of composite solids?",
+  "a": "Break the solid into familiar shapes (prisms, cylinders, cones, etc.), then add or subtract their areas and volumes. For surface area, include only exposed faces: where two shapes join, remove the joining area from each shape's total. For example, a cylinder sitting on a prism hides one circular face of the cylinder and an equal circular portion of the prism's top."
+ },
+ "turn": {
+  "question": "A solid is made by placing a rectangular prism on top of another rectangular prism. The bottom prism is 10 cm long, 8 cm wide, and 4 cm tall. The top prism is 6 cm long, 4 cm wide, and 5 cm tall. What is the total volume of the composite solid, in cm³?",
+  "kind": "number",
+  "accept": {
+   "value": 440,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$440$",
+  "hint": "Find the volume of each rectangular prism separately using $V = l \\times w \\times h$, then add them together.",
+  "solution": "**Key idea:** The volume of a composite solid made of two non-overlapping prisms is the sum of their individual volumes.\n\n1. Volume of the bottom prism: $V_1 = 10 \\times 8 \\times 4 = 320 \\text{ cm}^3$\n2. Volume of the top prism: $V_2 = 6 \\times 4 \\times 5 = 120 \\text{ cm}^3$\n3. Total volume: $V = V_1 + V_2 = 320 + 120 = 440 \\text{ cm}^3$\n\n**Answer:** $440 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "440",
+  "attempts": 2
+ }
+}

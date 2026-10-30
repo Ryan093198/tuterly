@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Solving by substitution",
+   "question": "Solve the simultaneous equations:\n$$y = 2x - 1$$\n$$3x + y = 9$$",
+   "solution": "**Key idea:** Substitute the expression for $y$ from the first equation directly into the second equation.\n\n1. Substitute $y = 2x - 1$ into $3x + y = 9$:\n$$3x + (2x - 1) = 9$$\n2. Simplify and solve for $x$:\n$$\\begin{aligned}5x - 1 &= 9 \\\\ 5x &= 10 \\\\ x &= 2\\end{aligned}$$\n3. Substitute $x = 2$ back into $y = 2x - 1$:\n$$y = 2(2) - 1 = 3$$\n4. Check in $3x + y = 9$: $3(2) + 3 = 9$ ✓\n\n**Answer:** $x = 2,\\; y = 3$",
+   "answer": "$x = 2,\\; y = 3$"
+  },
+  {
+   "title": "Solving by elimination",
+   "question": "Solve the simultaneous equations:\n$$3x + 2y = 16$$\n$$5x - 2y = 8$$",
+   "solution": "**Key idea:** Add the equations to eliminate $y$, since the $y$-coefficients are opposites.\n\n1. Add the two equations:\n$$\\begin{aligned}(3x + 2y) + (5x - 2y) &= 16 + 8 \\\\ 8x &= 24 \\\\ x &= 3\\end{aligned}$$\n2. Substitute $x = 3$ into $3x + 2y = 16$:\n$$\\begin{aligned}9 + 2y &= 16 \\\\ 2y &= 7 \\\\ y &= 3.5\\end{aligned}$$\n3. Check in $5x - 2y = 8$: $5(3) - 2(3.5) = 15 - 7 = 8$ ✓\n\n**Answer:** $x = 3,\\; y = 3.5$",
+   "answer": "$x = 3,\\; y = 3.5$"
+  },
+  {
+   "title": "Setting up and solving a word problem",
+   "question": "Two friends, Aiden and Brianna, buy items at a school canteen. Aiden buys 2 pies and 1 drink and pays \\$8.70. Brianna buys 1 pie and 1 drink and pays \\$5.20. Find the cost of one pie and one drink.",
+   "solution": "**Key idea:** Define variables, write two equations from the given information, then solve.\n\n1. Let $p$ = cost of one pie (dollars) and $d$ = cost of one drink (dollars). Write the equations:\n$$\\begin{aligned}2p + d &= 8.70 \\quad (1)\\\\ p + d &= 5.20 \\quad (2)\\end{aligned}$$\n2. Subtract equation (2) from equation (1) to eliminate $d$:\n$$\\begin{aligned}(2p + d) - (p + d) &= 8.70 - 5.20 \\\\ p &= 3.50\\end{aligned}$$\n3. Substitute $p = 3.50$ into equation (2):\n$$\\begin{aligned}3.50 + d &= 5.20 \\\\ d &= 1.70\\end{aligned}$$\n4. Check in equation (1): $2(3.50) + 1.70 = 7.00 + 1.70 = 8.70$ ✓\n\n**Answer:** One pie costs \\$3.50 and one drink costs \\$1.70.",
+   "answer": "One pie costs \\$3.50 and one drink costs \\$1.70."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Substituting into the same equation",
+   "wrong": "Found $x = 2$ from equation (1), then substituted back into equation (1) to find $y$, instead of using equation (2).",
+   "fix": "You can substitute back into either equation to find the second variable, but always check your answer in the other equation. Using a different equation from the one you solved reduces the chance of carrying an error forward."
+  },
+  {
+   "title": "Sign errors when subtracting equations",
+   "wrong": "$(3x + 2y) - (x - 2y) = 2x$ instead of $2x + 4y$.",
+   "fix": "When subtracting an equation, every term on both sides changes sign. Write out the subtraction line by line, or multiply the equation by $-1$ first and then add, to keep track of signs."
+  },
+  {
+   "title": "Forgetting to multiply every term when scaling an equation",
+   "wrong": "Multiplying $3x - y = 5$ by $2$ to get $6x - y = 10$ instead of $6x - 2y = 10$.",
+   "fix": "When you multiply an equation by a number, every single term on both sides must be multiplied. Check each term one at a time before moving on."
+  },
+  {
+   "title": "Stopping after finding only one variable",
+   "wrong": "Solved $x = 4$ and wrote the answer as $x = 4$, without finding $y$.",
+   "fix": "Simultaneous equations always require both variables. Once you find one, substitute it back in to find the other, and state both values clearly in your answer."
+  }
+ ],
+ "practice": {
+  "question": "Solve the simultaneous equations:\n$$4x + 3y = 5$$\n$$2x - 3y = 7$$",
+  "answer": "$x = 2,\\; y = -1$",
+  "solution": "**Key idea:** Add the equations to eliminate $y$, since the $y$-coefficients are already opposites.\n\n1. Add the two equations:\n$$\\begin{aligned}(4x + 3y) + (2x - 3y) &= 5 + 7 \\\\ 6x &= 12 \\\\ x &= 2\\end{aligned}$$\n2. Substitute $x = 2$ into $4x + 3y = 5$:\n$$\\begin{aligned}8 + 3y &= 5 \\\\ 3y &= -3 \\\\ y &= -1\\end{aligned}$$\n3. Check in $2x - 3y = 7$: $2(2) - 3(-1) = 4 + 3 = 7$ ✓\n\n**Answer:** $x = 2,\\; y = -1$"
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you solve simultaneous equations?",
+  "a": "Simultaneous equations are two equations with two unknowns solved together to find values that satisfy both at once. Use substitution (rearrange one equation and sub into the other), elimination (add or subtract to remove one variable), or find the intersection point on a graph. For example, x + y = 5 and x - y = 1 gives x = 3, y = 2."
+ },
+ "turn": {
+  "question": "Solve the following pair of simultaneous equations using any method.\n\n$$3x + 2y = 16$$\n$$x - y = 2$$\n\nFind the value of $x$.",
+  "kind": "number",
+  "accept": {
+   "value": 4,
+   "tol": 0
+  },
+  "answer_display": "$x = 4$",
+  "hint": "Try rearranging the second equation to express $x$ in terms of $y$, then substitute into the first equation.",
+  "solution": "**Key idea:** Use substitution by rearranging the simpler equation, then substitute into the other equation.\n\n1. From the second equation, rearrange for $x$:\n$$x = y + 2$$\n2. Substitute $x = y + 2$ into the first equation:\n$$3(y + 2) + 2y = 16$$\n3. Expand and simplify:\n$$\\begin{aligned}3y + 6 + 2y &= 16 \\\\ 5y &= 10 \\\\ y &= 2\\end{aligned}$$\n4. Substitute $y = 2$ back into $x = y + 2$:\n$$x = 2 + 2 = 4$$\n5. Check in the first equation: $3(4) + 2(2) = 12 + 4 = 16$ ✓\n\n**Answer:** $x = 4$"
+ },
+ "turn_checked": {
+  "my_answer": "4",
+  "attempts": 1
+ }
+}

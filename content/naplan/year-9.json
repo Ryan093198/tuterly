@@ -1,0 +1,309 @@
+{
+ "year": 9,
+ "questions": [
+  {
+   "strand": "Number",
+   "skill": "Scientific notation",
+   "calculator": false,
+   "format": "choice",
+   "question": "The distance from Earth to the Sun is approximately $150\\,000\\,000$ km. Which of the following expresses this distance in scientific notation?",
+   "options": [
+    "$1.5 \\times 10^7$ km",
+    "$15 \\times 10^8$ km",
+    "$15 \\times 10^7$ km",
+    "$1.5 \\times 10^8$ km"
+   ],
+   "answer_index": 3,
+   "solution": "Move the decimal point so there is one non-zero digit before it: $150\\,000\\,000 = 1.5 \\times 10^8$. The power of 10 is 8 because we move the decimal 8 places to the left. **Answer:** $1.5 \\times 10^8$ km",
+   "n": 1
+  },
+  {
+   "strand": "Number",
+   "skill": "Percentage increase",
+   "calculator": false,
+   "format": "number",
+   "question": "A school canteen sold 80 meat pies on Monday. On Tuesday, sales increased by 15%. How many meat pies were sold on Tuesday?",
+   "solution": "Find 15% of 80: $0.15 \\times 80 = 12$. Add to the original: $80 + 12 = 92$. **Answer:** 92",
+   "accept": {
+    "value": 92,
+    "tol": 0,
+    "unit": "meat pies"
+   },
+   "n": 2
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Area of a circle",
+   "calculator": false,
+   "format": "choice",
+   "question": "A circular garden in a Sydney park has a radius of 5 m. What is the area of the garden? Use $\\pi = 3.14$.",
+   "options": [
+    "$62.8$ m²",
+    "$78.5$ m²",
+    "$15.7$ m²",
+    "$31.4$ m²"
+   ],
+   "answer_index": 1,
+   "solution": "Area of a circle $= \\pi r^2 = 3.14 \\times 5^2 = 3.14 \\times 25 = 78.5$ m². **Answer:** $78.5$ m²",
+   "n": 3
+  },
+  {
+   "strand": "Space",
+   "skill": "Pythagoras' theorem",
+   "calculator": false,
+   "format": "number",
+   "question": "A right-angled triangle has two shorter sides of length 6 cm and 8 cm. What is the length of the hypotenuse in centimetres?",
+   "solution": "$c^2 = 6^2 + 8^2 = 36 + 64 = 100$. So $c = \\sqrt{100} = 10$ cm. **Answer:** 10",
+   "accept": {
+    "value": 10,
+    "tol": 0,
+    "unit": "cm"
+   },
+   "n": 4
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Mean from data",
+   "calculator": false,
+   "format": "choice",
+   "question": "Five students recorded how many laps they swam at training: 4, 7, 6, 9, and 4. What is the mean number of laps?",
+   "options": [
+    "9",
+    "5",
+    "7",
+    "6"
+   ],
+   "answer_index": 3,
+   "solution": "Add the values: $4 + 7 + 6 + 9 + 4 = 30$. Divide by the number of students: $30 \\div 5 = 6$. **Answer:** 6",
+   "n": 5
+  },
+  {
+   "strand": "Number",
+   "skill": "Ratio sharing",
+   "calculator": true,
+   "format": "number",
+   "question": "Lachlan and Priya share a prize of \\$360 in the ratio 5 : 4. How many dollars does Lachlan receive?",
+   "solution": "The total number of parts is $5 + 4 = 9$.\n\nThe value of one part is $360 \\div 9 = 40$.\n\nLachlan receives $5 \\times 40 = 200$ dollars.\n\n**Answer:** \\$200",
+   "accept": {
+    "value": 200,
+    "tol": 0,
+    "unit": "$"
+   },
+   "n": 6
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Solving a linear equation",
+   "calculator": true,
+   "format": "choice",
+   "question": "Solve for $x$: $\\quad 3x + 7 = 28$",
+   "options": [
+    "$x = 11$",
+    "$x = 7$",
+    "$x = 12$",
+    "$x = 9$"
+   ],
+   "answer_index": 1,
+   "solution": "Subtract 7 from both sides: $3x = 28 - 7 = 21$.\n\nDivide both sides by 3: $x = 21 \\div 3 = 7$.\n\n**Answer:** $x = 7$",
+   "n": 7
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Volume of a cylinder",
+   "calculator": true,
+   "format": "choice",
+   "question": "A cylindrical water tank has a radius of 3 m and a height of 4 m. What is the volume of the tank in cubic metres? Use $\\pi = 3.14$.",
+   "options": [
+    "$113.04 \\text{ m}^3$",
+    "$150.72 \\text{ m}^3$",
+    "$37.68 \\text{ m}^3$",
+    "$75.36 \\text{ m}^3$"
+   ],
+   "answer_index": 0,
+   "solution": "Volume of a cylinder $= \\pi r^2 h$.\n\n$= 3.14 \\times 3^2 \\times 4$\n\n$= 3.14 \\times 9 \\times 4 = 3.14 \\times 36 = 113.04 \\text{ m}^3$.\n\n**Answer:** $113.04 \\text{ m}^3$",
+   "n": 8
+  },
+  {
+   "strand": "Space",
+   "skill": "Gradient and equation of a straight line",
+   "calculator": true,
+   "format": "choice",
+   "question": "A straight line passes through the points $(0, 3)$ and $(4, 11)$. Which of the following is the equation of the line?",
+   "options": [
+    "$y = 4x + 3$",
+    "$y = 2x + 3$",
+    "$y = 2x + 4$",
+    "$y = 3x + 3$"
+   ],
+   "answer_index": 1,
+   "solution": "The gradient is $m = \\dfrac{11 - 3}{4 - 0} = \\dfrac{8}{4} = 2$.\n\nThe $y$-intercept is 3 (the line passes through $(0, 3)$).\n\nSo the equation is $y = 2x + 3$.\n\n**Answer:** $y = 2x + 3$",
+   "n": 9
+  },
+  {
+   "strand": "Number",
+   "skill": "Simple interest",
+   "calculator": true,
+   "format": "number",
+   "question": "Amelia invests \\$2500 in a savings account that pays simple interest at a rate of 4% per year. How much interest in dollars will she earn after 3 years?",
+   "solution": "Simple interest $= P \\times r \\times t$.\n\n$= 2500 \\times 0.04 \\times 3$\n\n$= 2500 \\times 0.12 = 300$.\n\n**Answer:** \\$300",
+   "accept": {
+    "value": 300,
+    "tol": 0,
+    "unit": "$"
+   },
+   "n": 10
+  },
+  {
+   "strand": "Number",
+   "skill": "Index laws",
+   "calculator": true,
+   "format": "choice",
+   "question": "Simplify $\\dfrac{x^8}{x^3}$.",
+   "options": [
+    "$x^2$",
+    "$x^{11}$",
+    "$x^{24}$",
+    "$x^5$"
+   ],
+   "answer_index": 3,
+   "solution": "When dividing powers with the same base, subtract the indices: $x^8 \\div x^3 = x^{8-3} = x^5$.\n\n**Answer:** $x^5$",
+   "n": 11
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Expanding and factorising expressions",
+   "calculator": true,
+   "format": "choice",
+   "question": "Factorise fully: $6m^2 + 9m$.",
+   "options": [
+    "$6m(m + 3)$",
+    "$3(2m^2 + 3m)$",
+    "$3m(2m + 3)$",
+    "$m(6m + 9)$"
+   ],
+   "answer_index": 2,
+   "solution": "Find the highest common factor (HCF) of $6m^2$ and $9m$. The HCF is $3m$.\n\nDivide each term: $6m^2 \\div 3m = 2m$ and $9m \\div 3m = 3$.\n\nSo $6m^2 + 9m = 3m(2m + 3)$.\n\n**Answer:** $3m(2m + 3)$",
+   "n": 12
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Two-way tables and probability",
+   "calculator": true,
+   "format": "choice",
+   "question": "A Year 9 group of 40 students was surveyed about whether they play sport and whether they play a musical instrument. The results are shown in the table below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Plays instrument | 8 | 12 | 20 |\n| Does not play instrument | 14 | 6 | 20 |\n| **Total** | 22 | 18 | 40 |\n\nA student is chosen at random. What is the probability that the student plays sport given that they play an instrument?",
+   "options": [
+    "$\\dfrac{1}{5}$",
+    "$\\dfrac{11}{20}$",
+    "$\\dfrac{2}{5}$",
+    "$\\dfrac{8}{40}$"
+   ],
+   "answer_index": 2,
+   "solution": "We want P(plays sport | plays instrument). Look only at the 20 students who play an instrument.\n\nOf those 20, exactly 8 also play sport.\n\n$P = \\dfrac{8}{20} = \\dfrac{2}{5}$.\n\n**Answer:** $\\dfrac{2}{5}$",
+   "n": 13
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Volume of a rectangular prism (composite thinking)",
+   "calculator": true,
+   "format": "number",
+   "question": "A swimming pool is in the shape of a rectangular prism. It is 25 m long, 10 m wide, and 2 m deep. How many cubic metres of water does the pool hold when full?",
+   "solution": "Volume of a rectangular prism $= \\text{length} \\times \\text{width} \\times \\text{height}$.\n\n$V = 25 \\times 10 \\times 2 = 500 \\text{ m}^3$.\n\n**Answer:** 500 m³",
+   "accept": {
+    "value": 500,
+    "tol": 0,
+    "unit": "m³"
+   },
+   "n": 14
+  },
+  {
+   "strand": "Number",
+   "skill": "Rates and speed",
+   "calculator": true,
+   "format": "number",
+   "question": "Mia drives from Brisbane to the Sunshine Coast, a distance of 108 km, in 1 hour and 12 minutes. What is her average speed in kilometres per hour?",
+   "solution": "Convert 1 hour 12 minutes to hours: $1\\frac{12}{60} = 1.2$ hours.\n\nSpeed $= \\dfrac{\\text{distance}}{\\text{time}} = \\dfrac{108}{1.2} = 90$ km/h.\n\n**Answer:** 90 km/h",
+   "accept": {
+    "value": 90,
+    "tol": 0,
+    "unit": "km/h"
+   },
+   "n": 15
+  },
+  {
+   "strand": "Algebra",
+   "skill": "Expanding binomial expressions",
+   "calculator": true,
+   "format": "choice",
+   "question": "Expand and simplify: $(x + 5)(x - 3)$",
+   "options": [
+    "$x^2 + 8x - 15$",
+    "$x^2 + 2x + 15$",
+    "$x^2 + 2x - 15$",
+    "$x^2 - 15$"
+   ],
+   "answer_index": 2,
+   "solution": "Use FOIL: $x \\times x = x^2$, $x \\times (-3) = -3x$, $5 \\times x = 5x$, $5 \\times (-3) = -15$.\n\nCollect like terms: $x^2 + (-3x + 5x) - 15 = x^2 + 2x - 15$.\n\n**Answer:** $x^2 + 2x - 15$",
+   "n": 16
+  },
+  {
+   "strand": "Number",
+   "skill": "Percentage decrease",
+   "calculator": true,
+   "format": "number",
+   "question": "A mountain bike originally priced at \\$840 is marked down by 35%. What is the sale price of the bike in dollars?",
+   "solution": "Find the discount: $35\\% \\times 840 = 0.35 \\times 840 = \\$294$.\n\nSubtract from original price: $840 - 294 = \\$546$.\n\n**Answer:** \\$546",
+   "accept": {
+    "value": 546,
+    "tol": 0,
+    "unit": "$"
+   },
+   "n": 17
+  },
+  {
+   "strand": "Space",
+   "skill": "Similar figures and scale",
+   "calculator": true,
+   "format": "choice",
+   "question": "Two triangles are similar. The sides of the smaller triangle are 4 cm, 6 cm, and 9 cm. The longest side of the larger triangle is 27 cm. What is the perimeter of the larger triangle in centimetres?",
+   "options": [
+    "63 cm",
+    "57 cm",
+    "45 cm",
+    "51 cm"
+   ],
+   "answer_index": 1,
+   "solution": "Find the scale factor: $27 \\div 9 = 3$.\n\nMultiply each side of the smaller triangle by 3: $4 \\times 3 = 12$ cm, $6 \\times 3 = 18$ cm, $9 \\times 3 = 27$ cm.\n\nPerimeter $= 12 + 18 + 27 = 57$ cm.\n\n**Answer:** 57 cm",
+   "n": 18
+  },
+  {
+   "strand": "Statistics and probability",
+   "skill": "Two-step probability",
+   "calculator": true,
+   "format": "choice",
+   "question": "A bag contains 4 red marbles and 6 blue marbles. A marble is drawn at random, its colour recorded, and then it is returned to the bag. A second marble is then drawn. What is the probability that both marbles drawn are red?",
+   "options": [
+    "$\\dfrac{4}{25}$",
+    "$\\dfrac{12}{25}$",
+    "$\\dfrac{8}{45}$",
+    "$\\dfrac{2}{5}$"
+   ],
+   "answer_index": 0,
+   "solution": "The probability of drawing a red marble each time is $\\dfrac{4}{10} = \\dfrac{2}{5}$ (since the marble is replaced).\n\nFor two red marbles: $\\dfrac{2}{5} \\times \\dfrac{2}{5} = \\dfrac{4}{25}$.\n\n**Answer:** $\\dfrac{4}{25}$",
+   "n": 19
+  },
+  {
+   "strand": "Measurement",
+   "skill": "Area of a composite shape",
+   "calculator": true,
+   "format": "number",
+   "question": "A school hall floor is made up of a rectangle and a semicircle attached to one end. The rectangle is 20 m long and 10 m wide. The semicircle has a diameter of 10 m (the same as the width of the rectangle). What is the total area of the floor in square metres? Use $\\pi = 3.14$.",
+   "solution": "Area of rectangle $= 20 \\times 10 = 200$ m$^2$.\n\nRadius of semicircle $= 10 \\div 2 = 5$ m. Area of semicircle $= \\dfrac{1}{2} \\times 3.14 \\times 5^2 = \\dfrac{1}{2} \\times 3.14 \\times 25 = 39.25$ m$^2$.\n\nTotal area $= 200 + 39.25 = 239.25$ m$^2$.\n\n**Answer:** 239.25 m²",
+   "accept": {
+    "value": 239.25,
+    "tol": 0,
+    "unit": "m²"
+   },
+   "n": 20
+  }
+ ]
+}

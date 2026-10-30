@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Adding fractions with different denominators",
+   "question": "Calculate $\\dfrac{2}{3} + \\dfrac{3}{4}$.",
+   "solution": "**Key idea:** To add fractions with different denominators, first find a common denominator, then add the numerators.\n\n1. Find the lowest common denominator (LCD) of 3 and 4: $\\text{LCD} = 12$\n2. Rewrite each fraction with denominator 12:\n$$\\frac{2}{3} = \\frac{8}{12}, \\qquad \\frac{3}{4} = \\frac{9}{12}$$\n3. Add the numerators:\n$$\\frac{8}{12} + \\frac{9}{12} = \\frac{17}{12}$$\n4. Convert to a mixed number:\n$$\\frac{17}{12} = 1\\frac{5}{12}$$\n\n**Answer:** $1\\dfrac{5}{12}$",
+   "answer": "$1\\dfrac{5}{12}$"
+  },
+  {
+   "title": "Dividing fractions using keep, change, flip",
+   "question": "Calculate $\\dfrac{5}{6} \\div \\dfrac{2}{3}$.",
+   "solution": "**Key idea:** To divide by a fraction, keep the first fraction, change the division sign to multiplication, and flip the second fraction (use its reciprocal).\n\n1. Keep $\\dfrac{5}{6}$, change $\\div$ to $\\times$, flip $\\dfrac{2}{3}$ to $\\dfrac{3}{2}$:\n$$\\frac{5}{6} \\times \\frac{3}{2}$$\n2. Simplify before multiplying: the 6 and the 3 share a common factor of 3:\n$$\\frac{5}{\\cancel{6}^{\\,2}} \\times \\frac{\\cancel{3}^{\\,1}}{2} = \\frac{5}{2} \\times \\frac{1}{2} = \\frac{5 \\times 1}{2 \\times 2}$$\n3. Multiply numerators and denominators:\n$$\\frac{5}{4}$$\n4. Convert to a mixed number:\n$$\\frac{5}{4} = 1\\frac{1}{4}$$\n\n**Answer:** $1\\dfrac{1}{4}$",
+   "answer": "$1\\dfrac{1}{4}$"
+  },
+  {
+   "title": "Solving a real-life problem with fractions",
+   "question": "Mia is making friendship bracelets. She has $2\\dfrac{1}{2}$ metres of ribbon. Each bracelet needs $\\dfrac{3}{8}$ of a metre of ribbon. How many complete bracelets can she make?",
+   "solution": "**Key idea:** Finding how many times a fraction fits into an amount means dividing the total by the amount per bracelet.\n\n1. Write the mixed number as an improper fraction:\n$$2\\frac{1}{2} = \\frac{5}{2}$$\n2. Set up the division:\n$$\\frac{5}{2} \\div \\frac{3}{8}$$\n3. Apply keep, change, flip:\n$$\\frac{5}{2} \\times \\frac{8}{3}$$\n4. Simplify before multiplying: the 2 and the 8 share a common factor of 2:\n$$\\frac{5}{\\cancel{2}^{\\,1}} \\times \\frac{\\cancel{8}^{\\,4}}{3} = \\frac{5 \\times 4}{1 \\times 3} = \\frac{20}{3}$$\n5. Convert to a mixed number: $\\dfrac{20}{3} = 6\\dfrac{2}{3}$, so Mia can make 6 complete bracelets.\n\n**Answer:** 6 complete bracelets",
+   "answer": "6 complete bracelets"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding numerators AND denominators",
+   "wrong": "$\\dfrac{1}{3} + \\dfrac{1}{4} = \\dfrac{2}{7}$",
+   "fix": "Only the numerators are added after finding a common denominator. The denominator stays as the common denominator, it never gets added. Always find the LCD first, then add the numerators only."
+  },
+  {
+   "title": "Forgetting to convert mixed numbers before multiplying or dividing",
+   "wrong": "$1\\dfrac{1}{2} \\times \\dfrac{2}{3} = \\dfrac{1 \\times 2}{2 \\times 3} = \\dfrac{2}{6}$",
+   "fix": "A mixed number must be converted to an improper fraction before multiplying or dividing. Here, $1\\dfrac{1}{2} = \\dfrac{3}{2}$, so the calculation becomes $\\dfrac{3}{2} \\times \\dfrac{2}{3}$."
+  },
+  {
+   "title": "Flipping the wrong fraction when dividing",
+   "wrong": "$\\dfrac{3}{4} \\div \\dfrac{2}{5} = \\dfrac{4}{3} \\times \\dfrac{2}{5}$",
+   "fix": "It is always the second fraction (the divisor) that gets flipped, not the first. Keep the first fraction exactly as it is, change the sign to multiplication, then flip the second fraction."
+  },
+  {
+   "title": "Not simplifying the final answer",
+   "wrong": "$\\dfrac{3}{5} \\times \\dfrac{5}{6} = \\dfrac{15}{30}$ (left as is)",
+   "fix": "Always check whether the final answer can be simplified. Divide the numerator and denominator by their highest common factor. Here, $\\dfrac{15}{30} = \\dfrac{1}{2}$."
+  }
+ ],
+ "practice": {
+  "question": "Calculate $\\dfrac{7}{8} \\div \\dfrac{1}{4}$.",
+  "answer": "$3\\dfrac{1}{2}$",
+  "solution": "**Key idea:** To divide by a fraction, keep the first fraction, change the division sign to multiplication, and flip the second fraction.\n\n1. Keep $\\dfrac{7}{8}$, change $\\div$ to $\\times$, flip $\\dfrac{1}{4}$ to $\\dfrac{4}{1}$:\n$$\\frac{7}{8} \\times \\frac{4}{1}$$\n2. Simplify before multiplying: the 8 and the 4 share a common factor of 4:\n$$\\frac{7}{\\cancel{8}^{\\,2}} \\times \\frac{\\cancel{4}^{\\,1}}{1} = \\frac{7}{2} \\times \\frac{1}{1}$$\n3. Multiply numerators and denominators:\n$$\\frac{7 \\times 1}{2 \\times 1} = \\frac{7}{2}$$\n4. Convert to a mixed number:\n$$\\frac{7}{2} = 3\\frac{1}{2}$$\n\n**Answer:** $3\\dfrac{1}{2}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you add, subtract, multiply and divide fractions?",
+  "a": "Find a common denominator to add or subtract fractions, multiply numerators and denominators straight across to multiply, and use keep-change-flip (multiply by the reciprocal) to divide. For example, 1/2 + 2/3 = 3/6 + 4/6 = 7/6 = 1 1/6, and 3/4 ÷ 1/2 = 3/4 × 2/1 = 3/2 = 1 1/2."
+ },
+ "turn": {
+  "question": "Calculate $\\dfrac{5}{6} \\div \\dfrac{1}{4}$. Give your answer as a decimal correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 3.33,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$3.33$",
+  "hint": "To divide by a fraction, keep the first fraction, change the division to multiplication, and flip the second fraction.",
+  "solution": "**Key idea:** Dividing by a fraction is the same as multiplying by its reciprocal.\n\n1. Keep the first fraction: $\\dfrac{5}{6}$\n2. Change $\\div$ to $\\times$ and flip the second fraction: $\\dfrac{5}{6} \\times \\dfrac{4}{1}$\n3. Multiply numerators and denominators: $\\dfrac{5 \\times 4}{6 \\times 1} = \\dfrac{20}{6}$\n4. Simplify: $\\dfrac{20}{6} = \\dfrac{10}{3}$\n5. Convert to a decimal: $10 \\div 3 = 3.3333\\ldots \\approx 3.33$\n\n**Answer:** $3.33$"
+ },
+ "turn_checked": {
+  "my_answer": "3.33",
+  "attempts": 2
+ }
+}

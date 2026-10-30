@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Evaluating and simplifying factorial expressions",
+   "question": "Evaluate $\\dfrac{8!}{6!}$.",
+   "solution": "**Key idea:** Cancel common factors by expanding just enough of the larger factorial to reach the smaller one.\n\n1. Write $8!$ as $8 \\times 7 \\times 6!$:\n$$\\frac{8!}{6!} = \\frac{8 \\times 7 \\times 6!}{6!}$$\n2. Cancel $6!$ from the numerator and denominator:\n$$= 8 \\times 7$$\n3. Evaluate:\n$$= 56$$\n\n**Answer:** $56$",
+   "answer": "56"
+  },
+  {
+   "title": "Counting ordered arrangements of a subset",
+   "question": "A school captain team consists of 10 candidates. In how many ways can a President, Vice-President and Treasurer be chosen from the 10 candidates, if no person can hold more than one role?",
+   "solution": "**Key idea:** Because the three roles are different, order matters. Use the multiplication principle: count the choices at each stage and multiply.\n\n1. Choose the President: 10 options.\n2. Choose the Vice-President from the remaining 9 candidates: 9 options.\n3. Choose the Treasurer from the remaining 8 candidates: 8 options.\n4. Multiply the choices together:\n$$10 \\times 9 \\times 8 = 720$$\n\nThis can also be written using factorial notation as:\n$$\\frac{10!}{(10-3)!} = \\frac{10!}{7!} = 720$$\n\n**Answer:** 720 ways",
+   "answer": "720 ways"
+  },
+  {
+   "title": "Probability using counting principles",
+   "question": "Eight athletes compete in a race. Assuming all finishing orders are equally likely, what is the probability that a particular athlete named Priya finishes first and a particular athlete named Marcus finishes second?",
+   "solution": "**Key idea:** Use counting principles to find the number of favourable outcomes and the total number of outcomes, then form a probability.\n\n1. Find the total number of ways the 8 athletes can finish (all ordered arrangements of 8 people):\n$$8! = 40320$$\n2. Count the favourable outcomes: Priya is first and Marcus is second, so the remaining 6 athletes fill positions 3 to 8 in any order:\n$$6! = 720$$\n3. Calculate the probability:\n$$P = \\frac{6!}{8!} = \\frac{720}{40320}$$\n4. Simplify:\n$$\\frac{720}{40320} = \\frac{1}{56}$$\n\n**Answer:** $\\dfrac{1}{56}$",
+   "answer": "$\\dfrac{1}{56}$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting that $0! = 1$",
+   "wrong": "Student writes $0! = 0$, so $\\frac{5!}{5!} = \\frac{120}{0}$, which is undefined.",
+   "fix": "By definition, $0! = 1$. This comes up often when all objects are arranged, since the formula $\\frac{n!}{(n-n)!} = \\frac{n!}{0!} = n!$ must still work. Always substitute $0! = 1$ before simplifying."
+  },
+  {
+   "title": "Expanding the full factorial instead of cancelling",
+   "wrong": "For $\\frac{10!}{7!}$, the student fully expands both: $\\frac{3628800}{5040} = 720$.",
+   "fix": "Cancel shared factors first: write $10! = 10 \\times 9 \\times 8 \\times 7!$ and cancel $7!$ immediately. This avoids large arithmetic and is much faster, especially in probability problems with big factorials."
+  },
+  {
+   "title": "Using multiplication when order does not matter (or vice versa)",
+   "wrong": "A student counts ordered arrangements when the question asks only for a selection, multiplying unnecessarily.",
+   "fix": "Always ask: does the order of the outcome matter? If the question asks who gets which distinct role or which position, order matters and you multiply stage by stage. If the question asks only who is chosen (with no different roles), order does not matter and a different method is needed."
+  },
+  {
+   "title": "Off-by-one errors in restricted arrangement problems",
+   "wrong": "Choosing 3 items from 7 in order, the student multiplies $7 \\times 6 \\times 6$ instead of $7 \\times 6 \\times 5$.",
+   "fix": "Each stage reduces the available choices by exactly one, because one item has already been used. Write out the stages carefully: first choice has $n$ options, second has $n-1$, third has $n-2$, and so on."
+  }
+ ],
+ "practice": {
+  "question": "A combination lock has digits 0 to 9. A code is formed by choosing 4 different digits in order. How many different codes are possible?",
+  "answer": "5040 codes",
+  "solution": "**Key idea:** The four positions in the code are distinct and no digit can be repeated, so order matters. Use the multiplication principle.\n\n1. Choose the first digit: 10 options (0 through 9).\n2. Choose the second digit from the remaining 9 digits: 9 options.\n3. Choose the third digit from the remaining 8 digits: 8 options.\n4. Choose the fourth digit from the remaining 7 digits: 7 options.\n5. Multiply:\n$$10 \\times 9 \\times 8 \\times 7 = 5040$$\n\nThis equals $\\dfrac{10!}{(10-4)!} = \\dfrac{10!}{6!} = 5040$.\n\n**Answer:** 5040 codes"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you count arrangements using factorials and the multiplication principle?",
+  "a": "The multiplication principle says: if one stage has m choices and the next has n choices, there are m × n total arrangements. Factorial notation gives the number of ways to order n distinct objects as n! = n × (n−1) × … × 1. For example, 4! = 24 ways to arrange 4 books."
+ },
+ "turn": {
+  "question": "Eight different runners finish a race in a random order. How many different arrangements of all eight runners are possible?",
+  "kind": "number",
+  "accept": {
+   "value": 40320,
+   "tol": 0
+  },
+  "answer_display": "$40320$",
+  "hint": "The number of ways to arrange $n$ distinct objects in a row is $n!$",
+  "solution": "**Key idea:** The number of ordered arrangements of $n$ distinct objects is $n!$\n\n1. There are 8 distinct runners to be placed in 8 positions.\n2. Apply the factorial formula: the number of arrangements $= 8!$\n3. Evaluate: $$8! = 8 \\times 7 \\times 6 \\times 5 \\times 4 \\times 3 \\times 2 \\times 1$$\n4. $$\\begin{aligned}8 \\times 7 &= 56 \\\\ 56 \\times 6 &= 336 \\\\ 336 \\times 5 &= 1680 \\\\ 1680 \\times 4 &= 6720 \\\\ 6720 \\times 3 &= 20160 \\\\ 20160 \\times 2 &= 40320\\end{aligned}$$\n5. Check: each step fills one finishing position, and the multiplication principle confirms the total is the product of all choices.\n\n**Answer:** $40320$"
+ },
+ "turn_checked": {
+  "my_answer": "40320",
+  "attempts": 1
+ }
+}

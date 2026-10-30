@@ -1,0 +1,73 @@
+{
+ "examples": [
+  {
+   "title": "Solving a basic sine equation",
+   "question": "Solve $\\sin(x) = \\dfrac{\\sqrt{3}}{2}$ for $0° \\leq x \\leq 360°$.",
+   "solution": "**Key idea:** Find the reference angle from exact values, then use the unit circle to identify all angles in the given interval where sine has that value.\n\n1. Recall the exact value: $\\sin(60°) = \\dfrac{\\sqrt{3}}{2}$, so the reference angle is $60°$.\n2. Sine is positive in the first and second quadrants.\n3. First quadrant solution: $x = 60°$.\n4. Second quadrant solution: $x = 180° - 60° = 120°$.\n5. Both values lie in $[0°, 360°]$, so both are valid.\n\n**Answer:** $x = 60°$ or $x = 120°$",
+   "answer": "$x = 60°$ or $x = 120°$"
+  },
+  {
+   "title": "Solving a cosine equation requiring rearrangement",
+   "question": "Solve $2\\cos(x) + \\sqrt{3} = 0$ for $0° \\leq x \\leq 360°$.",
+   "solution": "**Key idea:** Rearrange the equation to isolate $\\cos(x)$ first, then use the unit circle and symmetry to find all solutions in the interval.\n\n1. Rearrange: $2\\cos(x) = -\\sqrt{3}$, so $\\cos(x) = -\\dfrac{\\sqrt{3}}{2}$.\n2. Recall the exact value: $\\cos(30°) = \\dfrac{\\sqrt{3}}{2}$, so the reference angle is $30°$.\n3. Cosine is negative in the second and third quadrants.\n4. Second quadrant solution: $x = 180° - 30° = 150°$.\n5. Third quadrant solution: $x = 180° + 30° = 210°$.\n\n**Answer:** $x = 150°$ or $x = 210°$",
+   "answer": "$x = 150°$ or $x = 210°$"
+  },
+  {
+   "title": "Solving a trigonometric equation in a real-life context",
+   "question": "The depth of water (in metres) at a pier is modelled by $d = 5\\sin(\\theta) + 7$, where $\\theta$ is an angle parameter that increases from $0°$ to $360°$ over one tidal cycle. A boat needs a minimum depth of $9.5$ metres to dock safely. Find all values of $\\theta$ in $[0°, 360°]$ for which the depth is exactly $9.5$ metres.",
+   "solution": "**Key idea:** Substitute the required depth into the model and solve the resulting trigonometric equation over the given interval.\n\n1. Set $d = 9.5$: $\\quad 5\\sin(\\theta) + 7 = 9.5$.\n2. Rearrange: $5\\sin(\\theta) = 2.5$, so $\\sin(\\theta) = 0.5$.\n3. Recall the exact value: $\\sin(30°) = 0.5$, so the reference angle is $30°$.\n4. Sine is positive in the first and second quadrants.\n5. First quadrant: $\\theta = 30°$. Second quadrant: $\\theta = 180° - 30° = 150°$.\n\n**Answer:** $\\theta = 30°$ or $\\theta = 150°$",
+   "answer": "$\\theta = 30°$ or $\\theta = 150°$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting the second solution",
+   "wrong": "$\\sin(x) = \\frac{1}{2}$, so $x = 30°$ only.",
+   "fix": "Every basic sine or cosine equation has two solutions in $[0°, 360°]$ (unless the value is $\\pm 1$ or $0$). Always check both quadrants where the ratio has the correct sign using the unit circle."
+  },
+  {
+   "title": "Mixing up the quadrant rules for sine, cosine and tangent",
+   "wrong": "Cosine is negative, so the solutions are in the first and second quadrants.",
+   "fix": "Use the CAST rule: All ratios are positive in Q1, Sine only in Q2, Tangent only in Q3, Cosine only in Q4. Cosine is negative in Q2 and Q3, not Q1 and Q2."
+  },
+  {
+   "title": "Using the wrong formula for the third- or fourth-quadrant angle",
+   "wrong": "Reference angle is $45°$, third quadrant solution: $x = 360° - 45° = 315°$.",
+   "fix": "The third quadrant solution is $180°$ plus the reference angle ($180° + 45° = 225°$), and the fourth quadrant solution is $360°$ minus the reference angle ($360° - 45° = 315°$). Make sure you use the right formula for each quadrant."
+  },
+  {
+   "title": "Forgetting to rearrange before finding the reference angle",
+   "wrong": "$2\\sin(x) = 1$, reference angle $= \\sin^{-1}(2) = $ error.",
+   "fix": "Always isolate the trigonometric ratio completely before finding the reference angle. Divide both sides by the coefficient first to get $\\sin(x) = \\frac{1}{2}$, then find the reference angle."
+  }
+ ],
+ "practice": {
+  "question": "Solve $2\\tan(x) - 2 = 0$ for $0° \\leq x \\leq 360°$.",
+  "answer": "$x = 45°$ or $x = 225°$",
+  "solution": "**Key idea:** Rearrange to isolate $\\tan(x)$, find the reference angle from exact values, then use the unit circle to find all solutions in the interval.\n\n1. Rearrange: $2\\tan(x) = 2$, so $\\tan(x) = 1$.\n2. Recall the exact value: $\\tan(45°) = 1$, so the reference angle is $45°$.\n3. Tangent is positive in the first and third quadrants.\n4. First quadrant solution: $x = 45°$.\n5. Third quadrant solution: $x = 180° + 45° = 225°$.\n\n**Answer:** $x = 45°$ or $x = 225°$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve trigonometric equations?",
+  "a": "To solve a trigonometric equation such as sin(x) = k, find the reference angle using the inverse trig function, then use the unit circle's symmetry and periodicity to find all solutions in the given interval. For example, sin(x) = 0.5 gives x = 30° and x = 150° in [0°, 360°]."
+ },
+ "turn": {
+  "question": "Find all solutions to $\\cos(x) = -\\dfrac{\\sqrt{3}}{2}$ in the interval $0^\\circ \\leq x \\leq 360^\\circ$. Enter both solutions separated by a comma (smaller value first). Give each answer in degrees as an exact whole number.",
+  "kind": "values",
+  "accept": {
+   "values": [
+    150,
+    210
+   ],
+   "tol": 0
+  },
+  "answer_display": "$x = 150^\\circ, \\; 210^\\circ$",
+  "hint": "Find the reference angle where $\\cos(\\theta) = \\dfrac{\\sqrt{3}}{2}$, then decide which quadrants give a negative cosine.",
+  "solution": "**Key idea:** Cosine is negative in the second and third quadrants. Use the reference angle to find both solutions.\n\n1. Find the reference angle: $\\cos(\\theta) = \\dfrac{\\sqrt{3}}{2}$ gives $\\theta = 30^\\circ$.\n2. Cosine is negative in quadrants 2 and 3, so solutions come from $180^\\circ - 30^\\circ$ and $180^\\circ + 30^\\circ$.\n3. Second quadrant: $x = 180^\\circ - 30^\\circ = 150^\\circ$.\n4. Third quadrant: $x = 180^\\circ + 30^\\circ = 210^\\circ$.\n5. Both values lie in $[0^\\circ, 360^\\circ]$, so both are valid solutions.\n\n**Answer:** $x = 150^\\circ, \\; 210^\\circ$"
+ },
+ "turn_checked": {
+  "my_answer": "150, 210",
+  "attempts": 1
+ }
+}

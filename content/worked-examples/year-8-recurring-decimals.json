@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Identifying and converting a fraction to a terminating decimal",
+   "question": "Convert $\\dfrac{9}{16}$ to a decimal and state whether it is terminating or recurring.",
+   "solution": "**Key idea:** If the denominator's only prime factors are 2s and 5s, the decimal terminates. Divide to find the decimal.\n\n1. Check the denominator: $16 = 2^4$. Only 2s, so the decimal **terminates**.\n2. Divide: $9 \\div 16$.\n$$\\begin{aligned} 9 \\div 16 &= 0.5625 \\end{aligned}$$\n3. Verify: $0.5625 \\times 16 = 9$ ✓\n\n**Answer:** $\\dfrac{9}{16} = 0.5625$ (terminating decimal)",
+   "answer": "$0.5625$ (terminating)"
+  },
+  {
+   "title": "Converting a fraction to a recurring decimal using dot notation",
+   "question": "Convert $\\dfrac{5}{12}$ to a recurring decimal. Write your answer using dot notation.",
+   "solution": "**Key idea:** Divide the numerator by the denominator. When a remainder repeats, the decimal recurs. Use a dot above the first and last repeating digit.\n\n1. Check the denominator: $12 = 2^2 \\times 3$. It has a factor of 3 (not just 2s and 5s), so the decimal **recurs**.\n2. Perform the division $5 \\div 12$:\n$$\\begin{aligned} 5 \\div 12 &= 0.41666\\ldots \\end{aligned}$$\n3. The digit 6 repeats forever, so the recurring part is just 6.\n4. In dot notation, place one dot above the 6: $0.41\\dot{6}$\n\n**Answer:** $\\dfrac{5}{12} = 0.41\\dot{6}$",
+   "answer": "$0.41\\dot{6}$"
+  },
+  {
+   "title": "Choosing container sizes using decimal conversions",
+   "question": "A recipe needs $\\dfrac{7}{9}$ of a litre of olive oil. A shop sells olive oil in bottles labelled $0.7\\overline{7}$ litres and $0.\\dot{7}\\dot{8}$ litres. Which bottle size exactly matches the amount the recipe needs? Show all working.",
+   "solution": "**Key idea:** Convert $\\dfrac{7}{9}$ to a recurring decimal and compare with the two bottle labels.\n\n1. Check the denominator: $9 = 3^2$. It has no factors of 2 or 5, so the decimal recurs.\n2. Divide: $7 \\div 9 = 0.7777\\ldots$\n3. Write in dot notation: $0.\\dot{7}$\n4. Compare with the bottle labels:\n   - $0.7\\overline{7} = 0.7777\\ldots = 0.\\dot{7}$ ✓\n   - $0.\\dot{7}\\dot{8} = 0.787878\\ldots$ ✗\n5. The first bottle, $0.7\\overline{7}$ litres, matches $\\dfrac{7}{9}$ exactly.\n\n**Answer:** The $0.7\\overline{7}$ litre bottle exactly matches the recipe.",
+   "answer": "The $0.7\\overline{7}$ litre bottle"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Putting dots over the wrong digits",
+   "wrong": "$\\dfrac{5}{12} = 0.41666\\ldots$ written as $0.\\dot{4}1\\dot{6}$ instead of $0.41\\dot{6}$",
+   "fix": "Dots go only above the digits that actually repeat. In $0.41666\\ldots$ only the 6 repeats, so only the 6 gets a dot: $0.41\\dot{6}$. The digits 4 and 1 appear only once and are not part of the repeating block."
+  },
+  {
+   "title": "Thinking a large denominator always means a recurring decimal",
+   "wrong": "$\\dfrac{3}{40}$ labelled as recurring because 40 is large",
+   "fix": "The size of the denominator does not decide the decimal type. Write the denominator in prime factor form. If it contains only 2s and 5s (like $40 = 2^3 \\times 5$), the decimal terminates, no matter how large the denominator looks."
+  },
+  {
+   "title": "Forgetting to simplify when converting a terminating decimal to a fraction",
+   "wrong": "$0.64 = \\dfrac{64}{100}$ left unsimplified",
+   "fix": "Always divide the numerator and denominator by their highest common factor. Here $\\text{HCF}(64, 100) = 4$, giving $\\dfrac{64}{100} = \\dfrac{16}{25}$. An unsimplified fraction is not fully correct."
+  },
+  {
+   "title": "Stopping the division too early and missing the recurring pattern",
+   "wrong": "$\\dfrac{2}{3} = 0.6$ (division stopped after one step)",
+   "fix": "Keep dividing until you see a remainder that has appeared before. That is the signal that the digits are repeating. For $\\dfrac{2}{3}$, the remainder 2 recurs immediately, giving $0.\\dot{6}$, not $0.6$."
+  }
+ ],
+ "practice": {
+  "question": "Convert $\\dfrac{7}{11}$ to a recurring decimal using dot notation.",
+  "answer": "$0.\\dot{6}\\dot{3}$",
+  "solution": "**Key idea:** Divide the numerator by the denominator, identify the repeating block, and place dots above the first and last digits of that block.\n\n1. Check the denominator: $11$ is prime and not 2 or 5, so the decimal **recurs**.\n2. Perform the division $7 \\div 11$:\n$$\\begin{aligned} 7 \\div 11 &= 0.636363\\ldots \\end{aligned}$$\n3. The block 63 repeats forever.\n4. Place a dot above the 6 (first repeating digit) and a dot above the 3 (last repeating digit): $0.\\dot{6}\\dot{3}$\n5. Verify: $0.\\dot{6}\\dot{3} \\times 11 = 6.\\dot{9}\\dot{3} \\div \\ldots$ Quick check: $0.6363\\ldots \\times 11 = 7$ ✓\n\n**Answer:** $\\dfrac{7}{11} = 0.\\dot{6}\\dot{3}$"
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you convert fractions to terminating or recurring decimals?",
+  "a": "Divide the numerator by the denominator. If the denominator's only prime factors are 2s and 5s, the decimal terminates (e.g. 3/8 = 0.375). Otherwise it recurs. Write recurring decimals with a dot above the first and last digit of the repeating block (e.g. 1/3 = 0.3̇, 1/7 = 0.1̇4285̇7)."
+ },
+ "turn": {
+  "question": "Convert $\\dfrac{9}{16}$ to a decimal.",
+  "kind": "number",
+  "accept": {
+   "value": 0.5625,
+   "tol": 0
+  },
+  "answer_display": "$0.5625$",
+  "hint": "Check the prime factors of 16 first, then divide 9 by 16.",
+  "solution": "**Key idea:** A fraction whose denominator has only factors of 2 and 5 produces a terminating decimal.\n\n1. Factorise the denominator: $16 = 2^4$, so the only prime factor is 2. The decimal will terminate.\n2. Perform the division: $9 \\div 16$.\n3. $9 \\div 16 = 0.5625$ (multiply numerator and denominator by $5^4 = 625$ to see it clearly: $\\dfrac{9 \\times 625}{16 \\times 625} = \\dfrac{5625}{10000}$).\n4. Verify: $0.5625 \\times 16 = 9$. ✓\n\n**Answer:** $0.5625$"
+ },
+ "turn_checked": {
+  "my_answer": "0.5625",
+  "attempts": 2
+ }
+}

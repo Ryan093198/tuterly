@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Diagonal of a rectangular prism",
+   "question": "A rectangular box has length $12$ cm, width $5$ cm and height $8$ cm. Find the length of the longest diagonal of the box, correct to one decimal place.",
+   "solution": "**Key idea:** The longest diagonal of a rectangular prism goes from one corner to the opposite corner. Use Pythagoras twice: first on the base, then use that result with the height.\n\n1. Find the diagonal $d$ of the base using Pythagoras:\n$$d^2 = 12^2 + 5^2 = 144 + 25 = 169$$\n$$d = 13 \\text{ cm}$$\n2. Use $d$ and the height to find the space diagonal $D$:\n$$D^2 = d^2 + 8^2 = 169 + 64 = 233$$\n$$D = \\sqrt{233} \\approx 15.3 \\text{ cm}$$\n\n**Answer:** The longest diagonal is approximately $15.3$ cm.",
+   "answer": "$D \\approx 15.3$ cm"
+  },
+  {
+   "title": "Similarity and Pythagoras to find a missing length",
+   "question": "Two right-angled triangles are similar. In the smaller triangle, the two shorter sides are $6$ cm and $8$ cm. The longer of those two sides in the larger triangle is $20$ cm. Find the hypotenuse of the larger triangle.",
+   "solution": "**Key idea:** Use Pythagoras to find the hypotenuse of the smaller triangle, then use the similarity ratio to scale it up.\n\n1. Find the hypotenuse of the smaller triangle:\n$$c^2 = 6^2 + 8^2 = 36 + 64 = 100 \\implies c = 10 \\text{ cm}$$\n2. The side of length $8$ cm in the smaller triangle corresponds to the side of length $20$ cm in the larger triangle. Find the scale factor:\n$$k = \\frac{20}{8} = 2.5$$\n3. Multiply the smaller hypotenuse by the scale factor:\n$$\\text{Larger hypotenuse} = 10 \\times 2.5 = 25 \\text{ cm}$$\n\n**Answer:** The hypotenuse of the larger triangle is $25$ cm.",
+   "answer": "$25$ cm"
+  },
+  {
+   "title": "Real-life problem: ladder against a wall",
+   "question": "A $6.5$ m ladder leans against a vertical wall. The base of the ladder is on horizontal ground and sits $2.5$ m from the base of the wall. A safety rule says the angle the ladder makes with the ground must be between $70°$ and $80°$. Use trigonometry to find the angle the ladder makes with the ground, correct to one decimal place, and state whether the ladder is positioned safely.",
+   "solution": "**Key idea:** The ladder, wall and ground form a right-angled triangle. Use the cosine ratio, since the adjacent side (ground distance) and hypotenuse (ladder) are known, to find the angle at the base.\n\n1. Identify the sides relative to the angle at the ground: adjacent $= 2.5$ m, hypotenuse $= 6.5$ m.\n2. Write the cosine ratio:\n$$\\cos(\\theta) = \\frac{2.5}{6.5}$$\n3. Solve for $\\theta$:\n$$\\theta = \\cos^{-1}\\!\\left(\\frac{2.5}{6.5}\\right) \\approx \\cos^{-1}(0.3846) \\approx 67.4°$$\n4. Compare with the safe range of $70°$ to $80°$: $67.4° < 70°$, so the ladder is outside the safe range.\n\n**Answer:** The ladder makes an angle of approximately $67.4°$ with the ground, which is not safe.",
+   "answer": "$\\theta \\approx 67.4°$, not safe"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to apply Pythagoras twice in 3D",
+   "wrong": "Student writes $D^2 = 12^2 + 5^2 + 8^2$ and jumps straight to $D = \\sqrt{233}$ without justifying the formula.",
+   "fix": "Always show both steps clearly: find the base diagonal first using $d^2 = l^2 + w^2$, then find the space diagonal using $D^2 = d^2 + h^2$. Skipping steps can lead to errors and loses marks."
+  },
+  {
+   "title": "Using the wrong scale factor in similarity",
+   "wrong": "Student matches the $6$ cm side (not the $8$ cm side) to $20$ cm, giving $k = 20/6$ and an incorrect hypotenuse.",
+   "fix": "Always match corresponding sides carefully before forming the ratio. Label which side in the smaller triangle lines up with which side in the larger triangle before calculating the scale factor."
+  },
+  {
+   "title": "Mixing up sin, cos and tan",
+   "wrong": "Student writes $\\sin(\\theta) = 2.5/6.5$ when the known sides are the adjacent and hypotenuse, giving the wrong angle.",
+   "fix": "Use SOH-CAH-TOA every time: label the sides as opposite, adjacent and hypotenuse relative to the angle you want, then choose the correct ratio. Writing the labels on a sketch helps avoid this."
+  },
+  {
+   "title": "Rounding too early in a multi-step problem",
+   "wrong": "Student rounds $d = \\sqrt{169} = 13$ cm correctly, but in a different problem rounds a decimal base diagonal early, causing the final answer to be inaccurate.",
+   "fix": "Keep full calculator accuracy in every intermediate step and only round at the very last step. Store intermediate values in your calculator's memory rather than writing down rounded decimals."
+  }
+ ],
+ "practice": {
+  "question": "Two right-angled triangles are similar. In the smaller triangle, the two shorter sides are $9$ cm and $12$ cm. The shorter of those two sides in the larger triangle is $15$ cm. Find the hypotenuse of the larger triangle.",
+  "answer": "$\\text{Hypotenuse} = 25$ cm",
+  "solution": "**Key idea:** Find the hypotenuse of the smaller triangle using Pythagoras, then scale it up using the similarity ratio.\n\n1. Find the hypotenuse of the smaller triangle:\n$$c^2 = 9^2 + 12^2 = 81 + 144 = 225 \\implies c = 15 \\text{ cm}$$\n2. The shorter side of $9$ cm in the smaller triangle corresponds to $15$ cm in the larger triangle. Find the scale factor:\n$$k = \\frac{15}{9} = \\frac{5}{3}$$\n3. Multiply the smaller hypotenuse by the scale factor:\n$$\\text{Larger hypotenuse} = 15 \\times \\frac{5}{3} = 25 \\text{ cm}$$\n\n**Answer:** The hypotenuse of the larger triangle is $25$ cm."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you apply Pythagoras' theorem to real-world and 3D problems in Year 9?",
+  "a": "Identify a right-angled triangle within the situation, label the two shorter sides and the hypotenuse, then use a² + b² = c². In 3D problems such as finding a box's space diagonal, apply Pythagoras twice: first across the base to get the base diagonal, then use that result as one leg of a second triangle with the height."
+ },
+ "turn": {
+  "question": "A rectangular box has a length of $9$ cm, a width of $6$ cm and a height of $6$ cm. Find the length of the space diagonal of the box, correct to 2 decimal places. Give your answer in cm.",
+  "kind": "number",
+  "accept": {
+   "value": 12.37,
+   "tol": 0.005,
+   "unit": "cm"
+  },
+  "answer_display": "$12.37$ cm",
+  "hint": "First use Pythagoras to find the diagonal across the base, then use that diagonal and the height as the two legs of a second right-angled triangle.",
+  "solution": "**Key idea:** The space diagonal of a rectangular box is found by applying Pythagoras' theorem twice.\n\n1. Find the base diagonal $d$, where the base has length $9$ cm and width $6$ cm:\n$$d = \\sqrt{9^2 + 6^2} = \\sqrt{81 + 36} = \\sqrt{117}$$\n2. The space diagonal $s$ forms a right-angled triangle with $d$ as one leg and the height $6$ cm as the other:\n$$s = \\sqrt{d^2 + 6^2} = \\sqrt{117 + 36} = \\sqrt{153}$$\n3. Evaluate using a calculator:\n$$s = \\sqrt{153} \\approx 12.3693\\ldots$$\n4. Round to 2 decimal places:\n$$s \\approx 12.37 \\text{ cm}$$\n\n**Answer:** $12.37$ cm"
+ },
+ "turn_checked": {
+  "my_answer": "12.37",
+  "attempts": 1
+ }
+}

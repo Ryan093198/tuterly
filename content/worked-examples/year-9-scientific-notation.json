@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Converting between scientific notation and decimal form",
+   "question": "Write each number in the form requested.\n\n(a) Write $3.07 \\times 10^5$ as an ordinary number.\n\n(b) Write $0.000 \\, 048$ in scientific notation.",
+   "solution": "**Key idea:** In scientific notation a number is written as $a \\times 10^n$, where $1 \\leq a < 10$ and $n$ is an integer. A positive power of 10 makes the number larger; a negative power makes it smaller.\n\n1. **(a)** $3.07 \\times 10^5$ means move the decimal point 5 places to the right: $$3.07 \\times 10^5 = 307\\,000$$\n2. **(b)** The first significant digit in $0.000\\,048$ is 4. Count how many places the decimal point must move right to give a number between 1 and 10: it moves 5 places, giving $4.8$. Because the original number is less than 1, the power is negative: $$0.000\\,048 = 4.8 \\times 10^{-5}$$\n\n**Answer:** (a) $307\\,000$ and (b) $4.8 \\times 10^{-5}$",
+   "answer": "(a) $307\\,000$ and (b) $4.8 \\times 10^{-5}$"
+  },
+  {
+   "title": "Multiplying and dividing in scientific notation",
+   "question": "Evaluate each of the following, giving your answer in scientific notation.\n\n(a) $(3.2 \\times 10^4) \\times (4.5 \\times 10^6)$\n\n(b) $\\dfrac{6.6 \\times 10^3}{2.4 \\times 10^{-2}}$",
+   "solution": "**Key idea:** Multiply (or divide) the coefficients separately from the powers of 10, using index laws $10^m \\times 10^n = 10^{m+n}$ and $10^m \\div 10^n = 10^{m-n}$. Adjust if the coefficient falls outside $[1, 10)$.\n\n1. **(a)** Multiply the coefficients and add the indices:\n$$\\begin{aligned} (3.2 \\times 4.5) \\times 10^{4+6} &= 14.4 \\times 10^{10} \\end{aligned}$$\n2. $14.4$ is not in $[1, 10)$, so adjust: $14.4 = 1.44 \\times 10^1$, giving $$1.44 \\times 10^{11}$$\n3. **(b)** Divide the coefficients and subtract the indices:\n$$\\begin{aligned} \\frac{6.6}{2.4} \\times 10^{3-(-2)} &= 2.75 \\times 10^{5} \\end{aligned}$$\n4. $2.75$ is already in $[1, 10)$, so no adjustment is needed.\n\n**Answer:** (a) $1.44 \\times 10^{11}$ and (b) $2.75 \\times 10^{5}$",
+   "answer": "(a) $1.44 \\times 10^{11}$ and (b) $2.75 \\times 10^{5}$"
+  },
+  {
+   "title": "Real-world problem: comparing distances in space",
+   "question": "The distance from Earth to the Sun is approximately $1.496 \\times 10^{11}$ metres. The distance from Earth to the Moon is approximately $3.84 \\times 10^{8}$ metres. How many times farther from Earth is the Sun than the Moon? Give your answer correct to the nearest whole number.",
+   "solution": "**Key idea:** \"How many times farther\" means dividing the larger distance by the smaller distance. Divide numbers in scientific notation by handling the coefficients and powers of 10 separately.\n\n1. Set up the division:\n$$\\frac{1.496 \\times 10^{11}}{3.84 \\times 10^{8}}$$\n2. Divide the coefficients:\n$$\\frac{1.496}{3.84} \\approx 0.38958\\ldots$$\n3. Divide the powers of 10:\n$$10^{11} \\div 10^{8} = 10^{3}$$\n4. Combine and simplify:\n$$0.38958\\ldots \\times 10^{3} = 389.58\\ldots$$\n5. Round to the nearest whole number: $\\approx 390$.\n\n**Answer:** The Sun is approximately $390$ times farther from Earth than the Moon.",
+   "answer": "Approximately $390$ times farther"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Coefficient not between 1 and 10",
+   "wrong": "Student writes $48 \\times 10^{-6}$ instead of $4.8 \\times 10^{-5}$.",
+   "fix": "Scientific notation requires the coefficient to satisfy $1 \\leq a < 10$. If your coefficient is 48, move its decimal point one place left and increase the power of 10 by 1 to compensate."
+  },
+  {
+   "title": "Adding indices instead of keeping them equal when adding",
+   "wrong": "$(3 \\times 10^4) + (2 \\times 10^3) = 5 \\times 10^7$.",
+   "fix": "Index laws apply to multiplication, not addition. To add or subtract, first rewrite both numbers with the same power of 10, then add the coefficients: $(3 \\times 10^4) + (2 \\times 10^3) = (3 \\times 10^4) + (0.2 \\times 10^4) = 3.2 \\times 10^4$."
+  },
+  {
+   "title": "Sign error with negative indices when dividing",
+   "wrong": "$10^{3} \\div 10^{-2} = 10^{1}$ (subtracting $3 - 2$ instead of $3 - (-2)$).",
+   "fix": "Subtracting a negative gives addition: $10^{3} \\div 10^{-2} = 10^{3-(-2)} = 10^{5}$. Always write the subtraction in full before simplifying."
+  },
+  {
+   "title": "Confusing the direction of the decimal shift",
+   "wrong": "Student writes $6.2 \\times 10^{-4} = 62\\,000$ by moving the decimal point right for a negative power.",
+   "fix": "A negative power of 10 means the number is small (less than 1), so move the decimal point to the left. $6.2 \\times 10^{-4} = 0.000\\,62$. A quick check: multiplying by $10^{-4}$ makes the number smaller, not larger."
+  }
+ ],
+ "practice": {
+  "question": "Evaluate $(7.5 \\times 10^{-3}) \\times (8.0 \\times 10^{6})$, giving your answer in scientific notation.",
+  "answer": "$6.0 \\times 10^{4}$",
+  "solution": "**Key idea:** Multiply the coefficients together and add the indices, then adjust if the coefficient is outside $[1, 10)$.\n\n1. Multiply the coefficients: $7.5 \\times 8.0 = 60$.\n2. Add the indices: $10^{-3} \\times 10^{6} = 10^{-3+6} = 10^{3}$.\n3. Combine: $60 \\times 10^{3}$.\n4. Adjust the coefficient: $60 = 6.0 \\times 10^{1}$, so $$6.0 \\times 10^{1} \\times 10^{3} = 6.0 \\times 10^{4}$$\n\n**Answer:** $6.0 \\times 10^{4}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is scientific notation and how do you use it in Year 9?",
+  "a": "Scientific notation expresses very large or very small numbers as a number between 1 and 10 multiplied by a power of 10, written as $a \\times 10^n$. To convert, count how many places the decimal point moves. For example, 0.000047 = $4.7 \\times 10^{-5}$ and 93 000 000 = $9.3 \\times 10^7$."
+ },
+ "turn": {
+  "question": "The mass of a proton is $1.673 \\times 10^{-27}$ kg and the mass of an electron is $9.109 \\times 10^{-31}$ kg. How many times heavier is a proton than an electron? Give your answer correct to the nearest whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 1836,
+   "tol": 0.5
+  },
+  "answer_display": "$1836$",
+  "hint": "Divide the mass of the proton by the mass of the electron, and handle the powers of 10 separately.",
+  "solution": "**Key idea:** When dividing numbers in scientific notation, divide the decimal parts and subtract the exponents.\n\n1. Write the division: $$\\frac{1.673 \\times 10^{-27}}{9.109 \\times 10^{-31}}$$\n2. Divide the decimal parts: $$\\frac{1.673}{9.109} \\approx 0.18366$$\n3. Divide the powers of 10: $$\\frac{10^{-27}}{10^{-31}} = 10^{-27-(-31)} = 10^{4}$$\n4. Combine: $$0.18366 \\times 10^{4} = 1836.6$$\n5. Round to the nearest whole number: $1837$. \n\nWait, let me recompute: $1.673 \\div 9.109 = 0.183665...$, and $0.183665 \\times 10^4 = 1836.65...$, which rounds to $1837$.\n\nActually, using more precise values: $1.673 \\div 9.109$. $9.109 \\times 0.1836 = 1.6728...$, so $1.673 \\div 9.109 \\approx 0.18368$, giving $1836.8$, which rounds to $\\mathbf{1837}$.\n\n**Answer:** $1837$"
+ },
+ "turn_checked": {
+  "my_answer": "1836",
+  "attempts": 1
+ }
+}

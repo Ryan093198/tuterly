@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Two-step tree diagram with equal branches",
+   "question": "A fair coin is flipped twice. Draw a tree diagram and find the probability of getting exactly one Head.",
+   "solution": "**Key idea:** Multiply probabilities along each branch to find the probability of each outcome, then add the probabilities of all outcomes that match the event.\n\n1. List the branches for the first flip: Head (H) with probability $\\dfrac{1}{2}$, Tail (T) with probability $\\dfrac{1}{2}$.\n2. From each branch, list a second flip: H or T, each with probability $\\dfrac{1}{2}$. The four outcomes are HH, HT, TH, TT.\n3. Multiply along branches to find each outcome probability:\n$$\\begin{aligned} P(\\text{HH}) &= \\tfrac{1}{2} \\times \\tfrac{1}{2} = \\tfrac{1}{4} \\\\ P(\\text{HT}) &= \\tfrac{1}{2} \\times \\tfrac{1}{2} = \\tfrac{1}{4} \\\\ P(\\text{TH}) &= \\tfrac{1}{2} \\times \\tfrac{1}{2} = \\tfrac{1}{4} \\\\ P(\\text{TT}) &= \\tfrac{1}{2} \\times \\tfrac{1}{2} = \\tfrac{1}{4} \\end{aligned}$$\n4. Check: $\\dfrac{1}{4} + \\dfrac{1}{4} + \\dfrac{1}{4} + \\dfrac{1}{4} = 1$ ✓\n5. Exactly one Head occurs for HT and TH:\n$$P(\\text{exactly one Head}) = \\tfrac{1}{4} + \\tfrac{1}{4} = \\tfrac{1}{2}$$\n**Answer:** $\\dfrac{1}{2}$",
+   "answer": "$\\dfrac{1}{2}$"
+  },
+  {
+   "title": "Two-step tree diagram with unequal branches",
+   "question": "A bag contains 3 red marbles and 2 blue marbles. One marble is drawn at random, its colour is noted, and it is put back in the bag. A second marble is then drawn at random. Find the probability that the two marbles drawn are different colours.",
+   "solution": "**Key idea:** Because the marble is replaced, the probabilities on the second set of branches are the same as on the first. Multiply along branches, then add the matching outcomes.\n\n1. First draw: $P(\\text{Red}) = \\dfrac{3}{5}$, $P(\\text{Blue}) = \\dfrac{2}{5}$.\n2. Second draw (same bag): $P(\\text{Red}) = \\dfrac{3}{5}$, $P(\\text{Blue}) = \\dfrac{2}{5}$.\n3. Multiply along branches for all four outcomes:\n$$\\begin{aligned} P(\\text{RR}) &= \\tfrac{3}{5} \\times \\tfrac{3}{5} = \\tfrac{9}{25} \\\\ P(\\text{RB}) &= \\tfrac{3}{5} \\times \\tfrac{2}{5} = \\tfrac{6}{25} \\\\ P(\\text{BR}) &= \\tfrac{2}{5} \\times \\tfrac{3}{5} = \\tfrac{6}{25} \\\\ P(\\text{BB}) &= \\tfrac{2}{5} \\times \\tfrac{2}{5} = \\tfrac{4}{25} \\end{aligned}$$\n4. Check: $\\dfrac{9}{25} + \\dfrac{6}{25} + \\dfrac{6}{25} + \\dfrac{4}{25} = \\dfrac{25}{25} = 1$ ✓\n5. Different colours are RB and BR:\n$$P(\\text{different colours}) = \\tfrac{6}{25} + \\tfrac{6}{25} = \\tfrac{12}{25}$$\n**Answer:** $\\dfrac{12}{25}$",
+   "answer": "$\\dfrac{12}{25}$"
+  },
+  {
+   "title": "Three-step tree diagram: real-life problem",
+   "question": "At a school fundraiser, a student spins a spinner three times. The spinner has four equal sections numbered 1 to 4. A spin is called a win if the spinner lands on 4. The student wins a prize if they get a win on at least two of the three spins. Find the probability that the student wins a prize.",
+   "solution": "**Key idea:** For each spin, $P(\\text{win}) = \\dfrac{1}{4}$ and $P(\\text{not win}) = \\dfrac{3}{4}$. Use a three-step tree diagram, multiply along branches, and add the probabilities for outcomes with two or three wins.\n\n1. Label each spin as W (win, $p = \\dfrac{1}{4}$) or N (not win, $p = \\dfrac{3}{4}$). There are $2^3 = 8$ outcomes.\n2. Outcomes with exactly two wins: WWN, WNW, NWW. Each has probability $\\dfrac{1}{4} \\times \\dfrac{1}{4} \\times \\dfrac{3}{4} = \\dfrac{3}{64}$.\n3. Outcome with exactly three wins: WWW. Its probability is $\\dfrac{1}{4} \\times \\dfrac{1}{4} \\times \\dfrac{1}{4} = \\dfrac{1}{64}$.\n4. Add all matching outcomes:\n$$\\begin{aligned} P(\\text{at least two wins}) &= 3 \\times \\tfrac{3}{64} + \\tfrac{1}{64} \\\\ &= \\tfrac{9}{64} + \\tfrac{1}{64} \\\\ &= \\tfrac{10}{64} \\\\ &= \\tfrac{5}{32} \\end{aligned}$$\n**Answer:** $\\dfrac{5}{32}$",
+   "answer": "$\\dfrac{5}{32}$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding instead of multiplying along branches",
+   "wrong": "P(HH) = 1/2 + 1/2 = 1",
+   "fix": "To find the probability of a sequence of outcomes, multiply the probabilities along the branches, not add them. Adding is only used when combining separate outcomes (branches) at the end."
+  },
+  {
+   "title": "Forgetting to add all matching outcomes",
+   "wrong": "P(exactly one Head) = 1/4, using only HT and ignoring TH",
+   "fix": "Look at every branch in the tree diagram and include all outcomes that satisfy the condition. Here, both HT and TH give exactly one Head, so both probabilities must be added."
+  },
+  {
+   "title": "Not adjusting branch probabilities after drawing without replacement",
+   "wrong": "Drawing two marbles without replacement but using 3/5 and 2/5 for both draws",
+   "fix": "When items are not replaced, the total number in the bag decreases by one after each draw. Recalculate the probabilities on the second (and third) set of branches using the updated total and remaining counts."
+  },
+  {
+   "title": "Confusing independence with equal probabilities",
+   "wrong": "Saying two events are independent because P(A) = P(B)",
+   "fix": "Two events A and B are independent if $P(A \\cap B) = P(A) \\times P(B)$, which means knowing one outcome does not change the probability of the other. Equal probabilities have nothing to do with independence."
+  }
+ ],
+ "practice": {
+  "question": "A box contains 4 green counters and 1 yellow counter. A counter is chosen at random, its colour is noted, and it is returned to the box. A second counter is then chosen at random. Find the probability that at least one of the two counters chosen is yellow.",
+  "answer": "$\\dfrac{9}{25}$",
+  "solution": "**Key idea:** With replacement, branch probabilities stay the same for each draw. Find the probability of the complementary event (no yellow counters) and subtract from 1.\n\n1. Each draw: $P(\\text{Yellow}) = \\dfrac{1}{5}$, $P(\\text{Green}) = \\dfrac{4}{5}$.\n2. The only outcome with no yellow counter is GG:\n$$P(\\text{GG}) = \\tfrac{4}{5} \\times \\tfrac{4}{5} = \\tfrac{16}{25}$$\n3. Use the complement:\n$$P(\\text{at least one Yellow}) = 1 - P(\\text{GG}) = 1 - \\tfrac{16}{25} = \\tfrac{9}{25}$$\n4. Check by adding all outcomes: $P(\\text{YY}) + P(\\text{YG}) + P(\\text{GY}) = \\tfrac{1}{25} + \\tfrac{4}{25} + \\tfrac{4}{25} = \\tfrac{9}{25}$ ✓\n**Answer:** $\\dfrac{9}{25}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use tree diagrams to find probabilities in multi-step experiments?",
+  "a": "Draw a branch for each outcome at every step, write the probability on each branch, then multiply along the branches to find the probability of each combined outcome. All outcome probabilities must sum to 1. For example, flipping a coin twice: P(HH) = 0.5 × 0.5 = 0.25."
+ },
+ "turn": {
+  "question": "A bag contains 3 red and 2 blue marbles. A marble is drawn, its colour is recorded, and it is **not** replaced. A second marble is then drawn. What is the probability that both marbles are red? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 0.3,
+   "tol": 0.005,
+   "unit": ""
+  },
+  "answer_display": "$0.30$",
+  "hint": "After the first red marble is removed, how many marbles are left in the bag, and how many of them are red?",
+  "solution": "**Key idea:** Multiply the probabilities along the branches of the tree diagram. Because the marble is not replaced, the probabilities change at the second step (the events are dependent).\n\n1. At the first draw there are 5 marbles: 3 red and 2 blue. So $$P(\\text{1st red}) = \\frac{3}{5}.$$\n2. If the first marble was red, 4 marbles remain: 2 red and 2 blue. So $$P(\\text{2nd red} \\mid \\text{1st red}) = \\frac{2}{4} = \\frac{1}{2}.$$\n3. Multiply along the branches: $$P(\\text{both red}) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}.$$\n4. Convert to a decimal: $$\\frac{3}{10} = 0.30.$$\n\n**Answer:** $0.30$"
+ },
+ "turn_checked": {
+  "my_answer": "0.30",
+  "attempts": 1
+ }
+}

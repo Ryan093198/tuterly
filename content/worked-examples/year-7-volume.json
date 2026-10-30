@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Volume of a rectangular prism",
+   "question": "Find the volume of a rectangular prism with length $12$ cm, width $5$ cm and height $4$ cm.",
+   "solution": "**Key idea:** The volume of a rectangular prism is length times width times height.\n\n1. Write the formula: $V = l \\times w \\times h$\n2. Substitute the values: $V = 12 \\times 5 \\times 4$\n3. Calculate: $V = 240$\n\n**Answer:** The volume is $240$ cm³.",
+   "answer": "$240$ cm³"
+  },
+  {
+   "title": "Volume of a triangular prism",
+   "question": "A triangular prism has a triangular cross-section with a base of $6$ cm and a perpendicular height of $5$ cm. The prism has a length of $10$ cm. Find the volume of the prism.",
+   "solution": "**Key idea:** The volume of a prism is the area of its cross-section multiplied by its length. For a triangular cross-section, use $A = \\frac{1}{2} \\times b \\times h$.\n\n1. Find the area of the triangular cross-section: $A = \\frac{1}{2} \\times 6 \\times 5 = 15$ cm²\n2. Write the volume formula: $V = A \\times l$\n3. Substitute the values: $V = 15 \\times 10$\n4. Calculate: $V = 150$\n\n**Answer:** The volume is $150$ cm³.",
+   "answer": "$150$ cm³"
+  },
+  {
+   "title": "Volume and capacity of a garden bed",
+   "question": "Mia is building a rectangular garden bed that is $2$ m long, $80$ cm wide and $25$ cm deep. She needs to fill it with soil. One bag of soil contains $40$ litres. How many whole bags of soil does Mia need to buy to completely fill the garden bed? (Note: $1$ litre $= 1000$ cm³)",
+   "solution": "**Key idea:** Convert all measurements to the same unit first, then find the volume and convert to litres to compare with the bag size.\n\n1. Convert all measurements to centimetres: length $= 200$ cm, width $= 80$ cm, height $= 25$ cm.\n2. Find the volume: $V = 200 \\times 80 \\times 25 = 400\\,000$ cm³\n3. Convert to litres: $400\\,000 \\div 1000 = 400$ litres\n4. Find the number of bags: $400 \\div 40 = 10$ bags\n\n**Answer:** Mia needs to buy $10$ bags of soil.",
+   "answer": "$10$ bags"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to halve the triangle's area",
+   "wrong": "Area of triangle $= 6 \\times 5 = 30$ cm², so $V = 30 \\times 10 = 300$ cm³",
+   "fix": "The area of a triangle is $\\frac{1}{2} \\times base \\times height$, not just $base \\times height$. Always include the $\\frac{1}{2}$ before multiplying by the prism's length."
+  },
+  {
+   "title": "Mixing up units (metres and centimetres)",
+   "wrong": "$V = 2 \\times 80 \\times 25 = 4000$ cm³ (using 2 m without converting)",
+   "fix": "Before substituting into any formula, check that every measurement is in the same unit. Convert metres to centimetres by multiplying by $100$, so $2$ m $= 200$ cm."
+  },
+  {
+   "title": "Confusing length of prism with height of triangle",
+   "wrong": "Using the prism's length of $10$ cm as the height in the triangle area formula instead of $5$ cm",
+   "fix": "A triangular prism has two different heights: the perpendicular height of the triangular face, and the length the prism extends in 3D. Identify which measurement belongs to the triangle and which is the prism's length before calculating."
+  },
+  {
+   "title": "Forgetting to convert cm³ to litres",
+   "wrong": "$V = 400\\,000$ cm³, so Mia needs $400\\,000 \\div 40 = 10\\,000$ bags",
+   "fix": "Bag sizes are given in litres, not cm³. Convert first using $1000$ cm³ $= 1$ litre, then compare with the bag size."
+  }
+ ],
+ "practice": {
+  "question": "A triangular prism has a triangular cross-section with a base of $8$ cm and a perpendicular height of $3$ cm. The length of the prism is $15$ cm. Find the volume of the prism.",
+  "answer": "$180$ cm³",
+  "solution": "**Key idea:** Find the area of the triangular cross-section first, then multiply by the length of the prism.\n\n1. Find the area of the triangular cross-section: $A = \\frac{1}{2} \\times 8 \\times 3 = 12$ cm²\n2. Write the volume formula: $V = A \\times l$\n3. Substitute the values: $V = 12 \\times 15$\n4. Calculate: $V = 180$\n\n**Answer:** The volume is $180$ cm³."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the volume of a prism in Year 7?",
+  "a": "Volume of a right prism = area of cross-section × length. For a rectangular prism use length × width × height; for a triangular prism use ½ × base × height of triangle × length. For example, a rectangular prism 5 cm × 3 cm × 4 cm has volume 60 cm³."
+ },
+ "turn": {
+  "question": "A triangular prism has a triangular face with base $8$ cm and perpendicular height $5$ cm. The prism is $12$ cm long. What is the volume of the prism in cm³?",
+  "kind": "number",
+  "accept": {
+   "value": 240,
+   "tol": 0,
+   "unit": "cm³"
+  },
+  "answer_display": "$240 \\text{ cm}^3$",
+  "hint": "Find the area of the triangular cross-section first, then multiply by the length of the prism.",
+  "solution": "**Key idea:** Volume of a prism = area of cross-section × length, and the cross-section here is a triangle.\n\n1. Write the formula for the area of the triangular face: $A = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$\n2. Substitute the values: $A = \\frac{1}{2} \\times 8 \\times 5 = 20 \\text{ cm}^2$\n3. Write the volume formula: $V = A \\times \\text{length}$\n4. Substitute: $V = 20 \\times 12 = 240 \\text{ cm}^3$\n\n**Answer:** $240 \\text{ cm}^3$"
+ },
+ "turn_checked": {
+  "my_answer": "240",
+  "attempts": 1
+ }
+}

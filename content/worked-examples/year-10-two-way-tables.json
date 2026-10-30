@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Completing a two-way table",
+   "question": "A survey of 80 students recorded whether each student plays a sport (Yes or No) and their year level (Year 9 or Year 10). The partially completed two-way table is shown below.\n\n| | Plays sport | Does not play sport | Total |\n|---|---|---|---|\n| Year 9 | 27 | 13 | 40 |\n| Year 10 | 18 | ? | 40 |\n| **Total** | ? | ? | 80 |\n\nFind the three missing values.",
+   "solution": "**Key idea:** Every row total and column total must add up to the grand total of 80.\n\n1. Find the missing Year 10 frequency for \"Does not play sport\":\n$$40 - 18 = 22$$\n2. Find the column total for \"Plays sport\":\n$$27 + 18 = 45$$\n3. Find the column total for \"Does not play sport\":\n$$13 + 22 = 35$$\n\nCheck: $45 + 35 = 80$ ✓\n\n**Answer:** The missing values are 22, 45 and 35.",
+   "answer": "22, 45 and 35"
+  },
+  {
+   "title": "Calculating joint, marginal and conditional frequencies",
+   "question": "A group of 120 adults were surveyed about their preferred type of exercise (Gym or Outdoors) and whether they own a pet (Yes or No). The completed two-way table is below.\n\n| | Gym | Outdoors | Total |\n|---|---|---|---|\n| Owns a pet | 24 | 52 | 76 |\n| Does not own a pet | 30 | 14 | 44 |\n| **Total** | 54 | 66 | 120 |\n\n(a) State the joint frequency of adults who prefer Outdoors and own a pet.\n(b) State the marginal frequency of adults who prefer Gym.\n(c) Calculate the conditional frequency: of those who prefer Outdoors, what percentage own a pet? Round to one decimal place.",
+   "solution": "**Key idea:** A joint frequency is a single cell count; a marginal frequency is a row or column total; a conditional frequency restricts attention to one row or column.\n\n1. **(a)** Read the cell where \"Outdoors\" and \"Owns a pet\" meet:\n$$\\text{Joint frequency} = 52$$\n2. **(b)** Read the column total for \"Gym\":\n$$\\text{Marginal frequency} = 54$$\n3. **(c)** The total who prefer Outdoors is 66. Of these, 52 own a pet:\n$$\\frac{52}{66} \\times 100 \\approx 78.8\\%$$\n\n**Answer:** (a) 52, (b) 54, (c) approximately $78.8\\%$",
+   "answer": "(a) 52, (b) 54, (c) 78.8%"
+  },
+  {
+   "title": "Identifying a relationship between two categorical variables",
+   "question": "A school canteen recorded the lunch choice (Hot meal or Sandwich) and the year level (Junior: Years 7 and 8, or Senior: Years 9 and 10) for 200 students on one day.\n\n| | Hot meal | Sandwich | Total |\n|---|---|---|---|\n| Junior | 72 | 28 | 100 |\n| Senior | 38 | 62 | 100 |\n| **Total** | 110 | 90 | 200 |\n\nCalculate the percentage of Juniors who chose a hot meal and the percentage of Seniors who chose a hot meal. Use these values to describe whether there appears to be a relationship between year level and lunch choice.",
+   "solution": "**Key idea:** To compare groups fairly, convert each row to percentages of its own row total, then compare the percentages across rows.\n\n1. Percentage of Juniors who chose a hot meal:\n$$\\frac{72}{100} \\times 100 = 72\\%$$\n2. Percentage of Seniors who chose a hot meal:\n$$\\frac{38}{100} \\times 100 = 38\\%$$\n3. Compare the two conditional percentages: $72\\%$ of Juniors chose a hot meal compared with only $38\\%$ of Seniors. The percentages are very different, so the two variables are not distributed in the same way across year levels.\n4. Describe the relationship: Junior students are much more likely to choose a hot meal than Senior students. This suggests there is a relationship between year level and lunch choice, with Juniors favouring hot meals and Seniors favouring sandwiches.\n\n**Answer:** Juniors: $72\\%$ chose a hot meal; Seniors: $38\\%$ chose a hot meal. The large difference suggests there is a relationship between year level and lunch choice.",
+   "answer": "Juniors 72%, Seniors 38%; the large difference suggests a relationship between year level and lunch choice"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Adding a cell to the grand total instead of the row or column total",
+   "wrong": "Row total for Year 10: $18 + 40 = 58$ (adding the grand total instead of the missing cell)",
+   "fix": "A row total is the sum of only the cells in that row. Use the known row total to find the missing cell by subtracting: $40 - 18 = 22$. The grand total is used only to check that all row totals or all column totals add up correctly."
+  },
+  {
+   "title": "Using the grand total instead of the row or column total for a conditional frequency",
+   "wrong": "Percentage of Outdoors people who own a pet: $\\frac{52}{120} \\times 100 \\approx 43.3\\%$ (using the grand total 120)",
+   "fix": "A conditional frequency only looks at one group, so the denominator must be the total for that specific row or column, not the grand total. Here the correct denominator is 66 (all Outdoors respondents), giving $\\frac{52}{66} \\times 100 \\approx 78.8\\%$."
+  },
+  {
+   "title": "Confusing joint frequency with conditional frequency",
+   "wrong": "\"The conditional frequency of Gym users who own a pet is 24.\"",
+   "fix": "A joint frequency is a raw count from a single cell (e.g. 24 people prefer Gym and own a pet). A conditional frequency is a proportion or percentage calculated within a specific group (e.g. $\\frac{24}{54} \\times 100 \\approx 44.4\\%$ of Gym users own a pet). Always express a conditional frequency as a percentage or fraction, not a raw count."
+  },
+  {
+   "title": "Claiming a relationship without comparing conditional percentages",
+   "wrong": "\"More juniors chose hot meals (72) than seniors (38), so year level affects lunch choice.\"",
+   "fix": "Raw counts can be misleading when group sizes differ. Always convert each row (or column) to percentages of its own total before comparing. If the row totals are equal it is less of an issue, but comparing percentages is the correct method and is expected in your written response."
+  }
+ ],
+ "practice": {
+  "question": "180 customers at a cinema were surveyed about their age group (Under 25 or 25 and over) and their snack choice (Popcorn or No popcorn). The partially completed two-way table is shown below.\n\n| | Popcorn | No popcorn | Total |\n|---|---|---|---|\n| Under 25 | 63 | ? | 90 |\n| 25 and over | ? | 42 | 90 |\n| **Total** | ? | ? | 180 |\n\n(a) Complete the table by finding the four missing values.\n(b) Calculate the percentage of customers aged Under 25 who chose popcorn.\n(c) Calculate the percentage of customers aged 25 and over who chose popcorn.\n(d) Do the results suggest a relationship between age group and snack choice? Explain.",
+  "answer": "(a) 27, 48, 111, 69; (b) 70%; (c) approximately 53.3%; (d) Yes, a relationship is suggested because Under 25 customers chose popcorn at a noticeably higher rate (70%) than those aged 25 and over (53.3%).",
+  "solution": "**Key idea:** Use row totals to find missing cells, then convert to row percentages to compare groups and identify a possible relationship.\n\n1. Missing \"No popcorn\" cell for Under 25: $90 - 63 = 27$\n2. Missing \"Popcorn\" cell for 25 and over: $90 - 42 = 48$\n3. Column totals: Popcorn $= 63 + 48 = 111$; No popcorn $= 27 + 42 = 69$. Check: $111 + 69 = 180$ ✓\n4. Percentage of Under 25 who chose popcorn:\n$$\\frac{63}{90} \\times 100 = 70\\%$$\n5. Percentage of 25 and over who chose popcorn:\n$$\\frac{48}{90} \\times 100 \\approx 53.3\\%$$\n6. The conditional percentages differ by about $16.7$ percentage points ($70\\%$ vs $53.3\\%$), suggesting that younger customers are more likely to choose popcorn. This indicates a possible relationship between age group and snack choice.\n\n**Answer:** (a) 27, 48, 111, 69; (b) $70\\%$; (c) $\\approx 53.3\\%$; (d) Yes, the difference in conditional percentages suggests a relationship, with Under 25 customers more likely to choose popcorn."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are two-way tables and how do you use them to find relationships between categorical variables?",
+  "a": "A two-way table displays the frequencies of two categorical variables at once, with one variable across the rows and the other across the columns. To find a relationship, compare conditional frequencies (row or column percentages) across groups. For example, if 80% of one group prefers option A but only 30% of another does, a relationship likely exists."
+ },
+ "turn": {
+  "question": "A survey of 200 students recorded their year level and whether they own a pet. The results are shown in the table below.\n\n| | Owns a pet | Does not own a pet | Total |\n|---|---|---|---|\n| Year 9 | 54 | 36 | 90 |\n| Year 10 | 63 | 47 | 110 |\n| **Total** | 117 | 83 | 200 |\n\nWhat percentage of Year 9 students own a pet? Give your answer correct to 1 decimal place.",
+  "kind": "number",
+  "accept": {
+   "value": 60,
+   "tol": 0.05,
+   "unit": "%"
+  },
+  "answer_display": "$60.0\\%$",
+  "hint": "Divide the number of Year 9 students who own a pet by the total number of Year 9 students, then multiply by 100.",
+  "solution": "**Key idea:** A conditional frequency (as a percentage) is found by dividing the frequency in a cell by the row total (or column total) for that group, then multiplying by 100.\n\n1. Identify the number of Year 9 students who own a pet: $54$.\n2. Identify the total number of Year 9 students: $90$.\n3. Calculate the conditional frequency: $$\\frac{54}{90} \\times 100$$\n4. Evaluate: $$\\begin{aligned} \\frac{54}{90} \\times 100 &= 0.6 \\times 100 \\\\ &= 60.0\\% \\end{aligned}$$\n5. This means 60.0% of Year 9 students own a pet. (For comparison, $\\frac{63}{110} \\times 100 \\approx 57.3\\%$ of Year 10 students own a pet, suggesting only a weak relationship between year level and pet ownership.)\n\n**Answer:** $60.0\\%$"
+ },
+ "turn_checked": {
+  "my_answer": "60.0",
+  "attempts": 1
+ }
+}

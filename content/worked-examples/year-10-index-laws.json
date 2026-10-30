@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Multiplying algebraic terms using the product law",
+   "question": "Simplify $3a^4 \\times 5a^3$.",
+   "solution": "**Key idea:** When multiplying terms with the same base, add the exponents: $a^m \\times a^n = a^{m+n}$.\n\n1. Multiply the coefficients: $3 \\times 5 = 15$.\n2. Apply the product law to the powers of $a$: $a^4 \\times a^3 = a^{4+3} = a^7$.\n3. Write the result: $15a^7$.\n\n**Answer:** $15a^7$",
+   "answer": "$15a^7$"
+  },
+  {
+   "title": "Combining product, quotient and power laws",
+   "question": "Simplify $\\dfrac{(3x^2y)^3}{9x^4y^2}$, giving your answer with positive indices only.",
+   "solution": "**Key idea:** Expand any brackets using the power law first, then apply the quotient law to simplify.\n\n1. Expand the numerator using the power law: $(3x^2y)^3 = 3^3 \\cdot x^{2 \\times 3} \\cdot y^3 = 27x^6y^3$.\n2. Write the full expression: $\\dfrac{27x^6y^3}{9x^4y^2}$.\n3. Divide the coefficients: $\\dfrac{27}{9} = 3$.\n4. Apply the quotient law to each base: $x^{6-4} = x^2$ and $y^{3-2} = y^1 = y$.\n5. Write the result: $3x^2y$.\n\n**Answer:** $3x^2y$",
+   "answer": "$3x^2y$"
+  },
+  {
+   "title": "Applying index laws in a real-life context",
+   "question": "A square solar panel has a side length of $2x^3$ metres. Four of these panels are laid flat in a single row end to end, and the combined area is divided equally among $8x^2$ households. Write an expression for each household's share of the total panel area in square metres, giving your answer with positive indices only.",
+   "solution": "**Key idea:** Find the total area of the four panels, then divide by the number of households using the quotient law.\n\n1. Find the area of one panel: $(2x^3)^2 = 4x^6$ square metres.\n2. Find the total area of four panels: $4 \\times 4x^6 = 16x^6$ square metres.\n3. Divide by the number of households: $\\dfrac{16x^6}{8x^2}$.\n4. Divide the coefficients: $\\dfrac{16}{8} = 2$.\n5. Apply the quotient law: $x^{6-2} = x^4$.\n\n**Answer:** $2x^4$ square metres per household",
+   "answer": "$2x^4$ square metres per household"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Multiplying the exponents instead of adding them",
+   "wrong": "$a^3 \\times a^4 = a^{12}$",
+   "fix": "The product law says to add the exponents, not multiply them. The correct result is $a^{3+4} = a^7$. Save multiplying exponents for the power law, $(a^m)^n = a^{mn}$, where there is a bracket raised to a power."
+  },
+  {
+   "title": "Forgetting to apply the power to the coefficient",
+   "wrong": "$(3x^2)^3 = 3x^6$",
+   "fix": "Every factor inside the bracket must be raised to the outside power. The coefficient 3 must also be cubed: $(3x^2)^3 = 3^3 \\cdot x^{2 \\times 3} = 27x^6$."
+  },
+  {
+   "title": "Subtracting exponents the wrong way in a quotient",
+   "wrong": "$\\dfrac{a^3}{a^7} = a^4$",
+   "fix": "Always subtract the denominator's exponent from the numerator's exponent: $a^{3-7} = a^{-4}$. If a positive index is required, write this as $\\dfrac{1}{a^4}$."
+  },
+  {
+   "title": "Treating a zero index as zero instead of one",
+   "wrong": "$5a^0 = 0$",
+   "fix": "Any non-zero base raised to the power of zero equals 1, so $a^0 = 1$. Therefore $5a^0 = 5 \\times 1 = 5$."
+  }
+ ],
+ "practice": {
+  "question": "Simplify $\\dfrac{(2m^3n)^4}{4m^6n^2}$, giving your answer with positive indices only.",
+  "answer": "$4m^6n^2$",
+  "solution": "**Key idea:** Expand the numerator using the power law, then apply the quotient law to each base.\n\n1. Expand the numerator: $(2m^3n)^4 = 2^4 \\cdot m^{3 \\times 4} \\cdot n^4 = 16m^{12}n^4$.\n2. Write the full expression: $\\dfrac{16m^{12}n^4}{4m^6n^2}$.\n3. Divide the coefficients: $\\dfrac{16}{4} = 4$.\n4. Apply the quotient law: $m^{12-6} = m^6$ and $n^{4-2} = n^2$.\n5. Write the result: $4m^6n^2$."
+ },
+ "checked": true,
+ "attempts": 2,
+ "summary": {
+  "q": "How do you simplify algebraic expressions using index laws?",
+  "a": "Apply the index laws to the coefficients and each base separately. Product law: add indices when multiplying (aᵐ × aⁿ = aᵐ⁺ⁿ). Quotient law: subtract when dividing. Power law: multiply when raising a power to a power. For example, 2x³ × 3x² = 6x⁵."
+ },
+ "turn": {
+  "question": "Simplify $\\dfrac{(2x^3)^4}{x^5}$, giving your answer as a coefficient times a power of $x$.\n\nWhat is the exponent of $x$ in the simplified expression?",
+  "kind": "number",
+  "accept": {
+   "value": 7,
+   "tol": 0
+  },
+  "answer_display": "$16x^{7}$",
+  "hint": "First apply the power law to expand $(2x^3)^4$, then use the quotient law to simplify the division.",
+  "solution": "**Key idea:** Apply the power law $(a^m)^n = a^{mn}$ first, then the quotient law $a^m \\div a^n = a^{m-n}$.\n\n1. Apply the power law to the numerator:\n$$\\begin{aligned}(2x^3)^4 &= 2^4 \\times x^{3 \\times 4} \\\\ &= 16x^{12}\\end{aligned}$$\n2. Rewrite the expression:\n$$\\frac{16x^{12}}{x^5}$$\n3. Apply the quotient law to the $x$ terms:\n$$x^{12} \\div x^5 = x^{12-5} = x^7$$\n4. Combine with the coefficient:\n$$16x^7$$\n\n**Answer:** $16x^7$, so the exponent of $x$ is $7$."
+ },
+ "turn_checked": {
+  "my_answer": "7",
+  "attempts": 1
+ }
+}

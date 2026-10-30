@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Describing association from a scatterplot",
+   "question": "A scatterplot is drawn using the following eight data points, where $x$ is the number of hours a student studies per week and $y$ is their test score out of 100.\n\n| Hours studied ($x$) | 2 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|\n| Test score ($y$) | 45 | 52 | 58 | 63 | 68 | 71 | 78 | 82 |\n\nDescribe the association between hours studied and test score in terms of direction, form and strength.",
+   "solution": "**Key idea:** Association is described by direction (positive or negative), form (linear or non-linear) and strength (strong, moderate or weak).\n\n1. **Direction:** As hours studied increases, test score also increases, so the association is **positive**.\n2. **Form:** The points rise at a roughly constant rate with no obvious curve, so the form is **linear**.\n3. **Strength:** The points follow the linear trend closely with little scatter, so the association is **strong**.\n\n**Answer:** Strong positive linear association.",
+   "answer": "Strong positive linear association."
+  },
+  {
+   "title": "Drawing a line of good fit and making a prediction",
+   "question": "The table below shows the age of a car (in years) and its advertised selling price (in thousands of dollars) for seven cars.\n\n| Age ($x$ years) | 1 | 2 | 3 | 4 | 5 | 6 | 8 |\n|---|---|---|---|---|---|---|---|\n| Price ($y$ thousands) | 28 | 24 | 21 | 17 | 14 | 11 | 6 |\n\nA line of good fit is drawn by eye passing through the points $(1, 28)$ and $(8, 6)$.\n\n(a) Find the equation of this line of good fit.\n(b) Use your equation to predict the price of a 5-year-old car.",
+   "solution": "**Key idea:** The equation of a straight line is $y = mx + c$. Use two points on the line to find the gradient, then find the $y$-intercept.\n\n1. Find the gradient using the two given points:\n$$m = \\frac{6 - 28}{8 - 1} = \\frac{-22}{7} \\approx -3.14$$\n2. Substitute one point, say $(1, 28)$, into $y = mx + c$ to find $c$:\n$$28 = -3.14 \\times 1 + c \\implies c \\approx 31.14$$\n3. The equation of the line of good fit is:\n$$y = -3.14x + 31.14$$\n4. Substitute $x = 5$ to predict the price of a 5-year-old car:\n$$y = -3.14 \\times 5 + 31.14 = -15.70 + 31.14 = 15.44$$\n\n**Answer:** The equation is $y = -3.14x + 31.14$; the predicted price of a 5-year-old car is approximately \\$15 440.",
+   "answer": "$y = -3.14x + 31.14$; predicted price is approximately \\$15 440."
+  },
+  {
+   "title": "Correlation and causation in context",
+   "question": "A researcher collects data from 12 suburbs in Melbourne. She records the average number of ice cream cones sold per day ($x$) and the number of people who visited the local swimming pool that day ($y$). She finds a strong positive linear association between the two variables.\n\nA council member concludes: \"Selling more ice cream causes more people to go swimming. We should sell more ice cream to increase pool visits.\"\n\n(a) Is the council member's conclusion valid? Explain why or why not.\n(b) Suggest a third variable that could explain the association between ice cream sales and pool visits.",
+   "solution": "**Key idea:** Correlation means two variables are associated, but this does not mean one causes the other. A third variable (a confounding variable) may explain the association.\n\n1. The council member's conclusion is **not valid**. A strong association (correlation) between two variables does not mean that one variable causes the other.\n2. Just because ice cream sales and pool visits rise together does not mean buying ice cream makes people swim.\n3. A likely confounding variable is **air temperature (or hot weather)**. On hot days, people are more likely both to buy ice cream and to visit the pool. The temperature is driving both variables.\n4. To claim causation, a controlled experiment would be needed, not just observational data.\n\n**Answer:** The conclusion is not valid. Correlation does not imply causation. Hot weather is a likely confounding variable that causes both ice cream sales and pool visits to increase at the same time.",
+   "answer": "The conclusion is not valid; correlation does not imply causation. Hot weather is a likely confounding variable driving both variables."
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Confusing direction with strength",
+   "wrong": "The points go downward, so the association is weak.",
+   "fix": "Direction (positive or negative) and strength (strong, moderate or weak) are separate things. A downward trend means a negative association, which can still be strong if the points lie close to the line. Always describe both features separately."
+  },
+  {
+   "title": "Drawing the line of good fit through the first and last points, not the data",
+   "wrong": "I drew the line through the two end points of the table because those are the most important.",
+   "fix": "A line of good fit should balance all the data points, with roughly equal numbers of points above and below the line. The first and last values in a table are not necessarily on the line. Choose two points that the balanced line actually passes through."
+  },
+  {
+   "title": "Using the line to predict far outside the data range",
+   "wrong": "The data goes up to $x = 10$, so I used the line to predict the value at $x = 50$.",
+   "fix": "Predicting within the data range (interpolation) is generally reliable. Predicting far beyond the data range (extrapolation) is unreliable because the trend may not continue. Always note when a prediction is well outside the range of the data."
+  },
+  {
+   "title": "Claiming causation from a scatterplot",
+   "wrong": "There is a strong positive association, so increasing $x$ causes $y$ to increase.",
+   "fix": "A scatterplot only shows correlation, not causation. Never say one variable causes another just because they are associated. Always consider whether a third (confounding) variable might explain the relationship."
+  }
+ ],
+ "practice": {
+  "question": "The table below shows the number of absences a student had in a school term ($x$) and their end-of-term exam mark out of 80 ($y$) for nine students.\n\n| Absences ($x$) | 0 | 1 | 2 | 3 | 4 | 6 | 7 | 9 | 10 |\n|---|---|---|---|---|---|---|---|---|---|\n| Exam mark ($y$) | 74 | 70 | 68 | 64 | 60 | 53 | 49 | 40 | 37 |\n\nA line of good fit is drawn by eye and passes through the points $(0, 74)$ and $(10, 37)$.\n\n(a) Describe the association between absences and exam mark.\n(b) Find the equation of the line of good fit.\n(c) Use the equation to predict the exam mark of a student who had 5 absences.",
+  "answer": "(a) Strong negative linear association. (b) $y = -3.7x + 74$. (c) Predicted mark is $55.5$ out of 80.",
+  "solution": "**Key idea:** Describe association using direction, form and strength; find the line equation using gradient and $y$-intercept; substitute to predict.\n\n1. **Association:** As absences increase, exam marks decrease. The points follow a close linear trend, so the association is **strong, negative and linear**.\n2. **Gradient** using $(0, 74)$ and $(10, 37)$:\n$$m = \\frac{37 - 74}{10 - 0} = \\frac{-37}{10} = -3.7$$\n3. **$y$-intercept:** The line passes through $(0, 74)$, so $c = 74$.\n4. **Equation:**\n$$y = -3.7x + 74$$\n5. **Prediction** for $x = 5$:\n$$y = -3.7 \\times 5 + 74 = -18.5 + 74 = 55.5$$\n\n**Answer:** (a) Strong negative linear association. (b) $y = -3.7x + 74$. (c) The predicted exam mark is $55.5$ out of 80."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you construct a scatterplot and draw a line of good fit?",
+  "a": "Plot each pair of numerical values as a point on a graph, with one variable on each axis. Describe any association by its direction (positive or negative), form (linear or non-linear) and strength (strong, moderate or weak). Draw a line of good fit by eye so roughly equal numbers of points lie on each side, then use it to make predictions."
+ },
+ "turn": {
+  "question": "The table below shows the number of hours studied and the score (out of 100) achieved by 6 students on a test.\n\n| Hours studied | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| Test score | 42 | 51 | 55 | 64 | 72 | 78 |\n\nA line of good fit is drawn and its equation is found to be $\\text{score} = 7.4 \\times \\text{hours} + 33$. Using this equation, what score (out of 100) does the line of good fit predict for a student who studies for 7 hours? Give your answer correct to the nearest whole number.",
+  "kind": "number",
+  "accept": {
+   "value": 85,
+   "tol": 0.5,
+   "unit": "marks"
+  },
+  "answer_display": "$85$",
+  "hint": "Substitute 7 into the equation in place of hours studied and evaluate.",
+  "solution": "**Key idea:** A line of good fit can be used to make predictions by substituting a value into its equation.\n\n1. Write the equation of the line of good fit: $\\text{score} = 7.4 \\times \\text{hours} + 33$\n2. Substitute $\\text{hours} = 7$: $\\text{score} = 7.4 \\times 7 + 33$\n3. Calculate the product: $7.4 \\times 7 = 51.8$\n4. Add the constant: $51.8 + 33 = 84.8$\n5. Round to the nearest whole number: $84.8 \\approx 85$\n\n**Answer:** $85$"
+ },
+ "turn_checked": {
+  "my_answer": "85",
+  "attempts": 1
+ }
+}

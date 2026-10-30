@@ -1,0 +1,71 @@
+{
+ "examples": [
+  {
+   "title": "Finding absolute and percentage error",
+   "question": "A student measures the length of a book as 28 cm. The true length is 27.5 cm. Find the absolute error, the relative error and the percentage error.",
+   "solution": "**Key idea:** Absolute error is how far the measurement is from the true value. Relative error compares that gap to the true value. Percentage error converts the relative error to a percentage.\n\n1. Find the absolute error: $$\\text{absolute error} = \\lvert \\text{measured} - \\text{true} \\rvert = \\lvert 28 - 27.5 \\rvert = 0.5 \\text{ cm}$$\n2. Find the relative error: $$\\text{relative error} = \\frac{\\text{absolute error}}{\\text{true value}} = \\frac{0.5}{27.5} = \\frac{1}{55}$$\n3. Convert to a percentage error: $$\\text{percentage error} = \\frac{1}{55} \\times 100 \\approx 1.82\\%$$\n4. **Answer:** The absolute error is $0.5$ cm, the relative error is $\\dfrac{1}{55}$, and the percentage error is approximately $1.82\\%$.",
+   "answer": "Absolute error: $0.5$ cm; relative error: $\\frac{1}{55}$; percentage error: $\\approx 1.82\\%$"
+  },
+  {
+   "title": "Comparing errors across two measurements",
+   "question": "Maya measures the mass of two objects. For object A, she records 450 g but the true mass is 460 g. For object B, she records 3.2 kg but the true mass is 3.25 kg. Which measurement has the smaller percentage error?",
+   "solution": "**Key idea:** To compare errors fairly across different measurements, use percentage error, since it is relative to the true value.\n\n1. Find the absolute error for each object:\n$$\\text{Object A: } \\lvert 450 - 460 \\rvert = 10 \\text{ g}, \\qquad \\text{Object B: } \\lvert 3.2 - 3.25 \\rvert = 0.05 \\text{ kg} = 50 \\text{ g}$$\n2. Express both true values in the same unit to check, then calculate percentage errors using consistent units:\n$$\\text{Object A: } \\frac{10}{460} \\times 100 \\approx 2.17\\%$$\n$$\\text{Object B: } \\frac{0.05}{3.25} \\times 100 \\approx 1.54\\%$$\n3. Compare: $1.54\\% < 2.17\\%$, so Object B has the smaller percentage error.\n4. **Answer:** Object B has the smaller percentage error ($\\approx 1.54\\%$ compared with $\\approx 2.17\\%$).",
+   "answer": "Object B has the smaller percentage error ($\\approx 1.54\\%$)"
+  },
+  {
+   "title": "Interpreting measurement error in a real-life context",
+   "question": "A hardware store sells timber planks that are labelled as 2.4 m long. A builder measures 20 planks and finds their actual lengths vary. One plank measures 2.38 m. The store's quality standard requires a percentage error of no more than $1.5\\%$. Determine whether this plank meets the standard, and explain what the percentage error means in this context.",
+   "solution": "**Key idea:** Calculate the percentage error and compare it to the given threshold. The percentage error tells us how significant the measurement gap is relative to the stated length.\n\n1. Identify the true (labelled) value and the measured value: true value $= 2.4$ m, measured value $= 2.38$ m.\n2. Find the absolute error: $$\\lvert 2.38 - 2.4 \\rvert = 0.02 \\text{ m}$$\n3. Find the percentage error: $$\\frac{0.02}{2.4} \\times 100 = \\frac{2}{240} \\times 100 \\approx 0.83\\%$$\n4. Compare with the standard: $0.83\\% < 1.5\\%$, so the plank meets the quality standard.\n5. Interpret: A percentage error of $0.83\\%$ means the plank is only $0.83\\%$ shorter than its labelled length, which is within the acceptable tolerance for the builder's purposes.\n6. **Answer:** The plank has a percentage error of approximately $0.83\\%$, which is within the $1.5\\%$ standard, so it meets the requirement.",
+   "answer": "Percentage error $\\approx 0.83\\%$; the plank meets the standard"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting the absolute value in absolute error",
+   "wrong": "Absolute error $= 27.5 - 28 = -0.5$ cm",
+   "fix": "Absolute error is always a positive value. Write it as $\\lvert \\text{measured} - \\text{true} \\rvert$ and drop any negative sign. An error of $-0.5$ cm has no meaning; the error is $0.5$ cm."
+  },
+  {
+   "title": "Dividing by the measured value instead of the true value",
+   "wrong": "Relative error $= \\dfrac{0.5}{28}$ (using the measured value 28 as the denominator)",
+   "fix": "Always divide the absolute error by the true (or accepted) value, not the measured value. The true value is the reference point you are comparing against."
+  },
+  {
+   "title": "Comparing errors using absolute error when units differ",
+   "wrong": "Object A error is 10 g and Object B error is 0.05 kg, so Object A has less error because 10 is less than 0.05",
+   "fix": "When measurements use different units or very different sizes, absolute error alone is misleading. Convert to the same unit first, or use percentage error, which is unit-free and accounts for the size of the measurement."
+  },
+  {
+   "title": "Multiplying relative error by 10 instead of 100 to get percentage",
+   "wrong": "Relative error $= 0.0182$, so percentage error $= 0.182\\%$",
+   "fix": "To convert a decimal to a percentage, multiply by 100, not 10. So $0.0182 \\times 100 = 1.82\\%$. Remember: per cent means per hundred."
+  }
+ ],
+ "practice": {
+  "question": "A student uses a ruler to measure the width of a desk and records 95 cm. The true width of the desk is 98 cm. Calculate the absolute error, the relative error and the percentage error. Round the percentage error to two decimal places.",
+  "answer": "Absolute error: $3$ cm; relative error: $\\dfrac{3}{98}$; percentage error: $\\approx 3.06\\%$",
+  "solution": "**Key idea:** Absolute error is the size of the gap between the measured and true values. Relative error scales that gap against the true value, and percentage error expresses it per hundred.\n\n1. Find the absolute error: $$\\lvert 95 - 98 \\rvert = 3 \\text{ cm}$$\n2. Find the relative error: $$\\frac{3}{98}$$\n3. Convert to percentage error: $$\\frac{3}{98} \\times 100 \\approx 3.06\\%$$\n4. **Answer:** Absolute error $= 3$ cm, relative error $= \\dfrac{3}{98}$, percentage error $\\approx 3.06\\%$."
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you calculate absolute, relative and percentage error in measurements?",
+  "a": "Absolute error is the size of the difference between a measured value and the true value: |measured − true|. Relative error divides that by the true value, and percentage error multiplies the result by 100. For example, measuring 48 cm when the true length is 50 cm gives an absolute error of 2 cm, relative error of 0.04, and percentage error of 4%."
+ },
+ "turn": {
+  "question": "A student measures the mass of a rock as $47.6$ g. The true mass is $50.0$ g. What is the percentage error in the student's measurement? Give your answer correct to 2 decimal places.",
+  "kind": "number",
+  "accept": {
+   "value": 4.8,
+   "tol": 0.005,
+   "unit": "%"
+  },
+  "answer_display": "$4.80\\%$",
+  "hint": "Find the absolute error first (|measured − true|), then divide by the true value and multiply by 100.",
+  "solution": "**Key idea:** Percentage error $= \\dfrac{|\\text{measured} - \\text{true}|}{\\text{true}} \\times 100\\%$\n\n1. Find the absolute error: $|47.6 - 50.0| = 2.4$ g\n2. Find the relative error: $\\dfrac{2.4}{50.0} = 0.048$\n3. Convert to a percentage: $0.048 \\times 100 = 4.8\\%$\n4. Rounded to 2 decimal places: $4.80\\%$\n\n**Answer:** $4.80\\%$"
+ },
+ "turn_checked": {
+  "my_answer": "4.80",
+  "attempts": 1
+ }
+}

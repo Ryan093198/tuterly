@@ -7,7 +7,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import Fade from "@/components/marketing/Fade";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
-import AppPracticeBlock from "@/components/study/AppPracticeBlock";
+import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import {
   WORKSHEET_LANDING_PAGES,
@@ -15,6 +15,12 @@ import {
   getLandingPagesForYear,
 } from "@/lib/worksheet-landing-pages";
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
+import { getWorkedExamples } from "@/lib/worked-examples";
+import WorkedExamples from "@/components/study/WorkedExamples";
+import QuickAnswer from "@/components/study/QuickAnswer";
+import TopicStateNote from "@/components/state/TopicStateNote";
+import "@/components/study/worked-examples.css";
+import { mathToReadable } from "@/lib/try-email";
 import Testimonials from "@/components/marketing/Testimonials";
 
 const YEAR_LEVELS = [
@@ -26,6 +32,7 @@ const YEAR_LEVELS = [
   "Year 8",
   "Year 9",
   "Year 10",
+  "Year 10A",
 ];
 
 export function generateStaticParams() {
@@ -71,6 +78,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
 
   const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
   const faqs = getFaqsForSlug(page.slug);
+  const worked = getWorkedExamples(page.slug);
 
   // Schema.org markup. BreadcrumbList matches the visible breadcrumb
   // below the nav. LearningResource is Google's official type for
@@ -90,11 +98,15 @@ export default async function WorksheetTopicLandingPage({ params }) {
     ],
   };
 
-  const faqSchema = faqs.length
+  // The quick answer at the top of the page leads the FAQ schema.
+  const schemaFaqs = worked?.summary
+    ? [{ q: worked.summary.q, a: mathToReadable(worked.summary.a) }, ...faqs]
+    : faqs;
+  const faqSchema = schemaFaqs.length
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
+        mainEntity: schemaFaqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -207,6 +219,8 @@ export default async function WorksheetTopicLandingPage({ params }) {
               {page.subtitle}
             </p>
           </Fade>
+          <TopicStateNote slug={page.slug} yearLevel={page.yearLevel} />
+          {worked?.summary && <QuickAnswer q={worked.summary.q} a={worked.summary.a} />}
         </div>
       </section>
 
@@ -221,11 +235,17 @@ export default async function WorksheetTopicLandingPage({ params }) {
         </div>
       </section>
 
-      <section style={{ padding: "0 24px 60px", background: c.white }}>
+      <section style={{ padding: "0 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 1028, margin: "0 auto" }}>
-          <AppPracticeBlock topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_practice" />
+          <WorksheetUpgrade topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_upgrade" />
         </div>
       </section>
+
+      {worked && (
+        <section style={{ padding: "24px 24px 64px", background: c.white }}>
+          <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} slug={page.slug} />
+        </section>
+      )}
 
       <section style={{ padding: "60px 24px", background: c.offWhite }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
