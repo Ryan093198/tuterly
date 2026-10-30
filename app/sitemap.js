@@ -51,6 +51,10 @@ const STATIC_PAGES = [
   { path: "/maths-exam-preparation/year-9", priority: 0.7, changeFrequency: "monthly" },
   { path: "/maths-exam-preparation/year-10", priority: 0.7, changeFrequency: "monthly" },
   { path: "/worksheets", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/years/year-7-maths", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/years/year-8-maths", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/years/year-9-maths", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/years/year-10-maths", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb
   // pages because they target the strongest parent search intents on
