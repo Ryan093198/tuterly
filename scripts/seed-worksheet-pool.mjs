@@ -19,7 +19,7 @@ import { SYSTEM_INSTRUCTIONS, buildWorksheetUserMessage } from "../lib/worksheet
 import { CHECK_SYSTEM, CHECK_TOOL, checkUserMessage } from "../lib/worksheet-check-prompt.js";
 import { worksheetStructureProblems } from "../lib/worksheet-structure.js";
 import { sanitizeGenerated } from "../lib/sanitize-generated.js";
-import { findKatexErrors } from "../lib/markdown-katex-validate.js";
+import { findKatexErrors, formatErrorsForRetry } from "../lib/markdown-katex-validate.js";
 
 const args = Object.fromEntries(
   process.argv.slice(2).join(" ").split("--").filter(Boolean).map((a) => {
@@ -50,7 +50,8 @@ const supa = async (path, init = {}) => {
     headers: { apikey: SKEY, authorization: `Bearer ${SKEY}`, "content-type": "application/json", ...(init.headers || {}) },
   });
   if (!r.ok) throw new Error(`supabase ${r.status}: ${await r.text()}`);
-  return r.status === 204 ? null : r.json();
+  const text = await r.text();
+  return text ? JSON.parse(text) : null;
 };
 const claude = async (body) => {
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -78,17 +79,26 @@ async function one(t) {
   const have = await supa(`worksheet_pool?select=id&year_level=eq.${encodeURIComponent(t.year)}&topic_key=eq.${encodeURIComponent(key)}&status=eq.verified`);
   if (have.length >= PER) { skipped++; return; }
   for (let k = have.length; k < PER; k++) {
-    const gen = await claude({
-      model: "claude-sonnet-4-6",
-      max_tokens: 3500 + THINKING_BUDGET,
-      thinking: { type: "enabled", budget_tokens: THINKING_BUDGET },
-      system: SYSTEM_INSTRUCTIONS,
-      messages: [{ role: "user", content: buildWorksheetUserMessage({ yearLevel: t.year, topicLabel: t.label, topicDescription: t.desc, variantSeed: Math.random().toString(36).slice(2, 10) }) }],
-    });
-    const raw = gen.content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
+    const first = [{ role: "user", content: buildWorksheetUserMessage({ yearLevel: t.year, topicLabel: t.label, topicDescription: t.desc, variantSeed: Math.random().toString(36).slice(2, 10) }) }];
+    const write = async (messages) => {
+      const gen = await claude({
+        model: "claude-sonnet-4-6",
+        max_tokens: 3500 + THINKING_BUDGET,
+        thinking: { type: "enabled", budget_tokens: THINKING_BUDGET },
+        system: SYSTEM_INSTRUCTIONS,
+        messages,
+      });
+      return gen.content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
+    };
+    let raw = await write(first);
+    let katex = findKatexErrors(raw);
+    // Same as the live generator: one fix-up pass for maths that won't render.
+    if (katex.length && !worksheetStructureProblems(sanitizeGenerated(raw)).length) {
+      const fixed = await write([...first, { role: "assistant", content: raw }, { role: "user", content: formatErrorsForRetry(katex) }]);
+      if (fixed && findKatexErrors(fixed).length < katex.length) { raw = fixed; katex = findKatexErrors(fixed); }
+    }
     const md = sanitizeGenerated(raw);
     const layout = worksheetStructureProblems(md);
-    const katex = findKatexErrors(raw);
     let status = "rejected", notes = [...layout, ...katex.map(() => "maths that won't render")].join(" | ");
     if (!layout.length && !katex.length) {
       const chk = await claude({
@@ -100,6 +110,7 @@ async function one(t) {
         messages: [{ role: "user", content: checkUserMessage({ yearLevel: t.year, topicLabel: t.label, content: md }) }],
       });
       const r = chk.content.find((b) => b.type === "tool_use")?.input;
+      if (r && typeof r.questions === "string") { try { r.questions = JSON.parse(r.questions); } catch { r.questions = []; } }
       const bad = (r?.questions || []).filter((q) => !q.ok);
       const pass = r && r.questions.length === 6 && !bad.length && r.structure_ok !== false;
       status = pass ? "verified" : "rejected";
