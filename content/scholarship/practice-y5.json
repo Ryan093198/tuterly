@@ -1,0 +1,362 @@
+{
+ "entry_year": 5,
+ "source": "nr-diagnostic-y5 v1",
+ "stimuli": {
+  "games": {
+   "title": "Basketball points",
+   "body_md": "Four friends recorded how many points they scored in four basketball games.\n\n| Player | Game 1 | Game 2 | Game 3 | Game 4 |\n|---|---|---|---|---|\n| Asha | 6 | 8 | 5 | 9 |\n| Ben | 7 | 7 | 9 | 6 |\n| Cody | 10 | 4 | 6 | 8 |\n| Dina | 5 | 9 | 8 | 8 |\n"
+  }
+ },
+ "questions": [
+  {
+   "n": 1,
+   "source_number": 11,
+   "topic": "Tables and graphs",
+   "skill": "Reading tables: totals",
+   "home": "Read the question for what to compare (a whole day, a whole person) before looking at the numbers. Sports tables and weather data are great practice.",
+   "difficulty": 1,
+   "stimulus_id": "games",
+   "prompt_md": "Who scored the most points altogether?",
+   "options": [
+    {
+     "key": "A",
+     "md": "Asha"
+    },
+    {
+     "key": "B",
+     "md": "Ben"
+    },
+    {
+     "key": "C",
+     "md": "Cody"
+    },
+    {
+     "key": "D",
+     "md": "Dina"
+    },
+    {
+     "key": "E",
+     "md": "Ben and Dina equally"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "Add each row:\n\n- Asha: $6+8+5+9 = 28$\n- Ben: $7+7+9+6 = 29$\n- Cody: $10+4+6+8 = 28$\n- Dina: $5+9+8+8 = 30$\n\nDina scored the most.",
+   "time_guide_seconds": 30
+  },
+  {
+   "n": 2,
+   "source_number": 14,
+   "topic": "Time and measurement",
+   "skill": "Chains of unit conversions",
+   "home": "Write each step as a line (1 gem = 3 gold, 1 gold = 4 silver …) and multiply down the chain. Kitchen measures (cups, tablespoons, teaspoons) are good real-life practice.",
+   "difficulty": 1,
+   "stimulus_id": null,
+   "prompt_md": "3 small boxes fit exactly inside 1 medium box. 4 medium boxes fit exactly inside 1 large box.\n\nHow many small boxes fit inside 2 large boxes?",
+   "options": [
+    {
+     "key": "A",
+     "md": "7"
+    },
+    {
+     "key": "B",
+     "md": "12"
+    },
+    {
+     "key": "C",
+     "md": "14"
+    },
+    {
+     "key": "D",
+     "md": "24"
+    },
+    {
+     "key": "E",
+     "md": "48"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "1 large box holds 4 medium boxes $= 4 \\times 3 = 12$ small boxes. So 2 large boxes hold $2 \\times 12 = 24$.",
+   "time_guide_seconds": 30
+  },
+  {
+   "n": 3,
+   "source_number": 16,
+   "topic": "Logic and ordering",
+   "skill": "Putting clues in order",
+   "home": "Draw a line from tallest to shortest and place one name per clue, starting with the clue that links to the most others. Logic puzzle books help a lot.",
+   "difficulty": 1,
+   "stimulus_id": null,
+   "prompt_md": "Four children compare their heights.\n\n- Ali is taller than Bo.\n- Cy is shorter than Bo.\n- Di is taller than Ali.\n\nWho is the second tallest?",
+   "options": [
+    {
+     "key": "A",
+     "md": "Ali"
+    },
+    {
+     "key": "B",
+     "md": "Bo"
+    },
+    {
+     "key": "C",
+     "md": "Cy"
+    },
+    {
+     "key": "D",
+     "md": "Di"
+    },
+    {
+     "key": "E",
+     "md": "You can't tell"
+    }
+   ],
+   "answer": "A",
+   "solution_md": "Put them in order from the clues: Di > Ali (clue 3), Ali > Bo (clue 1), Bo > Cy (clue 2).\n\nOrder from tallest: Di, **Ali**, Bo, Cy.",
+   "time_guide_seconds": 30
+  },
+  {
+   "n": 4,
+   "source_number": 15,
+   "topic": "Fractions, decimals and percentages",
+   "skill": "Fractions of what's left",
+   "home": "Draw a bar for the whole amount and shade each fraction as it's spent. Watch for 'of what was left', which is a fraction of the remainder, not of the whole.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "Jess spent half of her money on a book. Then she spent half of what was left on a drink. She has \\$5 left.\n\nHow much money did she start with?",
+   "options": [
+    {
+     "key": "A",
+     "md": "\\$10"
+    },
+    {
+     "key": "B",
+     "md": "\\$12.50"
+    },
+    {
+     "key": "C",
+     "md": "\\$15"
+    },
+    {
+     "key": "D",
+     "md": "\\$20"
+    },
+    {
+     "key": "E",
+     "md": "\\$40"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "Work backwards. Before the drink she had $\\$5 \\times 2 = \\$10$. Before the book she had $\\$10 \\times 2 = \\$20$.\n\nCheck: half of \\$20 is \\$10; half of \\$10 is \\$5, leaving \\$5. ✓",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 5,
+   "source_number": 18,
+   "topic": "Patterns and sequences",
+   "skill": "Growing patterns",
+   "home": "Build the first few shapes with toothpicks, write the counts in a table, and find what gets added each time. Then predict the 10th and check it.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "Matchsticks are used to make triangles in a row, each one sharing a side with the next:\n\n- 1 triangle uses 3 matchsticks.\n- 2 triangles use 5 matchsticks.\n- 3 triangles use 7 matchsticks.\n\nHow many matchsticks are needed for 10 triangles?",
+   "options": [
+    {
+     "key": "A",
+     "md": "10"
+    },
+    {
+     "key": "B",
+     "md": "13"
+    },
+    {
+     "key": "C",
+     "md": "19"
+    },
+    {
+     "key": "D",
+     "md": "20"
+    },
+    {
+     "key": "E",
+     "md": "21"
+    }
+   ],
+   "answer": "E",
+   "solution_md": "The first triangle uses 3 matchsticks and each new one adds 2.\n\n10 triangles: $3 + 9 \\times 2 = 21$.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 6,
+   "source_number": 19,
+   "topic": "Shape and space",
+   "skill": "Angles in triangles",
+   "home": "Remember triangles add to 180° and four-sided shapes to 360°. Call the smallest angle s and write the others using s.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "The angles in a triangle add up to 180°. A triangle has one right angle (90°), and its other two angles are equal.\n\nWhat is the size of each of the other two angles?",
+   "options": [
+    {
+     "key": "A",
+     "md": "30°"
+    },
+    {
+     "key": "B",
+     "md": "45°"
+    },
+    {
+     "key": "C",
+     "md": "60°"
+    },
+    {
+     "key": "D",
+     "md": "90°"
+    },
+    {
+     "key": "E",
+     "md": "180°"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "The other two angles share $180 - 90 = 90°$. Equal shares: $90 \\div 2 = 45°$.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 7,
+   "source_number": 20,
+   "topic": "Counting and chance",
+   "skill": "Listing systematically",
+   "home": "List in an order (biggest first digit to smallest) so nothing is missed or counted twice, and look for the pattern in the counts.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "How many two-digit numbers have digits that add up to 5?",
+   "options": [
+    {
+     "key": "A",
+     "md": "4"
+    },
+    {
+     "key": "B",
+     "md": "5"
+    },
+    {
+     "key": "C",
+     "md": "6"
+    },
+    {
+     "key": "D",
+     "md": "9"
+    },
+    {
+     "key": "E",
+     "md": "10"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "List them: 14, 23, 32, 41, 50.\n\nThat's **5**.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 8,
+   "source_number": 25,
+   "topic": "Number properties",
+   "skill": "Counting multiples",
+   "home": "Count multiples by dividing (how many 6s fit into 100). For 'divisible by both', use the lowest common multiple, not just the two numbers multiplied.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "How many whole numbers from 1 to 30 can be divided exactly by 3 but **not** by 2?",
+   "options": [
+    {
+     "key": "A",
+     "md": "5"
+    },
+    {
+     "key": "B",
+     "md": "6"
+    },
+    {
+     "key": "C",
+     "md": "10"
+    },
+    {
+     "key": "D",
+     "md": "15"
+    },
+    {
+     "key": "E",
+     "md": "20"
+    }
+   ],
+   "answer": "A",
+   "solution_md": "Multiples of 3 up to 30: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 (10 numbers).\n\nTake away the even ones (6, 12, 18, 24, 30). That leaves 3, 9, 15, 21, 27: **5**.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 9,
+   "source_number": 27,
+   "topic": "Ratio, rates and best buys",
+   "skill": "Ratios with limited supplies",
+   "home": "Work out which ingredient runs out first. Scaling a recipe when you're short of one ingredient is perfect practice.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "One batch of pancakes needs 3 eggs and 2 cups of flour. Sam has 10 eggs and 8 cups of flour.\n\nWhat is the greatest number of full batches Sam can make?",
+   "options": [
+    {
+     "key": "A",
+     "md": "2"
+    },
+    {
+     "key": "B",
+     "md": "3"
+    },
+    {
+     "key": "C",
+     "md": "4"
+    },
+    {
+     "key": "D",
+     "md": "5"
+    },
+    {
+     "key": "E",
+     "md": "6"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "Eggs: 10 eggs is enough for 3 batches (9 eggs), with 1 egg left over.\n\nFlour: 8 cups is enough for 4 batches.\n\nThe eggs run out first, so Sam can make **3** batches.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 10,
+   "source_number": 30,
+   "topic": "Unknowns and working backwards",
+   "skill": "Age problems",
+   "home": "Draw a timeline (years ago, now, years ahead) and test the options. Make up age puzzles about the family.",
+   "difficulty": 3,
+   "stimulus_id": null,
+   "prompt_md": "Ella is 6 and her mum is 30. In how many years will her mum be exactly 3 times as old as Ella?",
+   "options": [
+    {
+     "key": "A",
+     "md": "2"
+    },
+    {
+     "key": "B",
+     "md": "3"
+    },
+    {
+     "key": "C",
+     "md": "4"
+    },
+    {
+     "key": "D",
+     "md": "6"
+    },
+    {
+     "key": "E",
+     "md": "12"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "Try the options. In 6 years Ella will be 12 and her mum will be 36. $36 = 3 \\times 12$. ✓\n\n(In 2 years: 8 and 32, which is 4 times. In 4 years: 10 and 34, not 3 times.)",
+   "time_guide_seconds": 80
+  }
+ ]
+}

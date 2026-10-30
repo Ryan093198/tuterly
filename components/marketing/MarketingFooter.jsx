@@ -20,6 +20,7 @@ const GROUPS = [
       { href: "/naplan", label: "NAPLAN practice tests" },
       { href: "/formula-sheets", label: "Formula sheets" },
       { href: "/exam-generator", label: "Practice exam generator" },
+      { href: "/scholarship-practice", label: "Scholarship practice" },
       { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
       { href: "/worksheets", label: "Free worksheet generator" },
       { href: "/learn", label: "Learn" },

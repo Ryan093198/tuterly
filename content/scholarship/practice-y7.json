@@ -1,0 +1,362 @@
+{
+ "entry_year": 7,
+ "source": "nr-diagnostic-1 v1",
+ "stimuli": {
+  "swim": {
+   "title": "Swim squad",
+   "body_md": "Five swimmers recorded how many laps they swam each day from Monday to Thursday. Each lap is 25 metres.\n\n| Swimmer | Mon | Tue | Wed | Thu |\n|---|---|---|---|---|\n| Ava | 12 | 15 | 9 | 14 |\n| Ben | 10 | 10 | 16 | 12 |\n| Chloe | 14 | 8 | 13 | 15 |\n| Dev | 9 | 11 | 12 | 14 |\n| Eli | 9 | 16 | 11 | 13 |\n"
+  }
+ },
+ "questions": [
+  {
+   "n": 1,
+   "source_number": 11,
+   "topic": "Tables and graphs",
+   "skill": "Reading tables: totals",
+   "home": "Read the question for what to compare (a whole day, a whole person) before looking at the numbers. Sports tables and weather data are great practice.",
+   "difficulty": 1,
+   "stimulus_id": "swim",
+   "prompt_md": "On which day did the five swimmers swim the most laps altogether?",
+   "options": [
+    {
+     "key": "A",
+     "md": "Monday"
+    },
+    {
+     "key": "B",
+     "md": "Tuesday"
+    },
+    {
+     "key": "C",
+     "md": "Wednesday"
+    },
+    {
+     "key": "D",
+     "md": "Thursday"
+    },
+    {
+     "key": "E",
+     "md": "Tuesday and Wednesday equally"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "Add each column:\n\n- Mon: $12+10+14+9+9 = 54$\n- Tue: $15+10+8+11+16 = 60$\n- Wed: $9+16+13+12+11 = 61$\n- Thu: $14+12+15+14+13 = 68$\n\nThursday has the most.",
+   "time_guide_seconds": 30
+  },
+  {
+   "n": 2,
+   "source_number": 14,
+   "topic": "Time and measurement",
+   "skill": "Chains of unit conversions",
+   "home": "Write each step as a line (1 gem = 3 gold, 1 gold = 4 silver …) and multiply down the chain. Kitchen measures (cups, tablespoons, teaspoons) are good real-life practice.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "In a game, 5 copper coins are worth 1 silver coin, 4 silver coins are worth 1 gold coin, and 3 gold coins are worth 1 gem.\n\nHow many copper coins are worth the same as 2 gems?",
+   "options": [
+    {
+     "key": "A",
+     "md": "24"
+    },
+    {
+     "key": "B",
+     "md": "40"
+    },
+    {
+     "key": "C",
+     "md": "60"
+    },
+    {
+     "key": "D",
+     "md": "120"
+    },
+    {
+     "key": "E",
+     "md": "240"
+    }
+   ],
+   "answer": "D",
+   "solution_md": "1 gem = 3 gold = $3 \\times 4 = 12$ silver = $12 \\times 5 = 60$ copper.\n\n2 gems = $2 \\times 60 = 120$ copper.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 3,
+   "source_number": 16,
+   "topic": "Logic and ordering",
+   "skill": "Putting clues in order",
+   "home": "Draw a line from tallest to shortest and place one name per clue, starting with the clue that links to the most others. Logic puzzle books help a lot.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "Five friends compare their heights.\n\n- Raj is taller than Sam.\n- Tess is shorter than Sam but taller than Uma.\n- Ola is taller than Tess but shorter than Raj.\n- Sam is taller than Ola.\n\nWho is the third tallest?",
+   "options": [
+    {
+     "key": "A",
+     "md": "Ola"
+    },
+    {
+     "key": "B",
+     "md": "Raj"
+    },
+    {
+     "key": "C",
+     "md": "Sam"
+    },
+    {
+     "key": "D",
+     "md": "Tess"
+    },
+    {
+     "key": "E",
+     "md": "Uma"
+    }
+   ],
+   "answer": "A",
+   "solution_md": "Build the order from the clues:\n\nRaj > Sam (clue 1), Sam > Ola (clue 4), Ola > Tess (clue 3), Tess > Uma (clue 2).\n\nOrder: Raj, Sam, **Ola**, Tess, Uma.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 4,
+   "source_number": 17,
+   "topic": "Fractions, decimals and percentages",
+   "skill": "Discounts and percentage changes",
+   "home": "Work out one discount at a time on the new price. Spot catalogue deals ('extra 10% off sale prices') and calculate the real final price.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "A jacket usually costs \\$80. It is reduced by 25%. At the checkout, a further 10% is taken off the sale price.\n\nHow much does the jacket cost?",
+   "options": [
+    {
+     "key": "A",
+     "md": "\\$52"
+    },
+    {
+     "key": "B",
+     "md": "\\$54"
+    },
+    {
+     "key": "C",
+     "md": "\\$56"
+    },
+    {
+     "key": "D",
+     "md": "\\$60"
+    },
+    {
+     "key": "E",
+     "md": "\\$66"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "25% off \\$80: $80 - 20 = \\$60$.\n\n10% off \\$60: $60 - 6 = \\$54$.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 5,
+   "source_number": 18,
+   "topic": "Patterns and sequences",
+   "skill": "Growing patterns",
+   "home": "Build the first few shapes with toothpicks, write the counts in a table, and find what gets added each time. Then predict the 10th and check it.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "Matchsticks are used to make squares in a row:\n\n- 1 square uses 4 matchsticks.\n- 2 squares in a row use 7 matchsticks.\n- 3 squares in a row use 10 matchsticks.\n\nHow many matchsticks are needed for 25 squares in a row?",
+   "options": [
+    {
+     "key": "A",
+     "md": "73"
+    },
+    {
+     "key": "B",
+     "md": "75"
+    },
+    {
+     "key": "C",
+     "md": "76"
+    },
+    {
+     "key": "D",
+     "md": "100"
+    },
+    {
+     "key": "E",
+     "md": "101"
+    }
+   ],
+   "answer": "C",
+   "solution_md": "The first square needs 4 matchsticks. Each new square shares a side, so it adds 3.\n\n25 squares: $4 + 24 \\times 3 = 76$. (Or $3 \\times 25 + 1 = 76$.)",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 6,
+   "source_number": 25,
+   "topic": "Number properties",
+   "skill": "Counting multiples",
+   "home": "Count multiples by dividing (how many 6s fit into 100). For 'divisible by both', use the lowest common multiple, not just the two numbers multiplied.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "How many whole numbers from 1 to 100 can be divided exactly by 6 but **not** by 4?",
+   "options": [
+    {
+     "key": "A",
+     "md": "4"
+    },
+    {
+     "key": "B",
+     "md": "8"
+    },
+    {
+     "key": "C",
+     "md": "10"
+    },
+    {
+     "key": "D",
+     "md": "12"
+    },
+    {
+     "key": "E",
+     "md": "16"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "Multiples of 6 up to 100: $100 \\div 6 = 16$ remainder 4, so there are 16.\n\nA number that divides by both 6 and 4 divides by 12. Multiples of 12 up to 100: 8.\n\n$16 - 8 = 8$",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 7,
+   "source_number": 29,
+   "topic": "Shape and space",
+   "skill": "Areas of borders and paths",
+   "home": "Find the big area, take away the inner area. Sketch it and label the inner lengths, which shrink by the path width on both sides.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "A garden is a rectangle 10 m long and 8 m wide. A path 1 m wide runs all the way around the **inside** edge of the garden.\n\nWhat is the area of the path?",
+   "options": [
+    {
+     "key": "A",
+     "md": "28 m²"
+    },
+    {
+     "key": "B",
+     "md": "32 m²"
+    },
+    {
+     "key": "C",
+     "md": "36 m²"
+    },
+    {
+     "key": "D",
+     "md": "48 m²"
+    },
+    {
+     "key": "E",
+     "md": "80 m²"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "The part inside the path measures $(10-2)$ by $(8-2)$, which is 8 m by 6 m $= 48$ m².\n\nPath $= 80 - 48 = 32$ m².",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 8,
+   "source_number": 30,
+   "topic": "Unknowns and working backwards",
+   "skill": "Age problems",
+   "home": "Draw a timeline (years ago, now, years ahead) and test the options. Make up age puzzles about the family.",
+   "difficulty": 2,
+   "stimulus_id": null,
+   "prompt_md": "In 4 years, Ana will be twice as old as she was 6 years ago. How old is Ana now?",
+   "options": [
+    {
+     "key": "A",
+     "md": "8"
+    },
+    {
+     "key": "B",
+     "md": "10"
+    },
+    {
+     "key": "C",
+     "md": "12"
+    },
+    {
+     "key": "D",
+     "md": "14"
+    },
+    {
+     "key": "E",
+     "md": "16"
+    }
+   ],
+   "answer": "E",
+   "solution_md": "Try the options, or reason:\n\nIf Ana is 16, in 4 years she is 20, and 6 years ago she was 10. $20 = 2 \\times 10$. ✓\n\nWith algebra: $a + 4 = 2(a - 6)$, so $a + 4 = 2a - 12$ and $a = 16$.",
+   "time_guide_seconds": 60
+  },
+  {
+   "n": 9,
+   "source_number": 20,
+   "topic": "Counting and chance",
+   "skill": "Listing systematically",
+   "home": "List in an order (biggest first digit to smallest) so nothing is missed or counted twice, and look for the pattern in the counts.",
+   "difficulty": 3,
+   "stimulus_id": null,
+   "prompt_md": "How many three-digit numbers have digits that add up to 5?",
+   "options": [
+    {
+     "key": "A",
+     "md": "15"
+    },
+    {
+     "key": "B",
+     "md": "18"
+    },
+    {
+     "key": "C",
+     "md": "20"
+    },
+    {
+     "key": "D",
+     "md": "21"
+    },
+    {
+     "key": "E",
+     "md": "25"
+    }
+   ],
+   "answer": "A",
+   "solution_md": "List them by the hundreds digit (it can't be 0):\n\n- Hundreds 5: 500 → 1\n- Hundreds 4: 401, 410 → 2\n- Hundreds 3: 302, 311, 320 → 3\n- Hundreds 2: 203, 212, 221, 230 → 4\n- Hundreds 1: 104, 113, 122, 131, 140 → 5\n\n$1+2+3+4+5 = 15$",
+   "time_guide_seconds": 80
+  },
+  {
+   "n": 10,
+   "source_number": 27,
+   "topic": "Ratio, rates and best buys",
+   "skill": "Ratios with limited supplies",
+   "home": "Work out which ingredient runs out first. Scaling a recipe when you're short of one ingredient is perfect practice.",
+   "difficulty": 3,
+   "stimulus_id": null,
+   "prompt_md": "Green paint is made by mixing blue and yellow in the ratio 3 : 5. Jo has 12 litres of blue and 15 litres of yellow.\n\nWhat is the most green paint she can make?",
+   "options": [
+    {
+     "key": "A",
+     "md": "20 L"
+    },
+    {
+     "key": "B",
+     "md": "24 L"
+    },
+    {
+     "key": "C",
+     "md": "27 L"
+    },
+    {
+     "key": "D",
+     "md": "32 L"
+    },
+    {
+     "key": "E",
+     "md": "36 L"
+    }
+   ],
+   "answer": "B",
+   "solution_md": "Using all the blue (12 L = 4 lots of 3) would need $4 \\times 5 = 20$ L of yellow. She only has 15 L.\n\nSo the yellow runs out first: 15 L = 3 lots of 5, which needs $3 \\times 3 = 9$ L of blue.\n\nGreen paint: $9 + 15 = 24$ L.",
+   "time_guide_seconds": 80
+  }
+ ]
+}
