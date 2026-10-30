@@ -68,7 +68,7 @@ export default function FormulaSheet({ year }) {
           <Eyebrow><Link href="/formula-sheets" className="tb-link">Formula sheets</Link> · {label}</Eyebrow>
           <h1 id="fs-title" className="tb-h1 fs-h1">{label} maths <span className="sl-accent">formula sheet</span></h1>
           <p className="tb-lead fs-lead">
-            Every key formula and rule for {label} maths on one printable page, following the Victorian Curriculum 2.0. Tap any formula to see worked examples on that topic.
+            Every key formula and rule for {label} maths on one printable page, following the Australian Curriculum. Tap any formula to see worked examples on that topic.
           </p>
           <PrintButton year={year} />
         </div>
@@ -79,7 +79,7 @@ export default function FormulaSheet({ year }) {
           <article className="fs-sheet">
             <header className="fs-sheet__head">
               <p className="fs-sheet__title">{label} maths formula sheet</p>
-              <p className="fs-sheet__sub">Victorian Curriculum 2.0 · tuterly.com.au/formula-sheets</p>
+              <p className="fs-sheet__sub">Australian Curriculum · tuterly.com.au/formula-sheets</p>
             </header>
             <div className="fs-cols">
               {sheet.map((s) => (

@@ -18,6 +18,8 @@ import { getFaqsForSlug } from "@/lib/worksheet-faqs";
 import { getWorkedExamples } from "@/lib/worked-examples";
 import WorkedExamples from "@/components/study/WorkedExamples";
 import QuickAnswer from "@/components/study/QuickAnswer";
+import TopicStateNote from "@/components/state/TopicStateNote";
+import "@/components/study/worked-examples.css";
 import { mathToReadable } from "@/lib/try-email";
 import Testimonials from "@/components/marketing/Testimonials";
 
@@ -217,6 +219,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
               {page.subtitle}
             </p>
           </Fade>
+          <TopicStateNote slug={page.slug} yearLevel={page.yearLevel} />
           {worked?.summary && <QuickAnswer q={worked.summary.q} a={worked.summary.a} />}
         </div>
       </section>

@@ -35,7 +35,7 @@ const COMPARISON_ROWS = [
   { label: "What it is", app: "An app for iPhone and Android for maths practice", competitor: "Online tutoring with a tutor" },
   { label: "Live sessions with a tutor", app: "No", competitor: "Yes" },
   { label: "Who explains a new topic", app: "No live teacher. Worked solutions, Explain this and Study notes", competitor: "A tutor, live, in Cluey’s online classroom" },
-  { label: "Lesson content", app: "Your child’s own wrong answers, with topics from the Victorian Curriculum 2.0", competitor: "Cluey’s own structured lesson content" },
+  { label: "Lesson content", app: "Your child’s own wrong answers, with topics from the Australian Curriculum", competitor: "Cluey’s own structured lesson content" },
   { label: "Practice on the exact questions your child got wrong", app: "Yes: snap it, then similar questions until it’s mastered", competitor: "You can bring them to a session" },
   { label: "When it happens", app: "Any day, a few minutes at a time, on their phone", competitor: "At booked session times" },
   { label: "Scheduling and payment", app: "Nothing to schedule. A weekly subscription, cancel any time", competitor: "Handled by Cluey" },

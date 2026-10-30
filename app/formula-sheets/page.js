@@ -8,7 +8,7 @@ import "@/components/study/study-landing.css";
 import "@/components/formula/formula.css";
 
 const TITLE = "Free Maths Formula Sheets, Years 7 to 10A (Printable) | Tuterly";
-const DESCRIPTION = "Free printable maths formula sheets for Years 7, 8, 9, 10 and 10A, following the Victorian Curriculum 2.0. Every key formula on one page, linked to worked examples.";
+const DESCRIPTION = "Free printable maths formula sheets for Years 7, 8, 9, 10 and 10A, following the Australian Curriculum. Every key formula on one page, linked to worked examples.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -25,7 +25,7 @@ export default function FormulaHub() {
         <div className="tb-wrap">
           <Eyebrow>Formula sheets</Eyebrow>
           <h1 id="fsh-title" className="tb-h1 fs-h1">Free maths <span className="sl-accent">formula sheets</span></h1>
-          <p className="tb-lead fs-lead">Every key formula and rule for each year level on one printable page, following the Victorian Curriculum 2.0. Print it, stick it on the wall, or save it as a PDF.</p>
+          <p className="tb-lead fs-lead">Every key formula and rule for each year level on one printable page, following the Australian Curriculum (Victorian Curriculum 2.0 year levels). Print it, stick it on the wall, or save it as a PDF.</p>
         </div>
       </section>
       <section className="tb-section tb-section--card" aria-labelledby="fsh-years">

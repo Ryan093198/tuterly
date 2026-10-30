@@ -75,3 +75,11 @@
 .wx-md ol, .tc__solution ol { list-style-position: inside; padding-left: 0; }
 .wx-md ul, .tc__solution ul { list-style-position: inside; padding-left: 0; }
 .wx-md li > p:first-child { display: inline; }
+
+/* State note on shared topic pages */
+.tsn { max-width: 640px; margin: 22px auto 0; text-align: left; background: var(--surface-soft, #f6f8fb); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+.tsn__title { margin: 0 0 4px; font-weight: 700; color: var(--foreground); font-size: 14.5px; }
+.tsn__text { margin: 0 0 6px; }
+.tsn__list { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.tsn__state { font-weight: 700; color: var(--brand-text); text-decoration: none; }
+.tsn__state:hover { text-decoration: underline; }

@@ -9,12 +9,12 @@ import { SITE_URL } from "@/lib/site";
 // searches. The test builder was removed (Oct 2026): the tests now come
 // from the Tuterly app ("Test any topic"), so the app is the CTA.
 
-const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Victorian Curriculum)";
+const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Australian Curriculum)";
 const DESCRIPTION =
   "A maths practice test generator for Years 7 to 10. Pick any topic and Tuterly writes a new test, one question from each part of the topic, with a worked solution for every question. iPhone and Android.";
 
 const HOW = [
-  { n: "1", title: "Pick any topic in their year", body: "Every Years 7 to 10 maths topic in the Victorian Curriculum 2.0. They don't need to have snapped anything first." },
+  { n: "1", title: "Pick any topic in their year", body: "Every Years 7 to 10 maths topic in the Australian Curriculum. They don't need to have snapped anything first." },
   { n: "2", title: "Get a new test every time", body: "One question from each part of the topic, written fresh, so a second attempt is a genuine retest and not a memory test." },
   { n: "3", title: "Check every answer", body: "Each question has a full worked solution, and a short explanation of the step that went wrong if they miss it." },
   { n: "4", title: "Wrong answers become practice", body: "Anything they get wrong goes into their bank, ready for Fix my mistakes, with fresh questions on the same idea until it's mastered." },
@@ -48,15 +48,15 @@ const WHY = [
     body: "A student who can solve a problem in ten unhurried minutes cannot always solve it in three. Sitting a test under a clock is the only way to build that speed, and it is the difference between knowing the maths and scoring the mark.",
   },
   {
-    title: "Years 9 and 10 set up VCE",
-    body: "Algebra, indices, trigonometry, statistics and financial maths in Years 9 and 10 are what VCE General Maths, Methods and Specialist assume are automatic. Gaps here quietly close off subject choices later, and a practice test surfaces them while there is still time.",
+    title: "Years 9 and 10 set up senior maths",
+    body: "Algebra, indices, trigonometry, statistics and financial maths in Years 9 and 10 are what senior maths courses (VCE, HSC, QCE and the rest) assume are automatic. Gaps here quietly close off subject choices later, and a practice test surfaces them while there is still time.",
   },
 ];
 
 const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
-    a: "Years 7 through 10, aligned to the Victorian Curriculum (VCAA). In Tuterly, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
+    a: "Years 7 through 10, following the Australian Curriculum, including the Victorian Curriculum 2.0. In Tuterly, Test any topic writes a short test on any topic in their year, one question from each part of the topic, with a worked solution for every question.",
   },
   {
     q: "Is there a free maths practice test generator?",
@@ -68,15 +68,15 @@ const FAQS = [
   },
   {
     q: "Do these match what my child is doing at school?",
-    a: "Topics follow the Victorian Curriculum 2.0, so your child can pick the exact topic their class is on. They can also upload their actual school tests and practice papers, and the app writes fresh questions on the ones they got wrong.",
+    a: "Topics follow the Australian Curriculum (built on the Victorian Curriculum 2.0), so your child can pick the exact topic their class is on. They can also upload their actual school tests and practice papers, and the app writes fresh questions on the ones they got wrong.",
   },
   {
     q: "How many practice tests should a student do before a maths test?",
     a: "Two or three spread across the fortnight before beats a single session the night before. Spacing the practice out is what makes it stick, and marking each one properly matters more than doing more of them.",
   },
   {
-    q: "Will this help with VCE maths preparation?",
-    a: "Indirectly, and importantly. Years 9 and 10 build the algebra, indices, trigonometry, statistics and financial maths that VCE General Maths, Methods and Specialist assume are second nature, so closing gaps now is the highest-value VCE preparation a Year 9 or 10 student can do.",
+    q: "Will this help with senior maths (VCE, HSC and others)?",
+    a: "Indirectly, and importantly. Years 9 and 10 build the algebra, indices, trigonometry, statistics and financial maths that senior courses such as VCE Methods or HSC Advanced assume are second nature, so closing gaps now is the highest-value VCE preparation a Year 9 or 10 student can do.",
   },
 ];
 

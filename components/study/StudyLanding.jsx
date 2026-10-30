@@ -244,9 +244,9 @@ export default function StudyLanding() {
           <Reveal>
             <SectionHead
               id="explained"
-              eyebrow="Every topic, Years 7 to 10A"
+              eyebrow="Every topic, Years 7 to 10"
               title="Maths, explained."
-              lead="Worked examples, the common mistakes to watch for, and a question to try, for every topic in the Victorian Curriculum. Free, no sign-up."
+              lead="Worked examples, the common mistakes to watch for, and a question to try, for every Years 7 to 10 topic in the Australian Curriculum. Free, no sign-up."
             />
           </Reveal>
           <TopicGrid years={TOPIC_YEARS} />

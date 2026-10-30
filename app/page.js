@@ -76,8 +76,8 @@ function homeSchema() {
     name: "Tuterly",
     url: SITE_URL,
     logo: `${SITE_URL}/og-image.png`,
-    description: `Tuterly makes ${STUDY_APP.name}, an app for iPhone and Android for Years 7 to 10 maths, and free maths resources for Victorian families.`,
-    areaServed: { "@type": "Place", name: "Melbourne, Victoria, Australia" },
+    description: `Tuterly makes ${STUDY_APP.name}, an app for iPhone and Android for Years 7 to 10 maths, and free maths resources for Australian families.`,
+    areaServed: { "@type": "Country", name: "Australia" },
     parentOrganization: { "@type": "Organization", name: "Bayside Academics", url: "https://baysideacademics.com.au" },
   };
   const app = {

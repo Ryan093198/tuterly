@@ -467,7 +467,7 @@ export default function WorksheetGenerator({
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
           Six questions across Foundation, Standard and Extension, with full
-          worked solutions, calibrated to the Victorian Curriculum.
+          worked solutions, written to the Australian Curriculum.
         </p>
 
         <form onSubmit={handleGenerate} style={{ marginTop: 20, display: "grid", gap: 16 }}>

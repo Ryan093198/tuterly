@@ -18,7 +18,7 @@ export function AppHeroBlock({ placement, heading, sub }) {
         heading={heading || "Want better maths marks in Years 7 to 10? Start with the questions they get wrong."}
         sub={
           sub ||
-          `${STUDY_APP.name} is an app for iPhone and Android designed by Australian educators and built on the Victorian Curriculum: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`
+          `${STUDY_APP.name} is an app for iPhone and Android designed by Australian educators and built on the Australian Curriculum: your child snaps the maths questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered.`
         }
         style={{ margin: "0 0 22px" }}
       />
@@ -46,7 +46,7 @@ export function AppLowerCostSection({ competitor, placement }) {
           {[
             `Cost: a 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99).`,
             "Covers: Years 7 to 10 maths only, on iPhone and Android.",
-            "Designed by Australian educators at Bayside Academics, with topics from the Victorian Curriculum 2.0.",
+            "Designed by Australian educators at Bayside Academics, with topics from the Australian Curriculum.",
             "Parents see a weekly summary and topic test scores, not their child's photos.",
           ].map((t) => (
             <li key={t} style={{ fontSize: 15, color: c.text, lineHeight: 1.55, paddingLeft: 18, position: "relative" }}>

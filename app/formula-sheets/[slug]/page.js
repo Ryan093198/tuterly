@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   if (!y) return {};
   const label = yearLabel(y);
   const title = `${label} Maths Formula Sheet (Free, Printable PDF) | Tuterly`;
-  const description = `Every key ${label} maths formula on one printable page: number, algebra, measurement, geometry, statistics and probability. Victorian Curriculum 2.0, free to print or save as a PDF.`;
+  const description = `Every key ${label} maths formula on one printable page: number, algebra, measurement, geometry, statistics and probability. Australian Curriculum, free to print or save as a PDF.`;
   const url = `${SITE_URL}/formula-sheets/${slug}`;
   return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website", images: ["/og-tuterly.png"] } };
 }
