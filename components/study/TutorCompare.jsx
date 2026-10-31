@@ -26,7 +26,7 @@ export default function TutorCompare({ id = "compare", className = "" }) {
             <span className="sl-compare__app">{name}</span>
           </div>
           <dl className="sl-compare__rows">
-            <Row label="Cost" tutor={`Usually $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour in Melbourne.`} app={`A 1-week free trial, then $7.99 a week if you sign up before launch (usually $15.99). ${STUDY_APP.priceVsTutor}`} />
+            <Row label="Cost" tutor={`Usually $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour in Melbourne.`} app={`${STUDY_APP.priceLine}. ${STUDY_APP.priceVsTutor}`} />
             <Row label="When" tutor="Usually an hour a week, at a set time." app="Any day they snap a question or take a topic test." />
             <Row label="What it works on" tutor="What the tutor plans, plus whatever your child brings to the session." app="The difficult questions, and the ones your child hasn’t fully understood, until each one is fully mastered." />
             <Row label="Explanations" tutor="A person who can explain it several ways and read how your child is going." app={<>A full worked solution for every question, and <strong>Explain this</strong> for the step that went wrong.</>} />

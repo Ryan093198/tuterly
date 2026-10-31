@@ -86,7 +86,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
           <div className="wu__cta-copy">
             <p className="wu__cta-title">Sign up early for a free trial.</p>
             <p className="wu__cta-text">
-              {`For Years 7 to 10. A 1-week free trial, then $${STUDY_APP.earlyPriceWeek} a week for life (50% off) when you sign up before launch.`}{" "}
+              {`For Years 7 to 10: ${STUDY_APP.priceLine}.`}{" "}
               <Link href="/guarantee">Better marks in 6 months, or your money back</Link>.
             </p>
             <p className="wu__cta-try">

@@ -34,7 +34,7 @@ export default function GuaranteePage() {
             </div>
 
             <Section title={`1. Use it every week for ${G.months} months`}>
-              <p>{`The ${G.months} months start on the date of your first paid subscription payment (after the free trial). In every week of those ${G.months} months (Monday to Sunday, Melbourne time), your child needs to:`}</p>
+              <p>{`The ${G.months} months start on the date of your first paid subscription payment (after the free trial, if your plan has one). In every week of those ${G.months} months (Monday to Sunday, Melbourne time), your child needs to:`}</p>
               <ul className="list-disc pl-6 space-y-1">
                 {G.usage.map((u) => <li key={u}>{u}</li>)}
               </ul>

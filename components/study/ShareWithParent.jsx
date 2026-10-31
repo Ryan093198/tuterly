@@ -4,7 +4,7 @@ import { STUDY_APP } from "@/lib/study-app";
 // For students: send the parents page to a parent by text or email.
 export default function ShareWithParent() {
   const url = `${SITE_URL}/parents`;
-  const text = `Can we get ${STUDY_APP.name}? It's a maths app for Years 7 to 10 that turns the questions I get wrong into practice. If we sign up early it's 50% off: ${url}`;
+  const text = `Can we get ${STUDY_APP.name}? It's a maths app for Years 7 to 10 that turns the questions I get wrong into practice. It's ${STUDY_APP.offerShort}: ${url}`;
   const sms = `sms:?&body=${encodeURIComponent(text)}`;
   const mail = `mailto:?subject=${encodeURIComponent(`Can we get ${STUDY_APP.name}?`)}&body=${encodeURIComponent(text)}`;
   return (

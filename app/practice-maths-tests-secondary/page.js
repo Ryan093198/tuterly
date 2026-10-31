@@ -5,6 +5,7 @@ import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import ExamGenerator from "@/components/exam/ExamGenerator";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { SITE_URL } from "@/lib/site";
+import { STUDY_APP } from "@/lib/study-app";
 
 // Transactional landing page for "maths practice test" searches. The free
 // practice exam generator (components/exam) is the payload: pick a year and
@@ -66,7 +67,7 @@ const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: "Tuterly is free to download, with a 1-week free trial. After that it's $15.99 a week, or $7.99 a week for life if you sign up before launch. You can cancel any time.",
+    a: `Tuterly is free to download. It's ${STUDY_APP.priceLine}. You can cancel any time.`,
   },
   {
     q: "Do these match what my child is doing at school?",

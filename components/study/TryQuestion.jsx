@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { Icon } from "@/components/brand";
 import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
+import { STUDY_APP } from "@/lib/study-app";
 
 // The "Try it" demo (home page and /try). Enter an email first (it joins
 // the early sign-up list), then snap or upload one maths question (or type
@@ -256,7 +257,7 @@ export default function TryQuestion() {
       {!unlocked && (
         <form className="tq-card tq-gate" onSubmit={onUnlock}>
           <h3 className="tb-h3">Try it free</h3>
-          <p className="tq-muted">Enter your email to try 2 questions a day, free. You’ll also lock in Tuterly for $7.99 a week for life (50% off the $15.99 price) when it launches.</p>
+          <p className="tq-muted">Enter your email to try 2 questions a day, free. We’ll also let you know when {STUDY_APP.name} launches, with {STUDY_APP.offerShort}.</p>
           <div className="tq-gate__row">
             <input type="email" required className="tb-input" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" autoComplete="email" />
             <select className="tb-input" value={role} onChange={(e) => setRole(e.target.value)} aria-label="I'm a">

@@ -213,7 +213,7 @@ export default function SelectiveEntryPrepPage() {
               A private tutor in Melbourne usually costs $80 to $100 an hour. For the reasoning and writing sections, a tutor’s feedback is hard to replace.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              For school maths in Years 7 and 8, between sessions or on its own, {name} comes with a {STUDY_APP.priceLine}, cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store and Google Play, on iPhone and Android.
+              For school maths in Years 7 and 8, between sessions or on its own, {name} is {STUDY_APP.priceLine}. Cancel any time. {STUDY_APP.priceVsTutor} It’s coming soon to the App Store and Google Play, on iPhone and Android.
             </p>
           </Fade>
         </div>

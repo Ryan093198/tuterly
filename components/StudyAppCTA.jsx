@@ -194,9 +194,7 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {live
-        ? `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`
-        : `Free to download · 1-week free trial · Years 7 to 10 maths · iPhone and Android`}
+      {`Free to download · ${STUDY_APP.trialDays}-day free trial on monthly · Years 7 to 10 maths · iPhone and Android`}
       {pos === "final" && pathname !== "/try" && (
         <>
           <br />
@@ -366,7 +364,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? "It's coming to Android soon. We'll email you once when it's ready."
-        : `Sign up before launch and get ${STUDY_APP.name} for $${STUDY_APP.earlyPriceWeek} a week for life, 50% off the $${STUDY_APP.priceWeek} public price. We'll email you when it's ready.`;
+        : `Sign up and we'll email you when ${STUDY_APP.name} is ready. At launch it's $${STUDY_APP.priceWeek} a week or $${STUDY_APP.priceMonth} a month, ${STUDY_APP.offerShort}.`;
 
   async function submit(e) {
     e.preventDefault();
