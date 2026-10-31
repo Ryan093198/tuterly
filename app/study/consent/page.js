@@ -46,7 +46,7 @@ export default async function StudyConsent({ searchParams }) {
             <ul className="list-disc pl-5 space-y-1.5">
               <li>No ads, no chat with other users, and we don&apos;t sell personal information.</li>
               <li>
-                Paid features (Tuterly Study Plus) are bought through the App Store or Google Play,
+                Paid features (Tuterly Study Plus) are bought through the App Store (or Google Play, once the app is on Android),
                 and can be turned off with Screen Time or Family Sharing.
               </li>
             </ul>

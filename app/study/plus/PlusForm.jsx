@@ -5,8 +5,8 @@ import { useState } from "react";
 import { LAUNCH_SPECIAL_LINE } from "@/lib/study-launch";
 
 const PLANS = [
-  { key: "monthly", label: "Monthly", price: "$29.99", per: "a month", usual: "$59.99", note: "7 days free, then $29.99 a month" },
-  { key: "weekly", label: "Weekly", price: "$8.99", per: "a week", usual: "$17.99", note: "Billed every week" },
+  { key: "monthly", label: "Monthly", price: "$29.99", per: "a month", note: "7 days free, then $29.99 a month" },
+  { key: "weekly", label: "Weekly", price: "$8.99", per: "a week", note: "Billed every week" },
 ];
 
 export default function PlusForm() {
@@ -74,7 +74,7 @@ export default function PlusForm() {
             </span>
             <span className="text-right">
               <span className="block font-bold text-lg">{p.price}</span>
-              <span className="text-xs text-muted whitespace-nowrap"><s>{p.usual}</s> {p.per}</span>
+              <span className="text-xs text-muted whitespace-nowrap">{p.per}</span>
             </span>
           </button>
         ))}

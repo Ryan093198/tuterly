@@ -67,7 +67,7 @@ export default function PassForm() {
       <div className="rounded-xl border-2 border-[#0e9fc1] bg-[#e3f6fa] p-4 text-center">
         <p className="text-xs font-semibold text-amber-700 mb-1">{LAUNCH_SPECIAL_LINE}</p>
         <p className="text-3xl font-bold">$99</p>
-        <p className="text-xs text-muted"><s>$198</s> once, yours to keep</p>
+        <p className="text-xs text-muted">once, yours to keep</p>
       </div>
 
       <label className="block space-y-1.5">

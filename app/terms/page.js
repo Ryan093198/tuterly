@@ -128,7 +128,7 @@ export default function TermsOfService() {
 
           <Section title="The Tuterly Study app">
             <p>
-              Tuterly Study is our app for iPhone and Android that helps
+              Tuterly Study is our iPhone app (Android coming soon) that helps
               students in Years 7 to 10 fix the maths questions they got wrong.
               Students under 16 need a parent or guardian&apos;s OK to use it;
               we ask for it by email when they sign up.
@@ -151,7 +151,7 @@ export default function TermsOfService() {
             <p>
               Tuterly Study has a free plan and a paid plan, Tuterly Study
               Plus, sold as a weekly or monthly subscription through the App
-              Store or Google Play, or on our website (billed by Bayside
+              Store (or Google Play, once the app is on Android), or on our website (billed by Bayside
               Academics through Stripe). The price is shown before you buy.
             </p>
             <p>
