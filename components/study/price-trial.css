@@ -23,3 +23,4 @@
 .pt__guarantee { margin: 0; padding: 14px 16px; border-radius: 14px; background: var(--brand-soft); border: 1.5px solid var(--brand); font-size: 15px; line-height: 1.55; color: var(--foreground); }
 .pt__guarantee strong { font-weight: 900; }
 .pt__guarantee a { font-weight: 800; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
+.pt__full { color: var(--muted); font-weight: 600; margin-right: 4px; }

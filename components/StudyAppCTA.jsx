@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import { trackEvent } from "@/lib/analytics";
 import "@/components/brand/brand.css";
+import LaunchPrice from "@/components/study/LaunchPrice";
 
 // The one app button used across the marketing site. Everything it says
 // and where it points comes from lib/study-app.js:
@@ -392,7 +393,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? `${STUDY_APP.name} is on iPhone at launch, and Android is coming soon. Leave your email and we'll tell you once, when it's on Android.`
-        : `Sign up and we'll email you when ${STUDY_APP.name} is ready. At launch it's ${STUDY_APP.offerShort}, on iPhone. Android coming soon.`;
+        : <>Sign up and we&apos;ll email you when {STUDY_APP.name} is ready. It&apos;s on iPhone, with Android coming soon. <LaunchPrice /></>;
 
   async function submit(e) {
     e.preventDefault();

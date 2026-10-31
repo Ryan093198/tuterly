@@ -20,6 +20,7 @@ import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
+import LaunchPrice from "@/components/study/LaunchPrice";
 
 // /tutoring/[suburb] - programmatic SEO landing pages. Each page still
 // answers "tutoring in <suburb>" for Melbourne parents, but since Oct 2026
@@ -139,7 +140,7 @@ export default async function SuburbPage({ params }) {
             </div>
             <div style={{ background: c.white, borderRadius: 18, border: `2px solid ${c.teal}`, padding: "24px 22px" }}>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 700, color: c.navy, marginBottom: 6 }}>{name}</h3>
-              <p style={{ fontSize: 15, fontWeight: 700, color: c.text, marginBottom: 10 }}>Launch price: ${STUDY_APP.priceWeek} a week or ${STUDY_APP.priceMonth} a month</p>
+              <p style={{ fontSize: 15, fontWeight: 700, color: c.text, marginBottom: 10 }}><LaunchPrice /></p>
               <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65 }}>
                 An iPhone app for Years 7 to 10 maths, with Android coming soon. Your child snaps the questions they got wrong and practises fresh versions until each one is mastered, any day of the week. {STUDY_APP.priceVsTutor}
               </p>

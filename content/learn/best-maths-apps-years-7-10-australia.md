@@ -24,7 +24,7 @@ We checked each app below on its own website or app store listing in October 202
 | Mathletics | Younger secondary students who like games | Yes | Not published | iPhone, Android, web |
 | IXL | Lots of skills practice by year level | Yes | From $15.95 | iPhone, web |
 | Maths Pathway Homeschool | Homeschooling families | Yes, marketed to homeschoolers | $29 a month or $299 a year | Web |
-| Tuterly | Practising the questions your child got wrong | Sign-ups open, launching soon | $8.99 a week or $29.99 a month (launch price) | iPhone, Android coming soon |
+| Tuterly | Practising the questions your child got wrong | Sign-ups open, launching soon | Launch price, 50% off until 31 March 2027: ~~$17.99~~ $8.99 a week or ~~$59.99~~ $29.99 a month | iPhone, Android coming soon |
 | Photomath | Checking working on a single problem | Yes | Free, Plus from $14.99 | iPhone, Android |
 | Khan Academy | Free videos and practice | Yes, free | Free | iPhone, Android, web |
 | Cluey | A real tutor, online | Yes | $86 to $99 per hour | Browser |
