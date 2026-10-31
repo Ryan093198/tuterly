@@ -37,16 +37,20 @@ export default function HubShell({
   strands,
   mistakesIntro,
   mistakes,
+  parentsIntro,
   parentTips,
   appIntro,
   appSteps,
   learnLinks,
   moreLinks,
   faqs,
+  ctaTitle,
+  ctaText,
+  finalText,
   children,
 }) {
   const name = `Year ${year} maths`;
-  const crumbs = [{ name, path }];
+  const crumbs = [{ name: "Years", path: "/years" }, { name, path }];
   const others = HUBS.filter((h) => h.href !== path);
   return (
     <div className="tb sl ym">
@@ -83,9 +87,9 @@ export default function HubShell({
               </ul>
             </div>
             <div className="ym-herocta">
-              <p className="ym-herocta__t">{`Turn Year ${year} mistakes into marks`}</p>
+              <p className="ym-herocta__t">{ctaTitle || `Turn Year ${year} mistakes into marks`}</p>
               <p className="ym-herocta__x">
-                Snap the maths questions your child gets wrong. Tuterly saves each one with a worked solution, then gives fresh questions on the same skill until it sticks.
+                {ctaText || "Snap the maths questions your child gets wrong. Tuterly saves each one with a worked solution and keeps it in their bank until they get it right."}
               </p>
               <StudyAppCTA variant="hero" placement={`year_${year}_maths_hub_hero`} slim />
             </div>
@@ -115,7 +119,7 @@ export default function HubShell({
               ))}
             </div>
             <p className="ym-small">
-              Topic map based on the Australian Curriculum v9 Mathematics strands (Number, Algebra, Measurement, Space, Statistics, Probability). The Victorian Curriculum 2.0 closely follows it, grouped as Number and Algebra, Measurement and Geometry, and Statistics and Probability. NSW, WA and some schools order topics differently, so check your child&rsquo;s school course outline for the exact sequence.
+              Topic map based on the Australian Curriculum v9 Mathematics strands (Number, Algebra, Measurement, Space, Statistics, Probability). The Victorian Curriculum 2.0 uses the same six strands. NSW, WA and some schools order topics differently, so check your child&rsquo;s school course outline for the exact sequence.
             </p>
           </div>
         </section>
@@ -127,7 +131,7 @@ export default function HubShell({
             <ul className="ym-mistakes">
               {mistakes.map((m) => (
                 <li key={m.title}>
-                  <strong>{m.title}</strong>
+                  <strong>{m.title}</strong>{" "}
                   {m.text}
                   {m.eg && <span className="ym-eg">{m.eg}</span>}
                   {m.link && <span className="ym-eg">Practise it: <Link href={m.link.href}>{m.link.label}</Link></span>}
@@ -140,7 +144,7 @@ export default function HubShell({
         <section id="parents" className="tb-section" aria-labelledby="h-parents">
           <div className="tb-wrap">
             <h2 id="h-parents" className="tb-h2 ym-h2">How parents can help at home</h2>
-            <p className="ym-intro">You do not need to remember how to do the maths yourself. Most of what helps is routine, the right questions, and what happens after a mistake.</p>
+            <p className="ym-intro">{parentsIntro || "You do not need to remember how to do the maths yourself. Most of what helps is routine, the right questions, and what happens after a mistake."}</p>
             <ul className="ym-checklist">
               {parentTips.map((t) => (
                 <li key={t.title}><strong>{t.title}</strong> {t.text}</li>
@@ -155,7 +159,7 @@ export default function HubShell({
             {appIntro && <p className="ym-intro">{appIntro}</p>}
             <ol className="ym-steps">
               {appSteps.map((s) => (
-                <li key={s.title}><strong>{s.title}</strong>{s.text}</li>
+                <li key={s.title}><strong>{s.title}</strong>{" "}{s.text}</li>
               ))}
             </ol>
             <p className="ym-small">
@@ -211,7 +215,7 @@ export default function HubShell({
           <Eyebrow>Tuterly · Years 7 to 10 maths</Eyebrow>
           <h2 id="h-cta" className="tb-h2 ym-h2">{`Make every Year ${year} mistake count`}</h2>
           <p className="ym-intro">
-            Each wrong question your child snaps becomes a worked solution, fresh practice on the same skill and, before a test, a practice test built from their own mistakes.
+            {finalText || "Each wrong question your child snaps becomes a worked solution in their bank. Fix my mistakes drills the ones still to fix, and Test any topic sets a short test on any topic in their year."}
           </p>
           <StudyAppCTA variant="hero" placement={`year_${year}_maths_hub_final`} position="final" slim />
         </div>

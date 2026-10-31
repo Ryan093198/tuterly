@@ -12,7 +12,7 @@ const ROWS = [
   ["Step-by-step solutions", "Yes, its core strength", "Yes, a worked solution for each saved question"],
   ["New questions on the same skill", "Not its main focus", "Yes, fresh questions generated on the same concept until mastered"],
   ["Australian Years 7 to 10 topic map", "General solver, not organised around Australian year levels", "Every question filed under an Australian Curriculum topic for Years 7 to 10"],
-  ["Practice tests from past mistakes", "Not its main focus", "Yes, built from your child’s saved mistakes before a topic test"],
+  ["Practice tests from past mistakes", "Not its main focus", "Yes, a weekly review tests up to 8 of the week’s trickiest questions, and Fix my mistakes drills every one still to fix with fresh versions"],
   ["Parent visibility", "Not its main focus", "A parent summary of practice and progress by topic"],
   ["Homework integrity habits", "Depends on how it is used; easy to copy without attempting", "Same risk with any solution; designed to be used after an attempt, then practised again"],
 ];
@@ -70,7 +70,7 @@ export default function Page() {
             </p>
             <ul>
               <li><strong>Reading a method is not the same as doing it.</strong> Following steps on a screen can feel like understanding. The real test is a fresh question with no help, which a solver does not set.</li>
-              <li><strong>Nothing comes back.</strong> Once the question is solved, it is gone. There is no list of what your child found hard, and no reminder to try that skill again next week.</li>
+              <li><strong>The skill does not come back.</strong> A solver shows the answer, but it doesn&rsquo;t bring the skill back later as new questions to practise.</li>
               <li><strong>It is not organised by year and topic.</strong> A general solver does not know your child is in Year 8 studying linear equations this term, or which topics are on the next test.</li>
               <li><strong>Homework stops telling the truth.</strong> If answers are copied, homework looks fine while the gaps stay hidden, and the first sign of trouble is a test mark.</li>
             </ul>
@@ -86,12 +86,12 @@ export default function Page() {
           <h2 id="h-integrity" className="tb-h2 pg-h2">Copying vs learning: a gentle approach</h2>
           <div className="pg-prose">
             <p>
-              Most students who copy from a solver are not trying to cheat. They are tired, stuck, and want homework finished. The fix is a clear family rule rather than a ban, and it applies to any app that shows solutions, Tuterly included.
+              Many students who copy from a solver are not trying to cheat. They are tired, stuck, and want homework finished. The fix is a clear family rule rather than a ban, and it applies to any app that shows solutions, Tuterly included.
             </p>
             <ol>
               <li><strong>Attempt first, in writing.</strong> Every question gets a genuine go on paper before any app is opened.</li>
               <li><strong>Check, then close.</strong> Use the solution to find the step that went wrong, then close the app and redo the question unaided.</li>
-              <li><strong>Mark it for later.</strong> Anything that needed help gets saved so it can be practised again in a few days. This is the step most students skip.</li>
+              <li><strong>Mark it for later.</strong> Anything that needed help gets saved so it can be practised again in a few days. This is the step many students skip.</li>
               <li><strong>Ask about school expectations.</strong> Teachers have different views on solver apps, and some homework is set specifically to see what your child can do alone.</li>
             </ol>
             <p>
@@ -148,7 +148,7 @@ export default function Page() {
               <ul>
                 <li>Homework looks fine but topic test marks do not match.</li>
                 <li>Your child makes the same kinds of mistakes again and again.</li>
-                <li>You want practice organised by Australian Years 7 to 10 topics, with a test built from their mistakes.</li>
+                <li>You want practice organised by Australian Years 7 to 10 topics, with fresh practice on the questions they got wrong.</li>
               </ul>
             </div>
             <div className="pg-box">
@@ -156,7 +156,7 @@ export default function Page() {
               <ul>
                 <li>A solver is used only to check a single step after a real attempt.</li>
                 <li>Every question that needed help is snapped into Tuterly to practise again.</li>
-                <li>Test preparation starts from those saved mistakes, not from re-reading.</li>
+                <li>Test preparation starts from those saved questions, drilled with fresh versions, not from re-reading.</li>
               </ul>
             </div>
           </div>

@@ -54,7 +54,7 @@ export default function Page() {
         ["faq", "FAQ"],
       ]}
       ctaTitle="Turn maths mistakes into marks"
-      ctaText="Your child snaps the maths questions they get wrong. Tuterly saves each one with a worked solution, then gives fresh questions on the same skill until it sticks."
+      ctaText="Your child snaps the maths questions they get wrong. Tuterly saves each one with a worked solution and a similar question to try, and keeps it in their bank until they get it right."
       placement="years_index"
       faqs={FAQS}
       faqTitle="Years 7 to 10 maths: questions parents ask"
@@ -63,7 +63,7 @@ export default function Page() {
       showYearHubs={false}
       links={LINKS}
       finalTitle="Make every maths mistake count"
-      finalText="Each wrong question your child snaps becomes a worked solution, fresh practice on the same skill and, before a test, a practice test built from their own mistakes."
+      finalText="Each wrong question your child snaps becomes a worked solution in their bank. Fix my mistakes drills every one still to fix, and Test any topic sets a short test on any topic in their year."
     >
       <section id="year-guides" className="tb-section" aria-labelledby="h-year-guides">
         <div className="tb-wrap">
@@ -103,7 +103,7 @@ export default function Page() {
             </div>
           </div>
           <p className="pg-small">
-            The topic maps follow the Australian Curriculum v9 Mathematics. The Victorian Curriculum 2.0 follows it closely; NSW and some other states and schools order topics differently. For example, Pythagoras is usually a Year 8 or Year 9 topic and right-angled trigonometry usually starts in Year 9, but your child&rsquo;s school may teach them a little earlier or later.
+            The topic maps follow the Australian Curriculum v9 Mathematics. The Victorian Curriculum 2.0 uses the same six strands and follows it closely; NSW and some other states and schools order topics differently. For example, Pythagoras is usually a Year 8 or Year 9 topic and right-angled trigonometry usually starts in Year 9, but your child&rsquo;s school may teach them a little earlier or later.
           </p>
         </div>
       </section>
@@ -133,10 +133,10 @@ export default function Page() {
             </p>
           </div>
           <ol className="pg-steps" style={{ marginTop: 18 }}>
-            <li><strong>Snap the wrong question</strong>From homework, a worksheet or a marked test. It is saved with a step-by-step worked solution.</li>
-            <li><strong>Practise a fresh version</strong>New questions on the same skill, so your child practises the step that went wrong rather than memorising one answer.</li>
-            <li><strong>Master it</strong>Questions come back until they are right, so an early-term mistake does not reappear in the exam.</li>
-            <li><strong>Test from mistakes</strong>Before a topic test, Tuterly builds a practice test from your child&rsquo;s own mistakes.</li>
+            <li><strong>Snap the wrong question</strong>{" "}From homework, a worksheet or a marked test. It is saved to their bank with a step-by-step worked solution.</li>
+            <li><strong>Try a similar question</strong>{" "}A similar question on the same skill, so your child practises the step that went wrong rather than memorising one answer.</li>
+            <li><strong>Fix my mistakes</strong>{" "}A drill of every question still to fix, and a weekly review of up to 8 of that week&rsquo;s questions, trickiest first.</li>
+            <li><strong>Test any topic</strong>{" "}A short test on any topic in their year, one question per section, even before anything has been snapped. Wrong answers go into the bank.</li>
           </ol>
           <p className="pg-small">
             See how it works on <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.

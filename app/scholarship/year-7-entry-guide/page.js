@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/scholarship-guides";
 const PATH = "/scholarship/year-7-entry-guide";
 const TITLE = "Year 7 Scholarship Entry Guide for Parents: Timeline, Skills and Prep | Tuterly";
 const DESCRIPTION =
-  "A parent guide to Year 7 entry scholarship tests in Australia: when to start, what ACER, Edutest and AAS test, writing and maths tips, applying to several schools, and where a free diagnostic fits.";
+  "A parent guide to Year 7 entry scholarship tests in Australia: when to start, what ACER, Edutest and AAS test, writing and maths tips, applying to several schools, and where Tuterly's Numerical Reasoning diagnostic fits.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "Where does Tuterly Scholarship fit for Year 7 entry?",
-    a: "Start with the 10 free diagnostic questions for Year 7 entry to see the style and an early picture of strengths. Scholarship Pass (launch special A$99 one-off per entry level, usual price A$198 from 1 April 2027) unlocks the full diagnostic, worked solutions and follow-up practice on everything your child misses.",
+    a: "Tuterly's Year 7 entry diagnostic is 40 Numerical Reasoning questions, pitched for Year 6 students, in the Tuterly app on iPhone. It does not cover reading, writing or humanities. The first 10 questions are free. A one-off Scholarship Pass for the Year 7 entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on everything your child misses. Families on the Scholarship list will get a launch discount.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Page() {
         ["Usually sat in", "Year 6"],
         ["Prep often starts", "Year 5"],
         ["Tests to check", "ACER secondary, Edutest, AAS"],
-        ["Free to start", "First 10 diagnostic questions"],
+        ["Each school sets", "Its own date, fee and deadline"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-time">
@@ -124,7 +124,7 @@ export default function Page() {
             <div className="sg-box">
               <h3>Writing under time</h3>
               <ul>
-                <li>Spend the first few minutes planning: a clear idea, a beginning, middle and end.</li>
+                <li>Spend a minute or two planning: a clear idea, a beginning, middle and end. Edutest&rsquo;s Written Expression is only 15 minutes.</li>
                 <li>Practise both narrative and persuasive pieces, as prompts vary.</li>
                 <li>Aim for a strong opening and a deliberate ending rather than maximum length.</li>
                 <li>Leave a minute or two to reread for missing words and punctuation.</li>
@@ -137,7 +137,7 @@ export default function Page() {
                 <li>Keep times tables and mental strategies quick and automatic.</li>
                 <li>Practise reading a problem twice and underlining what is actually asked.</li>
                 <li>Use estimation to rule out options in multiple choice.</li>
-                <li>Show working on scrap paper, even when the answer is multiple choice.</li>
+                <li>Use any space the test allows. Edutest does not allow working-out paper, so practise working in your head too.</li>
                 <li>If stuck, mark it, move on and come back. Every question is usually worth the same.</li>
               </ul>
             </div>
@@ -166,16 +166,10 @@ export default function Page() {
 
       <section className="tb-section" aria-labelledby="h-tuterly">
         <div className="tb-wrap">
-          <h2 id="h-tuterly" className="tb-h2 sg-h2">Where the free diagnostic and Scholarship Pass fit</h2>
+          <h2 id="h-tuterly" className="tb-h2 sg-h2">Where Tuterly fits</h2>
           <div className="sg-prose">
             <p>
-              <strong>At the start of Year 6 (or late Year 5):</strong> use the 10 free Year 7 entry diagnostic questions for an early picture of strengths and gaps, and to show your child what the questions look like.
-            </p>
-            <p>
-              <strong>When you are ready to plan properly:</strong> Scholarship Pass, a launch special of A$99 one-off for the Year 7 entry level (usual price A$198 from 1 April 2027), unlocks the full diagnostic, worked solutions for every question and follow-up practice on everything missed. It is designed to complement provider-specific papers and writing feedback, not replace them.
-            </p>
-            <p>
-              Today you can already try the <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link> (choose Year 6 for Year 7 entry). Younger child? See <Link href="/scholarship/year-5-and-year-6-prep">Year 5 and Year 6 prep</Link>, or go back to the <Link href="/scholarship">scholarship hub</Link>.
+              Tuterly covers the Numerical Reasoning side only, so use it alongside provider-specific papers and writing feedback. The start of Year 6 (or late Year 5) is a sensible time for a baseline, while there is still time to work on what it finds. Today you can already try the <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link> (choose Year 6 for Year 7 entry). Younger child? See <Link href="/scholarship/year-5-and-year-6-prep">Year 5 and Year 6 prep</Link>, or go back to the <Link href="/scholarship">scholarship hub</Link>.
             </p>
           </div>
         </div>

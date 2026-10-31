@@ -11,7 +11,7 @@ const ROWS = [
   ["Australian Years 7 to 10 topics", "Yes, built around Australian curricula and widely used in Australian schools", "Yes, every question filed under an Australian Curriculum topic for Years 7 to 10"],
   ["Step-by-step solutions", "Yes, with feedback on each line of working as the student enters it", "Yes, a worked solution for each saved question"],
   ["New questions on the same skill", "Yes, adaptive practice within the platform’s topics", "Yes, fresh questions generated from each of your child’s mistakes until mastered"],
-  ["Practice tests from past mistakes", "Not its main focus; tests are usually set by the teacher", "Yes, built from your child’s own saved mistakes before a topic test"],
+  ["Practice tests from past mistakes", "Not its main focus; tests are usually set by the teacher", "Yes, a weekly review tests up to 8 of the week’s trickiest questions, and Fix my mistakes drills every one still to fix with fresh versions"],
   ["Who sets the work", "Usually the teacher, through a school account", "Your child, from what went wrong this week"],
   ["Parent visibility", "Depends on the school or home account set-up", "A parent summary of practice and progress by topic"],
   ["Live human teaching", "No, it is a practice platform", "No, it is a study app"],
@@ -142,7 +142,7 @@ export default function Page() {
               <ul>
                 <li>Mathspace is set by the school and stays the main homework tool.</li>
                 <li>Anything your child gets wrong, in Mathspace or on paper, gets snapped into Tuterly.</li>
-                <li>The week before a topic test, they use a Tuterly practice test built from those mistakes.</li>
+                <li>The week before a topic test, they test themselves on that topic in Tuterly and drill anything they got wrong with fresh versions.</li>
               </ul>
             </div>
           </div>

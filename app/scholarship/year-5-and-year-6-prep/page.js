@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/scholarship-guides";
 const PATH = "/scholarship/year-5-and-year-6-prep";
 const TITLE = "Year 5 and Year 6 Entry Scholarship Prep: A Parent Guide | Tuterly";
 const DESCRIPTION =
-  "Preparing a younger child for a Year 5 or Year 6 entry scholarship test in Australia: primary-level tests such as ACER Level P, age-appropriate practice, avoiding burnout, the parent's role and a free diagnostic.";
+  "Preparing a younger child for a Year 5 or Year 6 entry scholarship test in Australia: primary-level tests such as ACER Level P, age-appropriate practice, avoiding burnout, the parent's role and a Numerical Reasoning diagnostic you can start free.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly Scholarship work for Year 5 and Year 6 entry?",
-    a: "Choose the entry level, and the first 10 diagnostic questions are free. Scholarship Pass (launch special A$99 one-off per entry level, usual price A$198 from 1 April 2027) unlocks the full diagnostic, worked solutions and follow-up practice on missed questions.",
+    a: "There is a 40-question Numerical Reasoning diagnostic for each level, in the Tuterly app on iPhone: Year 5 entry is pitched for Year 4 students and Year 6 entry for Year 5 students. It does not cover reading or writing. The first 10 questions are free. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on missed questions. Families on the Scholarship list will get a launch discount.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Page() {
         ["Year 5 entry", "Test usually sat in Year 4"],
         ["Year 6 entry", "Test usually sat in Year 5"],
         ["Common primary test", "ACER Level P"],
-        ["Free to start", "First 10 diagnostic questions"],
+        ["Best practice", "Short, light and regular"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-levels">
@@ -65,7 +65,7 @@ export default function Page() {
           <h2 id="h-levels" className="tb-h2 sg-h2">Primary-level tests vs early secondary tests</h2>
           <div className="sg-prose" style={{ marginBottom: 18 }}>
             <p>
-              Tests for earlier entry are pitched at primary level. They look different from the secondary tests used for Year 7 entry, and the difference matters when you choose practice.
+              Tests for earlier entry are pitched at primary level. They look different from the secondary tests used for Year 7 entry, and the difference matters when you choose practice. ACER&rsquo;s Primary test (Level P) covers Reading and Viewing, Mathematics and Writing, and some schools use primary-level Edutest or AAS tests instead. For sections, timing and calculator rules by provider, see <Link href="/scholarship/acer-vs-edutest-vs-aas">ACER vs Edutest vs AAS</Link>.
             </p>
           </div>
           <div className="sg-table">
@@ -75,8 +75,6 @@ export default function Page() {
                 <tr><th scope="col">&nbsp;</th><th scope="col">Primary level (Year 5 and 6 entry)</th><th scope="col">Early secondary (Year 7 entry)</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">ACER</th><td>Level P: Reading and Viewing, Mathematics, Writing. Typically on paper.</td><td>Secondary levels: Written Expression, Humanities, Mathematics. Online or paper.</td></tr>
-                <tr><th scope="row">Edutest and AAS</th><td>Primary-level versions where the school uses them. Sections depend on the school.</td><td>Reasoning and achievement sections, often five for Edutest.</td></tr>
                 <tr><th scope="row">Reading</th><td>Shorter texts and visuals, with literal and inferential questions</td><td>Longer and more varied texts, including poetry and persuasive pieces</td></tr>
                 <tr><th scope="row">Maths</th><td>Number sense, patterns, measurement and simple data, often in puzzle form</td><td>Multi-step problems across more topics</td></tr>
                 <tr><th scope="row">Writing</th><td>A shorter piece, often from a picture or simple prompt</td><td>A timed piece with higher expectations for structure and vocabulary</td></tr>
@@ -84,7 +82,7 @@ export default function Page() {
             </table>
           </div>
           <p className="sg-sources">
-            Always confirm the test and level on the school&rsquo;s own page. For a provider-by-provider view, see <Link href="/scholarship/acer-vs-edutest-vs-aas">ACER vs Edutest vs AAS</Link>.
+            Always confirm the test and level on the school&rsquo;s own page.
           </p>
         </div>
       </section>
@@ -157,16 +155,10 @@ export default function Page() {
 
       <section className="tb-section" aria-labelledby="h-path">
         <div className="tb-wrap">
-          <h2 id="h-path" className="tb-h2 sg-h2">The diagnostic path for Year 5 and Year 6 entry</h2>
-          <ol className="sg-steps">
-            <li><strong>Pick the level</strong>Year 5 entry (child in Year 4) or Year 6 entry (child in Year 5).</li>
-            <li><strong>Try 10 free questions</strong>The first 10 diagnostic questions are free, a gentle first look at the style.</li>
-            <li><strong>Unlock Scholarship Pass if useful</strong>Launch special A$99 one-off per entry level (usual price A$198 from 1 April 2027): full diagnostic and worked solutions.</li>
-            <li><strong>Practise little and often</strong>Follow-up practice on missed questions, in short sessions that suit younger children.</li>
-          </ol>
-          <div className="sg-prose" style={{ marginTop: 18 }}>
+          <h2 id="h-path" className="tb-h2 sg-h2">Where Tuterly fits for Year 5 and Year 6 entry</h2>
+          <div className="sg-prose">
             <p>
-              You can start today with the <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link>: choose Year 4 for Year 5 entry, or Year 5 for Year 6 entry. Planning ahead? Read the <Link href="/scholarship/year-7-entry-guide">Year 7 entry guide</Link>, or go back to the <Link href="/scholarship">scholarship hub</Link>.
+              Tuterly covers the Numerical Reasoning side only, so pair it with plenty of reading and some writing with feedback. Keep any practice short, in sessions that suit younger children. You can start today with the <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link>: choose Year 4 for Year 5 entry, or Year 5 for Year 6 entry. Planning ahead? Read the <Link href="/scholarship/year-7-entry-guide">Year 7 entry guide</Link>, or go back to the <Link href="/scholarship">scholarship hub</Link>.
             </p>
           </div>
         </div>

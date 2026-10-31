@@ -12,7 +12,7 @@ const ROWS = [
   ["Australian Years 7 to 10 topic map", "Depends on who made the set; quality and coverage vary", "Every question filed under an Australian Curriculum topic for Years 7 to 10"],
   ["Multi-step working", "Limited; a card usually checks one answer, not the method", "Yes, a step-by-step worked solution for each question"],
   ["New questions on the same skill", "Not its main focus; cards repeat the same item", "Yes, fresh questions on the same concept, so the method is practised, not one answer"],
-  ["Practice tests from past mistakes", "Can quiz on a set of cards", "Yes, a practice test built from your child’s saved mistakes before a topic test"],
+  ["Practice tests from past mistakes", "Can quiz on a set of cards", "Yes, a weekly review tests up to 8 of the week’s trickiest questions, and Fix my mistakes drills every one still to fix with fresh versions"],
   ["Good for formulas and vocabulary", "Yes, a real strength", "Formulas appear in context within questions; flashcards are quicker for pure recall"],
   ["Parent visibility", "Not its main focus for families", "A parent summary of practice and progress by topic"],
 ];
@@ -69,7 +69,7 @@ export default function Page() {
               Maths in Years 7 to 10 is mostly <strong>procedural</strong>. A typical topic test question is not &ldquo;What is the formula for the area of a trapezium?&rdquo; but &ldquo;Find the area of this composite shape&rdquo;, which needs the formula, the right measurements, several steps and a final answer with units. Knowing the fact is necessary, but it is not enough.
             </p>
             <ul>
-              <li><strong>A card checks an answer, not a method.</strong> Most marks in a maths test come from correct working. A flashcard cannot see where in a multi-step solution your child went wrong.</li>
+              <li><strong>A card checks an answer, not a method.</strong> Many marks in a maths test come from correct working. A flashcard cannot see where in a multi-step solution your child went wrong.</li>
               <li><strong>Repeating the same card can become memorising.</strong> If the card says &ldquo;Solve 3x + 5 = 20&rdquo;, your child may soon remember &ldquo;x = 5&rdquo; without being able to solve 4x &minus; 7 = 21. Maths needs new numbers each time.</li>
               <li><strong>Shared sets vary.</strong> Sets made by others may use non-Australian terms, a different topic order or simply contain errors. Your child&rsquo;s class notes and textbook are a safer source.</li>
               <li><strong>Transfer to the test is the hard part.</strong> Recognising a fact on a card is easier than choosing and using it inside an unfamiliar question.</li>
@@ -136,7 +136,7 @@ export default function Page() {
               <ul>
                 <li>A short flashcard warm-up covers the facts for this topic.</li>
                 <li>Then your child practises the questions they got wrong in Tuterly.</li>
-                <li>Before the test, they use a practice test built from those mistakes.</li>
+                <li>Before the test, they test themselves on the topic and drill what they got wrong with fresh versions.</li>
               </ul>
             </div>
           </div>

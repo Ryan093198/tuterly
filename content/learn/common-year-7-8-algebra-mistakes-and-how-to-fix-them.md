@@ -42,7 +42,7 @@ Grab your child's last algebra test or a page of homework with some red marks on
 
 **What it looks like:** -3 + 7 = -10, or 5 - (-2) = 3, or writing -x² when they meant (-x)².
 
-**Why it happens:** Negative numbers are usually taught in Year 7, often just before algebra, and are not yet fluent when algebra arrives. Errors with negatives then spread into every topic that follows.
+**Why it happens:** Negative numbers are usually taught in Years 7 and 8, often just before algebra, and are not yet fluent when algebra arrives. Errors with negatives then spread into every topic that follows.
 
 **The fix:** Go back to integers before going further with algebra. A number line drawn in the margin helps a lot. Fifteen minutes on our [Year 7 integers](/worksheets/year-7-integers) and [Year 8 integer operations](/worksheets/year-8-integer-operations) worksheets is often the quickest way to unblock several algebra topics at once.
 

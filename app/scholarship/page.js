@@ -3,9 +3,9 @@ import GuideShell from "@/components/scholarship-guides/GuideShell";
 import { pageMetadata } from "@/lib/scholarship-guides";
 
 const PATH = "/scholarship";
-const TITLE = "Scholarship and Selective Entry Exam Prep in Australia: A Parent Guide | Tuterly";
+const TITLE = "Scholarship Test Prep for ACER, Edutest and AAS: A Parent Guide | Tuterly";
 const DESCRIPTION =
-  "A plain-English parent guide to private school scholarship tests in Australia: ACER, Edutest and AAS at a glance, how they differ from government selective entry, a planning checklist, and a free diagnostic for Year 5, 6 and 7 entry.";
+  "A plain-English parent guide to private school scholarship tests in Australia for Year 5, 6 and 7 entry: ACER, Edutest and AAS in brief, how scholarships differ from government selective entry, a planning checklist, and a Numerical Reasoning diagnostic you can start free.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
@@ -23,12 +23,8 @@ const FAQS = [
     a: "Year 5, Year 6 and Year 7 entry. Year 7 entry is the most common scholarship year, so most families start with that. Children usually sit the test in the year before they would start at the new school.",
   },
   {
-    q: "What does the free diagnostic include?",
-    a: "The first 10 diagnostic questions are free. They show the question style and give an early read on which skills are secure and which need work. Scholarship Pass unlocks the full diagnostic with worked solutions and follow-up practice on every question your child misses.",
-  },
-  {
-    q: "How much is Scholarship Pass?",
-    a: "Scholarship Pass is a launch special of A$99, one-off, per entry level (usual price A$198 from 1 April 2027). It is not a subscription. Join the Scholarship list to hear when it opens.",
+    q: "What does Tuterly Scholarship include, and what does it cost?",
+    a: "It starts with a 40-question Numerical Reasoning diagnostic in the Tuterly app on iPhone, with a separate version for Year 5, 6 and 7 entry. It covers numerical reasoning only, not reading, writing or humanities. The first 10 questions are free. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest of the diagnostic, worked solutions and follow-up practice on every question your child misses. Pricing has not been announced yet, and families on the Scholarship list will get a launch discount.",
   },
   {
     q: "Can Tuterly tell me my child's chances of a scholarship?",
@@ -50,14 +46,13 @@ export default function Page() {
       description={DESCRIPTION}
       crumbs={CRUMBS}
       faqs={FAQS}
-      eyebrow="Scholarship and selective entry"
-      h1="Scholarship and selective entry exam prep in Australia: a parent guide"
-      lead="Which test does each of your target schools use, what is in it, and how do you prepare without wasting months on the wrong practice? This guide, written by Australian educators, answers those questions first, then shows where Tuterly's free scholarship diagnostic fits."
+      eyebrow="Scholarship test prep"
+      h1="Scholarship test prep: ACER, Edutest and AAS"
+      lead="Which test does each of your target schools use, what is in it, and how do you prepare without wasting months on the wrong practice? This parent guide to Year 5, 6 and 7 entry scholarship tests answers those questions first, then shows where Tuterly Scholarship fits."
       facts={[
         ["Entry years covered", "Year 5, Year 6 and Year 7 entry"],
         ["Main providers", "ACER, Edutest, AAS"],
-        ["Free to start", "First 10 diagnostic questions"],
-        ["Scholarship Pass", "A$99 launch special per entry level (usual price A$198 from 1 April 2027)"],
+        ["Free to start", "First 10 of 40 Numerical Reasoning diagnostic questions"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-vs">
@@ -77,7 +72,7 @@ export default function Page() {
               <tbody>
                 <tr><th scope="row">Who offers it</th><td>Independent and some Catholic schools</td><td>State government (for example, Victorian selective entry high schools, NSW selective high schools)</td></tr>
                 <tr><th scope="row">What you get</th><td>A place plus a fee reduction, from partial to (rarely) full</td><td>A place at a government selective school</td></tr>
-                <tr><th scope="row">Who runs the test</th><td>Usually ACER, Edutest or AAS, booked by each school</td><td>Set by the state education department through its own process</td></tr>
+                <tr><th scope="row">Who runs the test</th><td>Usually ACER, Edutest or AAS, booked by each school</td><td>Run for the state education department through its own process (in Victoria, by ACER)</td></tr>
                 <tr><th scope="row">Common entry years</th><td>Year 7 most common, also Years 5, 6, 9 and others</td><td>Varies by state, for example Year 9 in Victoria and Year 7 in NSW</td></tr>
                 <tr><th scope="row">How you apply</th><td>Register with each school, usually with a test fee</td><td>One application through the state system, by its deadline</td></tr>
               </tbody>
@@ -85,8 +80,8 @@ export default function Page() {
           </div>
           <div className="sg-prose" style={{ marginTop: 18 }}>
             <p>
-              Some families do both. The reasoning, reading, writing and maths skills overlap, but the dates, applications and question styles do not, so plan each pathway on its own. This hub and its guides focus on <strong>private school academic scholarships</strong>. For a Victorian selective overview, see our article on{" "}
-              <Link href="/learn/selective-school-entry-test-preparation-victoria-year-5-6">preparing for Melbourne&rsquo;s selective school entry tests</Link>, and always check the current rules on your state education department&rsquo;s website.
+              Some families do both. The reasoning, reading, writing and maths skills overlap, but the dates, applications and question styles do not, so plan each pathway on its own. This hub and its guides focus on <strong>private school academic scholarships</strong> for Year 5, 6 and 7 entry. Victoria&rsquo;s four selective entry high schools are different: they take students into Year 9, through their own exam sat in Year 8 (see{" "}
+              <Link href="/learn/selective-school-entry-test-preparation-victoria-year-5-6">Victorian selective entry: what Year 5 and 6 parents need to know</Link>). Always check the current rules on your state education department&rsquo;s website.
             </p>
           </div>
         </div>
@@ -95,43 +90,20 @@ export default function Page() {
       <section className="tb-section" aria-labelledby="h-providers">
         <div className="tb-wrap">
           <h2 id="h-providers" className="tb-h2 sg-h2">The three common scholarship test providers at a glance</h2>
-          <div className="sg-prose" style={{ marginBottom: 18 }}>
+          <div className="sg-prose">
             <p>
-              Most Australian independent schools use one of three providers. Each tests a different mix of skills, so the first job is matching your practice to the provider named on each school&rsquo;s page.
+              Many schools use one of three providers. Each tests a different mix of skills, so the first job is matching your practice to the provider named on each school&rsquo;s page.
+            </p>
+            <ul>
+              <li><strong>ACER:</strong> Reading, Mathematics and Writing at primary level (Level P), and Written Expression, Humanities and Mathematics at secondary level.</li>
+              <li><strong>Edutest:</strong> reasoning and achievement sections, commonly five, in short timed blocks.</li>
+              <li><strong>AAS (Academic Assessment Services):</strong> writing, reading, maths and reasoning, in the parts each school chooses.</li>
+            </ul>
+            <p>
+              For sections, timing, calculator rules and delivery side by side, read{" "}
+              <Link href="/scholarship/acer-vs-edutest-vs-aas">ACER vs Edutest vs AAS: which scholarship test is your child sitting?</Link>
             </p>
           </div>
-          <div className="sg-grid">
-            <div className="sg-box">
-              <h3>ACER Scholarship Tests</h3>
-              <ul>
-                <li><strong>Primary (Level P)</strong>, for entry into Years 4 to 6: Reading and Viewing, Mathematics, Writing. Typically on paper.</li>
-                <li><strong>Secondary (Levels 1 to 3)</strong>, for entry into Years 7 to 12: Written Expression, Humanities, Mathematics. Online or paper.</li>
-                <li>Leans towards reasoning and interpretation within each subject.</li>
-              </ul>
-            </div>
-            <div className="sg-box">
-              <h3>Edutest</h3>
-              <ul>
-                <li>Commonly five sections: Verbal Reasoning, Numerical Reasoning, Reading Comprehension, Mathematics, Written Expression.</li>
-                <li>Mixes ability tests (reasoning) with achievement tests (school-type skills).</li>
-                <li>Short, timed sections, often about 30 minutes each with a shorter writing task.</li>
-              </ul>
-            </div>
-            <div className="sg-box">
-              <h3>AAS (Academic Assessment Services)</h3>
-              <ul>
-                <li>Scholarship batteries drawing on writing, reading comprehension, mathematics and reasoning.</li>
-                <li>The exact parts, length and delivery depend on what each school chooses.</li>
-                <li>Read the school&rsquo;s own information pack closely.</li>
-              </ul>
-            </div>
-          </div>
-          <p className="sg-prose" style={{ marginTop: 18 }}>
-            <span>
-              See the full side-by-side tables in{" "}
-              <Link href="/scholarship/acer-vs-edutest-vs-aas">ACER vs Edutest vs AAS: which scholarship test is your child sitting?</Link>
-            </span>
-          </p>
         </div>
       </section>
 
@@ -157,16 +129,10 @@ export default function Page() {
 
       <section className="tb-section" aria-labelledby="h-how">
         <div className="tb-wrap">
-          <h2 id="h-how" className="tb-h2 sg-h2">How the free diagnostic and Scholarship Pass work</h2>
-          <ol className="sg-steps">
-            <li><strong>Pick the entry level</strong>Choose Year 5, 6 or 7 entry. The questions are pitched at the year your child is in now.</li>
-            <li><strong>Try 10 questions free</strong>The first 10 diagnostic questions are free, so you see the style and an early picture of strengths and gaps.</li>
-            <li><strong>Unlock Scholarship Pass</strong>Launch special A$99, one-off per entry level (usual price A$198 from 1 April 2027). Full diagnostic with worked solutions for every question.</li>
-            <li><strong>Practise what was missed</strong>Each missed question becomes follow-up practice on the same skill, so time goes where it counts.</li>
-          </ol>
-          <div className="sg-prose" style={{ marginTop: 18 }}>
+          <h2 id="h-how" className="tb-h2 sg-h2">Where Tuterly Scholarship fits</h2>
+          <div className="sg-prose">
             <p>
-              Tuterly Scholarship is built by the educators at Bayside Academics, who prepare students for scholarship and selective-entry tests each year. It is designed to sit alongside, not replace, provider-specific practice papers and feedback on your child&rsquo;s writing. If you want to see the question style today, the{" "}
+              Tuterly Scholarship is designed by Australian educators at Bayside Academics, a Melbourne tutoring business that helps students prepare for scholarship tests. It covers Numerical Reasoning only, so it sits alongside, not instead of, provider-specific practice papers and feedback on your child&rsquo;s writing. If you want to see the question style today, the{" "}
               <Link href="/scholarship-practice">free scholarship numerical reasoning practice</Link> has 10 questions per level, marked instantly with worked solutions.
             </p>
           </div>

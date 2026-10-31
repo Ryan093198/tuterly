@@ -145,10 +145,10 @@ const PARENT_TIPS = [
 ];
 
 const APP_STEPS = [
-  { title: "Snap the question they got wrong", text: "An index law question, a trig problem or a probability tree. It is saved with a step-by-step worked solution." },
-  { title: "Practise a fresh version", text: "Tuterly gives a new question on the same skill, so your child practises the exact step that went wrong." },
-  { title: "Master it, then move on", text: "Questions return until they are right, so a Term 1 index law mistake does not reappear in the end-of-year exam." },
-  { title: "Practice tests before assessments", text: "Before a topic test or exam, Tuterly builds a practice test from your child’s own mistakes." },
+  { title: "Snap the question they got wrong", text: "An index law question, a trig problem or a probability tree. It is saved to their bank with a step-by-step worked solution." },
+  { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, such as another (x + 3)² expansion, so your child practises the exact step that went wrong." },
+  { title: "A weekly review", text: "Each week brings a short test of up to 8 of that week’s questions, trickiest first, so an index law slip comes back before it sets in." },
+  { title: "Test any topic before a test", text: "Pick any Year 9 topic, such as trigonometry or linear graphs, for a short test with one question per section, even before anything is snapped. Wrong answers go into the bank for Fix my mistakes." },
 ];
 
 const FAQS = [
@@ -174,7 +174,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with Year 9 maths?",
-    a: "Your child photographs a question they got wrong. Tuterly saves it with a worked solution, generates new questions on the same concept, and builds practice tests from their mistakes before assessments. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs a question they got wrong, often an index law, a missing middle term or the wrong trig ratio. Tuterly saves it with a worked solution and a similar question to try, and a weekly review tests up to 8 of that week’s questions, trickiest first. Test any topic sets a short test on any Year 9 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
@@ -210,12 +210,16 @@ export default function Page() {
       strands={STRANDS}
       mistakesIntro="Most Year 9 errors come from new rules that look similar to old ones. They are very fixable with targeted practice."
       mistakes={MISTAKES}
+      parentsIntro="Year 9 is often a motivation dip, and many parents find the maths itself unfamiliar. What helps most is a steady routine and keeping track of which mistakes keep coming back, not reteaching index laws."
       parentTips={PARENT_TIPS}
       appIntro="In Year 9, the same small error (an index law, a missing middle term) can cost marks across several topics. Tuterly helps your child find and fix those patterns."
       appSteps={APP_STEPS}
       learnLinks={LEARN}
       moreLinks={MORE}
       faqs={FAQS}
+      ctaTitle="Stop Year 9 mix-ups repeating"
+      ctaText="Snap the index law, expansion or trig question your child got wrong. Tuterly saves it with a worked solution, and it stays in their bank until they get it right."
+      finalText="Each Year 9 question your child snaps becomes a worked solution in their bank, and Fix my mistakes drills every one still to fix before the next topic test."
     >
       <section className="tb-section" aria-labelledby="h-path">
         <div className="tb-wrap">

@@ -155,10 +155,10 @@ const PARENT_TIPS = [
 ];
 
 const APP_STEPS = [
-  { title: "Snap the question they got wrong", text: "From homework, a class worksheet or a marked test. It is saved with a step-by-step worked solution." },
-  { title: "Practise a fresh version", text: "Tuterly gives a new question on the same skill, such as another negative number subtraction, so practice targets the real gap." },
-  { title: "Keep going until it is mastered", text: "Questions come back until your child gets them right, so mistakes from Term 1 do not resurface on the end-of-year test." },
-  { title: "Build a practice test before assessments", text: "Before a topic test, Tuterly builds a practice test from your child’s own mistakes in that topic." },
+  { title: "Snap it from the marked test", text: "A subtraction with negatives, a fraction division or an angle answer without a reason. It is saved to their bank with a step-by-step worked solution." },
+  { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, such as another negative number subtraction, so practice targets the real gap." },
+  { title: "Fix my mistakes", text: "A drill of every question still to fix in their bank, so a Term 1 fraction slip gets another go before the end-of-year test." },
+  { title: "Test any topic before a topic test", text: "Pick a Year 7 topic, such as integers or angles, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
 ];
 
 const FAQS = [
@@ -184,7 +184,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help a Year 7 student?",
-    a: "Your child photographs the maths questions they get wrong. Tuterly saves each one with a worked solution, gives fresh practice on the same skill, and builds practice tests from their own mistakes before assessments. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs the questions they get wrong, often from a marked test on negative numbers, fractions or first equations. Tuterly saves each one with a worked solution and a similar question to try. Fix my mistakes drills everything still to fix, and Test any topic sets a short test on any Year 7 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
@@ -220,12 +220,16 @@ export default function Page() {
       strands={STRANDS}
       mistakesIntro="These come up again and again when Year 7 tests are marked. Most are not about ability: they are habits that can be fixed with targeted practice."
       mistakes={MISTAKES}
+      parentsIntro="Year 7 is as much about new habits as new maths: showing working, giving reasons for angles, checking units. You do not need to remember the content to help with any of those."
       parentTips={PARENT_TIPS}
       appIntro="The fastest way to improve marks is to fix the exact questions your child gets wrong, then check the fix has stuck. Tuterly is built around that loop."
       appSteps={APP_STEPS}
       learnLinks={LEARN}
       moreLinks={MORE}
       faqs={FAQS}
+      ctaTitle="Fix Year 7 slips before they stick"
+      ctaText="Snap a negative number or fraction question your child got wrong. Tuterly saves it with a worked solution, then gives a similar question so they can try the step again."
+      finalText="Every Year 7 question your child snaps stays in their bank with a worked solution until they get it right, and a short weekly review brings back up to 8 of that week’s questions, trickiest first."
     >
       <section className="tb-section" aria-labelledby="h-transition">
         <div className="tb-wrap">

@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Are calculators allowed?",
-    a: "Edutest does not allow calculators. For ACER and AAS, follow the instructions for your child's level and school. Practising without a calculator is the safe default for all three.",
+    a: "Edutest and AAS do not allow calculators, and Edutest does not allow working-out paper either. For ACER, follow the instructions for your child's level and school. Practising without a calculator is the safe default for all three.",
   },
   {
     q: "Is the test online or on paper?",
@@ -56,7 +56,7 @@ export default function Page() {
         ["Golden rule", "Prepare for the provider each school names"],
         ["Check every year", "Schools can change provider"],
         ["Calculator", "Practise without one"],
-        ["Free to start", "First 10 diagnostic questions"],
+        ["Who sets the date", "Each school, not the provider"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-first">
@@ -98,8 +98,8 @@ export default function Page() {
                 <tr>
                   <th scope="row">Typical timing</th>
                   <td>Several separate papers, each with its own time limit. Check the school&rsquo;s schedule for the total.</td>
-                  <td>Often about 30 minutes per section, with Written Expression shorter (around 15 minutes).</td>
-                  <td>Set by the school&rsquo;s chosen pack. Check the information sent after registration.</td>
+                  <td>About 30 minutes per section, with Written Expression shorter (15 minutes, with no separate planning time).</td>
+                  <td>Two sessions with a break. Each paper runs roughly 40 to 50 minutes, with writing about 25 to 30 minutes. Check the school&rsquo;s information.</td>
                 </tr>
                 <tr>
                   <th scope="row">Primary vs secondary</th>
@@ -122,8 +122,8 @@ export default function Page() {
                 <tr>
                   <th scope="row">Calculator</th>
                   <td>Follow the instructions for the level and school.</td>
+                  <td>Not allowed. Working-out paper is not allowed either.</td>
                   <td>Not allowed.</td>
-                  <td>Follow the school&rsquo;s instructions.</td>
                 </tr>
               </tbody>
             </table>

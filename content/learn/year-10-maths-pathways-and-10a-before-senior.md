@@ -16,13 +16,13 @@ Most senior subjects build on Year 10, but maths is unusual in how directly it d
 
 That is why many schools use Year 10 results, or placement in an advanced Year 10 class, as one input when recommending senior maths. It is also why the year is worth taking seriously well before the subject selection form arrives.
 
-For an overview of what Year 10 covers topic by topic, see our [Year 10 maths and 10A guide](/years/year-10-maths).
+For an overview of what Year 10 covers topic by topic, see our [Year 10 maths and 10A guide](/years/year-10-maths). Victorian parents may also find our guide to [helping with Year 10 maths before VCE](/learn/year-10-maths-guide-victorian-parents) useful.
 
 ## What is 10A maths?
 
-"10A" comes from the Australian Curriculum, which has included optional additional content for Year 10 students who are likely to study the more advanced senior maths subjects. Schools that use the label often run a separate 10A class, or teach 10A topics within an advanced Year 10 class.
+"10A" is optional extension content for Year 10 students who are likely to study the more advanced senior maths subjects. In Victoria it is a formal level, Level 10A, in the Victorian Curriculum 2.0. The Australian Curriculum Version 9 does not have a 10A level as such; instead, ACARA publishes a support resource, [Optional content for post-Year 10 Mathematics pathways](https://www.australiancurriculum.edu.au/support-resources/learning-area-resources/mathematics_optional_content_post_year_10), with suggestions teachers can draw on. Schools that use the label often run a separate 10A class, or teach 10A topics within an advanced Year 10 class.
 
-Content differs between schools, but 10A commonly includes topics such as:
+The list below reflects 10A in Victoria. Content differs between schools, but 10A commonly includes topics such as:
 
 - surds and fractional indices
 - logarithms and exponential equations
@@ -37,7 +37,7 @@ A few things to keep in mind:
 - **Not every school uses the name.** Some call it "advanced", "extension", "accelerated" or something else entirely. Some fold the content into their regular Year 10 course for everyone.
 - **Not every school teaches all of it.** Many teach a selection.
 - **NSW has its own syllabus.** NSW schools follow the NESA Mathematics K to 10 syllabus rather than the Australian Curriculum directly, and advanced Year 10 content there is organised differently. NSW parents should ask how their school groups Stage 5 maths classes and what that means for senior options.
-- **The curriculum has been revised.** The Australian Curriculum Version 9 and the Victorian Curriculum 2.0 changed how some optional content is described, and schools are at different stages of adopting the changes. Ask your school what its advanced class currently covers.
+- **The curriculum has been revised.** The Victorian Curriculum 2.0 keeps 10A as a formal level, while the Australian Curriculum Version 9 treats extra Year 10 content as optional post-Year 10 pathways material. Schools are at different stages of adopting the changes, so ask your school what its advanced class currently covers.
 
 If your child is in a 10A or advanced class, our [Year 10A formula sheet](/formula-sheets/year-10a-maths) and the free 10A worksheets on [surds](/worksheets/year-10a-surds), [logarithms](/worksheets/year-10a-logarithms), [polynomials](/worksheets/year-10a-polynomials) and [non-monic quadratics](/worksheets/year-10a-non-monic-quadratics) are useful companions.
 
@@ -64,7 +64,7 @@ Across states, the pattern is similar even when the names differ:
 - **Methods or Advanced level** focuses on functions, algebra and calculus. It is a prerequisite or assumed knowledge for many science, engineering, commerce, health and technology courses.
 - **Specialist or Extension level** goes further into proof, vectors, complex numbers and harder calculus. It is usually taken alongside Methods or Advanced, not instead of it.
 
-For Victorian families weighing the two most common options, our guide to [VCE General Maths vs Methods](/learn/vce-general-maths-vs-methods) goes into more detail.
+For Victorian families weighing the two most common options, our guide to [VCE General Maths vs Methods](/learn/vce-general-maths-vs-methods) goes into more detail, and our [VCE subject selection guide for Year 10 parents](/learn/vce-subject-selection-guide-year-10-parents-victoria) covers the wider decision.
 
 ## Do you need 10A to take the advanced subjects?
 

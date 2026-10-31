@@ -55,19 +55,19 @@ export default function ScholarshipCTA({ sourcePage, variant = "band", defaultEn
         <div aria-live="polite">
           <p className="sg-cta__title">You&rsquo;re on the Tuterly Scholarship list.</p>
           <p className="sg-cta__text">
-            We&rsquo;ll email you when the diagnostic opens, with the launch price. In the meantime, the{" "}
+            We&rsquo;ll email you when the diagnostic opens, with your launch discount. In the meantime, the{" "}
             <Link href="/scholarship-practice">free practice questions</Link> are ready now.
           </p>
         </div>
       ) : (
         <form onSubmit={submit}>
           <p className="sg-cta__title">
-            {hero ? "Find out where your child stands, before test day." : "Start with the free scholarship diagnostic."}
+            {hero ? "See where your child stands in Numerical Reasoning, before test day." : "Start the Numerical Reasoning diagnostic free."}
           </p>
           <p className="sg-cta__text">
-            Tuterly Scholarship opens with a diagnostic for Year 5, 6 and 7 entry. <strong>The first 10 questions are free.</strong>{" "}
-            Scholarship Pass then unlocks full worked solutions and follow-up practice on every question your child misses:{" "}
-            <strong>launch special A$99 one-off per entry level</strong> (usual price A$198 from 1 April 2027). Join the list to hear when it opens.
+            Tuterly Scholarship opens with a 40-question Numerical Reasoning diagnostic in the Tuterly app on iPhone, for Year 5, 6 and 7 entry.{" "}
+            <strong>The first 10 questions are free.</strong> A one-off Scholarship Pass per entry level (not a subscription) unlocks the rest, with
+            worked solutions and follow-up practice on every question your child misses. Families on the list get a launch discount.
           </p>
           <div className="sg-cta__row">
             <input

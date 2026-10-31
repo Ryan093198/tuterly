@@ -79,7 +79,7 @@ export default function Page() {
         <div className="tb-wrap">
           <h2 id="h-roles" className="tb-h2 pg-h2">Who does what: parent, student and teacher</h2>
           <p className="pg-intro">
-            Most homework conflict comes from blurred roles. A parent starts by checking in, ends up explaining, and before long is holding the pencil. Being clear about who owns what makes the evening calmer and the learning better.
+            A lot of homework conflict comes from blurred roles. A parent starts by checking in, ends up explaining, and before long is holding the pencil. Being clear about who owns what makes the evening calmer and the learning better.
           </p>
           <div className="pg-grid">
             <div className="pg-box">
@@ -228,7 +228,7 @@ export default function Page() {
             <li><strong>Snap it</strong>Your child photographs the question they got wrong or could not finish.</li>
             <li><strong>See the method</strong>It is saved with a step-by-step worked solution, so the &ldquo;one resource&rdquo; rung of the ladder is already there.</li>
             <li><strong>Try a fresh one</strong>Tuterly gives a new question on the same skill to try without looking, which is where the learning happens.</li>
-            <li><strong>Bring it back before the test</strong>Saved questions return until they are mastered, and can be built into a practice test before assessments.</li>
+            <li><strong>Bring it back before the test</strong>Saved questions return until they are mastered. Fix my mistakes drills them with fresh versions, and your child can test themselves on any topic before an assessment.</li>
           </ol>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>

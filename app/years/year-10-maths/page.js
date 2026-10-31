@@ -3,7 +3,7 @@ import HubShell from "@/components/years-maths-hubs/HubShell";
 import { pageMetadata } from "@/lib/years-maths-hubs";
 
 const PATH = "/years/year-10-maths";
-const TITLE = "Year 10 Maths and 10A: Australian Curriculum Guide for Parents | Tuterly";
+const TITLE = "Year 10 and 10A Maths: Australian Parent Guide | Tuterly";
 const DESCRIPTION =
   "What Year 10 and 10A maths cover in Australia, where students lose marks, how it prepares for senior maths choices, and practical ways parents can help at home.";
 
@@ -14,53 +14,55 @@ const W = (slug, label) => ({ href: `/worksheets/${slug}`, label });
 const STRANDS = [
   {
     name: "Number",
-    summary: "Applying number skills to finance and growth.",
+    summary: "Exact values versus rounded ones.",
     items: [
-      "Compound interest and comparing it with simple interest",
-      "Index laws applied to algebraic expressions",
-      "Rounding and the effect of approximation in calculations",
-    ],
-    links: [
-      W("year-10-compound-interest", "Compound interest"),
-      W("year-10-index-laws", "Index laws"),
+      "The effect of rounding and approximation in repeated calculations, compared with exact values",
     ],
   },
   {
     name: "Algebra",
     summary: "The heaviest strand of Year 10, and the one senior maths builds on most.",
     items: [
-      "Expanding and factorising quadratic expressions",
-      "Solving quadratic equations",
+      "Index laws applied to algebraic products and quotients",
+      "Expanding binomials and factorising monic quadratics such as x² + 5x + 6",
+      "Solving simple quadratic equations, including with the null factor law",
       "Simultaneous linear equations, algebraically and graphically",
-      "Linear inequalities",
+      "Linear inequalities, graphed on a number line",
       "Algebraic fractions and equations with fractions",
       "Rearranging formulas to change the subject",
+      "Gradients of parallel and perpendicular lines",
+      "Graphs of simple quadratics, reciprocals, circles and exponentials",
       "Simple exponential equations",
-      "Graphs of parabolas, circles and exponentials",
-      "Inverse proportion",
+      "Modelling with inverse proportion, growth and decay, including compound interest",
     ],
     links: [
+      W("year-10-index-laws", "Index laws"),
       W("year-10-quadratic-factorising", "Factorising quadratics"),
       W("year-10-quadratic-equations", "Quadratic equations"),
       W("year-10-simultaneous-equations", "Simultaneous equations"),
       W("year-10-linear-inequalities", "Inequalities"),
       W("year-10-algebraic-fractions", "Algebraic fractions"),
       W("year-10-rearranging-formulas", "Rearranging formulas"),
-      W("year-10-exponential-equations", "Exponential equations"),
+      W("year-10-coordinate-geometry", "Coordinate geometry"),
       W("year-10-parabolas-circles-exponentials", "Graphs"),
+      W("year-10-exponential-equations", "Exponential equations"),
+      W("year-10-compound-interest", "Compound interest"),
     ],
   },
   {
     name: "Measurement",
-    summary: "Composite solids and trigonometry in context.",
+    summary: "Composite solids, trigonometry in context and proportion.",
     items: [
-      "Surface area and volume of composite solids, including pyramids, cones and spheres",
-      "Trigonometry with angles of elevation and depression, and bearings",
-      "Multi-step problems mixing Pythagoras and trigonometry",
+      "Surface area and volume of composite objects",
+      "Pythagoras and trigonometry with direction and angles of elevation and depression",
+      "Logarithmic scales, such as the Richter and decibel scales",
+      "Direct and inverse proportion, and scaling objects",
     ],
     links: [
       W("year-10-surface-area-volume", "Surface area and volume"),
       W("year-10-trigonometry", "Trigonometry"),
+      W("year-10-logarithmic-scales", "Logarithmic scales"),
+      W("year-10-inverse-proportion", "Inverse proportion"),
     ],
   },
   {
@@ -68,12 +70,10 @@ const STRANDS = [
     summary: "Reasoning and proof.",
     items: [
       "Geometric proofs using congruence and similarity",
-      "Coordinate geometry: lines, midpoints, distance, parallel and perpendicular lines",
       "Networks, paths and connections",
     ],
     links: [
       W("year-10-geometric-reasoning", "Geometric reasoning"),
-      W("year-10-coordinate-geometry", "Coordinate geometry"),
       W("year-10-networks", "Networks"),
     ],
   },
@@ -81,22 +81,103 @@ const STRANDS = [
     name: "Statistics",
     summary: "Spread, relationships and judging claims.",
     items: [
-      "Five-number summaries and box plots",
-      "Comparing data sets using box plots",
+      "Comparing data sets using quartiles, interquartile range and box plots",
       "Scatter plots and describing relationships between two variables",
+      "Two-way tables for categorical data",
       "Evaluating statistical claims in the media",
     ],
-    links: [W("year-10-statistics", "Statistics")],
+    links: [
+      W("year-10-statistics", "Statistics"),
+      W("year-10-scatterplots", "Scatter plots"),
+      W("year-10-two-way-tables", "Two-way tables"),
+    ],
   },
   {
     name: "Probability",
     summary: "Conditional thinking.",
     items: [
-      "Multi-step experiments with and without replacement",
-      "Conditional probability using tables and tree diagrams",
+      "Two- and three-step experiments with and without replacement",
+      "Conditional probability and the language of “given” and “if … then”",
       "Independent and dependent events",
     ],
-    links: [W("year-10-probability", "Probability")],
+    links: [
+      W("year-10-probability", "Probability"),
+      W("year-10-tree-diagrams", "Tree diagrams"),
+    ],
+  },
+];
+
+// Victorian Curriculum 2.0 Level 10A (VC2M10A..): optional extension
+// content, kept separate from the mainstream Year 10 strands above.
+const STRANDS_10A = [
+  {
+    name: "Number (10A)",
+    items: [
+      "Rational and irrational numbers, surds and fractional indices",
+      "Logarithms and the log laws",
+    ],
+    links: [
+      W("year-10a-surds", "Surds"),
+      W("year-10a-logarithms", "Logarithms"),
+    ],
+  },
+  {
+    name: "Algebra (10A)",
+    items: [
+      "Polynomials, and the factor and remainder theorems",
+      "Factorising non-monic quadratics such as 2x² + 7x + 3",
+      "Exponential and logarithmic equations",
+      "Sketching parabolas, hyperbolas, circles and exponentials, and their transformations",
+      "Function notation",
+      "Linear and non-linear simultaneous equations",
+    ],
+    links: [
+      W("year-10a-polynomials", "Polynomials"),
+      W("year-10a-non-monic-quadratics", "Non-monic quadratics"),
+      W("year-10a-exponential-log-equations", "Exponential and log equations"),
+      W("year-10a-function-notation", "Function notation"),
+      W("year-10a-non-linear-simultaneous-equations", "Non-linear simultaneous equations"),
+    ],
+  },
+  {
+    name: "Measurement (10A)",
+    items: [
+      "Surface area and volume of right pyramids, right cones and spheres",
+      "Average rate of change and limiting values",
+    ],
+    links: [W("year-10a-pyramids-cones-spheres", "Pyramids, cones and spheres")],
+  },
+  {
+    name: "Space (10A)",
+    items: [
+      "Circle theorems (radii, diameters, chords and tangents)",
+      "The sine, cosine and area rules for any triangle",
+      "The unit circle and graphs of sine, cosine and tangent",
+      "Simple trigonometric equations",
+      "Pythagoras and trigonometry in three dimensions",
+    ],
+    links: [
+      W("year-10a-circle-theorems", "Circle theorems"),
+      W("year-10a-sine-cosine-rule", "Sine and cosine rules"),
+      W("year-10a-trigonometric-equations", "Trig equations"),
+      W("year-10a-3d-trigonometry", "3D trigonometry"),
+    ],
+  },
+  {
+    name: "Statistics (10A)",
+    items: [
+      "Mean and standard deviation, and the effect of outliers",
+      "Choosing a measure of spread to suit the data",
+      "Lines of best fit for bivariate data using digital tools",
+    ],
+    links: [W("year-10a-standard-deviation", "Standard deviation")],
+  },
+  {
+    name: "Probability (10A)",
+    items: [
+      "Counting principles and factorial notation",
+    ],
+    links: [W("year-10a-permutations-combinations", "Counting and arrangements")],
   },
 ];
 
@@ -144,10 +225,10 @@ const PARENT_TIPS = [
 ];
 
 const APP_STEPS = [
-  { title: "Snap the question they got wrong", text: "A factorising question, a simultaneous equation or a trig problem. It is saved with a step-by-step worked solution." },
-  { title: "Practise a fresh version", text: "Tuterly gives new questions on the same concept, so your child practises the step that went wrong rather than the whole chapter." },
-  { title: "Track weak topics", text: "Mistakes are organised by topic, so it is clear whether algebra, trigonometry or probability needs attention before exams." },
-  { title: "Practice tests from their own mistakes", text: "Before an exam, Tuterly builds a practice test from the questions your child has struggled with." },
+  { title: "Snap the question they got wrong", text: "A factorising question, a simultaneous equation or an angle of elevation problem. It is saved to their bank with a step-by-step worked solution." },
+  { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, so a sign slip in factorising gets practised on its own rather than the whole chapter." },
+  { title: "Test any topic before exams", text: "Pick any Year 10 topic, such as quadratics or probability, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
+  { title: "Fix my mistakes", text: "A drill of every question still to fix in the bank, which makes a focused last session before a mid-year or end-of-year exam." },
 ];
 
 const FAQS = [
@@ -165,7 +246,7 @@ const FAQS = [
   },
   {
     q: "Which senior maths subject should my child choose?",
-    a: "It depends on their strengths, interests and any prerequisites for courses they are considering. In Victoria, the main options are General Mathematics, Mathematical Methods and Specialist Mathematics. Talk with the maths teacher and the careers adviser at school.",
+    a: "It depends on their strengths, interests and any prerequisites for courses they are considering. In Victoria, the VCE maths subjects are Foundation Mathematics, General Mathematics, Mathematical Methods and Specialist Mathematics, and Specialist is normally taken together with Methods. Talk with the maths teacher and the careers adviser at school.",
   },
   {
     q: "How can my child catch up if they are behind in Year 10 maths?",
@@ -173,7 +254,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with Year 10 maths?",
-    a: "Your child photographs a question they got wrong. Tuterly saves it with a worked solution, generates new questions on the same concept until it is mastered, and builds practice tests from their mistakes before exams. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs a question they got wrong, such as a quadratic, a simultaneous equation or an elevation problem. Tuterly saves it with a worked solution and gives a similar question to try. Before exams, Test any topic sets a short test on any Year 10 topic, and Fix my mistakes drills every question still to fix. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
@@ -209,13 +290,41 @@ export default function Page() {
       strands={STRANDS}
       mistakesIntro="In Year 10, most lost marks come from small algebra slips inside otherwise correct working. Catching them early is the easiest way to lift results."
       mistakes={MISTAKES}
+      parentsIntro="In Year 10, most of the help that matters is planning: when exams fall, what each senior maths subject expects, and which algebra slips keep costing marks. None of it needs you to factorise a quadratic."
       parentTips={PARENT_TIPS}
       appIntro="With exams and subject selection ahead, Year 10 is a good time to stop repeating the same mistakes. Tuterly keeps a record of every one and turns it into practice."
       appSteps={APP_STEPS}
       learnLinks={LEARN}
       moreLinks={MORE}
       faqs={FAQS}
+      ctaTitle="Clean up Year 10 algebra before exams"
+      ctaText="Snap the factorising, simultaneous equation or trig question your child got wrong. Tuterly saves it with a worked solution, and Test any topic sets a short test on any Year 10 topic."
+      finalText="Each Year 10 mistake your child snaps becomes a worked solution in their bank. Fix my mistakes drills every one still to fix, and the weekly review is a short test of up to 8 of that week’s questions, trickiest first."
     >
+      <section className="tb-section" aria-labelledby="h-10a-topics">
+        <div className="tb-wrap">
+          <h2 id="h-10a-topics" className="tb-h2 ym-h2">Optional 10A topics</h2>
+          <p className="ym-intro">
+            10A is optional extension content in the Victorian Curriculum 2.0 (Level 10A) and the Australian Curriculum. It is usually taught to students heading for Mathematical Methods or Specialist Mathematics, and many schools teach only part of it. Each box links to free 10A worksheets.
+          </p>
+          <div className="ym-strands">
+            {STRANDS_10A.map((s) => (
+              <div key={s.name} className="ym-box">
+                <h3>{s.name}</h3>
+                <ul>
+                  {s.items.map((it) => <li key={it}>{it}</li>)}
+                </ul>
+                {s.links?.length > 0 && (
+                  <p className="ym-box__links">
+                    {s.links.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="tb-section" aria-labelledby="h-10a">
         <div className="tb-wrap">
           <h2 id="h-10a" className="tb-h2 ym-h2">Year 10, 10A and senior maths pathways</h2>

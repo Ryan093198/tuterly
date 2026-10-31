@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "What does Tuterly do, and what does it not do?",
-    a: "Tuterly is a study app for Years 7 to 10 maths. Your child snaps questions they get wrong; it saves each with a worked solution, generates similar questions until the skill is mastered, and builds practice tests from their mistakes. It does not replace a teacher or a tutor who can watch your child work and re-teach a topic from scratch.",
+    a: "Tuterly is a study app for Years 7 to 10 maths. Your child snaps questions they get wrong; it saves each with a worked solution, generates similar questions until the skill is mastered, and drills the questions they got wrong with fresh versions. A weekly review tests the week's trickiest, and they can test themselves on any topic in their year. It does not replace a teacher or a tutor who can watch your child work and re-teach a topic from scratch.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function Page() {
       ]}
       eyebrow="Parent guide · Years 7 to 10 maths"
       h1="Maths app or tutor? An honest guide for parents of Years 7 to 10"
-      lead="When maths marks start to slip, most parents weigh up the same options: a study app, a private tutor, or both. They solve different problems. This guide helps you work out which problem your child actually has, so you can choose the right kind of help, or a mix."
+      lead="When maths marks start to slip, many parents weigh up the same options: a study app, a private tutor, or both. They solve different problems. This guide helps you work out which problem your child actually has, so you can choose the right kind of help, or a mix."
       toc={[
         ["problem", "Start with the problem"],
         ["compare", "Side-by-side comparison"],
@@ -163,14 +163,14 @@ export default function Page() {
           <h2 id="h-app-fits" className="tb-h2 pg-h2">When an app is the right tool</h2>
           <div className="pg-prose">
             <p>
-              An app is a good fit when your child is roughly on track and the bottleneck is practice. Most marks in Years 7 to 10 are lost on skills a student has been taught but has not practised enough to recall under test conditions. Two well-established learning habits help most here:
+              An app is a good fit when your child is roughly on track and the bottleneck is practice. Often, marks in Years 7 to 10 are lost on skills a student has been taught but has not practised enough to recall under test conditions. Two well-established learning habits help most here:
             </p>
             <ul>
               <li><strong>Retrieval practice:</strong> trying a question from memory, rather than re-reading notes, strengthens recall.</li>
               <li><strong>Spacing:</strong> coming back to a skill over days and weeks works better than doing a lot in one night.</li>
             </ul>
             <p>
-              Both are hard to organise by hand. Most students do not keep a list of what they got wrong, and fewer still come back to it a week later. That is the gap a study app can fill.
+              Both are hard to organise by hand. Many students do not keep a list of what they got wrong, and fewer still come back to it a week later. That is the gap a study app can fill.
             </p>
             <h3 className="pg-h3">What to look for in a maths app</h3>
             <ul>
@@ -182,7 +182,7 @@ export default function Page() {
             </ul>
             <h3 className="pg-h3">How Tuterly approaches it</h3>
             <p>
-              Tuterly is built around the questions your child gets wrong. They snap a photo of a wrong question from homework or a marked test; it is saved with a worked solution; Tuterly generates fresh questions on the same skill; questions return until they are mastered; and before a topic test, it builds a practice test from their own mistakes. It covers Years 7 to 10 maths and is designed by Australian educators at Bayside Academics. See <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
+              Tuterly is built around the questions your child gets wrong. They snap a photo of a wrong question from homework or a marked test; it is saved with a worked solution; Tuterly generates fresh questions on the same skill; questions return until they are mastered; Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest; and before a topic test, they can test themselves on that topic, with anything they get wrong going into their bank. It covers Years 7 to 10 maths and is designed by Australian educators at Bayside Academics. See <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
             </p>
           </div>
         </div>

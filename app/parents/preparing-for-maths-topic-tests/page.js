@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with test preparation?",
-    a: "Through the term, your child snaps the questions they get wrong and practises similar ones. Before a topic test, Tuterly builds a practice test from those saved mistakes, so revision starts from what they actually found hard. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Through the term, your child snaps the questions they get wrong and practises similar ones. Fix my mistakes drills the questions they got wrong with fresh versions, so revision starts from what they actually found hard, and before a topic test they can test themselves on that topic. A weekly review also tests the week's trickiest questions. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function Page() {
       ]}
       eyebrow="Parent guide · Years 7 to 10 maths"
       h1="How to prepare for maths topic tests and exams in Years 7 to 10"
-      lead="Most secondary maths marks come from topic tests and end-of-term exams. The students who prepare well are not always the ones who study longest. They start from what they got wrong, practise it more than once, and arrive rested. Here is how to help your child do that."
+      lead="Topic tests and end-of-term exams make up a large part of secondary maths marks. The students who prepare well are not always the ones who study longest. They start from what they got wrong, practise it more than once, and arrive rested. Here is how to help your child do that."
       toc={[
         ["mistakes", "Start from mistakes"],
         ["method", "How to practise"],
@@ -74,21 +74,21 @@ export default function Page() {
         ["after", "After the test"],
         ["faq", "FAQ"],
       ]}
-      ctaTitle="A practice test built from their mistakes"
-      ctaText="Your child snaps the questions they get wrong through the term. Before a test, Tuterly turns those mistakes into a practice test on exactly what they found hard."
+      ctaTitle="Practice that starts from their mistakes"
+      ctaText="Your child snaps the questions they get wrong through the term. Fix my mistakes drills them with fresh versions, and before a test they can test themselves on the topic."
       placement="parents_topic_tests_guide"
       faqs={FAQS}
       faqTitle="Maths tests: questions parents ask"
       links={LINKS}
       finalTitle="Revise from the questions that cost marks"
-      finalText="Save every wrong question with a worked solution, practise fresh versions until each skill sticks, and build a practice test from them before the next assessment."
+      finalText="Save every wrong question with a worked solution, practise fresh versions until each skill sticks, and test themselves on any topic before the next assessment."
     >
       <section id="mistakes" className="tb-section" aria-labelledby="h-mistakes">
         <div className="tb-wrap">
           <h2 id="h-mistakes" className="tb-h2 pg-h2">Start from what they got wrong, not from the notes</h2>
           <div className="pg-prose">
             <p>
-              The most common revision plan is to read back through the textbook chapter and class notes. It feels thorough, but it mostly revises the parts your child already understands, because those are the parts that look familiar.
+              A common revision plan is to read back through the textbook chapter and class notes. It feels thorough, but it mostly revises the parts your child already understands, because those are the parts that look familiar.
             </p>
             <p>
               A better starting point is a list of what actually went wrong during the topic. Good sources are:
@@ -136,7 +136,7 @@ export default function Page() {
             <ul>
               <li><strong>If a sheet is allowed,</strong> your child should make it themselves during revision. Writing it is revision. Include a short worked example next to each formula, not just the formula.</li>
               <li><strong>If it is not allowed,</strong> practise writing the key formulas from memory at the start of each session, then check.</li>
-              <li><strong>Either way,</strong> know when to use each formula. Most errors come from picking the wrong formula, not forgetting it.</li>
+              <li><strong>Either way,</strong> know when to use each formula. A common error is picking the wrong formula, not forgetting it.</li>
             </ul>
           </div>
           <div className="pg-cards" style={{ marginTop: 18 }}>
@@ -250,7 +250,7 @@ export default function Page() {
             </p>
             <h3 className="pg-h3">How Tuterly fits</h3>
             <p>
-              Tuterly is designed around this loop. Through the term your child snaps the questions they get wrong; each one is saved with a worked solution and comes back as fresh, similar questions until it is mastered. Before a topic test, Tuterly builds a practice test from those saved mistakes, so revision starts from the right place without a parent having to assemble it. It covers Years 7 to 10 maths, follows the Australian Curriculum, and is designed by Australian educators at Bayside Academics. See <Link href="/features/test-any-topic">test any topic</Link>.
+              Tuterly is designed around this loop. Through the term your child snaps the questions they get wrong; each one is saved with a worked solution and comes back as fresh, similar questions until it is mastered. Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest, and before a topic test your child can test themselves on that topic, so revision starts from the right place without a parent having to assemble it. It covers Years 7 to 10 maths, follows the Australian Curriculum, and is designed by Australian educators at Bayside Academics. See <Link href="/features/test-any-topic">test any topic</Link>.
             </p>
             <p>
               If test results show a whole topic has not made sense, more practice alone may not fix it. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link> covers when a person needs to step in.
