@@ -9,18 +9,19 @@ import "@/components/brand/brand.css";
 // The one app button used across the marketing site. Everything it says
 // and where it points comes from lib/study-app.js:
 //
-//   stage "live"   App Store and/or Google Play buttons for whichever
-//                  store URLs are set (iPhone sees App Store, Android sees
-//                  Google Play, desktop sees both, with a QR code). An
-//                  Android visitor before the Play listing exists gets an
-//                  email form instead,
-//                  since they can't install an app for iPhone and Android.
-//   stage "pilot"  Not on the App Store or Google Play yet: a "Coming soon to the App
-//                  Store" label and a "Get notified" email form, for
-//                  everyone (no pilot sign-up on the site).
+//   stage "live"   The App Store button (desktop also gets a QR code). A
+//                  Google Play button only shows once playStoreUrl is set.
+//   stage "pilot"  Not on the App Store yet: a "Coming soon on iPhone"
+//                  label and a "Get notified" email form, for everyone
+//                  (no pilot sign-up on the site).
+//
+// Tuterly is on iPhone at launch, with Android coming soon. Until
+// playStoreUrl is set, an Android visitor gets a "Get notified when
+// Android launches" form instead (saved with interest "android"), and
+// everyone else gets a small "On Android?" link that switches to it.
 //
 // Platform detection is client-side only (user agent after mount). The
-// server render and first paint use the non-iPhone version.
+// server render and first paint use the non-iPhone, non-Android version.
 //
 // Variants: hero (big, no heading of its own), inline (inside articles and
 // worksheets), card (sidebar / grid card), banner (slim sticky bottom bar).
@@ -72,6 +73,7 @@ export default function StudyAppCTA({
   const platform = useSyncExternalStore(noopSubscribe, detectPlatform, () => null);
   const storedDismiss = useSyncExternalStore(noopSubscribe, readBannerDismissed, () => true);
   const [formOpen, setFormOpen] = useState(false);
+  const [androidChosen, setAndroidChosen] = useState(false); // tapped "On Android?"
   const [dismissedNow, setDismissedNow] = useState(false);
   const bannerHidden = variant !== "banner" || storedDismiss || dismissedNow;
   const live = isStudyAppLive();
@@ -103,7 +105,7 @@ export default function StudyAppCTA({
   if (variant === "nav") {
     let href = "/#get-app";
     let label = "Free to download";
-    const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl || STUDY_APP.playStoreUrl;
+    const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl;
     if (live && storeUrl) {
       href = storeUrl;
       label = "Free to download";
@@ -121,17 +123,18 @@ export default function StudyAppCTA({
   }
 
   // ── What the action area shows ────────────────────────────────────
+  // Android sign-up: detected Android, or "On Android?" tapped, while
+  // there's no Google Play listing to send them to.
+  const androidSoon = !STUDY_APP.playStoreUrl;
+  const wantsAndroid = androidSoon && (platform === "android" || androidChosen);
   let mode;
-  if (live) {
-    if (platform === "android") mode = STUDY_APP.playStoreUrl ? "store" : "android-form";
-    else if (platform === "iphone") mode = STUDY_APP.appStoreUrl ? "store" : "launch-form";
-    else mode = "store";
-  }
+  if (wantsAndroid) mode = "android-form";
+  else if (live) mode = "store";
   else mode = "launch-form";
   // Compact variants keep the form behind a button so they stay slim.
   const compact = variant === "banner";
   if (compact && mode === "launch-form") mode = "launch-button";
-  if (compact && mode === "android-form") mode = "android-button";
+  if (compact && mode === "android-form" && !androidChosen) mode = "android-button";
   if (formOpen) {
     if (mode === "pilot-button") mode = "pilot-form";
     else if (mode === "launch-button") mode = "launch-form";
@@ -180,6 +183,7 @@ export default function StudyAppCTA({
     const kind = mode === "pilot-form" ? "pilot" : mode === "android-form" ? "android" : "launch";
     action = (
       <WaitlistForm
+        key={kind}
         kind={kind}
         wide={big}
         slim={slim}
@@ -192,9 +196,25 @@ export default function StudyAppCTA({
     );
   }
 
+  // "On Android?" for anyone not detected as Android (and "On iPhone?" to
+  // switch back). Hidden once there's a Google Play listing.
+  const androidToggle = androidSoon && platform !== "android" && (
+    <button
+      type="button"
+      className="tb-appcta__android"
+      aria-pressed={androidChosen}
+      onClick={() => {
+        if (!androidChosen) track("open_android_form");
+        setAndroidChosen(!androidChosen);
+      }}
+    >
+      {androidChosen ? "On iPhone?" : "On Android?"}
+    </button>
+  );
+
   const meta = (
     <p className="tb-appcta__meta">
-      {`Free to download · ${STUDY_APP.trialDays}-day free trial on monthly · Years 7 to 10 maths · iPhone and Android`}
+      {`Free to download · ${STUDY_APP.trialDays}-day free trial on monthly · Years 7 to 10 maths · ${STUDY_APP.playStoreUrl ? "iPhone and Android" : "On iPhone. Android coming soon"}`}
       {pos === "final" && pathname !== "/try" && (
         <>
           <br />
@@ -206,7 +226,7 @@ export default function StudyAppCTA({
   // Until launch, say plainly where it will be.
   const soon = !live && (
     <p className="tb-appcta__soon">
-      <AppStoreGlyph /> Coming soon on iPhone and Android
+      <AppStoreGlyph /> Coming soon on iPhone. Android soon after.
     </p>
   );
 
@@ -223,6 +243,7 @@ export default function StudyAppCTA({
           <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
             {mode.endsWith("form") ? (
               <WaitlistForm
+                key={mode}
                 kind={mode === "pilot-form" ? "pilot" : mode === "android-form" ? "android" : "launch"}
                 compact
                 btnClass={btnClass}
@@ -233,6 +254,7 @@ export default function StudyAppCTA({
             ) : (
               action
             )}
+            {androidToggle}
             <button
               type="button"
               aria-label="Dismiss"
@@ -257,6 +279,7 @@ export default function StudyAppCTA({
       <div className="tb-appcta" style={style} data-study-cta={placement || "hero"}>
         {soon}
         {action}
+        {androidToggle}
         {meta}
       </div>
     );
@@ -276,6 +299,7 @@ export default function StudyAppCTA({
       </p>
       {soon}
       {action}
+      {androidToggle}
       {meta}
     </aside>
   );
@@ -358,13 +382,17 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
   const [error, setError] = useState("");
 
   const label =
-    kind === "pilot" ? "Join the free pilot" : kind === "android" ? "Notify me" : "Sign up early for a free trial";
+    kind === "pilot"
+      ? "Join the free pilot"
+      : kind === "android"
+        ? compact ? "Notify me" : "Get notified when Android launches"
+        : "Sign up early for a free trial";
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
-        ? "It's coming to Android soon. We'll email you once when it's ready."
-        : `Sign up and we'll email you when ${STUDY_APP.name} is ready. At launch it's $${STUDY_APP.priceWeek} a week or $${STUDY_APP.priceMonth} a month, ${STUDY_APP.offerShort}.`;
+        ? `${STUDY_APP.name} is on iPhone at launch, and Android is coming soon. Leave your email and we'll tell you once, when it's on Android.`
+        : `Sign up and we'll email you when ${STUDY_APP.name} is ready. At launch it's ${STUDY_APP.offerShort}, on iPhone. Android coming soon.`;
 
   async function submit(e) {
     e.preventDefault();
@@ -399,7 +427,9 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
     return (
       <p role="status" className="tb-appcta__status">
         {state === "already"
-          ? "You're already on the list. We'll be in touch."
+          ? kind === "android"
+            ? "You're already on the list. We'll email you when it's on Android."
+            : "You're already on the list. We'll be in touch."
           : "Thanks, you're on the list. Check your inbox for a confirmation."}
       </p>
     );
@@ -407,7 +437,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
 
   return (
     <form onSubmit={submit} style={{ margin: 0 }} aria-label={label}>
-      {!compact && (!slim || kind === "pilot") && <p className="tb-appcta__sub" style={{ fontSize: 15, marginBottom: 12 }}>{intro}</p>}
+      {!compact && (!slim || kind !== "launch") && <p className="tb-appcta__sub" style={{ fontSize: 15, marginBottom: 12 }}>{intro}</p>}
       <div
         className={compact ? undefined : `tb-appcta__form ${slim ? "tb-appcta__form--slim" : wide ? "tb-appcta__form--wide" : ""}`}
         style={compact ? { display: "flex", gap: 8, flexWrap: "wrap" } : undefined}

@@ -131,7 +131,7 @@ export default function ScholarshipTestPrepPage() {
             <AppHeroBlock
               placement="scholarship_test_prep_hero"
               heading="Aiming for a Year 9 scholarship? Keep their school maths solid."
-              sub={`${name} is an app for iPhone and Android for Years 7 to 10 maths, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It covers school maths, not the reasoning or writing sections of the test.`}
+              sub={`${name} is an app for Years 7 to 10 maths, on iPhone with Android coming soon, designed by Australian educators. Your child snaps the questions they got wrong, sees the worked solution, and practises fresh versions until each one is mastered. It covers school maths, not the reasoning or writing sections of the test.`}
             />
           </Fade>
         </div>
@@ -235,7 +235,7 @@ export default function ScholarshipTestPrepPage() {
           </div>
           <Fade delay={0.14}>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginTop: 24, maxWidth: 760 }}>
-              Cost: a private tutor in Melbourne usually costs $80 to $100 an hour. {name} comes with a {STUDY_APP.priceLine}, cancel any time. It’s coming soon to the App Store and Google Play, on iPhone and Android.
+              Cost: a private tutor in Melbourne usually costs $80 to $100 an hour. {name} is {STUDY_APP.priceLine}, cancel any time. It’s coming to the App Store on iPhone first. Android coming soon.
             </p>
           </Fade>
         </div>

@@ -117,7 +117,7 @@ export default function SchPracticePage({ provider = null }) {
             ))}
           </div>
           <div className="sch-why__steps">
-            <span><strong>1.</strong> Full diagnostic</span>
+            <span><strong>1.</strong> 40-question diagnostic, first 10 free</span>
             <span aria-hidden="true">→</span>
             <span><strong>2.</strong> Wrong answers into their bank</span>
             <span aria-hidden="true">→</span>

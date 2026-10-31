@@ -169,7 +169,7 @@ export function WaitlistBox({ entry, year, provider, score, sourcePage }) {
     <form className="sch-wl" onSubmit={submit}>
       <p className="sch-wl__title">Want the full 40-question test, and practice on every question they miss?</p>
       <p className="sch-wl__text">
-        Tuterly Scholarship is coming soon. It starts with a full numerical reasoning diagnostic, then has your child drill the exact questions they got wrong until each one is mastered. <strong>Sign up now to hear when it&rsquo;s ready and get the launch discount.</strong>
+        Tuterly Scholarship is coming soon. It starts with a 40-question numerical reasoning diagnostic in the Tuterly app on iPhone. The first 10 questions are free, with results for those 10, and a one-off Scholarship Pass for your child&rsquo;s entry level unlocks the rest. Then your child drills the exact questions they got wrong until each one is mastered. <strong>Sign up now to hear when it&rsquo;s ready and get the launch discount.</strong>
       </p>
       <div className="sch-wl__row">
         <input type="email" required autoComplete="email" placeholder="Parent's email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Parent's email" />

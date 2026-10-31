@@ -257,7 +257,7 @@ export default function TryQuestion() {
       {!unlocked && (
         <form className="tq-card tq-gate" onSubmit={onUnlock}>
           <h3 className="tb-h3">Try it free</h3>
-          <p className="tq-muted">Enter your email to try 2 questions a day, free. We’ll also let you know when {STUDY_APP.name} launches, with {STUDY_APP.offerShort}.</p>
+          <p className="tq-muted">Enter your email to try 2 questions a day, free. We’ll also let you know when {STUDY_APP.name} launches. It’s {STUDY_APP.offerShort}.</p>
           <div className="tq-gate__row">
             <input type="email" required className="tb-input" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" autoComplete="email" />
             <select className="tb-input" value={role} onChange={(e) => setRole(e.target.value)} aria-label="I'm a">

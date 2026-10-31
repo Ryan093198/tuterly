@@ -20,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Is 10A the same as Year 10 maths?",
-    a: "10A is extra content offered alongside Year 10 in the Australian Curriculum and the Victorian Curriculum, including surds, logarithms and harder algebra. Not every student takes it, and schools run it differently. The Year 10 guide covers both.",
+    a: "10A is extra content offered alongside Year 10 in the Victorian Curriculum (the Australian Curriculum lists similar optional content), including surds, logarithms and harder algebra. Not every student takes it, and schools run it differently. The Year 10 guide covers both.",
   },
   {
     q: "Are the worksheets on these pages free?",

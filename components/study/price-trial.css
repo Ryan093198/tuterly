@@ -3,7 +3,7 @@
 .pt__plans { display: grid; gap: 18px; width: 100%; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 560px) { .pt__plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pt__price { display: grid; gap: 4px; font-weight: 800; font-size: 18px; color: var(--foreground); margin: 0; }
-.pt__was { font-weight: 800; font-size: 16px; color: var(--muted); text-decoration: line-through; }
+.pt__plan { font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .pt__amount { font-size: 44px; font-weight: 900; line-height: 1; color: var(--brand-text); }
 .pt__perday { font-weight: 600; font-size: 15.5px; color: var(--muted); }
 .pt__steps {

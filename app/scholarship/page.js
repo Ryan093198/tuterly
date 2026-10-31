@@ -24,7 +24,7 @@ const FAQS = [
   },
   {
     q: "What does Tuterly Scholarship include, and what does it cost?",
-    a: "It starts with a 40-question Numerical Reasoning diagnostic in the Tuterly app on iPhone, with a separate version for Year 5, 6 and 7 entry. It covers numerical reasoning only, not reading, writing or humanities. The first 10 questions are free. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest of the diagnostic, worked solutions and follow-up practice on every question your child misses. Pricing has not been announced yet, and families on the Scholarship list will get a launch discount.",
+    a: "It starts with a 40-question Numerical Reasoning diagnostic in the Tuterly app on iPhone, with a separate version for Year 5, 6 and 7 entry. It covers numerical reasoning only, not reading, writing or humanities. The first 10 questions are free, with results for those 10. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest of the diagnostic, worked solutions and follow-up practice on every question your child misses. Pricing has not been announced yet, and families on the Scholarship list will get a launch discount.",
   },
   {
     q: "Can Tuterly tell me my child's chances of a scholarship?",
@@ -52,7 +52,7 @@ export default function Page() {
       facts={[
         ["Entry years covered", "Year 5, Year 6 and Year 7 entry"],
         ["Main providers", "ACER, Edutest, AAS"],
-        ["Free to start", "First 10 of 40 Numerical Reasoning diagnostic questions"],
+        ["Free to start", "First 10 of 40 Numerical Reasoning diagnostic questions, with results"],
       ]}
     >
       <section className="tb-section" aria-labelledby="h-vs">

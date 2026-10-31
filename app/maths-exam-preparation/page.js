@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Maths Exam Preparation App, Years 7 to 10 (Australian Curriculum) | Tuterly";
 const DESCRIPTION =
-  "A maths exam preparation app for Years 7 to 10: practice tests on every topic, the questions your child got wrong turned into fresh practice, and revision notes. Australian Curriculum. iPhone and Android.";
+  "A maths exam preparation app for Years 7 to 10: practice tests on every topic, the questions your child got wrong turned into fresh practice, and revision notes. Australian Curriculum. On iPhone, Android coming soon.";
 const URL = `${SITE_URL}/maths-exam-preparation`;
 
 export const metadata = {

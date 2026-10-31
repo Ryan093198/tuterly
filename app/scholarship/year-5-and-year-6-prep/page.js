@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly Scholarship work for Year 5 and Year 6 entry?",
-    a: "There is a 40-question Numerical Reasoning diagnostic for each level, in the Tuterly app on iPhone: Year 5 entry is pitched for Year 4 students and Year 6 entry for Year 5 students. It does not cover reading or writing. The first 10 questions are free. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on missed questions. Families on the Scholarship list will get a launch discount.",
+    a: "There is a 40-question Numerical Reasoning diagnostic for each level, in the Tuterly app on iPhone: Year 5 entry is pitched for Year 4 students and Year 6 entry for Year 5 students. It does not cover reading or writing. The first 10 questions are free, with results for those 10. A one-off Scholarship Pass per entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on missed questions. Families on the Scholarship list will get a launch discount.",
   },
 ];
 

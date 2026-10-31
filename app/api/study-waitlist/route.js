@@ -51,7 +51,19 @@ export async function POST(request) {
 
   if (error) {
     // 23505 = unique violation on lower(email): already on the list.
-    if (error.code === "23505") return NextResponse.json({ ok: true, already: true });
+    if (error.code === "23505") {
+      // Someone already on the list who now asks about Android: mark their
+      // row "android" so they're on the Android launch email. No second
+      // confirmation.
+      if (row.interest === "android") {
+        const { error: updateError } = await admin
+          .from("study_waitlist")
+          .update({ interest: "android" })
+          .eq("email", row.email);
+        if (updateError) console.error("[study-waitlist] android update failed", updateError.message);
+      }
+      return NextResponse.json({ ok: true, already: true });
+    }
     console.error("[study-waitlist] insert failed", error.message);
     return NextResponse.json(
       { error: "Sorry, something went wrong. Please try again later." },

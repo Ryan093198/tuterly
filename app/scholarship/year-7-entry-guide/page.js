@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "Where does Tuterly Scholarship fit for Year 7 entry?",
-    a: "Tuterly's Year 7 entry diagnostic is 40 Numerical Reasoning questions, pitched for Year 6 students, in the Tuterly app on iPhone. It does not cover reading, writing or humanities. The first 10 questions are free. A one-off Scholarship Pass for the Year 7 entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on everything your child misses. Families on the Scholarship list will get a launch discount.",
+    a: "Tuterly's Year 7 entry diagnostic is 40 Numerical Reasoning questions, pitched for Year 6 students, in the Tuterly app on iPhone. It does not cover reading, writing or humanities. The first 10 questions are free, with results for those 10. A one-off Scholarship Pass for the Year 7 entry level, not a subscription, unlocks the rest, with worked solutions and follow-up practice on everything your child misses. Families on the Scholarship list will get a launch discount.",
   },
 ];
 

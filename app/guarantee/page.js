@@ -59,7 +59,7 @@ export default function GuaranteePage() {
             <Section title="4. Your refund">
               <ul className="list-disc pl-6 space-y-1">
                 <li>{`We refund every ${name} subscription payment you made in those ${G.months} months.`}</li>
-                <li>Subscriptions are paid through the App Store or Google Play, so the refund comes from us (Bayside Academics) directly, by bank transfer, within 14 days of approving your claim.</li>
+                <li>Subscriptions are paid through the App Store (or Google Play, once the app is on Android), so the refund comes from us (Bayside Academics) directly, by bank transfer, within 14 days of approving your claim.</li>
                 <li>One guarantee refund per student. Please cancel the subscription in your phone’s settings once you’ve claimed.</li>
               </ul>
             </Section>

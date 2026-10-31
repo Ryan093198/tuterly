@@ -30,7 +30,7 @@ const STRANDS = [
       "Linear inequalities, graphed on a number line",
       "Algebraic fractions and equations with fractions",
       "Rearranging formulas to change the subject",
-      "Gradients of parallel and perpendicular lines",
+      "Gradients of parallel and perpendicular lines, building on Year 9 gradient, midpoint and distance",
       "Graphs of simple quadratics, reciprocals, circles and exponentials",
       "Simple exponential equations",
       "Modelling with inverse proportion, growth and decay, including compound interest",
@@ -107,8 +107,10 @@ const STRANDS = [
   },
 ];
 
-// Victorian Curriculum 2.0 Level 10A (VC2M10A..): optional extension
-// content, kept separate from the mainstream Year 10 strands above.
+// Victorian Curriculum 2.0 Level 10A (VC2M10AN.., VC2M10AA.., etc.): optional
+// extension content, kept separate from the mainstream Year 10 strands above.
+// AC v9 has a shorter list ("Optional content for post-Year 10 mathematics
+// pathways"); the 10A intro below names the topics it leaves out.
 const STRANDS_10A = [
   {
     name: "Number (10A)",
@@ -286,7 +288,7 @@ export default function Page() {
         ["Optional extension", "10A or an advanced class"],
         ["Leads to", "Senior maths subject choices"],
       ]}
-      topicsIntro="Year 10 combines everything from Years 7 to 9 into longer, multi-step problems. Each box links to free Year 10 worksheets for that topic."
+      topicsIntro="Year 10 combines everything from Years 7 to 9 into longer, multi-step problems. This list follows the Victorian Curriculum 2.0 Level 10, which adds a few topics to the Australian Curriculum v9 Year 10: in AC v9, gradients of parallel and perpendicular lines are a Year 9 topic, algebraic fractions are optional extension content, and inverse proportion is not listed. Each box links to free Year 10 worksheets for that topic."
       strands={STRANDS}
       mistakesIntro="In Year 10, most lost marks come from small algebra slips inside otherwise correct working. Catching them early is the easiest way to lift results."
       mistakes={MISTAKES}
@@ -305,7 +307,7 @@ export default function Page() {
         <div className="tb-wrap">
           <h2 id="h-10a-topics" className="tb-h2 ym-h2">Optional 10A topics</h2>
           <p className="ym-intro">
-            10A is optional extension content in the Victorian Curriculum 2.0 (Level 10A) and the Australian Curriculum. It is usually taught to students heading for Mathematical Methods or Specialist Mathematics, and many schools teach only part of it. Each box links to free 10A worksheets.
+            10A is optional extension content in the Victorian Curriculum 2.0 (Level 10A), and this list follows it. The Australian Curriculum v9 has a shorter list of optional content for students heading to senior maths: surds, logarithms, completing the square and the quadratic formula, graphs of sine and cosine, circle theorems, standard deviation and counting. Polynomials, the sine and cosine rules, and pyramids, cones and spheres are in Victoria&rsquo;s 10A but not in that list. 10A is usually taught to students heading for Mathematical Methods or Specialist Mathematics, and many schools teach only part of it. Each box links to free 10A worksheets.
           </p>
           <div className="ym-strands">
             {STRANDS_10A.map((s) => (

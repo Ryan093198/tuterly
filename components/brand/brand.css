@@ -299,6 +299,12 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 .tb-appcta__qr { display: flex; align-items: center; gap: 12px; }
 .tb-appcta__qr-code { width: 88px; height: 88px; padding: 4px; background: #fff; border-radius: 12px; border: 2px solid var(--border); }
 .tb-dark-band .tb-appcta__meta, .tb-dark-band .tb-appcta__note { color: var(--muted); }
+/* "On Android?": a small text button that switches to the Android sign-up. */
+.tb-appcta__android {
+  display: inline-block; margin: 8px 0 0; padding: 4px 0; min-height: 32px; border: 0; background: none; cursor: pointer;
+  font-family: inherit; font-weight: 800; font-size: 14px; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px;
+}
+.tb-appbar .tb-appcta__android { margin: 0; }
 
 /* Slim app bar */
 .tb-appbar {

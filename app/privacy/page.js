@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
             <p>
               Tuterly is operated by <strong>Bayside Academics</strong> (Brighton,
               Victoria, Australia). This policy covers the <strong>Tuterly app</strong>{" "}
-              (our app for iPhone and Android for Years 7 to 10 maths), this website, and the
+              (our iPhone app for Years 7 to 10 maths, with Android coming soon), this website, and the
               Tuterly tutoring platform at{" "}
               <a
                 href="https://app.tuterly.com.au"
@@ -175,7 +175,7 @@ export default function PrivacyPolicy() {
 
           <Section title="The Tuterly app: payments">
             <p>
-              Subscriptions are bought and managed through Apple’s App Store or Google Play. Apple or Google handles payment, so we never see your card details. You can
+              Subscriptions are bought and managed through Apple’s App Store (and Google Play, once the app is on Android). Apple or Google handles payment, so we never see your card details. You can
               cancel in your phone’s subscription settings at any time.
             </p>
           </Section>
