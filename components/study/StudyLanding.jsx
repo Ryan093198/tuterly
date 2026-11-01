@@ -142,6 +142,36 @@ export default function StudyLanding() {
             />
           </Reveal>
           <TryQuestion />
+
+          {/* A whole topic, not just one question: Test any topic in the
+              app, and the free tools that work the same way on the site.
+              Facts from lib/feature-pages.js (Test any topic). */}
+          <div className="sl-topic">
+            <div className="sl-topic__copy">
+              <p className="sl-topic__eyebrow">Got a test coming up?</p>
+              <h3 className="sl-topic__title">Test a whole topic, then drill what they got wrong.</h3>
+              <p className="sl-topic__lead">
+                In {name}, <strong>Test any topic</strong>{" "}writes a short test on any topic in their year, one question from each part of it. It&rsquo;s marked straight away, so you can see which kinds of question they need the most practice on.
+              </p>
+              <ol className="sl-topic__flow">
+                <li><strong>Test</strong><span>A fresh test on the topic, covering every part a school test is likely to include.</span></li>
+                <li><strong>Find the gaps</strong><span>Marked instantly. Every question they got wrong goes into their bank with a worked solution.</span></li>
+                <li><strong>Drill</strong><span>Fix my mistakes works through them with fresh questions on the same idea until each one is mastered.</span></li>
+              </ol>
+              <Link href="/features/test-any-topic" className="tb-link">How Test any topic works</Link>
+            </div>
+            <div className="sl-topic__tools">
+              <p className="sl-topic__eyebrow">Free on the website now</p>
+              <Link href="/exam-generator" className="sl-topic__tool">
+                <strong>Practice exam generator</strong>
+                <span>Pick the topics their test covers and get a marked practice exam with worked solutions.</span>
+              </Link>
+              <Link href="/worksheets" className="sl-topic__tool">
+                <strong>Worksheet generator</strong>
+                <span>Six new questions on any topic, from Foundation to Extension, with worked solutions.</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

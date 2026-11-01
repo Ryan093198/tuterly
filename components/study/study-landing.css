@@ -195,3 +195,21 @@ a.sl-resource:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edg
 .sl .sl-faq { max-width: 780px; }
 /* Home headline "The secret tool for / better maths marks!" on two lines. */
 @media (min-width: 900px) { .sl-hero__h1 { font-size: clamp(40px, 4.3vw, 58px); } }
+
+/* Try it: test a whole topic */
+.sl-topic { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; margin-top: 32px; padding: 26px 28px; border: 1px solid var(--border); border-radius: 20px; background: var(--card); }
+@media (max-width: 860px) { .sl-topic { grid-template-columns: 1fr; padding: 20px 18px; } }
+.sl-topic__eyebrow { margin: 0 0 6px; font-size: 12.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: var(--brand-text); }
+.sl-topic__title { margin: 0 0 8px; font-size: 22px; font-weight: 900; line-height: 1.25; color: var(--foreground); }
+.sl-topic__lead { margin: 0 0 14px; font-size: 15.5px; line-height: 1.6; color: var(--muted); }
+.sl-topic__lead strong { color: var(--foreground); }
+.sl-topic__flow { list-style: none; counter-reset: slt; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; }
+.sl-topic__flow li { counter-increment: slt; display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.sl-topic__flow li::before { content: counter(slt); grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-soft); color: var(--brand-text); font-weight: 900; display: grid; place-items: center; font-size: 14px; }
+.sl-topic__flow strong { color: var(--foreground); }
+.sl-topic__tools { display: grid; gap: 10px; align-content: start; }
+.sl-topic__tool { display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px; background: var(--background); text-decoration: none; color: inherit; }
+.sl-topic__tool:hover { border-color: var(--brand); }
+.sl-topic__tool strong { font-size: 15.5px; color: var(--foreground); }
+.sl-topic__tool strong::after { content: " →"; color: var(--brand-text); }
+.sl-topic__tool span { font-size: 14px; line-height: 1.5; color: var(--muted); }
