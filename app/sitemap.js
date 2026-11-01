@@ -23,6 +23,7 @@ const STATIC_PAGES = [
   { path: "/naplan", priority: 0.8, changeFrequency: "monthly" },
   { path: "/formula-sheets", priority: 0.7, changeFrequency: "monthly" },
   { path: "/exam-generator", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/results", priority: 0.6, changeFrequency: "monthly" },
   { path: "/scholarship-practice", priority: 0.8, changeFrequency: "monthly" },
   { path: "/scholarship-practice/acer", priority: 0.8, changeFrequency: "monthly" },
   { path: "/scholarship-practice/edutest", priority: 0.8, changeFrequency: "monthly" },

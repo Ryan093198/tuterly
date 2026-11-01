@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import PurchaseEvent from "./PurchaseEvent";
 import { stripe } from "@/lib/stripe";
 import { STUDY_APP, STUDY_APP_STORE_URL } from "@/lib/study-plus";
 
@@ -21,6 +22,7 @@ export default async function StudyPlusDone({ searchParams }) {
   return (
     <main className="flex flex-1 flex-col items-center px-6 py-12 bg-surface-soft">
       <div className="w-full max-w-xl">
+        {ok && <PurchaseEvent id={s.id} value={(s.amount_total || 0) / 100} item={pass ? "sch_pass" : "plus"} />}
         <header className="flex items-center justify-between mb-10">
           <Link href="/"><Logo /></Link>
         </header>

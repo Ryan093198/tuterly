@@ -5,6 +5,7 @@ import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import QuinnWorking from "@/components/brand/QuinnWorking";
+import { trackEvent } from "@/lib/analytics";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -229,6 +230,7 @@ export default function WorksheetGenerator({
       } catch {}
       setEmail(modalEmailInput);
       setEmailSaved(true);
+      trackEvent("generate_lead", { lead_type: "worksheet_unlock", source: "worksheets" });
       // Sync the form's year picker to whatever they confirmed in the
       // modal (might differ from the year they had open at the time).
       setYearLevel(modalYearInput);

@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { Icon } from "@/components/brand";
 import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
-import { STUDY_APP } from "@/lib/study-app";
+import { STUDY_APP, appCta } from "@/lib/study-app";
 
 // The "Try it" demo (home page and /try). Enter an email first (it joins
 // the early sign-up list), then snap or upload one maths question (or type
@@ -90,6 +90,7 @@ export default function TryQuestion() {
     try { setPreview(await fileToDataUrl(f)); } catch (err) { setError(err.message); }
   }
 
+  const cta = appCta();
   const ev = (name, params = {}) => trackEvent(name, { page: typeof window !== "undefined" ? window.location.pathname : "", ...params });
 
   // try_view once, when the demo first scrolls into view.
@@ -318,7 +319,7 @@ export default function TryQuestion() {
               <strong>In the app, every question they get wrong works like this,</strong> with fresh versions until it’s mastered.
             </p>
             <div className="tq-next__btns">
-              <a href="#get-app" className="tb-btn tb-btn--primary" onClick={() => ev("try_signup_click")}>Sign up early for a free trial</a>
+              <a href={cta.live ? cta.href : "#get-app"} className="tb-btn tb-btn--primary" onClick={() => { ev("try_signup_click"); if (cta.live) ev("begin_checkout", { item_id: "plus", source: "try" }); }}>{cta.label}</a>
               <button type="button" className="tq-link" onClick={() => { ev("try_another"); reset(); }}>Try another question</button>
             </div>
             {typeof result.tries_left_today === "number" && (

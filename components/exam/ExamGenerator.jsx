@@ -9,6 +9,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { trackEvent } from "@/lib/analytics";
+import { appCta } from "@/lib/study-app";
 import "./exam.css";
 
 // Free practice exam generator. Pick a year, tick topics (a main topic
@@ -50,6 +51,8 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   const [showAnswers, setShowAnswers] = useState(false);
   const [printing, setPrinting] = useState(false);
   const paperRef = useRef(null);
+  const cta = appCta();
+  const trackCta = (name, params) => { trackEvent(name, params); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "exam_generator" }); };
 
   useEffect(() => {
     const e = store.get(EMAIL_KEY);
@@ -154,6 +157,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       store.set(EMAIL_KEY, em);
       store.set(YEAR_KEY, year);
       setEmail(em);
+      trackEvent("generate_lead", { lead_type: "exam_unlock", source: placement });
       setGate(false);
       trackEvent("exam_email_unlock", { year, placement });
     } catch (err) {
@@ -253,7 +257,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             <p>{error}</p>
             {limit && (
               <div className="eg-msg__btns">
-                <Link href="/#get-app" className="eg-btn eg-btn--sm" onClick={() => trackEvent("exam_cta_click", { to: "app", from: "limit" })}>Sign up early for a free trial</Link>
+                <Link href={cta.href} className="eg-btn eg-btn--sm" onClick={() => trackCta("exam_cta_click", { to: "app", from: "limit" })}>{cta.label}</Link>
                 <Link href="/worksheets" className="eg-linkbtn">Or make a free worksheet</Link>
               </div>
             )}
@@ -275,7 +279,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             <p className="eg-next__title">Marked it? Turn the wrong answers into marks.</p>
             <p className="eg-next__text">Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered, and Test any topic builds a new test whenever they want one.</p>
             <div className="eg-next__btns">
-              <Link href="/#get-app" className="eg-btn" onClick={() => trackEvent("exam_cta_click", { to: "app", from: "result" })}>Sign up early for a free trial</Link>
+              <Link href={cta.href} className="eg-btn" onClick={() => trackCta("exam_cta_click", { to: "app", from: "result" })}>{cta.label}</Link>
               <Link href="/try" className="eg-linkbtn" onClick={() => trackEvent("exam_cta_click", { to: "try", from: "result" })}>Try it free on a question they got wrong →</Link>
             </div>
           </div>

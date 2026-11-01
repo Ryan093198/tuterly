@@ -282,6 +282,9 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   border-radius: 999px; background: var(--foreground); color: var(--background);
   font-weight: 800; font-size: 14px; line-height: 1.2;
 }
+.tb-appcta__buy { display: grid; gap: 12px; justify-items: start; }
+.tb-appcta__buy > .tb-btn--fluid { width: 100%; }
+.tb-appcta__store { font-weight: 800; font-size: 15px; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
 .tb-appcta__note { font-weight: 600; font-size: 13.5px; color: var(--muted); margin: 10px 0 0; line-height: 1.5; }
 .tb-appcta__note a { color: inherit; }
 .tb-appcta__form { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }

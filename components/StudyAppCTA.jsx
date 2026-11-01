@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import { STUDY_APP, STUDY_CHECKOUT, isStudyAppLive } from "@/lib/study-app";
 import { trackEvent } from "@/lib/analytics";
 import "@/components/brand/brand.css";
 import LaunchPrice from "@/components/study/LaunchPrice";
@@ -108,14 +108,17 @@ export default function StudyAppCTA({
     let label = "Free to download";
     const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl;
     if (live && storeUrl) {
-      href = storeUrl;
-      label = "Free to download";
+      href = STUDY_CHECKOUT.plus;
+      label = "Start free week";
     }
     return (
       <a
         href={href}
         className="tb-btn tb-btn--primary tb-btn--sm"
-        onClick={() => track(href.startsWith("/#") ? "nav_to_form" : "app_store")}
+        onClick={() => {
+          track(href.startsWith("/#") ? "nav_to_form" : "checkout");
+          if (!href.startsWith("/#")) trackEvent("begin_checkout", { item_id: "plus", source: "nav" });
+        }}
         style={{ marginBottom: 4, whiteSpace: "nowrap", ...style }}
       >
         {label}
@@ -147,13 +150,29 @@ export default function StudyAppCTA({
 
   let action;
   if (mode === "store") {
+    // Live: the free week at checkout on the website first (no App Store
+    // cut, and it's the step we can measure), the App Store second.
     action = (
-      <StoreButton
-        platform={platform}
-        btnClass={btnClass}
-        showQr={platform === "desktop" && variant !== "banner"}
-        onClick={() => track("app_store")}
-      />
+      <div className="tb-appcta__buy">
+        <a
+          href={STUDY_CHECKOUT.plus}
+          className={btnClass}
+          onClick={() => {
+            track("checkout");
+            trackEvent("begin_checkout", { item_id: "plus", source: placement || variant });
+          }}
+        >
+          Start your free week
+        </a>
+        {!compact && (
+          <StoreButton
+            platform={platform}
+            btnClass="tb-appcta__store"
+            showQr={platform === "desktop" && variant !== "banner"}
+            onClick={() => track("app_store")}
+          />
+        )}
+      </div>
     );
   } else if (mode === "testflight") {
     action = (
@@ -344,7 +363,7 @@ function StoreButton({ platform, btnClass, showQr, onClick }) {
     <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
       {apple && (
         <a href={STUDY_APP.appStoreUrl} className={btnClass} onClick={onClick} rel="noopener">
-          Download free on the App Store
+          {btnClass === "tb-appcta__store" ? "Or download free on the App Store" : "Download free on the App Store"}
         </a>
       )}
       {google && (
@@ -418,6 +437,8 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Something went wrong. Please try again.");
       setState(data?.already ? "already" : "done");
+      // GA4 recommended lead event, so sign-ups can be marked as a key event.
+      if (!data?.already) trackEvent("generate_lead", { lead_type: `app_${kind}`, source: placement || "" });
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
       setState("error");

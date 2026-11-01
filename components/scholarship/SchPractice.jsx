@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { isStudyAppLive } from "@/lib/study-app";
+import PassOffer from "@/components/scholarship/PassOffer";
 
 // Ten scholarship-style numerical reasoning questions for the chosen
 // level, marked on the page, then worked solutions, a skill-by-skill
@@ -128,7 +130,11 @@ export default function SchPractice({ levels, sets, provider = null, sourcePage 
   );
 }
 
-export function WaitlistBox({ entry, year, provider, score, sourcePage }) {
+export function WaitlistBox(props) {
+  return isStudyAppLive() ? <PassOffer source={props.sourcePage} /> : <WaitlistForm {...props} />;
+}
+
+function WaitlistForm({ entry, year, provider, score, sourcePage }) {
   const [email, setEmail] = useState("");
   const [test, setTest] = useState(provider || "");
   const [hp, setHp] = useState("");
@@ -150,6 +156,7 @@ export function WaitlistBox({ entry, year, provider, score, sourcePage }) {
       const d = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(d?.error || "Something went wrong. Try again.");
       setState("done");
+      trackEvent("generate_lead", { lead_type: "scholarship", source: sourcePage });
       trackEvent("sch_waitlist", { entry, provider, score });
     } catch (err) {
       setMsg(err.message);

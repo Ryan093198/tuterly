@@ -2,7 +2,7 @@ import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Icon, PhoneFrame } from "@/components/brand";
 import ResultsProof from "@/components/study/ResultsProof";
-import { STUDY_APP } from "@/lib/study-app";
+import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import "./worksheet-upgrade.css";
 
 // The main call to action on the free worksheet pages (most of the site's
@@ -84,7 +84,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
 
         <div className="wu__cta">
           <div className="wu__cta-copy">
-            <p className="wu__cta-title">Sign up early for a free trial.</p>
+            <p className="wu__cta-title">{isStudyAppLive() ? "Start your free week." : "Sign up early for a free trial."}</p>
             <p className="wu__cta-text">
               {`For Years 7 to 10: ${STUDY_APP.priceLine}.`}{" "}
               <Link href="/guarantee">Better marks in 6 months, or your money back</Link>.

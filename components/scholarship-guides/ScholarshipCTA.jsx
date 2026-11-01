@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
+import { isStudyAppLive } from "@/lib/study-app";
+import PassOffer from "@/components/scholarship/PassOffer";
 
 // Tuterly Scholarship waitlist for the /scholarship guide pages. Posts to
 // the existing /api/scholarship-waitlist route (same fields the practice
@@ -40,6 +42,7 @@ export default function ScholarshipCTA({ sourcePage, variant = "band", defaultEn
       const d = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(d?.error || "Something went wrong. Try again.");
       setState("done");
+      trackEvent("generate_lead", { lead_type: "scholarship", source: sourcePage });
       trackEvent("sch_guide_waitlist", { source: sourcePage, entry: entry || null, test: test || "not_sure", variant });
     } catch (err) {
       setMsg(err.message);
@@ -48,6 +51,13 @@ export default function ScholarshipCTA({ sourcePage, variant = "band", defaultEn
   }
 
   const hero = variant === "hero";
+  if (isStudyAppLive()) {
+    return (
+      <div className={`sg-cta ${hero ? "sg-cta--hero" : ""}`} id={id}>
+        <PassOffer source={sourcePage} className="" titleClass="sg-cta__title" textClass="sg-cta__text" />
+      </div>
+    );
+  }
 
   return (
     <div className={`sg-cta ${hero ? "sg-cta--hero" : ""}`} id={id}>

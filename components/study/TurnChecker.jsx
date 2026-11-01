@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { checkAnswer } from "@/lib/answer-check";
 import { trackEvent } from "@/lib/analytics";
+import { appCta } from "@/lib/study-app";
 
 // "Your turn" on a topic page: type an answer, it's marked, then the
 // hint or solution, then the app. The question, hint, answer and solution
@@ -21,6 +22,7 @@ export default function TurnChecker({ slug, topic, kind, accept, question, hint,
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [busy, setBusy] = useState(false);
+  const cta = appCta();
 
   async function onCheck(e) {
     e.preventDefault();
@@ -99,8 +101,8 @@ export default function TurnChecker({ slug, topic, kind, accept, question, hint,
               : "In the Tuterly app, snap the questions they get wrong and get a fresh one on the same idea, again and again, until it’s mastered."}
           </p>
           <div className="tc__next-btns">
-            <Link href="/#get-app" className="tc__cta" onClick={() => trackEvent("turn_cta_click", { slug, to: "app", result: result || "solution" })}>
-              Sign up early for a free trial
+            <Link href={cta.href} className="tc__cta" onClick={() => { trackEvent("turn_cta_click", { slug, to: "app", result: result || "solution" }); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "topic_turn" }); }}>
+              {cta.label}
             </Link>
             <Link href="/try" className="tc__cta2" onClick={() => trackEvent("turn_cta_click", { slug, to: "try", result: result || "solution" })}>
               Try it free on a question they got wrong →

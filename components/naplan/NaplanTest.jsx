@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import { checkAnswer } from "@/lib/answer-check";
 import { trackEvent } from "@/lib/analytics";
+import { appCta } from "@/lib/study-app";
 
 // The 20-question NAPLAN-style practice test. Questions, options and
 // solutions arrive already rendered from the server (maths included).
@@ -13,6 +14,7 @@ export default function NaplanTest({ year, questions, appYears }) {
   const [marked, setMarked] = useState(null); // { results: {n: true|false}, score }
   const started = useRef(false);
   const resultsRef = useRef(null);
+  const cta = appCta();
 
   function setAnswer(n, v) {
     if (!started.current) { started.current = true; trackEvent("naplan_start", { year }); }
@@ -85,7 +87,7 @@ export default function NaplanTest({ year, questions, appYears }) {
                     : "Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered. Built for Years 7 to 10 and the Victorian Curriculum."}
                 </p>
                 <div className="nt-next__btns">
-                  <Link href="/#get-app" className="nt-btn" onClick={() => trackEvent("naplan_cta_click", { year, to: "app", score: marked.score })}>Sign up early for a free trial</Link>
+                  <Link href={cta.href} className="nt-btn" onClick={() => { trackEvent("naplan_cta_click", { year, to: "app", score: marked.score }); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "naplan" }); }}>{cta.label}</Link>
                   <Link href="/try" className="nt-link" onClick={() => trackEvent("naplan_cta_click", { year, to: "try", score: marked.score })}>Try it free on one question →</Link>
                 </div>
               </>
