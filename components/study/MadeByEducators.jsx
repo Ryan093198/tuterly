@@ -9,12 +9,12 @@ import "./made-by-educators.css";
 export const MADE_BY_POINTS = [
   {
     icon: "educator",
-    title: "Designed by Australian educators",
-    text: "How it explains each step, what makes a good practice question, and when a question counts as mastered were all set by Australian educators.",
+    title: "Built by experienced Australian educators",
+    text: "Made specifically for Australian students. How it explains each step, what makes a good practice question, and when a question counts as mastered were all set by Australian educators.",
   },
   {
     icon: "school",
-    title: "Built on the curriculum",
+    title: "Follows the Australian Curriculum",
     text: `Topics follow the ${STUDY_APP_FACTS.curriculum}, for Years 7 to 10 maths. Every question is filed under a topic from their year level.`,
   },
   {
@@ -37,8 +37,8 @@ export default function MadeByEducators({ id = "educators", className = "" }) {
           <SectionHead
             id={id}
             eyebrow="Made in Australia"
-            title="Carefully designed by Australian educators."
-            lead={`Tuterly has been carefully designed by Australian educators at Bayside Academics, one of the leading tutoring companies in Melbourne, to help boost students’ test marks. It’s already used by tutoring centres and teachers in Victoria, and now it’s opening to the public.`}
+            title="Built by Australian educators, for Australian students."
+            lead={`Tuterly has been built by a team of experienced educators at Bayside Academics, one of the leading tutoring companies in Melbourne. It’s made specifically for Australian students: every topic follows the Australian Curriculum for Years 7 to 10, using the same terms their teachers use. It’s already used by tutoring centres and teachers in Victoria, and now it’s opening to the public.`}
           />
         </Reveal>
         <ul className="mbe">
@@ -52,5 +52,24 @@ export default function MadeByEducators({ id = "educators", className = "" }) {
         </ul>
       </div>
     </section>
+  );
+}
+
+// Two-line trust strip for the hero of the home, parents and students pages.
+export function MadeInAustralia({ className = "" }) {
+  return (
+    <ul className={`mia ${className}`} aria-label="About Tuterly">
+      <li><Check />Built in Australia by experienced educators</li>
+      <li><Check />Follows the Australian Curriculum, Years 7 to 10</li>
+    </ul>
+  );
+}
+
+function Check() {
+  return (
+    <svg className="mia__tick" viewBox="0 0 20 20" aria-hidden="true">
+      <circle cx="10" cy="10" r="10" />
+      <path d="M5.5 10.4l3 3 6-6.4" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

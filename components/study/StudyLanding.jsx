@@ -8,7 +8,7 @@ import {
 import { STUDY_APP } from "@/lib/study-app";
 import DemoVideo from "@/components/study/DemoVideo";
 import { getStudyFaqs } from "@/lib/study-faqs";
-import MadeByEducators from "@/components/study/MadeByEducators";
+import MadeByEducators, { MadeInAustralia } from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import TryQuestion from "@/components/study/TryQuestion";
@@ -87,6 +87,7 @@ export default function StudyLanding() {
             <p className="tb-lead sl-hero__lead">
               {`The self-learning maths app for Years 7 to 10. Snap a question they got wrong, or upload a whole school test, and ${name} writes fresh questions on the same idea until it’s mastered.`}
             </p>
+            <MadeInAustralia />
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="home_hero" slim />
             </div>
@@ -123,6 +124,9 @@ export default function StudyLanding() {
           <QuestionCounter />
         </div>
       </section>
+
+      {/* 2b. MADE BY AUSTRALIAN EDUCATORS, FOR AUSTRALIAN STUDENTS */}
+      <MadeByEducators />
 
       {/* 3. TRY IT */}
       <section className="tb-section" aria-labelledby="try-title" id="try-it">
@@ -258,9 +262,6 @@ export default function StudyLanding() {
           </div>
         </div>
       </section>
-
-      {/* 7. MADE BY AUSTRALIAN EDUCATORS */}
-      <MadeByEducators />
 
       {/* 8. MATHS, EXPLAINED: every topic page */}
       <section className="tb-section tb-section--card" aria-labelledby="explained" id="topics">

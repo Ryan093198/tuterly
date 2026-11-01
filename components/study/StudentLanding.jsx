@@ -6,6 +6,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import FlowSteps from "@/components/brand/FlowSteps";
 import { CtaBand, Eyebrow, OptionTile, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import ShareWithParent from "@/components/study/ShareWithParent";
+import { MadeInAustralia } from "@/components/study/MadeByEducators";
 import { LaunchPill } from "@/components/study/ResultsProof";
 import TryCta from "@/components/study/TryCta";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
@@ -83,6 +84,7 @@ export default function StudentLanding({ year = null }) {
                 ? year.intro
                 : `Got a test back with marks you could have had? Snap the questions you got wrong, or upload the whole test. ${name} shows you the full worked solution, then gives you fresh questions on the same idea until you’ve mastered it.`}
             </p>
+            <MadeInAustralia />
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement={`${placement}_hero`} audience="student" slim />
             </div>

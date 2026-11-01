@@ -3,7 +3,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import FlowSteps from "@/components/brand/FlowSteps";
-import MadeByEducators from "@/components/study/MadeByEducators";
+import MadeByEducators, { MadeInAustralia } from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
@@ -53,6 +53,7 @@ export default function ParentsPage() {
             <p className="tb-lead pp-hero__lead">
               {`With ${name}, your child snaps the maths questions they get wrong and practises fresh versions until each one is mastered. Each week you see what they added and mastered, plus their test scores.`}
             </p>
+            <MadeInAustralia />
             <ResultsProof />
             <div className="pp-hero__cta">
               <StudyAppCTA variant="hero" placement="parents_hero" slim />

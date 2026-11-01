@@ -4,3 +4,9 @@
 .mbe__card { display: grid; gap: 10px; align-content: start; }
 .mbe__title { font-size: 19px; font-weight: 900; line-height: 1.25; margin: 4px 0 0; }
 .mbe__text { font-size: 16px; line-height: 1.55; color: var(--muted); margin: 0; }
+
+.mia { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 8px; }
+.mia li { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 800; line-height: 1.35; color: var(--ink, #0b1a2c); }
+.mia__tick { width: 20px; height: 20px; flex: none; }
+.mia__tick circle { fill: #14a9c8; }
+.mia__tick path { stroke: #fff; }
