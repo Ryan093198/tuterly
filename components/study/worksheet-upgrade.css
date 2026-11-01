@@ -10,7 +10,7 @@
 .wu__lead { margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
 .wu__proof { margin-top: 18px; }
 .wu__phone { display: grid; place-items: center; }
-@media (max-width: 899px) { .wu__phone { display: none; } }
+@media (max-width: 899px) { .wu__phone { margin: 4px 0 8px; } .wu__phone .dv { width: min(240px, 64vw); } }
 
 /* Side-by-side: label, worksheet, app. Stacks into cards on phones. */
 .wu__table { display: grid; border: 2px solid var(--border); border-radius: 18px; overflow: hidden; }

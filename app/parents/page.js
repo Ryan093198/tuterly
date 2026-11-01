@@ -1,3 +1,4 @@
+import DemoVideo from "@/components/study/DemoVideo";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
@@ -59,14 +60,7 @@ export default function ParentsPage() {
           </div>
           <div className="pp-hero__visual">
             <div className="pp-hero__blob" aria-hidden="true" />
-            <PhoneFrame
-              src={`${S}/home.png`}
-              alt="The Tuterly home screen: the Snap a question button, Fix my mistakes and this week’s goals"
-              width={290}
-              priority
-              sizes="(max-width: 899px) 60vw, 290px"
-              className="pp-hero__phone"
-            />
+            <DemoVideo width={320} placement="parents_hero" priority />
           </div>
         </div>
       </section>

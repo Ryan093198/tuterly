@@ -1,3 +1,4 @@
+import DemoVideo from "@/components/study/DemoVideo";
 import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import MarketingNav from "@/components/marketing/MarketingNav";
@@ -89,14 +90,7 @@ export default function StudentLanding({ year = null }) {
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
-            <PhoneFrame
-              src={`${S}/flow-snap/05-similar-question-correct.png`}
-              alt="Tuterly showing Too easy! after a similar question is marked right, with a star and +5 XP"
-              width={300}
-              priority
-              sizes="(max-width: 899px) 62vw, 300px"
-              className="sl-hero__phone"
-            />
+            <DemoVideo width={330} placement="students_hero" priority />
           </div>
         </div>
       </section>

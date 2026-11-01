@@ -6,6 +6,7 @@ import {
   CtaBand, Icon, OptionTile, PhoneFrame, Reveal, SectionHead,
 } from "@/components/brand";
 import { STUDY_APP } from "@/lib/study-app";
+import DemoVideo from "@/components/study/DemoVideo";
 import { getStudyFaqs } from "@/lib/study-faqs";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
@@ -94,14 +95,7 @@ export default function StudyLanding() {
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
-            <PhoneFrame
-              src={`${S}/flow-snap/03-question-solution-hidden.png`}
-              alt="Tuterly showing a question the student got wrong, with a similar question to master"
-              width={300}
-              priority
-              sizes="(max-width: 899px) 62vw, 300px"
-              className="sl-hero__phone"
-            />
+            <DemoVideo width={330} placement="home_hero" priority />
           </div>
         </div>
       </section>

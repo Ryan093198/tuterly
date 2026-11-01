@@ -2,6 +2,7 @@ import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Icon, PhoneFrame } from "@/components/brand";
 import ResultsProof from "@/components/study/ResultsProof";
+import DemoVideo from "@/components/study/DemoVideo";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import "./worksheet-upgrade.css";
 
@@ -50,20 +51,15 @@ export default function WorksheetUpgrade({ topic, placement }) {
           <div>
             <p className="tb-eyebrow">Want more than a worksheet?</p>
             <h2 id={`wu-${placement}`} className="tb-h2 wu__title">
-              Practice built from their own mistakes.
+              Practice built from mistakes.
             </h2>
             <p className="wu__lead">
-              {`A worksheet${topic ? ` on ${topic}` : ""} is a good start. ${name} goes further: it turns the questions your child actually gets wrong into fresh practice, at their level, on what’s likely to be in their next test or exam.`}
+              {`A worksheet${topic ? ` on ${topic}` : ""} is a good start. ${name} goes further: it turns any question students get wrong into fresh practice, at the right level, on what’s likely to be in the next test or exam.`}
             </p>
             <ResultsProof className="wu__proof" />
           </div>
           <div className="wu__phone" aria-hidden="false">
-            <PhoneFrame
-              src="/app-screens/flow-snap/03-question-solution-hidden.png"
-              alt="Tuterly: a question the student got wrong, with the solution hidden and a similar question to answer themselves"
-              width={250}
-              sizes="(max-width: 899px) 56vw, 250px"
-            />
+            <DemoVideo width={270} placement={placement} />
           </div>
         </div>
 
