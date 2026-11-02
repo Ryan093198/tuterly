@@ -523,7 +523,7 @@ export default function WorksheetGenerator({
               variant="inline"
               placement="worksheet_limit"
               heading="That's today's free worksheet. Want to keep going?"
-              sub={`With Tuterly Plus, your child gets unlimited practice questions and practice tests on ${topicLabel.trim() ? topicLabel.trim() : "every topic"}${topicLabel.trim() ? " and every other Years 7 to 10 topic" : " in Years 7 to 10"}, each with a worked solution. Or come back tomorrow for another free worksheet.`}
+              sub={`With Tuterly Plus, your child gets unlimited practice questions and Topic checks on ${topicLabel.trim() ? topicLabel.trim() : "every topic"}${topicLabel.trim() ? " and every other Years 7 to 10 topic" : " in Years 7 to 10"}, each with a worked solution. Or come back tomorrow for another free worksheet.`}
               style={{ margin: "4px 0 16px" }}
             />
           )}
