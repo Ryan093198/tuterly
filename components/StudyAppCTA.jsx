@@ -67,6 +67,7 @@ export default function StudyAppCTA({
   position,
   slim = false, // hero: email + button only, so the button stays above the fold on phones
   audience = "parent", // "student" on the student pages: the sign-up is saved as a student
+  formIntro, // optional shorter line above the early sign-up form (launch form only)
   style,
 }) {
   const pathname = usePathname() || "/";
@@ -211,6 +212,7 @@ export default function StudyAppCTA({
         btnClass={btnClass}
         placement={placement || variant}
         pathname={pathname}
+        introText={formIntro}
         onSubmitClick={() => track("waitlist_submit")}
       />
     );
@@ -392,7 +394,7 @@ const ROLES = [
   { value: "tutor", label: "I'm a tutor" },
 ];
 
-function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass, placement, pathname, onSubmitClick }) {
+function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass, placement, pathname, introText, onSubmitClick }) {
   const id = useId();
   const [email, setEmail] = useState("");
   const [role, setRole] = useState(audience === "student" ? "student" : "parent");
@@ -412,7 +414,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? `${STUDY_APP.name} is on iPhone at launch, and Android is coming soon. Leave your email and we'll tell you once, when it's on Android.`
-        : <>Sign up and we&apos;ll email you when {STUDY_APP.name} is ready. It&apos;s on iPhone, with Android coming soon. <LaunchPrice /></>;
+        : introText || <>Sign up and we&apos;ll email you when {STUDY_APP.name} is ready. It&apos;s on iPhone, with Android coming soon. <LaunchPrice /></>;
 
   async function submit(e) {
     e.preventDefault();
