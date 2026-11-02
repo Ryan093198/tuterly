@@ -513,7 +513,20 @@ export default function WorksheetGenerator({
             </select>
           </label>
 
-          {error && <p style={errorTextStyle}>{error}</p>}
+          {error && !(limitReached && STUDY_APP_YEARS.includes(yearLevel)) && <p style={errorTextStyle}>{error}</p>}
+
+          {/* Free limit reached, Years 7 to 10: point straight at the app
+              (early sign-up before launch, the free week after). The app
+              has no worksheets, so this promises practice, not worksheets. */}
+          {limitReached && STUDY_APP_YEARS.includes(yearLevel) && (
+            <StudyAppCTA
+              variant="inline"
+              placement="worksheet_limit"
+              heading="That's today's free worksheet. Want to keep going?"
+              sub={`With Tuterly Plus, your child gets unlimited practice questions and practice tests on ${topicLabel.trim() ? topicLabel.trim() : "every topic"}${topicLabel.trim() ? " and every other Years 7 to 10 topic" : " in Years 7 to 10"}, each with a worked solution. Or come back tomorrow for another free worksheet.`}
+              style={{ margin: "4px 0 16px" }}
+            />
+          )}
 
           {generating && (
             <QuinnWorking
@@ -544,7 +557,7 @@ export default function WorksheetGenerator({
 
       {/* Under the generator: the app for Years 7 to 10, the tutor offer
           (returning users) for younger year levels. */}
-      {(studyAppUnderGenerator || limitReached) && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
+      {studyAppUnderGenerator && !limitReached && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
         <StudyAppCTA
           variant="inline"
           placement="worksheet_generator"

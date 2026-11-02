@@ -64,7 +64,7 @@ export async function POST(request) {
       const [byIp, byEmail] = await Promise.all([countSince(ENDPOINT, ip), countSince(EMAIL_ENDPOINT, emailKey)]);
       if (byIp >= PER_DAY || byEmail >= PER_DAY) {
         return NextResponse.json(
-          { limit: true, error: "That’s your free practice exam for today. Come back tomorrow for another, or use the Tuterly app to practise as much as you like." },
+          { limit: true, error: "That’s today’s free practice exam. With Tuterly Plus your child gets unlimited practice questions and practice tests on every Years 7 to 10 topic, each with a worked solution. Or come back tomorrow for another free exam." },
           { status: 429 }
         );
       }
