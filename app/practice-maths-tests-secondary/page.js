@@ -10,7 +10,7 @@ import { STUDY_APP } from "@/lib/study-app";
 // Transactional landing page for "maths practice test" searches. The free
 // practice exam generator (components/exam) is the payload: pick a year and
 // topics, get an exam built from the topic pages' checked questions. The
-// app (Test any topic, Fix my mistakes) is the follow-on CTA.
+// app (Topic check, Fix my mistakes) is the follow-on CTA.
 
 const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Australian Curriculum)";
 const DESCRIPTION =
@@ -63,7 +63,7 @@ const FAQS = [
   },
   {
     q: "Is the practice exam generator free?",
-    a: "Yes. Enter your email to unlock it and you can make one free practice exam a day. The questions come from our topic pages, and each one was checked by an independent second solve. For more, the Tuterly app's Test any topic writes a new test on any topic whenever they want one.",
+    a: "Yes. Enter your email to unlock it and you can make one free practice exam a day. The questions come from our topic pages, and each one was checked by an independent second solve. For more, the Tuterly app's Topic check writes a new test on any topic whenever they want one.",
   },
   {
     q: "How much does it cost?",

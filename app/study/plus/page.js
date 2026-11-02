@@ -12,7 +12,7 @@ const PERKS = [
   "Unlimited snaps and a bank as big as you like",
   "Unlimited drills",
   "Upload whole marked tests: every wrong question in one go",
-  "Topic tests, Test any topic and the Weekly review",
+  "Topic tests, Topic check and the Weekly review",
   "Study notes on any topic",
   "Follow your class's term plan",
 ];

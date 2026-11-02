@@ -277,7 +277,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
           <ExamPaper exam={exam} showAnswers={showAnswers} />
           <div className="eg-next">
             <p className="eg-next__title">Marked it? Turn the wrong answers into marks.</p>
-            <p className="eg-next__text">Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered, and Test any topic builds a new test whenever they want one.</p>
+            <p className="eg-next__text">Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered, and Topic check builds a new test whenever they want one.</p>
             <div className="eg-next__btns">
               <Link href={cta.href} className="eg-btn" onClick={() => trackCta("exam_cta_click", { to: "app", from: "result" })}>{cta.label}</Link>
               <Link href="/try" className="eg-linkbtn" onClick={() => trackEvent("exam_cta_click", { to: "try", from: "result" })}>Try it free on a question they got wrong →</Link>

@@ -4,7 +4,7 @@ import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import "./app-practice-block.css";
 
 // Replaces the old worksheet / practice-test builder on SEO pages: the
-// practice now happens in the app ("Test any topic", "Snap a question").
+// practice now happens in the app ("Topic check", "Snap a question").
 // Facts only from TUTERLY-STUDY-FEATURES.md.
 export default function AppPracticeBlock({ topic, placement, heading }) {
   const what = topic ? topic : "any topic in their year";
@@ -17,7 +17,7 @@ export default function AppPracticeBlock({ topic, placement, heading }) {
             {heading || `A practice test on ${what}, whenever they want.`}
           </h2>
           <ul className="apb__list">
-            <li><Icon name="test" size={20} /><span><strong>Test any topic</strong> writes a short test on {what}, one question from each part of the topic.</span></li>
+            <li><Icon name="test" size={20} /><span><strong>Topic check</strong> writes a short test on {what}, one question from each part of the topic.</span></li>
             <li><Icon name="snap" size={20} /><span>Got one wrong at school? <strong>Snap it</strong>, or upload the whole test, for a worked solution and a fresh question to master.</span></li>
             <li><Icon name="school" size={20} /><span>Designed by Australian educators. Topics follow the {STUDY_APP_FACTS.curriculum}.</span></li>
           </ul>

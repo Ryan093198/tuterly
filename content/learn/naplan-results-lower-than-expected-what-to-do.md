@@ -57,7 +57,7 @@ Consider a tutor if any of these are true: the gap is in numeracy or reading and
 
 ## Start with a practice test
 
-In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question. Pick the topic the report flagged:
+In {{STUDY_APP}}, Topic check writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question. Pick the topic the report flagged:
 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 

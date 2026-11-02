@@ -99,7 +99,7 @@ For more on supporting homework without taking it over, see our parent guide to 
 
 The hardest part of spaced practice is the admin: collecting mistakes, finding fresh questions, remembering what to come back to, and noticing when something is finally secure.
 
-{{STUDY_APP}} is designed to handle that for Years 7 to 10 maths. Your child photographs a question they got wrong, has another go with the solution hidden, then practises fresh questions on the same idea. Three right and it is mastered, with stars and XP along the way. Anything not yet mastered stays in their bank for Fix my mistakes, and [Test any topic](/features/test-any-topic) builds a short test on one topic when they want one. Parents who link with their child's code can see a weekly summary of what was added and mastered.
+{{STUDY_APP}} is designed to handle that for Years 7 to 10 maths. Your child photographs a question they got wrong, has another go with the solution hidden, then practises fresh questions on the same idea. Three right and it is mastered, with stars and XP along the way. Anything not yet mastered stays in their bank for Fix my mistakes, and [Topic check](/features/topic-check) builds a short test on one topic when they want one. Parents who link with their child's code can see a weekly summary of what was added and mastered.
 
 ## Frequently asked questions
 

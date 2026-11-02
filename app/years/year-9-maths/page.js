@@ -148,7 +148,7 @@ const APP_STEPS = [
   { title: "Snap the question they got wrong", text: "An index law question, a trig problem or a probability tree. It is saved to their bank with a step-by-step worked solution." },
   { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, such as another (x + 3)² expansion, so your child practises the exact step that went wrong." },
   { title: "A weekly review", text: "Each week brings a short test of up to 8 of that week’s questions, trickiest first, so an index law slip comes back before it sets in." },
-  { title: "Test any topic before a test", text: "Pick any Year 9 topic, such as trigonometry or linear graphs, for a short test with one question per section, even before anything is snapped. Wrong answers go into the bank for Fix my mistakes." },
+  { title: "Topic check before a test", text: "Pick any Year 9 topic, such as trigonometry or linear graphs, for a short test with one question per section, even before anything is snapped. Wrong answers go into the bank for Fix my mistakes." },
 ];
 
 const FAQS = [
@@ -174,7 +174,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with Year 9 maths?",
-    a: "Your child photographs a question they got wrong, often an index law, a missing middle term or the wrong trig ratio. Tuterly saves it with a worked solution and a similar question to try, and a weekly review tests up to 8 of that week’s questions, trickiest first. Test any topic sets a short test on any Year 9 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs a question they got wrong, often an index law, a missing middle term or the wrong trig ratio. Tuterly saves it with a worked solution and a similar question to try, and a weekly review tests up to 8 of that week’s questions, trickiest first. Topic check sets a short test on any Year 9 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 

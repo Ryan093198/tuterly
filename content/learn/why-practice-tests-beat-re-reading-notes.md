@@ -38,6 +38,6 @@ Retrieval practice works best once your child has actually been taught the mater
 
 ## Getting started
 
-In {{STUDY_APP}}, Test any topic writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question:
+In {{STUDY_APP}}, Topic check writes a short practice test on any Years 7 to 10 topic, with a worked solution for every question:
 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)

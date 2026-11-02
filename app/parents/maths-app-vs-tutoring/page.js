@@ -182,7 +182,7 @@ export default function Page() {
             </ul>
             <h3 className="pg-h3">How Tuterly approaches it</h3>
             <p>
-              Tuterly is built around the questions your child gets wrong. They snap a photo of a wrong question from homework or a marked test; it is saved with a worked solution; Tuterly generates fresh questions on the same skill; questions return until they are mastered; Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest; and before a topic test, they can test themselves on that topic, with anything they get wrong going into their bank. It covers Years 7 to 10 maths and is designed by Australian educators at Bayside Academics. See <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
+              Tuterly is built around the questions your child gets wrong. They snap a photo of a wrong question from homework or a marked test; it is saved with a worked solution; Tuterly generates fresh questions on the same skill; questions return until they are mastered; Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest; and before a topic test, they can test themselves on that topic, with anything they get wrong going into their bank. It covers Years 7 to 10 maths and is designed by Australian educators at Bayside Academics. See <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/topic-check">Topic check</Link>.
             </p>
           </div>
         </div>

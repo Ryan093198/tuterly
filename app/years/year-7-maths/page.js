@@ -158,7 +158,7 @@ const APP_STEPS = [
   { title: "Snap it from the marked test", text: "A subtraction with negatives, a fraction division or an angle answer without a reason. It is saved to their bank with a step-by-step worked solution." },
   { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, such as another negative number subtraction, so practice targets the real gap." },
   { title: "Fix my mistakes", text: "A drill of every question still to fix in their bank, so a Term 1 fraction slip gets another go before the end-of-year test." },
-  { title: "Test any topic before a topic test", text: "Pick a Year 7 topic, such as integers or angles, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
+  { title: "Topic check before a topic test", text: "Pick a Year 7 topic, such as integers or angles, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
 ];
 
 const FAQS = [
@@ -184,7 +184,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help a Year 7 student?",
-    a: "Your child photographs the questions they get wrong, often from a marked test on negative numbers, fractions or first equations. Tuterly saves each one with a worked solution and a similar question to try. Fix my mistakes drills everything still to fix, and Test any topic sets a short test on any Year 7 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs the questions they get wrong, often from a marked test on negative numbers, fractions or first equations. Tuterly saves each one with a worked solution and a similar question to try. Fix my mistakes drills everything still to fix, and Topic check sets a short test on any Year 7 topic. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
