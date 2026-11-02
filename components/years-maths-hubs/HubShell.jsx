@@ -163,7 +163,7 @@ export default function HubShell({
               ))}
             </ol>
             <p className="ym-small">
-              Tuterly is designed by Australian educators at Bayside Academics and covers the same Years 7 to 10 maths as the Australian Curriculum (and the Victorian Curriculum 2.0). See how it works on <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
+              Tuterly is designed by Australian educators at Bayside Academics and covers the same Years 7 to 10 maths as the Australian Curriculum (and the Victorian Curriculum 2.0). See how it works on <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/topic-check">Topic check</Link>.
             </p>
           </div>
         </section>
@@ -215,7 +215,7 @@ export default function HubShell({
           <Eyebrow>Tuterly · Years 7 to 10 maths</Eyebrow>
           <h2 id="h-cta" className="tb-h2 ym-h2">{`Make every Year ${year} mistake count`}</h2>
           <p className="ym-intro">
-            {finalText || "Each wrong question your child snaps becomes a worked solution in their bank. Fix my mistakes drills the ones still to fix, and Test any topic sets a short test on any topic in their year."}
+            {finalText || "Each wrong question your child snaps becomes a worked solution in their bank. Fix my mistakes drills the ones still to fix, and Topic check sets a short test on any topic in their year."}
           </p>
           <StudyAppCTA variant="hero" placement={`year_${year}_maths_hub_final`} position="final" slim />
         </div>

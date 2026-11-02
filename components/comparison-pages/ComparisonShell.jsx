@@ -83,7 +83,7 @@ export default function ComparisonShell({ page, children }) {
                 <li><strong>Best when your child is near year level</strong> and will genuinely attempt a question before looking at the solution.</li>
               </ul>
               <p>
-                See <Link href={RESOURCE_LINKS.features.href}>each feature in detail</Link>, including <Link href="/features/snap-a-question">snap a question</Link>, <Link href="/features/upload-a-test">upload a test</Link> and <Link href="/features/test-any-topic">test any topic</Link>.
+                See <Link href={RESOURCE_LINKS.features.href}>each feature in detail</Link>, including <Link href="/features/snap-a-question">snap a question</Link>, <Link href="/features/upload-a-test">upload a test</Link> and <Link href="/features/topic-check">Topic check</Link>.
               </p>
             </div>
           </div>

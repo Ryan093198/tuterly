@@ -126,7 +126,7 @@ export default function NaplanPage({ year }) {
             <div className="np-cta">
               <p className="np-cta__title">Turn their NAPLAN mistakes into practice.</p>
               <p className="np-cta__text">
-                The Tuterly app is built for Years 7 to 10. Snap any question they got wrong, here or in a school test, and they get the worked solution and fresh questions on the same idea until it’s mastered. Test any topic covers every part of a topic before the real thing.
+                The Tuterly app is built for Years 7 to 10. Snap any question they got wrong, here or in a school test, and they get the worked solution and fresh questions on the same idea until it’s mastered. Topic check covers every part of a topic before the real thing.
               </p>
               <div className="np-cta__form"><StudyAppCTA variant="hero" placement={`naplan_year_${year}`} position="inline" slim /></div>
             </div>

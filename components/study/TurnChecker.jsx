@@ -97,7 +97,7 @@ export default function TurnChecker({ slug, topic, kind, accept, question, hint,
           </p>
           <p className="tc__next-text">
             {result === "right"
-              ? "In the Tuterly app, every question they master unlocks a harder one, and Test any topic checks every part of the topic before a school test."
+              ? "In the Tuterly app, every question they master unlocks a harder one, and Topic check covers every part of the topic before a school test."
               : "In the Tuterly app, snap the questions they get wrong and get a fresh one on the same idea, again and again, until it’s mastered."}
           </p>
           <div className="tc__next-btns">

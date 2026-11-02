@@ -52,6 +52,9 @@ export default function StartMaths() {
               </div>
             ))}
           </div>
+          <p className="sh-p" style={{ marginTop: 20 }}>
+            <strong>No wrong answers to snap yet?</strong> A Topic check is a short test on the topic they&rsquo;re learning, one question from each part of it. Anything they get wrong goes into their bank to drill until it&rsquo;s mastered. Do one a week or two into each new topic, and again before the test.
+          </p>
         </div>
       </section>
 

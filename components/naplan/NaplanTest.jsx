@@ -83,7 +83,7 @@ export default function NaplanTest({ year, questions, appYears }) {
                 </p>
                 <p className="nt-next__text">
                   {marked.score >= total - 2
-                    ? "In the Tuterly app, every question they master unlocks a harder one, and Test any topic covers every part of a topic, so strong students keep being stretched before NAPLAN and school tests."
+                    ? "In the Tuterly app, every question they master unlocks a harder one, and Topic check covers every part of a topic, so strong students keep being stretched before NAPLAN and school tests."
                     : "Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered. Built for Years 7 to 10 and the Victorian Curriculum."}
                 </p>
                 <div className="nt-next__btns">
