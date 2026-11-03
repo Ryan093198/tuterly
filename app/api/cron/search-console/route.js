@@ -16,6 +16,9 @@ export const maxDuration = 60;
 // rows to search_console_weekly, so trends build up over time.
 
 const TUTOR = /tutor|tuition|tutoring/i; // old marketplace searches: not the focus now
+// Operator queries (intitle:, site:, quoted minus terms) are bots and SEO tools, not people.
+const JUNK = /\b(intitle|site|inurl|allintitle):|-"/i;
+const keep = (q) => !TUTOR.test(q) && !JUNK.test(q);
 
 function authorized(request) {
   const secret = process.env.CRON_SECRET;
@@ -65,7 +68,7 @@ async function buildReport() {
   // Searches where we sit just off page 1 (positions 8 to 20) over 28 days:
   // the cheapest wins, usually by improving or splitting the page.
   const nearPage1 = queries28
-    .filter((r) => !TUTOR.test(r.keys[0]) && r.position >= 8 && r.position <= 20 && r.impressions >= 10)
+    .filter((r) => keep(r.keys[0]) && r.position >= 8 && r.position <= 20 && r.impressions >= 3)
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15)
     .map((r) => ({ query: r.keys[0], impressions: r.impressions, clicks: r.clicks, position: r.position }));
@@ -73,7 +76,7 @@ async function buildReport() {
   // Searches seen this week that didn't appear in the 4 weeks before it.
   const seen = new Set(queriesBefore.map((r) => r.keys[0]));
   const newSearches = queriesNow
-    .filter((r) => !seen.has(r.keys[0]) && !TUTOR.test(r.keys[0]))
+    .filter((r) => !seen.has(r.keys[0]) && keep(r.keys[0]))
     .sort((a, b) => b.impressions - a.impressions)
     .slice(0, 15)
     .map((r) => ({ query: r.keys[0], impressions: r.impressions, clicks: r.clicks, position: r.position }));
