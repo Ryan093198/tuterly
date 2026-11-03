@@ -79,6 +79,7 @@ export default function YearHub({ n }) {
       <div className="sh-group__head">
         <h3>{g.label}</h3>
         <span>{g.items.length} {g.items.length === 1 ? "topic" : "topics"}</span>
+        {g.label.endsWith("Algebra") && <Link href="/worksheets/algebra" className="yh-all">Algebra for every year →</Link>}
       </div>
       <div className="sh-grid">
         {g.items.map((p) => (

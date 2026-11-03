@@ -22,6 +22,8 @@ import TopicStateNote from "@/components/state/TopicStateNote";
 import "@/components/study/worked-examples.css";
 import { mathToReadable } from "@/lib/try-email";
 import Testimonials from "@/components/marketing/Testimonials";
+import TopicGuide from "@/components/study/TopicGuide";
+import { getTopicGuide } from "@/lib/topic-guides";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -245,6 +247,13 @@ export default async function WorksheetTopicLandingPage({ params }) {
         <section style={{ padding: "24px 24px 64px", background: c.white }}>
           <WorkedExamples data={worked} topic={page.topic} yearLevel={page.yearLevel} slug={page.slug} />
         </section>
+      )}
+
+      <TopicGuide guide={getTopicGuide(page.slug)} />
+      {page.slug.endsWith("-algebra") && (
+        <p style={{ textAlign: "center", padding: "0 24px 40px", margin: 0, background: c.white, fontSize: 15 }}>
+          <Link href="/worksheets/algebra" style={{ color: c.tealDark, fontWeight: 700 }}>Algebra worksheets for every year, 7 to 10 →</Link>
+        </p>
       )}
 
       <section style={{ padding: "60px 24px", background: c.offWhite }}>

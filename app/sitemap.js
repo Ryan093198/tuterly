@@ -56,6 +56,7 @@ const STATIC_PAGES = [
   { path: "/worksheets/year-8", priority: 0.8, changeFrequency: "monthly" },
   { path: "/worksheets/year-9", priority: 0.8, changeFrequency: "monthly" },
   { path: "/worksheets/year-10", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/worksheets/algebra", priority: 0.8, changeFrequency: "monthly" },
   { path: "/year-7-maths-test", priority: 0.8, changeFrequency: "monthly" },
   { path: "/year-8-maths-test", priority: 0.8, changeFrequency: "monthly" },
   { path: "/year-9-maths-test", priority: 0.8, changeFrequency: "monthly" },

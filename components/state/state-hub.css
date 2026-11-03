@@ -57,3 +57,4 @@
 .sh-switch a:hover { border-color: var(--brand); }
 .sh-switch a.is-current { background: var(--brand-soft); border-color: var(--brand); }
 .sh .yh-ext { margin-top: 40px; }
+.sh .yh-all { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--brand-text); text-decoration: none; }
