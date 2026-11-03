@@ -93,7 +93,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: "Free Worksheets", item: `${SITE_URL}/worksheets` },
-      { "@type": "ListItem", position: 3, name: page.yearLevel, item: `${SITE_URL}/worksheets#year-${page.yearLevel.split(" ")[1]}` },
+      { "@type": "ListItem", position: 3, name: page.yearLevel, item: `${SITE_URL}/worksheets/year-${parseInt(page.yearLevel.split(" ")[1], 10)}` },
       { "@type": "ListItem", position: 4, name: page.topic, item: pageUrl },
     ],
   };
@@ -195,7 +195,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
           <li aria-hidden="true">/</li>
           <li>
             <Link
-              href={`/worksheets#year-${page.yearLevel.split(" ")[1]}`}
+              href={`/worksheets/year-${parseInt(page.yearLevel.split(" ")[1], 10)}`}
               style={{ color: c.textLight, textDecoration: "none" }}
             >
               {page.yearLevel}

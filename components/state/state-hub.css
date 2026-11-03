@@ -56,3 +56,4 @@
 .sh-switch a { display: inline-block; min-width: 56px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 999px; text-decoration: none; color: var(--foreground); font-weight: 700; font-size: 14px; background: var(--card); }
 .sh-switch a:hover { border-color: var(--brand); }
 .sh-switch a.is-current { background: var(--brand-soft); border-color: var(--brand); }
+.sh .yh-ext { margin-top: 40px; }

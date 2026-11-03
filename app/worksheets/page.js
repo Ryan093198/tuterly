@@ -209,6 +209,11 @@ export default function WorksheetsPage() {
                     <h3 style={{ fontSize: 18, fontWeight: 800, color: c.ink, letterSpacing: "-0.4px", margin: 0 }}>
                       {year}
                     </h3>
+                    {year !== "Year 10A" && (
+                      <Link href={`/worksheets/year-${year.split(" ")[1]}`} style={{ fontSize: 13, fontWeight: 700, color: c.tealDeep, marginLeft: "auto" }}>
+                        All {year} worksheets →
+                      </Link>
+                    )}
                     <span style={{ fontSize: 12.5, color: c.textMuted }}>
                       {items.length} topics
                     </span>
