@@ -150,7 +150,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn }),
+        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn, weekly_opt_in: optIn }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Could not save your email. Try again.");
@@ -247,7 +247,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             </div>
             <label className="eg-optin">
               <input type="checkbox" checked={optIn} onChange={(e) => setOptIn(e.target.checked)} />
-              <span>Send me maths study tips and Tuterly news (optional). Unsubscribe any time.</span>
+              <span>Email me a free worksheet for my child&rsquo;s year each week, plus Tuterly news. Unsubscribe any time.</span>
             </label>
           </form>
         )}

@@ -220,6 +220,7 @@ export default function WorksheetGenerator({
           email: modalEmailInput,
           year_level: modalYearInput,
           marketing_opt_in: modalMarketingOptIn,
+          weekly_opt_in: modalMarketingOptIn,
         }),
       });
       const data = await readJsonOrFallback(res);
@@ -780,7 +781,7 @@ function EmailGateModal({
               disabled={pending}
               style={{ width: 16, height: 16, margin: "2px 0 0", flex: "none", accentColor: c.teal }}
             />
-            <span>Send me occasional learning tips and offers from Tuterly</span>
+            <span>Email me a free worksheet for my child&rsquo;s year each week, plus Tuterly news. Unsubscribe any time.</span>
           </label>
         </div>
 

@@ -43,10 +43,25 @@ export async function POST(request) {
     upsertRow.marketing_opt_in = true;
     upsertRow.marketing_opt_in_at = new Date().toISOString();
   }
+  // Weekly worksheet email (4 Nov 2026): the tick box now asks for this.
+  // Ticking it again after unsubscribing re-subscribes, by their choice.
+  if (body?.weekly_opt_in === true) {
+    upsertRow.weekly_opt_in = true;
+    upsertRow.weekly_opt_in_at = new Date().toISOString();
+    upsertRow.unsubscribed_at = null;
+  }
 
-  const { error } = await admin
+  let { error } = await admin
     .from("worksheet_email_signups")
     .upsert(upsertRow, { onConflict: "email" });
+  // Until the weekly-email migration has run, those columns don't exist:
+  // save the sign-up without them rather than failing the visitor.
+  if (error && /weekly_opt_in|unsubscribed_at/.test(error.message || "")) {
+    delete upsertRow.weekly_opt_in;
+    delete upsertRow.weekly_opt_in_at;
+    delete upsertRow.unsubscribed_at;
+    ({ error } = await admin.from("worksheet_email_signups").upsert(upsertRow, { onConflict: "email" }));
+  }
   if (error) {
     console.error("[worksheets/email] upsert failed:", error);
     return NextResponse.json(
