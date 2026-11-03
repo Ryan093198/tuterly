@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DemoVideo from "@/components/study/DemoVideo";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -128,6 +129,44 @@ export default function ParentsPage() {
               </p>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* 2c. TOPIC CHECK: find the gaps in each new topic. Facts from
+          lib/feature-pages.js (topic-check). */}
+      <section className="tb-section tb-section--card" aria-labelledby="topic-check">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead
+              id="topic-check"
+              eyebrow="Every new topic"
+              title="Find the gaps before the test, not after the mark."
+              lead={`Not every child brings home their wrong answers. A Topic check is a short test on the topic they’re learning, one question from each part of it. It works best a week or two into each new topic, and again before the test.`}
+            />
+          </Reveal>
+          <div className="pp-three">
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="test" /> 1. Check the topic</h3>
+              <p className="tb-muted pp-card-text">
+                A fresh test on the topic, covering every part a school test is likely to include. It&rsquo;s written new each time, so a retest is a real test.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="bank" /> 2. Gaps go into the bank</h3>
+              <p className="tb-muted pp-card-text">
+                It&rsquo;s marked straight away. Every question they got wrong is saved to their bank with a worked solution, so nothing slips through.
+              </p>
+            </Card>
+            <Card>
+              <h3 className="tb-h3 pp-card-title"><Icon name="drill" /> 3. Drill until mastered</h3>
+              <p className="tb-muted pp-card-text">
+                Fix my mistakes works through them with fresh questions on the same idea. Their Week in review shows you what&rsquo;s fixed and what&rsquo;s still to go.
+              </p>
+            </Card>
+          </div>
+          <p style={{ marginTop: 18, textAlign: "center" }}>
+            <Link href="/features/topic-check" className="tb-link">How Topic check works</Link>
+          </p>
         </div>
       </section>
 

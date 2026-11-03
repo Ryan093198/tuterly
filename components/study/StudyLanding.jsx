@@ -64,7 +64,7 @@ const THREE_STEPS = [
     text: "A practice test on any topic before the real one.",
     src: `${S}/flow-practice/04-test-score.png`,
     alt: "A Tuterly practice test result: 6 out of 8",
-    href: "/features/test-any-topic",
+    href: "/features/topic-check",
   },
 ];
 
@@ -141,22 +141,22 @@ export default function StudyLanding() {
           </Reveal>
           <TryQuestion />
 
-          {/* A whole topic, not just one question: Test any topic in the
+          {/* A whole topic, not just one question: Topic check in the
               app, and the free tools that work the same way on the site.
-              Facts from lib/feature-pages.js (Test any topic). */}
+              Facts from lib/feature-pages.js (Topic check). */}
           <div className="sl-topic">
             <div className="sl-topic__copy">
-              <p className="sl-topic__eyebrow">Got a test coming up?</p>
-              <h3 className="sl-topic__title">Test a whole topic, then drill what they got wrong.</h3>
+              <p className="sl-topic__eyebrow">Every new topic</p>
+              <h3 className="sl-topic__title">Find the gaps before the test, not after the mark.</h3>
               <p className="sl-topic__lead">
-                In {name}, <strong>Test any topic</strong>{" "}writes a short test on any topic in their year, one question from each part of it. It&rsquo;s marked straight away, so you can see which kinds of question they need the most practice on.
+                You don&rsquo;t have to wait for a wrong answer to come home. In {name}, a <strong>Topic check</strong>{" "}is a short test on the topic they&rsquo;re learning, one question from each part of it. Do one a week or two into each new topic, and again before the test.
               </p>
               <ol className="sl-topic__flow">
-                <li><strong>Test</strong><span>A fresh test on the topic, covering every part a school test is likely to include.</span></li>
-                <li><strong>Find the gaps</strong><span>Marked instantly. Every question they got wrong goes into their bank with a worked solution.</span></li>
+                <li><strong>Check</strong><span>A fresh test on the topic, covering every part a school test is likely to include.</span></li>
+                <li><strong>Find the gaps</strong><span>Marked straight away. Every question they got wrong goes into their bank with a worked solution.</span></li>
                 <li><strong>Drill</strong><span>Fix my mistakes works through them with fresh questions on the same idea until each one is mastered.</span></li>
               </ol>
-              <Link href="/features/test-any-topic" className="tb-link">How Test any topic works</Link>
+              <Link href="/features/topic-check" className="tb-link">How Topic check works</Link>
             </div>
             <div className="sl-topic__tools">
               <p className="sl-topic__eyebrow">Free on the website now</p>
@@ -219,7 +219,7 @@ export default function StudyLanding() {
           </Reveal>
           <div className="tb-tiles">
             <OptionTile href="/features/upload-a-test" icon="upload" title="Upload a whole test" text="Photos, a PDF or a Word document. The questions marked wrong are saved automatically." />
-            <OptionTile href="/features/test-any-topic" icon="test" tone="violet" title="Test any topic" text="A short practice test on any topic in their year, even before they’ve snapped anything." />
+            <OptionTile href="/features/topic-check" icon="test" tone="violet" title="Topic check" text="A short practice test on any topic in their year, even before they’ve snapped anything." />
             <OptionTile href="/features/study-notes" icon="notes" tone="violet" title="Study notes" text="A revision sheet on a whole topic, or just the parts they find hard." />
             <OptionTile href="/features" icon="drill" tone="success" title="Fix my mistakes" text="The questions they got wrong, one after another, until each one is mastered." />
           </div>

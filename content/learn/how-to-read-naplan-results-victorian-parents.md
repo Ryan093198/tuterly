@@ -77,7 +77,7 @@ If your child is in Years 7 to 10, there is also [{{STUDY_APP}}](/), an iPhone a
 
 ## Start with a practice test
 
-The fastest way to turn a NAPLAN level into something you can act on is to find out where your child sits right now. For Years 7 to 10, Test any topic in {{STUDY_APP}} writes a short practice test on the topic the report flagged, with a worked solution for every question:
+The fastest way to turn a NAPLAN level into something you can act on is to find out where your child sits right now. For Years 7 to 10, Topic check in {{STUDY_APP}} writes a short practice test on the topic the report flagged, with a worked solution for every question:
 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 

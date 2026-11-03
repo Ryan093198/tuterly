@@ -36,7 +36,7 @@ If the answer to any of those raises doubt, it's worth acting now. Even students
 
 ## Where to get help
 
-Year 9 is when small gaps become big problems if left alone. A good maths tutor identifies exactly where the foundations are shaky and builds them up, and should tell you each week which topics were covered. For the practice itself, [{{STUDY_APP}}](/) lets your child snap the Year 9 questions they get wrong, see a full worked solution, and practise fresh versions on the same idea until each one is mastered. Test any topic sets a short test on any Year 9 topic, so there's less guessing about readiness come subject selection.
+Year 9 is when small gaps become big problems if left alone. A good maths tutor identifies exactly where the foundations are shaky and builds them up, and should tell you each week which topics were covered. For the practice itself, [{{STUDY_APP}}](/) lets your child snap the Year 9 questions they get wrong, see a full worked solution, and practise fresh versions on the same idea until each one is mastered. Topic check sets a short test on any Year 9 topic, so there's less guessing about readiness come subject selection.
 
 If you're in [Glen Waverley](/tutoring/glen-waverley), [Balwyn](/tutoring/balwyn), or anywhere in Melbourne, getting the right support in Year 9 is the single most effective thing you can do for your child's VCE maths options.
 

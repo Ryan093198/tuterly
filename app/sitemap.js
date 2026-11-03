@@ -43,7 +43,7 @@ const STATIC_PAGES = [
   { path: "/naplan/year-9-numeracy", priority: 0.8, changeFrequency: "monthly" },
   { path: "/features", priority: 0.8, changeFrequency: "monthly" },
   { path: "/features/snap-a-question", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/features/test-any-topic", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/features/topic-check", priority: 0.7, changeFrequency: "monthly" },
   { path: "/features/study-notes", priority: 0.7, changeFrequency: "monthly" },
   { path: "/features/upload-a-test", priority: 0.7, changeFrequency: "monthly" },
   { path: "/maths-exam-preparation", priority: 0.8, changeFrequency: "monthly" },

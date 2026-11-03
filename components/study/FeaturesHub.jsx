@@ -23,7 +23,7 @@ export default function FeaturesHub() {
               Everything Tuterly does starts with a <span className="sl-accent">wrong answer</span>.
             </h1>
             <p className="tb-lead sl-hero__lead">
-              Snap the questions they got wrong, test any topic, and revise from notes built around their mistakes. Here’s what each part does.
+              Snap the questions they got wrong, check any topic, and revise from notes built around their mistakes. Here’s what each part does.
             </p>
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="features_hero" slim />

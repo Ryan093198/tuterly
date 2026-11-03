@@ -1,6 +1,13 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // "Test any topic" was renamed "Topic check" (Nov 2026). Keep old links
+  // and search results working.
+  async redirects() {
+    return [
+      { source: "/features/test-any-topic", destination: "/features/topic-check", permanent: true },
+    ];
+  },
   // Bundle the PDF fonts into the serverless functions / server actions that
   // render PDFs (session reports, worksheets, full practice tests). Without
   // this the render code falls back to fetching the .ttf over HTTP, which

@@ -172,7 +172,7 @@ export default function VceTutoringPage() {
               ))}
             </ul>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75, marginBottom: 14 }}>
-              That’s what {name} is for. In Years 9 and 10, your child snaps the maths questions they get wrong in class, homework or tests. They see the full worked solution, then straight away get a similar question on the same idea, genuinely different rather than just new numbers. Each question moves from To fix to Learning to Mastered. <strong>Explain this</strong> shows the step that went wrong, and <strong>Test any topic</strong> gives a short test on any topic in their year.
+              That’s what {name} is for. In Years 9 and 10, your child snaps the maths questions they get wrong in class, homework or tests. They see the full worked solution, then straight away get a similar question on the same idea, genuinely different rather than just new numbers. Each question moves from To fix to Learning to Mastered. <strong>Explain this</strong> shows the step that went wrong, and <strong>Topic check</strong> gives a short test on any topic in their year.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
               If your child is already in Year 11 or 12, {name} isn’t the tool for their VCE subjects: it covers Years 7 to 10 maths only, not Units 1 to 4. For VCE itself, their teacher, VCAA past papers and a good tutor are the right help.

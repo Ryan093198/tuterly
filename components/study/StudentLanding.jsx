@@ -125,7 +125,7 @@ export default function StudentLanding({ year = null }) {
             <SectionHead id="stl-test" eyebrow="Test coming up?" title="Walk in knowing you’ve done the work." />
           </Reveal>
           <div className="tb-tiles tb-tiles--3">
-            <OptionTile icon="test" tone="violet" title="Test any topic" text="A short test on any topic in your year, one question from each part of it." />
+            <OptionTile icon="test" tone="violet" title="Topic check" text="A short test on any topic in your year, one question from each part of it." />
             <OptionTile icon="drill" tone="success" title="Fix my mistakes" text="Every question you got wrong on a topic, one after another." />
             <OptionTile icon="notes" tone="violet" title="Study notes" text="A revision sheet on a whole topic, or just the bits you find hard." />
             <OptionTile icon="goal" title="Test countdown" text="Tell it when your test is and it shows what to do next on your To do list." />

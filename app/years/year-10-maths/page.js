@@ -229,7 +229,7 @@ const PARENT_TIPS = [
 const APP_STEPS = [
   { title: "Snap the question they got wrong", text: "A factorising question, a simultaneous equation or an angle of elevation problem. It is saved to their bank with a step-by-step worked solution." },
   { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, so a sign slip in factorising gets practised on its own rather than the whole chapter." },
-  { title: "Test any topic before exams", text: "Pick any Year 10 topic, such as quadratics or probability, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
+  { title: "Topic check before exams", text: "Pick any Year 10 topic, such as quadratics or probability, for a short test with one question per section, even before anything has been snapped. Wrong answers go into the bank." },
   { title: "Fix my mistakes", text: "A drill of every question still to fix in the bank, which makes a focused last session before a mid-year or end-of-year exam." },
 ];
 
@@ -256,7 +256,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with Year 10 maths?",
-    a: "Your child photographs a question they got wrong, such as a quadratic, a simultaneous equation or an elevation problem. Tuterly saves it with a worked solution and gives a similar question to try. Before exams, Test any topic sets a short test on any Year 10 topic, and Fix my mistakes drills every question still to fix. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs a question they got wrong, such as a quadratic, a simultaneous equation or an elevation problem. Tuterly saves it with a worked solution and gives a similar question to try. Before exams, Topic check sets a short test on any Year 10 topic, and Fix my mistakes drills every question still to fix. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
@@ -300,7 +300,7 @@ export default function Page() {
       moreLinks={MORE}
       faqs={FAQS}
       ctaTitle="Clean up Year 10 algebra before exams"
-      ctaText="Snap the factorising, simultaneous equation or trig question your child got wrong. Tuterly saves it with a worked solution, and Test any topic sets a short test on any Year 10 topic."
+      ctaText="Snap the factorising, simultaneous equation or trig question your child got wrong. Tuterly saves it with a worked solution, and Topic check sets a short test on any Year 10 topic."
       finalText="Each Year 10 mistake your child snaps becomes a worked solution in their bank. Fix my mistakes drills every one still to fix, and the weekly review is a short test of up to 8 of that week’s questions, trickiest first."
     >
       <section className="tb-section" aria-labelledby="h-10a-topics">

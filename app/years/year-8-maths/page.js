@@ -151,7 +151,7 @@ const APP_STEPS = [
   { title: "Snap the question they got wrong", text: "A Pythagoras question from homework or an equation with brackets from a test. It is saved to their bank with a step-by-step worked solution." },
   { title: "Try a similar question", text: "Tuterly gives a similar question on the same skill, so your child practises expanding 3(x + 4) properly rather than redoing the whole worksheet." },
   { title: "Sorted by topic, and a parent view", text: "Your child’s mistakes are sorted by topic, so it is clear whether algebra or measurement needs the most work. A parent who links their own parent account with a 6-character code sees Week in review: questions added and mastered, test scores and the trickiest topic." },
-  { title: "Test any topic before an assessment", text: "Choose a Year 8 topic, such as linear equations or circles, for a short test with one question per section. Wrong answers go into the bank, ready for Fix my mistakes." },
+  { title: "Topic check before an assessment", text: "Choose a Year 8 topic, such as linear equations or circles, for a short test with one question per section. Wrong answers go into the bank, ready for Fix my mistakes." },
 ];
 
 const FAQS = [
@@ -177,7 +177,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with Year 8 maths?",
-    a: "Your child photographs a question they got wrong, such as an equation with brackets or a Pythagoras problem, and Tuterly saves it with a worked solution and a similar question to try. Test any topic sets a short test on any Year 8 topic, and Fix my mistakes drills every question still to fix. Parents can link with a 6-character code to see Week in review. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "Your child photographs a question they got wrong, such as an equation with brackets or a Pythagoras problem, and Tuterly saves it with a worked solution and a similar question to try. Topic check sets a short test on any Year 8 topic, and Fix my mistakes drills every question still to fix. Parents can link with a 6-character code to see Week in review. It covers Years 7 to 10 maths and is designed by Australian educators.",
   },
 ];
 
