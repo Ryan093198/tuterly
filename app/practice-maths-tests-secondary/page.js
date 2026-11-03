@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
@@ -133,6 +134,15 @@ export default function SecondaryPracticeTestsPage() {
         <div id="exam-generator" style={{ scrollMarginTop: 90 }}>
           <ExamGenerator catalogue={getExamCatalogue()} placement="practice_tests_secondary" />
         </div>
+        <p style={{ textAlign: "center", fontSize: 15, color: c.textLight, margin: 0 }}>
+          Free sample tests with answers:{" "}
+          {["7", "8", "9", "10"].map((y, i) => (
+            <span key={y}>
+              {i > 0 && " · "}
+              <Link href={`/year-${y}-maths-test`} style={{ color: c.tealDeep, fontWeight: 700 }}>Year {y}</Link>
+            </span>
+          ))}
+        </p>
         <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
 

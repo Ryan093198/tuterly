@@ -50,7 +50,7 @@
  "attempts": 1,
  "summary": {
   "q": "How do you solve percentage increase, decrease and error problems?",
-  "a": "Multiply the original by (1 + r/100) to increase or (1 − r/100) to decrease, where r is the rate. For reverse problems, divide the final amount by the multiplier to find the original. Percentage error = (|measured − actual| ÷ actual) × 100. For example, a 20% increase on $50 gives $50 × 1.20 = $60."
+  "a": "Multiply the original by (1 + r/100) to increase or (1 − r/100) to decrease, where r is the rate. For reverse problems, divide the final amount by the multiplier to find the original. Percentage error = (|measured − actual| ÷ actual) × 100. For example, a 20% increase on \\$50 gives \\$50 × 1.20 = \\$60."
  },
  "turn": {
   "question": "A jacket is marked at \\$184 after a 15% increase on its original price. What was the original price of the jacket, in dollars, correct to 2 decimal places?",

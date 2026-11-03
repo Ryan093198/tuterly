@@ -251,7 +251,7 @@
    "calculator": true,
    "format": "number",
    "question": "A mountain bike originally priced at \\$840 is marked down by 35%. What is the sale price of the bike in dollars?",
-   "solution": "Find the discount: $35\\% \\times 840 = 0.35 \\times 840 = \\$294$.\n\nSubtract from original price: $840 - 294 = \\$546$.\n\n**Answer:** \\$546",
+   "solution": "Find the discount: $35\\% \\times 840 = 0.35 \\times 840 = 294$, so the discount is \\$294.\n\nSubtract from original price: $840 - 294 = 546$, so the sale price is \\$546.\n\n**Answer:** \\$546",
    "accept": {
     "value": 546,
     "tol": 0,

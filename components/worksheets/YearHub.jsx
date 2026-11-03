@@ -155,7 +155,7 @@ export default function YearHub({ n }) {
             <div className="sh-box">
               <h3 className="sh-h3">Test before the real test</h3>
               <p className="sh-p">Pick the topics on your child&rsquo;s next test and get a printable {year} practice test, with marks and worked solutions.</p>
-              <p className="sh-p"><Link href="/practice-maths-tests-secondary" className="sh-link">Make a {year} practice test →</Link></p>
+              <p className="sh-p"><Link href={`/year-${n}-maths-test`} className="sh-link">Try a free {year} maths test →</Link></p>
             </div>
             {h.naplan && (
               <div className="sh-box">

@@ -1,0 +1,17 @@
+.yt-jump { margin: 18px 0 0; }
+.yt-jump a { font-weight: 800; color: var(--brand-text); text-decoration: none; }
+.yt-test { padding-top: 8px; padding-bottom: 48px; }
+.yt-test h2 { font-size: 26px; margin: 0 0 6px; }
+.yt-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.yt-q { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+.yt-q__head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.yt-q__num { font-weight: 800; font-size: 15px; }
+.yt-q__topic { font-size: 12.5px; font-weight: 700; color: var(--brand-text); text-decoration: none; text-transform: uppercase; letter-spacing: .5px; }
+.yt-ans { margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 10px; }
+.yt-ans summary { cursor: pointer; font-weight: 700; color: var(--brand-text); font-size: 14.5px; }
+.yt-ans__answer { display: flex; gap: 6px; align-items: baseline; margin: 10px 0 6px; }
+.yt-ans__answer .eg-md p { margin: 0; }
+.yt-ans__more { font-size: 14px; margin: 8px 0 0; }
+.yt-ans__more a { color: var(--brand-text); font-weight: 700; }
+.yt-q .eg-md ol { list-style: decimal; }
+.yt-q .eg-md ul { list-style: disc; }

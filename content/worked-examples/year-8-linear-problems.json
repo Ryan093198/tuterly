@@ -53,7 +53,7 @@
   "a": "Write a linear equation by identifying a starting value (the intercept) and a constant rate of change (the slope). Then substitute known values to solve for the unknown. For example, if a plumber charges a 60 dollar call-out fee plus 80 dollars per hour, the total cost is C = 80h + 60, so 3 hours costs 300 dollars."
  },
  "turn": {
-  "question": "A mobile plan charges a flat monthly fee of $15 and $0.08 per text message sent. In a month where Maya sends $n$ messages, her bill is given by $C = 0.08n + 15$. How many text messages did Maya send if her bill was $36.20? Give your answer as a whole number.",
+  "question": "A mobile plan charges a flat monthly fee of \\$15 and \\$0.08 per text message sent. In a month where Maya sends $n$ messages, her bill is given by $C = 0.08n + 15$. How many text messages did Maya send if her bill was \\$36.20? Give your answer as a whole number.",
   "kind": "number",
   "accept": {
    "value": 265,

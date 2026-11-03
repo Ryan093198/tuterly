@@ -27,7 +27,7 @@
   },
   {
    "title": "Forgetting to add principal to find the total amount",
-   "wrong": "Total amount = I = $810, so Mia has $810 at the end.",
+   "wrong": "Total amount = I = \\$810, so Mia has \\$810 at the end.",
    "fix": "$I$ is only the interest earned, not the final balance. The total amount is $A = P + I$, so always add the original principal back."
   },
   {
@@ -50,7 +50,7 @@
  "attempts": 1,
  "summary": {
   "q": "How do you calculate simple interest?",
-  "a": "Simple interest is calculated using I = PRT, where P is the principal (amount borrowed or invested), R is the annual interest rate as a decimal, and T is the time in years. For example, investing $2000 at 5% per year for 3 years earns I = 2000 × 0.05 × 3 = $300 in interest."
+  "a": "Simple interest is calculated using I = PRT, where P is the principal (amount borrowed or invested), R is the annual interest rate as a decimal, and T is the time in years. For example, investing \\$2000 at 5% per year for 3 years earns I = 2000 × 0.05 × 3 = \\$300 in interest."
  },
  "turn": {
   "question": "Anika invests $\\$4500$ at a simple interest rate of $6\\%$ per year for $4$ years. What is the total amount, in dollars, in her account at the end of the $4$ years?",
