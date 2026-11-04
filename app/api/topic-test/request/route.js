@@ -16,7 +16,7 @@ const PER_EMAIL_PER_DAY = 3;
 //   { email, year_level, topic_id, placement }
 // From the worksheet generator's free-limit box (TopicTestOffer). Puts the
 // address on the Tuterly app waitlist (the box says so) and emails a full
-// 25-question test on the topic with its answer key.
+// 20-question test on the topic with its answer key.
 export async function POST(request) {
   const startedAt = Date.now();
   let body;

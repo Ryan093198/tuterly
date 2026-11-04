@@ -6,7 +6,7 @@ import { trackEvent } from "@/lib/analytics";
 import "@/components/brand/brand.css";
 
 // Shown in the worksheet generator once today's free worksheet is used
-// (Years 7 to 10). One tap emails a full 25-question test on the topic they
+// (Years 7 to 10). One tap emails a full 20-question test on the topic they
 // picked, with its answer key, and puts them on the Tuterly early list
 // (app/api/topic-test/request). The email is already known from the
 // worksheet sign-up, so usually there's nothing to type.
@@ -55,7 +55,7 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
       ) : (
         <div>
           <p className="tb-appcta__sub">
-            {`We'll email you a 25-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
+            {`We'll email you a 20-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
           </p>
           <div className="tb-appcta__form" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {!knownEmail && (

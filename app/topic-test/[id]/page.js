@@ -6,7 +6,7 @@ import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
-import { getTopicTest } from "@/lib/topic-test";
+import { getTopicTest, questionCount } from "@/lib/topic-test";
 import { cleanMathText } from "@/lib/math-text-fixes";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
@@ -46,7 +46,7 @@ export default async function TopicTestPage({ params }) {
         <h1>{test ? `${test.year_level} ${test.topic_label} test` : "Test not found"}</h1>
         {ready ? (
           <>
-            <p className="sh-lead">25 questions, from the basics up to harder ones. Allow about 45 minutes, no notes, then mark it with the answer key at the bottom.</p>
+            <p className="sh-lead">{questionCount(test.questions_md)} questions, from the basics up to harder ones. Allow about {questionCount(test.questions_md) > 20 ? "45" : "30 to 35"} minutes, no notes, then mark it with the answer key at the bottom.</p>
             <p style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
               <a href={pdf("test")} className="tb-btn tb-btn--primary">Download the test (PDF)</a>
               <a href={pdf("answers")} className="tb-btn">Answer key (PDF)</a>
