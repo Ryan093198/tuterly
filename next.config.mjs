@@ -17,6 +17,9 @@ const nextConfig = {
     "/dashboard/**": ["./public/fonts/*.ttf"],
     // The practice exam generator reads the topic pages' checked questions.
     "/api/exam/**": ["./content/worked-examples/*.json"],
+    // Topic tests written ahead of time (lib/topic-test.js).
+    "/api/topic-test/**": ["./content/topic-tests/**/*.json"],
+    "/api/cron/**": ["./content/topic-tests/**/*.json"],
   },
   experimental: {
     // Audio uploads (Whisper) and resource files can be larger than the
