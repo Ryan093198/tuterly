@@ -40,6 +40,9 @@ for (const f of files) {
     const us = (md || "").match(US);
     if (us) problems.push(`${k}: US spelling "${us[0]}"`);
     if (/<details|\bwait\b|\bhmm\b|let me /i.test(md || "")) problems.push(`${k}: leaked working or details block`);
+    // The site's cleanup (lib/sanitize-generated.js) deletes these, so a
+    // "fill in the box" would lose its box. Use \Box for a blank box.
+    if (/\\(square|blacksquare|qed)\b/.test(md || "")) problems.push(`${k}: uses \\square (stripped by the site), use \\Box for a blank box`);
   }
   if (problems.length) { bad++; console.log(`✗ ${f}\n   ${problems.join("\n   ")}`); }
   else console.log(`✓ ${f}`);

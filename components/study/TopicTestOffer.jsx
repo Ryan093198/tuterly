@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/analytics";
 import "@/components/brand/brand.css";
@@ -10,12 +10,23 @@ import "@/components/brand/brand.css";
 // picked, with its answer key, and puts them on the Tuterly early list
 // (app/api/topic-test/request). The email is already known from the
 // worksheet sign-up, so usually there's nothing to type.
-export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, topicLabel, placement = "worksheet_limit_test" }) {
+//
+// Also used under the sample questions on the topic pages
+// (TopicTestTeaser), with its own eyebrow/title/intro; the email box there
+// is prefilled if this browser has signed up before.
+export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, topicLabel, placement = "worksheet_limit_test", eyebrow, title, intro, style }) {
   const pathname = usePathname() || "/";
   const [email, setEmail] = useState(knownEmail || "");
   const [state, setState] = useState("idle"); // idle | busy | done | error
   const [msg, setMsg] = useState("");
   const topic = (topicLabel || "").trim();
+  useEffect(() => {
+    if (knownEmail) return;
+    try {
+      const saved = window.localStorage.getItem("tuterly:worksheet_email");
+      if (saved) setEmail((e) => e || saved);
+    } catch {}
+  }, [knownEmail]);
 
   // Not a <form>: this sits inside the worksheet generator's own form, and a
   // nested form would submit the generator instead.
@@ -45,9 +56,9 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
   }
 
   return (
-    <aside className="tb-appcta tb-appcta--box" data-study-cta={placement} style={{ margin: "4px 0 16px" }}>
-      <p className="tb-eyebrow" style={{ marginBottom: 8 }}>Free full topic test</p>
-      <p className="tb-appcta__title">That&rsquo;s today&rsquo;s free worksheet. Want a full {topic || "topic"} test?</p>
+    <aside className="tb-appcta tb-appcta--box" data-study-cta={placement} style={{ margin: "4px 0 16px", ...style }}>
+      <p className="tb-eyebrow" style={{ marginBottom: 8 }}>{eyebrow || "Free full topic test"}</p>
+      <p className="tb-appcta__title">{title || <>That&rsquo;s today&rsquo;s free worksheet. Want a full {topic || "topic"} test?</>}</p>
       {state === "done" ? (
         <p role="status" className="tb-appcta__status">
           On its way to {email}. It can take a couple of minutes, so check your junk folder if it&rsquo;s not there.
@@ -55,7 +66,7 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
       ) : (
         <div>
           <p className="tb-appcta__sub">
-            {`We'll email you a 20-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
+            {intro || `We'll email you a 20-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
           </p>
           <div className="tb-appcta__form" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {!knownEmail && (

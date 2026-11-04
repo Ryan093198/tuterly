@@ -17,6 +17,7 @@ import {
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
 import { getWorkedExamples } from "@/lib/worked-examples";
 import WorkedExamples from "@/components/study/WorkedExamples";
+import TopicTestTeaser from "@/components/study/TopicTestTeaser";
 import QuickAnswer from "@/components/study/QuickAnswer";
 import TopicStateNote from "@/components/state/TopicStateNote";
 import "@/components/study/worked-examples.css";
@@ -251,6 +252,8 @@ export default async function WorksheetTopicLandingPage({ params }) {
           <WorksheetUpgrade topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_upgrade" />
         </div>
       </section>
+
+      <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.topic} />
 
       {worked && (
         <section style={{ padding: "24px 24px 64px", background: c.white }}>
