@@ -20,7 +20,7 @@ export const metadata = {
   },
 };
 
-const lastUpdated = "October 2026";
+const lastUpdated = "4 November 2026";
 
 export default function PrivacyPolicy() {
   return (
@@ -211,6 +211,21 @@ export default function PrivacyPolicy() {
               this website and the tutoring platform run on{" "}
               <strong>Vercel</strong>, and crash reports go to{" "}
               <strong>Sentry</strong>.
+            </p>
+          </Section>
+
+          <Section title="Website analytics and advertising">
+            <p>
+              On our public pages we use <strong>Google Analytics</strong> to
+              see which pages are useful, and the <strong>Meta Pixel</strong>{" "}
+              (Facebook and Instagram) to measure our ads. The Meta Pixel
+              records page visits and when someone signs up (for example for a
+              worksheet or a practice test). It does not receive your email or
+              any other details you type. Meta may use this to show our ads to
+              people who have visited the site. Neither runs on the signed-in
+              tutoring platform. You can turn off ads based on your activity in
+              your Facebook or Instagram ad settings, or block these tools with
+              your browser&rsquo;s privacy settings or an ad blocker.
             </p>
           </Section>
 

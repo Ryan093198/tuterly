@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Inter, Nunito } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavProgress from "../components/NavProgress";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 import { STUDY_APP } from "@/lib/study-app";
@@ -99,6 +100,9 @@ export default function RootLayout({ children }) {
         )}
         <Suspense fallback={null}>
           <NavProgress />
+        </Suspense>
+        <Suspense fallback={null}>
+          <MetaPixel />
         </Suspense>
         {children}
         <Suspense fallback={null}>
