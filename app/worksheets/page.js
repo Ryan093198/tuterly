@@ -10,6 +10,7 @@ import Testimonials from "@/components/marketing/Testimonials";
 import { SITE_URL } from "@/lib/site";
 import { StateSwitcher } from "@/components/state/StateHub";
 import { SKILL_PAGES } from "@/lib/skill-pages";
+import { TOPIC_HUBS } from "@/lib/topic-hubs";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
@@ -196,9 +197,11 @@ export default function WorksheetsPage() {
                 {s.h1.replace(/ worksheets with answers$/i, "")}
               </Link>
             ))}
-            <Link href="/worksheets/algebra" style={{ padding: "10px 16px", border: `1px solid ${c.border}`, borderRadius: 999, background: c.paper, color: c.ink, fontWeight: 700, fontSize: 14.5, textDecoration: "none" }}>
-              Algebra, Years 7 to 10
-            </Link>
+            {Object.entries(TOPIC_HUBS).map(([s, h]) => (
+              <Link key={s} href={`/worksheets/${s}`} style={{ padding: "10px 16px", border: `1px solid ${c.tealPale}`, borderRadius: 999, background: c.tealPale, color: c.ink, fontWeight: 700, fontSize: 14.5, textDecoration: "none" }}>
+                {h.name}, all years
+              </Link>
+            ))}
           </div>
         </div>
       </section>

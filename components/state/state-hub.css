@@ -58,3 +58,12 @@
 .sh-switch a.is-current { background: var(--brand-soft); border-color: var(--brand); }
 .sh .yh-ext { margin-top: 40px; }
 .sh .yh-all { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--brand-text); text-decoration: none; }
+.sh .ym-pill { display: inline-block; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--foreground); font-weight: 800; font-size: 14.5px; text-decoration: none; }
+.sh .ym-pill:hover { border-color: var(--brand); }
+.sh .ym-list { margin: 10px 0 0; padding-left: 1.2em; display: grid; gap: 10px; line-height: 1.65; font-size: 15.5px; }
+.sh .ym-topics { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .sh .ym-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sh .ym-topics li { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.sh .ym-topic { display: block; font-weight: 800; color: var(--foreground); text-decoration: none; }
+.sh .ym-topic:hover { color: var(--brand-text); }
+.sh .ym-desc { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 3px; }

@@ -26,6 +26,7 @@ import TopicGuide from "@/components/study/TopicGuide";
 import { getTopicGuide } from "@/lib/topic-guides";
 import SkillPage, { skillMetadata } from "@/components/worksheets/SkillPage";
 import { SKILL_PAGES, getSkillPage, skillPagesForTopic } from "@/lib/skill-pages";
+import { TOPIC_HUBS } from "@/lib/topic-hubs";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -76,6 +77,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
   const page = getLandingPageBySlug(slug);
   if (!page) notFound();
   const skillLinks = skillPagesForTopic(page.slug);
+  const hubLinks = Object.entries(TOPIC_HUBS).filter(([, h]) => h.match(page));
 
   const topicsByYear = Object.fromEntries(
     YEAR_LEVELS.map((y) => [y, getTopicGroupsForLevel(y, "maths", [y])])
@@ -268,9 +270,14 @@ export default async function WorksheetTopicLandingPage({ params }) {
           ))}
         </p>
       )}
-      {page.slug.endsWith("-algebra") && (
-        <p style={{ textAlign: "center", padding: "0 24px 40px", margin: 0, background: c.white, fontSize: 15 }}>
-          <Link href="/worksheets/algebra" style={{ color: c.tealDark, fontWeight: 700 }}>Algebra worksheets for every year, 7 to 10 →</Link>
+      {hubLinks.length > 0 && (
+        <p style={{ textAlign: "center", padding: "0 24px 40px", margin: 0, background: c.white, fontSize: 15, lineHeight: 1.9 }}>
+          {hubLinks.map(([s, h], i) => (
+            <span key={s}>
+              {i > 0 && " · "}
+              <Link href={`/worksheets/${s}`} style={{ color: c.tealDark, fontWeight: 700 }}>{h.name} worksheets for every year →</Link>
+            </span>
+          ))}
         </p>
       )}
 

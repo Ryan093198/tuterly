@@ -167,6 +167,7 @@ export default function YearHub({ n }) {
             )}
             <div className="sh-box">
               <h3 className="sh-h3">For {year} students</h3>
+              <p className="sh-p"><Link href={`/year-${n}-maths`} className="sh-link">What {year} maths covers, topic by topic →</Link></p>
               <p className="sh-p"><Link href={`/students/year-${n}`} className="sh-link">How to get better marks in {year} maths →</Link></p>
             </div>
           </div>
