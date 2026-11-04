@@ -98,6 +98,7 @@ const STATIC_PAGES = [
   { path: "/best-online-tutoring-melbourne", priority: 0.9, changeFrequency: "monthly" },
   { path: "/best-online-tutoring-victoria", priority: 0.9, changeFrequency: "monthly" },
   { path: "/practice-maths-tests-secondary", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/end-of-year-maths-exams", priority: 0.9, changeFrequency: "monthly" },
   { path: "/scholarship-test-prep", priority: 0.8, changeFrequency: "monthly" },
   { path: "/atar-planner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },

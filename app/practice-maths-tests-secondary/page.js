@@ -142,6 +142,8 @@ export default function SecondaryPracticeTestsPage() {
               <Link href={`/year-${y}-maths-test`} style={{ color: c.tealDeep, fontWeight: 700 }}>Year {y}</Link>
             </span>
           ))}
+          {" · "}
+          <Link href="/end-of-year-maths-exams" style={{ color: c.tealDeep, fontWeight: 700 }}>End-of-year exam revision</Link>
         </p>
         <AppPracticeBlock placement="practice_tests_secondary" />
       </main>
