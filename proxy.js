@@ -123,6 +123,15 @@ export async function proxy(request) {
     return NextResponse.redirect(url, 307);
   }
 
+  // Marketing pages on tuterly.com.au never read the session on the server,
+  // so skip the Supabase round trip for them. Running it on every page,
+  // client navigation and link prefetch made clicks hang now and then for
+  // signed-in visitors (Nov 2026). API routes (signed-in worksheet limits)
+  // and the auth paths still refresh the session below.
+  if (isMarketingDomain && !pathname.startsWith("/api/") && !pathMatchesPrefix(pathname, APP_PATH_PREFIXES)) {
+    return NextResponse.next({ request });
+  }
+
   // ── Supabase auth (existing behaviour, plus shared-domain cookies) ──
   let response = NextResponse.next({ request });
 
