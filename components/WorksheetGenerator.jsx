@@ -240,7 +240,7 @@ export default function WorksheetGenerator({
       // Re-trigger the generation now that we have an email on file.
       // Pass an explicit year override since React state hasn't flushed
       // yet on the next line.
-      handleGenerate(undefined, { yearLevelOverride: modalYearInput });
+      handleGenerate(undefined, { yearLevelOverride: modalYearInput, emailOverride: modalEmailInput });
     } catch (err) {
       setEmailError(err.message || "Could not save email.");
     } finally {
@@ -370,7 +370,11 @@ export default function WorksheetGenerator({
     // First-time generators land on the email + year-level capture
     // modal instead of the generate endpoint. Pre-fill the modal with
     // the year they currently have selected.
-    if (!emailSaved) {
+    // Straight after the email box, state hasn't caught up yet (this is the
+    // same render's closure), so the box passes the email in. Without that,
+    // emailSaved still reads false and the box reopens empty.
+    const effectiveEmail = opts.emailOverride || email;
+    if (!emailSaved && !opts.emailOverride) {
       cancelPendingUpsell();
       setUpsellOpen(false);
       setModalEmailInput(email || "");
@@ -390,7 +394,7 @@ export default function WorksheetGenerator({
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          email,
+          email: effectiveEmail,
           year_level: effectiveYear,
           topic_id: topicId || undefined,
           topic_label: topicLabel,
