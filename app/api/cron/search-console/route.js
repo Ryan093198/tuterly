@@ -89,6 +89,46 @@ async function buildReport() {
   };
 }
 
+// Sign-up funnel from the database: the last 7 days against the 7 before.
+// Shows at a glance whether each step of the path from a worksheet to the
+// app waitlist is still working (a step at 0 is the thing to check).
+async function buildFunnel() {
+  const admin = createAdminClient();
+  const now = Date.now();
+  const iso = (daysAgo) => new Date(now - daysAgo * 86_400_000).toISOString();
+  const windows = { now: [iso(7), iso(0)], prev: [iso(14), iso(7)] };
+  const count = async (table, col, [from, to], extra = (q) => q) => {
+    const { count, error } = await extra(
+      admin.from(table).select("*", { count: "exact", head: true }).gte(col, from).lt(col, to)
+    );
+    return error ? null : count || 0;
+  };
+  const both = async (...args) => ({ now: await count(args[0], args[1], windows.now, args[2]), prev: await count(args[0], args[1], windows.prev, args[2]) });
+
+  const rows = [
+    ["Worksheet sign-ups (new emails)", await both("worksheet_email_signups", "first_seen_at")],
+    ["Ticked the weekly email", await both("worksheet_email_signups", "weekly_opt_in_at")],
+    ["Worksheets made", await both("worksheet_generations", "created_at")],
+    ["Topic tests asked for: free-limit box", await both("topic_test_requests", "created_at", (q) => q.eq("placement", "worksheet_limit_test"))],
+    ["Topic tests asked for: topic pages", await both("topic_test_requests", "created_at", (q) => q.eq("placement", "topic_page_test"))],
+    ["Topic tests emailed", await both("topic_test_requests", "sent_at")],
+    ["App waitlist joins", await both("study_waitlist", "created_at")],
+    ["Weekly emails sent", await both("weekly_email_sends", "sent_at")],
+    ["Weekly emails opened", await both("weekly_email_sends", "opened_at")],
+    ["Weekly emails clicked", await both("weekly_email_sends", "clicked_at")],
+    ["Unsubscribed", await both("worksheet_email_signups", "unsubscribed_at")],
+  ].map(([label, v]) => ({ label, ...v }));
+
+  // Topic test requests over 15 minutes old that never sent: a run that failed or was cut off.
+  const { count: stuck } = await admin
+    .from("topic_test_requests")
+    .select("id", { count: "exact", head: true })
+    .is("sent_at", null)
+    .lt("created_at", iso(15 / 1440))
+    .gte("created_at", iso(7));
+  return { rows, stuckTopicTests: stuck || 0 };
+}
+
 async function saveWeek({ weekEnd, pagesNow, queriesNow }) {
   const admin = createAdminClient();
   const row = (dimension) => (r) => ({
@@ -108,6 +148,7 @@ async function handle(request) {
   const dry = new URL(request.url).searchParams.get("dry") === "1";
   try {
     const { _save, ...report } = await buildReport();
+    report.funnel = await buildFunnel().catch((e) => ({ error: String(e?.message || e) }));
     if (dry) return NextResponse.json({ ok: true, dry: true, report });
     const saved = await saveWeek(_save);
     const email = await sendSearchReportEmail(report);

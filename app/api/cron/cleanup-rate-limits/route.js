@@ -37,16 +37,18 @@ async function handle(request) {
 
   const tables = [
     { table: "api_rate_limits", column: "called_at" },
-    { table: "worksheet_generations", column: "created_at" },
+    // Kept 15 days: the Monday report counts worksheets made this week and
+    // last week (app/api/cron/search-console).
+    { table: "worksheet_generations", column: "created_at", days: 15 },
     { table: "public_request_log", column: "created_at" },
   ];
 
   const results = {};
-  for (const { table, column } of tables) {
+  for (const { table, column, days } of tables) {
     const { error, count } = await admin
       .from(table)
       .delete({ count: "exact" })
-      .lt(column, cutoff);
+      .lt(column, days ? new Date(Date.now() - days * 86_400_000).toISOString() : cutoff);
     results[table] = error ? `error: ${error.message}` : (count ?? 0);
   }
 

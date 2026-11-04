@@ -1,0 +1,50 @@
+name: Site check
+
+# Every morning, click through the live site's sign-up paths in a real
+# browser (scripts/site-check.mjs). Anything that would save or send is
+# faked, so nothing real happens. If a check fails, an issue is opened
+# (GitHub emails the repo owner) so a broken sign-up can't go unnoticed.
+on:
+  schedule:
+    # 07:23 Melbourne in daylight saving (06:23 in winter).
+    - cron: "23 20 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.63.0
+          npx playwright install --with-deps chromium
+
+      - name: Check the live site
+        run: node scripts/site-check.mjs https://www.tuterly.com.au
+
+      - name: Open an issue if it failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          body="The daily site check found a problem on tuterly.com.au. Something in the sign-up path may be broken for parents right now."
+          if [ -f site-check-failures.md ]; then body="$body"$'\n\n'"$(cat site-check-failures.md)"; fi
+          body="$body"$'\n\n'"Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --label site-check --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh label create site-check --color B60205 --description "Daily site check failed" 2>/dev/null || true
+            gh issue create --title "Site check failed: sign-up path may be broken" --label site-check --body "$body"
+          fi
