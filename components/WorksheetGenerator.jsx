@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import MarkdownReport from "@/components/MarkdownReport";
 import { readJsonOrFallback } from "@/lib/practice-client";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import TopicTestOffer from "@/components/study/TopicTestOffer";
 import QuinnWorking from "@/components/brand/QuinnWorking";
 import { trackEvent } from "@/lib/analytics";
 
@@ -402,8 +403,8 @@ export default function WorksheetGenerator({
         // Rate-limit response triggers the trial-signup modal instead
         // of a plain error toast. Anonymous + already-used-free-quota
         // visitors see the conversion prompt.
-        // The free limit: show the server's message, plus the app (below
-        // the form) for Years 7 to 10. No paid trial offer since Oct 2026:
+        // The free limit: show the server's message, or for Years 7 to 10
+        // the full topic test offer (TopicTestOffer, joins the app list). No paid trial offer since Oct 2026:
         // the Tuterly app is the site's only call to action.
         if ((res.status === 429 && data?.rate_limited) || res.status === 402) {
           setLimitReached(true);
@@ -516,18 +517,10 @@ export default function WorksheetGenerator({
 
           {error && !(limitReached && STUDY_APP_YEARS.includes(yearLevel)) && <p style={errorTextStyle}>{error}</p>}
 
-          {/* Free limit reached, Years 7 to 10: point straight at the app
-              (early sign-up before launch, the free week after). The app
-              has no worksheets, so this promises practice, not worksheets. */}
+          {/* Free limit reached, Years 7 to 10: one tap emails a full test
+              on the topic they picked and joins the Tuterly early list. */}
           {limitReached && STUDY_APP_YEARS.includes(yearLevel) && (
-            <StudyAppCTA
-              variant="inline"
-              placement="worksheet_limit"
-              heading="That's today's free worksheet. Want to keep going?"
-              sub={`With Tuterly Plus, students get unlimited practice questions and Topic checks on ${topicLabel.trim() || "any topic"} and every other Years 7 to 10 topic, each with a worked solution. It also writes new questions from their mistakes and the areas they find hard, so they practise exactly what they need before the next test.`}
-              formIntro="Sign up free below."
-              style={{ margin: "4px 0 16px" }}
-            />
+            <TopicTestOffer email={email} yearLevel={yearLevel} topicId={topicId} topicLabel={topicLabel} />
           )}
 
           {generating && (

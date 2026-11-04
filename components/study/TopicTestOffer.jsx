@@ -1,0 +1,88 @@
+"use client";
+
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { trackEvent } from "@/lib/analytics";
+import "@/components/brand/brand.css";
+
+// Shown in the worksheet generator once today's free worksheet is used
+// (Years 7 to 10). One tap emails a full 25-question test on the topic they
+// picked, with its answer key, and puts them on the Tuterly early list
+// (app/api/topic-test/request). The email is already known from the
+// worksheet sign-up, so usually there's nothing to type.
+export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, topicLabel, placement = "worksheet_limit_test" }) {
+  const pathname = usePathname() || "/";
+  const [email, setEmail] = useState(knownEmail || "");
+  const [state, setState] = useState("idle"); // idle | busy | done | error
+  const [msg, setMsg] = useState("");
+  const topic = (topicLabel || "").trim();
+
+  // Not a <form>: this sits inside the worksheet generator's own form, and a
+  // nested form would submit the generator instead.
+  async function submit() {
+    if (state === "busy") return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim())) {
+      setMsg("Please enter a valid email address.");
+      setState("error");
+      return;
+    }
+    setState("busy");
+    setMsg("");
+    try {
+      const res = await fetch("/api/topic-test/request", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email, year_level: yearLevel, topic_id: topicId, placement, source_page: pathname }),
+      });
+      const d = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(d?.error || "Something went wrong. Please try again.");
+      setState("done");
+      trackEvent("generate_lead", { lead_type: "topic_test", source: placement });
+    } catch (err) {
+      setMsg(err.message);
+      setState("error");
+    }
+  }
+
+  return (
+    <aside className="tb-appcta tb-appcta--box" data-study-cta={placement} style={{ margin: "4px 0 16px" }}>
+      <p className="tb-eyebrow" style={{ marginBottom: 8 }}>Free full topic test</p>
+      <p className="tb-appcta__title">That&rsquo;s today&rsquo;s free worksheet. Want a full {topic || "topic"} test?</p>
+      {state === "done" ? (
+        <p role="status" className="tb-appcta__status">
+          On its way to {email}. It can take a couple of minutes, so check your junk folder if it&rsquo;s not there.
+        </p>
+      ) : (
+        <div>
+          <p className="tb-appcta__sub">
+            {`We'll email you a 25-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
+          </p>
+          <div className="tb-appcta__form" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {!knownEmail && (
+              <input
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="Your email"
+                aria-label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); submit(); } }}
+                className="tb-input tb-input--email"
+                style={{ flex: "1 1 220px" }}
+              />
+            )}
+            <button type="button" onClick={submit} disabled={state === "busy" || !topicId} className="tb-btn tb-btn--primary tb-btn--fluid">
+              {state === "busy" ? "One moment…" : knownEmail ? "Email me the full test" : "Send me the test"}
+            </button>
+          </div>
+          {knownEmail && <p className="tb-small tb-muted" style={{ margin: "8px 0 0" }}>Sending to {knownEmail}</p>}
+          {msg && <p role="alert" className="tb-appcta__error">{msg}</p>}
+          <p className="tb-appcta__note">
+            We&rsquo;ll email you the test and Tuterly launch news. Unsubscribe any time. See our <a href="/privacy">privacy policy</a>.
+          </p>
+        </div>
+      )}
+    </aside>
+  );
+}
