@@ -7,7 +7,8 @@ import { SITE_URL } from "@/lib/site";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-// Weekly worksheet email, Monday morning Melbourne (vercel.json). Sends to
+// Weekly worksheet email, Monday 7pm Melbourne in daylight saving, 6pm in
+// winter (vercel.json: 08:07 UTC Mondays). Sends to
 // worksheet_email_signups rows with weekly_opt_in, not unsubscribed, a
 // Year 7 to 10A year level, and nothing sent in the last 6 days.
 // Auth: `Authorization: Bearer $CRON_SECRET`, or ?key= for manual runs.

@@ -36,7 +36,7 @@ export default function WeeklySignup({ yearLevel, placement }) {
     return (
       <div style={box}>
         <p style={{ fontWeight: 800, fontSize: 17, margin: "0 0 4px" }}>You&rsquo;re in.</p>
-        <p style={{ margin: 0, lineHeight: 1.6 }}>Your first free {yearLevel} worksheet arrives next Monday morning.</p>
+        <p style={{ margin: 0, lineHeight: 1.6 }}>Your first free {yearLevel} worksheet arrives next Monday evening.</p>
       </div>
     );
   }
