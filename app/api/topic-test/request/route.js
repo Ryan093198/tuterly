@@ -1,7 +1,7 @@
 import { NextResponse, after } from "next/server";
 import { guardPublicForm } from "@/lib/public-form-guard";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { resolveTopic, getOrCreateTopicTest } from "@/lib/topic-test";
+import { resolveTopic, processTopicTestRequest, sweepStuckRequests } from "@/lib/topic-test";
 import { sendTopicTestEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
@@ -18,6 +18,7 @@ const PER_EMAIL_PER_DAY = 3;
 // address on the Tuterly app waitlist (the box says so) and emails a full
 // 25-question test on the topic with its answer key.
 export async function POST(request) {
+  const startedAt = Date.now();
   let body;
   try {
     body = await request.json();
@@ -82,26 +83,13 @@ export async function POST(request) {
     source_page: typeof body.source_page === "string" && body.source_page.startsWith("/") ? body.source_page.slice(0, 200) : null,
     placement,
   });
-  const newOnWaitlist = !wlErr;
   if (wlErr && wlErr.code !== "23505") console.error("[topic-test] waitlist insert failed", wlErr.message);
 
   after(async () => {
-    try {
-      const test = await getOrCreateTopicTest(topic);
-      await sendTopicTestEmail({ to: email, test, newOnWaitlist });
-      await admin.from("topic_test_requests").update({ test_id: test.id, sent_at: new Date().toISOString() }).eq("id", req.id);
-      if (newOnWaitlist) {
-        // The test email doubles as the waitlist confirmation.
-        await admin
-          .from("study_waitlist")
-          .update({ confirmation_sent_at: new Date().toISOString() })
-          .eq("email", email)
-          .is("confirmation_sent_at", null);
-      }
-    } catch (err) {
-      console.error("[topic-test] failed", err?.message || err);
-      await admin.from("topic_test_requests").update({ error: String(err?.message || err).slice(0, 300) }).eq("id", req.id);
-    }
+    await processTopicTestRequest({ id: req.id, email, year_level: topic.yearLevel, topic_id: topic.topicId }, { sendEmail: sendTopicTestEmail });
+    // Then any earlier request whose run was cut off. Only if this one was
+    // quick (a saved test), so the sweep has the time it needs.
+    if (Date.now() - startedAt < 30_000) await sweepStuckRequests({ sendEmail: sendTopicTestEmail, exceptId: req.id, limit: 1 });
   });
 
   return NextResponse.json({ ok: true });

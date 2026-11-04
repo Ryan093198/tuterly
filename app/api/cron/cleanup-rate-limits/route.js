@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
+import { sweepStuckRequests } from "@/lib/topic-test";
+import { sendTopicTestEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
+// Room for the topic test sweep below (one test can take a couple of minutes).
+export const maxDuration = 300;
 
 // Cleanup cron (audit M1). The rate-limit / abuse-log tables gain a row per AI
 // call or public-form submission and are never pruned, so the COUNT queries the
@@ -46,7 +50,15 @@ async function handle(request) {
     results[table] = error ? `error: ${error.message}` : (count ?? 0);
   }
 
-  return NextResponse.json({ ok: true, deleted: results, cutoff });
+  // Topic tests whose run was cut off before sending (lib/topic-test.js).
+  let topicTestsRetried = 0;
+  try {
+    topicTestsRetried = await sweepStuckRequests({ sendEmail: sendTopicTestEmail, limit: 2 });
+  } catch (e) {
+    console.error("[cleanup] topic test sweep failed", e?.message || e);
+  }
+
+  return NextResponse.json({ ok: true, deleted: results, cutoff, topicTestsRetried });
 }
 
 export async function GET(request) {
