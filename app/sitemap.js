@@ -1,6 +1,7 @@
 import { STATE_CODES } from "@/lib/state-curriculum";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
+import { SKILL_PAGES } from "@/lib/skill-pages";
 import { SITE_URL } from "@/lib/site";
 import { getAllPosts } from "@/lib/learn";
 
@@ -126,6 +127,9 @@ export default function sitemap() {
   }));
   for (const code of STATE_CODES) {
     worksheetTopics.push({ url: `${SITE_URL}/worksheets/${code}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
+  }
+  for (const s of SKILL_PAGES) {
+    worksheetTopics.push({ url: `${SITE_URL}/worksheets/${s.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
   }
 
   // The Learn hub and every published article (content/learn/*.md).

@@ -24,6 +24,8 @@ import { mathToReadable } from "@/lib/try-email";
 import Testimonials from "@/components/marketing/Testimonials";
 import TopicGuide from "@/components/study/TopicGuide";
 import { getTopicGuide } from "@/lib/topic-guides";
+import SkillPage, { skillMetadata } from "@/components/worksheets/SkillPage";
+import { SKILL_PAGES, getSkillPage, skillPagesForTopic } from "@/lib/skill-pages";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -38,11 +40,13 @@ const YEAR_LEVELS = [
 ];
 
 export function generateStaticParams() {
-  return WORKSHEET_LANDING_PAGES.map((p) => ({ slug: p.slug }));
+  return [...WORKSHEET_LANDING_PAGES.map((p) => ({ slug: p.slug })), ...SKILL_PAGES.map((s) => ({ slug: s.slug }))];
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const skill = getSkillPage(slug);
+  if (skill) return skillMetadata(skill);
   const page = getLandingPageBySlug(slug);
   if (!page) return {};
   const url = `${SITE_URL}/worksheets/${page.slug}`;
@@ -67,8 +71,11 @@ export async function generateMetadata({ params }) {
 
 export default async function WorksheetTopicLandingPage({ params }) {
   const { slug } = await params;
+  const skill = getSkillPage(slug);
+  if (skill) return <SkillPage skill={skill} />;
   const page = getLandingPageBySlug(slug);
   if (!page) notFound();
+  const skillLinks = skillPagesForTopic(page.slug);
 
   const topicsByYear = Object.fromEntries(
     YEAR_LEVELS.map((y) => [y, getTopicGroupsForLevel(y, "maths", [y])])
@@ -250,6 +257,17 @@ export default async function WorksheetTopicLandingPage({ params }) {
       )}
 
       <TopicGuide guide={getTopicGuide(page.slug)} />
+      {skillLinks.length > 0 && (
+        <p style={{ textAlign: "center", padding: "0 24px 32px", margin: 0, background: c.white, fontSize: 15, lineHeight: 1.9 }}>
+          <span style={{ color: c.textLight }}>Practise one skill: </span>
+          {skillLinks.map((s, i) => (
+            <span key={s.slug}>
+              {i > 0 && " · "}
+              <Link href={`/worksheets/${s.slug}`} style={{ color: c.tealDark, fontWeight: 700 }}>{s.h1.replace(/ worksheets with answers$/i, "")}</Link>
+            </span>
+          ))}
+        </p>
+      )}
       {page.slug.endsWith("-algebra") && (
         <p style={{ textAlign: "center", padding: "0 24px 40px", margin: 0, background: c.white, fontSize: 15 }}>
           <Link href="/worksheets/algebra" style={{ color: c.tealDark, fontWeight: 700 }}>Algebra worksheets for every year, 7 to 10 →</Link>

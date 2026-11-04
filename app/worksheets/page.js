@@ -9,6 +9,7 @@ import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
 import { SITE_URL } from "@/lib/site";
 import { StateSwitcher } from "@/components/state/StateHub";
+import { SKILL_PAGES } from "@/lib/skill-pages";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
@@ -179,6 +180,28 @@ export default function WorksheetsPage() {
         kicker="From our families"
         heading="What parents say about the practice questions."
       />
+
+      {/* SKILL WORKSHEETS */}
+      <section className="ws-section" style={{ background: c.white, borderTop: `1px solid ${c.border}`, padding: "56px 40px" }}>
+        <div style={{ maxWidth: 960, margin: "0 auto" }}>
+          <h2 style={{ fontSize: 26, fontWeight: 800, color: c.ink, letterSpacing: "-0.5px", margin: "0 0 8px", textAlign: "center" }}>
+            Worksheets by skill
+          </h2>
+          <p style={{ fontSize: 15.5, color: c.textLight, lineHeight: 1.7, margin: "0 auto 22px", maxWidth: 560, textAlign: "center" }}>
+            One skill at a time, with a step-by-step guide, a quick check and a worksheet generator.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "center" }}>
+            {SKILL_PAGES.map((s) => (
+              <Link key={s.slug} href={`/worksheets/${s.slug}`} style={{ padding: "10px 16px", border: `1px solid ${c.border}`, borderRadius: 999, background: c.paper, color: c.ink, fontWeight: 700, fontSize: 14.5, textDecoration: "none" }}>
+                {s.h1.replace(/ worksheets with answers$/i, "")}
+              </Link>
+            ))}
+            <Link href="/worksheets/algebra" style={{ padding: "10px 16px", border: `1px solid ${c.border}`, borderRadius: 999, background: c.paper, color: c.ink, fontWeight: 700, fontSize: 14.5, textDecoration: "none" }}>
+              Algebra, Years 7 to 10
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* TOPIC GRID */}
       <section className="ws-section" style={{ background: c.paper, borderTop: `1px solid ${c.border}`, padding: "72px 40px 88px" }}>
