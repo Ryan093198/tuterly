@@ -95,7 +95,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
         </div>
 
         <p className="wu__foot">
-          * With a subscription. Fair use applies: up to 80 snapped questions and 120 new practice questions a day per student.
+          * Fair use applies with subscriptions.
         </p>
       </div>
     </section>
