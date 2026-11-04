@@ -11,10 +11,19 @@ const UUID = /^[0-9a-f-]{36}$/i;
 
 async function unsubscribe(token) {
   if (!UUID.test(token || "")) return false;
-  const { error } = await createAdminClient()
+  const admin = createAdminClient();
+  const now = new Date().toISOString();
+  let { error } = await admin
     .from("worksheet_email_signups")
-    .update({ unsubscribed_at: new Date().toISOString(), weekly_opt_in: false, marketing_opt_in: false })
+    .update({ unsubscribed_at: now, weekly_opt_in: false, marketing_opt_in: false })
     .eq("unsub_token", token);
+  // If the marketing_opt_in column is missing, still record the unsubscribe.
+  if (error && /marketing_opt_in/.test(error.message || "")) {
+    ({ error } = await admin
+      .from("worksheet_email_signups")
+      .update({ unsubscribed_at: now, weekly_opt_in: false })
+      .eq("unsub_token", token));
+  }
   return !error;
 }
 

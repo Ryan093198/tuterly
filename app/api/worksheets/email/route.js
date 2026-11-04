@@ -56,10 +56,17 @@ export async function POST(request) {
     .upsert(upsertRow, { onConflict: "email" });
   // Until the weekly-email migration has run, those columns don't exist:
   // save the sign-up without them rather than failing the visitor.
-  if (error && /weekly_opt_in|unsubscribed_at/.test(error.message || "")) {
-    delete upsertRow.weekly_opt_in;
-    delete upsertRow.weekly_opt_in_at;
-    delete upsertRow.unsubscribed_at;
+  // Same for the marketing_opt_in columns: their October migration was
+  // found unapplied on 4 Nov 2026, which made every ticked sign-up fail.
+  const OPTIONAL = {
+    weekly_opt_in: ["weekly_opt_in", "weekly_opt_in_at"],
+    unsubscribed_at: ["unsubscribed_at"],
+    marketing_opt_in: ["marketing_opt_in", "marketing_opt_in_at"],
+  };
+  for (let tries = 0; error && tries < 3; tries++) {
+    const hit = Object.keys(OPTIONAL).find((col) => (error.message || "").includes(col));
+    if (!hit) break;
+    for (const k of OPTIONAL[hit]) delete upsertRow[k];
     ({ error } = await admin.from("worksheet_email_signups").upsert(upsertRow, { onConflict: "email" }));
   }
   if (error) {
