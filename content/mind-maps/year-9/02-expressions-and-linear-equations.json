@@ -14,7 +14,7 @@
       ],
       "rule": "A pronumeral stands for a number. \\(3x\\) means \\(3 \\times x\\).",
       "lines": [
-        "\\\"5 more than \\(x\\)\\\": \\(x + 5\\) &nbsp; \\\"twice \\(y\\), minus 4\\\": \\(2y - 4\\)",
+        "\"5 more than \\(x\\)\": \\(x + 5\\) &nbsp; \"twice \\(y\\), minus 4\": \\(2y - 4\\)",
         "If \\(a = 3,\\ b = -2\\): \\(2a - b^2 = 6 - 4 = 2\\)"
       ],
       "tip": "substitute negatives in brackets: \\((-2)^2 = 4\\)"
@@ -75,7 +75,7 @@
       ],
       "rule": "Let \\(x\\) be the unknown, write an equation, solve it, then answer in words.",
       "lines": [
-        "\\\"Triple a number, add 7, get 31\\\": \\(3x + 7 = 31\\), so the number is 8",
+        "\"Triple a number, add 7, get 31\": \\(3x + 7 = 31\\), so the number is 8",
         "Rectangle 3 cm longer than it is wide, perimeter 26 cm: \\(2(w + w + 3) = 26 \\Rightarrow w = 5\\), so 5 cm by 8 cm"
       ]
     },

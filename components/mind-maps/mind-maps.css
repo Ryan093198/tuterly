@@ -136,3 +136,21 @@
 .mm-modal__go { width: 100%; }
 .mm-modal__error { margin: 0; color: var(--danger, #c0283e); font-size: 14px; }
 .mm-modal__small { margin: 0; font-size: 12.5px; color: var(--muted); }
+
+/* Top call to action: email box, then the download buttons. */
+.mm-head__panel { width: 100%; max-width: 460px; }
+.mm-panel {
+  padding: 16px 18px; border-radius: 20px; background: var(--card); border: 2px solid var(--brand);
+  box-shadow: 0 6px 0 var(--brand-soft), 0 12px 30px rgba(11, 26, 44, .08);
+}
+.mm-panel--done { border-color: var(--success, #1e8e4e); }
+.mm-panel__title { margin: 0; font: 900 19px/1.25 var(--font-nunito), Nunito, sans-serif; color: var(--foreground); }
+.mm-panel__text { margin: 4px 0 12px; color: var(--muted); font-size: 14.5px; line-height: 1.45; }
+.mm-panel--done .mm-actions { margin-top: 10px; }
+.mm-form { display: grid; gap: 10px; width: 100%; }
+.mm-form__row { display: grid; gap: 8px; }
+.mm-form--inline .mm-form__row { grid-template-columns: 1fr auto; }
+@media (max-width: 480px) { .mm-form--inline .mm-form__row { grid-template-columns: 1fr; } }
+.mm-form .tb-input { width: 100%; min-width: 0; }
+.mm-form .mm-modal__small { text-align: left; }
+.mm-modal__card .mm-form .mm-modal__small { text-align: center; }

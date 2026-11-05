@@ -4,7 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow } from "@/components/brand";
 import MindMapSheet from "@/components/mind-maps/MindMapSheet";
-import { GatedDownload, GatedSheet } from "@/components/mind-maps/MindMapGate";
+import { DownloadPanel, GatedSheet } from "@/components/mind-maps/MindMapGate";
 import {
   PRACTISE, mindMapFiles, mindMapPath, mindMapsForYear, revisionBooklet, revisionYearPath, rich,
 } from "@/lib/mind-maps";
@@ -76,9 +76,13 @@ export function RevisionYearPage({ year: y }) {
           <p className="tb-lead" style={{ maxWidth: 720 }}>
             Free revision mind maps for every Year {y} maths chapter. Each one is a one-page summary with a plain-English rule, worked examples and the mistakes to watch out for. Print them, stick them on the wall, or save them as PDFs.
           </p>
-          <div className="mm-actions" style={{ marginTop: 18 }}>
-            <GatedDownload href={revisionBooklet(y)} className="tb-btn tb-btn--primary" placement={`revision_y${y}_booklet`} year={y}>Download the revision booklet (PDF)</GatedDownload>
-            <span className="tb-muted" style={{ alignSelf: "center", fontSize: 14 }}>All {maps.length} topics, one A4 page each</span>
+          <div style={{ maxWidth: 560, marginTop: 20 }}>
+            <DownloadPanel
+              downloads={[{ href: revisionBooklet(y), label: `Download the Year ${y} revision booklet (PDF)` }]}
+              placement={`revision_y${y}_booklet`} year={y}
+              title={`Get the free Year ${y} revision booklet`} cta="Get the booklet"
+            />
+            <p className="tb-muted" style={{ fontSize: 14, marginTop: 8 }}>All {maps.length} topics, one A4 page each. Unlocks every map below too.</p>
           </div>
         </div>
       </section>
@@ -158,9 +162,11 @@ export function RevisionChapterPage({ map: m }) {
               <h1 className="tb-h1" style={{ fontSize: "clamp(28px, 4vw, 44px)" }}>Year {m.year} {m.short}: revision mind map</h1>
               <p className="tb-lead" style={{ maxWidth: 720, marginTop: 6 }}>{m.summary} Everything on one page, free to print or save as a PDF.</p>
             </div>
-            <div className="mm-actions">
-              <GatedDownload href={files.pdf} className="tb-btn tb-btn--primary" placement="revision_chapter_pdf" year={m.year}>Download the A4 PDF</GatedDownload>
-              <GatedDownload href={files.png} className="tb-btn tb-btn--secondary" placement="revision_chapter_png" year={m.year}>Save as an image</GatedDownload>
+            <div className="mm-head__panel">
+              <DownloadPanel
+                downloads={[{ href: files.pdf, label: "Download the A4 PDF" }, { href: files.png, label: "Save as an image" }]}
+                placement="revision_chapter" year={m.year}
+              />
             </div>
           </div>
           <PaywallJsonLd />

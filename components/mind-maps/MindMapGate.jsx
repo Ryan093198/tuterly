@@ -40,17 +40,13 @@ function useAutoUnlock() {
   }, []);
 }
 
-function UnlockModal({ onClose, placement, year }) {
+// The email form: inline at the top of the page, or inside the pop-up.
+function UnlockForm({ placement, year, onDone, inline = false, cta = "Unlock the mind maps" }) {
   const [email, setEmail] = useState("");
   const [optIn, setOptIn] = useState(false);
   const [trap, setTrap] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
 
   async function submit(e) {
     e.preventDefault();
@@ -60,7 +56,7 @@ function UnlockModal({ onClose, placement, year }) {
       await unlock({ email, marketing_opt_in: optIn, year_level: year ? `Year ${year}` : undefined, company_website: trap });
       try { window.localStorage.setItem(WORKSHEET_EMAIL_KEY, email.trim().toLowerCase()); } catch {}
       trackEvent("generate_lead", { lead_type: "mind_map", source: placement });
-      onClose();
+      onDone?.();
     } catch (err) {
       setError(err.message);
     } finally {
@@ -68,30 +64,73 @@ function UnlockModal({ onClose, placement, year }) {
     }
   }
 
+  return (
+    <form className={inline ? "mm-form mm-form--inline" : "mm-form"} onSubmit={submit}>
+      <div className="mm-form__row">
+        <input
+          type="email" required autoFocus={!inline} autoComplete="email" placeholder="Your email" className="tb-input"
+          value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" disabled={busy}
+        />
+        <button type="submit" className="tb-btn tb-btn--primary mm-form__go" disabled={busy}>{busy ? "One moment…" : cta}</button>
+      </div>
+      <div aria-hidden="true" style={{ position: "absolute", left: -10000, width: 1, height: 1, overflow: "hidden" }}>
+        <input tabIndex={-1} autoComplete="off" name="company_website" value={trap} onChange={(e) => setTrap(e.target.value)} />
+      </div>
+      <label className="mm-modal__tick">
+        <input type="checkbox" checked={optIn} onChange={(e) => setOptIn(e.target.checked)} disabled={busy} />
+        <span>Send me maths revision tips and offers from Tuterly. Unsubscribe any time.</span>
+      </label>
+      {error && <p className="mm-modal__error" role="alert">{error}</p>}
+      <p className="mm-modal__small">Free. Unlocks every mind map on this device. See our <a href="/privacy">privacy policy</a>.</p>
+    </form>
+  );
+}
+
+function UnlockModal({ onClose, placement, year }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
   return createPortal(
     <div className="mm-modal" role="dialog" aria-modal="true" aria-labelledby="mm-modal-title" onClick={onClose}>
-      <form className="mm-modal__card" onClick={(e) => e.stopPropagation()} onSubmit={submit}>
+      <div className="mm-modal__card" onClick={(e) => e.stopPropagation()}>
         <button type="button" className="mm-modal__x" onClick={onClose} aria-label="Close">×</button>
         <img src="/quinn/quinn-happy-bag-glasses.png" alt="" width="72" height="72" />
         <h2 id="mm-modal-title" className="mm-modal__title">Get the free mind maps</h2>
         <p className="mm-modal__text">Enter your email to unlock every revision mind map, with the A4 PDFs and the full revision booklet.</p>
-        <input
-          type="email" required autoFocus autoComplete="email" placeholder="Your email" className="tb-input"
-          value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" disabled={busy}
-        />
-        <div aria-hidden="true" style={{ position: "absolute", left: -10000, width: 1, height: 1, overflow: "hidden" }}>
-          <input tabIndex={-1} autoComplete="off" name="company_website" value={trap} onChange={(e) => setTrap(e.target.value)} />
-        </div>
-        <label className="mm-modal__tick">
-          <input type="checkbox" checked={optIn} onChange={(e) => setOptIn(e.target.checked)} disabled={busy} />
-          <span>Send me maths revision tips and offers from Tuterly. Unsubscribe any time.</span>
-        </label>
-        {error && <p className="mm-modal__error" role="alert">{error}</p>}
-        <button type="submit" className="tb-btn tb-btn--primary mm-modal__go" disabled={busy}>{busy ? "Unlocking…" : "Unlock the mind maps"}</button>
-        <p className="mm-modal__small">Free. We&apos;ll unlock every map on this device. See our <a href="/privacy">privacy policy</a>.</p>
-      </form>
+        <UnlockForm placement={placement} year={year} onDone={onClose} />
+      </div>
     </div>,
     document.body
+  );
+}
+
+// The main call to action at the top of the page: an email box until
+// they've signed up, then the download buttons.
+export function DownloadPanel({ downloads, placement, year, title = "Download the free A4 PDF", cta = "Get the free PDF" }) {
+  useAutoUnlock();
+  const unlocked = useUnlocked();
+  if (unlocked) {
+    return (
+      <div className="mm-panel mm-panel--done">
+        <p className="mm-panel__title">Unlocked. Download it here:</p>
+        <div className="mm-actions">
+          {downloads.map((d, i) => (
+            <a key={d.href} href={`${d.href}?download=1`} className={`tb-btn ${i ? "tb-btn--secondary" : "tb-btn--primary"}`} onClick={() => trackEvent("mind_map_download", { placement })}>
+              {d.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="mm-panel">
+      <p className="mm-panel__title">{title}</p>
+      <p className="mm-panel__text">Free with your email. Print it, stick it on the wall, or revise from it on your phone.</p>
+      <UnlockForm inline placement={placement} year={year} cta={cta} />
+    </div>
   );
 }
 
