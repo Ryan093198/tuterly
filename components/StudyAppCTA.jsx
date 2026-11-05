@@ -515,9 +515,16 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       {error && (
         <p role="alert" className="tb-appcta__error">{error}</p>
       )}
-      {!compact && (
+      {/* Marketing consent (Spam Act). Signing up here is the consent, so
+          it's stated next to the button. Wording in use from 5 Nov 2026;
+          sign-ups before then agreed to Tuterly updates only. */}
+      {compact ? (
+        <p className="tb-appcta__note" style={{ marginTop: 6 }}>
+          Launch news, tips and offers by email. Unsubscribe any time.
+        </p>
+      ) : (
         <p className="tb-appcta__note">
-          We only use your email for {STUDY_APP.name} updates. See our <a href="/privacy">privacy policy</a>.
+          We&apos;ll email you when {STUDY_APP.name} launches, plus occasional maths tips and offers. Unsubscribe any time. See our <a href="/privacy">privacy policy</a>.
         </p>
       )}
     </form>

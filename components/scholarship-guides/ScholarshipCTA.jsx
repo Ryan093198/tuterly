@@ -108,7 +108,8 @@ export default function ScholarshipCTA({ sourcePage, variant = "band", defaultEn
           />
           {state === "error" && <p className="sg-cta__err" role="alert">{msg}</p>}
           <p className="sg-cta__small">
-            One email when it opens, no spam. Want to start today? Try the{" "}
+            {/* Spam Act consent. From 5 Nov 2026; earlier sign-ups were promised one email. */}
+            We&rsquo;ll email you when it opens, plus occasional scholarship prep tips and offers. Unsubscribe any time. Want to start today? Try the{" "}
             <Link href="/scholarship-practice">free practice questions</Link>.
           </p>
         </form>

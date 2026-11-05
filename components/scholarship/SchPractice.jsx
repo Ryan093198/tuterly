@@ -192,7 +192,8 @@ function WaitlistForm({ entry, year, provider, score, sourcePage }) {
       </div>
       <input type="text" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} className="sch-hp" aria-hidden="true" name="company_website" />
       {state === "error" && <p className="sch-wl__err" role="alert">{msg}</p>}
-      <p className="sch-wl__small">One email when it launches. No spam, and you can ask to be removed any time.</p>
+      {/* Spam Act consent. From 5 Nov 2026; earlier sign-ups were promised one email. */}
+      <p className="sch-wl__small">We&rsquo;ll email you when it launches, plus occasional scholarship prep tips and offers. Unsubscribe any time.</p>
     </form>
   );
 }
