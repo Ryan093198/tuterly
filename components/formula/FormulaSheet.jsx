@@ -7,6 +7,7 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow, PhoneFrame } from "@/components/brand";
 import PrintButton from "@/components/formula/PrintButton";
 import { FORMULA_SHEETS, FORMULA_YEARS, formulaSlug, yearLabel } from "@/lib/formula-sheets";
+import { LIVE_YEARS, revisionYearPath } from "@/lib/mind-maps";
 import "@/components/study/study-landing.css";
 import "./formula.css";
 
@@ -118,6 +119,11 @@ export default function FormulaSheet({ year }) {
               <PhoneFrame src="/app-screens/flow-notes/03-notes-sheet.png" alt="A Tuterly study notes sheet with a summary and key ideas" width={240} sizes="(max-width: 899px) 56vw, 240px" />
             </div>
           </div>
+          {LIVE_YEARS.includes(Number(year)) && (
+            <p className="fs-other">
+              Revising for a test? <Link href={revisionYearPath(Number(year))}>{`${yearLabel(year)} revision mind maps`}</Link>: every topic on one page, with worked examples.
+            </p>
+          )}
           <p className="fs-other">
             Other years: {FORMULA_YEARS.filter((y) => y !== year).map((y, i) => (
               <span key={y}>{i ? " · " : ""}<Link href={`/formula-sheets/${formulaSlug(y)}`}>{yearLabel(y)}</Link></span>

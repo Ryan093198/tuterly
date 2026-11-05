@@ -5,25 +5,11 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow } from "@/components/brand";
 import MindMapSheet from "@/components/mind-maps/MindMapSheet";
 import {
-  mindMapFiles, mindMapPath, mindMapsForYear, revisionBooklet, revisionYearPath, rich,
+  PRACTISE, mindMapFiles, mindMapPath, mindMapsForYear, revisionBooklet, revisionYearPath, rich,
 } from "@/lib/mind-maps";
 import { SITE_URL } from "@/lib/site";
 import "@/components/study/study-landing.css";
 import "./mind-maps.css";
-
-// Free worksheet topic pages to practise each chapter (lib/worksheet-landing-pages.js).
-const PRACTISE = {
-  "number-and-financial-maths": [["year-9-simple-interest", "Simple interest"], ["year-9-direct-proportion", "Rates, ratio and proportion"]],
-  "expressions-and-linear-equations": [["year-9-linear-equations", "Linear equations"], ["year-9-algebra", "Algebra"]],
-  "pythagoras-and-trigonometry": [["year-9-pythagoras", "Pythagoras"], ["year-9-trigonometry", "Trigonometry"]],
-  "linear-relationships": [["year-9-coordinate-geometry", "Gradient, midpoint and distance"], ["year-9-linear-equations", "Linear graphs and equations"]],
-  measurement: [["year-9-surface-area-volume", "Surface area and volume"], ["year-9-measurement-error", "Measurement error"]],
-  "indices-and-surds": [["year-9-exponent-laws", "Index laws"], ["year-9-scientific-notation", "Scientific notation"]],
-  geometry: [["year-9-enlargements", "Enlargements and similarity"]],
-  "algebraic-techniques": [["year-9-algebra", "Expanding and factorising"]],
-  "probability-and-statistics": [["year-9-probability", "Probability"], ["year-9-venn-diagrams-probability", "Venn diagrams"], ["year-9-statistics", "Statistics"]],
-  "quadratic-equations-and-graphs": [["year-9-quadratics", "Quadratics"]],
-};
 
 const yearFaqs = (y, maps) => [
   {
@@ -144,7 +130,7 @@ export function RevisionChapterPage({ map: m }) {
   const i = all.indexOf(m);
   const prev = all[i - 1], next = all[i + 1];
   const files = mindMapFiles(m);
-  const practise = PRACTISE[m.slug] || [];
+  const practise = PRACTISE[m.appKey] || [];
   return (
     <div className="tb sl">
       <MarketingNav />

@@ -28,6 +28,7 @@ import { getTopicGuide } from "@/lib/topic-guides";
 import SkillPage, { skillMetadata } from "@/components/worksheets/SkillPage";
 import { SKILL_PAGES, getSkillPage, skillPagesForTopic } from "@/lib/skill-pages";
 import { TOPIC_HUBS } from "@/lib/topic-hubs";
+import { mindMapForWorksheet, mindMapPath } from "@/lib/mind-maps";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -250,6 +251,14 @@ export default async function WorksheetTopicLandingPage({ params }) {
       <section style={{ padding: "0 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 1028, margin: "0 auto" }}>
           <WorksheetUpgrade topic={`${page.yearLevel} ${page.topic.toLowerCase()}`} placement="worksheet_page_upgrade" />
+          {mindMapForWorksheet(page.slug) && (
+            <p style={{ marginTop: 18, fontSize: 15.5 }}>
+              Revising the whole chapter?{" "}
+              <Link href={mindMapPath(mindMapForWorksheet(page.slug))} style={{ fontWeight: 700, color: c.tealDark }}>
+                {`See the ${page.yearLevel} ${mindMapForWorksheet(page.slug).short} mind map →`}
+              </Link>
+            </p>
+          )}
         </div>
       </section>
 
