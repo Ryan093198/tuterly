@@ -50,7 +50,7 @@ export default function ParentsPage() {
           <div>
             <LaunchPill />
             <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
-            <h1 id="pp-title" className="tb-h1">Help your child improve their maths marks, and see the progress every week.</h1>
+            <h1 id="pp-title" className="tb-h1">Boost maths marks, and see the progress each week.</h1>
             <p className="tb-lead pp-hero__lead">
               {`With ${name}, your child snaps the maths questions they get wrong and practises fresh versions until each one is mastered. Each week you see what they added and mastered, plus their test scores.`}
             </p>
