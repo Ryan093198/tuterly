@@ -1,0 +1,103 @@
+{
+  "year": 8,
+  "chapter": 6,
+  "slug": "ratios-and-rates",
+  "title": "Ratios and rates",
+  "short": "Ratios and rates",
+  "appKey": "y8-ch6",
+  "summary": "Simplifying ratios, dividing in a ratio, scale drawings, rates, speed and the unitary method.",
+  "cards": [
+    {
+      "title": "Simplifying ratios",
+      "sections": [
+        "6A"
+      ],
+      "rule": "Divide both parts by the HCF. Use the same units first.",
+      "lines": [
+        "\\(12 : 18 = 2 : 3\\)",
+        "50 cm : 2 m \\(= 50 : 200 = 1 : 4\\)",
+        "\\(0.5 : 2 = 1 : 4\\)",
+        "Three parts: \\(6 : 9 : 15 = 2 : 3 : 5\\)"
+      ],
+      "tip": "convert to the same units before you simplify."
+    },
+    {
+      "title": "Solving ratio problems",
+      "sections": [
+        "6B"
+      ],
+      "rule": "Add the parts, find one part, then multiply.",
+      "lines": [
+        "$60 in the ratio 2 : 3: 5 parts, 1 part = $12",
+        "So **$24** and **$36**",
+        "In the ratio 3 : 5 with the first part 12: the second is \\(20\\)",
+        "$90 in the ratio 1 : 2 : 3: 6 parts, 1 part = $15, so **$15**, **$30** and **$45**"
+      ]
+    },
+    {
+      "title": "Scale drawings",
+      "sections": [
+        "6C"
+      ],
+      "rule": "A scale of 1 : 100 means 1 cm on the drawing is 100 cm in real life.",
+      "lines": [
+        "1 : 100, 4.5 cm on the plan: \\(4.5 \\times 100 = 450\\) cm, or 4.5 m",
+        "1 : 50 000, 3 cm on the map: 150 000 cm, or 1.5 km",
+        "Finding the scale: a 6 m wall drawn 3 cm long is 3 cm : 600 cm = **1 : 200**"
+      ],
+      "tip": "use the same units on both sides of the scale."
+    },
+    {
+      "title": "Introducing rates",
+      "sections": [
+        "6D"
+      ],
+      "rule": "A rate compares two different units. Read \"per\" as \"for each\".",
+      "lines": [
+        "150 km in 3 hours: **50 km/h**",
+        "$12 for 4 kg: **$3/kg**",
+        "Best buy: 2 L for $5 is $2.50/L; 3 L for $6.60 is $2.20/L, so the **3 L** is better value"
+      ]
+    },
+    {
+      "title": "Solving rate problems",
+      "sections": [
+        "6E"
+      ],
+      "rule": "Multiply the rate by the time, or divide to find the time.",
+      "lines": [
+        "8 L/min for 30 min: \\(8 \\times 30 = 240\\) L",
+        "200 L at 8 L/min: \\(200 \\div 8 = 25\\) min",
+        "Typing 45 words a minute for 20 minutes: \\(45 \\times 20 = 900\\) words"
+      ],
+      "note": "Check the units match before you multiply or divide."
+    },
+    {
+      "title": "Speed",
+      "sections": [
+        "6F"
+      ],
+      "rule": "\\(S = \\dfrac DT\\), \\(D = S \\times T\\), \\(T = \\dfrac DS\\)",
+      "lines": [
+        "240 km at 80 km/h: \\(T = 3\\) h",
+        "90 km in 1.5 h: \\(S = 60\\) km/h",
+        "45 minutes at 80 km/h: \\(D = 80 \\times 0.75 = 60\\) km",
+        "72 km/h in m/s: \\(72 \\div 3.6 = 20\\) m/s"
+      ],
+      "tip": "45 minutes is 0.75 hours, not 0.45."
+    },
+    {
+      "title": "The unitary method",
+      "sections": [
+        "6G"
+      ],
+      "rule": "Find the value of one, then multiply to get what you need.",
+      "lines": [
+        "5 pens cost $8: 1 pen is $1.60, so 12 pens are \\(\\$19.20\\)",
+        "In a ratio, 3 parts = 45: 1 part is 15, so 7 parts are \\(105\\)",
+        "A 250 g pack costs $4.50: 100 g costs \\(4.50 \\div 2.5 = \\$1.80\\)"
+      ],
+      "note": "Finding the value of one works for any amount."
+    }
+  ]
+}

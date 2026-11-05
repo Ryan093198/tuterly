@@ -188,6 +188,7 @@ const LEARN = [
 ];
 
 const MORE = [
+  { href: "/year-8-maths-revision", label: "Year 8 maths revision mind maps", note: "(every topic on one page, free PDF)" },
   { href: "/worksheets", label: "Free maths worksheets, Years 7 to 10" },
   { href: "/formula-sheets/year-8-maths", label: "Year 8 maths formula sheet" },
   { href: "/maths-exam-preparation/year-8", label: "Year 8 maths exam preparation" },

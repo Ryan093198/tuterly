@@ -1,0 +1,134 @@
+{
+  "year": 8,
+  "chapter": 5,
+  "slug": "algebra-and-index-laws",
+  "title": "Algebraic techniques and index laws",
+  "short": "Algebra and index laws",
+  "appKey": "y8-ch5",
+  "summary": "The language of algebra, substitution, like terms, algebraic fractions, expanding, factorising and the first index laws.",
+  "cards": [
+    {
+      "title": "The language of algebra",
+      "sections": [
+        "5A"
+      ],
+      "rule": "In \\(3x + 5\\): \\(x\\) is a pronumeral, 3 is the coefficient, 5 is the constant.",
+      "lines": [
+        "\"4 less than twice \\(n\\)\" is \\(2n - 4\\)"
+      ]
+    },
+    {
+      "title": "Substitution and equivalence",
+      "sections": [
+        "5B"
+      ],
+      "rule": "Replace each letter with its value. Equivalent expressions are equal for every value.",
+      "lines": [
+        "\\(x = 3,\\ y = -2\\): \\(2x + y = 4\\) &nbsp; \\(xy = -6\\)",
+        "\\(2(x + 1)\\) is equivalent to \\(2x + 2\\)"
+      ]
+    },
+    {
+      "title": "Adding and subtracting terms",
+      "sections": [
+        "5C"
+      ],
+      "rule": "Only like terms (same letters, same powers) can be added or subtracted.",
+      "lines": [
+        "\\(5a + 2b - a = 4a + 2b\\)",
+        "\\(3x^2 + x - x^2 = 2x^2 + x\\)"
+      ]
+    },
+    {
+      "title": "Multiplying and dividing terms",
+      "sections": [
+        "5D"
+      ],
+      "rule": "Multiply the numbers, then the letters. Divide like a fraction and cancel.",
+      "lines": [
+        "\\(3a \\times 4b = 12ab\\) &nbsp; \\(2x \\times 5x = 10x^2\\)",
+        "\\(12ab \\div 3a = 4b\\)"
+      ],
+      "tip": "\\(x + x = 2x\\) but \\(x \\times x = x^2\\)"
+    },
+    {
+      "title": "Algebraic fractions: + and −",
+      "sections": [
+        "5E"
+      ],
+      "rule": "Use a common denominator, then combine the numerators.",
+      "lines": [
+        "\\(\\tfrac x2 + \\tfrac x3 = \\tfrac{3x}{6} + \\tfrac{2x}{6} = \\tfrac{5x}{6}\\)",
+        "\\(\\tfrac{3a}{4} - \\tfrac a2 = \\tfrac{3a}{4} - \\tfrac{2a}{4} = \\tfrac a4\\)"
+      ]
+    },
+    {
+      "title": "Algebraic fractions: × and ÷",
+      "sections": [
+        "5F"
+      ],
+      "rule": "Cancel common factors, then multiply. To divide, flip the second fraction.",
+      "lines": [
+        "\\(\\tfrac{2a}{5} \\times \\tfrac{10}{a} = 4\\)",
+        "\\(\\tfrac a4 \\div \\tfrac a8 = \\tfrac a4 \\times \\tfrac 8a = 2\\)"
+      ]
+    },
+    {
+      "title": "Expanding brackets",
+      "sections": [
+        "5G"
+      ],
+      "rule": "Multiply every term inside by the term outside.",
+      "lines": [
+        "\\(3(x + 4) = 3x + 12\\)",
+        "\\(-2(x - 5) = -2x + 10\\)",
+        "\\(x(x + 3) = x^2 + 3x\\)"
+      ]
+    },
+    {
+      "title": "Factorising",
+      "sections": [
+        "5H"
+      ],
+      "rule": "The opposite of expanding: take out the highest common factor.",
+      "lines": [
+        "\\(6x + 9 = 3(2x + 3)\\)",
+        "\\(x^2 + 5x = x(x + 5)\\)",
+        "\\(12ab - 8a = 4a(3b - 2)\\)"
+      ]
+    },
+    {
+      "title": "Applying algebra",
+      "sections": [
+        "5I"
+      ],
+      "rule": "Use a letter for the unknown and write a rule.",
+      "lines": [
+        "Phone plan: $20 plus $0.50 a text: \\(C = 20 + 0.5t\\). 40 texts: \\(\\$40\\)",
+        "Rectangle, width \\(x\\), length \\(x + 3\\): perimeter \\(4x + 6\\)"
+      ]
+    },
+    {
+      "title": "Index laws: × and ÷",
+      "sections": [
+        "5J"
+      ],
+      "rule": "Same base: multiply, add the indices. Divide, subtract them.",
+      "lines": [
+        "\\(x^3 \\times x^4 = x^7\\) &nbsp; \\(a^6 \\div a^2 = a^4\\)",
+        "\\(2^3 \\times 2^2 = 2^5 = 32\\)"
+      ],
+      "tip": "\\(2^3 \\times 2^2\\) is not \\(4^5\\)."
+    },
+    {
+      "title": "Zero index and power of a power",
+      "sections": [
+        "5K"
+      ],
+      "rule": "Anything to the power 0 is 1. Power of a power: multiply the indices.",
+      "lines": [
+        "\\(5^0 = 1\\) &nbsp; \\(3x^0 = 3\\) &nbsp; \\((x^2)^3 = x^6\\)"
+      ]
+    }
+  ]
+}

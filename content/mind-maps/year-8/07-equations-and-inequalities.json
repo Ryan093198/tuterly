@@ -1,0 +1,122 @@
+{
+  "year": 8,
+  "chapter": 7,
+  "slug": "equations-and-inequalities",
+  "title": "Equations and inequalities",
+  "short": "Equations and inequalities",
+  "appKey": "y8-ch7",
+  "summary": "Solving equations with fractions, brackets and pronumerals on both sides, simple quadratic equations, formulas, word problems and inequalities.",
+  "cards": [
+    {
+      "title": "Reviewing equations",
+      "sections": [
+        "7A"
+      ],
+      "rule": "An equation has an equals sign. The solution is the value that makes it true.",
+      "lines": [
+        "\\(x + 7 = 12 \\Rightarrow x = 5\\) &nbsp; \\(3x = 21 \\Rightarrow x = 7\\)"
+      ],
+      "note": "Check by substituting: \\(5 + 7 = 12\\) ✓"
+    },
+    {
+      "title": "Equivalent equations",
+      "sections": [
+        "7B"
+      ],
+      "rule": "Do the same to both sides. Undo in reverse order.",
+      "lines": [
+        "\\(2x + 3 = 11 \\Rightarrow 2x = 8 \\Rightarrow x = 4\\)"
+      ]
+    },
+    {
+      "title": "Equations with fractions",
+      "sections": [
+        "7C"
+      ],
+      "rule": "Clear the fraction by multiplying both sides.",
+      "lines": [
+        "\\(\\tfrac x3 = 5 \\Rightarrow x = 15\\)",
+        "\\(\\tfrac{x + 1}{2} = 4 \\Rightarrow x + 1 = 8 \\Rightarrow x = 7\\)",
+        "\\(\\tfrac x4 + 1 = 3 \\Rightarrow \\tfrac x4 = 2 \\Rightarrow x = 8\\)"
+      ]
+    },
+    {
+      "title": "Pronumeral on both sides",
+      "sections": [
+        "7D"
+      ],
+      "rule": "Subtract the smaller term so the pronumeral is on one side.",
+      "lines": [
+        "\\(5x + 2 = 3x + 10 \\Rightarrow 2x = 8 \\Rightarrow x = 4\\)"
+      ]
+    },
+    {
+      "title": "Equations with brackets",
+      "sections": [
+        "7E"
+      ],
+      "rule": "Expand the brackets first.",
+      "lines": [
+        "\\(3(x - 2) = 12 \\Rightarrow 3x - 6 = 12 \\Rightarrow x = 6\\)",
+        "\\(2(x + 1) = x + 6 \\Rightarrow 2x + 2 = x + 6 \\Rightarrow x = 4\\)"
+      ]
+    },
+    {
+      "title": "Simple quadratic equations",
+      "sections": [
+        "7F"
+      ],
+      "rule": "Get \\(x^2\\) by itself, then take the square root. Remember both answers.",
+      "lines": [
+        "\\(x^2 = 25 \\Rightarrow x = \\pm 5\\)",
+        "\\(x^2 + 3 = 19 \\Rightarrow x^2 = 16 \\Rightarrow x = \\pm 4\\)"
+      ],
+      "note": "\\(x^2 = -4\\) has no solution: a square can't be negative."
+    },
+    {
+      "title": "Formulas and relationships",
+      "sections": [
+        "7G"
+      ],
+      "rule": "Substitute what you know, then solve for what's left.",
+      "lines": [
+        "\\(P = 2l + 2w\\) with \\(l = 5,\\ w = 3\\): \\(P = 16\\)",
+        "\\(A = lw\\) with \\(A = 24,\\ w = 4\\): \\(l = 6\\)"
+      ]
+    },
+    {
+      "title": "Applications of equations",
+      "sections": [
+        "7H"
+      ],
+      "rule": "Let a letter be the unknown, write an equation, solve it, answer in words.",
+      "lines": [
+        "Double a number and add 5 to get 17: \\(2x + 5 = 17\\), so the number is 6",
+        "Rectangle, width \\(w\\), length \\(2w\\), perimeter 30: \\(6w = 30\\), so 5 by 10"
+      ]
+    },
+    {
+      "title": "Inequalities",
+      "sections": [
+        "7I"
+      ],
+      "rule": "\\(<\\) less than, \\(\\le\\) less than or equal, \\(>\\) greater than, \\(\\ge\\) greater than or equal.",
+      "lines": [
+        "\\(x > 2\\): open circle at 2, arrow right",
+        "\\(x \\le 4\\): closed dot at 4, arrow left"
+      ]
+    },
+    {
+      "title": "Solving inequalities",
+      "sections": [
+        "7J"
+      ],
+      "rule": "Solve like an equation, but flip the sign when you multiply or divide by a negative.",
+      "lines": [
+        "\\(2x + 1 < 9 \\Rightarrow 2x < 8 \\Rightarrow x < 4\\)",
+        "\\(-3x \\le 12 \\Rightarrow x \\ge -4\\)"
+      ],
+      "tip": "flip the sign when dividing by a negative."
+    }
+  ]
+}

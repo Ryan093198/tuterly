@@ -1,0 +1,152 @@
+{
+  "year": 8,
+  "chapter": 4,
+  "slug": "measurement-and-pythagoras",
+  "title": "Measurement and Pythagoras' theorem",
+  "short": "Measurement and Pythagoras",
+  "appKey": "y8-ch4",
+  "summary": "Perimeter, circumference, area of quadrilaterals, circles and sectors, surface area, volume and capacity, time zones, and Pythagoras' theorem.",
+  "cards": [
+    {
+      "title": "Length and perimeter",
+      "sections": [
+        "4A"
+      ],
+      "rule": "Perimeter is the distance around the outside.",
+      "lines": [
+        "1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm",
+        "Rectangle 8 by 3: \\(P = 2(8 + 3) = 22\\)"
+      ]
+    },
+    {
+      "title": "Circumference",
+      "sections": [
+        "4B"
+      ],
+      "rule": "\\(C = \\pi d = 2\\pi r\\)",
+      "lines": [
+        "\\(d = 10\\): \\(C = 10\\pi \\approx 31.4\\)",
+        "\\(r = 3\\): \\(C = 6\\pi \\approx 18.8\\)"
+      ]
+    },
+    {
+      "title": "Area",
+      "sections": [
+        "4C"
+      ],
+      "rule": "Rectangle \\(lw\\). Triangle \\(\\tfrac12 bh\\).",
+      "lines": [
+        "\\(6 \\times 4 = 24\\) &nbsp; \\(\\tfrac12 \\times 8 \\times 5 = 20\\)",
+        "1 m² = 10 000 cm²"
+      ]
+    },
+    {
+      "title": "Special quadrilaterals",
+      "sections": [
+        "4D"
+      ],
+      "rule": "Parallelogram \\(bh\\). Rhombus or kite \\(\\tfrac12 xy\\). Trapezium \\(\\tfrac12(a + b)h\\).",
+      "lines": [
+        "Trapezium 4, 10, height 5: \\(35\\)",
+        "Rhombus, diagonals 6 and 8: \\(24\\)"
+      ]
+    },
+    {
+      "title": "Area of circles",
+      "sections": [
+        "4E"
+      ],
+      "rule": "\\(A = \\pi r^2\\). Use the radius, half the diameter.",
+      "lines": [
+        "\\(r = 5\\): \\(A = 25\\pi \\approx 78.5\\)",
+        "\\(d = 8\\): \\(r = 4\\), so \\(A = 16\\pi \\approx 50.3\\)"
+      ],
+      "tip": "\\(\\pi r^2\\) is area, \\(2\\pi r\\) is circumference."
+    },
+    {
+      "title": "Sectors and composite shapes",
+      "sections": [
+        "4F"
+      ],
+      "rule": "Sector: \\(\\tfrac{\\theta}{360} \\times \\pi r^2\\). Composite: split into shapes you know, then add or take away.",
+      "lines": [
+        "Quarter circle \\(r = 4\\): \\(\\tfrac14 \\times 16\\pi = 4\\pi \\approx 12.6\\)",
+        "8 by 4 rectangle with a semicircle on the 4 side: \\(32 + \\tfrac12\\pi(2^2) \\approx 38.3\\)"
+      ]
+    },
+    {
+      "title": "Surface area of prisms",
+      "sections": [
+        "4G"
+      ],
+      "rule": "Add the areas of every face. Drawing the net helps.",
+      "lines": [
+        "Box 5 by 3 by 2: \\(2(15 + 10 + 6) = 62\\)"
+      ]
+    },
+    {
+      "title": "Volume and capacity",
+      "sections": [
+        "4H"
+      ],
+      "rule": "Box: \\(V = lwh\\).",
+      "lines": [
+        "\\(5 \\times 3 \\times 2 = 30\\) cm³",
+        "1 cm³ = 1 mL, 1000 cm³ = 1 L, 1 m³ = 1000 L"
+      ]
+    },
+    {
+      "title": "Volume of prisms and cylinders",
+      "sections": [
+        "4I"
+      ],
+      "rule": "\\(V = Ah\\). Cylinder: \\(V = \\pi r^2 h\\).",
+      "lines": [
+        "Triangular prism: \\(\\tfrac12 \\times 3 \\times 4 = 6\\), length 10: \\(V = 60\\)",
+        "Cylinder \\(r = 2,\\ h = 5\\): \\(V = 20\\pi \\approx 62.8\\)"
+      ]
+    },
+    {
+      "title": "Time and time zones",
+      "sections": [
+        "4J"
+      ],
+      "rule": "Going west, clocks are earlier. Going east, clocks are later.",
+      "lines": [
+        "Melbourne is UTC+10, Perth is UTC+8",
+        "3 pm in Melbourne is **1 pm** in Perth (standard time)"
+      ],
+      "tip": "daylight saving changes the gap in summer."
+    },
+    {
+      "title": "Pythagoras' theorem",
+      "sections": [
+        "4K",
+        "4L"
+      ],
+      "rule": "Right-angled triangles: \\(c^2 = a^2 + b^2\\), \\(c\\) is the hypotenuse.",
+      "lines": [
+        "Sides 5 and 12: \\(c^2 = 25 + 144 = 169\\), so \\(c = 13\\)"
+      ],
+      "fig": {
+        "type": "right-triangle",
+        "labels": {
+          "base": "a",
+          "height": "b",
+          "hyp": "c (hypotenuse)"
+        }
+      }
+    },
+    {
+      "title": "Finding a shorter side",
+      "sections": [
+        "4M"
+      ],
+      "rule": "Subtract: \\(a^2 = c^2 - b^2\\).",
+      "lines": [
+        "Hypotenuse 10, side 6: \\(a^2 = 100 - 36 = 64\\), so \\(a = 8\\)"
+      ],
+      "tip": "a shorter side can never be longer than the hypotenuse."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "year": 8,
+  "chapter": 10,
+  "slug": "transformations-and-congruence",
+  "title": "Transformations and congruence",
+  "short": "Transformations and congruence",
+  "appKey": "y8-ch10",
+  "summary": "Reflections, translations, rotations, congruent figures and triangles, tessellations, quadrilaterals, similar figures and similar triangles.",
+  "cards": [
+    {
+      "title": "Reflection",
+      "sections": [
+        "10A"
+      ],
+      "rule": "A mirror image: each point is the same distance from the mirror line.",
+      "lines": [
+        "\\((2, 3)\\) in the x-axis: \\((2, -3)\\)",
+        "\\((2, 3)\\) in the y-axis: \\((-2, 3)\\)"
+      ]
+    },
+    {
+      "title": "Translation",
+      "sections": [
+        "10B"
+      ],
+      "rule": "A slide, with no turning or flipping.",
+      "lines": [
+        "Right 3, down 2: \\((1, 4) \\to (4, 2)\\)"
+      ]
+    },
+    {
+      "title": "Rotation",
+      "sections": [
+        "10C"
+      ],
+      "rule": "A turn, given by a centre, an angle and a direction.",
+      "lines": [
+        "180° about the origin: \\((2, 3) \\to (-2, -3)\\)",
+        "90° clockwise about the origin: \\((2, 3) \\to (3, -2)\\)"
+      ]
+    },
+    {
+      "title": "Congruent figures",
+      "sections": [
+        "10D"
+      ],
+      "rule": "Exactly the same shape and size (≅). Reflections, translations and rotations keep figures congruent.",
+      "lines": [
+        "Matching sides and matching angles are equal",
+        "Write the vertices in matching order"
+      ]
+    },
+    {
+      "title": "Congruent triangles",
+      "sections": [
+        "10E"
+      ],
+      "rule": "Tests: SSS, SAS, AAS, RHS.",
+      "lines": [
+        "SSS: three sides",
+        "SAS: two sides and the angle between them",
+        "AAS: two angles and a side",
+        "RHS: right angle, hypotenuse, side"
+      ],
+      "tip": "AAA isn't a test: same angles can be different sizes."
+    },
+    {
+      "title": "Tessellations",
+      "sections": [
+        "10F"
+      ],
+      "rule": "Shapes that cover a surface with no gaps or overlaps. The angles at each point add to 360°.",
+      "lines": [
+        "Regular hexagons: \\(3 \\times 120^\\circ = 360^\\circ\\) ✓",
+        "Regular pentagons don't: 108° doesn't divide evenly into 360°"
+      ]
+    },
+    {
+      "title": "Congruence and quadrilaterals",
+      "sections": [
+        "10G"
+      ],
+      "rule": "A diagonal can split a quadrilateral into congruent triangles, which proves its properties.",
+      "lines": [
+        "A parallelogram's diagonal makes two congruent triangles, so opposite sides are equal",
+        "A rhombus's diagonals cross at right angles"
+      ]
+    },
+    {
+      "title": "Similar figures",
+      "sections": [
+        "10H"
+      ],
+      "rule": "Same shape, different size. Scale factor \\(= \\dfrac{\\text{image length}}{\\text{original length}}\\).",
+      "lines": [
+        "3 cm becomes 12 cm: scale factor \\(4\\)",
+        "The angles stay the same"
+      ]
+    },
+    {
+      "title": "Similar triangles",
+      "sections": [
+        "10I"
+      ],
+      "rule": "Same angles, sides in the same ratio. Use the scale factor to find missing sides.",
+      "lines": [
+        "Matching sides 3 and 12: scale factor 4, so side 5 matches \\(20\\)",
+        "A 1 m stick has a 2 m shadow; a tree's shadow is 10 m: the tree is \\(5\\) m tall"
+      ]
+    }
+  ]
+}

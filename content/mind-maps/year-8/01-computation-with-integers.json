@@ -1,0 +1,105 @@
+{
+  "year": 8,
+  "chapter": 1,
+  "slug": "computation-with-integers",
+  "title": "Computation with integers",
+  "short": "Computation with integers",
+  "appKey": "y8-ch1",
+  "summary": "Adding, subtracting, multiplying and dividing whole numbers and negative integers, number properties, prime factors and the order of operations.",
+  "cards": [
+    {
+      "title": "Adding and subtracting",
+      "sections": [
+        "1A"
+      ],
+      "rule": "Line up the place values, then carry or borrow. Rounding first can make it easier in your head.",
+      "lines": [
+        "\\(347 + 586 = 933\\) &nbsp; \\(502 - 178 = 324\\)",
+        "In your head: \\(198 + 57 = 200 + 57 - 2 = 255\\)",
+        "Estimate first: \\(347 + 586 \\approx 350 + 590 = 940\\)"
+      ]
+    },
+    {
+      "title": "Multiplying and dividing",
+      "sections": [
+        "1B"
+      ],
+      "rule": "Split the number into parts you can multiply, then add the parts.",
+      "lines": [
+        "\\(34 \\times 26 = 34 \\times 20 + 34 \\times 6 = 680 + 204 = 884\\)",
+        "\\(756 \\div 7 = 108\\)"
+      ]
+    },
+    {
+      "title": "Number properties",
+      "sections": [
+        "1C"
+      ],
+      "rule": "Order doesn't matter for + and ×: \\(a + b = b + a\\). Brackets can be expanded: \\(a(b + c) = ab + ac\\).",
+      "lines": [
+        "\\(7 \\times 23 = 7 \\times 20 + 7 \\times 3 = 161\\)",
+        "12 and 18: HCF is 6, LCM is 36"
+      ]
+    },
+    {
+      "title": "Divisibility and prime factorisation",
+      "sections": [
+        "1D"
+      ],
+      "rule": "Divisible by 2: even. By 3: digits add to a multiple of 3. By 5: ends in 0 or 5. By 9: digits add to a multiple of 9.",
+      "lines": [
+        "Keep dividing by primes: \\(60 = 2^2 \\times 3 \\times 5\\) and \\(84 = 2^2 \\times 3 \\times 7\\)",
+        "1 is not a prime number. 2 is the only even prime."
+      ]
+    },
+    {
+      "title": "Negative integers",
+      "sections": [
+        "1E"
+      ],
+      "rule": "Numbers get smaller as you move left on the number line.",
+      "lines": [
+        "\\(-5 < -2\\) &nbsp; \\(-1 > -8\\)",
+        "A temperature of −3°C is colder than 2°C",
+        "In order: \\(-8, -3, 0, 2\\)",
+        "A rise of 5° from \\(-3^\\circ\\)C gives \\(2^\\circ\\)C"
+      ]
+    },
+    {
+      "title": "Adding and subtracting negatives",
+      "sections": [
+        "1F"
+      ],
+      "rule": "Adding a negative means subtract. Subtracting a negative means add.",
+      "lines": [
+        "\\(-3 + 7 = 4\\) &nbsp; \\(5 + (-8) = -3\\)",
+        "\\(-2 - (-6) = -2 + 6 = 4\\)",
+        "\\(-4 - 3 = -7\\)"
+      ]
+    },
+    {
+      "title": "Multiplying and dividing negatives",
+      "sections": [
+        "1G"
+      ],
+      "rule": "Same signs give a positive. Different signs give a negative.",
+      "lines": [
+        "\\(-4 \\times 6 = -24\\) &nbsp; \\(-36 \\div (-9) = 4\\)",
+        "\\(-2 \\times (-3) \\times (-1) = -6\\): an odd number of negatives gives a negative"
+      ],
+      "tip": "\\((-3)^2 = 9\\) but \\(-3^2 = -9\\)"
+    },
+    {
+      "title": "Order of operations and substitution",
+      "sections": [
+        "1H"
+      ],
+      "rule": "Brackets, then powers, then × and ÷ from left to right, then + and − from left to right.",
+      "lines": [
+        "\\(2 + 3 \\times (-4) = 2 - 12 = -10\\)",
+        "If \\(a = -2\\) and \\(b = 3\\): \\(a^2 - b = 4 - 3 = 1\\)"
+      ],
+      "tip": "put negative numbers in brackets when you substitute."
+    }
+  ]
+}

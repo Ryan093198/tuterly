@@ -1,0 +1,94 @@
+{
+  "year": 8,
+  "chapter": 2,
+  "slug": "angles-and-geometrical-figures",
+  "title": "Angle relationships and properties of geometrical figures",
+  "short": "Angles and geometrical figures",
+  "appKey": "y8-ch2",
+  "summary": "Angle rules, parallel lines, triangles, quadrilaterals, polygons, three-dimensional solids and Euler's formula, and 3D coordinates.",
+  "cards": [
+    {
+      "title": "Reviewing angles",
+      "sections": [
+        "2A"
+      ],
+      "rule": "Complementary angles add to 90°. Supplementary angles add to 180°. Vertically opposite angles are equal.",
+      "lines": [
+        "35° has a complement of **55°** and a supplement of **145°**",
+        "Angles on a straight line add to 180°",
+        "Angles around a point add to 360°"
+      ],
+      "note": "Acute: under 90°. Right: 90°. Obtuse: 90° to 180°. Reflex: over 180°."
+    },
+    {
+      "title": "Transversal and parallel lines",
+      "sections": [
+        "2B"
+      ],
+      "rule": "With parallel lines: corresponding angles are equal (F), alternate angles are equal (Z), co-interior angles add to 180° (C).",
+      "lines": [
+        "If one angle is 70°: corresponding **70°**, alternate **70°**, co-interior **110°**"
+      ],
+      "tip": "these rules only work when the lines are parallel."
+    },
+    {
+      "title": "Triangles",
+      "sections": [
+        "2C"
+      ],
+      "rule": "Angles add to 180°. An exterior angle equals the two opposite interior angles added together.",
+      "lines": [
+        "Angles 40° and 75°: the third is **65°**, the exterior angle is **115°**",
+        "Equilateral: all angles 60°",
+        "Isosceles: two equal sides, two equal base angles"
+      ]
+    },
+    {
+      "title": "Quadrilaterals",
+      "sections": [
+        "2D"
+      ],
+      "rule": "Angles add to 360°.",
+      "lines": [
+        "Angles 80°, 95°, 110°: the fourth is **75°**",
+        "Parallelogram: opposite angles equal",
+        "Rhombus: all sides equal",
+        "Kite: one pair of opposite angles equal"
+      ]
+    },
+    {
+      "title": "Polygons",
+      "sections": [
+        "2E"
+      ],
+      "rule": "Angle sum of an \\(n\\)-sided polygon: \\(S = (n - 2) \\times 180^\\circ\\).",
+      "lines": [
+        "Pentagon: \\(3 \\times 180^\\circ = 540^\\circ\\), each angle of a regular one is \\(108^\\circ\\)",
+        "Hexagon: \\(4 \\times 180^\\circ = 720^\\circ\\), each angle of a regular one is \\(120^\\circ\\)"
+      ]
+    },
+    {
+      "title": "3D solids and Euler's formula",
+      "sections": [
+        "2F"
+      ],
+      "rule": "For solids with flat faces: \\(F + V = E + 2\\) (faces, vertices, edges).",
+      "lines": [
+        "Cube: \\(6 + 8 = 12 + 2\\) ✓",
+        "Triangular prism: \\(5 + 6 = 9 + 2\\) ✓"
+      ],
+      "note": "Prisms have two matching ends. Pyramids come to a point."
+    },
+    {
+      "title": "3D coordinates",
+      "sections": [
+        "2G"
+      ],
+      "rule": "A point is \\((x, y, z)\\): along, across, then up. The origin is \\((0, 0, 0)\\).",
+      "lines": [
+        "\\((2, 3, 4)\\) is 2 along the x-axis, 3 along the y-axis and 4 up the z-axis",
+        "A 5 by 3 by 2 box with a corner at the origin has its opposite corner at \\((5, 3, 2)\\)"
+      ]
+    }
+  ]
+}

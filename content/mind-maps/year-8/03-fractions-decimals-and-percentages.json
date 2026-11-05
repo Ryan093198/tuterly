@@ -1,0 +1,134 @@
+{
+  "year": 8,
+  "chapter": 3,
+  "slug": "fractions-decimals-and-percentages",
+  "title": "Fractions, decimals and percentages",
+  "short": "Fractions, decimals and percentages",
+  "appKey": "y8-ch3",
+  "summary": "Equivalent fractions, operations with fractions and decimals, recurring decimals and rounding, converting, percentage increase and decrease, profit and loss, and the unitary method.",
+  "cards": [
+    {
+      "title": "Equivalent fractions",
+      "sections": [
+        "3A"
+      ],
+      "rule": "Multiply or divide the top and bottom by the same number.",
+      "lines": [
+        "\\(\\tfrac23 = \\tfrac{8}{12}\\) &nbsp; \\(\\tfrac{18}{24} = \\tfrac34\\)"
+      ]
+    },
+    {
+      "title": "Operations with fractions",
+      "sections": [
+        "3B"
+      ],
+      "rule": "Add or subtract: common denominator first. Divide: flip the second fraction and multiply.",
+      "lines": [
+        "\\(\\tfrac23 + \\tfrac14 = \\tfrac{8}{12} + \\tfrac{3}{12} = \\tfrac{11}{12}\\)",
+        "\\(1\\tfrac12 \\times \\tfrac23 = \\tfrac32 \\times \\tfrac23 = 1\\) &nbsp; \\(\\tfrac34 \\div \\tfrac12 = \\tfrac32\\)"
+      ]
+    },
+    {
+      "title": "Negative fractions",
+      "sections": [
+        "3C"
+      ],
+      "rule": "The same sign rules as integers.",
+      "lines": [
+        "\\(-\\tfrac12 + \\tfrac13 = -\\tfrac36 + \\tfrac26 = -\\tfrac16\\)",
+        "\\(-\\tfrac23 \\times \\left(-\\tfrac34\\right) = \\tfrac12\\)"
+      ]
+    },
+    {
+      "title": "Understanding decimals",
+      "sections": [
+        "3D"
+      ],
+      "rule": "Compare place by place, starting from the left.",
+      "lines": [
+        "0.305 is 3 tenths and 5 thousandths",
+        "0.5 is bigger than 0.45: 5 tenths beats 4 tenths"
+      ],
+      "tip": "more digits doesn't mean bigger."
+    },
+    {
+      "title": "Operations with decimals",
+      "sections": [
+        "3E"
+      ],
+      "rule": "Line up the decimal points to add or subtract. To multiply, count the decimal places. To divide, make the divisor whole.",
+      "lines": [
+        "\\(2.75 + 1.4 = 4.15\\)",
+        "\\(0.3 \\times 0.2 = 0.06\\) (two decimal places)",
+        "\\(4.8 \\div 0.6 = 48 \\div 6 = 8\\)"
+      ]
+    },
+    {
+      "title": "Recurring decimals and rounding",
+      "sections": [
+        "3F"
+      ],
+      "rule": "Divide the top by the bottom. It either stops (terminating) or repeats (recurring).",
+      "lines": [
+        "\\(\\tfrac38 = 0.375\\) &nbsp; \\(\\tfrac13 = 0.\\dot{3}\\) &nbsp; \\(\\tfrac{2}{11} = 0.\\dot{1}\\dot{8}\\)",
+        "2.467 to 1 decimal place is **2.5**"
+      ]
+    },
+    {
+      "title": "Converting",
+      "sections": [
+        "3G"
+      ],
+      "rule": "Fraction to decimal: divide. Decimal to percentage: multiply by 100.",
+      "lines": [
+        "\\(\\tfrac35 = 0.6 = 60\\%\\)",
+        "\\(\\tfrac18 = 0.125 = 12.5\\%\\)",
+        "\\(7\\% = 0.07 = \\tfrac{7}{100}\\)"
+      ]
+    },
+    {
+      "title": "Finding percentages",
+      "sections": [
+        "3H"
+      ],
+      "rule": "Percentage of an amount: multiply. Express as a percentage: divide and multiply by 100.",
+      "lines": [
+        "25% of 80 is **20**",
+        "18 out of 40: \\(\\tfrac{18}{40} \\times 100\\% = 45\\%\\)"
+      ]
+    },
+    {
+      "title": "Increasing and decreasing",
+      "sections": [
+        "3I"
+      ],
+      "rule": "Use a multiplier: 100% plus the increase, or 100% minus the decrease.",
+      "lines": [
+        "Up 15%: \\(60 \\times 1.15 = 69\\)",
+        "Down 20%: \\(45 \\times 0.8 = 36\\)"
+      ]
+    },
+    {
+      "title": "Percentage change, profit and loss",
+      "sections": [
+        "3J"
+      ],
+      "rule": "% change \\(= \\dfrac{\\text{change}}{\\text{original}} \\times 100\\%\\)",
+      "lines": [
+        "Bought for $50, sold for $65: profit $15, \\(\\tfrac{15}{50} = 30\\%\\)"
+      ]
+    },
+    {
+      "title": "The unitary method",
+      "sections": [
+        "3K"
+      ],
+      "rule": "Find what 1% is worth, then multiply to get what you need.",
+      "lines": [
+        "15% of an amount is $60",
+        "1% is \\(60 \\div 15 = \\$4\\), so 100% is \\(\\$400\\)"
+      ],
+      "note": "Check: 15% of $400 is $60 ✓"
+    }
+  ]
+}

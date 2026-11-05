@@ -1,0 +1,129 @@
+{
+  "year": 8,
+  "chapter": 9,
+  "slug": "linear-relationships",
+  "title": "Linear relationships",
+  "short": "Linear relationships",
+  "appKey": "y8-ch9",
+  "summary": "The Cartesian plane, tables and rules, solving equations and inequalities with graphs, intercepts, gradient, y = mx + c, applications and non-linear graphs.",
+  "cards": [
+    {
+      "title": "The Cartesian plane",
+      "sections": [
+        "9A"
+      ],
+      "rule": "\\((x, y)\\): across first, then up or down. The origin is \\((0, 0)\\).",
+      "lines": [
+        "\\((-2, 3)\\) is 2 left and 3 up, in the second quadrant"
+      ]
+    },
+    {
+      "title": "Rules, tables and graphs",
+      "sections": [
+        "9B"
+      ],
+      "rule": "Use the rule to fill a table, plot the points and join them.",
+      "lines": [
+        "\\(y = 2x + 1\\): \\(x = 0, 1, 2\\) gives \\(y = 1, 3, 5\\)"
+      ]
+    },
+    {
+      "title": "Finding the rule",
+      "sections": [
+        "9C"
+      ],
+      "rule": "The step in \\(y\\) is the number in front of \\(x\\). The value at \\(x = 0\\) is the constant.",
+      "lines": [
+        "\\(x\\): 0, 1, 2, 3 and \\(y\\): 4, 7, 10, 13",
+        "Up 3 each time, starts at 4: \\(y = 3x + 4\\)"
+      ]
+    },
+    {
+      "title": "Solving equations with graphs",
+      "sections": [
+        "9D"
+      ],
+      "rule": "Read across from the value you want to the line, then down to the x-axis.",
+      "lines": [
+        "Solve \\(2x + 1 = 7\\) on \\(y = 2x + 1\\): at \\(y = 7\\), \\(x = 3\\)"
+      ]
+    },
+    {
+      "title": "Solving inequalities with graphs",
+      "sections": [
+        "9E"
+      ],
+      "rule": "Find the part of the line above or below the value you want.",
+      "lines": [
+        "\\(2x + 1 < 7\\): the line is below \\(y = 7\\) when \\(x < 3\\)"
+      ]
+    },
+    {
+      "title": "The x- and y-intercepts",
+      "sections": [
+        "9F"
+      ],
+      "rule": "x-intercept: put \\(y = 0\\). y-intercept: put \\(x = 0\\).",
+      "lines": [
+        "\\(2x + y = 6\\): x-intercept \\((3, 0)\\), y-intercept \\((0, 6)\\)"
+      ],
+      "fig": {
+        "type": "line",
+        "rising": false,
+        "xPoint": true,
+        "yPoint": true,
+        "xLabel": "(3, 0)",
+        "yLabel": "(0, 6)"
+      }
+    },
+    {
+      "title": "Gradient",
+      "sections": [
+        "9G"
+      ],
+      "rule": "Gradient \\(= \\dfrac{\\text{rise}}{\\text{run}}\\). Up to the right is positive, down is negative.",
+      "lines": [
+        "\\((1, 2)\\) to \\((3, 6)\\): \\(\\tfrac{4}{2} = 2\\)",
+        "Horizontal lines have a gradient of 0"
+      ]
+    },
+    {
+      "title": "Gradient–intercept form",
+      "sections": [
+        "9H"
+      ],
+      "rule": "\\(y = mx + c\\): \\(m\\) is the gradient, \\(c\\) is the y-intercept.",
+      "lines": [
+        "\\(y = 3x - 2\\): \\(m = 3,\\ c = -2\\)",
+        "\\(y = -x + 4\\): \\(m = -1,\\ c = 4\\)"
+      ]
+    },
+    {
+      "title": "Applications of straight lines",
+      "sections": [
+        "9I"
+      ],
+      "rule": "\\(c\\) is the starting value, \\(m\\) is the rate.",
+      "lines": [
+        "Taxi: $3 plus $2 per km: \\(C = 2d + 3\\)",
+        "5 km: \\(C = 2 \\times 5 + 3 = \\$13\\)"
+      ]
+    },
+    {
+      "title": "Non-linear graphs",
+      "sections": [
+        "9J"
+      ],
+      "rule": "Not every rule gives a straight line. \\(y = x^2\\) is a parabola.",
+      "lines": [
+        "\\(y = x^2\\): \\((-2, 4), (0, 0), (2, 4)\\)"
+      ],
+      "fig": {
+        "type": "parabola",
+        "up": true,
+        "turning": "(0, 0)",
+        "xAxisY": 73
+      }
+    }
+  ]
+}

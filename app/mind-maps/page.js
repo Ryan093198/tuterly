@@ -31,13 +31,13 @@ export default function MindMapsHub() {
         lead={`A free one-page mind map for every maths chapter: the rules in plain English, worked examples and the mistakes to watch out for. ${yearsText(LIVE_YEARS)} ${LIVE_YEARS.length > 1 ? "are" : "is"} out now; ${yearsText(MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)))} coming soon.`}
         panel={
           <DownloadPanel
-            downloads={[{ href: revisionBooklet(LIVE_YEARS[0]), label: `Download the Year ${LIVE_YEARS[0]} revision booklet (PDF)` }]}
-            placement="mind_maps_hub" year={LIVE_YEARS[0]}
-            title={`Get the free Year ${LIVE_YEARS[0]} revision booklet`} cta="Get the booklet"
-            text={`All ${mindMapsForYear(LIVE_YEARS[0]).length} Year ${LIVE_YEARS[0]} topics, one A4 page each. Free with your email.`}
+            downloads={LIVE_YEARS.map((y) => ({ href: revisionBooklet(y), label: `Download the Year ${y} booklet (PDF)` }))}
+            placement="mind_maps_hub"
+            title="Get the free revision booklets" cta="Get the booklets"
+            text={`Every topic for ${yearsText(LIVE_YEARS)}, one A4 page each. Free with your email.`}
           />
         }
-        previews={mindMapsForYear(LIVE_YEARS[0]).slice(3, 6).map((m) => mindMapFiles(m).preview)}
+        previews={LIVE_YEARS.slice(-3).map((y) => mindMapFiles(mindMapsForYear(y)[2]).preview)}
         previewAlt="Maths revision mind maps"
       />
       {LIVE_YEARS.map((y) => (
@@ -54,9 +54,11 @@ export default function MindMapsHub() {
                 </Link>
               ))}
             </div>
-            <p className="mm-soon" style={{ marginTop: 20 }}>
-              {`Years ${MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)).join(", ").replace(/, (\d+)$/, " and $1")} mind maps are coming soon.`}
-            </p>
+            {y === LIVE_YEARS[LIVE_YEARS.length - 1] && (
+              <p className="mm-soon" style={{ marginTop: 20 }}>
+                {`${yearsText(MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)))} mind maps coming soon.`}
+              </p>
+            )}
           </div>
         </section>
       ))}
