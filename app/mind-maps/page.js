@@ -7,6 +7,7 @@ import { LIVE_YEARS, MIND_MAP_YEARS, mindMapFiles, mindMapPath, mindMapsForYear,
 import { SITE_URL } from "@/lib/site";
 import "@/components/study/study-landing.css";
 import "@/components/mind-maps/mind-maps.css";
+import { GatedDownload } from "@/components/mind-maps/MindMapGate";
 
 const TITLE = "Free Maths Revision Mind Maps and Summary Sheets, Years 7 to 10 | Tuterly";
 const DESCRIPTION = "Free printable maths revision mind maps: every chapter summarised on one A4 page with rules, worked examples and common mistakes. Year 9 is out now; Years 7, 8 and 10 are coming soon.";
@@ -35,11 +36,11 @@ export default function MindMapsHub() {
         <section key={y} className="tb-section tb-section--card" aria-labelledby={`mm-y${y}`}>
           <div className="tb-wrap">
             <h2 id={`mm-y${y}`} className="tb-h2" style={{ marginBottom: 8 }}><Link href={revisionYearPath(y)}>Year {y} maths revision</Link></h2>
-            <p style={{ margin: "0 0 16px" }}><a href={revisionBooklet(y)} className="tb-link" download>Download all {mindMapsForYear(y).length} as one revision booklet (PDF)</a></p>
+            <p style={{ margin: "0 0 16px" }}><GatedDownload href={revisionBooklet(y)} className="tb-link" placement="mind_maps_hub_booklet" year={y}>Download all {mindMapsForYear(y).length} as one revision booklet (PDF)</GatedDownload></p>
             <div className="mm-chapters">
               {mindMapsForYear(y).map((m) => (
                 <Link key={m.slug} href={mindMapPath(m)} className="mm-chapter">
-                  <img src={mindMapFiles(m).png} alt={`Year ${y} ${m.title} mind map`} loading="lazy" width="1680" height="1188" />
+                  <img src={mindMapFiles(m).preview} alt={`Year ${y} ${m.title} mind map`} loading="lazy" width="1680" height="1188" />
                   <span className="mm-chapter__k">Chapter {m.chapter}</span>
                   <span className="mm-chapter__t">{m.short}</span>
                 </Link>

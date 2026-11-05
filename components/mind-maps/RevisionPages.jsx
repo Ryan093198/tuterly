@@ -4,6 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow } from "@/components/brand";
 import MindMapSheet from "@/components/mind-maps/MindMapSheet";
+import { GatedDownload, GatedSheet } from "@/components/mind-maps/MindMapGate";
 import {
   PRACTISE, mindMapFiles, mindMapPath, mindMapsForYear, revisionBooklet, revisionYearPath, rich,
 } from "@/lib/mind-maps";
@@ -39,11 +40,23 @@ function FaqJsonLd({ faqs }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
+// The full map needs an email: tell Google which part is gated, so showing
+// it in the HTML behind the blur isn't treated as cloaking.
+function PaywallJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    isAccessibleForFree: false,
+    hasPart: { "@type": "WebPageElement", isAccessibleForFree: false, cssSelector: ".mm-gated" },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export function revisionYearMetadata(y) {
   const title = `Year ${y} Maths Revision: Mind Maps for Every Topic (Free PDF) | Tuterly`;
   const description = `Free Year ${y} maths revision notes as one-page mind maps: a summary of every chapter with rules, worked examples and common mistakes. Download the full revision booklet PDF.`;
   const url = `${SITE_URL}${revisionYearPath(y)}`;
-  return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website", images: [mindMapFiles(mindMapsForYear(y)[0]).png] } };
+  return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website", images: [mindMapFiles(mindMapsForYear(y)[0]).preview] } };
 }
 
 export function RevisionYearPage({ year: y }) {
@@ -64,7 +77,7 @@ export function RevisionYearPage({ year: y }) {
             Free revision mind maps for every Year {y} maths chapter. Each one is a one-page summary with a plain-English rule, worked examples and the mistakes to watch out for. Print them, stick them on the wall, or save them as PDFs.
           </p>
           <div className="mm-actions" style={{ marginTop: 18 }}>
-            <a href={revisionBooklet(y)} className="tb-btn tb-btn--primary" download>Download the revision booklet (PDF)</a>
+            <GatedDownload href={revisionBooklet(y)} className="tb-btn tb-btn--primary" placement={`revision_y${y}_booklet`} year={y}>Download the revision booklet (PDF)</GatedDownload>
             <span className="tb-muted" style={{ alignSelf: "center", fontSize: 14 }}>All {maps.length} topics, one A4 page each</span>
           </div>
         </div>
@@ -76,7 +89,7 @@ export function RevisionYearPage({ year: y }) {
           <div className="mm-chapters">
             {maps.map((m) => (
               <Link key={m.slug} href={mindMapPath(m)} className="mm-chapter">
-                <img src={mindMapFiles(m).png} alt={`Year ${y} ${m.short} revision mind map`} loading="lazy" width="1680" height="1188" />
+                <img src={mindMapFiles(m).preview} alt={`Year ${y} ${m.short} revision mind map`} loading="lazy" width="1680" height="1188" />
                 <span className="mm-chapter__k">Chapter {m.chapter}</span>
                 <span className="mm-chapter__t">{m.short}</span>
               </Link>
@@ -122,7 +135,7 @@ export function revisionChapterMetadata(m) {
   const title = `Year ${m.year} ${m.short} Revision: Mind Map and Summary (Free PDF) | Tuterly`;
   const description = `Year ${m.year} ${m.short.toLowerCase()} on one page: ${m.summary} Free printable summary sheet and PDF.`;
   const url = `${SITE_URL}${mindMapPath(m)}`;
-  return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [mindMapFiles(m).png] } };
+  return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [mindMapFiles(m).preview] } };
 }
 
 export function RevisionChapterPage({ map: m }) {
@@ -146,11 +159,14 @@ export function RevisionChapterPage({ map: m }) {
               <p className="tb-lead" style={{ maxWidth: 720, marginTop: 6 }}>{m.summary} Everything on one page, free to print or save as a PDF.</p>
             </div>
             <div className="mm-actions">
-              <a href={files.pdf} className="tb-btn tb-btn--primary" download>Download the A4 PDF</a>
-              <a href={files.png} className="tb-btn tb-btn--secondary" download>Save as an image</a>
+              <GatedDownload href={files.pdf} className="tb-btn tb-btn--primary" placement="revision_chapter_pdf" year={m.year}>Download the A4 PDF</GatedDownload>
+              <GatedDownload href={files.png} className="tb-btn tb-btn--secondary" placement="revision_chapter_png" year={m.year}>Save as an image</GatedDownload>
             </div>
           </div>
-          <MindMapSheet map={m} />
+          <PaywallJsonLd />
+          <GatedSheet placement="revision_chapter" year={m.year}>
+            <MindMapSheet map={m} />
+          </GatedSheet>
 
           <div className="mm-below">
             <section aria-labelledby="rv-in">

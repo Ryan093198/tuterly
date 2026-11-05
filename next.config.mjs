@@ -17,6 +17,8 @@ const nextConfig = {
     "/dashboard/**": ["./public/fonts/*.ttf"],
     // The practice exam generator reads the topic pages' checked questions.
     "/api/exam/**": ["./content/worked-examples/*.json"],
+    // Mind map PDFs and images, served only after an email unlock.
+    "/api/mind-maps/file/**": ["./mind-maps-files/**"],
     // Topic tests written ahead of time (lib/topic-test.js).
     "/api/topic-test/**": ["./content/topic-tests/**/*.json"],
     "/api/cron/**": ["./content/topic-tests/**/*.json"],
