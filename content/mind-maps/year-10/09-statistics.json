@@ -1,0 +1,129 @@
+{
+  "year": 10,
+  "chapter": 9,
+  "slug": "statistics",
+  "title": "Statistics",
+  "short": "Statistics",
+  "appKey": "y10-ch9",
+  "summary": "Sampling, data displays and their shape, two-way tables, summary statistics, box plots and outliers, standard deviation, percentiles, time series and scatter plots.",
+  "cards": [
+    {
+      "title": "Collecting representative data",
+      "sections": [
+        "9A"
+      ],
+      "rule": "A sample should represent the whole population. Random samples avoid bias.",
+      "lines": [
+        "Census: everyone. Sample: some",
+        "Random, systematic or stratified sampling"
+      ]
+    },
+    {
+      "title": "Data displays",
+      "sections": [
+        "9B"
+      ],
+      "rule": "Histograms for numerical data, column graphs for categories.",
+      "lines": [
+        "Shape: symmetric, positively skewed (tail to the right), negatively skewed, bimodal"
+      ]
+    },
+    {
+      "title": "Two-way tables",
+      "sections": [
+        "9C"
+      ],
+      "rule": "Count by two categories, then use the row and column totals.",
+      "lines": [
+        "25 of 40 students play sport; 15 of those are in Year 10",
+        "\\(\\tfrac{15}{25} = 60\\%\\) of the sport players are in Year 10"
+      ]
+    },
+    {
+      "title": "Summary statistics",
+      "sections": [
+        "9D"
+      ],
+      "rule": "Centre: mean and median. Spread: range and IQR.",
+      "lines": [
+        "4, 6, 7, 9, 14: mean \\(\\tfrac{40}{5} = 8\\), median 7"
+      ],
+      "note": "An outlier pulls the mean, not the median."
+    },
+    {
+      "title": "Box plots and outliers",
+      "sections": [
+        "9E"
+      ],
+      "rule": "Outlier: below \\(Q_1 - 1.5 \\times \\text{IQR}\\) or above \\(Q_3 + 1.5 \\times \\text{IQR}\\).",
+      "lines": [
+        "\\(Q_1 = 10,\\ Q_3 = 18\\): IQR 8, upper fence \\(18 + 12 = 30\\), so 34 is an outlier"
+      ],
+      "fig": {
+        "type": "boxplot",
+        "five": [
+          4,
+          10,
+          14,
+          18,
+          26
+        ],
+        "alt": "Box plot: min 4, Q1 10, median 14, Q3 18, max 26"
+      }
+    },
+    {
+      "title": "Standard deviation",
+      "sections": [
+        "9F"
+      ],
+      "rule": "Standard deviation \\(\\sigma\\) measures spread around the mean. Small \\(\\sigma\\): data close to the mean.",
+      "lines": [
+        "Bell-shaped data: about 68% within \\(1\\sigma\\), 95% within \\(2\\sigma\\)",
+        "Mean 70, \\(\\sigma = 5\\): about 95% between 60 and 80"
+      ]
+    },
+    {
+      "title": "Cumulative frequency and percentiles",
+      "sections": [
+        "9G"
+      ],
+      "rule": "Cumulative frequency is a running total. Read percentiles off the graph (ogive).",
+      "lines": [
+        "Median = 50th percentile, Q₁ = 25th, Q₃ = 75th",
+        "40 values: the median is halfway between the 20th and 21st"
+      ]
+    },
+    {
+      "title": "Time-series data",
+      "sections": [
+        "9H"
+      ],
+      "rule": "Data collected over time, with time on the x-axis.",
+      "lines": [
+        "Look for the trend (up or down) and any seasonal pattern"
+      ]
+    },
+    {
+      "title": "Bivariate data and scatter plots",
+      "sections": [
+        "9I"
+      ],
+      "rule": "Two numerical variables: explanatory on the x-axis, response on the y-axis.",
+      "lines": [
+        "Describe the direction (positive or negative), strength and form (linear or not)"
+      ],
+      "tip": "correlation doesn't prove that one causes the other."
+    },
+    {
+      "title": "Line of best fit",
+      "sections": [
+        "9J"
+      ],
+      "rule": "Draw it by eye with about the same number of points on each side.",
+      "lines": [
+        "\\(y = 2.5x + 10\\) at \\(x = 8\\): \\(y = 30\\)",
+        "Predicting inside the data (interpolation) is more reliable than outside it"
+      ]
+    }
+  ]
+}

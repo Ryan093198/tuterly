@@ -1,0 +1,141 @@
+{
+  "year": 10,
+  "chapter": 3,
+  "slug": "indices-exponentials-and-logarithms",
+  "title": "Indices, exponentials and logarithms",
+  "short": "Indices, exponentials and logarithms",
+  "appKey": "y10-ch3",
+  "summary": "Index laws, negative and fractional indices, scientific notation, exponential equations, graphs, growth and decay, compound interest and logarithms.",
+  "cards": [
+    {
+      "title": "Review of index laws",
+      "sections": [
+        "3A"
+      ],
+      "rule": "\\(a^m a^n = a^{m+n}\\), \\(a^m \\div a^n = a^{m-n}\\), \\((a^m)^n = a^{mn}\\), \\(a^0 = 1\\)",
+      "lines": [
+        "\\((2x^3)^2 \\times x = 4x^6 \\times x = 4x^7\\)"
+      ]
+    },
+    {
+      "title": "Negative indices",
+      "sections": [
+        "3B"
+      ],
+      "rule": "\\(a^{-n} = \\dfrac{1}{a^n}\\)",
+      "lines": [
+        "\\(3^{-2} = \\tfrac19\\) &nbsp; \\(2x^{-3} = \\tfrac{2}{x^3}\\)",
+        "\\(\\left(\\tfrac23\\right)^{-2} = \\tfrac94\\)"
+      ],
+      "tip": "only the \\(x\\) is to the power \\(-3\\) in \\(2x^{-3}\\)."
+    },
+    {
+      "title": "Scientific notation",
+      "sections": [
+        "3C"
+      ],
+      "rule": "\\(a \\times 10^n\\) with \\(1 \\le a < 10\\).",
+      "lines": [
+        "\\(0.000\\,52 = 5.2 \\times 10^{-4}\\)",
+        "\\((3 \\times 10^5)(4 \\times 10^{-2}) = 12 \\times 10^3 = 1.2 \\times 10^4\\)"
+      ]
+    },
+    {
+      "title": "Fractional indices",
+      "sections": [
+        "3D"
+      ],
+      "rule": "\\(a^{\\frac1n} = \\sqrt[n]{a}\\) and \\(a^{\\frac mn} = \\left(\\sqrt[n]{a}\\right)^m\\)",
+      "lines": [
+        "\\(27^{\\frac23} = 3^2 = 9\\) &nbsp; \\(16^{-\\frac12} = \\tfrac14\\)"
+      ]
+    },
+    {
+      "title": "Exponential equations",
+      "sections": [
+        "3E"
+      ],
+      "rule": "Write both sides with the same base, then equate the indices.",
+      "lines": [
+        "\\(2^x = 32 = 2^5 \\Rightarrow x = 5\\)",
+        "\\(9^x = 27 \\Rightarrow 3^{2x} = 3^3 \\Rightarrow x = \\tfrac32\\)"
+      ]
+    },
+    {
+      "title": "Exponential graphs",
+      "sections": [
+        "3F"
+      ],
+      "rule": "\\(y = a^x\\) (\\(a > 1\\)) passes through \\((0, 1)\\) and gets close to \\(y = 0\\) but never reaches it.",
+      "lines": [
+        "\\(y = 2^x\\): \\((0, 1), (1, 2), (2, 4)\\)",
+        "\\(y = 2^{-x}\\) is its reflection in the y-axis"
+      ]
+    },
+    {
+      "title": "Exponential growth and decay",
+      "sections": [
+        "3G"
+      ],
+      "rule": "Growth: \\(A = A_0(1 + r)^n\\). Decay: \\(A = A_0(1 - r)^n\\).",
+      "lines": [
+        "2000 people growing 5% a year: \\(2000 \\times 1.05^3 \\approx 2315\\) after 3 years",
+        "Decay 10% a year: multiply by 0.9 each year"
+      ]
+    },
+    {
+      "title": "Compound interest",
+      "sections": [
+        "3H"
+      ],
+      "rule": "\\(A = P\\left(1 + \\tfrac{r}{k}\\right)^{nk}\\): \\(k\\) payments a year for \\(n\\) years.",
+      "lines": [
+        "$5000 at 6% p.a. compounded monthly for 2 years: \\(5000 \\times 1.005^{24} \\approx \\$5635.80\\)"
+      ],
+      "tip": "divide the yearly rate by 12 for monthly."
+    },
+    {
+      "title": "Introducing logarithms",
+      "sections": [
+        "3I"
+      ],
+      "rule": "\\(\\log_a b = x\\) means \\(a^x = b\\).",
+      "lines": [
+        "\\(\\log_2 8 = 3\\) &nbsp; \\(\\log_{10} 1000 = 3\\) &nbsp; \\(\\log_3 \\tfrac19 = -2\\)"
+      ]
+    },
+    {
+      "title": "Logarithmic scales",
+      "sections": [
+        "3J"
+      ],
+      "rule": "Each step up the scale is 10 times bigger.",
+      "lines": [
+        "A magnitude 6 earthquake has 10 times the amplitude of a magnitude 5",
+        "pH 3 is 10 times more acidic than pH 4"
+      ]
+    },
+    {
+      "title": "Laws of logarithms",
+      "sections": [
+        "3K"
+      ],
+      "rule": "\\(\\log xy = \\log x + \\log y\\), \\(\\log \\tfrac xy = \\log x - \\log y\\), \\(\\log x^n = n \\log x\\)",
+      "lines": [
+        "\\(\\log_2 12 - \\log_2 3 = \\log_2 4 = 2\\)",
+        "\\(\\log_a 1 = 0\\) &nbsp; \\(\\log_a a = 1\\)"
+      ]
+    },
+    {
+      "title": "Solving with logarithms",
+      "sections": [
+        "3L"
+      ],
+      "rule": "Take logs of both sides when you can't match the bases.",
+      "lines": [
+        "\\(3^x = 20 \\Rightarrow x = \\dfrac{\\log 20}{\\log 3} \\approx 2.73\\)"
+      ],
+      "note": "Check: \\(3^{2.73} \\approx 20\\) ✓"
+    }
+  ]
+}

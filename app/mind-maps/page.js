@@ -10,7 +10,9 @@ import { DownloadPanel, GatedDownload } from "@/components/mind-maps/MindMapGate
 import RevisionHero from "@/components/mind-maps/RevisionHero";
 
 const TITLE = "Free Maths Revision Mind Maps and Summary Sheets, Years 7 to 10 | Tuterly";
-const DESCRIPTION = "Free printable maths revision mind maps: every chapter summarised on one A4 page with rules, worked examples and common mistakes. Year 9 is out now; Years 7, 8 and 10 are coming soon.";
+// "Years 9 and 10" / "Year 9".
+const yearsText = (ys) => (ys.length === 1 ? `Year ${ys[0]}` : `Years ${ys.slice(0, -1).join(", ")} and ${ys[ys.length - 1]}`);
+const DESCRIPTION = `Free printable maths revision mind maps: every chapter summarised on one A4 page with rules, worked examples and common mistakes. ${yearsText(LIVE_YEARS)} out now.`;
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -26,7 +28,7 @@ export default function MindMapsHub() {
       <RevisionHero
         eyebrow="Free maths revision mind maps"
         title={<>Every chapter on <span className="sl-accent">one page</span>.</>}
-        lead="A free one-page mind map for every maths chapter: the rules in plain English, worked examples and the mistakes to watch out for. Year 9 is out now; Years 7, 8 and 10 are coming soon."
+        lead={`A free one-page mind map for every maths chapter: the rules in plain English, worked examples and the mistakes to watch out for. ${yearsText(LIVE_YEARS)} ${LIVE_YEARS.length > 1 ? "are" : "is"} out now; ${yearsText(MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)))} coming soon.`}
         panel={
           <DownloadPanel
             downloads={[{ href: revisionBooklet(LIVE_YEARS[0]), label: `Download the Year ${LIVE_YEARS[0]} revision booklet (PDF)` }]}

@@ -1,0 +1,137 @@
+{
+  "year": 10,
+  "chapter": 6,
+  "slug": "trigonometry",
+  "title": "Trigonometry",
+  "short": "Trigonometry",
+  "appKey": "y10-ch6",
+  "summary": "Trig ratios, unknown angles, 2D and 3D problems, bearings, the sine and cosine rules, area of a triangle, the unit circle, trig graphs and exact values.",
+  "cards": [
+    {
+      "title": "Trigonometric ratios",
+      "sections": [
+        "6A"
+      ],
+      "rule": "SOH CAH TOA.",
+      "lines": [
+        "Hypotenuse 12, angle 50°: opposite \\(= 12\\sin 50^\\circ \\approx 9.19\\)"
+      ],
+      "fig": {
+        "type": "right-triangle",
+        "angle": "θ",
+        "labels": {
+          "base": "adjacent",
+          "height": "opposite",
+          "hyp": "hypotenuse"
+        }
+      }
+    },
+    {
+      "title": "Finding unknown angles",
+      "sections": [
+        "6B"
+      ],
+      "rule": "Use the inverse buttons: \\(\\sin^{-1}\\), \\(\\cos^{-1}\\), \\(\\tan^{-1}\\).",
+      "lines": [
+        "\\(\\cos\\theta = \\tfrac58 \\Rightarrow \\theta = \\cos^{-1}(0.625) \\approx 51.3^\\circ\\)"
+      ]
+    },
+    {
+      "title": "Applications in 2D",
+      "sections": [
+        "6C"
+      ],
+      "rule": "Elevation and depression are measured from the horizontal.",
+      "lines": [
+        "From a 40 m cliff, the angle of depression to a boat is 25°",
+        "Distance \\(= \\dfrac{40}{\\tan 25^\\circ} \\approx 85.8\\) m"
+      ]
+    },
+    {
+      "title": "Directions and bearings",
+      "sections": [
+        "6D"
+      ],
+      "rule": "True bearings: clockwise from north, three digits. Back bearing: add or subtract 180°.",
+      "lines": [
+        "N30°E = 030°T &nbsp; S40°W = 220°T",
+        "Back bearing of 060°T is **240°T**"
+      ]
+    },
+    {
+      "title": "Applications in 3D",
+      "sections": [
+        "6E"
+      ],
+      "rule": "Find the right triangle in the plane you need, often using Pythagoras first.",
+      "lines": [
+        "Box 3 by 4 by 12: base diagonal 5",
+        "Angle with the base: \\(\\tan\\theta = \\tfrac{12}{5} \\Rightarrow \\theta \\approx 67.4^\\circ\\)"
+      ]
+    },
+    {
+      "title": "The sine rule",
+      "sections": [
+        "6F"
+      ],
+      "rule": "\\(\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}\\): use it with a side and its opposite angle.",
+      "lines": [
+        "\\(A = 40^\\circ,\\ B = 65^\\circ,\\ a = 10\\): \\(b = \\dfrac{10\\sin 65^\\circ}{\\sin 40^\\circ} \\approx 14.1\\)"
+      ],
+      "tip": "finding an angle can give two answers (the ambiguous case)."
+    },
+    {
+      "title": "The cosine rule",
+      "sections": [
+        "6G"
+      ],
+      "rule": "\\(c^2 = a^2 + b^2 - 2ab\\cos C\\): use it with two sides and the angle between, or three sides.",
+      "lines": [
+        "\\(a = 7,\\ b = 9,\\ C = 60^\\circ\\): \\(c^2 = 49 + 81 - 63 = 67\\), so \\(c \\approx 8.19\\)"
+      ]
+    },
+    {
+      "title": "Area of a triangle",
+      "sections": [
+        "6H"
+      ],
+      "rule": "\\(A = \\tfrac12 ab\\sin C\\), with \\(C\\) between sides \\(a\\) and \\(b\\).",
+      "lines": [
+        "\\(a = 7,\\ b = 9,\\ C = 60^\\circ\\): \\(A = \\tfrac12 \\times 63 \\times \\sin 60^\\circ \\approx 27.3\\)"
+      ]
+    },
+    {
+      "title": "The unit circle",
+      "sections": [
+        "6I"
+      ],
+      "rule": "A point on the unit circle is \\((\\cos\\theta, \\sin\\theta)\\).",
+      "lines": [
+        "\\(\\sin(180^\\circ - \\theta) = \\sin\\theta\\) &nbsp; \\(\\cos(180^\\circ - \\theta) = -\\cos\\theta\\)",
+        "\\(\\sin 150^\\circ = \\tfrac12\\) &nbsp; \\(\\cos 120^\\circ = -\\tfrac12\\)"
+      ]
+    },
+    {
+      "title": "Graphs of trig functions",
+      "sections": [
+        "6J"
+      ],
+      "rule": "\\(y = \\sin x\\) and \\(y = \\cos x\\): period 360°, between −1 and 1.",
+      "lines": [
+        "\\(\\sin x\\) starts at 0, \\(\\cos x\\) starts at 1",
+        "\\(y = \\tan x\\): period 180°, asymptotes at 90° and 270°"
+      ]
+    },
+    {
+      "title": "Exact values and trig equations",
+      "sections": [
+        "6K"
+      ],
+      "rule": "\\(\\sin 30^\\circ = \\tfrac12\\), \\(\\cos 45^\\circ = \\tfrac{\\sqrt2}{2}\\), \\(\\tan 60^\\circ = \\sqrt3\\)",
+      "lines": [
+        "Solve \\(\\sin x = \\tfrac12\\) for \\(0^\\circ \\le x \\le 360^\\circ\\): \\(x = 30^\\circ\\) or \\(150^\\circ\\)"
+      ],
+      "tip": "check every quadrant where the ratio has the right sign."
+    }
+  ]
+}

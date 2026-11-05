@@ -19,7 +19,7 @@ const GROUPS = [
       { href: "/maths-exam-preparation", label: "Exam preparation" },
       { href: "/naplan", label: "NAPLAN practice tests" },
       { href: "/formula-sheets", label: "Formula sheets" },
-      { href: "/year-9-maths-revision", label: "Year 9 revision mind maps" },
+      { href: "/mind-maps", label: "Revision mind maps (Years 9 and 10)" },
       { href: "/exam-generator", label: "Practice exam generator" },
       { href: "/years", label: "Maths by year (7 to 10)" },
       { href: "/scholarship", label: "Scholarship guides" },

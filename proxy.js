@@ -35,6 +35,7 @@ const MARKETING_PATH_PREFIXES = [
   "/formula-sheets",
   "/mind-maps",
   "/year-9-maths-revision",
+  "/year-10-maths-revision",
   "/exam-generator",
   "/results",
   "/start",

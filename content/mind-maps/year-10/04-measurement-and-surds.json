@@ -1,0 +1,138 @@
+{
+  "year": 10,
+  "chapter": 4,
+  "slug": "measurement-and-surds",
+  "title": "Measurement and surds",
+  "short": "Measurement and surds",
+  "appKey": "y10-ch4",
+  "summary": "Surds and rationalising the denominator, length, Pythagoras in 3D, area, measurement error, and surface area and volume of prisms, cylinders, pyramids, cones and spheres.",
+  "cards": [
+    {
+      "title": "Irrational numbers and surds",
+      "sections": [
+        "4A"
+      ],
+      "rule": "A surd is a root that isn't a whole number, like \\(\\sqrt2\\). Simplify using square factors.",
+      "lines": [
+        "\\(\\sqrt8 = 2\\sqrt2\\) &nbsp; \\(\\sqrt{48} = \\sqrt{16}\\sqrt3 = 4\\sqrt3\\)"
+      ]
+    },
+    {
+      "title": "Operations with surds",
+      "sections": [
+        "4B",
+        "4C"
+      ],
+      "rule": "Add and subtract like surds only. Multiply or divide the numbers outside and inside separately.",
+      "lines": [
+        "\\(\\sqrt{12} + \\sqrt{27} = 2\\sqrt3 + 3\\sqrt3 = 5\\sqrt3\\)",
+        "\\(\\sqrt6 \\times \\sqrt3 = \\sqrt{18} = 3\\sqrt2\\) &nbsp; \\(6\\sqrt{10} \\div 2\\sqrt5 = 3\\sqrt2\\)"
+      ]
+    },
+    {
+      "title": "Rationalising the denominator",
+      "sections": [
+        "4D"
+      ],
+      "rule": "Multiply top and bottom so there's no surd on the bottom.",
+      "lines": [
+        "\\(\\dfrac{3}{\\sqrt2} = \\dfrac{3\\sqrt2}{2}\\)",
+        "\\(\\dfrac{1}{\\sqrt3 + 1} \\times \\dfrac{\\sqrt3 - 1}{\\sqrt3 - 1} = \\dfrac{\\sqrt3 - 1}{2}\\)"
+      ]
+    },
+    {
+      "title": "Review of length",
+      "sections": [
+        "4E"
+      ],
+      "rule": "Circumference \\(2\\pi r\\). Arc length \\(\\tfrac{\\theta}{360} \\times 2\\pi r\\).",
+      "lines": [
+        "\\(r = 10,\\ \\theta = 72^\\circ\\): arc \\(\\tfrac15 \\times 20\\pi = 4\\pi \\approx 12.57\\)"
+      ]
+    },
+    {
+      "title": "Pythagoras in 3D",
+      "sections": [
+        "4F"
+      ],
+      "rule": "Find a right triangle, or use \\(d = \\sqrt{a^2 + b^2 + c^2}\\) for a box.",
+      "lines": [
+        "Box 2 by 3 by 6: \\(\\sqrt{4 + 9 + 36} = 7\\)"
+      ]
+    },
+    {
+      "title": "Review of area",
+      "sections": [
+        "4G"
+      ],
+      "rule": "Triangle \\(\\tfrac12 bh\\), trapezium \\(\\tfrac12(a + b)h\\), circle \\(\\pi r^2\\), sector \\(\\tfrac{\\theta}{360}\\pi r^2\\)",
+      "lines": [
+        "Sector \\(r = 6,\\ \\theta = 60^\\circ\\): \\(\\tfrac16 \\times 36\\pi = 6\\pi \\approx 18.85\\)"
+      ]
+    },
+    {
+      "title": "Measurement errors and accuracy",
+      "sections": [
+        "4H"
+      ],
+      "rule": "The error is up to half the smallest unit. Percentage error = error ÷ measurement × 100%.",
+      "lines": [
+        "4.2 m to the nearest 0.1 m: between 4.15 m and 4.25 m",
+        "Percentage error \\(\\tfrac{0.05}{4.2} \\times 100\\% \\approx 1.2\\%\\)"
+      ]
+    },
+    {
+      "title": "Surface area: prisms and cylinders",
+      "sections": [
+        "4I"
+      ],
+      "rule": "Add every face. Cylinder: \\(2\\pi r^2 + 2\\pi rh\\).",
+      "lines": [
+        "Cylinder \\(r = 4,\\ h = 10\\): \\(32\\pi + 80\\pi = 112\\pi \\approx 351.9\\)"
+      ]
+    },
+    {
+      "title": "Surface area: pyramids and cones",
+      "sections": [
+        "4J"
+      ],
+      "rule": "Cone: \\(\\pi r^2 + \\pi r s\\), where \\(s\\) is the slant height.",
+      "lines": [
+        "\\(r = 3,\\ h = 4\\): \\(s = 5\\), so \\(SA = 9\\pi + 15\\pi = 24\\pi \\approx 75.4\\)"
+      ],
+      "tip": "use the slant height, not the vertical height."
+    },
+    {
+      "title": "Volume: prisms and cylinders",
+      "sections": [
+        "4K"
+      ],
+      "rule": "\\(V = Ah\\). Cylinder: \\(V = \\pi r^2 h\\).",
+      "lines": [
+        "\\(r = 5,\\ h = 8\\): \\(V = 200\\pi \\approx 628.3\\)"
+      ]
+    },
+    {
+      "title": "Volume: pyramids and cones",
+      "sections": [
+        "4L"
+      ],
+      "rule": "\\(V = \\tfrac13 Ah\\): a third of the matching prism.",
+      "lines": [
+        "Cone \\(r = 3,\\ h = 4\\): \\(\\tfrac13 \\times 9\\pi \\times 4 = 12\\pi \\approx 37.7\\)",
+        "Square pyramid, base 6, height 10: \\(\\tfrac13 \\times 36 \\times 10 = 120\\)"
+      ]
+    },
+    {
+      "title": "Spheres",
+      "sections": [
+        "4M"
+      ],
+      "rule": "\\(SA = 4\\pi r^2\\) and \\(V = \\tfrac43 \\pi r^3\\)",
+      "lines": [
+        "\\(r = 6\\): \\(SA = 144\\pi \\approx 452.4\\)",
+        "\\(V = \\tfrac43\\pi(216) = 288\\pi \\approx 904.8\\)"
+      ]
+    }
+  ]
+}

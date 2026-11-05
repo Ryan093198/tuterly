@@ -1,0 +1,126 @@
+{
+  "year": 10,
+  "chapter": 7,
+  "slug": "parabolas-and-rates-of-change",
+  "title": "Parabolas and rates of change",
+  "short": "Parabolas and rates of change",
+  "appKey": "y10-ch7",
+  "summary": "Sketching parabolas by transformations, factorising, completing the square and the discriminant, line–parabola intersections, rates of change, and direct and inverse variation.",
+  "cards": [
+    {
+      "title": "Exploring parabolas",
+      "sections": [
+        "7A"
+      ],
+      "rule": "\\(y = ax^2 + bx + c\\): axis of symmetry \\(x = -\\tfrac{b}{2a}\\), y-intercept \\(c\\).",
+      "lines": [
+        "\\(y = x^2 - 4x + 1\\): axis \\(x = 2\\), turning point \\((2, -3)\\)"
+      ],
+      "fig": {
+        "type": "parabola",
+        "up": true,
+        "turning": "(2, −3)",
+        "yAxisX": 66,
+        "axis": true
+      }
+    },
+    {
+      "title": "Sketching with transformations",
+      "sections": [
+        "7B"
+      ],
+      "rule": "\\(y = a(x - h)^2 + k\\) has turning point \\((h, k)\\).",
+      "lines": [
+        "\\(y = -2(x + 1)^2 + 3\\): upside down, narrower, turning point \\((-1, 3)\\)"
+      ]
+    },
+    {
+      "title": "Sketching using factorisation",
+      "sections": [
+        "7C"
+      ],
+      "rule": "Factorise for the x-intercepts. The turning point is halfway between them.",
+      "lines": [
+        "\\(y = x^2 - 2x - 8 = (x - 4)(x + 2)\\)",
+        "x-intercepts −2 and 4, axis \\(x = 1\\), turning point \\((1, -9)\\)"
+      ]
+    },
+    {
+      "title": "Sketching by completing the square",
+      "sections": [
+        "7D"
+      ],
+      "rule": "Complete the square to read off the turning point.",
+      "lines": [
+        "\\(y = x^2 + 6x + 5 = (x + 3)^2 - 4\\)",
+        "Turning point \\((-3, -4)\\)"
+      ]
+    },
+    {
+      "title": "The quadratic formula and discriminant",
+      "sections": [
+        "7E"
+      ],
+      "rule": "\\(\\Delta = b^2 - 4ac\\) tells you how many x-intercepts.",
+      "lines": [
+        "\\(\\Delta > 0\\): two. \\(\\Delta = 0\\): touches once. \\(\\Delta < 0\\): none",
+        "\\(y = x^2 + 2x + 5\\): \\(\\Delta = 4 - 20 < 0\\), no x-intercepts"
+      ]
+    },
+    {
+      "title": "Applications of parabolas",
+      "sections": [
+        "7F"
+      ],
+      "rule": "The maximum or minimum is at the turning point.",
+      "lines": [
+        "\\(h = -5t^2 + 20t + 1\\): \\(t = 2\\), max height \\(21\\) m",
+        "40 m of fence: \\(A = x(20 - x)\\), biggest at \\(x = 10\\): \\(100\\) m²"
+      ]
+    },
+    {
+      "title": "Lines and parabolas",
+      "sections": [
+        "7G"
+      ],
+      "rule": "Set the equations equal and solve. The discriminant tells you how many points they share.",
+      "lines": [
+        "\\(y = x^2\\) and \\(y = x + 2\\): \\(x^2 - x - 2 = 0\\)",
+        "\\(x = 2\\) or \\(-1\\): points \\((2, 4)\\) and \\((-1, 1)\\)"
+      ]
+    },
+    {
+      "title": "Rates of change",
+      "sections": [
+        "7H"
+      ],
+      "rule": "Rate \\(= \\dfrac{\\text{change in } y}{\\text{change in } x}\\), in units per unit.",
+      "lines": [
+        "300 km in 4 hours: **75 km/h**",
+        "The gradient of a distance–time graph is the speed"
+      ]
+    },
+    {
+      "title": "Average and instantaneous rates",
+      "sections": [
+        "7I"
+      ],
+      "rule": "Average: gradient of the chord between two points. Instantaneous: gradient of the tangent at one point.",
+      "lines": [
+        "\\(y = x^2\\) from \\(x = 1\\) to \\(3\\): \\(\\tfrac{9 - 1}{3 - 1} = 4\\)",
+        "At \\(x = 2\\), using \\(x = 2.01\\): \\(\\tfrac{4.0401 - 4}{0.01} = 4.01 \\approx 4\\)"
+      ]
+    },
+    {
+      "title": "Direct and inverse variation",
+      "sections": [
+        "7J"
+      ],
+      "rule": "Direct: \\(y = kx\\). Inverse: \\(y = \\tfrac kx\\). Find \\(k\\) first.",
+      "lines": [
+        "\\(y \\propto x\\), \\(y = 12\\) when \\(x = 3\\): \\(k = 4\\), so at \\(x = 5\\), \\(y = 20\\)",
+        "\\(y \\propto \\tfrac1x\\), \\(y = 6\\) when \\(x = 2\\): \\(k = 12\\), so at \\(x = 4\\), \\(y = 3\\)"
+      ]
+    }
+  ]
+}

@@ -267,6 +267,7 @@ const LEARN = [
 ];
 
 const MORE = [
+  { href: "/year-10-maths-revision", label: "Year 10 maths revision mind maps", note: "(every topic on one page, free PDF)" },
   { href: "/worksheets", label: "Free maths worksheets, Years 7 to 10" },
   { href: "/formula-sheets/year-10-maths", label: "Year 10 maths formula sheet" },
   { href: "/formula-sheets/year-10a-maths", label: "Year 10A maths formula sheet" },

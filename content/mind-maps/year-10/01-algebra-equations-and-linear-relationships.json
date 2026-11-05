@@ -1,0 +1,144 @@
+{
+  "year": 10,
+  "chapter": 1,
+  "slug": "algebra-equations-and-linear-relationships",
+  "title": "Algebra, equations and linear relationships",
+  "short": "Algebra, equations and linear relationships",
+  "appKey": "Y10-ch1",
+  "summary": "Algebra review, linear equations and inequalities, algebraic fractions, straight-line graphs, simultaneous equations and regions on the Cartesian plane.",
+  "cards": [
+    {
+      "title": "Review of algebra",
+      "sections": [
+        "1A"
+      ],
+      "rule": "Collect like terms; expand by multiplying every term; factorise by taking out the HCF.",
+      "lines": [
+        "\\(5a - 2b + 3a = 8a - 2b\\)",
+        "\\(3x(2 - x) = 6x - 3x^2\\)",
+        "\\(6ab - 9a = 3a(2b - 3)\\)"
+      ]
+    },
+    {
+      "title": "Solving linear equations",
+      "sections": [
+        "1B"
+      ],
+      "rule": "Undo each operation in reverse order, doing the same to both sides.",
+      "lines": [
+        "\\(\\tfrac{2x + 1}{3} = 5 \\Rightarrow 2x + 1 = 15 \\Rightarrow x = 7\\)",
+        "\\(5(x - 1) = 2x + 10 \\Rightarrow 3x = 15 \\Rightarrow x = 5\\)"
+      ]
+    },
+    {
+      "title": "Linear inequalities",
+      "sections": [
+        "1C"
+      ],
+      "rule": "Solve like an equation, but flip the sign when you multiply or divide by a negative.",
+      "lines": [
+        "\\(3 - 2x \\le 11 \\Rightarrow -2x \\le 8 \\Rightarrow x \\ge -4\\)"
+      ],
+      "tip": "flip the sign, not just the number."
+    },
+    {
+      "title": "Equations with algebraic fractions",
+      "sections": [
+        "1D"
+      ],
+      "rule": "Multiply every term by the lowest common denominator first.",
+      "lines": [
+        "\\(\\tfrac{x}{3} + \\tfrac{x - 1}{2} = 4\\): \\(\\times 6\\), \\(2x + 3(x - 1) = 24\\), \\(x = 5.4\\)",
+        "\\(\\tfrac{x + 2}{4} = \\tfrac{x - 1}{3} \\Rightarrow 3x + 6 = 4x - 4 \\Rightarrow x = 10\\)"
+      ]
+    },
+    {
+      "title": "Graphing straight lines",
+      "sections": [
+        "1E"
+      ],
+      "rule": "\\(y = mx + c\\). Or find the two intercepts and join them.",
+      "lines": [
+        "\\(3x - 2y = 6\\): x-intercept \\((2, 0)\\), y-intercept \\((0, -3)\\)",
+        "\\(y = -\\tfrac12 x + 4\\): gradient \\(-\\tfrac12\\), y-intercept 4"
+      ]
+    },
+    {
+      "title": "Finding the equation of a line",
+      "sections": [
+        "1F"
+      ],
+      "rule": "Find the gradient, then use \\(y - y_1 = m(x - x_1)\\).",
+      "lines": [
+        "Through \\((2, 3)\\) and \\((4, 11)\\): \\(m = \\tfrac{8}{2} = 4\\)",
+        "\\(y - 3 = 4(x - 2) \\Rightarrow y = 4x - 5\\)"
+      ]
+    },
+    {
+      "title": "Length and midpoint",
+      "sections": [
+        "1G"
+      ],
+      "rule": "Midpoint: average the coordinates. Length: \\(\\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\)",
+      "lines": [
+        "\\((-1, 2)\\) and \\((5, 10)\\): midpoint \\((2, 6)\\)",
+        "Length \\(\\sqrt{6^2 + 8^2} = 10\\)"
+      ]
+    },
+    {
+      "title": "Parallel and perpendicular lines",
+      "sections": [
+        "1H"
+      ],
+      "rule": "Parallel: equal gradients. Perpendicular: \\(m_1 \\times m_2 = -1\\).",
+      "lines": [
+        "Perpendicular to \\(y = 3x + 1\\): gradient \\(-\\tfrac13\\)",
+        "Through \\((3, 2)\\): \\(y = -\\tfrac13 x + 3\\)"
+      ]
+    },
+    {
+      "title": "Simultaneous equations: substitution",
+      "sections": [
+        "1I"
+      ],
+      "rule": "Replace one pronumeral with what it equals from the other equation.",
+      "lines": [
+        "\\(y = 2x - 1\\) and \\(3x + y = 14\\)",
+        "\\(3x + 2x - 1 = 14 \\Rightarrow x = 3,\\ y = 5\\)"
+      ]
+    },
+    {
+      "title": "Simultaneous equations: elimination",
+      "sections": [
+        "1J"
+      ],
+      "rule": "Add or subtract the equations so one pronumeral cancels.",
+      "lines": [
+        "\\(2x + 3y = 12\\) and \\(4x - 3y = 6\\)",
+        "Add: \\(6x = 18\\), so \\(x = 3,\\ y = 2\\)"
+      ]
+    },
+    {
+      "title": "Applications of simultaneous equations",
+      "sections": [
+        "1K"
+      ],
+      "rule": "Define two pronumerals, write two equations, solve, then answer in words.",
+      "lines": [
+        "Two numbers add to 31 and differ by 7: \\(x + y = 31,\\ x - y = 7\\)",
+        "Add: 2x = 38, so the numbers are **19** and **12**"
+      ]
+    },
+    {
+      "title": "Regions on the Cartesian plane",
+      "sections": [
+        "1L"
+      ],
+      "rule": "Draw the boundary line (dashed for \\(<\\) or \\(>\\), solid for \\(\\le\\) or \\(\\ge\\)), then test a point.",
+      "lines": [
+        "\\(y > 2x + 1\\): test \\((0, 0)\\): \\(0 > 1\\) is false",
+        "So shade the side without the origin"
+      ]
+    }
+  ]
+}

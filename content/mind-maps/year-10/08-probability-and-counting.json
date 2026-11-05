@@ -1,0 +1,139 @@
+{
+  "year": 10,
+  "chapter": 8,
+  "slug": "probability-and-counting",
+  "title": "Probability and counting techniques",
+  "short": "Probability and counting",
+  "appKey": "y10-ch8",
+  "summary": "Probability, Venn diagrams and set notation, the addition rule, conditional probability, arrays, tree diagrams, independence, factorials, arrangements and selections.",
+  "cards": [
+    {
+      "title": "Review of probability",
+      "sections": [
+        "8A"
+      ],
+      "rule": "\\(P(A) = \\dfrac{\\text{favourable}}{\\text{total}}\\) and \\(P(A') = 1 - P(A)\\).",
+      "lines": [
+        "52 cards: \\(P(\\text{heart}) = \\tfrac{13}{52} = \\tfrac14\\)",
+        "\\(P(\\text{not an ace}) = \\tfrac{48}{52} = \\tfrac{12}{13}\\)"
+      ]
+    },
+    {
+      "title": "Venn diagrams and two-way tables",
+      "sections": [
+        "8B"
+      ],
+      "rule": "\\(A \\cap B\\): both. \\(A \\cup B\\): either. \\(A'\\): not A.",
+      "lines": [
+        "30 people: \\(n(A \\cup B) = 27\\), \\(P(A') = \\tfrac{12}{30} = \\tfrac25\\)"
+      ],
+      "fig": {
+        "type": "venn",
+        "counts": [
+          "12",
+          "6",
+          "9",
+          "3"
+        ],
+        "alt": "Venn diagram: 12 in A only, 6 in both, 9 in B only, 3 in neither"
+      }
+    },
+    {
+      "title": "The addition rule",
+      "sections": [
+        "8C"
+      ],
+      "rule": "\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)",
+      "lines": [
+        "\\(0.5 + 0.4 - 0.2 = 0.7\\)",
+        "Mutually exclusive: \\(P(A \\cap B) = 0\\)"
+      ]
+    },
+    {
+      "title": "Conditional probability",
+      "sections": [
+        "8D"
+      ],
+      "rule": "\\(P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)}\\): only look inside B.",
+      "lines": [
+        "From the Venn in card 2: \\(P(A \\mid B) = \\tfrac{6}{15} = \\tfrac25\\)"
+      ]
+    },
+    {
+      "title": "Arrays for two steps",
+      "sections": [
+        "8E"
+      ],
+      "rule": "List every outcome in a table.",
+      "lines": [
+        "Two dice: 36 outcomes. \\(P(\\text{double}) = \\tfrac{6}{36} = \\tfrac16\\)",
+        "\\(P(\\text{sum} \\ge 10) = \\tfrac{6}{36} = \\tfrac16\\)"
+      ]
+    },
+    {
+      "title": "Tree diagrams",
+      "sections": [
+        "8F"
+      ],
+      "rule": "Multiply along the branches, add the branches you want.",
+      "lines": [
+        "2 red, 3 blue, take 2 without replacement:",
+        "\\(P(\\text{one of each}) = \\tfrac25 \\cdot \\tfrac34 + \\tfrac35 \\cdot \\tfrac24 = \\tfrac35\\)"
+      ]
+    },
+    {
+      "title": "Independent events",
+      "sections": [
+        "8G"
+      ],
+      "rule": "Independent if \\(P(A \\cap B) = P(A) \\times P(B)\\), so \\(P(A \\mid B) = P(A)\\).",
+      "lines": [
+        "Coin and die: \\(P(\\text{H and } 6) = \\tfrac12 \\times \\tfrac16 = \\tfrac{1}{12}\\)"
+      ]
+    },
+    {
+      "title": "Counting and factorials",
+      "sections": [
+        "8H"
+      ],
+      "rule": "Multiply the number of choices at each step. \\(n! = n \\times (n - 1) \\times \\cdots \\times 1\\)",
+      "lines": [
+        "3 shirts and 4 pairs of pants: 3 × 4 = **12** outfits",
+        "\\(5! = 120\\) &nbsp; \\(0! = 1\\)"
+      ]
+    },
+    {
+      "title": "Arrangements",
+      "sections": [
+        "8I"
+      ],
+      "rule": "Order matters: \\({}^nP_r = \\dfrac{n!}{(n - r)!}\\)",
+      "lines": [
+        "Arrange 3 of 5 books: \\(5 \\times 4 \\times 3 = 60\\)",
+        "Arrange the letters of MATHS: \\(5! = 120\\)"
+      ]
+    },
+    {
+      "title": "Selections",
+      "sections": [
+        "8J"
+      ],
+      "rule": "Order doesn't matter: \\({}^nC_r = \\dfrac{n!}{r!(n - r)!}\\)",
+      "lines": [
+        "Choose 3 from 5: \\({}^5C_3 = 10\\)",
+        "A pair from 6 people: \\({}^6C_2 = 15\\)"
+      ],
+      "tip": "a team is a selection; a 1st, 2nd and 3rd place is an arrangement."
+    },
+    {
+      "title": "Counting in probability",
+      "sections": [
+        "8K"
+      ],
+      "rule": "\\(P = \\dfrac{\\text{favourable selections}}{\\text{total selections}}\\)",
+      "lines": [
+        "Pick 3 from 5 boys and 4 girls: \\(P(\\text{all girls}) = \\dfrac{{}^4C_3}{{}^9C_3} = \\dfrac{4}{84} = \\dfrac{1}{21}\\)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "year": 10,
+  "chapter": 2,
+  "slug": "geometry-and-networks",
+  "title": "Geometry and networks",
+  "short": "Geometry and networks",
+  "appKey": "y10-ch2",
+  "summary": "Polygon angles, congruent and similar figures, circle chords, angles and tangents, and networks: graphs, Euler circuits and shortest paths.",
+  "cards": [
+    {
+      "title": "Review of geometry",
+      "sections": [
+        "2A"
+      ],
+      "rule": "Interior angle sum of an \\(n\\)-gon: \\((n - 2) \\times 180^\\circ\\). Exterior angles add to 360°.",
+      "lines": [
+        "Regular octagon: exterior \\(360^\\circ \\div 8 = 45^\\circ\\), interior \\(135^\\circ\\)"
+      ]
+    },
+    {
+      "title": "Congruent triangles and quadrilaterals",
+      "sections": [
+        "2B",
+        "2C"
+      ],
+      "rule": "Tests: SSS, SAS, AAS, RHS. Use them to prove properties of shapes.",
+      "lines": [
+        "In a parallelogram, the diagonals cut it into congruent triangles (AAS), so the diagonals bisect each other"
+      ],
+      "tip": "AAA shows similar, not congruent."
+    },
+    {
+      "title": "Similar figures and triangles",
+      "sections": [
+        "2D",
+        "2E"
+      ],
+      "rule": "Scale factor \\(k\\): lengths \\(\\times k\\), areas \\(\\times k^2\\), volumes \\(\\times k^3\\).",
+      "lines": [
+        "\\(k = 3\\): area \\(\\times 9\\), volume \\(\\times 27\\)",
+        "Similar triangles, matching sides 4 and 10: \\(k = 2.5\\), so side 6 matches \\(15\\)"
+      ]
+    },
+    {
+      "title": "Circles and chords",
+      "sections": [
+        "2F"
+      ],
+      "rule": "A line from the centre at right angles to a chord bisects the chord.",
+      "lines": [
+        "Chord 16, radius 10: distance from the centre \\(\\sqrt{10^2 - 8^2} = 6\\)"
+      ],
+      "note": "Chord, arc, sector, segment, tangent, secant: know each word."
+    },
+    {
+      "title": "Angle properties of circles",
+      "sections": [
+        "2G",
+        "2H"
+      ],
+      "rule": "Angle at the centre is twice the angle at the circumference. Angles in the same segment are equal.",
+      "lines": [
+        "Angle in a semicircle = 90°",
+        "Cyclic quadrilateral: opposite angles add to 180° (110° opposite 70°)",
+        "Circumference angle 35°: centre angle 70°"
+      ]
+    },
+    {
+      "title": "Circles and tangents",
+      "sections": [
+        "2I"
+      ],
+      "rule": "A tangent meets the radius at 90°. Two tangents from one point are equal.",
+      "lines": [
+        "Radius 5, centre 13 away: tangent \\(\\sqrt{13^2 - 5^2} = 12\\)"
+      ],
+      "note": "Alternate segment theorem: tangent–chord angle equals the angle in the opposite segment."
+    },
+    {
+      "title": "Chords, secants and tangents",
+      "sections": [
+        "2J"
+      ],
+      "rule": "Chords: \\(AP \\times PB = CP \\times PD\\). Tangent: \\(PT^2 = PA \\times PB\\).",
+      "lines": [
+        "\\(4 \\times 6 = 3 \\times x \\Rightarrow x = 8\\)",
+        "\\(PA = 4,\\ PB = 9\\): \\(PT = \\sqrt{36} = 6\\)"
+      ]
+    },
+    {
+      "title": "Introduction to networks",
+      "sections": [
+        "2K"
+      ],
+      "rule": "Vertices (dots) joined by edges. The degree of a vertex is the number of edges at it.",
+      "lines": [
+        "The degrees always add to twice the number of edges",
+        "5 edges: degrees add to **10**"
+      ]
+    },
+    {
+      "title": "Isomorphic and planar graphs",
+      "sections": [
+        "2L"
+      ],
+      "rule": "Isomorphic: same connections, drawn differently. Planar: can be drawn with no crossing edges.",
+      "lines": [
+        "Euler's formula for planar graphs: \\(v - e + f = 2\\)",
+        "4 vertices, 6 edges: \\(f = 2 - 4 + 6 = 4\\) faces"
+      ]
+    },
+    {
+      "title": "Trails, paths and Euler circuits",
+      "sections": [
+        "2M"
+      ],
+      "rule": "Trail: no repeated edges. Path: no repeated vertices.",
+      "lines": [
+        "Euler circuit: every vertex has an even degree",
+        "Euler trail: exactly two odd vertices (start at one, finish at the other)"
+      ]
+    },
+    {
+      "title": "Shortest path problems",
+      "sections": [
+        "2N"
+      ],
+      "rule": "Add the weights along each route and keep the smallest at every vertex.",
+      "lines": [
+        "A to B 4, B to D 3, A to C 2, C to D 6",
+        "A–B–D = 7, A–C–D = 8, so the shortest is **7**"
+      ]
+    }
+  ]
+}
