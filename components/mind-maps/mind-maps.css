@@ -94,3 +94,14 @@
 @media print {
   @page { size: A4 landscape; margin: 0; }
 }
+
+/* Revision pages around the maps. */
+.mm-steps { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 10px; font-size: 17px; line-height: 1.55; }
+.mm-faq { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.mm-faq summary { cursor: pointer; font-weight: 800; font-size: 17px; }
+.mm-faq p { margin: 8px 0 0; color: var(--muted); line-height: 1.6; }
+.mm-below { display: grid; gap: 28px; grid-template-columns: 1fr; margin-top: 28px; }
+@media (min-width: 900px) { .mm-below { grid-template-columns: 1.4fr 1fr; } }
+.mm-sections, .mm-practise { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.mm-sections li { font-size: 15.5px; line-height: 1.45; }
+.mm-sections__k { display: inline-block; min-width: 46px; font-weight: 800; color: var(--brand-text); }

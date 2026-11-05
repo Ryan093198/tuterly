@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { LIVE_YEARS, mindMapFiles, mindMapPath, mindMapsForYear } from "@/lib/mind-maps";
+import { LIVE_YEARS, mindMapFiles, mindMapPath, mindMapSheetPath, mindMapsForYear, revisionBooklet } from "@/lib/mind-maps";
 import { SITE_URL } from "@/lib/site";
 
 // GET /api/mind-maps: every published mind map with its image and PDF, for
@@ -13,9 +13,10 @@ export function GET() {
       const f = mindMapFiles(m);
       return {
         year: m.year, chapter: m.chapter, appKey: m.appKey, title: m.title, summary: m.summary,
-        page: `${SITE_URL}${mindMapPath(m)}`, png: `${SITE_URL}${f.png}`, pdf: `${SITE_URL}${f.pdf}`,
+        page: `${SITE_URL}${mindMapPath(m)}`, png: `${SITE_URL}${f.png}`, pdf: `${SITE_URL}${f.pdf}`, sheet: mindMapSheetPath(m),
       };
     })
   );
-  return NextResponse.json({ maps });
+  const booklets = LIVE_YEARS.map((y) => ({ year: y, pdf: `${SITE_URL}${revisionBooklet(y)}` }));
+  return NextResponse.json({ maps, booklets });
 }
