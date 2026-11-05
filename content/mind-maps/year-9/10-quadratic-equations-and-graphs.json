@@ -1,0 +1,125 @@
+{
+  "year": 9,
+  "chapter": 10,
+  "slug": "quadratic-equations-and-graphs",
+  "title": "Introduction to quadratic equations and graphs",
+  "short": "Quadratic equations and graphs",
+  "appKey": "y9-ch10",
+  "summary": "Solving quadratic equations with the Null Factor Law, quadratic word problems, and sketching parabolas: dilations, reflections, translations and intercept form.",
+  "cards": [
+    {
+      "title": "Quadratic equations",
+      "sections": [
+        "10A"
+      ],
+      "rule": "Null Factor Law: if \\(ab = 0\\), then \\(a = 0\\) or \\(b = 0\\).",
+      "lines": [
+        "\\((x - 3)(x + 5) = 0\\)",
+        "\\(x = 3\\) or \\(x = -5\\)"
+      ],
+      "note": "A quadratic can have two, one or no solutions."
+    },
+    {
+      "title": "Solving \\(ax^2 + bx = 0\\) and \\(x^2 = d\\)",
+      "sections": [
+        "10B"
+      ],
+      "rule": "Take out the common factor. For \\(x^2 = d\\), remember \\(\\pm\\).",
+      "lines": [
+        "\\(2x^2 - 6x = 0 \\Rightarrow 2x(x - 3) = 0 \\Rightarrow x = 0\\) or \\(3\\)",
+        "\\(x^2 = 16 \\Rightarrow x = \\pm 4\\)"
+      ],
+      "tip": "don't divide by \\(x\\): you'd lose \\(x = 0\\)."
+    },
+    {
+      "title": "Solving \\(x^2 + bx + c = 0\\)",
+      "sections": [
+        "10C"
+      ],
+      "rule": "Make one side 0, factorise, then use the Null Factor Law.",
+      "lines": [
+        "\\(x^2 + x - 12 = 0 \\Rightarrow (x + 4)(x - 3) = 0\\), so \\(x = -4\\) or \\(3\\)",
+        "\\(x^2 = 5x - 6 \\Rightarrow x^2 - 5x + 6 = 0 \\Rightarrow x = 2\\) or \\(3\\)"
+      ]
+    },
+    {
+      "title": "Using quadratics to solve problems",
+      "sections": [
+        "10D"
+      ],
+      "rule": "Write an equation, solve it, then reject answers that don't make sense.",
+      "lines": [
+        "A rectangle is 3 m longer than it is wide, area 40 m²: \\(x(x + 3) = 40\\)",
+        "\\(x^2 + 3x - 40 = 0 \\Rightarrow (x + 8)(x - 5) = 0\\)",
+        "Width can't be \\(-8\\), so it's 5 m by 8 m"
+      ]
+    },
+    {
+      "title": "The parabola",
+      "sections": [
+        "10E"
+      ],
+      "rule": "\\(y = x^2\\) is a parabola. It has a turning point and an axis of symmetry.",
+      "lines": [
+        "\\(a > 0\\): opens up (minimum). \\(a < 0\\): opens down (maximum)."
+      ],
+      "fig": {
+        "type": "parabola",
+        "up": true,
+        "turning": "(0, 0)",
+        "xAxisY": 73
+      }
+    },
+    {
+      "title": "Dilations and reflections",
+      "sections": [
+        "10F"
+      ],
+      "rule": "\\(y = ax^2\\): a bigger \\(|a|\\) makes it narrower; a negative \\(a\\) flips it upside down.",
+      "lines": [
+        "\\(y = 3x^2\\): narrower &nbsp; \\(y = \\tfrac12 x^2\\): wider",
+        "\\(y = -x^2\\): reflected in the x-axis"
+      ],
+      "fig": {
+        "type": "parabola",
+        "up": false,
+        "turning": "(0, 0)",
+        "xAxisY": 19
+      }
+    },
+    {
+      "title": "Translations",
+      "sections": [
+        "10G"
+      ],
+      "rule": "\\(y = (x - h)^2 + k\\) has turning point \\((h, k)\\).",
+      "lines": [
+        "\\(y = (x - 2)^2 + 3\\): turning point \\((2, 3)\\)",
+        "\\(y = (x + 1)^2 - 4\\): turning point \\((-1, -4)\\)"
+      ],
+      "tip": "the sign of \\(h\\) flips: \\((x + 1)\\) moves left 1."
+    },
+    {
+      "title": "Intercept form",
+      "sections": [
+        "10H"
+      ],
+      "rule": "\\(y = (x - a)(x - b)\\) crosses the x-axis at \\(a\\) and \\(b\\). The turning point is halfway between.",
+      "lines": [
+        "\\(y = (x - 1)(x - 5)\\): x-intercepts 1 and 5, axis \\(x = 3\\)",
+        "Turning point \\(y = (3 - 1)(3 - 5) = -4\\), so \\((3, -4)\\); y-intercept \\((0, 5)\\)"
+      ],
+      "fig": {
+        "type": "parabola",
+        "up": true,
+        "roots": [
+          "1",
+          "5"
+        ],
+        "turning": "(3, −4)",
+        "yAxisX": 66,
+        "axis": true
+      }
+    }
+  ]
+}

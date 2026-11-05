@@ -1,0 +1,112 @@
+{
+  "year": 9,
+  "chapter": 5,
+  "slug": "measurement",
+  "title": "Measurement",
+  "short": "Measurement",
+  "appKey": "y9-ch5",
+  "summary": "Accuracy, perimeter, circles and sectors, area of shapes and composite shapes, surface area and volume of prisms and cylinders.",
+  "cards": [
+    {
+      "title": "Errors and accuracy",
+      "sections": [
+        "5A"
+      ],
+      "rule": "A measurement is accurate to plus or minus half the smallest unit.",
+      "lines": [
+        "12 cm to the nearest cm: between **11.5 cm** and **12.5 cm**",
+        "Greatest possible error: 0.5 cm"
+      ]
+    },
+    {
+      "title": "Length and perimeter",
+      "sections": [
+        "5B"
+      ],
+      "rule": "Perimeter is the distance around the outside: add every side.",
+      "lines": [
+        "1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm",
+        "Rectangle 8 by 3: \\(P = 2(8 + 3) = 22\\)"
+      ],
+      "tip": "convert to the same unit before you add."
+    },
+    {
+      "title": "Circumference and sectors",
+      "sections": [
+        "5C"
+      ],
+      "rule": "\\(C = \\pi d = 2\\pi r\\). A sector is a fraction \\(\\tfrac{\\theta}{360}\\) of a circle.",
+      "lines": [
+        "\\(r = 5\\): \\(C = 10\\pi \\approx 31.4\\)",
+        "Sector \\(r = 6,\\ \\theta = 90^\\circ\\): \\(P = 2(6) + \\tfrac{90}{360} \\times 2\\pi(6) \\approx 21.4\\)"
+      ]
+    },
+    {
+      "title": "Area",
+      "sections": [
+        "5D"
+      ],
+      "rule": "Rectangle \\(lw\\) · triangle \\(\\tfrac12 bh\\) · parallelogram \\(bh\\) · trapezium \\(\\tfrac12(a + b)h\\) · circle \\(\\pi r^2\\)",
+      "lines": [
+        "Trapezium \\(a = 4,\\ b = 10,\\ h = 5\\): \\(\\tfrac12 \\times 14 \\times 5 = 35\\)",
+        "Circle \\(r = 3\\): \\(9\\pi \\approx 28.3\\)"
+      ],
+      "note": "1 m² = 10 000 cm² (100 × 100)."
+    },
+    {
+      "title": "Composite shapes",
+      "sections": [
+        "5E"
+      ],
+      "rule": "Split into shapes you know and add, or take a shape away.",
+      "lines": [
+        "10 by 6 rectangle with a semicircle on the 6 side: \\(60 + \\tfrac12\\pi(3^2) \\approx 74.1\\)"
+      ],
+      "tip": "the semicircle's radius is half the side: 3, not 6."
+    },
+    {
+      "title": "Surface area of prisms and pyramids",
+      "sections": [
+        "5F"
+      ],
+      "rule": "Add the areas of every face. Drawing the net helps.",
+      "lines": [
+        "Cube with side 4: \\(6 \\times 16 = 96\\)",
+        "Square pyramid, base 6, triangle height 5: \\(36 + 4 \\times \\tfrac12 \\times 6 \\times 5 = 96\\)"
+      ]
+    },
+    {
+      "title": "Surface area of cylinders",
+      "sections": [
+        "5G"
+      ],
+      "rule": "\\(SA = 2\\pi r^2 + 2\\pi rh\\) (two circles plus the curved side).",
+      "lines": [
+        "\\(r = 3,\\ h = 10\\): \\(18\\pi + 60\\pi = 78\\pi \\approx 245.0\\)"
+      ],
+      "note": "An open cylinder (like a cup) has only one circle."
+    },
+    {
+      "title": "Volume of prisms",
+      "sections": [
+        "5H"
+      ],
+      "rule": "\\(V = Ah\\): area of the cross-section times the length.",
+      "lines": [
+        "Triangular prism, triangle \\(\\tfrac12 \\times 4 \\times 3 = 6\\), length 10: \\(V = 60\\)",
+        "1 cm³ = 1 mL, 1000 cm³ = 1 L, 1 m³ = 1000 L"
+      ]
+    },
+    {
+      "title": "Volume of cylinders",
+      "sections": [
+        "5I"
+      ],
+      "rule": "\\(V = \\pi r^2 h\\): the circle's area times the height.",
+      "lines": [
+        "\\(r = 3\\) cm, \\(h = 10\\) cm: \\(V = 90\\pi \\approx 282.7\\) cm³, about 283 mL"
+      ],
+      "tip": "use the radius, not the diameter."
+    }
+  ]
+}

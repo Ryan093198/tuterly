@@ -1,0 +1,159 @@
+{
+  "year": 9,
+  "chapter": 1,
+  "slug": "number-and-financial-maths",
+  "title": "Reviewing number and financial mathematics",
+  "short": "Number and financial maths",
+  "appKey": "y9-ch1",
+  "summary": "Integers, rounding, fractions, ratios, percentages, profit, income, tax, and simple and compound interest, with a worked example for each.",
+  "cards": [
+    {
+      "title": "Integer operations",
+      "sections": [
+        "1A"
+      ],
+      "rule": "Multiply or divide: same signs give +, different signs give −.",
+      "lines": [
+        "\\(4 + (-9) = -5\\) &nbsp; \\(-6 - (-2) = -4\\)",
+        "\\(-7 \\times (-3) = 21\\) &nbsp; \\(-24 \\div 6 = -4\\)",
+        "Order of operations: \\(-2 + 3 \\times (-4) = -14\\)"
+      ],
+      "tip": "\\((-3)^2 = 9\\) but \\(-3^2 = -9\\)"
+    },
+    {
+      "title": "Decimal places and significant figures",
+      "sections": [
+        "1B"
+      ],
+      "rule": "Look at the next digit. 5 or more rounds up; 4 or less stays.",
+      "lines": [
+        "3.476 to 1 d.p. is **3.5**, to 2 d.p. is **3.48**",
+        "0.04082 to 2 s.f. is **0.041** (start at the first non-zero digit)",
+        "5683 to 1 s.f. is **6000**"
+      ]
+    },
+    {
+      "title": "Rational numbers",
+      "sections": [
+        "1C"
+      ],
+      "rule": "Rational means it can be written as a fraction \\(\\tfrac{a}{b}\\).",
+      "lines": [
+        "\\(2\\tfrac25 = \\tfrac{12}{5} = 2.4\\) (terminating)",
+        "\\(\\tfrac23 = 0.666\\ldots = 0.\\dot{6}\\) (recurring)",
+        "\\(0.35 = \\tfrac{35}{100} = \\tfrac{7}{20}\\)"
+      ],
+      "note": "\\(\\sqrt2\\) and \\(\\pi\\) are irrational: their decimals never end or repeat."
+    },
+    {
+      "title": "Operations with fractions",
+      "sections": [
+        "1D"
+      ],
+      "rule": "Add or subtract: common denominator first. Divide: flip the second fraction and multiply.",
+      "lines": [
+        "\\(2\\tfrac13 + 1\\tfrac34 = \\tfrac{28}{12} + \\tfrac{21}{12} = \\tfrac{49}{12} = 4\\tfrac{1}{12}\\)",
+        "\\(\\tfrac35 \\div \\tfrac{9}{10} = \\tfrac35 \\times \\tfrac{10}{9} = \\tfrac23\\)"
+      ],
+      "tip": "\\(\\tfrac12+\\tfrac13 \\ne \\tfrac25\\). It's \\(\\tfrac36 + \\tfrac26 = \\tfrac56\\)"
+    },
+    {
+      "title": "Ratios, rates and best buys",
+      "sections": [
+        "1E"
+      ],
+      "rule": "Simplify a ratio by dividing both parts by the HCF. A rate compares different units.",
+      "lines": [
+        "\\(12 : 18 = 2 : 3\\)",
+        "$240 in the ratio 5 : 3: 8 parts, 1 part = $30, so **$150** and **$90**",
+        "150 km in 2.5 h = **60 km/h**",
+        "Best buy: 500 g for $3.60 is **$0.72** per 100 g; 750 g for $5.10 is **$0.68** per 100 g, so the 750 g pack is better value"
+      ]
+    },
+    {
+      "title": "Percentages and money",
+      "sections": [
+        "1F"
+      ],
+      "rule": "Per cent means \"out of 100\". Divide by 100 to get a decimal.",
+      "lines": [
+        "Fraction to %: \\(\\tfrac{7}{20} \\times 100\\% = 35\\%\\) &nbsp; \\(12.5\\% = 0.125\\)",
+        "Find a percentage: 15% of $80 \\(= 0.15 \\times 80 = \\$12\\)",
+        "Find the whole: 30% of an amount is $45, so the amount is \\(45 \\div 0.3 = \\$150\\)"
+      ],
+      "tip": "check by working backwards: 30% of $150 is $45 ✓"
+    },
+    {
+      "title": "Percentage increase and decrease",
+      "sections": [
+        "1G"
+      ],
+      "rule": "Use a multiplier: 100% plus the increase, or 100% minus the decrease. Percentage change is always out of the original amount.",
+      "lines": [
+        "Up 12%: \\(50 \\times 1.12 = 56\\) &nbsp; Down 15%: \\(80 \\times 0.85 = 68\\)",
+        "% change \\(= \\tfrac{\\text{change}}{\\text{original}} \\times 100\\%\\): 40 to 50 is \\(\\tfrac{10}{40} = 25\\%\\)"
+      ]
+    },
+    {
+      "title": "Profits and discounts",
+      "sections": [
+        "1H"
+      ],
+      "rule": "Profit = selling price − cost price. Profit % is out of the cost price.",
+      "lines": [
+        "Cost $40, sold for $52: profit $12, \\(\\tfrac{12}{40} \\times 100\\% = 30\\%\\)",
+        "Mark up $80 by 25%: \\(80 \\times 1.25 = \\$100\\)",
+        "20% off $65: \\(65 \\times 0.8 = \\$52\\)"
+      ]
+    },
+    {
+      "title": "Income",
+      "sections": [
+        "1I"
+      ],
+      "rule": "Wage: paid per hour. Salary: a set amount a year. Commission: a % of sales.",
+      "lines": [
+        "$28/h: time and a half **$42/h**, double time **$56/h**",
+        "Salary $78 000 a year \\(\\div 52 =\\) **$1500** a week",
+        "4% commission on $15 000 sales = **$600**"
+      ]
+    },
+    {
+      "title": "The PAYG income tax system",
+      "sections": [
+        "1J"
+      ],
+      "rule": "Pay As You Go: your employer takes tax out of each pay and sends it to the ATO.",
+      "lines": [
+        "Taxable income = gross income − deductions",
+        "Medicare levy: 2%. On $60 000: \\(0.02 \\times 60\\,000 = \\$1200\\)"
+      ]
+    },
+    {
+      "title": "Simple interest",
+      "sections": [
+        "1K"
+      ],
+      "rule": "The same interest every year, worked out on the amount you started with.",
+      "lines": [
+        "\\(I = Prt\\): principal, rate as a decimal, time in years",
+        "$1500 at 4% p.a. for 3 years: \\(I = 1500 \\times 0.04 \\times 3 = \\$180\\)",
+        "Total \\(= \\$1500 + \\$180 = \\$1680\\)"
+      ],
+      "tip": "6 months is \\(t = 0.5\\)"
+    },
+    {
+      "title": "Compound interest and depreciation",
+      "sections": [
+        "1L",
+        "1M"
+      ],
+      "rule": "Compound: interest is added each year, then earns interest too. Depreciation: value drops by a % each year.",
+      "lines": [
+        "\\(A = P(1 + r)^n\\) &nbsp; $2000 at 6% p.a. for 2 years: \\(2000 \\times 1.06^2 = \\$2247.20\\)",
+        "Depreciation \\(A = P(1 - r)^n\\): a $20 000 car losing 15% a year is worth \\(20\\,000 \\times 0.85^2 = \\$14\\,450\\) after 2 years"
+      ],
+      "note": "Interest earned = A − P. Here $247.20, more than simple interest ($240)."
+    }
+  ]
+}

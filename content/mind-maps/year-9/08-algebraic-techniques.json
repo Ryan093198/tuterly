@@ -1,0 +1,137 @@
+{
+  "year": 9,
+  "chapter": 8,
+  "slug": "algebraic-techniques",
+  "title": "Algebraic techniques",
+  "short": "Algebraic techniques",
+  "appKey": "y9-ch8",
+  "summary": "Expanding binomial products, perfect squares, difference of two squares, factorising (including trinomials), and algebraic fractions.",
+  "cards": [
+    {
+      "title": "Expanding binomial products",
+      "sections": [
+        "8A"
+      ],
+      "rule": "Multiply every term in the first bracket by every term in the second.",
+      "lines": [
+        "\\((x + 3)(x + 5) = x^2 + 8x + 15\\)",
+        "\\((2x - 1)(x + 4) = 2x^2 + 7x - 4\\)"
+      ]
+    },
+    {
+      "title": "Perfect squares and DOTS",
+      "sections": [
+        "8B"
+      ],
+      "rule": "\\((a + b)^2 = a^2 + 2ab + b^2\\) and \\((a - b)(a + b) = a^2 - b^2\\)",
+      "lines": [
+        "\\((x + 4)^2 = x^2 + 8x + 16\\)",
+        "\\((x - 5)(x + 5) = x^2 - 25\\)"
+      ],
+      "tip": "\\((x + 3)^2 \\ne x^2 + 9\\): don't forget the middle term."
+    },
+    {
+      "title": "Factorising expressions",
+      "sections": [
+        "8C"
+      ],
+      "rule": "Take out the highest common factor (HCF).",
+      "lines": [
+        "\\(6x + 9 = 3(2x + 3)\\) &nbsp; \\(x^2 - 7x = x(x - 7)\\)",
+        "\\(-4a - 8 = -4(a + 2)\\)"
+      ],
+      "note": "Check by expanding: you should get back to the start."
+    },
+    {
+      "title": "Factorising DOTS",
+      "sections": [
+        "8D"
+      ],
+      "rule": "Difference of two squares: \\(a^2 - b^2 = (a - b)(a + b)\\)",
+      "lines": [
+        "\\(x^2 - 49 = (x - 7)(x + 7)\\)",
+        "\\(4x^2 - 9 = (2x - 3)(2x + 3)\\)",
+        "\\(3x^2 - 12 = 3(x - 2)(x + 2)\\)"
+      ]
+    },
+    {
+      "title": "Factorising by grouping",
+      "sections": [
+        "8E"
+      ],
+      "rule": "Group into pairs, take out a factor from each, then the common bracket.",
+      "lines": [
+        "\\(x^2 + 3x + 2x + 6 = x(x + 3) + 2(x + 3)\\)",
+        "\\(= (x + 3)(x + 2)\\)"
+      ]
+    },
+    {
+      "title": "Monic quadratic trinomials",
+      "sections": [
+        "8F"
+      ],
+      "rule": "\\(x^2 + bx + c\\): find two numbers that multiply to \\(c\\) and add to \\(b\\).",
+      "lines": [
+        "\\(x^2 + 7x + 12 = (x + 3)(x + 4)\\)",
+        "\\(x^2 - x - 6 = (x - 3)(x + 2)\\)"
+      ]
+    },
+    {
+      "title": "Trinomials \\(ax^2 + bx + c\\)",
+      "sections": [
+        "8G"
+      ],
+      "rule": "Find two numbers that multiply to \\(a \\times c\\) and add to \\(b\\). Split the middle term, then group.",
+      "lines": [
+        "\\(2x^2 + 7x + 3\\): \\(2 \\times 3 = 6\\), use 6 and 1",
+        "\\(2x^2 + 6x + x + 3 = 2x(x + 3) + 1(x + 3)\\)",
+        "\\(= (2x + 1)(x + 3)\\)"
+      ]
+    },
+    {
+      "title": "Algebraic fractions: × and ÷",
+      "sections": [
+        "8H"
+      ],
+      "rule": "Factorise, cancel common factors, then multiply. To divide, flip the second fraction.",
+      "lines": [
+        "\\(\\dfrac{x + 2}{6} \\times \\dfrac{9}{x + 2} = \\dfrac{9}{6} = \\dfrac32\\)",
+        "\\(\\dfrac{4x}{5} \\div \\dfrac{2x}{15} = \\dfrac{4x}{5} \\times \\dfrac{15}{2x} = 6\\)"
+      ]
+    },
+    {
+      "title": "Algebraic fractions: + and −",
+      "sections": [
+        "8I"
+      ],
+      "rule": "Use a common denominator, then add or subtract the numerators.",
+      "lines": [
+        "\\(\\dfrac{x}{3} + \\dfrac{x}{4} = \\dfrac{4x}{12} + \\dfrac{3x}{12} = \\dfrac{7x}{12}\\)",
+        "\\(\\dfrac{2}{x} - \\dfrac{1}{2x} = \\dfrac{4}{2x} - \\dfrac{1}{2x} = \\dfrac{3}{2x}\\)"
+      ]
+    },
+    {
+      "title": "Further simplification",
+      "sections": [
+        "8J"
+      ],
+      "rule": "Factorise first, then cancel whole factors.",
+      "lines": [
+        "\\(\\dfrac{x^2 - 9}{x + 3} = x - 3\\)",
+        "\\(\\dfrac{x^2 + 5x + 6}{x + 2} = x + 3\\)"
+      ],
+      "tip": "cancel factors, never single terms: \\(\\dfrac{x + 3}{3} \\ne x\\)"
+    },
+    {
+      "title": "Equations with algebraic fractions",
+      "sections": [
+        "8K"
+      ],
+      "rule": "Multiply both sides by the lowest common denominator to clear the fractions.",
+      "lines": [
+        "\\(\\dfrac{x + 1}{3} = \\dfrac{x - 2}{2} \\Rightarrow 2(x + 1) = 3(x - 2) \\Rightarrow x = 8\\)",
+        "\\(\\dfrac{x}{2} + \\dfrac{x}{3} = 10\\): multiply by 6, \\(3x + 2x = 60\\), so \\(x = 12\\)"
+      ]
+    }
+  ]
+}

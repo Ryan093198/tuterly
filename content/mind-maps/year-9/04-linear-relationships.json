@@ -1,0 +1,146 @@
+{
+  "year": 9,
+  "chapter": 4,
+  "slug": "linear-relationships",
+  "title": "Linear relationships",
+  "short": "Linear relationships",
+  "appKey": "y9-ch4",
+  "summary": "Straight-line graphs: intercepts, gradient, y = mx + c, finding equations, midpoint and length, parallel and perpendicular lines, modelling and simultaneous equations.",
+  "cards": [
+    {
+      "title": "Introduction to linear relationships",
+      "sections": [
+        "4A"
+      ],
+      "rule": "A linear rule gives a straight line. \\(y\\) changes by the same amount each step.",
+      "lines": [
+        "\\(y = 2x + 1\\): \\(x = 0, 1, 2\\) gives \\(y = 1, 3, 5\\)",
+        "Is \\((3, 7)\\) on the line? \\(2(3) + 1 = 7\\) ✓ yes"
+      ]
+    },
+    {
+      "title": "Graphing using intercepts",
+      "sections": [
+        "4B"
+      ],
+      "rule": "x-intercept: put \\(y = 0\\). y-intercept: put \\(x = 0\\).",
+      "lines": [
+        "\\(2x + 3y = 12\\): x-intercept \\((6, 0)\\), y-intercept \\((0, 4)\\)"
+      ],
+      "fig": {
+        "type": "line",
+        "rising": false,
+        "xPoint": true,
+        "yPoint": true,
+        "xLabel": "(6, 0)",
+        "yLabel": "(0, 4)"
+      }
+    },
+    {
+      "title": "Lines with one intercept",
+      "sections": [
+        "4C"
+      ],
+      "rule": "Some lines only cross one axis, or pass through the origin.",
+      "lines": [
+        "\\(y = 3\\): horizontal &nbsp; \\(x = -2\\): vertical",
+        "\\(y = 2x\\): through the origin \\((0, 0)\\)"
+      ]
+    },
+    {
+      "title": "Gradient",
+      "sections": [
+        "4D"
+      ],
+      "rule": "Gradient \\(m = \\dfrac{\\text{rise}}{\\text{run}} = \\dfrac{y_2 - y_1}{x_2 - x_1}\\)",
+      "lines": [
+        "\\((1, 2)\\) to \\((3, 8)\\): \\(m = \\dfrac{6}{2} = 3\\)"
+      ],
+      "tip": "rise over run, not run over rise. Going down to the right is negative."
+    },
+    {
+      "title": "Gradient and direct proportion",
+      "sections": [
+        "4E"
+      ],
+      "rule": "\\(y = kx\\): a straight line through the origin. The gradient \\(k\\) is the constant of proportion.",
+      "lines": [
+        "Paid $25 an hour: \\(P = 25h\\)",
+        "6 hours: \\(P = 25 \\times 6 = \\$150\\)"
+      ]
+    },
+    {
+      "title": "Gradient–intercept form",
+      "sections": [
+        "4F"
+      ],
+      "rule": "\\(y = mx + c\\): \\(m\\) is the gradient, \\(c\\) is the y-intercept.",
+      "lines": [
+        "\\(y = -2x + 5\\): \\(m = -2\\), \\(c = 5\\)",
+        "Rearrange \\(3x + y = 4\\): \\(y = -3x + 4\\)"
+      ],
+      "fig": {
+        "type": "line",
+        "rising": true,
+        "yPoint": true,
+        "yLabel": "c"
+      }
+    },
+    {
+      "title": "Finding the equation of a line",
+      "sections": [
+        "4G"
+      ],
+      "rule": "Find \\(m\\), then substitute a point to find \\(c\\).",
+      "lines": [
+        "Gradient 2 through \\((1, 5)\\): \\(5 = 2(1) + c\\), so \\(y = 2x + 3\\)",
+        "Through \\((0, 1)\\) and \\((2, 7)\\): \\(m = 3,\\ c = 1\\), so \\(y = 3x + 1\\)"
+      ]
+    },
+    {
+      "title": "Midpoint and length",
+      "sections": [
+        "4H"
+      ],
+      "rule": "Midpoint: average the coordinates. Length: Pythagoras.",
+      "lines": [
+        "\\((2, 3)\\) and \\((8, 11)\\): midpoint \\(\\left(\\tfrac{2+8}{2}, \\tfrac{3+11}{2}\\right) = (5, 7)\\)",
+        "Length \\(\\sqrt{6^2 + 8^2} = 10\\)"
+      ]
+    },
+    {
+      "title": "Parallel and perpendicular lines",
+      "sections": [
+        "4I"
+      ],
+      "rule": "Parallel: same gradient. Perpendicular: gradients multiply to \\(-1\\).",
+      "lines": [
+        "\\(y = 2x + 1\\) is parallel to \\(y = 2x - 4\\)",
+        "A line perpendicular to \\(y = 2x + 1\\) has gradient \\(-\\tfrac12\\)"
+      ]
+    },
+    {
+      "title": "Linear modelling",
+      "sections": [
+        "4J"
+      ],
+      "rule": "\\(c\\) is the starting value, \\(m\\) is the rate of change.",
+      "lines": [
+        "Taxi: $4 flag fall plus $2.50 per km: \\(C = 2.5d + 4\\)",
+        "10 km: \\(C = 2.5 \\times 10 + 4 = \\$29\\)"
+      ]
+    },
+    {
+      "title": "Graphical solutions to simultaneous equations",
+      "sections": [
+        "4K"
+      ],
+      "rule": "The solution is the point where the two lines cross.",
+      "lines": [
+        "\\(y = x + 1\\) and \\(y = -x + 5\\) cross at \\((2, 3)\\)",
+        "Check: \\(2 + 1 = 3\\) ✓ and \\(-2 + 5 = 3\\) ✓"
+      ],
+      "note": "Parallel lines never cross, so there's no solution."
+    }
+  ]
+}

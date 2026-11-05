@@ -1,0 +1,166 @@
+{
+  "year": 9,
+  "chapter": 9,
+  "slug": "probability-and-statistics",
+  "title": "Probability and statistics",
+  "short": "Probability and statistics",
+  "appKey": "y9-ch9",
+  "summary": "Probability, Venn diagrams, two-way tables, set notation, arrays, tree diagrams, relative frequency, sampling, averages, stem-and-leaf plots, spread and box plots.",
+  "cards": [
+    {
+      "title": "Review of probability",
+      "sections": [
+        "9A"
+      ],
+      "rule": "\\(P(\\text{event}) = \\dfrac{\\text{favourable outcomes}}{\\text{total outcomes}}\\), from 0 to 1.",
+      "lines": [
+        "One die: \\(P(\\text{even}) = \\tfrac36 = \\tfrac12\\)",
+        "\\(P(\\text{not } A) = 1 - P(A)\\): \\(P(\\text{not } 6) = \\tfrac56\\)"
+      ]
+    },
+    {
+      "title": "Venn diagrams and two-way tables",
+      "sections": [
+        "9B"
+      ],
+      "rule": "Fill in the overlap first.",
+      "lines": [
+        "30 students: \\(P(A) = \\tfrac{13}{30}\\), \\(P(A \\cap B) = \\tfrac16\\)"
+      ],
+      "fig": {
+        "type": "venn",
+        "counts": [
+          "8",
+          "5",
+          "7",
+          "10"
+        ],
+        "alt": "Venn diagram: 8 in A only, 5 in both, 7 in B only, 10 in neither"
+      }
+    },
+    {
+      "title": "Set notation",
+      "sections": [
+        "9C"
+      ],
+      "rule": "\\(A \\cap B\\): A and B. \\(A \\cup B\\): A or B (or both). \\(A'\\): not A.",
+      "lines": [
+        "From the Venn: \\(n(A \\cup B) = 8 + 5 + 7 = 20\\)",
+        "\\(n(A') = 7 + 10 = 17\\)"
+      ]
+    },
+    {
+      "title": "Arrays for two-step experiments",
+      "sections": [
+        "9D"
+      ],
+      "rule": "List every pair of outcomes in a table.",
+      "lines": [
+        "Two dice: \\(6 \\times 6 = 36\\) outcomes",
+        "Sum of 7: 6 ways, so \\(P = \\tfrac{6}{36} = \\tfrac16\\)"
+      ]
+    },
+    {
+      "title": "Tree diagrams",
+      "sections": [
+        "9E"
+      ],
+      "rule": "Multiply along the branches. Add the results you want.",
+      "lines": [
+        "Two coins: \\(P(\\text{HH}) = \\tfrac12 \\times \\tfrac12 = \\tfrac14\\)",
+        "\\(P(\\text{at least one head}) = 1 - \\tfrac14 = \\tfrac34\\)",
+        "3 red and 2 blue, take 2 without replacement: \\(P(\\text{both red}) = \\tfrac35 \\times \\tfrac24 = \\tfrac{3}{10}\\)"
+      ],
+      "tip": "without replacement, the second branch has one fewer."
+    },
+    {
+      "title": "Relative frequency",
+      "sections": [
+        "9F"
+      ],
+      "rule": "Relative frequency \\(= \\dfrac{\\text{times it happened}}{\\text{number of trials}}\\)",
+      "lines": [
+        "A pin lands point-up 36 times in 120 throws: \\(\\tfrac{36}{120} = 0.3\\)",
+        "Expected in 500 throws: \\(0.3 \\times 500 = 150\\)"
+      ],
+      "note": "More trials give a better estimate."
+    },
+    {
+      "title": "Data and sampling",
+      "sections": [
+        "9G"
+      ],
+      "rule": "A sample should represent the whole population. Random samples avoid bias.",
+      "lines": [
+        "Categorical: colours, types. Numerical: discrete (counts) or continuous (measurements)",
+        "Asking only gym members how often people exercise is biased"
+      ]
+    },
+    {
+      "title": "Mean, median and mode",
+      "sections": [
+        "9H"
+      ],
+      "rule": "Mean: add and divide. Median: middle value in order. Mode: most common.",
+      "lines": [
+        "3, 5, 5, 8, 9: mean \\(\\tfrac{30}{5} = 6\\), median 5, mode 5",
+        "2, 4, 7, 9: median \\(\\tfrac{4 + 7}{2} = 5.5\\)"
+      ]
+    },
+    {
+      "title": "Stem-and-leaf plots",
+      "sections": [
+        "9I"
+      ],
+      "rule": "The stem is the tens, the leaf is the units. Leaves go in order.",
+      "lines": [
+        "2 | 1 4 7 and 3 | 0 2 (key 2 | 4 = 24)",
+        "Data 21, 24, 27, 30, 32: median **27**"
+      ]
+    },
+    {
+      "title": "Grouping data into classes",
+      "sections": [
+        "9J"
+      ],
+      "rule": "Group numerical data into equal class intervals, then draw a histogram.",
+      "lines": [
+        "Classes 0–9, 10–19, 20–29 with a frequency for each",
+        "Class centre of 10–19: **14.5**"
+      ],
+      "note": "With grouped data, use the class centres to estimate the mean."
+    },
+    {
+      "title": "Range and interquartile range",
+      "sections": [
+        "9K"
+      ],
+      "rule": "Range = max − min. IQR \\(= Q_3 - Q_1\\), the spread of the middle half.",
+      "lines": [
+        "2, 4, 5, 7, 8, 10, 12, 15: range \\(15 - 2 = 13\\)",
+        "\\(Q_1 = 4.5\\), median 7.5, \\(Q_3 = 11\\), so IQR \\(= 6.5\\)"
+      ]
+    },
+    {
+      "title": "Box plots",
+      "sections": [
+        "9L"
+      ],
+      "rule": "Draw the five-number summary: min, Q₁, median, Q₃, max. The box holds the middle 50%.",
+      "lines": [
+        "The data from card 11:"
+      ],
+      "fig": {
+        "type": "boxplot",
+        "five": [
+          2,
+          4.5,
+          7.5,
+          11,
+          15
+        ],
+        "alt": "Box plot: min 2, Q1 4.5, median 7.5, Q3 11, max 15"
+      }
+    }
+  ]
+}

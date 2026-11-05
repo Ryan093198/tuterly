@@ -1,0 +1,21 @@
+import { NextResponse } from "next/server";
+import { LIVE_YEARS, mindMapFiles, mindMapPath, mindMapsForYear } from "@/lib/mind-maps";
+import { SITE_URL } from "@/lib/site";
+
+// GET /api/mind-maps: every published mind map with its image and PDF, for
+// the Tuterly Study app's future Mind Maps section (Practice > Study notes).
+// appKey matches the app's chapter key (e.g. "y9-ch1").
+export const dynamic = "force-static";
+
+export function GET() {
+  const maps = LIVE_YEARS.flatMap((y) =>
+    mindMapsForYear(y).map((m) => {
+      const f = mindMapFiles(m);
+      return {
+        year: m.year, chapter: m.chapter, appKey: m.appKey, title: m.title, summary: m.summary,
+        page: `${SITE_URL}${mindMapPath(m)}`, png: `${SITE_URL}${f.png}`, pdf: `${SITE_URL}${f.pdf}`,
+      };
+    })
+  );
+  return NextResponse.json({ maps });
+}

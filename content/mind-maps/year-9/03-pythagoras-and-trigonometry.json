@@ -1,0 +1,139 @@
+{
+  "year": 9,
+  "chapter": 3,
+  "slug": "pythagoras-and-trigonometry",
+  "title": "Pythagoras' theorem and trigonometry",
+  "short": "Pythagoras and trigonometry",
+  "appKey": "y9-ch3",
+  "summary": "Pythagoras' theorem in 2D and 3D, the three trig ratios (SOH CAH TOA), finding sides and angles, elevation, depression and bearings.",
+  "cards": [
+    {
+      "title": "Pythagoras' theorem",
+      "sections": [
+        "3A"
+      ],
+      "rule": "In a right-angled triangle: \\(c^2 = a^2 + b^2\\). \\(c\\) is the hypotenuse, the longest side.",
+      "lines": [
+        "Sides 6 and 8: \\(c^2 = 36 + 64 = 100\\), so \\(c = 10\\)"
+      ],
+      "fig": {
+        "type": "right-triangle",
+        "labels": {
+          "base": "a",
+          "height": "b",
+          "hyp": "c (hypotenuse)"
+        }
+      }
+    },
+    {
+      "title": "Finding a shorter side",
+      "sections": [
+        "3B"
+      ],
+      "rule": "To find a shorter side, subtract: \\(a^2 = c^2 - b^2\\).",
+      "lines": [
+        "Hypotenuse 13, side 5: \\(a^2 = 169 - 25 = 144\\), so \\(a = 12\\)"
+      ],
+      "tip": "a shorter side can never be longer than the hypotenuse."
+    },
+    {
+      "title": "Pythagoras in 2D problems",
+      "sections": [
+        "3C"
+      ],
+      "rule": "Draw it, mark the right angle, then find the triangle.",
+      "lines": [
+        "A 5 m ladder reaches 4 m up a wall: the foot is \\(\\sqrt{25 - 16} = 3\\) m out",
+        "Diagonal of a 9 by 12 rectangle: \\(\\sqrt{81 + 144} = 15\\)"
+      ]
+    },
+    {
+      "title": "Pythagoras in 3D",
+      "sections": [
+        "3D"
+      ],
+      "rule": "Find a right triangle on one face first, then use that length in a second triangle.",
+      "lines": [
+        "Box 3 by 4 by 12: base diagonal \\(\\sqrt{9 + 16} = 5\\)",
+        "Space diagonal \\(\\sqrt{5^2 + 12^2} = 13\\)"
+      ],
+      "note": "Shortcut: \\(d = \\sqrt{a^2 + b^2 + c^2}\\)"
+    },
+    {
+      "title": "Trigonometric ratios",
+      "sections": [
+        "3E"
+      ],
+      "rule": "SOH CAH TOA. Label the sides from the angle you're using.",
+      "lines": [
+        "\\(\\sin\\theta = \\dfrac{O}{H}\\) &nbsp; \\(\\cos\\theta = \\dfrac{A}{H}\\) &nbsp; \\(\\tan\\theta = \\dfrac{O}{A}\\)"
+      ],
+      "fig": {
+        "type": "right-triangle",
+        "angle": "θ",
+        "labels": {
+          "base": "adjacent (A)",
+          "height": "opposite (O)",
+          "hyp": "hypotenuse (H)"
+        }
+      },
+      "tip": "set your calculator to degrees."
+    },
+    {
+      "title": "Finding unknown sides",
+      "sections": [
+        "3F"
+      ],
+      "rule": "Pick the ratio that uses the side you know and the side you want.",
+      "lines": [
+        "Opposite 35°, hypotenuse 10: \\(x = 10\\sin 35^\\circ \\approx 5.74\\)",
+        "Adjacent 8, angle 40°, find opposite: \\(x = 8\\tan 40^\\circ \\approx 6.71\\)"
+      ]
+    },
+    {
+      "title": "Solving for the denominator",
+      "sections": [
+        "3G"
+      ],
+      "rule": "When \\(x\\) is on the bottom, swap it with the trig value.",
+      "lines": [
+        "\\(\\cos 30^\\circ = \\dfrac{12}{x} \\Rightarrow x = \\dfrac{12}{\\cos 30^\\circ} \\approx 13.86\\)"
+      ],
+      "tip": "check the answer makes sense: the hypotenuse must be the longest side."
+    },
+    {
+      "title": "Finding unknown angles",
+      "sections": [
+        "3H"
+      ],
+      "rule": "Use the inverse buttons: \\(\\sin^{-1}\\), \\(\\cos^{-1}\\), \\(\\tan^{-1}\\).",
+      "lines": [
+        "Opposite 5, hypotenuse 10: \\(\\sin\\theta = 0.5\\), so \\(\\theta = 30^\\circ\\)",
+        "Opposite 7, adjacent 4: \\(\\theta = \\tan^{-1}(1.75) \\approx 60.3^\\circ\\)"
+      ]
+    },
+    {
+      "title": "Applying trigonometry",
+      "sections": [
+        "3I"
+      ],
+      "rule": "Angles of elevation (looking up) and depression (looking down) are measured from the horizontal.",
+      "lines": [
+        "20 m from a tree, the angle of elevation to the top is 32°",
+        "Height \\(= 20\\tan 32^\\circ \\approx 12.5\\) m"
+      ],
+      "tip": "draw the horizontal line first, then the angle."
+    },
+    {
+      "title": "Bearings",
+      "sections": [
+        "3J"
+      ],
+      "rule": "True bearings are measured clockwise from north, with three digits.",
+      "lines": [
+        "North-east is 045°T, south-east 135°T, west 270°T",
+        "Walk 10 km on 060°T: east \\(10\\sin 60^\\circ \\approx 8.66\\) km, north \\(10\\cos 60^\\circ = 5\\) km"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "year": 9,
+  "chapter": 6,
+  "slug": "indices-and-surds",
+  "title": "Indices and surds",
+  "short": "Indices and surds",
+  "appKey": "y9-ch6",
+  "summary": "Index notation, the index laws, zero and negative indices, scientific notation, fractional indices and simple surds.",
+  "cards": [
+    {
+      "title": "Index notation",
+      "sections": [
+        "6A"
+      ],
+      "rule": "\\(2^5\\): 2 is the base, 5 is the index (how many 2s multiply).",
+      "lines": [
+        "\\(2^5 = 2 \\times 2 \\times 2 \\times 2 \\times 2 = 32\\)",
+        "Prime factors: \\(72 = 2^3 \\times 3^2\\)"
+      ]
+    },
+    {
+      "title": "Multiplying and dividing",
+      "sections": [
+        "6B"
+      ],
+      "rule": "Same base: multiply, add the indices. Divide, subtract them.",
+      "lines": [
+        "\\(a^m \\times a^n = a^{m+n}\\) &nbsp; \\(a^m \\div a^n = a^{m-n}\\)",
+        "\\(x^3 \\times x^4 = x^7\\) &nbsp; \\(6a^5 \\div 2a^2 = 3a^3\\)"
+      ],
+      "tip": "\\(2^3 \\times 2^4 = 2^7\\), not \\(4^7\\)"
+    },
+    {
+      "title": "Power of a power, zero index",
+      "sections": [
+        "6C"
+      ],
+      "rule": "Power of a power: multiply the indices. Anything to the power 0 is 1.",
+      "lines": [
+        "\\((a^m)^n = a^{mn}\\): \\((x^2)^5 = x^{10}\\)",
+        "\\(7^0 = 1\\) &nbsp; \\(5x^0 = 5\\)"
+      ]
+    },
+    {
+      "title": "Brackets and fractions",
+      "sections": [
+        "6D"
+      ],
+      "rule": "The power applies to everything inside the brackets.",
+      "lines": [
+        "\\((2x^3)^2 = 4x^6\\)",
+        "\\(\\left(\\tfrac{x}{3}\\right)^2 = \\tfrac{x^2}{9}\\)"
+      ],
+      "tip": "square the 2 too: \\((2x)^2 = 4x^2\\)"
+    },
+    {
+      "title": "Negative indices",
+      "sections": [
+        "6E"
+      ],
+      "rule": "A negative index means one over: \\(a^{-n} = \\dfrac{1}{a^n}\\).",
+      "lines": [
+        "\\(2^{-3} = \\tfrac18\\) &nbsp; \\(x^{-2} = \\tfrac{1}{x^2}\\) &nbsp; \\(\\dfrac{1}{a^{-2}} = a^2\\)"
+      ]
+    },
+    {
+      "title": "Scientific notation",
+      "sections": [
+        "6F"
+      ],
+      "rule": "Write numbers as \\(a \\times 10^n\\) with \\(1 \\le a < 10\\).",
+      "lines": [
+        "\\(45\\,000 = 4.5 \\times 10^4\\)",
+        "\\(0.0062 = 6.2 \\times 10^{-3}\\)"
+      ],
+      "tip": "big numbers get a positive power, small ones a negative power."
+    },
+    {
+      "title": "Scientific notation and significant figures",
+      "sections": [
+        "6G"
+      ],
+      "rule": "Round the first number to the significant figures asked for.",
+      "lines": [
+        "\\(0.000\\,456\\,7\\) to 2 s.f.: \\(4.6 \\times 10^{-4}\\)",
+        "\\(3\\,870\\,000\\) to 2 s.f.: \\(3.9 \\times 10^6\\)",
+        "\\((2.4 \\times 10^5) \\times (3 \\times 10^3) = 7.2 \\times 10^8\\)"
+      ]
+    },
+    {
+      "title": "Fractional indices and surds",
+      "sections": [
+        "6H"
+      ],
+      "rule": "\\(a^{\\frac12} = \\sqrt a\\), \\(a^{\\frac13} = \\sqrt[3]{a}\\). A surd is a root that isn't a whole number, like \\(\\sqrt2\\).",
+      "lines": [
+        "\\(9^{\\frac12} = 3\\) &nbsp; \\(8^{\\frac13} = 2\\)",
+        "Simplify: \\(\\sqrt{12} = \\sqrt4 \\times \\sqrt3 = 2\\sqrt3\\)"
+      ]
+    },
+    {
+      "title": "Simple operations with surds",
+      "sections": [
+        "6I"
+      ],
+      "rule": "Add or subtract like surds only. Multiply: multiply the numbers outside and inside.",
+      "lines": [
+        "\\(3\\sqrt5 + 2\\sqrt5 = 5\\sqrt5\\) &nbsp; \\(\\sqrt3 \\times \\sqrt5 = \\sqrt{15}\\)",
+        "\\(2\\sqrt3 \\times 4\\sqrt2 = 8\\sqrt6\\)",
+        "\\(\\sqrt8 + \\sqrt{18} = 2\\sqrt2 + 3\\sqrt2 = 5\\sqrt2\\)"
+      ],
+      "tip": "\\(\\sqrt2 + \\sqrt3 \\ne \\sqrt5\\)"
+    }
+  ]
+}

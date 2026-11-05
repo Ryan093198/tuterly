@@ -1,0 +1,104 @@
+{
+  "year": 9,
+  "chapter": 7,
+  "slug": "geometry",
+  "title": "Geometry",
+  "short": "Geometry",
+  "appKey": "y9-ch7",
+  "summary": "Angles in triangles and polygons, parallel lines, congruent triangles and proof, enlargement and similar triangles.",
+  "cards": [
+    {
+      "title": "Angles and triangles",
+      "sections": [
+        "7A"
+      ],
+      "rule": "Triangle angles add to 180°. Angles on a straight line add to 180°, around a point 360°.",
+      "lines": [
+        "Two angles are 50° and 60°: the third is **70°**",
+        "Exterior angle = sum of the two opposite interior angles"
+      ],
+      "note": "An isosceles triangle has two equal sides and two equal base angles."
+    },
+    {
+      "title": "Parallel lines",
+      "sections": [
+        "7B"
+      ],
+      "rule": "Corresponding angles are equal (F), alternate angles are equal (Z), co-interior angles add to 180° (C).",
+      "lines": [
+        "If one angle is 65°, its co-interior angle is **115°**"
+      ],
+      "tip": "these rules only work when the lines are parallel."
+    },
+    {
+      "title": "Quadrilaterals and polygons",
+      "sections": [
+        "7C"
+      ],
+      "rule": "Interior angle sum of an \\(n\\)-sided polygon: \\((n - 2) \\times 180^\\circ\\).",
+      "lines": [
+        "Quadrilateral: 360°",
+        "Hexagon: \\(4 \\times 180^\\circ = 720^\\circ\\); each angle of a regular hexagon is 120°"
+      ]
+    },
+    {
+      "title": "Congruent triangles",
+      "sections": [
+        "7D"
+      ],
+      "rule": "Congruent means exactly the same shape and size (≅). Tests: SSS, SAS, AAS, RHS.",
+      "lines": [
+        "SSS: all three sides equal",
+        "SAS: two sides and the angle between them",
+        "RHS: right angle, hypotenuse and one side"
+      ],
+      "tip": "AAA is not a congruence test: same angles can be different sizes."
+    },
+    {
+      "title": "Using congruence in proof",
+      "sections": [
+        "7E"
+      ],
+      "rule": "List the equal parts with a reason for each, name the test, then conclude.",
+      "lines": [
+        "ABCD is a parallelogram. Prove △ABC ≅ △CDA.",
+        "AB = CD and BC = DA (opposite sides of a parallelogram)",
+        "AC is common, so △ABC ≅ △CDA (SSS)"
+      ]
+    },
+    {
+      "title": "Enlargement and similar figures",
+      "sections": [
+        "7F"
+      ],
+      "rule": "Scale factor \\(= \\dfrac{\\text{image length}}{\\text{original length}}\\). Angles stay the same.",
+      "lines": [
+        "A 4 cm side enlarged by a scale factor of 2.5 becomes **10 cm**"
+      ],
+      "note": "Similar figures: same shape, sides in the same ratio."
+    },
+    {
+      "title": "Similar triangles",
+      "sections": [
+        "7G"
+      ],
+      "rule": "Tests: AAA, SSS (ratio), SAS (ratio), RHS (ratio). Match the sides in order.",
+      "lines": [
+        "Matching sides 4 and 6: scale factor \\(\\tfrac64 = 1.5\\)",
+        "Side 5 matches \\(x\\): \\(x = 5 \\times 1.5 = 7.5\\)"
+      ]
+    },
+    {
+      "title": "Proving and applying similar triangles",
+      "sections": [
+        "7H"
+      ],
+      "rule": "Show the triangles are similar, then use the scale factor.",
+      "lines": [
+        "A 2 m pole casts a 3 m shadow. A tree's shadow is 12 m at the same time.",
+        "Height \\(= 2 \\times \\tfrac{12}{3} = 8\\) m"
+      ],
+      "tip": "write the vertices in matching order: △ABC ||| △DEF."
+    }
+  ]
+}

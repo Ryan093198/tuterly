@@ -4,6 +4,7 @@ import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SKILL_PAGES } from "@/lib/skill-pages";
 import { SITE_URL } from "@/lib/site";
 import { getAllPosts } from "@/lib/learn";
+import { LIVE_YEARS, mindMapPath, mindMapsForYear } from "@/lib/mind-maps";
 
 // Public marketing pages Google should be aware of. Anything under
 // /dashboard, /auth, /onboarding, /api, /invite is excluded — those
@@ -155,10 +156,17 @@ export default function sitemap() {
     }),
   ];
 
+  // Mind maps: the hub and one page per chapter.
+  const mindMaps = [
+    { url: `${SITE_URL}/mind-maps`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...LIVE_YEARS.flatMap((y) => mindMapsForYear(y).map((m) => ({ url: `${SITE_URL}${mindMapPath(m)}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 }))),
+  ];
+
   return [
     ...statics,
     ...parentSuburbs,
     ...worksheetTopics,
     ...learn,
+    ...mindMaps,
   ];
 }
