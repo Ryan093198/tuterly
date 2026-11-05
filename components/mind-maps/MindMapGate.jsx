@@ -3,6 +3,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { trackEvent } from "@/lib/analytics";
+import { appCta } from "@/lib/study-app";
 
 // Mind maps are free with an email. Until then the map is blurred and the
 // download buttons open the email pop-up. One unlock covers every map on
@@ -108,7 +109,7 @@ function UnlockModal({ onClose, placement, year }) {
 
 // The main call to action at the top of the page: an email box until
 // they've signed up, then the download buttons.
-export function DownloadPanel({ downloads, placement, year, title = "Download the free A4 PDF", cta = "Get the free PDF" }) {
+export function DownloadPanel({ downloads, placement, year, title = "Download the free A4 PDF", cta = "Get the free PDF", text = "Free with your email. Print it, stick it on the wall, or revise from it on your phone." }) {
   useAutoUnlock();
   const unlocked = useUnlocked();
   if (unlocked) {
@@ -122,13 +123,16 @@ export function DownloadPanel({ downloads, placement, year, title = "Download th
             </a>
           ))}
         </div>
+        <p className="mm-panel__next">
+          Next step: <a href={appCta().href} onClick={() => trackEvent("study_app_cta_click", { placement: `${placement}_unlocked` })}>turn the questions you get wrong into practice with the Tuterly app →</a>
+        </p>
       </div>
     );
   }
   return (
     <div className="mm-panel">
       <p className="mm-panel__title">{title}</p>
-      <p className="mm-panel__text">Free with your email. Print it, stick it on the wall, or revise from it on your phone.</p>
+      <p className="mm-panel__text">{text}</p>
       <UnlockForm inline placement={placement} year={year} cta={cta} />
     </div>
   );

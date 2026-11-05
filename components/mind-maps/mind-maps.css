@@ -154,3 +154,37 @@
 .mm-form .tb-input { width: 100%; min-width: 0; }
 .mm-form .mm-modal__small { text-align: left; }
 .mm-modal__card .mm-form .mm-modal__small { text-align: center; }
+
+/* Revision page hero: copy and email box left, the map itself right. */
+.rv-hero { padding: 28px 0 40px; background: linear-gradient(180deg, var(--brand-pale, #f1fafc) 0%, var(--background) 100%); }
+.rv-hero__grid { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 980px) { .rv-hero__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; } }
+.rv-crumbs { font-size: 14px; margin-bottom: 14px; color: var(--muted); }
+.rv-hero__title { font-size: clamp(32px, 4.6vw, 52px); margin: 6px 0 0; }
+.rv-hero__lead { margin: 16px 0 0; }
+.rv-hero__panel { margin-top: 24px; max-width: 540px; }
+.rv-hero__side { display: grid; gap: 18px; justify-items: center; }
+.rv-stack { position: relative; width: 100%; max-width: 560px; aspect-ratio: 1680 / 1188; }
+.rv-stack__img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 14px; background: #fff;
+  border: 1px solid var(--border); box-shadow: 0 18px 40px rgba(11, 26, 44, .16);
+}
+.rv-stack--3 .rv-stack__img:nth-child(1) { z-index: 3; }
+.rv-stack--3 .rv-stack__img:nth-child(2) { z-index: 2; transform: rotate(-5deg) translate(-4%, 3%) scale(.94); opacity: .9; }
+.rv-stack--3 .rv-stack__img:nth-child(3) { z-index: 1; transform: rotate(5deg) translate(4%, 4%) scale(.9); opacity: .8; }
+.rv-stack--1 .rv-stack__img { transform: rotate(-1.5deg); }
+.rv-stack__badge {
+  position: absolute; z-index: 4; right: -6px; top: -12px; padding: 7px 12px; border-radius: 999px;
+  background: var(--xp, #e8a317); color: #fff; font: 900 13px var(--font-nunito), Nunito, sans-serif; box-shadow: 0 6px 14px rgba(0, 0, 0, .15);
+}
+.rv-app {
+  display: grid; grid-template-columns: 52px 1fr; gap: 12px; align-items: center; width: 100%; max-width: 560px;
+  padding: 14px 16px; border-radius: 18px; background: var(--card); border: 2px solid var(--border); color: var(--foreground); text-decoration: none;
+  transition: border-color .15s, transform .15s;
+}
+.rv-app:hover { border-color: var(--brand); transform: translateY(-1px); }
+.rv-app strong { display: block; font: 900 16px/1.25 var(--font-nunito), Nunito, sans-serif; }
+.rv-app__x { display: block; color: var(--muted); font-size: 14px; line-height: 1.4; margin-top: 2px; }
+.rv-app__go { display: block; margin-top: 4px; color: var(--brand-text); font-weight: 800; font-size: 14px; }
+.mm-panel__next { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.mm-panel__next a { color: var(--brand-text); font-weight: 700; }

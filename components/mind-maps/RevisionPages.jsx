@@ -2,8 +2,8 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
-import { Eyebrow } from "@/components/brand";
 import MindMapSheet from "@/components/mind-maps/MindMapSheet";
+import RevisionHero from "@/components/mind-maps/RevisionHero";
 import { DownloadPanel, GatedSheet } from "@/components/mind-maps/MindMapGate";
 import {
   PRACTISE, mindMapFiles, mindMapPath, mindMapsForYear, revisionBooklet, revisionYearPath, rich,
@@ -66,26 +66,24 @@ export function RevisionYearPage({ year: y }) {
     <div className="tb sl">
       <MarketingNav />
       <FaqJsonLd faqs={faqs} />
-      <section className="tb-section">
-        <div className="tb-wrap">
-          <nav aria-label="Breadcrumb" style={{ fontSize: 14, marginBottom: 10 }}>
-            <Link href="/mind-maps" className="tb-link">Revision mind maps</Link> / Year {y}
-          </nav>
-          <Eyebrow>{`Year ${y} maths revision`}</Eyebrow>
-          <h1 className="tb-h1">Year {y} maths revision: <span className="sl-accent">every topic on one page</span>.</h1>
-          <p className="tb-lead" style={{ maxWidth: 720 }}>
-            Free revision mind maps for every Year {y} maths chapter. Each one is a one-page summary with a plain-English rule, worked examples and the mistakes to watch out for. Print them, stick them on the wall, or save them as PDFs.
-          </p>
-          <div style={{ maxWidth: 560, marginTop: 20 }}>
+      <RevisionHero
+        crumbs={<><Link href="/mind-maps" className="tb-link">Revision mind maps</Link> / Year {y}</>}
+        eyebrow={`Year ${y} maths revision`}
+        title={<>Year {y} maths revision: <span className="sl-accent">every topic on one page</span>.</>}
+        lead={`A free one-page mind map for every Year ${y} maths chapter: the rules in plain English, worked examples and the mistakes to watch out for.`}
+        panel={
+          <>
             <DownloadPanel
               downloads={[{ href: revisionBooklet(y), label: `Download the Year ${y} revision booklet (PDF)` }]}
               placement={`revision_y${y}_booklet`} year={y}
               title={`Get the free Year ${y} revision booklet`} cta="Get the booklet"
+              text={`All ${maps.length} topics, one A4 page each. Free with your email.`}
             />
-            <p className="tb-muted" style={{ fontSize: 14, marginTop: 8 }}>All {maps.length} topics, one A4 page each. Unlocks every map below too.</p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        previews={maps.slice(0, 3).map((m) => mindMapFiles(m).preview)}
+        previewAlt={`Year ${y} maths revision mind maps`}
+      />
 
       <section className="tb-section tb-section--card" aria-labelledby="rv-chapters">
         <div className="tb-wrap">
@@ -151,24 +149,22 @@ export function RevisionChapterPage({ map: m }) {
   return (
     <div className="tb sl">
       <MarketingNav />
+      <RevisionHero
+        crumbs={<><Link href="/mind-maps" className="tb-link">Revision mind maps</Link> / <Link href={revisionYearPath(m.year)} className="tb-link">Year {m.year} maths revision</Link> / Chapter {m.chapter}</>}
+        eyebrow={`Year ${m.year} maths · Chapter ${m.chapter}`}
+        title={<>Year {m.year} {m.short}: <span className="sl-accent">revision mind map</span></>}
+        lead={`${m.summary} Everything on one A4 page.`}
+        panel={
+          <DownloadPanel
+            downloads={[{ href: files.pdf, label: "Download the A4 PDF" }, { href: files.png, label: "Save as an image" }]}
+            placement="revision_chapter" year={m.year}
+          />
+        }
+        previews={[files.preview]}
+        previewAlt={`Year ${m.year} ${m.short} revision mind map`}
+      />
       <main className="mm-page">
         <div className="tb-wrap">
-          <nav aria-label="Breadcrumb" style={{ fontSize: 14, marginBottom: 10 }}>
-            <Link href="/mind-maps" className="tb-link">Revision mind maps</Link> / <Link href={revisionYearPath(m.year)} className="tb-link">Year {m.year} maths revision</Link> / Chapter {m.chapter}
-          </nav>
-          <div className="mm-head">
-            <div>
-              <Eyebrow>{`Year ${m.year} maths · Chapter ${m.chapter}`}</Eyebrow>
-              <h1 className="tb-h1" style={{ fontSize: "clamp(28px, 4vw, 44px)" }}>Year {m.year} {m.short}: revision mind map</h1>
-              <p className="tb-lead" style={{ maxWidth: 720, marginTop: 6 }}>{m.summary} Everything on one page, free to print or save as a PDF.</p>
-            </div>
-            <div className="mm-head__panel">
-              <DownloadPanel
-                downloads={[{ href: files.pdf, label: "Download the A4 PDF" }, { href: files.png, label: "Save as an image" }]}
-                placement="revision_chapter" year={m.year}
-              />
-            </div>
-          </div>
           <PaywallJsonLd />
           <GatedSheet placement="revision_chapter" year={m.year}>
             <MindMapSheet map={m} />
