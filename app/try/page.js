@@ -2,6 +2,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import TryQuestion from "@/components/study/TryQuestion";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import ResultsProof from "@/components/study/ResultsProof";
 import { CtaBand, Eyebrow } from "@/components/brand";
 import { SITE_URL } from "@/lib/site";
 import "@/components/study/study-landing.css";
@@ -35,6 +36,9 @@ export default function TryPage() {
             </p>
           </div>
           <TryQuestion />
+          <div style={{ maxWidth: 640, margin: "24px auto 0" }}>
+            <ResultsProof />
+          </div>
         </div>
       </section>
       <CtaBand

@@ -1,3 +1,4 @@
+import ResultsProof from "@/components/study/ResultsProof";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import PlusForm from "./PlusForm";
@@ -41,6 +42,7 @@ export default function StudyPlus() {
               </li>
             ))}
           </ul>
+          <ResultsProof />
           <PlusForm />
           <p className="text-xs text-muted leading-relaxed">
             Billed by Bayside Academics. Prices in Australian dollars, including GST. Subscriptions renew

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import ResultsProof from "@/components/study/ResultsProof";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
@@ -25,6 +26,7 @@ export default function FeaturesHub() {
             <p className="tb-lead sl-hero__lead">
               Snap the questions they got wrong, check any topic, and revise from notes built around their mistakes. Here’s what each part does.
             </p>
+            <ResultsProof compact className="sl-hero__proof" />
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement="features_hero" slim />
             </div>

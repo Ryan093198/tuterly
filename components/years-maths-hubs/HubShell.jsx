@@ -2,6 +2,7 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import ResultsProof from "@/components/study/ResultsProof";
 import { Eyebrow } from "@/components/brand";
 import { HUBS, hubJsonLd } from "@/lib/years-maths-hubs";
 import "@/components/brand/brand.css";
@@ -91,6 +92,7 @@ export default function HubShell({
               <p className="ym-herocta__x">
                 {ctaText || "Snap the maths questions your child gets wrong. Tuterly saves each one with a worked solution and keeps it in their bank until they get it right."}
               </p>
+              <ResultsProof compact className="ym-proof" />
               <StudyAppCTA variant="hero" placement={`year_${year}_maths_hub_hero`} slim />
             </div>
           </div>
