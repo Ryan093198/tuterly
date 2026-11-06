@@ -10,7 +10,8 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const PER_EMAIL_PER_DAY = 3;
+// 10 so a teacher can request a unit's worth of tests in one sitting (Nov 2026).
+const PER_EMAIL_PER_DAY = 10;
 
 // POST /api/topic-test/request
 //   { email, year_level, topic_id, placement }

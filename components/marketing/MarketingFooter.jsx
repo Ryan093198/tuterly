@@ -16,6 +16,7 @@ const GROUPS = [
       { href: "/features", label: "Features" },
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },
+      { href: "/teachers", label: "For teachers" },
       { href: "/maths-exam-preparation", label: "Exam preparation" },
       { href: "/naplan", label: "NAPLAN practice tests" },
       { href: "/formula-sheets", label: "Formula sheets" },
