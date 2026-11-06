@@ -1,0 +1,107 @@
+{
+  "year": 7,
+  "chapter": 6,
+  "slug": "negative-numbers",
+  "title": "Negative numbers",
+  "short": "Negative numbers",
+  "appKey": "y7-ch6",
+  "summary": "Negative integers on the number line, adding and subtracting, multiplying and dividing, order of operations, substituting and the four quadrants.",
+  "cards": [
+    {
+      "title": "Introduction to negative integers",
+      "sections": [
+        "6A"
+      ],
+      "rule": "Numbers get smaller as you move left on the number line.",
+      "lines": [
+        "\\(-3 < 1\\) &nbsp; \\(-7 < -2\\)",
+        "4 degrees below zero is −4°C",
+        "In order: −8, −3, 0, 2",
+        "The opposite of 5 is −5",
+        "A lift at floor 2 goes down 5 floors: floor **−3**"
+      ]
+    },
+    {
+      "title": "Adding and subtracting positives",
+      "sections": [
+        "6B"
+      ],
+      "rule": "Adding moves right. Subtracting moves left.",
+      "lines": [
+        "\\(-3 + 5 = 2\\) &nbsp; \\(-2 + 6 = 4\\)",
+        "\\(2 - 7 = -5\\) &nbsp; \\(-4 - 3 = -7\\)",
+        "It's −3°C and warms by 8°: **5°C**",
+        "A diver at −12 m rises 5 m: **−7 m**"
+      ]
+    },
+    {
+      "title": "Adding and subtracting negatives",
+      "sections": [
+        "6C"
+      ],
+      "rule": "Adding a negative means subtract. Subtracting a negative means add.",
+      "lines": [
+        "\\(3 + (-5) = -2\\) &nbsp; \\(-1 + (-4) = -5\\)",
+        "\\(2 - (-3) = 5\\) &nbsp; \\(-6 - (-2) = -4\\)",
+        "Owing $5, then owing $4 more: \\(-5 + (-4) = -9\\)"
+      ],
+      "tip": "\\(+\\,(-)\\) acts like \\(-\\), and \\(-\\,(-)\\) acts like \\(+\\)."
+    },
+    {
+      "title": "Multiplying and dividing",
+      "sections": [
+        "6D"
+      ],
+      "rule": "Same signs give a positive. Different signs give a negative.",
+      "lines": [
+        "\\(-3 \\times 4 = -12\\) &nbsp; \\(-5 \\times (-2) = 10\\)",
+        "\\(-20 \\div 4 = -5\\) &nbsp; \\(-18 \\div (-3) = 6\\)",
+        "Lose 3 points in each of 4 rounds: \\(-3 \\times 4 = -12\\)",
+        "\\(-2 \\times (-3) \\times 4 = 24\\)"
+      ],
+      "tip": "this rule is for × and ÷ only: \\(-3 + (-2) = -5\\)."
+    },
+    {
+      "title": "Order of operations",
+      "sections": [
+        "6E"
+      ],
+      "rule": "Brackets, then × and ÷, then + and −, from left to right.",
+      "lines": [
+        "\\(-2 + 3 \\times (-4) = -2 - 12 = -14\\)",
+        "\\((-2 + 3) \\times (-4) = -4\\)",
+        "\\(10 \\div (-2) - 3 = -8\\)",
+        "\\(-3 \\times 2 + 8 = -6 + 8 = 2\\)"
+      ],
+      "note": "Do the multiplying and dividing before the adding and subtracting."
+    },
+    {
+      "title": "Substituting integers",
+      "sections": [
+        "6F"
+      ],
+      "rule": "Put negative numbers in brackets when you substitute.",
+      "lines": [
+        "\\(a = -2,\\ b = 3\\): \\(a + b = 1\\) &nbsp; \\(ab = -6\\)",
+        "\\(b - a = 3 - (-2) = 5\\) &nbsp; \\(a^2 = 4\\)",
+        "\\(2a - b = -4 - 3 = -7\\)",
+        "\\(ab + 10 = -6 + 10 = 4\\)"
+      ],
+      "tip": "\\((-2)^2 = 4\\), not \\(-4\\)."
+    },
+    {
+      "title": "The Cartesian plane",
+      "sections": [
+        "6G"
+      ],
+      "rule": "Four quadrants, numbered anticlockwise from the top right. \\((x, y)\\): across, then up or down.",
+      "lines": [
+        "\\((-3, 2)\\) is in the second quadrant",
+        "\\((-1, -4)\\) is in the third quadrant",
+        "\\((2, -3)\\) is in the fourth quadrant",
+        "Right 5 from \\((-3, 2)\\) gives \\((2, 2)\\)"
+      ],
+      "note": "\\((-2, 0)\\) is on the x-axis, so it isn't in any quadrant."
+    }
+  ]
+}

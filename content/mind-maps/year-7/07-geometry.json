@@ -1,0 +1,140 @@
+{
+  "year": 7,
+  "chapter": 7,
+  "slug": "geometry",
+  "title": "Geometry",
+  "short": "Geometry",
+  "appKey": "y7-ch7",
+  "summary": "Angles, parallel lines, triangles and quadrilaterals, the angle sum of a triangle, symmetry, reflections, rotations, translations, solids and nets.",
+  "cards": [
+    {
+      "title": "Points, lines and angles",
+      "sections": [
+        "7A"
+      ],
+      "rule": "Acute under 90°, right 90°, obtuse 90° to 180°, straight 180°, reflex over 180°.",
+      "lines": [
+        "A full revolution is 360°"
+      ]
+    },
+    {
+      "title": "Adjacent and opposite angles",
+      "sections": [
+        "7B"
+      ],
+      "rule": "On a straight line, angles add to 180°. Vertically opposite angles are equal.",
+      "lines": [
+        "130° on a straight line: the other angle is **50°**",
+        "Complementary angles add to 90°"
+      ]
+    },
+    {
+      "title": "Parallel lines",
+      "sections": [
+        "7C"
+      ],
+      "rule": "Corresponding angles are equal (F), alternate angles are equal (Z), co-interior angles add to 180° (C).",
+      "lines": [
+        "75°: co-interior angle **105°**"
+      ]
+    },
+    {
+      "title": "Compound problems",
+      "sections": [
+        "7D"
+      ],
+      "rule": "Draw an extra parallel line through the angle to split it.",
+      "lines": [
+        "Parts of 40° and 30°: the whole angle is **70°**"
+      ]
+    },
+    {
+      "title": "Triangles",
+      "sections": [
+        "7E"
+      ],
+      "rule": "By sides: equilateral, isosceles, scalene. By angles: acute, right, obtuse.",
+      "lines": [
+        "Equilateral: three equal sides",
+        "Isosceles: two equal sides",
+        "Scalene: no equal sides"
+      ]
+    },
+    {
+      "title": "Quadrilaterals and polygons",
+      "sections": [
+        "7F"
+      ],
+      "rule": "Square, rectangle, parallelogram, rhombus, trapezium, kite.",
+      "lines": [
+        "Polygons: pentagon 5 sides, hexagon 6, octagon 8",
+        "Rhombus: four equal sides"
+      ]
+    },
+    {
+      "title": "Angle sum of a triangle",
+      "sections": [
+        "7G"
+      ],
+      "rule": "The angles of a triangle add to 180°.",
+      "lines": [
+        "50° and 60°: the third is **70°**",
+        "Isosceles with top angle 40°: each base angle is **70°**"
+      ]
+    },
+    {
+      "title": "Symmetry",
+      "sections": [
+        "7H"
+      ],
+      "rule": "Line symmetry: it folds onto itself. Rotational symmetry: it fits onto itself as it turns.",
+      "lines": [
+        "Square: 4 lines, order 4",
+        "Rectangle: 2 lines, order 2"
+      ]
+    },
+    {
+      "title": "Reflection and rotation",
+      "sections": [
+        "7I"
+      ],
+      "rule": "Reflection: a mirror image. Rotation: a turn about a centre.",
+      "lines": [
+        "Give a rotation's centre, angle and direction, such as 90° clockwise"
+      ]
+    },
+    {
+      "title": "Translation",
+      "sections": [
+        "7J"
+      ],
+      "rule": "A slide, with no turning or flipping.",
+      "lines": [
+        "Right 4, up 1: \\((2, 1) \\to (6, 2)\\)"
+      ]
+    },
+    {
+      "title": "Drawing solids",
+      "sections": [
+        "7K"
+      ],
+      "rule": "Prisms, pyramids, cylinders, cones and spheres.",
+      "lines": [
+        "Draw top, front and side views",
+        "Isometric dot paper makes 3D drawing easier"
+      ]
+    },
+    {
+      "title": "Nets of solids",
+      "sections": [
+        "7L"
+      ],
+      "rule": "A net folds up into the solid.",
+      "lines": [
+        "Cube: 6 squares",
+        "Triangular prism: 2 triangles and 3 rectangles",
+        "Square pyramid: 1 square and 4 triangles"
+      ]
+    }
+  ]
+}

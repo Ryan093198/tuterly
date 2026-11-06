@@ -1,0 +1,110 @@
+{
+  "year": 7,
+  "chapter": 8,
+  "slug": "statistics-and-probability",
+  "title": "Statistics and probability",
+  "short": "Statistics and probability",
+  "appKey": "y7-ch8",
+  "summary": "Types of data, mean, median, mode and range, graphs including stem-and-leaf and sector graphs, and theoretical and experimental probability.",
+  "cards": [
+    {
+      "title": "Collecting and classifying data",
+      "sections": [
+        "8A"
+      ],
+      "rule": "Categorical data is groups. Numerical data is numbers.",
+      "lines": [
+        "Categorical: favourite sport",
+        "Numerical: discrete (counts), continuous (measurements)",
+        "Primary: you collect it. Secondary: someone else did."
+      ]
+    },
+    {
+      "title": "Summarising data",
+      "sections": [
+        "8B"
+      ],
+      "rule": "Mean: add and divide. Median: middle in order. Mode: most common. Range: max − min.",
+      "lines": [
+        "2, 3, 3, 6, 11: mean \\(\\tfrac{25}{5} = 5\\)",
+        "Median 3, mode 3, range 9"
+      ]
+    },
+    {
+      "title": "Column graphs and dot plots",
+      "sections": [
+        "8C"
+      ],
+      "rule": "Give it a title, label both axes and use an equal scale.",
+      "lines": [
+        "Column graphs: leave gaps between columns",
+        "Dot plots: one dot for each result"
+      ]
+    },
+    {
+      "title": "Line graphs",
+      "sections": [
+        "8D"
+      ],
+      "rule": "Show change over time, with time on the horizontal axis.",
+      "lines": [
+        "Look for rising, falling and flat parts"
+      ]
+    },
+    {
+      "title": "Stem-and-leaf plots",
+      "sections": [
+        "8E"
+      ],
+      "rule": "The stem is the tens, the leaf is the units. Include a key.",
+      "lines": [
+        "1 | 2 5 8 and 2 | 0 3 (key 1 | 2 = 12)",
+        "Data 12, 15, 18, 20, 23: median **18**"
+      ]
+    },
+    {
+      "title": "Sector and divided bar graphs",
+      "sections": [
+        "8F"
+      ],
+      "rule": "Each part of the circle or bar shows a share of the whole.",
+      "lines": [
+        "A quarter of a circle is \\(90^\\circ\\)",
+        "30% of a circle: \\(0.3 \\times 360^\\circ = 108^\\circ\\)"
+      ]
+    },
+    {
+      "title": "Describing probability",
+      "sections": [
+        "8G"
+      ],
+      "rule": "Probability runs from 0 (impossible) to 1 (certain).",
+      "lines": [
+        "Unlikely, even chance \\(\\left(\\tfrac12\\right)\\), likely"
+      ]
+    },
+    {
+      "title": "Theoretical probability",
+      "sections": [
+        "8H"
+      ],
+      "rule": "\\(P = \\dfrac{\\text{favourable}}{\\text{total}}\\) when outcomes are equally likely.",
+      "lines": [
+        "Fair die: \\(P(3) = \\tfrac16\\), \\(P(\\text{even}) = \\tfrac12\\)",
+        "3 red and 2 blue: \\(P(\\text{red}) = \\tfrac35\\)",
+        "\\(P(\\text{not } A) = 1 - P(A)\\)"
+      ]
+    },
+    {
+      "title": "Experimental probability",
+      "sections": [
+        "8I"
+      ],
+      "rule": "Relative frequency \\(= \\dfrac{\\text{times it happened}}{\\text{number of trials}}\\)",
+      "lines": [
+        "12 heads in 40 tosses: \\(\\tfrac{12}{40} = 0.3\\). The theoretical probability is 0.5.",
+        "More trials usually get closer to the theoretical probability."
+      ]
+    }
+  ]
+}

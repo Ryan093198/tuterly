@@ -1,0 +1,114 @@
+{
+  "year": 7,
+  "chapter": 5,
+  "slug": "decimals",
+  "title": "Decimals",
+  "short": "Decimals",
+  "appKey": "y7-ch5",
+  "summary": "Place value, rounding, adding, subtracting, multiplying and dividing decimals, and connecting decimals, fractions and percentages.",
+  "cards": [
+    {
+      "title": "Place value and decimals",
+      "sections": [
+        "5A"
+      ],
+      "rule": "After the point: tenths, hundredths, thousandths.",
+      "lines": [
+        "3.47 is 3 ones, 4 tenths and 7 hundredths",
+        "0.5 is bigger than 0.45"
+      ],
+      "tip": "more digits doesn't mean bigger."
+    },
+    {
+      "title": "Rounding decimals",
+      "sections": [
+        "5B"
+      ],
+      "rule": "Look at the next digit: 5 or more rounds up.",
+      "lines": [
+        "3.476 to 1 decimal place is **3.5**",
+        "6.849 to 2 decimal places is **6.85**",
+        "2.93 to the nearest whole is **3**"
+      ]
+    },
+    {
+      "title": "Adding and subtracting",
+      "sections": [
+        "5C"
+      ],
+      "rule": "Line up the decimal points. Fill gaps with zeros.",
+      "lines": [
+        "\\(3.5 + 2.75 = 6.25\\)",
+        "\\(5 - 1.8 = 3.2\\)"
+      ]
+    },
+    {
+      "title": "× and ÷ by 10, 100, 1000",
+      "sections": [
+        "5D"
+      ],
+      "rule": "Multiply: digits move left. Divide: digits move right. One place for each zero.",
+      "lines": [
+        "\\(3.4 \\times 100 = 340\\)",
+        "\\(56 \\div 10 = 5.6\\)",
+        "\\(0.7 \\div 100 = 0.007\\)"
+      ]
+    },
+    {
+      "title": "Multiplying decimals",
+      "sections": [
+        "5E"
+      ],
+      "rule": "Multiply as whole numbers, then count the decimal places.",
+      "lines": [
+        "\\(0.3 \\times 0.4 = 0.12\\) (two places)",
+        "\\(1.2 \\times 3 = 3.6\\)",
+        "\\(2.5 \\times 1.2 = 3\\)"
+      ]
+    },
+    {
+      "title": "Dividing decimals",
+      "sections": [
+        "5F"
+      ],
+      "rule": "Make the number you're dividing by whole: move both points the same way.",
+      "lines": [
+        "\\(7.5 \\div 3 = 2.5\\)",
+        "\\(4.2 \\div 0.7 = 42 \\div 7 = 6\\)"
+      ]
+    },
+    {
+      "title": "Decimals and fractions",
+      "sections": [
+        "5G"
+      ],
+      "rule": "To turn a fraction into a decimal, divide the top by the bottom.",
+      "lines": [
+        "\\(0.75 = \\tfrac34\\) &nbsp; \\(0.2 = \\tfrac15\\)",
+        "\\(\\tfrac38 = 0.375\\) &nbsp; \\(\\tfrac23 = 0.666\\ldots\\)"
+      ]
+    },
+    {
+      "title": "Decimals and percentages",
+      "sections": [
+        "5H"
+      ],
+      "rule": "Decimal to percentage: multiply by 100. Percentage to decimal: divide by 100.",
+      "lines": [
+        "\\(0.35 = 35\\%\\) &nbsp; \\(1.2 = 120\\%\\)",
+        "\\(7\\% = 0.07\\)"
+      ]
+    },
+    {
+      "title": "Expressing proportions",
+      "sections": [
+        "5I"
+      ],
+      "rule": "Write the part over the whole, then convert.",
+      "lines": [
+        "12 out of 20: \\(\\tfrac{12}{20} = \\tfrac35 = 0.6 = 60\\%\\)",
+        "9 out of 25: \\(\\tfrac{9}{25} = 0.36 = 36\\%\\)"
+      ]
+    }
+  ]
+}
