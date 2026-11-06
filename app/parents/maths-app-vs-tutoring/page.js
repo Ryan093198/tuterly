@@ -70,7 +70,7 @@ const LINKS = [
   { href: "/learn/when-does-your-child-need-a-tutor", label: "When does your child actually need a tutor?" },
   { href: "/learn/online-vs-in-person-tutoring", label: "Online vs in-person tutoring" },
   { href: "/parents/kumon-cost-australia", label: "Kumon cost in Australia, and is it worth it?" },
-  { href: "/learn/best-maths-apps-years-7-10-australia", label: "Maths apps for Years 7 to 10 in Australia" },
+  { href: "/best-maths-apps-australia", label: "Maths apps for Years 7 to 10 in Australia" },
   { href: "/end-of-year-maths-exams", label: "Free practice exams and topic tests", note: "(a quick way to see where the gaps are)" },
 ];
 
@@ -110,7 +110,7 @@ export default function Page() {
         <div className="tb-wrap">
           <h2 id="h-cost" className="tb-h2 pg-h2">What maths help actually costs</h2>
           <p className="pg-intro">
-            Prices vary a lot by city, tutor and year level, so treat these as a guide and check current rates before you decide. One $100 lesson a week adds up to about $430 a month.
+            Prices vary a lot by city, tutor and year level, so treat these as a guide and check current rates before you decide. One $100 lesson a week adds up to about $430 a month. Tuterly isn&rsquo;t affiliated with Kumon.
           </p>
           <div className="pg-table">
             <table>

@@ -208,7 +208,7 @@ export default function Page() {
             </table>
           </div>
           <p className="pg-small">
-            Tutoring prices are typical published rates in late 2026; see our guide to <Link href="/parents/maths-app-vs-tutoring">tutoring costs</Link>.
+            Tutoring prices are typical published rates in late 2026; see our guide to <Link href="/parents/maths-app-vs-tutoring">tutoring costs</Link>. Tuterly isn&rsquo;t affiliated with Kumon. Kumon is a trademark of its owner.
           </p>
         </div>
       </section>

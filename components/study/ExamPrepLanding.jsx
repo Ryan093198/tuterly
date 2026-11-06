@@ -183,7 +183,7 @@ export default function ExamPrepLanding({ year = null }) {
             ))}
           </ul>
           <p className="stl-other">
-            Also useful: the <Link href="/practice-maths-tests-secondary" className="tb-link">maths practice test generator</Link>, the <Link href="/worksheets" className="tb-link">free maths worksheet generator</Link>, and our <Link href="/learn/best-maths-apps-years-7-10-australia" className="tb-link">comparison of maths apps for Years 7 to 10</Link>.
+            Also useful: the <Link href="/practice-maths-tests-secondary" className="tb-link">maths practice test generator</Link>, the <Link href="/worksheets" className="tb-link">free maths worksheet generator</Link>, and our <Link href="/best-maths-apps-australia" className="tb-link">comparison of maths apps for Years 7 to 10</Link>.
           </p>
         </div>
       </section>

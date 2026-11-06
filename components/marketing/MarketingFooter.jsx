@@ -37,6 +37,7 @@ const GROUPS = [
       { href: "/tutoring", label: "Tutoring in Melbourne" },
       { href: "/best-online-tutoring-melbourne", label: "Online tutoring" },
       { href: "/vce-tutoring", label: "VCE tutoring" },
+      { href: "/best-maths-apps-australia", label: "Best maths apps in Australia" },
       { href: "/cluey-alternative", label: "Cluey alternative" },
       { href: "/parents/help-with-secondary-maths-homework", label: "Helping with maths homework" },
       { href: "/parents/maths-app-vs-tutoring", label: "Maths app or tutoring?" },

@@ -3,7 +3,7 @@ title: "The best maths apps for Years 7 to 10 in Australia (2026)"
 description: "An honest comparison of maths apps for Australian Years 7 to 10 students: what each one does, who can buy it, what it costs, and which curriculum it follows. Prices checked October 2026."
 date: "2026-10-29"
 audience: "Parents of Years 7 to 10 students"
-published: true
+published: false
 studyApp: "soft"
 ---
 

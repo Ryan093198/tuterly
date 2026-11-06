@@ -231,6 +231,9 @@ export default function Page() {
             <p>
               <strong>When practice is the real gap:</strong>{" "}if your child mostly understands the work but keeps losing marks on the same kinds of questions, daily practice on their own mistakes often helps more than one hour a week. That&rsquo;s what Tuterly is built for. Tuterly is made by Bayside Academics, a Melbourne tutoring business, so we&rsquo;re not neutral, but we&rsquo;ve tried to be fair.
             </p>
+            <p className="pg-small">
+              Tuterly isn&rsquo;t affiliated with Cluey Learning or Cuemath. All names are trademarks of their owners.
+            </p>
           </div>
         </div>
       </section>

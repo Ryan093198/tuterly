@@ -6,6 +6,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/features/test-any-topic", destination: "/features/topic-check", permanent: true },
+      { source: "/learn/best-maths-apps-years-7-10-australia", destination: "/best-maths-apps-australia", permanent: true },
     ];
   },
   // Bundle the PDF fonts into the serverless functions / server actions that

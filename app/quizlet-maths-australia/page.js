@@ -156,7 +156,7 @@ export default function Page() {
             </ol>
             <h3 className="pg-h3">What about other maths apps?</h3>
             <p>
-              Parents often ask about Mathletics, Education Perfect and Khan Academy too. Mathletics and Education Perfect are mostly used through schools for set practice; Khan Academy offers free videos and exercises. If your child&rsquo;s school uses one, follow the teacher&rsquo;s lead. We also compare <Link href="/mathspace-alternative">Mathspace</Link> and <Link href="/photomath-alternative">Photomath</Link>, and our <Link href="/learn/best-maths-apps-years-7-10-australia">round-up of maths apps for Years 7 to 10</Link> covers more. If you are weighing an app against a person, read <Link href="/parents/maths-app-vs-tutoring">maths app or tutor</Link>, and for assessment weeks, <Link href="/parents/preparing-for-maths-topic-tests">preparing for maths topic tests</Link>.
+              Parents often ask about Mathletics, Education Perfect and Khan Academy too. Mathletics and Education Perfect are mostly used through schools for set practice; Khan Academy offers free videos and exercises. If your child&rsquo;s school uses one, follow the teacher&rsquo;s lead. We also compare <Link href="/mathspace-alternative">Mathspace</Link> and <Link href="/photomath-alternative">Photomath</Link>, and our <Link href="/best-maths-apps-australia">round-up of maths apps for Years 7 to 10</Link> covers more. If you are weighing an app against a person, read <Link href="/parents/maths-app-vs-tutoring">maths app or tutor</Link>, and for assessment weeks, <Link href="/parents/preparing-for-maths-topic-tests">preparing for maths topic tests</Link>.
             </p>
           </div>
         </div>
