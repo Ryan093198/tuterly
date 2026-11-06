@@ -83,6 +83,7 @@ const STATIC_PAGES = [
   { path: "/parents/studied-but-failed-maths-test", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/dyscalculia", priority: 0.8, changeFrequency: "monthly" },
   { path: "/teachers", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/preparing-for-maths-topic-tests", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb

@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: "Tutor or Kumon?",
-    a: "They do different things. Kumon is a daily worksheet program that works through its own sequence of skills, done mostly at home and checked at a centre; parents report paying about $130 a month per subject. A tutor works on your child's school topics and can re-teach them. For a Year 7 to 10 student struggling with this term's topics, practice that matches what's being taught at school usually helps more.",
+    a: "They do different things. Kumon is a daily worksheet program that works through its own sequence of skills, done mostly at home with a weekly class; it costs $160 a month per subject plus a $100 enrolment fee. A tutor works on your child's school topics and can re-teach them. For a Year 7 to 10 student struggling with this term's topics, practice that matches what's being taught at school usually helps more.",
   },
   {
     q: "Is a maths app enough on its own?",
@@ -69,6 +69,7 @@ const LINKS = [
   { href: "/parents/end-of-year-maths-report", label: "Got the maths report? Close the gaps before next year" },
   { href: "/learn/when-does-your-child-need-a-tutor", label: "When does your child actually need a tutor?" },
   { href: "/learn/online-vs-in-person-tutoring", label: "Online vs in-person tutoring" },
+  { href: "/parents/kumon-cost-australia", label: "Kumon cost in Australia, and is it worth it?" },
   { href: "/learn/best-maths-apps-years-7-10-australia", label: "Maths apps for Years 7 to 10 in Australia" },
   { href: "/end-of-year-maths-exams", label: "Free practice exams and topic tests", note: "(a quick way to see where the gaps are)" },
 ];
@@ -134,8 +135,8 @@ export default function Page() {
                 </tr>
                 <tr>
                   <th scope="row">Kumon</th>
-                  <td>About $130 a month per subject</td>
-                  <td>Daily worksheets in Kumon&rsquo;s own sequence, checked at a centre</td>
+                  <td>$160 a month per subject, plus $100 to enrol</td>
+                  <td>Daily worksheets in Kumon&rsquo;s own sequence, with a weekly class</td>
                 </tr>
                 <tr className="pg-row-hl">
                   <th scope="row">Tuterly</th>
