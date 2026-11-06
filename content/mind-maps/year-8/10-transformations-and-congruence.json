@@ -16,7 +16,10 @@
       "lines": [
         "\\((2, 3)\\) in the x-axis: \\((2, -3)\\)",
         "\\((2, 3)\\) in the y-axis: \\((-2, 3)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "reflect"
+      }
     },
     {
       "title": "Translation",
@@ -26,7 +29,10 @@
       "rule": "A slide, with no turning or flipping.",
       "lines": [
         "Right 3, down 2: \\((1, 4) \\to (4, 2)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "translate"
+      }
     },
     {
       "title": "Rotation",
@@ -37,7 +43,10 @@
       "lines": [
         "180° about the origin: \\((2, 3) \\to (-2, -3)\\)",
         "90° clockwise about the origin: \\((2, 3) \\to (3, -2)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "rotate"
+      }
     },
     {
       "title": "Congruent figures",
@@ -48,7 +57,10 @@
       "lines": [
         "Matching sides and matching angles are equal",
         "Write the vertices in matching order"
-      ]
+      ],
+      "fig": {
+        "type": "congruent"
+      }
     },
     {
       "title": "Congruent triangles",
@@ -62,7 +74,10 @@
         "AAS: two angles and a side",
         "RHS: right angle, hypotenuse, side"
       ],
-      "tip": "AAA isn't a test: same angles can be different sizes."
+      "tip": "AAA isn't a test: same angles can be different sizes.",
+      "fig": {
+        "type": "congruencetests"
+      }
     },
     {
       "title": "Tessellations",
@@ -73,7 +88,10 @@
       "lines": [
         "Regular hexagons: \\(3 \\times 120^\\circ = 360^\\circ\\) ✓",
         "Regular pentagons don't: 108° doesn't divide evenly into 360°"
-      ]
+      ],
+      "fig": {
+        "type": "tessellation"
+      }
     },
     {
       "title": "Congruence and quadrilaterals",
@@ -84,7 +102,10 @@
       "lines": [
         "A parallelogram's diagonal makes two congruent triangles, so opposite sides are equal",
         "A rhombus's diagonals cross at right angles"
-      ]
+      ],
+      "fig": {
+        "type": "paradiag"
+      }
     },
     {
       "title": "Similar figures",
@@ -95,7 +116,13 @@
       "lines": [
         "3 cm becomes 12 cm: scale factor \\(4\\)",
         "The angles stay the same"
-      ]
+      ],
+      "fig": {
+        "type": "similar",
+        "k": 4,
+        "a": "3 cm",
+        "b": "12 cm"
+      }
     },
     {
       "title": "Similar triangles",
@@ -106,7 +133,15 @@
       "lines": [
         "Matching sides 3 and 12: scale factor 4, so side 5 matches \\(20\\)",
         "A 1 m stick has a 2 m shadow; a tree's shadow is 10 m: the tree is \\(5\\) m tall"
-      ]
+      ],
+      "fig": {
+        "type": "similar",
+        "k": 4,
+        "a": "3",
+        "b": "12",
+        "c": "5",
+        "d": "20"
+      }
     }
   ]
 }

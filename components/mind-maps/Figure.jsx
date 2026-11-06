@@ -1,11 +1,13 @@
 // Small diagrams for mind map cards, drawn as SVG so they print crisply.
 // Each figure is described in the map's JSON: { "type": "...", ... }.
+import FigureMore from "@/components/mind-maps/FigureMore";
+
 const INK = "#0b1a2c";
 const MUTED = "#5b6677";
 
 export default function Figure({ fig, colour }) {
   const c = colour || "#0e9fbf";
-  const box = { width: "100%", height: "calc(100px * var(--s, 1))", display: "block", flexShrink: 0 };
+  const box = { width: "100%", height: "calc(var(--fh, 100px) * var(--s, 1))", display: "block", flexShrink: 0, overflow: "visible", flexGrow: 1, maxHeight: "210px" };
   switch (fig?.type) {
     case "right-triangle": {
       // Right angle bottom-right, angle θ bottom-left.
@@ -36,7 +38,7 @@ export default function Figure({ fig, colour }) {
           {fig.yPoint && <circle cx="100" cy={rising ? 55.5 : 36.5} r="3.5" fill={c} />}
           {fig.xPoint && <circle cx={rising ? 86 : 154} cy="62" r="3.5" fill={c} />}
           {yLabel && <text x="106" y={rising ? 50 : 32} fontSize="11" fill={INK}>{yLabel}</text>}
-          {xLabel && <text x={rising ? 82 : 158} y="78" fontSize="11" fill={INK} textAnchor={rising ? "end" : "start"}>{xLabel}</text>}
+          {xLabel && <text x={rising ? 80 : 160} y="55" fontSize="11" fill={INK} textAnchor={rising ? "end" : "start"}>{xLabel}</text>}
         </svg>
       );
     }
@@ -102,6 +104,6 @@ export default function Figure({ fig, colour }) {
       );
     }
     default:
-      return null;
+      return <FigureMore fig={fig} c={c} box={box} />;
   }
 }

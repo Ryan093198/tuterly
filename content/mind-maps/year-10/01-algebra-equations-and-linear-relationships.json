@@ -4,7 +4,7 @@
   "slug": "algebra-equations-and-linear-relationships",
   "title": "Algebra, equations and linear relationships",
   "short": "Algebra, equations and linear relationships",
-  "appKey": "Y10-ch1",
+  "appKey": "y10-ch1",
   "summary": "Algebra review, linear equations and inequalities, algebraic fractions, straight-line graphs, simultaneous equations and regions on the Cartesian plane.",
   "cards": [
     {
@@ -94,18 +94,44 @@
       "lines": [
         "Perpendicular to \\(y = 3x + 1\\): gradient \\(-\\tfrac13\\)",
         "Through \\((3, 2)\\): \\(y = -\\tfrac13 x + 3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "parperp"
+      }
     },
     {
       "title": "Simultaneous equations: substitution",
       "sections": [
         "1I"
       ],
-      "rule": "Replace one pronumeral with what it equals from the other equation.",
+      "rule": "Replace one pronumeral with what it equals.",
       "lines": [
         "\\(y = 2x - 1\\) and \\(3x + y = 14\\)",
         "\\(3x + 2x - 1 = 14 \\Rightarrow x = 3,\\ y = 5\\)"
-      ]
+      ],
+      "fig": {
+        "type": "twolines",
+        "a": [
+          2,
+          -1
+        ],
+        "b": [
+          -3,
+          14
+        ],
+        "at": [
+          3,
+          5
+        ],
+        "xr": [
+          -1,
+          6
+        ],
+        "yr": [
+          -1,
+          10
+        ]
+      }
     },
     {
       "title": "Simultaneous equations: elimination",
@@ -138,7 +164,11 @@
       "lines": [
         "\\(y > 2x + 1\\): test \\((0, 0)\\): \\(0 > 1\\) is false",
         "So shade the side without the origin"
-      ]
+      ],
+      "fig": {
+        "type": "region",
+        "label": "y > 2x + 1"
+      }
     }
   ]
 }

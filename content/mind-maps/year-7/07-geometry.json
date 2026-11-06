@@ -15,7 +15,10 @@
       "rule": "Acute under 90°, right 90°, obtuse 90° to 180°, straight 180°, reflex over 180°.",
       "lines": [
         "A full revolution is 360°"
-      ]
+      ],
+      "fig": {
+        "type": "angletypes"
+      }
     },
     {
       "title": "Adjacent and opposite angles",
@@ -26,7 +29,11 @@
       "lines": [
         "130° on a straight line: the other angle is **50°**",
         "Complementary angles add to 90°"
-      ]
+      ],
+      "fig": {
+        "type": "intersect",
+        "deg": 50
+      }
     },
     {
       "title": "Parallel lines",
@@ -36,7 +43,10 @@
       "rule": "Corresponding angles are equal (F), alternate angles are equal (Z), co-interior angles add to 180° (C).",
       "lines": [
         "75°: co-interior angle **105°**"
-      ]
+      ],
+      "fig": {
+        "type": "fzc"
+      }
     },
     {
       "title": "Compound problems",
@@ -46,7 +56,14 @@
       "rule": "Draw an extra parallel line through the angle to split it.",
       "lines": [
         "Parts of 40° and 30°: the whole angle is **70°**"
-      ]
+      ],
+      "fig": {
+        "type": "compound",
+        "parts": [
+          40,
+          30
+        ]
+      }
     },
     {
       "title": "Triangles",
@@ -58,7 +75,10 @@
         "Equilateral: three equal sides",
         "Isosceles: two equal sides",
         "Scalene: no equal sides"
-      ]
+      ],
+      "fig": {
+        "type": "triangletypes"
+      }
     },
     {
       "title": "Quadrilaterals and polygons",
@@ -69,7 +89,10 @@
       "lines": [
         "Polygons: pentagon 5 sides, hexagon 6, octagon 8",
         "Rhombus: four equal sides"
-      ]
+      ],
+      "fig": {
+        "type": "quadrilaterals"
+      }
     },
     {
       "title": "Angle sum of a triangle",
@@ -80,7 +103,12 @@
       "lines": [
         "50° and 60°: the third is **70°**",
         "Isosceles with top angle 40°: each base angle is **70°**"
-      ]
+      ],
+      "fig": {
+        "type": "triangle",
+        "A": 50,
+        "B": 60
+      }
     },
     {
       "title": "Symmetry",
@@ -91,7 +119,10 @@
       "lines": [
         "Square: 4 lines, order 4",
         "Rectangle: 2 lines, order 2"
-      ]
+      ],
+      "fig": {
+        "type": "symmetry"
+      }
     },
     {
       "title": "Reflection and rotation",
@@ -101,7 +132,11 @@
       "rule": "Reflection: a mirror image. Rotation: a turn about a centre.",
       "lines": [
         "Give a rotation's centre, angle and direction, such as 90° clockwise"
-      ]
+      ],
+      "fig": {
+        "type": "rotate",
+        "half": true
+      }
     },
     {
       "title": "Translation",
@@ -111,7 +146,10 @@
       "rule": "A slide, with no turning or flipping.",
       "lines": [
         "Right 4, up 1: \\((2, 1) \\to (6, 2)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "translate"
+      }
     },
     {
       "title": "Drawing solids",
@@ -122,7 +160,10 @@
       "lines": [
         "Draw top, front and side views",
         "Isometric dot paper makes 3D drawing easier"
-      ]
+      ],
+      "fig": {
+        "type": "solids"
+      }
     },
     {
       "title": "Nets of solids",
@@ -134,7 +175,10 @@
         "Cube: 6 squares",
         "Triangular prism: 2 triangles and 3 rectangles",
         "Square pyramid: 1 square and 4 triangles"
-      ]
+      ],
+      "fig": {
+        "type": "nets"
+      }
     }
   ]
 }

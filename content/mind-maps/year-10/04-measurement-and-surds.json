@@ -58,7 +58,14 @@
       "rule": "Find a right triangle, or use \\(d = \\sqrt{a^2 + b^2 + c^2}\\) for a box.",
       "lines": [
         "Box 2 by 3 by 6: \\(\\sqrt{4 + 9 + 36} = 7\\)"
-      ]
+      ],
+      "fig": {
+        "type": "box",
+        "l": 2,
+        "w": 3,
+        "h": 6,
+        "diag": "7"
+      }
     },
     {
       "title": "Review of area",
@@ -89,7 +96,12 @@
       "rule": "Add every face. Cylinder: \\(2\\pi r^2 + 2\\pi rh\\).",
       "lines": [
         "Cylinder \\(r = 4,\\ h = 10\\): \\(32\\pi + 80\\pi = 112\\pi \\approx 351.9\\)"
-      ]
+      ],
+      "fig": {
+        "type": "cylinder",
+        "r": "4",
+        "h": "10"
+      }
     },
     {
       "title": "Surface area: pyramids and cones",
@@ -98,9 +110,15 @@
       ],
       "rule": "Cone: \\(\\pi r^2 + \\pi r s\\), where \\(s\\) is the slant height.",
       "lines": [
-        "\\(r = 3,\\ h = 4\\): \\(s = 5\\), so \\(SA = 9\\pi + 15\\pi = 24\\pi \\approx 75.4\\)"
+        "\\(s = 5\\): \\(SA = 9\\pi + 15\\pi = 24\\pi \\approx 75.4\\)"
       ],
-      "tip": "use the slant height, not the vertical height."
+      "tip": "use the slant height, not the vertical height.",
+      "fig": {
+        "type": "cone",
+        "r": "3",
+        "h": "4",
+        "s": "5"
+      }
     },
     {
       "title": "Volume: prisms and cylinders",
@@ -110,7 +128,12 @@
       "rule": "\\(V = Ah\\). Cylinder: \\(V = \\pi r^2 h\\).",
       "lines": [
         "\\(r = 5,\\ h = 8\\): \\(V = 200\\pi \\approx 628.3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "cylinder",
+        "r": "5",
+        "h": "8"
+      }
     },
     {
       "title": "Volume: pyramids and cones",
@@ -121,7 +144,12 @@
       "lines": [
         "Cone \\(r = 3,\\ h = 4\\): \\(\\tfrac13 \\times 9\\pi \\times 4 = 12\\pi \\approx 37.7\\)",
         "Square pyramid, base 6, height 10: \\(\\tfrac13 \\times 36 \\times 10 = 120\\)"
-      ]
+      ],
+      "fig": {
+        "type": "pyramid",
+        "b": "6",
+        "h": "10"
+      }
     },
     {
       "title": "Spheres",
@@ -132,7 +160,11 @@
       "lines": [
         "\\(r = 6\\): \\(SA = 144\\pi \\approx 452.4\\)",
         "\\(V = \\tfrac43\\pi(216) = 288\\pi \\approx 904.8\\)"
-      ]
+      ],
+      "fig": {
+        "type": "sphere",
+        "r": "6"
+      }
     }
   ]
 }

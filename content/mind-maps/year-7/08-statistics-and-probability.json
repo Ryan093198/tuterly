@@ -39,7 +39,17 @@
       "lines": [
         "Column graphs: leave gaps between columns",
         "Dot plots: one dot for each result"
-      ]
+      ],
+      "fig": {
+        "type": "bars",
+        "values": [
+          3,
+          6,
+          9,
+          5,
+          2
+        ]
+      }
     },
     {
       "title": "Line graphs",
@@ -49,7 +59,10 @@
       "rule": "Show change over time, with time on the horizontal axis.",
       "lines": [
         "Look for rising, falling and flat parts"
-      ]
+      ],
+      "fig": {
+        "type": "linegraph"
+      }
     },
     {
       "title": "Stem-and-leaf plots",
@@ -71,7 +84,11 @@
       "lines": [
         "A quarter of a circle is \\(90^\\circ\\)",
         "30% of a circle: \\(0.3 \\times 360^\\circ = 108^\\circ\\)"
-      ]
+      ],
+      "fig": {
+        "type": "pie",
+        "pct": 30
+      }
     },
     {
       "title": "Describing probability",

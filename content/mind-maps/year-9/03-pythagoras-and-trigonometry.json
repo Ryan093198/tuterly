@@ -57,7 +57,15 @@
         "Box 3 by 4 by 12: base diagonal \\(\\sqrt{9 + 16} = 5\\)",
         "Space diagonal \\(\\sqrt{5^2 + 12^2} = 13\\)"
       ],
-      "note": "Shortcut: \\(d = \\sqrt{a^2 + b^2 + c^2}\\)"
+      "note": "Shortcut: \\(d = \\sqrt{a^2 + b^2 + c^2}\\)",
+      "fig": {
+        "type": "box",
+        "l": 4,
+        "w": 3,
+        "h": 12,
+        "base": "5",
+        "diag": "13"
+      }
     },
     {
       "title": "Trigonometric ratios",
@@ -122,7 +130,13 @@
         "20 m from a tree, the angle of elevation to the top is 32°",
         "Height \\(= 20\\tan 32^\\circ \\approx 12.5\\) m"
       ],
-      "tip": "draw the horizontal line first, then the angle."
+      "tip": "draw the horizontal line first, then the angle.",
+      "fig": {
+        "type": "elevation",
+        "deg": 32,
+        "base": "20 m",
+        "height": "12.5 m"
+      }
     },
     {
       "title": "Bearings",
@@ -133,7 +147,12 @@
       "lines": [
         "North-east is 045°T, south-east 135°T, west 270°T",
         "Walk 10 km on 060°T: east \\(10\\sin 60^\\circ \\approx 8.66\\) km, north \\(10\\cos 60^\\circ = 5\\) km"
-      ]
+      ],
+      "fig": {
+        "type": "bearing",
+        "deg": 60,
+        "label": "060°T"
+      }
     }
   ]
 }

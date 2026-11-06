@@ -42,7 +42,10 @@
         "\\(d = 6\\): \\(C = 6\\pi \\approx 18.8\\)",
         "\\(r = 4\\): \\(C = 8\\pi \\approx 25.1\\)"
       ],
-      "note": "\\(\\pi \\approx 3.14\\)"
+      "note": "\\(\\pi \\approx 3.14\\)",
+      "fig": {
+        "type": "circleparts"
+      }
     },
     {
       "title": "Arcs and sectors",
@@ -51,9 +54,13 @@
       ],
       "rule": "Arc length \\(= \\tfrac{\\theta}{360} \\times 2\\pi r\\). Add the straight edges for the perimeter.",
       "lines": [
-        "Semicircle \\(r = 5\\): arc \\(5\\pi \\approx 15.7\\), perimeter \\(10 + 5\\pi \\approx 25.7\\)",
         "Quarter circle \\(r = 4\\): arc \\(2\\pi \\approx 6.3\\), perimeter \\(8 + 2\\pi \\approx 14.3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "sector",
+        "deg": 90,
+        "r": "4"
+      }
     },
     {
       "title": "Area of rectangles",
@@ -79,7 +86,12 @@
         "Base 6, height 4: \\(A = 24\\)",
         "Base 8 cm, height 5 cm: \\(A = 40\\) cm²"
       ],
-      "tip": "use the perpendicular height, not the slanted side."
+      "tip": "use the perpendicular height, not the slanted side.",
+      "fig": {
+        "type": "parallelogram",
+        "b": "6",
+        "h": "4"
+      }
     },
     {
       "title": "Area of triangles",
@@ -88,10 +100,14 @@
       ],
       "rule": "\\(A = \\tfrac12 bh\\): half a parallelogram.",
       "lines": [
-        "Base 10, height 3: \\(A = 15\\)",
-        "Base 6, height 7: \\(A = 21\\)"
+        "Base 10, height 3: \\(A = 15\\)"
       ],
-      "tip": "don't forget the \\(\\tfrac12\\)."
+      "tip": "don't forget the \\(\\tfrac12\\).",
+      "fig": {
+        "type": "triangleh",
+        "b": "10",
+        "h": "3"
+      }
     },
     {
       "title": "Composite shapes",
@@ -102,7 +118,14 @@
       "lines": [
         "L shape: \\(8 \\times 3 + 4 \\times 2 = 24 + 8 = 32\\)",
         "10 by 6 with a 2 by 2 hole: \\(60 - 4 = 56\\)"
-      ]
+      ],
+      "fig": {
+        "type": "lshape",
+        "w1": 8,
+        "h1": 3,
+        "w2": 4,
+        "h2": 2
+      }
     },
     {
       "title": "Volume of rectangular prisms",
@@ -113,7 +136,13 @@
       "lines": [
         "\\(5 \\times 3 \\times 2 = 30\\) cm³",
         "Cube, side 3: \\(3 \\times 3 \\times 3 = 27\\) cm³"
-      ]
+      ],
+      "fig": {
+        "type": "box",
+        "l": 5,
+        "w": 3,
+        "h": 2
+      }
     },
     {
       "title": "Volume of triangular prisms",
@@ -124,7 +153,13 @@
       "lines": [
         "Triangle \\(\\tfrac12 \\times 4 \\times 3 = 6\\), length 10: \\(V = 60\\)",
         "Triangle base 6, height 5: area 15. Length 4: \\(V = 60\\)"
-      ]
+      ],
+      "fig": {
+        "type": "triprism",
+        "b": 4,
+        "h": 3,
+        "l": "10"
+      }
     },
     {
       "title": "Capacity",
