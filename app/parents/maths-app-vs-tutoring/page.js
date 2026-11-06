@@ -9,7 +9,8 @@ import { PLUS_PRICES, FULL_PRICE_FROM } from "@/lib/study-launch";
 // it. Leads with an honest, sourced cost comparison, says plainly when a
 // tutor is the right call, then shows what an app does between lessons.
 //
-// Prices: Tuterly's in plain text follow lib/study-launch.js (launch price
+// Prices: the table shows Tuterly's current weekly and monthly price only
+// (Ryan, 6 Nov 2026); the FAQ follows lib/study-launch.js (launch price
 // and the price from 1 April 2027, no "50% off" or end date here). Tutor
 // and Kumon figures are what providers and parents published, with links.
 
@@ -107,7 +108,7 @@ export default function Page() {
         <div className="tb-wrap">
           <h2 id="h-cost" className="tb-h2 pg-h2">What maths help actually costs</h2>
           <p className="pg-intro">
-            Monthly costs below assume one lesson a week (about 4.3 a month). Prices vary a lot by city, tutor and year level, so treat these as a guide, and check current rates before you decide.
+            Prices vary a lot by city, tutor and year level, so treat these as a guide and check current rates before you decide. One $100 lesson a week adds up to about $430 a month.
           </p>
           <div className="pg-table">
             <table>
@@ -116,7 +117,6 @@ export default function Page() {
                 <tr>
                   <th scope="col">Option</th>
                   <th scope="col">Typical price</th>
-                  <th scope="col">About a month</th>
                   <th scope="col">What you get</th>
                 </tr>
               </thead>
@@ -124,26 +124,22 @@ export default function Page() {
                 <tr>
                   <th scope="row">Private tutor (experienced or registered teacher)</th>
                   <td>$100 to $120 an hour</td>
-                  <td>$430 to $520</td>
                   <td>One hour a week with a person who can re-teach and diagnose</td>
                 </tr>
                 <tr>
                   <th scope="row">Online tutoring company</th>
                   <td>From $65 to $70 an hour</td>
-                  <td>$280 to $300</td>
                   <td>One hour a week online, often with a university-student tutor</td>
                 </tr>
                 <tr>
                   <th scope="row">Kumon</th>
                   <td>About $130 a month per subject</td>
-                  <td>$130</td>
                   <td>Daily worksheets in Kumon&rsquo;s own sequence, checked at a centre</td>
                 </tr>
                 <tr className="pg-row-hl">
                   <th scope="row">Tuterly</th>
-                  <td>{WEEK} a week or {NOW} a month at launch ({WEEK_FULL} a week or {FULL} a month from {FULL_PRICE_FROM})</td>
-                  <td>{NOW}</td>
-                  <td>Practice every day on your child&rsquo;s own wrong questions, plus topic tests and a weekly summary for you</td>
+                  <td>{WEEK} a week or {NOW} a month</td>
+                  <td>Detailed, step-by-step worked solutions to your child&rsquo;s own wrong questions, fresh practice until they&rsquo;re mastered, topic tests and a weekly summary for you</td>
                 </tr>
               </tbody>
             </table>
@@ -197,6 +193,10 @@ export default function Page() {
             <li><strong>Test before the test</strong>A test on any topic in their year before a school assessment. Anything they get wrong goes straight into their practice.</li>
           </ol>
           <div className="pg-grid" style={{ marginTop: 18 }}>
+            <div className="pg-box">
+              <h3>Detailed worked solutions</h3>
+              <p>Every step written out and explained, so your child sees why it works, not just the answer. No waiting for next week&rsquo;s lesson.</p>
+            </div>
             <div className="pg-box">
               <h3>Ready at 9pm the night before</h3>
               <p>No lessons to book or reschedule, and nobody to cancel on you. It&rsquo;s there whenever homework is.</p>
