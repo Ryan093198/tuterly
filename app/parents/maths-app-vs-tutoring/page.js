@@ -1,47 +1,73 @@
 import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
+import { PLUS_PRICES, FULL_PRICE_FROM } from "@/lib/study-launch";
+
+// Parent landing page for tutoring cost searches ("maths tutor", "tutor near
+// me", "kumon cost", "is tutoring worth it"). Rewritten 6 Nov 2026 from the
+// parent research: tutoring feels compulsory but costly, and parents resent
+// it. Leads with an honest, sourced cost comparison, says plainly when a
+// tutor is the right call, then shows what an app does between lessons.
+//
+// Prices: Tuterly's in plain text follow lib/study-launch.js (launch price
+// and the price from 1 April 2027, no "50% off" or end date here). Tutor
+// and Kumon figures are what providers and parents published, with links.
 
 const PATH = "/parents/maths-app-vs-tutoring";
-const TITLE = "Maths App or Tutor? An Honest Guide for Years 7 to 10 Parents | Tuterly";
+const TITLE = "Maths Help Without the $100-an-Hour Tutor: Tutor Costs vs a Maths App | Tuterly";
 const DESCRIPTION =
-  "Should your secondary student use a maths app, a private tutor, or both? A practical framework for Australian parents: what each is good at, the trade-offs, and signs your child needs a person.";
+  "A good maths tutor often costs $100 an hour, about $430 a month for one lesson a week. An honest guide for parents of Years 7 to 10: what maths help costs in Australia, when a tutor is worth it, and when practice at home is the real gap.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
+const NOW = PLUS_PRICES.month.now;
+const FULL = PLUS_PRICES.month.full;
+
 const FAQS = [
   {
-    q: "Is a maths app enough on its own for a Year 7 to 10 student?",
-    a: "It can be, if your child is roughly keeping up in class and mainly needs more practice on the topics they are learning. It is usually not enough on its own if they are well behind, cannot start most questions in a topic, or are anxious enough that they avoid maths altogether. In those cases a person is better placed to diagnose and re-teach.",
+    q: "How much does a maths tutor cost in Australia?",
+    a: "It varies a lot. Online tutoring companies advertise from about $65 to $70 an hour, while an experienced or registered teacher tutoring privately often charges $100 to $120 an hour. One lesson a week at $100 an hour is about $430 a month. Prices here are what providers and parents published in late 2026, so check current rates.",
   },
   {
-    q: "How do I know if my child needs a tutor?",
-    a: "Common signs are: marks dropping across several topics rather than one, being unable to start homework questions even with a worked example, gaps from earlier years showing up repeatedly, or worry about maths affecting school life. Talk to the teacher first. They can often tell you whether it is a practice issue or an understanding issue.",
+    q: "Is maths tutoring worth it?",
+    a: "It can be, when your child needs something a person does best: re-teaching a topic from scratch, working out why they're stuck, or rebuilding confidence after a bad year. It's often less worth it when your child mostly understands the work and the real problem is not enough practice on the questions they get wrong. In that case most of the improvement happens between lessons, not in them.",
+  },
+  {
+    q: "Tutor or Kumon?",
+    a: "They do different things. Kumon is a daily worksheet program that works through its own sequence of skills, done mostly at home and checked at a centre; parents report paying about $130 a month per subject. A tutor works on your child's school topics and can re-teach them. For a Year 7 to 10 student struggling with this term's topics, practice that matches what's being taught at school usually helps more.",
+  },
+  {
+    q: "Is a maths app enough on its own?",
+    a: "It can be, if your child is roughly keeping up and mainly needs more practice on the topics they're learning. It usually isn't enough on its own if they're well behind, can't start most questions in a topic, or avoid maths altogether. In those cases a person is better placed to diagnose and re-teach.",
+  },
+  {
+    q: "My teenager refuses to see a tutor. What else can we do?",
+    a: "This is common. Some teenagers don't want an adult watching them get things wrong, or don't want another booked hour in the week. Practice they can do privately, on their own phone, at a time that suits them, often goes down better. Start small: the questions they got wrong on this week's homework.",
   },
   {
     q: "Can my child use an app and see a tutor at the same time?",
-    a: "Yes, and the two often work well together. The tutor re-teaches and diagnoses; the app gives your child structured practice between sessions on the questions they got wrong. Sharing the mistakes from the app with the tutor can help them decide what to work on.",
+    a: "Yes, and the two often work well together. The tutor re-teaches and diagnoses; the app gives your child practice between lessons on the questions they got wrong. Bringing those saved mistakes to the lesson means the tutor starts from real evidence.",
   },
   {
-    q: "Does it matter if an app follows the Australian Curriculum?",
-    a: "It helps. Topics, terminology and the order they are taught vary between countries. Practice that matches what your child is doing in class this term is easier to fit around homework and more likely to show up in school tests.",
+    q: "How much does Tuterly cost?",
+    a: `${NOW} a month at launch, and ${FULL} a month from ${FULL_PRICE_FROM}, with the first 7 days free and cancel any time. One family code covers up to 3 children.`,
   },
   {
-    q: "Online or in-person tutoring: which is better?",
-    a: "Both can work. Online tutoring removes travel and widens your choice of tutor; in-person can suit younger or easily distracted students. The tutor's ability to explain clearly and check understanding matters more than the format.",
+    q: "Is Tuterly just an answer app?",
+    a: "No. Your child sees a step-by-step worked solution, then has to get fresh questions on the same skill right on their own. Each question keeps coming back until it's mastered, so the point is being able to do it, not having the answer.",
   },
   {
-    q: "What does Tuterly do, and what does it not do?",
-    a: "Tuterly is a study app for Years 7 to 10 maths. Your child snaps questions they get wrong; it saves each with a worked solution, generates similar questions until the skill is mastered, and drills the questions they got wrong with fresh versions. A weekly review tests the week's trickiest, and they can test themselves on any topic in their year. It does not replace a teacher or a tutor who can watch your child work and re-teach a topic from scratch.",
+    q: "What does Tuterly not do?",
+    a: "It doesn't replace a teacher or a tutor who can sit beside your child, watch them work and re-teach a topic from scratch. If your child is far behind or very anxious about maths, talk to the school and consider a person.",
   },
 ];
 
 const LINKS = [
+  { href: "/parents/end-of-year-maths-report", label: "Got the maths report? Close the gaps before next year" },
   { href: "/learn/when-does-your-child-need-a-tutor", label: "When does your child actually need a tutor?" },
   { href: "/learn/online-vs-in-person-tutoring", label: "Online vs in-person tutoring" },
   { href: "/learn/best-maths-apps-years-7-10-australia", label: "Maths apps for Years 7 to 10 in Australia" },
-  { href: "/learn/maths-anxiety-help-children-victoria", label: "How to help your child with maths anxiety" },
-  { href: "/worksheets", label: "Free maths worksheets, Years 7 to 10", note: "(a quick way to check a skill at home)" },
+  { href: "/end-of-year-maths-exams", label: "Free practice exams and topic tests", note: "(a quick way to see where the gaps are)" },
 ];
 
 export default function Page() {
@@ -55,155 +81,155 @@ export default function Page() {
         { name: "Maths app or tutor?", path: PATH },
       ]}
       eyebrow="Parent guide · Years 7 to 10 maths"
-      h1="Maths app or tutor? An honest guide for parents of Years 7 to 10"
-      lead="When maths marks start to slip, many parents weigh up the same options: a study app, a private tutor, or both. They solve different problems. This guide helps you work out which problem your child actually has, so you can choose the right kind of help, or a mix."
+      h1={<>Maths help without the <span style={{ whiteSpace: "nowrap" }}>$100-an-hour</span> tutor</>}
+      lead="A good private maths tutor can easily cost $100 an hour: about $430 a month for one lesson a week. Sometimes that’s exactly what your child needs. But often the real problem isn’t the hour with the tutor. It’s the practice that doesn’t happen in the other six days."
       toc={[
-        ["problem", "Start with the problem"],
-        ["compare", "Side-by-side comparison"],
-        ["app-fits", "When an app fits"],
-        ["tutor-fits", "When a person is needed"],
-        ["both", "Combining them"],
+        ["cost", "What maths help costs"],
+        ["problem", "Which problem is it?"],
+        ["between", "The other six days"],
+        ["tutor-fits", "When a tutor is worth it"],
+        ["both", "Using both"],
         ["checklist", "Questions to ask"],
         ["faq", "FAQ"],
       ]}
-      ctaTitle="Practice built from your child’s mistakes"
-      ctaText="Tuterly turns each maths question your child gets wrong into a worked solution and fresh practice on the same skill. It covers the same maths as the Australian Curriculum."
+      ctaTitle="Practice every night, not once a week"
+      ctaText="Tuterly turns every maths question your child gets wrong into a worked solution and fresh practice until it sticks. Years 7 to 10, Australian Curriculum. Join the early list."
       placement="parents_app_vs_tutor"
       faqs={FAQS}
-      faqTitle="App or tutor: questions parents ask"
+      faqTitle="Tutoring and maths apps: questions parents ask"
       links={LINKS}
       finalTitle="Start with the questions they got wrong"
-      finalText="Whether or not your child also sees a tutor, Tuterly gives them a place to save every wrong question, practise it until it sticks, and test themselves before assessments."
+      finalText="Whether or not your child also sees a tutor, Tuterly gives them a place to save every wrong question, practise it until it sticks, and test themselves before assessments. You see what they mastered each week."
     >
-      <section id="problem" className="tb-section" aria-labelledby="h-problem">
+      <section id="cost" className="tb-section" aria-labelledby="h-cost">
         <div className="tb-wrap">
-          <h2 id="h-problem" className="tb-h2 pg-h2">Start with the problem, not the product</h2>
+          <h2 id="h-cost" className="tb-h2 pg-h2">What maths help actually costs</h2>
           <p className="pg-intro">
-            &ldquo;Struggling with maths&rdquo; can mean very different things. Before choosing any kind of help, it is worth working out which of these is closest to your child&rsquo;s situation.
-          </p>
-          <div className="pg-grid">
-            <div className="pg-box">
-              <h3>They understand it in class, then forget</h3>
-              <p>Homework goes fine on the night, but the same skills are shaky a few weeks later in a topic test. This is mostly a <strong>practice and retrieval</strong> gap.</p>
-            </div>
-            <div className="pg-box">
-              <h3>They make the same mistakes repeatedly</h3>
-              <p>Sign errors, a missed middle term when expanding, the wrong trig ratio. The method is mostly there, but specific steps keep breaking. This is a <strong>targeted practice</strong> gap.</p>
-            </div>
-            <div className="pg-box">
-              <h3>They cannot start most questions</h3>
-              <p>Even with a worked example, a whole topic does not make sense, or earlier skills (fractions, negative numbers, basic algebra) are missing. This is an <strong>understanding</strong> gap.</p>
-            </div>
-            <div className="pg-box">
-              <h3>They avoid maths altogether</h3>
-              <p>Homework does not get started, tests bring tears, or your child says they &ldquo;just can&rsquo;t do maths&rdquo;. This is often a <strong>confidence or accountability</strong> gap, sometimes alongside the others.</p>
-            </div>
-          </div>
-          <p className="pg-small">
-            Your child&rsquo;s teacher is the best first source here. A short conversation about recent tests usually tells you which of these is going on. Our <Link href="/parents/help-with-secondary-maths-homework">maths homework guide</Link> covers how to raise it.
-          </p>
-        </div>
-      </section>
-
-      <section id="compare" className="tb-section" aria-labelledby="h-compare">
-        <div className="tb-wrap">
-          <h2 id="h-compare" className="tb-h2 pg-h2">App and tutor, side by side</h2>
-          <p className="pg-intro">
-            This is a general comparison. Individual tutors and apps vary a lot, so treat it as a starting point rather than a verdict.
+            Monthly costs below assume one lesson a week (about 4.3 a month). Prices vary a lot by city, tutor and year level, so treat these as a guide, and check current rates before you decide.
           </p>
           <div className="pg-table">
             <table>
-              <caption>How a study app and a human tutor typically compare for Years 7 to 10 maths</caption>
+              <caption>Typical cost of maths help for a Year 7 to 10 student in Australia, late 2026</caption>
               <thead>
                 <tr>
-                  <th scope="col">Consideration</th>
-                  <th scope="col">Study app</th>
-                  <th scope="col">Tutor (online or in person)</th>
+                  <th scope="col">Option</th>
+                  <th scope="col">Typical price</th>
+                  <th scope="col">About a month</th>
+                  <th scope="col">What you get</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Best at</th>
-                  <td>Frequent practice, spaced review of past mistakes, quick worked solutions</td>
-                  <td>Diagnosing why a student is stuck, re-teaching a topic, adapting explanations in the moment</td>
+                  <th scope="row">Private tutor (experienced or registered teacher)</th>
+                  <td>$100 to $120 an hour</td>
+                  <td>$430 to $520</td>
+                  <td>One hour a week with a person who can re-teach and diagnose</td>
                 </tr>
                 <tr>
-                  <th scope="row">When it is available</th>
-                  <td>Any time, in short sessions, including the night before a test</td>
-                  <td>At booked session times, usually weekly</td>
+                  <th scope="row">Online tutoring company</th>
+                  <td>From $65 to $70 an hour</td>
+                  <td>$280 to $300</td>
+                  <td>One hour a week online, often with a university-student tutor</td>
                 </tr>
                 <tr>
-                  <th scope="row">Accountability</th>
-                  <td>Depends on your child&rsquo;s habits and your routine at home</td>
-                  <td>Built in: someone is expecting them each week</td>
+                  <th scope="row">Kumon</th>
+                  <td>About $130 a month per subject</td>
+                  <td>$130</td>
+                  <td>Daily worksheets in Kumon&rsquo;s own sequence, checked at a centre</td>
                 </tr>
                 <tr>
-                  <th scope="row">Seeing the working</th>
-                  <td>Checks answers and shows methods, but cannot watch your child think</td>
-                  <td>Can watch the process and spot exactly where it goes wrong</td>
-                </tr>
-                <tr>
-                  <th scope="row">Cost and time</th>
-                  <td>Generally a lower ongoing cost, no travel</td>
-                  <td>Generally a higher cost per week, plus travel for in-person sessions</td>
-                </tr>
-                <tr>
-                  <th scope="row">Match to school</th>
-                  <td>Varies; check it follows the Australian Curriculum and Australian terminology</td>
-                  <td>Varies; ask whether they know your child&rsquo;s year level and state curriculum</td>
+                  <th scope="row">Tuterly</th>
+                  <td>{NOW} a month at launch ({FULL} from {FULL_PRICE_FROM})</td>
+                  <td>{NOW}, up to 3 children</td>
+                  <td>Practice every day on your child&rsquo;s own wrong questions, plus topic tests and a weekly summary for you</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p className="pg-small">
+            Sources: an <a href="https://www.ozbargain.com.au/node/946603">OzBargain parent discussion</a> (a registered teacher tutoring senior students &ldquo;wouldnt be under $100 an hour&rdquo;; &ldquo;Kumon is about $130 a month per subject&rdquo;), an Australian teacher-tutor charging $120 an hour for senior maths (r/AustralianTeachers), and advertised rates from <a href="https://tutero.com/au/melbourne/maths-tutoring">Tutero</a> (from A$65 an hour) and <a href="https://kisacademics.com/w/tutoring-locations/melbourne-maths-tutoring">KIS Academics</a> ($70 an hour), November 2026.
+          </p>
         </div>
       </section>
 
-      <section id="app-fits" className="tb-section" aria-labelledby="h-app-fits">
+      <section id="problem" className="tb-section" aria-labelledby="h-problem">
         <div className="tb-wrap">
-          <h2 id="h-app-fits" className="tb-h2 pg-h2">When an app is the right tool</h2>
+          <h2 id="h-problem" className="tb-h2 pg-h2">First, which problem does your child have?</h2>
+          <p className="pg-intro">
+            &ldquo;Struggling with maths&rdquo; can mean very different things, and they need different kinds of help. Which of these sounds most like your child?
+          </p>
+          <div className="pg-grid">
+            <div className="pg-box">
+              <h3>They get it in class, then forget</h3>
+              <p>Homework goes fine on the night, but the same skills are shaky a few weeks later in the topic test. This is a <strong>practice</strong> gap. An app is usually enough.</p>
+            </div>
+            <div className="pg-box">
+              <h3>They make the same mistakes again and again</h3>
+              <p>Sign errors, a missed middle term when expanding, the wrong trig ratio. The method is mostly there, but specific steps keep breaking. This is a <strong>targeted practice</strong> gap. An app is usually enough.</p>
+            </div>
+            <div className="pg-box">
+              <h3>They can&rsquo;t start most questions</h3>
+              <p>Even with a worked example, a whole topic doesn&rsquo;t make sense, or earlier skills (fractions, negatives, basic algebra) are missing. This is an <strong>understanding</strong> gap. A person usually helps most.</p>
+            </div>
+            <div className="pg-box">
+              <h3>They avoid maths altogether</h3>
+              <p>Homework doesn&rsquo;t get started, tests bring tears, or your child says they &ldquo;just can&rsquo;t do maths&rdquo;. This is often a <strong>confidence</strong> gap. A patient person, and the school, can help.</p>
+            </div>
+          </div>
+          <p className="pg-small">
+            Not sure? A free <Link href="/end-of-year-maths-exams">practice exam or topic test</Link>{" "}shows where marks are being lost, and your child&rsquo;s teacher can usually tell you whether it&rsquo;s a practice issue or an understanding issue.
+          </p>
+        </div>
+      </section>
+
+      <section id="between" className="tb-section" aria-labelledby="h-between">
+        <div className="tb-wrap">
+          <h2 id="h-between" className="tb-h2 pg-h2">The hour with the tutor isn&rsquo;t where most marks are won</h2>
           <div className="pg-prose">
             <p>
-              An app is a good fit when your child is roughly on track and the bottleneck is practice. Often, marks in Years 7 to 10 are lost on skills a student has been taught but has not practised enough to recall under test conditions. Two well-established learning habits help most here:
+              Most marks in Years 7 to 10 are lost on skills a student has been taught but hasn&rsquo;t practised enough to remember under test conditions. Two well-established habits fix that: <strong>trying questions from memory</strong> rather than re-reading notes, and <strong>coming back to a skill over days and weeks</strong> rather than cramming. Both happen between lessons, and both are hard to organise by hand.
             </p>
-            <ul>
-              <li><strong>Retrieval practice:</strong> trying a question from memory, rather than re-reading notes, strengthens recall.</li>
-              <li><strong>Spacing:</strong> coming back to a skill over days and weeks works better than doing a lot in one night.</li>
-            </ul>
-            <p>
-              Both are hard to organise by hand. Many students do not keep a list of what they got wrong, and fewer still come back to it a week later. That is the gap a study app can fill.
-            </p>
-            <h3 className="pg-h3">What to look for in a maths app</h3>
-            <ul>
-              <li><strong>Australian Curriculum alignment</strong> so practice matches what is being taught this term, in the same order and language.</li>
-              <li><strong>Practice on your child&rsquo;s actual mistakes</strong>, not just generic question sets.</li>
-              <li><strong>Worked solutions that show steps</strong>, so your child sees the method, not only the answer.</li>
-              <li><strong>Similar questions, not the same one</strong>, so they practise the skill rather than memorising an answer.</li>
-              <li><strong>Some visibility for parents</strong>, so you can see whether it is being used and what is improving.</li>
-            </ul>
-            <h3 className="pg-h3">How Tuterly approaches it</h3>
-            <p>
-              Tuterly is built around the questions your child gets wrong. They snap a photo of a wrong question from homework or a marked test; it is saved with a worked solution; Tuterly generates fresh questions on the same skill; questions return until they are mastered; Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest; and before a topic test, they can test themselves on that topic, with anything they get wrong going into their bank. It covers Years 7 to 10 maths and is designed by Australian educators at Bayside Academics. See <Link href="/features/snap-a-question">snap a question</Link> and <Link href="/features/topic-check">Topic check</Link>.
-            </p>
+            <p>That&rsquo;s the part Tuterly does, every day, for a fraction of one tutoring hour:</p>
+          </div>
+          <ol className="pg-steps" style={{ marginTop: 16 }}>
+            <li><strong>Snap the question they got wrong</strong>From homework or a marked test. It&rsquo;s saved with a step-by-step worked solution.</li>
+            <li><strong>Practise fresh versions</strong>New questions on the same skill, so they learn the idea rather than memorising one answer.</li>
+            <li><strong>Keep it until it&rsquo;s mastered</strong>Wrong questions keep coming back until your child gets them right on their own. A weekly review tests the week&rsquo;s trickiest.</li>
+            <li><strong>Test before the test</strong>A test on any topic in their year before a school assessment. Anything they get wrong goes straight into their practice.</li>
+          </ol>
+          <div className="pg-grid" style={{ marginTop: 18 }}>
+            <div className="pg-box">
+              <h3>Ready at 9pm the night before</h3>
+              <p>No lessons to book or reschedule, and nobody to cancel on you. It&rsquo;s there whenever homework is.</p>
+            </div>
+            <div className="pg-box">
+              <h3>For teenagers who won&rsquo;t have a tutor</h3>
+              <p>Private, on their own phone, with no adult watching them get it wrong.</p>
+            </div>
+            <div className="pg-box">
+              <h3>You can see it working</h3>
+              <p>A weekly summary of the questions they added and mastered, plus their test scores. Never their photos.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="tutor-fits" className="tb-section" aria-labelledby="h-tutor-fits">
         <div className="tb-wrap">
-          <h2 id="h-tutor-fits" className="tb-h2 pg-h2">When your child needs a person</h2>
+          <h2 id="h-tutor-fits" className="tb-h2 pg-h2">When a tutor is worth the money</h2>
           <p className="pg-intro">
-            Some problems need someone who can watch your child work, ask questions back, and change the explanation on the spot. Consider a tutor, or extra support through the school, when:
+            Tuterly is built by Bayside Academics, a Melbourne tutoring business, so we&rsquo;ll say it plainly: some problems need a person who can watch your child work, ask questions back and change the explanation on the spot. A tutor, or extra help through the school, is worth it when:
           </p>
           <ul className="pg-checklist">
-            <li><strong>They are significantly behind.</strong> If earlier skills are missing, more practice on current topics will not stick until the foundations are rebuilt.</li>
-            <li><strong>The process needs diagnosing.</strong> Answers keep coming out wrong and nobody can quite see why. A person watching the working can usually spot it.</li>
-            <li><strong>Anxiety is getting in the way.</strong> A patient adult can rebuild confidence in a way practice alone cannot. If worry is affecting school life, talk to the school too.</li>
-            <li><strong>Accountability is the missing piece.</strong> Some students simply work better when someone is expecting them at a set time.</li>
-            <li><strong>A high-stakes step is coming.</strong> Class placement for Year 10 or senior maths choices can make targeted help worth it for a term.</li>
+            <li><strong>They&rsquo;re well behind.</strong> If earlier skills are missing, practice on this term&rsquo;s topics won&rsquo;t stick until the foundations are rebuilt.</li>
+            <li><strong>Nobody can see why it&rsquo;s going wrong.</strong> A person watching the working can usually spot it.</li>
+            <li><strong>Worry is getting in the way.</strong> A patient adult can rebuild confidence in a way practice alone can&rsquo;t. If it&rsquo;s affecting school life, talk to the school too.</li>
+            <li><strong>They need someone expecting them.</strong> Some students simply work better with a set time and a person waiting.</li>
+            <li><strong>A big step is coming.</strong> Year 10 class placement or senior maths choices can make a term of targeted help worth it.</li>
           </ul>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>
-              Before paying for tutoring, ask the school what support already exists. Many secondary schools run homework clubs or maths help sessions, and teachers can often point you to the specific skills that need work.
+              Before paying for tutoring, ask the school what support already exists. Many secondary schools run homework clubs or maths help sessions, and teachers can often point you to the exact skills that need work.
             </p>
           </div>
         </div>
@@ -211,18 +237,16 @@ export default function Page() {
 
       <section id="both" className="tb-section" aria-labelledby="h-both">
         <div className="tb-wrap">
-          <h2 id="h-both" className="tb-h2 pg-h2">Using an app and a tutor together</h2>
+          <h2 id="h-both" className="tb-h2 pg-h2">Using a tutor and an app together</h2>
           <div className="pg-prose">
-            <p>
-              The choice is not always one or the other. A hybrid often works well, because each covers what the other cannot:
-            </p>
+            <p>It doesn&rsquo;t have to be one or the other. Each covers what the other can&rsquo;t:</p>
             <ul>
-              <li>The <strong>tutor</strong> uses session time for re-teaching and diagnosis, not for drilling questions your child could practise alone.</li>
-              <li>The <strong>app</strong> handles practice between sessions, on the specific questions your child got wrong that week.</li>
-              <li>Your child brings their saved mistakes to the session, so the tutor starts from real evidence rather than guessing.</li>
+              <li>The <strong>tutor</strong> spends the hour re-teaching and diagnosing, not drilling questions your child could practise alone.</li>
+              <li>The <strong>app</strong> handles practice on the other six days, on the exact questions they got wrong that week.</li>
+              <li>Your child brings their saved mistakes to the lesson, so the tutor starts from real evidence rather than guessing.</li>
             </ul>
             <p>
-              A common pattern is to use a tutor for a term while a big gap is closed, then step back to app-based practice once your child is keeping up again. The school stays in the loop throughout.
+              A common pattern is a tutor for a term while a big gap is closed, then stepping back to practice at home once your child is keeping up again. That can save a lot over a year of weekly lessons.
             </p>
           </div>
         </div>
@@ -230,7 +254,7 @@ export default function Page() {
 
       <section id="checklist" className="tb-section" aria-labelledby="h-checklist">
         <div className="tb-wrap">
-          <h2 id="h-checklist" className="tb-h2 pg-h2">Questions to ask before you decide</h2>
+          <h2 id="h-checklist" className="tb-h2 pg-h2">Questions to ask before you spend anything</h2>
           <div className="pg-grid">
             <div className="pg-box">
               <h3>Ask your child</h3>
@@ -249,16 +273,16 @@ export default function Page() {
               </ul>
             </div>
             <div className="pg-box">
-              <h3>Ask any app or tutor</h3>
+              <h3>Ask any tutor or app</h3>
               <ul>
                 <li>Does it follow the Australian Curriculum for my child&rsquo;s year?</li>
-                <li>How will I know if it is helping?</li>
-                <li>Can it work from my child&rsquo;s actual mistakes?</li>
+                <li>How will I know if it&rsquo;s helping?</li>
+                <li>What happens if we want to stop? Is there a lock-in?</li>
               </ul>
             </div>
           </div>
           <p className="pg-small">
-            Whichever you choose, check the topics your child is studying on the <Link href="/years">Years 7 to 10 guides</Link>, and give it a fair trial of several weeks before judging it.
+            Whichever you choose, give it a fair trial of several weeks before judging it. The <Link href="/years">Years 7 to 10 guides</Link> show what your child is studying this year.
           </p>
         </div>
       </section>

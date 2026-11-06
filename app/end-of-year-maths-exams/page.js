@@ -190,7 +190,7 @@ export default function EndOfYearMathsExamsPage() {
             ))}
           </div>
           <p className="sh-small">
-            More help: <Link href="/parents/preparing-for-maths-topic-tests" className="sh-link">how to prepare for a maths test</Link> · <Link href="/practice-maths-tests-secondary" className="sh-link">all practice tests</Link>
+            More help: <Link href="/parents/end-of-year-maths-report" className="sh-link">got the report? close the gaps before next year</Link> · <Link href="/parents/preparing-for-maths-topic-tests" className="sh-link">how to prepare for a maths test</Link> · <Link href="/practice-maths-tests-secondary" className="sh-link">all practice tests</Link>
           </p>
         </div>
       </section>

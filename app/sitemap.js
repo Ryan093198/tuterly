@@ -78,6 +78,7 @@ const STATIC_PAGES = [
   { path: "/years", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/help-with-secondary-maths-homework", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/maths-app-vs-tutoring", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/parents/end-of-year-maths-report", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/preparing-for-maths-topic-tests", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb
