@@ -3,7 +3,7 @@ import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 
 const PATH = "/parents/preparing-for-maths-topic-tests";
-const TITLE = "How to Prepare for Maths Topic Tests and Exams, Years 7 to 10 | Tuterly";
+const TITLE = "How to Prepare for Maths Topic Tests and Exams, Years 7 to 10 (2026) | Tuterly";
 const DESCRIPTION =
   "A parent's guide to secondary maths topic tests, chapter tests and end-of-term exams: start from past mistakes, space the practice, use formula sheets well, plus week-before and night-before checklists.";
 
@@ -37,6 +37,7 @@ const FAQS = [
 ];
 
 const LINKS = [
+  { href: "/parents/studied-but-failed-maths-test", label: "They studied but still failed the maths test? Here's why" },
   { href: "/maths-exam-preparation", label: "Maths exam preparation, Years 7 to 10", note: "(by year level)" },
   { href: "/formula-sheets", label: "Maths formula sheets by year level" },
   { href: "/worksheets", label: "Free maths worksheets, Years 7 to 10", note: "(printable, with answers)" },
@@ -77,6 +78,7 @@ export default function Page() {
       ctaTitle="Practice that starts from their mistakes"
       ctaText="Your child snaps the questions they get wrong through the term. Fix my mistakes drills them with fresh versions, and before a test they can test themselves on the topic."
       placement="parents_topic_tests_guide"
+      quickAnswer="Start about a week before a topic test, or two to three weeks before an exam, with short sessions on most days. Begin with the questions they got wrong in class and homework, attempt fresh questions without notes, then check against worked solutions. Re-reading notes on its own rarely helps."
       faqs={FAQS}
       faqTitle="Maths tests: questions parents ask"
       links={LINKS}
@@ -100,7 +102,7 @@ export default function Page() {
               <li>Earlier tests that touched the same skills</li>
             </ul>
             <p>
-              Sort the list into three groups: <strong>slips</strong> (knew it, made an error), <strong>forgotten steps</strong> (knew it once, could not recall it) and <strong>never understood</strong>. Slips need a checking habit. Forgotten steps need spaced practice. Anything never understood needs a worked example, a question to the teacher, or both, and should be dealt with first.
+              Sort the list into three groups: <strong>slips</strong>{" "}(knew it, made an error), <strong>forgotten steps</strong>{" "}(knew it once, could not recall it) and <strong>never understood</strong>. Slips need a checking habit. Forgotten steps need spaced practice. Anything never understood needs a worked example, a question to the teacher, or both, and should be dealt with first.
             </p>
           </div>
         </div>
@@ -120,7 +122,7 @@ export default function Page() {
           </ol>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>
-              Mixing topics also helps closer to the test. Real tests do not label which method to use, so a set of mixed questions trains your child to recognise the type of problem as well as solve it. Our article on <Link href="/learn/why-practice-tests-beat-re-reading-notes">why practice tests beat re-reading notes</Link> explains the reasoning in more detail.
+              Mixing topics also helps closer to the test. Real tests do not label which method to use, so a set of mixed questions trains your child to recognise the type of problem as well as solve it. Our article on <Link href="/learn/why-practice-tests-beat-re-reading-notes">why practice tests beat re-reading notes</Link>{" "}explains the reasoning in more detail.
             </p>
           </div>
         </div>
@@ -134,9 +136,9 @@ export default function Page() {
               Some schools allow a formula sheet or a page of notes in tests; others expect formulas to be memorised. Check the rules for each test, because they often change between topics and year levels.
             </p>
             <ul>
-              <li><strong>If a sheet is allowed,</strong> your child should make it themselves during revision. Writing it is revision. Include a short worked example next to each formula, not just the formula.</li>
-              <li><strong>If it is not allowed,</strong> practise writing the key formulas from memory at the start of each session, then check.</li>
-              <li><strong>Either way,</strong> know when to use each formula. A common error is picking the wrong formula, not forgetting it.</li>
+              <li><strong>If a sheet is allowed,</strong>{" "}your child should make it themselves during revision. Writing it is revision. Include a short worked example next to each formula, not just the formula.</li>
+              <li><strong>If it is not allowed,</strong>{" "}practise writing the key formulas from memory at the start of each session, then check.</li>
+              <li><strong>Either way,</strong>{" "}know when to use each formula. A common error is picking the wrong formula, not forgetting it.</li>
             </ul>
           </div>
           <div className="pg-cards" style={{ marginTop: 18 }}>
@@ -148,7 +150,7 @@ export default function Page() {
             ))}
           </div>
           <p className="pg-small">
-            There is also a <Link href="/formula-sheets/year-10a-maths">Year 10A formula sheet</Link> for students in an advanced class.
+            There is also a <Link href="/formula-sheets/year-10a-maths">Year 10A formula sheet</Link>{" "}for students in an advanced class.
           </p>
         </div>
       </section>
@@ -193,7 +195,7 @@ export default function Page() {
             </table>
           </div>
           <p className="pg-small">
-            For end-of-term or end-of-year exams, stretch the same pattern over two to three weeks so each topic is revisited at least twice. Year-specific exam topics are on the <Link href="/maths-exam-preparation">maths exam preparation</Link> pages.
+            For end-of-term or end-of-year exams, stretch the same pattern over two to three weeks so each topic is revisited at least twice. Year-specific exam topics are on the <Link href="/maths-exam-preparation">maths exam preparation</Link>{" "}pages.
           </p>
         </div>
       </section>
@@ -246,14 +248,14 @@ export default function Page() {
               <li>Keep the wrong ones somewhere they will be seen again before the end-of-term exam.</li>
             </ul>
             <p>
-              Topics build on each other, so a gap left now often shows up again later. Each year guide lists the skills that tend to carry forward: <Link href="/years/year-7-maths">Year 7</Link>, <Link href="/years/year-8-maths">Year 8</Link>, <Link href="/years/year-9-maths">Year 9</Link> and <Link href="/years/year-10-maths">Year 10</Link>.
+              Topics build on each other, so a gap left now often shows up again later. Each year guide lists the skills that tend to carry forward: <Link href="/years/year-7-maths">Year 7</Link>, <Link href="/years/year-8-maths">Year 8</Link>, <Link href="/years/year-9-maths">Year 9</Link>{" "}and <Link href="/years/year-10-maths">Year 10</Link>.
             </p>
             <h3 className="pg-h3">How Tuterly fits</h3>
             <p>
               Tuterly is designed around this loop. Through the term your child snaps the questions they get wrong; each one is saved with a worked solution and comes back as fresh, similar questions until it is mastered. Fix my mistakes drills the questions they got wrong with fresh versions, and a weekly review tests the week&rsquo;s trickiest, and before a topic test your child can test themselves on that topic, so revision starts from the right place without a parent having to assemble it. It covers Years 7 to 10 maths, follows the Australian Curriculum, and is designed by Australian educators at Bayside Academics. See <Link href="/features/topic-check">Topic check</Link>.
             </p>
             <p>
-              If test results show a whole topic has not made sense, more practice alone may not fix it. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link> covers when a person needs to step in.
+              If test results show a whole topic has not made sense, more practice alone may not fix it. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link>{" "}covers when a person needs to step in.
             </p>
           </div>
           <div className="pg-cards" style={{ marginTop: 18 }}>

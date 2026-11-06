@@ -68,3 +68,9 @@
 /* A highlighted table row (e.g. Tuterly in a comparison). */
 .pg-table tr.pg-row-hl > * { background: var(--brand-soft); }
 .pg-table tr.pg-row-hl > th { color: var(--brand-text); box-shadow: inset 4px 0 0 var(--brand); }
+
+/* Byline and "Quick answer" box under the guide intro. */
+.pg-byline { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.pg-quick { margin-top: 18px; max-width: 64ch; padding: 14px 18px; border-radius: 14px; background: var(--brand-soft); border-left: 4px solid var(--brand); }
+.pg-quick__k { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); }
+.pg-quick__x { margin: 0; font-size: 16px; line-height: 1.6; color: var(--foreground); }

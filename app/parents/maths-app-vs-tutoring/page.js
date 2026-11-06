@@ -15,7 +15,7 @@ import { PLUS_PRICES, FULL_PRICE_FROM } from "@/lib/study-launch";
 // and Kumon figures are what providers and parents published, with links.
 
 const PATH = "/parents/maths-app-vs-tutoring";
-const TITLE = "Maths Help Without the $100-an-Hour Tutor: Tutor Costs vs a Maths App | Tuterly";
+const TITLE = "Maths Help Without the $100-an-Hour Tutor (2026 Cost Guide) | Tuterly";
 const DESCRIPTION =
   "A good maths tutor often costs $100 an hour, about $430 a month for one lesson a week. An honest guide for parents of Years 7 to 10: what maths help costs in Australia, when a tutor is worth it, and when practice at home is the real gap.";
 
@@ -98,6 +98,7 @@ export default function Page() {
       ctaTitle="Practice every night, not once a week"
       ctaText="Tuterly turns every maths question your child gets wrong into a worked solution and fresh practice until it sticks. Years 7 to 10, Australian Curriculum. Join the early list."
       placement="parents_app_vs_tutor"
+      quickAnswer="A private maths tutor in Australia typically costs $65 to $120 an hour, so one lesson a week is about $280 to $520 a month. A tutor is worth it when your child needs a topic re-taught or is well behind. If they mostly understand the work but keep losing marks, the gap is usually practice on their own mistakes, and that costs far less."
       faqs={FAQS}
       faqTitle="Tutoring and maths apps: questions parents ask"
       links={LINKS}
@@ -156,19 +157,19 @@ export default function Page() {
           <div className="pg-grid">
             <div className="pg-box">
               <h3>They get it in class, then forget</h3>
-              <p>Homework goes fine on the night, but the same skills are shaky a few weeks later in the topic test. This is a <strong>practice</strong> gap. An app is usually enough.</p>
+              <p>Homework goes fine on the night, but the same skills are shaky a few weeks later in the topic test. This is a <strong>practice</strong>{" "}gap. An app is usually enough.</p>
             </div>
             <div className="pg-box">
               <h3>They make the same mistakes again and again</h3>
-              <p>Sign errors, a missed middle term when expanding, the wrong trig ratio. The method is mostly there, but specific steps keep breaking. This is a <strong>targeted practice</strong> gap. An app is usually enough.</p>
+              <p>Sign errors, a missed middle term when expanding, the wrong trig ratio. The method is mostly there, but specific steps keep breaking. This is a <strong>targeted practice</strong>{" "}gap. An app is usually enough.</p>
             </div>
             <div className="pg-box">
               <h3>They can&rsquo;t start most questions</h3>
-              <p>Even with a worked example, a whole topic doesn&rsquo;t make sense, or earlier skills (fractions, negatives, basic algebra) are missing. This is an <strong>understanding</strong> gap. A person usually helps most.</p>
+              <p>Even with a worked example, a whole topic doesn&rsquo;t make sense, or earlier skills (fractions, negatives, basic algebra) are missing. This is an <strong>understanding</strong>{" "}gap. A person usually helps most.</p>
             </div>
             <div className="pg-box">
               <h3>They avoid maths altogether</h3>
-              <p>Homework doesn&rsquo;t get started, tests bring tears, or your child says they &ldquo;just can&rsquo;t do maths&rdquo;. This is often a <strong>confidence</strong> gap. A patient person, and the school, can help.</p>
+              <p>Homework doesn&rsquo;t get started, tests bring tears, or your child says they &ldquo;just can&rsquo;t do maths&rdquo;. This is often a <strong>confidence</strong>{" "}gap. A patient person, and the school, can help.</p>
             </div>
           </div>
           <p className="pg-small">
@@ -182,7 +183,7 @@ export default function Page() {
           <h2 id="h-between" className="tb-h2 pg-h2">The hour with the tutor isn&rsquo;t where most marks are won</h2>
           <div className="pg-prose">
             <p>
-              Most marks in Years 7 to 10 are lost on skills a student has been taught but hasn&rsquo;t practised enough to remember under test conditions. Two well-established habits fix that: <strong>trying questions from memory</strong> rather than re-reading notes, and <strong>coming back to a skill over days and weeks</strong> rather than cramming. Both happen between lessons, and both are hard to organise by hand.
+              Most marks in Years 7 to 10 are lost on skills a student has been taught but hasn&rsquo;t practised enough to remember under test conditions. Two well-established habits fix that: <strong>trying questions from memory</strong>{" "}rather than re-reading notes, and <strong>coming back to a skill over days and weeks</strong>{" "}rather than cramming. Both happen between lessons, and both are hard to organise by hand.
             </p>
             <p>That&rsquo;s the part Tuterly does, every day, for a fraction of one tutoring hour:</p>
           </div>
@@ -220,11 +221,11 @@ export default function Page() {
             Tuterly is built by Bayside Academics, a Melbourne tutoring business, so we&rsquo;ll say it plainly: some problems need a person who can watch your child work, ask questions back and change the explanation on the spot. A tutor, or extra help through the school, is worth it when:
           </p>
           <ul className="pg-checklist">
-            <li><strong>They&rsquo;re well behind.</strong> If earlier skills are missing, practice on this term&rsquo;s topics won&rsquo;t stick until the foundations are rebuilt.</li>
-            <li><strong>Nobody can see why it&rsquo;s going wrong.</strong> A person watching the working can usually spot it.</li>
-            <li><strong>Worry is getting in the way.</strong> A patient adult can rebuild confidence in a way practice alone can&rsquo;t. If it&rsquo;s affecting school life, talk to the school too.</li>
-            <li><strong>They need someone expecting them.</strong> Some students simply work better with a set time and a person waiting.</li>
-            <li><strong>A big step is coming.</strong> Year 10 class placement or senior maths choices can make a term of targeted help worth it.</li>
+            <li><strong>They&rsquo;re well behind.</strong>{" "}If earlier skills are missing, practice on this term&rsquo;s topics won&rsquo;t stick until the foundations are rebuilt.</li>
+            <li><strong>Nobody can see why it&rsquo;s going wrong.</strong>{" "}A person watching the working can usually spot it.</li>
+            <li><strong>Worry is getting in the way.</strong>{" "}A patient adult can rebuild confidence in a way practice alone can&rsquo;t. If it&rsquo;s affecting school life, talk to the school too.</li>
+            <li><strong>They need someone expecting them.</strong>{" "}Some students simply work better with a set time and a person waiting.</li>
+            <li><strong>A big step is coming.</strong>{" "}Year 10 class placement or senior maths choices can make a term of targeted help worth it.</li>
           </ul>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>
@@ -240,8 +241,8 @@ export default function Page() {
           <div className="pg-prose">
             <p>It doesn&rsquo;t have to be one or the other. Each covers what the other can&rsquo;t:</p>
             <ul>
-              <li>The <strong>tutor</strong> spends the hour re-teaching and diagnosing, not drilling questions your child could practise alone.</li>
-              <li>The <strong>app</strong> handles practice on the other six days, on the exact questions they got wrong that week.</li>
+              <li>The <strong>tutor</strong>{" "}spends the hour re-teaching and diagnosing, not drilling questions your child could practise alone.</li>
+              <li>The <strong>app</strong>{" "}handles practice on the other six days, on the exact questions they got wrong that week.</li>
               <li>Your child brings their saved mistakes to the lesson, so the tutor starts from real evidence rather than guessing.</li>
             </ul>
             <p>
@@ -281,7 +282,7 @@ export default function Page() {
             </div>
           </div>
           <p className="pg-small">
-            Whichever you choose, give it a fair trial of several weeks before judging it. The <Link href="/years">Years 7 to 10 guides</Link> show what your child is studying this year.
+            Whichever you choose, give it a fair trial of several weeks before judging it. The <Link href="/years">Years 7 to 10 guides</Link>{" "}show what your child is studying this year.
           </p>
         </div>
       </section>

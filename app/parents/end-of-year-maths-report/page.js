@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/parent-guides";
 // page for report-season ads and emails. State-neutral.
 
 const PATH = "/parents/end-of-year-maths-report";
-const TITLE = "Got the Maths Report? Close the Gaps Before Next Year (Years 7 to 10) | Tuterly";
+const TITLE = "Got the Maths Report? Close the Gaps Before 2027 (Years 7 to 10) | Tuterly";
 const DESCRIPTION =
   "What your child's maths grade actually means, how to find the exact topics that cost marks with a free practice exam, and a four-week holiday plan so they start next year caught up. For parents of Years 7 to 10.";
 
@@ -84,6 +84,7 @@ export default function Page() {
       ctaTitle="Start next year caught up"
       ctaText="Tuterly turns every maths question your child gets wrong into a worked solution and fresh practice until it sticks. Join the early list for Years 7 to 10."
       placement="parents_eoy_report"
+      quickAnswer="On most Australian school reports, a C means your child met the standard for their year, and a D or E means some of the year’s skills aren’t secure yet. Find the exact topics with a free practice exam, then fix two or three of them over the holidays in 20 to 30 minute sessions, four or five days a week."
       faqs={FAQS}
       faqTitle="Maths report questions parents ask"
       links={LINKS}
@@ -119,14 +120,14 @@ export default function Page() {
           </div>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>
-              <strong>The comments matter more than the letter.</strong> Look for the topics named in the teacher&rsquo;s comment and in any assessment breakdown. Phrases like &ldquo;needs to consolidate&rdquo;, &ldquo;developing&rdquo; or &ldquo;would benefit from further practice&rdquo; usually point to specific skills, not to your child&rsquo;s ability in maths overall.
+              <strong>The comments matter more than the letter.</strong>{" "}Look for the topics named in the teacher&rsquo;s comment and in any assessment breakdown. Phrases like &ldquo;needs to consolidate&rdquo;, &ldquo;developing&rdquo; or &ldquo;would benefit from further practice&rdquo; usually point to specific skills, not to your child&rsquo;s ability in maths overall.
             </p>
             <p>
-              <strong>Why it&rsquo;s worth acting now.</strong> Maths builds on itself. Year 8 algebra leans on Year 7 negative numbers and fractions; Year 9 quadratics lean on Year 8 expanding. A gap left over the holidays tends to come back in the first topic of next year, when there&rsquo;s less time to fix it.
+              <strong>Why it&rsquo;s worth acting now.</strong>{" "}Maths builds on itself. Year 8 algebra leans on Year 7 negative numbers and fractions; Year 9 quadratics lean on Year 8 expanding. A gap left over the holidays tends to come back in the first topic of next year, when there&rsquo;s less time to fix it.
             </p>
           </div>
           <p className="pg-small">
-            Grade descriptions are based on the A to E scales published by the <a href="https://www.education.act.gov.au/public-school-life/assessment_and_reporting/act-student-reporting">ACT Education Directorate</a> and the <a href="https://www.education.sa.gov.au/department/media-centre/our-news/what-does-my-childs-report-mean">SA Department for Education</a>. Some schools use words or a different scale; your child&rsquo;s school can tell you how theirs works.
+            Grade descriptions are based on the A to E scales published by the <a href="https://www.education.act.gov.au/public-school-life/assessment_and_reporting/act-student-reporting">ACT Education Directorate</a>{" "}and the <a href="https://www.education.sa.gov.au/department/media-centre/our-news/what-does-my-childs-report-mean">SA Department for Education</a>. Some schools use words or a different scale; your child&rsquo;s school can tell you how theirs works.
           </p>
         </div>
       </section>
@@ -184,7 +185,7 @@ export default function Page() {
             </li>
           </ol>
           <p className="pg-small">
-            Topic tests for every year: <Link href="/end-of-year-maths-exams#year-7">Year 7</Link> · <Link href="/end-of-year-maths-exams#year-8">Year 8</Link> · <Link href="/end-of-year-maths-exams#year-9">Year 9</Link> · <Link href="/end-of-year-maths-exams#year-10">Year 10</Link>. What&rsquo;s coming next year: the <Link href="/years">Years 7 to 10 guides</Link>.
+            Topic tests for every year: <Link href="/end-of-year-maths-exams#year-7">Year 7</Link>{" "}· <Link href="/end-of-year-maths-exams#year-8">Year 8</Link>{" "}· <Link href="/end-of-year-maths-exams#year-9">Year 9</Link>{" "}· <Link href="/end-of-year-maths-exams#year-10">Year 10</Link>. What&rsquo;s coming next year: the <Link href="/years">Years 7 to 10 guides</Link>.
           </p>
         </div>
       </section>
@@ -196,14 +197,14 @@ export default function Page() {
             A disappointing report can knock a teenager&rsquo;s confidence, and holiday maths is an easy thing to fight about. A few things help:
           </p>
           <ul className="pg-checklist">
-            <li><strong>Start with a quick win.</strong> Pick a topic they nearly have first. Getting questions right early makes the harder topics easier to face.</li>
-            <li><strong>Let them mark their own work.</strong> Checking against the worked solutions keeps them in charge and keeps you out of the &ldquo;that&rsquo;s not how we do it&rdquo; argument.</li>
-            <li><strong>Praise the fixes, not the score.</strong> &ldquo;You couldn&rsquo;t do these last week&rdquo; lands better than a percentage.</li>
-            <li><strong>Agree on the time, not the amount.</strong> Twenty minutes after breakfast is easier to stick to than &ldquo;do some maths today&rdquo;.</li>
-            <li><strong>Don&rsquo;t redo the whole year.</strong> Two or three topics, properly fixed, are worth more than a skim of everything.</li>
+            <li><strong>Start with a quick win.</strong>{" "}Pick a topic they nearly have first. Getting questions right early makes the harder topics easier to face.</li>
+            <li><strong>Let them mark their own work.</strong>{" "}Checking against the worked solutions keeps them in charge and keeps you out of the &ldquo;that&rsquo;s not how we do it&rdquo; argument.</li>
+            <li><strong>Praise the fixes, not the score.</strong>{" "}&ldquo;You couldn&rsquo;t do these last week&rdquo; lands better than a percentage.</li>
+            <li><strong>Agree on the time, not the amount.</strong>{" "}Twenty minutes after breakfast is easier to stick to than &ldquo;do some maths today&rdquo;.</li>
+            <li><strong>Don&rsquo;t redo the whole year.</strong>{" "}Two or three topics, properly fixed, are worth more than a skim of everything.</li>
           </ul>
           <p className="pg-small">
-            If you&rsquo;re not confident with the maths yourself, that&rsquo;s fine. Our <Link href="/parents/help-with-secondary-maths-homework">homework guide</Link> covers how to help without having to teach it.
+            If you&rsquo;re not confident with the maths yourself, that&rsquo;s fine. Our <Link href="/parents/help-with-secondary-maths-homework">homework guide</Link>{" "}covers how to help without having to teach it.
           </p>
         </div>
       </section>
@@ -216,11 +217,11 @@ export default function Page() {
               Tuterly is a maths study app for Years 7 to 10, built by Bayside Academics, a Melbourne tutoring business. It does the fixing part of this plan for your child, every day:
             </p>
             <ul>
-              <li><strong>Snap the questions they lost marks on,</strong> from a marked test or homework. Each one is saved with a step-by-step worked solution.</li>
-              <li><strong>Fresh questions on the same skill,</strong> so they practise the idea, not memorise one answer.</li>
-              <li><strong>Mistakes come back until they&rsquo;re mastered,</strong> so a fix from week one is still there in week four.</li>
-              <li><strong>A test on any topic in their year</strong> before school assessments, with anything they get wrong going straight into their practice.</li>
-              <li><strong>A weekly summary for you</strong> showing the questions they added and mastered, plus their test scores.</li>
+              <li><strong>Snap the questions they lost marks on,</strong>{" "}from a marked test or homework. Each one is saved with a step-by-step worked solution.</li>
+              <li><strong>Fresh questions on the same skill,</strong>{" "}so they practise the idea, not memorise one answer.</li>
+              <li><strong>Mistakes come back until they&rsquo;re mastered,</strong>{" "}so a fix from week one is still there in week four.</li>
+              <li><strong>A test on any topic in their year</strong>{" "}before school assessments, with anything they get wrong going straight into their practice.</li>
+              <li><strong>A weekly summary for you</strong>{" "}showing the questions they added and mastered, plus their test scores.</li>
             </ul>
             <p>
               It isn&rsquo;t an answer app. Seeing the solution is the start: your child then has to get fresh questions right on their own.

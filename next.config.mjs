@@ -22,6 +22,8 @@ const nextConfig = {
     // Topic tests written ahead of time (lib/topic-test.js).
     "/api/topic-test/**": ["./content/topic-tests/**/*.json"],
     "/api/cron/**": ["./content/topic-tests/**/*.json"],
+    // Free practice sheet PDFs (built at deploy, traced in case of a rebuild).
+    "/worksheets/**": ["./content/topic-tests/**/*.json", "./public/fonts/*.ttf"],
   },
   experimental: {
     // Audio uploads (Whisper) and resource files can be larger than the

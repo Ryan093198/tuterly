@@ -3,7 +3,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow } from "@/components/brand";
-import { PARENT_GUIDES, YEAR_HUBS, guideJsonLd } from "@/lib/parent-guides";
+import { PARENT_GUIDES, YEAR_HUBS, UPDATED, AUTHOR, guideJsonLd } from "@/lib/parent-guides";
 import "@/components/brand/brand.css";
 import "@/components/study/study-landing.css";
 import "./guides.css";
@@ -36,15 +36,18 @@ export default function GuideShell({
   links,
   finalTitle,
   finalText,
+  quickAnswer,
+  updated = UPDATED,
   children,
 }) {
+  const updatedLabel = new Date(`${updated}T00:00:00`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
   const otherGuides = PARENT_GUIDES.filter((g) => g.href !== path);
   return (
     <div className="tb sl pg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(guideJsonLd({ title, description, path, crumbs, faqs, pageType, parts })),
+          __html: JSON.stringify(guideJsonLd({ title, description, path, crumbs, faqs, pageType, parts, updated })),
         }}
       />
       <MarketingNav />
@@ -66,6 +69,17 @@ export default function GuideShell({
               <Eyebrow>{eyebrow}</Eyebrow>
               <h1 className="tb-h1 pg-h1">{h1}</h1>
               <p className="tb-lead pg-lead">{lead}</p>
+              {pageType === "Article" && (
+                <p className="pg-byline">
+                  By {AUTHOR.name}, {AUTHOR.role} · Updated {updatedLabel}
+                </p>
+              )}
+              {quickAnswer && (
+                <div className="pg-quick">
+                  <p className="pg-quick__k">Quick answer</p>
+                  <p className="pg-quick__x">{quickAnswer}</p>
+                </div>
+              )}
               {toc?.length > 0 && (
                 <ul className="pg-toc" aria-label="On this page">
                   {toc.map(([id, label]) => <li key={id}><a href={`#${id}`}>{label}</a></li>)}

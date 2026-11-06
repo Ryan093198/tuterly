@@ -262,7 +262,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
         </div>
       </section>
 
-      <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.topic} />
+      <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.topic} slug={page.slug} />
 
       {worked && (
         <section style={{ padding: "24px 24px 64px", background: c.white }}>

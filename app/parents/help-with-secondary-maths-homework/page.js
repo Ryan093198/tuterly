@@ -3,15 +3,18 @@ import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 
 const PATH = "/parents/help-with-secondary-maths-homework";
-const TITLE = "How to Help With Years 7 to 10 Maths Homework (Without Doing It) | Tuterly";
+// Parent guide for maths homework. Rewritten 6 Nov 2026 from the parent
+// research: the most emotional worry was "I can't help, it's taught
+// differently now", with the load falling mostly on mothers (UniSA 2024).
+const TITLE = "How to Help With Maths Homework When You Don't Remember the Maths (Years 7 to 10) | Tuterly";
 const DESCRIPTION =
-  "A practical guide for Australian parents: a nightly maths homework routine, a support ladder that keeps your child doing the thinking, when to write to the teacher, and how to help even if maths was never your subject.";
+  "You don't need to remember Year 9 maths to help. Why methods have changed, what to say instead of \"let me show you how I did it\", a nightly routine, and when to hand it to the teacher. For parents of Years 7 to 10.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
 const FAQS = [
   {
-    q: "Should I help my child with maths homework if I do not understand it?",
+    q: "How can I help with maths homework if I don't understand it?",
     a: "Yes, but your job is not to know the maths. Ask your child to explain the question and what they tried, point them to a worked example in their book or notes, and keep the routine steady. If they are still stuck after that, a short note to the teacher is more useful than you working out the method together.",
   },
   {
@@ -19,8 +22,8 @@ const FAQS = [
     a: "It varies by school and by year, so check the school homework policy. As a rough guide, a set time with a clear stopping point works better than open-ended sessions. If maths homework regularly runs well past what the school expects, that is worth mentioning to the teacher.",
   },
   {
-    q: "What if my child's school teaches a different method from the one I learnt?",
-    a: "Go with the school's method. Showing a different way can confuse students, and teachers often mark the working, not just the answer. If you want to help, ask your child to teach you their method. Explaining it is good practice for them.",
+    q: "Why is maths taught differently now?",
+    a: "Schools now teach several strategies for the same skill and ask students to show and explain their working, so the method can look unfamiliar even when the maths is the same. Go with the school's method: showing a different way can confuse students, and teachers often mark the working, not just the answer. Ask your child to teach you their method instead. Explaining it is good practice for them.",
   },
   {
     q: "Is it cheating to look at the worked solutions?",
@@ -32,7 +35,7 @@ const FAQS = [
   },
   {
     q: "How does Tuterly help with homework?",
-    a: "When your child gets a homework question wrong, they snap a photo of it. Tuterly saves it with a step-by-step worked solution and then gives fresh questions on the same skill, so the stuck moment becomes practice instead of a fight. It covers Years 7 to 10 maths and is designed by Australian educators.",
+    a: "When your child gets a homework question wrong, they snap a photo of it. Tuterly saves it with a detailed, step-by-step worked solution and then gives fresh questions on the same skill, so the stuck moment becomes practice instead of a fight, and you don't have to be the one explaining. Each week you see what they added and mastered.",
   },
 ];
 
@@ -55,26 +58,106 @@ export default function Page() {
         { name: "Help with maths homework", path: PATH },
       ]}
       eyebrow="Parent guide · Years 7 to 10 maths"
-      h1="How to help with Years 7 to 10 maths homework, without doing it for them"
-      lead="You do not need to remember how to factorise a quadratic to help with maths homework. What helps most is a predictable routine, asking the right questions in the right order, and knowing when to stop and let the teacher step in. This guide sets out how to do that, night by night."
+      h1="You don’t need to remember Year 9 maths to help with homework"
+      lead="The methods have changed since most of us were at school, and it’s normal to look at tonight’s homework and not know where to start. The good news: your job isn’t to teach the maths. Here’s how to help without the 9pm homework fight."
+      quickAnswer="You don’t need to know the maths. Keep a steady routine, ask your child to explain the question and show what they tried, point them to a worked example in their book, and if they’re still stuck, park it and tell the teacher. Use the school’s method, not the one you learnt."
       toc={[
+        ["why", "Why it feels harder now"],
+        ["say", "What to say instead"],
         ["roles", "Who does what"],
         ["routine", "A nightly routine"],
         ["ladder", "The support ladder"],
         ["teacher", "When to contact the teacher"],
         ["years", "What to expect by year"],
-        ["app", "Where Tuterly fits"],
+        ["app", "Let Tuterly explain it"],
         ["faq", "FAQ"],
       ]}
-      ctaTitle="Turn the stuck moment into practice"
-      ctaText="When a homework question goes wrong, your child snaps it. Tuterly saves it with a worked solution, then gives fresh questions on the same skill until it sticks."
+      ctaTitle="You don’t have to be the one explaining"
+      ctaText="When a homework question goes wrong, your child snaps it. Tuterly shows a detailed worked solution, step by step, then gives fresh questions on the same skill until it sticks."
       placement="parents_homework_guide"
       faqs={FAQS}
       faqTitle="Maths homework: questions parents ask"
       links={LINKS}
-      finalTitle="Fewer homework arguments, more practice that counts"
-      finalText="Your child snaps the questions they get wrong. Tuterly turns each one into a worked solution and fresh practice, so you can stay in the encouraging role."
+      finalTitle="Fewer homework fights. You stay the encourager."
+      finalText="Your child snaps the questions they get wrong. Tuterly explains each one step by step and gives fresh practice until it’s mastered, so you don’t have to remember the maths. Each week you see what they mastered."
     >
+      <section id="why" className="tb-section" aria-labelledby="h-why">
+        <div className="tb-wrap">
+          <h2 id="h-why" className="tb-h2 pg-h2">Why maths homework feels harder to help with now</h2>
+          <div className="pg-grid">
+            <div className="pg-box">
+              <h3>The methods have changed</h3>
+              <p>Schools now teach several strategies for the same skill and expect students to show and explain their working. The maths is the same, but the page can look unfamiliar.</p>
+            </div>
+            <div className="pg-box">
+              <h3>It&rsquo;s been a while</h3>
+              <p>Most parents haven&rsquo;t factorised a quadratic or used SOH CAH TOA in decades. Not remembering it is normal, not a failing.</p>
+            </div>
+            <div className="pg-box">
+              <h3>It usually lands on one parent</h3>
+              <p>Research from the University of South Australia found it was &ldquo;overwhelmingly mothers&rdquo; managing children&rsquo;s homework, and that many parents are unsure of the strategies their children are learning.</p>
+            </div>
+          </div>
+          <div className="pg-note" style={{ marginTop: 18 }}>
+            <strong>Your job isn&rsquo;t to teach the maths.</strong>{" "}It&rsquo;s to set up the time and place, ask good questions, keep it calm, and know when to hand it to the teacher. All of that works whether or not you remember the method.
+          </div>
+          <p className="pg-small">
+            Source: <a href="https://unisa.edu.au/media-centre/Releases/2024/numbers-do-not-add-up-for-maths-homework">University of South Australia, &ldquo;Numbers do not add up for maths homework&rdquo; (2024)</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="say" className="tb-section" aria-labelledby="h-say">
+        <div className="tb-wrap">
+          <h2 id="h-say" className="tb-h2 pg-h2">What to say instead</h2>
+          <p className="pg-intro">
+            Most homework fights start with a well-meant sentence. A few swaps keep your child doing the thinking, and keep you out of the &ldquo;that&rsquo;s not how we do it&rdquo; argument.
+          </p>
+          <div className="pg-table">
+            <table>
+              <caption>Things parents often say about maths homework, and what tends to work better</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Instead of</th>
+                  <th scope="col">Try</th>
+                  <th scope="col">Why it helps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&ldquo;Let me show you how I did it.&rdquo;</td>
+                  <td>&ldquo;Show me how your teacher did one like this.&rdquo;</td>
+                  <td>Keeps them on the school&rsquo;s method, which is what gets marked.</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;It&rsquo;s easy, just&hellip;&rdquo;</td>
+                  <td>&ldquo;What is the question asking you to find?&rdquo;</td>
+                  <td>Many &ldquo;stuck&rdquo; moments are about reading the question, not the maths.</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;I was never good at maths either.&rdquo;</td>
+                  <td>&ldquo;This is hard right now. It gets easier with practice.&rdquo;</td>
+                  <td>Tells them ability grows, rather than that struggling runs in the family.</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;Just keep trying until you get it.&rdquo;</td>
+                  <td>&ldquo;Mark it, move on, and we&rsquo;ll tell the teacher.&rdquo;</td>
+                  <td>Stops one question from turning into a late-night battle.</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;Good job, you&rsquo;re so smart.&rdquo;</td>
+                  <td>&ldquo;You checked your answer, that&rsquo;s how you caught that.&rdquo;</td>
+                  <td>Praises the habit they can repeat, not a fixed trait.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="pg-small">
+            The best one of all, if you&rsquo;ve forgotten the maths: &ldquo;Can you teach me how to do this one?&rdquo; Explaining a step out loud is one of the strongest ways to learn it, and it puts your child in the expert role.
+          </p>
+        </div>
+      </section>
+
       <section id="roles" className="tb-section" aria-labelledby="h-roles">
         <div className="tb-wrap">
           <h2 id="h-roles" className="tb-h2 pg-h2">Who does what: parent, student and teacher</h2>
@@ -137,17 +220,8 @@ export default function Page() {
             <li><strong>Park it and flag it</strong>Still stuck? Mark the question, move on, and add it to a short note for the teacher. Stuck is information, not failure.</li>
           </ol>
           <div className="pg-prose" style={{ marginTop: 18 }}>
-            <h3 className="pg-h3">Questions that help (and ones that do not)</h3>
-            <ul>
-              <li><strong>Helpful:</strong> &ldquo;What is the question asking you to find?&rdquo;, &ldquo;What do you already know?&rdquo;, &ldquo;Can you check that answer another way?&rdquo;, &ldquo;Can you teach me how you did that one?&rdquo;</li>
-              <li><strong>Less helpful:</strong> &ldquo;It&rsquo;s easy, just&hellip;&rdquo;, &ldquo;That&rsquo;s not how I learnt it&rdquo;, or taking the pencil to show them.</li>
-            </ul>
             <p>
-              Asking your child to teach you a method is one of the most useful things you can do, especially if you have forgotten the maths. Explaining a step out loud is a strong way to learn it, and it puts them in the expert role.
-            </p>
-            <h3 className="pg-h3">Watch what you say about maths</h3>
-            <p>
-              &ldquo;I was never good at maths either&rdquo; is meant kindly, but it tells a teenager that maths ability is fixed and that struggling is normal for your family. Try instead: &ldquo;This is hard right now, and it will get easier with practice.&rdquo; Praise the effort and the strategy (&ldquo;you checked your answer, that&rsquo;s why you caught the sign error&rdquo;) rather than being &ldquo;smart&rdquo;.
+              Other good prompts: &ldquo;What do you already know?&rdquo;, &ldquo;Can you check that answer another way?&rdquo; and &ldquo;What did you do in the last question?&rdquo;. If you catch yourself reaching for the pencil, that&rsquo;s the moment to step back.
             </p>
           </div>
         </div>
@@ -160,14 +234,14 @@ export default function Page() {
             One hard night is normal. A pattern is worth a short message. Contact the teacher when you notice any of these:
           </p>
           <ul className="pg-checklist">
-            <li><strong>The same topic is stuck on several nights.</strong> If the support ladder runs out on the same kind of question more than once, the method has not landed and needs re-teaching.</li>
-            <li><strong>Homework is regularly taking far longer than intended.</strong> The teacher may not know, and may adjust the load or the support.</li>
-            <li><strong>Your child cannot start the homework at all.</strong> Not knowing where to begin often means an earlier skill is missing.</li>
-            <li><strong>Marks have dropped on a topic test.</strong> Ask which skills cost the marks and what to focus on next.</li>
-            <li><strong>Worry about maths is getting bigger.</strong> Tears, avoidance or not wanting to go to maths class are worth raising early.</li>
+            <li><strong>The same topic is stuck on several nights.</strong>{" "}If the support ladder runs out on the same kind of question more than once, the method has not landed and needs re-teaching.</li>
+            <li><strong>Homework is regularly taking far longer than intended.</strong>{" "}The teacher may not know, and may adjust the load or the support.</li>
+            <li><strong>Your child cannot start the homework at all.</strong>{" "}Not knowing where to begin often means an earlier skill is missing.</li>
+            <li><strong>Marks have dropped on a topic test.</strong>{" "}Ask which skills cost the marks and what to focus on next.</li>
+            <li><strong>Worry about maths is getting bigger.</strong>{" "}Tears, avoidance or not wanting to go to maths class are worth raising early.</li>
           </ul>
           <div className="pg-note" style={{ marginTop: 18 }}>
-            <strong>Keep the note short and specific.</strong> For example: &ldquo;Sam spent 40 minutes on questions 5 to 8 (solving equations with brackets) and could not get started. Could you go over this in class or suggest an example to look at?&rdquo; Older students can write it themselves, which is a useful skill in its own right.
+            <strong>Keep the note short and specific.</strong>{" "}For example: &ldquo;Sam spent 40 minutes on questions 5 to 8 (solving equations with brackets) and could not get started. Could you go over this in class or suggest an example to look at?&rdquo; Older students can write it themselves, which is a useful skill in its own right.
           </div>
         </div>
       </section>
@@ -220,22 +294,22 @@ export default function Page() {
 
       <section id="app" className="tb-section" aria-labelledby="h-app">
         <div className="tb-wrap">
-          <h2 id="h-app" className="tb-h2 pg-h2">Where Tuterly fits in the homework routine</h2>
+          <h2 id="h-app" className="tb-h2 pg-h2">Let Tuterly do the explaining</h2>
           <p className="pg-intro">
-            The hardest moment in homework is the wrong answer: your child is frustrated, you are not sure how to help, and the question usually gets abandoned. Tuterly is built for that moment.
+            The hardest moment in homework is the wrong answer: your child is frustrated, you don&rsquo;t remember the method, and the question usually gets abandoned. Tuterly is built for that moment, so you can stay the encourager.
           </p>
           <ol className="pg-steps">
             <li><strong>Snap it</strong>Your child photographs the question they got wrong or could not finish.</li>
-            <li><strong>See the method</strong>It is saved with a step-by-step worked solution, so the &ldquo;one resource&rdquo; rung of the ladder is already there.</li>
+            <li><strong>See the method</strong>It&rsquo;s saved with a detailed, step-by-step worked solution, with every step explained, so the &ldquo;one resource&rdquo; rung of the ladder is already there.</li>
             <li><strong>Try a fresh one</strong>Tuterly gives a new question on the same skill to try without looking, which is where the learning happens.</li>
             <li><strong>Bring it back before the test</strong>Saved questions return until they are mastered. Fix my mistakes drills them with fresh versions, and your child can test themselves on any topic before an assessment.</li>
           </ol>
           <div className="pg-prose" style={{ marginTop: 18 }}>
             <p>
-              An app does not replace the routine, the encouragement, or the note to the teacher. It works best when your child is roughly keeping up and needs more practice on specific skills. If a whole topic has not made sense, the teacher, or sometimes a tutor, needs to re-teach it first. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link> covers how to tell the difference.
+              An app does not replace the routine, the encouragement, or the note to the teacher. It works best when your child is roughly keeping up and needs more practice on specific skills. If a whole topic has not made sense, the teacher, or sometimes a tutor, needs to re-teach it first. Our guide to <Link href="/parents/maths-app-vs-tutoring">choosing between a maths app and a tutor</Link>{" "}covers how to tell the difference.
             </p>
             <p>
-              Tuterly covers the same Years 7 to 10 maths as the Australian Curriculum and is designed by Australian educators at Bayside Academics. See how <Link href="/features/snap-a-question">snap a question</Link> works.
+              You stay in the loop without checking every page: each week you see the questions they added and mastered, plus their test scores. Tuterly covers the same Years 7 to 10 maths as the Australian Curriculum and is built by Bayside Academics, a Melbourne tutoring business. See how <Link href="/features/snap-a-question">snap a question</Link>{" "}works.
             </p>
           </div>
         </div>

@@ -22,6 +22,7 @@ export async function GET(request, { params }) {
       yearLevel: test.year_level,
       topicLabel: test.topic_label,
       part,
+      instructions: "", // the written tests carry their own instructions
     });
     return new NextResponse(buffer, {
       headers: {

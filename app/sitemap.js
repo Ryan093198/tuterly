@@ -3,6 +3,7 @@ import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { SKILL_PAGES } from "@/lib/skill-pages";
 import { SITE_URL } from "@/lib/site";
+import { writtenTopicTest } from "@/lib/topic-test-files";
 import { getAllPosts } from "@/lib/learn";
 import { LIVE_YEARS, mindMapPath, mindMapsForYear, revisionYearPath } from "@/lib/mind-maps";
 
@@ -79,6 +80,7 @@ const STATIC_PAGES = [
   { path: "/parents/help-with-secondary-maths-homework", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/maths-app-vs-tutoring", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/end-of-year-maths-report", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/parents/studied-but-failed-maths-test", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/preparing-for-maths-topic-tests", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
   // High-intent exam-prep landing pages. Listed alongside the suburb
@@ -141,6 +143,12 @@ export default function sitemap() {
   }
   for (const s of SKILL_PAGES) {
     worksheetTopics.push({ url: `${SITE_URL}/worksheets/${s.slug}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 });
+  }
+  // The free practice sheet PDF on each topic page that has a written test.
+  for (const p of WORKSHEET_LANDING_PAGES) {
+    if (writtenTopicTest(p.yearLevel, p.topicId)) {
+      worksheetTopics.push({ url: `${SITE_URL}/worksheets/${p.slug}/practice-questions.pdf`, lastModified: now, changeFrequency: "monthly", priority: 0.5 });
+    }
   }
 
   // The Learn hub and every published article (content/learn/*.md).
