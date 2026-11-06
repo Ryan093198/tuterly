@@ -104,7 +104,15 @@
       "lines": [
         "\\(x > 2\\): open circle at 2, arrow right",
         "\\(x \\le 4\\): closed dot at 4, arrow left"
-      ]
+      ],
+      "fig": {
+        "type": "inequality",
+        "lo": -1,
+        "hi": 6,
+        "value": 2,
+        "dir": "right",
+        "label": "x > 2"
+      }
     },
     {
       "title": "Solving inequalities",
@@ -116,7 +124,15 @@
         "\\(2x + 1 < 9 \\Rightarrow 2x < 8 \\Rightarrow x < 4\\)",
         "\\(-3x \\le 12 \\Rightarrow x \\ge -4\\)"
       ],
-      "tip": "flip the sign when dividing by a negative."
+      "tip": "flip the sign when dividing by a negative.",
+      "fig": {
+        "type": "inequality",
+        "lo": -1,
+        "hi": 7,
+        "value": 4,
+        "dir": "left",
+        "label": "x < 4"
+      }
     }
   ]
 }

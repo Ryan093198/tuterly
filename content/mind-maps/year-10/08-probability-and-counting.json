@@ -79,7 +79,22 @@
       "lines": [
         "2 red, 3 blue, take 2 without replacement:",
         "\\(P(\\text{one of each}) = \\tfrac25 \\cdot \\tfrac34 + \\tfrac35 \\cdot \\tfrac24 = \\tfrac35\\)"
-      ]
+      ],
+      "fig": {
+        "type": "tree",
+        "labels": [
+          "R",
+          "B"
+        ],
+        "probs": [
+          "2/5",
+          "3/5",
+          "1/4",
+          "3/4",
+          "2/4",
+          "2/4"
+        ]
+      }
     },
     {
       "title": "Independent events",

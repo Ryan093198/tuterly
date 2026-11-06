@@ -79,7 +79,14 @@
       "rule": "The point of inflection is \\((h, k)\\). A negative \\(a\\) flips it.",
       "lines": [
         "\\(y = (x - 1)^3 + 2\\): point of inflection \\((1, 2)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "graph",
+        "fn": "cubic",
+        "h": 1,
+        "k": 2,
+        "label": "(1, 2)"
+      }
     },
     {
       "title": "Graphs of polynomials",
@@ -89,7 +96,11 @@
       "rule": "Factors give the x-intercepts. A squared factor touches the axis; a cubed one flattens through it.",
       "lines": [
         "\\(y = (x + 1)(x - 2)(x - 3)\\): x-intercepts −1, 2, 3, y-intercept 6"
-      ]
+      ],
+      "fig": {
+        "type": "graph",
+        "fn": "poly"
+      }
     },
     {
       "title": "Graphs of circles",
@@ -99,7 +110,15 @@
       "rule": "\\((x - h)^2 + (y - k)^2 = r^2\\): centre \\((h, k)\\), radius \\(r\\).",
       "lines": [
         "\\((x - 2)^2 + (y + 1)^2 = 9\\): centre \\((2, -1)\\), radius 3"
-      ]
+      ],
+      "fig": {
+        "type": "graph",
+        "fn": "circle",
+        "h": 2,
+        "k": -1,
+        "r": 3,
+        "label": "centre (2, −1)"
+      }
     },
     {
       "title": "Hyperbolas",
@@ -109,7 +128,16 @@
       "rule": "\\(y = \\dfrac{a}{x - h} + k\\): asymptotes \\(x = h\\) and \\(y = k\\).",
       "lines": [
         "\\(y = \\dfrac{2}{x - 1} + 3\\): asymptotes \\(x = 1\\) and \\(y = 3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "graph",
+        "fn": "hyperbola",
+        "h": 1,
+        "k": 3,
+        "a": 2,
+        "xLabel": "x = 1",
+        "yLabel": "y = 3"
+      }
     },
     {
       "title": "Further transformations",

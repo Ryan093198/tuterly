@@ -32,7 +32,15 @@
         "\\(2 - 7 = -5\\) &nbsp; \\(-4 - 3 = -7\\)",
         "It's −3°C and warms by 8°: **5°C**",
         "A diver at −12 m rises 5 m: **−7 m**"
-      ]
+      ],
+      "fig": {
+        "type": "numberline",
+        "lo": -5,
+        "hi": 6,
+        "from": -3,
+        "to": 2,
+        "label": "−3 + 5 = 2"
+      }
     },
     {
       "title": "Adding and subtracting negatives",
@@ -45,7 +53,15 @@
         "\\(2 - (-3) = 5\\) &nbsp; \\(-6 - (-2) = -4\\)",
         "Owing $5, then owing $4 more: \\(-5 + (-4) = -9\\)"
       ],
-      "tip": "\\(+\\,(-)\\) acts like \\(-\\), and \\(-\\,(-)\\) acts like \\(+\\)."
+      "tip": "\\(+\\,(-)\\) acts like \\(-\\), and \\(-\\,(-)\\) acts like \\(+\\).",
+      "fig": {
+        "type": "numberline",
+        "lo": -5,
+        "hi": 5,
+        "from": 3,
+        "to": -2,
+        "label": "3 + (−5) = −2"
+      }
     },
     {
       "title": "Multiplying and dividing",
@@ -101,7 +117,28 @@
         "\\((2, -3)\\) is in the fourth quadrant",
         "Right 5 from \\((-3, 2)\\) gives \\((2, 2)\\)"
       ],
-      "note": "\\((-2, 0)\\) is on the x-axis, so it isn't in any quadrant."
+      "note": "\\((-2, 0)\\) is on the x-axis, so it isn't in any quadrant.",
+      "fig": {
+        "type": "quadrants",
+        "names": true,
+        "points": [
+          [
+            -3,
+            2,
+            "(−3, 2)"
+          ],
+          [
+            -1,
+            -4,
+            "(−1, −4)"
+          ],
+          [
+            2,
+            -3,
+            "(2, −3)"
+          ]
+        ]
+      }
     }
   ]
 }

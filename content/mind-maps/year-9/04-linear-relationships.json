@@ -56,7 +56,12 @@
       "lines": [
         "\\((1, 2)\\) to \\((3, 8)\\): \\(m = \\dfrac{6}{2} = 3\\)"
       ],
-      "tip": "rise over run, not run over rise. Going down to the right is negative."
+      "tip": "rise over run, not run over rise.",
+      "fig": {
+        "type": "gradient",
+        "rise": 6,
+        "run": 2
+      }
     },
     {
       "title": "Gradient and direct proportion",
@@ -116,8 +121,11 @@
       "rule": "Parallel: same gradient. Perpendicular: gradients multiply to \\(-1\\).",
       "lines": [
         "\\(y = 2x + 1\\) is parallel to \\(y = 2x - 4\\)",
-        "A line perpendicular to \\(y = 2x + 1\\) has gradient \\(-\\tfrac12\\)"
-      ]
+        "Perpendicular to \\(y = 2x + 1\\): gradient \\(-\\tfrac12\\)"
+      ],
+      "fig": {
+        "type": "parperp"
+      }
     },
     {
       "title": "Linear modelling",
@@ -140,7 +148,30 @@
         "\\(y = x + 1\\) and \\(y = -x + 5\\) cross at \\((2, 3)\\)",
         "Check: \\(2 + 1 = 3\\) ✓ and \\(-2 + 5 = 3\\) ✓"
       ],
-      "note": "Parallel lines never cross, so there's no solution."
+      "note": "Parallel lines never cross, so there's no solution.",
+      "fig": {
+        "type": "twolines",
+        "a": [
+          1,
+          1
+        ],
+        "b": [
+          -1,
+          5
+        ],
+        "at": [
+          2,
+          3
+        ],
+        "xr": [
+          -2,
+          6
+        ],
+        "yr": [
+          -1,
+          6
+        ]
+      }
     }
   ]
 }

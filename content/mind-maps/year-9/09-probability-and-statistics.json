@@ -71,7 +71,22 @@
         "\\(P(\\text{at least one head}) = 1 - \\tfrac14 = \\tfrac34\\)",
         "3 red and 2 blue, take 2 without replacement: \\(P(\\text{both red}) = \\tfrac35 \\times \\tfrac24 = \\tfrac{3}{10}\\)"
       ],
-      "tip": "without replacement, the second branch has one fewer."
+      "tip": "without replacement, the second branch has one fewer.",
+      "fig": {
+        "type": "tree",
+        "labels": [
+          "H",
+          "T"
+        ],
+        "probs": [
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/2"
+        ]
+      }
     },
     {
       "title": "Relative frequency",

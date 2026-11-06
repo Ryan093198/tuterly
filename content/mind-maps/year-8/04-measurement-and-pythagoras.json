@@ -27,7 +27,10 @@
       "lines": [
         "\\(d = 10\\): \\(C = 10\\pi \\approx 31.4\\)",
         "\\(r = 3\\): \\(C = 6\\pi \\approx 18.8\\)"
-      ]
+      ],
+      "fig": {
+        "type": "circleparts"
+      }
     },
     {
       "title": "Area",
@@ -49,7 +52,13 @@
       "lines": [
         "Trapezium 4, 10, height 5: \\(35\\)",
         "Rhombus, diagonals 6 and 8: \\(24\\)"
-      ]
+      ],
+      "fig": {
+        "type": "trapezium",
+        "a": "4",
+        "b": "10",
+        "h": "5"
+      }
     },
     {
       "title": "Area of circles",
@@ -72,7 +81,12 @@
       "lines": [
         "Quarter circle \\(r = 4\\): \\(\\tfrac14 \\times 16\\pi = 4\\pi \\approx 12.6\\)",
         "8 by 4 rectangle with a semicircle on the 4 side: \\(32 + \\tfrac12\\pi(2^2) \\approx 38.3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "rectsemi",
+        "w": 8,
+        "h": 4
+      }
     },
     {
       "title": "Surface area of prisms",
@@ -82,7 +96,13 @@
       "rule": "Add the areas of every face. Drawing the net helps.",
       "lines": [
         "Box 5 by 3 by 2: \\(2(15 + 10 + 6) = 62\\)"
-      ]
+      ],
+      "fig": {
+        "type": "box",
+        "l": 5,
+        "w": 3,
+        "h": 2
+      }
     },
     {
       "title": "Volume and capacity",
@@ -104,7 +124,12 @@
       "lines": [
         "Triangular prism: \\(\\tfrac12 \\times 3 \\times 4 = 6\\), length 10: \\(V = 60\\)",
         "Cylinder \\(r = 2,\\ h = 5\\): \\(V = 20\\pi \\approx 62.8\\)"
-      ]
+      ],
+      "fig": {
+        "type": "cylinder",
+        "r": "2",
+        "h": "5"
+      }
     },
     {
       "title": "Time and time zones",

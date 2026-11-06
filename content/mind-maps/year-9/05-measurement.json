@@ -39,7 +39,12 @@
       "lines": [
         "\\(r = 5\\): \\(C = 10\\pi \\approx 31.4\\)",
         "Sector \\(r = 6,\\ \\theta = 90^\\circ\\): \\(P = 2(6) + \\tfrac{90}{360} \\times 2\\pi(6) \\approx 21.4\\)"
-      ]
+      ],
+      "fig": {
+        "type": "sector",
+        "deg": 90,
+        "r": "6"
+      }
     },
     {
       "title": "Area",
@@ -51,7 +56,13 @@
         "Trapezium \\(a = 4,\\ b = 10,\\ h = 5\\): \\(\\tfrac12 \\times 14 \\times 5 = 35\\)",
         "Circle \\(r = 3\\): \\(9\\pi \\approx 28.3\\)"
       ],
-      "note": "1 m² = 10 000 cm² (100 × 100)."
+      "note": "1 m² = 10 000 cm² (100 × 100).",
+      "fig": {
+        "type": "trapezium",
+        "a": "4",
+        "b": "10",
+        "h": "5"
+      }
     },
     {
       "title": "Composite shapes",
@@ -62,7 +73,12 @@
       "lines": [
         "10 by 6 rectangle with a semicircle on the 6 side: \\(60 + \\tfrac12\\pi(3^2) \\approx 74.1\\)"
       ],
-      "tip": "the semicircle's radius is half the side: 3, not 6."
+      "tip": "the semicircle's radius is half the side: 3, not 6.",
+      "fig": {
+        "type": "rectsemi",
+        "w": 10,
+        "h": 6
+      }
     },
     {
       "title": "Surface area of prisms and pyramids",
@@ -73,7 +89,12 @@
       "lines": [
         "Cube with side 4: \\(6 \\times 16 = 96\\)",
         "Square pyramid, base 6, triangle height 5: \\(36 + 4 \\times \\tfrac12 \\times 6 \\times 5 = 96\\)"
-      ]
+      ],
+      "fig": {
+        "type": "pyramid",
+        "b": "6",
+        "t": "5"
+      }
     },
     {
       "title": "Surface area of cylinders",
@@ -84,7 +105,12 @@
       "lines": [
         "\\(r = 3,\\ h = 10\\): \\(18\\pi + 60\\pi = 78\\pi \\approx 245.0\\)"
       ],
-      "note": "An open cylinder (like a cup) has only one circle."
+      "note": "An open cylinder (like a cup) has only one circle.",
+      "fig": {
+        "type": "cylindernet",
+        "around": "2πr",
+        "h": "h"
+      }
     },
     {
       "title": "Volume of prisms",
@@ -95,7 +121,13 @@
       "lines": [
         "Triangular prism, triangle \\(\\tfrac12 \\times 4 \\times 3 = 6\\), length 10: \\(V = 60\\)",
         "1 cm³ = 1 mL, 1000 cm³ = 1 L, 1 m³ = 1000 L"
-      ]
+      ],
+      "fig": {
+        "type": "triprism",
+        "b": 4,
+        "h": 3,
+        "l": "10"
+      }
     },
     {
       "title": "Volume of cylinders",
@@ -106,7 +138,12 @@
       "lines": [
         "\\(r = 3\\) cm, \\(h = 10\\) cm: \\(V = 90\\pi \\approx 282.7\\) cm³, about 283 mL"
       ],
-      "tip": "use the radius, not the diameter."
+      "tip": "use the radius, not the diameter.",
+      "fig": {
+        "type": "cylinder",
+        "r": "3",
+        "h": "10"
+      }
     }
   ]
 }

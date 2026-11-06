@@ -35,7 +35,18 @@
       "rule": "Histograms show numerical data: the columns touch.",
       "lines": [
         "Also: dot plots, and stem-and-leaf plots (key 2 | 4 = 24)"
-      ]
+      ],
+      "fig": {
+        "type": "bars",
+        "values": [
+          2,
+          5,
+          8,
+          6,
+          3
+        ],
+        "touch": true
+      }
     },
     {
       "title": "Measures of centre",
@@ -101,7 +112,22 @@
       "rule": "Multiply along the branches, then add the results you want.",
       "lines": [
         "3 red and 1 blue, with replacement: \\(P(\\text{red, red}) = \\tfrac34 \\times \\tfrac34 = \\tfrac{9}{16}\\)"
-      ]
+      ],
+      "fig": {
+        "type": "tree",
+        "labels": [
+          "R",
+          "B"
+        ],
+        "probs": [
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/4",
+          "3/4",
+          "1/4"
+        ]
+      }
     },
     {
       "title": "Venn diagrams and two-way tables",

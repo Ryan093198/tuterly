@@ -43,9 +43,16 @@
       ],
       "rule": "Elevation and depression are measured from the horizontal.",
       "lines": [
-        "From a 40 m cliff, the angle of depression to a boat is 25°",
-        "Distance \\(= \\dfrac{40}{\\tan 25^\\circ} \\approx 85.8\\) m"
-      ]
+        "40 m cliff, angle of depression 25° to a boat",
+        "Distance \\(= \\tfrac{40}{\\tan 25^\\circ} \\approx 85.8\\) m"
+      ],
+      "fig": {
+        "type": "elevation",
+        "kind": "depression",
+        "deg": 25,
+        "base": "85.8 m",
+        "height": "40 m"
+      }
     },
     {
       "title": "Directions and bearings",
@@ -56,7 +63,12 @@
       "lines": [
         "N30°E = 030°T &nbsp; S40°W = 220°T",
         "Back bearing of 060°T is **240°T**"
-      ]
+      ],
+      "fig": {
+        "type": "bearing",
+        "deg": 220,
+        "label": "220°T"
+      }
     },
     {
       "title": "Applications in 3D",
@@ -67,7 +79,15 @@
       "lines": [
         "Box 3 by 4 by 12: base diagonal 5",
         "Angle with the base: \\(\\tan\\theta = \\tfrac{12}{5} \\Rightarrow \\theta \\approx 67.4^\\circ\\)"
-      ]
+      ],
+      "fig": {
+        "type": "box",
+        "l": 3,
+        "w": 4,
+        "h": 12,
+        "base": "5",
+        "diag": "13"
+      }
     },
     {
       "title": "The sine rule",
@@ -78,7 +98,20 @@
       "lines": [
         "\\(A = 40^\\circ,\\ B = 65^\\circ,\\ a = 10\\): \\(b = \\dfrac{10\\sin 65^\\circ}{\\sin 40^\\circ} \\approx 14.1\\)"
       ],
-      "tip": "finding an angle can give two answers (the ambiguous case)."
+      "tip": "finding an angle can give two answers (the ambiguous case).",
+      "fig": {
+        "type": "oblique",
+        "A": 40,
+        "B": 65,
+        "mark": [
+          "A",
+          "B"
+        ],
+        "angA": "40°",
+        "angB": "65°",
+        "a": "a = 10",
+        "b": "b"
+      }
     },
     {
       "title": "The cosine rule",
@@ -88,7 +121,19 @@
       "rule": "\\(c^2 = a^2 + b^2 - 2ab\\cos C\\): use it with two sides and the angle between, or three sides.",
       "lines": [
         "\\(a = 7,\\ b = 9,\\ C = 60^\\circ\\): \\(c^2 = 49 + 81 - 63 = 67\\), so \\(c \\approx 8.19\\)"
-      ]
+      ],
+      "fig": {
+        "type": "oblique",
+        "A": 47.8,
+        "B": 72.2,
+        "mark": [
+          "C"
+        ],
+        "angC": "60°",
+        "a": "a = 7",
+        "b": "b = 9",
+        "c": "c"
+      }
     },
     {
       "title": "Area of a triangle",
@@ -98,7 +143,18 @@
       "rule": "\\(A = \\tfrac12 ab\\sin C\\), with \\(C\\) between sides \\(a\\) and \\(b\\).",
       "lines": [
         "\\(a = 7,\\ b = 9,\\ C = 60^\\circ\\): \\(A = \\tfrac12 \\times 63 \\times \\sin 60^\\circ \\approx 27.3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "oblique",
+        "A": 47.8,
+        "B": 72.2,
+        "mark": [
+          "C"
+        ],
+        "angC": "60°",
+        "a": "7",
+        "b": "9"
+      }
     },
     {
       "title": "The unit circle",
@@ -109,7 +165,10 @@
       "lines": [
         "\\(\\sin(180^\\circ - \\theta) = \\sin\\theta\\) &nbsp; \\(\\cos(180^\\circ - \\theta) = -\\cos\\theta\\)",
         "\\(\\sin 150^\\circ = \\tfrac12\\) &nbsp; \\(\\cos 120^\\circ = -\\tfrac12\\)"
-      ]
+      ],
+      "fig": {
+        "type": "unitcircle"
+      }
     },
     {
       "title": "Graphs of trig functions",
@@ -118,9 +177,12 @@
       ],
       "rule": "\\(y = \\sin x\\) and \\(y = \\cos x\\): period 360°, between −1 and 1.",
       "lines": [
-        "\\(\\sin x\\) starts at 0, \\(\\cos x\\) starts at 1",
         "\\(y = \\tan x\\): period 180°, asymptotes at 90° and 270°"
-      ]
+      ],
+      "fig": {
+        "type": "graph",
+        "fn": "sincos"
+      }
     },
     {
       "title": "Exact values and trig equations",

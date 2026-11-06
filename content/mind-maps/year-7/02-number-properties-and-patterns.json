@@ -100,9 +100,11 @@
       ],
       "rule": "Count how much each new shape adds, then write a rule.",
       "lines": [
-        "Squares from matchsticks: 4, 7, 10, so \\(\\text{sticks} = 3n + 1\\)",
-        "10 squares: \\(3 \\times 10 + 1 = 31\\) sticks"
-      ]
+        "\\(\\text{sticks} = 3n + 1\\), so 10 squares: \\(3 \\times 10 + 1 = 31\\)"
+      ],
+      "fig": {
+        "type": "matchsticks"
+      }
     },
     {
       "title": "Tables and rules",
@@ -124,7 +126,17 @@
       "lines": [
         "\\((3, 2)\\) is 3 across and 2 up",
         "Plot \\(y = x + 1\\): \\((0, 1), (1, 2), (2, 3)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "quadrants",
+        "points": [
+          [
+            3,
+            2,
+            "(3, 2)"
+          ]
+        ]
+      }
     }
   ]
 }

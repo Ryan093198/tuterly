@@ -81,8 +81,17 @@ export default function MindMapLinks({ mode }) {
     const grow = () => {
       if (stacked()) { sheet.style.setProperty("--s", "1"); return; }
       const cards = [...sheet.querySelectorAll("[data-mm-card]")];
-      const fits = (v) => { sheet.style.setProperty("--s", String(v)); return cards.every((c) => c.scrollHeight <= c.clientHeight + 1); };
-      if (!fits(1)) { sheet.style.setProperty("--s", "1"); return; }
+      const over = (c) => c.scrollHeight > c.clientHeight + 1;
+      const fits = (v) => { sheet.style.setProperty("--s", String(v)); return cards.every((c) => !over(c)); };
+      cards.forEach((c) => c.style.removeProperty("--fh"));
+      if (!fits(1)) {
+        // A crowded card gets a smaller diagram rather than clipped text.
+        sheet.style.setProperty("--s", "1");
+        cards.filter(over).forEach((c) => {
+          for (let h = 92; h >= 72 && over(c); h -= 4) c.style.setProperty("--fh", `${h}px`);
+        });
+        return;
+      }
       let lo = 1, hi = 1.4;
       for (let i = 0; i < 8; i++) { const mid = (lo + hi) / 2; if (fits(mid)) lo = mid; else hi = mid; }
       // A little headroom so rounding never tips a card over.

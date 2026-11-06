@@ -15,7 +15,18 @@
       "rule": "\\((x, y)\\): across first, then up or down. The origin is \\((0, 0)\\).",
       "lines": [
         "\\((-2, 3)\\) is 2 left and 3 up, in the second quadrant"
-      ]
+      ],
+      "fig": {
+        "type": "quadrants",
+        "names": true,
+        "points": [
+          [
+            -2,
+            3,
+            "(−2, 3)"
+          ]
+        ]
+      }
     },
     {
       "title": "Rules, tables and graphs",
@@ -46,7 +57,22 @@
       "rule": "Read across from the value you want to the line, then down to the x-axis.",
       "lines": [
         "Solve \\(2x + 1 = 7\\) on \\(y = 2x + 1\\): at \\(y = 7\\), \\(x = 3\\)"
-      ]
+      ],
+      "fig": {
+        "type": "readline",
+        "m": 2,
+        "k": 1,
+        "x": 3,
+        "xr": [
+          -1,
+          5
+        ],
+        "yr": [
+          -1,
+          9
+        ],
+        "label": "y = 2x + 1"
+      }
     },
     {
       "title": "Solving inequalities with graphs",
@@ -85,7 +111,12 @@
       "lines": [
         "\\((1, 2)\\) to \\((3, 6)\\): \\(\\tfrac{4}{2} = 2\\)",
         "Horizontal lines have a gradient of 0"
-      ]
+      ],
+      "fig": {
+        "type": "gradient",
+        "rise": 4,
+        "run": 2
+      }
     },
     {
       "title": "Gradient–intercept form",

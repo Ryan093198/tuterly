@@ -80,7 +80,13 @@
       "lines": [
         "Bell-shaped data: about 68% within \\(1\\sigma\\), 95% within \\(2\\sigma\\)",
         "Mean 70, \\(\\sigma = 5\\): about 95% between 60 and 80"
-      ]
+      ],
+      "fig": {
+        "type": "bell",
+        "lo": "60",
+        "mid": "70",
+        "hi": "80"
+      }
     },
     {
       "title": "Cumulative frequency and percentiles",
@@ -91,7 +97,10 @@
       "lines": [
         "Median = 50th percentile, Q₁ = 25th, Q₃ = 75th",
         "40 values: the median is halfway between the 20th and 21st"
-      ]
+      ],
+      "fig": {
+        "type": "ogive"
+      }
     },
     {
       "title": "Time-series data",
@@ -101,7 +110,10 @@
       "rule": "Data collected over time, with time on the x-axis.",
       "lines": [
         "Look for the trend (up or down) and any seasonal pattern"
-      ]
+      ],
+      "fig": {
+        "type": "linegraph"
+      }
     },
     {
       "title": "Bivariate data and scatter plots",
@@ -112,7 +124,10 @@
       "lines": [
         "Describe the direction (positive or negative), strength and form (linear or not)"
       ],
-      "tip": "correlation doesn't prove that one causes the other."
+      "tip": "correlation doesn't prove that one causes the other.",
+      "fig": {
+        "type": "scatter"
+      }
     },
     {
       "title": "Line of best fit",
@@ -123,7 +138,11 @@
       "lines": [
         "\\(y = 2.5x + 10\\) at \\(x = 8\\): \\(y = 30\\)",
         "Predicting inside the data (interpolation) is more reliable than outside it"
-      ]
+      ],
+      "fig": {
+        "type": "scatter",
+        "line": true
+      }
     }
   ]
 }

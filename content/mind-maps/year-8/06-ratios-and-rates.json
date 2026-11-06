@@ -84,7 +84,10 @@
         "45 minutes at 80 km/h: \\(D = 80 \\times 0.75 = 60\\) km",
         "72 km/h in m/s: \\(72 \\div 3.6 = 20\\) m/s"
       ],
-      "tip": "45 minutes is 0.75 hours, not 0.45."
+      "tip": "45 minutes is 0.75 hours, not 0.45.",
+      "fig": {
+        "type": "dst"
+      }
     },
     {
       "title": "The unitary method",

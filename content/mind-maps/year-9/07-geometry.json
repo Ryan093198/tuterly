@@ -17,7 +17,13 @@
         "Two angles are 50° and 60°: the third is **70°**",
         "Exterior angle = sum of the two opposite interior angles"
       ],
-      "note": "An isosceles triangle has two equal sides and two equal base angles."
+      "note": "An isosceles triangle has two equal sides and two equal base angles.",
+      "fig": {
+        "type": "triangle",
+        "A": 50,
+        "B": 70,
+        "exterior": true
+      }
     },
     {
       "title": "Parallel lines",
@@ -28,7 +34,10 @@
       "lines": [
         "If one angle is 65°, its co-interior angle is **115°**"
       ],
-      "tip": "these rules only work when the lines are parallel."
+      "tip": "these rules only work when the lines are parallel.",
+      "fig": {
+        "type": "fzc"
+      }
     },
     {
       "title": "Quadrilaterals and polygons",
@@ -39,7 +48,11 @@
       "lines": [
         "Quadrilateral: 360°",
         "Hexagon: \\(4 \\times 180^\\circ = 720^\\circ\\); each angle of a regular hexagon is 120°"
-      ]
+      ],
+      "fig": {
+        "type": "polygon",
+        "n": 6
+      }
     },
     {
       "title": "Congruent triangles",
@@ -52,7 +65,10 @@
         "SAS: two sides and the angle between them",
         "RHS: right angle, hypotenuse and one side"
       ],
-      "tip": "AAA is not a congruence test: same angles can be different sizes."
+      "tip": "AAA is not a congruence test: same angles can be different sizes.",
+      "fig": {
+        "type": "congruencetests"
+      }
     },
     {
       "title": "Using congruence in proof",
@@ -64,7 +80,10 @@
         "ABCD is a parallelogram. Prove △ABC ≅ △CDA.",
         "AB = CD and BC = DA (opposite sides of a parallelogram)",
         "AC is common, so △ABC ≅ △CDA (SSS)"
-      ]
+      ],
+      "fig": {
+        "type": "paradiag"
+      }
     },
     {
       "title": "Enlargement and similar figures",
@@ -75,7 +94,13 @@
       "lines": [
         "A 4 cm side enlarged by a scale factor of 2.5 becomes **10 cm**"
       ],
-      "note": "Similar figures: same shape, sides in the same ratio."
+      "note": "Similar figures: same shape, sides in the same ratio.",
+      "fig": {
+        "type": "similar",
+        "k": 2.5,
+        "a": "4 cm",
+        "b": "10 cm"
+      }
     },
     {
       "title": "Similar triangles",
@@ -86,7 +111,15 @@
       "lines": [
         "Matching sides 4 and 6: scale factor \\(\\tfrac64 = 1.5\\)",
         "Side 5 matches \\(x\\): \\(x = 5 \\times 1.5 = 7.5\\)"
-      ]
+      ],
+      "fig": {
+        "type": "similar",
+        "k": 1.5,
+        "a": "4",
+        "b": "6",
+        "c": "5",
+        "d": "x"
+      }
     },
     {
       "title": "Proving and applying similar triangles",
@@ -98,7 +131,18 @@
         "A 2 m pole casts a 3 m shadow. A tree's shadow is 12 m at the same time.",
         "Height \\(= 2 \\times \\tfrac{12}{3} = 8\\) m"
       ],
-      "tip": "write the vertices in matching order: △ABC ||| △DEF."
+      "tip": "write the vertices in matching order: △ABC ||| △DEF.",
+      "fig": {
+        "type": "shadow",
+        "p": [
+          2,
+          3
+        ],
+        "t": [
+          8,
+          12
+        ]
+      }
     }
   ]
 }

@@ -63,7 +63,15 @@
         "A temperature of −3°C is colder than 2°C",
         "In order: \\(-8, -3, 0, 2\\)",
         "A rise of 5° from \\(-3^\\circ\\)C gives \\(2^\\circ\\)C"
-      ]
+      ],
+      "fig": {
+        "type": "numberline",
+        "lo": -5,
+        "hi": 4,
+        "from": -3,
+        "to": 2,
+        "label": "rise of 5°"
+      }
     },
     {
       "title": "Adding and subtracting negatives",
@@ -75,7 +83,15 @@
         "\\(-3 + 7 = 4\\) &nbsp; \\(5 + (-8) = -3\\)",
         "\\(-2 - (-6) = -2 + 6 = 4\\)",
         "\\(-4 - 3 = -7\\)"
-      ]
+      ],
+      "fig": {
+        "type": "numberline",
+        "lo": -4,
+        "hi": 6,
+        "from": 5,
+        "to": -3,
+        "label": "5 + (−8) = −3"
+      }
     },
     {
       "title": "Multiplying and dividing negatives",

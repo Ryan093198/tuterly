@@ -18,7 +18,11 @@
         "Angles on a straight line add to 180°",
         "Angles around a point add to 360°"
       ],
-      "note": "Acute: under 90°. Right: 90°. Obtuse: 90° to 180°. Reflex: over 180°."
+      "note": "Acute: under 90°. Right: 90°. Obtuse: 90° to 180°. Reflex: over 180°.",
+      "fig": {
+        "type": "intersect",
+        "deg": 35
+      }
     },
     {
       "title": "Transversal and parallel lines",
@@ -29,7 +33,10 @@
       "lines": [
         "If one angle is 70°: corresponding **70°**, alternate **70°**, co-interior **110°**"
       ],
-      "tip": "these rules only work when the lines are parallel."
+      "tip": "these rules only work when the lines are parallel.",
+      "fig": {
+        "type": "fzc"
+      }
     },
     {
       "title": "Triangles",
@@ -41,7 +48,13 @@
         "Angles 40° and 75°: the third is **65°**, the exterior angle is **115°**",
         "Equilateral: all angles 60°",
         "Isosceles: two equal sides, two equal base angles"
-      ]
+      ],
+      "fig": {
+        "type": "triangle",
+        "A": 40,
+        "B": 65,
+        "exterior": true
+      }
     },
     {
       "title": "Quadrilaterals",
@@ -54,7 +67,10 @@
         "Parallelogram: opposite angles equal",
         "Rhombus: all sides equal",
         "Kite: one pair of opposite angles equal"
-      ]
+      ],
+      "fig": {
+        "type": "quadrilaterals"
+      }
     },
     {
       "title": "Polygons",
@@ -65,7 +81,11 @@
       "lines": [
         "Pentagon: \\(3 \\times 180^\\circ = 540^\\circ\\), each angle of a regular one is \\(108^\\circ\\)",
         "Hexagon: \\(4 \\times 180^\\circ = 720^\\circ\\), each angle of a regular one is \\(120^\\circ\\)"
-      ]
+      ],
+      "fig": {
+        "type": "polygon",
+        "n": 5
+      }
     },
     {
       "title": "3D solids and Euler's formula",
@@ -77,7 +97,10 @@
         "Cube: \\(6 + 8 = 12 + 2\\) ✓",
         "Triangular prism: \\(5 + 6 = 9 + 2\\) ✓"
       ],
-      "note": "Prisms have two matching ends. Pyramids come to a point."
+      "note": "Prisms have two matching ends. Pyramids come to a point.",
+      "fig": {
+        "type": "solids"
+      }
     },
     {
       "title": "3D coordinates",
@@ -88,7 +111,16 @@
       "lines": [
         "\\((2, 3, 4)\\) is 2 along the x-axis, 3 along the y-axis and 4 up the z-axis",
         "A 5 by 3 by 2 box with a corner at the origin has its opposite corner at \\((5, 3, 2)\\)"
-      ]
+      ],
+      "fig": {
+        "type": "axes3d",
+        "at": [
+          2,
+          3,
+          4
+        ],
+        "label": "(2, 3, 4)"
+      }
     }
   ]
 }
