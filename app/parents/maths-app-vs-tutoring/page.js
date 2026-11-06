@@ -139,7 +139,7 @@ export default function Page() {
                   <td>$130</td>
                   <td>Daily worksheets in Kumon&rsquo;s own sequence, checked at a centre</td>
                 </tr>
-                <tr>
+                <tr className="pg-row-hl">
                   <th scope="row">Tuterly</th>
                   <td>{WEEK} a week or {NOW} a month at launch ({WEEK_FULL} a week or {FULL} a month from {FULL_PRICE_FROM})</td>
                   <td>{NOW}</td>
@@ -148,9 +148,6 @@ export default function Page() {
               </tbody>
             </table>
           </div>
-          <p className="pg-small">
-            Sources: an <a href="https://www.ozbargain.com.au/node/946603">OzBargain parent discussion</a> (a registered teacher tutoring senior students &ldquo;wouldnt be under $100 an hour&rdquo;; &ldquo;Kumon is about $130 a month per subject&rdquo;), an Australian teacher-tutor charging $120 an hour for senior maths (r/AustralianTeachers), and advertised rates from <a href="https://tutero.com/au/melbourne/maths-tutoring">Tutero</a> (from A$65 an hour) and <a href="https://kisacademics.com/w/tutoring-locations/melbourne-maths-tutoring">KIS Academics</a> ($70 an hour), November 2026.
-          </p>
         </div>
       </section>
 

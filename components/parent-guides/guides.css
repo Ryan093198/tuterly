@@ -64,3 +64,7 @@
 .pg-card__x { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
 .pg-links { margin: 22px 0 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15.5px; line-height: 1.5; max-width: 860px; }
 .pg-links span { color: var(--muted); }
+
+/* A highlighted table row (e.g. Tuterly in a comparison). */
+.pg-table tr.pg-row-hl > * { background: var(--brand-soft); }
+.pg-table tr.pg-row-hl > th { color: var(--brand-text); box-shadow: inset 4px 0 0 var(--brand); }
