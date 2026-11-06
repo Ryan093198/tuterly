@@ -27,7 +27,9 @@ export async function POST(request) {
     const price = await priceFor(plan);
     if (!price) return NextResponse.json({ error: "Plus isn't on sale here just yet." }, { status: 503 });
     const { customers, subs } = await studySubscriptionsFor(email);
-    const live = subs.find((s) => ["trialing", "active", "past_due"].includes(s.status));
+    // One subscription, one student: a parent can buy another for another child,
+    // so only their own Plus can't be bought twice.
+    const live = kind === "self" && subs.find((s) => s.metadata?.kind === "self" && ["trialing", "active", "past_due"].includes(s.status));
     if (live) {
       return NextResponse.json({
         error: "This email already has Tuterly Study Plus. To change it, use Manage subscription.", manage: true,

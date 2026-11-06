@@ -53,7 +53,7 @@ export default function PlusForm() {
         <div className="flex gap-3">
           <button type="button" className={choice(kind === "family")} onClick={() => setKind("family")}>
             <div className="font-semibold">My child</div>
-            <div className="text-xs text-muted">You get a family code for up to 3 children</div>
+            <div className="text-xs text-muted">You get a family code for one child</div>
           </button>
           <button type="button" className={choice(kind === "self")} onClick={() => setKind("self")}>
             <div className="font-semibold">Me</div>

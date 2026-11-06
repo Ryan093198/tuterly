@@ -45,7 +45,7 @@ export default async function StudyPlusDone({ searchParams }) {
                 <li>When they set it up, they enter this code and {pass ? "the Scholarship Pass is theirs" : "Plus switches on straight away"}.</li>
                 <li>Already using the app? Me, then Link a tutor or parent, then Got a family code.</li>
               </ol>
-              <p className="text-sm text-muted">{pass ? "The code works for one child." : "Up to 3 children can use one code."} We&apos;ve emailed it to {s.metadata.email} too.</p>
+              <p className="text-sm text-muted">{pass ? "The code works for one child." : "The code works for one child. For another child, get another subscription."} We&apos;ve emailed it to {s.metadata.email} too.</p>
             </>
           ) : (
             <>
