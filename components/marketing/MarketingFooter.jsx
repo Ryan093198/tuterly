@@ -7,6 +7,8 @@ import "@/components/brand/brand.css";
 // Tuterly app, so the footer carries no tutor sign-up, directory or
 // tutor-job links (those pages redirect home, see proxy.js). The tutoring
 // guides stay linked so Google keeps a crawl path to them.
+// Grouped 6 Nov 2026 (Ryan): "The app" is only about the app; free tools,
+// guides and comparisons each get their own column.
 const GROUPS = [
   {
     title: "The app",
@@ -17,34 +19,60 @@ const GROUPS = [
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },
       { href: "/teachers", label: "For teachers" },
-      { href: "/maths-exam-preparation", label: "Exam preparation" },
+    ],
+  },
+  {
+    title: "Free resources",
+    links: [
+      { href: "/worksheets", label: "Worksheet generator" },
+      { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
+      { href: "/exam-generator", label: "Practice exam generator" },
+      { href: "/end-of-year-maths-exams", label: "End-of-year exam practice" },
       { href: "/naplan", label: "NAPLAN practice tests" },
       { href: "/formula-sheets", label: "Formula sheets" },
-      { href: "/mind-maps", label: "Revision mind maps (Years 7 to 10)" },
-      { href: "/exam-generator", label: "Practice exam generator" },
+      { href: "/mind-maps", label: "Revision mind maps" },
       { href: "/years", label: "Maths by year (7 to 10)" },
-      { href: "/scholarship", label: "Scholarship guides" },
-      { href: "/scholarship-practice", label: "Scholarship practice" },
-      { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
-      { href: "/worksheets", label: "Free worksheet generator" },
-      { href: "/learn", label: "Learn" },
       { href: "/atar-planner", label: "ATAR planner" },
     ],
   },
   {
-    title: "Guides",
+    title: "Study guides",
+    links: [
+      { href: "/maths-exam-preparation", label: "Exam preparation" },
+      { href: "/scholarship", label: "Scholarship guides" },
+      { href: "/scholarship-practice", label: "Scholarship practice" },
+      { href: "/learn", label: "Learn (all articles)" },
+    ],
+  },
+  {
+    title: "Parent guides",
+    links: [
+      { href: "/parents/help-with-secondary-maths-homework", label: "Helping with maths homework" },
+      { href: "/parents/maths-app-vs-tutoring", label: "Maths app or tutor?" },
+      { href: "/parents/end-of-year-maths-report", label: "The end-of-year report" },
+      { href: "/parents/preparing-for-maths-topic-tests", label: "Preparing for topic tests" },
+      { href: "/parents/studied-but-failed-maths-test", label: "Studied but still failed" },
+      { href: "/parents/dyscalculia", label: "Dyscalculia" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { href: "/best-maths-apps-australia", label: "Best maths apps in Australia" },
+      { href: "/parents/cluey-learning-review", label: "Cluey Learning review" },
+      { href: "/cluey-alternative", label: "Cluey alternative" },
+      { href: "/parents/kumon-cost-australia", label: "Kumon cost" },
+      { href: "/mathspace-alternative", label: "Mathspace alternative" },
+      { href: "/photomath-alternative", label: "Photomath alternative" },
+      { href: "/quizlet-maths-australia", label: "Quizlet for maths" },
+    ],
+  },
+  {
+    title: "Tutoring",
     links: [
       { href: "/tutoring", label: "Tutoring in Melbourne" },
       { href: "/best-online-tutoring-melbourne", label: "Online tutoring" },
       { href: "/vce-tutoring", label: "VCE tutoring" },
-      { href: "/best-maths-apps-australia", label: "Best maths apps in Australia" },
-      { href: "/cluey-alternative", label: "Cluey alternative" },
-      { href: "/parents/help-with-secondary-maths-homework", label: "Helping with maths homework" },
-      { href: "/parents/maths-app-vs-tutoring", label: "Maths app or tutoring?" },
-      { href: "/parents/preparing-for-maths-topic-tests", label: "Preparing for topic tests" },
-      { href: "/mathspace-alternative", label: "Mathspace alternative" },
-      { href: "/photomath-alternative", label: "Photomath alternative" },
-      { href: "/quizlet-maths-australia", label: "Quizlet for maths" },
     ],
   },
   {
@@ -61,10 +89,10 @@ export default function MarketingFooter() {
   return (
     <footer className="tb-footer">
       <div className="tb-wrap">
+        <div className="tb-footer__logo">
+          <Logo />
+        </div>
         <div className="tb-footer__grid">
-          <div>
-            <Logo />
-          </div>
           {GROUPS.map((g) => (
             <div key={g.title}>
               <p className="tb-footer__title">{g.title}</p>
