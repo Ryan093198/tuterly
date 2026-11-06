@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "How much does Cluey cost?",
-    a: "Cluey doesn't publish one standard price. It depends on your child's year level and the package you choose, and Cluey often discounts the first sessions. Reviews on Cluey's own promotional pages mention around $80 a session for Years 7 to 12. Ask for a written quote, including how packages are billed.",
+    a: "Cluey's fee schedule (from 1 July 2026) lists $86 to $99 for a 60-minute session, depending on the plan: the cheaper plans need more sessions paid in advance and more notice to cancel. Cluey quotes for your child after an enrolment questionnaire or call, so ask for the plan and its terms in writing.",
   },
   {
     q: "Who are Cluey's tutors?",
@@ -114,10 +114,13 @@ export default function Page() {
           <h2 id="h-cost" className="tb-h2 pg-h2">What Cluey costs</h2>
           <div className="pg-prose">
             <p>
-              Cluey doesn&rsquo;t publish one standard price: it depends on year level, one-to-one or group sessions, and the package. Reviews on Cluey&rsquo;s own promotional pages mention around $80 a session for Years 7 to 12, and Cluey often offers a discount on the first sessions.
+              Cluey&rsquo;s fee schedule (from 1 July 2026) lists plans for a 60-minute session: $99 a session with 2 sessions paid in advance, or $86 with 4 paid in advance (a $92 plan is closed to new customers). The notice needed to change or cancel matches the number of sessions paid in advance. Cluey gives a quote for your child after an enrolment questionnaire or call.
             </p>
             <p>
-              At around $80 a week, a year of weekly sessions during school terms (about 40 weeks) comes to roughly $3,200. Ask for a written quote, and ask how packages are billed before you commit.
+              At $86 to $99 a week, a year of weekly sessions during school terms (about 40 weeks) comes to roughly $3,400 to $4,000. Ask for the plan and its cancellation terms in writing before you commit.
+            </p>
+            <p className="pg-small">
+              Plans as summarised from Cluey&rsquo;s Service Schedule and Fees by <a href="https://www.cuemath.com/blog/cuemath-vs-cluey-learning/">Cuemath</a>{" "}(verified September 2026). Check current fees with Cluey.
             </p>
           </div>
         </div>
@@ -202,7 +205,7 @@ export default function Page() {
               <tbody>
                 <tr>
                   <th scope="row">Cluey Learning</th>
-                  <td>Around $80 a session (quoted, not published)</td>
+                  <td>$86 to $99 a session</td>
                   <td>A live online tutor, usually once a week, with recordings and reports</td>
                   <td>Check billing and cancellation terms first</td>
                 </tr>
