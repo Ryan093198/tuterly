@@ -22,6 +22,8 @@ export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, p
 
 const NOW = PLUS_PRICES.month.now;
 const FULL = PLUS_PRICES.month.full;
+const WEEK = PLUS_PRICES.week.now;
+const WEEK_FULL = PLUS_PRICES.week.full;
 
 const FAQS = [
   {
@@ -50,7 +52,7 @@ const FAQS = [
   },
   {
     q: "How much does Tuterly cost?",
-    a: `${NOW} a month at launch, and ${FULL} a month from ${FULL_PRICE_FROM}, with the first 7 days free and cancel any time. One family code covers up to 3 children.`,
+    a: `At launch, ${WEEK} a week or ${NOW} a month. From ${FULL_PRICE_FROM}, ${WEEK_FULL} a week or ${FULL} a month. The monthly plan starts with 7 days free, and you can cancel any time.`,
   },
   {
     q: "Is Tuterly just an answer app?",
@@ -139,8 +141,8 @@ export default function Page() {
                 </tr>
                 <tr>
                   <th scope="row">Tuterly</th>
-                  <td>{NOW} a month at launch ({FULL} from {FULL_PRICE_FROM})</td>
-                  <td>{NOW}, up to 3 children</td>
+                  <td>{WEEK} a week or {NOW} a month at launch ({WEEK_FULL} a week or {FULL} a month from {FULL_PRICE_FROM})</td>
+                  <td>{NOW}</td>
                   <td>Practice every day on your child&rsquo;s own wrong questions, plus topic tests and a weekly summary for you</td>
                 </tr>
               </tbody>
