@@ -1,0 +1,144 @@
+{
+  "year": 7,
+  "chapter": 3,
+  "slug": "fractions-and-percentages",
+  "title": "Fractions and percentages",
+  "short": "Fractions and percentages",
+  "appKey": "y7-ch3",
+  "summary": "Equivalent and mixed fractions, ordering, adding, subtracting, multiplying and dividing fractions, percentages and ratios.",
+  "cards": [
+    {
+      "title": "Introduction to fractions",
+      "sections": [
+        "3A"
+      ],
+      "rule": "The bottom says how many equal parts. The top says how many you have.",
+      "lines": [
+        "\\(\\tfrac34\\): 3 of 4 equal parts",
+        "Improper: \\(\\tfrac54\\) is more than a whole"
+      ]
+    },
+    {
+      "title": "Equivalent fractions",
+      "sections": [
+        "3B"
+      ],
+      "rule": "Multiply or divide the top and bottom by the same number.",
+      "lines": [
+        "\\(\\tfrac34 = \\tfrac68\\)",
+        "Simplify: \\(\\tfrac{12}{18} = \\tfrac23\\)"
+      ]
+    },
+    {
+      "title": "Mixed and improper",
+      "sections": [
+        "3C"
+      ],
+      "rule": "Multiply the whole by the bottom, then add the top.",
+      "lines": [
+        "\\(2\\tfrac13 = \\tfrac73\\)",
+        "\\(\\tfrac{11}{4} = 2\\tfrac34\\)"
+      ]
+    },
+    {
+      "title": "Ordering fractions",
+      "sections": [
+        "3D"
+      ],
+      "rule": "Rewrite with a common denominator, then compare the tops.",
+      "lines": [
+        "\\(\\tfrac23\\) and \\(\\tfrac34\\): \\(\\tfrac{8}{12} < \\tfrac{9}{12}\\), so \\(\\tfrac23 < \\tfrac34\\)"
+      ]
+    },
+    {
+      "title": "Adding fractions",
+      "sections": [
+        "3E"
+      ],
+      "rule": "Common denominator first, then add the tops only.",
+      "lines": [
+        "\\(\\tfrac14 + \\tfrac24 = \\tfrac34\\)",
+        "\\(\\tfrac12 + \\tfrac13 = \\tfrac36 + \\tfrac26 = \\tfrac56\\)",
+        "\\(1\\tfrac12 + 2\\tfrac13 = 3\\tfrac56\\)"
+      ],
+      "tip": "don't add the bottoms: \\(\\tfrac12 + \\tfrac13 \\ne \\tfrac25\\)"
+    },
+    {
+      "title": "Subtracting fractions",
+      "sections": [
+        "3F"
+      ],
+      "rule": "Common denominator first, then subtract the tops.",
+      "lines": [
+        "\\(\\tfrac34 - \\tfrac13 = \\tfrac{9}{12} - \\tfrac{4}{12} = \\tfrac{5}{12}\\)",
+        "\\(2\\tfrac12 - \\tfrac34 = \\tfrac{10}{4} - \\tfrac34 = 1\\tfrac34\\)"
+      ]
+    },
+    {
+      "title": "Multiplying fractions",
+      "sections": [
+        "3G"
+      ],
+      "rule": "Top times top, bottom times bottom. No common denominator needed.",
+      "lines": [
+        "\\(\\tfrac23 \\times \\tfrac35 = \\tfrac{6}{15} = \\tfrac25\\)",
+        "\\(\\tfrac12\\) of 12 is 6"
+      ]
+    },
+    {
+      "title": "Dividing fractions",
+      "sections": [
+        "3H"
+      ],
+      "rule": "Flip the second fraction, then multiply.",
+      "lines": [
+        "\\(\\tfrac34 \\div \\tfrac18 = \\tfrac34 \\times 8 = 6\\)",
+        "\\(\\tfrac23 \\div 4 = \\tfrac23 \\times \\tfrac14 = \\tfrac16\\)"
+      ]
+    },
+    {
+      "title": "Fractions and percentages",
+      "sections": [
+        "3I"
+      ],
+      "rule": "Per cent means out of 100.",
+      "lines": [
+        "\\(\\tfrac14 = 25\\%\\) &nbsp; \\(\\tfrac35 = 60\\%\\)",
+        "\\(35\\% = \\tfrac{35}{100} = \\tfrac{7}{20}\\)"
+      ]
+    },
+    {
+      "title": "Percentage of a number",
+      "sections": [
+        "3J"
+      ],
+      "rule": "Find 10% first, or multiply by the percentage as a fraction.",
+      "lines": [
+        "10% of 60 is 6, so 20% of 60 is **12**",
+        "15% of 80: \\(\\tfrac{15}{100} \\times 80 = 12\\)"
+      ]
+    },
+    {
+      "title": "Introduction to ratios",
+      "sections": [
+        "3K"
+      ],
+      "rule": "A ratio compares amounts. Order matters.",
+      "lines": [
+        "3 red and 5 blue: red to blue is **3 : 5**",
+        "Simplify: \\(6 : 8 = 3 : 4\\)"
+      ]
+    },
+    {
+      "title": "Problems with ratios",
+      "sections": [
+        "3L"
+      ],
+      "rule": "Add the parts, find one part, then multiply.",
+      "lines": [
+        "$40 in the ratio 3 : 5: 8 parts, 1 part = $5",
+        "So **$15** and **$25**"
+      ]
+    }
+  ]
+}

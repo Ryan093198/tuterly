@@ -34,6 +34,7 @@ const MARKETING_PATH_PREFIXES = [
   "/naplan",
   "/formula-sheets",
   "/mind-maps",
+  "/year-7-maths-revision",
   "/year-8-maths-revision",
   "/year-9-maths-revision",
   "/year-10-maths-revision",

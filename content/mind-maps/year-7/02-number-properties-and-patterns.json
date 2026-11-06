@@ -1,0 +1,130 @@
+{
+  "year": 7,
+  "chapter": 2,
+  "slug": "number-properties-and-patterns",
+  "title": "Number properties and patterns",
+  "short": "Number properties and patterns",
+  "appKey": "y7-ch2",
+  "summary": "Factors, multiples, HCF and LCM, divisibility, primes, indices, squares and square roots, number patterns, rules and the Cartesian plane.",
+  "cards": [
+    {
+      "title": "Factors and multiples",
+      "sections": [
+        "2A"
+      ],
+      "rule": "Factors go into a number. Multiples come out of its times table.",
+      "lines": [
+        "Factors of 12: 1, 2, 3, 4, 6, 12",
+        "Multiples of 4: 4, 8, 12, 16…"
+      ]
+    },
+    {
+      "title": "HCF and LCM",
+      "sections": [
+        "2B"
+      ],
+      "rule": "Highest common factor: the biggest number into both. Lowest common multiple: the smallest both go into.",
+      "lines": [
+        "12 and 18: HCF is **6**, LCM is **36**"
+      ]
+    },
+    {
+      "title": "Divisibility tests",
+      "sections": [
+        "2C"
+      ],
+      "rule": "By 2: even. By 3: digits add to a multiple of 3. By 5: ends in 0 or 5. By 9: digits add to a multiple of 9.",
+      "lines": [
+        "126: digits add to 9, so it divides by 3 and 9"
+      ]
+    },
+    {
+      "title": "Prime numbers",
+      "sections": [
+        "2D"
+      ],
+      "rule": "A prime has exactly two factors: 1 and itself.",
+      "lines": [
+        "2, 3, 5, 7, 11, 13, 17, 19",
+        "1 isn't prime. 2 is the only even prime."
+      ]
+    },
+    {
+      "title": "Using indices",
+      "sections": [
+        "2E"
+      ],
+      "rule": "The index counts how many times the base multiplies: \\(5 \\times 5 \\times 5 = 5^3\\).",
+      "lines": [
+        "\\(2^4 = 16\\) &nbsp; \\(3^3 = 27\\) &nbsp; \\(10^3 = 1000\\)"
+      ],
+      "tip": "\\(2^3 = 2 \\times 2 \\times 2 = 8\\), not 6."
+    },
+    {
+      "title": "Prime decomposition",
+      "sections": [
+        "2F"
+      ],
+      "rule": "Use a factor tree until every branch ends in a prime.",
+      "lines": [
+        "\\(36 = 2^2 \\times 3^2\\)",
+        "\\(90 = 2 \\times 3^2 \\times 5\\)"
+      ]
+    },
+    {
+      "title": "Squares and square roots",
+      "sections": [
+        "2G"
+      ],
+      "rule": "\\(7^2 = 49\\), so \\(\\sqrt{49} = 7\\). They undo each other.",
+      "lines": [
+        "\\(\\sqrt{144} = 12\\)",
+        "Perfect squares: 1, 4, 9, 16, 25, 36…"
+      ]
+    },
+    {
+      "title": "Number patterns",
+      "sections": [
+        "2H"
+      ],
+      "rule": "Find what happens each step: add a number, or multiply by one.",
+      "lines": [
+        "3, 7, 11, 15: add 4, next is **19**",
+        "2, 6, 18: multiply by 3, next is **54**"
+      ]
+    },
+    {
+      "title": "Spatial patterns",
+      "sections": [
+        "2I"
+      ],
+      "rule": "Count how much each new shape adds, then write a rule.",
+      "lines": [
+        "Squares from matchsticks: 4, 7, 10, so \\(\\text{sticks} = 3n + 1\\)",
+        "10 squares: \\(3 \\times 10 + 1 = 31\\) sticks"
+      ]
+    },
+    {
+      "title": "Tables and rules",
+      "sections": [
+        "2J"
+      ],
+      "rule": "The step in the output tells you what to multiply by.",
+      "lines": [
+        "Input 1, 2, 3 and output 5, 8, 11: \\(y = 3x + 2\\)",
+        "\\(x = 10\\): \\(y = 32\\)"
+      ]
+    },
+    {
+      "title": "The Cartesian plane",
+      "sections": [
+        "2K"
+      ],
+      "rule": "\\((x, y)\\): across first, then up. The origin is \\((0, 0)\\).",
+      "lines": [
+        "\\((3, 2)\\) is 3 across and 2 up",
+        "Plot \\(y = x + 1\\): \\((0, 1), (1, 2), (2, 3)\\)"
+      ]
+    }
+  ]
+}

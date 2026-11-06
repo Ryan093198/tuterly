@@ -195,6 +195,7 @@ const LEARN = [
 ];
 
 const MORE = [
+  { href: "/year-7-maths-revision", label: "Year 7 maths revision mind maps", note: "(every topic on one page, free PDF)" },
   { href: "/worksheets", label: "Free maths worksheets, Years 7 to 10" },
   { href: "/formula-sheets/year-7-maths", label: "Year 7 maths formula sheet" },
   { href: "/maths-exam-preparation/year-7", label: "Year 7 maths exam preparation" },

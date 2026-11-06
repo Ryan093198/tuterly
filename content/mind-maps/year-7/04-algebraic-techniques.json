@@ -1,0 +1,99 @@
+{
+  "year": 7,
+  "chapter": 4,
+  "slug": "algebraic-techniques",
+  "title": "Algebraic techniques",
+  "short": "Algebraic techniques",
+  "appKey": "y7-ch4",
+  "summary": "Pronumerals and expressions, substituting, equivalent expressions, like terms, multiplying and dividing, expanding brackets and applying algebra.",
+  "cards": [
+    {
+      "title": "Introduction to algebra",
+      "sections": [
+        "4A"
+      ],
+      "rule": "A pronumeral is a letter for a number. \\(3x\\) means \\(3 \\times x\\).",
+      "lines": [
+        "\"7 more than \\(n\\)\": \\(n + 7\\)",
+        "\"Double \\(y\\)\": \\(2y\\)",
+        "\"\\(x\\) divided by 4\": \\(\\tfrac x4\\)",
+        "In \\(3x + 5\\): the coefficient is 3, the constant is 5"
+      ]
+    },
+    {
+      "title": "Substituting",
+      "sections": [
+        "4B"
+      ],
+      "rule": "Replace each letter with its number, then work it out.",
+      "lines": [
+        "\\(x = 4\\): \\(3x + 2 = 14\\) &nbsp; \\(x^2 = 16\\) &nbsp; \\(20 \\div x = 5\\)",
+        "\\(a = 2,\\ b = 5\\): \\(ab + 1 = 11\\)"
+      ],
+      "tip": "\\(3x\\) with \\(x = 4\\) is \\(3 \\times 4\\), not 34."
+    },
+    {
+      "title": "Equivalent expressions",
+      "sections": [
+        "4C"
+      ],
+      "rule": "Equivalent expressions are equal for every value of the letter.",
+      "lines": [
+        "\\(2(x + 3)\\) and \\(2x + 6\\)",
+        "Test with \\(x = 5\\): both give 16 ✓",
+        "\\(x + x = 2x\\)",
+        "\\(3a + 2a = 5a\\)"
+      ]
+    },
+    {
+      "title": "Like terms",
+      "sections": [
+        "4D"
+      ],
+      "rule": "Only terms with the same letters and powers can be added or subtracted.",
+      "lines": [
+        "\\(3x + 2x = 5x\\)",
+        "\\(4a + 2b - a = 3a + 2b\\)",
+        "\\(5x\\) and \\(x^2\\) aren't like terms",
+        "\\(2x + 3 + x + 4 = 3x + 7\\)"
+      ]
+    },
+    {
+      "title": "Multiplying and dividing",
+      "sections": [
+        "4E"
+      ],
+      "rule": "Multiply the numbers, then the letters. Divide like a fraction.",
+      "lines": [
+        "\\(3 \\times 2x = 6x\\) &nbsp; \\(2a \\times 3b = 6ab\\)",
+        "\\(x \\times x = x^2\\)",
+        "\\(8x \\div 2 = 4x\\) &nbsp; \\(12ab \\div 4a = 3b\\)"
+      ]
+    },
+    {
+      "title": "Expanding brackets",
+      "sections": [
+        "4F"
+      ],
+      "rule": "Multiply everything inside by the term outside.",
+      "lines": [
+        "\\(3(x + 2) = 3x + 6\\)",
+        "\\(5(2a - 1) = 10a - 5\\)",
+        "\\(x(x + 4) = x^2 + 4x\\)"
+      ],
+      "tip": "multiply the second term too."
+    },
+    {
+      "title": "Applying algebra",
+      "sections": [
+        "4G"
+      ],
+      "rule": "Pick a letter for the unknown and write a rule.",
+      "lines": [
+        "Gym: $10 to join plus $5 a visit: \\(C = 10 + 5v\\). 8 visits: \\(\\$50\\)",
+        "Rectangle, width \\(x\\), length \\(x + 2\\): perimeter \\(4x + 4\\). If \\(x = 3\\), that's 16.",
+        "30 students on each of \\(b\\) buses: \\(30b\\). 4 buses: 120 students"
+      ]
+    }
+  ]
+}

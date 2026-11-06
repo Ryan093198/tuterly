@@ -12,7 +12,8 @@ import RevisionHero from "@/components/mind-maps/RevisionHero";
 const TITLE = "Free Maths Revision Mind Maps and Summary Sheets, Years 7 to 10 | Tuterly";
 // "Years 9 and 10" / "Year 9".
 const yearsText = (ys) => (ys.length === 1 ? `Year ${ys[0]}` : `Years ${ys.slice(0, -1).join(", ")} and ${ys[ys.length - 1]}`);
-const DESCRIPTION = `Free printable maths revision mind maps: every chapter summarised on one A4 page with rules, worked examples and common mistakes. ${yearsText(LIVE_YEARS)} out now.`;
+const COMING = MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x));
+const DESCRIPTION = `Free printable maths revision mind maps: every chapter summarised on one A4 page with rules, worked examples and common mistakes. Every chapter for ${yearsText(LIVE_YEARS)}.`;
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -28,7 +29,7 @@ export default function MindMapsHub() {
       <RevisionHero
         eyebrow="Free maths revision mind maps"
         title={<>Every chapter on <span className="sl-accent">one page</span>.</>}
-        lead={`A free one-page mind map for every maths chapter: the rules in plain English, worked examples and the mistakes to watch out for. ${yearsText(LIVE_YEARS)} ${LIVE_YEARS.length > 1 ? "are" : "is"} out now; ${yearsText(MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)))} coming soon.`}
+        lead={`A free one-page mind map for every maths chapter: the rules in plain English, worked examples and the mistakes to watch out for. ${COMING.length ? `${yearsText(LIVE_YEARS)} ${LIVE_YEARS.length > 1 ? "are" : "is"} out now; ${yearsText(COMING)} coming soon.` : `All of ${yearsText(LIVE_YEARS)}, free.`}`}
         panel={
           <DownloadPanel
             downloads={LIVE_YEARS.map((y) => ({ href: revisionBooklet(y), label: `Download the Year ${y} booklet (PDF)` }))}
@@ -54,10 +55,8 @@ export default function MindMapsHub() {
                 </Link>
               ))}
             </div>
-            {y === LIVE_YEARS[LIVE_YEARS.length - 1] && (
-              <p className="mm-soon" style={{ marginTop: 20 }}>
-                {`${yearsText(MIND_MAP_YEARS.filter((x) => !LIVE_YEARS.includes(x)))} mind maps coming soon.`}
-              </p>
+            {COMING.length > 0 && y === LIVE_YEARS[LIVE_YEARS.length - 1] && (
+              <p className="mm-soon" style={{ marginTop: 20 }}>{`${yearsText(COMING)} mind maps coming soon.`}</p>
             )}
           </div>
         </section>

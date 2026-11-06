@@ -1,0 +1,120 @@
+{
+  "year": 7,
+  "chapter": 1,
+  "slug": "computation-with-positive-integers",
+  "title": "Computation with positive integers",
+  "short": "Computation with positive integers",
+  "appKey": "y7-ch1",
+  "summary": "Place value, adding, subtracting, multiplying and dividing whole numbers, estimating and rounding, and the order of operations.",
+  "cards": [
+    {
+      "title": "Ancient number systems",
+      "sections": [
+        "1A"
+      ],
+      "rule": "Roman numerals add up, but a smaller symbol before a larger one means subtract.",
+      "lines": [
+        "I = 1, V = 5, X = 10, L = 50, C = 100",
+        "XIV = 14 &nbsp; XL = 40 &nbsp; CXXIII = 123"
+      ]
+    },
+    {
+      "title": "Place value",
+      "sections": [
+        "1B"
+      ],
+      "rule": "Each digit's value depends on where it sits. A zero holds an empty place.",
+      "lines": [
+        "The 3 in 4325 is worth 300",
+        "\\(4325 = 4 \\times 1000 + 3 \\times 100 + 2 \\times 10 + 5\\)",
+        "507: the zero holds the tens place"
+      ]
+    },
+    {
+      "title": "Adding and subtracting",
+      "sections": [
+        "1C"
+      ],
+      "rule": "Round to a friendly number, then adjust.",
+      "lines": [
+        "\\(47 + 28 = 47 + 30 - 2 = 75\\)",
+        "\\(63 - 18 = 63 - 20 + 2 = 45\\)",
+        "Order doesn't matter: \\(38 + 17 + 2 = 38 + 2 + 17 = 57\\)"
+      ]
+    },
+    {
+      "title": "Algorithms for + and −",
+      "sections": [
+        "1D"
+      ],
+      "rule": "Line up the place values, then carry or borrow.",
+      "lines": [
+        "\\(476 + 385 = 861\\)",
+        "\\(603 - 247 = 356\\)",
+        "Check: \\(356 + 247 = 603\\) ✓"
+      ],
+      "tip": "line up the units, not the left-hand digits."
+    },
+    {
+      "title": "Multiplying small numbers",
+      "sections": [
+        "1E"
+      ],
+      "rule": "Split a number into tens and units. Order doesn't matter, so pair numbers that are easy.",
+      "lines": [
+        "\\(6 \\times 23 = 6 \\times 20 + 6 \\times 3 = 138\\)",
+        "\\(4 \\times 17 \\times 25 = 100 \\times 17 = 1700\\)",
+        "\\(5 \\times 14 \\times 2 = 10 \\times 14 = 140\\)"
+      ]
+    },
+    {
+      "title": "Multiplying large numbers",
+      "sections": [
+        "1F"
+      ],
+      "rule": "Multiply by each digit, then add the parts.",
+      "lines": [
+        "\\(37 \\times 24 = 37 \\times 20 + 37 \\times 4 = 740 + 148 = 888\\)",
+        "\\(45 \\times 100 = 4500\\)",
+        "\\(123 \\times 6 = 738\\)"
+      ]
+    },
+    {
+      "title": "Dividing",
+      "sections": [
+        "1G"
+      ],
+      "rule": "Short division: divide one digit at a time, carrying what's left.",
+      "lines": [
+        "\\(84 \\div 4 = 21\\) &nbsp; \\(936 \\div 8 = 117\\)",
+        "\\(47 \\div 5 = 9\\) remainder 2",
+        "Check: \\(117 \\times 8 = 936\\) ✓"
+      ]
+    },
+    {
+      "title": "Estimating and rounding",
+      "sections": [
+        "1H"
+      ],
+      "rule": "Look at the next digit: 5 or more rounds up.",
+      "lines": [
+        "387 to the nearest 10 is **390**, to the nearest 100 is **400**",
+        "Estimate \\(48 \\times 21 \\approx 50 \\times 20 = 1000\\)",
+        "Estimate \\(612 \\div 3 \\approx 600 \\div 3 = 200\\)"
+      ]
+    },
+    {
+      "title": "Order of operations",
+      "sections": [
+        "1I"
+      ],
+      "rule": "Brackets first, then × and ÷ from left to right, then + and − from left to right.",
+      "lines": [
+        "\\(3 + 4 \\times 5 = 23\\) &nbsp; \\((3 + 4) \\times 5 = 35\\)",
+        "\\(20 - 12 \\div 4 = 17\\)",
+        "\\(2 \\times (6 + 4) - 5 = 15\\)"
+      ],
+      "tip": "don't just work from left to right."
+    }
+  ]
+}

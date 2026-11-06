@@ -1,0 +1,110 @@
+{
+  "year": 7,
+  "chapter": 9,
+  "slug": "equations",
+  "title": "Equations",
+  "short": "Equations",
+  "appKey": "y7-ch9",
+  "summary": "What equations are, solving by inspection and algebraically, equivalent equations, fractions, brackets, formulas and word problems.",
+  "cards": [
+    {
+      "title": "Introduction to equations",
+      "sections": [
+        "9A"
+      ],
+      "rule": "An equation says two things are equal. The solution makes it true.",
+      "lines": [
+        "\\(x + 3 = 7\\) is true when \\(x = 4\\)",
+        "\\(2x = 10\\) is true when \\(x = 5\\)",
+        "Is \\(x = 3\\) a solution of \\(2x + 1 = 7\\)? \\(2(3) + 1 = 7\\) ✓ yes"
+      ]
+    },
+    {
+      "title": "Solving by inspection",
+      "sections": [
+        "9B"
+      ],
+      "rule": "Ask: what number makes this true?",
+      "lines": [
+        "\\(x + 5 = 12 \\Rightarrow x = 7\\)",
+        "\\(3x = 18 \\Rightarrow x = 6\\)",
+        "\\(\\tfrac x2 = 4 \\Rightarrow x = 8\\)",
+        "\\(x - 4 = 9 \\Rightarrow x = 13\\)"
+      ]
+    },
+    {
+      "title": "Equivalent equations",
+      "sections": [
+        "9C"
+      ],
+      "rule": "Do the same to both sides and the equation stays balanced.",
+      "lines": [
+        "\\(x + 3 = 7\\): subtract 3, \\(x = 4\\)",
+        "\\(2x = 8\\): divide by 2, \\(x = 4\\)",
+        "\\(x - 5 = 2\\): add 5, \\(x = 7\\)",
+        "\\(\\tfrac x3 = 2\\): multiply by 3, \\(x = 6\\)"
+      ]
+    },
+    {
+      "title": "Solving algebraically",
+      "sections": [
+        "9D"
+      ],
+      "rule": "Undo each operation in reverse order, then check by substituting.",
+      "lines": [
+        "\\(2x + 3 = 11 \\Rightarrow 2x = 8 \\Rightarrow x = 4\\)",
+        "\\(5x - 2 = 13 \\Rightarrow 5x = 15 \\Rightarrow x = 3\\)",
+        "\\(4x + 1 = 21 \\Rightarrow 4x = 20 \\Rightarrow x = 5\\)"
+      ],
+      "note": "Check: \\(2(4) + 3 = 11\\) ✓"
+    },
+    {
+      "title": "Equations with fractions",
+      "sections": [
+        "9E"
+      ],
+      "rule": "Multiply both sides to clear the fraction.",
+      "lines": [
+        "\\(\\tfrac x3 = 4 \\Rightarrow x = 12\\)",
+        "\\(\\tfrac x2 + 1 = 5 \\Rightarrow \\tfrac x2 = 4 \\Rightarrow x = 8\\)",
+        "\\(\\tfrac{x + 2}{3} = 4 \\Rightarrow x + 2 = 12 \\Rightarrow x = 10\\)"
+      ]
+    },
+    {
+      "title": "Equations with brackets",
+      "sections": [
+        "9F"
+      ],
+      "rule": "Expand the brackets first.",
+      "lines": [
+        "\\(2(x + 3) = 14 \\Rightarrow 2x + 6 = 14 \\Rightarrow x = 4\\)",
+        "\\(3(x - 1) = 12 \\Rightarrow 3x - 3 = 12 \\Rightarrow x = 5\\)",
+        "\\(4(x + 2) = 20 \\Rightarrow 4x + 8 = 20 \\Rightarrow x = 3\\)"
+      ]
+    },
+    {
+      "title": "Using formulas",
+      "sections": [
+        "9G"
+      ],
+      "rule": "Substitute what you know, then solve for what's left.",
+      "lines": [
+        "\\(A = lw\\), \\(l = 6,\\ w = 4\\): \\(A = 24\\)",
+        "\\(P = 2l + 2w\\), \\(P = 20,\\ l = 6\\): \\(20 = 12 + 2w\\), so \\(w = 4\\)",
+        "\\(D = ST\\), \\(S = 60,\\ T = 2\\): \\(D = 120\\)"
+      ]
+    },
+    {
+      "title": "Solving problems",
+      "sections": [
+        "9H"
+      ],
+      "rule": "Use a letter for the unknown, write an equation, solve it, answer in words.",
+      "lines": [
+        "A number plus 9 is 21: \\(x + 9 = 21\\), so the number is 12",
+        "3 pens plus a $5 ruler cost $14: \\(3x + 5 = 14\\), so each pen is \\(\\$3\\)",
+        "Rectangle, width \\(w\\), length \\(w + 3\\), perimeter 26: \\(4w + 6 = 26\\), so \\(w = 5\\): 5 by 8"
+      ]
+    }
+  ]
+}

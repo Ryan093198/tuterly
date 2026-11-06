@@ -1,0 +1,155 @@
+{
+  "year": 7,
+  "chapter": 10,
+  "slug": "measurement",
+  "title": "Measurement",
+  "short": "Measurement",
+  "appKey": "y7-ch10",
+  "summary": "Metric units, perimeter, circumference, arcs and sectors, area of rectangles, parallelograms, triangles and composite shapes, volume, capacity, mass and temperature.",
+  "cards": [
+    {
+      "title": "Metric units of length",
+      "sections": [
+        "10A"
+      ],
+      "rule": "1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm.",
+      "lines": [
+        "2.5 m = **250 cm**",
+        "3400 m = **3.4 km**",
+        "45 mm = **4.5 cm**"
+      ],
+      "note": "Big unit to small: multiply. Small unit to big: divide."
+    },
+    {
+      "title": "Perimeter",
+      "sections": [
+        "10B"
+      ],
+      "rule": "Add all the sides.",
+      "lines": [
+        "Rectangle 7 by 4: \\(2(7 + 4) = 22\\)",
+        "Square side 5: \\(4 \\times 5 = 20\\)",
+        "Regular hexagon, side 3: \\(6 \\times 3 = 18\\)"
+      ]
+    },
+    {
+      "title": "Circles and circumference",
+      "sections": [
+        "10C"
+      ],
+      "rule": "\\(C = \\pi d = 2\\pi r\\). The radius is half the diameter.",
+      "lines": [
+        "\\(d = 6\\): \\(C = 6\\pi \\approx 18.8\\)",
+        "\\(r = 4\\): \\(C = 8\\pi \\approx 25.1\\)"
+      ],
+      "note": "\\(\\pi \\approx 3.14\\)"
+    },
+    {
+      "title": "Arcs and sectors",
+      "sections": [
+        "10D"
+      ],
+      "rule": "Arc length \\(= \\tfrac{\\theta}{360} \\times 2\\pi r\\). Add the straight edges for the perimeter.",
+      "lines": [
+        "Semicircle \\(r = 5\\): arc \\(5\\pi \\approx 15.7\\), perimeter \\(10 + 5\\pi \\approx 25.7\\)",
+        "Quarter circle \\(r = 4\\): arc \\(2\\pi \\approx 6.3\\), perimeter \\(8 + 2\\pi \\approx 14.3\\)"
+      ]
+    },
+    {
+      "title": "Area of rectangles",
+      "sections": [
+        "10E"
+      ],
+      "rule": "\\(A = lw\\), in square units.",
+      "lines": [
+        "\\(8 \\times 3 = 24\\) cm²",
+        "1 cm² = 100 mm², 1 m² = 10 000 cm²",
+        "Square, side 5: \\(25\\) cm²",
+        "2 m by 3 m: \\(6\\) m²"
+      ],
+      "tip": "to convert area units, square the length conversion."
+    },
+    {
+      "title": "Area of parallelograms",
+      "sections": [
+        "10F"
+      ],
+      "rule": "\\(A = bh\\), with the height at right angles to the base.",
+      "lines": [
+        "Base 6, height 4: \\(A = 24\\)",
+        "Base 8 cm, height 5 cm: \\(A = 40\\) cm²"
+      ],
+      "tip": "use the perpendicular height, not the slanted side."
+    },
+    {
+      "title": "Area of triangles",
+      "sections": [
+        "10G"
+      ],
+      "rule": "\\(A = \\tfrac12 bh\\): half a parallelogram.",
+      "lines": [
+        "Base 10, height 3: \\(A = 15\\)",
+        "Base 6, height 7: \\(A = 21\\)"
+      ],
+      "tip": "don't forget the \\(\\tfrac12\\)."
+    },
+    {
+      "title": "Composite shapes",
+      "sections": [
+        "10H"
+      ],
+      "rule": "Split into shapes you know and add, or take a shape away.",
+      "lines": [
+        "L shape: \\(8 \\times 3 + 4 \\times 2 = 24 + 8 = 32\\)",
+        "10 by 6 with a 2 by 2 hole: \\(60 - 4 = 56\\)"
+      ]
+    },
+    {
+      "title": "Volume of rectangular prisms",
+      "sections": [
+        "10I"
+      ],
+      "rule": "\\(V = lwh\\), in cubic units.",
+      "lines": [
+        "\\(5 \\times 3 \\times 2 = 30\\) cm³",
+        "Cube, side 3: \\(3 \\times 3 \\times 3 = 27\\) cm³"
+      ]
+    },
+    {
+      "title": "Volume of triangular prisms",
+      "sections": [
+        "10J"
+      ],
+      "rule": "\\(V = Ah\\): area of the triangle times the length.",
+      "lines": [
+        "Triangle \\(\\tfrac12 \\times 4 \\times 3 = 6\\), length 10: \\(V = 60\\)",
+        "Triangle base 6, height 5: area 15. Length 4: \\(V = 60\\)"
+      ]
+    },
+    {
+      "title": "Capacity",
+      "sections": [
+        "10K"
+      ],
+      "rule": "1 L = 1000 mL, 1 cm³ = 1 mL, 1 m³ = 1000 L.",
+      "lines": [
+        "250 mL = **0.25 L**",
+        "A 10 cm cube holds 1000 cm³, or **1 L**",
+        "1.5 L = **1500 mL**"
+      ]
+    },
+    {
+      "title": "Mass and temperature",
+      "sections": [
+        "10L"
+      ],
+      "rule": "1 t = 1000 kg, 1 kg = 1000 g.",
+      "lines": [
+        "2.5 kg = **2500 g**",
+        "Water freezes at 0°C and boils at 100°C",
+        "750 g = **0.75 kg**",
+        "From \\(-2^\\circ\\)C to \\(5^\\circ\\)C is a rise of \\(7^\\circ\\)"
+      ]
+    }
+  ]
+}
