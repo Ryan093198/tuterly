@@ -36,7 +36,7 @@ const FAQS = [
   },
   {
     q: "The report doesn't say what they struggled with. How do I find out?",
-    a: "Email the maths teacher before the end of term and ask which two topics cost the most marks. You can also have your child sit a free practice exam on this page: mark it with the worked solutions, and the topics where marks were lost are the ones to work on.",
+    a: "Email the maths teacher before the end of term and ask which two topics cost the most marks. You can also have your child sit a free practice exam on this page: mark it with the answers, and the topics where marks were lost are the ones to work on.",
   },
   {
     q: "How much maths should my child do over the summer holidays?",

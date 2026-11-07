@@ -180,7 +180,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
     <div className="eg">
       <div className="eg-card">
         <h2 className="eg-title">Build a practice exam</h2>
-        <p className="eg-lead">Pick a year, tick the topics, and get an exam with marks, a time and fully worked solutions. Free with your email, one exam a day.</p>
+        <p className="eg-lead">Pick a year, tick the topics, and get an exam with marks, a time and answers to every question. Free with your email, one exam a day.</p>
 
         <p className="eg-label" id="eg-year-l">1. Year level</p>
         <div className="eg-years" role="radiogroup" aria-labelledby="eg-year-l">
@@ -336,7 +336,7 @@ function ExamPaper({ exam, showAnswers, forPrint = false }) {
 
       {showAnswers && (
         <section className="eg-ans">
-          <h4 className="eg-sec__title">Answers and worked solutions</h4>
+          <h4 className="eg-sec__title">Answers</h4>
           {all.map((q) => (
             <div key={q.n} className="eg-ans__item">
               <p className="eg-ans__head">
@@ -358,7 +358,7 @@ function ExamPaper({ exam, showAnswers, forPrint = false }) {
           ))}
         </section>
       )}
-      <p className="eg-paper__foot">tuterly.com.au · Free practice exam · Questions from Tuterly&rsquo;s topic pages, each checked by a second solve.</p>
+      <p className="eg-paper__foot">tuterly.com.au · Free practice exam · Questions from Tuterly&rsquo;s topic pages and topic tests, every answer checked.</p>
     </article>
   );
 }

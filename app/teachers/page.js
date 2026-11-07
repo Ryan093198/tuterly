@@ -176,7 +176,7 @@ export default function TeachersPage() {
       <section className="sh-sec" aria-labelledby="t-exam">
         <div className="sh-wrap">
           <h2 id="t-exam">Build a practice exam</h2>
-          <p className="sh-sub">Pick a year and the topics you&rsquo;ve covered. You&rsquo;ll get a printable exam with marks, a suggested time and worked solutions, ready for end-of-term or end-of-year revision.</p>
+          <p className="sh-sub">Pick a year and the topics you&rsquo;ve covered. You&rsquo;ll get a printable exam with marks, a suggested time and answers, ready for end-of-term or end-of-year revision.</p>
           <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="teachers_exam" />
         </div>
       </section>

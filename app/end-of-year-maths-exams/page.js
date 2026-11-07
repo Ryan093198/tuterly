@@ -19,7 +19,7 @@ import "@/components/exam/exam.css";
 
 const TITLE = "End-of-Year Maths Exam Practice, Years 7 to 10 (Free) | Tuterly";
 const DESCRIPTION =
-  "Free end-of-year maths exam practice for Years 7 to 10: build a practice exam with worked solutions, a free test on every topic with an answer key, and a three-week revision plan. Australian Curriculum.";
+  "Free end-of-year maths exam practice for Years 7 to 10: build a practice exam with answers, a free test on every topic with an answer key, and a three-week revision plan. Australian Curriculum.";
 const URL = `${SITE_URL}/end-of-year-maths-exams`;
 
 export const metadata = {
@@ -42,11 +42,11 @@ function topicsFor(year) {
 const PLAN = [
   {
     when: "Week 1: find the gaps",
-    text: "Have your child sit a practice exam on the year's topics under exam conditions: timed, no notes. Mark it with the worked solutions and write down the topics where marks were lost. That list is the revision plan.",
+    text: "Have your child sit a practice exam on the year's topics under exam conditions: timed, no notes. Mark it with the answers and write down the topics where marks were lost. That list is the revision plan.",
   },
   {
     when: "Week 2: fix the gaps",
-    text: "Take the two or three weakest topics and do a full topic test on each. Read the worked solution for every wrong answer, then try a fresh question on the same idea a day later. Short sessions (30 to 40 minutes) on most days beat one long one.",
+    text: "Take the two or three weakest topics and do a full topic test on each. Check every wrong answer against the answer key, then try a fresh question on the same idea a day later. Short sessions (30 to 40 minutes) on most days beat one long one.",
   },
   {
     when: "Week 3: practise like the real thing",
@@ -123,7 +123,7 @@ export default function EndOfYearMathsExamsPage() {
         <p className="sh-eyebrow">Years 7 to 10 · Australian Curriculum · Free</p>
         <h1>End-of-year maths exams: free practice for Years 7 to 10</h1>
         <p className="sh-lead">
-          Find out what your child doesn&rsquo;t know before the exam does. Build a practice exam with worked solutions, then fix the weak topics with a free test on each one.
+          Find out what your child doesn&rsquo;t know before the exam does. Build a practice exam with answers, then fix the weak topics with a free test on each one.
         </p>
         <dl className="sh-facts">
           <div><dt>Practice exams</dt><dd>Up to 20 questions, marks and a suggested time</dd></div>
@@ -136,7 +136,7 @@ export default function EndOfYearMathsExamsPage() {
       <main id="practice-exam" className="sh-sec sh-sec--paper" aria-labelledby="ey-make">
         <div className="sh-wrap">
           <h2 id="ey-make">Step 1: make a practice exam</h2>
-          <p className="sh-sub">Pick your child&rsquo;s year and the topics their exam covers (or all of them). You&rsquo;ll get a printable exam with marks, a suggested time and worked solutions.</p>
+          <p className="sh-sub">Pick your child&rsquo;s year and the topics their exam covers (or all of them). You&rsquo;ll get a printable exam with marks, a suggested time and answers.</p>
           <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="end_of_year_exam" />
         </div>
       </main>

@@ -15,12 +15,12 @@ import { STUDY_APP } from "@/lib/study-app";
 
 const TITLE = "Maths Practice Test Generator, Years 7 to 10 (Australian Curriculum)";
 const DESCRIPTION =
-  "Free maths practice exam generator for Years 7 to 10A. Pick the year and the topics, and get a printable exam with marks, a suggested time and fully worked solutions. Australian Curriculum.";
+  "Free maths practice exam generator for Years 7 to 10A. Pick the year and the topics, and get a printable exam with marks, a suggested time and answers to every question. Australian Curriculum.";
 
 const HOW = [
   { n: "1", title: "Pick the year and topics", body: "Tick a main topic like Algebra to include all of it, or pick the exact subtopics their next test covers." },
   { n: "2", title: "Get an exam in exam format", body: "Up to 20 questions in short answer and extended response sections, with marks for each and a suggested time." },
-  { n: "3", title: "Sit it, then mark it", body: "Print it or save it as a PDF, with or without the answers. Every question has a fully worked solution." },
+  { n: "3", title: "Sit it, then mark it", body: "Print it or save it as a PDF, with or without the answers. Every question has an answer, and many have a fully worked solution." },
   { n: "4", title: "Wrong answers become practice", body: "Snap the ones they got wrong in the Tuterly app for fresh questions on the same idea until each one is mastered." },
 ];
 const URL = `${SITE_URL}/practice-maths-tests-secondary`;
@@ -60,7 +60,7 @@ const WHY = [
 const FAQS = [
   {
     q: "What year levels are these maths practice tests for?",
-    a: "Years 7 through 10, plus Year 10A extension topics, following the Australian Curriculum. Pick any mix of topics in their year and the generator builds an exam of up to 20 questions with a worked solution for every question.",
+    a: "Years 7 through 10, plus Year 10A extension topics, following the Australian Curriculum. Pick any mix of topics in their year and the generator builds an exam of up to 20 questions, with answers to every question.",
   },
   {
     q: "Is the practice exam generator free?",
@@ -125,7 +125,7 @@ export default function SecondaryPracticeTestsPage() {
             Textbook questions come sorted by topic, so your child knows the method before they read the question. Actual tests mix topics, run to a clock, and lean on worded problems. That is why a student who follows everything in class can still come home with a mark that does not reflect what they know.
           </p>
           <p style={{ fontSize: 17.5, color: c.ink, fontWeight: 600, lineHeight: 1.7, maxWidth: 580, margin: "0 auto" }}>
-            Build a free practice exam on the topics their next test covers, with marks, a suggested time and a worked solution for every question.
+            Build a free practice exam on the topics their next test covers, with marks, a suggested time and answers to every question.
           </p>
         </div>
       </section>
