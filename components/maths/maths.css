@@ -29,7 +29,7 @@
 .mx-calc { background: var(--card); border: 2px solid var(--brand); border-radius: 20px; padding: 20px; box-shadow: 0 6px 0 var(--brand-soft); }
 .mx-calc__row { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 12px; }
 .mx-calc label { display: grid; gap: 6px; font-weight: 700; font-size: 14.5px; }
-.mx-calc input, .mx-calc select { font: inherit; font-size: 17px; padding: 10px 12px; border: 2px solid var(--border); border-radius: 12px; background: var(--background); color: var(--foreground); min-width: 0; }
+.mx-calc input, .mx-calc select, .mx-calc textarea { font: inherit; font-size: 17px; padding: 10px 12px; border: 2px solid var(--border); border-radius: 12px; background: var(--background); color: var(--foreground); min-width: 0; }
 .mx-calc input:focus, .mx-calc select:focus { outline: none; border-color: var(--brand); }
 .mx-calc__tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
 .mx-calc__tab { font: inherit; font-weight: 700; padding: 8px 14px; border-radius: 999px; border: 2px solid var(--border); background: var(--background); color: var(--foreground); cursor: pointer; }
@@ -45,3 +45,6 @@
 .mx-calc__hint { margin: 12px 0 0; font-size: 14px; color: var(--muted); }
 .mx-tri { display: block; margin: 0 auto 14px; max-width: 260px; width: 100%; height: auto; }
 .mx-tri text { font-family: inherit; font-weight: 700; fill: var(--foreground); }
+.mx-calc textarea { width: 100%; resize: vertical; font-family: inherit; }
+.mx-calc__eq { margin: 0 0 12px; font-size: 18px; }
+.mx-calc__exact { margin: 0 0 8px; font-size: 17px; }

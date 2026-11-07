@@ -97,7 +97,9 @@ If you use the other angle in the triangle, the opposite and adjacent swap.`} />
         <div className="tb-wrap pg-narrow">
           <h2 id="h-ratios" className="tb-h2 pg-h2">Step 2: pick the ratio</h2>
           <div className="mx-formula">
-            <MathMd md={R`$$\sin\theta = \frac{\text{O}}{\text{H}} \qquad \cos\theta = \frac{\text{A}}{\text{H}} \qquad \tan\theta = \frac{\text{O}}{\text{A}}$$`} />
+            <MathMd md={R`$$\sin\theta = \frac{\text{O}}{\text{H}}$$
+$$\cos\theta = \frac{\text{A}}{\text{H}}$$
+$$\tan\theta = \frac{\text{O}}{\text{A}}$$`} />
           </div>
           <MathMd md={R`| You know or want | Use | Remember |
 |---|---|---|

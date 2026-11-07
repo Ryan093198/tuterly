@@ -49,6 +49,7 @@ const PRACTICE = [
 ];
 
 const LINKS = [
+  { href: "/maths/surds", label: "Surds explained" },
   { href: "/maths/pythagoras-theorem", label: "Pythagoras' theorem explained" },
   { href: "/maths/sohcahtoa", label: "SOH CAH TOA explained" },
   { href: "/maths", label: "All maths topics explained" },
@@ -141,7 +142,8 @@ $$3a^3b^{-3} = \frac{3a^3}{b^3}$$`} />
           <h2 id="h-frac" className="tb-h2 pg-h2">Fractional indices (Year 10A)</h2>
           <MathMd md={R`A fractional index means a root: the bottom number is the root, the top is the power.
 
-$$a^{\frac{1}{n}} = \sqrt[n]{a} \qquad a^{\frac{m}{n}} = \left(\sqrt[n]{a}\right)^m$$
+$$a^{\frac{1}{n}} = \sqrt[n]{a}$$
+$$a^{\frac{m}{n}} = \left(\sqrt[n]{a}\right)^m$$
 
 For example, $8^{\frac{2}{3}} = \left(\sqrt[3]{8}\right)^2 = 2^2 = 4$, and $16^{\frac{3}{4}} = \left(\sqrt[4]{16}\right)^3 = 2^3 = 8$. Take the root first so the numbers stay small.`} />
         </div>

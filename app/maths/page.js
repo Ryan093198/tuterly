@@ -14,10 +14,18 @@ const TOPICS = [
   { href: "/maths/pythagoras-theorem", k: "Years 8 to 10", t: "Pythagoras’ theorem", x: "The formula, finding any side, word problems and practice." },
   { href: "/maths/sohcahtoa", k: "Years 9 and 10", t: "SOH CAH TOA (trigonometry)", x: "Labelling sides, choosing sin, cos or tan, finding sides and angles." },
   { href: "/maths/index-laws", k: "Years 8 to 10", t: "Index laws", x: "All 7 laws of indices with examples, plus fractional indices." },
+  { href: "/maths/surds", k: "Years 9 to 10A", t: "Surds", x: "Simplifying, adding, multiplying and rationalising surds." },
+  { href: "/maths/simultaneous-equations", k: "Year 10", t: "Simultaneous equations", x: "Substitution, elimination and graphing, with a solver." },
+  { href: "/maths/gradient", k: "Years 8 to 10", t: "Gradient", x: "From two points, a graph or an equation, with a calculator." },
+  { href: "/maths/3d-pythagoras", k: "Year 10A", t: "3D Pythagoras", x: "Space diagonals, pyramids and cones." },
 ];
 const CALCULATORS = [
   { href: "/calculators/pythagoras", k: "Calculator", t: "Pythagoras calculator", x: "Find the hypotenuse or a missing side, with the working." },
   { href: "/calculators/trigonometry", k: "Calculator", t: "Trigonometry calculator", x: "Find a missing side or angle with SOH CAH TOA, with the working." },
+  { href: "/calculators/quadratic-formula", k: "Calculator", t: "Quadratic formula calculator", x: "Exact answers in surd form, plus decimals, with the working." },
+  { href: "/calculators/standard-deviation", k: "Calculator", t: "Standard deviation calculator", x: "Mean, population and sample standard deviation, with the working." },
+  { href: "/maths/simultaneous-equations#solver", k: "Calculator", t: "Simultaneous equations solver", x: "Two linear equations, solved by elimination, with exact fractions." },
+  { href: "/maths/gradient#calculator", k: "Calculator", t: "Gradient calculator", x: "Gradient, equation of the line, midpoint and distance from two points." },
 ];
 
 const Cards = ({ items }) => (

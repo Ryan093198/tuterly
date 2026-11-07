@@ -42,6 +42,7 @@ const PRACTICE = [
 const LINKS = [
   { href: "/calculators/pythagoras", label: "Pythagoras calculator with working out" },
   { href: "/maths/sohcahtoa", label: "SOH CAH TOA explained (trigonometry)" },
+  { href: "/maths/3d-pythagoras", label: "3D Pythagoras: space diagonals, pyramids and cones" },
   { href: "/maths/index-laws", label: "Index laws explained" },
   { href: "/maths", label: "All maths topics explained" },
 ];
