@@ -1,0 +1,5564 @@
+{
+ "year": "Year 7",
+ "sections": [
+  {
+   "code": "1A",
+   "name": "Place value in ancient number systems",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write the Roman numeral $\\text{MCDXCIV}$ as a Hindu-Arabic number.",
+     "answer": "$1494$",
+     "solution": "**Key idea:** In Roman numerals, a smaller symbol placed before a larger one is subtracted (for example $\\text{IV} = 4$); otherwise the values are added.\n\n1. Split the numeral into groups: $\\text{M} \\mid \\text{CD} \\mid \\text{XC} \\mid \\text{IV}$\n2. Find each value: $\\text{M} = 1000$, $\\text{CD} = 500 - 100 = 400$, $\\text{XC} = 100 - 10 = 90$, $\\text{IV} = 5 - 1 = 4$\n3. Add: $1000 + 400 + 90 + 4 = 1494$\n\n**Answer:** $1494$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $2847$ in Roman numerals.",
+     "answer": "$\\text{MMDCCCXLVII}$",
+     "solution": "**Key idea:** Break the number into thousands, hundreds, tens and ones, then write each part using Roman symbols.\n\n1. $2847 = 2000 + 800 + 40 + 7$\n2. $2000 = \\text{MM}$ and $800 = 500 + 300 = \\text{DCCC}$\n3. $40 = 50 - 10 = \\text{XL}$ and $7 = 5 + 2 = \\text{VII}$\n4. Join the parts in order: $\\text{MM} + \\text{DCCC} + \\text{XL} + \\text{VII}$\n\n**Answer:** $\\text{MMDCCCXLVII}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In the ancient Egyptian number system, a stroke stands for $1$, a heel bone for $10$, a coil of rope for $100$ and a lotus flower for $1000$. A number is written using $3$ lotus flowers, $2$ coils of rope, $4$ heel bones and $6$ strokes. What is the number?",
+     "answer": "$3246$",
+     "solution": "**Key idea:** The Egyptian system is additive: find the value of each group of symbols and add them.\n\n1. Lotus flowers: $3 \\times 1000 = 3000$\n2. Coils of rope: $2 \\times 100 = 200$\n3. Heel bones: $4 \\times 10 = 40$\n4. Strokes: $6 \\times 1 = 6$\n5. Add: $3000 + 200 + 40 + 6 = 3246$\n\n**Answer:** $3246$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The Babylonians used base $60$. A vertical wedge stands for $1$ and a corner wedge stands for $10$. A number is written in two groups. The left group (the sixties place) has $2$ vertical wedges. The right group (the ones place) has $3$ corner wedges and $5$ vertical wedges. What is the number in Hindu-Arabic form?",
+     "answer": "$155$",
+     "solution": "**Key idea:** In the Babylonian system each place is worth $60$ times the place to its right, so the left group is multiplied by $60$.\n\n1. Left group: $2$ vertical wedges $= 2$, which is in the sixties place, so it is worth $2 \\times 60 = 120$\n2. Right group: $3$ corner wedges and $5$ vertical wedges $= 30 + 5 = 35$\n3. Add: $120 + 35 = 155$\n\n**Answer:** $155$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) Write $49$ and $1999$ in Roman numerals.\n\n(b) In the Hindu-Arabic number $22$, the two digits have different values. Explain why the two symbols in the Roman numeral $\\text{XX}$ do not have different values, and what this tells you about the Roman system.\n\n(c) Using the Egyptian symbols (stroke $= 1$, heel bone $= 10$, coil of rope $= 100$), how many symbols are needed to write $999$? How many digits are needed in the Hindu-Arabic system?",
+     "answer": "(a) $49 = \\text{XLIX}$, $1999 = \\text{MCMXCIX}$ (b) Each X is worth $10$ wherever it sits, so Roman numerals do not use place value. (c) $27$ symbols compared with $3$ digits",
+     "solution": "**Key idea:** In a place-value system the position of a digit changes its value. The Roman and Egyptian systems are mostly additive, so symbols keep the same value wherever they are written.\n\n1. (a) $49 = 40 + 9 = \\text{XL} + \\text{IX} = \\text{XLIX}$\n2. (a) $1999 = 1000 + 900 + 90 + 9 = \\text{M} + \\text{CM} + \\text{XC} + \\text{IX} = \\text{MCMXCIX}$\n3. (b) In $22$ the left $2$ means $2$ tens $= 20$ and the right $2$ means $2$ ones. In $\\text{XX}$ each X means $10$, so $\\text{XX} = 10 + 10 = 20$. The value of a Roman symbol does not depend on its position, so it is not a place-value system.\n4. (c) $999 = 9$ hundreds $+ 9$ tens $+ 9$ ones, so the Egyptians need $9$ coils, $9$ heel bones and $9$ strokes: $9 + 9 + 9 = 27$ symbols\n5. (c) The Hindu-Arabic system needs only the $3$ digits $9$, $9$, $9$, because place value does the work.\n\n**Answer:** (a) $49 = \\text{XLIX}$, $1999 = \\text{MCMXCIX}$ (b) Each X is worth $10$ wherever it sits, so Roman numerals do not use place value. (c) $27$ symbols compared with $3$ digits"
+    }
+   ]
+  },
+  {
+   "code": "1B",
+   "name": "Place value in Hindu–Arabic numbers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 7
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Consider the number $6\\,284\\,917$.\n\n(a) What is the value of the digit $8$?\n\n(b) Write the number in expanded form.",
+     "answer": "(a) $80\\,000$ (b) $6 \\times 1\\,000\\,000 + 2 \\times 100\\,000 + 8 \\times 10\\,000 + 4 \\times 1000 + 9 \\times 100 + 1 \\times 10 + 7 \\times 1$",
+     "solution": "**Key idea:** Each place is worth $10$ times the place to its right: ones, tens, hundreds, thousands, ten thousands, hundred thousands, millions.\n\n1. (a) Reading from the right, the $8$ is in the fifth place, the ten thousands place, so its value is $8 \\times 10\\,000 = 80\\,000$\n2. (b) Write each digit multiplied by its place value: $6 \\times 1\\,000\\,000 + 2 \\times 100\\,000 + 8 \\times 10\\,000 + 4 \\times 1000 + 9 \\times 100 + 1 \\times 10 + 7 \\times 1$\n\n**Answer:** (a) $80\\,000$ (b) $6 \\times 1\\,000\\,000 + 2 \\times 100\\,000 + 8 \\times 10\\,000 + 4 \\times 1000 + 9 \\times 100 + 1 \\times 10 + 7 \\times 1$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use each of the digits $3$, $0$, $7$, $5$, $9$ and $1$ exactly once to make six-digit numbers.\n\n(a) What is the largest number you can make?\n\n(b) What is the smallest six-digit number you can make?\n\n(c) Find the difference between your answers to (a) and (b).",
+     "answer": "(a) $975\\,310$ (b) $103\\,579$ (c) $871\\,731$",
+     "solution": "**Key idea:** To make the largest number, put the largest digits in the highest places. For the smallest six-digit number the first digit cannot be $0$.\n\n1. (a) Arrange the digits from largest to smallest: $9, 7, 5, 3, 1, 0$, giving $975\\,310$\n2. (b) The first digit must be the smallest non-zero digit, $1$. Then place the rest from smallest to largest: $0, 3, 5, 7, 9$, giving $103\\,579$\n3. (c) $975\\,310 - 103\\,579 = 871\\,731$\n\n**Answer:** (a) $975\\,310$ (b) $103\\,579$ (c) $871\\,731$"
+    }
+   ]
+  },
+  {
+   "code": "1C",
+   "name": "Adding and subtracting positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 10
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a mental strategy to find $368 + 197$.",
+     "answer": "$565$",
+     "solution": "**Key idea:** $197$ is close to $200$, so add $200$ and then take away the extra $3$.\n\n1. $368 + 200 = 568$\n2. $197 = 200 - 3$, so subtract $3$: $568 - 3 = 565$\n\n**Answer:** $565$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a mental strategy to find $1000 - 463$.",
+     "answer": "$537$",
+     "solution": "**Key idea:** Count up from the smaller number to the larger number in friendly jumps.\n\n1. From $463$ to $500$ is $37$\n2. From $500$ to $1000$ is $500$\n3. Total jump: $37 + 500 = 537$\n\n**Answer:** $537$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A bookshop has $845$ books at the start of the week. On Monday it sells $128$ books. On Tuesday a delivery of $260$ books arrives. On Wednesday it sells $197$ books. How many books does the shop have at the end of Wednesday?",
+     "answer": "$780$ books",
+     "solution": "**Key idea:** Sales decrease the number of books, so subtract them; deliveries increase it, so add them. Work in order.\n\n1. After Monday: $845 - 128 = 717$\n2. After Tuesday: $717 + 260 = 977$\n3. After Wednesday: $977 - 197 = 977 - 200 + 3 = 780$\n\n**Answer:** $780$ books"
+    }
+   ]
+  },
+  {
+   "code": "1D",
+   "name": "Algorithms for adding and subtracting",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use the addition algorithm to find $4786 + 3958$.",
+     "answer": "$8744$",
+     "solution": "**Key idea:** Line up the place values and add from the ones column, carrying any ten to the next column.\n\n1. Ones: $6 + 8 = 14$, write $4$, carry $1$\n2. Tens: $8 + 5 + 1 = 14$, write $4$, carry $1$\n3. Hundreds: $7 + 9 + 1 = 17$, write $7$, carry $1$\n4. Thousands: $4 + 3 + 1 = 8$\n5. The result is $8744$\n\n**Answer:** $8744$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use the subtraction algorithm to find $7003 - 2856$.",
+     "answer": "$4147$",
+     "solution": "**Key idea:** When a column does not have enough to subtract, borrow from the next place to the left. Here we must borrow across zeros.\n\n1. Rewrite $7003$ as $6$ thousands, $9$ hundreds, $9$ tens and $13$ ones (since $7003 = 6000 + 900 + 90 + 13$)\n2. Ones: $13 - 6 = 7$\n3. Tens: $9 - 5 = 4$\n4. Hundreds: $9 - 8 = 1$\n5. Thousands: $6 - 2 = 4$\n6. The result is $4147$. Check: $4147 + 2856 = 7003$ ✓\n\n**Answer:** $4147$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $25\\,649 + 8372 + 917$.",
+     "answer": "$34\\,938$",
+     "solution": "**Key idea:** Line up all three numbers by place value and add one column at a time, carrying as needed.\n\n1. Ones: $9 + 2 + 7 = 18$, write $8$, carry $1$\n2. Tens: $4 + 7 + 1 + 1 = 13$, write $3$, carry $1$\n3. Hundreds: $6 + 3 + 9 + 1 = 19$, write $9$, carry $1$\n4. Thousands: $5 + 8 + 1 = 14$, write $4$, carry $1$\n5. Ten thousands: $2 + 1 = 3$\n6. The result is $34\\,938$\n\n**Answer:** $34\\,938$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In the addition $3\\square7 + 26\\square = 624$, each box stands for a missing digit (the first number has hundreds digit $3$ and ones digit $7$; the second has hundreds digit $2$ and tens digit $6$). Find the two missing digits.",
+     "answer": "$357 + 267 = 624$, so the missing digits are $5$ and $7$",
+     "solution": "**Key idea:** Work through the algorithm column by column from the ones, keeping track of carries.\n\n1. Ones: $7 + \\square$ must end in $4$, so $7 + 7 = 14$. The missing ones digit is $7$; carry $1$\n2. Tens: $\\square + 6 + 1$ must end in $2$, so it equals $12$, giving $\\square = 5$; carry $1$\n3. Hundreds: $3 + 2 + 1 = 6$ ✓\n4. Check: $357 + 267 = 624$ ✓\n\n**Answer:** $357 + 267 = 624$, so the missing digits are $5$ and $7$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "At the start of a road trip, a car's odometer reads $48\\,375$ km. At the end of the trip it reads $51\\,062$ km.\n\n(a) How far did the car travel?\n\n(b) The family had planned to drive $3000$ km. How many kilometres short of the plan were they?",
+     "answer": "(a) $2687$ km (b) $313$ km",
+     "solution": "**Key idea:** The distance travelled is the difference between the two odometer readings.\n\n1. (a) Set up $51\\,062 - 48\\,375$. Ones: $2 - 5$ needs a borrow, so $12 - 5 = 7$ (the tens digit $6$ becomes $5$)\n2. (a) Tens: $5 - 7$ needs a borrow. The hundreds digit is $0$, so borrow from the thousands: the thousands $1$ becomes $0$, the hundreds become $9$, and the tens become $15$. $15 - 7 = 8$\n3. (a) Hundreds: $9 - 3 = 6$\n4. (a) Thousands: $0 - 8$ needs a borrow, so $10 - 8 = 2$ (the ten thousands $5$ becomes $4$). Ten thousands: $4 - 4 = 0$\n5. (a) So the distance is $2687$ km. Check: $48\\,375 + 2687 = 51\\,062$ ✓\n6. (b) $3000 - 2687 = 313$ km\n\n**Answer:** (a) $2687$ km (b) $313$ km"
+    }
+   ]
+  },
+  {
+   "code": "1E",
+   "name": "Multiplying small positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 15
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a mental strategy to find:\n\n(a) $25 \\times 16$\n\n(b) $9 \\times 48$",
+     "answer": "(a) $400$ (b) $432$",
+     "solution": "**Key idea:** Look for friendly numbers: $25 \\times 4 = 100$, and $9 = 10 - 1$.\n\n1. (a) $25 \\times 16 = 25 \\times 4 \\times 4 = 100 \\times 4 = 400$\n2. (b) $9 \\times 48 = 10 \\times 48 - 1 \\times 48 = 480 - 48 = 432$\n\n**Answer:** (a) $400$ (b) $432$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A group goes to the zoo. Adult tickets cost \\$9 and child tickets cost \\$6. The group buys $13$ adult tickets and $8$ child tickets.\n\n(a) What is the total cost?\n\n(b) They pay with \\$200. How much change do they receive?",
+     "answer": "(a) \\$165 (b) \\$35",
+     "solution": "**Key idea:** Multiply the number of tickets by the price for each type, then add.\n\n1. (a) Adults: $13 \\times 9 = 13 \\times 10 - 13 = 130 - 13 = 117$\n2. (a) Children: $8 \\times 6 = 48$\n3. (a) Total: $117 + 48 = 165$, so \\$165\n4. (b) Change: $200 - 165 = 35$, so \\$35\n\n**Answer:** (a) \\$165 (b) \\$35"
+    }
+   ]
+  },
+  {
+   "code": "1F",
+   "name": "Multiplying large positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 20
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use the multiplication algorithm to find $347 \\times 26$.",
+     "answer": "$9022$",
+     "solution": "**Key idea:** Multiply by the ones digit and the tens digit separately, then add the two partial products.\n\n1. $347 \\times 6 = 2082$\n2. $347 \\times 20 = 6940$\n3. Add: $2082 + 6940 = 9022$\n\n**Answer:** $9022$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $1205 \\times 34$.",
+     "answer": "$40\\,970$",
+     "solution": "**Key idea:** Split $34$ into $30 + 4$ and add the partial products.\n\n1. $1205 \\times 4 = 4820$\n2. $1205 \\times 30 = 36\\,150$\n3. Add: $4820 + 36\\,150 = 40\\,970$\n\n**Answer:** $40\\,970$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $4600 \\times 300$.",
+     "answer": "$1\\,380\\,000$",
+     "solution": "**Key idea:** Multiply the non-zero parts, then attach the total number of zeros.\n\n1. $46 \\times 3 = 138$\n2. $4600$ has $2$ zeros and $300$ has $2$ zeros, so attach $4$ zeros\n3. $138$ followed by $4$ zeros is $1\\,380\\,000$\n\n**Answer:** $1\\,380\\,000$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A factory fills $2375$ bottles per hour. It runs for $16$ hours each day.\n\n(a) How many bottles does it fill in one day?\n\n(b) How many bottles does it fill in $6$ days?",
+     "answer": "(a) $38\\,000$ bottles (b) $228\\,000$ bottles",
+     "solution": "**Key idea:** Multiply the hourly rate by the number of hours, then by the number of days.\n\n1. (a) $2375 \\times 16 = 2375 \\times 10 + 2375 \\times 6 = 23\\,750 + 14\\,250 = 38\\,000$\n2. (b) $38\\,000 \\times 6 = 228\\,000$\n\n**Answer:** (a) $38\\,000$ bottles (b) $228\\,000$ bottles"
+    }
+   ]
+  },
+  {
+   "code": "1G",
+   "name": "Dividing positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use short division to find $7236 \\div 6$.",
+     "answer": "$1206$",
+     "solution": "**Key idea:** Divide each digit from left to right, carrying any remainder to the next digit.\n\n1. $7 \\div 6 = 1$ remainder $1$; carry $1$ to make $12$\n2. $12 \\div 6 = 2$ remainder $0$\n3. $3 \\div 6 = 0$ remainder $3$; carry $3$ to make $36$\n4. $36 \\div 6 = 6$\n5. So $7236 \\div 6 = 1206$. Check: $1206 \\times 6 = 7236$ ✓\n\n**Answer:** $1206$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $4581 \\div 7$, giving the remainder.",
+     "answer": "$654$ remainder $3$",
+     "solution": "**Key idea:** Use short division; whatever is left at the end is the remainder.\n\n1. $45 \\div 7 = 6$ remainder $3$; carry $3$ to make $38$\n2. $38 \\div 7 = 5$ remainder $3$; carry $3$ to make $31$\n3. $31 \\div 7 = 4$ remainder $3$\n4. So the quotient is $654$ with remainder $3$. Check: $654 \\times 7 + 3 = 4578 + 3 = 4581$ ✓\n\n**Answer:** $654$ remainder $3$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $3150 \\div 15$.",
+     "answer": "$210$",
+     "solution": "**Key idea:** Dividing by $15$ is the same as dividing by $5$ and then by $3$.\n\n1. $3150 \\div 5 = 630$\n2. $630 \\div 3 = 210$\n3. Check: $210 \\times 15 = 3150$ ✓\n\n**Answer:** $210$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a mental strategy to find $840 \\div 24$.",
+     "answer": "$35$",
+     "solution": "**Key idea:** Halve both numbers repeatedly; the answer stays the same.\n\n1. $840 \\div 24 = 420 \\div 12 = 210 \\div 6$\n2. $210 \\div 6 = 35$\n\n**Answer:** $35$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A school is taking $438$ students on an excursion. Each bus holds $52$ students.\n\n(a) How many buses are needed?\n\n(b) If all the buses are booked, how many empty seats will there be in total?",
+     "answer": "(a) $9$ buses (b) $30$ empty seats",
+     "solution": "**Key idea:** Divide, then think about what the remainder means: any students left over still need a bus.\n\n1. (a) $438 \\div 52$: $52 \\times 8 = 416$, and $438 - 416 = 22$, so $438 \\div 52 = 8$ remainder $22$\n2. (a) The $22$ leftover students need another bus, so $8 + 1 = 9$ buses\n3. (b) Seats available: $9 \\times 52 = 468$\n4. (b) Empty seats: $468 - 438 = 30$\n\n**Answer:** (a) $9$ buses (b) $30$ empty seats"
+    }
+   ]
+  },
+  {
+   "code": "1H",
+   "name": "Estimating and rounding positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "we",
+     "slug": "year-7-rounding-estimation",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Round $47\\,862$ to:\n\n(a) the nearest hundred\n\n(b) the nearest thousand",
+     "answer": "(a) $47\\,900$ (b) $48\\,000$",
+     "solution": "**Key idea:** Look at the digit just to the right of the rounding place: $5$ or more rounds up, less than $5$ rounds down.\n\n1. (a) The hundreds digit is $8$ and the next digit is $6$, which is $5$ or more, so round up: $47\\,900$\n2. (b) The thousands digit is $7$ and the next digit is $8$, which is $5$ or more, so round up: $48\\,000$\n\n**Answer:** (a) $47\\,900$ (b) $48\\,000$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use leading digit approximation to estimate $612 \\times 38$.",
+     "answer": "About $24\\,000$",
+     "solution": "**Key idea:** Round each number to its first (leading) digit, then calculate.\n\n1. $612 \\approx 600$ and $38 \\approx 40$\n2. $600 \\times 40 = 24\\,000$\n\n**Answer:** About $24\\,000$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use leading digit approximation to estimate $7845 \\div 39$.",
+     "answer": "About $200$",
+     "solution": "**Key idea:** Round each number to its leading digit so the division is easy.\n\n1. $7845 \\approx 8000$ and $39 \\approx 40$\n2. $8000 \\div 40 = 200$\n\n**Answer:** About $200$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "The attendances at three football games were $28\\,470$, $31\\,905$ and $26\\,618$.\n\n(a) Round each attendance to the nearest thousand and use these to estimate the total attendance.\n\n(b) Find the exact total attendance.\n\n(c) By how much does your estimate differ from the exact total?",
+     "answer": "(a) $87\\,000$ (b) $86\\,993$ (c) $7$",
+     "solution": "**Key idea:** Rounding first makes the addition quick; the exact total checks how good the estimate is.\n\n1. (a) $28\\,470 \\approx 28\\,000$, $31\\,905 \\approx 32\\,000$, $26\\,618 \\approx 27\\,000$\n2. (a) Estimate: $28\\,000 + 32\\,000 + 27\\,000 = 87\\,000$\n3. (b) $28\\,470 + 31\\,905 = 60\\,375$, then $60\\,375 + 26\\,618 = 86\\,993$\n4. (c) $87\\,000 - 86\\,993 = 7$\n\n**Answer:** (a) $87\\,000$ (b) $86\\,993$ (c) $7$"
+    }
+   ]
+  },
+  {
+   "code": "1I",
+   "name": "Order of operations with positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $18 - 4 \\times 3$.",
+     "answer": "$6$",
+     "solution": "**Key idea:** Multiplication and division are done before addition and subtraction.\n\n1. Multiply first: $4 \\times 3 = 12$\n2. Then subtract: $18 - 12 = 6$\n\n**Answer:** $6$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $40 \\div (2 + 6) \\times 3$.",
+     "answer": "$15$",
+     "solution": "**Key idea:** Brackets first, then multiplication and division from left to right.\n\n1. Brackets: $2 + 6 = 8$\n2. Left to right: $40 \\div 8 = 5$\n3. Then $5 \\times 3 = 15$\n\n**Answer:** $15$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $6 \\times (9 - 4) + 20 \\div 5$.",
+     "answer": "$34$",
+     "solution": "**Key idea:** Brackets first, then multiplication and division, then addition and subtraction.\n\n1. Brackets: $9 - 4 = 5$\n2. Multiply and divide: $6 \\times 5 = 30$ and $20 \\div 5 = 4$\n3. Add: $30 + 4 = 34$\n\n**Answer:** $34$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Insert one pair of brackets to make this statement true: $8 + 4 \\times 5 - 2 = 58$",
+     "answer": "$(8 + 4) \\times 5 - 2 = 58$",
+     "solution": "**Key idea:** Brackets change the order of operations. Try different positions and evaluate each one.\n\n1. Without brackets: $8 + 20 - 2 = 26$, which is not $58$\n2. Try $(8 + 4) \\times 5 - 2 = 12 \\times 5 - 2 = 60 - 2 = 58$ ✓\n\n**Answer:** $(8 + 4) \\times 5 - 2 = 58$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Ella buys $3$ notebooks at \\$4 each and $2$ pens at \\$3 each. She pays with a \\$50 note.\n\n(a) Write a single expression, using brackets, for the change she receives.\n\n(b) Evaluate your expression.",
+     "answer": "(a) $50 - (3 \\times 4 + 2 \\times 3)$ (b) \\$32",
+     "solution": "**Key idea:** The total cost must be worked out before it is subtracted from $50$, so it goes in brackets.\n\n1. (a) Cost of notebooks: $3 \\times 4$; cost of pens: $2 \\times 3$\n2. (a) Change $= 50 - (3 \\times 4 + 2 \\times 3)$\n3. (b) Inside the brackets: $12 + 6 = 18$\n4. (b) $50 - 18 = 32$, so \\$32\n\n**Answer:** (a) $50 - (3 \\times 4 + 2 \\times 3)$ (b) \\$32"
+    }
+   ]
+  },
+  {
+   "code": "2A",
+   "name": "Factors and multiples",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "List all the factors of $36$.",
+     "answer": "$1, 2, 3, 4, 6, 9, 12, 18, 36$",
+     "solution": "**Key idea:** Find factor pairs that multiply to give the number, stopping when the pairs start to repeat.\n\n1. $1 \\times 36$, $2 \\times 18$, $3 \\times 12$, $4 \\times 9$, $6 \\times 6$\n2. $5$ does not divide $36$, and after $6$ the pairs repeat\n3. List them in order: $1, 2, 3, 4, 6, 9, 12, 18, 36$\n\n**Answer:** $1, 2, 3, 4, 6, 9, 12, 18, 36$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write down the first five multiples of $7$.",
+     "answer": "$7, 14, 21, 28, 35$",
+     "solution": "**Key idea:** The multiples of a number are found by multiplying it by $1, 2, 3, \\ldots$\n\n1. $7 \\times 1 = 7$, $7 \\times 2 = 14$, $7 \\times 3 = 21$\n2. $7 \\times 4 = 28$, $7 \\times 5 = 35$\n\n**Answer:** $7, 14, 21, 28, 35$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "(a) Is $84$ a multiple of $12$?\n\n(b) Is $9$ a factor of $84$?",
+     "answer": "(a) Yes, $84 = 12 \\times 7$ (b) No",
+     "solution": "**Key idea:** $a$ is a factor of $b$ (and $b$ is a multiple of $a$) when $a$ divides $b$ with no remainder.\n\n1. (a) $84 \\div 12 = 7$ with no remainder, so $84$ is a multiple of $12$\n2. (b) $84 \\div 9 = 9$ remainder $3$, so $9$ is not a factor of $84$\n\n**Answer:** (a) Yes, $84 = 12 \\times 7$ (b) No"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write down all the factor pairs of $48$.",
+     "answer": "$1 \\times 48$, $2 \\times 24$, $3 \\times 16$, $4 \\times 12$, $6 \\times 8$",
+     "solution": "**Key idea:** Test each whole number from $1$ upwards and stop once the pairs would repeat.\n\n1. $1 \\times 48 = 48$, $2 \\times 24 = 48$, $3 \\times 16 = 48$, $4 \\times 12 = 48$\n2. $5$ is not a factor; $6 \\times 8 = 48$; $7$ is not a factor\n3. The next factor is $8$, which is already in a pair, so stop\n\n**Answer:** $1 \\times 48$, $2 \\times 24$, $3 \\times 16$, $4 \\times 12$, $6 \\times 8$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Mr Lee has $60$ students to put into equal teams, with nobody left over. Each team must have at least $4$ and at most $15$ students. List every possible team size and, for each, the number of teams.",
+     "answer": "Teams of $4$ (15 teams), $5$ (12 teams), $6$ (10 teams), $10$ (6 teams), $12$ (5 teams), $15$ (4 teams)",
+     "solution": "**Key idea:** The team size must be a factor of $60$ so that the students divide equally.\n\n1. Factors of $60$: $1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60$\n2. Keep those from $4$ to $15$: $4, 5, 6, 10, 12, 15$\n3. Number of teams $= 60 \\div$ team size: $60 \\div 4 = 15$, $60 \\div 5 = 12$, $60 \\div 6 = 10$, $60 \\div 10 = 6$, $60 \\div 12 = 5$, $60 \\div 15 = 4$\n\n**Answer:** Teams of $4$ (15 teams), $5$ (12 teams), $6$ (10 teams), $10$ (6 teams), $12$ (5 teams) or $15$ (4 teams)"
+    }
+   ]
+  },
+  {
+   "code": "2B",
+   "name": "Highest common factor and lowest common multiple",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 19
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find:\n\n(a) the highest common factor (HCF) of $42$ and $70$\n\n(b) the lowest common multiple (LCM) of $6$ and $8$",
+     "answer": "(a) $14$ (b) $24$",
+     "solution": "**Key idea:** The HCF is the largest number that divides both numbers. The LCM is the smallest number that both numbers divide into.\n\n1. (a) Factors of $42$: $1, 2, 3, 6, 7, 14, 21, 42$\n2. (a) Factors of $70$: $1, 2, 5, 7, 10, 14, 35, 70$\n3. (a) The largest common factor is $14$\n4. (b) Multiples of $6$: $6, 12, 18, 24, \\ldots$; multiples of $8$: $8, 16, 24, \\ldots$\n5. (b) The first common multiple is $24$\n\n**Answer:** (a) $14$ (b) $24$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Two lighthouses flash their lights. The first flashes every $12$ seconds and the second flashes every $18$ seconds. They both flash at exactly the same moment.\n\n(a) After how many seconds will they next flash together?\n\n(b) How many more times will they flash together in the next $3$ minutes (not counting the starting flash)?",
+     "answer": "(a) $36$ seconds (b) $5$ times",
+     "solution": "**Key idea:** Two repeating events happen together again after the lowest common multiple of their intervals.\n\n1. (a) Multiples of $12$: $12, 24, 36, 48, \\ldots$\n2. (a) Multiples of $18$: $18, 36, 54, \\ldots$\n3. (a) LCM $= 36$, so they flash together every $36$ seconds\n4. (b) $3$ minutes $= 3 \\times 60 = 180$ seconds\n5. (b) $180 \\div 36 = 5$, so they flash together $5$ more times (at $36, 72, 108, 144$ and $180$ seconds)\n\n**Answer:** (a) $36$ seconds (b) $5$ times"
+    }
+   ]
+  },
+  {
+   "code": "2C",
+   "name": "Divisibility tests",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use divisibility tests to decide whether $4572$ is divisible by:\n\n(a) $3$\n\n(b) $9$",
+     "answer": "(a) Yes (b) Yes",
+     "solution": "**Key idea:** A number is divisible by $3$ if its digit sum is divisible by $3$, and by $9$ if its digit sum is divisible by $9$.\n\n1. Digit sum: $4 + 5 + 7 + 2 = 18$\n2. (a) $18$ is divisible by $3$, so $4572$ is divisible by $3$\n3. (b) $18$ is divisible by $9$, so $4572$ is divisible by $9$ (in fact $4572 = 9 \\times 508$)\n\n**Answer:** (a) Yes (b) Yes"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use divisibility tests to decide whether $7316$ is divisible by:\n\n(a) $4$\n\n(b) $8$",
+     "answer": "(a) Yes (b) No",
+     "solution": "**Key idea:** A number is divisible by $4$ if its last two digits form a number divisible by $4$, and by $8$ if its last three digits form a number divisible by $8$.\n\n1. (a) Last two digits: $16$, and $16 \\div 4 = 4$, so $7316$ is divisible by $4$\n2. (b) Last three digits: $316$, and $316 \\div 8 = 39$ remainder $4$, so $7316$ is not divisible by $8$\n\n**Answer:** (a) Yes (b) No"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which of the numbers $2, 3, 4, 5, 6, 9$ and $10$ divide exactly into $1530$?",
+     "answer": "$2, 3, 5, 6, 9$ and $10$ (but not $4$)",
+     "solution": "**Key idea:** Apply each divisibility test in turn.\n\n1. $2$: last digit $0$ is even, so yes\n2. $3$: digit sum $1 + 5 + 3 + 0 = 9$, divisible by $3$, so yes\n3. $4$: last two digits $30$, and $30 \\div 4$ leaves remainder $2$, so no\n4. $5$ and $10$: last digit is $0$, so yes to both\n5. $6$: divisible by both $2$ and $3$, so yes\n6. $9$: digit sum $9$ is divisible by $9$, so yes\n\n**Answer:** $2, 3, 5, 6, 9$ and $10$ (but not $4$)"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The four-digit number $52\\square4$ is divisible by $9$. Find the missing digit.",
+     "answer": "$7$ (the number is $5274$)",
+     "solution": "**Key idea:** For divisibility by $9$, the digit sum must be a multiple of $9$.\n\n1. Known digits sum to $5 + 2 + 4 = 11$\n2. The next multiple of $9$ above $11$ is $18$, so the missing digit is $18 - 11 = 7$\n3. The one after that is $27$, which would need a digit of $16$, which is impossible\n4. So the number is $5274$. Check: $5274 \\div 9 = 586$ ✓\n\n**Answer:** $7$ (the number is $5274$)"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A four-digit number has the form $4\\square8\\square$, where the boxes are missing digits (thousands digit $4$, tens digit $8$). The number is divisible by both $10$ and $3$.\n\n(a) What must the ones digit be?\n\n(b) List all the possible numbers.\n\n(c) Which of these numbers is also divisible by $9$?",
+     "answer": "(a) $0$ (b) $4080, 4380, 4680, 4980$ (c) $4680$",
+     "solution": "**Key idea:** Divisible by $10$ means the last digit is $0$. Then use the digit-sum tests for $3$ and $9$.\n\n1. (a) A number divisible by $10$ ends in $0$, so the ones digit is $0$\n2. (b) Digit sum $= 4 + \\square + 8 + 0 = 12 + \\square$. This must be a multiple of $3$, so $\\square = 0, 3, 6$ or $9$\n3. (b) The numbers are $4080$, $4380$, $4680$ and $4980$\n4. (c) The digit sum $12 + \\square$ must be a multiple of $9$, so $12 + \\square = 18$ and $\\square = 6$, giving $4680$\n\n**Answer:** (a) $0$ (b) $4080, 4380, 4680, 4980$ (c) $4680$"
+    }
+   ]
+  },
+  {
+   "code": "2D",
+   "name": "Prime numbers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 12
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "List all the prime numbers between $30$ and $50$.",
+     "answer": "$31, 37, 41, 43, 47$",
+     "solution": "**Key idea:** A prime number has exactly two factors: $1$ and itself. To test a number below $50$, check whether $2, 3, 5$ or $7$ divides it.\n\n1. Remove even numbers and multiples of $5$: left with $31, 33, 37, 39, 41, 43, 47, 49$\n2. Remove multiples of $3$: $33 = 3 \\times 11$ and $39 = 3 \\times 13$\n3. Remove multiples of $7$: $49 = 7 \\times 7$\n4. Remaining primes: $31, 37, 41, 43, 47$\n\n**Answer:** $31, 37, 41, 43, 47$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) Is $91$ prime? Explain.\n\n(b) Is $97$ prime? Explain.\n\n(c) Explain why $2$ is the only even prime number.\n\n(d) Write $40$ as the sum of two prime numbers in as many different ways as you can.",
+     "answer": "(a) No, $91 = 7 \\times 13$ (b) Yes (c) Every other even number has $2$ as a factor as well as $1$ and itself. (d) $3 + 37$, $11 + 29$, $17 + 23$",
+     "solution": "**Key idea:** To test whether a number is prime, check for divisors up to the number whose square is just above it.\n\n1. (a) $91 \\div 7 = 13$, so $91 = 7 \\times 13$ has more than two factors and is not prime\n2. (b) Since $10 \\times 10 = 100 > 97$, only check $2, 3, 5, 7$: $97$ is odd, its digit sum $16$ is not a multiple of $3$, it does not end in $0$ or $5$, and $97 = 7 \\times 13 + 6$. So $97$ is prime\n3. (c) Any even number greater than $2$ is divisible by $1$, $2$ and itself, so it has at least three factors\n4. (d) Try each prime $p$ up to $20$ and check if $40 - p$ is prime: $40 - 3 = 37$ ✓, $40 - 5 = 35$ ✗, $40 - 7 = 33$ ✗, $40 - 11 = 29$ ✓, $40 - 13 = 27$ ✗, $40 - 17 = 23$ ✓, $40 - 19 = 21$ ✗\n5. (d) ($40 - 2 = 38$ is not prime either.) So there are three ways\n\n**Answer:** (a) Not prime, $91 = 7 \\times 13$ (b) Prime (c) Other even numbers also have $2$ as a factor (d) $3 + 37$, $11 + 29$, $17 + 23$"
+    }
+   ]
+  },
+  {
+   "code": "2E",
+   "name": "Using indices",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "2F",
+   "name": "Prime decomposition",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N02",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-prime-factors",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-prime-factors",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-prime-factors",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-prime-factors",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-prime-factors",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2G",
+   "name": "Squares and square roots",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-square-roots",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-square-roots",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-square-roots",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-square-roots",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-square-roots",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2H",
+   "name": "Number patterns",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 20
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write the next three terms of the pattern $7, 11, 15, 19, \\ldots$ and describe the rule.",
+     "answer": "$23, 27, 31$; start at $7$ and add $4$ each time",
+     "solution": "**Key idea:** Find the difference between consecutive terms.\n\n1. $11 - 7 = 4$, $15 - 11 = 4$, $19 - 15 = 4$, so the rule is add $4$\n2. $19 + 4 = 23$, $23 + 4 = 27$, $27 + 4 = 31$\n\n**Answer:** $23, 27, 31$; start at $7$ and add $4$ each time"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write the next three terms of the pattern $3, 6, 12, 24, \\ldots$ and describe the rule.",
+     "answer": "$48, 96, 192$; start at $3$ and multiply by $2$ each time",
+     "solution": "**Key idea:** When the differences keep growing, check whether each term is a multiple of the one before.\n\n1. $6 \\div 3 = 2$, $12 \\div 6 = 2$, $24 \\div 12 = 2$, so the rule is multiply by $2$\n2. $24 \\times 2 = 48$, $48 \\times 2 = 96$, $96 \\times 2 = 192$\n\n**Answer:** $48, 96, 192$; start at $3$ and multiply by $2$ each time"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The pattern $81, 74, 67, \\ldots$ continues by the same rule. Find the $8$th term.",
+     "answer": "$32$",
+     "solution": "**Key idea:** Each term is $7$ less than the one before. The $8$th term is $7$ steps after the $1$st term.\n\n1. Rule: subtract $7$\n2. From term $1$ to term $8$ there are $7$ steps: $7 \\times 7 = 49$\n3. $81 - 49 = 32$\n\n**Answer:** $32$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A number pattern is $2, 5, 11, 23, 47, \\ldots$\n\n(a) Describe the rule that takes each term to the next.\n\n(b) Write the next two terms.\n\n(c) Find the first term in the pattern that is greater than $1000$.",
+     "answer": "(a) Multiply by $2$ then add $1$ (b) $95, 191$ (c) $1535$",
+     "solution": "**Key idea:** The differences $3, 6, 12, 24$ double each time, which suggests a multiply-by-$2$ rule with an adjustment.\n\n1. (a) $2 \\times 2 + 1 = 5$, $5 \\times 2 + 1 = 11$, $11 \\times 2 + 1 = 23$, $23 \\times 2 + 1 = 47$ ✓\n2. (b) $47 \\times 2 + 1 = 95$ and $95 \\times 2 + 1 = 191$\n3. (c) Continue: $191 \\times 2 + 1 = 383$, $383 \\times 2 + 1 = 767$, $767 \\times 2 + 1 = 1535$\n4. (c) $767 < 1000$ but $1535 > 1000$\n\n**Answer:** (a) Multiply by $2$ then add $1$ (b) $95, 191$ (c) $1535$"
+    }
+   ]
+  },
+  {
+   "code": "2I",
+   "name": "Spatial patterns",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 17
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Matchsticks are used to make a row of squares joined side by side. One square uses $4$ matchsticks, two squares in a row use $7$ matchsticks, and three squares in a row use $10$ matchsticks.\n\n(a) Copy and complete the table for $1$ to $5$ squares (number of squares, number of matchsticks).\n\n(b) Write a rule for the number of matchsticks $m$ needed for $s$ squares.\n\n(c) How many matchsticks are needed for $25$ squares?\n\n(d) What is the largest number of squares that can be made with $100$ matchsticks?",
+     "answer": "(a) $4, 7, 10, 13, 16$ (b) $m = 3s + 1$ (c) $76$ (d) $33$ squares",
+     "solution": "**Key idea:** Each new square shares one side with the previous square, so it adds only $3$ matchsticks.\n\n1. (a) Add $3$ each time: $1 \\to 4$, $2 \\to 7$, $3 \\to 10$, $4 \\to 13$, $5 \\to 16$\n2. (b) The first square needs $1$ extra matchstick on the left and every square needs $3$ more, so $m = 3s + 1$. Check: $s = 3$ gives $3 \\times 3 + 1 = 10$ ✓\n3. (c) $m = 3 \\times 25 + 1 = 76$\n4. (d) We need $3s + 1 \\le 100$, so $3s \\le 99$ and $s \\le 33$\n5. (d) $33$ squares use $3 \\times 33 + 1 = 100$ matchsticks exactly\n\n**Answer:** (a) $4, 7, 10, 13, 16$ (b) $m = 3s + 1$ (c) $76$ (d) $33$ squares"
+    }
+   ]
+  },
+  {
+   "code": "2J",
+   "name": "Tables and rules",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 8
+    },
+    {
+     "src": "we",
+     "slug": "year-7-tables-of-values",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-tables-of-values",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-tables-of-values",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-tables-of-values",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-tables-of-values",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2K",
+   "name": "The Cartesian plane and graphs",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 18
+    }
+   ]
+  },
+  {
+   "code": "3A",
+   "name": "Introduction to fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A pizza is cut into $8$ equal slices and $3$ slices are eaten. What fraction of the pizza is eaten, and what fraction is left?",
+     "answer": "Eaten $\\dfrac{3}{8}$, left $\\dfrac{5}{8}$",
+     "solution": "**Key idea:** The denominator is the number of equal parts in the whole; the numerator is the number of parts being counted.\n\n1. There are $8$ equal parts, so the denominator is $8$\n2. $3$ parts are eaten: $\\dfrac{3}{8}$\n3. $8 - 3 = 5$ parts are left: $\\dfrac{5}{8}$\n\n**Answer:** Eaten $\\dfrac{3}{8}$, left $\\dfrac{5}{8}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "What fraction of $1$ hour is $20$ minutes? Give your answer in simplest form.",
+     "answer": "$\\dfrac{1}{3}$",
+     "solution": "**Key idea:** Write both amounts in the same unit, then write part over whole.\n\n1. $1$ hour $= 60$ minutes\n2. Fraction $= \\dfrac{20}{60}$\n3. Divide top and bottom by $20$: $\\dfrac{1}{3}$\n\n**Answer:** $\\dfrac{1}{3}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A class has $28$ students, of whom $13$ are girls. What fraction of the class are boys?",
+     "answer": "$\\dfrac{15}{28}$",
+     "solution": "**Key idea:** Find the number of boys first, then write it over the total.\n\n1. Boys: $28 - 13 = 15$\n2. Fraction of boys $= \\dfrac{15}{28}$, which cannot be simplified since $15$ and $28$ have no common factor other than $1$\n\n**Answer:** $\\dfrac{15}{28}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A number line runs from $0$ to $2$. The distance from $0$ to $1$ is divided into $5$ equal parts, and so is the distance from $1$ to $2$.\n\n(a) A point is placed on the third mark after $0$. What fraction does it show?\n\n(b) A second point is placed on the second mark after $1$. Write this as an improper fraction.",
+     "answer": "(a) $\\dfrac{3}{5}$ (b) $\\dfrac{7}{5}$",
+     "solution": "**Key idea:** Each mark is one fifth. Count the number of fifths from $0$.\n\n1. (a) $3$ marks after $0$ is $3$ fifths: $\\dfrac{3}{5}$\n2. (b) $1$ whole is $5$ fifths; $2$ more marks gives $5 + 2 = 7$ fifths: $\\dfrac{7}{5}$\n\n**Answer:** (a) $\\dfrac{3}{5}$ (b) $\\dfrac{7}{5}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A fruit bowl contains $4$ apples, $5$ bananas and $3$ oranges.\n\n(a) What fraction of the fruit are bananas?\n\n(b) What fraction of the fruit are not apples? Give your answer in simplest form.\n\n(c) Then $6$ more oranges are added to the bowl. What fraction of the fruit are now oranges? Give your answer in simplest form.",
+     "answer": "(a) $\\dfrac{5}{12}$ (b) $\\dfrac{2}{3}$ (c) $\\dfrac{1}{2}$",
+     "solution": "**Key idea:** Always find the total number of pieces of fruit first; this is the denominator.\n\n1. (a) Total: $4 + 5 + 3 = 12$. Bananas: $\\dfrac{5}{12}$\n2. (b) Not apples: $5 + 3 = 8$, so $\\dfrac{8}{12} = \\dfrac{2}{3}$\n3. (c) Oranges: $3 + 6 = 9$; total: $12 + 6 = 18$\n4. (c) $\\dfrac{9}{18} = \\dfrac{1}{2}$\n\n**Answer:** (a) $\\dfrac{5}{12}$ (b) $\\dfrac{2}{3}$ (c) $\\dfrac{1}{2}$"
+    }
+   ]
+  },
+  {
+   "code": "3B",
+   "name": "Equivalent fractions and simplified fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 11
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $\\dfrac{35}{56}$ in simplest form.",
+     "answer": "$\\dfrac{5}{8}$",
+     "solution": "**Key idea:** Divide the numerator and denominator by their highest common factor.\n\n1. Factors of $35$: $1, 5, 7, 35$. Factors of $56$ include $7$ ($56 = 7 \\times 8$)\n2. HCF $= 7$\n3. $\\dfrac{35 \\div 7}{56 \\div 7} = \\dfrac{5}{8}$\n\n**Answer:** $\\dfrac{5}{8}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the missing numbers:\n\n(a) $\\dfrac{3}{7} = \\dfrac{\\square}{35}$\n\n(b) $\\dfrac{3}{7} = \\dfrac{12}{\\square}$",
+     "answer": "(a) $15$ (b) $28$",
+     "solution": "**Key idea:** Equivalent fractions are made by multiplying the numerator and denominator by the same number.\n\n1. (a) $7 \\times 5 = 35$, so multiply the numerator by $5$ too: $3 \\times 5 = 15$\n2. (b) $3 \\times 4 = 12$, so multiply the denominator by $4$ too: $7 \\times 4 = 28$\n\n**Answer:** (a) $15$ (b) $28$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Which one of these fractions is not equivalent to $\\dfrac{3}{5}$? Write that fraction in simplest form.\n\n$$\\frac{12}{20}, \\quad \\frac{21}{35}, \\quad \\frac{15}{24}, \\quad \\frac{30}{50}$$",
+     "answer": "$\\dfrac{15}{24}$, which simplifies to $\\dfrac{5}{8}$",
+     "solution": "**Key idea:** Simplify each fraction fully and compare it with $\\dfrac{3}{5}$.\n\n1. $\\dfrac{12}{20} = \\dfrac{12 \\div 4}{20 \\div 4} = \\dfrac{3}{5}$\n2. $\\dfrac{21}{35} = \\dfrac{21 \\div 7}{35 \\div 7} = \\dfrac{3}{5}$\n3. $\\dfrac{15}{24} = \\dfrac{15 \\div 3}{24 \\div 3} = \\dfrac{5}{8}$, which is not $\\dfrac{3}{5}$\n4. $\\dfrac{30}{50} = \\dfrac{30 \\div 10}{50 \\div 10} = \\dfrac{3}{5}$\n\n**Answer:** $\\dfrac{15}{24}$, which simplifies to $\\dfrac{5}{8}$"
+    }
+   ]
+  },
+  {
+   "code": "3C",
+   "name": "Mixed numerals and improper fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 2
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $\\dfrac{23}{4}$ as a mixed numeral.",
+     "answer": "$5\\dfrac{3}{4}$",
+     "solution": "**Key idea:** Divide the numerator by the denominator. The quotient is the whole number and the remainder is the new numerator.\n\n1. $23 \\div 4 = 5$ remainder $3$\n2. So $\\dfrac{23}{4} = 5\\dfrac{3}{4}$\n\n**Answer:** $5\\dfrac{3}{4}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $3\\dfrac{2}{5}$ as an improper fraction.",
+     "answer": "$\\dfrac{17}{5}$",
+     "solution": "**Key idea:** Multiply the whole number by the denominator and add the numerator.\n\n1. $3 \\times 5 = 15$ fifths\n2. $15 + 2 = 17$ fifths\n3. So $3\\dfrac{2}{5} = \\dfrac{17}{5}$\n\n**Answer:** $\\dfrac{17}{5}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $\\dfrac{47}{6}$ as a mixed numeral.",
+     "answer": "$7\\dfrac{5}{6}$",
+     "solution": "**Key idea:** Divide the numerator by the denominator and keep the remainder over the same denominator.\n\n1. $47 \\div 6 = 7$ remainder $5$ (since $6 \\times 7 = 42$)\n2. So $\\dfrac{47}{6} = 7\\dfrac{5}{6}$\n\n**Answer:** $7\\dfrac{5}{6}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Sam uses a $\\dfrac{1}{4}$-cup scoop to measure flour. He uses $19$ scoops.\n\n(a) Write the amount of flour as an improper fraction of a cup.\n\n(b) Write this amount as a mixed numeral.\n\n(c) How many more scoops does Sam need to have exactly $6$ cups?",
+     "answer": "(a) $\\dfrac{19}{4}$ cups (b) $4\\dfrac{3}{4}$ cups (c) $5$ scoops",
+     "solution": "**Key idea:** Each scoop is one quarter, so $19$ scoops is $19$ quarters.\n\n1. (a) $19$ quarters $= \\dfrac{19}{4}$ cups\n2. (b) $19 \\div 4 = 4$ remainder $3$, so $4\\dfrac{3}{4}$ cups\n3. (c) $6$ cups $= 6 \\times 4 = 24$ quarters\n4. (c) $24 - 19 = 5$ more scoops\n\n**Answer:** (a) $\\dfrac{19}{4}$ cups (b) $4\\dfrac{3}{4}$ cups (c) $5$ scoops"
+    }
+   ]
+  },
+  {
+   "code": "3D",
+   "name": "Ordering fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 16
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which is larger, $\\dfrac{5}{8}$ or $\\dfrac{3}{5}$?",
+     "answer": "$\\dfrac{5}{8}$",
+     "solution": "**Key idea:** Write both fractions with a common denominator, then compare numerators.\n\n1. Lowest common denominator of $8$ and $5$ is $40$\n2. $\\dfrac{5}{8} = \\dfrac{25}{40}$ and $\\dfrac{3}{5} = \\dfrac{24}{40}$\n3. $25 > 24$, so $\\dfrac{5}{8}$ is larger\n\n**Answer:** $\\dfrac{5}{8}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write in ascending order: $\\dfrac{2}{3}, \\dfrac{7}{12}, \\dfrac{3}{4}, \\dfrac{5}{6}$",
+     "answer": "$\\dfrac{7}{12}, \\dfrac{2}{3}, \\dfrac{3}{4}, \\dfrac{5}{6}$",
+     "solution": "**Key idea:** Ascending means smallest to largest. Use a common denominator of $12$.\n\n1. $\\dfrac{2}{3} = \\dfrac{8}{12}$, $\\dfrac{7}{12}$, $\\dfrac{3}{4} = \\dfrac{9}{12}$, $\\dfrac{5}{6} = \\dfrac{10}{12}$\n2. Order the numerators: $7, 8, 9, 10$\n\n**Answer:** $\\dfrac{7}{12}, \\dfrac{2}{3}, \\dfrac{3}{4}, \\dfrac{5}{6}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write in descending order: $\\dfrac{4}{9}, \\dfrac{1}{2}, \\dfrac{5}{12}, \\dfrac{7}{18}$",
+     "answer": "$\\dfrac{1}{2}, \\dfrac{4}{9}, \\dfrac{5}{12}, \\dfrac{7}{18}$",
+     "solution": "**Key idea:** Descending means largest to smallest. The lowest common denominator of $9, 2, 12$ and $18$ is $36$.\n\n1. $\\dfrac{4}{9} = \\dfrac{16}{36}$, $\\dfrac{1}{2} = \\dfrac{18}{36}$, $\\dfrac{5}{12} = \\dfrac{15}{36}$, $\\dfrac{7}{18} = \\dfrac{14}{36}$\n2. Order the numerators from largest: $18, 16, 15, 14$\n\n**Answer:** $\\dfrac{1}{2}, \\dfrac{4}{9}, \\dfrac{5}{12}, \\dfrac{7}{18}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Three friends are running the same course. Ava has run $\\dfrac{7}{10}$ of it, Ben has run $\\dfrac{3}{4}$ and Chloe has run $\\dfrac{2}{3}$.\n\n(a) Who has run the furthest?\n\n(b) List the friends from the shortest distance run to the longest.\n\n(c) Write a fraction that lies between Chloe's and Ava's fractions.",
+     "answer": "(a) Ben (b) Chloe, Ava, Ben (c) For example $\\dfrac{41}{60}$",
+     "solution": "**Key idea:** Use the lowest common denominator of $10$, $4$ and $3$, which is $60$.\n\n1. Ava: $\\dfrac{7}{10} = \\dfrac{42}{60}$; Ben: $\\dfrac{3}{4} = \\dfrac{45}{60}$; Chloe: $\\dfrac{2}{3} = \\dfrac{40}{60}$\n2. (a) $45$ is the largest numerator, so Ben has run the furthest\n3. (b) $40 < 42 < 45$: Chloe, Ava, Ben\n4. (c) Between $\\dfrac{40}{60}$ and $\\dfrac{42}{60}$ lies $\\dfrac{41}{60}$ (other answers are possible)\n\n**Answer:** (a) Ben (b) Chloe, Ava, Ben (c) For example $\\dfrac{41}{60}$"
+    }
+   ]
+  },
+  {
+   "code": "3E",
+   "name": "Adding fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fraction-operations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Mia spent $\\dfrac{3}{4}$ of an hour on homework on Friday, $1\\dfrac{1}{2}$ hours on Saturday and $2\\dfrac{2}{3}$ hours on Sunday.\n\n(a) How many hours did she spend in total? Give your answer as a mixed numeral.\n\n(b) Write the total in hours and minutes.",
+     "answer": "(a) $4\\dfrac{11}{12}$ hours (b) $4$ hours $55$ minutes",
+     "solution": "**Key idea:** Convert mixed numerals to improper fractions, use a common denominator, then add.\n\n1. (a) $1\\dfrac{1}{2} = \\dfrac{3}{2}$ and $2\\dfrac{2}{3} = \\dfrac{8}{3}$\n2. (a) The lowest common denominator of $4, 2, 3$ is $12$:\n$$\\frac{3}{4} + \\frac{3}{2} + \\frac{8}{3} = \\frac{9}{12} + \\frac{18}{12} + \\frac{32}{12} = \\frac{59}{12}$$\n3. (a) $59 \\div 12 = 4$ remainder $11$, so $4\\dfrac{11}{12}$ hours\n4. (b) $\\dfrac{11}{12}$ of $60$ minutes $= 11 \\times 5 = 55$ minutes\n\n**Answer:** (a) $4\\dfrac{11}{12}$ hours (b) $4$ hours $55$ minutes"
+    }
+   ]
+  },
+  {
+   "code": "3F",
+   "name": "Subtracting fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 19
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A rope is $5$ metres long. Jack cuts off $1\\dfrac{3}{4}$ m and then cuts off another $2\\dfrac{1}{3}$ m. How much rope is left?",
+     "answer": "$\\dfrac{11}{12}$ m",
+     "solution": "**Key idea:** Subtract both pieces from the original length using a common denominator.\n\n1. Write everything as improper fractions: $5 = \\dfrac{5}{1}$, $1\\dfrac{3}{4} = \\dfrac{7}{4}$, $2\\dfrac{1}{3} = \\dfrac{7}{3}$\n2. Lowest common denominator is $12$: $5 = \\dfrac{60}{12}$, $\\dfrac{7}{4} = \\dfrac{21}{12}$, $\\dfrac{7}{3} = \\dfrac{28}{12}$\n3. $\\dfrac{60}{12} - \\dfrac{21}{12} - \\dfrac{28}{12} = \\dfrac{11}{12}$\n\n**Answer:** $\\dfrac{11}{12}$ m of rope is left"
+    }
+   ]
+  },
+  {
+   "code": "3G",
+   "name": "Multiplying fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 13
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fractions-decimals",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "3H",
+   "name": "Dividing fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fraction-operations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fraction-operations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fraction-operations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fraction-operations",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fractions-decimals",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fractions-decimals",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fractions-decimals",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "3I",
+   "name": "Fractions and percentages",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 3
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "(a) Write $\\dfrac{7}{20}$ as a percentage.\n\n(b) Write $45\\%$ as a fraction in simplest form.",
+     "answer": "(a) $35\\%$ (b) $\\dfrac{9}{20}$",
+     "solution": "**Key idea:** Percent means out of $100$.\n\n1. (a) $\\dfrac{7}{20} = \\dfrac{7 \\times 5}{20 \\times 5} = \\dfrac{35}{100} = 35\\%$\n2. (b) $45\\% = \\dfrac{45}{100} = \\dfrac{45 \\div 5}{100 \\div 5} = \\dfrac{9}{20}$\n\n**Answer:** (a) $35\\%$ (b) $\\dfrac{9}{20}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Priya's test results were: Maths $\\dfrac{17}{20}$, Science $\\dfrac{21}{25}$ and English $\\dfrac{39}{50}$.\n\n(a) Write each result as a percentage.\n\n(b) In which subject did she do best?",
+     "answer": "(a) Maths $85\\%$, Science $84\\%$, English $78\\%$ (b) Maths",
+     "solution": "**Key idea:** To compare scores out of different totals, convert each to a percentage (a fraction out of $100$).\n\n1. (a) Maths: $\\dfrac{17}{20} = \\dfrac{17 \\times 5}{100} = \\dfrac{85}{100} = 85\\%$\n2. (a) Science: $\\dfrac{21}{25} = \\dfrac{21 \\times 4}{100} = \\dfrac{84}{100} = 84\\%$\n3. (a) English: $\\dfrac{39}{50} = \\dfrac{39 \\times 2}{100} = \\dfrac{78}{100} = 78\\%$\n4. (b) $85\\%$ is the highest, so Maths\n\n**Answer:** (a) Maths $85\\%$, Science $84\\%$, English $78\\%$ (b) Maths"
+    }
+   ]
+  },
+  {
+   "code": "3J",
+   "name": "Finding a percentage of a number",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-7-percentages",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-percentages",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-percentages",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "3K",
+   "name": "Introduction to ratios",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 12
+    },
+    {
+     "src": "we",
+     "slug": "year-7-ratios",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "3L",
+   "name": "Solving problems with ratios",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M06",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N09",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-ratios",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-ratios",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-ratios",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-ratios",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "4A",
+   "name": "Introduction to algebra",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 8
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write an algebraic expression for each of the following.\n\n(a) $5$ more than $x$\n\n(b) the product of $4$ and $m$\n\n(c) half of $k$",
+     "answer": "(a) $x + 5$ (b) $4m$ (c) $\\dfrac{k}{2}$",
+     "solution": "**Key idea:** Translate each phrase into operations: more than means add, product means multiply, half means divide by $2$.\n\n1. (a) $5$ more than $x$: $x + 5$\n2. (b) $4 \\times m$ is written $4m$\n3. (c) $k \\div 2$ is written $\\dfrac{k}{2}$\n\n**Answer:** (a) $x + 5$ (b) $4m$ (c) $\\dfrac{k}{2}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For the expression $7a - 3b + 2$:\n\n(a) how many terms are there?\n\n(b) what is the coefficient of $b$?\n\n(c) what is the constant term?",
+     "answer": "(a) $3$ (b) $-3$ (c) $2$",
+     "solution": "**Key idea:** Terms are separated by $+$ and $-$ signs. The sign in front belongs to the term.\n\n1. (a) The terms are $7a$, $-3b$ and $2$, so there are $3$ terms\n2. (b) The number multiplying $b$ is $-3$\n3. (c) The term with no pronumeral is $2$\n\n**Answer:** (a) $3$ (b) $-3$ (c) $2$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Pencils cost $p$ cents each and erasers cost $e$ cents each.\n\n(a) Write an expression for the cost, in cents, of $6$ pencils and $2$ erasers.\n\n(b) Write an expression for the change, in cents, from $500$ cents.\n\n(c) Find the change if $p = 45$ and $e = 80$.",
+     "answer": "(a) $6p + 2e$ (b) $500 - (6p + 2e)$ (c) $70$ cents",
+     "solution": "**Key idea:** Use a pronumeral to stand for an unknown price, and multiply it by the number bought.\n\n1. (a) $6$ pencils cost $6p$ cents and $2$ erasers cost $2e$ cents, so the total is $6p + 2e$\n2. (b) Change $= 500 - (6p + 2e)$\n3. (c) $6 \\times 45 = 270$ and $2 \\times 80 = 160$\n4. (c) $500 - (270 + 160) = 500 - 430 = 70$ cents\n\n**Answer:** (a) $6p + 2e$ (b) $500 - (6p + 2e)$ (c) $70$ cents"
+    }
+   ]
+  },
+  {
+   "code": "4B",
+   "name": "Substituting numbers into algebraic expressions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 15
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $a = 6$, evaluate $3a + 7$.",
+     "answer": "$25$",
+     "solution": "**Key idea:** Replace the pronumeral with its value, then follow the order of operations.\n\n1. $3a + 7 = 3 \\times 6 + 7$\n2. $= 18 + 7 = 25$\n\n**Answer:** $25$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $x = 4$ and $y = 9$, evaluate $2xy - 5y$.",
+     "answer": "$27$",
+     "solution": "**Key idea:** Substitute both values, multiply first, then subtract.\n\n1. $2xy = 2 \\times 4 \\times 9 = 72$\n2. $5y = 5 \\times 9 = 45$\n3. $72 - 45 = 27$\n\n**Answer:** $27$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $m = 12$ and $n = 3$, evaluate $\\dfrac{m}{n} + 4n$.",
+     "answer": "$16$",
+     "solution": "**Key idea:** Substitute, then do the division and multiplication before adding.\n\n1. $\\dfrac{m}{n} = \\dfrac{12}{3} = 4$\n2. $4n = 4 \\times 3 = 12$\n3. $4 + 12 = 16$\n\n**Answer:** $16$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "The fare for a taxi trip is given by $F = 4 + 2d$, where $F$ is the fare in dollars and $d$ is the distance in kilometres.\n\n(a) Find the fare for a $7$ km trip.\n\n(b) Find the fare for a $15$ km trip.\n\n(c) A trip costs \\$30. By trying values of $d$, find how long the trip was.",
+     "answer": "(a) \\$18 (b) \\$34 (c) $13$ km",
+     "solution": "**Key idea:** Substitute the distance into the rule. For (c), test values until the fare equals $30$.\n\n1. (a) $F = 4 + 2 \\times 7 = 4 + 14 = 18$, so \\$18\n2. (b) $F = 4 + 2 \\times 15 = 4 + 30 = 34$, so \\$34\n3. (c) Try $d = 12$: $4 + 24 = 28$ (too small). Try $d = 13$: $4 + 26 = 30$ ✓\n\n**Answer:** (a) \\$18 (b) \\$34 (c) $13$ km"
+    }
+   ]
+  },
+  {
+   "code": "4C",
+   "name": "Equivalent algebraic expressions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 9
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which of these expressions are equivalent to $3x + 6$?\n\nA. $3(x + 2)$ B. $6 + 3x$ C. $3x + 2$ D. $x + x + x + 6$",
+     "answer": "A, B and D",
+     "solution": "**Key idea:** Equivalent expressions give the same value for every value of the pronumeral.\n\n1. A: $3(x + 2) = 3 \\times x + 3 \\times 2 = 3x + 6$ ✓\n2. B: $6 + 3x$ is $3x + 6$ in a different order ✓\n3. C: $3x + 2$ has a different constant. For $x = 1$: $5$ compared with $3x + 6 = 9$ ✗\n4. D: $x + x + x = 3x$, so $3x + 6$ ✓\n\n**Answer:** A, B and D"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "By substituting $a = 5$, check that $2a + 3a + a$ and $6a$ give the same value.",
+     "answer": "Both equal $30$",
+     "solution": "**Key idea:** Substituting a value into two expressions is a quick check of whether they could be equivalent.\n\n1. $2a + 3a + a = 10 + 15 + 5 = 30$\n2. $6a = 6 \\times 5 = 30$\n3. Both give $30$ (and collecting like terms shows $2a + 3a + a = 6a$ for every $a$)\n\n**Answer:** Both equal $30$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Is $4(n + 1)$ equivalent to $4n + 1$? Use $n = 2$ to explain your answer.",
+     "answer": "No: for $n = 2$, $4(n + 1) = 12$ but $4n + 1 = 9$",
+     "solution": "**Key idea:** If two expressions give different values for even one value of the pronumeral, they are not equivalent.\n\n1. $4(n + 1) = 4 \\times (2 + 1) = 4 \\times 3 = 12$\n2. $4n + 1 = 4 \\times 2 + 1 = 9$\n3. $12 \\ne 9$, so they are not equivalent. (The correct expansion is $4(n + 1) = 4n + 4$.)\n\n**Answer:** No: for $n = 2$, $4(n + 1) = 12$ but $4n + 1 = 9$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A rectangle has length $x + 3$ cm and width $2$ cm.\n\n(a) Write an expression for its perimeter using brackets.\n\n(b) Write an equivalent expression in the simplest form.\n\n(c) Check that both expressions give the same perimeter when $x = 4$.",
+     "answer": "(a) $2(x + 3) + 2 \\times 2$ (b) $2x + 10$ (c) Both give $18$ cm",
+     "solution": "**Key idea:** Perimeter is the total distance around: two lengths plus two widths.\n\n1. (a) Perimeter $= 2(x + 3) + 2 \\times 2$\n2. (b) $2(x + 3) = 2x + 6$, so the perimeter is $2x + 6 + 4 = 2x + 10$\n3. (c) With $x = 4$: $2(4 + 3) + 4 = 14 + 4 = 18$\n4. (c) $2 \\times 4 + 10 = 18$ ✓\n\n**Answer:** (a) $2(x + 3) + 2 \\times 2$ (b) $2x + 10$ (c) Both give $18$ cm"
+    }
+   ]
+  },
+  {
+   "code": "4D",
+   "name": "Like terms",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 11
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $5a + 3b - 2a + b$.",
+     "answer": "$3a + 4b$",
+     "solution": "**Key idea:** Like terms have exactly the same pronumerals; only like terms can be added or subtracted.\n\n1. Group like terms: $5a - 2a + 3b + b$\n2. $5a - 2a = 3a$ and $3b + b = 4b$\n3. Result: $3a + 4b$\n\n**Answer:** $3a + 4b$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $4xy + 3x - xy + 7 - x$.",
+     "answer": "$3xy + 2x + 7$",
+     "solution": "**Key idea:** $xy$ terms, $x$ terms and constants are three different kinds of term.\n\n1. $xy$ terms: $4xy - xy = 3xy$\n2. $x$ terms: $3x - x = 2x$\n3. Constant: $7$\n4. Result: $3xy + 2x + 7$\n\n**Answer:** $3xy + 2x + 7$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A triangle has side lengths $3m + 2$, $2m + 5$ and $m - 1$ centimetres.\n\n(a) Write a simplified expression for the perimeter.\n\n(b) Find the perimeter when $m = 4$.",
+     "answer": "(a) $6m + 6$ cm (b) $30$ cm",
+     "solution": "**Key idea:** Add the three sides, then collect like terms.\n\n1. (a) $(3m + 2) + (2m + 5) + (m - 1)$\n2. (a) $m$ terms: $3m + 2m + m = 6m$; constants: $2 + 5 - 1 = 6$\n3. (a) Perimeter $= 6m + 6$\n4. (b) $6 \\times 4 + 6 = 30$\n5. (b) Check with the sides: $14 + 13 + 3 = 30$ ✓\n\n**Answer:** (a) $6m + 6$ cm (b) $30$ cm"
+    }
+   ]
+  },
+  {
+   "code": "4E",
+   "name": "Multiplying and dividing expressions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $4a \\times 3b$.",
+     "answer": "$12ab$",
+     "solution": "**Key idea:** Multiply the numbers together and write the pronumerals next to each other in alphabetical order.\n\n1. Numbers: $4 \\times 3 = 12$\n2. Pronumerals: $a \\times b = ab$\n3. Result: $12ab$\n\n**Answer:** $12ab$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $2x \\times 5x$.",
+     "answer": "$10x^2$",
+     "solution": "**Key idea:** $x \\times x$ is written $x^2$.\n\n1. Numbers: $2 \\times 5 = 10$\n2. Pronumerals: $x \\times x = x^2$\n3. Result: $10x^2$\n\n**Answer:** $10x^2$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $18pq \\div 6q$.",
+     "answer": "$3p$",
+     "solution": "**Key idea:** Write the division as a fraction and cancel common factors.\n\n1. $\\dfrac{18pq}{6q}$\n2. $18 \\div 6 = 3$ and $q$ cancels with $q$\n3. Result: $3p$\n\n**Answer:** $3p$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $\\dfrac{24a^2b}{8ab}$.",
+     "answer": "$3a$",
+     "solution": "**Key idea:** Cancel the numbers and each pronumeral separately; remember $a^2 = a \\times a$.\n\n1. $\\dfrac{24 \\times a \\times a \\times b}{8 \\times a \\times b}$\n2. $24 \\div 8 = 3$; one $a$ cancels; $b$ cancels\n3. Result: $3a$\n\n**Answer:** $3a$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A rectangle has length $3x$ cm and width $4y$ cm.\n\n(a) Write a simplified expression for its area.\n\n(b) A second rectangle has the same area but a width of $2y$ cm. Find an expression for its length.\n\n(c) Check both areas are equal when $x = 2$ and $y = 5$.",
+     "answer": "(a) $12xy$ cm$^2$ (b) $6x$ cm (c) Both areas are $120$ cm$^2$",
+     "solution": "**Key idea:** Area of a rectangle is length times width. Length is area divided by width.\n\n1. (a) $3x \\times 4y = 12xy$\n2. (b) Length $= \\dfrac{12xy}{2y} = 6x$\n3. (c) First rectangle: $3 \\times 2 = 6$ by $4 \\times 5 = 20$, area $= 120$\n4. (c) Second rectangle: $6 \\times 2 = 12$ by $2 \\times 5 = 10$, area $= 120$ ✓\n\n**Answer:** (a) $12xy$ cm$^2$ (b) $6x$ cm (c) Both areas are $120$ cm$^2$"
+    }
+   ]
+  },
+  {
+   "code": "4F",
+   "name": "Expanding brackets",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-expressions",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-expressions",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-expressions",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-expressions",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "4G",
+   "name": "Applying algebra",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A02",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-7-algebra",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-algebra",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-expressions",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "5A",
+   "name": "Place value and decimals",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In the number $37.0592$, what is the value of:\n\n(a) the digit $9$\n\n(b) the digit $5$",
+     "answer": "(a) $9$ thousandths ($0.009$) (b) $5$ hundredths ($0.05$)",
+     "solution": "**Key idea:** After the decimal point the places are tenths, hundredths, thousandths, ten-thousandths.\n\n1. Decimal places of $37.0592$: tenths $0$, hundredths $5$, thousandths $9$, ten-thousandths $2$\n2. (a) $9$ is in the thousandths place: $\\dfrac{9}{1000} = 0.009$\n3. (b) $5$ is in the hundredths place: $\\dfrac{5}{100} = 0.05$\n\n**Answer:** (a) $9$ thousandths ($0.009$) (b) $5$ hundredths ($0.05$)"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $4 + \\dfrac{6}{10} + \\dfrac{3}{1000}$ as a decimal.",
+     "answer": "$4.603$",
+     "solution": "**Key idea:** Place each digit in its column; use $0$ for an empty place.\n\n1. Ones: $4$; tenths: $6$; hundredths: none, so $0$; thousandths: $3$\n2. Result: $4.603$\n\n**Answer:** $4.603$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write these decimals in ascending order: $0.708, \\ 0.78, \\ 0.0785, \\ 0.7$",
+     "answer": "$0.0785, \\ 0.7, \\ 0.708, \\ 0.78$",
+     "solution": "**Key idea:** Compare place by place from the left. Adding zeros to the end can make comparing easier.\n\n1. Write with four decimal places: $0.7080$, $0.7800$, $0.0785$, $0.7000$\n2. Compare as whole numbers: $785 < 7000 < 7080 < 7800$\n3. Order: $0.0785, 0.7, 0.708, 0.78$\n\n**Answer:** $0.0785, \\ 0.7, \\ 0.708, \\ 0.78$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $2.465$ in expanded form using fractions.",
+     "answer": "$2 + \\dfrac{4}{10} + \\dfrac{6}{100} + \\dfrac{5}{1000}$",
+     "solution": "**Key idea:** Each decimal place is a fraction with denominator $10$, $100$, $1000$, and so on.\n\n1. $2$ is in the ones place\n2. $4$ tenths $= \\dfrac{4}{10}$, $6$ hundredths $= \\dfrac{6}{100}$, $5$ thousandths $= \\dfrac{5}{1000}$\n\n**Answer:** $2 + \\dfrac{4}{10} + \\dfrac{6}{100} + \\dfrac{5}{1000}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Four swimmers recorded these times, in seconds, for the same race: $52.38$, $52.4$, $51.97$, $52.309$.\n\n(a) List the times from fastest to slowest.\n\n(b) What is the difference between the fastest and slowest times?",
+     "answer": "(a) $51.97, 52.309, 52.38, 52.4$ (b) $0.43$ seconds",
+     "solution": "**Key idea:** The fastest time is the smallest number. Line up decimal places to compare.\n\n1. (a) Write with three decimal places: $52.380$, $52.400$, $51.970$, $52.309$\n2. (a) Smallest to largest: $51.970 < 52.309 < 52.380 < 52.400$\n3. (b) $52.400 - 51.970 = 0.430$\n\n**Answer:** (a) $51.97, 52.309, 52.38, 52.4$ (b) $0.43$ seconds"
+    }
+   ]
+  },
+  {
+   "code": "5B",
+   "name": "Rounding decimals",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-rounding-estimation",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-rounding-estimation",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-rounding-estimation",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-rounding-estimation",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "5C",
+   "name": "Adding and subtracting decimals",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 15
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Lucy has \\$50. She buys a book for \\$12.85, a pen set for \\$7.40 and a game for \\$18.65.\n\n(a) How much does she spend in total?\n\n(b) How much money does she have left?",
+     "answer": "(a) \\$38.90 (b) \\$11.10",
+     "solution": "**Key idea:** Line up the decimal points when adding or subtracting money.\n\n1. (a) $12.85 + 7.40 = 20.25$\n2. (a) $20.25 + 18.65 = 38.90$, so \\$38.90\n3. (b) $50.00 - 38.90 = 11.10$, so \\$11.10\n\n**Answer:** (a) \\$38.90 (b) \\$11.10"
+    }
+   ]
+  },
+  {
+   "code": "5D",
+   "name": "Multiplying and dividing decimals by 10, 100, 1000 etc.",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 15
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $4.067 \\times 100$.",
+     "answer": "$406.7$",
+     "solution": "**Key idea:** Multiplying by $100$ moves each digit two places to the left (the decimal point appears to move two places right).\n\n1. $100$ has $2$ zeros, so move the decimal point $2$ places right\n2. $4.067 \\to 406.7$\n\n**Answer:** $406.7$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $52.8 \\div 1000$.",
+     "answer": "$0.0528$",
+     "solution": "**Key idea:** Dividing by $1000$ moves the decimal point three places to the left.\n\n1. Move the decimal point $3$ places left, filling with zeros: $52.8 \\to 5.28 \\to 0.528 \\to 0.0528$\n\n**Answer:** $0.0528$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find $0.035 \\times 10\\,000$.",
+     "answer": "$350$",
+     "solution": "**Key idea:** $10\\,000$ has four zeros, so move the decimal point four places to the right.\n\n1. $0.035 \\to 0.35 \\to 3.5 \\to 35 \\to 350$\n\n**Answer:** $350$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A pack of $1000$ sheets of paper has a mass of $4.8$ kg.\n\n(a) Find the mass of one sheet in kilograms.\n\n(b) Write the mass of one sheet in grams ($1$ kg $= 1000$ g).\n\n(c) Find the mass of $100$ packs.",
+     "answer": "(a) $0.0048$ kg (b) $4.8$ g (c) $480$ kg",
+     "solution": "**Key idea:** Dividing or multiplying by $10$, $100$ or $1000$ shifts the decimal point.\n\n1. (a) $4.8 \\div 1000 = 0.0048$ kg\n2. (b) $0.0048 \\times 1000 = 4.8$ g\n3. (c) $4.8 \\times 100 = 480$ kg\n\n**Answer:** (a) $0.0048$ kg (b) $4.8$ g (c) $480$ kg"
+    }
+   ]
+  },
+  {
+   "code": "5E",
+   "name": "Multiplying decimals",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-fractions-decimals",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "5F",
+   "name": "Dividing decimals",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N05",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "5G",
+   "name": "Connecting decimals and fractions",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N06",
+     "q": 9
+    }
+   ]
+  },
+  {
+   "code": "5H",
+   "name": "Connecting decimals and percentages",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 1
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write each decimal as a percentage: (a) $0.47$ (b) $0.6$ (c) $1.25$",
+     "answer": "(a) $47\\%$ (b) $60\\%$ (c) $125\\%$",
+     "solution": "**Key idea:** To change a decimal to a percentage, multiply by $100$.\n\n1. (a) $0.47 \\times 100 = 47\\%$\n2. (b) $0.6 \\times 100 = 60\\%$\n3. (c) $1.25 \\times 100 = 125\\%$\n\n**Answer:** (a) $47\\%$ (b) $60\\%$ (c) $125\\%$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write each percentage as a decimal: (a) $8\\%$ (b) $62.5\\%$ (c) $140\\%$",
+     "answer": "(a) $0.08$ (b) $0.625$ (c) $1.4$",
+     "solution": "**Key idea:** To change a percentage to a decimal, divide by $100$.\n\n1. (a) $8 \\div 100 = 0.08$\n2. (b) $62.5 \\div 100 = 0.625$\n3. (c) $140 \\div 100 = 1.4$\n\n**Answer:** (a) $0.08$ (b) $0.625$ (c) $1.4$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Three basketball players compare their shooting. Kai scored with $0.68$ of his shots, Lina scored with $65\\%$ of hers and Ruby scored with $\\dfrac{7}{10}$ of hers.\n\n(a) Write each player's result as a percentage.\n\n(b) List the players from best to worst.",
+     "answer": "(a) Kai $68\\%$, Lina $65\\%$, Ruby $70\\%$ (b) Ruby, Kai, Lina",
+     "solution": "**Key idea:** Write all the results in the same form before comparing.\n\n1. (a) Kai: $0.68 \\times 100 = 68\\%$\n2. (a) Lina: $65\\%$\n3. (a) Ruby: $\\dfrac{7}{10} = \\dfrac{70}{100} = 70\\%$\n4. (b) $70\\% > 68\\% > 65\\%$\n\n**Answer:** (a) Kai $68\\%$, Lina $65\\%$, Ruby $70\\%$ (b) Ruby, Kai, Lina"
+    }
+   ]
+  },
+  {
+   "code": "5I",
+   "name": "Expressing proportions using decimals, fractions and percentages",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N07",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N10",
+     "q": 14
+    },
+    {
+     "src": "we",
+     "slug": "year-7-percentages",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-percentages",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "6A",
+   "name": "Introduction to negative integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 16
+    }
+   ]
+  },
+  {
+   "code": "6B",
+   "name": "Adding and subtracting positive integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-7-integers",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-integers",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-integers",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "6C",
+   "name": "Adding and subtracting negative integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N03",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-7-integers",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-integers",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "6D",
+   "name": "Multiplying and dividing integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N08",
+     "q": 20
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate: (a) $(-7) \\times 8$ (b) $(-6) \\times (-9)$",
+     "answer": "(a) $-56$ (b) $54$",
+     "solution": "**Key idea:** Different signs give a negative product; the same signs give a positive product.\n\n1. (a) $7 \\times 8 = 56$; signs differ, so $-56$\n2. (b) $6 \\times 9 = 54$; signs are the same, so $54$\n\n**Answer:** (a) $-56$ (b) $54$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate: (a) $(-72) \\div 9$ (b) $(-45) \\div (-5)$",
+     "answer": "(a) $-8$ (b) $9$",
+     "solution": "**Key idea:** Division follows the same sign rules as multiplication.\n\n1. (a) $72 \\div 9 = 8$; signs differ, so $-8$\n2. (b) $45 \\div 5 = 9$; signs are the same, so $9$\n\n**Answer:** (a) $-8$ (b) $9$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $(-2) \\times (-3) \\times (-5)$.",
+     "answer": "$-30$",
+     "solution": "**Key idea:** Multiply two numbers at a time, applying the sign rule each time.\n\n1. $(-2) \\times (-3) = 6$\n2. $6 \\times (-5) = -30$\n\n**Answer:** $-30$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "At midnight the temperature is $4°\\text{C}$. It falls by $3°\\text{C}$ every hour for $6$ hours.\n\n(a) Write a multiplication for the total change in temperature and evaluate it.\n\n(b) What is the temperature after $6$ hours?\n\n(c) On another night the temperature fell steadily from $4°\\text{C}$ to $-20°\\text{C}$ over $8$ hours. Find the change per hour.",
+     "answer": "(a) $6 \\times (-3) = -18$ (b) $-14°\\text{C}$ (c) $-3°\\text{C}$ per hour",
+     "solution": "**Key idea:** A fall in temperature is a negative change.\n\n1. (a) $6 \\times (-3) = -18$, a fall of $18°\\text{C}$\n2. (b) $4 + (-18) = -14$, so $-14°\\text{C}$\n3. (c) Total change: $-20 - 4 = -24$\n4. (c) Change per hour: $(-24) \\div 8 = -3$, a fall of $3°\\text{C}$ per hour\n\n**Answer:** (a) $6 \\times (-3) = -18$ (b) $-14°\\text{C}$ (c) $-3°\\text{C}$ per hour"
+    }
+   ]
+  },
+  {
+   "code": "6E",
+   "name": "Order of operations with integers",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $-3 + 4 \\times (-2)$.",
+     "answer": "$-11$",
+     "solution": "**Key idea:** Multiplication comes before addition.\n\n1. $4 \\times (-2) = -8$\n2. $-3 + (-8) = -11$\n\n**Answer:** $-11$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $(-12) \\div (-3) - 5$.",
+     "answer": "$-1$",
+     "solution": "**Key idea:** Divide first, then subtract.\n\n1. $(-12) \\div (-3) = 4$\n2. $4 - 5 = -1$\n\n**Answer:** $-1$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $6 - (-4) \\times 3$.",
+     "answer": "$18$",
+     "solution": "**Key idea:** Multiply before subtracting; subtracting a negative is the same as adding.\n\n1. $(-4) \\times 3 = -12$\n2. $6 - (-12) = 6 + 12 = 18$\n\n**Answer:** $18$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Evaluate $(-20) \\div (2 - 7) + (-3) \\times 2$.",
+     "answer": "$-2$",
+     "solution": "**Key idea:** Brackets first, then multiplication and division, then addition.\n\n1. Brackets: $2 - 7 = -5$\n2. $(-20) \\div (-5) = 4$ and $(-3) \\times 2 = -6$\n3. $4 + (-6) = -2$\n\n**Answer:** $-2$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "In a quiz, a correct answer scores $3$ points, a wrong answer scores $-2$ points and a skipped question scores $0$.\n\n(a) Ari gets $8$ correct, $7$ wrong and skips $5$. Write a single expression for Ari's score.\n\n(b) Evaluate the expression.\n\n(c) Bea gets $6$ correct and her total score is $-4$. How many did she get wrong?",
+     "answer": "(a) $8 \\times 3 + 7 \\times (-2) + 5 \\times 0$ (b) $10$ (c) $11$",
+     "solution": "**Key idea:** Multiply each count by its points value, then add the results.\n\n1. (a) $8 \\times 3 + 7 \\times (-2) + 5 \\times 0$\n2. (b) $24 + (-14) + 0 = 10$\n3. (c) Bea's correct answers give $6 \\times 3 = 18$\n4. (c) Her wrong answers must give $-4 - 18 = -22$\n5. (c) $(-22) \\div (-2) = 11$ wrong answers\n\n**Answer:** (a) $8 \\times 3 + 7 \\times (-2) + 5 \\times 0$ (b) $10$ (c) $11$"
+    }
+   ]
+  },
+  {
+   "code": "6F",
+   "name": "Substituting integers",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 16
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $a = -3$, evaluate $5a + 2$.",
+     "answer": "$-13$",
+     "solution": "**Key idea:** Substitute using brackets around the negative number, then use the order of operations.\n\n1. $5 \\times (-3) + 2$\n2. $= -15 + 2 = -13$\n\n**Answer:** $-13$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $x = -2$ and $y = 4$, evaluate $x^2 - 3y$.",
+     "answer": "$-8$",
+     "solution": "**Key idea:** $x^2$ means $x \\times x$; a negative number squared is positive.\n\n1. $x^2 = (-2) \\times (-2) = 4$\n2. $3y = 3 \\times 4 = 12$\n3. $4 - 12 = -8$\n\n**Answer:** $-8$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "If $m = -6$ and $n = -2$, evaluate $\\dfrac{m}{n} - mn$.",
+     "answer": "$-9$",
+     "solution": "**Key idea:** Substitute both values in brackets and apply the sign rules.\n\n1. $\\dfrac{m}{n} = \\dfrac{-6}{-2} = 3$\n2. $mn = (-6) \\times (-2) = 12$\n3. $3 - 12 = -9$\n\n**Answer:** $-9$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "The formula $C = \\dfrac{5(F - 32)}{9}$ converts a temperature $F$ in degrees Fahrenheit to $C$ in degrees Celsius.\n\n(a) Convert $14°\\text{F}$ to degrees Celsius.\n\n(b) Convert $-4°\\text{F}$ to degrees Celsius.",
+     "answer": "(a) $-10°\\text{C}$ (b) $-20°\\text{C}$",
+     "solution": "**Key idea:** Substitute, work out the bracket first, then multiply and divide.\n\n1. (a) $F - 32 = 14 - 32 = -18$\n2. (a) $C = \\dfrac{5 \\times (-18)}{9} = \\dfrac{-90}{9} = -10$\n3. (b) $F - 32 = -4 - 32 = -36$\n4. (b) $C = \\dfrac{5 \\times (-36)}{9} = \\dfrac{-180}{9} = -20$\n\n**Answer:** (a) $-10°\\text{C}$ (b) $-20°\\text{C}$"
+    }
+   ]
+  },
+  {
+   "code": "6G",
+   "name": "The Cartesian plane",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A05",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 14
+    }
+   ]
+  },
+  {
+   "code": "7A",
+   "name": "Points, lines, intervals and angles",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Classify each angle as acute, right, obtuse, straight, reflex or a revolution:\n\n(a) $37°$ (b) $90°$ (c) $145°$ (d) $180°$ (e) $212°$ (f) $360°$",
+     "answer": "(a) acute (b) right (c) obtuse (d) straight (e) reflex (f) revolution",
+     "solution": "**Key idea:** Acute is between $0°$ and $90°$, obtuse between $90°$ and $180°$, reflex between $180°$ and $360°$.\n\n1. (a) $0° < 37° < 90°$: acute\n2. (b) exactly $90°$: right\n3. (c) $90° < 145° < 180°$: obtuse\n4. (d) exactly $180°$: straight\n5. (e) $180° < 212° < 360°$: reflex\n6. (f) exactly $360°$: revolution\n\n**Answer:** (a) acute (b) right (c) obtuse (d) straight (e) reflex (f) revolution"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two rays $BA$ and $BC$ start at the point $B$ and form an angle. Name the vertex and write the angle in two different ways using three letters.",
+     "answer": "Vertex $B$; $\\angle ABC$ or $\\angle CBA$",
+     "solution": "**Key idea:** When an angle is named with three letters, the vertex is always the middle letter.\n\n1. The rays start at $B$, so $B$ is the vertex\n2. Put $B$ in the middle with a point from each arm on either side: $\\angle ABC$ or $\\angle CBA$\n\n**Answer:** Vertex $B$; $\\angle ABC$ or $\\angle CBA$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the smaller angle between the hour hand and minute hand of a clock at:\n\n(a) $3{:}00$ (b) $5{:}00$",
+     "answer": "(a) $90°$ (b) $150°$",
+     "solution": "**Key idea:** A full turn is $360°$ and there are $12$ hour marks, so each hour mark is $360° \\div 12 = 30°$ apart.\n\n1. (a) At $3{:}00$ the hands are $3$ hour marks apart: $3 \\times 30° = 90°$\n2. (b) At $5{:}00$ the hands are $5$ hour marks apart: $5 \\times 30° = 150°$\n\n**Answer:** (a) $90°$ (b) $150°$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Five points $P, Q, R, S$ and $T$ are marked on a page so that no three of them lie on the same straight line. How many different intervals can be drawn joining two of the points?",
+     "answer": "$10$",
+     "solution": "**Key idea:** An interval is a part of a line with two endpoints. Count each pair of points once.\n\n1. From $P$: $PQ, PR, PS, PT$ ($4$ intervals)\n2. From $Q$ (not counting $QP$ again): $QR, QS, QT$ ($3$)\n3. From $R$: $RS, RT$ ($2$); from $S$: $ST$ ($1$)\n4. Total: $4 + 3 + 2 + 1 = 10$\n\n**Answer:** $10$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "An angle measures $128°$.\n\n(a) What type of angle is it?\n\n(b) How many degrees larger than a right angle is it?\n\n(c) What size is the reflex angle that, together with this angle, makes a full revolution?\n\n(d) How many degrees must be added to it to make a straight angle?",
+     "answer": "(a) obtuse (b) $38°$ (c) $232°$ (d) $52°$",
+     "solution": "**Key idea:** A right angle is $90°$, a straight angle is $180°$ and a revolution is $360°$.\n\n1. (a) $90° < 128° < 180°$, so it is obtuse\n2. (b) $128° - 90° = 38°$\n3. (c) $360° - 128° = 232°$\n4. (d) $180° - 128° = 52°$\n\n**Answer:** (a) obtuse (b) $38°$ (c) $232°$ (d) $52°$"
+    }
+   ]
+  },
+  {
+   "code": "7B",
+   "name": "Adjacent and vertically opposite angles",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two straight lines cross at a point, forming four angles. One of the angles is $47°$. Find the sizes of the other three angles, giving reasons.",
+     "answer": "$133°$, $47°$ and $133°$",
+     "solution": "**Key idea:** Vertically opposite angles are equal, and adjacent angles on a straight line add to $180°$.\n\n1. The angle vertically opposite the $47°$ angle is also $47°$\n2. Each angle next to the $47°$ angle lies on a straight line with it: $180° - 47° = 133°$\n3. The remaining angle is vertically opposite one of the $133°$ angles, so it is $133°$\n\n**Answer:** $133°$, $47°$ and $133°$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Points $A$, $O$ and $C$ lie on a straight line, with $O$ between $A$ and $C$. A ray $OB$ is drawn from $O$, forming two adjacent angles: $\\angle AOB = (2x + 10)°$ and $\\angle BOC = (3x + 20)°$.\n\n(a) Explain why $(2x + 10) + (3x + 20) = 180$.\n\n(b) Find $x$.\n\n(c) Find the size of each angle.",
+     "answer": "(a) The angles are adjacent on a straight line (b) $x = 30$ (c) $\\angle AOB = 70°$, $\\angle BOC = 110°$",
+     "solution": "**Key idea:** Adjacent angles that together form a straight angle are supplementary (add to $180°$).\n\n1. (a) $\\angle AOB$ and $\\angle BOC$ together make the straight angle $\\angle AOC = 180°$\n2. (b) Collect like terms: $5x + 30 = 180$\n3. (b) $5x = 150$, so $x = 30$\n4. (c) $\\angle AOB = 2 \\times 30 + 10 = 70°$ and $\\angle BOC = 3 \\times 30 + 20 = 110°$\n5. (c) Check: $70° + 110° = 180°$ ✓\n\n**Answer:** (a) The angles are adjacent on a straight line (b) $x = 30$ (c) $\\angle AOB = 70°$, $\\angle BOC = 110°$"
+    }
+   ]
+  },
+  {
+   "code": "7C",
+   "name": "Transversal and parallel lines",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "7D",
+   "name": "Solving compound problems with parallel lines",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M04",
+     "q": 19
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two horizontal lines $AB$ and $CD$ are parallel, with $AB$ above $CD$, and $A$ and $C$ on the left. A transversal $EF$ crosses $AB$ at $G$ and $CD$ at $H$, with $E$ above line $AB$ and $F$ below line $CD$. $\\angle AGH = 72°$. Find $\\angle DHF$, giving reasons.",
+     "answer": "$\\angle DHF = 108°$",
+     "solution": "**Key idea:** Co-interior angles on parallel lines add to $180°$, and vertically opposite angles are equal.\n\n1. $\\angle AGH$ and $\\angle GHC$ are co-interior (both between the parallel lines, on the left of the transversal), so $\\angle GHC = 180° - 72° = 108°$\n2. $\\angle DHF$ is vertically opposite $\\angle GHC$, so $\\angle DHF = 108°$\n\n**Answer:** $\\angle DHF = 108°$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two horizontal lines $AB$ and $CD$ are parallel, with $AB$ above $CD$, and $A$ and $C$ on the left. A transversal $EF$ crosses $AB$ at $G$ and $CD$ at $H$, with $E$ above line $AB$ and $F$ below line $CD$. $\\angle EGB = 115°$. Find $\\angle CHG$, giving reasons.",
+     "answer": "$\\angle CHG = 65°$",
+     "solution": "**Key idea:** Corresponding angles on parallel lines are equal, and angles on a straight line add to $180°$.\n\n1. $\\angle EGB$ is above line $AB$ on the right of the transversal; $\\angle GHD$ is above line $CD$ on the right. They are corresponding, so $\\angle GHD = 115°$\n2. $\\angle CHG$ and $\\angle GHD$ are adjacent angles on the straight line $CD$, so $\\angle CHG = 180° - 115° = 65°$\n\n**Answer:** $\\angle CHG = 65°$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two horizontal lines are parallel. Point $B$ is on the upper line and point $A$ is on the upper line to the right of $B$. Point $D$ is on the lower line and point $C$ is on the lower line to the right of $D$. Point $P$ lies between the two lines, to the right of both $B$ and $D$. Intervals $BP$ and $DP$ are drawn. If $\\angle ABP = 40°$ and $\\angle CDP = 55°$, find $\\angle BPD$.",
+     "answer": "$\\angle BPD = 95°$",
+     "solution": "**Key idea:** Draw an extra line through $P$ parallel to the two given lines; this splits $\\angle BPD$ into two alternate angles.\n\n1. Draw a line through $P$ parallel to both lines, with point $Q$ on it to the right of $P$\n2. $\\angle BPQ = \\angle ABP = 40°$ (alternate angles, upper line parallel to $PQ$)\n3. $\\angle DPQ = \\angle CDP = 55°$ (alternate angles, lower line parallel to $PQ$)\n4. $\\angle BPD = 40° + 55° = 95°$\n\n**Answer:** $\\angle BPD = 95°$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Two horizontal lines $AB$ and $CD$ are parallel, with $AB$ above $CD$, $A$ to the left of $B$ and $C$ to the left of $D$. Point $P$ is on $AB$. Points $Q$ and $R$ are on $CD$, with $Q$ to the left of $R$. Intervals $PQ$ and $PR$ are drawn, forming triangle $PQR$. $\\angle APQ = 58°$ and $\\angle BPR = 47°$.\n\n(a) Find $\\angle PQR$, giving a reason.\n\n(b) Find $\\angle PRQ$, giving a reason.\n\n(c) Find $\\angle QPR$, giving a reason.",
+     "answer": "(a) $58°$ (b) $47°$ (c) $75°$",
+     "solution": "**Key idea:** Alternate angles on parallel lines are equal, and angles on a straight line add to $180°$.\n\n1. (a) $\\angle PQR$ and $\\angle APQ$ are alternate angles on parallel lines (transversal $PQ$), so $\\angle PQR = 58°$\n2. (b) $\\angle PRQ$ and $\\angle BPR$ are alternate angles on parallel lines (transversal $PR$), so $\\angle PRQ = 47°$\n3. (c) $\\angle APQ$, $\\angle QPR$ and $\\angle BPR$ together form the straight angle at $P$ on line $AB$\n4. (c) $\\angle QPR = 180° - 58° - 47° = 75°$\n5. Check: the triangle's angles are $58° + 47° + 75° = 180°$ ✓\n\n**Answer:** (a) $58°$ (b) $47°$ (c) $75°$"
+    }
+   ]
+  },
+  {
+   "code": "7E",
+   "name": "Classifying and constructing triangles",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 9
+    },
+    {
+     "src": "we",
+     "slug": "year-7-geometry",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "7F",
+   "name": "Classifying quadrilaterals and other polygons",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP02",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles-in-triangles",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles-in-triangles",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-geometry",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-geometry",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-geometry",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "7G",
+   "name": "Angle sum of a triangle",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M05",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles-in-triangles",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles-in-triangles",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles-in-triangles",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-angles",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-geometry",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "7H",
+   "name": "Symmetry",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP04",
+     "q": 12
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "State the number of lines of symmetry and the order of rotational symmetry of:\n\n(a) a square (b) a rectangle that is not a square (c) an equilateral triangle (d) a parallelogram that is not a rectangle or a rhombus",
+     "answer": "(a) $4$ lines, order $4$ (b) $2$ lines, order $2$ (c) $3$ lines, order $3$ (d) $0$ lines, order $2$",
+     "solution": "**Key idea:** A line of symmetry folds a shape onto itself. The order of rotational symmetry is the number of times a shape matches itself in one full turn.\n\n1. (a) Square: $2$ diagonals and $2$ lines through midpoints of opposite sides, so $4$ lines; it matches itself every quarter turn, order $4$\n2. (b) Rectangle: $2$ lines through midpoints of opposite sides (the diagonals do not work); it matches itself every half turn, order $2$\n3. (c) Equilateral triangle: $3$ lines, one from each vertex to the midpoint of the opposite side; order $3$\n4. (d) Parallelogram: no fold works, so $0$ lines; it matches itself after a half turn about its centre, order $2$\n\n**Answer:** (a) $4$ lines, order $4$ (b) $2$ lines, order $2$ (c) $3$ lines, order $3$ (d) $0$ lines, order $2$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "State the number of lines of symmetry and the order of rotational symmetry of:\n\n(a) a regular hexagon (b) a regular octagon",
+     "answer": "(a) $6$ lines, order $6$ (b) $8$ lines, order $8$",
+     "solution": "**Key idea:** A regular polygon with $n$ sides has $n$ lines of symmetry and rotational symmetry of order $n$.\n\n1. (a) Hexagon: $n = 6$, so $6$ lines and order $6$\n2. (b) Octagon: $n = 8$, so $8$ lines and order $8$\n\n**Answer:** (a) $6$ lines, order $6$ (b) $8$ lines, order $8$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For each capital letter written in a simple block style, state the number of lines of symmetry and the order of rotational symmetry:\n\n(a) H (b) N (c) A (d) S",
+     "answer": "(a) $2$ lines, order $2$ (b) $0$ lines, order $2$ (c) $1$ line, order $1$ (d) $0$ lines, order $2$",
+     "solution": "**Key idea:** A shape with no rotational symmetry still matches itself once per full turn, so its order is $1$.\n\n1. (a) H has a vertical and a horizontal line of symmetry, and looks the same after a half turn: $2$ lines, order $2$\n2. (b) N has no line of symmetry but looks the same after a half turn: $0$ lines, order $2$\n3. (c) A has one vertical line of symmetry and only matches itself after a full turn: $1$ line, order $1$\n4. (d) S has no line of symmetry but looks the same after a half turn: $0$ lines, order $2$\n\n**Answer:** (a) $2$ lines, order $2$ (b) $0$ lines, order $2$ (c) $1$ line, order $1$ (d) $0$ lines, order $2$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) How many lines of symmetry does a kite (that is not a rhombus) have, and what is its order of rotational symmetry?\n\n(b) How many lines of symmetry does a rhombus (that is not a square) have, and where are they?\n\n(c) Is it possible for a shape to have rotational symmetry of order $2$ but no lines of symmetry? Give an example or explain why not.",
+     "answer": "(a) $1$ line, order $1$ (b) $2$ lines, along its diagonals (c) Yes, for example a parallelogram that is not a rectangle or rhombus",
+     "solution": "**Key idea:** Test each fold line and each turn separately; the two kinds of symmetry do not always go together.\n\n1. (a) A kite folds onto itself only along the diagonal joining the vertices where the equal sides meet: $1$ line. It only matches itself after a full turn, so order $1$\n2. (b) A rhombus folds onto itself along both diagonals: $2$ lines. (It also has rotational symmetry of order $2$.)\n3. (c) Yes. A parallelogram that is not a rectangle or rhombus matches itself after a half turn about its centre (order $2$) but cannot be folded onto itself (no lines). The letter S is another example.\n\n**Answer:** (a) $1$ line, order $1$ (b) $2$ lines, along its diagonals (c) Yes, for example a parallelogram that is not a rectangle or rhombus"
+    }
+   ]
+  },
+  {
+   "code": "7I",
+   "name": "Reflection and rotation",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-transformations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-transformations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-transformations",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "7J",
+   "name": "Translation",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP03",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-transformations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-transformations",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "7K",
+   "name": "Drawing solids",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 19
+    }
+   ]
+  },
+  {
+   "code": "7L",
+   "name": "Nets of solids",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7SP01",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "8A",
+   "name": "Collecting and classifying data",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 18
+    }
+   ]
+  },
+  {
+   "code": "8B",
+   "name": "Summarising data numerically",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-dot-plots-stem-and-leaf",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-statistics",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-statistics",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-statistics",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-statistics",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-statistics",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8C",
+   "name": "Column graphs and dot plots",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST03",
+     "q": 10
+    },
+    {
+     "src": "we",
+     "slug": "year-7-dot-plots-stem-and-leaf",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "8D",
+   "name": "Line graphs",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A04",
+     "q": 10
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A line graph shows the temperature during one day. The plotted points, joined by straight line segments, are: $6$ am $9°\\text{C}$, $9$ am $14°\\text{C}$, $12$ pm $21°\\text{C}$, $3$ pm $23°\\text{C}$, $6$ pm $17°\\text{C}$.\n\n(a) Between which two consecutive readings did the temperature rise the most?\n\n(b) Use the graph to estimate the temperature at $4{:}30$ pm.",
+     "answer": "(a) Between $9$ am and $12$ pm (b) $20°\\text{C}$",
+     "solution": "**Key idea:** The change between readings is found by subtraction. Halfway between two times on a straight segment, the value is halfway between the two readings.\n\n1. (a) Changes: $14 - 9 = 5$, $21 - 14 = 7$, $23 - 21 = 2$, $17 - 23 = -6$\n2. (a) The biggest rise is $7°\\text{C}$, from $9$ am to $12$ pm\n3. (b) $4{:}30$ pm is halfway between $3$ pm and $6$ pm, so the reading is halfway between $23$ and $17$: $\\dfrac{23 + 17}{2} = 20$\n\n**Answer:** (a) Between $9$ am and $12$ pm (b) $20°\\text{C}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A line graph shows the height of a seedling measured at the end of each week. The plotted points (week, height in cm) are: $(0, 2)$, $(1, 5)$, $(2, 9)$, $(3, 14)$, $(4, 18)$, $(5, 21)$.\n\n(a) How much did the seedling grow over the $5$ weeks?\n\n(b) During which week did it grow the most?\n\n(c) Find the average growth per week.\n\n(d) If it grows by the same amount in week $6$ as it did in week $5$, predict its height at the end of week $6$.",
+     "answer": "(a) $19$ cm (b) Week $3$ (from week $2$ to week $3$) (c) $3.8$ cm per week (d) $24$ cm",
+     "solution": "**Key idea:** Growth in a week is the difference between consecutive heights. The steepest segment of the graph shows the fastest growth.\n\n1. (a) $21 - 2 = 19$ cm\n2. (b) Weekly growth: $3, 4, 5, 4, 3$ cm. The largest is $5$ cm, from week $2$ to week $3$\n3. (c) $19 \\div 5 = 3.8$ cm per week\n4. (d) Week $5$ growth: $21 - 18 = 3$ cm, so week $6$ height $= 21 + 3 = 24$ cm\n\n**Answer:** (a) $19$ cm (b) Week $3$ (from week $2$ to week $3$) (c) $3.8$ cm per week (d) $24$ cm"
+    }
+   ]
+  },
+  {
+   "code": "8E",
+   "name": "Stem-and-leaf plots",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7ST02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-dot-plots-stem-and-leaf",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-dot-plots-stem-and-leaf",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-dot-plots-stem-and-leaf",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8F",
+   "name": "Sector graphs and divided bar graphs",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In a survey of $40$ students, $10$ chose soccer as their favourite sport. What angle would the soccer sector have in a sector graph?",
+     "answer": "$90°$",
+     "solution": "**Key idea:** Sector angle $= \\dfrac{\\text{frequency}}{\\text{total}} \\times 360°$.\n\n1. Fraction choosing soccer: $\\dfrac{10}{40} = \\dfrac{1}{4}$\n2. Angle: $\\dfrac{1}{4} \\times 360° = 90°$\n\n**Answer:** $90°$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A sector graph shows how $120$ people travel to work. The bus sector has an angle of $72°$. How many people travel by bus?",
+     "answer": "$24$ people",
+     "solution": "**Key idea:** The sector angle as a fraction of $360°$ is the fraction of people in that category.\n\n1. Fraction: $\\dfrac{72}{360} = \\dfrac{1}{5}$\n2. People: $\\dfrac{1}{5} \\times 120 = 24$\n\n**Answer:** $24$ people"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A divided bar graph is $20$ cm long and shows how $200$ students get to school. The section for walking is $6$ cm long. What percentage of students walk, and how many students is this?",
+     "answer": "$30\\%$, which is $60$ students",
+     "solution": "**Key idea:** Each section's length as a fraction of the whole bar is the fraction of the total.\n\n1. Fraction: $\\dfrac{6}{20} = \\dfrac{30}{100} = 30\\%$\n2. Students: $30\\%$ of $200 = 0.3 \\times 200 = 60$\n\n**Answer:** $30\\%$, which is $60$ students"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A family's weekly spending is: rent \\$600, food \\$300, transport \\$150 and other \\$150. Find the sector angle for each category in a sector graph.",
+     "answer": "Rent $180°$, food $90°$, transport $45°$, other $45°$",
+     "solution": "**Key idea:** Find the total first, then each angle is its fraction of $360°$.\n\n1. Total: $600 + 300 + 150 + 150 = 1200$\n2. Rent: $\\dfrac{600}{1200} \\times 360° = \\dfrac{1}{2} \\times 360° = 180°$\n3. Food: $\\dfrac{300}{1200} \\times 360° = \\dfrac{1}{4} \\times 360° = 90°$\n4. Transport and other: $\\dfrac{150}{1200} \\times 360° = \\dfrac{1}{8} \\times 360° = 45°$ each\n5. Check: $180 + 90 + 45 + 45 = 360$ ✓\n\n**Answer:** Rent $180°$, food $90°$, transport $45°$, other $45°$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "In a survey, $60$ students chose their favourite fruit: apple $21$, banana $15$, mango $18$, other $6$.\n\n(a) Find the percentage of students in each category.\n\n(b) Find the sector angle for each category.\n\n(c) The results are to be shown on a divided bar graph $15$ cm long. Find the length of each section. (You do not need to draw it.)",
+     "answer": "(a) apple $35\\%$, banana $25\\%$, mango $30\\%$, other $10\\%$ (b) $126°$, $90°$, $108°$, $36°$ (c) $5.25$ cm, $3.75$ cm, $4.5$ cm, $1.5$ cm",
+     "solution": "**Key idea:** Each category's share of the total is used to find its percentage, its share of $360°$ and its share of the bar length.\n\n1. (a) Apple $\\dfrac{21}{60} = \\dfrac{35}{100} = 35\\%$; banana $\\dfrac{15}{60} = 25\\%$; mango $\\dfrac{18}{60} = 30\\%$; other $\\dfrac{6}{60} = 10\\%$\n2. (b) Apple $0.35 \\times 360° = 126°$; banana $0.25 \\times 360° = 90°$; mango $0.3 \\times 360° = 108°$; other $0.1 \\times 360° = 36°$. Check: total $360°$ ✓\n3. (c) Apple $0.35 \\times 15 = 5.25$ cm; banana $0.25 \\times 15 = 3.75$ cm; mango $0.3 \\times 15 = 4.5$ cm; other $0.1 \\times 15 = 1.5$ cm. Check: total $15$ cm ✓\n\n**Answer:** (a) apple $35\\%$, banana $25\\%$, mango $30\\%$, other $10\\%$ (b) $126°$, $90°$, $108°$, $36°$ (c) $5.25$ cm, $3.75$ cm, $4.5$ cm, $1.5$ cm"
+    }
+   ]
+  },
+  {
+   "code": "8G",
+   "name": "Describing probability",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 12
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A standard six-sided die is rolled. Describe the chance of each event using one of: impossible, unlikely, even chance, likely, certain.\n\n(a) rolling a $7$ (b) rolling an even number (c) rolling a number less than $6$ (d) rolling a number from $1$ to $6$",
+     "answer": "(a) impossible (b) even chance (c) likely (d) certain",
+     "solution": "**Key idea:** Compare the number of favourable outcomes with the $6$ possible outcomes.\n\n1. (a) No face shows $7$: $0$ out of $6$, impossible\n2. (b) $2, 4, 6$: $3$ out of $6$, even chance\n3. (c) $1, 2, 3, 4, 5$: $5$ out of $6$, likely\n4. (d) All $6$ outcomes: certain\n\n**Answer:** (a) impossible (b) even chance (c) likely (d) certain"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A bag holds $3$ red, $5$ blue and $2$ green marbles. One marble is chosen without looking.\n\n(a) List the colours from least likely to most likely.\n\n(b) What is the probability of choosing blue, and how would you describe this chance in words?",
+     "answer": "(a) green, red, blue (b) $\\dfrac{1}{2}$, even chance",
+     "solution": "**Key idea:** The colour with more marbles is more likely to be chosen.\n\n1. (a) Green $2$, red $3$, blue $5$, so green, red, blue\n2. (b) Total marbles: $3 + 5 + 2 = 10$. $P(\\text{blue}) = \\dfrac{5}{10} = \\dfrac{1}{2}$, which is an even chance\n\n**Answer:** (a) green, red, blue (b) $\\dfrac{1}{2}$, even chance"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A spinner has $8$ equal sectors: $4$ yellow, $3$ blue and $1$ red.\n\n(a) Which colour is most likely?\n\n(b) Describe in words the chance of landing on yellow, and the chance of landing on red.\n\n(c) Redesign the $8$-sector spinner so that blue and red are equally likely and yellow is unlikely but still possible.",
+     "answer": "(a) yellow (b) yellow: even chance; red: unlikely (c) For example $2$ yellow, $3$ blue, $3$ red",
+     "solution": "**Key idea:** Probability $= \\dfrac{\\text{favourable sectors}}{\\text{total sectors}}$ when all sectors are equal.\n\n1. (a) Yellow has the most sectors ($4$), so it is most likely\n2. (b) $P(\\text{yellow}) = \\dfrac{4}{8} = \\dfrac{1}{2}$: even chance. $P(\\text{red}) = \\dfrac{1}{8}$: unlikely\n3. (c) Blue and red need the same number of sectors, and yellow needs at least $1$ but fewer than half. For example $2$ yellow, $3$ blue, $3$ red gives $P(\\text{yellow}) = \\dfrac{2}{8} = \\dfrac{1}{4}$ (unlikely) and $P(\\text{blue}) = P(\\text{red}) = \\dfrac{3}{8}$. Other answers are possible.\n\n**Answer:** (a) yellow (b) yellow: even chance; red: unlikely (c) For example $2$ yellow, $3$ blue, $3$ red"
+    }
+   ]
+  },
+  {
+   "code": "8H",
+   "name": "Theoretical probability in single-step experiments",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-7-probability",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-probability",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-probability",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-probability",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8I",
+   "name": "Experimental probability in single-step experiments",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7P02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-probability",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "9A",
+   "name": "Introduction to equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 9
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Is $x = 4$ a solution of $3x + 5 = 17$?",
+     "answer": "Yes",
+     "solution": "**Key idea:** A value is a solution if substituting it makes both sides equal.\n\n1. Left side: $3 \\times 4 + 5 = 12 + 5 = 17$\n2. Right side: $17$\n3. Both sides are equal, so $x = 4$ is a solution\n\n**Answer:** Yes"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which of $k = 1, 2, 3, 4, 5$ is a solution of $2(k + 3) = 16$?",
+     "answer": "$k = 5$",
+     "solution": "**Key idea:** Substitute each value and see which makes the equation true.\n\n1. $k = 1$: $2 \\times 4 = 8$; $k = 2$: $2 \\times 5 = 10$; $k = 3$: $2 \\times 6 = 12$\n2. $k = 4$: $2 \\times 7 = 14$; $k = 5$: $2 \\times 8 = 16$ ✓\n\n**Answer:** $k = 5$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "I think of a number $n$, multiply it by $6$ and then subtract $4$. The result is $32$.\n\n(a) Write an equation for this.\n\n(b) Check whether $n = 6$ is the solution.",
+     "answer": "(a) $6n - 4 = 32$ (b) Yes, $n = 6$ is the solution",
+     "solution": "**Key idea:** Turn each step of the description into an operation on $n$.\n\n1. (a) Multiply by $6$: $6n$; subtract $4$: $6n - 4$; result $32$: $6n - 4 = 32$\n2. (b) $6 \\times 6 - 4 = 36 - 4 = 32$ ✓\n\n**Answer:** (a) $6n - 4 = 32$ (b) Yes, $n = 6$ is the solution"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "At the cinema, adult tickets cost \\$12 and child tickets cost \\$8. A family buys $2$ adult tickets and $c$ child tickets for a total of \\$56.\n\n(a) Write an equation for this situation.\n\n(b) Is $c = 3$ a solution?\n\n(c) Is $c = 4$ a solution? How many child tickets did they buy?",
+     "answer": "(a) $24 + 8c = 56$ (b) No (c) Yes, $4$ child tickets",
+     "solution": "**Key idea:** Build the equation from the total cost, then test values by substitution.\n\n1. (a) Adults: $2 \\times 12 = 24$; children: $8c$; total: $24 + 8c = 56$\n2. (b) $24 + 8 \\times 3 = 24 + 24 = 48 \\ne 56$, so no\n3. (c) $24 + 8 \\times 4 = 24 + 32 = 56$ ✓, so they bought $4$ child tickets\n\n**Answer:** (a) $24 + 8c = 56$ (b) No (c) Yes, $4$ child tickets"
+    }
+   ]
+  },
+  {
+   "code": "9B",
+   "name": "Solving equations by inspection",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 3
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Solve by inspection:\n\n(a) $x + 9 = 23$ (b) $7m = 63$ (c) $\\dfrac{k}{4} = 6$ (d) $20 - p = 8$",
+     "answer": "(a) $x = 14$ (b) $m = 9$ (c) $k = 24$ (d) $p = 12$",
+     "solution": "**Key idea:** Ask: what number makes the equation true?\n\n1. (a) What plus $9$ gives $23$? $14$, since $14 + 9 = 23$\n2. (b) $7$ times what is $63$? $9$, since $7 \\times 9 = 63$\n3. (c) What divided by $4$ is $6$? $24$, since $24 \\div 4 = 6$\n4. (d) $20$ minus what is $8$? $12$, since $20 - 12 = 8$\n\n**Answer:** (a) $x = 14$ (b) $m = 9$ (c) $k = 24$ (d) $p = 12$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Lena is $y$ years old. Her brother is $3$ years older than her. Their ages add to $27$.\n\n(a) Write an equation involving $y$.\n\n(b) Use guess and check to solve it, showing at least two guesses.\n\n(c) How old is Lena's brother?",
+     "answer": "(a) $y + y + 3 = 27$ (b) $y = 12$ (c) $15$",
+     "solution": "**Key idea:** Guess a value, test it, and adjust the next guess depending on whether the result was too big or too small.\n\n1. (a) Brother's age is $y + 3$, so $y + (y + 3) = 27$\n2. (b) Guess $y = 10$: $10 + 13 = 23$, too small\n3. (b) Guess $y = 12$: $12 + 15 = 27$ ✓\n4. (c) Brother: $12 + 3 = 15$\n\n**Answer:** (a) $y + y + 3 = 27$ (b) $y = 12$ (c) $15$"
+    }
+   ]
+  },
+  {
+   "code": "9C",
+   "name": "Equivalent equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write the equation that results when you add $5$ to both sides of $x - 5 = 12$.",
+     "answer": "$x = 17$",
+     "solution": "**Key idea:** Doing the same operation to both sides gives an equivalent equation.\n\n1. Left: $x - 5 + 5 = x$\n2. Right: $12 + 5 = 17$\n3. New equation: $x = 17$\n\n**Answer:** $x = 17$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Start with $x = 3$. Multiply both sides by $4$, then add $7$ to both sides. Write the new equation.",
+     "answer": "$4x + 7 = 19$",
+     "solution": "**Key idea:** Build an equation by applying the same operations to both sides.\n\n1. Multiply by $4$: $4x = 12$\n2. Add $7$: $4x + 7 = 19$\n\n**Answer:** $4x + 7 = 19$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which of these equations are equivalent to $2x + 1 = 9$?\n\nA. $2x = 8$ B. $x = 4$ C. $2x + 5 = 13$ D. $4x + 1 = 18$",
+     "answer": "A, B and C",
+     "solution": "**Key idea:** Equivalent equations have the same solution. First solve $2x + 1 = 9$.\n\n1. $2x + 1 = 9$ gives $2x = 8$ and $x = 4$\n2. A: $2x = 8$ gives $x = 4$ ✓; B: $x = 4$ ✓\n3. C: $2x + 5 = 13$ gives $2x = 8$, $x = 4$ ✓\n4. D: with $x = 4$, $4 \\times 4 + 1 = 17 \\ne 18$ ✗\n\n**Answer:** A, B and C"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Are the equations $3x = 15$ and $x + 2 = 7$ equivalent? Explain.",
+     "answer": "Yes, both have solution $x = 5$",
+     "solution": "**Key idea:** Two equations are equivalent if they have exactly the same solution.\n\n1. $3x = 15$ gives $x = 5$\n2. $x + 2 = 7$ gives $x = 5$\n3. Same solution, so they are equivalent\n\n**Answer:** Yes, both have solution $x = 5$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Start with the equation $m = 6$.\n\n(a) Multiply both sides by $5$.\n\n(b) Then subtract $8$ from both sides.\n\n(c) Then divide both sides by $2$.\n\n(d) Check that $m = 6$ is a solution of your final equation.",
+     "answer": "(a) $5m = 30$ (b) $5m - 8 = 22$ (c) $\\dfrac{5m - 8}{2} = 11$ (d) $\\dfrac{30 - 8}{2} = 11$ ✓",
+     "solution": "**Key idea:** Each step applies the same operation to both sides, so every new equation has the same solution $m = 6$.\n\n1. (a) $5 \\times m = 5 \\times 6$: $5m = 30$\n2. (b) $5m - 8 = 30 - 8$: $5m - 8 = 22$\n3. (c) $\\dfrac{5m - 8}{2} = \\dfrac{22}{2}$: $\\dfrac{5m - 8}{2} = 11$\n4. (d) $\\dfrac{5 \\times 6 - 8}{2} = \\dfrac{22}{2} = 11$ ✓\n\n**Answer:** (a) $5m = 30$ (b) $5m - 8 = 22$ (c) $\\dfrac{5m - 8}{2} = 11$ (d) $\\dfrac{30 - 8}{2} = 11$ ✓"
+    }
+   ]
+  },
+  {
+   "code": "9D",
+   "name": "Solving equations algebraically",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 10
+    },
+    {
+     "src": "we",
+     "slug": "year-7-linear-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) A gym charges a \\$40 joining fee plus \\$12 per visit. Sam paid \\$148 in total. Write an equation and solve it to find how many times he visited.\n\n(b) Solve $5x - 7 = 2x + 14$.",
+     "answer": "(a) $40 + 12v = 148$, $v = 9$ visits (b) $x = 7$",
+     "solution": "**Key idea:** Undo operations in reverse order, doing the same thing to both sides each time. Collect pronumerals on one side first if they appear on both sides.\n\n1. (a) Let $v$ be the number of visits: $40 + 12v = 148$\n2. (a) Subtract $40$: $12v = 108$\n3. (a) Divide by $12$: $v = 9$. Check: $40 + 108 = 148$ ✓\n4. (b) Subtract $2x$ from both sides: $3x - 7 = 14$\n5. (b) Add $7$: $3x = 21$\n6. (b) Divide by $3$: $x = 7$. Check: $35 - 7 = 28$ and $14 + 14 = 28$ ✓\n\n**Answer:** (a) $40 + 12v = 148$, $v = 9$ visits (b) $x = 7$"
+    }
+   ]
+  },
+  {
+   "code": "9E",
+   "name": "Equations with fractions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 11
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Solve:\n\n(a) $\\dfrac{x}{5} + 3 = 7$ (b) $\\dfrac{2m - 4}{3} = 6$ (c) $\\dfrac{3k}{4} = 12$",
+     "answer": "(a) $x = 20$ (b) $m = 11$ (c) $k = 16$",
+     "solution": "**Key idea:** Remove the fraction by multiplying both sides by the denominator at the right moment.\n\n1. (a) Subtract $3$: $\\dfrac{x}{5} = 4$; multiply by $5$: $x = 20$\n2. (b) Multiply by $3$: $2m - 4 = 18$; add $4$: $2m = 22$; divide by $2$: $m = 11$\n3. (c) Multiply by $4$: $3k = 48$; divide by $3$: $k = 16$\n\n**Answer:** (a) $x = 20$ (b) $m = 11$ (c) $k = 16$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Six friends share a restaurant bill. They first take off a \\$9 voucher, then split the rest equally. Each person pays \\$14.\n\n(a) Let $b$ be the original bill. Write an equation for this situation.\n\n(b) Solve the equation to find the original bill.",
+     "answer": "(a) $\\dfrac{b - 9}{6} = 14$ (b) $b = 93$, so the bill was \\$93",
+     "solution": "**Key idea:** The amount left after the voucher is divided by $6$ to give each share.\n\n1. (a) After the voucher: $b - 9$; each share: $\\dfrac{b - 9}{6} = 14$\n2. (b) Multiply both sides by $6$: $b - 9 = 84$\n3. (b) Add $9$: $b = 93$\n4. Check: $(93 - 9) \\div 6 = 84 \\div 6 = 14$ ✓\n\n**Answer:** (a) $\\dfrac{b - 9}{6} = 14$ (b) $b = 93$, so the bill was \\$93"
+    }
+   ]
+  },
+  {
+   "code": "9F",
+   "name": "Equations with brackets",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-7-linear-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-linear-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-linear-equations",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "9G",
+   "name": "Using formulas",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A06",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-algebra",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-algebra",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-algebra",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "9H",
+   "name": "Using equations to solve problems",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-linear-equations",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "10A",
+   "name": "Metric units of length",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert:\n\n(a) $4.7$ km to metres (b) $365$ cm to metres",
+     "answer": "(a) $4700$ m (b) $3.65$ m",
+     "solution": "**Key idea:** $1$ km $= 1000$ m and $1$ m $= 100$ cm. Multiply to go to a smaller unit, divide to go to a larger unit.\n\n1. (a) $4.7 \\times 1000 = 4700$ m\n2. (b) $365 \\div 100 = 3.65$ m\n\n**Answer:** (a) $4700$ m (b) $3.65$ m"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert:\n\n(a) $82$ mm to centimetres (b) $0.6$ m to millimetres",
+     "answer": "(a) $8.2$ cm (b) $600$ mm",
+     "solution": "**Key idea:** $1$ cm $= 10$ mm and $1$ m $= 1000$ mm.\n\n1. (a) $82 \\div 10 = 8.2$ cm\n2. (b) $0.6 \\times 1000 = 600$ mm\n\n**Answer:** (a) $8.2$ cm (b) $600$ mm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write these lengths in order from shortest to longest: $1.2$ km, $950$ m, $125\\,000$ cm, $1\\,150\\,000$ mm",
+     "answer": "$950$ m, $1\\,150\\,000$ mm, $1.2$ km, $125\\,000$ cm",
+     "solution": "**Key idea:** Convert all lengths to the same unit before comparing.\n\n1. $1.2$ km $= 1.2 \\times 1000 = 1200$ m\n2. $125\\,000$ cm $= 125\\,000 \\div 100 = 1250$ m\n3. $1\\,150\\,000$ mm $= 1\\,150\\,000 \\div 1000 = 1150$ m\n4. Order: $950 < 1150 < 1200 < 1250$\n\n**Answer:** $950$ m, $1\\,150\\,000$ mm, $1.2$ km, $125\\,000$ cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A pencil is $17.5$ cm long. Eight identical pencils are placed end to end. What is the total length in metres?",
+     "answer": "$1.4$ m",
+     "solution": "**Key idea:** Find the total in centimetres, then convert to metres.\n\n1. $17.5 \\times 8 = 140$ cm\n2. $140 \\div 100 = 1.4$ m\n\n**Answer:** $1.4$ m"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "One lap of a running track is $400$ m.\n\n(a) How many laps make $5$ km?\n\n(b) Ella runs $18$ laps. How far does she run, in kilometres?\n\n(c) How much further would Ella need to run to complete $10$ km?",
+     "answer": "(a) $12.5$ laps (b) $7.2$ km (c) $2.8$ km",
+     "solution": "**Key idea:** Work in metres for the calculations, then convert to kilometres ($1$ km $= 1000$ m).\n\n1. (a) $5$ km $= 5000$ m; $5000 \\div 400 = 12.5$ laps\n2. (b) $18 \\times 400 = 7200$ m $= 7.2$ km\n3. (c) $10 - 7.2 = 2.8$ km\n\n**Answer:** (a) $12.5$ laps (b) $7.2$ km (c) $2.8$ km"
+    }
+   ]
+  },
+  {
+   "code": "10B",
+   "name": "Perimeter",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the perimeter of a rectangle that is $14$ cm long and $9$ cm wide.",
+     "answer": "$46$ cm",
+     "solution": "**Key idea:** Perimeter of a rectangle $= 2 \\times \\text{length} + 2 \\times \\text{width}$.\n\n1. $2 \\times 14 + 2 \\times 9 = 28 + 18 = 46$ cm\n\n**Answer:** $46$ cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A square has a perimeter of $52$ m. Find its side length.",
+     "answer": "$13$ m",
+     "solution": "**Key idea:** A square has four equal sides, so each side is the perimeter divided by $4$.\n\n1. $52 \\div 4 = 13$ m\n\n**Answer:** $13$ m"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the perimeter of a regular hexagon with side length $7.5$ cm.",
+     "answer": "$45$ cm",
+     "solution": "**Key idea:** A regular hexagon has $6$ equal sides.\n\n1. $6 \\times 7.5 = 45$ cm\n\n**Answer:** $45$ cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A rectangle has a perimeter of $60$ cm and a length of $18$ cm. Find its width.",
+     "answer": "$12$ cm",
+     "solution": "**Key idea:** Half the perimeter equals one length plus one width.\n\n1. Half the perimeter: $60 \\div 2 = 30$ cm\n2. Width $= 30 - 18 = 12$ cm\n\n**Answer:** $12$ cm"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A garden is shaped like a $12$ m by $8$ m rectangle with a $5$ m by $3$ m rectangle cut out of one corner (the $5$ m side of the cut-out runs along the $12$ m side, and the $3$ m side runs along the $8$ m side).\n\n(a) Find the length of each of the six sides of the garden.\n\n(b) Find the perimeter.\n\n(c) Fencing costs \\$25 per metre. How much will it cost to fence the whole perimeter?",
+     "answer": "(a) $12$ m, $8$ m, $7$ m, $3$ m, $5$ m, $5$ m (b) $40$ m (c) \\$1000",
+     "solution": "**Key idea:** Cutting a rectangle out of a corner moves two sides inwards but does not change the total distance around.\n\n1. (a) The two full sides are $12$ m and $8$ m\n2. (a) The shortened top side is $12 - 5 = 7$ m and the shortened right side is $8 - 3 = 5$ m\n3. (a) The two sides of the notch are $3$ m and $5$ m\n4. (b) $12 + 8 + 7 + 3 + 5 + 5 = 40$ m (the same as the full rectangle, $2 \\times 12 + 2 \\times 8 = 40$)\n5. (c) $40 \\times 25 = 1000$, so \\$1000\n\n**Answer:** (a) $12$ m, $8$ m, $7$ m, $3$ m, $5$ m, $5$ m (b) $40$ m (c) \\$1000"
+    }
+   ]
+  },
+  {
+   "code": "10C",
+   "name": "Circles, π and circumference",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7A01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-circles",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-7-circles",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-circles",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-7-circles",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "10D",
+   "name": "Arc length and perimeter of sectors and composite shapes",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M03",
+     "q": 18
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A sector is a quarter of a circle with radius $8$ m.\n\n(a) Find the exact length of its arc, in terms of $\\pi$.\n\n(b) Find its perimeter, using $\\pi \\approx 3.14$.",
+     "answer": "(a) $4\\pi$ m (b) $28.56$ m",
+     "solution": "**Key idea:** The arc of a quarter circle is $\\dfrac{1}{4}$ of the circumference $2\\pi r$. The perimeter of a sector is the arc plus two radii.\n\n1. (a) Arc $= \\dfrac{1}{4} \\times 2 \\times \\pi \\times 8 = 4\\pi$ m\n2. (b) $4\\pi \\approx 4 \\times 3.14 = 12.56$ m\n3. (b) Perimeter $= 12.56 + 8 + 8 = 28.56$ m\n\n**Answer:** (a) $4\\pi$ m (b) $28.56$ m"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A running track is made of a rectangle $100$ m long and $60$ m wide, with a semicircle attached to each of the two $60$ m ends (the semicircles have diameter $60$ m). The track runs around the outside of the shape, so the $60$ m ends are not part of it.\n\n(a) Find the exact perimeter in terms of $\\pi$.\n\n(b) Use $\\pi \\approx 3.14$ to find the perimeter to one decimal place.\n\n(c) About how many laps are needed to run at least $2$ km?",
+     "answer": "(a) $200 + 60\\pi$ m (b) $388.4$ m (c) $6$ laps",
+     "solution": "**Key idea:** Two semicircles with the same diameter make one full circle, so their arcs add to $\\pi d$.\n\n1. (a) Straight sections: $2 \\times 100 = 200$ m\n2. (a) Two semicircles of diameter $60$ m make a full circle: $\\pi \\times 60 = 60\\pi$ m\n3. (a) Perimeter $= 200 + 60\\pi$ m\n4. (b) $60 \\times 3.14 = 188.4$, so $200 + 188.4 = 388.4$ m\n5. (c) $5$ laps $= 5 \\times 388.4 = 1942$ m, which is less than $2000$ m; $6$ laps $= 2330.4$ m, so $6$ laps\n\n**Answer:** (a) $200 + 60\\pi$ m (b) $388.4$ m (c) $6$ laps"
+    }
+   ]
+  },
+  {
+   "code": "10E",
+   "name": "Units of area and area of rectangles",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7N01",
+     "q": 10
+    },
+    {
+     "src": "we",
+     "slug": "year-7-area-perimeter",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "10F",
+   "name": "Area of parallelograms",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 15
+    },
+    {
+     "src": "we",
+     "slug": "year-7-area-perimeter",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "10G",
+   "name": "Area of triangles",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-area-perimeter",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "10H",
+   "name": "Area of composite shapes",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-area-perimeter",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-area-perimeter",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "10I",
+   "name": "Volume of rectangular prisms",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-7-volume",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "10J",
+   "name": "Volume of triangular prisms",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-7-volume",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-7-volume",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-7-volume",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "10K",
+   "name": "Capacity",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M7M02",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-7-volume",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "10L",
+   "name": "Mass and temperature",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert:\n\n(a) $3.25$ kg to grams (b) $750$ mg to grams",
+     "answer": "(a) $3250$ g (b) $0.75$ g",
+     "solution": "**Key idea:** $1$ kg $= 1000$ g and $1$ g $= 1000$ mg.\n\n1. (a) $3.25 \\times 1000 = 3250$ g\n2. (b) $750 \\div 1000 = 0.75$ g\n\n**Answer:** (a) $3250$ g (b) $0.75$ g"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert:\n\n(a) $2.4$ tonnes to kilograms (b) $6500$ g to kilograms",
+     "answer": "(a) $2400$ kg (b) $6.5$ kg",
+     "solution": "**Key idea:** $1$ t $= 1000$ kg and $1$ kg $= 1000$ g.\n\n1. (a) $2.4 \\times 1000 = 2400$ kg\n2. (b) $6500 \\div 1000 = 6.5$ kg\n\n**Answer:** (a) $2400$ kg (b) $6.5$ kg"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "At $8$ am the temperature in Ballarat was $-3°\\text{C}$. By $2$ pm it was $11°\\text{C}$. By how many degrees did the temperature rise?",
+     "answer": "$14°\\text{C}$",
+     "solution": "**Key idea:** The rise is the difference: final temperature minus starting temperature.\n\n1. $11 - (-3) = 11 + 3 = 14$\n2. From $-3$ up to $0$ is $3$ degrees, then $0$ up to $11$ is $11$ degrees: $3 + 11 = 14$ ✓\n\n**Answer:** $14°\\text{C}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A bag contains $1.5$ kg of flour. Each cake needs $350$ g of flour. How many whole cakes can be made, and how much flour is left over?",
+     "answer": "$4$ cakes, with $100$ g left over",
+     "solution": "**Key idea:** Convert to the same unit (grams) before dividing.\n\n1. $1.5$ kg $= 1500$ g\n2. $1500 \\div 350 = 4$ remainder $100$ (since $4 \\times 350 = 1400$)\n3. So $4$ whole cakes with $100$ g left\n\n**Answer:** $4$ cakes, with $100$ g left over"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A truck can carry a maximum load of $4.5$ tonnes. It is loaded with $120$ boxes, each with a mass of $32.5$ kg.\n\n(a) Find the total mass of the boxes in kilograms and in tonnes.\n\n(b) How many more boxes can be loaded without going over the maximum?",
+     "answer": "(a) $3900$ kg $= 3.9$ t (b) $18$ more boxes",
+     "solution": "**Key idea:** Work in kilograms: $1$ t $= 1000$ kg.\n\n1. (a) $120 \\times 32.5 = 120 \\times 32 + 120 \\times 0.5 = 3840 + 60 = 3900$ kg\n2. (a) $3900 \\div 1000 = 3.9$ t\n3. (b) Maximum $= 4.5 \\times 1000 = 4500$ kg, so spare capacity $= 4500 - 3900 = 600$ kg\n4. (b) $600 \\div 32.5$: $18 \\times 32.5 = 585$ and $19 \\times 32.5 = 617.5$, which is too much\n5. (b) So $18$ more boxes\n\n**Answer:** (a) $3900$ kg $= 3.9$ t (b) $18$ more boxes"
+    }
+   ]
+  }
+ ],
+ "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 7 contents (names only). Items: tt = topic test question, we = worked example, nq = new question written for the section (answers checked by code, Nov 2026)."
+}
