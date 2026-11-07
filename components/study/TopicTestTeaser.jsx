@@ -49,9 +49,9 @@ export default function TopicTestTeaser({ yearLevel, topicId, topic, slug }) {
           topicId={topicId}
           topicLabel={topic}
           placement="topic_page_test"
-          eyebrow={`${n} questions · answer key · printable`}
-          title={`Get the full ${topic.toLowerCase()} test`}
-          intro={`We'll email you all ${n} questions and the answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
+          eyebrow="Free full topic test"
+          title={`Get the full ${n}-question ${topic.toLowerCase()} test, free`}
+          count={n}
           style={{ marginTop: 20 }}
         />
       </div>

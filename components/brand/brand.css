@@ -275,6 +275,16 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   background: var(--brand-pale); border: 2px solid var(--brand-soft); border-radius: 22px;
   box-shadow: 0 4px 0 var(--brand-soft); padding: 22px; margin: 28px 0;
 }
+.tb-appcta--offer {
+  background: var(--card); border: 3px solid var(--brand); border-radius: 22px;
+  box-shadow: 0 6px 0 var(--brand-text); padding: 24px; margin: 28px 0;
+}
+.tb-appcta--offer .tb-appcta__title { font-size: 26px; }
+.tb-appcta__ticks { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 8px; }
+.tb-appcta__ticks li { position: relative; padding-left: 30px; font-weight: 700; font-size: 15.5px; line-height: 1.45; color: var(--foreground); }
+.tb-appcta__ticks li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 21px; height: 21px; border-radius: 7px; display: grid; place-items: center; background: var(--brand); color: var(--on-brand, #fff); font-weight: 900; font-size: 12px; }
+.tb-appcta__deal { margin: 10px 0 0; padding: 8px 12px; border-radius: 12px; background: #fff7e0; border: 2px solid #f5c542; font-weight: 800; font-size: 14px; line-height: 1.45; color: var(--foreground); }
+.tb-appcta__deal s { color: var(--muted); font-weight: 700; }
 .tb-appcta--card { background: var(--card); border: 2px solid var(--border); border-radius: 22px; box-shadow: 0 4px 0 var(--edge); padding: 22px; margin: 28px 0; }
 .tb-appcta__title { font-weight: 900; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 8px; color: var(--foreground); }
 .tb-appcta__sub { font-weight: 600; font-size: 16px; line-height: 1.55; color: var(--muted); margin: 0 0 16px; }
@@ -336,3 +346,4 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 @media (max-width: 640px) { .tb-season__long { display: none; } .tb-season__short { display: inline; } .tb-season__link { font-size: 14px; padding-left: 16px; } }
 .tb-season__close { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; display: grid; place-items: center; border: 0; background: transparent; color: inherit; cursor: pointer; border-radius: 10px; }
 .tb-season__close:hover { background: rgba(255, 255, 255, 0.15); }
+.dark .tb-appcta__deal { background: #3a2c08; border-color: #8a6a12; }

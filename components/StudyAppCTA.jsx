@@ -245,6 +245,15 @@ export default function StudyAppCTA({
       )}
     </p>
   );
+  // What the app does, as ticks (box and card variants, and the hero when
+  // it isn't slim). Facts only: see STUDY_APP_FACTS in lib/study-app.js.
+  const ticks = (
+    <ul className="tb-appcta__ticks">
+      <li>A detailed worked solution for every question</li>
+      <li>Fresh questions on what they got wrong, until it&apos;s mastered</li>
+      <li>Built for the Australian Curriculum, Years 7 to 10</li>
+    </ul>
+  );
   // Until launch, say plainly where it will be.
   const soon = !live && (
     <p className="tb-appcta__soon">
@@ -300,6 +309,7 @@ export default function StudyAppCTA({
     return (
       <div className="tb-appcta" style={style} data-study-cta={placement || "hero"}>
         {soon}
+        {!slim && ticks}
         {action}
         {androidToggle}
         {meta}
@@ -319,6 +329,7 @@ export default function StudyAppCTA({
       <p className="tb-appcta__sub">
         {sub || `Snap them in ${STUDY_APP.name} and get a fresh version to practise until they're mastered.`}
       </p>
+      {ticks}
       {soon}
       {action}
       {androidToggle}
@@ -414,7 +425,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."
       : kind === "android"
         ? `${STUDY_APP.name} is on iPhone at launch, and Android is coming soon. Leave your email and we'll tell you once, when it's on Android.`
-        : introText || <>Sign up and we&apos;ll email you when {STUDY_APP.name} is ready. It&apos;s on iPhone, with Android coming soon. <LaunchPrice /></>;
+        : introText || <>Sign up and we&apos;ll email you the day {STUDY_APP.name} launches. It&apos;s on iPhone, with Android coming soon.</>;
 
   async function submit(e) {
     e.preventDefault();
@@ -514,6 +525,9 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       </div>
       {error && (
         <p role="alert" className="tb-appcta__error">{error}</p>
+      )}
+      {kind === "launch" && !compact && (
+        <p className="tb-appcta__deal"><LaunchPrice /></p>
       )}
       {/* Marketing consent (Spam Act). Signing up here is the consent, so
           it's stated next to the button. Wording in use from 5 Nov 2026;

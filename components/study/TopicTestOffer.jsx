@@ -14,7 +14,7 @@ import "@/components/brand/brand.css";
 // Also used under the sample questions on the topic pages
 // (TopicTestTeaser), with its own eyebrow/title/intro; the email box there
 // is prefilled if this browser has signed up before.
-export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, topicLabel, placement = "worksheet_limit_test", eyebrow, title, intro, style }) {
+export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, topicLabel, placement = "worksheet_limit_test", eyebrow, title, intro, count = 20, style }) {
   const pathname = usePathname() || "/";
   const [email, setEmail] = useState(knownEmail || "");
   const [state, setState] = useState("idle"); // idle | busy | done | error
@@ -56,7 +56,7 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
   }
 
   return (
-    <aside className="tb-appcta tb-appcta--box" data-study-cta={placement} style={{ margin: "4px 0 16px", ...style }}>
+    <aside className="tb-appcta tb-appcta--offer" data-study-cta={placement} style={{ margin: "4px 0 16px", ...style }}>
       <p className="tb-eyebrow" style={{ marginBottom: 8 }}>{eyebrow || "Free full topic test"}</p>
       <p className="tb-appcta__title">{title || <>That&rsquo;s today&rsquo;s free worksheet. Want a full {topic || "topic"} test?</>}</p>
       {state === "done" ? (
@@ -65,9 +65,12 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
         </p>
       ) : (
         <div>
-          <p className="tb-appcta__sub">
-            {intro || `We'll email you a 20-question ${yearLevel} ${topic ? `${topic} ` : ""}test with an answer key, ready to print. You'll also be on the early list for the Tuterly app, which turns every question your child gets wrong into fresh practice.`}
-          </p>
+          {intro && <p className="tb-appcta__sub">{intro}</p>}
+          <ul className="tb-appcta__ticks">
+            <li>All {count} questions, from the basics up to the hardest</li>
+            <li>A full answer key to mark it</li>
+            <li>Printable PDFs, in your inbox in a couple of minutes</li>
+          </ul>
           <div className="tb-appcta__form" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {!knownEmail && (
               <input
@@ -84,13 +87,13 @@ export default function TopicTestOffer({ email: knownEmail, yearLevel, topicId, 
               />
             )}
             <button type="button" onClick={submit} disabled={state === "busy" || !topicId} className="tb-btn tb-btn--primary tb-btn--fluid">
-              {state === "busy" ? "One moment…" : knownEmail ? "Email me the full test" : "Send me the test"}
+              {state === "busy" ? "One moment…" : "Email me the free test"}
             </button>
           </div>
           {knownEmail && <p className="tb-small tb-muted" style={{ margin: "8px 0 0" }}>Sending to {knownEmail}</p>}
           {msg && <p role="alert" className="tb-appcta__error">{msg}</p>}
           <p className="tb-appcta__note">
-            We&rsquo;ll email you the test and Tuterly launch news. Unsubscribe any time. See our <a href="/privacy">privacy policy</a>.
+            Free. We&rsquo;ll email you the test, plus Tuterly launch news and maths tips. Unsubscribe any time. See our <a href="/privacy">privacy policy</a>.
           </p>
         </div>
       )}
