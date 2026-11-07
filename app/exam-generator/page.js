@@ -28,14 +28,12 @@ const HOW = [
 ];
 
 // Free generator vs Exam Zone in the app. App facts from the student
-// features doc (7 Nov 2026): Plus has 2 brand new exams and 5 repeats a
-// week (not unlimited).
+// features doc (7 Nov 2026). Exam limits left off on purpose (Ryan, 8 Nov).
 const COMPARE = [
   ["Where the questions come from", "Tuterly’s checked question bank for Years 7 to 10A", "Written from your own test outline, past papers and teacher’s notes"],
   ["Style", "A standard exam format", "Your school’s style, with a match meter showing how close it gets"],
-  ["How many", "One free exam a day", "2 brand new exams and 5 re-sits a week with Plus"],
   ["Marking", "You mark it with the worked solutions", "Marked for you by topic, even handwritten answers from a photo"],
-  ["After the exam", "Read the worked solutions", "Fix what you missed, then re-sit the same exam with new numbers"],
+  ["After the exam", "Read the worked solutions", "Fix what you missed, and re-sit with new questions"],
   ["Exam day", "Print it and sit it", "Countdown to the real exam, an optional timer, or print it on A4"],
 ];
 
