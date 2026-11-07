@@ -51,8 +51,8 @@ const STEPS = [
 // (7 Nov 2026); the FAQ says plainly it can't promise the exact questions.
 const EXAM_STEPS = [
   { n: "1", title: "Add what you’ve got", text: "Your test outline, past papers and your teacher’s notes. Photos, a PDF or a Word file. Nothing yet? Pick up to 6 topics." },
-  { n: "2", title: "Quinn reads your test", text: "It works out what’s on your test and how your school writes its questions, and the match meter shows how close it can get." },
-  { n: "3", title: "Sit your exam before the exam", text: "A brand new practice exam in your school’s style. Marked by topic, with a worked solution for every question." },
+  { n: "2", title: "Tuterly analyses your test", text: "It works out what’s on your test and how your school writes its questions, and the match meter shows how close it can get." },
+  { n: "3", title: "Sit your exam before the exam", text: "Tuterly creates a brand new practice exam in your school’s style. Marked by topic, with a worked solution for every question." },
 ];
 
 const EXAM_FEATURES = [
@@ -111,7 +111,7 @@ function ExamZoneSection({ placement }) {
             id="stl-exam"
             eyebrow="Exam Zone"
             title="How Tuterly predicts your maths exam."
-            lead="Your teacher has already told you most of what’s coming: it’s in the outline, the past papers and the notes. Tuterly reads all of it and turns it into an exam you can sit first."
+            lead="Your teacher has already told you most of what’s coming: it’s in the outline, the past papers and the notes. Tuterly analyses all of it and creates practice exams you can sit first."
           />
         </Reveal>
         <ol className="ezs">
@@ -172,7 +172,7 @@ export default function StudentLanding({ year = null }) {
             <p className="tb-lead sl-hero__lead">
               {year
                 ? year.intro
-                : `Upload your test outline, past papers and your teacher’s notes. ${name} works out what’s on your test and how your school writes it, then writes you a practice exam in the same style, before the real one. Then it fixes everything you miss.`}
+                : `Upload your test outline, past papers and your teacher’s notes. ${name} works out what’s on your test and how your school writes it, then writes you practice exams in the same style, before the real one.`}
             </p>
             <ResultsProof compact className="sl-hero__proof" />
             <MadeInAustralia />
