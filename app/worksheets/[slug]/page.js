@@ -1,3 +1,4 @@
+import { writtenTopicTest } from "@/lib/topic-test-files";
 import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { notFound } from "next/navigation";
@@ -53,21 +54,29 @@ export async function generateMetadata({ params }) {
   const page = getLandingPageBySlug(slug);
   if (!page) return {};
   const url = `${SITE_URL}/worksheets/${page.slug}`;
+  // Pages with a free practice sheet PDF say so in the title and snippet
+  // (Search Console, Nov 2026: these pages sit at positions 5 to 10, so a
+  // more clickable snippet is the fastest win).
+  const hasPdf = Boolean(writtenTopicTest(page.yearLevel, page.topicId));
+  const metaTitle = hasPdf
+    ? page.metaTitle.replace(" (Free, Australian Curriculum)", /with Answers/.test(page.metaTitle) ? " (Free PDF, Australian Curriculum)" : " with Answers (Free PDF, Australian Curriculum)")
+    : page.metaTitle;
+  const metaDescription = hasPdf ? `${page.metaDescription.replace(/\s*$/, "")} Free printable PDF with answers, no sign-up.` : page.metaDescription;
   return {
-    title: { absolute: page.metaTitle },
-    description: page.metaDescription,
+    title: { absolute: metaTitle },
+    description: metaDescription,
     alternates: { canonical: url },
     openGraph: {
       images: ["/og-tuterly.png"],
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
       url,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: page.metaTitle,
-      description: page.metaDescription,
+      title: metaTitle,
+      description: metaDescription,
     },
   };
 }

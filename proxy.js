@@ -68,7 +68,6 @@ const PAUSED_PREFIXES = [
   "/centres",
   "/sample-report",
   "/tutor-jobs",
-  "/tutoring-prices-melbourne",
   "/practice-maths-tests-primary",
 ];
 const PAUSED_EXACT = ["/tutors"];

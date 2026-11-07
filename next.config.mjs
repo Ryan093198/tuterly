@@ -7,6 +7,9 @@ const nextConfig = {
     return [
       { source: "/features/test-any-topic", destination: "/features/topic-check", permanent: true },
       { source: "/learn/best-maths-apps-years-7-10-australia", destination: "/best-maths-apps-australia", permanent: true },
+      // Ranked for tutoring cost searches (1,788 impressions in 3 months to Nov 2026);
+      // the cost guide now answers them.
+      { source: "/tutoring-prices-melbourne", destination: "/parents/maths-app-vs-tutoring", permanent: true },
     ];
   },
   // Bundle the PDF fonts into the serverless functions / server actions that

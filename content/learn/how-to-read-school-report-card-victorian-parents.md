@@ -1,12 +1,14 @@
 ---
-title: "How to read your child's school report card: a plain-English guide for Victorian parents"
-description: "Victorian school reports can be confusing. Here's what A–E grades, effort ratings, and teacher comments actually mean for your child."
+title: "How to Read Your Child's School Report: A to E Grades, Effort Ratings and Comments Explained (Victoria)"
+description: "What a C really means, what effort ratings and teacher comments tell you, and what to do next. A plain-English guide to Victorian school reports for parents."
 date: "2026-06-02"
 audience: "Primary and secondary parents (Year 1–10)"
 published: true
 ---
 
 ## Reports are out. Here's what you're actually looking at.
+
+**Worried about the maths grade?** Our guide [Got the maths report? Close the gaps before next year](/parents/end-of-year-maths-report) shows how to find the exact topics that cost marks, with a free practice exam and a four-week holiday plan.
 
 Twice a year, Victorian parents receive a school report and spend a few minutes trying to work out what it really means. The grades look straightforward enough. Then you hit the effort ratings, the curriculum levels, the comments that say "is making progress" without telling you whether that's good or concerning, and suddenly it's less clear.
 
