@@ -67,3 +67,14 @@
 .sh .ym-topic { display: block; font-weight: 800; color: var(--foreground); text-decoration: none; }
 .sh .ym-topic:hover { color: var(--brand-text); }
 .sh .ym-desc { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 3px; }
+
+/* Exam generator: free vs app comparison */
+.eg-app__lead { max-width: 72ch; }
+.eg-cmp { margin: 20px 0; overflow-x: auto; border: 2px solid var(--border, #e5e9ef); border-radius: 18px; background: var(--card, #fff); }
+.eg-cmp table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 15.5px; line-height: 1.5; }
+.eg-cmp th, .eg-cmp td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border, #e5e9ef); }
+.eg-cmp thead th { font-weight: 900; font-size: 15px; }
+.eg-cmp tbody th { font-weight: 800; width: 24%; }
+.eg-cmp tr:last-child th, .eg-cmp tr:last-child td { border-bottom: 0; }
+.eg-cmp__app { background: var(--brand-soft, #e6f6fa); box-shadow: inset 4px 0 0 var(--brand, #0fa3c4); font-weight: 700; }
+.eg-app__cta { max-width: 640px; }

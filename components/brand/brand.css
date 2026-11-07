@@ -248,6 +248,13 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
   display: grid; background: var(--card); border: 2px solid var(--border); border-radius: 18px;
   box-shadow: 0 4px 0 var(--edge), 0 18px 40px -20px rgba(11, 26, 44, 0.35);
 }
+@media (min-width: 900px) and (max-width: 1239px) {
+  .tb-nav__link { padding: 0 8px; font-size: 14px; }
+}
+@media (max-width: 1059px) {
+  .tb-nav__links { display: none; }
+  .tb-nav__menu { display: block; }
+}
 @media (max-width: 899px) {
   .tb-nav__links { display: none; }
   .tb-nav__menu { display: block; }

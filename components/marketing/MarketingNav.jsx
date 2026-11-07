@@ -15,6 +15,7 @@ const LINKS = [
   { href: "/parents", label: "For parents" },
   { href: "/students", label: "For students" },
   { href: "/worksheets", label: "Free worksheets" },
+  { href: "/exam-generator", label: "Exam generator" },
   { href: "/learn", label: "Learn" },
 ];
 
