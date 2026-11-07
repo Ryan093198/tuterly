@@ -28,6 +28,7 @@ const nextConfig = {
     "/api/cron/**": ["./content/topic-tests/**/*.json"],
     // Free practice sheet PDFs (built at deploy, traced in case of a rebuild).
     "/worksheets/**": ["./content/topic-tests/**/*.json", "./public/fonts/*.ttf"],
+    "/naplan/**": ["./content/naplan/*.json", "./content/learn/*.md", "./content/topic-tests/**/*.json", "./public/fonts/*.ttf"],
   },
   experimental: {
     // Audio uploads (Whisper) and resource files can be larger than the

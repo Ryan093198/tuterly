@@ -9,7 +9,10 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow, Reveal, SectionHead } from "@/components/brand";
 import NaplanTest from "@/components/naplan/NaplanTest";
-import { NAPLAN_FACTS, NAPLAN_SOURCES, NAPLAN_YEARS, OFFICIAL_DEMO, calculatorLine, getNaplanTest, naplanFaqs, naplanSlug } from "@/lib/naplan";
+import { NAPLAN_FACTS, NAPLAN_SOURCES, NAPLAN_YEARS, OFFICIAL_DEMO, calculatorLine, getNaplanTest, naplanFaqs, naplanSlug, naplanPdfPath, STRAND_PRACTICE, NAPLAN_READING } from "@/lib/naplan";
+import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
+import { writtenTopicTest } from "@/lib/topic-test-files";
+import { getPostBySlug } from "@/lib/learn";
 import "@/components/study/study-landing.css";
 import "@/components/study/worked-examples.css";
 import "./naplan.css";
@@ -62,7 +65,7 @@ export default function NaplanPage({ year }) {
             Year {year} NAPLAN numeracy <span className="sl-accent">practice test</span>
           </h1>
           <p className="tb-lead np-lead">
-            20 free NAPLAN-style questions across every strand, marked as soon as you finish, with a worked solution for every question. The official demonstration tests don’t show answers. This one does.
+            20 free NAPLAN-style questions across every strand, marked as soon as you finish, with a worked solution for every question. Do it online, or print the PDF.
           </p>
           <div className="np-facts">
             <div><span className="np-facts__k">NAPLAN 2027</span><span className="np-facts__v">{NAPLAN_FACTS.window}</span></div>
@@ -70,7 +73,10 @@ export default function NaplanPage({ year }) {
             <div><span className="np-facts__k">Calculator</span><span className="np-facts__v">{year >= 7 ? "After a short non-calculator section" : "Not allowed"}</span></div>
             <div><span className="np-facts__k">This practice test</span><span className="np-facts__v">20 questions, about {year >= 7 ? 30 : 25} minutes</span></div>
           </div>
-          <a href="#naplan-test" className="tb-btn tb-btn--primary np-start">Start the practice test</a>
+          <div className="np-btns">
+            <a href="#naplan-test" className="tb-btn tb-btn--primary">Start the practice test</a>
+            <a href={naplanPdfPath(year)} className="tb-btn tb-btn--secondary">Download the PDF</a>
+          </div>
         </div>
       </section>
 
@@ -142,6 +148,39 @@ export default function NaplanPage({ year }) {
         </div>
       </section>
 
+      {STRAND_PRACTICE[year] && (
+        <section className="tb-section" aria-labelledby="np-strands">
+          <div className="tb-wrap">
+            <Reveal>
+              <SectionHead id="np-strands" eyebrow="Practise by strand" title={`Year ${year} NAPLAN numeracy practice by strand.`} />
+            </Reveal>
+            <p className="np-intro">
+              After marking, practise the strand they found hardest. Each topic below has free worksheets with worked solutions, and most have a free 10-question PDF with answers. They follow the Australian Curriculum{year === 9 ? ", and include some Year 8 topics, since Year 9 NAPLAN tests everything up to Year 9" : ""}.
+            </p>
+            <div className="np-strands">
+              {STRAND_PRACTICE[year].map((st) => (
+                <div key={st.strand} className="np-strand">
+                  <p className="np-strand__t">{st.strand}</p>
+                  <ul>
+                    {st.slugs.map((slug) => {
+                      const p = WORKSHEET_LANDING_PAGES.find((w) => w.slug === slug);
+                      if (!p) return null;
+                      const pdf = writtenTopicTest(p.yearLevel, p.topicId);
+                      return (
+                        <li key={slug}>
+                          <Link href={`/worksheets/${slug}`}>{p.yearLevel === `Year ${year}` ? p.topic : `${p.topic} (${p.yearLevel})`}</Link>
+                          {pdf && <a className="np-strand__pdf" href={`/worksheets/${slug}/practice-questions.pdf`} aria-label={`${p.topic} free PDF with answers`}>PDF</a>}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="tb-section" aria-labelledby="np-faq">
         <div className="tb-wrap">
           <Reveal>
@@ -155,6 +194,18 @@ export default function NaplanPage({ year }) {
               </details>
             ))}
           </div>
+          {(NAPLAN_READING[year] || []).length > 0 && (
+            <div className="np-reading">
+              <p className="np-reading__t">Reading for parents</p>
+              <ul>
+                {NAPLAN_READING[year].map((slug) => {
+                  const p = getPostBySlug(slug);
+                  return p ? <li key={slug}><Link href={`/learn/${slug}`}>{p.title}</Link></li> : null;
+                })}
+                <li><Link href="/naplan/past-papers">NAPLAN past papers: where to find them, with answers</Link></li>
+              </ul>
+            </div>
+          )}
           <p className="np-other">
             Other years: {NAPLAN_YEARS.filter((y) => y !== year).map((y, i) => (
               <span key={y}>{i ? " · " : ""}<Link href={`/naplan/${naplanSlug(y)}`}>Year {y} numeracy</Link></span>

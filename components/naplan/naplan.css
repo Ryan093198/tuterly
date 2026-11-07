@@ -8,6 +8,19 @@
 .np-facts__k { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .np-facts__v { font-weight: 800; font-size: 15px; line-height: 1.35; color: var(--foreground); }
 .np-start { margin-top: 22px; }
+.np-btns { display: flex; flex-wrap: wrap; gap: 10px 12px; margin-top: 22px; }
+.np-intro { margin: -6px 0 18px; max-width: 70ch; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.np-strands { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.np-strand { background: var(--card); border: 2px solid var(--border); border-radius: 16px; padding: 16px 18px; }
+.np-strand__t { margin: 0 0 8px; font-weight: 800; font-size: 17px; }
+.np-strand ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.np-strand li { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 15px; line-height: 1.4; }
+.np-strand li a { color: var(--brand-text); font-weight: 700; }
+.np-strand__pdf { flex: none; font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: var(--brand-soft); text-decoration: none; }
+.np-reading { margin-top: 24px; max-width: 780px; }
+.np-reading__t { margin: 0 0 8px; font-weight: 800; }
+.np-reading ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.np-reading a { color: var(--brand-text); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .np-testwrap > * { max-width: 860px; }
 .np-note { margin: 0 0 18px; font-size: 15.5px; color: var(--muted); }
 .np-disclaimer { margin: 22px 0 0; font-size: 13px; line-height: 1.5; color: var(--muted); }
@@ -85,3 +98,8 @@
 .nph-card__text { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.5; }
 .nph-card__go { font-weight: 800; color: var(--brand-text); }
 @media (min-width: 640px) { .nt-strand { grid-template-columns: 200px minmax(0, 1fr) 44px; } }
+.nph-card--static:hover { border-color: var(--border); }
+.nph-card__links { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 800; font-size: 15px; }
+.nph-card__links a { color: var(--brand-text); }
+.nph-card__links a + a { text-decoration: underline; text-underline-offset: 3px; }
+.np-steps2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
