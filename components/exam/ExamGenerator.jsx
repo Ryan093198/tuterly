@@ -343,13 +343,15 @@ function ExamPaper({ exam, showAnswers, forPrint = false }) {
                 <strong>Question {q.n}</strong> <span>{q.topic}</span>
               </p>
               <div className="eg-ans__answer"><strong>Answer:</strong> <Md>{q.answer}</Md></div>
-              {forPrint ? (
+              {!q.solution ? (
+                !forPrint && q.slug ? <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p> : null
+              ) : forPrint ? (
                 <Md>{q.solution}</Md>
               ) : (
                 <details className="eg-ans__sol">
                   <summary>Worked solution</summary>
                   <Md>{q.solution}</Md>
-                  <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p>
+                  {q.slug && <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p>}
                 </details>
               )}
             </div>
