@@ -38,10 +38,12 @@ export default function GuideShell({
   finalText,
   quickAnswer,
   updated = UPDATED,
+  moreTitle = "More for parents of Years 7 to 10",
+  showGuides = true,
   children,
 }) {
   const updatedLabel = new Date(`${updated}T00:00:00`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
-  const otherGuides = PARENT_GUIDES.filter((g) => g.href !== path);
+  const otherGuides = showGuides ? PARENT_GUIDES.filter((g) => g.href !== path) : [];
   return (
     <div className="tb sl pg">
       <script
@@ -115,7 +117,7 @@ export default function GuideShell({
 
       <section className="tb-section" aria-labelledby="h-more">
         <div className="tb-wrap">
-          <h2 id="h-more" className="tb-h2 pg-h2">More for parents of Years 7 to 10</h2>
+          <h2 id="h-more" className="tb-h2 pg-h2">{moreTitle}</h2>
           {showYearHubs && (
             <div className="pg-cards">
               {YEAR_HUBS.map((h) => (

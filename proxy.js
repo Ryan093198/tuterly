@@ -52,6 +52,10 @@ const MARKETING_PATH_PREFIXES = [
   "/mathspace-alternative",
   "/photomath-alternative",
   "/quizlet-maths-australia",
+  "/maths",
+  "/calculators",
+  "/teachers",
+  "/best-maths-apps-australia",
   // Tuterly Study checkout, manage and parent consent (linked from app emails)
   "/study",
 ];

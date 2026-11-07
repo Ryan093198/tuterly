@@ -32,12 +32,18 @@ const GROUPS = [
       { href: "/formula-sheets", label: "Formula sheets" },
       { href: "/mind-maps", label: "Revision mind maps" },
       { href: "/years", label: "Maths by year (7 to 10)" },
+      { href: "/calculators/pythagoras", label: "Pythagoras calculator" },
+      { href: "/calculators/trigonometry", label: "Trigonometry calculator" },
       { href: "/atar-planner", label: "ATAR planner" },
     ],
   },
   {
     title: "Study guides",
     links: [
+      { href: "/maths", label: "Maths explained" },
+      { href: "/maths/pythagoras-theorem", label: "Pythagoras' theorem" },
+      { href: "/maths/sohcahtoa", label: "SOH CAH TOA" },
+      { href: "/maths/index-laws", label: "Index laws" },
       { href: "/maths-exam-preparation", label: "Exam preparation" },
       { href: "/scholarship", label: "Scholarship guides" },
       { href: "/scholarship-practice", label: "Scholarship practice" },
