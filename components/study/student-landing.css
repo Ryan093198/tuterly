@@ -13,3 +13,26 @@
 .ep-slips { display: grid; gap: 14px; }
 @media (min-width: 700px) { .ep-slips { grid-template-columns: 1fr 1fr; } }
 .ep-slip__text { margin-top: 6px; font-size: 15.5px; line-height: 1.6; }
+
+/* Exam Zone hero card (an illustration, not an app screenshot) */
+.ezc { position: relative; z-index: 1; width: min(360px, 100%); background: var(--card); border: 2px solid var(--border); border-radius: 24px; box-shadow: 0 6px 0 var(--edge), 0 24px 48px -24px rgba(11, 26, 44, 0.35); padding: 22px; font-family: var(--font-display); }
+.ezc__k { margin: 0 0 4px; font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); }
+.ezc__t { margin: 0 0 14px; font-size: 20px; font-weight: 900; line-height: 1.25; color: var(--foreground); }
+.ezc__files { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 8px; }
+.ezc__files li { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 12px; background: var(--surface-soft); font-weight: 800; font-size: 15px; }
+.ezc__files span { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; background: var(--success); color: #fff; font-size: 12px; font-weight: 900; }
+.ezc__m { margin: 0 0 6px; display: flex; justify-content: space-between; font-weight: 800; font-size: 14px; color: var(--muted); }
+.ezc__m strong { color: var(--success); }
+.ezc__bar { height: 12px; border-radius: 999px; background: var(--surface-soft); overflow: hidden; margin-bottom: 16px; }
+.ezc__bar span { display: block; height: 100%; width: 88%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--success)); }
+.ezc__ready { display: grid; gap: 6px; font-weight: 700; font-size: 14px; color: var(--muted); }
+.ezc__badge { justify-self: start; padding: 6px 12px; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 900; font-size: 14px; }
+
+/* Exam Zone section */
+.ezs { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 14px; }
+@media (min-width: 800px) { .ezs { grid-template-columns: repeat(3, 1fr); } }
+.ezs__step { background: var(--card); border: 2px solid var(--border); border-radius: 20px; box-shadow: 0 4px 0 var(--edge); padding: 18px 20px; }
+.ezs__n { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--brand); color: #fff; font-weight: 900; font-size: 17px; margin-bottom: 10px; }
+.ezs__t { margin: 0 0 6px; font-weight: 900; font-size: 19px; color: var(--foreground); }
+.ezs__x { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--muted); }
+.ezs__note { margin: 22px 0 0; max-width: 70ch; padding: 14px 18px; border-radius: 16px; background: var(--brand-soft); font-weight: 700; font-size: 16px; line-height: 1.55; color: var(--foreground); }

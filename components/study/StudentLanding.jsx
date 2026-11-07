@@ -46,6 +46,96 @@ const STEPS = [
   },
 ];
 
+// Exam Zone: practice exams written from the student's own test materials.
+// Facts from the features doc (7 Nov 2026). Headline wording is Ryan's call
+// (7 Nov 2026); the FAQ says plainly it can't promise the exact questions.
+const EXAM_STEPS = [
+  { n: "1", title: "Add what you’ve got", text: "Your test outline, past papers and your teacher’s notes. Photos, a PDF or a Word file. Nothing yet? Pick up to 6 topics." },
+  { n: "2", title: "Quinn reads your test", text: "It works out what’s on your test and how your school writes its questions, and the match meter shows how close it can get." },
+  { n: "3", title: "Sit your exam before the exam", text: "A brand new practice exam in your school’s style. Marked by topic, with a worked solution for every question." },
+];
+
+const EXAM_FEATURES = [
+  { icon: "school", tone: "violet", title: "Written in your school’s style", text: "New questions on your topics, set out the way your school sets out its tests. It never copies your school’s questions." },
+  { icon: "goal", title: "Match meter", text: "From “Based on your topics” to “Great match”. It tells you what to add next to get closer." },
+  { icon: "flag", tone: "streak", title: "Exam day set-up", text: "Name the exam, set the date for a countdown and choose the length. The timer is optional." },
+  { icon: "checked", tone: "success", title: "Marks by topic", text: "See exactly which topics cost you marks, with a worked solution for every question." },
+  { icon: "drill", tone: "success", title: "Fix what you missed", text: "Every question you got wrong in one place. Redo it, or try a similar one." },
+  { icon: "practice", tone: "violet", title: "Same exam, new numbers", text: "Re-sit it with new figures and slightly different wording, so you learn the method, not the answer." },
+  { icon: "notes", title: "Print it, sit it on paper", text: "An A4 PDF that feels like the real thing. Photograph your written answers and it marks them." },
+  { icon: "upload", title: "Upload your test when it’s back", text: "It finds every question, picks out the ones that look wrong, and you choose which to practise." },
+  { icon: "book", tone: "streak", title: "Term plan", text: "Upload your class’s term plan for this week’s topic and a countdown to every test." },
+];
+
+const MORE_FEATURES = [
+  { icon: "snap", title: "Snap a question", text: "Any wrong question from homework or a test, solved step by step and filed under the right topic." },
+  { icon: "practice", tone: "violet", title: "Similar and harder questions", text: "A new question on the same idea, then a harder one, so you can’t just remember the answer." },
+  { icon: "explain", tone: "streak", title: "Hints, then solutions", text: "Try first, get a nudge, then see the full method. After a wrong answer, it explains the step that went wrong." },
+  { icon: "star", tone: "xp", title: "Mastery you can see", text: "Every question moves from To fix to Learning to Mastered, with stars along the way." },
+  { icon: "drill", tone: "success", title: "Drills", text: "Run through your mistakes, one topic or several together." },
+  { icon: "book", tone: "violet", title: "Spaced review", text: "Questions you got right come back after 3 days, a week and three weeks, so you don’t forget them." },
+  { icon: "test", tone: "violet", title: "Test any topic", text: "A short test on any topic, one question from each part of it. No snapping needed." },
+  { icon: "checked", tone: "success", title: "Topic tests and weekly review", text: "Prove you’ve mastered a topic, and a quick check on this week’s questions." },
+  { icon: "notes", title: "Study notes", text: "A one-page revision sheet on a topic, or only the bits you find hard. Save it or share it as a PDF." },
+  { icon: "bank", title: "Mind maps", text: "40 one-page maps across Years 7 to 10, with rules, examples and diagrams. Free." },
+  { icon: "goal", title: "Quick questions widget", text: "Practice on your home screen. Answer without opening the app." },
+  { icon: "streak", tone: "streak", title: "Goals, streaks and Quinn", text: "Weekly goals, XP and stars. Master a topic to unlock a new accessory for Quinn the quokka." },
+];
+
+function ExamCard() {
+  return (
+    <div className="ezc" aria-label="Example: an Exam Zone practice exam built from a test outline and a past paper">
+      <p className="ezc__k">Exam Zone</p>
+      <p className="ezc__t">Year 9 maths test: Linear relationships</p>
+      <ul className="ezc__files">
+        <li><span aria-hidden="true">✓</span> Test outline</li>
+        <li><span aria-hidden="true">✓</span> Past paper</li>
+        <li><span aria-hidden="true">✓</span> Teacher’s notes</li>
+      </ul>
+      <p className="ezc__m">Match meter <strong>Great match</strong></p>
+      <div className="ezc__bar" aria-hidden="true"><span /></div>
+      <div className="ezc__ready">
+        <span className="ezc__badge">Practice exam ready</span>
+        <span>20 questions · your test is in 6 days</span>
+      </div>
+    </div>
+  );
+}
+
+function ExamZoneSection({ placement }) {
+  return (
+    <section id="exam-zone" className="tb-section tb-section--card" aria-labelledby="stl-exam">
+      <div className="tb-wrap">
+        <Reveal>
+          <SectionHead
+            id="stl-exam"
+            eyebrow="Exam Zone"
+            title="How Tuterly predicts your maths exam."
+            lead="Your teacher has already told you most of what’s coming: it’s in the outline, the past papers and the notes. Tuterly reads all of it and turns it into an exam you can sit first."
+          />
+        </Reveal>
+        <ol className="ezs">
+          {EXAM_STEPS.map((st) => (
+            <li key={st.n} className="ezs__step">
+              <span className="ezs__n" aria-hidden="true">{st.n}</span>
+              <p className="ezs__t">{st.title}</p>
+              <p className="ezs__x">{st.text}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="tb-tiles tb-tiles--3 ezs__tiles">
+          {EXAM_FEATURES.map((t) => (
+            <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
+          ))}
+        </div>
+        <p className="ezs__note">
+          Is it cheating? No. It’s the practice exam your teacher never gave you. You still have to do the maths, and the answers stay hidden until you’ve had a go.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function StudentLanding({ year = null }) {
   const name = STUDY_APP.name;
   const faqs = studentFaqs(name);
@@ -76,13 +166,13 @@ export default function StudentLanding({ year = null }) {
               {year ? (
                 year.h1
               ) : (
-                <>Better maths marks, starting with the ones you <span className="sl-accent">lost</span>.</>
+                <>Predict the questions on your <span className="sl-accent">maths exam</span>.</>
               )}
             </h1>
             <p className="tb-lead sl-hero__lead">
               {year
                 ? year.intro
-                : `Got a test back with marks you could have had? Snap the questions you got wrong, or upload the whole test. ${name} shows you the full worked solution, then gives you fresh questions on the same idea until you’ve mastered it.`}
+                : `Upload your test outline, past papers and your teacher’s notes. ${name} works out what’s on your test and how your school writes it, then writes you a practice exam in the same style, before the real one. Then it fixes everything you miss.`}
             </p>
             <ResultsProof compact className="sl-hero__proof" />
             <MadeInAustralia />
@@ -93,7 +183,7 @@ export default function StudentLanding({ year = null }) {
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
-            <DemoVideo width={330} placement="students_hero" priority />
+            {year ? <DemoVideo width={330} placement="students_hero" priority /> : <ExamCard />}
           </div>
         </div>
       </section>
@@ -104,13 +194,15 @@ export default function StudentLanding({ year = null }) {
         </div>
       </section>
 
+      <ExamZoneSection placement={placement} />
+
       {/* HOW IT WORKS */}
-      <section className="tb-section tb-section--card" aria-labelledby="stl-how">
+      <section className="tb-section" aria-labelledby="stl-how">
         <div className="tb-wrap">
           <Reveal>
             <SectionHead
               id="stl-how"
-              eyebrow="How it works"
+              eyebrow="Everything else in the app"
               title="Every wrong answer is a mark you can win back."
               lead="Re-reading your notes feels like studying. Getting a fresh version of the question right is what actually sticks."
             />
@@ -119,25 +211,22 @@ export default function StudentLanding({ year = null }) {
         </div>
       </section>
 
-      {/* BEFORE A TEST */}
-      <section className="tb-section" aria-labelledby="stl-test">
+      {/* ALL FEATURES */}
+      <section className="tb-section tb-section--card" aria-labelledby="stl-test">
         <div className="tb-wrap">
           <Reveal>
-            <SectionHead id="stl-test" eyebrow="Test coming up?" title="Walk in knowing you’ve done the work." />
+            <SectionHead id="stl-test" eyebrow="All the features" title="Everything you need between now and the test." />
           </Reveal>
           <div className="tb-tiles tb-tiles--3">
-            <OptionTile icon="test" tone="violet" title="Topic check" text="A short test on any topic in your year, one question from each part of it." />
-            <OptionTile icon="drill" tone="success" title="Fix my mistakes" text="Every question you got wrong on a topic, one after another." />
-            <OptionTile icon="notes" tone="violet" title="Study notes" text="A revision sheet on a whole topic, or just the bits you find hard." />
-            <OptionTile icon="goal" title="Test countdown" text="Tell it when your test is and it shows what to do next on your To do list." />
-            <OptionTile icon="upload" title="Upload a whole test" text="Photos, a PDF or a Word document. The wrong ones are saved automatically." />
-            <OptionTile icon="explain" tone="streak" title="Explain this" text="Got it wrong? A short explanation of the one step that went wrong." />
+            {MORE_FEATURES.map((t) => (
+              <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* HABIT */}
-      <section className="tb-section tb-section--card" aria-labelledby="stl-habit">
+      <section className="tb-section" aria-labelledby="stl-habit">
         <div className="tb-wrap sl-parents">
           <div>
             <Reveal>
@@ -238,7 +327,7 @@ export default function StudentLanding({ year = null }) {
 
       <CtaBand
         id={`${placement}-final-title`}
-        title="Your next test starts with the last one."
+        title={year ? "Your next test starts with the last one." : "Sit your exam before your exam."}
         lead={`${name} is ${STUDY_APP.offerShort}.`}
       >
         <StudyAppCTA variant="hero" placement={`${placement}_final`} position="final" audience="student" />

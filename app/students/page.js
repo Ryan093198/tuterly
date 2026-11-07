@@ -1,9 +1,9 @@
 import StudentLanding from "@/components/study/StudentLanding";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Maths Help for Students, Years 7 to 10: Get Better Marks";
+const TITLE = "Predict the Questions on Your Maths Exam | Tuterly for Students, Years 7 to 10";
 const DESCRIPTION =
-  "For Years 7 to 10 students: snap the maths questions you got wrong, see the worked solution, and practise fresh versions until you’ve mastered them. Coming soon on iPhone, with Android soon after.";
+  "Upload your test outline and past papers, and Tuterly writes a practice exam in your school’s style before the real one. Then fix every question you miss, with worked solutions. Years 7 to 10 maths, coming soon on iPhone.";
 const URL = `${SITE_URL}/students`;
 
 export const metadata = {
