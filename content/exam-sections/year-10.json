@@ -1,0 +1,5237 @@
+{
+ "year": "Year 10",
+ "sections": [
+  {
+   "code": "1A",
+   "name": "Review of algebra",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-algebraic-fractions",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-algebraic-fractions",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-algebraic-fractions",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-algebraic-fractions",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-rearranging-formulas",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-rearranging-formulas",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-rearranging-formulas",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 5,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 12,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "1B",
+   "name": "Solving linear equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A07",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A12",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-equations-with-fractions",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-equations-with-fractions",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-equations-with-fractions",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-equations-with-fractions",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-equations-with-fractions",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-equations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-equations",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-rearranging-formulas",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-rearranging-formulas",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "1C",
+   "name": "Linear inequalities",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A08",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-inequalities",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-inequalities",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-inequalities",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-inequalities",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-linear-inequalities",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 14,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "1E",
+   "name": "Graphing straight lines",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Consider the line $3x - 4y = 24$.\n\n(a) Find the $x$-intercept and the $y$-intercept.\n\n(b) Find the gradient of the line.\n\n(c) Describe how to sketch the line using your answers.",
+     "answer": "(a) $x$-intercept $(8, 0)$, $y$-intercept $(0, -6)$ (b) $\\frac{3}{4}$ (c) Plot $(8, 0)$ and $(0, -6)$ and rule a line through them.",
+     "solution": "**Key idea:** To find an intercept, set the other variable to zero. Rearranging to $y = mx + c$ gives the gradient.\n\n**(a)**\n1. $x$-intercept: let $y = 0$, so $3x = 24$ and $x = 8$. The point is $(8, 0)$.\n2. $y$-intercept: let $x = 0$, so $-4y = 24$ and $y = -6$. The point is $(0, -6)$.\n\n**(b)**\n1. Rearrange: $-4y = -3x + 24$, so $y = \\frac{3}{4}x - 6$.\n2. The gradient is $\\frac{3}{4}$.\n3. Check with the intercepts: $\\frac{\\text{rise}}{\\text{run}} = \\frac{0 - (-6)}{8 - 0} = \\frac{6}{8} = \\frac{3}{4}$ ✓\n\n**(c)**\n1. Draw axes, plot $(8, 0)$ and $(0, -6)$, then rule a straight line through both points and label it $3x - 4y = 24$.\n2. The line rises from left to right, which matches the positive gradient.\n\n**Answer:** (a) $x$-intercept $(8, 0)$, $y$-intercept $(0, -6)$ (b) $\\frac{3}{4}$ (c) Plot the two intercepts and rule a line through them."
+    }
+   ]
+  },
+  {
+   "code": "1F",
+   "name": "Finding the equation of a line",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the equation of the line that passes through the points $(-2, 5)$ and $(4, -7)$. Give your answer in the form $y = mx + c$.",
+     "answer": "$y = -2x + 1$",
+     "solution": "**Key idea:** Find the gradient from the two points, then substitute one point into $y = mx + c$ to find $c$.\n\n1. Gradient: $$m = \\frac{-7 - 5}{4 - (-2)} = \\frac{-12}{6} = -2$$\n2. Substitute $(-2, 5)$ into $y = -2x + c$: $5 = -2(-2) + c = 4 + c$, so $c = 1$.\n3. Check with $(4, -7)$: $-2(4) + 1 = -7$ ✓\n\n**Answer:** $y = -2x + 1$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A taxi company charges a fixed flagfall plus a constant amount per kilometre. A 6 km trip costs \\$19.20 and a 14 km trip costs \\$35.20.\n\n(a) Find a rule for the cost $C$ (in dollars) of a trip of $d$ kilometres.\n\n(b) What do the gradient and the $C$-intercept represent?\n\n(c) Find the cost of a 22 km trip.\n\n(d) How far can you travel for \\$60?",
+     "answer": "(a) $C = 2d + 7.2$ (b) \\$2 per km; \\$7.20 flagfall (c) \\$51.20 (d) 26.4 km",
+     "solution": "**Key idea:** The cost is linear in distance, so treat $(6, 19.2)$ and $(14, 35.2)$ as two points on a line $C = md + c$.\n\n**(a)**\n1. Gradient: $$m = \\frac{35.2 - 19.2}{14 - 6} = \\frac{16}{8} = 2$$\n2. Substitute $(6, 19.2)$: $19.2 = 2(6) + c$, so $c = 7.2$.\n3. Rule: $C = 2d + 7.2$\n4. Check with $(14, 35.2)$: $2(14) + 7.2 = 35.2$ ✓\n\n**(b)**\n1. The gradient 2 means each kilometre costs \\$2.\n2. The $C$-intercept 7.2 is the flagfall of \\$7.20, charged before any distance is travelled.\n\n**(c)**\n1. $C = 2(22) + 7.2 = 51.2$, so the trip costs \\$51.20.\n\n**(d)**\n1. Solve $60 = 2d + 7.2$: $2d = 52.8$, so $d = 26.4$.\n\n**Answer:** (a) $C = 2d + 7.2$ (b) \\$2 per kilometre; a \\$7.20 flagfall (c) \\$51.20 (d) 26.4 km"
+    }
+   ]
+  },
+  {
+   "code": "1G",
+   "name": "Length and midpoint of a line segment",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For the points $A(-3, 4)$ and $B(5, -2)$, find:\n\n(a) the length of the line segment $AB$\n\n(b) the midpoint of $AB$.",
+     "answer": "(a) 10 units (b) $(1, 1)$",
+     "solution": "**Key idea:** Length $= \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$ and midpoint $= \\left(\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2}\\right)$.\n\n**(a)**\n1. $x_2 - x_1 = 5 - (-3) = 8$ and $y_2 - y_1 = -2 - 4 = -6$.\n2. $$AB = \\sqrt{8^2 + (-6)^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$$\n\n**(b)**\n1. $$M = \\left(\\frac{-3 + 5}{2}, \\frac{4 + (-2)}{2}\\right) = (1, 1)$$\n\n**Answer:** (a) 10 units (b) $(1, 1)$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The point $M(3, -1)$ is the midpoint of the line segment $AB$. If $A$ is the point $(-2, 5)$, find the coordinates of $B$.",
+     "answer": "$B(8, -7)$",
+     "solution": "**Key idea:** Let $B = (x, y)$ and set each midpoint coordinate equal to the average of the endpoint coordinates.\n\n1. $x$-coordinate: $\\frac{-2 + x}{2} = 3$, so $-2 + x = 6$ and $x = 8$.\n2. $y$-coordinate: $\\frac{5 + y}{2} = -1$, so $5 + y = -2$ and $y = -7$.\n3. Check: midpoint of $(-2, 5)$ and $(8, -7)$ is $\\left(\\frac{6}{2}, \\frac{-2}{2}\\right) = (3, -1)$ ✓\n\n**Answer:** $B(8, -7)$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The distance between the points $(1, a)$ and $(4, 6)$ is 5 units. Find the possible values of $a$.",
+     "answer": "$a = 2$ or $a = 10$",
+     "solution": "**Key idea:** Substitute into the distance formula and solve the resulting equation.\n\n1. $$\\sqrt{(4 - 1)^2 + (6 - a)^2} = 5$$\n2. Square both sides: $9 + (6 - a)^2 = 25$, so $(6 - a)^2 = 16$.\n3. $6 - a = 4$ or $6 - a = -4$, so $a = 2$ or $a = 10$.\n4. Check $a = 2$: $\\sqrt{9 + 16} = 5$ ✓. Check $a = 10$: $\\sqrt{9 + 16} = 5$ ✓\n\n**Answer:** $a = 2$ or $a = 10$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Triangle $PQR$ has vertices $P(1, 2)$, $Q(7, 4)$ and $R(3, 8)$.\n\n(a) Find the exact lengths of $PQ$, $QR$ and $PR$.\n\n(b) What type of triangle is $PQR$? Give a reason.\n\n(c) Find the midpoint $M$ of $QR$.\n\n(d) Find the length of $PM$, correct to two decimal places.\n\n(e) Use gradients to show that $PM$ is perpendicular to $QR$.",
+     "answer": "(a) $PQ = \\sqrt{40}$, $QR = \\sqrt{32}$, $PR = \\sqrt{40}$ (b) Isosceles, since $PQ = PR$ (c) $M(5, 6)$ (d) 5.66 units (e) Gradients 1 and $-1$ multiply to $-1$",
+     "solution": "**Key idea:** Use the distance and midpoint formulas, and recall that two lines are perpendicular when the product of their gradients is $-1$.\n\n**(a)**\n1. $PQ = \\sqrt{(7 - 1)^2 + (4 - 2)^2} = \\sqrt{36 + 4} = \\sqrt{40}$\n2. $QR = \\sqrt{(3 - 7)^2 + (8 - 4)^2} = \\sqrt{16 + 16} = \\sqrt{32}$\n3. $PR = \\sqrt{(3 - 1)^2 + (8 - 2)^2} = \\sqrt{4 + 36} = \\sqrt{40}$\n\n**(b)**\n1. $PQ = PR = \\sqrt{40}$, so two sides are equal and the triangle is isosceles.\n\n**(c)**\n1. $$M = \\left(\\frac{7 + 3}{2}, \\frac{4 + 8}{2}\\right) = (5, 6)$$\n\n**(d)**\n1. $PM = \\sqrt{(5 - 1)^2 + (6 - 2)^2} = \\sqrt{16 + 16} = \\sqrt{32} \\approx 5.66$\n\n**(e)**\n1. Gradient of $PM = \\frac{6 - 2}{5 - 1} = 1$.\n2. Gradient of $QR = \\frac{8 - 4}{3 - 7} = -1$.\n3. Product of gradients $= 1 \\times (-1) = -1$, so $PM \\perp QR$.\n\n**Answer:** (a) $PQ = \\sqrt{40}$, $QR = \\sqrt{32}$, $PR = \\sqrt{40}$ units (b) Isosceles, because $PQ = PR$ (c) $M(5, 6)$ (d) $PM \\approx 5.66$ units (e) The gradients are $1$ and $-1$, whose product is $-1$, so $PM \\perp QR$."
+    }
+   ]
+  },
+  {
+   "code": "1H",
+   "name": "Parallel and perpendicular lines",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A10",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-coordinate-geometry",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-coordinate-geometry",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-coordinate-geometry",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-coordinate-geometry",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-coordinate-geometry",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 10,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "1I",
+   "name": "Simultaneous equations using substitution",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 6
+    },
+    {
+     "src": "we",
+     "slug": "year-10-simultaneous-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 1,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "1J",
+   "name": "Simultaneous equations using elimination",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-10-simultaneous-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-simultaneous-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-simultaneous-equations",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 13,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-linear-simultaneous-equations",
+     "part": "examples",
+     "i": 0,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "1K",
+   "name": "Further applications of simultaneous equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A09",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 11
+    },
+    {
+     "src": "we",
+     "slug": "year-10-simultaneous-equations",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "1L",
+   "name": "Regions on the Cartesian plane",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Which of the points $A(2, -1)$, $B(4, 3)$ and $C(0, -8)$ lie in the region $y > 3x - 8$?",
+     "answer": "Only $A(2, -1)$",
+     "solution": "**Key idea:** Substitute each point into the inequality. A point is in the region only if the inequality is true. Points on the boundary line are not included because the inequality is strict.\n\n1. $A(2, -1)$: is $-1 > 3(2) - 8 = -2$? Yes, so $A$ is in the region.\n2. $B(4, 3)$: is $3 > 3(4) - 8 = 4$? No, so $B$ is not in the region.\n3. $C(0, -8)$: is $-8 > 3(0) - 8 = -8$? No (it is equal), so $C$ lies on the boundary line and is not included.\n\n**Answer:** Only $A(2, -1)$ lies in the region."
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Describe how to sketch the region $2x + y \\le 6$ on the Cartesian plane. State the intercepts of the boundary line, whether the boundary is solid or dashed, and which side is shaded.",
+     "answer": "Solid line through $(3, 0)$ and $(0, 6)$; shade the side containing the origin (below the line).",
+     "solution": "**Key idea:** Sketch the boundary line $2x + y = 6$, then use a test point to decide which side satisfies the inequality.\n\n1. $x$-intercept: let $y = 0$, then $2x = 6$, so $x = 3$. Point $(3, 0)$.\n2. $y$-intercept: let $x = 0$, then $y = 6$. Point $(0, 6)$.\n3. The inequality is $\\le$, so points on the line are included and the boundary is drawn **solid**.\n4. Test the origin $(0, 0)$: $2(0) + 0 = 0 \\le 6$ is true.\n5. Shade the side of the line that contains $(0, 0)$, which is the region below and to the left of the line.\n\n**Answer:** Draw a solid line through $(3, 0)$ and $(0, 6)$ and shade the side containing the origin (below the line)."
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A region on the Cartesian plane is bounded by a dashed straight line passing through $(0, -2)$ and $(4, 0)$. The region is the side of the line that contains the origin. Write an inequality that describes the region.",
+     "answer": "$y > \\frac{1}{2}x - 2$",
+     "solution": "**Key idea:** Find the equation of the boundary line, then use the test point $(0, 0)$ to choose the inequality sign. A dashed line means the inequality is strict.\n\n1. Gradient: $m = \\frac{0 - (-2)}{4 - 0} = \\frac{1}{2}$, and the $y$-intercept is $-2$.\n2. Boundary line: $y = \\frac{1}{2}x - 2$.\n3. At $(0, 0)$: $y = 0$ and $\\frac{1}{2}(0) - 2 = -2$. Since $0 > -2$, the region uses $>$.\n4. The boundary is dashed, so it is not included and the strict sign $>$ is correct.\n\n**Answer:** $y > \\frac{1}{2}x - 2$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A region is defined by the two inequalities $y \\ge x + 1$ and $y \\le -2x + 7$.\n\n(a) Find the point where the two boundary lines intersect.\n\n(b) Determine whether the point $(0, 3)$ lies in the region.",
+     "answer": "(a) $(2, 3)$ (b) Yes",
+     "solution": "**Key idea:** The boundary lines meet where both equations are true at once. A point is in the region only if it satisfies **both** inequalities.\n\n**(a)**\n1. Solve $x + 1 = -2x + 7$: $3x = 6$, so $x = 2$.\n2. $y = 2 + 1 = 3$, so the lines meet at $(2, 3)$.\n3. Check in the second line: $-2(2) + 7 = 3$ ✓\n\n**(b)**\n1. First inequality: is $3 \\ge 0 + 1 = 1$? Yes.\n2. Second inequality: is $3 \\le -2(0) + 7 = 7$? Yes.\n3. Both are true, so $(0, 3)$ is in the region.\n\n**Answer:** (a) $(2, 3)$ (b) Yes, $(0, 3)$ satisfies both inequalities."
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A region $R$ is defined by the four inequalities\n$$x \\ge 0, \\quad y \\ge 0, \\quad x + y \\le 8, \\quad 2x + y \\le 12$$\n\n(a) Find the $x$- and $y$-intercepts of the lines $x + y = 8$ and $2x + y = 12$.\n\n(b) Find the point where $x + y = 8$ and $2x + y = 12$ intersect.\n\n(c) List the coordinates of the corners (vertices) of region $R$.\n\n(d) Does the point $(5, 2)$ lie in region $R$? Explain.\n\n(e) Find the area of region $R$.",
+     "answer": "(a) $x + y = 8$: $(8, 0)$, $(0, 8)$; $2x + y = 12$: $(6, 0)$, $(0, 12)$ (b) $(4, 4)$ (c) $(0, 0)$, $(6, 0)$, $(4, 4)$, $(0, 8)$ (d) Yes, it lies on the boundary $2x + y = 12$, which is included (e) 28 square units",
+     "solution": "**Key idea:** The region is the overlap of four half-planes. Its corners are where pairs of boundary lines meet, and only the corners that satisfy every inequality belong to the region.\n\n**(a)**\n1. $x + y = 8$: intercepts $(8, 0)$ and $(0, 8)$.\n2. $2x + y = 12$: when $y = 0$, $x = 6$; when $x = 0$, $y = 12$. Intercepts $(6, 0)$ and $(0, 12)$.\n\n**(b)**\n1. Subtract the equations: $(2x + y) - (x + y) = 12 - 8$, so $x = 4$.\n2. Then $y = 8 - 4 = 4$. The lines meet at $(4, 4)$.\n\n**(c)**\n1. Origin $(0, 0)$ satisfies everything.\n2. On the $x$-axis, $2x \\le 12$ gives $x \\le 6$ and $x \\le 8$, so the corner is $(6, 0)$.\n3. On the $y$-axis, $y \\le 8$ and $y \\le 12$, so the corner is $(0, 8)$.\n4. The intersection $(4, 4)$ satisfies $x, y \\ge 0$, so it is the fourth corner.\n\n**(d)**\n1. $x + y = 5 + 2 = 7 \\le 8$ ✓\n2. $2x + y = 10 + 2 = 12 \\le 12$ ✓ (on the boundary, which is included because of $\\le$)\n3. $x \\ge 0$ and $y \\ge 0$ ✓, so $(5, 2)$ is in $R$.\n\n**(e)**\n1. Split the quadrilateral along the line from $(0, 0)$ to $(4, 4)$ into two triangles.\n2. Triangle $(0, 0)$, $(6, 0)$, $(4, 4)$: base 6 on the $x$-axis, height 4, area $= \\frac{1}{2}(6)(4) = 12$.\n3. Triangle $(0, 0)$, $(4, 4)$, $(0, 8)$: base 8 on the $y$-axis, horizontal height 4, area $= \\frac{1}{2}(8)(4) = 16$.\n4. Total area $= 12 + 16 = 28$ square units.\n\n**Answer:** (a) $x + y = 8$: $(8, 0)$ and $(0, 8)$; $2x + y = 12$: $(6, 0)$ and $(0, 12)$ (b) $(4, 4)$ (c) $(0, 0)$, $(6, 0)$, $(4, 4)$, $(0, 8)$ (d) Yes; it lies on the included boundary $2x + y = 12$ and satisfies the other inequalities (e) 28 square units"
+    }
+   ]
+  },
+  {
+   "code": "2A",
+   "name": "Review of geometry",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 5,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "2B",
+   "name": "Congruent triangles",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 15
+    },
+    {
+     "src": "we",
+     "slug": "year-10-geometric-reasoning",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-geometric-reasoning",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-geometric-reasoning",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2C",
+   "name": "Using congruence to investigate quadrilaterals",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 11
+    },
+    {
+     "src": "we",
+     "slug": "year-10-geometric-reasoning",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "$ABCD$ is a parallelogram, so $AB \\parallel DC$, $AD \\parallel BC$ and $AB = DC$. The diagonals $AC$ and $BD$ intersect at $M$. Use congruent triangles to prove that the diagonals bisect each other, that is, $AM = MC$ and $BM = MD$.",
+     "answer": "$\\triangle ABM \\equiv \\triangle CDM$ (AAS), so $AM = CM$ and $BM = DM$.",
+     "solution": "**Key idea:** Find a pair of triangles that contain the four half-diagonals, prove them congruent, then use matching sides.\n\n1. Consider $\\triangle ABM$ and $\\triangle CDM$.\n2. $\\angle BAM = \\angle DCM$ (alternate angles, $AB \\parallel DC$).\n3. $\\angle ABM = \\angle CDM$ (alternate angles, $AB \\parallel DC$).\n4. $AB = CD$ (opposite sides of a parallelogram are equal).\n5. So $\\triangle ABM \\equiv \\triangle CDM$ (AAS).\n6. Corresponding sides of congruent triangles are equal, so $AM = CM$ and $BM = DM$.\n7. Therefore $M$ is the midpoint of both diagonals, and the diagonals bisect each other.\n\n**Answer:** $\\triangle ABM \\equiv \\triangle CDM$ by AAS, so $AM = MC$ and $BM = MD$; the diagonals bisect each other."
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "$PQRS$ is a rhombus (all four sides are equal). Its diagonals $PR$ and $QS$ intersect at $O$.\n\n(a) Prove that $\\triangle PQR \\equiv \\triangle PSR$.\n\n(b) Hence explain why the diagonal $PR$ bisects $\\angle QPS$.\n\n(c) Prove that $\\triangle POQ \\equiv \\triangle POS$ and hence that the diagonals meet at right angles.\n\n(d) If each side of the rhombus is 13 cm and the diagonal $PR$ is 24 cm, find the length of the diagonal $QS$. (You may use the fact that the diagonals of a rhombus bisect each other.)",
+     "answer": "(a) SSS (b) Matching angles $\\angle QPR = \\angle SPR$ (c) SAS, then $\\angle POQ = \\angle POS = 90^\\circ$ (d) 10 cm",
+     "solution": "**Key idea:** Use the equal sides of a rhombus to build congruent triangles, then use matching angles to prove the angle properties.\n\n**(a)**\n1. $PQ = PS$ (sides of a rhombus).\n2. $QR = SR$ (sides of a rhombus).\n3. $PR$ is common.\n4. So $\\triangle PQR \\equiv \\triangle PSR$ (SSS).\n\n**(b)**\n1. Corresponding angles in congruent triangles are equal, so $\\angle QPR = \\angle SPR$.\n2. Hence $PR$ splits $\\angle QPS$ into two equal angles, so it bisects $\\angle QPS$.\n\n**(c)**\n1. In $\\triangle POQ$ and $\\triangle POS$: $PQ = PS$ (sides of a rhombus).\n2. $\\angle QPO = \\angle SPO$ (from part (b)).\n3. $PO$ is common.\n4. So $\\triangle POQ \\equiv \\triangle POS$ (SAS), and therefore $\\angle POQ = \\angle POS$.\n5. These two angles lie on the straight line $QS$, so they add to $180^\\circ$. Each is $90^\\circ$, so $PR \\perp QS$.\n\n**(d)**\n1. The diagonals bisect each other, so $PO = \\frac{24}{2} = 12$ cm.\n2. $\\triangle POQ$ is right-angled at $O$ with hypotenuse $PQ = 13$ cm.\n3. $OQ = \\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = \\sqrt{25} = 5$ cm.\n4. $QS = 2 \\times 5 = 10$ cm.\n\n**Answer:** (a) $\\triangle PQR \\equiv \\triangle PSR$ (SSS) (b) $\\angle QPR = \\angle SPR$, so $PR$ bisects $\\angle QPS$ (c) $\\triangle POQ \\equiv \\triangle POS$ (SAS), so the angles at $O$ are equal and supplementary, hence $90^\\circ$ (d) $QS = 10$ cm"
+    }
+   ]
+  },
+  {
+   "code": "2D",
+   "name": "Similar figures",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10-inverse-proportion",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "2E",
+   "name": "Proving and applying similar triangles",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 20
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "In $\\triangle ABC$, point $D$ lies on side $AB$ and point $E$ lies on side $AC$ so that $DE \\parallel BC$. Given $AD = 4$ cm, $DB = 6$ cm, $DE = 5$ cm and $AE = 3$ cm:\n\n(a) Prove that $\\triangle ADE \\sim \\triangle ABC$.\n\n(b) Find the length of $BC$.\n\n(c) Find the length of $EC$.",
+     "answer": "(a) AAA (b) 12.5 cm (c) 4.5 cm",
+     "solution": "**Key idea:** Parallel lines create equal corresponding angles, giving similar triangles (AAA). Then use the scale factor from the larger triangle to the smaller one.\n\n**(a)**\n1. $\\angle A$ is common to both triangles.\n2. $\\angle ADE = \\angle ABC$ (corresponding angles, $DE \\parallel BC$).\n3. $\\angle AED = \\angle ACB$ (corresponding angles, $DE \\parallel BC$).\n4. So $\\triangle ADE \\sim \\triangle ABC$ (AAA).\n\n**(b)**\n1. $AB = AD + DB = 4 + 6 = 10$ cm.\n2. Scale factor from $\\triangle ADE$ to $\\triangle ABC$: $\\frac{AB}{AD} = \\frac{10}{4} = 2.5$.\n3. $BC = 2.5 \\times DE = 2.5 \\times 5 = 12.5$ cm.\n\n**(c)**\n1. $AC = 2.5 \\times AE = 2.5 \\times 3 = 7.5$ cm.\n2. $EC = AC - AE = 7.5 - 3 = 4.5$ cm.\n\n**Answer:** (a) $\\triangle ADE \\sim \\triangle ABC$ (AAA) (b) $BC = 12.5$ cm (c) $EC = 4.5$ cm"
+    }
+   ]
+  },
+  {
+   "code": "2K",
+   "name": "Introduction to networks",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-networks",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-networks",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "2L",
+   "name": "Isomorphic and planar graphs",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 8
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A connected planar graph has 9 vertices and 14 edges. How many faces does it have (including the outside face)?",
+     "answer": "7 faces",
+     "solution": "**Key idea:** Euler's formula for connected planar graphs is $v - e + f = 2$.\n\n1. Substitute $v = 9$ and $e = 14$: $9 - 14 + f = 2$.\n2. $-5 + f = 2$, so $f = 7$.\n\n**Answer:** 7 faces"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Graph $G$ has vertices $A, B, C, D, E$ and edges $AB$, $BC$, $CD$, $DE$, $EA$.\n\nGraph $H$ has vertices $P, Q, R, S, T$ and edges $PR$, $RT$, $TQ$, $QS$, $SP$.\n\nAre $G$ and $H$ isomorphic? If so, give a matching of the vertices.",
+     "answer": "Yes: $A \\to P$, $B \\to R$, $C \\to T$, $D \\to Q$, $E \\to S$",
+     "solution": "**Key idea:** Two graphs are isomorphic if the vertices can be matched so that every edge of one graph corresponds to an edge of the other.\n\n1. Both graphs have 5 vertices and 5 edges, and every vertex has degree 2 in each graph.\n2. $G$ is the single cycle $A - B - C - D - E - A$.\n3. Following the edges of $H$: $P - R - T - Q - S - P$, which is also a single cycle of length 5.\n4. Match the cycles in order: $A \\to P$, $B \\to R$, $C \\to T$, $D \\to Q$, $E \\to S$.\n5. Check every edge: $AB \\to PR$, $BC \\to RT$, $CD \\to TQ$, $DE \\to QS$, $EA \\to SP$. All are edges of $H$ ✓\n\n**Answer:** Yes, they are isomorphic, with $A \\to P$, $B \\to R$, $C \\to T$, $D \\to Q$, $E \\to S$."
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Graph $G$ has vertices $1, 2, 3, 4, 5, 6$ and edges $12$, $23$, $31$, $45$, $56$, $64$.\n\nGraph $H$ has vertices $U, V, W, X, Y, Z$ and edges $UV$, $VW$, $WX$, $XY$, $YZ$, $ZU$.\n\nBoth graphs have 6 vertices, 6 edges and every vertex has degree 2. Explain why they are **not** isomorphic.",
+     "answer": "$G$ is two separate triangles (disconnected); $H$ is one 6-cycle (connected), so they are not isomorphic.",
+     "solution": "**Key idea:** Matching vertex and edge counts and degrees is necessary but not enough. Isomorphic graphs must also agree on every structural feature, such as being connected or containing triangles.\n\n1. In $G$, edges $12, 23, 31$ form a triangle on $\\{1, 2, 3\\}$ and edges $45, 56, 64$ form a triangle on $\\{4, 5, 6\\}$. No edge joins the two triangles, so $G$ is **disconnected**.\n2. In $H$, following the edges gives $U - V - W - X - Y - Z - U$, a single cycle through all six vertices, so $H$ is **connected**.\n3. $G$ also contains cycles of length 3, while the shortest cycle in $H$ has length 6.\n4. An isomorphism would preserve connectedness and cycle lengths, so no matching of vertices can work.\n\n**Answer:** They are not isomorphic: $G$ is two separate triangles (disconnected), whereas $H$ is one connected 6-cycle with no triangles."
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A graph has vertices placed at $A(0, 0)$, $B(2, 0)$, $C(2, 2)$, $D(0, 2)$ and $E(4, 1)$. Its edges are drawn as straight segments: $AB$, $BC$, $CD$, $DA$, $AC$, $BD$, $BE$ and $CE$.\n\n(a) State the number of vertices and edges.\n\n(b) In this drawing, which two edges cross each other?\n\n(c) Explain how the graph can be redrawn with no crossing edges, and hence state whether it is planar.\n\n(d) Use Euler's formula to find the number of faces in a planar drawing.",
+     "answer": "(a) 5 vertices, 8 edges (b) $AC$ and $BD$ (c) Redraw $BD$ around the outside, below $A$ and up the left side to $D$; planar (d) 5 faces",
+     "solution": "**Key idea:** A graph is planar if it can be redrawn with no edges crossing. For a connected planar graph, $v - e + f = 2$.\n\n**(a)**\n1. Vertices: $A, B, C, D, E$, so $v = 5$.\n2. Edges: $AB, BC, CD, DA, AC, BD, BE, CE$, so $e = 8$.\n\n**(b)**\n1. $AC$ runs from $(0, 0)$ to $(2, 2)$ and $BD$ runs from $(2, 0)$ to $(0, 2)$. They are the diagonals of the square and cross at $(1, 1)$.\n2. $BE$ and $CE$ lie to the right of the square and cross nothing.\n\n**(c)**\n1. Keep $AC$ as the diagonal. Remove $BD$ and redraw it as a curve that leaves $B$, passes below $A$, goes up the left side of the square and enters $D$ from the left.\n2. This curve stays outside the square and away from $E$ (which is on the right), so it crosses no edge.\n3. No edges now cross, so the graph is planar.\n\n**(d)**\n1. $v - e + f = 2$ gives $5 - 8 + f = 2$, so $f = 5$.\n2. Check by counting in the redrawn graph: triangle $ABC$, triangle $ACD$, triangle $BCE$, the region between the square's side $AB$, $DA$ and the curved edge $BD$, and the outside face: 5 faces ✓\n\n**Answer:** (a) 5 vertices, 8 edges (b) $AC$ and $BD$ (c) Redraw $BD$ around the outside of the square (below $A$ and up the left side); the graph is planar (d) 5 faces"
+    }
+   ]
+  },
+  {
+   "code": "2M",
+   "name": "Trails, paths and Eulerian circuits",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10-networks",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-networks",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2N",
+   "name": "Shortest path problems",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP02",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-10-networks",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 9,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3A",
+   "name": "Review of index laws",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-index-laws",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-index-laws",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-index-laws",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-index-laws",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-index-laws",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "3B",
+   "name": "Negative indices",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 4,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3C",
+   "name": "Scientific notation",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 16
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write each number in scientific notation.\n\n(a) $0.000\\,047\\,2$\n\n(b) $382\\,000\\,000$",
+     "answer": "(a) $4.72 \\times 10^{-5}$ (b) $3.82 \\times 10^{8}$",
+     "solution": "**Key idea:** Write the number as $a \\times 10^n$ with $1 \\le a < 10$. Count how many places the decimal point moves: moving right gives a negative power, moving left gives a positive power.\n\n**(a)**\n1. Move the decimal point 5 places to the right to get $4.72$.\n2. $0.000\\,047\\,2 = 4.72 \\times 10^{-5}$\n\n**(b)**\n1. Move the decimal point 8 places to the left to get $3.82$.\n2. $382\\,000\\,000 = 3.82 \\times 10^{8}$\n\n**Answer:** (a) $4.72 \\times 10^{-5}$ (b) $3.82 \\times 10^{8}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Without a calculator, evaluate each expression and give your answer in scientific notation.\n\n(a) $(3.2 \\times 10^{5}) \\times (4 \\times 10^{-9})$\n\n(b) $\\dfrac{6.3 \\times 10^{7}}{9 \\times 10^{2}}$",
+     "answer": "(a) $1.28 \\times 10^{-3}$ (b) $7 \\times 10^{4}$",
+     "solution": "**Key idea:** Multiply or divide the decimal parts, use index laws on the powers of 10, then adjust so the decimal part is between 1 and 10.\n\n**(a)**\n1. $3.2 \\times 4 = 12.8$ and $10^{5} \\times 10^{-9} = 10^{-4}$.\n2. $12.8 \\times 10^{-4} = 1.28 \\times 10^{1} \\times 10^{-4} = 1.28 \\times 10^{-3}$\n\n**(b)**\n1. $6.3 \\div 9 = 0.7$ and $10^{7} \\div 10^{2} = 10^{5}$.\n2. $0.7 \\times 10^{5} = 7 \\times 10^{-1} \\times 10^{5} = 7 \\times 10^{4}$\n\n**Answer:** (a) $1.28 \\times 10^{-3}$ (b) $7 \\times 10^{4}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. Light travels at $3.00 \\times 10^{8}$ metres per second.\n\n(a) The average distance from the Sun to Earth is $1.496 \\times 10^{11}$ m. How long does sunlight take to reach Earth? Give your answer in seconds in scientific notation correct to three significant figures, and also in minutes correct to one decimal place.\n\n(b) A light-year is the distance light travels in one year of 365.25 days. Find one light-year in metres, in scientific notation correct to three significant figures.\n\n(c) The star Proxima Centauri is about 4.24 light-years from Earth. Using your unrounded answer to part (b), find this distance in kilometres, in scientific notation correct to three significant figures.",
+     "answer": "(a) $4.99 \\times 10^{2}$ s, about 8.3 minutes (b) $9.47 \\times 10^{15}$ m (c) $4.01 \\times 10^{13}$ km",
+     "solution": "**Key idea:** Time $= \\dfrac{\\text{distance}}{\\text{speed}}$ and distance $= \\text{speed} \\times \\text{time}$. Convert all times to seconds first.\n\n**(a)**\n1. $$t = \\frac{1.496 \\times 10^{11}}{3.00 \\times 10^{8}} = 498.67 \\text{ s} \\approx 4.99 \\times 10^{2} \\text{ s}$$\n2. In minutes: $498.67 \\div 60 \\approx 8.3$ minutes.\n\n**(b)**\n1. Seconds in a year: $365.25 \\times 24 \\times 60 \\times 60 = 31\\,557\\,600$ s.\n2. Distance: $3.00 \\times 10^{8} \\times 31\\,557\\,600 = 9.467\\,28 \\times 10^{15}$ m $\\approx 9.47 \\times 10^{15}$ m.\n\n**(c)**\n1. $4.24 \\times 9.467\\,28 \\times 10^{15} = 4.014\\,13 \\times 10^{16}$ m.\n2. Divide by 1000 to convert to kilometres: $4.014\\,13 \\times 10^{13}$ km $\\approx 4.01 \\times 10^{13}$ km.\n\n**Answer:** (a) $4.99 \\times 10^{2}$ s (about 8.3 minutes) (b) $9.47 \\times 10^{15}$ m (c) $4.01 \\times 10^{13}$ km"
+    }
+   ]
+  },
+  {
+   "code": "3E",
+   "name": "Exponential equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A14",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 12
+    },
+    {
+     "src": "we",
+     "slug": "year-10-exponential-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-exponential-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-exponential-equations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-exponential-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-exponential-equations",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 2,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3F",
+   "name": "Exponential relations and their graphs",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 7,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3G",
+   "name": "Exponential growth and decay",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-parabolas-circles-exponentials",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 18,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3H",
+   "name": "Compound interest",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-10-compound-interest",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-compound-interest",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-compound-interest",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-compound-interest",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-compound-interest",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "3I",
+   "name": "Introducing logarithms",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 5,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 15,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-exponential-log-equations",
+     "part": "examples",
+     "i": 0,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-logarithms",
+     "part": "examples",
+     "i": 0,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "3J",
+   "name": "Logarithmic scales",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-logarithmic-scales",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-logarithmic-scales",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-logarithmic-scales",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-logarithmic-scales",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-logarithmic-scales",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 12,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 13,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-logarithms",
+     "part": "examples",
+     "i": 2,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "4E",
+   "name": "Review of length",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert each length to the unit shown in brackets.\n\n(a) 3.75 km (m)\n\n(b) 48 mm (cm)\n\n(c) 0.62 m (mm)",
+     "answer": "(a) 3750 m (b) 4.8 cm (c) 620 mm",
+     "solution": "**Key idea:** $1 \\text{ km} = 1000 \\text{ m}$, $1 \\text{ m} = 100 \\text{ cm}$ and $1 \\text{ cm} = 10 \\text{ mm}$. Multiply when converting to a smaller unit, divide when converting to a larger unit.\n\n**(a)**\n1. $3.75 \\times 1000 = 3750$ m\n\n**(b)**\n1. $48 \\div 10 = 4.8$ cm\n\n**(c)**\n1. $1 \\text{ m} = 1000 \\text{ mm}$, so $0.62 \\times 1000 = 620$ mm\n\n**Answer:** (a) 3750 m (b) 4.8 cm (c) 620 mm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. A shape is made from a rectangle measuring 12 cm by 5 cm with a semicircle attached to one of its 5 cm sides, so that this 5 cm side is the diameter of the semicircle. Find the perimeter of the shape, correct to two decimal places.",
+     "answer": "36.85 cm",
+     "solution": "**Key idea:** The perimeter is the distance around the outside only. The 5 cm side shared with the semicircle is inside the shape, so it is not counted.\n\n1. Straight edges on the outside: $12 + 5 + 12 = 29$ cm.\n2. Curved edge (half a circle of diameter 5 cm): $$\\frac{1}{2} \\times \\pi \\times 5 = 7.853\\ldots \\text{ cm}$$\n3. Perimeter $= 29 + 7.853\\ldots = 36.853\\ldots \\approx 36.85$ cm.\n\n**Answer:** 36.85 cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. A sector of a circle has radius 9 cm and a centre angle of $140^\\circ$.\n\n(a) Find the arc length, correct to two decimal places.\n\n(b) Find the perimeter of the sector, correct to two decimal places.",
+     "answer": "(a) 21.99 cm (b) 39.99 cm",
+     "solution": "**Key idea:** Arc length $= \\dfrac{\\theta}{360^\\circ} \\times 2\\pi r$. The perimeter of a sector is the arc plus two radii.\n\n**(a)**\n1. $$l = \\frac{140}{360} \\times 2\\pi \\times 9 = 7\\pi = 21.991\\ldots \\approx 21.99 \\text{ cm}$$\n\n**(b)**\n1. $P = 21.991\\ldots + 9 + 9 = 39.991\\ldots \\approx 39.99$ cm\n\n**Answer:** (a) 21.99 cm (b) 39.99 cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A right-angled triangle has a hypotenuse of 26 cm and one shorter side of 10 cm. Find the length of the third side and the perimeter of the triangle.",
+     "answer": "Third side 24 cm; perimeter 60 cm",
+     "solution": "**Key idea:** Use Pythagoras' theorem, $a^2 + b^2 = c^2$, where $c$ is the hypotenuse.\n\n1. $b^2 = 26^2 - 10^2 = 676 - 100 = 576$\n2. $b = \\sqrt{576} = 24$ cm\n3. Perimeter $= 26 + 10 + 24 = 60$ cm\n\n**Answer:** The third side is 24 cm and the perimeter is 60 cm."
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. The inside lane of a running track is made of two straight sections, each 84.39 m long, joined at each end by a semicircle of radius 36.8 m.\n\n(a) Find the total length of the inside lane, correct to one decimal place.\n\n(b) The next lane out has semicircles of radius 38.02 m and the same straight sections. How much further is one lap of this lane than one lap of the inside lane? Give your answer correct to two decimal places.\n\n(c) Explain why runners in outer lanes start further ahead in a one-lap race.",
+     "answer": "(a) 400.0 m (b) 7.67 m (c) Each outer lane is longer, so runners are staggered to run the same distance.",
+     "solution": "**Key idea:** The two semicircles together make one full circle, so a lap is $2 \\times \\text{straight} + 2\\pi r$.\n\n**(a)**\n1. Straights: $2 \\times 84.39 = 168.78$ m.\n2. Curves: $2\\pi \\times 36.8 = 231.221\\ldots$ m.\n3. Total: $168.78 + 231.221\\ldots = 400.001\\ldots \\approx 400.0$ m.\n\n**(b)**\n1. The straights are the same, so only the curves differ.\n2. Difference $= 2\\pi \\times 38.02 - 2\\pi \\times 36.8 = 2\\pi \\times 1.22 = 7.665\\ldots \\approx 7.67$ m.\n\n**(c)**\n1. A lap of the next lane is about 7.67 m longer because its curves have a larger radius.\n2. If every runner started on the same line, outer-lane runners would run further. Staggering the start (by about 7.67 m per lane) makes each runner cover the same distance.\n\n**Answer:** (a) 400.0 m (b) 7.67 m (c) Outer lanes have larger curves and are longer, so their starts are moved forward to make every runner cover the same distance."
+    }
+   ]
+  },
+  {
+   "code": "4F",
+   "name": "Pythagoras' theorem including three-dimensional problems",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 14
+    },
+    {
+     "src": "we",
+     "slug": "year-10-geometric-reasoning",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-trigonometry",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP06",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-3d-trigonometry",
+     "part": "examples",
+     "i": 0,
+     "year": "Year 10A"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-3d-trigonometry",
+     "part": "turn",
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "4G",
+   "name": "Review of area",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 17
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Find the area of a trapezium with parallel sides of 8.4 cm and 13.6 cm and a perpendicular height of 5 cm.",
+     "answer": "55 cm²",
+     "solution": "**Key idea:** Area of a trapezium $= \\dfrac{1}{2}(a + b)h$, where $a$ and $b$ are the parallel sides.\n\n1. $a + b = 8.4 + 13.6 = 22$\n2. $A = \\frac{1}{2} \\times 22 \\times 5 = 55$\n\n**Answer:** 55 cm²"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. Find the area of a circle with a diameter of 18 cm, correct to one decimal place.",
+     "answer": "254.5 cm²",
+     "solution": "**Key idea:** Area of a circle $= \\pi r^2$. Halve the diameter to get the radius first.\n\n1. $r = 18 \\div 2 = 9$ cm\n2. $A = \\pi \\times 9^2 = 81\\pi = 254.469\\ldots \\approx 254.5$ cm²\n\n**Answer:** 254.5 cm²"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Convert each area to the unit shown in brackets.\n\n(a) 3.2 m² (cm²)\n\n(b) 45 000 m² (hectares)",
+     "answer": "(a) 32 000 cm² (b) 4.5 ha",
+     "solution": "**Key idea:** Square the length conversion factor: $1 \\text{ m}^2 = 100^2 = 10\\,000 \\text{ cm}^2$. Also $1 \\text{ ha} = 10\\,000 \\text{ m}^2$.\n\n**(a)**\n1. $3.2 \\times 10\\,000 = 32\\,000$ cm²\n\n**(b)**\n1. $45\\,000 \\div 10\\,000 = 4.5$ ha\n\n**Answer:** (a) 32 000 cm² (b) 4.5 ha"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. A rectangular backyard measures 15 m by 8 m. It contains a circular pond of radius 1.5 m, and the rest of the backyard is to be covered with turf.\n\n(a) Find the area to be turfed, correct to two decimal places.\n\n(b) Turf is sold only in whole square metres at \\$12.50 per square metre. Find the cost of the turf needed.\n\n(c) A paved path 1 m wide is to be built around the outside of the backyard. Find the area of the path.",
+     "answer": "(a) 112.93 m² (b) \\$1412.50 (c) 50 m²",
+     "solution": "**Key idea:** The turfed area is the rectangle minus the circle. The path area is the large outer rectangle minus the backyard.\n\n**(a)**\n1. Rectangle: $15 \\times 8 = 120$ m².\n2. Pond: $\\pi \\times 1.5^2 = 2.25\\pi = 7.068\\ldots$ m².\n3. Turf area: $120 - 7.068\\ldots = 112.931\\ldots \\approx 112.93$ m².\n\n**(b)**\n1. Round up to whole square metres: 113 m².\n2. Cost: $113 \\times 12.50 = 1412.50$, so \\$1412.50.\n\n**(c)**\n1. Adding 1 m on every side gives an outer rectangle of $(15 + 2)$ m by $(8 + 2)$ m, that is 17 m by 10 m.\n2. Outer area: $17 \\times 10 = 170$ m².\n3. Path area: $170 - 120 = 50$ m².\n\n**Answer:** (a) 112.93 m² (b) \\$1412.50 (c) 50 m²"
+    }
+   ]
+  },
+  {
+   "code": "4H",
+   "name": "Measurement errors and accuracy",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "4I",
+   "name": "Surface area of prisms and cylinders",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-10-surface-area-volume",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "4K",
+   "name": "Volume of prisms and cylinders",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10-surface-area-volume",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-surface-area-volume",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-surface-area-volume",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-surface-area-volume",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "5A",
+   "name": "Expanding expressions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 4,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "5B",
+   "name": "Factorising expressions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10-common-factors",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-common-factors",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-common-factors",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-common-factors",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-common-factors",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 2,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "5C",
+   "name": "Multiplying and dividing algebraic fractions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-algebraic-fractions",
+     "part": "examples",
+     "i": 1
+    }
+   ]
+  },
+  {
+   "code": "5D",
+   "name": "Factorising monic quadratic trinomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A04",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-factorising",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-factorising",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-factorising",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-factorising",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-factorising",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 1,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "5F",
+   "name": "Factorising by completing the square",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Write $x^2 + 8x + 3$ in the form $(x + h)^2 + k$ by completing the square.",
+     "answer": "$(x + 4)^2 - 13$",
+     "solution": "**Key idea:** Add and subtract $\\left(\\frac{b}{2}\\right)^2$, where $b$ is the coefficient of $x$.\n\n1. $\\frac{b}{2} = \\frac{8}{2} = 4$ and $4^2 = 16$.\n2. $x^2 + 8x + 3 = x^2 + 8x + 16 - 16 + 3$\n3. $= (x + 4)^2 - 13$\n4. Check: $(x + 4)^2 - 13 = x^2 + 8x + 16 - 13 = x^2 + 8x + 3$ ✓\n\n**Answer:** $(x + 4)^2 - 13$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Factorise $x^2 + 6x + 4$ by completing the square.",
+     "answer": "$(x + 3 - \\sqrt{5})(x + 3 + \\sqrt{5})$",
+     "solution": "**Key idea:** Complete the square to get a difference of two squares, then use $a^2 - b^2 = (a - b)(a + b)$.\n\n1. $\\left(\\frac{6}{2}\\right)^2 = 9$, so $x^2 + 6x + 4 = x^2 + 6x + 9 - 9 + 4 = (x + 3)^2 - 5$.\n2. Write $5 = (\\sqrt{5})^2$: $(x + 3)^2 - (\\sqrt{5})^2$.\n3. Difference of two squares: $(x + 3 - \\sqrt{5})(x + 3 + \\sqrt{5})$.\n\n**Answer:** $(x + 3 - \\sqrt{5})(x + 3 + \\sqrt{5})$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Factorise $x^2 - 10x + 18$ by completing the square.",
+     "answer": "$(x - 5 - \\sqrt{7})(x - 5 + \\sqrt{7})$",
+     "solution": "**Key idea:** Complete the square, then factorise as a difference of two squares.\n\n1. $\\left(\\frac{-10}{2}\\right)^2 = 25$, so $x^2 - 10x + 18 = x^2 - 10x + 25 - 25 + 18 = (x - 5)^2 - 7$.\n2. $(x - 5)^2 - (\\sqrt{7})^2 = (x - 5 - \\sqrt{7})(x - 5 + \\sqrt{7})$\n\n**Answer:** $(x - 5 - \\sqrt{7})(x - 5 + \\sqrt{7})$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Factorise $x^2 + 5x + 2$ by completing the square.",
+     "answer": "$\\left(x + \\frac{5}{2} - \\frac{\\sqrt{17}}{2}\\right)\\left(x + \\frac{5}{2} + \\frac{\\sqrt{17}}{2}\\right)$",
+     "solution": "**Key idea:** When the coefficient of $x$ is odd, $\\left(\\frac{b}{2}\\right)^2$ is a fraction. Work carefully with the fractions.\n\n1. $\\left(\\frac{5}{2}\\right)^2 = \\frac{25}{4}$, so $$x^2 + 5x + 2 = \\left(x + \\frac{5}{2}\\right)^2 - \\frac{25}{4} + \\frac{8}{4} = \\left(x + \\frac{5}{2}\\right)^2 - \\frac{17}{4}$$\n2. $\\frac{17}{4} = \\left(\\frac{\\sqrt{17}}{2}\\right)^2$\n3. Difference of two squares: $$\\left(x + \\frac{5}{2} - \\frac{\\sqrt{17}}{2}\\right)\\left(x + \\frac{5}{2} + \\frac{\\sqrt{17}}{2}\\right)$$\n\n**Answer:** $\\left(x + \\frac{5}{2} - \\frac{\\sqrt{17}}{2}\\right)\\left(x + \\frac{5}{2} + \\frac{\\sqrt{17}}{2}\\right)$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) By completing the square, show that $x^2 + 4x + 9$ cannot be factorised using real numbers.\n\n(b) Factorise $x^2 - 2x - 11$ by completing the square, giving surds in simplest form.\n\n(c) Find all values of $k$ for which $x^2 + 6x + k$ can be factorised using real numbers.",
+     "answer": "(a) $(x + 2)^2 + 5$ is a sum, not a difference, of squares (b) $(x - 1 - 2\\sqrt{3})(x - 1 + 2\\sqrt{3})$ (c) $k \\le 9$",
+     "solution": "**Key idea:** After completing the square, $(x + h)^2 - m$ factorises over the real numbers only when $m \\ge 0$, because then $m$ is a perfect square of a real number.\n\n**(a)**\n1. $x^2 + 4x + 9 = x^2 + 4x + 4 - 4 + 9 = (x + 2)^2 + 5$\n2. This is a sum of two squares, not a difference, and $(x + 2)^2 + 5 \\ge 5 > 0$ for all $x$.\n3. So it cannot be written as a product of real linear factors.\n\n**(b)**\n1. $x^2 - 2x - 11 = x^2 - 2x + 1 - 1 - 11 = (x - 1)^2 - 12$\n2. $\\sqrt{12} = 2\\sqrt{3}$, so $(x - 1)^2 - (2\\sqrt{3})^2$.\n3. $= (x - 1 - 2\\sqrt{3})(x - 1 + 2\\sqrt{3})$\n\n**(c)**\n1. $x^2 + 6x + k = (x + 3)^2 - 9 + k = (x + 3)^2 - (9 - k)$\n2. This is a difference of squares when $9 - k \\ge 0$, that is $k \\le 9$.\n\n**Answer:** (a) $x^2 + 4x + 9 = (x + 2)^2 + 5$, a sum of squares that is always positive, so it has no real factors (b) $(x - 1 - 2\\sqrt{3})(x - 1 + 2\\sqrt{3})$ (c) $k \\le 9$"
+    }
+   ]
+  },
+  {
+   "code": "5G",
+   "name": "Solving quadratic equations using factorisation",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 12
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-equations",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 4,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "5H",
+   "name": "Applications of quadratic equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-quadratic-equations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 17,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "5I",
+   "name": "Solving quadratic equations by completing the square",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Solve $x^2 - 6x - 3 = 0$ by completing the square. Give exact answers in simplest surd form.",
+     "answer": "$x = 3 \\pm 2\\sqrt{3}$",
+     "solution": "**Key idea:** Complete the square on the left side, move the constant across, then take the square root of both sides (remembering $\\pm$).\n\n1. $x^2 - 6x + 9 - 9 - 3 = 0$, so $(x - 3)^2 - 12 = 0$.\n2. $(x - 3)^2 = 12$\n3. $x - 3 = \\pm\\sqrt{12} = \\pm 2\\sqrt{3}$\n4. $x = 3 \\pm 2\\sqrt{3}$\n\n**Answer:** $x = 3 + 2\\sqrt{3}$ or $x = 3 - 2\\sqrt{3}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A rectangle has a length that is 4 cm more than its width. Its area is 30 cm². Let the width be $w$ cm.\n\n(a) Show that $w^2 + 4w - 30 = 0$.\n\n(b) Solve the equation by completing the square, giving exact answers.\n\n(c) Use a calculator to find the width and length of the rectangle, correct to two decimal places.",
+     "answer": "(a) $w(w + 4) = 30$ (b) $w = -2 \\pm \\sqrt{34}$ (c) Width 3.83 cm, length 7.83 cm",
+     "solution": "**Key idea:** Write the area as length $\\times$ width, rearrange to equal zero, then complete the square. Reject any negative length.\n\n**(a)**\n1. Length $= w + 4$, so area $= w(w + 4) = 30$.\n2. $w^2 + 4w = 30$, so $w^2 + 4w - 30 = 0$.\n\n**(b)**\n1. $w^2 + 4w + 4 - 4 - 30 = 0$, so $(w + 2)^2 = 34$.\n2. $w + 2 = \\pm\\sqrt{34}$\n3. $w = -2 + \\sqrt{34}$ or $w = -2 - \\sqrt{34}$\n\n**(c)**\n1. $-2 - \\sqrt{34}$ is negative, so it is rejected because a width must be positive.\n2. $w = -2 + \\sqrt{34} = 3.830\\ldots \\approx 3.83$ cm\n3. Length $= w + 4 = 7.830\\ldots \\approx 7.83$ cm\n4. Check: $3.830\\ldots \\times 7.830\\ldots = 30.0$ ✓\n\n**Answer:** (a) $w(w + 4) = 30$ rearranges to $w^2 + 4w - 30 = 0$ (b) $w = -2 \\pm \\sqrt{34}$ (c) Width 3.83 cm, length 7.83 cm"
+    }
+   ]
+  },
+  {
+   "code": "5J",
+   "name": "Solving quadratic equations using the quadratic formula",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 9,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use the quadratic formula to solve $2x^2 + 5x - 1 = 0$. Give exact answers.",
+     "answer": "$x = \\dfrac{-5 \\pm \\sqrt{33}}{4}$",
+     "solution": "**Key idea:** For $ax^2 + bx + c = 0$, $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n1. $a = 2$, $b = 5$, $c = -1$.\n2. $b^2 - 4ac = 25 - 4(2)(-1) = 25 + 8 = 33$\n3. $$x = \\frac{-5 \\pm \\sqrt{33}}{2 \\times 2} = \\frac{-5 \\pm \\sqrt{33}}{4}$$\n\n**Answer:** $x = \\dfrac{-5 + \\sqrt{33}}{4}$ or $x = \\dfrac{-5 - \\sqrt{33}}{4}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. Solve $3x^2 - 4x - 2 = 0$ using the quadratic formula, giving answers correct to two decimal places.",
+     "answer": "$x \\approx 1.72$ or $x \\approx -0.39$",
+     "solution": "**Key idea:** Substitute $a$, $b$ and $c$ into the quadratic formula, then evaluate each solution separately.\n\n1. $a = 3$, $b = -4$, $c = -2$.\n2. $b^2 - 4ac = 16 - 4(3)(-2) = 16 + 24 = 40$\n3. $$x = \\frac{4 \\pm \\sqrt{40}}{6}$$\n4. $x = \\frac{4 + 6.324\\ldots}{6} = 1.720\\ldots \\approx 1.72$\n5. $x = \\frac{4 - 6.324\\ldots}{6} = -0.387\\ldots \\approx -0.39$\n\n**Answer:** $x \\approx 1.72$ or $x \\approx -0.39$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use the discriminant to find the number of real solutions of each equation.\n\n(a) $4x^2 - 12x + 9 = 0$\n\n(b) $x^2 + 3x + 5 = 0$\n\n(c) $2x^2 - x - 6 = 0$",
+     "answer": "(a) 1 (b) 0 (c) 2",
+     "solution": "**Key idea:** The discriminant is $\\Delta = b^2 - 4ac$. If $\\Delta > 0$ there are two solutions, if $\\Delta = 0$ there is one, and if $\\Delta < 0$ there are none.\n\n**(a)**\n1. $\\Delta = (-12)^2 - 4(4)(9) = 144 - 144 = 0$, so one solution.\n\n**(b)**\n1. $\\Delta = 3^2 - 4(1)(5) = 9 - 20 = -11 < 0$, so no real solutions.\n\n**(c)**\n1. $\\Delta = (-1)^2 - 4(2)(-6) = 1 + 48 = 49 > 0$, so two solutions.\n\n**Answer:** (a) 1 solution (b) 0 solutions (c) 2 solutions"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. A ball is thrown upwards so that its height $h$ metres above the ground after $t$ seconds is\n$$h = -4.9t^2 + 18t + 1.5$$\n\n(a) Find the height from which the ball was thrown.\n\n(b) Find the two times when the ball is 10 m above the ground, correct to two decimal places.\n\n(c) Find when the ball hits the ground, correct to two decimal places.",
+     "answer": "(a) 1.5 m (b) 0.56 s and 3.12 s (c) 3.75 s",
+     "solution": "**Key idea:** Set $h$ equal to the required height, rearrange to $at^2 + bt + c = 0$ and use the quadratic formula. Reject negative times.\n\n**(a)**\n1. At $t = 0$, $h = 1.5$, so the ball was thrown from 1.5 m.\n\n**(b)**\n1. $-4.9t^2 + 18t + 1.5 = 10$, so $-4.9t^2 + 18t - 8.5 = 0$.\n2. $a = -4.9$, $b = 18$, $c = -8.5$: $\\Delta = 18^2 - 4(-4.9)(-8.5) = 324 - 166.6 = 157.4$\n3. $$t = \\frac{-18 \\pm \\sqrt{157.4}}{2(-4.9)} = \\frac{-18 \\pm 12.546\\ldots}{-9.8}$$\n4. $t = \\frac{-18 + 12.546\\ldots}{-9.8} = 0.556\\ldots \\approx 0.56$ s and $t = \\frac{-18 - 12.546\\ldots}{-9.8} = 3.116\\ldots \\approx 3.12$ s\n\n**(c)**\n1. Solve $-4.9t^2 + 18t + 1.5 = 0$: $\\Delta = 324 - 4(-4.9)(1.5) = 324 + 29.4 = 353.4$\n2. $$t = \\frac{-18 \\pm \\sqrt{353.4}}{-9.8} = \\frac{-18 \\pm 18.798\\ldots}{-9.8}$$\n3. The solutions are $t \\approx -0.08$ (rejected, as time cannot be negative) and $t = \\frac{-18 - 18.798\\ldots}{-9.8} = 3.754\\ldots \\approx 3.75$ s.\n\n**Answer:** (a) 1.5 m (b) $t \\approx 0.56$ s and $t \\approx 3.12$ s (c) $t \\approx 3.75$ s"
+    }
+   ]
+  },
+  {
+   "code": "6A",
+   "name": "Trigonometric ratios",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 13
+    }
+   ]
+  },
+  {
+   "code": "6B",
+   "name": "Finding unknown angles",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 15
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. In a right-angled triangle, the side opposite angle $\\theta$ is 7 cm and the hypotenuse is 12 cm. Find $\\theta$, correct to one decimal place.",
+     "answer": "$\\theta \\approx 35.7^\\circ$",
+     "solution": "**Key idea:** Opposite and hypotenuse are known, so use sine, then the inverse sine function.\n\n1. $\\sin\\theta = \\frac{7}{12}$\n2. $\\theta = \\sin^{-1}\\left(\\frac{7}{12}\\right) = 35.685\\ldots^\\circ \\approx 35.7^\\circ$\n\n**Answer:** $\\theta \\approx 35.7^\\circ$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Use a calculator. In a right-angled triangle, the side opposite angle $\\alpha$ is 8.6 m and the side adjacent to $\\alpha$ is 15.2 m. Find $\\alpha$, correct to one decimal place.",
+     "answer": "$\\alpha \\approx 29.5^\\circ$",
+     "solution": "**Key idea:** Opposite and adjacent are known, so use tangent, then the inverse tangent function.\n\n1. $\\tan\\alpha = \\frac{8.6}{15.2}$\n2. $\\alpha = \\tan^{-1}\\left(\\frac{8.6}{15.2}\\right) = 29.500\\ldots^\\circ \\approx 29.5^\\circ$\n\n**Answer:** $\\alpha \\approx 29.5^\\circ$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. A wheelchair ramp rises 1.2 m vertically over a horizontal distance of 9 m.\n\n(a) Find the angle the ramp makes with the horizontal, correct to one decimal place.\n\n(b) Find the length of the sloping surface of the ramp, correct to two decimal places.\n\n(c) A building guideline says a ramp's gradient must be no steeper than 1 in 14 (a rise of 1 m for every 14 m horizontally). Does this ramp meet the guideline? If not, find the horizontal distance needed for a 1.2 m rise.",
+     "answer": "(a) $7.6^\\circ$ (b) 9.08 m (c) No; it needs 16.8 m horizontally",
+     "solution": "**Key idea:** The rise is opposite the angle and the horizontal run is adjacent, so use tangent. Pythagoras gives the sloping length.\n\n**(a)**\n1. $\\tan\\theta = \\frac{1.2}{9}$\n2. $\\theta = \\tan^{-1}\\left(\\frac{1.2}{9}\\right) = 7.594\\ldots^\\circ \\approx 7.6^\\circ$\n\n**(b)**\n1. $l = \\sqrt{9^2 + 1.2^2} = \\sqrt{81 + 1.44} = \\sqrt{82.44} = 9.079\\ldots \\approx 9.08$ m\n\n**(c)**\n1. The ramp's gradient is $\\frac{1.2}{9} = \\frac{1}{7.5}$, which is steeper than $\\frac{1}{14}$, so it does not meet the guideline.\n2. For a gradient of $\\frac{1}{14}$: horizontal distance $= 14 \\times 1.2 = 16.8$ m.\n\n**Answer:** (a) $7.6^\\circ$ (b) 9.08 m (c) No, it is too steep (1 in 7.5); it would need a horizontal distance of 16.8 m."
+    }
+   ]
+  },
+  {
+   "code": "6C",
+   "name": "Applications in two dimensions",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-trigonometry",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-trigonometry",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-trigonometry",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 12,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "6D",
+   "name": "Directions and bearings",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M03",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10-trigonometry",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator. A hiker walks 8 km from camp on a bearing of $130^\\circ$T.\n\n(a) How far east and how far south of camp is the hiker? Give answers correct to two decimal places.\n\n(b) On what bearing must the hiker walk to return directly to camp?",
+     "answer": "(a) 6.13 km east, 5.14 km south (b) $310^\\circ$T",
+     "solution": "**Key idea:** Draw a right-angled triangle with the north-south line. A bearing of $130^\\circ$T makes an angle of $180^\\circ - 130^\\circ = 50^\\circ$ with due south. The return bearing differs by $180^\\circ$.\n\n**(a)**\n1. Angle between the path and due south: $180^\\circ - 130^\\circ = 50^\\circ$.\n2. Distance south (adjacent to $50^\\circ$): $8\\cos 50^\\circ = 5.142\\ldots \\approx 5.14$ km.\n3. Distance east (opposite $50^\\circ$): $8\\sin 50^\\circ = 6.128\\ldots \\approx 6.13$ km.\n\n**(b)**\n1. Return bearing $= 130^\\circ + 180^\\circ = 310^\\circ$T.\n\n**Answer:** (a) 6.13 km east and 5.14 km south (b) $310^\\circ$T"
+    }
+   ]
+  },
+  {
+   "code": "7A",
+   "name": "Exploring parabolas",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A13",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 9
+    }
+   ]
+  },
+  {
+   "code": "7B",
+   "name": "Sketching parabolas using transformations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Consider the parabola $y = -2(x - 3)^2 + 8$.\n\n(a) State the coordinates of the turning point and whether it is a maximum or a minimum.\n\n(b) Describe the transformations that map $y = x^2$ onto this parabola.\n\n(c) Find the $y$-intercept.\n\n(d) Find the $x$-intercepts.\n\n(e) State the equation of the axis of symmetry.",
+     "answer": "(a) $(3, 8)$, maximum (b) Dilation by factor 2 from the $x$-axis, reflection in the $x$-axis, translation 3 right and 8 up (c) $(0, -10)$ (d) $(1, 0)$ and $(5, 0)$ (e) $x = 3$",
+     "solution": "**Key idea:** In turning point form $y = a(x - h)^2 + k$, the turning point is $(h, k)$. A negative $a$ means the parabola opens downwards.\n\n**(a)**\n1. $h = 3$ and $k = 8$, so the turning point is $(3, 8)$.\n2. $a = -2 < 0$, so the parabola is concave down and $(3, 8)$ is a maximum.\n\n**(b)**\n1. Dilation by a factor of 2 from the $x$-axis (narrower).\n2. Reflection in the $x$-axis (because $a$ is negative).\n3. Translation 3 units right and 8 units up.\n\n**(c)**\n1. Let $x = 0$: $y = -2(0 - 3)^2 + 8 = -18 + 8 = -10$, giving $(0, -10)$.\n\n**(d)**\n1. Let $y = 0$: $-2(x - 3)^2 + 8 = 0$, so $(x - 3)^2 = 4$.\n2. $x - 3 = \\pm 2$, so $x = 1$ or $x = 5$.\n\n**(e)**\n1. The axis of symmetry passes through the turning point: $x = 3$.\n2. Check: the $x$-intercepts 1 and 5 are symmetric about 3 ✓\n\n**Answer:** (a) $(3, 8)$, a maximum (b) Dilation by factor 2 from the $x$-axis, reflection in the $x$-axis, then translation 3 right and 8 up (c) $(0, -10)$ (d) $(1, 0)$ and $(5, 0)$ (e) $x = 3$"
+    }
+   ]
+  },
+  {
+   "code": "7C",
+   "name": "Sketching parabolas using factorisation",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 3
+    },
+    {
+     "src": "we",
+     "slug": "year-10-parabolas-circles-exponentials",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 5,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "7D",
+   "name": "Sketching parabolas by completing the square",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "By completing the square, write $y = x^2 - 4x - 5$ in turning point form. Hence state the turning point, the $y$-intercept and the $x$-intercepts.",
+     "answer": "$y = (x - 2)^2 - 9$; turning point $(2, -9)$; $y$-intercept $(0, -5)$; $x$-intercepts $(-1, 0)$ and $(5, 0)$",
+     "solution": "**Key idea:** Completing the square gives $y = (x - h)^2 + k$ with turning point $(h, k)$.\n\n1. $y = x^2 - 4x + 4 - 4 - 5 = (x - 2)^2 - 9$\n2. Turning point: $(2, -9)$ (a minimum, as the coefficient of $x^2$ is positive).\n3. $y$-intercept: let $x = 0$, then $y = -5$, giving $(0, -5)$.\n4. $x$-intercepts: $(x - 2)^2 = 9$, so $x - 2 = \\pm 3$ and $x = -1$ or $x = 5$.\n\n**Answer:** $y = (x - 2)^2 - 9$; turning point $(2, -9)$; $y$-intercept $(0, -5)$; $x$-intercepts $(-1, 0)$ and $(5, 0)$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Consider the parabola $y = x^2 + 6x + 4$.\n\n(a) Write the equation in turning point form by completing the square.\n\n(b) State the coordinates of the turning point and the equation of the axis of symmetry.\n\n(c) Find the $y$-intercept.\n\n(d) Find the exact $x$-intercepts, and then use a calculator to give them correct to two decimal places.\n\n(e) Describe the key features you would label on a sketch of the graph.",
+     "answer": "(a) $y = (x + 3)^2 - 5$ (b) $(-3, -5)$, $x = -3$ (c) $(0, 4)$ (d) $x = -3 \\pm \\sqrt{5}$, about $-0.76$ and $-5.24$ (e) Concave up with minimum $(-3, -5)$, intercepts as found",
+     "solution": "**Key idea:** Completing the square reveals the turning point. Setting $y = 0$ in turning point form gives the $x$-intercepts.\n\n**(a)**\n1. $y = x^2 + 6x + 9 - 9 + 4 = (x + 3)^2 - 5$\n\n**(b)**\n1. Turning point $(-3, -5)$, a minimum.\n2. Axis of symmetry: $x = -3$.\n\n**(c)**\n1. Let $x = 0$: $y = 4$, giving $(0, 4)$.\n\n**(d)**\n1. $(x + 3)^2 - 5 = 0$, so $(x + 3)^2 = 5$ and $x + 3 = \\pm\\sqrt{5}$.\n2. $x = -3 + \\sqrt{5} \\approx -0.76$ and $x = -3 - \\sqrt{5} \\approx -5.24$.\n\n**(e)**\n1. The parabola is concave up (positive coefficient of $x^2$) with minimum turning point $(-3, -5)$.\n2. Label the $y$-intercept $(0, 4)$, the $x$-intercepts $(-3 \\pm \\sqrt{5}, 0)$ and the axis of symmetry $x = -3$.\n3. By symmetry, the point $(-6, 4)$ is also on the graph.\n\n**Answer:** (a) $y = (x + 3)^2 - 5$ (b) Turning point $(-3, -5)$; axis $x = -3$ (c) $(0, 4)$ (d) $x = -3 \\pm \\sqrt{5}$, that is about $-0.76$ and $-5.24$ (e) Concave up, minimum at $(-3, -5)$, with the intercepts and axis labelled"
+    }
+   ]
+  },
+  {
+   "code": "7E",
+   "name": "Sketching parabolas using the quadratic formula and the discriminant",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 10,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 12,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 19,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 16,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "7F",
+   "name": "Applications of parabolas",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 17,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 20,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "7J",
+   "name": "Direct variation and inverse variation",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A15",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M04",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-inverse-proportion",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-inverse-proportion",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-inverse-proportion",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-inverse-proportion",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8A",
+   "name": "Review of probability",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 16
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A bag contains 5 red, 3 blue and 4 green marbles. One marble is chosen at random. Find:\n\n(a) $\\Pr(\\text{blue})$\n\n(b) $\\Pr(\\text{not green})$",
+     "answer": "(a) $\\frac{1}{4}$ (b) $\\frac{2}{3}$",
+     "solution": "**Key idea:** $\\Pr(\\text{event}) = \\dfrac{\\text{number of favourable outcomes}}{\\text{total number of outcomes}}$, and $\\Pr(\\text{not } A) = 1 - \\Pr(A)$.\n\n**(a)**\n1. Total marbles: $5 + 3 + 4 = 12$.\n2. $\\Pr(\\text{blue}) = \\frac{3}{12} = \\frac{1}{4}$\n\n**(b)**\n1. $\\Pr(\\text{green}) = \\frac{4}{12} = \\frac{1}{3}$\n2. $\\Pr(\\text{not green}) = 1 - \\frac{1}{3} = \\frac{2}{3}$\n\n**Answer:** (a) $\\frac{1}{4}$ (b) $\\frac{2}{3}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A fair spinner has ten equal sectors numbered 1 to 10. Find the probability that the spinner lands on:\n\n(a) a prime number\n\n(b) an even number or a multiple of 3.",
+     "answer": "(a) $\\frac{2}{5}$ (b) $\\frac{7}{10}$",
+     "solution": "**Key idea:** List the favourable outcomes carefully, counting any number that appears in both lists only once.\n\n**(a)**\n1. Primes from 1 to 10: 2, 3, 5, 7. That is 4 outcomes.\n2. $\\Pr(\\text{prime}) = \\frac{4}{10} = \\frac{2}{5}$\n\n**(b)**\n1. Even: 2, 4, 6, 8, 10. Multiples of 3: 3, 6, 9.\n2. Combined, without repeating 6: 2, 3, 4, 6, 8, 9, 10. That is 7 outcomes.\n3. $\\Pr = \\frac{7}{10}$\n\n**Answer:** (a) $\\frac{2}{5}$ (b) $\\frac{7}{10}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A standard six-sided die is rolled 200 times and a six appears 41 times.\n\n(a) Find the experimental probability of rolling a six.\n\n(b) Find the theoretical probability of rolling a six, correct to three decimal places.\n\n(c) How many sixes would be expected in 200 rolls of a fair die? Give your answer correct to one decimal place.",
+     "answer": "(a) 0.205 (b) 0.167 (c) 33.3",
+     "solution": "**Key idea:** Experimental probability uses observed results; theoretical probability uses equally likely outcomes. Expected count $= \\text{number of trials} \\times \\text{probability}$.\n\n**(a)**\n1. $\\frac{41}{200} = 0.205$\n\n**(b)**\n1. $\\frac{1}{6} = 0.1666\\ldots \\approx 0.167$\n\n**(c)**\n1. $200 \\times \\frac{1}{6} = 33.33\\ldots \\approx 33.3$ sixes\n\n**Answer:** (a) 0.205 (b) 0.167 (c) About 33.3 sixes"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A standard deck of 52 playing cards has four suits: hearts and diamonds (red), clubs and spades (black). Each suit contains an ace, the numbers 2 to 10, and three picture cards (jack, queen and king). One card is drawn at random. Find the probability that the card is:\n\n(a) a king\n\n(b) not a heart\n\n(c) red or a picture card\n\n(d) a black card that is not a picture card.",
+     "answer": "(a) $\\frac{1}{13}$ (b) $\\frac{3}{4}$ (c) $\\frac{8}{13}$ (d) $\\frac{5}{13}$",
+     "solution": "**Key idea:** Count favourable cards out of 52. Avoid double counting cards that are in both groups.\n\n**(a)**\n1. There are 4 kings: $\\frac{4}{52} = \\frac{1}{13}$\n\n**(b)**\n1. There are 13 hearts, so $52 - 13 = 39$ cards are not hearts.\n2. $\\frac{39}{52} = \\frac{3}{4}$\n\n**(c)**\n1. Red cards: 26. Picture cards: $3 \\times 4 = 12$, of which 6 are red and 6 are black.\n2. Red or picture $= 26 + 6 = 32$ (adding only the 6 black picture cards).\n3. $\\frac{32}{52} = \\frac{8}{13}$\n\n**(d)**\n1. Black cards: 26, of which 6 are picture cards.\n2. Black non-picture cards: $26 - 6 = 20$.\n3. $\\frac{20}{52} = \\frac{5}{13}$\n\n**Answer:** (a) $\\frac{1}{13}$ (b) $\\frac{3}{4}$ (c) $\\frac{8}{13}$ (d) $\\frac{5}{13}$"
+    }
+   ]
+  },
+  {
+   "code": "8B",
+   "name": "Set notation in Venn diagrams and two-way tables",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 10
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Let $\\xi = \\{1, 2, 3, \\ldots, 15\\}$, $A = \\{\\text{multiples of } 3\\}$ and $B = \\{\\text{odd numbers}\\}$.\n\n(a) List the elements of $A \\cap B$.\n\n(b) Find $n(A \\cup B)$.\n\n(c) List the elements of $A' \\cap B$.",
+     "answer": "(a) $\\{3, 9, 15\\}$ (b) 10 (c) $\\{1, 5, 7, 11, 13\\}$",
+     "solution": "**Key idea:** $\\cap$ means \"and\" (in both sets), $\\cup$ means \"or\" (in at least one set) and $A'$ means \"not in $A$\".\n\n1. $A = \\{3, 6, 9, 12, 15\\}$ and $B = \\{1, 3, 5, 7, 9, 11, 13, 15\\}$.\n\n**(a)**\n1. Elements in both: $A \\cap B = \\{3, 9, 15\\}$.\n\n**(b)**\n1. $n(A \\cup B) = n(A) + n(B) - n(A \\cap B) = 5 + 8 - 3 = 10$.\n2. Check by listing: $\\{1, 3, 5, 6, 7, 9, 11, 12, 13, 15\\}$ has 10 elements ✓\n\n**(c)**\n1. Odd numbers that are not multiples of 3: $A' \\cap B = \\{1, 5, 7, 11, 13\\}$.\n\n**Answer:** (a) $\\{3, 9, 15\\}$ (b) 10 (c) $\\{1, 5, 7, 11, 13\\}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A Venn diagram shows two overlapping sets $A$ and $B$ inside a sample space. The regions contain the following numbers of outcomes: in $A$ only, 12; in both $A$ and $B$, 5; in $B$ only, 8; in neither set, 15. Find:\n\n(a) $\\Pr(A)$\n\n(b) $\\Pr(A \\cup B)$\n\n(c) $\\Pr(A \\cap B')$\n\n(d) $\\Pr(A' \\cap B')$",
+     "answer": "(a) $\\frac{17}{40}$ (b) $\\frac{5}{8}$ (c) $\\frac{3}{10}$ (d) $\\frac{3}{8}$",
+     "solution": "**Key idea:** Add the relevant regions and divide by the total number of outcomes.\n\n1. Total: $12 + 5 + 8 + 15 = 40$.\n\n**(a)**\n1. $n(A) = 12 + 5 = 17$, so $\\Pr(A) = \\frac{17}{40}$.\n\n**(b)**\n1. $n(A \\cup B) = 12 + 5 + 8 = 25$, so $\\Pr(A \\cup B) = \\frac{25}{40} = \\frac{5}{8}$.\n\n**(c)**\n1. $A \\cap B'$ is \"in $A$ but not $B$\", which is $A$ only: 12.\n2. $\\Pr(A \\cap B') = \\frac{12}{40} = \\frac{3}{10}$\n\n**(d)**\n1. $A' \\cap B'$ is \"in neither\": 15.\n2. $\\Pr(A' \\cap B') = \\frac{15}{40} = \\frac{3}{8}$\n\n**Answer:** (a) $\\frac{17}{40}$ (b) $\\frac{5}{8}$ (c) $\\frac{3}{10}$ (d) $\\frac{3}{8}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "In a group of 80 students, 34 play a sport, 25 play a musical instrument and 12 do both.\n\n(a) Complete a two-way table with rows \"Sport\" and \"No sport\" and columns \"Instrument\" and \"No instrument\", including totals.\n\n(b) Describe the same information in a Venn diagram by giving the number in each of the four regions.\n\n(c) Find the probability that a randomly chosen student does neither activity.\n\n(d) Find $\\Pr(\\text{sport} \\cup \\text{instrument})$.\n\n(e) Find the probability that a student does exactly one of the two activities.",
+     "answer": "(a) Sport: 12, 22 (34); No sport: 13, 33 (46); totals 25, 55 (80) (b) Sport only 22, both 12, instrument only 13, neither 33 (c) $\\frac{33}{80}$ (d) $\\frac{47}{80}$ (e) $\\frac{7}{16}$",
+     "solution": "**Key idea:** Fill in the given values first, then use row and column totals to find the rest. The two-way table and the Venn diagram hold the same four numbers.\n\n**(a)**\n1. Sport and instrument: 12. Sport total: 34, so sport and no instrument $= 34 - 12 = 22$.\n2. Instrument total: 25, so no sport and instrument $= 25 - 12 = 13$.\n3. No sport total: $80 - 34 = 46$, so no sport and no instrument $= 46 - 13 = 33$.\n4. No instrument total: $22 + 33 = 55$.\n\n| | Instrument | No instrument | Total |\n|---|---|---|---|\n| Sport | 12 | 22 | 34 |\n| No sport | 13 | 33 | 46 |\n| Total | 25 | 55 | 80 |\n\n**(b)**\n1. Sport only: 22; both: 12; instrument only: 13; outside both circles: 33.\n2. Check: $22 + 12 + 13 + 33 = 80$ ✓\n\n**(c)**\n1. $\\Pr(\\text{neither}) = \\frac{33}{80}$\n\n**(d)**\n1. $n(\\text{sport} \\cup \\text{instrument}) = 22 + 12 + 13 = 47$, so the probability is $\\frac{47}{80}$.\n\n**(e)**\n1. Exactly one: $22 + 13 = 35$.\n2. $\\Pr = \\frac{35}{80} = \\frac{7}{16}$\n\n**Answer:** (a) Sport row: 12, 22, total 34; No sport row: 13, 33, total 46; column totals 25, 55, 80 (b) Sport only 22, both 12, instrument only 13, neither 33 (c) $\\frac{33}{80}$ (d) $\\frac{47}{80}$ (e) $\\frac{7}{16}$"
+    }
+   ]
+  },
+  {
+   "code": "8C",
+   "name": "The addition rule",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For two events $A$ and $B$, $\\Pr(A) = 0.45$, $\\Pr(B) = 0.3$ and $\\Pr(A \\cap B) = 0.12$. Find $\\Pr(A \\cup B)$.",
+     "answer": "0.63",
+     "solution": "**Key idea:** The addition rule is $\\Pr(A \\cup B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cap B)$.\n\n1. $\\Pr(A \\cup B) = 0.45 + 0.3 - 0.12$\n2. $= 0.63$\n\n**Answer:** 0.63"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For two events $A$ and $B$, $\\Pr(A \\cup B) = 0.8$, $\\Pr(A) = 0.5$ and $\\Pr(B) = 0.6$. Find $\\Pr(A \\cap B)$.",
+     "answer": "0.3",
+     "solution": "**Key idea:** Rearrange the addition rule: $\\Pr(A \\cap B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cup B)$.\n\n1. $\\Pr(A \\cap B) = 0.5 + 0.6 - 0.8$\n2. $= 0.3$\n\n**Answer:** 0.3"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A card is drawn at random from 20 cards numbered 1 to 20. Use the addition rule to find the probability that the number is a multiple of 4 or a multiple of 5.",
+     "answer": "$\\frac{2}{5}$",
+     "solution": "**Key idea:** $\\Pr(A \\cup B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cap B)$. Numbers that are multiples of both must only be counted once.\n\n1. Multiples of 4: 4, 8, 12, 16, 20, so $\\Pr(A) = \\frac{5}{20}$.\n2. Multiples of 5: 5, 10, 15, 20, so $\\Pr(B) = \\frac{4}{20}$.\n3. Multiples of both (multiples of 20): only 20, so $\\Pr(A \\cap B) = \\frac{1}{20}$.\n4. $\\Pr(A \\cup B) = \\frac{5}{20} + \\frac{4}{20} - \\frac{1}{20} = \\frac{8}{20} = \\frac{2}{5}$\n\n**Answer:** $\\frac{2}{5}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Events $A$ and $B$ have $\\Pr(A) = 0.35$, $\\Pr(B) = 0.4$ and $\\Pr(A \\cup B) = 0.75$. Are $A$ and $B$ mutually exclusive? Explain.",
+     "answer": "Yes, because $\\Pr(A \\cap B) = 0$.",
+     "solution": "**Key idea:** Events are mutually exclusive when they cannot happen together, that is $\\Pr(A \\cap B) = 0$.\n\n1. $\\Pr(A \\cap B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cup B) = 0.35 + 0.4 - 0.75 = 0$\n2. Since $\\Pr(A \\cap B) = 0$, the events are mutually exclusive.\n\n**Answer:** Yes. $\\Pr(A \\cap B) = 0.35 + 0.4 - 0.75 = 0$, so $A$ and $B$ are mutually exclusive."
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "In a class of 30 students, 18 like maths, 14 like science and 7 like both. A student is chosen at random.\n\n(a) Use the addition rule to find the probability that the student likes maths or science.\n\n(b) Find the probability that the student likes neither subject.\n\n(c) Find the probability that the student likes exactly one of the two subjects.\n\n(d) In another class, $\\Pr(\\text{likes maths}) = 0.6$, $\\Pr(\\text{likes art}) = 0.5$ and $\\Pr(\\text{likes maths or art}) = 0.9$. Find the probability that a student in this class likes both maths and art.",
+     "answer": "(a) $\\frac{5}{6}$ (b) $\\frac{1}{6}$ (c) $\\frac{3}{5}$ (d) 0.2",
+     "solution": "**Key idea:** $\\Pr(A \\cup B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cap B)$. \"Neither\" is the complement of \"$A$ or $B$\".\n\n**(a)**\n1. $\\Pr(M \\cup S) = \\frac{18}{30} + \\frac{14}{30} - \\frac{7}{30} = \\frac{25}{30} = \\frac{5}{6}$\n\n**(b)**\n1. $\\Pr(\\text{neither}) = 1 - \\frac{5}{6} = \\frac{1}{6}$\n\n**(c)**\n1. Maths only: $18 - 7 = 11$. Science only: $14 - 7 = 7$.\n2. Exactly one: $11 + 7 = 18$, so $\\Pr = \\frac{18}{30} = \\frac{3}{5}$.\n\n**(d)**\n1. $\\Pr(M \\cap A) = \\Pr(M) + \\Pr(A) - \\Pr(M \\cup A) = 0.6 + 0.5 - 0.9 = 0.2$\n\n**Answer:** (a) $\\frac{5}{6}$ (b) $\\frac{1}{6}$ (c) $\\frac{3}{5}$ (d) 0.2"
+    }
+   ]
+  },
+  {
+   "code": "8D",
+   "name": "Conditional probability",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10-probability",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-probability",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-probability",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-probability",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8E",
+   "name": "Two-step experiments using arrays",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 13
+    }
+   ]
+  },
+  {
+   "code": "8F",
+   "name": "Using tree diagrams",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-probability",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-tree-diagrams",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-tree-diagrams",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-tree-diagrams",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-tree-diagrams",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-tree-diagrams",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8G",
+   "name": "Independent events",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10P02",
+     "q": 15
+    }
+   ]
+  },
+  {
+   "code": "9A",
+   "name": "Collecting representative data",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 5,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 9,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 12,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 13,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 15,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 17,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 18,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 19,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP02",
+     "q": 20,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "9B",
+   "name": "Review of data displays",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 9
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A stem-and-leaf plot shows the number of minutes 11 students spent on homework one night (stem = tens, leaf = units):\n\n| Stem | Leaf |\n|---|---|\n| 1 | 2 5 8 |\n| 2 | 1 3 3 7 |\n| 3 | 0 4 8 |\n| 4 | 1 |\n\nFind the range, the mode, the median and the mean (correct to one decimal place).",
+     "answer": "Range 29, mode 23, median 23, mean 25.6",
+     "solution": "**Key idea:** Read the data values from the plot in order, then calculate each statistic.\n\n1. Data in order: 12, 15, 18, 21, 23, 23, 27, 30, 34, 38, 41 (11 values).\n2. Range $= 41 - 12 = 29$ minutes.\n3. Mode: 23 appears twice, so the mode is 23 minutes.\n4. Median: the middle (6th) value is 23 minutes.\n5. Mean: sum $= 282$, so mean $= \\frac{282}{11} = 25.636\\ldots \\approx 25.6$ minutes.\n\n**Answer:** Range 29 min, mode 23 min, median 23 min, mean 25.6 min"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "The test scores of a class are summarised in a grouped frequency table:\n\n| Score | Frequency |\n|---|---|\n| $0 - {<}10$ | 4 |\n| $10 - {<}20$ | 9 |\n| $20 - {<}30$ | 12 |\n| $30 - {<}40$ | 5 |\n\n(a) How many students are in the class?\n\n(b) State the modal class.\n\n(c) Describe the histogram for this data: what is on each axis and how tall is each column?\n\n(d) Estimate the mean score using the class midpoints.\n\n(e) In which class does the median lie?\n\n(f) What percentage of students scored 30 or more? Give your answer correct to one decimal place.",
+     "answer": "(a) 30 (b) $20 - {<}30$ (c) Score on the horizontal axis in classes of width 10; frequency on the vertical axis; columns of height 4, 9, 12, 5 (d) 21 (e) $20 - {<}30$ (f) 16.7%",
+     "solution": "**Key idea:** For grouped data, use the midpoint of each class as a representative value. The median is the middle value when the data is in order.\n\n**(a)**\n1. $4 + 9 + 12 + 5 = 30$ students.\n\n**(b)**\n1. The highest frequency is 12, so the modal class is $20 - {<}30$.\n\n**(c)**\n1. Horizontal axis: score, marked at 0, 10, 20, 30, 40. Vertical axis: frequency.\n2. Columns with no gaps between them, of heights 4, 9, 12 and 5.\n\n**(d)**\n1. Midpoints: 5, 15, 25, 35.\n2. $\\sum fx = 4(5) + 9(15) + 12(25) + 5(35) = 20 + 135 + 300 + 175 = 630$\n3. Mean $\\approx \\frac{630}{30} = 21$\n\n**(e)**\n1. With 30 scores, the median lies between the 15th and 16th scores.\n2. Running totals: 4, then 13, then 25. The 15th and 16th scores are in the $20 - {<}30$ class.\n\n**(f)**\n1. $\\frac{5}{30} \\times 100\\% = 16.66\\ldots\\% \\approx 16.7\\%$\n\n**Answer:** (a) 30 (b) $20 - {<}30$ (c) Score on the horizontal axis (classes of width 10), frequency on the vertical axis, touching columns of heights 4, 9, 12, 5 (d) 21 (e) $20 - {<}30$ (f) 16.7%"
+    }
+   ]
+  },
+  {
+   "code": "9C",
+   "name": "Two-way tables",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-two-way-tables",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-two-way-tables",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-two-way-tables",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10-two-way-tables",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-two-way-tables",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "9D",
+   "name": "Summary statistics",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST04",
+     "q": 13
+    },
+    {
+     "src": "we",
+     "slug": "year-10-statistics",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-statistics",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-statistics",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-statistics",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 5,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 12,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 18,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 19,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "9E",
+   "name": "Box plots",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST01",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-statistics",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 10,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 15,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 17,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "9H",
+   "name": "Time-series data",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 19
+    }
+   ]
+  },
+  {
+   "code": "9I",
+   "name": "Bivariate data and scatter plots",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10-scatterplots",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10-scatterplots",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 1,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 6,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 11,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 12,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "9J",
+   "name": "Line of best fit by eye",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ST05",
+     "q": 12
+    },
+    {
+     "src": "we",
+     "slug": "year-10-scatterplots",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10-scatterplots",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10-scatterplots",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 3,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 5,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 7,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 8,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 9,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 10,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 13,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 14,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 15,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 16,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 17,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 18,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 19,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST03",
+     "q": 20,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "10I",
+   "name": "Graphs of circles",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 13
+    },
+    {
+     "src": "we",
+     "slug": "year-10-parabolas-circles-exponentials",
+     "part": "turn"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 2,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 9,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 19,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 20,
+     "year": "Year 10A"
+    }
+   ]
+  },
+  {
+   "code": "10J",
+   "name": "Hyperbolic functions and their graphs",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A11",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-10-parabolas-circles-exponentials",
+     "part": "practice"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 4,
+     "year": "Year 10A"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 8,
+     "year": "Year 10A"
+    }
+   ]
+  }
+ ],
+ "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 10 & 10A contents (names only). Items: tt = topic test question, we = worked example, nq = new question (answers checked by code, Nov 2026). Items with a year field come from that year's bank."
+}

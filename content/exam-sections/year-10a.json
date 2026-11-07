@@ -1,0 +1,2606 @@
+{
+ "year": "Year 10A",
+ "sections": [
+  {
+   "code": "1D",
+   "name": "Linear equations involving more complex algebraic fractions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA03",
+     "q": 19
+    }
+   ]
+  },
+  {
+   "code": "2F",
+   "name": "Circle terminology and chord properties",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 16,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 20
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A chord of length 16 cm is drawn in a circle of radius 10 cm. Find the perpendicular distance from the centre of the circle to the chord.",
+     "answer": "6 cm",
+     "solution": "**Key idea:** The perpendicular from the centre to a chord bisects the chord. This creates a right-angled triangle with the radius as the hypotenuse.\n\n1. Half the chord: $16 \\div 2 = 8$ cm.\n2. The radius (10 cm) is the hypotenuse, half the chord (8 cm) is one side, and the distance $d$ is the other side.\n3. $d = \\sqrt{10^2 - 8^2} = \\sqrt{100 - 64} = \\sqrt{36} = 6$ cm\n\n**Answer:** 6 cm"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A circle has centre $O$ and radius 13 cm. Two parallel chords are drawn: $AB = 24$ cm and $CD = 10$ cm.\n\n(a) Prove that the perpendicular from $O$ to chord $AB$ bisects $AB$. Let $M$ be the foot of the perpendicular.\n\n(b) Find the distance from $O$ to each chord.\n\n(c) Find the distance between the two chords if they are on the same side of $O$.\n\n(d) Find the distance between the two chords if they are on opposite sides of $O$.",
+     "answer": "(a) $\\triangle OMA \\equiv \\triangle OMB$ (RHS), so $AM = BM$ (b) 5 cm to $AB$, 12 cm to $CD$ (c) 7 cm (d) 17 cm",
+     "solution": "**Key idea:** Use congruent right-angled triangles to show the perpendicular from the centre bisects a chord, then use Pythagoras' theorem with the radius as hypotenuse.\n\n**(a)**\n1. In $\\triangle OMA$ and $\\triangle OMB$: $\\angle OMA = \\angle OMB = 90^\\circ$ (given perpendicular).\n2. $OA = OB$ (radii).\n3. $OM$ is common.\n4. So $\\triangle OMA \\equiv \\triangle OMB$ (RHS), and therefore $AM = BM$.\n\n**(b)**\n1. Chord $AB$: half-length 12 cm, so distance $= \\sqrt{13^2 - 12^2} = \\sqrt{25} = 5$ cm.\n2. Chord $CD$: half-length 5 cm, so distance $= \\sqrt{13^2 - 5^2} = \\sqrt{144} = 12$ cm.\n\n**(c)**\n1. Since the chords are parallel, both perpendiculars lie along the same line through $O$.\n2. Same side: $12 - 5 = 7$ cm.\n\n**(d)**\n1. Opposite sides: $12 + 5 = 17$ cm.\n\n**Answer:** (a) $\\triangle OMA \\equiv \\triangle OMB$ (RHS), so $AM = MB$ (b) 5 cm from $AB$ and 12 cm from $CD$ (c) 7 cm (d) 17 cm"
+    }
+   ]
+  },
+  {
+   "code": "2G",
+   "name": "Angle properties of circles: Theorems 1 and 2",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 8,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 16
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-circle-theorems",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-circle-theorems",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "2H",
+   "name": "Angle properties of circles: Theorems 3 and 4",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 9,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 17,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 19,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-circle-theorems",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-circle-theorems",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "2I",
+   "name": "Theorems involving circles and tangents",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10SP01",
+     "q": 13,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-circle-theorems",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "2J",
+   "name": "Intersecting chords, secants and tangents",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP01",
+     "q": 13
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Two chords $AB$ and $CD$ of a circle intersect at a point $P$ inside the circle. If $AP = 6$ cm, $PB = 4$ cm and $CP = 3$ cm, find $PD$ and the length of chord $CD$.",
+     "answer": "$PD = 8$ cm, $CD = 11$ cm",
+     "solution": "**Key idea:** For intersecting chords, $AP \\times PB = CP \\times PD$.\n\n1. $6 \\times 4 = 3 \\times PD$\n2. $24 = 3 \\times PD$, so $PD = 8$ cm.\n3. $CD = CP + PD = 3 + 8 = 11$ cm.\n\n**Answer:** $PD = 8$ cm and $CD = 11$ cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "From a point $P$ outside a circle, two secants are drawn. The first cuts the circle at $A$ and then $B$, with $PA = 5$ cm and $AB = 7$ cm. The second cuts the circle at $C$ and then $D$, with $PC = 6$ cm. Find the length of $CD$.",
+     "answer": "4 cm",
+     "solution": "**Key idea:** For two secants from an external point, $PA \\times PB = PC \\times PD$, where each product uses the distances from $P$ to the near and far intersection points.\n\n1. $PB = PA + AB = 5 + 7 = 12$ cm.\n2. $PA \\times PB = 5 \\times 12 = 60$.\n3. $PC \\times PD = 60$, so $6 \\times PD = 60$ and $PD = 10$ cm.\n4. $CD = PD - PC = 10 - 6 = 4$ cm.\n\n**Answer:** 4 cm"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "From an external point $P$, a tangent touches a circle at $T$, with $PT = 12$ cm. A secant from $P$ passes through the centre $O$ of the circle and cuts the circle at $A$ (nearer to $P$) and $B$, with $PA = 8$ cm.\n\n(a) Find the length of $PB$.\n\n(b) Hence find the radius of the circle.\n\n(c) Verify your answer using the fact that a tangent is perpendicular to the radius at the point of contact.\n\n(d) Use a calculator to find $\\angle TPO$, correct to one decimal place.",
+     "answer": "(a) 18 cm (b) 5 cm (c) $PO = 13$, and $12^2 + 5^2 = 13^2$ (d) $22.6^\\circ$",
+     "solution": "**Key idea:** The tangent-secant theorem states $PT^2 = PA \\times PB$. Because the secant passes through the centre, $AB$ is a diameter.\n\n**(a)**\n1. $PT^2 = PA \\times PB$, so $144 = 8 \\times PB$.\n2. $PB = 18$ cm.\n\n**(b)**\n1. $AB = PB - PA = 18 - 8 = 10$ cm, and $AB$ is a diameter.\n2. Radius $= 10 \\div 2 = 5$ cm.\n\n**(c)**\n1. $PO = PA + AO = 8 + 5 = 13$ cm.\n2. $\\angle PTO = 90^\\circ$, so Pythagoras requires $PT^2 + OT^2 = PO^2$.\n3. $12^2 + 5^2 = 144 + 25 = 169 = 13^2$ ✓\n\n**(d)**\n1. In right-angled $\\triangle PTO$: $\\tan\\angle TPO = \\frac{OT}{PT} = \\frac{5}{12}$.\n2. $\\angle TPO = \\tan^{-1}\\left(\\frac{5}{12}\\right) = 22.619\\ldots^\\circ \\approx 22.6^\\circ$\n\n**Answer:** (a) 18 cm (b) 5 cm (c) $PO = 13$ cm and $12^2 + 5^2 = 13^2$, consistent with $\\angle PTO = 90^\\circ$ (d) $22.6^\\circ$"
+    }
+   ]
+  },
+  {
+   "code": "3D",
+   "name": "Fractional indices",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-surds",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "3K",
+   "name": "Laws of logarithms",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-exponential-log-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-exponential-log-equations",
+     "part": "practice"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-logarithms",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-logarithms",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-logarithms",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "3L",
+   "name": "Solving exponential equations using logarithms",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN03",
+     "q": 11
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-exponential-log-equations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-exponential-log-equations",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "4A",
+   "name": "Irrational numbers including surds",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10N01",
+     "q": 2,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 17
+    }
+   ]
+  },
+  {
+   "code": "4B",
+   "name": "Adding and subtracting surds",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-surds",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Simplify $3\\sqrt{12} + 2\\sqrt{27} - \\sqrt{75}$.",
+     "answer": "$7\\sqrt{3}$",
+     "solution": "**Key idea:** Simplify each surd so they share the same surd part, then collect like surds.\n\n1. $3\\sqrt{12} = 3\\sqrt{4 \\times 3} = 3 \\times 2\\sqrt{3} = 6\\sqrt{3}$\n2. $2\\sqrt{27} = 2\\sqrt{9 \\times 3} = 2 \\times 3\\sqrt{3} = 6\\sqrt{3}$\n3. $\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$\n4. $6\\sqrt{3} + 6\\sqrt{3} - 5\\sqrt{3} = 7\\sqrt{3}$\n\n**Answer:** $7\\sqrt{3}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A triangle has sides of length $\\sqrt{48}$ cm, $\\sqrt{27}$ cm and $\\sqrt{75}$ cm.\n\n(a) Find the perimeter of the triangle in simplest surd form.\n\n(b) Show that the triangle is right-angled.\n\n(c) Find the area of the triangle.\n\n(d) Simplify $\\sqrt{75} - \\sqrt{48} - \\sqrt{27}$ and explain what the answer tells you about the triangle's sides.",
+     "answer": "(a) $12\\sqrt{3}$ cm (b) $48 + 27 = 75$ (c) 18 cm² (d) $-2\\sqrt{3}$; the longest side is shorter than the sum of the other two",
+     "solution": "**Key idea:** Simplify each surd to a multiple of $\\sqrt{3}$ to add or subtract them. Use the converse of Pythagoras' theorem to test for a right angle.\n\n**(a)**\n1. $\\sqrt{48} = 4\\sqrt{3}$, $\\sqrt{27} = 3\\sqrt{3}$, $\\sqrt{75} = 5\\sqrt{3}$.\n2. Perimeter $= 4\\sqrt{3} + 3\\sqrt{3} + 5\\sqrt{3} = 12\\sqrt{3}$ cm.\n\n**(b)**\n1. Squares of the sides: $48$, $27$ and $75$.\n2. $48 + 27 = 75$, so the square of the longest side equals the sum of the squares of the other two. The triangle is right-angled.\n\n**(c)**\n1. The two shorter sides are perpendicular, so area $= \\frac{1}{2} \\times \\sqrt{48} \\times \\sqrt{27}$.\n2. $= \\frac{1}{2} \\times 4\\sqrt{3} \\times 3\\sqrt{3} = \\frac{1}{2} \\times 12 \\times 3 = 18$ cm².\n\n**(d)**\n1. $5\\sqrt{3} - 4\\sqrt{3} - 3\\sqrt{3} = -2\\sqrt{3}$\n2. The result is negative, so the longest side is less than the sum of the other two sides, as must be true for any triangle (by $2\\sqrt{3}$ cm).\n\n**Answer:** (a) $12\\sqrt{3}$ cm (b) $48 + 27 = 75$, so it is right-angled (c) 18 cm² (d) $-2\\sqrt{3}$; the longest side is $2\\sqrt{3}$ cm shorter than the other two sides combined"
+    }
+   ]
+  },
+  {
+   "code": "4C",
+   "name": "Multiplying and dividing surds",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 15
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-surds",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-surds",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-surds",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "4D",
+   "name": "Rationalising the denominator",
+   "strand": "Number",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AN01",
+     "q": 9
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Rationalise the denominator and simplify.\n\n(a) $\\dfrac{6}{\\sqrt{3}}$\n\n(b) $\\dfrac{5}{2\\sqrt{10}}$",
+     "answer": "(a) $2\\sqrt{3}$ (b) $\\dfrac{\\sqrt{10}}{4}$",
+     "solution": "**Key idea:** Multiply the numerator and denominator by the surd in the denominator, since $\\sqrt{a} \\times \\sqrt{a} = a$.\n\n**(a)**\n1. $$\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$$\n\n**(b)**\n1. $$\\frac{5}{2\\sqrt{10}} \\times \\frac{\\sqrt{10}}{\\sqrt{10}} = \\frac{5\\sqrt{10}}{2 \\times 10} = \\frac{5\\sqrt{10}}{20} = \\frac{\\sqrt{10}}{4}$$\n\n**Answer:** (a) $2\\sqrt{3}$ (b) $\\dfrac{\\sqrt{10}}{4}$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Rationalise the denominator of $\\dfrac{4}{3 - \\sqrt{5}}$ and simplify.",
+     "answer": "$3 + \\sqrt{5}$",
+     "solution": "**Key idea:** For a binomial denominator, multiply by its conjugate so the denominator becomes a difference of two squares.\n\n1. Multiply by $\\frac{3 + \\sqrt{5}}{3 + \\sqrt{5}}$: $$\\frac{4(3 + \\sqrt{5})}{(3 - \\sqrt{5})(3 + \\sqrt{5})}$$\n2. Denominator: $3^2 - (\\sqrt{5})^2 = 9 - 5 = 4$.\n3. $$\\frac{4(3 + \\sqrt{5})}{4} = 3 + \\sqrt{5}$$\n\n**Answer:** $3 + \\sqrt{5}$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) Rationalise the denominator of $\\dfrac{2\\sqrt{3}}{\\sqrt{6} + \\sqrt{2}}$ and simplify.\n\n(b) Show that $\\dfrac{1}{\\sqrt{5} - 2} + \\dfrac{1}{\\sqrt{5} + 2}$ simplifies to $2\\sqrt{5}$.\n\n(c) Express $\\dfrac{\\sqrt{7} + \\sqrt{3}}{\\sqrt{7} - \\sqrt{3}}$ in the form $\\dfrac{a + \\sqrt{b}}{c}$ where $a$, $b$ and $c$ are integers.",
+     "answer": "(a) $\\dfrac{3\\sqrt{2} - \\sqrt{6}}{2}$ (b) $2\\sqrt{5}$ (c) $\\dfrac{5 + \\sqrt{21}}{2}$",
+     "solution": "**Key idea:** Multiply by the conjugate of the denominator. The product $(\\sqrt{a} - \\sqrt{b})(\\sqrt{a} + \\sqrt{b}) = a - b$ has no surds.\n\n**(a)**\n1. Multiply by $\\frac{\\sqrt{6} - \\sqrt{2}}{\\sqrt{6} - \\sqrt{2}}$. Denominator: $6 - 2 = 4$.\n2. Numerator: $2\\sqrt{3}(\\sqrt{6} - \\sqrt{2}) = 2\\sqrt{18} - 2\\sqrt{6} = 6\\sqrt{2} - 2\\sqrt{6}$.\n3. $$\\frac{6\\sqrt{2} - 2\\sqrt{6}}{4} = \\frac{3\\sqrt{2} - \\sqrt{6}}{2}$$\n\n**(b)**\n1. $\\frac{1}{\\sqrt{5} - 2} \\times \\frac{\\sqrt{5} + 2}{\\sqrt{5} + 2} = \\frac{\\sqrt{5} + 2}{5 - 4} = \\sqrt{5} + 2$\n2. $\\frac{1}{\\sqrt{5} + 2} \\times \\frac{\\sqrt{5} - 2}{\\sqrt{5} - 2} = \\frac{\\sqrt{5} - 2}{5 - 4} = \\sqrt{5} - 2$\n3. Sum: $(\\sqrt{5} + 2) + (\\sqrt{5} - 2) = 2\\sqrt{5}$ ✓\n\n**(c)**\n1. Multiply by $\\frac{\\sqrt{7} + \\sqrt{3}}{\\sqrt{7} + \\sqrt{3}}$. Denominator: $7 - 3 = 4$.\n2. Numerator: $(\\sqrt{7} + \\sqrt{3})^2 = 7 + 2\\sqrt{21} + 3 = 10 + 2\\sqrt{21}$.\n3. $$\\frac{10 + 2\\sqrt{21}}{4} = \\frac{5 + \\sqrt{21}}{2}$$\n\n**Answer:** (a) $\\dfrac{3\\sqrt{2} - \\sqrt{6}}{2}$ (b) $2\\sqrt{5}$ (c) $\\dfrac{5 + \\sqrt{21}}{2}$"
+    }
+   ]
+  },
+  {
+   "code": "4J",
+   "name": "Surface area of pyramids and cones",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 10,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-pyramids-cones-spheres",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-pyramids-cones-spheres",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-pyramids-cones-spheres",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "4L",
+   "name": "Volume of pyramids and cones",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 6,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 13,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-pyramids-cones-spheres",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "4M",
+   "name": "Surface area and volume of spheres",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 7,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 8,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 18,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10M01",
+     "q": 20,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM01",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-pyramids-cones-spheres",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "5E",
+   "name": "Factorising non-monic quadratic trinomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA07",
+     "q": 15
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-monic-quadratics",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-monic-quadratics",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-monic-quadratics",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-monic-quadratics",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-monic-quadratics",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "6E",
+   "name": "Applications in three dimensions",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP05",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-3d-trigonometry",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-3d-trigonometry",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-3d-trigonometry",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "6F",
+   "name": "The sine rule",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 18
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-sine-cosine-rule",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-sine-cosine-rule",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "6G",
+   "name": "The cosine rule",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-sine-cosine-rule",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-sine-cosine-rule",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "6H",
+   "name": "Area of a triangle",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP02",
+     "q": 11
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-sine-cosine-rule",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Use a calculator.\n\n(a) A triangular paddock $PQR$ has $PQ = 85$ m, $PR = 62$ m and $\\angle QPR = 48^\\circ$. Find its area, correct to the nearest square metre.\n\n(b) Another triangle has two sides of 80 m and 50 m and an area of 1500 m². Find the two possible sizes of the angle between these sides, correct to one decimal place.",
+     "answer": "(a) 1958 m² (b) $48.6^\\circ$ or $131.4^\\circ$",
+     "solution": "**Key idea:** Area $= \\frac{1}{2}ab\\sin C$, where $C$ is the angle between sides $a$ and $b$. Since $\\sin\\theta = \\sin(180^\\circ - \\theta)$, an area can give an acute and an obtuse angle.\n\n**(a)**\n1. $A = \\frac{1}{2} \\times 85 \\times 62 \\times \\sin 48^\\circ$\n2. $= 2635 \\times 0.7431\\ldots = 1958.18\\ldots \\approx 1958$ m²\n\n**(b)**\n1. $1500 = \\frac{1}{2} \\times 80 \\times 50 \\times \\sin C = 2000\\sin C$\n2. $\\sin C = \\frac{1500}{2000} = 0.75$\n3. $C = \\sin^{-1}(0.75) = 48.590\\ldots^\\circ \\approx 48.6^\\circ$\n4. or $C = 180^\\circ - 48.590\\ldots^\\circ = 131.409\\ldots^\\circ \\approx 131.4^\\circ$\n\n**Answer:** (a) 1958 m² (b) $48.6^\\circ$ or $131.4^\\circ$"
+    }
+   ]
+  },
+  {
+   "code": "6I",
+   "name": "The unit circle",
+   "strand": "Space",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "6J",
+   "name": "Graphs of trigonometric functions",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 16
+    }
+   ]
+  },
+  {
+   "code": "6K",
+   "name": "Exact values and solving trigonometric equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP03",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10ASP04",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-trigonometric-equations",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-trigonometric-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-trigonometric-equations",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-trigonometric-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-trigonometric-equations",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "7G",
+   "name": "Intersection of lines and parabolas",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 7,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA09",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 17
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-linear-simultaneous-equations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-linear-simultaneous-equations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-non-linear-simultaneous-equations",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "7H",
+   "name": "Rates of change",
+   "strand": "Measurement",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 4
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A ball is thrown upwards and its height $h$ metres after $t$ seconds is $h = 40t - 5t^2$.\n\n(a) Find the average rate of change of height between $t = 1$ and $t = 3$.\n\n(b) Find the average rate of change of height between $t = 3$ and $t = 5$, and explain the meaning of your answer.\n\n(c) Estimate the instantaneous rate of change of height at $t = 2$ by finding the average rate of change between $t = 2$ and $t = 2.01$.\n\n(d) At what time is the instantaneous rate of change zero? Explain using the shape of the graph.",
+     "answer": "(a) 20 m/s (b) 0 m/s; the ball is at the same height at both times (c) 19.95 m/s, about 20 m/s (d) $t = 4$ s, at the maximum turning point",
+     "solution": "**Key idea:** Average rate of change $= \\dfrac{h(t_2) - h(t_1)}{t_2 - t_1}$, the gradient of the chord. Using two very close times estimates the instantaneous rate (the gradient of the tangent).\n\n**(a)**\n1. $h(1) = 40 - 5 = 35$ and $h(3) = 120 - 45 = 75$.\n2. $$\\frac{75 - 35}{3 - 1} = \\frac{40}{2} = 20 \\text{ m/s}$$\n\n**(b)**\n1. $h(5) = 200 - 125 = 75$.\n2. $$\\frac{75 - 75}{5 - 3} = 0 \\text{ m/s}$$\n3. The ball rises and then falls back to the same height, so there is no overall change in height over this interval.\n\n**(c)**\n1. $h(2) = 80 - 20 = 60$ and $h(2.01) = 80.4 - 5(4.0401) = 80.4 - 20.2005 = 60.1995$.\n2. $$\\frac{60.1995 - 60}{0.01} = 19.95 \\text{ m/s} \\approx 20 \\text{ m/s}$$\n\n**(d)**\n1. The graph is a concave-down parabola with $t$-intercepts $t = 0$ and $t = 8$, so its turning point is at $t = 4$.\n2. At the maximum the tangent is horizontal, so the instantaneous rate of change is zero at $t = 4$ s (height 80 m).\n\n**Answer:** (a) 20 m/s (b) 0 m/s; the ball is 75 m high at both times (c) 19.95 m/s, about 20 m/s (d) At $t = 4$ s, the maximum point, where the tangent is horizontal"
+    }
+   ]
+  },
+  {
+   "code": "7I",
+   "name": "Average and instantaneous rates of change",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AM02",
+     "q": 20
+    }
+   ]
+  },
+  {
+   "code": "8H",
+   "name": "Counting principles and factorial notation",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-permutations-combinations",
+     "part": "examples",
+     "i": 0
+    }
+   ]
+  },
+  {
+   "code": "8I",
+   "name": "Arrangements",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 13
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-permutations-combinations",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-permutations-combinations",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-permutations-combinations",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "8J",
+   "name": "Selections",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 16
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In how many ways can a group of 3 people be selected from 8 people?",
+     "answer": "56",
+     "solution": "**Key idea:** Order does not matter in a selection, so use $^nC_r = \\dfrac{n!}{r!(n - r)!}$.\n\n1. $$^8C_3 = \\frac{8!}{3! \\times 5!} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1}$$\n2. $= \\frac{336}{6} = 56$\n\n**Answer:** 56 ways"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A committee of 2 teachers and 3 students is to be chosen from 5 teachers and 7 students. How many different committees are possible?",
+     "answer": "350",
+     "solution": "**Key idea:** Choose the teachers and the students separately, then multiply (multiplication principle).\n\n1. Teachers: $^5C_2 = \\frac{5 \\times 4}{2 \\times 1} = 10$\n2. Students: $^7C_3 = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$\n3. Committees: $10 \\times 35 = 350$\n\n**Answer:** 350 committees"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "A team of 5 players is to be selected from a squad of 7 juniors and 5 seniors.\n\n(a) How many different teams are possible?\n\n(b) How many teams contain exactly 2 seniors?\n\n(c) How many teams contain at least one senior?\n\n(d) If the team is chosen at random, find the probability that it contains exactly 2 seniors. Give your answer as a fraction in simplest form.",
+     "answer": "(a) 792 (b) 350 (c) 771 (d) $\\frac{175}{396}$",
+     "solution": "**Key idea:** Use $^nC_r$ for each group and multiply. For \"at least one\", subtract the teams with none from the total.\n\n**(a)**\n1. 12 players in total: $^{12}C_5 = \\frac{12 \\times 11 \\times 10 \\times 9 \\times 8}{5 \\times 4 \\times 3 \\times 2 \\times 1} = 792$\n\n**(b)**\n1. Choose 2 of the 5 seniors and 3 of the 7 juniors: $^5C_2 \\times {}^7C_3 = 10 \\times 35 = 350$\n\n**(c)**\n1. Teams with no seniors (all juniors): $^7C_5 = 21$.\n2. At least one senior: $792 - 21 = 771$\n\n**(d)**\n1. $\\Pr = \\frac{350}{792} = \\frac{175}{396}$\n\n**Answer:** (a) 792 (b) 350 (c) 771 (d) $\\frac{175}{396}$"
+    }
+   ]
+  },
+  {
+   "code": "8K",
+   "name": "Applications of counting in probability",
+   "strand": "Probability",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AP01",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-permutations-combinations",
+     "part": "examples",
+     "i": 2
+    }
+   ]
+  },
+  {
+   "code": "9F",
+   "name": "Standard deviation",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AST02",
+     "q": 20
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-standard-deviation",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-standard-deviation",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-standard-deviation",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-standard-deviation",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-standard-deviation",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "9G",
+   "name": "Cumulative frequency and percentiles",
+   "strand": "Statistics",
+   "items": [
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The quiz scores of 20 students are summarised below.\n\n| Score | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|\n| Frequency | 2 | 5 | 8 | 4 | 1 |\n\n(a) Write the cumulative frequency for each score.\n\n(b) Find the median score.\n\n(c) What percentage of students scored 6 or less?",
+     "answer": "(a) 2, 7, 15, 19, 20 (b) 7 (c) 35%",
+     "solution": "**Key idea:** Cumulative frequency is the running total of frequencies. It tells you how many values are less than or equal to each score.\n\n**(a)**\n1. $2$, $2 + 5 = 7$, $7 + 8 = 15$, $15 + 4 = 19$, $19 + 1 = 20$.\n\n**(b)**\n1. With 20 scores, the median is the average of the 10th and 11th scores.\n2. The cumulative frequency passes 7 at score 6 and reaches 15 at score 7, so the 10th and 11th scores are both 7.\n3. Median $= 7$.\n\n**(c)**\n1. Cumulative frequency at score 6 is 7.\n2. $\\frac{7}{20} \\times 100\\% = 35\\%$\n\n**Answer:** (a) 2, 7, 15, 19, 20 (b) 7 (c) 35%"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "In a cohort of 240 students, Mia's result is at the 85th percentile. Approximately how many students scored lower than Mia, and what does this percentile tell you?",
+     "answer": "About 204 students; 85% of the cohort scored below her.",
+     "solution": "**Key idea:** The $p$th percentile is the value below which about $p\\%$ of the data lies.\n\n1. $85\\%$ of $240 = 0.85 \\times 240 = 204$.\n2. About 204 students scored lower than Mia, and about 15% scored at or above her result.\n\n**Answer:** About 204 students; Mia scored higher than about 85% of the cohort."
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The heights of 50 plants are summarised in a cumulative frequency table.\n\n| Height (cm) | $< 150$ | $< 160$ | $< 170$ | $< 180$ | $< 190$ |\n|---|---|---|---|---|---|\n| Cumulative frequency | 4 | 14 | 32 | 46 | 50 |\n\nAssuming the ogive is drawn with straight line segments between these points, estimate the median height, correct to one decimal place.",
+     "answer": "166.1 cm",
+     "solution": "**Key idea:** The median is at cumulative frequency $\\frac{n}{2}$. On a straight-line ogive, find it by linear interpolation within the class where it falls.\n\n1. $\\frac{n}{2} = \\frac{50}{2} = 25$.\n2. The cumulative frequency is 14 at 160 cm and 32 at 170 cm, so the median lies in the $160 - {<}170$ class (18 plants over 10 cm).\n3. $25 - 14 = 11$ plants into that class: $$\\text{median} \\approx 160 + \\frac{11}{18} \\times 10 = 166.11\\ldots \\approx 166.1 \\text{ cm}$$\n\n**Answer:** 166.1 cm"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "The masses of 60 parcels are summarised in a cumulative frequency table.\n\n| Mass (kg) | $< 20$ | $< 40$ | $< 60$ | $< 80$ | $< 100$ |\n|---|---|---|---|---|---|\n| Cumulative frequency | 6 | 21 | 48 | 57 | 60 |\n\nAssuming a straight-line ogive, estimate the 90th percentile, correct to one decimal place.",
+     "answer": "73.3 kg",
+     "solution": "**Key idea:** The 90th percentile is at cumulative frequency $0.9n$. Interpolate along the ogive segment that contains it.\n\n1. $0.9 \\times 60 = 54$.\n2. The cumulative frequency is 48 at 60 kg and 57 at 80 kg, so 54 lies in the $60 - {<}80$ class (9 parcels over 20 kg).\n3. $54 - 48 = 6$ parcels into the class: $$P_{90} \\approx 60 + \\frac{6}{9} \\times 20 = 73.33\\ldots \\approx 73.3 \\text{ kg}$$\n\n**Answer:** 73.3 kg"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "The waiting times of 24 patients at a clinic are shown below.\n\n| Waiting time (min) | $0 - {<}5$ | $5 - {<}10$ | $10 - {<}15$ | $15 - {<}20$ | $20 - {<}25$ |\n|---|---|---|---|---|---|\n| Frequency | 3 | 7 | 8 | 4 | 2 |\n\n(a) Construct a cumulative frequency table using the upper class boundaries.\n\n(b) What percentage of patients waited less than 15 minutes?\n\n(c) Assuming a straight-line ogive, estimate the median waiting time.\n\n(d) Estimate the lower quartile $Q_1$ and upper quartile $Q_3$, and hence the interquartile range. Give answers correct to two decimal places.\n\n(e) Ben waited exactly 20 minutes. At what percentile is his waiting time? Give your answer correct to one decimal place.",
+     "answer": "(a) $< 5$: 3, $< 10$: 10, $< 15$: 18, $< 20$: 22, $< 25$: 24 (b) 75% (c) 11.25 min (d) $Q_1 \\approx 7.14$, $Q_3 = 15$, IQR $\\approx 7.86$ min (e) 91.7th percentile",
+     "solution": "**Key idea:** Percentiles are read from the ogive at cumulative frequency $\\frac{p}{100} \\times n$. With a straight-line ogive this is linear interpolation within a class.\n\n**(a)**\n1. Running totals: $< 5$: 3; $< 10$: 10; $< 15$: 18; $< 20$: 22; $< 25$: 24.\n\n**(b)**\n1. $\\frac{18}{24} \\times 100\\% = 75\\%$\n\n**(c)**\n1. $\\frac{24}{2} = 12$, which lies in the $10 - {<}15$ class (cumulative 10 to 18, so 8 patients over 5 min).\n2. $$\\text{median} \\approx 10 + \\frac{12 - 10}{8} \\times 5 = 10 + 1.25 = 11.25 \\text{ min}$$\n\n**(d)**\n1. $Q_1$ at $0.25 \\times 24 = 6$, in the $5 - {<}10$ class (cumulative 3 to 10): $$Q_1 \\approx 5 + \\frac{6 - 3}{7} \\times 5 = 7.142\\ldots \\approx 7.14 \\text{ min}$$\n2. $Q_3$ at $0.75 \\times 24 = 18$, which is exactly the cumulative frequency at 15 min, so $Q_3 = 15$ min.\n3. IQR $= 15 - 7.142\\ldots = 7.857\\ldots \\approx 7.86$ min.\n\n**(e)**\n1. Cumulative frequency at 20 min is 22.\n2. $\\frac{22}{24} \\times 100 = 91.66\\ldots \\approx 91.7$, so Ben's time is at about the 91.7th percentile.\n\n**Answer:** (a) $< 5$: 3, $< 10$: 10, $< 15$: 18, $< 20$: 22, $< 25$: 24 (b) 75% (c) 11.25 min (d) $Q_1 \\approx 7.14$ min, $Q_3 = 15$ min, IQR $\\approx 7.86$ min (e) About the 91.7th percentile"
+    }
+   ]
+  },
+  {
+   "code": "10A",
+   "name": "Functions and their notation",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA08",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-function-notation",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-function-notation",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-function-notation",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-function-notation",
+     "part": "turn"
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-function-notation",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "10B",
+   "name": "Introducing polynomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 3
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 17
+    }
+   ]
+  },
+  {
+   "code": "10C",
+   "name": "Expanding and simplifying polynomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 4
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 2
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Expand and simplify $(x^2 - 3x + 2)(2x + 5) - (x - 1)^3$.",
+     "answer": "$x^3 + 2x^2 - 14x + 11$",
+     "solution": "**Key idea:** Expand each product fully, then subtract, taking care to change every sign of the second expansion.\n\n1. $(x^2 - 3x + 2)(2x + 5) = 2x^3 + 5x^2 - 6x^2 - 15x + 4x + 10 = 2x^3 - x^2 - 11x + 10$\n2. $(x - 1)^3 = x^3 - 3x^2 + 3x - 1$\n3. Subtract: $2x^3 - x^2 - 11x + 10 - x^3 + 3x^2 - 3x + 1$\n4. Collect like terms: $x^3 + 2x^2 - 14x + 11$\n\n**Answer:** $x^3 + 2x^2 - 14x + 11$"
+    }
+   ]
+  },
+  {
+   "code": "10D",
+   "name": "Division of polynomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 10
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "Divide $2x^3 + 3x^2 - 5x + 7$ by $x + 2$. Write the result in the form $P(x) = (x + 2)Q(x) + R$.",
+     "answer": "$2x^3 + 3x^2 - 5x + 7 = (x + 2)(2x^2 - x - 3) + 13$",
+     "solution": "**Key idea:** Use long division: divide the leading terms, multiply back, subtract, and repeat.\n\n1. $2x^3 \\div x = 2x^2$. Multiply: $2x^2(x + 2) = 2x^3 + 4x^2$. Subtract: $3x^2 - 4x^2 = -x^2$, bring down $-5x$.\n2. $-x^2 \\div x = -x$. Multiply: $-x(x + 2) = -x^2 - 2x$. Subtract: $-5x - (-2x) = -3x$, bring down $+7$.\n3. $-3x \\div x = -3$. Multiply: $-3(x + 2) = -3x - 6$. Subtract: $7 - (-6) = 13$.\n4. Quotient $2x^2 - x - 3$, remainder 13.\n5. Check: $(x + 2)(2x^2 - x - 3) + 13 = 2x^3 + 3x^2 - 5x - 6 + 13 = 2x^3 + 3x^2 - 5x + 7$ ✓\n\n**Answer:** $2x^3 + 3x^2 - 5x + 7 = (x + 2)(2x^2 - x - 3) + 13$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "(a) Divide $3x^3 - 2x^2 + 4x - 5$ by $x + 1$, stating the quotient and remainder.\n\n(b) Divide $x^3 - 7x + 6$ by $x - 2$. (Hint: include a $0x^2$ term.)\n\n(c) Use your answer to part (b) to factorise $x^3 - 7x + 6$ fully.",
+     "answer": "(a) Quotient $3x^2 - 5x + 9$, remainder $-14$ (b) $x^2 + 2x - 3$, remainder 0 (c) $(x - 2)(x + 3)(x - 1)$",
+     "solution": "**Key idea:** In long division, write any missing powers with a zero coefficient so the columns line up. A remainder of 0 means the divisor is a factor.\n\n**(a)**\n1. $3x^3 \\div x = 3x^2$; $3x^2(x + 1) = 3x^3 + 3x^2$; subtract: $-5x^2 + 4x$.\n2. $-5x^2 \\div x = -5x$; $-5x(x + 1) = -5x^2 - 5x$; subtract: $9x - 5$.\n3. $9x \\div x = 9$; $9(x + 1) = 9x + 9$; subtract: $-14$.\n4. Quotient $3x^2 - 5x + 9$, remainder $-14$.\n\n**(b)**\n1. Write $x^3 + 0x^2 - 7x + 6$.\n2. $x^3 \\div x = x^2$; $x^2(x - 2) = x^3 - 2x^2$; subtract: $2x^2 - 7x$.\n3. $2x^2 \\div x = 2x$; $2x(x - 2) = 2x^2 - 4x$; subtract: $-3x + 6$.\n4. $-3x \\div x = -3$; $-3(x - 2) = -3x + 6$; subtract: $0$.\n5. Quotient $x^2 + 2x - 3$, remainder 0.\n\n**(c)**\n1. $x^3 - 7x + 6 = (x - 2)(x^2 + 2x - 3)$\n2. $x^2 + 2x - 3 = (x + 3)(x - 1)$\n3. So $x^3 - 7x + 6 = (x - 2)(x + 3)(x - 1)$.\n\n**Answer:** (a) Quotient $3x^2 - 5x + 9$, remainder $-14$ (b) Quotient $x^2 + 2x - 3$, remainder 0 (c) $(x - 2)(x + 3)(x - 1)$"
+    }
+   ]
+  },
+  {
+   "code": "10E",
+   "name": "The remainder and factor theorems",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 17
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 19
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 19
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-polynomials",
+     "part": "examples",
+     "i": 0
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-polynomials",
+     "part": "examples",
+     "i": 1
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-polynomials",
+     "part": "practice"
+    }
+   ]
+  },
+  {
+   "code": "10F",
+   "name": "Solving polynomial equations",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10A16",
+     "q": 10,
+     "year": "Year 10"
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 9
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 3
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-polynomials",
+     "part": "examples",
+     "i": 2
+    },
+    {
+     "src": "we",
+     "slug": "year-10a-polynomials",
+     "part": "turn"
+    }
+   ]
+  },
+  {
+   "code": "10G",
+   "name": "Graphing cubic functions of the form y = a(x − h)^3 + k",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 8
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For the cubic $y = (x - 2)^3 + 1$, state the point of inflection and find the $y$-intercept and the $x$-intercept.",
+     "answer": "Point of inflection $(2, 1)$; $y$-intercept $(0, -7)$; $x$-intercept $(1, 0)$",
+     "solution": "**Key idea:** For $y = a(x - h)^3 + k$, the point of inflection is $(h, k)$.\n\n1. Point of inflection: $(2, 1)$.\n2. $y$-intercept: $y = (0 - 2)^3 + 1 = -8 + 1 = -7$, giving $(0, -7)$.\n3. $x$-intercept: $(x - 2)^3 = -1$, so $x - 2 = \\sqrt[3]{-1} = -1$ and $x = 1$, giving $(1, 0)$.\n\n**Answer:** Point of inflection $(2, 1)$; $y$-intercept $(0, -7)$; $x$-intercept $(1, 0)$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "For the cubic $y = -2(x + 1)^3 + 16$, state the point of inflection and find the $y$-intercept and the $x$-intercept.",
+     "answer": "Point of inflection $(-1, 16)$; $y$-intercept $(0, 14)$; $x$-intercept $(1, 0)$",
+     "solution": "**Key idea:** Read the point of inflection from the form $a(x - h)^3 + k$, then substitute $x = 0$ and $y = 0$ for the intercepts.\n\n1. $y = -2(x - (-1))^3 + 16$, so the point of inflection is $(-1, 16)$.\n2. $y$-intercept: $y = -2(1)^3 + 16 = 14$, giving $(0, 14)$.\n3. $x$-intercept: $-2(x + 1)^3 + 16 = 0$, so $(x + 1)^3 = 8$, $x + 1 = 2$ and $x = 1$, giving $(1, 0)$.\n\n**Answer:** Point of inflection $(-1, 16)$; $y$-intercept $(0, 14)$; $x$-intercept $(1, 0)$"
+    },
+    {
+     "src": "nq",
+     "kind": "short",
+     "question": "A cubic graph has the rule $y = a(x - h)^3 + k$. Its point of inflection is $(3, -4)$ and it passes through the point $(5, 12)$. Find the rule.",
+     "answer": "$y = 2(x - 3)^3 - 4$",
+     "solution": "**Key idea:** The point of inflection gives $h$ and $k$. Substitute the other point to find $a$.\n\n1. $h = 3$ and $k = -4$, so $y = a(x - 3)^3 - 4$.\n2. Substitute $(5, 12)$: $12 = a(2)^3 - 4 = 8a - 4$.\n3. $8a = 16$, so $a = 2$.\n\n**Answer:** $y = 2(x - 3)^3 - 4$"
+    },
+    {
+     "src": "nq",
+     "kind": "extended",
+     "question": "Consider the cubic $y = \\frac{1}{2}(x - 4)^3 - 4$.\n\n(a) Describe the transformations that map $y = x^3$ onto this graph.\n\n(b) State the point of inflection.\n\n(c) Find the $y$-intercept.\n\n(d) Find the $x$-intercept.\n\n(e) Show that the point $(2, -8)$ lies on the graph.\n\n(f) Describe the shape of the graph for a sketch.",
+     "answer": "(a) Dilation by factor $\\frac{1}{2}$ from the $x$-axis, translation 4 right and 4 down (b) $(4, -4)$ (c) $(0, -36)$ (d) $(6, 0)$ (e) $\\frac{1}{2}(-2)^3 - 4 = -8$ (f) Increasing, flattening at $(4, -4)$",
+     "solution": "**Key idea:** For $y = a(x - h)^3 + k$, $a$ dilates (and reflects if negative), $h$ translates horizontally and $k$ translates vertically. The point of inflection is $(h, k)$.\n\n**(a)**\n1. Dilation by a factor of $\\frac{1}{2}$ from the $x$-axis.\n2. Translation 4 units right and 4 units down.\n\n**(b)**\n1. $(4, -4)$\n\n**(c)**\n1. $y = \\frac{1}{2}(0 - 4)^3 - 4 = \\frac{1}{2}(-64) - 4 = -32 - 4 = -36$, giving $(0, -36)$.\n\n**(d)**\n1. $\\frac{1}{2}(x - 4)^3 - 4 = 0$, so $(x - 4)^3 = 8$.\n2. $x - 4 = 2$, so $x = 6$, giving $(6, 0)$.\n\n**(e)**\n1. Substitute $x = 2$: $y = \\frac{1}{2}(2 - 4)^3 - 4 = \\frac{1}{2}(-8) - 4 = -8$ ✓\n\n**(f)**\n1. Since $a = \\frac{1}{2} > 0$, the graph increases from left to right.\n2. It flattens momentarily at the point of inflection $(4, -4)$, crosses the $y$-axis at $(0, -36)$ and the $x$-axis at $(6, 0)$.\n\n**Answer:** (a) Dilation by factor $\\frac{1}{2}$ from the $x$-axis, then translation 4 right and 4 down (b) $(4, -4)$ (c) $(0, -36)$ (d) $(6, 0)$ (e) $\\frac{1}{2}(2 - 4)^3 - 4 = -8$ ✓ (f) An increasing cubic that flattens at $(4, -4)$"
+    }
+   ]
+  },
+  {
+   "code": "10H",
+   "name": "Graphs of polynomials",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA01",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 6
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 7
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 14
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 18
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 13
+    }
+   ]
+  },
+  {
+   "code": "10K",
+   "name": "Further transformations of graphs",
+   "strand": "Algebra",
+   "items": [
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 5
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 8
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 10
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 11
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 12
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 13
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 15
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA05",
+     "q": 20
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA06",
+     "q": 16
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 1
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 2
+    },
+    {
+     "src": "tt",
+     "topic_id": "VC2M10AA10",
+     "q": 12
+    }
+   ]
+  }
+ ],
+ "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 10 & 10A contents (names only). Items: tt = topic test question, we = worked example, nq = new question (answers checked by code, Nov 2026). Items with a year field come from that year's bank."
+}
