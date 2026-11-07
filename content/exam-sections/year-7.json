@@ -5560,5 +5560,17 @@
    ]
   }
  ],
- "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 7 contents (names only). Items: tt = topic test question, we = worked example, nq = new question written for the section (answers checked by code, Nov 2026)."
+ "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 7 contents (names only). Items: tt = topic test question, we = worked example, nq = new question written for the section (answers checked by code, Nov 2026).",
+ "chapters": {
+  "1": "Computation with positive integers",
+  "2": "Number properties and patterns",
+  "3": "Fractions and percentages",
+  "4": "Algebraic techniques",
+  "5": "Decimals",
+  "6": "Negative numbers",
+  "7": "Geometry",
+  "8": "Statistics and probability",
+  "9": "Equations",
+  "10": "Measurement"
+ }
 }

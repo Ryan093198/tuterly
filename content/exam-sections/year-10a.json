@@ -2602,5 +2602,17 @@
    ]
   }
  ],
- "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 10 & 10A contents (names only). Items: tt = topic test question, we = worked example, nq = new question (answers checked by code, Nov 2026). Items with a year field come from that year's bank."
+ "source": "Section names from Cambridge Essential Mathematics for the Victorian Curriculum Year 10 & 10A contents (names only). Items: tt = topic test question, we = worked example, nq = new question (answers checked by code, Nov 2026). Items with a year field come from that year's bank.",
+ "chapters": {
+  "1": "Algebra, equations and linear relationships",
+  "2": "Geometry and networks",
+  "3": "Indices, exponentials and logarithms",
+  "4": "Measurement and surds",
+  "5": "Quadratic expressions and equations",
+  "6": "Trigonometry",
+  "7": "Parabolas and rates of change",
+  "8": "Probability and counting techniques",
+  "9": "Statistics",
+  "10": "Polynomials, functions and graphs"
+ }
 }

@@ -18,7 +18,7 @@ const DESCRIPTION =
   "Free maths practice exam generator for Years 7 to 10A. Pick the year and the topics, and get a printable exam with marks, a suggested time and answers to every question. Australian Curriculum.";
 
 const HOW = [
-  { n: "1", title: "Pick the year and topics", body: "Tick a main topic like Algebra to include all of it, or pick the exact subtopics their next test covers." },
+  { n: "1", title: "Pick the year and topics", body: "Tick a whole chapter, like Fractions and percentages, or pick the exact topics their next test covers." },
   { n: "2", title: "Get an exam in exam format", body: "Up to 20 questions in short answer and extended response sections, with marks for each and a suggested time." },
   { n: "3", title: "Sit it, then mark it", body: "Print it or save it as a PDF, with or without the answers. Every question has an answer, and many have a fully worked solution." },
   { n: "4", title: "Wrong answers become practice", body: "Snap the ones they got wrong in the Tuterly app for fresh questions on the same idea until each one is mastered." },

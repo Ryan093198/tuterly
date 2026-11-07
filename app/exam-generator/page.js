@@ -22,7 +22,7 @@ export const metadata = {
 };
 
 const HOW = [
-  { t: "Pick the year and topics", b: "Tick a main topic, like Algebra, to include all of it, or pick the subtopics their next test covers." },
+  { t: "Pick the year and topics", b: "Tick a whole chapter, like Fractions and percentages, or pick the exact topics their next test covers, named as in their textbook." },
   { t: "Get an exam in exam format", b: "Up to 20 questions in short answer and extended response sections, with marks for each question and a suggested time." },
   { t: "Sit it, then mark it", b: "Print it or save it as a PDF, with or without answers. Every question has an answer, and many have a fully worked solution." },
 ];

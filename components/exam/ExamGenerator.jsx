@@ -231,7 +231,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
           <p className="eg-bar__sum" aria-live="polite">
             {chosen.length
               ? <><strong>{chosen.length} topic{chosen.length === 1 ? "" : "s"}</strong> · {estQuestions} questions{estQuestions === MAX_Q && chosen.reduce((s, t) => s + t.count, 0) > MAX_Q ? " (mixed from all of them)" : ""}</>
-              : "Tick a main topic to include all of its subtopics, or pick them one by one."}
+              : "Tick a chapter to include all of its topics, or pick them one by one."}
           </p>
           <button type="button" className="eg-btn" disabled={busy || !chosen.length} onClick={() => generate()}>
             {busy ? "Building your exam…" : "Generate my exam"}
