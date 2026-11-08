@@ -7,7 +7,7 @@ import "@/components/brand/brand.css";
 
 // Sticky top nav for the marketing site, in the app's style. The primary
 // button is the Tuterly app CTA. "Find a Tutor" and "Apply as a
-// Tutor" live in the footer's Tutoring group. On phones: logo, the app
+// Tutor" live in the footer's Tutoring group, and Learn in its Study guides. On phones: logo, the app
 // button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
   { href: "/try", label: "Try it free" },
@@ -16,7 +16,6 @@ const LINKS = [
   { href: "/students", label: "For students" },
   { href: "/worksheets", label: "Free worksheets" },
   { href: "/exam-generator", label: "Exam generator" },
-  { href: "/learn", label: "Learn" },
 ];
 
 export function Logo() {
