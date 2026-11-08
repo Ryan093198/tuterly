@@ -11,24 +11,24 @@ import "./demo-video.css";
 //   attributes, so iPhones and in-app browsers play it inline, never full
 //   screen;
 // - no native controls: a tap pauses or plays it in place;
-// - if a browser won't autoplay (Android in-app browsers, iPhone Low Power
-//   Mode), an animated WebP of the same demo is shown instead, which plays
-//   everywhere;
+// - only if a browser refuses to autoplay (some Android in-app browsers,
+//   iPhone Low Power Mode) is an animated WebP of the same demo shown
+//   instead (540 px, 15 fps); a slow connection just shows the poster first;
 // - with reduced motion turned on it stays on the poster, with a play button.
 
 export const DEMO_VIDEO = {
   src: "/videos/tuterly-snap-demo.mp4",
   poster: "/videos/tuterly-snap-demo-poster.jpg",
-  anim: "/videos/tuterly-snap-demo.webp",
+  anim: "/videos/tuterly-snap-demo.webp?v=2",
   label: "Tuterly demo: snap a question your child got wrong, see the worked solution, practise fresh questions until it's mastered, then test the whole topic.",
 };
 
 // The 26-second Exam Zone demo (8 Nov 2026), from real app screens of a
 // demo student and made-up test materials (marketing/exam-zone-demo).
 export const EXAM_ZONE_VIDEO = {
-  src: "/videos/tuterly-exam-zone-demo.mp4",
+  src: "/videos/tuterly-exam-zone-demo.mp4?v=2",
   poster: "/videos/tuterly-exam-zone-demo-poster.jpg",
-  anim: "/videos/tuterly-exam-zone-demo.webp",
+  anim: "/videos/tuterly-exam-zone-demo.webp?v=2",
   label: "Tuterly Exam Zone demo: add your test outline, a past paper and your teacher's notes, Tuterly analyses your test and writes a practice exam in your school's style, then marks it by topic so you can fix what you missed.",
 };
 
@@ -65,9 +65,11 @@ export default function DemoVideo({ width = 340, placement = "demo", className =
     };
     v.addEventListener("playing", onPlaying);
 
+    // Fall back only when the browser refuses to play (NotAllowedError),
+    // never because the video is still loading on a slow connection.
     const tryPlay = () => {
       const p = v.play();
-      if (p && p.catch) p.catch(() => { if (!started) setMode("anim"); });
+      if (p && p.catch) p.catch((err) => { if (!started && err?.name === "NotAllowedError") setMode("anim"); });
     };
 
     // Only play while it's on screen.
@@ -80,15 +82,8 @@ export default function DemoVideo({ width = 340, placement = "demo", className =
     }, { threshold: 0.25 });
     io.observe(v);
 
-    // If it's on screen and still hasn't started after a few seconds, the
-    // browser is blocking it: switch to the animated image.
-    const timer = setTimeout(() => {
-      if (!started && visible.current && !userPaused.current) setMode("anim");
-    }, 3500);
-
     return () => {
       io.disconnect();
-      clearTimeout(timer);
       v.removeEventListener("playing", onPlaying);
     };
   }, [placement]);
@@ -99,7 +94,7 @@ export default function DemoVideo({ width = 340, placement = "demo", className =
     if (v.paused) {
       userPaused.current = false;
       if (mode === "still") setMode("video");
-      v.play().then(() => setPaused(false)).catch(() => setMode("anim"));
+      v.play().then(() => setPaused(false)).catch((err) => { if (err?.name === "NotAllowedError") setMode("anim"); });
       trackEvent("demo_video_play", { placement });
     } else {
       userPaused.current = true;
@@ -112,7 +107,7 @@ export default function DemoVideo({ width = 340, placement = "demo", className =
     <div className={`dv ${className}`} style={{ "--dv-w": `${width}px` }}>
       {mode === "anim" ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img className="dv__video" src={video.anim} alt={video.label} width={360} height={640} />
+        <img className="dv__video" src={video.anim} alt={video.label} width={540} height={960} />
       ) : (
         <>
           <video
