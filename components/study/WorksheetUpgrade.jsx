@@ -81,16 +81,21 @@ export default function WorksheetUpgrade({ topic, placement }) {
         <div className="wu__cta">
           <div className="wu__cta-copy">
             <p className="wu__cta-title">{isStudyAppLive() ? "Start your free week." : "Sign up early for a free trial."}</p>
-            <p className="wu__cta-text">
-              {`For Years 7 to 10: ${STUDY_APP.priceLine}.`}{" "}
-              <Link href="/guarantee">Better marks in 6 months, or your money back</Link>.
-            </p>
-            <p className="wu__cta-try">
-              <Link href="/try">Or try it free now on one of their questions →</Link>
+            <ul className="wu__cta-ticks">
+              <li>Fresh questions on exactly what they got wrong</li>
+              <li>Practice exams in their school&rsquo;s style</li>
+              <li>A weekly progress summary for parents</li>
+            </ul>
+            <p className="wu__cta-guarantee">
+              <Icon name="privacy" size={17} />
+              <Link href="/guarantee">Better marks in 6 months, or your money back</Link>
             </p>
           </div>
           <div className="wu__cta-form">
-            <StudyAppCTA variant="hero" placement={placement} position="inline" slim />
+            <StudyAppCTA variant="hero" placement={placement} position="inline" slim hideMeta />
+            <p className="wu__cta-try">
+              <Link href="/try">Or try it free now on one of their questions →</Link>
+            </p>
           </div>
         </div>
 

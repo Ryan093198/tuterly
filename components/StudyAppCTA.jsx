@@ -66,6 +66,7 @@ export default function StudyAppCTA({
   sub,
   position,
   slim = false, // hero: email + button only, so the button stays above the fold on phones
+  hideMeta = false, // hero: drop the "Free to download · ..." line (when the page already says it)
   audience = "parent", // "student" on the student pages: the sign-up is saved as a student
   formIntro, // optional shorter line above the early sign-up form (launch form only)
   style,
@@ -312,7 +313,7 @@ export default function StudyAppCTA({
         {!slim && ticks}
         {action}
         {androidToggle}
-        {meta}
+        {!hideMeta && meta}
       </div>
     );
   }
