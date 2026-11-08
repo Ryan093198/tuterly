@@ -60,6 +60,8 @@ export default function TeacherBuilder({ catalogue, initialYear = "Year 8" }) {
   const years = Object.keys(cat);
   const [year, setYear] = useState(years.includes(initialYear) ? initialYear : years[0]);
   const [picked, setPicked] = useState(() => new Set());
+  // Chapters show their subtopics only when opened, to keep the page short.
+  const [open, setOpen] = useState(() => new Set());
   const [count, setCount] = useState(10);
   const [title, setTitle] = useState("");
   const [teacher, setTeacher] = useState(null);
@@ -71,6 +73,20 @@ export default function TeacherBuilder({ catalogue, initialYear = "Year 8" }) {
   const [error, setError] = useState(null);
   const [made, setMade] = useState(null);
   const [papers, setPapers] = useState([]);
+
+  // Prefill from a chapter page link: /teachers?year=Year%208&topics=a,b#teacher-zone
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const qy = q.get("year");
+    if (!qy || !cat[qy]) return;
+    const valid = new Set(cat[qy].flatMap((g) => g.topics.map((t) => t.slug)));
+    const want = (q.get("topics") || "").split(",").filter((t) => valid.has(t));
+    setYear(qy);
+    if (want.length) {
+      setPicked(new Set(want));
+      setOpen(new Set(cat[qy].filter((g) => g.topics.some((t) => want.includes(t.slug))).map((g) => g.key)));
+    }
+  }, [cat]);
 
   useEffect(() => {
     try {
@@ -157,7 +173,7 @@ export default function TeacherBuilder({ catalogue, initialYear = "Year 8" }) {
         <p className="eg-label" id="tz-year-l">1. Year level</p>
         <div className="eg-years" role="radiogroup" aria-labelledby="tz-year-l">
           {years.map((y) => (
-            <button key={y} type="button" role="radio" aria-checked={y === year} className={`eg-chip ${y === year ? "is-on" : ""}`} onClick={() => { setYear(y); setPicked(new Set()); setMade(null); }}>
+            <button key={y} type="button" role="radio" aria-checked={y === year} className={`eg-chip ${y === year ? "is-on" : ""}`} onClick={() => { setYear(y); setPicked(new Set()); setOpen(new Set()); setMade(null); }}>
               {y}
             </button>
           ))}
@@ -175,8 +191,16 @@ export default function TeacherBuilder({ catalogue, initialYear = "Year 8" }) {
                     <span>{g.name}</span>
                     <small>{on ? `${on} of ${g.topics.length}` : `${g.topics.length} topics`}</small>
                   </label>
+                  <button
+                    type="button"
+                    className="tz-more"
+                    aria-expanded={open.has(g.key)}
+                    onClick={() => setOpen((o) => { const n = new Set(o); n.has(g.key) ? n.delete(g.key) : n.add(g.key); return n; })}
+                  >
+                    {open.has(g.key) ? "Hide topics" : "Choose topics"}
+                  </button>
                 </legend>
-                <div className="eg-subs">
+                <div className="eg-subs" hidden={!open.has(g.key)}>
                   {g.topics.map((t) => (
                     <label key={t.slug} className="eg-check">
                       <input type="checkbox" checked={picked.has(t.slug)} onChange={() => toggle(t.slug)} />
@@ -208,7 +232,7 @@ export default function TeacherBuilder({ catalogue, initialYear = "Year 8" }) {
           <p className="eg-bar__sum" aria-live="polite">
             {chosen.length
               ? <><strong>{chosen.length} topic{chosen.length === 1 ? "" : "s"}</strong> · {Math.min(count, available)} questions{available < count ? ` (all ${available} available)` : ""}</>
-              : "Tick a chapter to include all of its topics, or pick them one by one."}
+              : "Tick a chapter to include all of its topics, or open it to choose topics."}
           </p>
           <button type="button" className="eg-btn" disabled={busy || !chosen.length} onClick={() => build()}>
             {busy ? "Building…" : "Create shareable test"}

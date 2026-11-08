@@ -6,6 +6,7 @@ import { SKILL_PAGES } from "@/lib/skill-pages";
 import { SITE_URL } from "@/lib/site";
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import { getAllPosts } from "@/lib/learn";
+import { teacherChapterPath } from "@/lib/teacher-resources";
 import { LIVE_YEARS, mindMapPath, mindMapsForYear, revisionYearPath } from "@/lib/mind-maps";
 
 // Public marketing pages Google should be aware of. Anything under
@@ -199,6 +200,10 @@ export default function sitemap() {
   const chapterTests = [
     { url: `${SITE_URL}/maths-tests`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     ...getChapterPages().map((c) => ({ url: `${SITE_URL}${c.path}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
+    // Teacher pages (8 Nov 2026)
+    { url: `${SITE_URL}/teachers/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/teachers/printable-exam`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    ...getChapterPages().map((c) => ({ url: `${SITE_URL}${teacherChapterPath(c)}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
   ];
   return [
     ...statics,

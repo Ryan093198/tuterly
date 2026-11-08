@@ -2,25 +2,22 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
-import ExamGenerator from "@/components/exam/ExamGenerator";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
 import { getExamCatalogue } from "@/lib/exam-bank";
-import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
-import { STRANDS, strandOf } from "@/lib/year-hubs";
-import { writtenTopicTest, SHEET_QUESTIONS } from "@/lib/topic-test-files";
+import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
 import "@/components/paper/paper.css";
 
-// For teachers: free Years 7 to 10 maths resources for class use. The
-// Tutero playbook's link engine (Nov 2026): a page teachers share and
-// schools link to. Printable practice sheets (ungated PDFs), full topic
-// tests (emailed), the practice exam builder, and the other free tools.
+// For teachers: the Teacher Zone (auto-marked tests shared by link). Since
+// 8 Nov 2026 (Ryan: "the page is way too long") the printable sheets, topic
+// tests and the paper exam builder live on their own pages under
+// /teachers/resources and /teachers/printable-exam (lib/teacher-resources.js).
 
 const TITLE = "Free Auto-Marked Maths Tests for Teachers, Years 7 to 10 | Tuterly Teacher Zone";
 const DESCRIPTION =
-  "Build a Years 7 to 10 maths test on any topic, share one link, and every student is marked automatically with worked solutions. Plus free printable practice sheets and topic tests. Victorian and Australian Curriculum.";
+  "Build a Years 7 to 10 maths test on any topic, share one link, and every student is marked automatically with a worked solution for every question. Free for teachers, up to 5 tests a day. Victorian Curriculum.";
 const URL = `${SITE_URL}/teachers`;
 
 export const metadata = {
@@ -31,37 +28,16 @@ export const metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
-const YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
-const anchor = (y) => y.toLowerCase().replace(/\s+/g, "-");
-
-function topicsFor(year) {
-  const pages = WORKSHEET_LANDING_PAGES.filter((p) => p.yearLevel === year && writtenTopicTest(year, p.topicId));
-  return STRANDS.map((s) => ({ name: s.name, items: pages.filter((p) => strandOf(p.topicId) === s.code) })).filter((g) => g.items.length);
-}
-
-const USES = [
-  { t: "Warm-up", x: "Questions 1 to 4 of each test are the basics. Put one or two on the board to start the lesson." },
-  { t: "Exit ticket", x: "Two questions from the practice sheet at the end of a lesson show who has it and who needs another go." },
-  { t: "Homework with answers", x: "The practice sheet has the answers on the last page. Print the questions only, or include the answers so students can self-mark." },
-  { t: "Topic test revision", x: "The full 20-question test runs from the basics to harder problems. A week before the real test, it shows students where their gaps are." },
-  { t: "Mixed revision", x: "The practice exam builder mixes several topics with marks and a suggested time, for end-of-term and end-of-year revision." },
-  { t: "Extension", x: "The last section of each full test (questions 17 to 20) has multi-step and problem-solving questions for students who finish early." },
-];
-
 const MORE = [
-  { href: "/worksheets", k: "Generator", n: "Worksheet generator: any topic, any number of questions" },
-  { href: "/formula-sheets", k: "Printable", n: "Formula sheets, Years 7 to 10" },
-  { href: "/mind-maps", k: "Printable", n: "Revision mind maps by year" },
-  { href: "/naplan", k: "Years 7 and 9", n: "NAPLAN numeracy practice tests" },
-  { href: "/end-of-year-maths-exams", k: "Term 4", n: "End-of-year exam practice" },
-  { href: "/years", k: "Overview", n: "Topic maps for Years 7 to 10" },
+  { href: TEACHER_RESOURCES_PATH, k: "By chapter", n: "Teaching resources for every chapter, Years 7 to 10", x: "Printable practice sheets, full topic tests with answer keys and ready-made auto-marked tests." },
+  { href: PRINTABLE_EXAM_PATH, k: "Paper", n: "Printable practice exam builder", x: "A PDF exam with marks and a suggested time, including questions that need working or explanations." },
+  { href: "/naplan", k: "Years 7 and 9", n: "NAPLAN numeracy practice tests", x: "Online and printable tests in the 2027 format." },
+  { href: "/formula-sheets", k: "Printable", n: "Formula sheets, Years 7 to 10", x: "One page per year level." },
+  { href: "/worksheets", k: "Generator", n: "Worksheet generator", x: "Any topic, any number of questions." },
+  { href: "/mind-maps", k: "Printable", n: "Revision mind maps by year", x: "Every topic on one page." },
 ];
 
 const FAQS = [
-  {
-    q: "Can I print these and use them with my class?",
-    a: "Yes. The practice sheets, topic tests and practice exams are free to print, copy and share with your students, in class or as homework. Please don't sell them or republish them as your own.",
-  },
   {
     q: "How does the Teacher Zone work?",
     a: "Pick a year level and the topics, choose how many questions, and create the test. You get two links: one for students, which opens the questions on Tuterly, and one with the answers and worked solutions for you. Students type their answers, press Mark my test, and see their mark and a worked solution for every question straight away.",
@@ -79,31 +55,21 @@ const FAQS = [
     a: "Yes, it's free, up to 5 tests a day. Sign up once with your email and school. Students don't need an account or an email: they just open the link.",
   },
   {
-    q: "Do I need an account for the printables?",
-    a: "No. The printable practice sheets download straight away, with no login or email. The full 20-question topic tests and the practice exam builder ask for an email so we can send you the file.",
-  },
-  {
     q: "Which curriculum do they follow?",
     a: "The Australian Curriculum v9 for Years 7 to 10, including the 10A extension topics. The Victorian Curriculum 2.0 follows the same content. Schools sequence topics differently, so check each test against your scope and sequence.",
   },
   {
     q: "Are the answers checked?",
-    a: "Yes. Every test was written and then checked a second time, independently, before it was published. If you spot an error, email us at admin@baysideacademics.com.au and we'll fix it.",
-  },
-  {
-    q: "What's in each full topic test?",
-    a: "Twenty questions in three sections: the basics (questions 1 to 4), core skills (5 to 16) and harder multi-step problems (17 to 20), with a full answer key. The free practice sheet is the first ten.",
+    a: "Yes. Every question's answer was checked by computing it, and every marking key was tested against right and wrong answers. If you spot an error, email us at admin@baysideacademics.com.au and we'll fix it.",
   },
   {
     q: "What is Tuterly?",
-    a: "Tuterly is a maths study app for Years 7 to 10 students, built by Bayside Academics, a Melbourne tutoring business. Students snap questions they got wrong and get a detailed worked solution and fresh practice until it sticks. The resources on this page are free whether or not your students use it.",
+    a: "Tuterly is a maths study app for Years 7 to 10 students, built by Bayside Academics, a Melbourne tutoring business. Students snap questions they got wrong and get a detailed worked solution and fresh practice until it sticks. The Teacher Zone and the teaching resources are free whether or not your students use it.",
   },
 ];
 
 export default function TeachersPage() {
   const catalogue = getExamCatalogue();
-  const byYear = YEARS.map((y) => ({ year: y, groups: topicsFor(y) })).filter((y) => y.groups.length);
-  const topicCount = byYear.reduce((n, y) => n + y.groups.reduce((m, g) => m + g.items.length, 0), 0);
 
   const schema = [
     {
@@ -140,11 +106,11 @@ export default function TeachersPage() {
         <p className="sh-eyebrow">Teacher Zone · Years 7 to 10 · Free</p>
         <h1>Set a maths test in two minutes. Every student marked automatically.</h1>
         <p className="sh-lead">
-          Pick the topics, share one link with your class, and each student gets their mark and a worked solution for every question the moment they finish. Plus free printable practice sheets and topic tests for {topicCount} topics.
+          Pick the topics, share one link with your class, and each student gets their mark and a worked solution for every question the moment they finish.
         </p>
         <p className="tz-hero-btns">
           <a href="#teacher-zone" className="tb-btn tb-btn--primary">Create a test</a>
-          <a href="#sheets" className="tb-btn tb-btn--secondary">Printable sheets</a>
+          <Link href={TEACHER_RESOURCES_PATH} className="tb-btn tb-btn--secondary">Printable resources</Link>
         </p>
         <dl className="sh-facts">
           <div><dt>Marking</dt><dd>Automatic, with a worked solution for every question</dd></div>
@@ -166,77 +132,15 @@ export default function TeachersPage() {
         </div>
       </section>
 
-      <main id="sheets" className="sh-sec sh-sec--paper" aria-labelledby="t-sheets">
-        <div className="sh-wrap">
-          <h2 id="t-sheets">Printable practice sheets and topic tests</h2>
-          <p className="sh-sub">
-            Each topic has a free printable PDF ({SHEET_QUESTIONS} questions, answers on the last page) and a full 20-question test with an answer key, which we email to you.
-          </p>
-          <nav className="sh-switch" aria-label="Jump to a year level" style={{ margin: "8px 0 24px" }}>
-            <ul>
-              {byYear.map(({ year }) => (
-                <li key={year}><a href={`#${anchor(year)}`}>{year}</a></li>
-              ))}
-            </ul>
-          </nav>
-          {byYear.map(({ year, groups }) => (
-            <div key={year} id={anchor(year)} style={{ scrollMarginTop: 80, marginBottom: 32 }}>
-              <h3 className="sh-h3" style={{ fontSize: 22, margin: "0 0 4px" }}>{year}</h3>
-              {year === "Year 10A" && <p className="sh-p">Extension topics, for students heading to the harder senior maths subjects.</p>}
-              {groups.map((g) => (
-                <div key={g.name} className="sh-group">
-                  <div className="sh-group__head">
-                    <h4 style={{ margin: 0 }}>{g.name}</h4>
-                    <span>{g.items.length} {g.items.length === 1 ? "topic" : "topics"}</span>
-                  </div>
-                  <div className="sh-grid">
-                    {g.items.map((p) => (
-                      <div key={p.slug} className="sh-card">
-                        <span className="sh-card__name">{p.topic}</span>
-                        <span style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px", marginTop: 8, fontSize: 14 }}>
-                          <a href={`/worksheets/${p.slug}/practice-questions.pdf`} className="sh-link">Practice sheet (PDF)</a>
-                          <Link href={`/worksheets/${p.slug}#topic-test`} className="sh-link">Full test</Link>
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </main>
-
-      <section className="sh-sec" aria-labelledby="t-exam">
-        <div className="sh-wrap">
-          <h2 id="t-exam">Build a printable practice exam</h2>
-          <p className="sh-sub">Prefer paper? Pick a year and the topics you&rsquo;ve covered for a printable exam with marks, a suggested time and answers, including the questions that need working or an explanation.</p>
-          <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="teachers_exam" />
-        </div>
-      </section>
-
-      <section className="sh-sec sh-sec--paper" aria-labelledby="t-uses">
-        <div className="sh-wrap">
-          <h2 id="t-uses">Ways to use them in class</h2>
-          <div className="sh-tests">
-            {USES.map((u) => (
-              <div key={u.t} className="sh-box">
-                <p className="sh-when">{u.t}</p>
-                <p className="sh-p">{u.x}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="sh-sec" aria-labelledby="t-more">
         <div className="sh-wrap">
-          <h2 id="t-more">More free resources</h2>
+          <h2 id="t-more">More free teaching resources</h2>
           <div className="sh-grid">
             {MORE.map((m) => (
               <Link key={m.href} href={m.href} className="sh-card">
                 <span className="sh-card__kicker">{m.k}</span>
                 <span className="sh-card__name">{m.n}</span>
+                <span className="sh-card__meta">{m.x}</span>
               </Link>
             ))}
           </div>
@@ -248,10 +152,10 @@ export default function TeachersPage() {
           <h2 id="t-faq">Questions from teachers</h2>
           <div className="sh-faqs">
             {FAQS.map((f) => (
-              <div key={f.q} className="sh-box">
-                <h3 className="sh-h3">{f.q}</h3>
+              <details key={f.q} className="sh-box tz-faq">
+                <summary><h3 className="sh-h3">{f.q}</h3></summary>
                 <p className="sh-p">{f.a}</p>
-              </div>
+              </details>
             ))}
           </div>
         </div>
