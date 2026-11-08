@@ -26,7 +26,7 @@ export const DEMO_VIDEO = {
 // The 26-second Exam Zone demo (8 Nov 2026), from real app screens of a
 // demo student and made-up test materials (marketing/exam-zone-demo).
 export const EXAM_ZONE_VIDEO = {
-  src: "/videos/tuterly-exam-zone-demo.mp4?v=2",
+  src: "/videos/tuterly-exam-zone-demo.mp4?v=3",
   poster: "/videos/tuterly-exam-zone-demo-poster.jpg",
   anim: "/videos/tuterly-exam-zone-demo.webp?v=2",
   label: "Tuterly Exam Zone demo: add your test outline, a past paper and your teacher's notes, Tuterly analyses your test and writes a practice exam in your school's style, then marks it by topic so you can fix what you missed.",
