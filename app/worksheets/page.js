@@ -4,6 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
+import DemoVideo, { EXAM_ZONE_VIDEO } from "@/components/study/DemoVideo";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import Testimonials from "@/components/marketing/Testimonials";
@@ -105,6 +106,15 @@ export default function WorksheetsPage() {
           .ws-nav { padding: 0 16px !important; }
           .ws-nav-links a:not(.ws-nav-cta) { display: none; }
         }
+        .ws-hero__grid { max-width: 1040px; margin: 0 auto; display: grid; gap: 28px; justify-items: center; }
+        .ws-hero__video { margin: 0; display: grid; justify-items: center; gap: 10px; }
+        .ws-hero__video figcaption { max-width: 290px; font-size: 14px; line-height: 1.45; color: ${c.textLight}; text-align: center; }
+        .ws-hero__video a { color: ${c.tealDeep}; font-weight: 700; }
+        @media(min-width:900px) {
+          .ws-hero__grid { grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
+          .ws-hero__copy { text-align: left !important; }
+          .ws-hero__copy p, .ws-hero__copy div { margin-left: 0 !important; justify-content: flex-start !important; }
+        }
       `}</style>
 
       {/* NAV */}
@@ -112,7 +122,8 @@ export default function WorksheetsPage() {
 
       {/* HERO */}
       <section className="ws-hero" style={{ padding: "56px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
+        <div className="ws-hero__grid">
+        <div className="ws-hero__copy" style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
           <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
             Free worksheet generator
           </p>
@@ -130,6 +141,14 @@ export default function WorksheetsPage() {
               Designed by Australian educators at Bayside Academics
             </p>
           </div>
+        </div>
+        <figure className="ws-hero__video">
+          <DemoVideo width={250} placement="worksheets_hero" priority video={EXAM_ZONE_VIDEO} />
+          <figcaption>
+            Predict the questions on your maths exam: Exam Zone in the Tuterly app writes practice exams from your own test outline and past papers.{" "}
+            <Link href="/students#exam-zone">See how it works</Link>
+          </figcaption>
+        </figure>
         </div>
       </section>
 
