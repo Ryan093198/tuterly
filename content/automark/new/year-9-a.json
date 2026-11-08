@@ -1,0 +1,2245 @@
+{
+ "Year 9": {
+  "1A": [
+   {
+    "kind": "short",
+    "question": "Evaluate $-36 \\div 4 + (-5) \\times 3$.",
+    "answer": "$-24$",
+    "solution": "**Key idea:** Do multiplication and division before addition.\n\n1. $-36 \\div 4 = -9$\n2. $(-5) \\times 3 = -15$\n3. $-9 + (-15) = -24$\n\n**Answer:** $-24$",
+    "key": [
+     {
+      "type": "num",
+      "value": -24
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate:\n\n(a) $(-2)^4$\n\n(b) $-2^4$",
+    "answer": "(a) $16$ (b) $-16$",
+    "solution": "**Key idea:** A negative base in brackets is multiplied by itself; without brackets only the $2$ is raised to the power.\n\n1. $(-2)^4 = (-2)(-2)(-2)(-2) = 16$\n2. $-2^4 = -(2 \\times 2 \\times 2 \\times 2) = -16$\n\n**Answer:** (a) $16$ (b) $-16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 16
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -16
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A diver is $12$ m below the surface of the sea, so her position is $-12$ m. She rises $7$ m, dives down $9$ m and then rises $3$ m. What is her final position, in metres?",
+    "answer": "$-11$ m",
+    "solution": "**Key idea:** Rising adds and diving subtracts.\n\n1. Start at $-12$.\n2. $-12 + 7 = -5$\n3. $-5 - 9 = -14$\n4. $-14 + 3 = -11$\n\n**Answer:** $-11$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": -11,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "1B": [
+   {
+    "kind": "short",
+    "question": "Calculate $\\dfrac{4.96 \\times 2.03}{0.98}$, giving your answer correct to $3$ significant figures.",
+    "answer": "$10.3$",
+    "solution": "**Key idea:** Do the full calculation first, then round to $3$ significant figures.\n\n1. $4.96 \\times 2.03 = 10.0688$\n2. $10.0688 \\div 0.98 = 10.2743$\n3. The first three significant figures are $1$, $0$ and $2$; the next digit is $7$, so round up to $10.3$\n\n**Answer:** $10.3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10.3,
+      "dp": 1
+     }
+    ]
+   }
+  ],
+  "1C": [
+   {
+    "kind": "short",
+    "question": "Write $0.\\dot{3}\\dot{6}$ as a fraction in simplest form.",
+    "answer": "$\\frac{4}{11}$",
+    "solution": "**Key idea:** For two repeating digits, multiply by $100$ and subtract.\n\n1. Let $x = 0.3636\\ldots$\n2. $100x = 36.3636\\ldots$\n3. $99x = 36$, so $x = \\frac{36}{99} = \\frac{4}{11}$\n\n**Answer:** $\\frac{4}{11}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.36363636363636365
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $1.45$ as a fraction in simplest form.",
+    "answer": "$\\frac{29}{20}$",
+    "solution": "**Key idea:** Write the decimal over a power of $10$ and simplify.\n\n1. $1.45 = \\frac{145}{100}$\n2. Divide top and bottom by $5$: $\\frac{29}{20}$\n\n**Answer:** $\\frac{29}{20}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1.45
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $\\frac{7}{16}$ as a decimal.",
+    "answer": "$0.4375$",
+    "solution": "**Key idea:** Divide the numerator by the denominator.\n\n1. $16 = 2^4$, so the decimal terminates.\n2. $7 \\div 16 = 0.4375$\n\n**Answer:** $0.4375$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.4375
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "(a) Write $0.4$ as a fraction in simplest form.\n\n(b) Write $0.\\dot{3}$ as a fraction in simplest form.\n\n(c) Find $0.4 + 0.\\dot{3}$ as a fraction in simplest form.",
+    "answer": "(a) $\\frac{2}{5}$ (b) $\\frac{1}{3}$ (c) $\\frac{11}{15}$",
+    "solution": "**Key idea:** Convert each decimal to a fraction, then add using a common denominator.\n\n1. $0.4 = \\frac{4}{10} = \\frac{2}{5}$\n2. $0.\\dot{3} = \\frac{3}{9} = \\frac{1}{3}$\n3. $\\frac{2}{5} + \\frac{1}{3} = \\frac{6}{15} + \\frac{5}{15} = \\frac{11}{15}$\n\n**Answer:** (a) $\\frac{2}{5}$ (b) $\\frac{1}{3}$ (c) $\\frac{11}{15}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.3333333333333333
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.7333333333333333
+     }
+    ]
+   }
+  ],
+  "1D": [
+   {
+    "kind": "short",
+    "question": "Evaluate $\\frac{5}{6} - \\frac{3}{4} \\times \\frac{2}{9}$, giving your answer in simplest form.",
+    "answer": "$\\frac{2}{3}$",
+    "solution": "**Key idea:** Multiply before subtracting.\n\n1. $\\frac{3}{4} \\times \\frac{2}{9} = \\frac{6}{36} = \\frac{1}{6}$\n2. $\\frac{5}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}$\n\n**Answer:** $\\frac{2}{3}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.6666666666666666
+     }
+    ]
+   }
+  ],
+  "1F": [
+   {
+    "kind": "short",
+    "question": "Find $12.5\\%$ of \\$368.",
+    "answer": "\\$46",
+    "solution": "**Key idea:** Change the percentage to a decimal and multiply.\n\n1. $12.5\\% = 0.125$\n2. $0.125 \\times 368 = 46$\n\n**Answer:** \\$46",
+    "key": [
+     {
+      "type": "num",
+      "value": 46
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Lachlan scored $27$ out of $45$ on a science test. What percentage did he score?",
+    "answer": "$60\\%$",
+    "solution": "**Key idea:** Write the score as a fraction and multiply by $100\\%$.\n\n1. $\\frac{27}{45} = 0.6$\n2. $0.6 \\times 100\\% = 60\\%$\n\n**Answer:** $60\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 60,
+      "unit": "%"
+     }
+    ]
+   }
+  ],
+  "1G": [
+   {
+    "kind": "short",
+    "question": "Increase \\$64 by $35\\%$.",
+    "answer": "\\$86.40",
+    "solution": "**Key idea:** Multiply by $1 + 0.35 = 1.35$.\n\n1. $64 \\times 1.35 = 86.4$\n\n**Answer:** \\$86.40",
+    "key": [
+     {
+      "type": "num",
+      "value": 86.4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The value of a mountain bike fell from \\$1250 to \\$980. Find the percentage decrease.",
+    "answer": "$21.6\\%$",
+    "solution": "**Key idea:** Percentage change $= \\frac{\\text{change}}{\\text{original}} \\times 100\\%$.\n\n1. Decrease $= 1250 - 980 = 270$\n2. $\\frac{270}{1250} \\times 100\\% = 21.6\\%$\n\n**Answer:** $21.6\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 21.6,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "After a $20\\%$ increase, the price of a concert ticket is \\$105.60. What was the price before the increase?",
+    "answer": "\\$88",
+    "solution": "**Key idea:** The new price is $120\\%$ of the original, so divide by $1.2$.\n\n1. $105.60 \\div 1.2 = 88$\n\n**Answer:** \\$88",
+    "key": [
+     {
+      "type": "num",
+      "value": 88
+     }
+    ]
+   }
+  ],
+  "1H": [
+   {
+    "kind": "extended",
+    "question": "A store buys a toaster for \\$150 and marks the price up by $60\\%$. In a sale the marked price is then discounted by $25\\%$.\n\n(a) Find the marked price.\n\n(b) Find the sale price.\n\n(c) Find the profit on a toaster sold in the sale, as a percentage of the cost price.",
+    "answer": "(a) \\$240 (b) \\$180 (c) $20\\%$",
+    "solution": "**Key idea:** A markup multiplies by $1 + \\text{rate}$; a discount multiplies by $1 - \\text{rate}$.\n\n1. Marked price $= 150 \\times 1.6 = 240$\n2. Sale price $= 240 \\times 0.75 = 180$\n3. Profit $= 180 - 150 = 30$, and $\\frac{30}{150} \\times 100\\% = 20\\%$\n\n**Answer:** (a) \\$240 (b) \\$180 (c) $20\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 240
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 180
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 20,
+      "unit": "%"
+     }
+    ]
+   }
+  ],
+  "1I": [
+   {
+    "kind": "short",
+    "question": "A real estate agent earns \\$1620 per month plus $2.5\\%$ commission on all sales. In March she sells property worth $\\$480\\,000$. Find her total pay for March.",
+    "answer": "$\\$13\\,620$",
+    "solution": "**Key idea:** Commission is a percentage of the sales amount.\n\n1. Commission $= 0.025 \\times 480\\,000 = 12\\,000$\n2. Total $= 1620 + 12\\,000 = 13\\,620$\n\n**Answer:** $\\$13\\,620$",
+    "key": [
+     {
+      "type": "num",
+      "value": 13620
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Ella earns an annual salary of $\\$67\\,600$ and works $40$ hours per week. Using $52$ weeks in a year, find:\n\n(a) her weekly pay\n\n(b) her equivalent hourly rate",
+    "answer": "(a) \\$1300 (b) \\$32.50",
+    "solution": "**Key idea:** Divide the annual salary by $52$ for weekly pay, then by the hours worked.\n\n1. Weekly pay $= 67\\,600 \\div 52 = 1300$\n2. Hourly rate $= 1300 \\div 40 = 32.50$\n\n**Answer:** (a) \\$1300 (b) \\$32.50",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1300
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 32.5
+     }
+    ]
+   }
+  ],
+  "1J": [
+   {
+    "kind": "short",
+    "question": "Use this tax table for resident taxpayers.\n\n| Taxable income | Tax on this income |\n|---|---|\n| \\$0 to $\\$18\\,200$ | Nil |\n| $\\$18\\,201$ to $\\$45\\,000$ | $16$c for each \\$1 over $\\$18\\,200$ |\n| $\\$45\\,001$ to $\\$135\\,000$ | \\$4288 plus $30$c for each \\$1 over $\\$45\\,000$ |\n| $\\$135\\,001$ to $\\$190\\,000$ | $\\$31\\,288$ plus $37$c for each \\$1 over $\\$135\\,000$ |\n| $\\$190\\,001$ and over | $\\$51\\,638$ plus $45$c for each \\$1 over $\\$190\\,000$ |\n\nOscar's taxable income is $\\$27\\,500$. Find the tax payable.",
+    "answer": "\\$1488",
+    "solution": "**Key idea:** Find the bracket, then apply its rule.\n\n1. $27\\,500$ is in the $\\$18\\,201$ to $\\$45\\,000$ bracket.\n2. Amount over $18\\,200$: $27\\,500 - 18\\,200 = 9300$\n3. Tax $= 0.16 \\times 9300 = 1488$\n\n**Answer:** \\$1488",
+    "key": [
+     {
+      "type": "num",
+      "value": 1488
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use this tax table for resident taxpayers.\n\n| Taxable income | Tax on this income |\n|---|---|\n| \\$0 to $\\$18\\,200$ | Nil |\n| $\\$18\\,201$ to $\\$45\\,000$ | $16$c for each \\$1 over $\\$18\\,200$ |\n| $\\$45\\,001$ to $\\$135\\,000$ | \\$4288 plus $30$c for each \\$1 over $\\$45\\,000$ |\n| $\\$135\\,001$ to $\\$190\\,000$ | $\\$31\\,288$ plus $37$c for each \\$1 over $\\$135\\,000$ |\n| $\\$190\\,001$ and over | $\\$51\\,638$ plus $45$c for each \\$1 over $\\$190\\,000$ |\n\nGrace's taxable income is $\\$160\\,000$. Find the tax payable.",
+    "answer": "$\\$40\\,538$",
+    "solution": "**Key idea:** Find the bracket, then apply its rule.\n\n1. $160\\,000$ is in the $\\$135\\,001$ to $\\$190\\,000$ bracket.\n2. Amount over $135\\,000$: $25\\,000$\n3. Tax $= 31\\,288 + 0.37 \\times 25\\,000 = 31\\,288 + 9250 = 40\\,538$\n\n**Answer:** $\\$40\\,538$",
+    "key": [
+     {
+      "type": "num",
+      "value": 40538
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Use this tax table for resident taxpayers.\n\n| Taxable income | Tax on this income |\n|---|---|\n| \\$0 to $\\$18\\,200$ | Nil |\n| $\\$18\\,201$ to $\\$45\\,000$ | $16$c for each \\$1 over $\\$18\\,200$ |\n| $\\$45\\,001$ to $\\$135\\,000$ | \\$4288 plus $30$c for each \\$1 over $\\$45\\,000$ |\n| $\\$135\\,001$ to $\\$190\\,000$ | $\\$31\\,288$ plus $37$c for each \\$1 over $\\$135\\,000$ |\n| $\\$190\\,001$ and over | $\\$51\\,638$ plus $45$c for each \\$1 over $\\$190\\,000$ |\n\nHamish earns a gross income of $\\$71\\,200$ and has \\$1800 of tax deductions. The Medicare levy is $2\\%$ of taxable income.\n\n(a) Find his taxable income.\n\n(b) Find the income tax payable.\n\n(c) Find the Medicare levy.\n\n(d) His employer withheld $\\$13\\,500$ in PAYG tax. How much is his tax refund?",
+    "answer": "(a) $\\$69\\,400$ (b) $\\$11\\,608$ (c) \\$1388 (d) \\$504",
+    "solution": "**Key idea:** Taxable income is gross income minus deductions; compare the tax owed with the tax withheld.\n\n1. Taxable income $= 71\\,200 - 1800 = 69\\,400$\n2. Tax $= 4288 + 0.30 \\times (69\\,400 - 45\\,000) = 4288 + 7320 = 11\\,608$\n3. Medicare levy $= 0.02 \\times 69\\,400 = 1388$\n4. Total owed $= 11\\,608 + 1388 = 12\\,996$; refund $= 13\\,500 - 12\\,996 = 504$\n\n**Answer:** (a) $\\$69\\,400$ (b) $\\$11\\,608$ (c) \\$1388 (d) \\$504",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 69400
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 11608
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 1388
+     },
+     {
+      "label": "d",
+      "type": "num",
+      "value": 504
+     }
+    ]
+   }
+  ],
+  "1L": [
+   {
+    "kind": "extended",
+    "question": "\\$4000 is invested at $3\\%$ per annum, compounded annually.\n\n(a) Find the balance after $1$ year.\n\n(b) Find the balance after $2$ years.\n\n(c) Find the total interest earned after $3$ years, correct to the nearest cent.",
+    "answer": "(a) \\$4120 (b) \\$4243.60 (c) \\$370.91",
+    "solution": "**Key idea:** Each year, interest is added to the balance and the next year's interest is calculated on the new balance.\n\n1. Year 1: $4000 \\times 1.03 = 4120$\n2. Year 2: $4120 \\times 1.03 = 4243.60$\n3. Year 3: $4243.60 \\times 1.03 = 4370.908$, so interest $= 4370.91 - 4000 = 370.91$\n\n**Answer:** (a) \\$4120 (b) \\$4243.60 (c) \\$370.91",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4120
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4243.6
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 370.91,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ute bought for $\\$36\\,000$ depreciates by $15\\%$ of its value each year. Find its value after $2$ years.",
+    "answer": "$\\$26\\,010$",
+    "solution": "**Key idea:** Each year the value is multiplied by $1 - 0.15 = 0.85$.\n\n1. After $1$ year: $36\\,000 \\times 0.85 = 30\\,600$\n2. After $2$ years: $30\\,600 \\times 0.85 = 26\\,010$\n\n**Answer:** $\\$26\\,010$",
+    "key": [
+     {
+      "type": "num",
+      "value": 26010
+     }
+    ]
+   }
+  ],
+  "1M": [
+   {
+    "kind": "short",
+    "question": "$\\$8500$ is invested at $4.8\\%$ per annum, compounded monthly, for $5$ years. Find the final amount, to the nearest cent.",
+    "answer": "$\\$10\\,800.45$",
+    "solution": "**Key idea:** Monthly compounding uses $\\frac{r}{12}$ per period and $12n$ periods.\n\n1. Rate per month $= 4.8\\% \\div 12 = 0.4\\% = 0.004$\n2. Number of months $= 5 \\times 12 = 60$\n3. $A = 8500 \\times 1.004^{60} = 10800.4461$, which is \\$10800.45 to the nearest cent\n\n**Answer:** $\\$10\\,800.45$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10800.45,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A laptop bought for \\$2200 depreciates by $18\\%$ per year. Use $A = P\\left(1 - \\frac{r}{100}\\right)^n$ to find its value after $4$ years, to the nearest cent.",
+    "answer": "\\$994.67",
+    "solution": "**Key idea:** Depreciation multiplies the value by $1 - \\frac{r}{100}$ each year.\n\n1. $A = 2200 \\times 0.82^4$\n2. $0.82^4 = 0.45212176$\n3. $A = 994.6679$, which is \\$994.67\n\n**Answer:** \\$994.67",
+    "key": [
+     {
+      "type": "num",
+      "value": 994.67,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "2A": [
+   {
+    "kind": "short",
+    "question": "Evaluate $\\dfrac{3x^2 - 4y}{2x + 6}$ when $x = -2$ and $y = 5$.",
+    "answer": "$-4$",
+    "solution": "**Key idea:** Substitute carefully, using brackets around negative numbers.\n\n1. Numerator: $3(-2)^2 - 4(5) = 12 - 20 = -8$\n2. Denominator: $2(-2) + 6 = 2$\n3. $-8 \\div 2 = -4$\n\n**Answer:** $-4$",
+    "key": [
+     {
+      "type": "num",
+      "value": -4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write an algebraic expression for each of the following.\n\n(a) $5$ less than double $n$\n\n(b) the product of $p$ and $q$, plus $8$\n\n(c) the cube of $k$, divided by $3$",
+    "answer": "(a) $2n - 5$ (b) $pq + 8$ (c) $\\frac{k^3}{3}$",
+    "solution": "**Key idea:** Translate each phrase in order: 'product' means multiply and 'less than' means subtract from.\n\n1. $5$ less than double $n$: $2n - 5$\n2. Product of $p$ and $q$, plus $8$: $pq + 8$\n3. Cube of $k$ divided by $3$: $\\frac{k^3}{3}$\n\n**Answer:** (a) $2n - 5$ (b) $pq + 8$ (c) $\\frac{k^3}{3}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "2*n-5",
+      "vars": [
+       "n"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "p*q+8",
+      "vars": [
+       "p",
+       "q"
+      ]
+     },
+     {
+      "label": "c",
+      "type": "expr",
+      "expr": "k^3/3",
+      "vars": [
+       "k"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "An electrician charges a \\$85 call-out fee plus \\$60 per hour.\n\n(a) Write an expression for the cost, in dollars, of a job lasting $h$ hours.\n\n(b) Find the cost of a $3$-hour job.\n\n(c) A job cost \\$445. How many hours did it take?",
+    "answer": "(a) $85 + 60h$ (b) \\$265 (c) $6$ hours",
+    "solution": "**Key idea:** The cost is the fixed fee plus the hourly rate times the number of hours.\n\n1. Cost $= 85 + 60h$\n2. When $h = 3$: $85 + 60 \\times 3 = 265$\n3. $85 + 60h = 445$, so $60h = 360$ and $h = 6$\n\n**Answer:** (a) $85 + 60h$ (b) \\$265 (c) $6$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "85+60*h",
+      "vars": [
+       "h"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 265
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6,
+      "unit": "hours"
+     }
+    ]
+   }
+  ],
+  "2B": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{6ab \\times 2a}{4b}$.",
+    "answer": "$3a^2$",
+    "solution": "**Key idea:** Multiply the numerators, then cancel common factors.\n\n1. $6ab \\times 2a = 12a^2b$\n2. $\\frac{12a^2b}{4b} = 3a^2$\n\n**Answer:** $3a^2$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3*a^2",
+      "vars": [
+       "a"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $7mn - 3m + 2mn + 5m - mn$.",
+    "answer": "$8mn + 2m$",
+    "solution": "**Key idea:** Only like terms can be added or subtracted.\n\n1. $mn$ terms: $7mn + 2mn - mn = 8mn$\n2. $m$ terms: $-3m + 5m = 2m$\n\n**Answer:** $8mn + 2m$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "8*m*n+2*m",
+      "vars": [
+       "m",
+       "n"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "2C": [
+   {
+    "kind": "short",
+    "question": "Expand and simplify $3(2x + 5) - 2(x - 4)$.",
+    "answer": "$4x + 23$",
+    "solution": "**Key idea:** Expand each bracket, taking care with the negative sign, then collect like terms.\n\n1. $3(2x + 5) = 6x + 15$\n2. $-2(x - 4) = -2x + 8$\n3. $6x + 15 - 2x + 8 = 4x + 23$\n\n**Answer:** $4x + 23$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "4*x+23",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand $-5a(2a - 3)$.",
+    "answer": "$-10a^2 + 15a$",
+    "solution": "**Key idea:** Multiply each term inside the bracket by $-5a$.\n\n1. $-5a \\times 2a = -10a^2$\n2. $-5a \\times (-3) = 15a$\n\n**Answer:** $-10a^2 + 15a$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-10*a^2+15*a",
+      "vars": [
+       "a"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A garden bed has two rectangular sections. One section is $x$ m by $(x + 4)$ m and the other is $3$ m by $(x + 4)$ m. A square pond of side $x$ m is placed inside the bed.\n\n(a) Write an expanded expression for the total area of the two sections.\n\n(b) Write a simplified expression for the area of the bed that is not covered by the pond.\n\n(c) Find the uncovered area when $x = 5$.",
+    "answer": "(a) $x^2 + 7x + 12$ (b) $7x + 12$ (c) $47 \\text{ m}^2$",
+    "solution": "**Key idea:** Expand each area, then collect like terms.\n\n1. $x(x + 4) = x^2 + 4x$ and $3(x + 4) = 3x + 12$, so the total is $x^2 + 7x + 12$\n2. Subtract the pond's area $x^2$: $x^2 + 7x + 12 - x^2 = 7x + 12$\n3. When $x = 5$: $7(5) + 12 = 47$\n\n**Answer:** (a) $x^2 + 7x + 12$ (b) $7x + 12$ (c) $47 \\text{ m}^2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "x^2+7*x+12",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "7*x+12",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 47,
+      "unit": "m²"
+     }
+    ]
+   }
+  ],
+  "2D": [
+   {
+    "kind": "short",
+    "question": "Solve $\\dfrac{3x - 4}{5} = 4$.",
+    "answer": "$x = 8$",
+    "solution": "**Key idea:** Undo the operations in reverse order.\n\n1. Multiply both sides by $5$: $3x - 4 = 20$\n2. Add $4$: $3x = 24$\n3. Divide by $3$: $x = 8$\n\n**Answer:** $x = 8$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8
+     }
+    ]
+   }
+  ],
+  "2E": [
+   {
+    "kind": "short",
+    "question": "Solve $5(x - 2) = 3(x + 4)$.",
+    "answer": "$x = 11$",
+    "solution": "**Key idea:** Expand both sides, then collect the $x$ terms on one side.\n\n1. $5x - 10 = 3x + 12$\n2. $2x - 10 = 12$\n3. $2x = 22$, so $x = 11$\n\n**Answer:** $x = 11$",
+    "key": [
+     {
+      "type": "num",
+      "value": 11
+     }
+    ]
+   }
+  ],
+  "2F": [
+   {
+    "kind": "short",
+    "question": "The sum of three consecutive even numbers is $96$. Find the largest of the three numbers.",
+    "answer": "$34$",
+    "solution": "**Key idea:** Let the numbers be $x$, $x + 2$ and $x + 4$.\n\n1. $x + (x + 2) + (x + 4) = 96$\n2. $3x + 6 = 96$, so $3x = 90$ and $x = 30$\n3. The numbers are $30$, $32$ and $34$; the largest is $34$.\n\n**Answer:** $34$",
+    "key": [
+     {
+      "type": "num",
+      "value": 34
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A school canteen sold $40$ lunches. Some were wraps at \\$12 each and the rest were burgers at \\$18 each. The total takings were \\$570. How many wraps were sold?",
+    "answer": "$25$",
+    "solution": "**Key idea:** Let $x$ be the number of wraps, so $40 - x$ burgers were sold.\n\n1. $12x + 18(40 - x) = 570$\n2. $12x + 720 - 18x = 570$\n3. $-6x = -150$, so $x = 25$\n\n**Answer:** $25$",
+    "key": [
+     {
+      "type": "num",
+      "value": 25
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Three friends share $135$ stickers. Jai gets $15$ more than Ava, and Mei gets twice as many as Ava.\n\n(a) Let Ava's number of stickers be $x$. Find $x$.\n\n(b) How many stickers does Jai get?\n\n(c) How many stickers does Mei get?",
+    "answer": "(a) $30$ (b) $45$ (c) $60$",
+    "solution": "**Key idea:** Write each person's share in terms of $x$, add them and set the total equal to $135$.\n\n1. Ava $x$, Jai $x + 15$, Mei $2x$\n2. $x + x + 15 + 2x = 135$, so $4x = 120$ and $x = 30$\n3. Jai: $30 + 15 = 45$; Mei: $2 \\times 30 = 60$\n\n**Answer:** (a) $30$ (b) $45$ (c) $60$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 45
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 60
+     }
+    ]
+   }
+  ],
+  "2G": [
+   {
+    "kind": "short",
+    "question": "Solve $4x - 7 > 21$. What is the smallest whole number that satisfies the inequality?",
+    "answer": "$8$",
+    "solution": "**Key idea:** Solve like an equation, then find the smallest whole number in the solution.\n\n1. $4x > 28$\n2. $x > 7$\n3. The smallest whole number greater than $7$ is $8$.\n\n**Answer:** $8$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $5 - 3x \\ge -13$. What is the largest integer that satisfies the inequality?",
+    "answer": "$6$",
+    "solution": "**Key idea:** Dividing both sides by a negative number reverses the inequality sign.\n\n1. $-3x \\ge -18$\n2. Divide by $-3$ and reverse the sign: $x \\le 6$\n3. The largest integer is $6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many integers $x$ satisfy both $2x + 1 > -5$ and $2x + 1 \\le 9$?",
+    "answer": "$7$",
+    "solution": "**Key idea:** Solve each inequality, then count the integers between the two limits.\n\n1. $2x + 1 > -5$ gives $x > -3$\n2. $2x + 1 \\le 9$ gives $x \\le 4$\n3. The integers are $-2, -1, 0, 1, 2, 3, 4$, which is $7$ integers.\n\n**Answer:** $7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A phone plan costs \\$25 per month plus $40$ cents for each text message. Ruby wants her monthly bill to be at most \\$40. What is the greatest number of texts she can send?",
+    "answer": "$37$",
+    "solution": "**Key idea:** Write an inequality, solve it, then round down to a whole number of texts.\n\n1. $25 + 0.4t \\le 40$\n2. $0.4t \\le 15$, so $t \\le 37.5$\n3. She can send at most $37$ texts.\n\n**Answer:** $37$",
+    "key": [
+     {
+      "type": "num",
+      "value": 37
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A school band pays \\$450 to hire a hall for a concert and sells tickets for \\$18 each. What is the least number of tickets they must sell to make a profit of at least \\$1000?",
+    "answer": "$81$",
+    "solution": "**Key idea:** Profit is ticket sales minus costs; round up because a whole number of tickets is sold.\n\n1. $18n - 450 \\ge 1000$\n2. $18n \\ge 1450$, so $n \\ge 80.5\\ldots$\n3. The least number of tickets is $81$.\n\n**Answer:** $81$",
+    "key": [
+     {
+      "type": "num",
+      "value": 81
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Consider the inequalities $\\dfrac{x}{3} + 2 < 7$ and $-\\dfrac{x}{2} \\le 4$.\n\n(a) What is the largest integer that satisfies the first inequality?\n\n(b) What is the smallest integer that satisfies the second inequality?\n\n(c) How many integers satisfy both inequalities?",
+    "answer": "(a) $14$ (b) $-8$ (c) $23$",
+    "solution": "**Key idea:** Solve each inequality separately, remembering to reverse the sign when multiplying by a negative.\n\n1. $\\frac{x}{3} < 5$, so $x < 15$; the largest integer is $14$\n2. $-\\frac{x}{2} \\le 4$; multiply by $-2$ and reverse: $x \\ge -8$\n3. The integers from $-8$ to $14$: $14 - (-8) + 1 = 23$\n\n**Answer:** (a) $14$ (b) $-8$ (c) $23$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 14
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -8
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 23
+     }
+    ]
+   }
+  ],
+  "2H": [
+   {
+    "kind": "short",
+    "question": "The perimeter of a rectangle is $P = 2(l + w)$.\n\n(a) Find $P$ when $l = 8.5$ and $w = 4.25$.\n\n(b) Find $w$ when $P = 46$ and $l = 15$.",
+    "answer": "(a) $25.5$ (b) $8$",
+    "solution": "**Key idea:** Substitute the known values, then solve for the unknown.\n\n1. $P = 2(8.5 + 4.25) = 2 \\times 12.75 = 25.5$\n2. $46 = 2(15 + w)$, so $23 = 15 + w$ and $w = 8$\n\n**Answer:** (a) $25.5$ (b) $8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 25.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The area of a trapezium is $A = \\frac{1}{2}(a + b)h$. A trapezium has area $48 \\text{ cm}^2$, height $6$ cm and one parallel side of $7$ cm. Find the length of the other parallel side.",
+    "answer": "$9$ cm",
+    "solution": "**Key idea:** Substitute the known values, then solve the equation.\n\n1. $48 = \\frac{1}{2}(a + 7) \\times 6$\n2. $48 = 3(a + 7)$, so $16 = a + 7$\n3. $a = 9$\n\n**Answer:** $9$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "2I": [
+   {
+    "kind": "short",
+    "question": "Use substitution to solve $y = 4x - 3$ and $2x + y = 15$. Give your answer as $x$, $y$.",
+    "answer": "$x = 3$, $y = 9$",
+    "solution": "**Key idea:** Replace $y$ in the second equation with $4x - 3$.\n\n1. $2x + (4x - 3) = 15$\n2. $6x = 18$, so $x = 3$\n3. $y = 4(3) - 3 = 9$\n\n**Answer:** $x = 3$, $y = 9$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       9
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use substitution to solve $x = 3y + 1$ and $2x - 5y = 4$. Give your answer as $x$, $y$.",
+    "answer": "$x = 7$, $y = 2$",
+    "solution": "**Key idea:** Replace $x$ in the second equation with $3y + 1$.\n\n1. $2(3y + 1) - 5y = 4$\n2. $6y + 2 - 5y = 4$, so $y = 2$\n3. $x = 3(2) + 1 = 7$\n\n**Answer:** $x = 7$, $y = 2$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       7,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "2J": [
+   {
+    "kind": "short",
+    "question": "Use elimination to solve $3x + 4y = 10$ and $5x - 4y = 22$. Give your answer as $x$, $y$.",
+    "answer": "$x = 4$, $y = -\\frac{1}{2}$",
+    "solution": "**Key idea:** The $y$ terms have opposite signs, so add the equations.\n\n1. Add: $8x = 32$, so $x = 4$\n2. Substitute into the first equation: $12 + 4y = 10$\n3. $4y = -2$, so $y = -\\frac{1}{2}$\n\n**Answer:** $x = 4$, $y = -\\frac{1}{2}$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       -0.5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use elimination to solve $2x + 5y = 1$ and $3x + 2y = -4$. Give your answer as $x$, $y$.",
+    "answer": "$x = -2$, $y = 1$",
+    "solution": "**Key idea:** Multiply the equations so that one pronumeral has the same coefficient, then subtract.\n\n1. Multiply the first by $3$: $6x + 15y = 3$\n2. Multiply the second by $2$: $6x + 4y = -8$\n3. Subtract: $11y = 11$, so $y = 1$\n4. Substitute: $2x + 5 = 1$, so $x = -2$\n\n**Answer:** $x = -2$, $y = 1$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       -2,
+       1
+      ]
+     }
+    ]
+   }
+  ],
+  "2K": [
+   {
+    "kind": "extended",
+    "question": "A cinema sold $52$ tickets for one session. Adult tickets cost \\$25 and student tickets cost \\$15. The total takings were \\$1060.\n\n(a) How many adult tickets were sold?\n\n(b) How many student tickets were sold?",
+    "answer": "(a) $28$ (b) $24$",
+    "solution": "**Key idea:** Write one equation for the number of tickets and one for the money.\n\n1. Let $a$ be adult tickets and $s$ student tickets: $a + s = 52$ and $25a + 15s = 1060$\n2. Multiply the first by $15$: $15a + 15s = 780$\n3. Subtract: $10a = 280$, so $a = 28$\n4. $s = 52 - 28 = 24$\n\n**Answer:** (a) $28$ (b) $24$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 28
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 24
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two angles are complementary (they add to $90^\\circ$). One angle is $24^\\circ$ larger than the other. Find the size of the larger angle.",
+    "answer": "$57^\\circ$",
+    "solution": "**Key idea:** Write two equations: one for the sum and one for the difference.\n\n1. $x + y = 90$ and $x - y = 24$\n2. Add: $2x = 114$, so $x = 57$\n3. The larger angle is $57^\\circ$.\n\n**Answer:** $57^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 57,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "At a bakery, $3$ pies and $2$ sausage rolls cost \\$13.10, while $1$ pie and $4$ sausage rolls cost \\$10.70.\n\n(a) Find the cost of one pie.\n\n(b) Find the cost of one sausage roll.",
+    "answer": "(a) \\$3.10 (b) \\$1.90",
+    "solution": "**Key idea:** Let $p$ and $s$ be the prices; form two equations and eliminate one pronumeral.\n\n1. $3p + 2s = 13.10$ and $p + 4s = 10.70$\n2. Multiply the first by $2$: $6p + 4s = 26.20$\n3. Subtract the second: $5p = 15.50$, so $p = 3.10$\n4. $3.10 + 4s = 10.70$, so $4s = 7.60$ and $s = 1.90$\n\n**Answer:** (a) \\$3.10 (b) \\$1.90",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3.1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1.9
+     }
+    ]
+   }
+  ],
+  "3A": [
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has shorter sides of $7$ cm and $24$ cm. Find the length of the hypotenuse.",
+    "answer": "$25$ cm",
+    "solution": "**Key idea:** Use $c^2 = a^2 + b^2$.\n\n1. $c^2 = 7^2 + 24^2 = 49 + 576 = 625$\n2. $c = \\sqrt{625} = 25$\n\n**Answer:** $25$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 25,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has shorter sides of $4.5$ m and $6$ m. Find the length of the hypotenuse.",
+    "answer": "$7.5$ m",
+    "solution": "**Key idea:** Use $c^2 = a^2 + b^2$.\n\n1. $c^2 = 4.5^2 + 6^2 = 20.25 + 36 = 56.25$\n2. $c = \\sqrt{56.25} = 7.5$\n\n**Answer:** $7.5$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 7.5,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has shorter sides of $9$ cm and $13$ cm. Find the length of the hypotenuse, correct to $2$ decimal places.",
+    "answer": "$15.81$ cm",
+    "solution": "**Key idea:** Use $c^2 = a^2 + b^2$ and round at the end.\n\n1. $c^2 = 81 + 169 = 250$\n2. $c = \\sqrt{250} = 15.8114\\ldots$\n3. Correct to $2$ decimal places, $c = 15.81$\n\n**Answer:** $15.81$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15.81,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangular gate is $3$ m wide and $1.6$ m high. A diagonal brace runs from one corner of the gate to the opposite corner. How long is the brace?",
+    "answer": "$3.4$ m",
+    "solution": "**Key idea:** The brace is the hypotenuse of a right-angled triangle.\n\n1. $c^2 = 3^2 + 1.6^2 = 9 + 2.56 = 11.56$\n2. $c = \\sqrt{11.56} = 3.4$\n\n**Answer:** $3.4$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.4,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Zoe walks $40$ m along one edge of a rectangular oval and then $30$ m along the next edge.\n\n(a) How far has she walked?\n\n(b) How far is she now from her starting point, in a straight line?\n\n(c) How many metres shorter is the straight-line distance than the distance she walked?",
+    "answer": "(a) $70$ m (b) $50$ m (c) $20$ m",
+    "solution": "**Key idea:** The edges of the oval meet at right angles, so the straight-line distance is a hypotenuse.\n\n1. Distance walked $= 40 + 30 = 70$ m\n2. $c^2 = 40^2 + 30^2 = 1600 + 900 = 2500$, so $c = 50$ m\n3. $70 - 50 = 20$ m\n\n**Answer:** (a) $70$ m (b) $50$ m (c) $20$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 70,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 50,
+      "unit": "m"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 20,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "3B": [
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has a hypotenuse of $15$ m and one shorter side of $9$ m. Find the length of the other shorter side.",
+    "answer": "$12$ m",
+    "solution": "**Key idea:** Rearrange Pythagoras' theorem: $a^2 = c^2 - b^2$.\n\n1. $a^2 = 15^2 - 9^2 = 225 - 81 = 144$\n2. $a = \\sqrt{144} = 12$\n\n**Answer:** $12$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 12,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A $6$ m ladder leans against a vertical wall. Its foot is $2.1$ m from the base of the wall on level ground. How high up the wall does the ladder reach? Give your answer correct to $2$ decimal places.",
+    "answer": "$5.62$ m",
+    "solution": "**Key idea:** The ladder is the hypotenuse, so subtract the squares.\n\n1. $h^2 = 6^2 - 2.1^2 = 36 - 4.41 = 31.59$\n2. $h = \\sqrt{31.59} = 5.6205\\ldots$\n3. Correct to $2$ decimal places: $5.62$ m\n\n**Answer:** $5.62$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 5.62,
+      "dp": 2,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "3C": [
+   {
+    "kind": "short",
+    "question": "A square park has sides of $45$ m. Lily walks diagonally across the park from one corner to the opposite corner instead of walking along two sides. How many metres does she save? Give your answer correct to $1$ decimal place.",
+    "answer": "$26.4$ m",
+    "solution": "**Key idea:** The diagonal is the hypotenuse of a right-angled triangle with two sides of $45$ m.\n\n1. Along two sides: $45 + 45 = 90$ m\n2. Diagonal: $\\sqrt{45^2 + 45^2} = \\sqrt{4050} = 63.6396\\ldots$ m\n3. Saving: $90 - 63.6396 = 26.3604$, which is $26.4$ m\n\n**Answer:** $26.4$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 26.4,
+      "dp": 1,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "3D": [
+   {
+    "kind": "short",
+    "question": "A storage box is $20$ cm long, $15$ cm wide and $12$ cm high. Find the length of the longest straight rod that fits inside the box, correct to $1$ decimal place.",
+    "answer": "$27.7$ cm",
+    "solution": "**Key idea:** The longest rod runs along the space diagonal: $D^2 = l^2 + w^2 + h^2$.\n\n1. $D^2 = 20^2 + 15^2 + 12^2 = 400 + 225 + 144 = 769$\n2. $D = \\sqrt{769} = 27.7308\\ldots$\n3. Correct to $1$ decimal place: $27.7$ cm\n\n**Answer:** $27.7$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 27.7,
+      "dp": 1,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A lift shaft in a building is a rectangular prism $8$ m long, $6$ m wide and $24$ m high.\n\n(a) Find the length of a diagonal of the floor.\n\n(b) Find the distance from one bottom corner of the shaft to the opposite top corner.",
+    "answer": "(a) $10$ m (b) $26$ m",
+    "solution": "**Key idea:** First find the floor diagonal, then use it with the height in a second right-angled triangle.\n\n1. Floor diagonal: $\\sqrt{8^2 + 6^2} = \\sqrt{100} = 10$ m\n2. Space diagonal: $\\sqrt{10^2 + 24^2} = \\sqrt{676} = 26$ m\n\n**Answer:** (a) $10$ m (b) $26$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 10,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 26,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "3E": [
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has sides $5$, $12$ and $13$. For the angle $\\theta$, the opposite side is $5$ and the adjacent side is $12$.\n\n(a) Find $\\sin \\theta$.\n\n(b) Find $\\cos \\theta$.\n\n(c) Find $\\tan \\theta$.",
+    "answer": "(a) $\\frac{5}{13}$ (b) $\\frac{12}{13}$ (c) $\\frac{5}{12}$",
+    "solution": "**Key idea:** SOH CAH TOA: $\\sin = \\frac{O}{H}$, $\\cos = \\frac{A}{H}$, $\\tan = \\frac{O}{A}$.\n\n1. The hypotenuse is $13$, the longest side.\n2. $\\sin \\theta = \\frac{5}{13}$\n3. $\\cos \\theta = \\frac{12}{13}$\n4. $\\tan \\theta = \\frac{5}{12}$\n\n**Answer:** (a) $\\frac{5}{13}$ (b) $\\frac{12}{13}$ (c) $\\frac{5}{12}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.38461538461538464
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.9230769230769231
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.4166666666666667
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use a calculator to evaluate each of the following, correct to $4$ decimal places.\n\n(a) $\\sin 27^\\circ$\n\n(b) $\\cos 64^\\circ$\n\n(c) $\\tan 71^\\circ$",
+    "answer": "(a) $0.4540$ (b) $0.4384$ (c) $2.9042$",
+    "solution": "**Key idea:** Make sure the calculator is in degree mode.\n\n1. $\\sin 27^\\circ = 0.453990\\ldots$\n2. $\\cos 64^\\circ = 0.438371\\ldots$\n3. $\\tan 71^\\circ = 2.904211\\ldots$\n\n**Answer:** (a) $0.4540$ (b) $0.4384$ (c) $2.9042$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.454,
+      "dp": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.4384,
+      "dp": 4
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 2.9042,
+      "dp": 4
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In a right-angled triangle, the side opposite angle $\\theta$ is $8$ cm and the hypotenuse is $17$ cm.\n\n(a) Find the length of the side adjacent to $\\theta$.\n\n(b) Write $\\cos \\theta$ as a fraction.\n\n(c) Write $\\tan \\theta$ as a fraction.",
+    "answer": "(a) $15$ cm (b) $\\frac{15}{17}$ (c) $\\frac{8}{15}$",
+    "solution": "**Key idea:** Use Pythagoras' theorem to find the missing side, then the ratios.\n\n1. Adjacent $= \\sqrt{17^2 - 8^2} = \\sqrt{225} = 15$ cm\n2. $\\cos \\theta = \\frac{15}{17}$\n3. $\\tan \\theta = \\frac{8}{15}$\n\n**Answer:** (a) $15$ cm (b) $\\frac{15}{17}$ (c) $\\frac{8}{15}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.8823529411764706
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.5333333333333333
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In $\\triangle XYZ$ the right angle is at $Y$. $XY = 20$ cm, $YZ = 21$ cm and $XZ = 29$ cm. Find $\\sin X$ as a fraction.",
+    "answer": "$\\frac{21}{29}$",
+    "solution": "**Key idea:** The side opposite angle $X$ is $YZ$ and the hypotenuse is $XZ$.\n\n1. Opposite $X$: $YZ = 21$\n2. Hypotenuse: $XZ = 29$\n3. $\\sin X = \\frac{21}{29}$\n\n**Answer:** $\\frac{21}{29}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.7241379310344828
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "For an angle $\\theta$ in a right-angled triangle, $\\tan \\theta = 0.75$ and the side adjacent to $\\theta$ is $12$ cm.\n\n(a) Find the length of the side opposite $\\theta$.\n\n(b) Find the length of the hypotenuse.\n\n(c) Find $\\sin \\theta$ as a decimal.",
+    "answer": "(a) $9$ cm (b) $15$ cm (c) $0.6$",
+    "solution": "**Key idea:** $\\tan \\theta = \\frac{\\text{opposite}}{\\text{adjacent}}$, so opposite $=$ adjacent $\\times \\tan \\theta$.\n\n1. Opposite $= 12 \\times 0.75 = 9$ cm\n2. Hypotenuse $= \\sqrt{9^2 + 12^2} = \\sqrt{225} = 15$ cm\n3. $\\sin \\theta = \\frac{9}{15} = 0.6$\n\n**Answer:** (a) $9$ cm (b) $15$ cm (c) $0.6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.6
+     }
+    ]
+   }
+  ],
+  "3G": [
+   {
+    "kind": "short",
+    "question": "In a right-angled triangle, the side adjacent to a $38^\\circ$ angle is $12$ cm. Find the length of the hypotenuse, correct to $2$ decimal places.",
+    "answer": "$15.23$ cm",
+    "solution": "**Key idea:** $\\cos \\theta = \\frac{A}{H}$, so $H = \\frac{A}{\\cos \\theta}$ when the unknown is in the denominator.\n\n1. $\\cos 38^\\circ = \\frac{12}{h}$\n2. $h = \\frac{12}{\\cos 38^\\circ}$\n3. $h = 15.2282\\ldots$, which is $15.23$ cm\n\n**Answer:** $15.23$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15.23,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a right-angled triangle, the side opposite a $29^\\circ$ angle is $7.5$ m. Find the length of the side adjacent to the $29^\\circ$ angle, correct to $2$ decimal places.",
+    "answer": "$13.53$ m",
+    "solution": "**Key idea:** $\\tan \\theta = \\frac{O}{A}$, so $A = \\frac{O}{\\tan \\theta}$.\n\n1. $\\tan 29^\\circ = \\frac{7.5}{x}$\n2. $x = \\frac{7.5}{\\tan 29^\\circ}$\n3. $x = 13.5304\\ldots$, which is $13.53$ m\n\n**Answer:** $13.53$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 13.53,
+      "dp": 2,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A ramp must rise $3.2$ m and make an angle of $14^\\circ$ with the horizontal ground.\n\n(a) Find the length of the sloping surface of the ramp, correct to $2$ decimal places.\n\n(b) Find the horizontal distance the ramp covers, correct to $2$ decimal places.",
+    "answer": "(a) $13.23$ m (b) $12.83$ m",
+    "solution": "**Key idea:** The rise is opposite the $14^\\circ$ angle; the unknown sides are in the denominator.\n\n1. $\\sin 14^\\circ = \\frac{3.2}{L}$, so $L = \\frac{3.2}{\\sin 14^\\circ}$\n2. $L = 13.2274\\ldots$, which is $13.23$ m\n3. $\\tan 14^\\circ = \\frac{3.2}{x}$, so $x = \\frac{3.2}{\\tan 14^\\circ}$\n4. $x = 12.8345\\ldots$, which is $12.83$ m\n\n**Answer:** (a) $13.23$ m (b) $12.83$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 13.23,
+      "dp": 2,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12.83,
+      "dp": 2,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "3J": [
+   {
+    "kind": "short",
+    "question": "A yacht sails $15$ km from a marina on a true bearing of $050^\\circ$T. How far east of the marina is the yacht? Give your answer correct to $2$ decimal places.",
+    "answer": "$11.49$ km",
+    "solution": "**Key idea:** The bearing is measured clockwise from north, so the east distance is opposite the $50^\\circ$ angle.\n\n1. Draw a right-angled triangle with the $15$ km path as the hypotenuse and a $50^\\circ$ angle at the marina between north and the path.\n2. East distance $= 15 \\sin 50^\\circ$\n3. $= 11.4907\\ldots$, which is $11.49$ km\n\n**Answer:** $11.49$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 11.49,
+      "dp": 2,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A plane flies $240$ km on a true bearing of $150^\\circ$T.\n\n(a) What is the size of the angle between due south and the plane's path?\n\n(b) How far south of its starting point is the plane? Give your answer correct to $1$ decimal place.\n\n(c) How far east of its starting point is the plane?",
+    "answer": "(a) $30^\\circ$ (b) $207.8$ km (c) $120$ km",
+    "solution": "**Key idea:** Find the angle from the nearest north-south line, then use a right-angled triangle.\n\n1. $180^\\circ - 150^\\circ = 30^\\circ$, measured from south towards east\n2. South distance $= 240 \\cos 30^\\circ$\n3. $= 207.8461\\ldots$, which is $207.8$ km\n4. East distance $= 240 \\sin 30^\\circ = 240 \\times 0.5 = 120$ km\n\n**Answer:** (a) $30^\\circ$ (b) $207.8$ km (c) $120$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 207.8,
+      "dp": 1,
+      "unit": "km"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 120,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A hiker walks $12$ km due north and then $9$ km due east.\n\n(a) How far is the hiker from the starting point?\n\n(b) Find the angle between due north and the hiker's direct line from the starting point, correct to the nearest degree.",
+    "answer": "(a) $15$ km (b) $37^\\circ$",
+    "solution": "**Key idea:** The north and east legs form a right angle.\n\n1. $\\sqrt{12^2 + 9^2} = \\sqrt{225} = 15$ km\n2. $\\tan \\theta = \\frac{9}{12}$, where $\\theta$ is measured from north\n3. $\\theta = 36.87^\\circ$, which is $37^\\circ$ to the nearest degree\n\n**Answer:** (a) $15$ km (b) $37^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 37,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Town $Q$ is on a true bearing of $125^\\circ$T from town $P$. Find the true bearing of $P$ from $Q$, as a number of degrees.",
+    "answer": "$305^\\circ$",
+    "solution": "**Key idea:** The back bearing differs by $180^\\circ$.\n\n1. The bearing is less than $180^\\circ$, so add $180^\\circ$.\n2. $125^\\circ + 180^\\circ = 305^\\circ$\n\n**Answer:** $305^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 305,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ship sails $20$ km due west from a port, then $8$ km due south. Find the straight-line distance from the port to the ship, correct to $2$ decimal places.",
+    "answer": "$21.54$ km",
+    "solution": "**Key idea:** West and south are at right angles, so use Pythagoras' theorem.\n\n1. $d^2 = 20^2 + 8^2 = 400 + 64 = 464$\n2. $d = \\sqrt{464} = 21.5407\\ldots$\n3. Correct to $2$ decimal places: $21.54$ km\n\n**Answer:** $21.54$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 21.54,
+      "dp": 2,
+      "unit": "km"
+     }
+    ]
+   }
+  ],
+  "4A": [
+   {
+    "kind": "short",
+    "question": "For the rule $y = 5 - 2x$, find $y$ when:\n\n(a) $x = 3$\n\n(b) $x = -4$\n\n(c) $x = 0.5$",
+    "answer": "(a) $-1$ (b) $13$ (c) $4$",
+    "solution": "**Key idea:** Substitute each value of $x$ into the rule.\n\n1. $5 - 2(3) = -1$\n2. $5 - 2(-4) = 13$\n3. $5 - 2(0.5) = 4$\n\n**Answer:** (a) $-1$ (b) $13$ (c) $4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 13
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(-2, k)$ lies on the line $y = -3x + 4$. Find $k$.",
+    "answer": "$k = 10$",
+    "solution": "**Key idea:** A point lies on a line when its coordinates satisfy the equation.\n\n1. Substitute $x = -2$: $y = -3(-2) + 4$\n2. $y = 6 + 4 = 10$\n\n**Answer:** $k = 10$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(a, 7)$ lies on the line $2x + 3y = 15$. Find $a$.",
+    "answer": "$a = -3$",
+    "solution": "**Key idea:** Substitute $y = 7$ and solve for $x$.\n\n1. $2a + 3(7) = 15$\n2. $2a + 21 = 15$\n3. $2a = -6$, so $a = -3$\n\n**Answer:** $a = -3$",
+    "key": [
+     {
+      "type": "num",
+      "value": -3
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A table of values for a straight line is shown.\n\n| $x$ | $0$ | $1$ | $2$ | $3$ |\n|---|---|---|---|---|\n| $y$ | $-4$ | $-1$ | $2$ | $5$ |\n\n(a) By how much does $y$ increase each time $x$ increases by $1$?\n\n(b) Write the rule for $y$ in terms of $x$.\n\n(c) Find $y$ when $x = 10$.",
+    "answer": "(a) $3$ (b) $y = 3x - 4$ (c) $26$",
+    "solution": "**Key idea:** The constant increase is the multiple of $x$, and the $y$ value at $x = 0$ is the constant term.\n\n1. $y$ goes $-4, -1, 2, 5$: it increases by $3$ each time\n2. At $x = 0$, $y = -4$, so $y = 3x - 4$\n3. $y = 3(10) - 4 = 26$\n\n**Answer:** (a) $3$ (b) $y = 3x - 4$ (c) $26$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "3*x-4",
+      "vars": [
+       "x"
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 26
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use the rule $y = \\frac{1}{2}x + 3$ to find the value of $x$ when $y = 8$.",
+    "answer": "$x = 10$",
+    "solution": "**Key idea:** Substitute the $y$ value and solve the equation for $x$.\n\n1. $8 = \\frac{1}{2}x + 3$\n2. $5 = \\frac{1}{2}x$\n3. $x = 10$\n\n**Answer:** $x = 10$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "4B": [
+   {
+    "kind": "short",
+    "question": "Find the $x$-intercept of the line $3x - 5y = 30$.",
+    "answer": "$10$",
+    "solution": "**Key idea:** At the $x$-intercept, $y = 0$.\n\n1. Substitute $y = 0$: $3x = 30$\n2. $x = 10$\n\n**Answer:** $10$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $y$-intercept of the line $3x - 5y = 30$.",
+    "answer": "$-6$",
+    "solution": "**Key idea:** At the $y$-intercept, $x = 0$.\n\n1. Substitute $x = 0$: $-5y = 30$\n2. $y = -6$\n\n**Answer:** $-6$",
+    "key": [
+     {
+      "type": "num",
+      "value": -6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-intercept of the line $y = 4x + 10$.",
+    "answer": "$-2.5$",
+    "solution": "**Key idea:** At the $x$-intercept, $y = 0$.\n\n1. $0 = 4x + 10$\n2. $4x = -10$\n3. $x = -2.5$\n\n**Answer:** $-2.5$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2.5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "For the line $6x + 4y = 24$:\n\n(a) find the $x$-intercept\n\n(b) find the $y$-intercept\n\n(c) find the area of the triangle formed by the line and the two axes, in square units.",
+    "answer": "(a) $4$ (b) $6$ (c) $12$ square units",
+    "solution": "**Key idea:** Set $y = 0$ for the $x$-intercept and $x = 0$ for the $y$-intercept; the intercepts give the base and height of the triangle.\n\n1. $y = 0$: $6x = 24$, so $x = 4$\n2. $x = 0$: $4y = 24$, so $y = 6$\n3. Area $= \\frac{1}{2} \\times 4 \\times 6 = 12$\n\n**Answer:** (a) $4$ (b) $6$ (c) $12$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 12,
+      "unit": "square units"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $y$-intercept of the line $2x + 7y = -21$.",
+    "answer": "$-3$",
+    "solution": "**Key idea:** At the $y$-intercept, $x = 0$.\n\n1. $7y = -21$\n2. $y = -3$\n\n**Answer:** $-3$",
+    "key": [
+     {
+      "type": "num",
+      "value": -3
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The line $y = -2x + 8$ crosses the axes at $A$ (on the $x$-axis) and $B$ (on the $y$-axis).\n\n(a) Find the $x$-coordinate of $A$.\n\n(b) Find the $y$-coordinate of $B$.\n\n(c) Find the distance $AB$, correct to $2$ decimal places.",
+    "answer": "(a) $4$ (b) $8$ (c) $8.94$",
+    "solution": "**Key idea:** Find each intercept, then use Pythagoras' theorem for the distance between them.\n\n1. $0 = -2x + 8$, so $x = 4$\n2. $y = -2(0) + 8 = 8$\n3. $AB = \\sqrt{4^2 + 8^2} = \\sqrt{80} = 8.9443\\ldots$, which is $8.94$\n\n**Answer:** (a) $4$ (b) $8$ (c) $8.94$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 8.94,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "4C": [
+   {
+    "kind": "short",
+    "question": "The line $y = kx$ passes through the origin and the point $(4, -10)$. Find $k$.",
+    "answer": "$k = -2.5$",
+    "solution": "**Key idea:** A line through the origin has the rule $y = kx$; substitute the point to find $k$.\n\n1. $-10 = k \\times 4$\n2. $k = -10 \\div 4 = -2.5$\n\n**Answer:** $k = -2.5$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the point where the vertical line $x = -2$ meets the line $y = 3x + 7$. Give your answer as a coordinate pair.",
+    "answer": "$(-2, 1)$",
+    "solution": "**Key idea:** On the line $x = -2$, every point has $x$-coordinate $-2$.\n\n1. Substitute $x = -2$ into $y = 3x + 7$\n2. $y = -6 + 7 = 1$\n3. The point is $(-2, 1)$\n\n**Answer:** $(-2, 1)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       -2,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The horizontal line $y = 6$ and the line $y = \\frac{3}{2}x$ meet at point $P$.\n\n(a) Find the $x$-coordinate of $P$.\n\n(b) The lines $y = 6$, $y = \\frac{3}{2}x$ and the $y$-axis form a triangle. Find its area in square units.",
+    "answer": "(a) $4$ (b) $12$ square units",
+    "solution": "**Key idea:** At $P$ both equations are true, so set $\\frac{3}{2}x = 6$.\n\n1. $\\frac{3}{2}x = 6$, so $x = 4$\n2. The triangle has vertices $(0, 0)$, $(0, 6)$ and $(4, 6)$\n3. Area $= \\frac{1}{2} \\times 4 \\times 6 = 12$\n\n**Answer:** (a) $4$ (b) $12$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12,
+      "unit": "square units"
+     }
+    ]
+   }
+  ],
+  "4D": [
+   {
+    "kind": "short",
+    "question": "Find the gradient of the line passing through $(-4, 9)$ and $(2, -3)$.",
+    "answer": "$-2$",
+    "solution": "**Key idea:** Gradient $= \\frac{y_2 - y_1}{x_2 - x_1}$.\n\n1. Rise $= -3 - 9 = -12$\n2. Run $= 2 - (-4) = 6$\n3. Gradient $= \\frac{-12}{6} = -2$\n\n**Answer:** $-2$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ski run drops $120$ m vertically over a horizontal distance of $480$ m. Find the gradient of the run as a decimal, treating a downward slope as negative.",
+    "answer": "$-0.25$",
+    "solution": "**Key idea:** Gradient $= \\frac{\\text{rise}}{\\text{run}}$; a drop is a negative rise.\n\n1. Rise $= -120$, run $= 480$\n2. Gradient $= \\frac{-120}{480} = -0.25$\n\n**Answer:** $-0.25$",
+    "key": [
+     {
+      "type": "num",
+      "value": -0.25
+     }
+    ]
+   }
+  ],
+  "4E": [
+   {
+    "kind": "short",
+    "question": "$y$ is directly proportional to $x$, and $y = 21$ when $x = 6$. Find the constant of proportionality $k$ in $y = kx$.",
+    "answer": "$k = 3.5$",
+    "solution": "**Key idea:** For direct proportion $y = kx$, so $k = \\frac{y}{x}$.\n\n1. $k = \\frac{21}{6} = 3.5$\n\n**Answer:** $k = 3.5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$d$ is directly proportional to $t$, and $d = 150$ when $t = 2.5$. Find $d$ when $t = 4$.",
+    "answer": "$240$",
+    "solution": "**Key idea:** Find $k$ first, then use $d = kt$.\n\n1. $k = \\frac{150}{2.5} = 60$\n2. $d = 60 \\times 4 = 240$\n\n**Answer:** $240$",
+    "key": [
+     {
+      "type": "num",
+      "value": 240
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The cost of mince is directly proportional to its mass. $1.5$ kg of mince costs \\$21.\n\n(a) Find the cost per kilogram.\n\n(b) Find the cost of $2.2$ kg of mince.\n\n(c) What mass of mince can be bought for \\$49?",
+    "answer": "(a) \\$14 (b) \\$30.80 (c) $3.5$ kg",
+    "solution": "**Key idea:** The constant of proportionality is the cost per kilogram.\n\n1. $k = 21 \\div 1.5 = 14$\n2. Cost $= 14 \\times 2.2 = 30.80$\n3. Mass $= 49 \\div 14 = 3.5$ kg\n\n**Answer:** (a) \\$14 (b) \\$30.80 (c) $3.5$ kg",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 14
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 30.8
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 3.5,
+      "unit": "kg"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A car uses fuel at a constant rate, so the fuel used is directly proportional to the distance travelled. It uses $27$ L to travel $360$ km. How many litres does it use to travel $520$ km?",
+    "answer": "$39$ L",
+    "solution": "**Key idea:** Find the fuel used per kilometre, then multiply.\n\n1. $k = \\frac{27}{360} = 0.075$ L per km\n2. Fuel $= 0.075 \\times 520 = 39$ L\n\n**Answer:** $39$ L",
+    "key": [
+     {
+      "type": "num",
+      "value": 39,
+      "unit": "L"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of a direct proportion passes through the origin and the point $(8, 6)$. Find the gradient of the graph.",
+    "answer": "$\\frac{3}{4}$",
+    "solution": "**Key idea:** The gradient of a direct proportion graph equals the constant $k = \\frac{y}{x}$.\n\n1. Gradient $= \\frac{6 - 0}{8 - 0} = \\frac{6}{8} = \\frac{3}{4}$\n\n**Answer:** $\\frac{3}{4}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.75
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Isla is paid at a constant hourly rate, so her pay $P$ dollars is directly proportional to the hours $h$ she works. She earns \\$171 for $6$ hours.\n\n(a) Find her hourly rate.\n\n(b) How much does she earn for $15$ hours?\n\n(c) How many hours must she work to earn \\$513?",
+    "answer": "(a) \\$28.50 (b) \\$427.50 (c) $18$ hours",
+    "solution": "**Key idea:** The hourly rate is the constant $k$ in $P = kh$.\n\n1. $k = 171 \\div 6 = 28.50$\n2. $P = 28.50 \\times 15 = 427.50$\n3. $h = 513 \\div 28.50 = 18$\n\n**Answer:** (a) \\$28.50 (b) \\$427.50 (c) $18$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 28.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 427.5
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 18,
+      "unit": "hours"
+     }
+    ]
+   }
+  ],
+  "4F": [
+   {
+    "kind": "short",
+    "question": "For the line $y = -\\frac{2}{3}x + 5$, state:\n\n(a) the gradient\n\n(b) the $y$-intercept",
+    "answer": "(a) $-\\frac{2}{3}$ (b) $5$",
+    "solution": "**Key idea:** In $y = mx + c$, $m$ is the gradient and $c$ is the $y$-intercept.\n\n1. The coefficient of $x$ is $-\\frac{2}{3}$\n2. The constant term is $5$\n\n**Answer:** (a) $-\\frac{2}{3}$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -0.6666666666666666
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rearrange $5x - y = 3$ into the form $y = mx + c$ and state the gradient.\n\n(a) Write the equation in the form $y = mx + c$.\n\n(b) State the gradient.",
+    "answer": "(a) $y = 5x - 3$ (b) $5$",
+    "solution": "**Key idea:** Make $y$ the subject.\n\n1. $-y = -5x + 3$\n2. Multiply by $-1$: $y = 5x - 3$\n3. The gradient is $5$\n\n**Answer:** (a) $y = 5x - 3$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "5*x-3",
+      "vars": [
+       "x"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write the equation of the line with gradient $-4$ and $y$-intercept $2.5$ in the form $y = mx + c$.",
+    "answer": "$y = -4x + 2.5$",
+    "solution": "**Key idea:** Substitute $m$ and $c$ into $y = mx + c$.\n\n1. $m = -4$ and $c = 2.5$\n2. $y = -4x + 2.5$\n\n**Answer:** $y = -4x + 2.5$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-4*x+2.5",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   }
+  ],
+  "4G": [
+   {
+    "kind": "short",
+    "question": "Find the equation of the line through $(1, 5)$ and $(4, 17)$ in the form $y = mx + c$.",
+    "answer": "$y = 4x + 1$",
+    "solution": "**Key idea:** Find the gradient, then substitute a point to find $c$.\n\n1. $m = \\frac{17 - 5}{4 - 1} = \\frac{12}{3} = 4$\n2. $5 = 4(1) + c$, so $c = 1$\n3. $y = 4x + 1$\n\n**Answer:** $y = 4x + 1$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "4*x+1",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the equation of the line with gradient $\\frac{1}{2}$ that passes through $(6, -1)$, in the form $y = mx + c$.",
+    "answer": "$y = \\frac{1}{2}x - 4$",
+    "solution": "**Key idea:** Substitute the point into $y = mx + c$ to find $c$.\n\n1. $-1 = \\frac{1}{2}(6) + c$\n2. $-1 = 3 + c$, so $c = -4$\n3. $y = \\frac{1}{2}x - 4$\n\n**Answer:** $y = \\frac{1}{2}x - 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x/2-4",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A line passes through $(-2, 4)$ and $(2, -8)$.\n\n(a) Find the gradient.\n\n(b) Find the $y$-intercept.\n\n(c) Find the $x$-intercept, as a fraction.",
+    "answer": "(a) $-3$ (b) $-2$ (c) $-\\frac{2}{3}$",
+    "solution": "**Key idea:** Gradient from two points, then $c$ from one point, then set $y = 0$.\n\n1. $m = \\frac{-8 - 4}{2 - (-2)} = \\frac{-12}{4} = -3$\n2. $4 = -3(-2) + c$, so $c = -2$\n3. $0 = -3x - 2$, so $x = -\\frac{2}{3}$\n\n**Answer:** (a) $-3$ (b) $-2$ (c) $-\\frac{2}{3}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -2
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": -0.6666666666666666
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $y = mx - 3$ passes through $(5, 12)$. Find $m$.",
+    "answer": "$m = 3$",
+    "solution": "**Key idea:** Substitute the point and solve for $m$.\n\n1. $12 = 5m - 3$\n2. $15 = 5m$\n3. $m = 3$\n\n**Answer:** $m = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   }
+  ],
+  "4I": [
+   {
+    "kind": "short",
+    "question": "Find the gradient of a line perpendicular to $y = \\frac{2}{5}x - 1$.",
+    "answer": "$-\\frac{5}{2}$",
+    "solution": "**Key idea:** Perpendicular gradients multiply to $-1$, so take the negative reciprocal.\n\n1. The gradient of the given line is $\\frac{2}{5}$\n2. The negative reciprocal is $-\\frac{5}{2}$\n\n**Answer:** $-\\frac{5}{2}$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the equation of the line parallel to $y = -3x + 8$ that passes through $(2, 1)$, in the form $y = mx + c$.",
+    "answer": "$y = -3x + 7$",
+    "solution": "**Key idea:** Parallel lines have the same gradient.\n\n1. $m = -3$\n2. $1 = -3(2) + c$, so $c = 7$\n3. $y = -3x + 7$\n\n**Answer:** $y = -3x + 7$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-3*x+7",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the equation of the line perpendicular to $y = 2x + 3$ that passes through $(4, 5)$, in the form $y = mx + c$.",
+    "answer": "$y = -\\frac{1}{2}x + 7$",
+    "solution": "**Key idea:** The perpendicular gradient is the negative reciprocal of $2$.\n\n1. $m = -\\frac{1}{2}$\n2. $5 = -\\frac{1}{2}(4) + c = -2 + c$, so $c = 7$\n3. $y = -\\frac{1}{2}x + 7$\n\n**Answer:** $y = -\\frac{1}{2}x + 7$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-x/2+7",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The line $y = kx - 3$ is perpendicular to the line $y = -\\frac{1}{2}x + 7$.\n\n(a) Find $k$.\n\n(b) Find the point where the two lines meet, as a coordinate pair.",
+    "answer": "(a) $2$ (b) $(4, 5)$",
+    "solution": "**Key idea:** Perpendicular gradients multiply to $-1$; then solve the two equations together.\n\n1. $k \\times \\left(-\\frac{1}{2}\\right) = -1$, so $k = 2$\n2. $2x - 3 = -\\frac{1}{2}x + 7$, so $\\frac{5}{2}x = 10$ and $x = 4$\n3. $y = 2(4) - 3 = 5$, so the point is $(4, 5)$\n\n**Answer:** (a) $2$ (b) $(4, 5)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       4,
+       5
+      ]
+     }
+    ]
+   }
+  ],
+  "4J": [
+   {
+    "kind": "short",
+    "question": "A swimming pool holds $54\\,000$ L and is drained at a steady $1800$ L per hour. The volume left after $t$ hours is $V = 54\\,000 - 1800t$.\n\n(a) How much water is left after $8$ hours?\n\n(b) How long does it take to empty the pool?",
+    "answer": "(a) $39\\,600$ L (b) $30$ hours",
+    "solution": "**Key idea:** Substitute into the rule; the pool is empty when $V = 0$.\n\n1. $V = 54\\,000 - 1800 \\times 8 = 39\\,600$\n2. $0 = 54\\,000 - 1800t$, so $t = 30$\n\n**Answer:** (a) $39\\,600$ L (b) $30$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 39600,
+      "unit": "L"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 30,
+      "unit": "hours"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A taxi fare is $C = 2.4d + 4.5$ dollars for a trip of $d$ km.\n\n(a) Find the fare for a $12$ km trip.\n\n(b) A fare was \\$40.50. How long was the trip?",
+    "answer": "(a) \\$33.30 (b) $15$ km",
+    "solution": "**Key idea:** Substitute the known value and solve.\n\n1. $C = 2.4 \\times 12 + 4.5 = 33.30$\n2. $40.50 = 2.4d + 4.5$, so $2.4d = 36$ and $d = 15$\n\n**Answer:** (a) \\$33.30 (b) $15$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 33.3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A plant is $80$ cm tall when it is first measured and grows at a constant rate. After $3$ weeks it is $98$ cm tall.\n\n(a) Find the growth rate in cm per week.\n\n(b) Write a rule for the height $h$ cm after $w$ weeks.\n\n(c) After how many weeks will the plant be $140$ cm tall?",
+    "answer": "(a) $6$ (b) $h = 6w + 80$ (c) $10$ weeks",
+    "solution": "**Key idea:** A constant rate gives a linear rule $h = mw + c$, where $c$ is the starting height.\n\n1. Rate $= (98 - 80) \\div 3 = 6$ cm per week\n2. $h = 6w + 80$\n3. $140 = 6w + 80$, so $6w = 60$ and $w = 10$\n\n**Answer:** (a) $6$ (b) $h = 6w + 80$ (c) $10$ weeks",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "6*w+80",
+      "vars": [
+       "w"
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 10,
+      "unit": "weeks"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A hire company charges a fixed booking fee plus a daily rate for a trailer. $3$ days costs \\$135 and $7$ days costs \\$255.\n\n(a) Find the daily rate.\n\n(b) Find the booking fee.\n\n(c) Find the cost of hiring the trailer for $10$ days.",
+    "answer": "(a) \\$30 (b) \\$45 (c) \\$345",
+    "solution": "**Key idea:** The daily rate is the gradient; the booking fee is the vertical intercept.\n\n1. Daily rate $= \\frac{255 - 135}{7 - 3} = \\frac{120}{4} = 30$\n2. $135 = 30 \\times 3 + c$, so $c = 45$\n3. $C = 30 \\times 10 + 45 = 345$\n\n**Answer:** (a) \\$30 (b) \\$45 (c) \\$345",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 45
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 345
+     }
+    ]
+   }
+  ],
+  "4K": [
+   {
+    "kind": "short",
+    "question": "The lines $y = 2x + 3$ and $y = -x + 9$ are graphed on the same axes. Find their point of intersection, as a coordinate pair.",
+    "answer": "$(2, 7)$",
+    "solution": "**Key idea:** At the intersection both rules give the same $y$ value.\n\n1. $2x + 3 = -x + 9$\n2. $3x = 6$, so $x = 2$\n3. $y = 2(2) + 3 = 7$\n\n**Answer:** $(2, 7)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       2,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the point of intersection of the lines $y = x - 4$ and $y = -3x + 8$, as a coordinate pair.",
+    "answer": "$(3, -1)$",
+    "solution": "**Key idea:** Set the two rules equal and solve.\n\n1. $x - 4 = -3x + 8$\n2. $4x = 12$, so $x = 3$\n3. $y = 3 - 4 = -1$\n\n**Answer:** $(3, -1)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       -1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The lines $x + y = 6$ and $x - y = 2$ are graphed on the same axes. Find the point where they cross, as a coordinate pair.",
+    "answer": "$(4, 2)$",
+    "solution": "**Key idea:** The intersection point satisfies both equations.\n\n1. Add the equations: $2x = 8$, so $x = 4$\n2. $4 + y = 6$, so $y = 2$\n\n**Answer:** $(4, 2)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the point of intersection of $y = \\frac{1}{2}x + 1$ and $y = -x + 7$, as a coordinate pair.",
+    "answer": "$(4, 3)$",
+    "solution": "**Key idea:** At the intersection both rules give the same $y$ value.\n\n1. $\\frac{1}{2}x + 1 = -x + 7$\n2. $\\frac{3}{2}x = 6$, so $x = 4$\n3. $y = -4 + 7 = 3$\n\n**Answer:** $(4, 3)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two gyms charge as follows. Gym A: \\$20 joining fee plus \\$15 per week. Gym B: no joining fee and \\$25 per week. The cost after $w$ weeks is graphed for each gym.\n\n(a) After how many weeks do the graphs intersect?\n\n(b) What is the cost at that point?",
+    "answer": "(a) $2$ weeks (b) \\$50",
+    "solution": "**Key idea:** The graphs intersect where the two costs are equal.\n\n1. Gym A: $C = 15w + 20$; Gym B: $C = 25w$\n2. $15w + 20 = 25w$, so $10w = 20$ and $w = 2$\n3. $C = 25 \\times 2 = 50$\n\n**Answer:** (a) $2$ weeks (b) \\$50",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2,
+      "unit": "weeks"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Water tank A holds $40$ L and is drained at $3$ L per minute. Tank B holds $10$ L and is filled at $2$ L per minute. The volumes are graphed against time $t$ minutes.\n\n(a) After how many minutes are the volumes equal?\n\n(b) What is the volume in each tank at that time?",
+    "answer": "(a) $6$ minutes (b) $22$ L",
+    "solution": "**Key idea:** Write a rule for each tank and find where the graphs intersect.\n\n1. Tank A: $V = 40 - 3t$; Tank B: $V = 10 + 2t$\n2. $40 - 3t = 10 + 2t$, so $5t = 30$ and $t = 6$\n3. $V = 10 + 2 \\times 6 = 22$\n\n**Answer:** (a) $6$ minutes (b) $22$ L",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6,
+      "unit": "minutes"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 22,
+      "unit": "L"
+     }
+    ]
+   }
+  ],
+  "5B": [
+   {
+    "kind": "short",
+    "question": "A rectangular photo frame is $45$ cm long and $0.3$ m wide. Find its perimeter in centimetres.",
+    "answer": "$150$ cm",
+    "solution": "**Key idea:** Convert to the same unit before adding.\n\n1. $0.3$ m $= 30$ cm\n2. $P = 2(45 + 30) = 150$ cm\n\n**Answer:** $150$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 150,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A regular hexagon has a perimeter of $8.4$ m.\n\n(a) Find the length of one side, in metres.\n\n(b) Write this length in millimetres.",
+    "answer": "(a) $1.4$ m (b) $1400$ mm",
+    "solution": "**Key idea:** A regular hexagon has $6$ equal sides; $1$ m $= 1000$ mm.\n\n1. Side $= 8.4 \\div 6 = 1.4$ m\n2. $1.4 \\times 1000 = 1400$ mm\n\n**Answer:** (a) $1.4$ m (b) $1400$ mm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1.4,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1400,
+      "unit": "mm"
+     }
+    ]
+   }
+  ],
+  "5C": [
+   {
+    "kind": "short",
+    "question": "A round table has a diameter of $1.2$ m. Find its circumference, correct to $2$ decimal places.",
+    "answer": "$3.77$ m",
+    "solution": "**Key idea:** $C = \\pi d$.\n\n1. $C = \\pi \\times 1.2 = 3.7699\\ldots$\n2. Correct to $2$ decimal places: $3.77$ m\n\n**Answer:** $3.77$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.77,
+      "dp": 2,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A sector has radius $9$ cm and an angle of $40^\\circ$ at the centre. Find the perimeter of the sector, correct to $2$ decimal places.",
+    "answer": "$24.28$ cm",
+    "solution": "**Key idea:** Perimeter of a sector $=$ arc length $+ 2r$.\n\n1. Arc length $= \\frac{40}{360} \\times 2\\pi \\times 9 = 2\\pi = 6.2832\\ldots$\n2. Add the two radii: $+ 18$\n3. Perimeter $= 24.2832\\ldots$, which is $24.28$ cm\n\n**Answer:** $24.28$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 24.28,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A circular running track has a circumference of $400$ m.\n\n(a) Find the radius of the track, correct to $2$ decimal places.\n\n(b) Lucas runs $3.5$ laps. How far does he run, in metres?",
+    "answer": "(a) $63.66$ m (b) $1400$ m",
+    "solution": "**Key idea:** Rearrange $C = 2\\pi r$ to $r = \\frac{C}{2\\pi}$.\n\n1. $r = \\frac{400}{2\\pi} = 63.6620\\ldots$, which is $63.66$ m\n2. Distance $= 3.5 \\times 400 = 1400$ m\n\n**Answer:** (a) $63.66$ m (b) $1400$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 63.66,
+      "dp": 2,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1400,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "5D": [
+   {
+    "kind": "short",
+    "question": "Find the area of a triangle with base $18$ cm and perpendicular height $11$ cm.",
+    "answer": "$99 \\text{ cm}^2$",
+    "solution": "**Key idea:** $A = \\frac{1}{2}bh$.\n\n1. $A = \\frac{1}{2} \\times 18 \\times 11 = 99$\n\n**Answer:** $99 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 99,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A circular garden bed has a diameter of $3.4$ m. Find its area, correct to $2$ decimal places.",
+    "answer": "$9.08 \\text{ m}^2$",
+    "solution": "**Key idea:** Halve the diameter to get the radius, then use $A = \\pi r^2$.\n\n1. $r = 3.4 \\div 2 = 1.7$ m\n2. $A = \\pi \\times 1.7^2 = 9.0792\\ldots$\n3. Correct to $2$ decimal places: $9.08 \\text{ m}^2$\n\n**Answer:** $9.08 \\text{ m}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9.08,
+      "dp": 2,
+      "unit": "m²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A trapezium has an area of $84 \\text{ cm}^2$ and parallel sides of $9$ cm and $15$ cm.\n\n(a) Find its perpendicular height.\n\n(b) A rhombus has the same area and one diagonal of $12$ cm. Find the length of its other diagonal.",
+    "answer": "(a) $7$ cm (b) $14$ cm",
+    "solution": "**Key idea:** Use $A = \\frac{1}{2}(a + b)h$ for a trapezium and $A = \\frac{1}{2}xy$ for a rhombus.\n\n1. $84 = \\frac{1}{2}(9 + 15)h = 12h$, so $h = 7$ cm\n2. $84 = \\frac{1}{2} \\times 12 \\times y = 6y$, so $y = 14$ cm\n\n**Answer:** (a) $7$ cm (b) $14$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 14,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "5E": [
+   {
+    "kind": "short",
+    "question": "A rectangular sheet of metal is $12$ cm by $8$ cm. A square of side $2$ cm is cut from each corner. Find the area of metal that remains.",
+    "answer": "$80 \\text{ cm}^2$",
+    "solution": "**Key idea:** Subtract the areas of the removed pieces from the area of the whole sheet.\n\n1. Sheet: $12 \\times 8 = 96 \\text{ cm}^2$\n2. Removed: $4 \\times 2^2 = 16 \\text{ cm}^2$\n3. Remaining: $96 - 16 = 80 \\text{ cm}^2$\n\n**Answer:** $80 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 80,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "5F": [
+   {
+    "kind": "short",
+    "question": "Find the total surface area of a closed rectangular prism that is $10$ cm long, $4$ cm wide and $5$ cm high.",
+    "answer": "$220 \\text{ cm}^2$",
+    "solution": "**Key idea:** Add the areas of the three pairs of opposite faces.\n\n1. $2(10 \\times 4) = 80$\n2. $2(10 \\times 5) = 100$\n3. $2(4 \\times 5) = 40$\n4. Total $= 80 + 100 + 40 = 220 \\text{ cm}^2$\n\n**Answer:** $220 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 220,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A triangular prism is $20$ cm long. Its cross-section is a right-angled triangle with sides $5$ cm, $12$ cm and $13$ cm.\n\n(a) Find the area of one triangular end.\n\n(b) Find the total area of the three rectangular faces.\n\n(c) Find the total surface area of the prism.",
+    "answer": "(a) $30 \\text{ cm}^2$ (b) $600 \\text{ cm}^2$ (c) $660 \\text{ cm}^2$",
+    "solution": "**Key idea:** The surface area is the two triangular ends plus three rectangles, each $20$ cm long.\n\n1. Triangle: $\\frac{1}{2} \\times 5 \\times 12 = 30 \\text{ cm}^2$\n2. Rectangles: $20 \\times (5 + 12 + 13) = 20 \\times 30 = 600 \\text{ cm}^2$\n3. Total: $2 \\times 30 + 600 = 660 \\text{ cm}^2$\n\n**Answer:** (a) $30 \\text{ cm}^2$ (b) $600 \\text{ cm}^2$ (c) $660 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30,
+      "unit": "cm²"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 600,
+      "unit": "cm²"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 660,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "5G": [
+   {
+    "kind": "short",
+    "question": "Find the total surface area of a closed cylinder with radius $6$ cm and height $15$ cm, correct to $2$ decimal places.",
+    "answer": "$791.68 \\text{ cm}^2$",
+    "solution": "**Key idea:** $\\text{TSA} = 2\\pi r^2 + 2\\pi rh$.\n\n1. $2\\pi \\times 6^2 = 72\\pi$\n2. $2\\pi \\times 6 \\times 15 = 180\\pi$\n3. Total $= 252\\pi = 791.6813\\ldots$, which is $791.68 \\text{ cm}^2$\n\n**Answer:** $791.68 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 791.68,
+      "dp": 2,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "5I": [
+   {
+    "kind": "short",
+    "question": "Find the volume of a cylindrical water bottle with diameter $7$ cm and height $12$ cm, correct to $1$ decimal place.",
+    "answer": "$461.8 \\text{ cm}^3$",
+    "solution": "**Key idea:** $V = \\pi r^2 h$, with $r$ half the diameter.\n\n1. $r = 3.5$ cm\n2. $V = \\pi \\times 3.5^2 \\times 12 = 147\\pi = 461.8141\\ldots$\n3. Correct to $1$ decimal place: $461.8 \\text{ cm}^3$\n\n**Answer:** $461.8 \\text{ cm}^3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 461.8,
+      "dp": 1,
+      "unit": "cm³"
+     }
+    ]
+   }
+  ]
+ }
+}

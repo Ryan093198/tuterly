@@ -56,13 +56,13 @@
   "question": "The daily temperatures (in °C) recorded over 12 days are listed below.\n\n$$3,\\ 7,\\ 9,\\ 12,\\ 14,\\ 16,\\ 18,\\ 21,\\ 24,\\ 27,\\ 31,\\ 35$$\n\nWhat is the interquartile range (IQR) of this dataset?",
   "kind": "number",
   "accept": {
-   "value": 18,
+   "value": 15,
    "tol": 0,
    "unit": "°C"
   },
-  "answer_display": "$18$",
+  "answer_display": "$15$",
   "hint": "Split the 12 values into a lower half and an upper half, find the median of each half to get Q1 and Q3, then subtract.",
-  "solution": "**Key idea:** For an even-numbered dataset, split the ordered values into two equal halves. Q1 is the median of the lower half and Q3 is the median of the upper half. IQR = Q3 − Q1.\n\n1. The data is already ordered: $3, 7, 9, 12, 14, 16, 18, 21, 24, 27, 31, 35$. There are $n = 12$ values.\n2. **Median (Q2):** Average of the 6th and 7th values $= \\dfrac{16 + 18}{2} = 17$.\n3. **Lower half** (first 6 values): $3, 7, 9, 12, 14, 16$. Q1 $= \\dfrac{9 + 12}{2} = 10.5$.\n4. **Upper half** (last 6 values): $18, 21, 24, 27, 31, 35$. Q3 $= \\dfrac{24 + 27}{2} = 25.5$.\n5. **IQR** $= Q3 - Q1 = 25.5 - 10.5 = 18$.\n\n**Answer:** $18$ °C"
+  "solution": "**Key idea:** For an even-numbered dataset, split the ordered values into two equal halves. Q1 is the median of the lower half and Q3 is the median of the upper half. IQR = Q3 − Q1.\n\n1. The data is already ordered: $3, 7, 9, 12, 14, 16, 18, 21, 24, 27, 31, 35$. There are $n = 12$ values.\n2. **Median (Q2):** Average of the 6th and 7th values $= \\dfrac{16 + 18}{2} = 17$.\n3. **Lower half** (first 6 values): $3, 7, 9, 12, 14, 16$. Q1 $= \\dfrac{9 + 12}{2} = 10.5$.\n4. **Upper half** (last 6 values): $18, 21, 24, 27, 31, 35$. Q3 $= \\dfrac{24 + 27}{2} = 25.5$.\n5. **IQR** $= Q3 - Q1 = 25.5 - 10.5 = 15$.\n\n**Answer:** $15$ °C"
  },
  "turn_checked": {
   "my_answer": "18",

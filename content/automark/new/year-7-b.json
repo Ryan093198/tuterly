@@ -1,0 +1,1608 @@
+{
+ "Year 7": {
+  "6D": [
+   {
+    "kind": "short",
+    "question": "Evaluate:\n\n(a) $(-8) \\times (-7)$\n\n(b) $(-96) \\div 12$",
+    "answer": "(a) $56$ (b) $-8$",
+    "solution": "**Key idea:** Same signs give a positive answer; different signs give a negative answer.\n\n1. $(-8) \\times (-7) = 56$ (two negatives give a positive).\n2. $(-96) \\div 12 = -8$ (a negative divided by a positive is negative).\n\n**Answer:** (a) $56$ (b) $-8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 56
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -8
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A diver starts at $-10$ m (10 m below the surface). She swims down at a steady 4 m per minute.\n\n(a) Write the change in her depth after 9 minutes as an integer.\n\n(b) What is her position after 9 minutes?",
+    "answer": "(a) $-36$ m (b) $-46$ m",
+    "solution": "**Key idea:** Going down 4 m each minute is a change of $-4$ per minute, so multiply by the number of minutes.\n\n1. Change $= 9 \\times (-4) = -36$ m.\n2. New position $= -10 + (-36) = -46$ m.\n\n**Answer:** (a) $-36$ m (b) $-46$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -36,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -46,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "6E": [
+   {
+    "kind": "short",
+    "question": "Evaluate $-24 \\div (-6) + 2 \\times (-7)$.",
+    "answer": "$-10$",
+    "solution": "**Key idea:** Do multiplication and division before addition, working left to right.\n\n1. $-24 \\div (-6) = 4$\n2. $2 \\times (-7) = -14$\n3. $4 + (-14) = -10$\n\n**Answer:** $-10$",
+    "key": [
+     {
+      "type": "num",
+      "value": -10
+     }
+    ]
+   }
+  ],
+  "6F": [
+   {
+    "kind": "short",
+    "question": "If $p = -4$ and $q = 3$, evaluate $2p^2 - pq$.",
+    "answer": "$44$",
+    "solution": "**Key idea:** Replace each pronumeral with its value in brackets, then follow the order of operations.\n\n1. $2p^2 = 2 \\times (-4)^2 = 2 \\times 16 = 32$\n2. $pq = (-4) \\times 3 = -12$\n3. $32 - (-12) = 32 + 12 = 44$\n\n**Answer:** $44$",
+    "key": [
+     {
+      "type": "num",
+      "value": 44
+     }
+    ]
+   }
+  ],
+  "6G": [
+   {
+    "kind": "short",
+    "question": "The points $A(-5, 2)$ and $B(3, 2)$ are plotted on a Cartesian plane.\n\n(a) Find the length of $AB$.\n\n(b) Write the coordinates of the point halfway between $A$ and $B$.",
+    "answer": "(a) $8$ units (b) $(-1, 2)$",
+    "solution": "**Key idea:** Points with the same $y$-coordinate lie on a horizontal line, so the distance is the difference of the $x$-coordinates.\n\n1. $AB = 3 - (-5) = 8$ units.\n2. Halfway is 4 units right of $A$: $x = -5 + 4 = -1$, and $y$ stays $2$, giving $(-1, 2)$.\n\n**Answer:** (a) $8$ units (b) $(-1, 2)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "units"
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       -1,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "7A": [
+   {
+    "kind": "short",
+    "question": "What is the smaller angle between the hour hand and the minute hand of a clock at $2{:}00$?",
+    "answer": "$60°$",
+    "solution": "**Key idea:** A full turn is $360°$ and the clock face has 12 hour marks, so each hour mark is $360 \\div 12 = 30°$ apart.\n\n1. At 2:00 the hands are 2 hour marks apart.\n2. $2 \\times 30° = 60°$\n\n**Answer:** $60°$",
+    "key": [
+     {
+      "type": "num",
+      "value": 60,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "(a) How many degrees are in three-quarters of a revolution?\n\n(b) Through how many degrees does the minute hand of a clock turn in 20 minutes?",
+    "answer": "(a) $270°$ (b) $120°$",
+    "solution": "**Key idea:** One revolution is $360°$.\n\n1. $\\frac{3}{4} \\times 360° = 270°$\n2. 20 minutes is $\\frac{20}{60} = \\frac{1}{3}$ of a revolution, and $\\frac{1}{3} \\times 360° = 120°$.\n\n**Answer:** (a) $270°$ (b) $120°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 270,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 120,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Six points are marked on a page so that no three of them lie on the same straight line. How many different intervals can be drawn joining two of the points?",
+    "answer": "$15$",
+    "solution": "**Key idea:** Each point joins to every other point, but each interval would then be counted twice.\n\n1. Each of the 6 points joins to 5 others: $6 \\times 5 = 30$.\n2. Each interval has been counted twice, so $30 \\div 2 = 15$.\n\n**Answer:** $15$",
+    "key": [
+     {
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "An angle measures $47°$.\n\n(a) How many degrees smaller than a right angle is it?\n\n(b) What size is the reflex angle that, together with this angle, makes a full revolution?\n\n(c) How many degrees must be added to it to make a straight angle?",
+    "answer": "(a) $43°$ (b) $313°$ (c) $133°$",
+    "solution": "**Key idea:** A right angle is $90°$, a straight angle is $180°$ and a revolution is $360°$.\n\n1. $90° - 47° = 43°$\n2. $360° - 47° = 313°$\n3. $180° - 47° = 133°$\n\n**Answer:** (a) $43°$ (b) $313°$ (c) $133°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 43,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 313,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 133,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7B": [
+   {
+    "kind": "short",
+    "question": "Two adjacent angles together make a right angle. One of them is $27°$. Find the other angle.",
+    "answer": "$63°$",
+    "solution": "**Key idea:** Adjacent angles that form a right angle add to $90°$ (they are complementary).\n\n1. $90° - 27° = 63°$\n\n**Answer:** $63°$",
+    "key": [
+     {
+      "type": "num",
+      "value": 63,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two straight lines cross at a point. One of the four angles formed is $112°$.\n\n(a) Find the angle vertically opposite the $112°$ angle.\n\n(b) Find the angle adjacent to the $112°$ angle.",
+    "answer": "(a) $112°$ (b) $68°$",
+    "solution": "**Key idea:** Vertically opposite angles are equal, and adjacent angles on a straight line add to $180°$.\n\n1. The vertically opposite angle equals $112°$.\n2. The adjacent angle is $180° - 112° = 68°$.\n\n**Answer:** (a) $112°$ (b) $68°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 112,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 68,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Three angles meet at a point and fill the space around it. The angles are $3x°$, $4x°$ and $5x°$.\n\n(a) Find $x$.\n\n(b) Find the size of the largest angle.",
+    "answer": "(a) $x = 30$ (b) $150°$",
+    "solution": "**Key idea:** Angles around a point add to $360°$.\n\n1. $3x + 4x + 5x = 360$, so $12x = 360$.\n2. $x = 30$\n3. The largest angle is $5x = 5 \\times 30 = 150°$.\n\n**Answer:** (a) $x = 30$ (b) $150°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 150,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7D": [
+   {
+    "kind": "extended",
+    "question": "Lines $AB$ and $CD$ are parallel, with $AB$ above $CD$. Both run from left to right ($A$ and $C$ on the left). Point $P$ is on $AB$ and point $Q$ is on $CD$. Point $X$ lies between the two lines, to the right of $P$ and $Q$. Intervals $PX$ and $XQ$ are drawn.\n\n$\\angle BPX = 35°$ and $\\angle DQX = 50°$. Find $\\angle PXQ$. (Hint: draw a line through $X$ parallel to $AB$.)",
+    "answer": "$85°$",
+    "solution": "**Key idea:** A line through $X$ parallel to $AB$ splits $\\angle PXQ$ into two parts, each equal to an alternate angle.\n\n1. The top part of $\\angle PXQ$ is alternate to $\\angle BPX$, so it is $35°$.\n2. The bottom part is alternate to $\\angle DQX$, so it is $50°$.\n3. $\\angle PXQ = 35° + 50° = 85°$\n\n**Answer:** $85°$",
+    "key": [
+     {
+      "type": "num",
+      "value": 85,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two horizontal lines $AB$ and $CD$ are parallel, with $AB$ above $CD$, $A$ to the left of $B$ and $C$ to the left of $D$. Point $P$ is on $AB$. Points $Q$ and $R$ are on $CD$, with $Q$ to the left of $R$. Intervals $PQ$ and $PR$ are drawn, forming triangle $PQR$. $\\angle APQ = 62°$ and $\\angle BPR = 55°$.\n\n(a) Find $\\angle PQR$.\n\n(b) Find $\\angle PRQ$.\n\n(c) Find $\\angle QPR$.",
+    "answer": "(a) $62°$ (b) $55°$ (c) $63°$",
+    "solution": "**Key idea:** Use alternate angles between the parallel lines, then the angles on the straight line $AB$ at $P$.\n\n1. $\\angle PQR = \\angle APQ = 62°$ (alternate angles, $AB \\parallel CD$).\n2. $\\angle PRQ = \\angle BPR = 55°$ (alternate angles).\n3. Angles on the straight line $AB$ at $P$: $\\angle QPR = 180° - 62° - 55° = 63°$.\n\n**Answer:** (a) $62°$ (b) $55°$ (c) $63°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 62,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 55,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 63,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two parallel lines are crossed by a transversal. A pair of alternate angles between the parallel lines measure $(3x + 12)°$ and $(5x - 20)°$.\n\n(a) Find $x$.\n\n(b) Find the size of each of these angles.",
+    "answer": "(a) $x = 16$ (b) $60°$",
+    "solution": "**Key idea:** Alternate angles between parallel lines are equal, so set the two expressions equal.\n\n1. $3x + 12 = 5x - 20$\n2. $32 = 2x$, so $x = 16$.\n3. $3 \\times 16 + 12 = 60$, and $5 \\times 16 - 20 = 60$, so each angle is $60°$.\n\n**Answer:** (a) $x = 16$ (b) $60°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 16
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 60,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two parallel lines are crossed by a transversal. A pair of co-interior angles measure $(2x + 30)°$ and $(x + 15)°$.\n\n(a) Find $x$.\n\n(b) Find the size of the larger angle.",
+    "answer": "(a) $x = 45$ (b) $120°$",
+    "solution": "**Key idea:** Co-interior angles between parallel lines add to $180°$.\n\n1. $(2x + 30) + (x + 15) = 180$\n2. $3x + 45 = 180$, so $3x = 135$ and $x = 45$.\n3. The angles are $2 \\times 45 + 30 = 120°$ and $45 + 15 = 60°$, so the larger is $120°$.\n\n**Answer:** (a) $x = 45$ (b) $120°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 45
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 120,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7E": [
+   {
+    "kind": "short",
+    "question": "An isosceles triangle has a perimeter of $40$ cm. Each of its two equal sides is $13$ cm long. How long is the third side?",
+    "answer": "$14$ cm",
+    "solution": "**Key idea:** Perimeter is the sum of the three sides.\n\n1. The two equal sides total $2 \\times 13 = 26$ cm.\n2. Third side $= 40 - 26 = 14$ cm.\n\n**Answer:** $14$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 14,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "An equilateral triangle has a perimeter of $54$ cm. How long is each side?",
+    "answer": "$18$ cm",
+    "solution": "**Key idea:** An equilateral triangle has three equal sides.\n\n1. $54 \\div 3 = 18$ cm\n\n**Answer:** $18$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 18,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two sides of a triangle are $5$ cm and $9$ cm. The third side is a whole number of centimetres. How many different lengths are possible for the third side?",
+    "answer": "$9$",
+    "solution": "**Key idea:** In any triangle, the two shorter sides must add to more than the longest side, so the third side must be between the difference and the sum of the other two.\n\n1. The third side must be longer than $9 - 5 = 4$ cm.\n2. It must be shorter than $9 + 5 = 14$ cm.\n3. The whole numbers from $5$ to $13$ work, which is $9$ lengths.\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "An isosceles triangle has two equal sides of length $(2x + 1)$ cm and $(x + 6)$ cm. Its third side is $8$ cm.\n\n(a) Find $x$.\n\n(b) Find the perimeter of the triangle.",
+    "answer": "(a) $x = 5$ (b) $30$ cm",
+    "solution": "**Key idea:** The two equal sides of an isosceles triangle have the same length, so the expressions are equal.\n\n1. $2x + 1 = x + 6$, so $x = 5$.\n2. Each equal side is $2 \\times 5 + 1 = 11$ cm.\n3. Perimeter $= 11 + 11 + 8 = 30$ cm.\n\n**Answer:** (a) $x = 5$ (b) $30$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 30,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A triangle has sides of $7$ cm and $12$ cm. The third side is a whole number of centimetres.\n\n(a) What is the shortest possible length of the third side?\n\n(b) What is the longest possible length of the third side?",
+    "answer": "(a) $6$ cm (b) $18$ cm",
+    "solution": "**Key idea:** The third side must be more than the difference and less than the sum of the other two sides.\n\n1. It must be more than $12 - 7 = 5$ cm, so the shortest whole number is $6$ cm.\n2. It must be less than $12 + 7 = 19$ cm, so the longest whole number is $18$ cm.\n\n**Answer:** (a) $6$ cm (b) $18$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 18,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "7H": [
+   {
+    "kind": "short",
+    "question": "A regular pentagon has five equal sides and five equal angles.\n\n(a) How many lines of symmetry does it have?\n\n(b) What is its order of rotational symmetry?",
+    "answer": "(a) $5$ (b) $5$",
+    "solution": "**Key idea:** A regular polygon with $n$ sides has $n$ lines of symmetry and rotational symmetry of order $n$.\n\n1. A regular pentagon has $n = 5$ sides.\n2. So it has $5$ lines of symmetry and rotational symmetry of order $5$.\n\n**Answer:** (a) $5$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangle is $8$ cm long and $3$ cm wide.\n\n(a) How many lines of symmetry does it have?\n\n(b) What is its order of rotational symmetry?",
+    "answer": "(a) $2$ (b) $2$",
+    "solution": "**Key idea:** Fold lines that match one half onto the other are lines of symmetry; count how many times the shape matches itself in one full turn.\n\n1. The lines through the midpoints of opposite sides are lines of symmetry; the diagonals are not, because the rectangle is not a square. That gives $2$.\n2. The rectangle matches itself after a half turn and a full turn, so the order is $2$.\n\n**Answer:** (a) $2$ (b) $2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A regular polygon has $9$ lines of symmetry.\n\n(a) How many sides does it have?\n\n(b) What is its order of rotational symmetry?",
+    "answer": "(a) $9$ (b) $9$",
+    "solution": "**Key idea:** A regular polygon has as many lines of symmetry as it has sides.\n\n1. $9$ lines of symmetry means $9$ sides.\n2. Its order of rotational symmetry is also $9$.\n\n**Answer:** (a) $9$ (b) $9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "(a) How many lines of symmetry does an isosceles triangle that is not equilateral have?\n\n(b) What is the order of rotational symmetry of an equilateral triangle?",
+    "answer": "(a) $1$ (b) $3$",
+    "solution": "**Key idea:** Check which folds match the two halves exactly, and how many times the shape fits onto itself in one full turn.\n\n1. An isosceles triangle has one line of symmetry, through the angle between the equal sides and the midpoint of the opposite side.\n2. An equilateral triangle fits onto itself after turns of $120°$, $240°$ and $360°$, so its order is $3$.\n\n**Answer:** (a) $1$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "(a) What is the smallest angle a regular octagon can be turned through about its centre so that it looks exactly the same?\n\n(b) What is the smallest such angle for a regular hexagon?",
+    "answer": "(a) $45°$ (b) $60°$",
+    "solution": "**Key idea:** For rotational symmetry of order $n$, the smallest angle of rotation is $360° \\div n$.\n\n1. A regular octagon has order $8$: $360° \\div 8 = 45°$.\n2. A regular hexagon has order $6$: $360° \\div 6 = 60°$.\n\n**Answer:** (a) $45°$ (b) $60°$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 45,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 60,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A sports club logo has rotational symmetry of order $5$ and no lines of symmetry.\n\n(a) What is the smallest angle the logo can be turned through so that it looks the same?\n\n(b) The logo is turned through $216°$. How many times has it matched its starting position during the turn, counting the end position if it matches?",
+    "answer": "(a) $72°$ (b) $3$",
+    "solution": "**Key idea:** Order $5$ means the logo matches itself every $360° \\div 5$.\n\n1. $360° \\div 5 = 72°$\n2. The logo matches itself at $72°$, $144°$ and $216°$.\n3. $216 \\div 72 = 3$, so it matches $3$ times.\n\n**Answer:** (a) $72°$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 72,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   }
+  ],
+  "7J": [
+   {
+    "kind": "short",
+    "question": "Point $P(-2, 5)$ is translated $6$ units to the right and $3$ units down. Write the coordinates of its image $P'$.",
+    "answer": "$(4, 2)$",
+    "solution": "**Key idea:** Moving right adds to the $x$-coordinate; moving down subtracts from the $y$-coordinate.\n\n1. $x$: $-2 + 6 = 4$\n2. $y$: $5 - 3 = 2$\n3. $P' = (4, 2)$\n\n**Answer:** $(4, 2)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A point moves from $(1, 4)$ to $(-3, 9)$ by a single translation.\n\n(a) How many units to the left does it move?\n\n(b) How many units up does it move?",
+    "answer": "(a) $4$ (b) $5$",
+    "solution": "**Key idea:** Compare the $x$-coordinates for left and right movement and the $y$-coordinates for up and down movement.\n\n1. $x$ changes from $1$ to $-3$, a change of $-4$, so $4$ units left.\n2. $y$ changes from $4$ to $9$, a change of $+5$, so $5$ units up.\n\n**Answer:** (a) $4$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4,
+      "unit": "units"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5,
+      "unit": "units"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A point is translated $2$ units to the left and $7$ units up. Its image is $(3, -1)$. What were the coordinates of the original point?",
+    "answer": "$(5, -8)$",
+    "solution": "**Key idea:** Undo the translation: move $2$ units right and $7$ units down.\n\n1. $x$: $3 + 2 = 5$\n2. $y$: $-1 - 7 = -8$\n3. The original point was $(5, -8)$.\n\n**Answer:** $(5, -8)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       5,
+       -8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Triangle $ABC$ has vertices $A(0, 0)$, $B(4, 0)$ and $C(0, 3)$. It is translated $5$ units to the right and $2$ units up.\n\n(a) Write the coordinates of $C'$.\n\n(b) Find the area of triangle $A'B'C'$ in square units.",
+    "answer": "(a) $(5, 5)$ (b) $6$ square units",
+    "solution": "**Key idea:** A translation slides a shape without changing its size, so the area stays the same.\n\n1. $C' = (0 + 5, 3 + 2) = (5, 5)$\n2. The original triangle has base $4$ and height $3$, so area $= \\frac{1}{2} \\times 4 \\times 3 = 6$.\n3. The image has the same area: $6$ square units.\n\n**Answer:** (a) $(5, 5)$ (b) $6$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       5,
+       5
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "square units"
+     }
+    ]
+   }
+  ],
+  "7K": [
+   {
+    "kind": "short",
+    "question": "A triangular prism has two triangular ends joined by rectangular faces.\n\n(a) How many faces does it have?\n\n(b) How many edges does it have?\n\n(c) How many vertices does it have?",
+    "answer": "(a) $5$ (b) $9$ (c) $6$",
+    "solution": "**Key idea:** Count the faces, edges and vertices of each end and the parts joining them.\n\n1. Faces: $2$ triangles and $3$ rectangles, so $5$.\n2. Edges: $3$ on each triangle plus $3$ joining them, so $9$.\n3. Vertices: $3$ on each triangle, so $6$. (Check: $5 + 6 - 9 = 2$.)\n\n**Answer:** (a) $5$ (b) $9$ (c) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A solid has $8$ faces and $12$ vertices. Euler's rule $F + V - E = 2$ holds for it. How many edges does it have?",
+    "answer": "$18$",
+    "solution": "**Key idea:** Substitute the known values into $F + V - E = 2$ and solve for $E$.\n\n1. $8 + 12 - E = 2$\n2. $20 - E = 2$, so $E = 18$.\n\n**Answer:** $18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A model is built from cubes stacked in columns on a table. Looking down from above, the columns sit in two rows of three. The numbers show how many cubes are in each column.\n\n| | Left | Middle | Right |\n|---|---|---|---|\n| Back row | 2 | 2 | 1 |\n| Front row | 3 | 0 | 1 |\n\n(a) How many cubes are in the model?\n\n(b) How many squares would the top view show?\n\n(c) The front view is seen by looking at the model from the front. Write the height of the tallest column you would see in each position, from left to right.",
+    "answer": "(a) $9$ (b) $5$ (c) $3, 2, 1$",
+    "solution": "**Key idea:** The top view shows one square for every column that has at least one cube; the front view shows the tallest column in each position.\n\n1. Total cubes: $2 + 2 + 1 + 3 + 0 + 1 = 9$.\n2. Five positions have at least one cube, so the top view shows $5$ squares.\n3. Left: tallest of $2$ and $3$ is $3$. Middle: tallest of $2$ and $0$ is $2$. Right: tallest of $1$ and $1$ is $1$.\n\n**Answer:** (a) $9$ (b) $5$ (c) $3, 2, 1$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "c",
+      "type": "list",
+      "values": [
+       3,
+       2,
+       1
+      ]
+     }
+    ]
+   }
+  ],
+  "7L": [
+   {
+    "kind": "short",
+    "question": "The net of a cube is made of six squares, each with side length $4$ cm. Find the total area of the net.",
+    "answer": "$96$ cm²",
+    "solution": "**Key idea:** The area of the net is the total area of all its faces.\n\n1. Area of one square $= 4 \\times 4 = 16$ cm².\n2. $6 \\times 16 = 96$ cm²\n\n**Answer:** $96$ cm²",
+    "key": [
+     {
+      "type": "num",
+      "value": 96,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the net of a square-based pyramid.\n\n(a) How many triangles are in the net?\n\n(b) How many faces does the folded pyramid have?",
+    "answer": "(a) $4$ (b) $5$",
+    "solution": "**Key idea:** Each face of a solid appears once in its net.\n\n1. A square-based pyramid has a triangle on each of the $4$ sides of the square base.\n2. Faces $= 4$ triangles $+ 1$ square $= 5$.\n\n**Answer:** (a) $4$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the net of a triangular prism.\n\n(a) How many rectangles are in the net?\n\n(b) How many triangles are in the net?",
+    "answer": "(a) $3$ (b) $2$",
+    "solution": "**Key idea:** A prism has two identical ends joined by rectangles, one for each side of the end shape.\n\n1. The triangular end has $3$ sides, so there are $3$ rectangles.\n2. There are $2$ triangular ends.\n\n**Answer:** (a) $3$ (b) $2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangular prism is $5$ cm long, $3$ cm wide and $2$ cm high. Find the total area of its net.",
+    "answer": "$62$ cm²",
+    "solution": "**Key idea:** The net is made of three pairs of identical rectangles.\n\n1. Top and bottom: $2 \\times (5 \\times 3) = 30$ cm²\n2. Front and back: $2 \\times (5 \\times 2) = 20$ cm²\n3. Two ends: $2 \\times (3 \\times 2) = 12$ cm²\n4. Total $= 30 + 20 + 12 = 62$ cm²\n\n**Answer:** $62$ cm²",
+    "key": [
+     {
+      "type": "num",
+      "value": 62,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A net is made from two hexagons and six rectangles.\n\n(a) How many faces does the folded solid have?\n\n(b) How many vertices does it have?",
+    "answer": "(a) $8$ (b) $12$",
+    "solution": "**Key idea:** The net folds into a hexagonal prism, whose vertices are the corners of the two hexagonal ends.\n\n1. Faces $= 2 + 6 = 8$.\n2. Each hexagon has $6$ corners, so there are $2 \\times 6 = 12$ vertices.\n\n**Answer:** (a) $8$ (b) $12$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A gift box is a rectangular prism $20$ cm long, $15$ cm wide and $10$ cm high. It is made from a net with no flaps or overlaps.\n\n(a) Find the area of the net.\n\n(b) Cardboard costs \\$0.02 per square centimetre. Find the cost of the cardboard for one box.",
+    "answer": "(a) $1300$ cm² (b) \\$26",
+    "solution": "**Key idea:** The area of the net equals the total area of the six faces.\n\n1. Top and bottom: $2 \\times (20 \\times 15) = 600$ cm²\n2. Front and back: $2 \\times (20 \\times 10) = 400$ cm²\n3. Two ends: $2 \\times (15 \\times 10) = 300$ cm²\n4. Area $= 600 + 400 + 300 = 1300$ cm²\n5. Cost $= 1300 \\times 0.02 = \\$26$\n\n**Answer:** (a) $1300$ cm² (b) \\$26",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1300,
+      "unit": "cm²"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 26,
+      "dp": 2,
+      "unit": "dollars"
+     }
+    ]
+   }
+  ],
+  "8A": [
+   {
+    "kind": "short",
+    "question": "A random sample of $40$ students from a school of $800$ students was surveyed. $14$ of the sample said they ride a bike to school. Estimate how many students in the whole school ride a bike to school.",
+    "answer": "$280$",
+    "solution": "**Key idea:** A random sample should have about the same proportion as the whole population.\n\n1. Proportion in the sample $= \\frac{14}{40}$.\n2. Estimate $= \\frac{14}{40} \\times 800 = 280$.\n\n**Answer:** $280$",
+    "key": [
+     {
+      "type": "num",
+      "value": 280
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a survey of $25$ students, $12$ said their favourite season is summer. What percentage of the sample chose summer?",
+    "answer": "$48\\%$",
+    "solution": "**Key idea:** Write the count as a fraction of the sample and convert it to a percentage.\n\n1. $\\frac{12}{25} = \\frac{48}{100}$\n2. $48\\%$\n\n**Answer:** $48\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 48,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A sports club has $1200$ members. The committee surveys a sample of $10\\%$ of the members. What is the sample size?",
+    "answer": "$120$",
+    "solution": "**Key idea:** The sample size is the number of members in the sample.\n\n1. $10\\%$ of $1200 = 0.1 \\times 1200 = 120$\n\n**Answer:** $120$",
+    "key": [
+     {
+      "type": "num",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A council chooses a random sample of $60$ households in a town of $4000$ households. $21$ of the sampled households own a dog.\n\n(a) What percentage of the sample own a dog?\n\n(b) Estimate the number of households in the town that own a dog.",
+    "answer": "(a) $35\\%$ (b) $1400$",
+    "solution": "**Key idea:** Use the sample percentage as an estimate for the whole population.\n\n1. $\\frac{21}{60} = 0.35 = 35\\%$\n2. $35\\%$ of $4000 = 0.35 \\times 4000 = 1400$\n\n**Answer:** (a) $35\\%$ (b) $1400$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 35,
+      "unit": "%"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1400
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rangers checked a random sample of $50$ trees in a forest and found that $18$ had a fungus. The forest has $2500$ trees. Estimate how many trees in the forest have the fungus.",
+    "answer": "$900$",
+    "solution": "**Key idea:** Scale the sample proportion up to the whole population.\n\n1. Proportion $= \\frac{18}{50} = 0.36$\n2. $0.36 \\times 2500 = 900$\n\n**Answer:** $900$",
+    "key": [
+     {
+      "type": "num",
+      "value": 900
+     }
+    ]
+   }
+  ],
+  "8C": [
+   {
+    "kind": "short",
+    "question": "A dot plot shows how many times $20$ students bought lunch from the canteen last week. The number of dots above each value is shown.\n\n| Times | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Number of dots | 3 | 4 | 6 | 5 | 2 |\n\n(a) What is the mode?\n\n(b) What is the median?\n\n(c) What is the mean?",
+    "answer": "(a) $2$ (b) $2$ (c) $1.95$",
+    "solution": "**Key idea:** The mode has the most dots; the median is the middle value when all $20$ values are in order.\n\n1. The tallest column is above $2$, so the mode is $2$.\n2. The 10th and 11th values are both $2$ (the first $7$ values are $0$ or $1$, and values 8 to 13 are $2$), so the median is $2$.\n3. Total $= 0 \\times 3 + 1 \\times 4 + 2 \\times 6 + 3 \\times 5 + 4 \\times 2 = 39$.\n4. Mean $= 39 \\div 20 = 1.95$\n\n**Answer:** (a) $2$ (b) $2$ (c) $1.95$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 1.95
+     }
+    ]
+   }
+  ],
+  "8D": [
+   {
+    "kind": "short",
+    "question": "A line graph is drawn from these temperature readings taken in Bendigo one day.\n\n| Time | 7 am | 10 am | 1 pm | 4 pm | 7 pm |\n|---|---|---|---|---|---|\n| Temperature (°C) | 8 | 14 | 19 | 22 | 15 |\n\n(a) What was the temperature at 1 pm?\n\n(b) By how many degrees did the temperature rise from 7 am to 4 pm?\n\n(c) By how many degrees did it fall from 4 pm to 7 pm?",
+    "answer": "(a) $19$°C (b) $14$°C (c) $7$°C",
+    "solution": "**Key idea:** Read each value from the table of plotted points, then subtract.\n\n1. At 1 pm the reading is $19$°C.\n2. Rise $= 22 - 8 = 14$°C.\n3. Fall $= 22 - 15 = 7$°C.\n\n**Answer:** (a) $19$°C (b) $14$°C (c) $7$°C",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 19,
+      "unit": "°C"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 14,
+      "unit": "°C"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 7,
+      "unit": "°C"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "On a line graph, the points $(2\\text{ pm}, 18°\\text{C})$ and $(4\\text{ pm}, 26°\\text{C})$ are joined by a straight line segment. Use the graph to estimate the temperature at 3 pm, in °C.",
+    "answer": "$22$°C",
+    "solution": "**Key idea:** On a straight segment, halfway along in time is halfway between the two values.\n\n1. 3 pm is halfway between 2 pm and 4 pm.\n2. Halfway between $18$ and $26$ is $(18 + 26) \\div 2 = 22$°C.\n\n**Answer:** $22$°C",
+    "key": [
+     {
+      "type": "num",
+      "value": 22,
+      "unit": "°C"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A line graph shows the distance a family has travelled on a road trip. The plotted points are:\n\n| Time (hours) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Distance (km) | 0 | 80 | 150 | 150 | 230 |\n\n(a) How far did they travel in the first hour?\n\n(b) For how many hours were they stopped?\n\n(c) Find their average speed for the whole trip, in km/h.",
+    "answer": "(a) $80$ km (b) $1$ hour (c) $57.5$ km/h",
+    "solution": "**Key idea:** A flat section of a distance-time graph means no distance is being covered.\n\n1. After 1 hour they had travelled $80$ km.\n2. The distance stays at $150$ km from hour 2 to hour 3, so they were stopped for $1$ hour.\n3. Average speed $= 230 \\div 4 = 57.5$ km/h.\n\n**Answer:** (a) $80$ km (b) $1$ hour (c) $57.5$ km/h",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 80,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1,
+      "unit": "hours"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 57.5,
+      "unit": "km/h"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A line graph shows the amount of water in a rainwater tank at the end of each month.\n\n| Month | Jan | Feb | Mar | Apr | May |\n|---|---|---|---|---|---|\n| Water (L) | 400 | 520 | 560 | 850 | 900 |\n\n(a) What was the greatest increase in one month, in litres?\n\n(b) What was the total increase from January to May, in litres?",
+    "answer": "(a) $290$ L (b) $500$ L",
+    "solution": "**Key idea:** The steepest upward segment of the line graph shows the greatest increase.\n\n1. Monthly increases: $120$, $40$, $290$, $50$ L. The greatest is $290$ L (March to April).\n2. Total increase $= 900 - 400 = 500$ L.\n\n**Answer:** (a) $290$ L (b) $500$ L",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 290,
+      "unit": "L"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 500,
+      "unit": "L"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A line graph shows the height of a tomato plant. At week $0$ it was $4$ cm tall and at week $6$ it was $31$ cm tall. Find the average growth per week, in centimetres.",
+    "answer": "$4.5$ cm",
+    "solution": "**Key idea:** Average growth per week is the total growth divided by the number of weeks.\n\n1. Total growth $= 31 - 4 = 27$ cm.\n2. $27 \\div 6 = 4.5$ cm per week.\n\n**Answer:** $4.5$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.5,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Ruby's savings are shown on a line graph. The plotted points (week, savings in dollars) are $(0, 30)$, $(1, 45)$, $(2, 60)$, $(3, 75)$ and $(4, 90)$.\n\n(a) How much does Ruby save each week?\n\n(b) If the pattern continues, how much will she have at week $10$?\n\n(c) In which week will she first have \\$180?",
+    "answer": "(a) \\$15 (b) \\$180 (c) $10$",
+    "solution": "**Key idea:** The points lie on a straight line, so the savings increase by the same amount each week.\n\n1. Each week the savings rise by $45 - 30 = 15$ dollars.\n2. At week 10: $30 + 10 \\times 15 = 180$ dollars.\n3. She reaches \\$180 at week $10$.\n\n**Answer:** (a) \\$15 (b) \\$180 (c) $10$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15,
+      "unit": "dollars"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 180,
+      "unit": "dollars"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "8F": [
+   {
+    "kind": "short",
+    "question": "(a) In a survey of $72$ students, $20$ chose netball as their favourite sport. What angle would the netball sector have in a sector graph?\n\n(b) On a divided bar graph $12$ cm long, how long is the section for a category that makes up $25\\%$ of the data?",
+    "answer": "(a) $100°$ (b) $3$ cm",
+    "solution": "**Key idea:** A sector angle is the fraction of the data multiplied by $360°$; a bar section is the fraction multiplied by the bar's length.\n\n1. $\\frac{20}{72} \\times 360° = 100°$\n2. $25\\%$ of $12$ cm $= 0.25 \\times 12 = 3$ cm\n\n**Answer:** (a) $100°$ (b) $3$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 100,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "8G": [
+   {
+    "kind": "short",
+    "question": "The probability that a train is late is $0.3$. What is the probability that it is not late?",
+    "answer": "$0.7$",
+    "solution": "**Key idea:** An event and its complement have probabilities that add to $1$.\n\n1. $1 - 0.3 = 0.7$\n\n**Answer:** $0.7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A bag holds $4$ red and $4$ blue marbles. One marble is chosen without looking.\n\n(a) What is the probability of choosing a red marble?\n\n(b) What is the probability of choosing a green marble?",
+    "answer": "(a) $\\frac{1}{2}$ (b) $0$",
+    "solution": "**Key idea:** Probability is the number of favourable outcomes divided by the total number of equally likely outcomes. An impossible event has probability $0$.\n\n1. $P(\\text{red}) = \\frac{4}{8} = \\frac{1}{2}$ (an even chance).\n2. There are no green marbles, so $P(\\text{green}) = 0$ (impossible).\n\n**Answer:** (a) $\\frac{1}{2}$ (b) $0$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A standard six-sided die is rolled.\n\n(a) What is the probability of rolling a number less than $7$?\n\n(b) What is the probability of rolling a number less than $3$?",
+    "answer": "(a) $1$ (b) $\\frac{1}{3}$",
+    "solution": "**Key idea:** A certain event has probability $1$.\n\n1. Every face is less than $7$, so the event is certain: probability $1$.\n2. The numbers $1$ and $2$ are less than $3$: $\\frac{2}{6} = \\frac{1}{3}$.\n\n**Answer:** (a) $1$ (b) $\\frac{1}{3}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.3333333333333333
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A spinner has $10$ equal sections. Seven are green and three are white.\n\n(a) Find the probability of landing on green.\n\n(b) Find the probability of not landing on green.",
+    "answer": "(a) $0.7$ (b) $0.3$",
+    "solution": "**Key idea:** For equal sections, probability is the number of matching sections out of the total.\n\n1. $P(\\text{green}) = \\frac{7}{10} = 0.7$ (likely).\n2. $P(\\text{not green}) = 1 - 0.7 = 0.3$\n\n**Answer:** (a) $0.7$ (b) $0.3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The weather forecast for Darwin says there is a $40\\%$ chance of rain tomorrow. What is the chance, as a percentage, that it does not rain?",
+    "answer": "$60\\%$",
+    "solution": "**Key idea:** The chances of an event happening and not happening add to $100\\%$.\n\n1. $100\\% - 40\\% = 60\\%$\n\n**Answer:** $60\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 60,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A bag holds $2$ red counters and $6$ yellow counters.\n\n(a) What is the probability of choosing a red counter?\n\n(b) How many red counters must be added to the bag so that choosing red has an even chance?",
+    "answer": "(a) $\\frac{1}{4}$ (b) $4$",
+    "solution": "**Key idea:** An even chance means a probability of $\\frac{1}{2}$, so there must be equal numbers of red and yellow counters.\n\n1. $P(\\text{red}) = \\frac{2}{8} = \\frac{1}{4}$ (unlikely).\n2. For an even chance, red must equal yellow: $6$ red counters.\n3. $6 - 2 = 4$ red counters must be added.\n\n**Answer:** (a) $\\frac{1}{4}$ (b) $4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.25
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     }
+    ]
+   }
+  ],
+  "9A": [
+   {
+    "kind": "short",
+    "question": "Which of $x = 2, 3, 4, 5$ is a solution of $5x - 3 = 17$?",
+    "answer": "$x = 4$",
+    "solution": "**Key idea:** A solution makes the left side equal the right side when substituted.\n\n1. $x = 2$: $7$; $x = 3$: $12$; $x = 4$: $17$; $x = 5$: $22$.\n2. Only $x = 4$ gives $17$.\n\n**Answer:** $x = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Substitute $x = 6$ into the left side of $3x + 4 = 22$. What value do you get?",
+    "answer": "$22$",
+    "solution": "**Key idea:** Replace $x$ with $6$ and evaluate.\n\n1. $3 \\times 6 + 4 = 18 + 4 = 22$\n2. (So $x = 6$ is a solution, because both sides equal $22$.)\n\n**Answer:** $22$",
+    "key": [
+     {
+      "type": "num",
+      "value": 22
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Which of $m = 1, 2, 3, 4, 5, 6$ is a solution of $m^2 + m = 30$?",
+    "answer": "$m = 5$",
+    "solution": "**Key idea:** Substitute each value and see which one makes the left side equal $30$.\n\n1. $m = 4$: $16 + 4 = 20$\n2. $m = 5$: $25 + 5 = 30$ ✓\n3. $m = 6$: $36 + 6 = 42$\n\n**Answer:** $m = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Jai thinks of a number, doubles it and then adds $7$. The result is $31$. What is Jai's number?",
+    "answer": "$12$",
+    "solution": "**Key idea:** Write the equation $2n + 7 = 31$ and find the value of $n$ that makes it true.\n\n1. $2n + 7 = 31$\n2. $2n = 24$, so $n = 12$.\n3. Check: $2 \\times 12 + 7 = 31$ ✓\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Pencils cost \\$2 each and a pencil case costs \\$9. Mai buys one pencil case and $p$ pencils for a total of \\$21, so $2p + 9 = 21$.\n\n(a) Evaluate the left side when $p = 5$.\n\n(b) Which whole number $p$ is the solution?",
+    "answer": "(a) $19$ (b) $6$",
+    "solution": "**Key idea:** Substitute values for $p$ until the left side equals the right side.\n\n1. When $p = 5$: $2 \\times 5 + 9 = 19$, which is not $21$.\n2. When $p = 6$: $2 \\times 6 + 9 = 21$ ✓, so $p = 6$.\n\n**Answer:** (a) $19$ (b) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 19
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   }
+  ],
+  "9B": [
+   {
+    "kind": "short",
+    "question": "Solve by inspection:\n\n(a) $y - 12 = 30$\n\n(b) $9t = 72$",
+    "answer": "(a) $y = 42$ (b) $t = 8$",
+    "solution": "**Key idea:** Ask which number makes the equation true.\n\n1. Which number minus $12$ is $30$? $y = 42$.\n2. $9$ times which number is $72$? $t = 8$.\n\n**Answer:** (a) $y = 42$ (b) $t = 8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 42
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve by inspection:\n\n(a) $\\dfrac{45}{p} = 9$\n\n(b) $2x + 1 = 15$",
+    "answer": "(a) $p = 5$ (b) $x = 7$",
+    "solution": "**Key idea:** Think about which number makes each statement true.\n\n1. $45$ divided by which number is $9$? $p = 5$.\n2. $2x$ must be $14$, so $x = 7$.\n\n**Answer:** (a) $p = 5$ (b) $x = 7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 7
+     }
+    ]
+   }
+  ],
+  "9C": [
+   {
+    "kind": "short",
+    "question": "Start with the equation $x = 4$. Multiply both sides by $3$, then add $5$ to both sides. The new equation is $3x + 5 = \\Box$. What number goes in the box?",
+    "answer": "$17$",
+    "solution": "**Key idea:** Whatever you do to one side of an equation, do to the other side as well.\n\n1. Multiply both sides by $3$: $3x = 12$.\n2. Add $5$ to both sides: $3x + 5 = 17$.\n\n**Answer:** $17$",
+    "key": [
+     {
+      "type": "num",
+      "value": 17
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "To solve $x - 9 = 14$, the same number is added to both sides.\n\n(a) What number should be added?\n\n(b) What is the solution?",
+    "answer": "(a) $9$ (b) $x = 23$",
+    "solution": "**Key idea:** Adding the same number to both sides gives an equivalent equation.\n\n1. Add $9$ to both sides to undo the subtraction.\n2. $x = 14 + 9 = 23$\n\n**Answer:** (a) $9$ (b) $x = 23$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 23
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The equations $2x + 3 = 11$ and $x + a = 6$ are equivalent (they have the same solution). Find $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Equivalent equations have the same solution, so solve the first equation and substitute.\n\n1. $2x + 3 = 11$ gives $2x = 8$, so $x = 4$.\n2. Substitute into $x + a = 6$: $4 + a = 6$, so $a = 2$.\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Start with the equation $k = -2$. Multiply both sides by $5$, then subtract $3$ from both sides. The new equation is $5k - 3 = \\Box$. What number goes in the box?",
+    "answer": "$-13$",
+    "solution": "**Key idea:** Apply each operation to both sides.\n\n1. Multiply both sides by $5$: $5k = -10$.\n2. Subtract $3$ from both sides: $5k - 3 = -13$.\n\n**Answer:** $-13$",
+    "key": [
+     {
+      "type": "num",
+      "value": -13
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Solve $4x - 7 = 21$ by writing equivalent equations.\n\n(a) What number is added to both sides first?\n\n(b) What number are both sides then divided by?\n\n(c) What is the solution?",
+    "answer": "(a) $7$ (b) $4$ (c) $x = 7$",
+    "solution": "**Key idea:** Undo the operations in reverse order, doing the same to both sides each time.\n\n1. Add $7$ to both sides: $4x = 28$.\n2. Divide both sides by $4$: $x = 7$.\n3. Check: $4 \\times 7 - 7 = 21$ ✓\n\n**Answer:** (a) $7$ (b) $4$ (c) $x = 7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The equations $3x = 18$ and $x + b = 10$ are equivalent. Find $b$.",
+    "answer": "$b = 4$",
+    "solution": "**Key idea:** Equivalent equations have the same solution.\n\n1. $3x = 18$ gives $x = 6$.\n2. $6 + b = 10$, so $b = 4$.\n\n**Answer:** $b = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   }
+  ],
+  "9D": [
+   {
+    "kind": "short",
+    "question": "Solve $6x - 11 = 25$.",
+    "answer": "$x = 6$",
+    "solution": "**Key idea:** Undo the subtraction, then undo the multiplication, doing the same to both sides.\n\n1. Add $11$ to both sides: $6x = 36$.\n2. Divide both sides by $6$: $x = 6$.\n\n**Answer:** $x = 6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $9x + 4 = 5x + 28$.",
+    "answer": "$x = 6$",
+    "solution": "**Key idea:** Collect the $x$ terms on one side and the numbers on the other.\n\n1. Subtract $5x$ from both sides: $4x + 4 = 28$.\n2. Subtract $4$: $4x = 24$.\n3. Divide by $4$: $x = 6$.\n\n**Answer:** $x = 6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   }
+  ],
+  "9E": [
+   {
+    "kind": "short",
+    "question": "Solve $\\dfrac{2x}{3} - 1 = 7$.",
+    "answer": "$x = 12$",
+    "solution": "**Key idea:** Undo the subtraction first, then multiply both sides by the denominator.\n\n1. Add $1$ to both sides: $\\frac{2x}{3} = 8$.\n2. Multiply both sides by $3$: $2x = 24$.\n3. Divide by $2$: $x = 12$.\n\n**Answer:** $x = 12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A number is divided by $5$ and then $8$ is added. The result is $15$. Write an equation with $n$ for the number and solve it. What is the number?",
+    "answer": "$35$",
+    "solution": "**Key idea:** Write $\\frac{n}{5} + 8 = 15$, then undo each step.\n\n1. $\\frac{n}{5} + 8 = 15$\n2. Subtract $8$: $\\frac{n}{5} = 7$.\n3. Multiply by $5$: $n = 35$.\n\n**Answer:** $35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 35
+     }
+    ]
+   }
+  ],
+  "9H": [
+   {
+    "kind": "short",
+    "question": "Three adult tickets to a zoo cost \\$18 each. Child tickets cost \\$11 each. A family spends \\$87 on $3$ adult tickets and some child tickets. How many child tickets did they buy?",
+    "answer": "$3$",
+    "solution": "**Key idea:** Let $n$ be the number of child tickets and write an equation for the total cost.\n\n1. $3 \\times 18 + 11n = 87$\n2. $54 + 11n = 87$, so $11n = 33$.\n3. $n = 3$\n\n**Answer:** $3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The sum of three consecutive even numbers is $54$. Find the three numbers, from smallest to largest.",
+    "answer": "$16, 18, 20$",
+    "solution": "**Key idea:** Let the smallest number be $n$; the next two are $n + 2$ and $n + 4$.\n\n1. $n + (n + 2) + (n + 4) = 54$\n2. $3n + 6 = 54$, so $3n = 48$ and $n = 16$.\n3. The numbers are $16$, $18$ and $20$.\n\n**Answer:** $16, 18, 20$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       16,
+       18,
+       20
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangle's length is $3$ cm more than twice its width. Its perimeter is $54$ cm.\n\n(a) Find the width.\n\n(b) Find the length.",
+    "answer": "(a) $8$ cm (b) $19$ cm",
+    "solution": "**Key idea:** Let the width be $w$ cm, so the length is $2w + 3$ cm, and use $P = 2l + 2w$.\n\n1. $2(2w + 3) + 2w = 54$\n2. $6w + 6 = 54$, so $6w = 48$ and $w = 8$.\n3. Length $= 2 \\times 8 + 3 = 19$ cm.\n\n**Answer:** (a) $8$ cm (b) $19$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 19,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Leo's mum is $4$ times as old as Leo. Their ages add to $65$.\n\n(a) How old is Leo?\n\n(b) How old is his mum?",
+    "answer": "(a) $13$ (b) $52$",
+    "solution": "**Key idea:** Let Leo's age be $a$; his mum's age is then $4a$.\n\n1. $a + 4a = 65$\n2. $5a = 65$, so $a = 13$.\n3. Mum is $4 \\times 13 = 52$.\n\n**Answer:** (a) $13$ (b) $52$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 13,
+      "unit": "years"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 52,
+      "unit": "years"
+     }
+    ]
+   }
+  ],
+  "10A": [
+   {
+    "kind": "short",
+    "question": "Convert:\n\n(a) $0.35$ km to metres\n\n(b) $4600$ mm to metres",
+    "answer": "(a) $350$ m (b) $4.6$ m",
+    "solution": "**Key idea:** $1$ km $= 1000$ m and $1$ m $= 1000$ mm.\n\n1. $0.35 \\times 1000 = 350$ m\n2. $4600 \\div 1000 = 4.6$ m\n\n**Answer:** (a) $350$ m (b) $4.6$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 350,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4.6,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A roll of ribbon is $3.6$ m long.\n\n(a) How many $45$ cm pieces can be cut from one roll?\n\n(b) A craft shop sells $250$ of these rolls. What is the total length of ribbon, in kilometres?",
+    "answer": "(a) $8$ (b) $0.9$ km",
+    "solution": "**Key idea:** Convert to the same unit before dividing.\n\n1. $3.6$ m $= 360$ cm, and $360 \\div 45 = 8$ pieces.\n2. $250 \\times 3.6 = 900$ m\n3. $900$ m $= 900 \\div 1000 = 0.9$ km\n\n**Answer:** (a) $8$ (b) $0.9$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.9,
+      "unit": "km"
+     }
+    ]
+   }
+  ],
+  "10B": [
+   {
+    "kind": "short",
+    "question": "An equilateral triangle has a perimeter of $13.5$ cm. Find the length of each side.",
+    "answer": "$4.5$ cm",
+    "solution": "**Key idea:** All three sides of an equilateral triangle are equal.\n\n1. $13.5 \\div 3 = 4.5$ cm\n\n**Answer:** $4.5$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.5,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangular vegetable patch is $3.2$ m long and $1.8$ m wide.\n\n(a) Find its perimeter.\n\n(b) Garden edging costs \\$14.50 per metre. Find the cost of edging the whole perimeter.",
+    "answer": "(a) $10$ m (b) \\$145",
+    "solution": "**Key idea:** Perimeter of a rectangle $= 2 \\times (\\text{length} + \\text{width})$.\n\n1. $P = 2 \\times (3.2 + 1.8) = 2 \\times 5 = 10$ m\n2. Cost $= 10 \\times 14.50 = \\$145$\n\n**Answer:** (a) $10$ m (b) \\$145",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 10,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 145,
+      "dp": 2,
+      "unit": "dollars"
+     }
+    ]
+   }
+  ],
+  "10D": [
+   {
+    "kind": "short",
+    "question": "A semicircle has a diameter of $14$ cm. Using $\\pi \\approx \\frac{22}{7}$, find its perimeter (the curved part plus the straight edge).",
+    "answer": "$36$ cm",
+    "solution": "**Key idea:** The curved part of a semicircle is half the circumference, $\\frac{1}{2}\\pi d$.\n\n1. Curved part $= \\frac{1}{2} \\times \\frac{22}{7} \\times 14 = 22$ cm.\n2. Perimeter $= 22 + 14 = 36$ cm.\n\n**Answer:** $36$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 36,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A quarter circle has a radius of $6$ m. Using $\\pi \\approx 3.14$, find its perimeter (the arc plus the two straight radii).",
+    "answer": "$21.42$ m",
+    "solution": "**Key idea:** The arc of a quarter circle is $\\frac{1}{4}$ of the circumference $2\\pi r$.\n\n1. Arc $= \\frac{1}{4} \\times 2 \\times 3.14 \\times 6 = 9.42$ m.\n2. Perimeter $= 9.42 + 6 + 6 = 21.42$ m.\n\n**Answer:** $21.42$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 21.42,
+      "dp": 2,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A sector has a radius of $12$ cm and an angle of $60°$ at the centre. Use $\\pi \\approx 3.14$.\n\n(a) Find the length of the arc.\n\n(b) Find the perimeter of the sector.",
+    "answer": "(a) $12.56$ cm (b) $36.56$ cm",
+    "solution": "**Key idea:** The arc is the fraction $\\frac{\\theta}{360}$ of the full circumference.\n\n1. Arc $= \\frac{60}{360} \\times 2 \\times 3.14 \\times 12 = \\frac{1}{6} \\times 75.36 = 12.56$ cm.\n2. Perimeter $= 12.56 + 12 + 12 = 36.56$ cm.\n\n**Answer:** (a) $12.56$ cm (b) $36.56$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12.56,
+      "dp": 2,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 36.56,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "10F": [
+   {
+    "kind": "short",
+    "question": "A parallelogram has a base of $9$ cm and a perpendicular height of $7$ cm. Find its area.",
+    "answer": "$63$ cm²",
+    "solution": "**Key idea:** Area of a parallelogram $=$ base $\\times$ perpendicular height.\n\n1. $A = 9 \\times 7 = 63$ cm²\n\n**Answer:** $63$ cm²",
+    "key": [
+     {
+      "type": "num",
+      "value": 63,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A parallelogram has an area of $84$ m² and a base of $12$ m. Find its perpendicular height.",
+    "answer": "$7$ m",
+    "solution": "**Key idea:** Use $A = bh$ and divide the area by the base.\n\n1. $84 = 12 \\times h$\n2. $h = 84 \\div 12 = 7$ m\n\n**Answer:** $7$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 7,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A courtyard is paved in the shape of a parallelogram with a base of $8.5$ m and a perpendicular height of $4$ m. Pavers cost \\$45 per square metre.\n\n(a) Find the area of the courtyard.\n\n(b) Find the cost of the pavers.",
+    "answer": "(a) $34$ m² (b) \\$1530",
+    "solution": "**Key idea:** Area of a parallelogram $=$ base $\\times$ perpendicular height.\n\n1. $A = 8.5 \\times 4 = 34$ m²\n2. Cost $= 34 \\times 45 = \\$1530$\n\n**Answer:** (a) $34$ m² (b) \\$1530",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 34,
+      "unit": "m²"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1530,
+      "dp": 2,
+      "unit": "dollars"
+     }
+    ]
+   }
+  ],
+  "10K": [
+   {
+    "kind": "short",
+    "question": "A bottle holds $1.25$ L of juice.\n\n(a) How many millilitres is this?\n\n(b) How many $250$ mL glasses can be filled from the bottle?",
+    "answer": "(a) $1250$ mL (b) $5$",
+    "solution": "**Key idea:** $1$ L $= 1000$ mL.\n\n1. $1.25 \\times 1000 = 1250$ mL\n2. $1250 \\div 250 = 5$ glasses\n\n**Answer:** (a) $1250$ mL (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1250,
+      "unit": "mL"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   }
+  ],
+  "10L": [
+   {
+    "kind": "short",
+    "question": "A carton holds $24$ tins of tomatoes, each with a mass of $425$ g. Find the total mass of the tins, in kilograms.",
+    "answer": "$10.2$ kg",
+    "solution": "**Key idea:** $1$ kg $= 1000$ g.\n\n1. $24 \\times 425 = 10\\,200$ g\n2. $10\\,200 \\div 1000 = 10.2$ kg\n\n**Answer:** $10.2$ kg",
+    "key": [
+     {
+      "type": "num",
+      "value": 10.2,
+      "unit": "kg"
+     }
+    ]
+   }
+  ]
+ }
+}

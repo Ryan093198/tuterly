@@ -1,0 +1,1270 @@
+{
+ "Year 7": {
+  "1A": [
+   {
+    "kind": "short",
+    "question": "Write the Roman numeral $\\text{CDLXXVIII}$ as a Hindu-Arabic number.",
+    "answer": "$478$",
+    "solution": "**Key idea:** Read Roman numerals from left to right. A smaller symbol before a larger one is subtracted.\n\n1. $\\text{CD} = 500 - 100 = 400$\n2. $\\text{L} = 50$ and $\\text{XX} = 20$\n3. $\\text{VIII} = 8$\n4. $400 + 50 + 20 + 8 = 478$\n\n**Answer:** $478$",
+    "key": [
+     {
+      "type": "num",
+      "value": 478
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In the ancient Egyptian number system, a stroke stands for $1$, a heel bone for $10$, a coil of rope for $100$ and a lotus flower for $1000$. A number is written using $5$ lotus flowers, $7$ coils of rope and $3$ strokes, with no heel bones. What is the number?",
+    "answer": "$5703$",
+    "solution": "**Key idea:** The Egyptian system adds the values of all the symbols. There is no symbol for zero, so a missing symbol type means a zero in that place.\n\n1. Lotus flowers: $5 \\times 1000 = 5000$\n2. Coils of rope: $7 \\times 100 = 700$\n3. Strokes: $3 \\times 1 = 3$\n4. $5000 + 700 + 3 = 5703$\n\n**Answer:** $5703$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5703
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The Babylonians used base $60$. A vertical wedge stands for $1$ and a corner wedge stands for $10$. A number is written in two groups. The left group (the sixties place) has $4$ vertical wedges. The right group (the ones place) has $1$ corner wedge and $7$ vertical wedges. What is the number in Hindu-Arabic form?",
+    "answer": "$257$",
+    "solution": "**Key idea:** In base $60$, the left group counts sixties and the right group counts ones.\n\n1. Left group: $4 \\times 60 = 240$\n2. Right group: $10 + 7 = 17$\n3. $240 + 17 = 257$\n\n**Answer:** $257$",
+    "key": [
+     {
+      "type": "num",
+      "value": 257
+     }
+    ]
+   }
+  ],
+  "1B": [
+   {
+    "kind": "short",
+    "question": "What is the value of the digit $7$ in the number $3\\,472\\,615$?",
+    "answer": "$70\\,000$",
+    "solution": "**Key idea:** The value of a digit depends on its place.\n\n1. Reading from the left: $3$ millions, $4$ hundred thousands, $7$ ten thousands.\n2. So the $7$ is worth $7 \\times 10\\,000 = 70\\,000$.\n\n**Answer:** $70\\,000$",
+    "key": [
+     {
+      "type": "num",
+      "value": 70000
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write the number that is equal to $6 \\times 10^{4} + 3 \\times 10^{2} + 5 \\times 10^{0}$.",
+    "answer": "$60\\,305$",
+    "solution": "**Key idea:** Each power of $10$ is a place: $10^4$ is ten thousands, $10^2$ is hundreds, $10^0$ is ones.\n\n1. $6 \\times 10^4 = 60\\,000$\n2. $3 \\times 10^2 = 300$\n3. $5 \\times 10^0 = 5$\n4. There are no thousands or tens, so those places are $0$: $60\\,000 + 300 + 5 = 60\\,305$\n\n**Answer:** $60\\,305$",
+    "key": [
+     {
+      "type": "num",
+      "value": 60305
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The digit $4$ appears in both $54\\,210$ and $7340$. How many times larger is the value of the $4$ in $54\\,210$ than the value of the $4$ in $7340$?",
+    "answer": "$100$",
+    "solution": "**Key idea:** Each place to the left is worth $10$ times as much.\n\n1. In $54\\,210$ the $4$ is in the thousands place, so it is worth $4000$.\n2. In $7340$ the $4$ is in the tens place, so it is worth $40$.\n3. $4000 \\div 40 = 100$\n\n**Answer:** $100$",
+    "key": [
+     {
+      "type": "num",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Use each of the digits $8$, $2$, $0$, $6$ and $4$ exactly once to make five-digit numbers.\n\n(a) What is the largest even number you can make?\n\n(b) What is the smallest five-digit number you can make?\n\n(c) Find the difference between your answers to (a) and (b).",
+    "answer": "(a) $86\\,420$ (b) $20\\,468$ (c) $65\\,952$",
+    "solution": "**Key idea:** Put the largest digits in the highest places for the largest number. A five-digit number cannot start with $0$.\n\n1. Largest: $86\\,420$. It ends in $0$, so it is even.\n2. Smallest: the first digit must be the smallest non-zero digit, $2$, then $0, 4, 6, 8$: $20\\,468$.\n3. Difference: $86\\,420 - 20\\,468 = 65\\,952$\n\n**Answer:** (a) $86\\,420$ (b) $20\\,468$ (c) $65\\,952$",
+    "key": [
+     {
+      "type": "num",
+      "value": 86420,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 20468,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 65952,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "1C": [
+   {
+    "kind": "short",
+    "question": "Use a mental strategy to find $646 + 298$.",
+    "answer": "$944$",
+    "solution": "**Key idea:** Adding $298$ is the same as adding $300$ and then taking away $2$.\n\n1. $646 + 300 = 946$\n2. $946 - 2 = 944$\n\n**Answer:** $944$",
+    "key": [
+     {
+      "type": "num",
+      "value": 944
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A school library has $1250$ books. During one week, $386$ books are borrowed, $145$ borrowed books are returned and the library buys $72$ new books. How many books are on the shelves at the end of the week?",
+    "answer": "$1081$ books",
+    "solution": "**Key idea:** Subtract the books that leave the shelves and add the books that come back or are new.\n\n1. $1250 - 386 = 864$\n2. $864 + 145 = 1009$\n3. $1009 + 72 = 1081$\n\n**Answer:** $1081$ books",
+    "key": [
+     {
+      "type": "num",
+      "value": 1081
+     }
+    ]
+   }
+  ],
+  "1D": [
+   {
+    "kind": "short",
+    "question": "Use the subtraction algorithm to find $8004 - 3567$.",
+    "answer": "$4437$",
+    "solution": "**Key idea:** Line up the places and trade from the next place when the top digit is too small.\n\n1. Ones: trade through the zeros so $8004$ becomes $7$ thousands, $9$ hundreds, $9$ tens and $14$ ones.\n2. $14 - 7 = 7$, $9 - 6 = 3$, $9 - 5 = 4$, $7 - 3 = 4$\n3. So $8004 - 3567 = 4437$\n\n**Answer:** $4437$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4437
+     }
+    ]
+   }
+  ],
+  "1E": [
+   {
+    "kind": "short",
+    "question": "Use the distributive law to calculate $8 \\times 103$ mentally.",
+    "answer": "$824$",
+    "solution": "**Key idea:** Split $103$ into $100 + 3$.\n\n1. $8 \\times 100 = 800$\n2. $8 \\times 3 = 24$\n3. $800 + 24 = 824$\n\n**Answer:** $824$",
+    "key": [
+     {
+      "type": "num",
+      "value": 824
+     }
+    ]
+   }
+  ],
+  "1F": [
+   {
+    "kind": "short",
+    "question": "Find $506 \\times 47$.",
+    "answer": "$23\\,782$",
+    "solution": "**Key idea:** Multiply by the tens and the ones separately, then add.\n\n1. $506 \\times 40 = 20\\,240$\n2. $506 \\times 7 = 3542$\n3. $20\\,240 + 3542 = 23\\,782$\n\n**Answer:** $23\\,782$",
+    "key": [
+     {
+      "type": "num",
+      "value": 23782
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A regional stadium has $42$ rows with $175$ seats in each row.\n\n(a) How many seats are there in the stadium?\n\n(b) Every seat is sold for a match at \\$18 each. How much money is collected from ticket sales?",
+    "answer": "(a) $7350$ seats (b) \\$132\\,300",
+    "solution": "**Key idea:** Multiply the number of rows by the seats in each row, then multiply by the ticket price.\n\n1. Seats: $175 \\times 42 = 7000 + 350 = 7350$\n2. Money: $7350 \\times 18 = 73\\,500 + 58\\,800 = 132\\,300$\n\n**Answer:** (a) $7350$ seats (b) \\$132\\,300",
+    "key": [
+     {
+      "type": "num",
+      "value": 7350,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 132300,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "1G": [
+   {
+    "kind": "short",
+    "question": "Use short division to find $5832 \\div 8$.",
+    "answer": "$729$",
+    "solution": "**Key idea:** Divide each place in turn, carrying any remainder to the next place.\n\n1. $58 \\div 8 = 7$ remainder $2$\n2. $23 \\div 8 = 2$ remainder $7$\n3. $72 \\div 8 = 9$\n4. So $5832 \\div 8 = 729$\n\n**Answer:** $729$",
+    "key": [
+     {
+      "type": "num",
+      "value": 729
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A poultry farm collects $312$ eggs. The eggs are packed into cartons that each hold $12$ eggs.\n\n(a) How many cartons are filled?\n\n(b) The cartons are packed into boxes that each hold $6$ cartons. How many boxes are needed to hold all of the cartons?",
+    "answer": "(a) $26$ cartons (b) $5$ boxes",
+    "solution": "**Key idea:** When something must hold everything, round a division answer up.\n\n1. $312 \\div 12 = 26$ cartons\n2. $26 \\div 6 = 4$ remainder $2$\n3. Four boxes hold $24$ cartons, so a fifth box is needed for the last $2$ cartons: $5$ boxes.\n\n**Answer:** (a) $26$ cartons (b) $5$ boxes",
+    "key": [
+     {
+      "type": "num",
+      "value": 26,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 5,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "1H": [
+   {
+    "kind": "short",
+    "question": "Round $638\\,512$ to the nearest ten thousand.",
+    "answer": "$640\\,000$",
+    "solution": "**Key idea:** Look at the thousands digit to decide whether to round up or down.\n\n1. The ten thousands digit is $3$ and the next digit is $8$.\n2. $8$ is $5$ or more, so round up to $640\\,000$.\n\n**Answer:** $640\\,000$",
+    "key": [
+     {
+      "type": "num",
+      "value": 640000
+     }
+    ]
+   }
+  ],
+  "1I": [
+   {
+    "kind": "short",
+    "question": "Evaluate $48 \\div 6 + 3 \\times 7$.",
+    "answer": "$29$",
+    "solution": "**Key idea:** Do multiplication and division before addition.\n\n1. $48 \\div 6 = 8$\n2. $3 \\times 7 = 21$\n3. $8 + 21 = 29$\n\n**Answer:** $29$",
+    "key": [
+     {
+      "type": "num",
+      "value": 29
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $(15 - 3) \\times 4 - 10 \\div 2$.",
+    "answer": "$43$",
+    "solution": "**Key idea:** Brackets first, then multiplication and division, then addition and subtraction.\n\n1. $(15 - 3) = 12$\n2. $12 \\times 4 = 48$ and $10 \\div 2 = 5$\n3. $48 - 5 = 43$\n\n**Answer:** $43$",
+    "key": [
+     {
+      "type": "num",
+      "value": 43
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $100 - 4 \\times (6 + 9) \\div 3$.",
+    "answer": "$80$",
+    "solution": "**Key idea:** Brackets first, then multiplication and division from left to right, then subtraction.\n\n1. $6 + 9 = 15$\n2. $4 \\times 15 = 60$, then $60 \\div 3 = 20$\n3. $100 - 20 = 80$\n\n**Answer:** $80$",
+    "key": [
+     {
+      "type": "num",
+      "value": 80
+     }
+    ]
+   }
+  ],
+  "2A": [
+   {
+    "kind": "short",
+    "question": "What is the $12$th multiple of $9$?",
+    "answer": "$108$",
+    "solution": "**Key idea:** The $n$th multiple of $9$ is $9 \\times n$.\n\n1. $9 \\times 12 = 108$\n\n**Answer:** $108$",
+    "key": [
+     {
+      "type": "num",
+      "value": 108
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many factors does $60$ have?",
+    "answer": "$12$",
+    "solution": "**Key idea:** List the factor pairs so none are missed.\n\n1. Factor pairs: $1 \\times 60$, $2 \\times 30$, $3 \\times 20$, $4 \\times 15$, $5 \\times 12$, $6 \\times 10$\n2. That is $6$ pairs, so $12$ factors.\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "List all the factors of $28$.",
+    "answer": "$1, 2, 4, 7, 14, 28$",
+    "solution": "**Key idea:** Find the factor pairs of $28$.\n\n1. $1 \\times 28$, $2 \\times 14$, $4 \\times 7$\n2. So the factors are $1, 2, 4, 7, 14, 28$.\n\n**Answer:** $1, 2, 4, 7, 14, 28$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1,
+       2,
+       4,
+       7,
+       14,
+       28
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the smallest multiple of $7$ that is greater than $100$?",
+    "answer": "$105$",
+    "solution": "**Key idea:** Divide $100$ by $7$ and go to the next whole number of sevens.\n\n1. $7 \\times 14 = 98$, which is less than $100$.\n2. $7 \\times 15 = 105$\n\n**Answer:** $105$",
+    "key": [
+     {
+      "type": "num",
+      "value": 105
+     }
+    ]
+   }
+  ],
+  "2B": [
+   {
+    "kind": "short",
+    "question": "Find the highest common factor (HCF) of $48$ and $72$.",
+    "answer": "$24$",
+    "solution": "**Key idea:** Write each number as a product of primes and take the common primes.\n\n1. $48 = 2^4 \\times 3$ and $72 = 2^3 \\times 3^2$\n2. Common: $2^3 \\times 3 = 24$\n\n**Answer:** $24$",
+    "key": [
+     {
+      "type": "num",
+      "value": 24
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the lowest common multiple (LCM) of $9$ and $15$.",
+    "answer": "$45$",
+    "solution": "**Key idea:** List multiples of the larger number until one is also a multiple of the smaller.\n\n1. Multiples of $15$: $15, 30, 45$\n2. $45 \\div 9 = 5$, so the LCM is $45$.\n\n**Answer:** $45$",
+    "key": [
+     {
+      "type": "num",
+      "value": 45
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "At a school sausage sizzle, bread rolls come in packs of $8$ and sausages come in packs of $10$. The organisers want exactly the same number of rolls and sausages.\n\n(a) What is the smallest number of rolls (and sausages) they can have?\n\n(b) How many packs of rolls is that?\n\n(c) How many packs of sausages is that?",
+    "answer": "(a) $40$ (b) $5$ packs (c) $4$ packs",
+    "solution": "**Key idea:** The smallest equal number is the LCM of the pack sizes.\n\n1. Multiples of $10$: $10, 20, 30, 40$; $40$ is the first that is also a multiple of $8$.\n2. Rolls: $40 \\div 8 = 5$ packs\n3. Sausages: $40 \\div 10 = 4$ packs\n\n**Answer:** (a) $40$ (b) $5$ packs (c) $4$ packs",
+    "key": [
+     {
+      "type": "num",
+      "value": 40,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 5,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 4,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "2C": [
+   {
+    "kind": "short",
+    "question": "The three-digit number $7\\square2$ is divisible by $3$. The missing digit is as large as possible. What is the missing digit?",
+    "answer": "$9$",
+    "solution": "**Key idea:** A number is divisible by $3$ when its digit sum is divisible by $3$.\n\n1. Digit sum: $7 + \\square + 2 = 9 + \\square$\n2. $9 + \\square$ is a multiple of $3$ when $\\square$ is $0$, $3$, $6$ or $9$.\n3. The largest is $9$ (the number $792$).\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the smallest whole number that must be added to $418$ to make a number that is divisible by $9$?",
+    "answer": "$5$",
+    "solution": "**Key idea:** A number is divisible by $9$ when its digit sum is divisible by $9$.\n\n1. Digit sum of $418$: $4 + 1 + 8 = 13$\n2. The next multiple of $9$ is $18$, so the digit sum must go up by $5$.\n3. $418 + 5 = 423$, and $4 + 2 + 3 = 9$\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Which of the numbers $2, 3, 4, 5, 6, 8, 9$ and $10$ divide exactly into $2340$?",
+    "answer": "$2, 3, 4, 5, 6, 9$ and $10$",
+    "solution": "**Key idea:** Use the divisibility test for each number.\n\n1. Ends in $0$: divisible by $2$, $5$ and $10$.\n2. Digit sum $2 + 3 + 4 + 0 = 9$: divisible by $3$ and $9$, and so by $6$.\n3. Last two digits $40$ are divisible by $4$, so $2340$ is divisible by $4$.\n4. Last three digits $340$: $340 \\div 8 = 42.5$, so not divisible by $8$.\n\n**Answer:** $2, 3, 4, 5, 6, 9$ and $10$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       2,
+       3,
+       4,
+       5,
+       6,
+       9,
+       10
+      ]
+     }
+    ]
+   }
+  ],
+  "2D": [
+   {
+    "kind": "short",
+    "question": "Find the sum of all the prime numbers between $10$ and $30$.",
+    "answer": "$112$",
+    "solution": "**Key idea:** List the primes first, checking each odd number for factors.\n\n1. Primes between $10$ and $30$: $11, 13, 17, 19, 23, 29$\n2. $11 + 13 + 17 + 19 + 23 + 29 = 112$\n\n**Answer:** $112$",
+    "key": [
+     {
+      "type": "num",
+      "value": 112
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many prime numbers are less than $50$?",
+    "answer": "$15$",
+    "solution": "**Key idea:** A prime number has exactly two factors. $1$ is not prime.\n\n1. $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47$\n2. Count them: $15$\n\n**Answer:** $15$",
+    "key": [
+     {
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the smallest prime number greater than $90$?",
+    "answer": "$97$",
+    "solution": "**Key idea:** Check each number after $90$ for factors.\n\n1. $91 = 7 \\times 13$, $92$, $94$, $96$ are even, $93 = 3 \\times 31$, $95 = 5 \\times 19$\n2. $97$ has no factors other than $1$ and itself, so it is prime.\n\n**Answer:** $97$",
+    "key": [
+     {
+      "type": "num",
+      "value": 97
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The number $36$ can be written as the sum of two prime numbers in several ways. Find the way in which the smaller prime is as small as possible. Write the two primes, smaller first.",
+    "answer": "$5, 31$",
+    "solution": "**Key idea:** Try the smallest primes first and check whether the other number is prime.\n\n1. $36 - 2 = 34$, not prime.\n2. $36 - 3 = 33 = 3 \\times 11$, not prime.\n3. $36 - 5 = 31$, which is prime. So $36 = 5 + 31$.\n\n**Answer:** $5, 31$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       5,
+       31
+      ]
+     }
+    ]
+   }
+  ],
+  "2E": [
+   {
+    "kind": "short",
+    "question": "Evaluate $4^{3}$.",
+    "answer": "$64$",
+    "solution": "**Key idea:** $4^3$ means $4 \\times 4 \\times 4$.\n\n1. $4 \\times 4 = 16$\n2. $16 \\times 4 = 64$\n\n**Answer:** $64$",
+    "key": [
+     {
+      "type": "num",
+      "value": 64
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $2^{4} \\times 3^{2}$.",
+    "answer": "$144$",
+    "solution": "**Key idea:** Evaluate each power first, then multiply.\n\n1. $2^4 = 16$ and $3^2 = 9$\n2. $16 \\times 9 = 144$\n\n**Answer:** $144$",
+    "key": [
+     {
+      "type": "num",
+      "value": 144
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $n$ if $3^{n} = 243$.",
+    "answer": "$n = 5$",
+    "solution": "**Key idea:** Keep multiplying by $3$ and count the factors.\n\n1. $3, 9, 27, 81, 243$\n2. That is five factors of $3$, so $n = 5$.\n\n**Answer:** $n = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $10^{4} - 9^{2}$.",
+    "answer": "$9919$",
+    "solution": "**Key idea:** Evaluate the powers before subtracting.\n\n1. $10^4 = 10\\,000$ and $9^2 = 81$\n2. $10\\,000 - 81 = 9919$\n\n**Answer:** $9919$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9919
+     }
+    ]
+   }
+  ],
+  "2F": [
+   {
+    "kind": "short",
+    "question": "Which number has the prime factorisation $2^{2} \\times 3 \\times 7$?",
+    "answer": "$84$",
+    "solution": "**Key idea:** Multiply the prime factors together.\n\n1. $2^2 = 4$\n2. $4 \\times 3 \\times 7 = 84$\n\n**Answer:** $84$",
+    "key": [
+     {
+      "type": "num",
+      "value": 84
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the largest prime factor of $455$?",
+    "answer": "$13$",
+    "solution": "**Key idea:** Divide by primes in order until only primes are left.\n\n1. $455 \\div 5 = 91$\n2. $91 \\div 7 = 13$\n3. $455 = 5 \\times 7 \\times 13$, so the largest prime factor is $13$.\n\n**Answer:** $13$",
+    "key": [
+     {
+      "type": "num",
+      "value": 13
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The number $400$ can be written as $2^{a} \\times 5^{b}$. Find the values of $a$ and $b$. Write $a$ first, then $b$.",
+    "answer": "$a = 4$, $b = 2$",
+    "solution": "**Key idea:** Use repeated division by primes.\n\n1. $400 \\div 2 = 200$, $\\div 2 = 100$, $\\div 2 = 50$, $\\div 2 = 25$: four factors of $2$.\n2. $25 = 5 \\times 5$: two factors of $5$.\n3. $400 = 2^4 \\times 5^2$\n\n**Answer:** $a = 4$, $b = 2$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "2H": [
+   {
+    "kind": "short",
+    "question": "Find the next term in the pattern $5, 12, 19, 26, \\ldots$",
+    "answer": "$33$",
+    "solution": "**Key idea:** Find the difference between terms.\n\n1. Each term is $7$ more than the one before.\n2. $26 + 7 = 33$\n\n**Answer:** $33$",
+    "key": [
+     {
+      "type": "num",
+      "value": 33
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The pattern $4, 9, 14, 19, \\ldots$ continues by the same rule. Find the $10$th term.",
+    "answer": "$49$",
+    "solution": "**Key idea:** The rule is add $5$. The $10$th term is $9$ steps after the first term.\n\n1. $9 \\times 5 = 45$\n2. $4 + 45 = 49$\n\n**Answer:** $49$",
+    "key": [
+     {
+      "type": "num",
+      "value": 49
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write the next three terms of the pattern $2, 6, 18, 54, \\ldots$",
+    "answer": "$162, 486, 1458$",
+    "solution": "**Key idea:** Each term is $3$ times the one before.\n\n1. $54 \\times 3 = 162$\n2. $162 \\times 3 = 486$\n3. $486 \\times 3 = 1458$\n\n**Answer:** $162, 486, 1458$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       162,
+       486,
+       1458
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The pattern $100, 93, 86, \\ldots$ continues by subtracting $7$ each time. What is the first term in the pattern that is less than zero?",
+    "answer": "$-5$",
+    "solution": "**Key idea:** Count how many times $7$ can be subtracted before going below zero.\n\n1. $7 \\times 14 = 98$, so the $15$th term is $100 - 98 = 2$.\n2. The next term is $2 - 7 = -5$.\n\n**Answer:** $-5$",
+    "key": [
+     {
+      "type": "num",
+      "value": -5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Mia saves \\$5 in the first week. Each week after that she saves \\$3 more than the week before.\n\n(a) How much does she save in the $6$th week?\n\n(b) How much has she saved altogether after $6$ weeks?",
+    "answer": "(a) \\$20 (b) \\$75",
+    "solution": "**Key idea:** Write out the pattern of weekly savings.\n\n1. Weekly savings: $5, 8, 11, 14, 17, 20$\n2. Week $6$: \\$20\n3. Total: $5 + 8 + 11 + 14 + 17 + 20 = 75$\n\n**Answer:** (a) \\$20 (b) \\$75",
+    "key": [
+     {
+      "type": "num",
+      "value": 20,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 75,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "2I": [
+   {
+    "kind": "extended",
+    "question": "Matchsticks are used to make a row of triangles, joined so that neighbouring triangles share one side. One triangle uses $3$ matchsticks, two triangles use $5$ and three triangles use $7$.\n\n(a) Write a rule for the number of matchsticks $m$ needed for $t$ triangles.\n\n(b) How many matchsticks are needed for $30$ triangles?\n\n(c) How many triangles can be made with exactly $85$ matchsticks?",
+    "answer": "(a) $m = 2t + 1$ (b) $61$ (c) $42$",
+    "solution": "**Key idea:** Each extra triangle adds $2$ matchsticks.\n\n1. The pattern goes up by $2$ and starts at $3$ for $t = 1$, so $m = 2t + 1$.\n2. $m = 2 \\times 30 + 1 = 61$\n3. $2t + 1 = 85$, so $2t = 84$ and $t = 42$.\n\n**Answer:** (a) $m = 2t + 1$ (b) $61$ (c) $42$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "2t+1",
+      "vars": [
+       "t"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 61,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 42,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "2J": [
+   {
+    "kind": "short",
+    "question": "Look at this table of values.\n\n| $x$ | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| $y$ | 7 | 10 | 13 | 16 |\n\n(a) Write the rule linking $y$ and $x$.\n\n(b) Find $y$ when $x = 20$.",
+    "answer": "(a) $y = 3x + 4$ (b) $64$",
+    "solution": "**Key idea:** The $y$ values go up by $3$ each time, so the rule starts with $3x$.\n\n1. $3 \\times 1 = 3$, and $7 - 3 = 4$, so $y = 3x + 4$.\n2. Check: $3 \\times 4 + 4 = 16$\n3. $y = 3 \\times 20 + 4 = 64$\n\n**Answer:** (a) $y = 3x + 4$ (b) $64$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3x+4",
+      "vars": [
+       "x"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 64,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "3A": [
+   {
+    "kind": "short",
+    "question": "A netball team played $18$ games and won $11$ of them. There were no draws. What fraction of the games did the team lose?",
+    "answer": "$\\frac{7}{18}$",
+    "solution": "**Key idea:** Fraction lost = games lost out of games played.\n\n1. Games lost: $18 - 11 = 7$\n2. Fraction lost: $\\frac{7}{18}$\n\n**Answer:** $\\frac{7}{18}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.3888888888888889
+     }
+    ]
+   }
+  ],
+  "3B": [
+   {
+    "kind": "short",
+    "question": "Find the missing number: $\\dfrac{4}{9} = \\dfrac{\\square}{45}$",
+    "answer": "$20$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by the same number.\n\n1. $9 \\times 5 = 45$\n2. $4 \\times 5 = 20$\n\n**Answer:** $20$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "To write $\\dfrac{42}{56}$ in simplest form in one step, what is the largest number you can divide both the numerator and the denominator by?",
+    "answer": "$14$",
+    "solution": "**Key idea:** Divide by the highest common factor.\n\n1. Factors of $42$: $1, 2, 3, 6, 7, 14, 21, 42$\n2. $14$ is the largest of these that also divides $56$ ($56 = 4 \\times 14$).\n3. So $\\frac{42}{56} = \\frac{3}{4}$\n\n**Answer:** $14$",
+    "key": [
+     {
+      "type": "num",
+      "value": 14
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the missing number: $\\dfrac{5}{8} = \\dfrac{35}{\\square}$",
+    "answer": "$56$",
+    "solution": "**Key idea:** Whatever the numerator is multiplied by, the denominator is multiplied by the same.\n\n1. $5 \\times 7 = 35$\n2. $8 \\times 7 = 56$\n\n**Answer:** $56$",
+    "key": [
+     {
+      "type": "num",
+      "value": 56
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What value of $n$ makes $\\dfrac{12}{n}$ equivalent to $\\dfrac{3}{7}$?",
+    "answer": "$n = 28$",
+    "solution": "**Key idea:** Find the multiplier from $3$ to $12$.\n\n1. $3 \\times 4 = 12$\n2. $7 \\times 4 = 28$\n\n**Answer:** $n = 28$",
+    "key": [
+     {
+      "type": "num",
+      "value": 28
+     }
+    ]
+   }
+  ],
+  "3C": [
+   {
+    "kind": "short",
+    "question": "How many thirds are there in $5\\dfrac{2}{3}$?",
+    "answer": "$17$",
+    "solution": "**Key idea:** Each whole contains $3$ thirds.\n\n1. $5$ wholes $= 5 \\times 3 = 15$ thirds\n2. $15 + 2 = 17$ thirds\n\n**Answer:** $17$",
+    "key": [
+     {
+      "type": "num",
+      "value": 17
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "When $4\\dfrac{3}{8}$ is written as an improper fraction, what is the numerator?",
+    "answer": "$35$",
+    "solution": "**Key idea:** Multiply the whole number by the denominator and add the numerator.\n\n1. $4 \\times 8 = 32$\n2. $32 + 3 = 35$, so $4\\frac{3}{8} = \\frac{35}{8}$\n\n**Answer:** $35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Between which two consecutive whole numbers does $\\dfrac{47}{5}$ lie? Write the smaller number first.",
+    "answer": "$9, 10$",
+    "solution": "**Key idea:** Write the improper fraction as a mixed numeral.\n\n1. $47 \\div 5 = 9$ remainder $2$\n2. $\\frac{47}{5} = 9\\frac{2}{5}$, which lies between $9$ and $10$.\n\n**Answer:** $9, 10$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       9,
+       10
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "When $\\dfrac{59}{7}$ is written as a mixed numeral, what is the whole-number part?",
+    "answer": "$8$",
+    "solution": "**Key idea:** Divide the numerator by the denominator.\n\n1. $59 \\div 7 = 8$ remainder $3$\n2. $\\frac{59}{7} = 8\\frac{3}{7}$\n\n**Answer:** $8$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Oliver measures sugar with a $\\frac{1}{4}$-cup scoop. He uses $23$ scoops. How many full cups is this, and how many quarter cups are left over? Write the number of full cups first.",
+    "answer": "$5, 3$ ($5\\frac{3}{4}$ cups)",
+    "solution": "**Key idea:** Four quarter cups make one cup.\n\n1. $23 \\div 4 = 5$ remainder $3$\n2. So $\\frac{23}{4} = 5\\frac{3}{4}$: $5$ full cups and $3$ quarter cups.\n\n**Answer:** $5, 3$ ($5\\frac{3}{4}$ cups)",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       5,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A bakery cuts every pie into $6$ equal slices. On Saturday it sells $41$ slices.\n\n(a) The slices sold make how many whole pies?\n\n(b) How many more slices would need to be sold to make exactly $8$ whole pies?",
+    "answer": "(a) $6$ (b) $7$",
+    "solution": "**Key idea:** $41$ sixths is $\\frac{41}{6}$ of a pie.\n\n1. $41 \\div 6 = 6$ remainder $5$, so $\\frac{41}{6} = 6\\frac{5}{6}$: $6$ whole pies.\n2. $8$ pies $= 8 \\times 6 = 48$ slices\n3. $48 - 41 = 7$ more slices\n\n**Answer:** (a) $6$ (b) $7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 7,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "3D": [
+   {
+    "kind": "short",
+    "question": "Which is the largest of $\\dfrac{5}{7}$, $\\dfrac{2}{3}$ and $\\dfrac{7}{10}$?",
+    "answer": "$\\frac{5}{7}$",
+    "solution": "**Key idea:** Write the fractions with a common denominator.\n\n1. A common denominator is $210$.\n2. $\\frac{5}{7} = \\frac{150}{210}$, $\\frac{2}{3} = \\frac{140}{210}$, $\\frac{7}{10} = \\frac{147}{210}$\n3. The largest is $\\frac{5}{7}$.\n\n**Answer:** $\\frac{5}{7}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.7142857142857143
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write in ascending order: $\\dfrac{3}{5}, \\dfrac{5}{8}, \\dfrac{7}{12}, \\dfrac{11}{20}$",
+    "answer": "$\\frac{11}{20}, \\frac{7}{12}, \\frac{3}{5}, \\frac{5}{8}$",
+    "solution": "**Key idea:** Use a common denominator of $120$.\n\n1. $\\frac{3}{5} = \\frac{72}{120}$, $\\frac{5}{8} = \\frac{75}{120}$, $\\frac{7}{12} = \\frac{70}{120}$, $\\frac{11}{20} = \\frac{66}{120}$\n2. Order the numerators: $66, 70, 72, 75$\n\n**Answer:** $\\frac{11}{20}, \\frac{7}{12}, \\frac{3}{5}, \\frac{5}{8}$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       0.55,
+       0.5833333333333334,
+       0.6,
+       0.625
+      ]
+     }
+    ]
+   }
+  ],
+  "3E": [
+   {
+    "kind": "short",
+    "question": "Calculate $\\dfrac{3}{8} + \\dfrac{5}{12}$.",
+    "answer": "$\\frac{19}{24}$",
+    "solution": "**Key idea:** Use the lowest common denominator, $24$.\n\n1. $\\frac{3}{8} = \\frac{9}{24}$ and $\\frac{5}{12} = \\frac{10}{24}$\n2. $\\frac{9}{24} + \\frac{10}{24} = \\frac{19}{24}$\n\n**Answer:** $\\frac{19}{24}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.7916666666666666
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Jai walks $1\\frac{2}{3}$ km to the park, then $\\frac{3}{4}$ km to the shops, then $2\\frac{1}{2}$ km home. How far does he walk altogether? Give your answer as a mixed numeral.",
+    "answer": "$4\\frac{11}{12}$ km",
+    "solution": "**Key idea:** Write each distance as a fraction with denominator $12$.\n\n1. $1\\frac{2}{3} = \\frac{20}{12}$, $\\frac{3}{4} = \\frac{9}{12}$, $2\\frac{1}{2} = \\frac{30}{12}$\n2. $\\frac{20 + 9 + 30}{12} = \\frac{59}{12}$\n3. $\\frac{59}{12} = 4\\frac{11}{12}$ km\n\n**Answer:** $4\\frac{11}{12}$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.916666666666667,
+      "unit": "km"
+     }
+    ]
+   }
+  ],
+  "3F": [
+   {
+    "kind": "short",
+    "question": "Calculate $5\\dfrac{1}{6} - 2\\dfrac{3}{4}$. Give your answer as a mixed numeral.",
+    "answer": "$2\\frac{5}{12}$",
+    "solution": "**Key idea:** Change to improper fractions with a common denominator.\n\n1. $5\\frac{1}{6} = \\frac{62}{12}$ and $2\\frac{3}{4} = \\frac{33}{12}$\n2. $\\frac{62}{12} - \\frac{33}{12} = \\frac{29}{12} = 2\\frac{5}{12}$\n\n**Answer:** $2\\frac{5}{12}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2.4166666666666665
+     }
+    ]
+   }
+  ],
+  "3I": [
+   {
+    "kind": "short",
+    "question": "Write $\\dfrac{7}{25}$ as a percentage.",
+    "answer": "$28\\%$",
+    "solution": "**Key idea:** Make the denominator $100$.\n\n1. $\\frac{7}{25} = \\frac{28}{100}$\n2. $\\frac{28}{100} = 28\\%$\n\n**Answer:** $28\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 28
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Ari scored $\\dfrac{17}{20}$ on a spelling test. What is this as a percentage?",
+    "answer": "$85\\%$",
+    "solution": "**Key idea:** Make the denominator $100$.\n\n1. $\\frac{17}{20} = \\frac{85}{100}$\n2. $= 85\\%$\n\n**Answer:** $85\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 85
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $1\\dfrac{1}{4}$ as a percentage.",
+    "answer": "$125\\%$",
+    "solution": "**Key idea:** One whole is $100\\%$.\n\n1. $1 = 100\\%$ and $\\frac{1}{4} = 25\\%$\n2. $100\\% + 25\\% = 125\\%$\n\n**Answer:** $125\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 125
+     }
+    ]
+   }
+  ],
+  "4A": [
+   {
+    "kind": "short",
+    "question": "For the expression $5m - 2n + 9$:\n\n(a) what is the coefficient of $m$?\n\n(b) what is the coefficient of $n$?\n\n(c) what is the constant term?",
+    "answer": "(a) $5$ (b) $-2$ (c) $9$",
+    "solution": "**Key idea:** A coefficient is the number multiplying a pronumeral, including its sign.\n\n1. The term $5m$ has coefficient $5$.\n2. The term $-2n$ has coefficient $-2$.\n3. The term with no pronumeral is $9$.\n\n**Answer:** (a) $5$ (b) $-2$ (c) $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -2,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 9,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "4B": [
+   {
+    "kind": "short",
+    "question": "If $p = 7$ and $q = 2$, evaluate $p^{2} - 3pq$.",
+    "answer": "$7$",
+    "solution": "**Key idea:** Replace each pronumeral with its value, then use the order of operations.\n\n1. $p^2 = 49$\n2. $3pq = 3 \\times 7 \\times 2 = 42$\n3. $49 - 42 = 7$\n\n**Answer:** $7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   }
+  ],
+  "4C": [
+   {
+    "kind": "short",
+    "question": "Find the missing number: $5(x + 3) = 5x + \\square$",
+    "answer": "$15$",
+    "solution": "**Key idea:** The distributive law multiplies each term inside the brackets.\n\n1. $5 \\times x = 5x$\n2. $5 \\times 3 = 15$\n\n**Answer:** $15$",
+    "key": [
+     {
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $k$ so that $4(2x + k)$ is equivalent to $8x + 12$.",
+    "answer": "$k = 3$",
+    "solution": "**Key idea:** Expanding gives $8x + 4k$.\n\n1. $4(2x + k) = 8x + 4k$\n2. $4k = 12$, so $k = 3$\n\n**Answer:** $k = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The expressions $3(a + 4)$ and $3a + 12$ are equivalent. Substitute $a = 5$ to find the value that both expressions give.",
+    "answer": "$27$",
+    "solution": "**Key idea:** Equivalent expressions give the same value for every value of the pronumeral.\n\n1. $3(5 + 4) = 3 \\times 9 = 27$\n2. $3 \\times 5 + 12 = 15 + 12 = 27$\n\n**Answer:** $27$",
+    "key": [
+     {
+      "type": "num",
+      "value": 27
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the missing number: $6(y - 2) = 6y - \\square$",
+    "answer": "$12$",
+    "solution": "**Key idea:** Multiply each term in the brackets by $6$.\n\n1. $6 \\times y = 6y$\n2. $6 \\times 2 = 12$\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Zara thinks $3(x + 1)$ and $3x + 1$ are equivalent. When $x = 4$, what is the difference between the values of the two expressions?",
+    "answer": "$2$",
+    "solution": "**Key idea:** Substituting a value is a quick way to test whether two expressions are equivalent.\n\n1. $3(4 + 1) = 15$\n2. $3 \\times 4 + 1 = 13$\n3. $15 - 13 = 2$, so they are not equivalent.\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   }
+  ],
+  "4D": [
+   {
+    "kind": "short",
+    "question": "Simplify $7m - 3n + 2m + 8n$.",
+    "answer": "$9m + 5n$",
+    "solution": "**Key idea:** Only like terms can be added or subtracted.\n\n1. $7m + 2m = 9m$\n2. $-3n + 8n = 5n$\n\n**Answer:** $9m + 5n$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "9m+5n",
+      "vars": [
+       "m",
+       "n"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "4E": [
+   {
+    "kind": "short",
+    "question": "Simplify $35x^{2}y \\div 7xy$.",
+    "answer": "$5x$",
+    "solution": "**Key idea:** Divide the numbers, then cancel common pronumerals.\n\n1. $35 \\div 7 = 5$\n2. $\\frac{x^2 y}{xy} = x$\n3. So the answer is $5x$.\n\n**Answer:** $5x$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "5x",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "4G": [
+   {
+    "kind": "extended",
+    "question": "A plumber charges a call-out fee of \\$60 plus \\$85 for each hour of work.\n\n(a) Write an expression for the cost, in dollars, of a job that takes $h$ hours.\n\n(b) Find the cost of a job that takes $3$ hours.",
+    "answer": "(a) $60 + 85h$ (b) \\$315",
+    "solution": "**Key idea:** The fixed fee is added once; the hourly rate is multiplied by the number of hours.\n\n1. Cost $= 60 + 85h$\n2. When $h = 3$: $60 + 85 \\times 3 = 60 + 255 = 315$\n\n**Answer:** (a) $60 + 85h$ (b) \\$315",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "60+85h",
+      "vars": [
+       "h"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 315,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "5A": [
+   {
+    "kind": "short",
+    "question": "What is the value of the digit $4$ in $18.0346$?",
+    "answer": "$0.004$",
+    "solution": "**Key idea:** The places after the decimal point are tenths, hundredths, thousandths, ten-thousandths.\n\n1. The digits after the point are $0$ tenths, $3$ hundredths, $4$ thousandths.\n2. So the $4$ is worth $\\frac{4}{1000} = 0.004$.\n\n**Answer:** $0.004$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.004
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $7 + \\dfrac{3}{100} + \\dfrac{9}{1000}$ as a decimal.",
+    "answer": "$7.039$",
+    "solution": "**Key idea:** There are no tenths, so the tenths digit is $0$.\n\n1. $7$ ones, $0$ tenths, $3$ hundredths, $9$ thousandths\n2. $7.039$\n\n**Answer:** $7.039$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7.039
+     }
+    ]
+   }
+  ],
+  "5C": [
+   {
+    "kind": "short",
+    "question": "Calculate $15.4 - 7.86$.",
+    "answer": "$7.54$",
+    "solution": "**Key idea:** Line up the decimal points and fill empty places with zeros.\n\n1. $15.40 - 7.86$\n2. $= 7.54$\n\n**Answer:** $7.54$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7.54
+     }
+    ]
+   }
+  ],
+  "5D": [
+   {
+    "kind": "short",
+    "question": "Find $3.08 \\div 100$.",
+    "answer": "$0.0308$",
+    "solution": "**Key idea:** Dividing by $100$ moves each digit two places to the right.\n\n1. $3.08 \\div 100 = 0.0308$\n\n**Answer:** $0.0308$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.0308
+     }
+    ]
+   }
+  ],
+  "5F": [
+   {
+    "kind": "short",
+    "question": "Calculate $8.4 \\div 0.7$.",
+    "answer": "$12$",
+    "solution": "**Key idea:** Multiply both numbers by $10$ so you divide by a whole number.\n\n1. $8.4 \\div 0.7 = 84 \\div 7$\n2. $= 12$\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Calculate $6.75 \\div 0.25$.",
+    "answer": "$27$",
+    "solution": "**Key idea:** Multiply both numbers by $100$.\n\n1. $6.75 \\div 0.25 = 675 \\div 25$\n2. $= 27$\n\n**Answer:** $27$",
+    "key": [
+     {
+      "type": "num",
+      "value": 27
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A $3.6$ kg bag of rice is shared into smaller bags of $0.45$ kg each. How many smaller bags are filled?",
+    "answer": "$8$",
+    "solution": "**Key idea:** Divide the total by the size of each bag.\n\n1. $3.6 \\div 0.45 = 360 \\div 45$\n2. $= 8$\n\n**Answer:** $8$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Petrol costs \\$1.85 per litre. Emma spends \\$55.50 filling up her car. How many litres of petrol does she buy?",
+    "answer": "$30$ litres",
+    "solution": "**Key idea:** Litres = total cost divided by the price per litre.\n\n1. $55.50 \\div 1.85 = 5550 \\div 185$\n2. $= 30$ litres\n\n**Answer:** $30$ litres",
+    "key": [
+     {
+      "type": "num",
+      "value": 30,
+      "unit": "L"
+     }
+    ]
+   }
+  ],
+  "5G": [
+   {
+    "kind": "short",
+    "question": "Write $\\dfrac{7}{8}$ as a decimal.",
+    "answer": "$0.875$",
+    "solution": "**Key idea:** Divide the numerator by the denominator.\n\n1. $7 \\div 8 = 0.875$\n\n**Answer:** $0.875$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.875
+     }
+    ]
+   }
+  ],
+  "5H": [
+   {
+    "kind": "short",
+    "question": "Write $0.085$ as a percentage.",
+    "answer": "$8.5\\%$",
+    "solution": "**Key idea:** Multiply by $100$ to change a decimal to a percentage.\n\n1. $0.085 \\times 100 = 8.5$\n2. $8.5\\%$\n\n**Answer:** $8.5\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $2.3$ as a percentage.",
+    "answer": "$230\\%$",
+    "solution": "**Key idea:** Multiply by $100$.\n\n1. $2.3 \\times 100 = 230$\n2. $230\\%$\n\n**Answer:** $230\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 230
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $4.5\\%$ as a decimal.",
+    "answer": "$0.045$",
+    "solution": "**Key idea:** Divide by $100$ to change a percentage to a decimal.\n\n1. $4.5 \\div 100 = 0.045$\n\n**Answer:** $0.045$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.045
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1881 @@
+{
+ "Year 10": {
+  "6A": [
+   {
+    "kind": "short",
+    "question": "In triangle $PQR$, $\\angle Q = 90^\\circ$. The side opposite angle $\\theta$ at $P$ is $QR = 5$ cm, the side adjacent to $\\theta$ is $PQ = 12$ cm and the hypotenuse is $PR = 13$ cm.\n\nWrite, as fractions:\n\n(a) $\\cos \\theta$\n\n(b) $\\tan \\theta$",
+    "answer": "(a) $\\frac{12}{13}$ (b) $\\frac{5}{12}$",
+    "solution": "**Key idea:** $\\cos \\theta = \\frac{\\text{adjacent}}{\\text{hypotenuse}}$ and $\\tan \\theta = \\frac{\\text{opposite}}{\\text{adjacent}}$.\n\n1. $\\cos \\theta = \\frac{12}{13}$\n2. $\\tan \\theta = \\frac{5}{12}$\n\n**Answer:** (a) $\\frac{12}{13}$ (b) $\\frac{5}{12}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.9230769230769231
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.4166666666666667
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a right-angled triangle, the hypotenuse is 15 cm long and one angle is $28^\\circ$. Find the length of the side opposite the $28^\\circ$ angle, correct to 2 decimal places.",
+    "answer": "$7.04$ cm",
+    "solution": "**Key idea:** Use $\\sin \\theta = \\frac{\\text{opposite}}{\\text{hypotenuse}}$.\n\n1. $\\sin 28^\\circ = \\frac{x}{15}$\n2. $x = 15 \\sin 28^\\circ \\approx 7.042$\n\n**Answer:** $7.04$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 7.04,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "6B": [
+   {
+    "kind": "short",
+    "question": "In a right-angled triangle, the side adjacent to angle $\\theta$ is 9 cm and the hypotenuse is 14 cm. Find $\\theta$, correct to 1 decimal place.",
+    "answer": "$50.0^\\circ$",
+    "solution": "**Key idea:** Use the inverse cosine, since the adjacent side and the hypotenuse are known.\n\n1. $\\cos \\theta = \\frac{9}{14}$\n2. $\\theta = \\cos^{-1} \\frac{9}{14} \\approx 49.995^\\circ$\n\n**Answer:** $50.0^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 50.0,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A 6.5 m ladder leans against a vertical wall on level ground. The top of the ladder touches the wall 6 m above the ground.\n\n(a) Find the angle the ladder makes with the ground, correct to 1 decimal place.\n\n(b) How far is the foot of the ladder from the wall?",
+    "answer": "(a) $67.4^\\circ$ (b) $2.5$ m",
+    "solution": "**Key idea:** The ladder is the hypotenuse; the height up the wall is opposite the angle with the ground.\n\n1. $\\sin \\theta = \\frac{6}{6.5}$\n2. $\\theta = \\sin^{-1} \\frac{6}{6.5} \\approx 67.38^\\circ$\n3. By Pythagoras, distance $= \\sqrt{6.5^{2} - 6^{2}} = \\sqrt{6.25} = 2.5$ m\n\n**Answer:** (a) $67.4^\\circ$ (b) $2.5$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 67.4,
+      "dp": 1,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 2.5,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "6D": [
+   {
+    "kind": "short",
+    "question": "A ship sails 12 km from port on a true bearing of $040^\\circ$.\n\n(a) How far north of the port is the ship? Give your answer correct to 2 decimal places.\n\n(b) How far east of the port is the ship? Give your answer correct to 2 decimal places.",
+    "answer": "(a) $9.19$ km (b) $7.71$ km",
+    "solution": "**Key idea:** The bearing is measured clockwise from north, so the $40^\\circ$ angle is between the path and due north.\n\n1. North: $12 \\cos 40^\\circ \\approx 9.193$ km\n2. East: $12 \\sin 40^\\circ \\approx 7.713$ km\n\n**Answer:** (a) $9.19$ km (b) $7.71$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9.19,
+      "dp": 2,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 7.71,
+      "dp": 2,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A light plane flies 250 km due south from Mildura, then 180 km due west. How far is the plane from Mildura? Give your answer correct to the nearest kilometre.",
+    "answer": "$308$ km",
+    "solution": "**Key idea:** South and west are at right angles, so use Pythagoras.\n\n1. $d^{2} = 250^{2} + 180^{2} = 94\\,900$\n2. $d = \\sqrt{94\\,900} \\approx 308.06$ km\n\n**Answer:** $308$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 308,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A yacht $Y$ is 15 km due east of a marina $M$. A lighthouse $L$ is 8 km due north of the marina.\n\n(a) How far is the yacht from the lighthouse?\n\n(b) Find the size of angle $MYL$ (the angle at the yacht), correct to 1 decimal place.",
+    "answer": "(a) $17$ km (b) $28.1^\\circ$",
+    "solution": "**Key idea:** Triangle $MYL$ has a right angle at $M$ because east and north are perpendicular.\n\n1. $YL = \\sqrt{15^{2} + 8^{2}} = \\sqrt{289} = 17$ km\n2. At $Y$, the opposite side is $ML = 8$ and the adjacent side is $MY = 15$\n3. $\\angle MYL = \\tan^{-1} \\frac{8}{15} \\approx 28.07^\\circ$\n\n**Answer:** (a) $17$ km (b) $28.1^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 17,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 28.1,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "From a lighthouse, a fishing boat is 6 km away on a true bearing of $120^\\circ$.\n\n(a) How far south of the lighthouse is the boat?\n\n(b) How far east of the lighthouse is the boat? Give your answer correct to 2 decimal places.",
+    "answer": "(a) $3$ km (b) $5.20$ km",
+    "solution": "**Key idea:** A bearing of $120^\\circ$ makes an angle of $180^\\circ - 120^\\circ = 60^\\circ$ with due south.\n\n1. South: $6 \\cos 60^\\circ = 3$ km\n2. East: $6 \\sin 60^\\circ \\approx 5.196$ km\n\n**Answer:** (a) $3$ km (b) $5.20$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5.2,
+      "dp": 2,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A survey drone flies 400 m due east from its launch point, then 300 m due south.\n\n(a) How far is the drone from its launch point?\n\n(b) Find the angle between due east and the direct line from the launch point to the drone, correct to 1 decimal place.\n\n(c) Hence find the true bearing of the drone from the launch point, correct to 1 decimal place.",
+    "answer": "(a) $500$ m (b) $36.9^\\circ$ (c) $126.9^\\circ$",
+    "solution": "**Key idea:** Draw a right-angled triangle with legs 400 m (east) and 300 m (south).\n\n1. Distance $= \\sqrt{400^{2} + 300^{2}} = 500$ m\n2. Angle below due east $= \\tan^{-1} \\frac{300}{400} \\approx 36.87^\\circ$\n3. Bearing $= 90^\\circ + 36.87^\\circ \\approx 126.87^\\circ$\n\n**Answer:** (a) $500$ m (b) $36.9^\\circ$ (c) $126.9^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 500,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 36.9,
+      "dp": 1,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 126.9,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7A": [
+   {
+    "kind": "short",
+    "question": "For the parabola $y = x^{2} - 6x + 8$, find the value of $y$ when:\n\n(a) $x = 5$\n\n(b) $x = -1$",
+    "answer": "(a) $3$ (b) $15$",
+    "solution": "**Key idea:** Substitute the $x$ value into the rule.\n\n1. $x = 5$: $25 - 30 + 8 = 3$\n2. $x = -1$: $1 + 6 + 8 = 15$\n\n**Answer:** (a) $3$ (b) $15$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = x^{2} - 4$.\n\n(a) Write the coordinates of the turning point, in the form $(x, y)$.\n\n(b) Find the $x$-coordinates of the two points where the graph crosses the $x$-axis.",
+    "answer": "(a) $(0, -4)$ (b) $x = 2$ or $x = -2$",
+    "solution": "**Key idea:** The graph of $y = x^{2}$ has been moved down 4 units.\n\n1. The turning point of $y = x^{2}$ is $(0, 0)$; moving down 4 gives $(0, -4)$\n2. Set $y = 0$: $x^{2} = 4$, so $x = 2$ or $x = -2$\n\n**Answer:** (a) $(0, -4)$ (b) $x = 2$ or $x = -2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       0,
+       -4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       2,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A parabola crosses the $x$-axis at $x = -3$ and $x = 5$. Find the equation of its axis of symmetry.",
+    "answer": "$x = 1$",
+    "solution": "**Key idea:** The axis of symmetry is halfway between the $x$-intercepts.\n\n1. $x = \\frac{-3 + 5}{2} = 1$\n\n**Answer:** $x = 1$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(6, 9)$ lies on a parabola whose axis of symmetry is the line $x = 2$. Another point on the parabola also has a $y$-coordinate of 9. Find its $x$-coordinate.",
+    "answer": "$-2$",
+    "solution": "**Key idea:** Points with the same $y$-value are reflections of each other in the axis of symmetry.\n\n1. $x = 6$ is $4$ units to the right of $x = 2$\n2. The matching point is $4$ units to the left: $x = 2 - 4 = -2$\n\n**Answer:** $-2$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = -x^{2} + 2x + 8$, which has its turning point at $x = 1$.\n\n(a) Find the maximum value of $y$.\n\n(b) Find the two values of $x$ for which $y = 0$.",
+    "answer": "(a) $9$ (b) $x = -2$ or $x = 4$",
+    "solution": "**Key idea:** The maximum value of $y$ occurs at the turning point.\n\n1. At $x = 1$: $y = -1 + 2 + 8 = 9$\n2. $-x^{2} + 2x + 8 = 0$ becomes $x^{2} - 2x - 8 = 0$, so $(x - 4)(x + 2) = 0$\n3. $x = 4$ or $x = -2$\n\n**Answer:** (a) $9$ (b) $x = -2$ or $x = 4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       -2,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For $y = x^{2} + 2x - 3$, find the values of $y$ when $x = -3$, $x = -1$ and $x = 1$. Write them in that order.",
+    "answer": "$0, -4, 0$",
+    "solution": "**Key idea:** Substitute each $x$ value into the rule.\n\n1. $x = -3$: $9 - 6 - 3 = 0$\n2. $x = -1$: $1 - 2 - 3 = -4$\n3. $x = 1$: $1 + 2 - 3 = 0$\n\n**Answer:** $0, -4, 0$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       0,
+       -4,
+       0
+      ]
+     }
+    ]
+   }
+  ],
+  "7B": [
+   {
+    "kind": "short",
+    "question": "Write the coordinates of the turning point of $y = (x - 4)^{2} + 1$, in the form $(x, y)$.",
+    "answer": "$(4, 1)$",
+    "solution": "**Key idea:** $y = (x - h)^{2} + k$ has turning point $(h, k)$.\n\n1. Here $h = 4$ and $k = 1$\n\n**Answer:** $(4, 1)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = -(x + 3)^{2} + 5$.\n\n(a) Write the coordinates of the turning point, in the form $(x, y)$.\n\n(b) What is the maximum value of $y$?",
+    "answer": "(a) $(-3, 5)$ (b) $5$",
+    "solution": "**Key idea:** $y = a(x - h)^{2} + k$ has turning point $(h, k)$; a negative $a$ gives a maximum.\n\n1. $(x + 3)^{2} = (x - (-3))^{2}$, so $h = -3$ and $k = 5$\n2. The parabola is concave down, so the maximum value is $k = 5$\n\n**Answer:** (a) $(-3, 5)$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -3,
+       5
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = x^{2}$ is translated 2 units to the left and 3 units down. Write the equation of the new parabola.",
+    "answer": "$y = (x + 2)^{2} - 3$",
+    "solution": "**Key idea:** Moving left $h$ units replaces $x$ with $x + h$; moving down $k$ units subtracts $k$.\n\n1. Left 2: $y = (x + 2)^{2}$\n2. Down 3: $y = (x + 2)^{2} - 3$\n\n**Answer:** $y = (x + 2)^{2} - 3$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(x+2)^2-3",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = 2(x - 1)^{2} - 8$.\n\n(a) Find the $y$-coordinate of the point where the graph crosses the $y$-axis.\n\n(b) Find the $x$-coordinates of the points where the graph crosses the $x$-axis.",
+    "answer": "(a) $-6$ (b) $x = 3$ or $x = -1$",
+    "solution": "**Key idea:** Substitute $x = 0$ for the $y$-intercept and $y = 0$ for the $x$-intercepts.\n\n1. $x = 0$: $y = 2(1) - 8 = -6$\n2. $y = 0$: $2(x - 1)^{2} = 8$, so $(x - 1)^{2} = 4$\n3. $x - 1 = \\pm 2$, so $x = 3$ or $x = -1$\n\n**Answer:** (a) $-6$ (b) $x = 3$ or $x = -1$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -6
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       3,
+       -1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = (x + 1)^{2} - 9$.\n\n(a) Find the $x$-coordinates of the points where the graph crosses the $x$-axis.\n\n(b) Find the $y$-coordinate of the point where the graph crosses the $y$-axis.",
+    "answer": "(a) $x = 2$ or $x = -4$ (b) $-8$",
+    "solution": "**Key idea:** Set $y = 0$ for the $x$-intercepts and $x = 0$ for the $y$-intercept.\n\n1. $(x + 1)^{2} = 9$, so $x + 1 = \\pm 3$\n2. $x = 2$ or $x = -4$\n3. $x = 0$: $y = 1 - 9 = -8$\n\n**Answer:** (a) $x = 2$ or $x = -4$ (b) $-8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       2,
+       -4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -8
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A parabola has the equation $y = a(x - 3)^{2} - 2$. It passes through the point $(5, 6)$.\n\n(a) Find the value of $a$.\n\n(b) Find the $y$-coordinate of the point where the parabola crosses the $y$-axis.",
+    "answer": "(a) $2$ (b) $16$",
+    "solution": "**Key idea:** Substitute the known point into the equation to find $a$.\n\n1. $6 = a(5 - 3)^{2} - 2$, so $4a = 8$ and $a = 2$\n2. $x = 0$: $y = 2(0 - 3)^{2} - 2 = 18 - 2 = 16$\n\n**Answer:** (a) $2$ (b) $16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 16
+     }
+    ]
+   }
+  ],
+  "7C": [
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = x^{2} - x - 12$.\n\n(a) Find the $x$-coordinates of the $x$-intercepts.\n\n(b) Find the equation of the axis of symmetry.\n\n(c) Find the coordinates of the turning point, in the form $(x, y)$.",
+    "answer": "(a) $x = 4$ or $x = -3$ (b) $x = \\frac{1}{2}$ (c) $\\left(\\frac{1}{2}, -12\\frac{1}{4}\\right)$",
+    "solution": "**Key idea:** Factorise to find the $x$-intercepts; the turning point is halfway between them.\n\n1. $x^{2} - x - 12 = (x - 4)(x + 3) = 0$, so $x = 4$ or $x = -3$\n2. Axis: $x = \\frac{4 + (-3)}{2} = \\frac{1}{2}$\n3. $y = \\frac{1}{4} - \\frac{1}{2} - 12 = -12\\frac{1}{4}$\n\n**Answer:** (a) $x = 4$ or $x = -3$ (b) $x = \\frac{1}{2}$ (c) $\\left(\\frac{1}{2}, -12\\frac{1}{4}\\right)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       4,
+       -3
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5
+     },
+     {
+      "label": "c",
+      "type": "list",
+      "values": [
+       0.5,
+       -12.25
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = x^{2} + 6x + 8$.\n\n(a) Find the $x$-coordinates of the $x$-intercepts.\n\n(b) Find the coordinates of the turning point, in the form $(x, y)$.",
+    "answer": "(a) $x = -2$ or $x = -4$ (b) $(-3, -1)$",
+    "solution": "**Key idea:** Factorise, then use symmetry to locate the turning point.\n\n1. $(x + 2)(x + 4) = 0$, so $x = -2$ or $x = -4$\n2. Axis of symmetry: $x = \\frac{-2 + (-4)}{2} = -3$\n3. $y = 9 - 18 + 8 = -1$\n\n**Answer:** (a) $x = -2$ or $x = -4$ (b) $(-3, -1)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       -2,
+       -4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       -3,
+       -1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = -x^{2} + 2x + 15$.\n\n(a) Find the $x$-coordinates of the $x$-intercepts.\n\n(b) Find the maximum value of $y$.",
+    "answer": "(a) $x = 5$ or $x = -3$ (b) $16$",
+    "solution": "**Key idea:** Take out $-1$ and factorise; the maximum is at the turning point, halfway between the intercepts.\n\n1. $y = -(x^{2} - 2x - 15) = -(x - 5)(x + 3)$\n2. $x = 5$ or $x = -3$\n3. Axis: $x = 1$, so $y = -1 + 2 + 15 = 16$\n\n**Answer:** (a) $x = 5$ or $x = -3$ (b) $16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       5,
+       -3
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 16
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = 2x^{2} - 8x$.\n\n(a) Find the $x$-coordinates of the $x$-intercepts.\n\n(b) Find the coordinates of the turning point, in the form $(x, y)$.",
+    "answer": "(a) $x = 0$ or $x = 4$ (b) $(2, -8)$",
+    "solution": "**Key idea:** Take out the common factor $2x$.\n\n1. $2x(x - 4) = 0$, so $x = 0$ or $x = 4$\n2. Axis: $x = 2$\n3. $y = 2(4) - 16 = -8$\n\n**Answer:** (a) $x = 0$ or $x = 4$ (b) $(2, -8)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       0,
+       4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       2,
+       -8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = x^{2} - 9$.\n\n(a) Find the $x$-coordinates of the $x$-intercepts.\n\n(b) Find the $y$-coordinate of the $y$-intercept.",
+    "answer": "(a) $x = 3$ or $x = -3$ (b) $-9$",
+    "solution": "**Key idea:** Use the difference of two squares.\n\n1. $(x - 3)(x + 3) = 0$, so $x = 3$ or $x = -3$\n2. $x = 0$: $y = -9$\n\n**Answer:** (a) $x = 3$ or $x = -3$ (b) $-9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       3,
+       -3
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -9
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A parabola crosses the $x$-axis at $x = 2$ and $x = 6$, and crosses the $y$-axis at $y = 24$. Its equation can be written as $y = a(x - 2)(x - 6)$.\n\n(a) Find the value of $a$.\n\n(b) Find the coordinates of the turning point, in the form $(x, y)$.\n\n(c) Expand the equation, writing $y$ in the form $ax^{2} + bx + c$.",
+    "answer": "(a) $2$ (b) $(4, -8)$ (c) $y = 2x^{2} - 16x + 24$",
+    "solution": "**Key idea:** Substitute the $y$-intercept to find $a$; the turning point lies halfway between the $x$-intercepts.\n\n1. At $x = 0$: $a(-2)(-6) = 12a = 24$, so $a = 2$\n2. Axis: $x = \\frac{2 + 6}{2} = 4$; $y = 2(2)(-2) = -8$\n3. $2(x^{2} - 8x + 12) = 2x^{2} - 16x + 24$\n\n**Answer:** (a) $2$ (b) $(4, -8)$ (c) $y = 2x^{2} - 16x + 24$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       4,
+       -8
+      ]
+     },
+     {
+      "label": "c",
+      "type": "expr",
+      "expr": "2x^2-16x+24",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   }
+  ],
+  "7D": [
+   {
+    "kind": "short",
+    "question": "By completing the square, $x^{2} + 8x + 3$ can be written as $(x + a)^{2} + b$. Find the values of $a$ and $b$, in that order.",
+    "answer": "$a = 4$, $b = -13$",
+    "solution": "**Key idea:** Halve the coefficient of $x$, then subtract its square.\n\n1. $x^{2} + 8x + 3 = (x^{2} + 8x + 16) - 16 + 3$\n2. $= (x + 4)^{2} - 13$\n\n**Answer:** $a = 4$, $b = -13$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       4,
+       -13
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "By completing the square, find the coordinates of the turning point of $y = x^{2} - 6x + 1$, in the form $(x, y)$.",
+    "answer": "$(3, -8)$",
+    "solution": "**Key idea:** Write the rule in turning point form $y = (x - h)^{2} + k$.\n\n1. $y = (x^{2} - 6x + 9) - 9 + 1$\n2. $y = (x - 3)^{2} - 8$, so the turning point is $(3, -8)$\n\n**Answer:** $(3, -8)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       -8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider $y = x^{2} + 10x + 21$.\n\n(a) By completing the square, find the coordinates of the turning point, in the form $(x, y)$.\n\n(b) What is the minimum value of $y$?",
+    "answer": "(a) $(-5, -4)$ (b) $-4$",
+    "solution": "**Key idea:** Complete the square to get turning point form.\n\n1. $y = (x^{2} + 10x + 25) - 25 + 21 = (x + 5)^{2} - 4$\n2. Turning point $(-5, -4)$\n3. The parabola is concave up, so the minimum value is $-4$\n\n**Answer:** (a) $(-5, -4)$ (b) $-4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -5,
+       -4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "By completing the square, find the coordinates of the turning point of $y = x^{2} - 3x + 1$, in the form $(x, y)$. Give the coordinates as decimals or fractions.",
+    "answer": "$(1.5, -1.25)$",
+    "solution": "**Key idea:** Half of $-3$ is $-\\frac{3}{2}$, and its square is $\\frac{9}{4}$.\n\n1. $y = \\left(x - \\frac{3}{2}\\right)^{2} - \\frac{9}{4} + 1$\n2. $y = \\left(x - \\frac{3}{2}\\right)^{2} - \\frac{5}{4}$, so the turning point is $\\left(\\frac{3}{2}, -\\frac{5}{4}\\right)$\n\n**Answer:** $(1.5, -1.25)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       1.5,
+       -1.25
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "By completing the square, find the $x$-intercepts of $y = x^{2} - 4x - 1$. Give the $x$-coordinates correct to 2 decimal places.",
+    "answer": "$x \\approx 4.24$ or $x \\approx -0.24$",
+    "solution": "**Key idea:** Write the rule as $(x - 2)^{2} - 5$, then set $y = 0$.\n\n1. $y = (x - 2)^{2} - 4 - 1 = (x - 2)^{2} - 5$\n2. $(x - 2)^{2} = 5$, so $x = 2 \\pm \\sqrt{5}$\n3. $x \\approx 4.2361$ or $x \\approx -0.2361$\n\n**Answer:** $x \\approx 4.24$ or $x \\approx -0.24$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       4.24,
+       -0.24
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Consider the parabola $y = -x^{2} + 4x + 5$.\n\n(a) By completing the square, the rule can be written as $y = -(x - a)^{2} + b$. Find $a$ and $b$, in that order.\n\n(b) What is the maximum value of $y$?\n\n(c) Find the $x$-coordinates of the $x$-intercepts.",
+    "answer": "(a) $a = 2$, $b = 9$ (b) $9$ (c) $x = 5$ or $x = -1$",
+    "solution": "**Key idea:** Take out $-1$ from the $x$ terms before completing the square.\n\n1. $y = -(x^{2} - 4x) + 5 = -[(x - 2)^{2} - 4] + 5 = -(x - 2)^{2} + 9$\n2. The turning point is $(2, 9)$, a maximum, so the maximum value is 9\n3. $(x - 2)^{2} = 9$, so $x - 2 = \\pm 3$, giving $x = 5$ or $x = -1$\n\n**Answer:** (a) $a = 2$, $b = 9$ (b) $9$ (c) $x = 5$ or $x = -1$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       2,
+       9
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "c",
+      "type": "set",
+      "values": [
+       5,
+       -1
+      ]
+     }
+    ]
+   }
+  ],
+  "7E": [
+   {
+    "kind": "short",
+    "question": "Find the value of the discriminant, $\\Delta = b^{2} - 4ac$, for the equation $2x^{2} - 5x + 1 = 0$.",
+    "answer": "$17$",
+    "solution": "**Key idea:** Identify $a$, $b$ and $c$, then substitute.\n\n1. $a = 2$, $b = -5$, $c = 1$\n2. $\\Delta = 25 - 8 = 17$\n\n**Answer:** $17$",
+    "key": [
+     {
+      "type": "num",
+      "value": 17
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use the quadratic formula to solve $x^{2} + 4x - 1 = 0$. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx 0.24$ or $x \\approx -4.24$",
+    "solution": "**Key idea:** $x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}$\n\n1. $\\Delta = 16 + 4 = 20$\n2. $x = \\frac{-4 \\pm \\sqrt{20}}{2} = -2 \\pm \\sqrt{5}$\n3. $x \\approx 0.2361$ or $x \\approx -4.2361$\n\n**Answer:** $x \\approx 0.24$ or $x \\approx -4.24$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0.24,
+       -4.24
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the parabola $y = x^{2} - 6x + 10$.\n\n(a) Find the value of the discriminant.\n\n(b) How many $x$-intercepts does the graph have?",
+    "answer": "(a) $-4$ (b) $0$",
+    "solution": "**Key idea:** If $\\Delta < 0$ there are no $x$-intercepts.\n\n1. $\\Delta = 36 - 40 = -4$\n2. $\\Delta < 0$, so the graph has 0 $x$-intercepts\n\n**Answer:** (a) $-4$ (b) $0$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $k$ for which $x^{2} - 8x + k = 0$ has exactly one solution.",
+    "answer": "$k = 16$",
+    "solution": "**Key idea:** Exactly one solution means $\\Delta = 0$.\n\n1. $\\Delta = 64 - 4k = 0$\n2. $k = 16$\n\n**Answer:** $k = 16$",
+    "key": [
+     {
+      "type": "num",
+      "value": 16
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use the quadratic formula to solve $3x^{2} - x - 5 = 0$. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx 1.47$ or $x \\approx -1.14$",
+    "solution": "**Key idea:** $x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}$ with $a = 3$, $b = -1$, $c = -5$.\n\n1. $\\Delta = 1 + 60 = 61$\n2. $x = \\frac{1 \\pm \\sqrt{61}}{6}$\n3. $x \\approx 1.4684$ or $x \\approx -1.1350$\n\n**Answer:** $x \\approx 1.47$ or $x \\approx -1.14$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1.47,
+       -1.14
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Consider the parabola $y = 2x^{2} + 3x - 4$.\n\n(a) Find the value of the discriminant.\n\n(b) Find the $x$-coordinates of the $x$-intercepts, correct to 2 decimal places.\n\n(c) Find the $y$-coordinate of the $y$-intercept.",
+    "answer": "(a) $41$ (b) $x \\approx 0.85$ or $x \\approx -2.35$ (c) $-4$",
+    "solution": "**Key idea:** Use the discriminant inside the quadratic formula.\n\n1. $\\Delta = 9 + 32 = 41$\n2. $x = \\frac{-3 \\pm \\sqrt{41}}{4}$\n3. $x \\approx 0.8508$ or $x \\approx -2.3508$\n4. $x = 0$ gives $y = -4$\n\n**Answer:** (a) $41$ (b) $x \\approx 0.85$ or $x \\approx -2.35$ (c) $-4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 41
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       0.85,
+       -2.35
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": -4
+     }
+    ]
+   }
+  ],
+  "7F": [
+   {
+    "kind": "extended",
+    "question": "A netball is thrown upwards from ground level. Its height, $h$ metres, after $t$ seconds is $h = -5t^{2} + 30t$.\n\n(a) After how many seconds does the ball land?\n\n(b) After how many seconds does the ball reach its greatest height?\n\n(c) What is the greatest height?",
+    "answer": "(a) $6$ seconds (b) $3$ seconds (c) $45$ m",
+    "solution": "**Key idea:** The ball is on the ground when $h = 0$; the greatest height is at the turning point, halfway between.\n\n1. $-5t(t - 6) = 0$, so $t = 0$ or $t = 6$; it lands after 6 seconds\n2. Turning point at $t = \\frac{0 + 6}{2} = 3$\n3. $h = -45 + 90 = 45$ m\n\n**Answer:** (a) $6$ seconds (b) $3$ seconds (c) $45$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6,
+      "unit": "seconds"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3,
+      "unit": "seconds"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 45,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Mia has 40 m of fencing to make a rectangular vegetable garden. If the width is $x$ m, the area is $A = x(20 - x)$ m$^{2}$.\n\n(a) Find the width that gives the largest area.\n\n(b) Find the largest area.",
+    "answer": "(a) $10$ m (b) $100$ m$^{2}$",
+    "solution": "**Key idea:** The area is a concave down parabola with $x$-intercepts $0$ and $20$.\n\n1. The turning point is at $x = \\frac{0 + 20}{2} = 10$\n2. $A = 10 \\times 10 = 100$ m$^{2}$\n\n**Answer:** (a) $10$ m (b) $100$ m$^{2}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 10,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 100,
+      "unit": "m²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A food truck's daily profit is $P = -x^{2} + 60x - 500$ dollars when it sells meals at $x$ dollars each.\n\n(a) Find the two meal prices at which the profit is zero.\n\n(b) Find the maximum daily profit.",
+    "answer": "(a) \\$10 and \\$50 (b) \\$400",
+    "solution": "**Key idea:** The profit is zero at the $x$-intercepts; the maximum is at the turning point, halfway between them.\n\n1. $x^{2} - 60x + 500 = 0$ gives $(x - 10)(x - 50) = 0$, so $x = 10$ or $x = 50$\n2. Turning point at $x = 30$\n3. $P = -900 + 1800 - 500 = 400$\n\n**Answer:** (a) \\$10 and \\$50 (b) \\$400",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       10,
+       50
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 400,
+      "unit": "dollars"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The entrance to a tunnel is a parabolic arch. With the origin at the left edge of the road, the arch is $y = -0.1(x - 10)^{2} + 10$, where $x$ and $y$ are in metres.\n\n(a) How wide is the arch at road level?\n\n(b) How high is the arch 4 m from the left edge?",
+    "answer": "(a) $20$ m (b) $6.4$ m",
+    "solution": "**Key idea:** The arch meets the road where $y = 0$.\n\n1. $0.1(x - 10)^{2} = 10$ gives $(x - 10)^{2} = 100$, so $x = 0$ or $x = 20$; width $20$ m\n2. $y = -0.1(4 - 10)^{2} + 10 = -3.6 + 10 = 6.4$ m\n\n**Answer:** (a) $20$ m (b) $6.4$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6.4,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two numbers add to 14. If one number is $x$, their product is $P = x(14 - x)$. Find the largest possible value of the product.",
+    "answer": "$49$",
+    "solution": "**Key idea:** The product is a concave down parabola; its maximum is at the turning point.\n\n1. $P = x(14 - x)$ has $x$-intercepts $0$ and $14$\n2. Turning point at $x = 7$\n3. $P = 7 \\times 7 = 49$\n\n**Answer:** $49$",
+    "key": [
+     {
+      "type": "num",
+      "value": 49
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A stone is thrown from the top of a cliff. Its height above the sea, $h$ metres, after $t$ seconds is $h = -5t^{2} + 10t + 40$.\n\n(a) How high is the top of the cliff?\n\n(b) Find the greatest height of the stone above the sea.\n\n(c) After how many seconds does the stone hit the sea?",
+    "answer": "(a) $40$ m (b) $45$ m (c) $4$ seconds",
+    "solution": "**Key idea:** The height at $t = 0$ is the cliff height; complete the square for the maximum; solve $h = 0$ for when it lands.\n\n1. $t = 0$: $h = 40$ m\n2. $h = -5(t^{2} - 2t) + 40 = -5(t - 1)^{2} + 45$, so the greatest height is 45 m\n3. $-5t^{2} + 10t + 40 = 0$ gives $t^{2} - 2t - 8 = 0$, so $(t - 4)(t + 2) = 0$\n4. $t = 4$ (time cannot be negative)\n\n**Answer:** (a) $40$ m (b) $45$ m (c) $4$ seconds",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 40,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 45,
+      "unit": "m"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 4,
+      "unit": "seconds"
+     }
+    ]
+   }
+  ],
+  "8A": [
+   {
+    "kind": "short",
+    "question": "A bag contains 4 red, 6 yellow and 2 blue counters. One counter is chosen at random. Find:\n\n(a) $\\Pr(\\text{yellow})$\n\n(b) $\\Pr(\\text{not blue})$",
+    "answer": "(a) $\\frac{1}{2}$ (b) $\\frac{5}{6}$",
+    "solution": "**Key idea:** Probability $= \\frac{\\text{number of favourable outcomes}}{\\text{total number of outcomes}}$.\n\n1. There are $12$ counters\n2. $\\Pr(\\text{yellow}) = \\frac{6}{12} = \\frac{1}{2}$\n3. $\\Pr(\\text{not blue}) = \\frac{10}{12} = \\frac{5}{6}$\n\n**Answer:** (a) $\\frac{1}{2}$ (b) $\\frac{5}{6}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.8333333333333334
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Each letter of the word AUSTRALIA is written on a card, and one card is chosen at random. Find the probability that the letter is:\n\n(a) an A\n\n(b) a vowel (A, E, I, O or U).",
+    "answer": "(a) $\\frac{1}{3}$ (b) $\\frac{5}{9}$",
+    "solution": "**Key idea:** There are 9 cards, one for each letter.\n\n1. There are 3 A's, so $\\Pr(\\text{A}) = \\frac{3}{9} = \\frac{1}{3}$\n2. The vowels are A, U, A, I, A: 5 cards, so $\\Pr(\\text{vowel}) = \\frac{5}{9}$\n\n**Answer:** (a) $\\frac{1}{3}$ (b) $\\frac{5}{9}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.3333333333333333
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5555555555555556
+     }
+    ]
+   }
+  ],
+  "8B": [
+   {
+    "kind": "short",
+    "question": "A Venn diagram for events $A$ and $B$ shows: 7 outcomes in $A$ only, 4 in both $A$ and $B$, 9 in $B$ only and 5 in neither.\n\n(a) Find $n(A)$.\n\n(b) Find $n(A \\cup B)$.\n\n(c) Find $\\Pr(B')$.",
+    "answer": "(a) $11$ (b) $20$ (c) $\\frac{12}{25}$",
+    "solution": "**Key idea:** Add the regions that make up each set; the total is $7 + 4 + 9 + 5 = 25$.\n\n1. $n(A) = 7 + 4 = 11$\n2. $n(A \\cup B) = 7 + 4 + 9 = 20$\n3. $B'$ is $A$ only and neither: $7 + 5 = 12$, so $\\Pr(B') = \\frac{12}{25}$\n\n**Answer:** (a) $11$ (b) $20$ (c) $\\frac{12}{25}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 11
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 20
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.48
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Let $\\xi = \\{1, 2, 3, \\ldots, 20\\}$, $A = \\{\\text{multiples of } 4\\}$ and $B = \\{\\text{factors of } 20\\}$.\n\n(a) Find $n(A \\cap B)$.\n\n(b) Find $n(A \\cup B)$.\n\n(c) A number is chosen at random from $\\xi$. Find $\\Pr(A' \\cap B')$.",
+    "answer": "(a) $2$ (b) $9$ (c) $\\frac{11}{20}$",
+    "solution": "**Key idea:** List the elements of each set first.\n\n1. $A = \\{4, 8, 12, 16, 20\\}$ and $B = \\{1, 2, 4, 5, 10, 20\\}$\n2. $A \\cap B = \\{4, 20\\}$, so $n(A \\cap B) = 2$\n3. $n(A \\cup B) = 5 + 6 - 2 = 9$\n4. $A' \\cap B'$ has $20 - 9 = 11$ elements, so the probability is $\\frac{11}{20}$\n\n**Answer:** (a) $2$ (b) $9$ (c) $\\frac{11}{20}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.55
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In a class of 60 students, 35 like football, 28 like basketball and 10 like both.\n\n(a) How many students like neither sport?\n\n(b) How many students like football only?\n\n(c) A student is chosen at random. Find the probability that they like football only.",
+    "answer": "(a) $7$ (b) $25$ (c) $\\frac{5}{12}$",
+    "solution": "**Key idea:** Fill in a Venn diagram or two-way table, starting with the overlap.\n\n1. Football only $= 35 - 10 = 25$; basketball only $= 28 - 10 = 18$\n2. Neither $= 60 - (25 + 10 + 18) = 7$\n3. $\\Pr(\\text{football only}) = \\frac{25}{60} = \\frac{5}{12}$\n\n**Answer:** (a) $7$ (b) $25$ (c) $\\frac{5}{12}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7,
+      "unit": "students"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 25,
+      "unit": "students"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.4166666666666667
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For events $A$ and $B$ in a sample space $\\xi$: $n(\\xi) = 50$, $n(A) = 22$, $n(B) = 30$ and $n(A \\cap B) = 12$.\n\n(a) Find $n(A \\cup B)$.\n\n(b) Find $n(A' \\cap B')$.\n\n(c) Find $\\Pr(A \\cap B')$.",
+    "answer": "(a) $40$ (b) $10$ (c) $\\frac{1}{5}$",
+    "solution": "**Key idea:** $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$.\n\n1. $n(A \\cup B) = 22 + 30 - 12 = 40$\n2. $n(A' \\cap B') = 50 - 40 = 10$\n3. $A \\cap B'$ is $A$ only: $22 - 12 = 10$, so $\\Pr = \\frac{10}{50} = \\frac{1}{5}$\n\n**Answer:** (a) $40$ (b) $10$ (c) $\\frac{1}{5}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 40
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 10
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.2
+     }
+    ]
+   }
+  ],
+  "8C": [
+   {
+    "kind": "short",
+    "question": "For two events, $\\Pr(A) = 0.55$, $\\Pr(B) = 0.35$ and $\\Pr(A \\cap B) = 0.2$.\n\n(a) Find $\\Pr(A \\cup B)$.\n\n(b) Find $\\Pr(A' \\cap B')$, the probability that neither event occurs.",
+    "answer": "(a) $0.7$ (b) $0.3$",
+    "solution": "**Key idea:** Use the addition rule $\\Pr(A \\cup B) = \\Pr(A) + \\Pr(B) - \\Pr(A \\cap B)$.\n\n1. $\\Pr(A \\cup B) = 0.55 + 0.35 - 0.2 = 0.7$\n2. $\\Pr(A' \\cap B') = 1 - 0.7 = 0.3$\n\n**Answer:** (a) $0.7$ (b) $0.3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A card is drawn at random from a standard deck of 52 playing cards (13 hearts, and one king in each of the four suits). Use the addition rule to find the probability that the card is a heart or a king.",
+    "answer": "$\\frac{4}{13}$",
+    "solution": "**Key idea:** Subtract the king of hearts so it is not counted twice.\n\n1. $\\Pr(\\text{heart}) = \\frac{13}{52}$, $\\Pr(\\text{king}) = \\frac{4}{52}$, $\\Pr(\\text{king of hearts}) = \\frac{1}{52}$\n2. $\\Pr = \\frac{13 + 4 - 1}{52} = \\frac{16}{52} = \\frac{4}{13}$\n\n**Answer:** $\\frac{4}{13}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.3076923076923077
+     }
+    ]
+   }
+  ],
+  "8E": [
+   {
+    "kind": "short",
+    "question": "Two fair six-sided dice are rolled and the numbers are added. Find the probability that the sum is:\n\n(a) 10\n\n(b) less than 5.",
+    "answer": "(a) $\\frac{1}{12}$ (b) $\\frac{1}{6}$",
+    "solution": "**Key idea:** Use a $6 \\times 6$ array of the 36 equally likely outcomes.\n\n1. Sum 10: $(4, 6)$, $(5, 5)$, $(6, 4)$, so $\\frac{3}{36} = \\frac{1}{12}$\n2. Sum 2, 3 or 4: $1 + 2 + 3 = 6$ outcomes, so $\\frac{6}{36} = \\frac{1}{6}$\n\n**Answer:** (a) $\\frac{1}{12}$ (b) $\\frac{1}{6}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.08333333333333333
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.16666666666666666
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A spinner numbered 1 to 4 is spun and a fair six-sided die is rolled. The two numbers are multiplied.\n\n(a) How many outcomes are in the sample space?\n\n(b) Find the probability that the product is even.",
+    "answer": "(a) $24$ (b) $\\frac{3}{4}$",
+    "solution": "**Key idea:** The product is odd only when both numbers are odd.\n\n1. There are $4 \\times 6 = 24$ outcomes\n2. Both odd: $2 \\times 3 = 6$ outcomes\n3. $\\Pr(\\text{even}) = 1 - \\frac{6}{24} = \\frac{3}{4}$\n\n**Answer:** (a) $24$ (b) $\\frac{3}{4}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 24
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.75
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two fair six-sided dice are rolled.\n\n(a) Find the probability that the difference between the two numbers is 2.\n\n(b) Find the probability that at least one die shows a 5.",
+    "answer": "(a) $\\frac{2}{9}$ (b) $\\frac{11}{36}$",
+    "solution": "**Key idea:** List the outcomes in a $6 \\times 6$ array.\n\n1. Difference 2: $(1, 3)$, $(2, 4)$, $(3, 5)$, $(4, 6)$ and the reverse of each, 8 outcomes\n2. $\\frac{8}{36} = \\frac{2}{9}$\n3. At least one 5: 6 in the row for the first die, 6 in the column for the second, minus $(5, 5)$ counted twice: $11$ outcomes, so $\\frac{11}{36}$\n\n**Answer:** (a) $\\frac{2}{9}$ (b) $\\frac{11}{36}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.2222222222222222
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.3055555555555556
+     }
+    ]
+   }
+  ],
+  "8G": [
+   {
+    "kind": "short",
+    "question": "Events $A$ and $B$ are independent, with $\\Pr(A) = 0.6$ and $\\Pr(B) = 0.25$.\n\n(a) Find $\\Pr(A \\cap B)$.\n\n(b) Find $\\Pr(A \\cup B)$.",
+    "answer": "(a) $0.15$ (b) $0.7$",
+    "solution": "**Key idea:** For independent events, $\\Pr(A \\cap B) = \\Pr(A) \\times \\Pr(B)$.\n\n1. $\\Pr(A \\cap B) = 0.6 \\times 0.25 = 0.15$\n2. $\\Pr(A \\cup B) = 0.6 + 0.25 - 0.15 = 0.7$\n\n**Answer:** (a) $0.15$ (b) $0.7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.15
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Events $A$ and $B$ are independent. $\\Pr(A) = 0.4$ and $\\Pr(A \\cap B) = 0.1$. Find $\\Pr(B)$.",
+    "answer": "$0.25$",
+    "solution": "**Key idea:** For independent events, $\\Pr(A \\cap B) = \\Pr(A) \\times \\Pr(B)$.\n\n1. $0.4 \\times \\Pr(B) = 0.1$\n2. $\\Pr(B) = 0.25$\n\n**Answer:** $0.25$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.25
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A fair coin is tossed and a fair six-sided die is rolled. The two results are independent. Find the probability of getting a head and a 6.",
+    "answer": "$\\frac{1}{12}$",
+    "solution": "**Key idea:** Multiply the probabilities of independent events.\n\n1. $\\Pr(\\text{head and } 6) = \\frac{1}{2} \\times \\frac{1}{6} = \\frac{1}{12}$\n\n**Answer:** $\\frac{1}{12}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.08333333333333333
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "On any school day, the probability that Jess's bus is late is 0.2, independently of other days. Consider three school days.\n\n(a) Find the probability that the bus is never late.\n\n(b) Find the probability that the bus is late on at least one day.\n\n(c) Find the probability that the bus is late on exactly one day.",
+    "answer": "(a) $0.512$ (b) $0.488$ (c) $0.384$",
+    "solution": "**Key idea:** Multiply along the branches for independent days; use the complement for 'at least one'.\n\n1. $\\Pr(\\text{never late}) = 0.8^{3} = 0.512$\n2. $\\Pr(\\text{at least one}) = 1 - 0.512 = 0.488$\n3. Exactly one: 3 possible days, each $0.2 \\times 0.8^{2} = 0.128$, so $3 \\times 0.128 = 0.384$\n\n**Answer:** (a) $0.512$ (b) $0.488$ (c) $0.384$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.512
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.488
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.384
+     }
+    ]
+   }
+  ],
+  "9A": [
+   {
+    "kind": "short",
+    "question": "A school has 1000 students: 400 in the junior school and 600 in the senior school. A stratified sample of 50 students is chosen in proportion to the size of each group.\n\n(a) How many junior students are in the sample?\n\n(b) How many senior students are in the sample?",
+    "answer": "(a) $20$ (b) $30$",
+    "solution": "**Key idea:** In a stratified sample, each group is sampled in proportion to its size.\n\n1. Junior: $\\frac{400}{1000} \\times 50 = 20$\n2. Senior: $\\frac{600}{1000} \\times 50 = 30$\n\n**Answer:** (a) $20$ (b) $30$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20,
+      "unit": "students"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 30,
+      "unit": "students"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A researcher wants a systematic sample of 60 names from a list of 1200 club members, choosing every $k$th name. Find $k$.",
+    "answer": "$20$",
+    "solution": "**Key idea:** Divide the population size by the sample size.\n\n1. $k = \\frac{1200}{60} = 20$\n\n**Answer:** $20$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A council posted 800 surveys to households and 250 were returned. Of the returned surveys, 40% supported a new skate park.\n\n(a) What percentage of the surveys were returned?\n\n(b) How many of the returned surveys supported the skate park?",
+    "answer": "(a) $31.25\\%$ (b) $100$",
+    "solution": "**Key idea:** Response rate $= \\frac{\\text{number returned}}{\\text{number sent}} \\times 100\\%$.\n\n1. $\\frac{250}{800} \\times 100\\% = 31.25\\%$\n2. $40\\%$ of $250 = 100$\n\n**Answer:** (a) $31.25\\%$ (b) $100$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 31.25
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rough margin of error for a poll with a random sample of size $n$ is $\\frac{1}{\\sqrt{n}}$, written as a percentage.\n\n(a) Find the margin of error for a poll of 2500 people, as a percentage.\n\n(b) How many people would need to be sampled for a margin of error of 4%?",
+    "answer": "(a) $2\\%$ (b) $625$",
+    "solution": "**Key idea:** Margin of error $= \\frac{1}{\\sqrt{n}}$.\n\n1. $\\frac{1}{\\sqrt{2500}} = \\frac{1}{50} = 0.02 = 2\\%$\n2. $\\frac{1}{\\sqrt{n}} = 0.04$ gives $\\sqrt{n} = 25$, so $n = 625$\n\n**Answer:** (a) $2\\%$ (b) $625$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 625,
+      "unit": "people"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A tennis club has 84 junior members, 126 adult members and 30 senior members. A stratified sample of 40 members is chosen in proportion to the size of each group. Find the number of juniors, adults and seniors in the sample, in that order.",
+    "answer": "$14, 21, 5$",
+    "solution": "**Key idea:** Each group's share of the sample matches its share of the club.\n\n1. The club has $84 + 126 + 30 = 240$ members\n2. Juniors: $\\frac{84}{240} \\times 40 = 14$\n3. Adults: $\\frac{126}{240} \\times 40 = 21$\n4. Seniors: $\\frac{30}{240} \\times 40 = 5$\n\n**Answer:** $14, 21, 5$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       14,
+       21,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A shire council wants residents' views on a new library. There are 3200 households in Northside and 4800 households in Southside. It surveys a stratified random sample of 200 households.\n\n(a) How many Northside households should be in the sample?\n\n(b) How many Southside households should be in the sample?\n\n(c) In the Northside sample, 65% support the library. How many Northside households in the sample is this?",
+    "answer": "(a) $80$ (b) $120$ (c) $52$",
+    "solution": "**Key idea:** Sample each suburb in proportion to its number of households.\n\n1. Total households: $3200 + 4800 = 8000$\n2. Northside: $\\frac{3200}{8000} \\times 200 = 80$\n3. Southside: $\\frac{4800}{8000} \\times 200 = 120$\n4. $65\\%$ of $80 = 52$\n\n**Answer:** (a) $80$ (b) $120$ (c) $52$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 80
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 120
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 52
+     }
+    ]
+   }
+  ],
+  "9B": [
+   {
+    "kind": "short",
+    "question": "A stem-and-leaf plot shows the ages of 12 people at a yoga class (stem = tens, leaf = units).\n\n| Stem | Leaf |\n|---|---|\n| 1 | 2 5 8 |\n| 2 | 1 3 3 7 |\n| 3 | 0 4 8 |\n| 4 | 1 5 |\n\n(a) Find the median age.\n\n(b) Find the range.",
+    "answer": "(a) $25$ (b) $33$",
+    "solution": "**Key idea:** With 12 values, the median is the mean of the 6th and 7th values.\n\n1. Ordered: 12, 15, 18, 21, 23, 23, 27, 30, 34, 38, 41, 45\n2. Median $= \\frac{23 + 27}{2} = 25$\n3. Range $= 45 - 12 = 33$\n\n**Answer:** (a) $25$ (b) $33$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 25
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 33
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The number of minutes 20 students spent travelling to school is summarised below.\n\n| Time (minutes) | Frequency |\n|---|---|\n| $0 - {<}10$ | 3 |\n| $10 - {<}20$ | 8 |\n| $20 - {<}30$ | 6 |\n| $30 - {<}40$ | 3 |\n\n(a) What percentage of students took 30 minutes or more?\n\n(b) Estimate the mean travel time using the class midpoints.",
+    "answer": "(a) $15\\%$ (b) $19.5$ minutes",
+    "solution": "**Key idea:** Use the midpoint of each class (5, 15, 25, 35) as the typical value.\n\n1. $\\frac{3}{20} \\times 100\\% = 15\\%$\n2. $\\frac{5 \\times 3 + 15 \\times 8 + 25 \\times 6 + 35 \\times 3}{20} = \\frac{390}{20} = 19.5$\n\n**Answer:** (a) $15\\%$ (b) $19.5$ minutes",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 19.5,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A dot plot shows the number of people living in each of 20 houses in a street:\n\n| People in house | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Number of houses | 2 | 4 | 8 | 4 | 2 |\n\n(a) Find the mode.\n\n(b) Find the mean number of people per house.",
+    "answer": "(a) $3$ (b) $3$",
+    "solution": "**Key idea:** The mode has the highest frequency; the mean is the total number of people divided by the number of houses.\n\n1. The mode is 3 (8 houses)\n2. Total people: $2 + 8 + 24 + 16 + 10 = 60$\n3. Mean $= \\frac{60}{20} = 3$\n\n**Answer:** (a) $3$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a survey of 72 students about their favourite sport, the results are shown in a pie chart.\n\n(a) 18 students chose swimming. What is the angle of the swimming sector, in degrees?\n\n(b) The netball sector has an angle of $120^\\circ$. How many students chose netball?",
+    "answer": "(a) $90^\\circ$ (b) $24$",
+    "solution": "**Key idea:** Each student is represented by $\\frac{360^\\circ}{72} = 5^\\circ$.\n\n1. Swimming: $18 \\times 5^\\circ = 90^\\circ$\n2. Netball: $\\frac{120}{5} = 24$ students\n\n**Answer:** (a) $90^\\circ$ (b) $24$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 90,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 24,
+      "unit": "students"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A histogram shows the heights of 40 plants, in classes of width 5 cm. The column heights are 4, 10, 14, 8 and 4 for the classes $10 - {<}15$, $15 - {<}20$, $20 - {<}25$, $25 - {<}30$ and $30 - {<}35$.\n\n(a) How many plants are 25 cm or taller?\n\n(b) What percentage of the plants are shorter than 20 cm?",
+    "answer": "(a) $12$ (b) $35\\%$",
+    "solution": "**Key idea:** Add the frequencies of the classes needed.\n\n1. 25 cm or taller: $8 + 4 = 12$\n2. Shorter than 20 cm: $4 + 10 = 14$, and $\\frac{14}{40} \\times 100\\% = 35\\%$\n\n**Answer:** (a) $12$ (b) $35\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12,
+      "unit": "plants"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A column graph shows a gym's members in two years: 52 thousand in 2024 and 56 thousand in 2025. The vertical axis starts at 50 thousand.\n\n(a) Find the actual percentage increase in members, correct to 1 decimal place.\n\n(b) How many times taller does the 2025 column look than the 2024 column?",
+    "answer": "(a) $7.7\\%$ (b) $3$",
+    "solution": "**Key idea:** On this graph, the column heights show only the part above 50 thousand.\n\n1. Increase $= \\frac{56 - 52}{52} \\times 100\\% \\approx 7.69\\%$\n2. Visible heights: $56 - 50 = 6$ and $52 - 50 = 2$\n3. $\\frac{6}{2} = 3$, so the 2025 column looks 3 times as tall\n\n**Answer:** (a) $7.7\\%$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7.7,
+      "dp": 1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   }
+  ],
+  "9E": [
+   {
+    "kind": "short",
+    "question": "The numbers of goals scored by a hockey team in 9 matches were:\n\n4, 7, 9, 11, 12, 15, 18, 20, 26\n\n(a) Write the five-number summary (minimum, $Q_1$, median, $Q_3$, maximum), in that order.\n\n(b) Find the interquartile range.",
+    "answer": "(a) $4, 8, 12, 19, 26$ (b) $11$",
+    "solution": "**Key idea:** With 9 values, the median is the 5th value; $Q_1$ and $Q_3$ are the medians of the 4 values below and above it.\n\n1. Median $= 12$\n2. $Q_1 = \\frac{7 + 9}{2} = 8$ and $Q_3 = \\frac{18 + 20}{2} = 19$\n3. IQR $= 19 - 8 = 11$\n\n**Answer:** (a) $4, 8, 12, 19, 26$ (b) $11$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       4,
+       8,
+       12,
+       19,
+       26
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 11
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A box plot shows the times (in minutes) that 40 students took to run a cross-country course: minimum 5, $Q_1 = 12$, median 18, $Q_3 = 25$, maximum 40.\n\n(a) Approximately how many students took more than 25 minutes?\n\n(b) Find the upper fence, $Q_3 + 1.5 \\times \\text{IQR}$.",
+    "answer": "(a) $10$ (b) $44.5$",
+    "solution": "**Key idea:** Each quarter of a box plot holds about 25% of the data.\n\n1. About $25\\%$ of $40 = 10$ students\n2. IQR $= 25 - 12 = 13$\n3. Upper fence $= 25 + 1.5 \\times 13 = 44.5$\n\n**Answer:** (a) $10$ (b) $44.5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 10,
+      "unit": "students"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 44.5
+     }
+    ]
+   }
+  ],
+  "9H": [
+   {
+    "kind": "short",
+    "question": "A café's coffee sales (cups per week) over five weeks were:\n\n| Week | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Cups | 400 | 420 | 450 | 470 | 500 |\n\n(a) By how many cups did weekly sales increase from Week 1 to Week 5?\n\n(b) What percentage increase is this?",
+    "answer": "(a) $100$ (b) $25\\%$",
+    "solution": "**Key idea:** Percentage increase $= \\frac{\\text{increase}}{\\text{original}} \\times 100\\%$.\n\n1. $500 - 400 = 100$ cups\n2. $\\frac{100}{400} \\times 100\\% = 25\\%$\n\n**Answer:** (a) $100$ (b) $25\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 100
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 25
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The number of bike hires at a beach kiosk over six weekends was 30, 36, 33, 39, 42, 45. Find the four 3-point moving averages, in order.",
+    "answer": "$33, 36, 38, 42$",
+    "solution": "**Key idea:** Each moving average is the mean of three consecutive values.\n\n1. $\\frac{30 + 36 + 33}{3} = 33$\n2. $\\frac{36 + 33 + 39}{3} = 36$\n3. $\\frac{33 + 39 + 42}{3} = 38$\n4. $\\frac{39 + 42 + 45}{3} = 42$\n\n**Answer:** $33, 36, 38, 42$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       33,
+       36,
+       38,
+       42
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A trend line for the number of members of a surf club is $M = 1.5t + 20$, where $M$ is in hundreds and $t$ is the number of years after 2015. Use the trend line to predict the number of members, in hundreds, in 2025.",
+    "answer": "$35$",
+    "solution": "**Key idea:** 2025 is $t = 10$.\n\n1. $t = 2025 - 2015 = 10$\n2. $M = 1.5 \\times 10 + 20 = 35$ (hundred)\n\n**Answer:** $35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A farm's annual wheat yield (tonnes) for six years was 48, 52, 61, 58, 66, 75.\n\n(a) Find the mean yield.\n\n(b) Find the range of the yields.",
+    "answer": "(a) $60$ tonnes (b) $27$ tonnes",
+    "solution": "**Key idea:** Mean $= \\frac{\\text{sum}}{\\text{number of values}}$.\n\n1. Sum $= 360$, so the mean is $\\frac{360}{6} = 60$\n2. Range $= 75 - 48 = 27$\n\n**Answer:** (a) $60$ tonnes (b) $27$ tonnes",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 60,
+      "unit": "tonnes"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 27,
+      "unit": "tonnes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The average house price in a town, $P$ thousand dollars, was \\$420 thousand in 2018 ($t = 0$) and \\$580 thousand in 2026 ($t = 8$). A straight trend line passes through these two points.\n\n(a) Find the gradient of the trend line.\n\n(b) Use the trend line to predict the average price, in thousands of dollars, in 2030.",
+    "answer": "(a) $20$ (b) $660$",
+    "solution": "**Key idea:** Gradient $= \\frac{\\text{rise}}{\\text{run}}$; 2030 is $t = 12$.\n\n1. Gradient $= \\frac{580 - 420}{8 - 0} = 20$ (thousand dollars per year)\n2. $P = 20t + 420$\n3. $t = 12$: $P = 240 + 420 = 660$\n\n**Answer:** (a) $20$ (b) $660$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 660
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A caravan park's bookings each quarter were:\n\n| | Quarter 1 | Quarter 2 | Quarter 3 | Quarter 4 |\n|---|---|---|---|---|\n| 2024 | 150 | 120 | 90 | 180 |\n| 2025 | 165 | 132 | 99 | 198 |\n\n(a) Find the total bookings in 2024.\n\n(b) Find the total bookings in 2025.\n\n(c) Find the percentage increase in total bookings from 2024 to 2025.",
+    "answer": "(a) $540$ (b) $594$ (c) $10\\%$",
+    "solution": "**Key idea:** Add the four quarters for each year, then compare the totals.\n\n1. 2024: $150 + 120 + 90 + 180 = 540$\n2. 2025: $165 + 132 + 99 + 198 = 594$\n3. $\\frac{594 - 540}{540} \\times 100\\% = 10\\%$\n\n**Answer:** (a) $540$ (b) $594$ (c) $10\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 540
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 594
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "9I": [
+   {
+    "kind": "short",
+    "question": "Eight students recorded the hours they spent on homework ($x$) and their test score ($y$):\n\n| $x$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| $y$ | 50 | 55 | 61 | 64 | 30 | 75 | 79 | 86 |\n\nOn a scatterplot, one point is an outlier. Write its coordinates, in the form $(x, y)$.",
+    "answer": "$(5, 30)$",
+    "solution": "**Key idea:** Look for the point that does not follow the pattern of the others.\n\n1. The scores rise steadily as $x$ increases, except at $x = 5$\n2. The outlier is $(5, 30)$\n\n**Answer:** $(5, 30)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       5,
+       30
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Six data points on a scatterplot are $(2, 12)$, $(4, 18)$, $(5, 20)$, $(7, 26)$, $(8, 28)$ and $(10, 34)$. Find the mean point $(\\bar{x}, \\bar{y})$.",
+    "answer": "$(6, 23)$",
+    "solution": "**Key idea:** Find the mean of the $x$ values and the mean of the $y$ values.\n\n1. $\\bar{x} = \\frac{2 + 4 + 5 + 7 + 8 + 10}{6} = 6$\n2. $\\bar{y} = \\frac{12 + 18 + 20 + 26 + 28 + 34}{6} = 23$\n\n**Answer:** $(6, 23)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       6,
+       23
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A scatterplot shows the age ($x$ years) and the price ($y$ thousand dollars) of 7 used utes:\n\n| $x$ | 2 | 3 | 5 | 6 | 8 | 9 | 11 |\n|---|---|---|---|---|---|---|---|\n| $y$ | 42 | 38 | 31 | 29 | 22 | 20 | 14 |\n\n(a) Find the range of the ages.\n\n(b) Find the range of the prices.",
+    "answer": "(a) $9$ years (b) $28$ thousand dollars",
+    "solution": "**Key idea:** Range $= \\text{largest} - \\text{smallest}$.\n\n1. Ages: $11 - 2 = 9$\n2. Prices: $42 - 14 = 28$\n\n**Answer:** (a) $9$ years (b) $28$ thousand dollars",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "years"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 28
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "An ice-creamery recorded the maximum temperature ($^\\circ$C) and the number of cones sold on 8 days:\n\n| Temperature | 24 | 28 | 31 | 33 | 35 | 29 | 36 | 22 |\n|---|---|---|---|---|---|---|---|---|\n| Cones sold | 150 | 190 | 230 | 210 | 260 | 205 | 280 | 120 |\n\nOn how many days was the temperature above $30^\\circ$C and the number of cones sold above 200?",
+    "answer": "$4$",
+    "solution": "**Key idea:** Check each day for both conditions.\n\n1. Days above $30^\\circ$C: 31, 33, 35, 36\n2. Cones sold on those days: 230, 210, 260, 280, all above 200\n3. So 4 days\n\n**Answer:** $4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4,
+      "unit": "days"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Five points on a scatterplot lie exactly on the line $y = 5x + 40$: $(1, 45)$, $(2, 50)$, $(4, 60)$, $(6, \\, ?)$ and $(8, 80)$. Find the missing $y$-value.",
+    "answer": "$70$",
+    "solution": "**Key idea:** Substitute $x = 6$ into the rule.\n\n1. $y = 5 \\times 6 + 40 = 70$\n\n**Answer:** $70$",
+    "key": [
+     {
+      "type": "num",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Six students recorded their hours of sleep ($x$) and their score on a memory test ($y$):\n\n| $x$ | 6 | 6.5 | 7 | 7.5 | 8 | 8.5 |\n|---|---|---|---|---|---|---|\n| $y$ | 60 | 64 | 70 | 25 | 72 | 78 |\n\n(a) One point is an outlier. What is its $x$-value?\n\n(b) Ignoring the outlier, find the mean test score of the other five students.",
+    "answer": "(a) $7.5$ (b) $68.8$",
+    "solution": "**Key idea:** An outlier is far from the pattern of the other points.\n\n1. The scores rise as sleep increases, except at $x = 7.5$, where the score is 25\n2. Without it: $\\frac{60 + 64 + 70 + 72 + 78}{5} = \\frac{344}{5} = 68.8$\n\n**Answer:** (a) $7.5$ (b) $68.8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 68.8
+     }
+    ]
+   }
+  ],
+  "10I": [
+   {
+    "kind": "short",
+    "question": "Find the radius of the circle $x^{2} + y^{2} = 20$, correct to 2 decimal places.",
+    "answer": "$4.47$",
+    "solution": "**Key idea:** A circle $x^{2} + y^{2} = r^{2}$ has radius $r$.\n\n1. $r^{2} = 20$\n2. $r = \\sqrt{20} \\approx 4.4721$\n\n**Answer:** $4.47$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.47,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the circle $(x - 3)^{2} + (y + 1)^{2} = 16$.\n\n(a) Write the coordinates of its centre, in the form $(x, y)$.\n\n(b) Find its radius.",
+    "answer": "(a) $(3, -1)$ (b) $4$",
+    "solution": "**Key idea:** $(x - h)^{2} + (y - k)^{2} = r^{2}$ has centre $(h, k)$ and radius $r$.\n\n1. $y + 1 = y - (-1)$, so the centre is $(3, -1)$\n2. $r^{2} = 16$, so $r = 4$\n\n**Answer:** (a) $(3, -1)$ (b) $4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       3,
+       -1
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-coordinates of the points where the circle $x^{2} + y^{2} = 36$ crosses the $x$-axis.",
+    "answer": "$x = 6$ or $x = -6$",
+    "solution": "**Key idea:** On the $x$-axis, $y = 0$.\n\n1. $x^{2} = 36$\n2. $x = 6$ or $x = -6$\n\n**Answer:** $x = 6$ or $x = -6$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       6,
+       -6
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A circle has its centre at the origin and passes through the point $(5, 12)$.\n\n(a) Find its radius.\n\n(b) Find the two $y$-values of the points on the circle where $x = 5$.",
+    "answer": "(a) $13$ (b) $y = 12$ or $y = -12$",
+    "solution": "**Key idea:** The radius is the distance from the origin to the point.\n\n1. $r = \\sqrt{5^{2} + 12^{2}} = \\sqrt{169} = 13$\n2. The circle is $x^{2} + y^{2} = 169$; with $x = 5$, $y^{2} = 144$\n3. $y = 12$ or $y = -12$\n\n**Answer:** (a) $13$ (b) $y = 12$ or $y = -12$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 13
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       12,
+       -12
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A circle has the equation $x^{2} + y^{2} - 6x + 8y = 0$.\n\n(a) By completing the square, find the coordinates of the centre, in the form $(x, y)$.\n\n(b) Find the radius.",
+    "answer": "(a) $(3, -4)$ (b) $5$",
+    "solution": "**Key idea:** Complete the square separately for the $x$ terms and the $y$ terms.\n\n1. $(x^{2} - 6x + 9) + (y^{2} + 8y + 16) = 9 + 16$\n2. $(x - 3)^{2} + (y + 4)^{2} = 25$\n3. Centre $(3, -4)$, radius $5$\n\n**Answer:** (a) $(3, -4)$ (b) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       3,
+       -4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   }
+  ],
+  "10J": [
+   {
+    "kind": "short",
+    "question": "Consider the hyperbola $y = \\frac{12}{x}$.\n\n(a) Find $y$ when $x = 4$.\n\n(b) Find $x$ when $y = -6$.",
+    "answer": "(a) $3$ (b) $-2$",
+    "solution": "**Key idea:** Substitute, then solve.\n\n1. $y = \\frac{12}{4} = 3$\n2. $-6 = \\frac{12}{x}$, so $x = \\frac{12}{-6} = -2$\n\n**Answer:** (a) $3$ (b) $-2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The hyperbola $y = \\frac{k}{x}$ passes through the point $(3, 5)$.\n\n(a) Find $k$.\n\n(b) Find $y$ when $x = -5$.",
+    "answer": "(a) $15$ (b) $-3$",
+    "solution": "**Key idea:** Substitute the point to find $k$.\n\n1. $5 = \\frac{k}{3}$, so $k = 15$\n2. $y = \\frac{15}{-5} = -3$\n\n**Answer:** (a) $15$ (b) $-3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-coordinates of the points where the hyperbola $y = \\frac{8}{x}$ meets the line $y = 2x$.",
+    "answer": "$x = 2$ or $x = -2$",
+    "solution": "**Key idea:** Set the two rules equal.\n\n1. $\\frac{8}{x} = 2x$\n2. $2x^{2} = 8$, so $x^{2} = 4$\n3. $x = 2$ or $x = -2$\n\n**Answer:** $x = 2$ or $x = -2$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       2,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the hyperbola $y = -\\frac{10}{x}$.\n\n(a) Find $y$ when $x = 2.5$.\n\n(b) Find $x$ when $y = 5$.",
+    "answer": "(a) $-4$ (b) $-2$",
+    "solution": "**Key idea:** Substitute, then solve.\n\n1. $y = -\\frac{10}{2.5} = -4$\n2. $5 = -\\frac{10}{x}$, so $x = -\\frac{10}{5} = -2$\n\n**Answer:** (a) $-4$ (b) $-2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The hyperbola $y = \\frac{4}{x}$ and the line $y = x - 3$ meet at two points.\n\n(a) Find the $x$-coordinates of the two points.\n\n(b) Find the $y$-coordinate of the point that lies in the first quadrant.",
+    "answer": "(a) $x = 4$ or $x = -1$ (b) $1$",
+    "solution": "**Key idea:** Set the two rules equal and solve the quadratic.\n\n1. $\\frac{4}{x} = x - 3$ gives $4 = x^{2} - 3x$\n2. $x^{2} - 3x - 4 = 0$, so $(x - 4)(x + 1) = 0$\n3. $x = 4$ or $x = -1$\n4. In the first quadrant $x = 4$, so $y = \\frac{4}{4} = 1$\n\n**Answer:** (a) $x = 4$ or $x = -1$ (b) $1$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       4,
+       -1
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangular garden bed has an area of 24 m$^{2}$. Its width is $x$ m and its length is $y$ m, so $y = \\frac{24}{x}$.\n\n(a) Find the length when the width is 3 m.\n\n(b) Find the width when the length is 2.5 m.\n\n(c) Find the perimeter of the bed when the width is 4 m.",
+    "answer": "(a) $8$ m (b) $9.6$ m (c) $20$ m",
+    "solution": "**Key idea:** Use the hyperbola rule $y = \\frac{24}{x}$.\n\n1. $y = \\frac{24}{3} = 8$ m\n2. $2.5 = \\frac{24}{x}$, so $x = \\frac{24}{2.5} = 9.6$ m\n3. When $x = 4$, $y = 6$, so the perimeter is $2(4 + 6) = 20$ m\n\n**Answer:** (a) $8$ m (b) $9.6$ m (c) $20$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9.6,
+      "unit": "m"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 20,
+      "unit": "m"
+     }
+    ]
+   }
+  ]
+ }
+}

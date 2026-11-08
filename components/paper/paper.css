@@ -1,0 +1,99 @@
+/* Teacher Zone: builder (/teachers), student paper (/paper/[id]) and the
+   solutions page (/paper/[id]/solutions/[token]). Uses the exam generator's
+   tokens (exam.css) so light and dark modes follow the site. */
+
+/* ---------- builder ---------- */
+.tz-hero-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 22px 0 26px; }
+.tz-sec { scroll-margin-top: 80px; }
+.tz-steps { list-style: none; counter-reset: tz; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0; margin: 0 0 20px; }
+.tz-steps li { counter-increment: tz; position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px 14px 52px; font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+.tz-steps li strong { display: block; color: var(--foreground); font-size: 15.5px; margin-bottom: 2px; }
+.tz-steps li::before { content: counter(tz); position: absolute; left: 14px; top: 14px; width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 14px; }
+.tz-opts { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: flex-end; margin-top: 18px; }
+.tz-title { flex: 1 1 260px; display: flex; flex-direction: column; }
+.tz-title input, .tz-gate__grid input { border: 1px solid var(--border); border-radius: 12px; padding: 11px 14px; font-size: 15px; font-family: inherit; background: var(--card); color: var(--foreground); min-width: 0; }
+.tz-gate__grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; }
+@media (max-width: 700px) { .tz-gate__grid { grid-template-columns: 1fr; } }
+.tz-who { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+.tz-made { margin-top: 16px; background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 18px; padding: 20px 22px; display: grid; gap: 12px; }
+.tz-made__t { margin: 0; font-weight: 800; font-size: 18px; }
+.tz-made__x { margin: 0; font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+.tz-link__label { margin: 0 0 6px; font-weight: 700; font-size: 14px; }
+.tz-link__row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tz-link__row input { flex: 1 1 240px; min-width: 0; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); color: var(--foreground); }
+.tz-link--primary .tz-link__row input { border-color: var(--brand); }
+.tz-mine { margin-top: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 16px; }
+.tz-mine summary { font-weight: 700; cursor: pointer; }
+.tz-mine ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.tz-mine li { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; align-items: baseline; }
+.tz-mine__t { font-weight: 600; flex: 1 1 200px; }
+.tz-mine__d { color: var(--muted); font-size: 13px; }
+
+/* ---------- student paper ---------- */
+.pp-hero { padding-bottom: 8px; }
+.pp-meta { margin: 6px 0 0; color: var(--muted); font-size: 14.5px; }
+.pp-inst { margin: 14px 0 0; font-size: 15px; line-height: 1.55; max-width: 680px; }
+.pp-hero__btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+.pp-wrap { padding-bottom: 40px; }
+.pp-sec { margin-top: 18px; }
+.pp-qs { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.pp-q { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; min-width: 0; }
+.pp-q .eg-md { max-width: 100%; overflow-x: auto; }
+.pp-q.is-right { border-color: #16a34a; }
+.pp-q.is-part { border-color: #d97706; }
+.pp-q.is-wrong { border-color: #dc2626; }
+.pp-parts { display: grid; gap: 10px; margin-top: 10px; }
+.pp-part { display: grid; grid-template-columns: 70px 1fr; gap: 2px 10px; align-items: center; }
+.pp-part__label { font-weight: 700; font-size: 14.5px; }
+.pp-part__box { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.pp-part__box input { flex: 1 1 auto; min-width: 0; max-width: 340px; border: 1.5px solid var(--border); border-radius: 10px; padding: 11px 12px; font-size: 16px; font-family: inherit; background: var(--background); color: var(--foreground); }
+.pp-part__box input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+.pp-part__unit { font-weight: 600; color: var(--muted); font-size: 15px; }
+.pp-part__hint { grid-column: 2; font-size: 12.5px; color: var(--muted); }
+.pp-part.is-right input { border-color: #16a34a; }
+.pp-part.is-wrong input { border-color: #dc2626; }
+.pp-part__mark { font-weight: 900; font-size: 20px; width: 24px; text-align: center; }
+.pp-part.is-right .pp-part__mark { color: #16a34a; }
+.pp-part.is-wrong .pp-part__mark { color: #dc2626; }
+.pp-fb { margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 10px; display: grid; gap: 8px; }
+.pp-fb__ans { display: flex; gap: 6px; flex-wrap: wrap; align-items: baseline; }
+.pp-fb__ans .eg-md p { margin: 0; }
+.pp-fb__sol summary { cursor: pointer; font-weight: 700; color: var(--brand-text); }
+.pp-fb__more { margin: 0; font-size: 14px; }
+.pp-submit { margin-top: 22px; display: grid; gap: 8px; justify-items: start; }
+.pp-submit__btn { font-size: 17px; padding: 15px 28px; }
+.pp-submit__warn { margin: 0; background: #fffbeb; color: #92400e; border: 1px solid #fcd34d; border-radius: 10px; padding: 10px 12px; font-size: 14.5px; }
+.pp-submit__note { margin: 0; font-size: 13px; color: var(--muted); }
+.pp-score { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; margin-top: 8px; scroll-margin-top: 90px; }
+@media (max-width: 760px) { .pp-score { grid-template-columns: 1fr; } }
+.pp-score__card { background: var(--card); border: 2px solid var(--brand); border-radius: 18px; padding: 20px 22px; }
+.pp-score__big { margin: 0; font-size: 44px; font-weight: 900; letter-spacing: -1px; line-height: 1.05; }
+.pp-score__sub { margin: 4px 0 8px; font-weight: 700; color: var(--muted); }
+.pp-score__msg { margin: 0; font-size: 15px; line-height: 1.5; }
+.pp-cta { background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 18px; padding: 20px 22px; }
+.pp-cta--end { margin-top: 24px; }
+.pp-cta__t { margin: 0 0 6px; font-weight: 800; font-size: 18px; }
+.pp-cta__x { margin: 0 0 14px; font-size: 15px; line-height: 1.55; color: var(--foreground); }
+
+/* ---------- solutions page ---------- */
+.pp-sols { padding-bottom: 40px; }
+.pp-sol-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 14px; }
+.pp-sol { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; min-width: 0; break-inside: avoid; }
+.pp-sol .eg-md { max-width: 100%; overflow-x: auto; }
+.pp-sol__ans { display: flex; gap: 6px; flex-wrap: wrap; align-items: baseline; margin-top: 8px; }
+.pp-sol__ans .eg-md p, .pp-sol__ans p { margin: 0; }
+.pp-sol__work { margin-top: 10px; border-top: 1px dashed var(--border); padding-top: 8px; }
+.pp-sol__topic { margin: 0 0 6px; font-size: 13px; color: var(--muted); }
+.pp-sol__label { margin: 0 0 4px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.pp-teacher { margin-top: 24px; background: var(--brand-soft); border: 1px solid var(--brand); border-radius: 18px; padding: 20px 22px; }
+.pp-teacher__t { margin: 0 0 6px; font-weight: 800; font-size: 18px; }
+.pp-teacher p { line-height: 1.55; }
+
+@media print {
+  .tb-nav, .tb-footer, .pp-hero__btns, .pp-teacher, .cta-band, nav, footer { display: none !important; }
+  .pp-sol { border: 0; border-bottom: 1px solid #ddd; border-radius: 0; }
+}
+
+/* sh-wrap has no side padding of its own; give the paper pages a gutter. */
+.pp-wrap, .pp-sols, .pp-score { padding-left: 20px; padding-right: 20px; box-sizing: border-box; }
+@media (max-width: 600px) { .pp-wrap, .pp-sols, .pp-score { padding-left: 16px; padding-right: 16px; } }

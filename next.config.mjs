@@ -20,7 +20,10 @@ const nextConfig = {
     "/api/**": ["./public/fonts/*.ttf"],
     "/dashboard/**": ["./public/fonts/*.ttf"],
     // The practice exam generator reads the topic pages' checked questions.
-    "/api/exam/**": ["./content/worked-examples/*.json"],
+    // Since 8 Nov it also reads the textbook section files, the topic tests
+    // and the auto-marking keys; the Teacher Zone builds from the same bank.
+    "/api/exam/**": ["./content/worked-examples/*.json", "./content/exam-sections/*.json", "./content/topic-tests/**/*.json", "./content/automark/**/*.json"],
+    "/api/teachers/**": ["./content/worked-examples/*.json", "./content/exam-sections/*.json", "./content/topic-tests/**/*.json", "./content/automark/**/*.json"],
     // Mind map PDFs and images, served only after an email unlock.
     "/api/mind-maps/file/**": ["./mind-maps-files/**"],
     // Topic tests written ahead of time (lib/topic-test.js).

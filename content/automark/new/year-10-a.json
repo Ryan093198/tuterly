@@ -1,0 +1,1589 @@
+{
+ "Year 10": {
+  "1C": [
+   {
+    "kind": "short",
+    "question": "Find the largest integer $x$ that satisfies $5x - 7 < 3x + 6$.",
+    "answer": "$6$",
+    "solution": "**Key idea:** Solve the inequality, then pick the largest whole number that fits.\n\n1. Subtract $3x$ from both sides: $2x - 7 < 6$.\n2. Add 7 to both sides: $2x < 13$.\n3. Divide both sides by 2: $x < 6.5$.\n4. The largest integer less than $6.5$ is $6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the smallest integer $n$ that satisfies $4(n - 3) \\ge 2n + 5$.",
+    "answer": "$9$",
+    "solution": "**Key idea:** Solve the inequality, then pick the smallest whole number that fits.\n\n1. Expand: $4n - 12 \\ge 2n + 5$.\n2. Subtract $2n$ and add 12: $2n \\ge 17$.\n3. Divide by 2: $n \\ge 8.5$.\n4. The smallest integer that is at least $8.5$ is $9$.\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A gym charges a joining fee of \\$40 plus \\$12 for each class. Priya has \\$250 to spend.\n\n(a) Write an inequality for the number of classes, $c$, and find the greatest number of classes Priya can pay for.\n\n(b) How much money will Priya have left after paying for that many classes?",
+    "answer": "(a) $17$ classes (b) \\$6",
+    "solution": "**Key idea:** Write total cost $\\le$ budget, solve, then round down to a whole number of classes.\n\n1. The total cost must be at most \\$250: $40 + 12c \\le 250$.\n2. Subtract 40: $12c \\le 210$, so $c \\le 17.5$.\n3. Classes are whole numbers, so the greatest number is $17$.\n4. Cost of 17 classes: $40 + 12 \\times 17 = 244$, so she has $250 - 244 = 6$ dollars left.\n\n**Answer:** (a) $17$ (b) \\$6",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 17,
+      "unit": "classes"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "$"
+     }
+    ]
+   }
+  ],
+  "1E": [
+   {
+    "kind": "short",
+    "question": "For the line $2x + 5y = 20$, find:\n\n(a) the $x$-intercept\n\n(b) the $y$-intercept.",
+    "answer": "(a) $10$ (b) $4$",
+    "solution": "**Key idea:** An intercept is found by setting the other variable to zero.\n\n1. For the $x$-intercept, put $y = 0$: $2x = 20$, so $x = 10$.\n2. For the $y$-intercept, put $x = 0$: $5y = 20$, so $y = 4$.\n\n**Answer:** (a) $10$ (b) $4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 10
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rearrange $4x - 2y = 7$ into the form $y = mx + c$, then write:\n\n(a) the gradient\n\n(b) the $y$-intercept.",
+    "answer": "(a) $2$ (b) $-3.5$",
+    "solution": "**Key idea:** Make $y$ the subject; then $m$ is the coefficient of $x$ and $c$ is the constant.\n\n1. Subtract $4x$: $-2y = -4x + 7$.\n2. Divide by $-2$: $y = 2x - 3.5$.\n3. So $m = 2$ and $c = -3.5$.\n\n**Answer:** (a) $2$ (b) $-3.5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -3.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(k, 11)$ lies on the line $y = 3x - 4$. Find $k$.",
+    "answer": "$5$",
+    "solution": "**Key idea:** A point lies on a line when its coordinates satisfy the equation.\n\n1. Substitute $y = 11$ and $x = k$: $11 = 3k - 4$.\n2. Add 4: $15 = 3k$.\n3. Divide by 3: $k = 5$.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the gradient of the line through $(-1, 4)$ and $(3, -8)$.",
+    "answer": "$-3$",
+    "solution": "**Key idea:** Gradient is the change in $y$ divided by the change in $x$.\n\n1. Gradient $= \\frac{\\text{rise}}{\\text{run}} = \\frac{-8 - 4}{3 - (-1)}$.\n2. $= \\frac{-12}{4} = -3$.\n\n**Answer:** $-3$",
+    "key": [
+     {
+      "type": "num",
+      "value": -3
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A water tank holds 600 L and drains at 25 L per minute. The volume left, $V$ litres, after $t$ minutes is $V = 600 - 25t$.\n\n(a) What is the $V$-intercept of the graph?\n\n(b) What is the gradient of the graph?\n\n(c) Find the $t$-intercept, which is the time in minutes for the tank to empty.",
+    "answer": "(a) $600$ (b) $-25$ (c) $24$ minutes",
+    "solution": "**Key idea:** In $V = 600 - 25t$ the constant is the intercept and the coefficient of $t$ is the gradient.\n\n1. When $t = 0$, $V = 600$, so the $V$-intercept is $600$.\n2. The coefficient of $t$ is $-25$, so the gradient is $-25$ (25 L lost each minute).\n3. Set $V = 0$: $600 - 25t = 0$, so $t = 24$.\n\n**Answer:** (a) $600$ (b) $-25$ (c) $24$ minutes",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 600
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -25
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 24,
+      "unit": "minutes"
+     }
+    ]
+   }
+  ],
+  "1F": [
+   {
+    "kind": "short",
+    "question": "Find the equation of the line with gradient $3$ that passes through $(2, 1)$. Write your answer in the form $y = mx + c$.",
+    "answer": "$y = 3x - 5$",
+    "solution": "**Key idea:** Substitute the known point into $y = mx + c$ to find $c$.\n\n1. Start with $y = 3x + c$.\n2. Substitute $(2, 1)$: $1 = 6 + c$, so $c = -5$.\n3. The equation is $y = 3x - 5$.\n\n**Answer:** $y = 3x - 5$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3x-5",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the equation of the line that passes through $(-1, 7)$ and $(2, -2)$. Write your answer in the form $y = mx + c$.",
+    "answer": "$y = -3x + 4$",
+    "solution": "**Key idea:** Find the gradient from the two points, then use one point to find $c$.\n\n1. Gradient: $m = \\frac{-2 - 7}{2 - (-1)} = \\frac{-9}{3} = -3$.\n2. Substitute $(-1, 7)$ into $y = -3x + c$: $7 = 3 + c$, so $c = 4$.\n3. The equation is $y = -3x + 4$.\n\n**Answer:** $y = -3x + 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-3x+4",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A line passes through $(0, -3)$ and $(4, 5)$.\n\n(a) Find the gradient of the line.\n\n(b) Write the equation of the line in the form $y = mx + c$.",
+    "answer": "(a) $2$ (b) $y = 2x - 3$",
+    "solution": "**Key idea:** The point with $x = 0$ gives the $y$-intercept directly.\n\n1. Gradient $= \\frac{5 - (-3)}{4 - 0} = \\frac{8}{4} = 2$.\n2. The line passes through $(0, -3)$, so the $y$-intercept is $-3$.\n3. The equation is $y = 2x - 3$.\n\n**Answer:** (a) $2$ (b) $y = 2x - 3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "2x-3",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A plumber charges a fixed call-out fee plus an hourly rate. A 2 hour job costs \\$190 and a 5 hour job costs \\$385.\n\n(a) Find the hourly rate.\n\n(b) Find the call-out fee.\n\n(c) Find the cost of a job that takes 3.5 hours.",
+    "answer": "(a) \\$65 (b) \\$60 (c) \\$287.50",
+    "solution": "**Key idea:** Treat cost against hours as a straight line: gradient = hourly rate, intercept = call-out fee.\n\n1. The cost is a straight line through $(2, 190)$ and $(5, 385)$.\n2. Hourly rate (gradient) $= \\frac{385 - 190}{5 - 2} = \\frac{195}{3} = 65$.\n3. Call-out fee: $190 = 65 \\times 2 + c$, so $c = 60$.\n4. Rule: $C = 65h + 60$. For $h = 3.5$: $C = 227.5 + 60 = 287.5$.\n\n**Answer:** (a) \\$65 (b) \\$60 (c) \\$287.50",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 65,
+      "unit": "$"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 60,
+      "unit": "$"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 287.5,
+      "unit": "$"
+     }
+    ]
+   }
+  ],
+  "1G": [
+   {
+    "kind": "short",
+    "question": "Find the midpoint of the line segment joining $P(-4, 7)$ and $Q(6, -3)$.",
+    "answer": "$(1, 2)$",
+    "solution": "**Key idea:** The midpoint is the average of the endpoints' coordinates.\n\n1. Average the $x$-coordinates: $\\frac{-4 + 6}{2} = 1$.\n2. Average the $y$-coordinates: $\\frac{7 + (-3)}{2} = 2$.\n\n**Answer:** $(1, 2)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the distance between $A(2, -1)$ and $B(7, 11)$.",
+    "answer": "$13$",
+    "solution": "**Key idea:** Use Pythagoras' theorem on the horizontal and vertical changes.\n\n1. Horizontal change: $7 - 2 = 5$. Vertical change: $11 - (-1) = 12$.\n2. Distance $= \\sqrt{5^{2} + 12^{2}} = \\sqrt{169} = 13$.\n\n**Answer:** $13$",
+    "key": [
+     {
+      "type": "num",
+      "value": 13,
+      "unit": "units"
+     }
+    ]
+   }
+  ],
+  "1I": [
+   {
+    "kind": "short",
+    "question": "Solve using substitution: $y = 3x - 2$ and $2x + y = 13$. Give your answer as $x$, then $y$.",
+    "answer": "$x = 3$, $y = 7$",
+    "solution": "**Key idea:** Replace $y$ in the second equation with the expression from the first.\n\n1. Substitute $y = 3x - 2$ into $2x + y = 13$: $2x + 3x - 2 = 13$.\n2. $5x = 15$, so $x = 3$.\n3. $y = 3(3) - 2 = 7$.\n\n**Answer:** $x = 3$, $y = 7$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve using substitution: $x = 2y + 1$ and $3x - 4y = 9$. Give your answer as $x$, then $y$.",
+    "answer": "$x = 7$, $y = 3$",
+    "solution": "**Key idea:** Replace $x$ in the second equation with $2y + 1$.\n\n1. Substitute $x = 2y + 1$: $3(2y + 1) - 4y = 9$.\n2. $6y + 3 - 4y = 9$, so $2y = 6$ and $y = 3$.\n3. $x = 2(3) + 1 = 7$.\n\n**Answer:** $x = 7$, $y = 3$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       7,
+       3
+      ]
+     }
+    ]
+   }
+  ],
+  "1K": [
+   {
+    "kind": "extended",
+    "question": "A school sold 240 tickets to its musical. Adult tickets cost \\$15 and student tickets cost \\$9. Ticket sales came to \\$2760.\n\n(a) How many adult tickets were sold?\n\n(b) How many student tickets were sold?",
+    "answer": "(a) $100$ (b) $140$",
+    "solution": "**Key idea:** Write one equation for the number of tickets and one for the money, then eliminate.\n\n1. Let $a$ be adult tickets and $s$ student tickets: $a + s = 240$ and $15a + 9s = 2760$.\n2. Multiply the first equation by 9: $9a + 9s = 2160$.\n3. Subtract: $6a = 600$, so $a = 100$.\n4. $s = 240 - 100 = 140$.\n\n**Answer:** (a) $100$ (b) $140$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 100
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 140
+     }
+    ]
+   }
+  ],
+  "1L": [
+   {
+    "kind": "short",
+    "question": "The point $(3, k)$ lies on the boundary line of the region $y < 2x - 1$. Find $k$.",
+    "answer": "$5$",
+    "solution": "**Key idea:** The boundary of $y < 2x - 1$ is the line $y = 2x - 1$.\n\n1. The boundary line is $y = 2x - 1$.\n2. Substitute $x = 3$: $k = 2(3) - 1 = 5$.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The region $3x + 4y \\le 24$ is shaded on the Cartesian plane. For its boundary line, find:\n\n(a) the $x$-intercept\n\n(b) the $y$-intercept.",
+    "answer": "(a) $8$ (b) $6$",
+    "solution": "**Key idea:** Replace the inequality sign with $=$ to get the boundary line.\n\n1. The boundary line is $3x + 4y = 24$.\n2. Put $y = 0$: $3x = 24$, so $x = 8$.\n3. Put $x = 0$: $4y = 24$, so $y = 6$.\n\n**Answer:** (a) $8$ (b) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A region is bounded by the lines $y = x + 2$ and $y = -x + 6$. Find the coordinates of the corner where these two boundary lines meet.",
+    "answer": "$(2, 4)$",
+    "solution": "**Key idea:** A corner of a region is where two boundary lines intersect.\n\n1. Set the right-hand sides equal: $x + 2 = -x + 6$.\n2. $2x = 4$, so $x = 2$.\n3. $y = 2 + 2 = 4$.\n\n**Answer:** $(2, 4)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       2,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many of the points $(0, 0)$, $(1, 5)$, $(4, 1)$ and $(-2, 3)$ lie in the region $y \\ge 2x - 1$?",
+    "answer": "$3$",
+    "solution": "**Key idea:** Substitute each point and check whether the inequality is true.\n\n1. $(0, 0)$: $0 \\ge -1$, true.\n2. $(1, 5)$: $5 \\ge 1$, true.\n3. $(4, 1)$: $1 \\ge 7$, false.\n4. $(-2, 3)$: $3 \\ge -5$, true. So 3 points lie in the region.\n\n**Answer:** $3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A region is defined by $x \\ge 0$, $y \\ge 0$ and $x + y \\le 6$. Find the area of the region in square units.",
+    "answer": "$18$",
+    "solution": "**Key idea:** Find the corners, then use the area formula for the shape.\n\n1. The region is a right-angled triangle with corners $(0, 0)$, $(6, 0)$ and $(0, 6)$.\n2. Area $= \\frac{1}{2} \\times 6 \\times 6 = 18$.\n\n**Answer:** $18$ square units",
+    "key": [
+     {
+      "type": "num",
+      "value": 18,
+      "unit": "square units"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Region $R$ is defined by $x \\ge 0$, $y \\ge 0$, $2x + y \\le 10$ and $x + y \\le 7$.\n\n(a) Find the point where $2x + y = 10$ and $x + y = 7$ intersect.\n\n(b) Find the area of region $R$ in square units.",
+    "answer": "(a) $(3, 4)$ (b) $20.5$",
+    "solution": "**Key idea:** Find all the corners first, then split the region into triangles.\n\n1. Subtract the equations: $(2x + y) - (x + y) = 10 - 7$, so $x = 3$ and $y = 4$.\n2. The corners of $R$ are $(0, 0)$, $(5, 0)$, $(3, 4)$ and $(0, 7)$.\n3. Split $R$ along the line from $(0, 0)$ to $(3, 4)$ into two triangles.\n4. Triangle $(0, 0)$, $(5, 0)$, $(3, 4)$: base 5, height 4, area $10$. Triangle $(0, 0)$, $(3, 4)$, $(0, 7)$: base 7 on the $y$-axis, height 3, area $10.5$.\n5. Total area $= 10 + 10.5 = 20.5$.\n\n**Answer:** (a) $(3, 4)$ (b) $20.5$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       3,
+       4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 20.5,
+      "unit": "square units"
+     }
+    ]
+   }
+  ],
+  "2A": [
+   {
+    "kind": "short",
+    "question": "Find the size of each exterior angle of a regular octagon.",
+    "answer": "$45^\\circ$",
+    "solution": "**Key idea:** Exterior angles of a polygon add to $360^\\circ$.\n\n1. The exterior angles of any polygon add to $360^\\circ$.\n2. A regular octagon has 8 equal exterior angles: $360^\\circ \\div 8 = 45^\\circ$.\n\n**Answer:** $45^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 45,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Each interior angle of a regular polygon is $156^\\circ$. How many sides does the polygon have?",
+    "answer": "$15$",
+    "solution": "**Key idea:** Interior and exterior angles at a vertex add to $180^\\circ$; exterior angles add to $360^\\circ$.\n\n1. Each exterior angle is $180^\\circ - 156^\\circ = 24^\\circ$.\n2. Number of sides $= 360 \\div 24 = 15$.\n\n**Answer:** $15$",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "sides"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $\\angle A = (3x)^\\circ$, $\\angle B = (2x + 15)^\\circ$ and $\\angle C = (x + 21)^\\circ$.\n\n(a) Find $x$.\n\n(b) Find the size of the largest angle in the triangle.",
+    "answer": "(a) $24$ (b) $72^\\circ$",
+    "solution": "**Key idea:** The angles in a triangle add to $180^\\circ$.\n\n1. Angle sum: $3x + (2x + 15) + (x + 21) = 180$.\n2. $6x + 36 = 180$, so $6x = 144$ and $x = 24$.\n3. The angles are $72^\\circ$, $63^\\circ$ and $45^\\circ$, so the largest is $72^\\circ$.\n\n**Answer:** (a) $24$ (b) $72^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 24
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 72,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "2B": [
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\equiv \\triangle DEF$, with $A$ matching $D$, $B$ matching $E$ and $C$ matching $F$. $AB = 7$ cm, $BC = 9$ cm, $\\angle B = 64^\\circ$ and $\\angle C = 48^\\circ$.\n\n(a) Find the length of $EF$.\n\n(b) Find $\\angle D$.",
+    "answer": "(a) $9$ cm (b) $68^\\circ$",
+    "solution": "**Key idea:** Matching sides and matching angles of congruent triangles are equal.\n\n1. $EF$ matches $BC$, so $EF = 9$ cm.\n2. $\\angle A = 180^\\circ - 64^\\circ - 48^\\circ = 68^\\circ$.\n3. $\\angle D$ matches $\\angle A$, so $\\angle D = 68^\\circ$.\n\n**Answer:** (a) $9$ cm (b) $68^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 68,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle PQR \\equiv \\triangle XYZ$, with the vertices matching in the order written. $PQ = (3x + 2)$ cm and $XY = 17$ cm. Find $x$.",
+    "answer": "$5$",
+    "solution": "**Key idea:** Matching sides of congruent triangles are equal.\n\n1. $PQ$ matches $XY$, so $3x + 2 = 17$.\n2. $3x = 15$, so $x = 5$.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\equiv \\triangle DEF$, with the vertices matching in the order written. $\\angle A = (2y + 10)^\\circ$ and $\\angle D = 54^\\circ$. Find $y$.",
+    "answer": "$22$",
+    "solution": "**Key idea:** Matching angles of congruent triangles are equal.\n\n1. $\\angle A$ matches $\\angle D$, so $2y + 10 = 54$.\n2. $2y = 44$, so $y = 22$.\n\n**Answer:** $22$",
+    "key": [
+     {
+      "type": "num",
+      "value": 22
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Kite $ABCD$ has $AB = AD$ and $CB = CD$. The diagonal $AC$ divides it into triangles $ABC$ and $ADC$, which are congruent (SSS). $\\angle BAC = 35^\\circ$ and $\\angle BCA = 50^\\circ$.\n\n(a) Find $\\angle ABC$.\n\n(b) Find $\\angle BAD$.",
+    "answer": "(a) $95^\\circ$ (b) $70^\\circ$",
+    "solution": "**Key idea:** Congruent triangles give equal matching angles on each side of the diagonal.\n\n1. In $\\triangle ABC$: $\\angle ABC = 180^\\circ - 35^\\circ - 50^\\circ = 95^\\circ$.\n2. Since $\\triangle ABC \\equiv \\triangle ADC$, $\\angle DAC = \\angle BAC = 35^\\circ$.\n3. $\\angle BAD = 35^\\circ + 35^\\circ = 70^\\circ$.\n\n**Answer:** (a) $95^\\circ$ (b) $70^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 95,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 70,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two right-angled triangles are congruent by RHS. Each has a hypotenuse of 13 cm, and one of the other sides of the first triangle is 5 cm. Find the length of the third side of the second triangle.",
+    "answer": "$12$ cm",
+    "solution": "**Key idea:** Congruent triangles have the same three side lengths.\n\n1. The triangles are congruent, so the second triangle also has sides 13 cm and 5 cm.\n2. Third side $= \\sqrt{13^{2} - 5^{2}} = \\sqrt{144} = 12$ cm.\n\n**Answer:** $12$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 12,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Triangles $PQS$ and $RQS$ share the side $QS$. $PQ = RQ$ and $PS = RS$, so the triangles are congruent (SSS). $\\angle PQS = (4x - 6)^\\circ$ and $\\angle RQS = (2x + 18)^\\circ$.\n\n(a) Find $x$.\n\n(b) Find $\\angle PQR$.",
+    "answer": "(a) $12$ (b) $84^\\circ$",
+    "solution": "**Key idea:** Matching angles of congruent triangles are equal.\n\n1. $\\angle PQS$ and $\\angle RQS$ are matching angles, so $4x - 6 = 2x + 18$.\n2. $2x = 24$, so $x = 12$.\n3. Each angle is $4(12) - 6 = 42^\\circ$.\n4. $\\angle PQR = 42^\\circ + 42^\\circ = 84^\\circ$.\n\n**Answer:** (a) $12$ (b) $84^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 84,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "2C": [
+   {
+    "kind": "short",
+    "question": "$ABCD$ is a parallelogram with $AB = 11$ cm and $BC = 7$ cm. Find its perimeter.",
+    "answer": "$36$ cm",
+    "solution": "**Key idea:** Opposite sides of a parallelogram are equal.\n\n1. Opposite sides of a parallelogram are equal: $CD = 11$ cm and $DA = 7$ cm.\n2. Perimeter $= 11 + 7 + 11 + 7 = 36$ cm.\n\n**Answer:** $36$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 36,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In parallelogram $PQRS$, $\\angle P = 68^\\circ$.\n\n(a) Find $\\angle R$.\n\n(b) Find $\\angle Q$.",
+    "answer": "(a) $68^\\circ$ (b) $112^\\circ$",
+    "solution": "**Key idea:** Opposite angles are equal and neighbouring angles add to $180^\\circ$.\n\n1. Opposite angles of a parallelogram are equal, so $\\angle R = 68^\\circ$.\n2. Co-interior angles between parallel sides add to $180^\\circ$, so $\\angle Q = 180^\\circ - 68^\\circ = 112^\\circ$.\n\n**Answer:** (a) $68^\\circ$ (b) $112^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 68,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 112,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The diagonals of rectangle $ABCD$ meet at $M$. The diagonal $AC$ is 18 cm long. Find the length of $BM$.",
+    "answer": "$9$ cm",
+    "solution": "**Key idea:** The diagonals of a rectangle are equal and bisect each other.\n\n1. The diagonals of a rectangle are equal, so $BD = 18$ cm.\n2. The diagonals bisect each other, so $BM = 18 \\div 2 = 9$ cm.\n\n**Answer:** $9$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rhombus has diagonals of length 10 cm and 24 cm.\n\n(a) Find the side length of the rhombus.\n\n(b) Find its perimeter.",
+    "answer": "(a) $13$ cm (b) $52$ cm",
+    "solution": "**Key idea:** The diagonals of a rhombus are perpendicular bisectors of each other.\n\n1. The diagonals of a rhombus bisect each other at right angles, making four right-angled triangles with legs 5 cm and 12 cm.\n2. Side $= \\sqrt{5^{2} + 12^{2}} = 13$ cm.\n3. Perimeter $= 4 \\times 13 = 52$ cm.\n\n**Answer:** (a) $13$ cm (b) $52$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 13,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 52,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The diagonals of parallelogram $ABCD$ meet at $M$. $AM = (2x + 3)$ cm and $MC = (5x - 9)$ cm.\n\n(a) Find $x$.\n\n(b) Find the length of the diagonal $AC$.",
+    "answer": "(a) $4$ (b) $22$ cm",
+    "solution": "**Key idea:** The diagonals of a parallelogram bisect each other.\n\n1. The diagonals of a parallelogram bisect each other, so $2x + 3 = 5x - 9$.\n2. $12 = 3x$, so $x = 4$.\n3. $AM = 2(4) + 3 = 11$ cm, so $AC = 2 \\times 11 = 22$ cm.\n\n**Answer:** (a) $4$ (b) $22$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 22,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In parallelogram $ABCD$, $\\angle A = (3x + 10)^\\circ$ and $\\angle B = (2x + 20)^\\circ$.\n\n(a) Find $x$.\n\n(b) Find $\\angle C$.",
+    "answer": "(a) $30$ (b) $100^\\circ$",
+    "solution": "**Key idea:** Neighbouring angles of a parallelogram add to $180^\\circ$; opposite angles are equal.\n\n1. $\\angle A$ and $\\angle B$ are co-interior angles between parallel sides, so they add to $180^\\circ$.\n2. $5x + 30 = 180$, so $x = 30$.\n3. $\\angle A = 3(30) + 10 = 100^\\circ$.\n4. $\\angle C$ is opposite $\\angle A$, so $\\angle C = 100^\\circ$.\n\n**Answer:** (a) $30$ (b) $100^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 100,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "2D": [
+   {
+    "kind": "short",
+    "question": "Two triangles are similar. A side of the smaller triangle is 4 cm and the matching side of the larger triangle is 10 cm. The smaller triangle has an area of $12 \\text{ cm}^2$. Find the area of the larger triangle.",
+    "answer": "$75 \\text{ cm}^2$",
+    "solution": "**Key idea:** Areas scale by the square of the length scale factor.\n\n1. Length scale factor $= \\frac{10}{4} = 2.5$.\n2. Area scale factor $= 2.5^{2} = 6.25$.\n3. Larger area $= 12 \\times 6.25 = 75 \\text{ cm}^2$.\n\n**Answer:** $75 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 75,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "2E": [
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $D$ is on $AB$ and $E$ is on $AC$ with $DE \\parallel BC$. $AD = 6$ cm, $DB = 3$ cm and $AE = 8$ cm. Find $EC$.",
+    "answer": "$4$ cm",
+    "solution": "**Key idea:** A line parallel to a side of a triangle cuts the other sides in the same ratio.\n\n1. A line parallel to one side divides the other two sides in the same ratio: $\\frac{AD}{DB} = \\frac{AE}{EC}$.\n2. $\\frac{6}{3} = \\frac{8}{EC}$, so $EC = 4$ cm.\n\n**Answer:** $4$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 4,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "At the same time of day, a 2 m post casts a shadow 3 m long and a building casts a shadow 27 m long. Both stand vertically on level ground. Find the height of the building.",
+    "answer": "$18$ m",
+    "solution": "**Key idea:** Objects and their shadows at the same time form similar triangles.\n\n1. The triangles formed by each object, its shadow and the sun's ray are similar (AA).\n2. Scale factor $= \\frac{27}{3} = 9$.\n3. Height of building $= 2 \\times 9 = 18$ m.\n\n**Answer:** $18$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 18,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\sim \\triangle PQR$ with $A$, $B$, $C$ matching $P$, $Q$, $R$. $AB = 5$ cm, $BC = 7$ cm, $AC = 8$ cm and $PQ = 15$ cm.\n\n(a) Find $QR$.\n\n(b) Find $PR$.",
+    "answer": "(a) $21$ cm (b) $24$ cm",
+    "solution": "**Key idea:** All matching sides of similar triangles are in the same ratio.\n\n1. Scale factor $= \\frac{PQ}{AB} = \\frac{15}{5} = 3$.\n2. $QR = 3 \\times 7 = 21$ cm.\n3. $PR = 3 \\times 8 = 24$ cm.\n\n**Answer:** (a) $21$ cm (b) $24$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 21,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 24,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $D$ is on $AB$ and $E$ is on $AC$ with $DE \\parallel BC$. $AD = 4$ cm, $AB = 10$ cm and $DE = 6$ cm. Find $BC$.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** $DE \\parallel BC$ makes $\\triangle ADE$ similar to $\\triangle ABC$.\n\n1. $\\triangle ADE \\sim \\triangle ABC$ (common angle $A$ and corresponding angles).\n2. Scale factor $= \\frac{AB}{AD} = \\frac{10}{4} = 2.5$.\n3. $BC = 6 \\times 2.5 = 15$ cm.\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\sim \\triangle DEF$ with $A$, $B$, $C$ matching $D$, $E$, $F$. $AB = 12$ cm, $DE = 8$ cm and $EF = 10$ cm. Find $BC$.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** Matching sides of similar triangles are in the same ratio.\n\n1. Scale factor from $\\triangle DEF$ to $\\triangle ABC$ is $\\frac{12}{8} = 1.5$.\n2. $BC = 10 \\times 1.5 = 15$ cm.\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "To measure across a lake, a surveyor marks points so that $AB \\parallel CD$, and the segments $AC$ and $BD$ cross at $E$, with $E$ between $A$ and $C$. She measures $AB = 30$ m, $CD = 12$ m and $CE = 8$ m.\n\n(a) Find the length $AE$.\n\n(b) Find the length $AC$.",
+    "answer": "(a) $20$ m (b) $28$ m",
+    "solution": "**Key idea:** Parallel lines crossed by two transversals that meet make similar triangles.\n\n1. Vertically opposite angles at $E$ are equal, and alternate angles are equal because $AB \\parallel CD$, so $\\triangle ABE \\sim \\triangle CDE$ (AA).\n2. Scale factor $= \\frac{AB}{CD} = \\frac{30}{12} = 2.5$.\n3. $AE = 2.5 \\times CE = 2.5 \\times 8 = 20$ m.\n4. $AC = AE + EC = 20 + 8 = 28$ m.\n\n**Answer:** (a) $20$ m (b) $28$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 28,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "2K": [
+   {
+    "kind": "short",
+    "question": "A network has 7 vertices and every vertex has degree 4. How many edges does it have?",
+    "answer": "$14$",
+    "solution": "**Key idea:** The sum of the degrees is twice the number of edges.\n\n1. Sum of degrees $= 7 \\times 4 = 28$.\n2. Each edge adds 2 to the sum of degrees, so edges $= 28 \\div 2 = 14$.\n\n**Answer:** $14$",
+    "key": [
+     {
+      "type": "num",
+      "value": 14,
+      "unit": "edges"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a complete network every pair of vertices is joined by exactly one edge. How many edges does a complete network with 8 vertices have?",
+    "answer": "$28$",
+    "solution": "**Key idea:** Use the sum of degrees, or count pairs of vertices.\n\n1. Each vertex has degree 7, so the sum of degrees is $8 \\times 7 = 56$.\n2. Edges $= 56 \\div 2 = 28$.\n\n**Answer:** $28$",
+    "key": [
+     {
+      "type": "num",
+      "value": 28,
+      "unit": "edges"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A network has vertices $A$, $B$, $C$, $D$ and $E$, and edges $AB$, $AC$, $AD$, $BC$, $CD$, $DE$ and $CE$.\n\n(a) What is the degree of vertex $C$?\n\n(b) What is the sum of the degrees of all five vertices?",
+    "answer": "(a) $4$ (b) $14$",
+    "solution": "**Key idea:** The degree of a vertex is the number of edges that meet there.\n\n1. Edges at $C$: $AC$, $BC$, $CD$ and $CE$, so $C$ has degree 4.\n2. There are 7 edges and each adds 2 to the total, so the sum of degrees is $14$.\n\n**Answer:** (a) $4$ (b) $14$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 14
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A network has 6 vertices with degrees 1, 2, 3, 3, 4 and $x$. The network has 9 edges. Find $x$.",
+    "answer": "$5$",
+    "solution": "**Key idea:** The sum of the degrees is twice the number of edges.\n\n1. Sum of degrees $= 2 \\times 9 = 18$.\n2. $1 + 2 + 3 + 3 + 4 + x = 18$, so $13 + x = 18$ and $x = 5$.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   }
+  ],
+  "2L": [
+   {
+    "kind": "short",
+    "question": "A connected planar graph has 10 vertices and 15 edges. Use Euler's formula $v - e + f = 2$ to find the number of faces (including the outside face).",
+    "answer": "$7$",
+    "solution": "**Key idea:** Substitute into Euler's formula $v - e + f = 2$.\n\n1. $10 - 15 + f = 2$.\n2. $f = 2 + 5 = 7$.\n\n**Answer:** $7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected planar graph has 12 edges and 8 faces (including the outside face). How many vertices does it have?",
+    "answer": "$6$",
+    "solution": "**Key idea:** Substitute into Euler's formula $v - e + f = 2$.\n\n1. Euler's formula: $v - 12 + 8 = 2$.\n2. $v - 4 = 2$, so $v = 6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected planar graph has 7 vertices and 5 faces (including the outside face). How many edges does it have?",
+    "answer": "$10$",
+    "solution": "**Key idea:** Substitute into Euler's formula $v - e + f = 2$.\n\n1. Euler's formula: $7 - e + 5 = 2$.\n2. $12 - e = 2$, so $e = 10$.\n\n**Answer:** $10$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The corners and edges of a cube can be drawn as a planar graph.\n\n(a) How many vertices does the graph have?\n\n(b) How many edges does it have?\n\n(c) Use Euler's formula to find the number of faces (including the outside face).",
+    "answer": "(a) $8$ (b) $12$ (c) $6$",
+    "solution": "**Key idea:** Euler's formula $v - e + f = 2$ links vertices, edges and faces.\n\n1. A cube has 8 corners, so $v = 8$.\n2. A cube has 12 edges, so $e = 12$.\n3. $8 - 12 + f = 2$, so $f = 6$ (matching the 6 faces of the cube).\n\n**Answer:** (a) $8$ (b) $12$ (c) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   }
+  ],
+  "2M": [
+   {
+    "kind": "short",
+    "question": "A connected network has seven vertices with degrees 2, 3, 4, 3, 2, 1 and 1. How many vertices have odd degree?",
+    "answer": "$4$",
+    "solution": "**Key idea:** Count the vertices whose degree is an odd number.\n\n1. The odd degrees are 3, 3, 1 and 1.\n2. So 4 vertices have odd degree.\n\n**Answer:** $4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected network has an Euler trail but no Euler circuit. How many vertices of odd degree does it have?",
+    "answer": "$2$",
+    "solution": "**Key idea:** Euler trails and circuits depend on the number of odd-degree vertices.\n\n1. An Euler circuit needs every vertex to have even degree.\n2. An Euler trail that is not a circuit needs exactly two vertices of odd degree (the start and the finish).\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A council inspector must drive along every road in this network at least once, starting and finishing at depot $P$. The roads are $PQ$ 4 km, $QR$ 6 km, $RS$ 5 km, $SP$ 3 km and $PR$ 8 km.\n\n(a) Find the total length of all the roads.\n\n(b) Find the shortest possible total distance the inspector must drive.",
+    "answer": "(a) $26$ km (b) $34$ km",
+    "solution": "**Key idea:** Repeat the shortest path between the two odd vertices to make an Euler circuit possible.\n\n1. Total road length $= 4 + 6 + 5 + 3 + 8 = 26$ km.\n2. Degrees: $P$ 3, $Q$ 2, $R$ 3, $S$ 2. $P$ and $R$ are odd, so there is no Euler circuit.\n3. The shortest path from $P$ to $R$ must be repeated. Options: $PR = 8$, $PQR = 10$, $PSR = 8$, so the shortest is 8 km.\n4. Shortest total $= 26 + 8 = 34$ km.\n\n**Answer:** (a) $26$ km (b) $34$ km",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 26,
+      "unit": "km"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 34,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected network has five vertices with degrees 3, 3, 3, 3 and 2. What is the smallest number of extra edges that must be added so that the network has an Euler circuit?",
+    "answer": "$2$",
+    "solution": "**Key idea:** Adding an edge changes the degree of both of its end vertices by 1.\n\n1. An Euler circuit needs every vertex to have even degree.\n2. There are 4 vertices of odd degree.\n3. Each new edge can fix two odd vertices, so at least $4 \\div 2 = 2$ edges are needed (for example, join the odd vertices in pairs).\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2,
+      "unit": "edges"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected network has five vertices with degrees 2, 4, 4, 6 and $k$, and it has 10 edges. Find $k$.",
+    "answer": "$4$",
+    "solution": "**Key idea:** The sum of the degrees is twice the number of edges.\n\n1. Sum of degrees $= 2 \\times 10 = 20$.\n2. $2 + 4 + 4 + 6 + k = 20$, so $k = 4$.\n\n**Answer:** $4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A connected network has six vertices with degrees 2, 2, 3, 4, 5 and 2.\n\n(a) How many vertices have odd degree?\n\n(b) How many edges does the network have?",
+    "answer": "(a) $2$ (b) $9$",
+    "solution": "**Key idea:** Count odd degrees for Euler trails; halve the degree sum for edges.\n\n1. The odd degrees are 3 and 5, so 2 vertices have odd degree (an Euler trail exists).\n2. Sum of degrees $= 18$, so there are $18 \\div 2 = 9$ edges.\n\n**Answer:** (a) $2$ (b) $9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     }
+    ]
+   }
+  ],
+  "2N": [
+   {
+    "kind": "short",
+    "question": "The table shows the lengths of roads (in km) between five towns. Every road can be travelled in both directions.\n\n| Road | $AB$ | $AC$ | $BC$ | $BD$ | $CD$ | $CE$ | $DE$ |\n|---|---|---|---|---|---|---|---|\n| Length (km) | 5 | 2 | 2 | 4 | 7 | 10 | 3 |\n\nFind the length of the shortest route from $A$ to $E$.",
+    "answer": "$11$ km",
+    "solution": "**Key idea:** Label each town with its shortest known distance from $A$, working outwards.\n\n1. Shortest distance to $C$: $AC = 2$. To $B$: $A, C, B = 2 + 2 = 4$ (shorter than $AB = 5$).\n2. To $D$: through $B$ gives $4 + 4 = 8$ (through $C$ gives $2 + 7 = 9$).\n3. To $E$: through $D$ gives $8 + 3 = 11$; through $C$ gives $2 + 10 = 12$.\n4. Shortest route: $A, C, B, D, E$, length 11 km.\n\n**Answer:** $11$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 11,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Using the same road network ($AB$ 5 km, $AC$ 2 km, $BC$ 2 km, $BD$ 4 km, $CD$ 7 km, $CE$ 10 km, $DE$ 3 km), find the length of the shortest route from $A$ to $D$.",
+    "answer": "$8$ km",
+    "solution": "**Key idea:** The shortest route is not always the one with the fewest roads.\n\n1. Routes to $D$: $A, B, D = 9$; $A, C, D = 9$; $A, C, B, D = 2 + 2 + 4 = 8$.\n2. The shortest is $A, C, B, D$ with length 8 km.\n\n**Answer:** $8$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 8,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A courier starts at depot $D$. Travel times (in minutes) along two-way roads are:\n\n| Road | $DA$ | $DB$ | $AB$ | $AC$ | $BC$ | $BE$ | $CE$ | $CF$ | $EF$ |\n|---|---|---|---|---|---|---|---|---|---|\n| Time (min) | 8 | 3 | 4 | 6 | 11 | 9 | 2 | 7 | 5 |\n\n(a) Find the quickest time from $D$ to $C$.\n\n(b) Find the quickest time from $D$ to $F$.\n\n(c) The courier must pick up a parcel at $C$ on the way from $D$ to $F$. How many extra minutes does this add compared with (b)?",
+    "answer": "(a) $13$ min (b) $17$ min (c) $3$ min",
+    "solution": "**Key idea:** Find shortest times outwards from the start, keeping the smallest total at each vertex.\n\n1. To $B$: 3. To $A$: $D, B, A = 7$ (shorter than $DA = 8$). To $C$: $D, B, A, C = 13$ (others: $D, B, C = 14$, $D, A, C = 14$).\n2. To $E$: $D, B, E = 12$. To $F$: $D, B, E, F = 17$ (through $C$ would be at least $13 + 7 = 20$).\n3. Via $C$: $13$ to $C$, then $C, F = 7$ (or $C, E, F = 7$), total $20$.\n4. Extra time $= 20 - 17 = 3$ minutes.\n\n**Answer:** (a) $13$ min (b) $17$ min (c) $3$ min",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 13,
+      "unit": "minutes"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 17,
+      "unit": "minutes"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 3,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Five sheds $P$, $Q$, $R$, $S$ and $T$ on a farm are to be connected with water pipes so that every shed is connected (directly or through other sheds). The possible pipes and their lengths are:\n\n| Pipe | $PQ$ | $PR$ | $QR$ | $QS$ | $RS$ | $RT$ | $ST$ |\n|---|---|---|---|---|---|---|---|\n| Length (m) | 6 | 4 | 3 | 5 | 7 | 8 | 2 |\n\nUsing the shortest pipes first and never making a closed loop, find the minimum total length of pipe needed.",
+    "answer": "$14$ m",
+    "solution": "**Key idea:** Build a minimum spanning tree by repeatedly adding the shortest pipe that does not make a loop.\n\n1. Choose $ST$ (2), then $QR$ (3), then $PR$ (4), then $QS$ (5).\n2. These 4 pipes connect all five sheds with no loop, so stop.\n3. Total $= 2 + 3 + 4 + 5 = 14$ m.\n\n**Answer:** $14$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 14,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A cyclist travels from $S$ to $T$. The bike paths (in km) are: $SP$ 12, $SQ$ 5, $PQ$ 4, $PR$ 3, $QR$ 9, $QT$ 16 and $RT$ 8. Find the length of the shortest route from $S$ to $T$.",
+    "answer": "$20$ km",
+    "solution": "**Key idea:** Label each point with its shortest known distance from $S$.\n\n1. Shortest to $Q$: 5. To $P$: $S, Q, P = 9$ (shorter than $SP = 12$).\n2. To $R$: $S, Q, P, R = 12$ (shorter than $S, Q, R = 14$).\n3. To $T$: through $R$ gives $12 + 8 = 20$; through $Q$ gives $5 + 16 = 21$.\n4. Shortest route $S, Q, P, R, T$ is 20 km.\n\n**Answer:** $20$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 20,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Lily walks from home $H$ to school $S$. The footpaths (in km) are: $HA$ 2.4, $HB$ 1.8, $AB$ 0.5, $AS$ 1.9 and $BS$ 2.8. Find the length of her shortest walk to school.",
+    "answer": "$4.2$ km",
+    "solution": "**Key idea:** Compare every reasonable route; a longer-looking route can be shorter.\n\n1. $H, A, S = 2.4 + 1.9 = 4.3$ km.\n2. $H, B, S = 1.8 + 2.8 = 4.6$ km.\n3. $H, B, A, S = 1.8 + 0.5 + 1.9 = 4.2$ km; $H, A, B, S = 5.7$ km.\n4. The shortest walk is 4.2 km.\n\n**Answer:** $4.2$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.2,
+      "unit": "km"
+     }
+    ]
+   }
+  ],
+  "3B": [
+   {
+    "kind": "short",
+    "question": "Evaluate $4^{-2}$, giving your answer as a fraction or a decimal.",
+    "answer": "$\\frac{1}{16}$ ($0.0625$)",
+    "solution": "**Key idea:** $a^{-n} = \\frac{1}{a^{n}}$.\n\n1. $4^{-2} = \\frac{1}{4^{2}}$.\n2. $= \\frac{1}{16} = 0.0625$.\n\n**Answer:** $\\frac{1}{16}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.0625
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\left(\\frac{1}{5}\\right)^{-2} + 2^{-1}$.",
+    "answer": "$25.5$",
+    "solution": "**Key idea:** A negative index means take the reciprocal.\n\n1. $\\left(\\frac{1}{5}\\right)^{-2} = 5^{2} = 25$.\n2. $2^{-1} = \\frac{1}{2} = 0.5$.\n3. Total $= 25.5$.\n\n**Answer:** $25.5$ (or $25\\frac{1}{2}$)",
+    "key": [
+     {
+      "type": "num",
+      "value": 25.5
+     }
+    ]
+   }
+  ],
+  "3C": [
+   {
+    "kind": "short",
+    "question": "Evaluate $(2.5 \\times 10^{4}) \\times (6 \\times 10^{3})$, giving your answer in scientific notation.",
+    "answer": "$1.5 \\times 10^{8}$",
+    "solution": "**Key idea:** Multiply the number parts and use index laws for the powers of 10.\n\n1. Multiply the numbers: $2.5 \\times 6 = 15$.\n2. Add the indices: $10^{4} \\times 10^{3} = 10^{7}$.\n3. $15 \\times 10^{7} = 1.5 \\times 10^{8}$.\n\n**Answer:** $1.5 \\times 10^{8}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 150000000.0,
+      "form": "sci"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\dfrac{8.4 \\times 10^{6}}{2.1 \\times 10^{-2}}$, giving your answer in scientific notation.",
+    "answer": "$4 \\times 10^{8}$",
+    "solution": "**Key idea:** Divide the number parts and subtract the indices.\n\n1. Divide the numbers: $8.4 \\div 2.1 = 4$.\n2. Subtract the indices: $10^{6} \\div 10^{-2} = 10^{8}$.\n3. Answer: $4 \\times 10^{8}$.\n\n**Answer:** $4 \\times 10^{8}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 400000000.0,
+      "form": "sci"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A red blood cell has a diameter of about $7.5 \\times 10^{-6}$ m. How many red blood cells placed side by side would make a line 3 cm long?",
+    "answer": "$4000$",
+    "solution": "**Key idea:** Use the same units, then divide.\n\n1. $3 \\text{ cm} = 0.03 \\text{ m} = 3 \\times 10^{-2}$ m.\n2. Number $= \\frac{3 \\times 10^{-2}}{7.5 \\times 10^{-6}} = 0.4 \\times 10^{4}$.\n3. $= 4000$.\n\n**Answer:** $4000$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4000
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The Moon is about $3.84 \\times 10^{5}$ km from Earth. Light travels at about $3 \\times 10^{5}$ km per second. How many seconds does light take to travel from the Moon to Earth?",
+    "answer": "$1.28$ seconds",
+    "solution": "**Key idea:** Time equals distance divided by speed.\n\n1. Time $= \\frac{\\text{distance}}{\\text{speed}} = \\frac{3.84 \\times 10^{5}}{3 \\times 10^{5}}$.\n2. $= 1.28 \\times 10^{0} = 1.28$ seconds.\n\n**Answer:** $1.28$ seconds",
+    "key": [
+     {
+      "type": "num",
+      "value": 1.28,
+      "unit": "seconds"
+     }
+    ]
+   }
+  ],
+  "3F": [
+   {
+    "kind": "short",
+    "question": "For $y = 3 \\times 2^{x}$, find the value of $y$ when $x = 4$.",
+    "answer": "$48$",
+    "solution": "**Key idea:** Work out the power first, then multiply.\n\n1. $2^{4} = 16$.\n2. $y = 3 \\times 16 = 48$.\n\n**Answer:** $48$",
+    "key": [
+     {
+      "type": "num",
+      "value": 48
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the graph of $y = 2^{x} + 3$.\n\n(a) Find the $y$-intercept.\n\n(b) The horizontal asymptote is the line $y = k$. Find $k$.",
+    "answer": "(a) $4$ (b) $3$",
+    "solution": "**Key idea:** Adding 3 moves the graph of $y = 2^{x}$ up 3 units, including its asymptote.\n\n1. At $x = 0$: $y = 2^{0} + 3 = 1 + 3 = 4$.\n2. As $x$ becomes very negative, $2^{x}$ gets close to 0, so $y$ gets close to 3. The asymptote is $y = 3$.\n\n**Answer:** (a) $4$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = a \\times 3^{x}$ passes through the point $(2, 36)$. Find $a$.",
+    "answer": "$4$",
+    "solution": "**Key idea:** Substitute the point into the rule and solve for $a$.\n\n1. Substitute $x = 2$, $y = 36$: $36 = a \\times 3^{2} = 9a$.\n2. $a = 4$.\n\n**Answer:** $4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For $y = 5^{x}$, find $y$ when $x = -2$. Give your answer as a decimal.",
+    "answer": "$0.04$",
+    "solution": "**Key idea:** A negative index means take the reciprocal.\n\n1. $5^{-2} = \\frac{1}{5^{2}} = \\frac{1}{25}$.\n2. $\\frac{1}{25} = 0.04$.\n\n**Answer:** $0.04$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.04
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The graph of $y = k \\times b^{x}$ passes through the points $(0, 3)$ and $(1, 12)$.\n\n(a) Find $k$.\n\n(b) Find $b$.\n\n(c) Find $y$ when $x = 2$.",
+    "answer": "(a) $3$ (b) $4$ (c) $48$",
+    "solution": "**Key idea:** The $y$-intercept of $y = k \\times b^{x}$ is $k$.\n\n1. At $x = 0$: $3 = k \\times b^{0} = k$, so $k = 3$.\n2. At $x = 1$: $12 = 3 \\times b$, so $b = 4$.\n3. At $x = 2$: $y = 3 \\times 4^{2} = 48$.\n\n**Answer:** (a) $3$ (b) $4$ (c) $48$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 48
+     }
+    ]
+   }
+  ],
+  "4E": [
+   {
+    "kind": "short",
+    "question": "Convert $0.045$ km to centimetres.",
+    "answer": "$4500$ cm",
+    "solution": "**Key idea:** $1 \\text{ km} = 1000$ m and $1 \\text{ m} = 100$ cm.\n\n1. $0.045 \\text{ km} = 0.045 \\times 1000 = 45$ m.\n2. $45 \\text{ m} = 45 \\times 100 = 4500$ cm.\n\n**Answer:** $4500$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 4500,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the perimeter of a semicircle with a diameter of 14 cm (include the straight edge). Give your answer correct to 2 decimal places.",
+    "answer": "$35.99$ cm",
+    "solution": "**Key idea:** A semicircle's perimeter is half the circumference plus the diameter.\n\n1. Curved part $= \\frac{1}{2} \\times \\pi \\times 14 = 7\\pi$.\n2. Perimeter $= 7\\pi + 14 \\approx 35.99$ cm.\n\n**Answer:** $35.99$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 35.99,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "4G": [
+   {
+    "kind": "short",
+    "question": "Find the area of a parallelogram with base 12.5 cm and perpendicular height 8 cm.",
+    "answer": "$100 \\text{ cm}^2$",
+    "solution": "**Key idea:** Area of a parallelogram is base times perpendicular height.\n\n1. Area $= \\text{base} \\times \\text{height}$.\n2. $= 12.5 \\times 8 = 100 \\text{ cm}^2$.\n\n**Answer:** $100 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 100,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the area of a sector with radius 6 cm and angle $75^\\circ$. Give your answer correct to 2 decimal places.",
+    "answer": "$23.56 \\text{ cm}^2$",
+    "solution": "**Key idea:** A sector is a fraction $\\frac{\\theta}{360}$ of the whole circle.\n\n1. Area $= \\frac{75}{360} \\times \\pi \\times 6^{2}$.\n2. $= 7.5\\pi \\approx 23.56 \\text{ cm}^2$.\n\n**Answer:** $23.56 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 23.56,
+      "dp": 2,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "4H": [
+   {
+    "kind": "short",
+    "question": "A length is measured as $6.4$ cm, correct to the nearest millimetre.\n\n(a) What is the smallest possible actual length?\n\n(b) What is the upper limit of the possible actual length?",
+    "answer": "(a) $6.35$ cm (b) $6.45$ cm",
+    "solution": "**Key idea:** The limits of accuracy are half a unit of measurement either side.\n\n1. Measuring to the nearest mm ($0.1$ cm) means the error is at most half of $0.1$ cm, which is $0.05$ cm.\n2. Smallest: $6.4 - 0.05 = 6.35$ cm.\n3. Upper limit: $6.4 + 0.05 = 6.45$ cm.\n\n**Answer:** (a) $6.35$ cm (b) $6.45$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6.35,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6.45,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the percentage error when $3.14$ is used in place of $\\pi$, correct to 2 decimal places.",
+    "answer": "$0.05\\%$",
+    "solution": "**Key idea:** Percentage error = error divided by the true value, times 100.\n\n1. Error $= \\pi - 3.14 \\approx 0.00159$.\n2. Percentage error $= \\frac{0.00159}{\\pi} \\times 100 \\approx 0.05\\%$.\n\n**Answer:** $0.05\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.05,
+      "dp": 2,
+      "unit": "%"
+     }
+    ]
+   }
+  ],
+  "4I": [
+   {
+    "kind": "short",
+    "question": "Find the total surface area of a closed cylinder with radius 4 cm and height 10 cm. Give your answer correct to 2 decimal places.",
+    "answer": "$351.86 \\text{ cm}^2$",
+    "solution": "**Key idea:** Surface area of a closed cylinder $= 2\\pi r^{2} + 2\\pi rh$.\n\n1. Two circular ends: $2 \\times \\pi \\times 4^{2} = 32\\pi$.\n2. Curved surface: $2\\pi \\times 4 \\times 10 = 80\\pi$.\n3. Total $= 112\\pi \\approx 351.86 \\text{ cm}^2$.\n\n**Answer:** $351.86 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 351.86,
+      "dp": 2,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the total surface area of a rectangular prism that is 8 cm long, 5 cm wide and 3 cm high.",
+    "answer": "$158 \\text{ cm}^2$",
+    "solution": "**Key idea:** A rectangular prism has three pairs of matching rectangular faces.\n\n1. Pairs of faces: $8 \\times 5 = 40$, $8 \\times 3 = 24$, $5 \\times 3 = 15$.\n2. Surface area $= 2(40 + 24 + 15) = 158 \\text{ cm}^2$.\n\n**Answer:** $158 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 158,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A triangular prism is 15 cm long. Its cross-section is a right-angled triangle with shorter sides 6 cm and 8 cm and hypotenuse 10 cm. Find the total surface area of the prism.",
+    "answer": "$408 \\text{ cm}^2$",
+    "solution": "**Key idea:** Add the areas of the two ends and the rectangular faces around the side.\n\n1. Two triangular ends: $2 \\times \\frac{1}{2} \\times 6 \\times 8 = 48 \\text{ cm}^2$.\n2. Three rectangles: $15 \\times 6 + 15 \\times 8 + 15 \\times 10 = 360 \\text{ cm}^2$.\n3. Total $= 48 + 360 = 408 \\text{ cm}^2$.\n\n**Answer:** $408 \\text{ cm}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 408,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "5F": [
+   {
+    "kind": "short",
+    "question": "Write $x^{2} + 10x + 7$ in the form $(x + h)^{2} + k$.\n\n(a) Find $h$.\n\n(b) Find $k$.",
+    "answer": "(a) $5$ (b) $-18$",
+    "solution": "**Key idea:** Add and subtract the square of half the coefficient of $x$.\n\n1. Half of 10 is 5, so use $(x + 5)^{2} = x^{2} + 10x + 25$.\n2. $x^{2} + 10x + 7 = (x + 5)^{2} - 25 + 7 = (x + 5)^{2} - 18$.\n3. So $h = 5$ and $k = -18$.\n\n**Answer:** (a) $5$ (b) $-18$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -18
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $x^{2} - 6x + 2$ in the form $(x + h)^{2} + k$.\n\n(a) Find $h$.\n\n(b) Find $k$.",
+    "answer": "(a) $-3$ (b) $-7$",
+    "solution": "**Key idea:** Add and subtract the square of half the coefficient of $x$.\n\n1. Half of $-6$ is $-3$, so use $(x - 3)^{2} = x^{2} - 6x + 9$.\n2. $x^{2} - 6x + 2 = (x - 3)^{2} - 9 + 2 = (x - 3)^{2} - 7$.\n3. So $h = -3$ and $k = -7$.\n\n**Answer:** (a) $-3$ (b) $-7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What number must be added to $x^{2} + 14x$ to make a perfect square?",
+    "answer": "$49$",
+    "solution": "**Key idea:** Add the square of half the coefficient of $x$.\n\n1. Half of 14 is 7.\n2. $7^{2} = 49$, and $x^{2} + 14x + 49 = (x + 7)^{2}$.\n\n**Answer:** $49$",
+    "key": [
+     {
+      "type": "num",
+      "value": 49
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise $x^{2} + 8x + 12$ by completing the square.",
+    "answer": "$(x + 2)(x + 6)$",
+    "solution": "**Key idea:** Complete the square, then use the difference of two squares.\n\n1. $x^{2} + 8x + 12 = (x + 4)^{2} - 16 + 12 = (x + 4)^{2} - 4$.\n2. Difference of two squares: $(x + 4)^{2} - 2^{2} = (x + 4 - 2)(x + 4 + 2)$.\n3. $= (x + 2)(x + 6)$.\n\n**Answer:** $(x + 2)(x + 6)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(x+2)*(x+6)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise $x^{2} - 4x - 21$ by completing the square.",
+    "answer": "$(x - 7)(x + 3)$",
+    "solution": "**Key idea:** Complete the square, then use the difference of two squares.\n\n1. $x^{2} - 4x - 21 = (x - 2)^{2} - 4 - 21 = (x - 2)^{2} - 25$.\n2. Difference of two squares: $(x - 2 - 5)(x - 2 + 5)$.\n3. $= (x - 7)(x + 3)$.\n\n**Answer:** $(x - 7)(x + 3)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(x-7)*(x+3)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "By completing the square, $x^{2} - 2x - 11 = (x - 1)^{2} - k = (x - 1 - \\sqrt{k})(x - 1 + \\sqrt{k})$. Find $k$.",
+    "answer": "$12$",
+    "solution": "**Key idea:** Add and subtract the square of half the coefficient of $x$.\n\n1. $(x - 1)^{2} = x^{2} - 2x + 1$.\n2. $x^{2} - 2x - 11 = (x - 1)^{2} - 1 - 11 = (x - 1)^{2} - 12$.\n3. So $k = 12$.\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   }
+  ],
+  "5H": [
+   {
+    "kind": "short",
+    "question": "The product of two consecutive positive whole numbers is 156. Find the smaller number.",
+    "answer": "$12$",
+    "solution": "**Key idea:** Form a quadratic equation, solve it, and reject solutions that do not fit.\n\n1. Let the numbers be $n$ and $n + 1$: $n(n + 1) = 156$.\n2. $n^{2} + n - 156 = 0$, so $(n + 13)(n - 12) = 0$.\n3. $n = 12$ (reject $-13$, which is not positive).\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ball is kicked from the ground. Its height, $h$ metres, after $t$ seconds is $h = 25t - 5t^{2}$. After how many seconds does it land?",
+    "answer": "$5$ seconds",
+    "solution": "**Key idea:** Set the height to zero and use the null factor law.\n\n1. It lands when $h = 0$: $25t - 5t^{2} = 0$.\n2. $5t(5 - t) = 0$, so $t = 0$ or $t = 5$.\n3. $t = 0$ is when it is kicked, so it lands after 5 seconds.\n\n**Answer:** $5$ seconds",
+    "key": [
+     {
+      "type": "num",
+      "value": 5,
+      "unit": "seconds"
+     }
+    ]
+   }
+  ],
+  "5I": [
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} + 4x - 21 = 0$ by completing the square.",
+    "answer": "$x = 3$ or $x = -7$",
+    "solution": "**Key idea:** Complete the square, then take the square root of both sides.\n\n1. $x^{2} + 4x = 21$, so $(x + 2)^{2} = 21 + 4 = 25$.\n2. $x + 2 = \\pm 5$.\n3. $x = 3$ or $x = -7$.\n\n**Answer:** $x = 3$ or $x = -7$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       3,
+       -7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} - 8x + 7 = 0$ by completing the square.",
+    "answer": "$x = 7$ or $x = 1$",
+    "solution": "**Key idea:** Complete the square, then take the square root of both sides.\n\n1. $x^{2} - 8x = -7$, so $(x - 4)^{2} = -7 + 16 = 9$.\n2. $x - 4 = \\pm 3$.\n3. $x = 7$ or $x = 1$.\n\n**Answer:** $x = 7$ or $x = 1$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       7,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} + 2x - 5 = 0$ by completing the square. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx 1.45$ or $x \\approx -3.45$",
+    "solution": "**Key idea:** Complete the square, take square roots, then round at the end.\n\n1. $x^{2} + 2x = 5$, so $(x + 1)^{2} = 6$.\n2. $x + 1 = \\pm\\sqrt{6}$, so $x = -1 \\pm \\sqrt{6}$.\n3. $x \\approx 1.45$ or $x \\approx -3.45$.\n\n**Answer:** $x \\approx 1.45$ or $x \\approx -3.45$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1.45,
+       -3.45
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Solve $x^{2} - 6x + 4 = 0$ by completing the square. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx 5.24$ or $x \\approx 0.76$",
+    "solution": "**Key idea:** Complete the square, take square roots, then round at the end.\n\n1. $x^{2} - 6x = -4$, so $(x - 3)^{2} = -4 + 9 = 5$.\n2. $x - 3 = \\pm\\sqrt{5}$, so $x = 3 \\pm \\sqrt{5}$.\n3. $x \\approx 5.24$ or $x \\approx 0.76$.\n\n**Answer:** $x \\approx 5.24$ or $x \\approx 0.76$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       5.24,
+       0.76
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "5J": [
+   {
+    "kind": "short",
+    "question": "Use the quadratic formula to solve $x^{2} + 5x + 2 = 0$. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx -0.44$ or $x \\approx -4.56$",
+    "solution": "**Key idea:** $x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}$.\n\n1. $a = 1$, $b = 5$, $c = 2$, so $b^{2} - 4ac = 25 - 8 = 17$.\n2. $x = \\frac{-5 \\pm \\sqrt{17}}{2}$.\n3. $x \\approx -0.44$ or $x \\approx -4.56$.\n\n**Answer:** $x \\approx -0.44$ or $x \\approx -4.56$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       -0.44,
+       -4.56
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of the discriminant of $3x^{2} - 5x + 4 = 0$.",
+    "answer": "$-23$",
+    "solution": "**Key idea:** The discriminant is $b^{2} - 4ac$.\n\n1. $a = 3$, $b = -5$, $c = 4$.\n2. $\\Delta = b^{2} - 4ac = 25 - 48 = -23$ (so there are no real solutions).\n\n**Answer:** $-23$",
+    "key": [
+     {
+      "type": "num",
+      "value": -23
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use the quadratic formula to solve $2x^{2} + 3x - 7 = 0$. Give your answers correct to 2 decimal places.",
+    "answer": "$x \\approx 1.27$ or $x \\approx -2.77$",
+    "solution": "**Key idea:** $x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}$.\n\n1. $a = 2$, $b = 3$, $c = -7$, so $b^{2} - 4ac = 9 + 56 = 65$.\n2. $x = \\frac{-3 \\pm \\sqrt{65}}{4}$.\n3. $x \\approx 1.27$ or $x \\approx -2.77$.\n\n**Answer:** $x \\approx 1.27$ or $x \\approx -2.77$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1.27,
+       -2.77
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

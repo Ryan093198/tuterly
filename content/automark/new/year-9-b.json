@@ -1,0 +1,2444 @@
+{
+ "Year 9": {
+  "6A": [
+   {
+    "kind": "short",
+    "question": "Evaluate $2^{3} \\times 3^{2}$.",
+    "answer": "$72$",
+    "solution": "**Key idea:** Work out each power first, then multiply.\n\n1. $2^{3} = 2 \\times 2 \\times 2 = 8$\n2. $3^{2} = 3 \\times 3 = 9$\n3. $8 \\times 9 = 72$\n\n**Answer:** $72$",
+    "key": [
+     {
+      "type": "num",
+      "value": 72
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $n$ in each equation.\n\n(a) $3^{n} = 243$\n\n(b) $10^{n} = 1\\,000\\,000$",
+    "answer": "(a) $n = 5$ (b) $n = 6$",
+    "solution": "**Key idea:** Write the number as a power of the given base.\n\n1. $3 \\times 3 \\times 3 \\times 3 \\times 3 = 243$, so $3^{5} = 243$ and $n = 5$\n2. $1\\,000\\,000$ has six zeros, so $10^{6} = 1\\,000\\,000$ and $n = 6$\n\n**Answer:** (a) $n = 5$ (b) $n = 6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A school club passes on a message. On day $1$, $3$ people receive it. Each day, every person who received the message the day before sends it to $3$ new people, so on day $n$ there are $3^{n}$ new people receiving it.\n\n(a) How many new people receive the message on day $5$?\n\n(b) On which day does the number of new people receiving the message first go above $2000$?",
+    "answer": "(a) $243$ (b) day $7$",
+    "solution": "**Key idea:** Evaluate the power for each day and compare with the target.\n\n1. Day 5: $3^{5} = 243$\n2. $3^{6} = 729$, which is less than $2000$\n3. $3^{7} = 2187$, which is more than $2000$, so the answer is day $7$\n\n**Answer:** (a) $243$ (b) day $7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 243
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 7
+     }
+    ]
+   }
+  ],
+  "6B": [
+   {
+    "kind": "short",
+    "question": "Simplify $5m^{3}n^{2} \\times 4m^{2}n^{5}$.",
+    "answer": "$20m^{5}n^{7}$",
+    "solution": "**Key idea:** Multiply the coefficients and add the indices of matching bases.\n\n1. Coefficients: $5 \\times 4 = 20$\n2. $m^{3} \\times m^{2} = m^{5}$ and $n^{2} \\times n^{5} = n^{7}$\n\n**Answer:** $20m^{5}n^{7}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "20*m^5*n^7",
+      "vars": [
+       "m",
+       "n"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{24p^{9}q^{4}}{6p^{3}q}$.",
+    "answer": "$4p^{6}q^{3}$",
+    "solution": "**Key idea:** Divide the coefficients and subtract the indices of matching bases.\n\n1. $24 \\div 6 = 4$\n2. $p^{9} \\div p^{3} = p^{6}$ and $q^{4} \\div q^{1} = q^{3}$\n\n**Answer:** $4p^{6}q^{3}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "4*p^6*q^3",
+      "vars": [
+       "p",
+       "q"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "6D": [
+   {
+    "kind": "short",
+    "question": "Simplify $(3a^{4})^{2}$.",
+    "answer": "$9a^{8}$",
+    "solution": "**Key idea:** Raise every factor inside the brackets to the power.\n\n1. $3^{2} = 9$\n2. $(a^{4})^{2} = a^{8}$\n\n**Answer:** $9a^{8}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "9*a^8",
+      "vars": [
+       "a"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $(-2x^{2}y^{3})^{3}$.",
+    "answer": "$-8x^{6}y^{9}$",
+    "solution": "**Key idea:** Each factor, including the negative sign, is cubed.\n\n1. $(-2)^{3} = -8$\n2. $(x^{2})^{3} = x^{6}$ and $(y^{3})^{3} = y^{9}$\n\n**Answer:** $-8x^{6}y^{9}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-8*x^6*y^9",
+      "vars": [
+       "x",
+       "y"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\left(\\dfrac{2}{3}\\right)^{3}$ without a calculator.",
+    "answer": "$\\frac{8}{27}$",
+    "solution": "**Key idea:** Raise the numerator and the denominator to the power.\n\n1. $2^{3} = 8$ and $3^{3} = 27$\n2. $\\left(\\frac{2}{3}\\right)^{3} = \\frac{8}{27}$\n\n**Answer:** $\\frac{8}{27}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.2962962962962963
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A square floor tile has a side length of $5k^{2}$ cm.\n\n(a) Write a simplified expression for the area of the tile in $\\text{cm}^{2}$.\n\n(b) Find the area of the tile when $k = 2$.",
+    "answer": "(a) $25k^{4}$ (b) $400 \\text{ cm}^{2}$",
+    "solution": "**Key idea:** Area of a square is side squared, so use the power of a product law.\n\n1. Area $= (5k^{2})^{2} = 5^{2} \\times (k^{2})^{2} = 25k^{4}$\n2. When $k = 2$: $25 \\times 2^{4} = 25 \\times 16 = 400$\n\n**Answer:** (a) $25k^{4}$ (b) $400 \\text{ cm}^{2}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "25*k^4",
+      "vars": [
+       "k"
+      ],
+      "form": "simplified"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 400,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "6E": [
+   {
+    "kind": "short",
+    "question": "Evaluate $5^{-2}$ as a fraction.",
+    "answer": "$\\frac{1}{25}$",
+    "solution": "**Key idea:** $a^{-n} = \\frac{1}{a^{n}}$.\n\n1. $5^{-2} = \\frac{1}{5^{2}}$\n2. $= \\frac{1}{25}$\n\n**Answer:** $\\frac{1}{25}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.04
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\left(\\dfrac{2}{5}\\right)^{-1} + 2^{-1}$ without a calculator.",
+    "answer": "$3$",
+    "solution": "**Key idea:** A power of $-1$ gives the reciprocal.\n\n1. $\\left(\\frac{2}{5}\\right)^{-1} = \\frac{5}{2}$\n2. $2^{-1} = \\frac{1}{2}$\n3. $\\frac{5}{2} + \\frac{1}{2} = 3$\n\n**Answer:** $3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $3^{-2} \\times 3^{5}$ without a calculator.",
+    "answer": "$27$",
+    "solution": "**Key idea:** Add the indices, including the negative one.\n\n1. $3^{-2} \\times 3^{5} = 3^{-2 + 5} = 3^{3}$\n2. $3^{3} = 27$\n\n**Answer:** $27$",
+    "key": [
+     {
+      "type": "num",
+      "value": 27
+     }
+    ]
+   }
+  ],
+  "6G": [
+   {
+    "kind": "short",
+    "question": "A city has a population of $4\\,875\\,316$. Write this number in scientific notation, correct to $3$ significant figures.",
+    "answer": "$4.88 \\times 10^{6}$",
+    "solution": "**Key idea:** Round to 3 significant figures, then write as a number between 1 and 10 times a power of 10.\n\n1. The first three significant figures are $4$, $8$, $7$; the next digit is $5$, so round up to $4\\,880\\,000$\n2. $4\\,880\\,000 = 4.88 \\times 10^{6}$\n\n**Answer:** $4.88 \\times 10^{6}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4880000,
+      "form": "sci"
+     }
+    ]
+   }
+  ],
+  "6H": [
+   {
+    "kind": "short",
+    "question": "Evaluate without a calculator.\n\n(a) $49^{\\frac{1}{2}}$\n\n(b) $27^{\\frac{1}{3}}$\n\n(c) $16^{\\frac{3}{4}}$",
+    "answer": "(a) $7$ (b) $3$ (c) $8$",
+    "solution": "**Key idea:** $a^{\\frac{1}{n}} = \\sqrt[n]{a}$ and $a^{\\frac{m}{n}} = (\\sqrt[n]{a})^{m}$.\n\n1. $49^{\\frac{1}{2}} = \\sqrt{49} = 7$\n2. $27^{\\frac{1}{3}} = \\sqrt[3]{27} = 3$\n3. $16^{\\frac{3}{4}} = (\\sqrt[4]{16})^{3} = 2^{3} = 8$\n\n**Answer:** (a) $7$ (b) $3$ (c) $8$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $8^{\\frac{2}{3}} + 25^{\\frac{1}{2}}$ without a calculator.",
+    "answer": "$9$",
+    "solution": "**Key idea:** Take the root first, then the power.\n\n1. $8^{\\frac{2}{3}} = (\\sqrt[3]{8})^{2} = 2^{2} = 4$\n2. $25^{\\frac{1}{2}} = \\sqrt{25} = 5$\n3. $4 + 5 = 9$\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Between which two consecutive whole numbers does $\\sqrt{58}$ lie?",
+    "answer": "$7$ and $8$",
+    "solution": "**Key idea:** Find the square numbers on either side of 58.\n\n1. $7^{2} = 49$ and $8^{2} = 64$\n2. $49 < 58 < 64$, so $7 < \\sqrt{58} < 8$\n\n**Answer:** $7$ and $8$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       7,
+       8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use a calculator to find $\\sqrt{42}$, correct to $2$ decimal places.",
+    "answer": "$6.48$",
+    "solution": "**Key idea:** Round the calculator value to 2 decimal places.\n\n1. $\\sqrt{42} = 6.4807\\ldots$\n2. The third decimal place is $0$, so round down to $6.48$\n\n**Answer:** $6.48$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6.48,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A square courtyard has an area of $150 \\text{ m}^{2}$.\n\n(a) Find the side length of the courtyard in metres, correct to $1$ decimal place.\n\n(b) Find the perimeter of the courtyard in metres, correct to $1$ decimal place.",
+    "answer": "(a) $12.2 \\text{ m}$ (b) $49.0 \\text{ m}$ (also accept $48.8 \\text{ m}$ from the rounded side)",
+    "solution": "**Key idea:** The side length of a square is the square root of its area.\n\n1. Side $= \\sqrt{150} = 12.247\\ldots \\approx 12.2 \\text{ m}$\n2. Perimeter $= 4 \\times \\sqrt{150} = 48.989\\ldots \\approx 49.0 \\text{ m}$\n\n**Answer:** (a) $12.2 \\text{ m}$ (b) $49.0 \\text{ m}$ (also accept $48.8 \\text{ m}$ from the rounded side)",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12.2,
+      "dp": 1,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 49.0,
+      "dp": 1,
+      "accept": [
+       48.8
+      ],
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "6I": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{3} \\times \\sqrt{12}$.",
+    "answer": "$6$",
+    "solution": "**Key idea:** $\\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab}$.\n\n1. $\\sqrt{3} \\times \\sqrt{12} = \\sqrt{36}$\n2. $\\sqrt{36} = 6$\n\n**Answer:** $6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $(2\\sqrt{5})^{2}$.",
+    "answer": "$20$",
+    "solution": "**Key idea:** Square both factors: $(\\sqrt{5})^{2} = 5$.\n\n1. $(2\\sqrt{5})^{2} = 2^{2} \\times (\\sqrt{5})^{2}$\n2. $= 4 \\times 5 = 20$\n\n**Answer:** $20$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $\\sqrt{75}$ in the form $a\\sqrt{3}$. What is the value of $a$?",
+    "answer": "$a = 5$",
+    "solution": "**Key idea:** Find the largest square factor of 75.\n\n1. $75 = 25 \\times 3$\n2. $\\sqrt{75} = \\sqrt{25} \\times \\sqrt{3} = 5\\sqrt{3}$, so $a = 5$\n\n**Answer:** $a = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{8} + \\sqrt{32}$, writing your answer in the form $k\\sqrt{2}$. What is the value of $k$?",
+    "answer": "$k = 6$",
+    "solution": "**Key idea:** Simplify each surd so they are like surds, then add.\n\n1. $\\sqrt{8} = 2\\sqrt{2}$ and $\\sqrt{32} = 4\\sqrt{2}$\n2. $2\\sqrt{2} + 4\\sqrt{2} = 6\\sqrt{2}$, so $k = 6$\n\n**Answer:** $k = 6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand and simplify $(\\sqrt{6} + 2)(\\sqrt{6} - 2)$.",
+    "answer": "$2$",
+    "solution": "**Key idea:** This is a difference of two squares.\n\n1. $(\\sqrt{6} + 2)(\\sqrt{6} - 2) = (\\sqrt{6})^{2} - 2^{2}$\n2. $= 6 - 4 = 2$\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangle has a length of $\\sqrt{50}$ cm and a width of $\\sqrt{18}$ cm.\n\n(a) Find the area of the rectangle in $\\text{cm}^{2}$.\n\n(b) The perimeter can be written as $k\\sqrt{2}$ cm. Find $k$.",
+    "answer": "(a) $30 \\text{ cm}^{2}$ (b) $k = 16$",
+    "solution": "**Key idea:** Multiply surds for the area; simplify to like surds for the perimeter.\n\n1. Area $= \\sqrt{50} \\times \\sqrt{18} = \\sqrt{900} = 30$\n2. $\\sqrt{50} = 5\\sqrt{2}$ and $\\sqrt{18} = 3\\sqrt{2}$\n3. Perimeter $= 2(5\\sqrt{2} + 3\\sqrt{2}) = 16\\sqrt{2}$, so $k = 16$\n\n**Answer:** (a) $30 \\text{ cm}^{2}$ (b) $k = 16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30,
+      "unit": "cm²"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 16
+     }
+    ]
+   }
+  ],
+  "7A": [
+   {
+    "kind": "short",
+    "question": "Two angles of a triangle are $47^\\circ$ and $68^\\circ$. Find the size of the third angle.",
+    "answer": "$65^\\circ$",
+    "solution": "**Key idea:** The angles of a triangle add to $180^\\circ$.\n\n1. $47 + 68 = 115$\n2. $180 - 115 = 65$, so the third angle is $65^\\circ$\n\n**Answer:** $65^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 65,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Triangle $PQR$ is isosceles with $PQ = PR$ and $\\angle QPR = 36^\\circ$. Find $\\angle PQR$.",
+    "answer": "$72^\\circ$",
+    "solution": "**Key idea:** The base angles of an isosceles triangle are equal.\n\n1. The two base angles add to $180 - 36 = 144^\\circ$\n2. Each base angle is $144 \\div 2 = 72^\\circ$\n\n**Answer:** $72^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 72,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $\\angle BAC = 52^\\circ$ and $\\angle ABC = 61^\\circ$. Side $BC$ is extended past $C$ to point $D$. Find the exterior angle $\\angle ACD$.",
+    "answer": "$113^\\circ$",
+    "solution": "**Key idea:** An exterior angle of a triangle equals the sum of the two opposite interior angles.\n\n1. $\\angle ACD = \\angle BAC + \\angle ABC$\n2. $= 52 + 61 = 113^\\circ$\n\n**Answer:** $113^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 113,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The angles of a triangle are $x^\\circ$, $2x^\\circ$ and $3x^\\circ$. Find the value of $x$.",
+    "answer": "$x = 30$",
+    "solution": "**Key idea:** Form an equation using the angle sum of $180^\\circ$.\n\n1. $x + 2x + 3x = 180$\n2. $6x = 180$, so $x = 30$\n\n**Answer:** $x = 30$",
+    "key": [
+     {
+      "type": "num",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "An isosceles triangle has two base angles of $38^\\circ$ each. Find the size of the third angle.",
+    "answer": "$104^\\circ$",
+    "solution": "**Key idea:** The angles of a triangle add to $180^\\circ$.\n\n1. $38 + 38 = 76$\n2. $180 - 76 = 104^\\circ$\n\n**Answer:** $104^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 104,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In triangle $ABC$, $\\angle A = (2x + 10)^\\circ$, $\\angle B = (3x - 5)^\\circ$ and $\\angle C = 55^\\circ$.\n\n(a) Find the value of $x$.\n\n(b) Find the size of $\\angle A$.\n\n(c) Find the size of $\\angle B$.",
+    "answer": "(a) $x = 24$ (b) $58^\\circ$ (c) $67^\\circ$",
+    "solution": "**Key idea:** Add the three angles and set the total equal to $180^\\circ$.\n\n1. $(2x + 10) + (3x - 5) + 55 = 180$\n2. $5x + 60 = 180$, so $5x = 120$ and $x = 24$\n3. $\\angle A = 2(24) + 10 = 58^\\circ$\n4. $\\angle B = 3(24) - 5 = 67^\\circ$ (check: $58 + 67 + 55 = 180$)\n\n**Answer:** (a) $x = 24$ (b) $58^\\circ$ (c) $67^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 24
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 58,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 67,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7B": [
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. One angle between the parallel lines is $74^\\circ$. Find the size of the angle that is co-interior to it.",
+    "answer": "$106^\\circ$",
+    "solution": "**Key idea:** Co-interior angles on parallel lines add to $180^\\circ$.\n\n1. $180 - 74 = 106$\n2. The co-interior angle is $106^\\circ$\n\n**Answer:** $106^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 106,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. A pair of corresponding angles measure $(3x + 12)^\\circ$ and $78^\\circ$. Find the value of $x$.",
+    "answer": "$x = 22$",
+    "solution": "**Key idea:** Corresponding angles on parallel lines are equal.\n\n1. $3x + 12 = 78$\n2. $3x = 66$, so $x = 22$\n\n**Answer:** $x = 22$",
+    "key": [
+     {
+      "type": "num",
+      "value": 22
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. A pair of alternate angles measure $(5a - 20)^\\circ$ and $(3a + 16)^\\circ$.\n\n(a) Find the value of $a$.\n\n(b) Find the size of each angle.",
+    "answer": "(a) $a = 18$ (b) $70^\\circ$",
+    "solution": "**Key idea:** Alternate angles on parallel lines are equal.\n\n1. $5a - 20 = 3a + 16$\n2. $2a = 36$, so $a = 18$\n3. $5(18) - 20 = 70$, and $3(18) + 16 = 70$, so each angle is $70^\\circ$\n\n**Answer:** (a) $a = 18$ (b) $70^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 18
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 70,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. A pair of co-interior angles measure $(2y + 15)^\\circ$ and $(y + 45)^\\circ$. Find the value of $y$.",
+    "answer": "$y = 40$",
+    "solution": "**Key idea:** Co-interior angles on parallel lines add to $180^\\circ$.\n\n1. $(2y + 15) + (y + 45) = 180$\n2. $3y + 60 = 180$, so $3y = 120$ and $y = 40$\n\n**Answer:** $y = 40$",
+    "key": [
+     {
+      "type": "num",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A straight road crosses two parallel railway lines. The acute angle between the road and the first railway line is $63^\\circ$.\n\n(a) Find the obtuse angle between the road and the first railway line.\n\n(b) Find the acute angle between the road and the second railway line.",
+    "answer": "(a) $117^\\circ$ (b) $63^\\circ$",
+    "solution": "**Key idea:** Angles on a straight line add to $180^\\circ$, and corresponding angles on parallel lines are equal.\n\n1. The acute and obtuse angles at the first line lie on a straight line: $180 - 63 = 117^\\circ$\n2. The acute angle at the second line corresponds to the acute angle at the first line, so it is also $63^\\circ$\n\n**Answer:** (a) $117^\\circ$ (b) $63^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 117,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 63,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7C": [
+   {
+    "kind": "short",
+    "question": "Find the angle sum of a hexagon.",
+    "answer": "$720^\\circ$",
+    "solution": "**Key idea:** Angle sum of an $n$-sided polygon $= (n - 2) \\times 180^\\circ$.\n\n1. A hexagon has $6$ sides\n2. $(6 - 2) \\times 180 = 720^\\circ$\n\n**Answer:** $720^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 720,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the size of each interior angle of a regular $12$-sided polygon (a regular dodecagon).",
+    "answer": "$150^\\circ$",
+    "solution": "**Key idea:** Find the angle sum, then share it equally among the angles.\n\n1. Angle sum $= (12 - 2) \\times 180 = 1800^\\circ$\n2. Each angle $= 1800 \\div 12 = 150^\\circ$\n\n**Answer:** $150^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 150,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Each exterior angle of a regular polygon is $24^\\circ$. How many sides does the polygon have?",
+    "answer": "$15$",
+    "solution": "**Key idea:** The exterior angles of any polygon add to $360^\\circ$.\n\n1. Number of sides $= 360 \\div 24$\n2. $= 15$\n\n**Answer:** $15$",
+    "key": [
+     {
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Three angles of a quadrilateral are $85^\\circ$, $110^\\circ$ and $72^\\circ$. Find the size of the fourth angle.",
+    "answer": "$93^\\circ$",
+    "solution": "**Key idea:** The angles of a quadrilateral add to $360^\\circ$.\n\n1. $85 + 110 + 72 = 267$\n2. $360 - 267 = 93^\\circ$\n\n**Answer:** $93^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 93,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$ABCD$ is a parallelogram with $\\angle DAB = 64^\\circ$.\n\n(a) Find $\\angle ABC$.\n\n(b) Find $\\angle BCD$.",
+    "answer": "(a) $116^\\circ$ (b) $64^\\circ$",
+    "solution": "**Key idea:** In a parallelogram, co-interior angles add to $180^\\circ$ and opposite angles are equal.\n\n1. $\\angle ABC$ and $\\angle DAB$ are co-interior ($AD \\parallel BC$), so $\\angle ABC = 180 - 64 = 116^\\circ$\n2. $\\angle BCD$ is opposite $\\angle DAB$, so $\\angle BCD = 64^\\circ$\n\n**Answer:** (a) $116^\\circ$ (b) $64^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 116,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 64,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Each interior angle of a regular polygon is $140^\\circ$.\n\n(a) Find the size of each exterior angle.\n\n(b) How many sides does the polygon have?\n\n(c) Find the angle sum of the polygon.",
+    "answer": "(a) $40^\\circ$ (b) $9$ (c) $1260^\\circ$",
+    "solution": "**Key idea:** An interior angle and its exterior angle add to $180^\\circ$, and the exterior angles add to $360^\\circ$.\n\n1. Exterior angle $= 180 - 140 = 40^\\circ$\n2. Number of sides $= 360 \\div 40 = 9$\n3. Angle sum $= (9 - 2) \\times 180 = 1260^\\circ$ (check: $9 \\times 140 = 1260$)\n\n**Answer:** (a) $40^\\circ$ (b) $9$ (c) $1260^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 40,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 1260,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "7D": [
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\equiv \\triangle PQR$. In $\\triangle ABC$, $AB = 7$ cm, $BC = 10$ cm and $CA = 8$ cm. Find the length of $QR$.",
+    "answer": "$10$ cm",
+    "solution": "**Key idea:** Matching sides of congruent triangles are equal; the vertices are listed in matching order.\n\n1. $B$ matches $Q$ and $C$ matches $R$, so $QR$ matches $BC$\n2. $QR = BC = 10$ cm\n\n**Answer:** $10$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 10,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle LMN \\equiv \\triangle XYZ$. In $\\triangle LMN$, $\\angle LMN = 64^\\circ$ and $\\angle MNL = 48^\\circ$. Find $\\angle YXZ$.",
+    "answer": "$68^\\circ$",
+    "solution": "**Key idea:** Matching angles of congruent triangles are equal.\n\n1. $\\angle YXZ$ matches $\\angle MLN$\n2. $\\angle MLN = 180 - 64 - 48 = 68^\\circ$, so $\\angle YXZ = 68^\\circ$\n\n**Answer:** $68^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 68,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\equiv \\triangle DEF$. $AB = (3x - 2)$ cm and $DE = 13$ cm. Find the value of $x$.",
+    "answer": "$x = 5$",
+    "solution": "**Key idea:** Matching sides of congruent triangles are equal.\n\n1. $AB$ matches $DE$, so $3x - 2 = 13$\n2. $3x = 15$, so $x = 5$\n\n**Answer:** $x = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle PQR \\equiv \\triangle STU$. In $\\triangle PQR$, $PQ = 6$ cm, $QR = 9$ cm and $PR = 11$ cm. Find the perimeter of $\\triangle STU$.",
+    "answer": "$26$ cm",
+    "solution": "**Key idea:** Congruent triangles have equal matching sides, so equal perimeters.\n\n1. $ST = 6$ cm, $TU = 9$ cm and $SU = 11$ cm\n2. Perimeter $= 6 + 9 + 11 = 26$ cm\n\n**Answer:** $26$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 26,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "$\\triangle ABC \\equiv \\triangle KLM$. In $\\triangle ABC$, $AB = (2a + 3)$ cm, $BC = 4b$ cm and $\\angle ABC = (3c)^\\circ$. In $\\triangle KLM$, $KL = 15$ cm, $LM = 18$ cm and $\\angle KLM = 72^\\circ$.\n\n(a) Find $a$.\n\n(b) Find $b$.\n\n(c) Find $c$.",
+    "answer": "(a) $a = 6$ (b) $b = 4.5$ (c) $c = 24$",
+    "solution": "**Key idea:** Match the sides and angles using the order of the vertices, then solve each equation.\n\n1. $AB = KL$: $2a + 3 = 15$, so $2a = 12$ and $a = 6$\n2. $BC = LM$: $4b = 18$, so $b = 4.5$\n3. $\\angle ABC = \\angle KLM$: $3c = 72$, so $c = 24$\n\n**Answer:** (a) $a = 6$ (b) $b = 4.5$ (c) $c = 24$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4.5
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 24
+     }
+    ]
+   }
+  ],
+  "7E": [
+   {
+    "kind": "short",
+    "question": "Triangle $ABC$ is isosceles with $AB = AC$, and $M$ is the midpoint of $BC$. Using congruent triangles ($\\triangle ABM \\equiv \\triangle ACM$ by SSS), it can be proved that $AM \\perp BC$.\n\nIf $BC = 16$ cm and $AB = 17$ cm, find the length of $AM$.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** The congruent triangles are right-angled at $M$, so use Pythagoras' theorem.\n\n1. $BM = 16 \\div 2 = 8$ cm\n2. $AM^{2} = 17^{2} - 8^{2} = 289 - 64 = 225$\n3. $AM = \\sqrt{225} = 15$ cm\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The diagonals of parallelogram $ABCD$ meet at $O$. Using congruent triangles it can be proved that the diagonals of a parallelogram bisect each other. $AC = 14$ cm and $BD = 9$ cm.\n\n(a) Find $AO$.\n\n(b) Find $BO$.",
+    "answer": "(a) $7$ cm (b) $4.5$ cm",
+    "solution": "**Key idea:** Bisect means cut into two equal parts.\n\n1. $AO = \\frac{1}{2} \\times 14 = 7$ cm\n2. $BO = \\frac{1}{2} \\times 9 = 4.5$ cm\n\n**Answer:** (a) $7$ cm (b) $4.5$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4.5,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$ABCD$ is a kite with $AB = AD$ and $CB = CD$. The diagonal $AC$ is drawn, and $\\triangle ABC \\equiv \\triangle ADC$ (SSS). If $\\angle ABC = 112^\\circ$, find $\\angle ADC$.",
+    "answer": "$112^\\circ$",
+    "solution": "**Key idea:** Matching angles in congruent triangles are equal.\n\n1. In $\\triangle ABC \\equiv \\triangle ADC$, vertex $B$ matches vertex $D$\n2. So $\\angle ADC = \\angle ABC = 112^\\circ$\n\n**Answer:** $112^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 112,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The diagonals of a rhombus are $10$ cm and $24$ cm long. Using congruent triangles it can be proved that the diagonals of a rhombus bisect each other at right angles. Find the side length of the rhombus.",
+    "answer": "$13$ cm",
+    "solution": "**Key idea:** The diagonals cut the rhombus into four congruent right-angled triangles.\n\n1. Half-diagonals: $5$ cm and $12$ cm\n2. Side$^{2} = 5^{2} + 12^{2} = 169$\n3. Side $= 13$ cm\n\n**Answer:** $13$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 13,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In $\\triangle ABC$, $AB = AC$ and $\\angle BAC = 48^\\circ$. Congruent triangles can be used to prove that the base angles of an isosceles triangle are equal. Find $\\angle ABC$.",
+    "answer": "$66^\\circ$",
+    "solution": "**Key idea:** The base angles are equal and the angle sum is $180^\\circ$.\n\n1. $\\angle ABC + \\angle ACB = 180 - 48 = 132^\\circ$\n2. $\\angle ABC = 132 \\div 2 = 66^\\circ$\n\n**Answer:** $66^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 66,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "$M$ is the midpoint of $AB$ and point $P$ is placed so that $PM \\perp AB$. Then $\\triangle PMA \\equiv \\triangle PMB$ (SAS), so $PA = PB$. The length of $AB$ is $24$ cm and $PM = 5$ cm.\n\n(a) Find $AM$.\n\n(b) Find $PA$.\n\n(c) Find the perimeter of $\\triangle PAB$.",
+    "answer": "(a) $12$ cm (b) $13$ cm (c) $50$ cm",
+    "solution": "**Key idea:** Use the congruent right-angled triangles and Pythagoras' theorem.\n\n1. $AM = 24 \\div 2 = 12$ cm\n2. $PA^{2} = 12^{2} + 5^{2} = 169$, so $PA = 13$ cm\n3. $PB = PA = 13$ cm, so the perimeter is $13 + 13 + 24 = 50$ cm\n\n**Answer:** (a) $12$ cm (b) $13$ cm (c) $50$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 13,
+      "unit": "cm"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 50,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "7G": [
+   {
+    "kind": "short",
+    "question": "A triangle has sides of $5$ cm, $7$ cm and $9$ cm. A similar triangle has a shortest side of $15$ cm. Find the length of the longest side of the larger triangle.",
+    "answer": "$27$ cm",
+    "solution": "**Key idea:** Find the scale factor using matching sides, then multiply.\n\n1. Scale factor $= 15 \\div 5 = 3$\n2. Longest side $= 9 \\times 3 = 27$ cm\n\n**Answer:** $27$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 27,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two rectangles are similar. The smaller one measures $4$ cm by $10$ cm. The larger one has a width of $6$ cm (matching the $4$ cm side). Find the length of the larger rectangle.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** Matching sides of similar figures are in the same ratio.\n\n1. Scale factor $= 6 \\div 4 = 1.5$\n2. Length $= 10 \\times 1.5 = 15$ cm\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "7H": [
+   {
+    "kind": "short",
+    "question": "In $\\triangle ABC$, point $D$ is on $AB$ and point $E$ is on $AC$ so that $DE \\parallel BC$. $AD = 3$ cm, $AB = 9$ cm and $DE = 4$ cm. Find the length of $BC$.",
+    "answer": "$12$ cm",
+    "solution": "**Key idea:** $\\triangle ADE \\sim \\triangle ABC$ (AAA), so matching sides are in the same ratio.\n\n1. Scale factor $= AB \\div AD = 9 \\div 3 = 3$\n2. $BC = 4 \\times 3 = 12$ cm\n\n**Answer:** $12$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 12,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In $\\triangle ABC$, $D$ is on $AB$ and $E$ is on $AC$ with $DE \\parallel BC$. $AD = 5$ cm, $DB = 3$ cm and $AE = 6$ cm. Find the length of $EC$.",
+    "answer": "$3.6$ cm",
+    "solution": "**Key idea:** A line parallel to one side of a triangle divides the other two sides in the same ratio.\n\n1. $\\frac{EC}{AE} = \\frac{DB}{AD}$, so $\\frac{EC}{6} = \\frac{3}{5}$\n2. $EC = 6 \\times \\frac{3}{5} = 3.6$ cm\n\n**Answer:** $3.6$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.6,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "At the same time of day, a student who is $1.5$ m tall casts a shadow $2$ m long, and a flagpole casts a shadow $12$ m long. Find the height of the flagpole.",
+    "answer": "$9$ m",
+    "solution": "**Key idea:** The two triangles formed are similar (AAA), so the ratio height : shadow is the same.\n\n1. $\\frac{h}{12} = \\frac{1.5}{2}$\n2. $h = 12 \\times 0.75 = 9$ m\n\n**Answer:** $9$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 9,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Line segments $AD$ and $BC$ cross at $O$, with $AB \\parallel CD$. $OA = 4$ cm, $OD = 10$ cm and $AB = 6$ cm. Find the length of $CD$.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** $\\triangle OAB \\sim \\triangle ODC$ (vertically opposite and alternate angles).\n\n1. Scale factor $= OD \\div OA = 10 \\div 4 = 2.5$\n2. $CD = 6 \\times 2.5 = 15$ cm\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "One triangle has sides $6$ cm, $8$ cm and $12$ cm. Another has sides $9$ cm, $12$ cm and $18$ cm. The triangles are similar (SSS). Find the scale factor from the smaller triangle to the larger triangle.",
+    "answer": "$1.5$",
+    "solution": "**Key idea:** Divide matching sides; all three ratios must be equal.\n\n1. $\\frac{9}{6} = 1.5$, $\\frac{12}{8} = 1.5$ and $\\frac{18}{12} = 1.5$\n2. The scale factor is $1.5$\n\n**Answer:** $1.5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1.5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A straight ramp rises from the ground. A vertical support post $0.6$ m high touches the ramp at a point $2$ m (measured horizontally) from the bottom of the ramp. The top of the ramp is $5$ m (measured horizontally) from the bottom.\n\n(a) Find the scale factor from the small triangle (post) to the large triangle (whole ramp).\n\n(b) Find the height of the top of the ramp above the ground, in metres.",
+    "answer": "(a) $2.5$ (b) $1.5$ m",
+    "solution": "**Key idea:** The small and large right-angled triangles share the angle at the bottom of the ramp, so they are similar (AAA).\n\n1. Scale factor $= 5 \\div 2 = 2.5$\n2. Height $= 0.6 \\times 2.5 = 1.5$ m\n\n**Answer:** (a) $2.5$ (b) $1.5$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1.5,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "8A": [
+   {
+    "kind": "short",
+    "question": "Expand and simplify $(3x - 2)(x + 5)$.",
+    "answer": "$3x^{2} + 13x - 10$",
+    "solution": "**Key idea:** Multiply each term in the first bracket by each term in the second bracket.\n\n1. $3x \\times x + 3x \\times 5 - 2 \\times x - 2 \\times 5$\n2. $= 3x^{2} + 15x - 2x - 10 = 3x^{2} + 13x - 10$\n\n**Answer:** $3x^{2} + 13x - 10$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3*x^2+13*x-10",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangular garden bed is $(2x + 3)$ m long and $(x - 1)$ m wide.\n\n(a) Write an expanded expression for the area of the garden bed.\n\n(b) Find the area of the garden bed when $x = 4$.",
+    "answer": "(a) $2x^{2} + x - 3$ (b) $33 \\text{ m}^{2}$",
+    "solution": "**Key idea:** Area = length $\\times$ width; expand the binomial product.\n\n1. $(2x + 3)(x - 1) = 2x^{2} - 2x + 3x - 3 = 2x^{2} + x - 3$\n2. When $x = 4$: $2(16) + 4 - 3 = 33$ (check: $11 \\times 3 = 33$)\n\n**Answer:** (a) $2x^{2} + x - 3$ (b) $33 \\text{ m}^{2}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "2*x^2+x-3",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 33,
+      "unit": "m²"
+     }
+    ]
+   }
+  ],
+  "8B": [
+   {
+    "kind": "short",
+    "question": "Expand $(x + 7)^{2}$.",
+    "answer": "$x^{2} + 14x + 49$",
+    "solution": "**Key idea:** $(a + b)^{2} = a^{2} + 2ab + b^{2}$.\n\n1. $x^{2} + 2 \\times x \\times 7 + 7^{2}$\n2. $= x^{2} + 14x + 49$\n\n**Answer:** $x^{2} + 14x + 49$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x^2+14*x+49",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand $(3a - 4)^{2}$.",
+    "answer": "$9a^{2} - 24a + 16$",
+    "solution": "**Key idea:** $(a - b)^{2} = a^{2} - 2ab + b^{2}$.\n\n1. $(3a)^{2} - 2 \\times 3a \\times 4 + 4^{2}$\n2. $= 9a^{2} - 24a + 16$\n\n**Answer:** $9a^{2} - 24a + 16$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "9*a^2-24*a+16",
+      "vars": [
+       "a"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand $(5m + 2)(5m - 2)$.",
+    "answer": "$25m^{2} - 4$",
+    "solution": "**Key idea:** $(a + b)(a - b) = a^{2} - b^{2}$.\n\n1. $(5m)^{2} - 2^{2}$\n2. $= 25m^{2} - 4$\n\n**Answer:** $25m^{2} - 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "25*m^2-4",
+      "vars": [
+       "m"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Use expansion to evaluate each without a calculator.\n\n(a) $98^{2}$, by writing it as $(100 - 2)^{2}$\n\n(b) $61 \\times 59$, by writing it as $(60 + 1)(60 - 1)$",
+    "answer": "(a) $9604$ (b) $3599$",
+    "solution": "**Key idea:** Use the perfect square and difference of two squares expansions.\n\n1. $(100 - 2)^{2} = 100^{2} - 2 \\times 100 \\times 2 + 2^{2} = 10\\,000 - 400 + 4 = 9604$\n2. $(60 + 1)(60 - 1) = 60^{2} - 1^{2} = 3600 - 1 = 3599$\n\n**Answer:** (a) $9604$ (b) $3599$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9604
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3599
+     }
+    ]
+   }
+  ],
+  "8C": [
+   {
+    "kind": "short",
+    "question": "Factorise $14a^{2}b - 21ab^{2}$.",
+    "answer": "$7ab(2a - 3b)$",
+    "solution": "**Key idea:** Take out the highest common factor of the numbers and the pronumerals.\n\n1. HCF of $14$ and $21$ is $7$; both terms contain $a$ and $b$, so the HCF is $7ab$\n2. $14a^{2}b - 21ab^{2} = 7ab(2a - 3b)$\n\n**Answer:** $7ab(2a - 3b)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "7*a*b*(2*a-3*b)",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise fully $-6x^{2} - 15x$, taking out a negative common factor.",
+    "answer": "$-3x(2x + 5)$",
+    "solution": "**Key idea:** When the first term is negative, take out a negative HCF.\n\n1. The HCF is $3x$; take out $-3x$\n2. $-6x^{2} - 15x = -3x(2x + 5)$\n\n**Answer:** $-3x(2x + 5)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-3*x*(2*x+5)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   }
+  ],
+  "8D": [
+   {
+    "kind": "short",
+    "question": "Factorise $81 - 4y^{2}$.",
+    "answer": "$(9 - 2y)(9 + 2y)$",
+    "solution": "**Key idea:** $a^{2} - b^{2} = (a - b)(a + b)$.\n\n1. $81 = 9^{2}$ and $4y^{2} = (2y)^{2}$\n2. $81 - 4y^{2} = (9 - 2y)(9 + 2y)$\n\n**Answer:** $(9 - 2y)(9 + 2y)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(9-2*y)*(9+2*y)",
+      "vars": [
+       "y"
+      ],
+      "form": "factorised"
+     }
+    ]
+   }
+  ],
+  "8E": [
+   {
+    "kind": "short",
+    "question": "Factorise $x^{2} + 5x + 2x + 10$ by grouping in pairs.",
+    "answer": "$(x + 5)(x + 2)$",
+    "solution": "**Key idea:** Factorise each pair, then take out the common bracket.\n\n1. $x(x + 5) + 2(x + 5)$\n2. $= (x + 5)(x + 2)$\n\n**Answer:** $(x + 5)(x + 2)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(x+5)*(x+2)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise $3ab - 6a + 4b - 8$ by grouping in pairs.",
+    "answer": "$(b - 2)(3a + 4)$",
+    "solution": "**Key idea:** Factorise each pair so that the same bracket appears.\n\n1. $3a(b - 2) + 4(b - 2)$\n2. $= (b - 2)(3a + 4)$\n\n**Answer:** $(b - 2)(3a + 4)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(b-2)*(3*a+4)",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "factorised"
+     }
+    ]
+   }
+  ],
+  "8G": [
+   {
+    "kind": "short",
+    "question": "Factorise $2x^{2} + 11x + 12$.",
+    "answer": "$(2x + 3)(x + 4)$",
+    "solution": "**Key idea:** Find two numbers that multiply to $ac$ and add to $b$, then split the middle term.\n\n1. $ac = 24$; $8 \\times 3 = 24$ and $8 + 3 = 11$\n2. $2x^{2} + 8x + 3x + 12 = 2x(x + 4) + 3(x + 4)$\n3. $= (2x + 3)(x + 4)$\n\n**Answer:** $(2x + 3)(x + 4)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(2*x+3)*(x+4)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise $4x^{2} - 4x - 15$.",
+    "answer": "$(2x - 5)(2x + 3)$",
+    "solution": "**Key idea:** Find two numbers that multiply to $ac$ and add to $b$, then split the middle term.\n\n1. $ac = -60$; $-10 \\times 6 = -60$ and $-10 + 6 = -4$\n2. $4x^{2} - 10x + 6x - 15 = 2x(2x - 5) + 3(2x - 5)$\n3. $= (2x - 5)(2x + 3)$\n\n**Answer:** $(2x - 5)(2x + 3)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(2*x-5)*(2*x+3)",
+      "vars": [
+       "x"
+      ],
+      "form": "factorised"
+     }
+    ]
+   }
+  ],
+  "8H": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{5x}{8} \\times \\dfrac{4}{15x}$.",
+    "answer": "$\\frac{1}{6}$",
+    "solution": "**Key idea:** Cancel common factors before multiplying.\n\n1. $\\frac{5x \\times 4}{8 \\times 15x} = \\frac{20x}{120x}$\n2. $= \\frac{1}{6}$\n\n**Answer:** $\\frac{1}{6}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.16666666666666666
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{x + 5}{6} \\div \\dfrac{x + 5}{9}$.",
+    "answer": "$\\frac{3}{2}$",
+    "solution": "**Key idea:** To divide, multiply by the reciprocal of the second fraction.\n\n1. $\\frac{x + 5}{6} \\times \\frac{9}{x + 5}$\n2. The $(x + 5)$ factors cancel, leaving $\\frac{9}{6} = \\frac{3}{2}$\n\n**Answer:** $\\frac{3}{2}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{9a^{2}}{4b} \\times \\dfrac{8b}{3a}$.",
+    "answer": "$6a$",
+    "solution": "**Key idea:** Multiply numerators and denominators, then cancel common factors.\n\n1. $\\frac{9a^{2} \\times 8b}{4b \\times 3a} = \\frac{72a^{2}b}{12ab}$\n2. $= 6a$\n\n**Answer:** $6a$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "6*a",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "8I": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{3x}{5} + \\dfrac{2x}{5}$.",
+    "answer": "$x$",
+    "solution": "**Key idea:** The denominators are the same, so add the numerators.\n\n1. $\\frac{3x + 2x}{5} = \\frac{5x}{5}$\n2. $= x$\n\n**Answer:** $x$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{x + 4}{3} + \\dfrac{2x - 1}{3}$.",
+    "answer": "$x + 1$",
+    "solution": "**Key idea:** Add the numerators over the common denominator, then simplify.\n\n1. $\\frac{x + 4 + 2x - 1}{3} = \\frac{3x + 3}{3}$\n2. $= \\frac{3(x + 1)}{3} = x + 1$\n\n**Answer:** $x + 1$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x+1",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "When $\\dfrac{x}{4} + \\dfrac{x}{6}$ is written as a single fraction, it equals $\\dfrac{kx}{12}$. Find the value of $k$.",
+    "answer": "$k = 5$",
+    "solution": "**Key idea:** Write both fractions with the lowest common denominator, 12.\n\n1. $\\frac{x}{4} = \\frac{3x}{12}$ and $\\frac{x}{6} = \\frac{2x}{12}$\n2. $\\frac{3x}{12} + \\frac{2x}{12} = \\frac{5x}{12}$, so $k = 5$\n\n**Answer:** $k = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "When $\\dfrac{2}{x} + \\dfrac{3}{2x}$ is written as a single fraction, it equals $\\dfrac{k}{2x}$. Find the value of $k$.",
+    "answer": "$k = 7$",
+    "solution": "**Key idea:** Use the common denominator $2x$.\n\n1. $\\frac{2}{x} = \\frac{4}{2x}$\n2. $\\frac{4}{2x} + \\frac{3}{2x} = \\frac{7}{2x}$, so $k = 7$\n\n**Answer:** $k = 7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\dfrac{5a}{6} - \\dfrac{a}{3} = \\dfrac{a}{k}$. Find the value of $k$.",
+    "answer": "$k = 2$",
+    "solution": "**Key idea:** Use the common denominator 6, subtract, then simplify.\n\n1. $\\frac{a}{3} = \\frac{2a}{6}$\n2. $\\frac{5a}{6} - \\frac{2a}{6} = \\frac{3a}{6} = \\frac{a}{2}$, so $k = 2$\n\n**Answer:** $k = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The expression $\\dfrac{x + 1}{2} + \\dfrac{x - 1}{3}$ can be written as a single fraction in the form $\\dfrac{ax + b}{6}$.\n\n(a) Find $a$.\n\n(b) Find $b$.\n\n(c) Find the value of the expression when $x = 7$.",
+    "answer": "(a) $a = 5$ (b) $b = 1$ (c) $6$",
+    "solution": "**Key idea:** Write both fractions over 6, expanding the numerators carefully.\n\n1. $\\frac{3(x + 1)}{6} + \\frac{2(x - 1)}{6} = \\frac{3x + 3 + 2x - 2}{6}$\n2. $= \\frac{5x + 1}{6}$, so $a = 5$ and $b = 1$\n3. When $x = 7$: $\\frac{5(7) + 1}{6} = \\frac{36}{6} = 6$ (check: $\\frac{8}{2} + \\frac{6}{3} = 4 + 2 = 6$)\n\n**Answer:** (a) $a = 5$ (b) $b = 1$ (c) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 1
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   }
+  ],
+  "8J": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{x^{2} - 16}{x - 4}$.",
+    "answer": "$x + 4$",
+    "solution": "**Key idea:** Factorise the numerator, then cancel the common factor.\n\n1. $x^{2} - 16 = (x - 4)(x + 4)$\n2. $\\frac{(x - 4)(x + 4)}{x - 4} = x + 4$\n\n**Answer:** $x + 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x+4",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{x^{2} + 7x + 12}{x + 3}$.",
+    "answer": "$x + 4$",
+    "solution": "**Key idea:** Factorise the trinomial, then cancel the common factor.\n\n1. $x^{2} + 7x + 12 = (x + 3)(x + 4)$\n2. $\\frac{(x + 3)(x + 4)}{x + 3} = x + 4$\n\n**Answer:** $x + 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x+4",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{3x - 6}{x^{2} - 4} \\times \\dfrac{x + 2}{3}$.",
+    "answer": "$1$",
+    "solution": "**Key idea:** Factorise every numerator and denominator, then cancel.\n\n1. $3x - 6 = 3(x - 2)$ and $x^{2} - 4 = (x - 2)(x + 2)$\n2. $\\frac{3(x - 2)}{(x - 2)(x + 2)} \\times \\frac{x + 2}{3} = 1$\n\n**Answer:** $1$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1
+     }
+    ]
+   }
+  ],
+  "8K": [
+   {
+    "kind": "short",
+    "question": "Solve $\\dfrac{x - 3}{4} = \\dfrac{x + 1}{6}$.",
+    "answer": "$x = 11$",
+    "solution": "**Key idea:** Multiply both sides by the lowest common denominator, 12.\n\n1. $3(x - 3) = 2(x + 1)$\n2. $3x - 9 = 2x + 2$\n3. $x = 11$ (check: $\\frac{8}{4} = 2$ and $\\frac{12}{6} = 2$)\n\n**Answer:** $x = 11$",
+    "key": [
+     {
+      "type": "num",
+      "value": 11
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "When a third of a number is added to a quarter of the same number, the result is $21$.\n\n(a) Write an equation and solve it to find the number.\n\n(b) What is a quarter of the number?",
+    "answer": "(a) $36$ (b) $9$",
+    "solution": "**Key idea:** Let the number be $x$ and clear the fractions using the lowest common denominator.\n\n1. $\\frac{x}{3} + \\frac{x}{4} = 21$\n2. Multiply by $12$: $4x + 3x = 252$, so $7x = 252$ and $x = 36$\n3. A quarter of $36$ is $9$ (check: $12 + 9 = 21$)\n\n**Answer:** (a) $36$ (b) $9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 36
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     }
+    ]
+   }
+  ],
+  "9A": [
+   {
+    "kind": "short",
+    "question": "A bag contains $5$ red, $3$ blue and $4$ yellow counters. One counter is chosen at random. Find:\n\n(a) $P(\\text{blue})$\n\n(b) $P(\\text{not red})$\n\n(c) $P(\\text{red or yellow})$",
+    "answer": "(a) $\\frac{1}{4}$ (b) $\\frac{7}{12}$ (c) $\\frac{3}{4}$",
+    "solution": "**Key idea:** $P(\\text{event}) = \\frac{\\text{number of favourable outcomes}}{\\text{total number of outcomes}}$.\n\n1. Total $= 5 + 3 + 4 = 12$\n2. $P(\\text{blue}) = \\frac{3}{12} = \\frac{1}{4}$\n3. $P(\\text{not red}) = \\frac{7}{12}$\n4. $P(\\text{red or yellow}) = \\frac{9}{12} = \\frac{3}{4}$\n\n**Answer:** (a) $\\frac{1}{4}$ (b) $\\frac{7}{12}$ (c) $\\frac{3}{4}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.25
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5833333333333334
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.75
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A fair six-sided die is rolled once. Find:\n\n(a) the probability of rolling a number greater than $4$\n\n(b) the probability of rolling a prime number",
+    "answer": "(a) $\\frac{1}{3}$ (b) $\\frac{1}{2}$",
+    "solution": "**Key idea:** List the favourable outcomes out of the 6 equally likely outcomes.\n\n1. Greater than $4$: $5$ and $6$, so $\\frac{2}{6} = \\frac{1}{3}$\n2. Prime: $2$, $3$ and $5$, so $\\frac{3}{6} = \\frac{1}{2}$\n\n**Answer:** (a) $\\frac{1}{3}$ (b) $\\frac{1}{2}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.3333333333333333
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Each letter of the word AUSTRALIA is written on a separate card, and one card is chosen at random. Find the probability that the letter is:\n\n(a) A\n\n(b) a vowel (A, E, I, O or U)",
+    "answer": "(a) $\\frac{1}{3}$ (b) $\\frac{5}{9}$",
+    "solution": "**Key idea:** Count the letters, including repeated ones.\n\n1. There are $9$ letters, and $3$ of them are A, so $P(\\text{A}) = \\frac{3}{9} = \\frac{1}{3}$\n2. The vowels are A, U, A, I, A, so $P(\\text{vowel}) = \\frac{5}{9}$\n\n**Answer:** (a) $\\frac{1}{3}$ (b) $\\frac{5}{9}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.3333333333333333
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5555555555555556
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A spinner has $10$ equal sectors: $4$ green, $3$ orange, $2$ purple and $1$ white.\n\n(a) Find $P(\\text{green})$ as a decimal.\n\n(b) Find $P(\\text{not purple})$ as a decimal.\n\n(c) The spinner is spun $150$ times. How many times would you expect it to land on orange?",
+    "answer": "(a) $0.4$ (b) $0.8$ (c) $45$",
+    "solution": "**Key idea:** Expected number = probability $\\times$ number of trials.\n\n1. $P(\\text{green}) = \\frac{4}{10} = 0.4$\n2. $P(\\text{not purple}) = \\frac{8}{10} = 0.8$\n3. $P(\\text{orange}) = 0.3$, and $0.3 \\times 150 = 45$\n\n**Answer:** (a) $0.4$ (b) $0.8$ (c) $45$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.8
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 45
+     }
+    ]
+   }
+  ],
+  "9C": [
+   {
+    "kind": "short",
+    "question": "Let $\\xi = \\{1, 2, 3, \\ldots, 15\\}$, $A = \\{\\text{multiples of } 3\\}$ and $B = \\{\\text{multiples of } 5\\}$. Find:\n\n(a) $n(A \\cap B)$\n\n(b) $n(A \\cup B)$\n\n(c) $P(A \\cup B)$ if a number is chosen at random from $\\xi$",
+    "answer": "(a) $1$ (b) $7$ (c) $\\frac{7}{15}$",
+    "solution": "**Key idea:** $A \\cap B$ means in both sets; $A \\cup B$ means in either set or both.\n\n1. $A = \\{3, 6, 9, 12, 15\\}$ and $B = \\{5, 10, 15\\}$\n2. $A \\cap B = \\{15\\}$, so $n(A \\cap B) = 1$\n3. $A \\cup B = \\{3, 5, 6, 9, 10, 12, 15\\}$, so $n(A \\cup B) = 7$\n4. $P(A \\cup B) = \\frac{7}{15}$\n\n**Answer:** (a) $1$ (b) $7$ (c) $\\frac{7}{15}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.4666666666666667
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a class survey, $n(\\xi) = 40$, $n(A) = 22$, $n(B) = 15$ and $n(A \\cap B) = 6$. Find:\n\n(a) $n(A \\cup B)$\n\n(b) $n(A' \\cap B')$\n\n(c) $P(A \\cap B')$, as a decimal",
+    "answer": "(a) $31$ (b) $9$ (c) $0.4$",
+    "solution": "**Key idea:** $n(A \\cup B) = n(A) + n(B) - n(A \\cap B)$.\n\n1. $n(A \\cup B) = 22 + 15 - 6 = 31$\n2. $n(A' \\cap B') = 40 - 31 = 9$\n3. $n(A \\cap B') = 22 - 6 = 16$, so $P(A \\cap B') = \\frac{16}{40} = 0.4$\n\n**Answer:** (a) $31$ (b) $9$ (c) $0.4$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 31
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For two events, $P(A) = 0.5$, $P(B) = 0.3$ and $P(A \\cap B) = 0.1$. Find:\n\n(a) $P(A \\cup B)$\n\n(b) $P(A')$\n\n(c) $P\\left((A \\cup B)'\\right)$",
+    "answer": "(a) $0.7$ (b) $0.5$ (c) $0.3$",
+    "solution": "**Key idea:** $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$ and $P(A') = 1 - P(A)$.\n\n1. $P(A \\cup B) = 0.5 + 0.3 - 0.1 = 0.7$\n2. $P(A') = 1 - 0.5 = 0.5$\n3. $P\\left((A \\cup B)'\\right) = 1 - 0.7 = 0.3$\n\n**Answer:** (a) $0.7$ (b) $0.5$ (c) $0.3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.5
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.3
+     }
+    ]
+   }
+  ],
+  "9D": [
+   {
+    "kind": "short",
+    "question": "Two fair six-sided dice are rolled and the two numbers are added. Using an array of all $36$ outcomes, find:\n\n(a) $P(\\text{total of } 8)$\n\n(b) $P(\\text{total of at least } 10)$",
+    "answer": "(a) $\\frac{5}{36}$ (b) $\\frac{1}{6}$",
+    "solution": "**Key idea:** Count the cells in the 6 by 6 array that give each total.\n\n1. Total of $8$: $(2, 6), (3, 5), (4, 4), (5, 3), (6, 2)$, so $\\frac{5}{36}$\n2. Totals of $10$, $11$ or $12$: $3 + 2 + 1 = 6$ outcomes, so $\\frac{6}{36} = \\frac{1}{6}$\n\n**Answer:** (a) $\\frac{5}{36}$ (b) $\\frac{1}{6}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.1388888888888889
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.16666666666666666
+     }
+    ]
+   }
+  ],
+  "9F": [
+   {
+    "kind": "short",
+    "question": "A basketballer took $160$ shots at goal in training and scored $112$ of them.\n\n(a) Find the relative frequency of scoring, as a decimal.\n\n(b) Use this to estimate how many of her next $50$ shots she will score.",
+    "answer": "(a) $0.7$ (b) $35$",
+    "solution": "**Key idea:** Relative frequency = number of successes $\\div$ number of trials.\n\n1. $\\frac{112}{160} = 0.7$\n2. $0.7 \\times 50 = 35$\n\n**Answer:** (a) $0.7$ (b) $35$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A die is rolled $250$ times and a six comes up $65$ times.\n\n(a) Estimate the probability of rolling a six, as a decimal.\n\n(b) Estimate how many sixes there would be in $1000$ rolls.",
+    "answer": "(a) $0.26$ (b) $260$",
+    "solution": "**Key idea:** Use the relative frequency as the estimate of the probability.\n\n1. $\\frac{65}{250} = 0.26$\n2. $0.26 \\times 1000 = 260$\n\n**Answer:** (a) $0.26$ (b) $260$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.26
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 260
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a survey of $400$ cars passing a school, $92$ were white. Use this data to estimate the probability that a car passing the school is not white. Give your answer as a decimal.",
+    "answer": "$0.77$",
+    "solution": "**Key idea:** Find the relative frequency of cars that are not white.\n\n1. Not white: $400 - 92 = 308$\n2. $\\frac{308}{400} = 0.77$\n\n**Answer:** $0.77$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.77
+     }
+    ]
+   }
+  ],
+  "9I": [
+   {
+    "kind": "short",
+    "question": "The stem-and-leaf plot shows the ages of people in a dance class. Key: $2 \\mid 6$ means $26$ years.\n\n| Stem | Leaf |\n|---|---|\n| 1 | 5 7 9 |\n| 2 | 0 2 2 6 8 |\n| 3 | 1 4 7 |\n| 4 | 3 |\n\n(a) How many people are in the class?\n\n(b) Find the median age.\n\n(c) Find the range.\n\n(d) Find the mode.",
+    "answer": "(a) $12$ (b) $24$ years (c) $28$ years (d) $22$ years",
+    "solution": "**Key idea:** The leaves are already in order, so count along to find the middle values.\n\n1. Count the leaves: $3 + 5 + 3 + 1 = 12$\n2. The median is the mean of the 6th and 7th values: $\\frac{22 + 26}{2} = 24$\n3. Range $= 43 - 15 = 28$\n4. $22$ appears twice, so the mode is $22$\n\n**Answer:** (a) $12$ (b) $24$ years (c) $28$ years (d) $22$ years",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 24,
+      "unit": "years"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 28,
+      "unit": "years"
+     },
+     {
+      "label": "d",
+      "type": "num",
+      "value": 22,
+      "unit": "years"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The back-to-back stem-and-leaf plot shows the test scores of two classes. Class A's leaves are on the left and are read from the stem outwards. Key: $3 \\mid 6 \\mid 2$ means $63$ for Class A and $62$ for Class B.\n\n| Class A | Stem | Class B |\n|---|---|---|\n| | 4 | 9 |\n| 8 2 | 5 | 6 |\n| 7 3 1 | 6 | 2 8 |\n| 9 4 0 | 7 | 1 3 6 |\n| 5 | 8 | 2 8 |\n| | 9 | 1 |\n\n(a) Find the median score for Class A.\n\n(b) Find the median score for Class B.\n\n(c) Find the range of the scores for Class B.",
+    "answer": "(a) $67$ (b) $72$ (c) $42$",
+    "solution": "**Key idea:** Write each class's scores in order, then find the middle value.\n\n1. Class A: 52, 58, 61, 63, 67, 70, 74, 79, 85 ($9$ scores), so the median is the 5th score, $67$\n2. Class B: 49, 56, 62, 68, 71, 73, 76, 82, 88, 91 ($10$ scores), so the median is $\\frac{71 + 73}{2} = 72$\n3. Range for Class B $= 91 - 49 = 42$\n\n**Answer:** (a) $67$ (b) $72$ (c) $42$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 67
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 72
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 42
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The stem-and-leaf plot shows the times, in seconds, that $9$ students took to solve a puzzle. Key: $3 \\mid 2$ means $32$ seconds.\n\n| Stem | Leaf |\n|---|---|\n| 2 | 4 8 |\n| 3 | 0 2 5 5 9 |\n| 4 | 1 6 |\n\n(a) Find the median time.\n\n(b) Find the mean time, correct to $1$ decimal place.",
+    "answer": "(a) $35$ seconds (b) $34.4$ seconds",
+    "solution": "**Key idea:** Read the values from the plot in order.\n\n1. The values are 24, 28, 30, 32, 35, 35, 39, 41, 46; the 5th value is $35$\n2. Sum $= 310$, so mean $= 310 \\div 9 = 34.44\\ldots \\approx 34.4$\n\n**Answer:** (a) $35$ seconds (b) $34.4$ seconds",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 35,
+      "unit": "seconds"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 34.4,
+      "dp": 1,
+      "unit": "seconds"
+     }
+    ]
+   }
+  ],
+  "9J": [
+   {
+    "kind": "short",
+    "question": "The times, $t$ minutes, taken by $30$ students to run $1$ km are shown in the grouped frequency table.\n\n| Time (minutes) | Frequency |\n|---|---|\n| $4 \\le t < 5$ | 3 |\n| $5 \\le t < 6$ | 9 |\n| $6 \\le t < 7$ | 12 |\n| $7 \\le t < 8$ | 4 |\n| $8 \\le t < 9$ | 2 |\n\nHow many students took less than $6$ minutes?",
+    "answer": "$12$",
+    "solution": "**Key idea:** Add the frequencies of the classes below 6 minutes.\n\n1. The classes $4 \\le t < 5$ and $5 \\le t < 6$ are below $6$ minutes\n2. $3 + 9 = 12$\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The times, $t$ minutes, taken by $30$ students to run $1$ km are shown in the grouped frequency table.\n\n| Time (minutes) | Frequency |\n|---|---|\n| $4 \\le t < 5$ | 3 |\n| $5 \\le t < 6$ | 9 |\n| $6 \\le t < 7$ | 12 |\n| $7 \\le t < 8$ | 4 |\n| $8 \\le t < 9$ | 2 |\n\nWhat percentage of the students took $7$ minutes or more?",
+    "answer": "$20\\%$",
+    "solution": "**Key idea:** Add the frequencies for 7 minutes or more, then write as a percentage of the total.\n\n1. $4 + 2 = 6$ students\n2. $\\frac{6}{30} \\times 100 = 20\\%$\n\n**Answer:** $20\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The times, $t$ minutes, taken by $30$ students to run $1$ km are shown in the grouped frequency table.\n\n| Time (minutes) | Frequency |\n|---|---|\n| $4 \\le t < 5$ | 3 |\n| $5 \\le t < 6$ | 9 |\n| $6 \\le t < 7$ | 12 |\n| $7 \\le t < 8$ | 4 |\n| $8 \\le t < 9$ | 2 |\n\nUse the class centres (midpoints) to estimate the mean time, correct to $1$ decimal place.",
+    "answer": "$6.3$ minutes",
+    "solution": "**Key idea:** Multiply each class centre by its frequency, add, then divide by the total frequency.\n\n1. Class centres: $4.5, 5.5, 6.5, 7.5, 8.5$\n2. $4.5(3) + 5.5(9) + 6.5(12) + 7.5(4) + 8.5(2) = 13.5 + 49.5 + 78 + 30 + 17 = 188$\n3. $188 \\div 30 = 6.27 \\approx 6.3$ minutes\n\n**Answer:** $6.3$ minutes",
+    "key": [
+     {
+      "type": "num",
+      "value": 6.3,
+      "dp": 1,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The heights, $h$ cm, of $20$ tomato seedlings are:\n\n$12, \\ 25, \\ 31, \\ 18, \\ 22, \\ 27, \\ 35, \\ 41, \\ 29, \\ 33,$\n$16, \\ 24, \\ 38, \\ 21, \\ 30, \\ 26, \\ 44, \\ 19, \\ 28, \\ 36$\n\nThe data is grouped into the classes $10 \\le h < 20$, $20 \\le h < 30$, $30 \\le h < 40$ and $40 \\le h < 50$.\n\n(a) Find the frequency of the class $20 \\le h < 30$.\n\n(b) Find the frequency of the class $30 \\le h < 40$.",
+    "answer": "(a) $8$ (b) $6$",
+    "solution": "**Key idea:** Tally each value into the class it belongs to; a value equal to the lower end belongs in that class.\n\n1. $20 \\le h < 30$: 25, 22, 27, 29, 24, 21, 26, 28, so $8$ values\n2. $30 \\le h < 40$: 31, 35, 33, 38, 30, 36, so $6$ values\n\n**Answer:** (a) $8$ (b) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The masses of $40$ Year 9 students were grouped as follows.\n\n| Mass (kg) | Frequency |\n|---|---|\n| $50 \\le m < 55$ | 5 |\n| $55 \\le m < 60$ | 11 |\n| $60 \\le m < 65$ | 14 |\n| $65 \\le m < 70$ | 7 |\n| $70 \\le m < 75$ | 3 |\n\n(a) How many students have a mass of at least $60$ kg?\n\n(b) What percentage of the students have a mass of less than $55$ kg?",
+    "answer": "(a) $24$ (b) $12.5\\%$",
+    "solution": "**Key idea:** Add the relevant class frequencies.\n\n1. At least $60$ kg: $14 + 7 + 3 = 24$\n2. Less than $55$ kg: $5$ students, and $\\frac{5}{40} \\times 100 = 12.5\\%$\n\n**Answer:** (a) $24$ (b) $12.5\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 24
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12.5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The daily rainfall, $r$ mm, at a weather station was recorded for $50$ days. One frequency is missing.\n\n| Rainfall (mm) | Frequency |\n|---|---|\n| $0 \\le r < 10$ | 18 |\n| $10 \\le r < 20$ | $x$ |\n| $20 \\le r < 30$ | 9 |\n| $30 \\le r < 40$ | 4 |\n\n(a) Find $x$.\n\n(b) On what percentage of the days was the rainfall at least $20$ mm?\n\n(c) Use class centres to estimate the mean daily rainfall.",
+    "answer": "(a) $x = 19$ (b) $26\\%$ (c) $14.8$ mm",
+    "solution": "**Key idea:** The frequencies add to the total number of days; use class centres to estimate the mean.\n\n1. $18 + x + 9 + 4 = 50$, so $x = 19$\n2. At least $20$ mm: $9 + 4 = 13$ days; $\\frac{13}{50} \\times 100 = 26\\%$\n3. $5(18) + 15(19) + 25(9) + 35(4) = 90 + 285 + 225 + 140 = 740$\n4. Mean $\\approx 740 \\div 50 = 14.8$ mm\n\n**Answer:** (a) $x = 19$ (b) $26\\%$ (c) $14.8$ mm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 19
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 26
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 14.8,
+      "unit": "mm"
+     }
+    ]
+   }
+  ],
+  "9L": [
+   {
+    "kind": "short",
+    "question": "A box plot has minimum $12$, lower quartile $18$, median $23$, upper quartile $30$ and maximum $41$.\n\n(a) Find the range.\n\n(b) Find the interquartile range.",
+    "answer": "(a) $29$ (b) $12$",
+    "solution": "**Key idea:** Range $=$ max $-$ min; IQR $= Q_3 - Q_1$.\n\n1. Range $= 41 - 12 = 29$\n2. IQR $= 30 - 18 = 12$\n\n**Answer:** (a) $29$ (b) $12$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 29
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the five-number summary of this data set, to be used for a box plot. Give the values in the order minimum, $Q_1$, median, $Q_3$, maximum. (Do not include the median in either half when finding the quartiles.)\n\n$3, \\ 7, \\ 8, \\ 10, \\ 12, \\ 13, \\ 15, \\ 18, \\ 21$",
+    "answer": "$3, \\ 7.5, \\ 12, \\ 16.5, \\ 21$",
+    "solution": "**Key idea:** The quartiles are the medians of the lower and upper halves.\n\n1. There are $9$ values, so the median is the 5th value, $12$\n2. Lower half 3, 7, 8, 10: $Q_1 = \\frac{7 + 8}{2} = 7.5$\n3. Upper half 13, 15, 18, 21: $Q_3 = \\frac{15 + 18}{2} = 16.5$\n4. Minimum $3$, maximum $21$\n\n**Answer:** $3, \\ 7.5, \\ 12, \\ 16.5, \\ 21$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       7.5,
+       12,
+       16.5,
+       21
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For a data set, $Q_1 = 20$ and $Q_3 = 32$. A value is an outlier if it is more than $1.5 \\times \\text{IQR}$ above $Q_3$ or below $Q_1$.\n\n(a) Find the IQR.\n\n(b) Find the upper boundary for outliers, $Q_3 + 1.5 \\times \\text{IQR}$.\n\n(c) Find the lower boundary for outliers, $Q_1 - 1.5 \\times \\text{IQR}$.",
+    "answer": "(a) $12$ (b) $50$ (c) $2$",
+    "solution": "**Key idea:** Find the IQR first, then go $1.5 \\times$ IQR beyond each quartile.\n\n1. IQR $= 32 - 20 = 12$\n2. $1.5 \\times 12 = 18$\n3. Upper boundary $= 32 + 18 = 50$\n4. Lower boundary $= 20 - 18 = 2$\n\n**Answer:** (a) $12$ (b) $50$ (c) $2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 50
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A box plot shows the test scores of $80$ students, with $Q_1 = 54$, median $66$ and $Q_3 = 75$.\n\n(a) About how many students scored more than $75$?\n\n(b) About how many students scored $54$ or more?",
+    "answer": "(a) $20$ (b) $60$",
+    "solution": "**Key idea:** Each section of a box plot contains about 25% of the data.\n\n1. About $25\\%$ of the scores are above $Q_3$: $0.25 \\times 80 = 20$\n2. About $75\\%$ of the scores are at or above $Q_1$: $0.75 \\times 80 = 60$\n\n**Answer:** (a) $20$ (b) $60$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 60
+     }
+    ]
+   }
+  ],
+  "10A": [
+   {
+    "kind": "short",
+    "question": "Solve $(x - 9)(x + 2) = 0$.",
+    "answer": "$x = 9$ or $x = -2$",
+    "solution": "**Key idea:** Null factor law: if $ab = 0$, then $a = 0$ or $b = 0$.\n\n1. $x - 9 = 0$ or $x + 2 = 0$\n2. $x = 9$ or $x = -2$\n\n**Answer:** $x = 9$ or $x = -2$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       9,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $5x(x + 3) = 0$.",
+    "answer": "$x = 0$ or $x = -3$",
+    "solution": "**Key idea:** Null factor law: set each factor equal to zero.\n\n1. $5x = 0$ or $x + 3 = 0$\n2. $x = 0$ or $x = -3$\n\n**Answer:** $x = 0$ or $x = -3$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       -3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $(2x - 5)(x + 4) = 0$.",
+    "answer": "$x = \\frac{5}{2}$ or $x = -4$",
+    "solution": "**Key idea:** Null factor law: set each factor equal to zero.\n\n1. $2x - 5 = 0$ gives $x = \\frac{5}{2} = 2.5$\n2. $x + 4 = 0$ gives $x = -4$\n\n**Answer:** $x = \\frac{5}{2}$ or $x = -4$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       2.5,
+       -4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The equation $x(x + 4) = 21$ is written in the standard form $x^{2} + bx + c = 0$.\n\n(a) Find $b$.\n\n(b) Find $c$.",
+    "answer": "(a) $b = 4$ (b) $c = -21$",
+    "solution": "**Key idea:** Expand the brackets and move every term to one side.\n\n1. $x^{2} + 4x = 21$\n2. $x^{2} + 4x - 21 = 0$, so $b = 4$ and $c = -21$\n\n**Answer:** (a) $b = 4$ (b) $c = -21$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -21
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "One solution of the quadratic equation $x^{2} + kx - 12 = 0$ is $x = 2$.\n\n(a) Find the value of $k$.\n\n(b) Find the other solution of the equation.",
+    "answer": "(a) $k = 4$ (b) $x = -6$",
+    "solution": "**Key idea:** Substitute the known solution, then factorise and use the null factor law.\n\n1. $2^{2} + 2k - 12 = 0$, so $2k = 8$ and $k = 4$\n2. $x^{2} + 4x - 12 = (x + 6)(x - 2) = 0$\n3. The other solution is $x = -6$\n\n**Answer:** (a) $k = 4$ (b) $x = -6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -6
+     }
+    ]
+   }
+  ],
+  "10B": [
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} = 81$.",
+    "answer": "$x = 9$ or $x = -9$",
+    "solution": "**Key idea:** A positive number has two square roots.\n\n1. $x = \\pm\\sqrt{81}$\n2. $x = 9$ or $x = -9$\n\n**Answer:** $x = 9$ or $x = -9$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       9,
+       -9
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} - 8x = 0$.",
+    "answer": "$x = 0$ or $x = 8$",
+    "solution": "**Key idea:** Take out the common factor $x$, then use the null factor law.\n\n1. $x(x - 8) = 0$\n2. $x = 0$ or $x = 8$\n\n**Answer:** $x = 0$ or $x = 8$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $4x^{2} = 20x$.",
+    "answer": "$x = 0$ or $x = 5$",
+    "solution": "**Key idea:** Bring every term to one side and factorise; do not divide by $x$, or a solution is lost.\n\n1. $4x^{2} - 20x = 0$\n2. $4x(x - 5) = 0$\n3. $x = 0$ or $x = 5$\n\n**Answer:** $x = 0$ or $x = 5$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $3x^{2} = 60$, giving your answers correct to $2$ decimal places.",
+    "answer": "$x \\approx 4.47$ or $x \\approx -4.47$",
+    "solution": "**Key idea:** Make $x^{2}$ the subject, then take the positive and negative square roots.\n\n1. $x^{2} = 20$\n2. $x = \\pm\\sqrt{20} = \\pm 4.472\\ldots$\n3. $x \\approx 4.47$ or $x \\approx -4.47$\n\n**Answer:** $x \\approx 4.47$ or $x \\approx -4.47$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       4.47,
+       -4.47
+      ],
+      "dps": [
+       2,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "10C": [
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} + 3x - 28 = 0$.",
+    "answer": "$x = -7$ or $x = 4$",
+    "solution": "**Key idea:** Factorise the trinomial, then use the null factor law.\n\n1. Two numbers that multiply to $-28$ and add to $3$: $7$ and $-4$\n2. $(x + 7)(x - 4) = 0$\n3. $x = -7$ or $x = 4$\n\n**Answer:** $x = -7$ or $x = 4$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       -7,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x^{2} - 12x + 36 = 0$.",
+    "answer": "$x = 6$",
+    "solution": "**Key idea:** Recognise a perfect square.\n\n1. $x^{2} - 12x + 36 = (x - 6)^{2}$\n2. $(x - 6)^{2} = 0$, so $x = 6$ (only one solution)\n\n**Answer:** $x = 6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   }
+  ],
+  "10D": [
+   {
+    "kind": "short",
+    "question": "The product of two consecutive positive even numbers is $168$. Let the smaller number be $x$. Write a quadratic equation and solve it to find the smaller number.",
+    "answer": "$12$",
+    "solution": "**Key idea:** Consecutive even numbers differ by 2.\n\n1. $x(x + 2) = 168$\n2. $x^{2} + 2x - 168 = 0$\n3. $(x + 14)(x - 12) = 0$, so $x = 12$ (reject $-14$, which is not positive)\n\n**Answer:** $12$",
+    "key": [
+     {
+      "type": "num",
+      "value": 12
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangle has a length that is $4$ cm more than its width. Its area is $96 \\text{ cm}^{2}$. Find the width of the rectangle.",
+    "answer": "$8$ cm",
+    "solution": "**Key idea:** Let the width be $w$ cm, form a quadratic equation and reject the negative solution.\n\n1. $w(w + 4) = 96$\n2. $w^{2} + 4w - 96 = 0$\n3. $(w + 12)(w - 8) = 0$, so $w = 8$ (a width cannot be $-12$)\n\n**Answer:** $8$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ball is kicked from the ground. Its height $h$ metres after $t$ seconds is $h = 30t - 5t^{2}$. After how many seconds does the ball land back on the ground?",
+    "answer": "$6$ seconds",
+    "solution": "**Key idea:** The ball is on the ground when $h = 0$.\n\n1. $30t - 5t^{2} = 0$\n2. $5t(6 - t) = 0$\n3. $t = 0$ (when it is kicked) or $t = 6$, so it lands after $6$ seconds\n\n**Answer:** $6$ seconds",
+    "key": [
+     {
+      "type": "num",
+      "value": 6,
+      "unit": "seconds"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangular pool is $10$ m long and $6$ m wide. A path of width $x$ m is built all the way around the pool. The total area of the pool and path is $140 \\text{ m}^{2}$.\n\n(a) Show that $x^{2} + 8x - 20 = 0$ and solve it to find the width of the path in metres.\n\n(b) Find the area of the path alone.",
+    "answer": "(a) $2$ m (b) $80 \\text{ m}^{2}$",
+    "solution": "**Key idea:** The outside rectangle is $(10 + 2x)$ m by $(6 + 2x)$ m.\n\n1. $(10 + 2x)(6 + 2x) = 140$\n2. $60 + 32x + 4x^{2} = 140$, so $4x^{2} + 32x - 80 = 0$ and $x^{2} + 8x - 20 = 0$\n3. $(x + 10)(x - 2) = 0$, so $x = 2$ (reject $-10$)\n4. Path area $= 140 - 10 \\times 6 = 80 \\text{ m}^{2}$\n\n**Answer:** (a) $2$ m (b) $80 \\text{ m}^{2}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 2,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 80,
+      "unit": "m²"
+     }
+    ]
+   }
+  ],
+  "10E": [
+   {
+    "kind": "short",
+    "question": "For the parabola $y = x^{2} - 6x + 5$:\n\n(a) find the $y$-intercept\n\n(b) find the $x$-intercepts",
+    "answer": "(a) $5$ (b) $x = 1$ and $x = 5$",
+    "solution": "**Key idea:** Substitute $x = 0$ for the $y$-intercept; solve $y = 0$ for the $x$-intercepts.\n\n1. When $x = 0$, $y = 5$\n2. $x^{2} - 6x + 5 = 0$ gives $(x - 1)(x - 5) = 0$\n3. $x = 1$ or $x = 5$\n\n**Answer:** (a) $5$ (b) $x = 1$ and $x = 5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "set",
+      "values": [
+       1,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A parabola has $x$-intercepts at $x = -4$ and $x = 2$. Find the equation of its axis of symmetry.",
+    "answer": "$x = -1$",
+    "solution": "**Key idea:** The axis of symmetry is halfway between the $x$-intercepts.\n\n1. $\\frac{-4 + 2}{2} = -1$\n2. The axis of symmetry is $x = -1$\n\n**Answer:** $x = -1$",
+    "key": [
+     {
+      "type": "num",
+      "value": -1
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A parabola has its axis of symmetry at $x = 3$ and passes through the point $(1, 5)$. The parabola passes through one other point with a $y$-coordinate of $5$. Find the $x$-coordinate of that point.",
+    "answer": "$x = 5$",
+    "solution": "**Key idea:** Points with the same $y$-value are the same distance either side of the axis of symmetry.\n\n1. $(1, 5)$ is $2$ units to the left of $x = 3$\n2. The matching point is $2$ units to the right: $x = 5$\n\n**Answer:** $x = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the parabola $y = x^{2} + 2x - 3$:\n\n(a) find the value of $y$ when $x = 2$\n\n(b) the turning point lies on the axis of symmetry $x = -1$. Find the coordinates of the turning point.",
+    "answer": "(a) $5$ (b) $(-1, -4)$",
+    "solution": "**Key idea:** Substitute the $x$-value into the rule.\n\n1. $y = 2^{2} + 2(2) - 3 = 5$\n2. $y = (-1)^{2} + 2(-1) - 3 = -4$, so the turning point is $(-1, -4)$\n\n**Answer:** (a) $5$ (b) $(-1, -4)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       -1,
+       -4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The path of a ball is modelled by $y = -x^{2} + 6x$, where $x$ m is the horizontal distance travelled and $y$ m is the height.\n\n(a) The axis of symmetry is $x = 3$. Find the maximum height of the ball.\n\n(b) How far from its starting point does the ball land?",
+    "answer": "(a) $9$ m (b) $6$ m",
+    "solution": "**Key idea:** The maximum is at the turning point; the ball lands where $y = 0$.\n\n1. When $x = 3$, $y = -9 + 18 = 9$, so the maximum height is $9$ m\n2. $-x^{2} + 6x = 0$ gives $-x(x - 6) = 0$, so $x = 0$ or $x = 6$\n3. The ball lands $6$ m from its starting point\n\n**Answer:** (a) $9$ m (b) $6$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "10F": [
+   {
+    "kind": "short",
+    "question": "For the parabola $y = 4x^{2}$, find the value of $y$ when $x = -3$.",
+    "answer": "$36$",
+    "solution": "**Key idea:** Square first, then multiply by 4.\n\n1. $y = 4 \\times (-3)^{2}$\n2. $= 4 \\times 9 = 36$\n\n**Answer:** $36$",
+    "key": [
+     {
+      "type": "num",
+      "value": 36
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The parabola $y = ax^{2}$ passes through the point $(3, 18)$. Find the value of $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Substitute the coordinates of the point into the rule.\n\n1. $18 = a \\times 3^{2} = 9a$\n2. $a = 2$\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the parabola $y = -0.5x^{2}$, find the value of $y$ when $x = 6$.",
+    "answer": "$-18$",
+    "solution": "**Key idea:** Square first, then multiply by $-0.5$.\n\n1. $y = -0.5 \\times 6^{2}$\n2. $= -0.5 \\times 36 = -18$\n\n**Answer:** $-18$",
+    "key": [
+     {
+      "type": "num",
+      "value": -18
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-values of the two points on the parabola $y = 3x^{2}$ that have a $y$-value of $48$.",
+    "answer": "$x = 4$ and $x = -4$",
+    "solution": "**Key idea:** Set $y = 48$ and solve.\n\n1. $3x^{2} = 48$, so $x^{2} = 16$\n2. $x = 4$ or $x = -4$\n\n**Answer:** $x = 4$ and $x = -4$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       4,
+       -4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = ax^{2}$ is the reflection of the graph of $y = 5x^{2}$ in the $x$-axis. Find the value of $a$.",
+    "answer": "$a = -5$",
+    "solution": "**Key idea:** Reflecting in the $x$-axis changes the sign of every $y$-value.\n\n1. Each $y$-value of $y = 5x^{2}$ becomes its negative\n2. $y = -5x^{2}$, so $a = -5$\n\n**Answer:** $a = -5$",
+    "key": [
+     {
+      "type": "num",
+      "value": -5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The parabola $y = ax^{2}$ passes through the point $(-2, -12)$.\n\n(a) Find the value of $a$.\n\n(b) Find the value of $y$ when $x = 3$.\n\n(c) Find the positive value of $x$ for which $y = -75$.",
+    "answer": "(a) $a = -3$ (b) $-27$ (c) $x = 5$",
+    "solution": "**Key idea:** Substitute the known point to find $a$, then use the rule.\n\n1. $-12 = a \\times (-2)^{2} = 4a$, so $a = -3$\n2. $y = -3 \\times 3^{2} = -27$\n3. $-3x^{2} = -75$, so $x^{2} = 25$ and the positive value is $x = 5$\n\n**Answer:** (a) $a = -3$ (b) $-27$ (c) $x = 5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -27
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   }
+  ],
+  "10G": [
+   {
+    "kind": "short",
+    "question": "For the parabola $y = (x + 5)^{2} - 2$:\n\n(a) write the coordinates of the turning point\n\n(b) find the $y$-intercept",
+    "answer": "(a) $(-5, -2)$ (b) $23$",
+    "solution": "**Key idea:** For $y = (x - h)^{2} + k$ the turning point is $(h, k)$.\n\n1. $y = (x - (-5))^{2} + (-2)$, so the turning point is $(-5, -2)$\n2. When $x = 0$: $y = 5^{2} - 2 = 23$\n\n**Answer:** (a) $(-5, -2)$ (b) $23$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -5,
+       -2
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 23
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The parabola $y = x^{2}$ is translated $3$ units to the right and $1$ unit up.\n\n(a) Write the equation of the new parabola.\n\n(b) Find its $y$-intercept.",
+    "answer": "(a) $y = (x - 3)^{2} + 1$ (b) $10$",
+    "solution": "**Key idea:** A translation of $h$ units right and $k$ units up gives $y = (x - h)^{2} + k$.\n\n1. $y = (x - 3)^{2} + 1$\n2. When $x = 0$: $y = (-3)^{2} + 1 = 10$\n\n**Answer:** (a) $y = (x - 3)^{2} + 1$ (b) $10$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "(x-3)^2+1",
+      "vars": [
+       "x"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "10H": [
+   {
+    "kind": "short",
+    "question": "For the parabola $y = (x - 2)(x - 6)$, find:\n\n(a) the $x$-intercepts\n\n(b) the $y$-intercept\n\n(c) the coordinates of the turning point",
+    "answer": "(a) $x = 2$ and $x = 6$ (b) $12$ (c) $(4, -4)$",
+    "solution": "**Key idea:** The turning point lies halfway between the $x$-intercepts.\n\n1. $y = 0$ when $x = 2$ or $x = 6$\n2. When $x = 0$: $y = (-2)(-6) = 12$\n3. Axis of symmetry $x = \\frac{2 + 6}{2} = 4$; $y = (2)(-2) = -4$, so the turning point is $(4, -4)$\n\n**Answer:** (a) $x = 2$ and $x = 6$ (b) $12$ (c) $(4, -4)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       2,
+       6
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "c",
+      "type": "list",
+      "values": [
+       4,
+       -4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the coordinates of the turning point of the parabola $y = (x + 3)(x - 5)$.",
+    "answer": "$(1, -16)$",
+    "solution": "**Key idea:** Find the axis of symmetry from the $x$-intercepts, then substitute.\n\n1. The $x$-intercepts are $-3$ and $5$, so the axis of symmetry is $x = \\frac{-3 + 5}{2} = 1$\n2. $y = (1 + 3)(1 - 5) = -16$, so the turning point is $(1, -16)$\n\n**Answer:** $(1, -16)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       1,
+       -16
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the parabola $y = x(x - 8)$:\n\n(a) find the $x$-intercepts\n\n(b) find the coordinates of the turning point",
+    "answer": "(a) $x = 0$ and $x = 8$ (b) $(4, -16)$",
+    "solution": "**Key idea:** Use the null factor law, then the midpoint of the intercepts.\n\n1. $x = 0$ or $x - 8 = 0$, so $x = 0$ or $x = 8$\n2. Axis of symmetry $x = 4$; $y = 4(4 - 8) = -16$\n3. Turning point $(4, -16)$\n\n**Answer:** (a) $x = 0$ and $x = 8$ (b) $(4, -16)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       0,
+       8
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       4,
+       -16
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the parabola $y = -(x + 1)(x - 5)$:\n\n(a) find the $y$-intercept\n\n(b) find the coordinates of the turning point",
+    "answer": "(a) $5$ (b) $(2, 9)$",
+    "solution": "**Key idea:** Substitute $x = 0$ for the $y$-intercept; the turning point is halfway between the $x$-intercepts.\n\n1. When $x = 0$: $y = -(1)(-5) = 5$\n2. The $x$-intercepts are $-1$ and $5$, so the axis is $x = 2$\n3. $y = -(3)(-3) = 9$, so the turning point is $(2, 9)$ (a maximum)\n\n**Answer:** (a) $5$ (b) $(2, 9)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       2,
+       9
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "For the parabola $y = 2(x - 1)(x - 4)$:\n\n(a) find the $x$-intercepts\n\n(b) find the $y$-intercept\n\n(c) find the coordinates of the turning point",
+    "answer": "(a) $x = 1$ and $x = 4$ (b) $8$ (c) $(2.5, -4.5)$",
+    "solution": "**Key idea:** The factor of 2 does not change the $x$-intercepts, but it does change the $y$-values.\n\n1. $x = 1$ or $x = 4$\n2. When $x = 0$: $y = 2(-1)(-4) = 8$\n3. Axis of symmetry $x = \\frac{1 + 4}{2} = 2.5$\n4. $y = 2(1.5)(-1.5) = -4.5$, so the turning point is $(2.5, -4.5)$\n\n**Answer:** (a) $x = 1$ and $x = 4$ (b) $8$ (c) $(2.5, -4.5)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       1,
+       4
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "c",
+      "type": "list",
+      "values": [
+       2.5,
+       -4.5
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

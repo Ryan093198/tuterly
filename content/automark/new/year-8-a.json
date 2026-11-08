@@ -1,0 +1,1713 @@
+{
+ "Year 8": {
+  "1A": [
+   {
+    "kind": "short",
+    "question": "A concert venue holds $12\\,450$ people. So far $8976$ tickets have been sold. How many tickets are left?",
+    "answer": "$3474$",
+    "solution": "**Key idea:** Subtract the tickets sold from the capacity.\n\n1. $12\\,450 - 8976 = 3474$\n\n**Answer:** $3474$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3474
+     }
+    ]
+   }
+  ],
+  "1B": [
+   {
+    "kind": "extended",
+    "question": "A school orders $5$ boxes of pencils with $144$ pencils in each box. The pencils are shared equally among $16$ classes.\n\n(a) How many pencils are there altogether?\n\n(b) How many pencils does each class get?",
+    "answer": "(a) $720$ (b) $45$",
+    "solution": "**Key idea:** Multiply to find the total, then divide to share equally.\n\n1. $5 \\times 144 = 720$ pencils\n2. $720 \\div 16 = 45$ pencils per class\n\n**Answer:** (a) $720$ (b) $45$",
+    "key": [
+     {
+      "type": "num",
+      "value": 720,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 45,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "1C": [
+   {
+    "kind": "short",
+    "question": "Evaluate $\\sqrt{196}$.",
+    "answer": "$14$",
+    "solution": "**Key idea:** Find the number that multiplies by itself to give 196.\n\n1. $14 \\times 14 = 196$\n2. So $\\sqrt{196} = 14$\n\n**Answer:** $14$",
+    "key": [
+     {
+      "type": "num",
+      "value": 14
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\sqrt{81} \\times \\sqrt{4} + \\sqrt{144}$.",
+    "answer": "$30$",
+    "solution": "**Key idea:** Evaluate each square root first, then follow the order of operations.\n\n1. $\\sqrt{81} = 9$, $\\sqrt{4} = 2$, $\\sqrt{144} = 12$\n2. $9 \\times 2 + 12 = 18 + 12 = 30$\n\n**Answer:** $30$",
+    "key": [
+     {
+      "type": "num",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the smallest whole number greater than $50$ whose square root is rational?",
+    "answer": "$64$",
+    "solution": "**Key idea:** A whole number has a rational square root only if it is a perfect square.\n\n1. The perfect squares near 50 are $49 = 7^{2}$ and $64 = 8^{2}$\n2. $49$ is less than $50$, so the next one, $64$, is the answer\n\n**Answer:** $64$",
+    "key": [
+     {
+      "type": "num",
+      "value": 64
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use a calculator to find $\\sqrt{40}$ correct to one decimal place.",
+    "answer": "$6.3$",
+    "solution": "**Key idea:** Round the calculator value to one decimal place.\n\n1. $\\sqrt{40} = 6.3245\\ldots$\n2. The second decimal digit is 2, so round down to $6.3$\n\n**Answer:** $6.3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6.3,
+      "dp": 1
+     }
+    ]
+   }
+  ],
+  "1D": [
+   {
+    "kind": "short",
+    "question": "Use prime factorisation to find the highest common factor (HCF) of $48$ and $72$.",
+    "answer": "$24$",
+    "solution": "**Key idea:** The HCF is the product of the prime factors the two numbers share, using the lower power of each.\n\n1. $48 = 2^{4} \\times 3$ and $72 = 2^{3} \\times 3^{2}$\n2. Common factors: $2^{3} \\times 3 = 24$\n\n**Answer:** $24$",
+    "key": [
+     {
+      "type": "num",
+      "value": 24
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the lowest common multiple (LCM) of $12$ and $18$.",
+    "answer": "$36$",
+    "solution": "**Key idea:** The LCM uses each prime factor with its highest power.\n\n1. $12 = 2^{2} \\times 3$ and $18 = 2 \\times 3^{2}$\n2. LCM $= 2^{2} \\times 3^{2} = 36$\n\n**Answer:** $36$",
+    "key": [
+     {
+      "type": "num",
+      "value": 36
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The four-digit number $47\\square2$ is divisible by $3$. What is the smallest digit that can go in the box?",
+    "answer": "$2$",
+    "solution": "**Key idea:** A number is divisible by 3 when the sum of its digits is divisible by 3.\n\n1. The known digits add to $4 + 7 + 2 = 13$\n2. The next multiple of 3 after 13 is 15, so the missing digit is $15 - 13 = 2$\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "List all the different prime factors of $210$.",
+    "answer": "$2$, $3$, $5$, $7$",
+    "solution": "**Key idea:** Divide by primes until the quotient is 1.\n\n1. $210 = 2 \\times 105 = 2 \\times 3 \\times 35 = 2 \\times 3 \\times 5 \\times 7$\n2. The prime factors are 2, 3, 5 and 7\n\n**Answer:** $2$, $3$, $5$, $7$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       2,
+       3,
+       5,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two lighthouses can be seen from a beach in Lorne. One flashes every $15$ seconds and the other flashes every $20$ seconds. They flash together at exactly 9 pm.\n\n(a) After how many seconds do they next flash together?\n\n(b) How many times do they flash together in the first $10$ minutes after 9 pm, not counting the flash at 9 pm?",
+    "answer": "(a) $60$ seconds (b) $10$ times",
+    "solution": "**Key idea:** Flashes line up at common multiples of 15 and 20, so find the LCM.\n\n1. $15 = 3 \\times 5$ and $20 = 2^{2} \\times 5$, so the LCM is $2^{2} \\times 3 \\times 5 = 60$ seconds\n2. 10 minutes is $600$ seconds, and $600 \\div 60 = 10$\n\n**Answer:** (a) $60$ seconds (b) $10$ times",
+    "key": [
+     {
+      "type": "num",
+      "value": 60,
+      "unit": "seconds",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 10,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $72$ as a product of prime factors. Hence find the smallest whole number that $72$ must be multiplied by to give a perfect square.",
+    "answer": "$2$",
+    "solution": "**Key idea:** In a perfect square every prime factor appears an even number of times.\n\n1. $72 = 2^{3} \\times 3^{2}$\n2. The power of 2 is odd, so multiply by one more 2: $72 \\times 2 = 144 = 12^{2}$\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   }
+  ],
+  "1E": [
+   {
+    "kind": "short",
+    "question": "Write these integers in descending order (largest to smallest):\n\n$$4, -8, 0, -3, 7, -11$$",
+    "answer": "$7, 4, 0, -3, -8, -11$",
+    "solution": "**Key idea:** On a number line, numbers further to the right are larger.\n\n1. Positive numbers first: $7, 4$\n2. Then $0$, then the negatives from closest to zero: $-3, -8, -11$\n\n**Answer:** $7, 4, 0, -3, -8, -11$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       7,
+       4,
+       0,
+       -3,
+       -8,
+       -11
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Which integer is exactly halfway between $-14$ and $6$ on a number line?",
+    "answer": "$-4$",
+    "solution": "**Key idea:** The halfway point is the same distance from each end.\n\n1. The distance from $-14$ to $6$ is $20$ units\n2. Half of 20 is 10, and $-14 + 10 = -4$\n\n**Answer:** $-4$",
+    "key": [
+     {
+      "type": "num",
+      "value": -4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "One winter morning the temperature was $-11^\\circ\\text{C}$ at Mt Hotham and $-4^\\circ\\text{C}$ at Bright. How many degrees warmer was Bright?",
+    "answer": "$7^\\circ\\text{C}$",
+    "solution": "**Key idea:** Find the distance between the two temperatures on a number line.\n\n1. From $-11$ up to $-4$ is $-4 - (-11)$\n2. $-4 + 11 = 7$\n\n**Answer:** $7^\\circ\\text{C}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7,
+      "unit": "°C"
+     }
+    ]
+   }
+  ],
+  "1F": [
+   {
+    "kind": "short",
+    "question": "Evaluate $-15 + (-6) - (-10)$.",
+    "answer": "$-11$",
+    "solution": "**Key idea:** Adding a negative is subtracting; subtracting a negative is adding.\n\n1. $-15 + (-6) = -21$\n2. $-21 - (-10) = -21 + 10 = -11$\n\n**Answer:** $-11$",
+    "key": [
+     {
+      "type": "num",
+      "value": -11
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A lift in a Melbourne office tower starts at level $3$. It goes down $7$ floors, then up $2$ floors. Basement levels are numbered with negative integers. What level is the lift on now?",
+    "answer": "$-2$",
+    "solution": "**Key idea:** Going down is subtracting and going up is adding.\n\n1. $3 - 7 = -4$\n2. $-4 + 2 = -2$, so basement level 2\n\n**Answer:** $-2$",
+    "key": [
+     {
+      "type": "num",
+      "value": -2
+     }
+    ]
+   }
+  ],
+  "1G": [
+   {
+    "kind": "short",
+    "question": "Evaluate $(-84) \\div (-7) \\times (-2)$.",
+    "answer": "$-24$",
+    "solution": "**Key idea:** Work from left to right; two negatives give a positive, one negative gives a negative.\n\n1. $(-84) \\div (-7) = 12$\n2. $12 \\times (-2) = -24$\n\n**Answer:** $-24$",
+    "key": [
+     {
+      "type": "num",
+      "value": -24
+     }
+    ]
+   }
+  ],
+  "2A": [
+   {
+    "kind": "short",
+    "question": "Find the complement of an angle of $27^\\circ$.",
+    "answer": "$63^\\circ$",
+    "solution": "**Key idea:** Complementary angles add to $90^\\circ$.\n\n1. $90^\\circ - 27^\\circ = 63^\\circ$\n\n**Answer:** $63^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 63,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the supplement of an angle of $114^\\circ$.",
+    "answer": "$66^\\circ$",
+    "solution": "**Key idea:** Supplementary angles add to $180^\\circ$.\n\n1. $180^\\circ - 114^\\circ = 66^\\circ$\n\n**Answer:** $66^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 66,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Three angles meet at a point. They measure $3x^\\circ$, $2x^\\circ$ and $100^\\circ$. Find the value of $x$.",
+    "answer": "$x = 52$",
+    "solution": "**Key idea:** Angles at a point add to $360^\\circ$.\n\n1. $3x + 2x + 100 = 360$\n2. $5x = 260$\n3. $x = 52$\n\n**Answer:** $x = 52$",
+    "key": [
+     {
+      "type": "num",
+      "value": 52
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two straight lines cross. A pair of vertically opposite angles measure $(4x - 10)^\\circ$ and $(2x + 30)^\\circ$. Find $x$.",
+    "answer": "$x = 20$",
+    "solution": "**Key idea:** Vertically opposite angles are equal.\n\n1. $4x - 10 = 2x + 30$\n2. $2x = 40$\n3. $x = 20$\n\n**Answer:** $x = 20$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Three angles lie side by side on a straight line. They measure $x^\\circ$, $(2x + 15)^\\circ$ and $45^\\circ$.\n\n(a) Find $x$.\n\n(b) Find the size of the largest of the three angles.",
+    "answer": "(a) $x = 40$ (b) $95^\\circ$",
+    "solution": "**Key idea:** Angles on a straight line add to $180^\\circ$.\n\n1. $x + 2x + 15 + 45 = 180$, so $3x + 60 = 180$\n2. $3x = 120$, so $x = 40$\n3. The angles are $40^\\circ$, $95^\\circ$ and $45^\\circ$, so the largest is $95^\\circ$\n\n**Answer:** (a) $x = 40$ (b) $95^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 40,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 95,
+      "unit": "°",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "2B": [
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. A pair of corresponding angles measure $(2x + 14)^\\circ$ and $76^\\circ$. Find $x$.",
+    "answer": "$x = 31$",
+    "solution": "**Key idea:** Corresponding angles on parallel lines are equal.\n\n1. $2x + 14 = 76$\n2. $2x = 62$\n3. $x = 31$\n\n**Answer:** $x = 31$",
+    "key": [
+     {
+      "type": "num",
+      "value": 31
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two parallel lines are cut by a transversal. A pair of co-interior angles measure $3x^\\circ$ and $(x + 40)^\\circ$. Find $x$.",
+    "answer": "$x = 35$",
+    "solution": "**Key idea:** Co-interior angles on parallel lines add to $180^\\circ$.\n\n1. $3x + x + 40 = 180$\n2. $4x = 140$\n3. $x = 35$\n\n**Answer:** $x = 35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two angles are co-interior angles between a pair of parallel lines. One of them is $47^\\circ$. Find the other angle.",
+    "answer": "$133^\\circ$",
+    "solution": "**Key idea:** Co-interior angles on parallel lines add to $180^\\circ$.\n\n1. $180^\\circ - 47^\\circ = 133^\\circ$\n\n**Answer:** $133^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 133,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A transversal crosses two parallel lines. A pair of alternate angles measure $(5x - 20)^\\circ$ and $(3x + 16)^\\circ$. Find $x$.",
+    "answer": "$x = 18$",
+    "solution": "**Key idea:** Alternate angles on parallel lines are equal.\n\n1. $5x - 20 = 3x + 16$\n2. $2x = 36$\n3. $x = 18$\n\n**Answer:** $x = 18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A straight road crosses two parallel railway lines. One of the angles between the road and the first railway line is $112^\\circ$.\n\n(a) Find the size of the angle that is co-interior with the $112^\\circ$ angle.\n\n(b) Find the size of the angle that corresponds to the $112^\\circ$ angle at the second railway line.\n\n(c) Find the size of the angle that is alternate to the co-interior angle in (a).",
+    "answer": "(a) $68^\\circ$ (b) $112^\\circ$ (c) $68^\\circ$",
+    "solution": "**Key idea:** Use the angle relationships for parallel lines: co-interior angles add to $180^\\circ$, corresponding and alternate angles are equal.\n\n1. Co-interior: $180^\\circ - 112^\\circ = 68^\\circ$\n2. Corresponding angles are equal: $112^\\circ$\n3. Alternate angles are equal, so the angle alternate to the $68^\\circ$ angle is also $68^\\circ$\n\n**Answer:** (a) $68^\\circ$ (b) $112^\\circ$ (c) $68^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 68,
+      "unit": "°",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 112,
+      "unit": "°",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 68,
+      "unit": "°",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "2C": [
+   {
+    "kind": "short",
+    "question": "Two angles of a triangle measure $38^\\circ$ and $77^\\circ$. Find the third angle.",
+    "answer": "$65^\\circ$",
+    "solution": "**Key idea:** The angles of a triangle add to $180^\\circ$.\n\n1. $38 + 77 = 115$\n2. $180 - 115 = 65$\n\n**Answer:** $65^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 65,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "An isosceles triangle has two base angles of $52^\\circ$ each. Find the third angle.",
+    "answer": "$76^\\circ$",
+    "solution": "**Key idea:** The angles of a triangle add to $180^\\circ$.\n\n1. $52 + 52 = 104$\n2. $180 - 104 = 76$\n\n**Answer:** $76^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 76,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "An isosceles triangle has an angle of $34^\\circ$ between its two equal sides. Find the size of each of the other two angles.",
+    "answer": "$73^\\circ$",
+    "solution": "**Key idea:** The two base angles of an isosceles triangle are equal.\n\n1. The base angles add to $180^\\circ - 34^\\circ = 146^\\circ$\n2. Each base angle is $146^\\circ \\div 2 = 73^\\circ$\n\n**Answer:** $73^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 73,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The two interior opposite angles of an exterior angle of a triangle measure $48^\\circ$ and $69^\\circ$. Find the exterior angle.",
+    "answer": "$117^\\circ$",
+    "solution": "**Key idea:** An exterior angle of a triangle equals the sum of the two interior opposite angles.\n\n1. $48^\\circ + 69^\\circ = 117^\\circ$\n\n**Answer:** $117^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 117,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The angles of a triangle are $x^\\circ$, $(x + 15)^\\circ$ and $(2x - 11)^\\circ$.\n\n(a) Find $x$.\n\n(b) Find the size of the largest angle.",
+    "answer": "(a) $x = 44$ (b) $77^\\circ$",
+    "solution": "**Key idea:** The angles of a triangle add to $180^\\circ$.\n\n1. $x + x + 15 + 2x - 11 = 180$, so $4x + 4 = 180$\n2. $4x = 176$, so $x = 44$\n3. The angles are $44^\\circ$, $59^\\circ$ and $77^\\circ$, so the largest is $77^\\circ$\n\n**Answer:** (a) $x = 44$ (b) $77^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 44,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 77,
+      "unit": "°",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "2D": [
+   {
+    "kind": "short",
+    "question": "$PQRS$ is a parallelogram with $\\angle P = 72^\\circ$. Find $\\angle Q$.",
+    "answer": "$108^\\circ$",
+    "solution": "**Key idea:** Neighbouring angles of a parallelogram are co-interior angles, so they add to $180^\\circ$.\n\n1. $\\angle P + \\angle Q = 180^\\circ$\n2. $\\angle Q = 180^\\circ - 72^\\circ = 108^\\circ$\n\n**Answer:** $108^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 108,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$ABCD$ is a trapezium with $AB$ parallel to $DC$. $\\angle DAB = x^\\circ$ and $\\angle ADC = 3x^\\circ$. Find $x$.",
+    "answer": "$x = 45$",
+    "solution": "**Key idea:** $\\angle DAB$ and $\\angle ADC$ are co-interior angles between the parallel sides, so they add to $180^\\circ$.\n\n1. $x + 3x = 180$\n2. $4x = 180$\n3. $x = 45$\n\n**Answer:** $x = 45$",
+    "key": [
+     {
+      "type": "num",
+      "value": 45
+     }
+    ]
+   }
+  ],
+  "2E": [
+   {
+    "kind": "short",
+    "question": "Find the angle sum of a dodecagon (a polygon with $12$ sides).",
+    "answer": "$1800^\\circ$",
+    "solution": "**Key idea:** The angle sum of an $n$-sided polygon is $(n - 2) \\times 180^\\circ$.\n\n1. $(12 - 2) \\times 180^\\circ = 10 \\times 180^\\circ = 1800^\\circ$\n\n**Answer:** $1800^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1800,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "2F": [
+   {
+    "kind": "short",
+    "question": "A polyhedron has $8$ faces and $12$ vertices. Use Euler's formula $F + V - E = 2$ to find the number of edges.",
+    "answer": "$18$",
+    "solution": "**Key idea:** Substitute into Euler's formula and solve for $E$.\n\n1. $8 + 12 - E = 2$\n2. $20 - E = 2$, so $E = 18$\n\n**Answer:** $18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many edges does a hexagonal prism have?",
+    "answer": "$18$",
+    "solution": "**Key idea:** A prism has two copies of its base plus one edge joining each pair of matching vertices.\n\n1. Each hexagonal base has $6$ edges, so the two bases have $12$\n2. There are $6$ edges joining the bases\n3. $12 + 6 = 18$\n\n**Answer:** $18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many faces does an octagonal pyramid have?",
+    "answer": "$9$",
+    "solution": "**Key idea:** A pyramid has its base plus one triangular face for each side of the base.\n\n1. $1$ octagonal base\n2. $8$ triangular faces\n3. $1 + 8 = 9$\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A polyhedron has $30$ edges and $12$ vertices. How many faces does it have?",
+    "answer": "$20$",
+    "solution": "**Key idea:** Use Euler's formula $F + V - E = 2$.\n\n1. $F + 12 - 30 = 2$\n2. $F - 18 = 2$, so $F = 20$\n\n**Answer:** $20$",
+    "key": [
+     {
+      "type": "num",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A tent is shaped like a triangular prism.\n\n(a) How many faces does it have?\n\n(b) How many vertices does it have?\n\n(c) How many edges does it have?\n\n(d) Use your answers to find $F + V - E$.",
+    "answer": "(a) $5$ (b) $6$ (c) $9$ (d) $2$",
+    "solution": "**Key idea:** Count the parts of the prism, then check Euler's formula.\n\n1. Faces: $2$ triangles and $3$ rectangles, so $5$\n2. Vertices: $3$ on each triangle, so $6$\n3. Edges: $3$ on each triangle plus $3$ joining them, so $9$\n4. $5 + 6 - 9 = 2$\n\n**Answer:** (a) $5$ (b) $6$ (c) $9$ (d) $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 6,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 9,
+      "label": "c"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "d"
+     }
+    ]
+   }
+  ],
+  "3A": [
+   {
+    "kind": "short",
+    "question": "Find the missing number: $\\dfrac{3}{5} = \\dfrac{\\square}{35}$.",
+    "answer": "$21$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by the same number.\n\n1. $5 \\times 7 = 35$\n2. $3 \\times 7 = 21$\n\n**Answer:** $21$",
+    "key": [
+     {
+      "type": "num",
+      "value": 21
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the missing number: $\\dfrac{28}{\\square} = \\dfrac{4}{9}$.",
+    "answer": "$63$",
+    "solution": "**Key idea:** Equivalent fractions are made by multiplying the numerator and denominator by the same number.\n\n1. $4 \\times 7 = 28$\n2. $9 \\times 7 = 63$\n\n**Answer:** $63$",
+    "key": [
+     {
+      "type": "num",
+      "value": 63
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many twelfths are equal to $\\dfrac{5}{6}$?",
+    "answer": "$10$",
+    "solution": "**Key idea:** Write $\\frac{5}{6}$ as an equivalent fraction with denominator 12.\n\n1. $6 \\times 2 = 12$, so multiply the numerator by 2 as well\n2. $\\frac{5}{6} = \\frac{10}{12}$\n\n**Answer:** $10$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write these fractions in ascending order:\n\n$$\\frac{1}{2}, \\frac{4}{7}, \\frac{2}{5}, \\frac{3}{7}$$",
+    "answer": "$\\dfrac{2}{5}, \\dfrac{3}{7}, \\dfrac{1}{2}, \\dfrac{4}{7}$",
+    "solution": "**Key idea:** Write each fraction with a common denominator, or as a decimal, then compare.\n\n1. Using the denominator 70: $\\frac{1}{2} = \\frac{35}{70}$, $\\frac{4}{7} = \\frac{40}{70}$, $\\frac{2}{5} = \\frac{28}{70}$, $\\frac{3}{7} = \\frac{30}{70}$\n2. In order: $\\frac{28}{70}, \\frac{30}{70}, \\frac{35}{70}, \\frac{40}{70}$\n\n**Answer:** $\\dfrac{2}{5}, \\dfrac{3}{7}, \\dfrac{1}{2}, \\dfrac{4}{7}$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       0.4,
+       0.42857142857142855,
+       0.5,
+       0.5714285714285714
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Ruby ate $\\frac{3}{8}$ of a pizza and Sam ate $\\frac{1}{4}$ of the same pizza.\n\n(a) Write Sam's share as an equivalent fraction with a denominator of $8$. What is the numerator?\n\n(b) What fraction of the pizza did they eat altogether?\n\n(c) What fraction of the pizza is left?",
+    "answer": "(a) $2$ (b) $\\dfrac{5}{8}$ (c) $\\dfrac{3}{8}$",
+    "solution": "**Key idea:** Rewrite both fractions with the same denominator so they can be added.\n\n1. $\\frac{1}{4} = \\frac{2}{8}$, so the numerator is 2\n2. $\\frac{3}{8} + \\frac{2}{8} = \\frac{5}{8}$\n3. $1 - \\frac{5}{8} = \\frac{3}{8}$\n\n**Answer:** (a) $2$ (b) $\\dfrac{5}{8}$ (c) $\\dfrac{3}{8}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 0.625,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 0.375,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "3B": [
+   {
+    "kind": "short",
+    "question": "Find $2\\frac{1}{3} + 1\\frac{3}{4}$.",
+    "answer": "$4\\frac{1}{12}$",
+    "solution": "**Key idea:** Change to improper fractions with a common denominator.\n\n1. $2\\frac{1}{3} = \\frac{28}{12}$ and $1\\frac{3}{4} = \\frac{21}{12}$\n2. $\\frac{28}{12} + \\frac{21}{12} = \\frac{49}{12} = 4\\frac{1}{12}$\n\n**Answer:** $4\\frac{1}{12}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.083333333333333
+     }
+    ]
+   }
+  ],
+  "3C": [
+   {
+    "kind": "short",
+    "question": "Find $-\\dfrac{5}{6} + \\dfrac{1}{4}$.",
+    "answer": "$-\\dfrac{7}{12}$",
+    "solution": "**Key idea:** Use a common denominator of 12.\n\n1. $-\\frac{5}{6} = -\\frac{10}{12}$ and $\\frac{1}{4} = \\frac{3}{12}$\n2. $-\\frac{10}{12} + \\frac{3}{12} = -\\frac{7}{12}$\n\n**Answer:** $-\\dfrac{7}{12}$",
+    "key": [
+     {
+      "type": "num",
+      "value": -0.5833333333333334
+     }
+    ]
+   }
+  ],
+  "3D": [
+   {
+    "kind": "short",
+    "question": "What is the value of the digit $6$ in $4.2063$? Write your answer as a decimal.",
+    "answer": "$0.006$",
+    "solution": "**Key idea:** The third place after the decimal point is thousandths.\n\n1. The 6 is in the thousandths place\n2. Its value is $\\frac{6}{1000} = 0.006$\n\n**Answer:** $0.006$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.006
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $3 + \\dfrac{4}{10} + \\dfrac{7}{1000}$ as a decimal.",
+    "answer": "$3.407$",
+    "solution": "**Key idea:** Place each part in its place value column; the hundredths place is 0.\n\n1. $3$ ones, $4$ tenths, $0$ hundredths, $7$ thousandths\n2. $3.407$\n\n**Answer:** $3.407$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.407
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write these decimals in ascending order:\n\n$$0.59, 0.509, 0.9, 0.059$$",
+    "answer": "$0.059, 0.509, 0.59, 0.9$",
+    "solution": "**Key idea:** Compare the digits place by place, starting with tenths.\n\n1. Tenths digits: $0.059$ has 0, $0.509$ and $0.59$ have 5, $0.9$ has 9\n2. Comparing $0.509$ and $0.590$, the hundredths digit 0 is less than 9\n\n**Answer:** $0.059, 0.509, 0.59, 0.9$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       0.059,
+       0.509,
+       0.59,
+       0.9
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Which number is exactly halfway between $2.36$ and $2.4$?",
+    "answer": "$2.38$",
+    "solution": "**Key idea:** Add the two numbers and halve the result.\n\n1. $2.36 + 2.40 = 4.76$\n2. $4.76 \\div 2 = 2.38$\n\n**Answer:** $2.38$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2.38
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many thousandths are there in $0.4$?",
+    "answer": "$400$",
+    "solution": "**Key idea:** One tenth is equal to 100 thousandths.\n\n1. $0.4 = 0.400$\n2. $0.400 = \\frac{400}{1000}$, so there are 400 thousandths\n\n**Answer:** $400$",
+    "key": [
+     {
+      "type": "num",
+      "value": 400
+     }
+    ]
+   }
+  ],
+  "3E": [
+   {
+    "kind": "short",
+    "question": "Calculate $0.8 \\times 0.07$.",
+    "answer": "$0.056$",
+    "solution": "**Key idea:** Multiply the whole numbers, then count the decimal places.\n\n1. $8 \\times 7 = 56$\n2. There are 3 decimal places in total, so $0.056$\n\n**Answer:** $0.056$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.056
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Mince costs \\$12.45 per kilogram. Find the cost of $3.6$ kg of mince, to the nearest cent.",
+    "answer": "\\$44.82",
+    "solution": "**Key idea:** Multiply the mass by the price per kilogram.\n\n1. $3.6 \\times 12.45 = 44.82$\n\n**Answer:** \\$44.82",
+    "key": [
+     {
+      "type": "num",
+      "value": 44.82,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "3F": [
+   {
+    "kind": "short",
+    "question": "Round $3.14159$ to three decimal places.",
+    "answer": "$3.142$",
+    "solution": "**Key idea:** Look at the fourth decimal digit to decide whether to round up.\n\n1. The fourth decimal digit is 5, so round the third digit up\n2. $3.141 \\to 3.142$\n\n**Answer:** $3.142$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3.142
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $\\dfrac{5}{11}$ as a decimal, correct to three decimal places.",
+    "answer": "$0.455$",
+    "solution": "**Key idea:** Divide, then round to three decimal places.\n\n1. $5 \\div 11 = 0.454545\\ldots$\n2. The fourth decimal digit is 5, so round up to $0.455$\n\n**Answer:** $0.455$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.455
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $\\dfrac{2}{7}$ as a decimal, correct to four decimal places.",
+    "answer": "$0.2857$",
+    "solution": "**Key idea:** Divide, then round to four decimal places.\n\n1. $2 \\div 7 = 0.285714\\ldots$\n2. The fifth decimal digit is 1, so round down to $0.2857$\n\n**Answer:** $0.2857$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.2857
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\dfrac{3}{11} = 0.272727\\ldots$ What is the $15$th digit after the decimal point?",
+    "answer": "$2$",
+    "solution": "**Key idea:** The repeating block 27 has 2 digits, so odd-numbered places are 2 and even-numbered places are 7.\n\n1. The digits go 2, 7, 2, 7, ...\n2. 15 is odd, so the 15th digit is 2\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Seven friends share a \\$100 prize equally. How much does each person get, correct to the nearest cent?",
+    "answer": "\\$14.29",
+    "solution": "**Key idea:** Divide, then round to two decimal places.\n\n1. $100 \\div 7 = 14.285714\\ldots$\n2. The third decimal digit is 5, so round up to \\$14.29\n\n**Answer:** \\$14.29",
+    "key": [
+     {
+      "type": "num",
+      "value": 14.29
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Mila runs $5$ km in $23$ minutes.\n\n(a) Find her average time per kilometre, in minutes, correct to two decimal places.\n\n(b) Write her average time per kilometre in seconds.\n\n(c) Find her average speed in kilometres per minute, correct to three decimal places.",
+    "answer": "(a) $4.60$ minutes (b) $276$ seconds (c) $0.217$ km per minute",
+    "solution": "**Key idea:** Divide to find a rate, then round to the number of decimal places asked for.\n\n1. $23 \\div 5 = 4.6$, which is $4.60$ to two decimal places\n2. $4.6 \\times 60 = 276$ seconds\n3. $5 \\div 23 = 0.21739\\ldots$, which is $0.217$ to three decimal places\n\n**Answer:** (a) $4.60$ minutes (b) $276$ seconds (c) $0.217$ km per minute",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.6,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 276,
+      "unit": "seconds",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 0.217,
+      "dp": 3,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "3G": [
+   {
+    "kind": "short",
+    "question": "Write $\\dfrac{7}{8}$ as a percentage.",
+    "answer": "$87.5\\%$",
+    "solution": "**Key idea:** Multiply by $100\\%$.\n\n1. $\\frac{7}{8} \\times 100\\% = \\frac{700}{8}\\% = 87.5\\%$\n\n**Answer:** $87.5\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 87.5,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $0.045$ as a percentage.",
+    "answer": "$4.5\\%$",
+    "solution": "**Key idea:** Multiply by $100\\%$, which moves the decimal point two places to the right.\n\n1. $0.045 \\times 100\\% = 4.5\\%$\n\n**Answer:** $4.5\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.5,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $135\\%$ as a decimal.",
+    "answer": "$1.35$",
+    "solution": "**Key idea:** Divide by 100, which moves the decimal point two places to the left.\n\n1. $135 \\div 100 = 1.35$\n\n**Answer:** $1.35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1.35
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $12.5\\%$ as a decimal.",
+    "answer": "$0.125$",
+    "solution": "**Key idea:** Divide by 100.\n\n1. $12.5 \\div 100 = 0.125$\n\n**Answer:** $0.125$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.125
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $2\\frac{1}{4}$ as a percentage.",
+    "answer": "$225\\%$",
+    "solution": "**Key idea:** Write the mixed number as a decimal, then multiply by $100\\%$.\n\n1. $2\\frac{1}{4} = 2.25$\n2. $2.25 \\times 100\\% = 225\\%$\n\n**Answer:** $225\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 225,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In a survey of $60$ students at a Geelong school, $27$ said they play a team sport.\n\n(a) What percentage of the students play a team sport?\n\n(b) What percentage do not play a team sport?\n\n(c) Write the answer to (a) as a decimal.",
+    "answer": "(a) $45\\%$ (b) $55\\%$ (c) $0.45$",
+    "solution": "**Key idea:** Write the fraction, then convert it to a percentage.\n\n1. $\\frac{27}{60} \\times 100\\% = 45\\%$\n2. $100\\% - 45\\% = 55\\%$\n3. $45\\% = 45 \\div 100 = 0.45$\n\n**Answer:** (a) $45\\%$ (b) $55\\%$ (c) $0.45$",
+    "key": [
+     {
+      "type": "num",
+      "value": 45,
+      "unit": "%",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 55,
+      "unit": "%",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 0.45,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "3H": [
+   {
+    "kind": "short",
+    "question": "Find $35\\%$ of $240$.",
+    "answer": "$84$",
+    "solution": "**Key idea:** Change the percentage to a decimal and multiply.\n\n1. $0.35 \\times 240 = 84$\n\n**Answer:** $84$",
+    "key": [
+     {
+      "type": "num",
+      "value": 84
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $27$ out of $75$ as a percentage.",
+    "answer": "$36\\%$",
+    "solution": "**Key idea:** Write as a fraction and multiply by $100\\%$.\n\n1. $\\frac{27}{75} \\times 100\\% = 36\\%$\n\n**Answer:** $36\\%$",
+    "key": [
+     {
+      "type": "num",
+      "value": 36,
+      "unit": "%"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A school has $650$ students, and $18\\%$ of them walk to school. How many students walk to school?",
+    "answer": "$117$",
+    "solution": "**Key idea:** Find $18\\%$ of 650.\n\n1. $0.18 \\times 650 = 117$\n\n**Answer:** $117$",
+    "key": [
+     {
+      "type": "num",
+      "value": 117
+     }
+    ]
+   }
+  ],
+  "4A": [
+   {
+    "kind": "short",
+    "question": "Convert $0.65$ km to metres.",
+    "answer": "$650$ m",
+    "solution": "**Key idea:** There are 1000 m in 1 km.\n\n1. $0.65 \\times 1000 = 650$\n\n**Answer:** $650$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 650,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangular rug is $3.2$ m long and $145$ cm wide. Find its perimeter in centimetres.",
+    "answer": "$930$ cm",
+    "solution": "**Key idea:** Convert to the same unit before adding.\n\n1. $3.2 \\text{ m} = 320 \\text{ cm}$\n2. $P = 2 \\times (320 + 145) = 2 \\times 465 = 930$ cm\n\n**Answer:** $930$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 930,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "4E": [
+   {
+    "kind": "short",
+    "question": "A circular clock face has a diameter of $14$ cm. Find its area, correct to one decimal place.",
+    "answer": "$153.9 \\text{ cm}^{2}$",
+    "solution": "**Key idea:** Use $A = \\pi r^{2}$ with the radius, which is half the diameter.\n\n1. $r = 14 \\div 2 = 7$ cm\n2. $A = \\pi \\times 7^{2} = 49\\pi = 153.938\\ldots$\n3. $153.9 \\text{ cm}^{2}$ to one decimal place\n\n**Answer:** $153.9 \\text{ cm}^{2}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 153.9,
+      "dp": 1,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "4G": [
+   {
+    "kind": "short",
+    "question": "Find the surface area of a rectangular prism that is $12$ cm long, $4$ cm wide and $5$ cm high.",
+    "answer": "$256 \\text{ cm}^{2}$",
+    "solution": "**Key idea:** Add the areas of the three pairs of opposite faces.\n\n1. $12 \\times 4 = 48$, $12 \\times 5 = 60$, $4 \\times 5 = 20$\n2. $SA = 2 \\times (48 + 60 + 20) = 256 \\text{ cm}^{2}$\n\n**Answer:** $256 \\text{ cm}^{2}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 256,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "4J": [
+   {
+    "kind": "short",
+    "question": "How many minutes are there from 09:40 to 13:15 on the same day?",
+    "answer": "$215$ minutes",
+    "solution": "**Key idea:** Count up to the next whole hour, then add the remaining time.\n\n1. From 09:40 to 10:00 is 20 minutes\n2. From 10:00 to 13:15 is 3 hours 15 minutes, which is 195 minutes\n3. $20 + 195 = 215$ minutes\n\n**Answer:** $215$ minutes",
+    "key": [
+     {
+      "type": "num",
+      "value": 215,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Convert $3.4$ hours to minutes.",
+    "answer": "$204$ minutes",
+    "solution": "**Key idea:** Multiply the number of hours by 60.\n\n1. $3.4 \\times 60 = 204$\n\n**Answer:** $204$ minutes",
+    "key": [
+     {
+      "type": "num",
+      "value": 204,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many seconds are there in $2.5$ hours?",
+    "answer": "$9000$ seconds",
+    "solution": "**Key idea:** There are $60 \\times 60 = 3600$ seconds in an hour.\n\n1. $2.5 \\times 3600 = 9000$\n\n**Answer:** $9000$ seconds",
+    "key": [
+     {
+      "type": "num",
+      "value": 9000,
+      "unit": "seconds"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In summer, Sydney is on UTC+11 and Perth is on UTC+8. How many hours ahead of Perth is Sydney?",
+    "answer": "$3$ hours",
+    "solution": "**Key idea:** Subtract the UTC offsets.\n\n1. $11 - 8 = 3$\n\n**Answer:** $3$ hours",
+    "key": [
+     {
+      "type": "num",
+      "value": 3,
+      "unit": "hours"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A flight from Melbourne to Darwin takes $4$ hours $25$ minutes. How long is this in minutes?",
+    "answer": "$265$ minutes",
+    "solution": "**Key idea:** Multiply the hours by 60 and add the extra minutes.\n\n1. $4 \\times 60 = 240$\n2. $240 + 25 = 265$\n\n**Answer:** $265$ minutes",
+    "key": [
+     {
+      "type": "num",
+      "value": 265,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A security guard works a shift from 21:30 until 06:15 the next morning, with no unpaid breaks. She is paid \\$38 per hour.\n\n(a) How many hours long is the shift? Give your answer as a decimal.\n\n(b) How much is she paid for the shift?",
+    "answer": "(a) $8.75$ hours (b) \\$332.50",
+    "solution": "**Key idea:** Find the length of the shift across midnight, write it in hours, then multiply by the hourly rate.\n\n1. From 21:30 to midnight is 2 hours 30 minutes\n2. From midnight to 06:15 is 6 hours 15 minutes\n3. Total: 8 hours 45 minutes $= 8.75$ hours\n4. $8.75 \\times 38 = 332.50$\n\n**Answer:** (a) $8.75$ hours (b) \\$332.50",
+    "key": [
+     {
+      "type": "num",
+      "value": 8.75,
+      "unit": "hours",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 332.5,
+      "dp": 2,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "4K": [
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has shorter sides of $5$ cm and $12$ cm. Find the value of $c^{2}$, where $c$ is the length of the hypotenuse.",
+    "answer": "$169$",
+    "solution": "**Key idea:** Pythagoras' theorem: $c^{2} = a^{2} + b^{2}$.\n\n1. $c^{2} = 5^{2} + 12^{2} = 25 + 144 = 169$\n\n**Answer:** $169$",
+    "key": [
+     {
+      "type": "num",
+      "value": 169
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A triangle has sides of $8$ cm, $15$ cm and $17$ cm. Calculate $8^{2} + 15^{2}$.",
+    "answer": "$289$",
+    "solution": "**Key idea:** Square each number, then add.\n\n1. $8^{2} = 64$ and $15^{2} = 225$\n2. $64 + 225 = 289$ (which equals $17^{2}$, so the triangle is right-angled)\n\n**Answer:** $289$",
+    "key": [
+     {
+      "type": "num",
+      "value": 289
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the missing number in the Pythagorean triad $9$, $40$, $\\square$, where the missing number is the largest.",
+    "answer": "$41$",
+    "solution": "**Key idea:** In a Pythagorean triad, $a^{2} + b^{2} = c^{2}$.\n\n1. $9^{2} + 40^{2} = 81 + 1600 = 1681$\n2. $\\sqrt{1681} = 41$\n\n**Answer:** $41$",
+    "key": [
+     {
+      "type": "num",
+      "value": 41
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A right-angled triangle has shorter sides of $20$ m and $21$ m. Find the length of the hypotenuse.",
+    "answer": "$29$ m",
+    "solution": "**Key idea:** Use $c^{2} = a^{2} + b^{2}$, then take the square root.\n\n1. $c^{2} = 400 + 441 = 841$\n2. $c = \\sqrt{841} = 29$\n\n**Answer:** $29$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 29,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Each number in the Pythagorean triad $3$, $4$, $5$ is multiplied by $7$. What is the largest number in the new triad?",
+    "answer": "$35$",
+    "solution": "**Key idea:** Multiplying every number in a triad by the same whole number gives another triad.\n\n1. $5 \\times 7 = 35$ (the new triad is 21, 28, 35)\n\n**Answer:** $35$",
+    "key": [
+     {
+      "type": "num",
+      "value": 35
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A triangle has sides of $12$ cm, $35$ cm and $37$ cm.\n\n(a) Calculate $12^{2} + 35^{2}$.\n\n(b) Calculate $37^{2}$.\n\n(c) The triangle is right-angled. What is the length, in cm, of its hypotenuse?",
+    "answer": "(a) $1369$ (b) $1369$ (c) $37$ cm",
+    "solution": "**Key idea:** A triangle is right-angled when the square of the longest side equals the sum of the squares of the other two sides.\n\n1. $144 + 1225 = 1369$\n2. $37^{2} = 1369$\n3. The two results are equal, so the triangle is right-angled and the hypotenuse is the longest side, $37$ cm\n\n**Answer:** (a) $1369$ (b) $1369$ (c) $37$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 1369,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 1369,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 37,
+      "unit": "cm",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "5A": [
+   {
+    "kind": "short",
+    "question": "A bike has $2$ wheels and a car has $4$ wheels. Write an expression for the total number of wheels on $b$ bikes and $c$ cars.",
+    "answer": "$2b + 4c$",
+    "solution": "**Key idea:** Multiply the number of each vehicle by its wheels, then add.\n\n1. $b$ bikes have $2b$ wheels\n2. $c$ cars have $4c$ wheels\n3. Total: $2b + 4c$\n\n**Answer:** $2b + 4c$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "2*b+4*c",
+      "vars": [
+       "b",
+       "c"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the expression $7x^{2} - 3x + 9$:\n\n(a) How many terms are there?\n\n(b) What is the coefficient of $x$?\n\n(c) What is the constant term?",
+    "answer": "(a) $3$ (b) $-3$ (c) $9$",
+    "solution": "**Key idea:** Terms are separated by $+$ and $-$ signs, and each sign belongs to the term after it.\n\n1. The terms are $7x^{2}$, $-3x$ and $9$, so there are 3\n2. The term with $x$ is $-3x$, so the coefficient is $-3$\n3. The term with no pronumeral is $9$\n\n**Answer:** (a) $3$ (b) $-3$ (c) $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -3,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 9,
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "5B": [
+   {
+    "kind": "short",
+    "question": "Evaluate $4m - 3n$ when $m = -2$ and $n = 5$.",
+    "answer": "$-23$",
+    "solution": "**Key idea:** Replace each pronumeral with its value, using brackets around negatives.\n\n1. $4(-2) - 3(5) = -8 - 15$\n2. $= -23$\n\n**Answer:** $-23$",
+    "key": [
+     {
+      "type": "num",
+      "value": -23
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $\\dfrac{a^{2} + b}{c}$ when $a = 3$, $b = -1$ and $c = 4$.",
+    "answer": "$2$",
+    "solution": "**Key idea:** Substitute, then work out the numerator before dividing.\n\n1. $\\frac{3^{2} + (-1)}{4} = \\frac{9 - 1}{4}$\n2. $= \\frac{8}{4} = 2$\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $2(x - y)^{2}$ when $x = 1$ and $y = 4$.",
+    "answer": "$18$",
+    "solution": "**Key idea:** Work out the brackets first, then the power, then multiply.\n\n1. $x - y = 1 - 4 = -3$\n2. $(-3)^{2} = 9$\n3. $2 \\times 9 = 18$\n\n**Answer:** $18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The formula $F = 1.8C + 32$ converts a temperature in degrees Celsius ($C$) to degrees Fahrenheit ($F$).\n\n(a) A summer day in Mildura reaches $25^\\circ\\text{C}$. Find the temperature in degrees Fahrenheit.\n\n(b) Find $F$ when $C = -10$.",
+    "answer": "(a) $77$ (b) $14$",
+    "solution": "**Key idea:** Substitute the value of $C$ into the formula.\n\n1. $F = 1.8 \\times 25 + 32 = 45 + 32 = 77$\n2. $F = 1.8 \\times (-10) + 32 = -18 + 32 = 14$\n\n**Answer:** (a) $77$ (b) $14$",
+    "key": [
+     {
+      "type": "num",
+      "value": 77,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 14,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "5C": [
+   {
+    "kind": "short",
+    "question": "Simplify $6p - 2q + 3q - 9p$.",
+    "answer": "$-3p + q$",
+    "solution": "**Key idea:** Collect like terms: the $p$ terms together and the $q$ terms together.\n\n1. $6p - 9p = -3p$\n2. $-2q + 3q = q$\n3. $-3p + q$\n\n**Answer:** $-3p + q$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-3*p+q",
+      "vars": [
+       "p",
+       "q"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "5D": [
+   {
+    "kind": "short",
+    "question": "Simplify $7a \\times (-3ab)$.",
+    "answer": "$-21a^{2}b$",
+    "solution": "**Key idea:** Multiply the coefficients, then multiply the pronumerals.\n\n1. $7 \\times (-3) = -21$\n2. $a \\times a \\times b = a^{2}b$\n3. $-21a^{2}b$\n\n**Answer:** $-21a^{2}b$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-21*a^2*b",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $45x^{3}y \\div 9xy$.",
+    "answer": "$5x^{2}$",
+    "solution": "**Key idea:** Divide the coefficients, then cancel common pronumerals.\n\n1. $45 \\div 9 = 5$\n2. $\\frac{x^{3}y}{xy} = x^{2}$\n3. $5x^{2}$\n\n**Answer:** $5x^{2}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "5*x^2",
+      "vars": [
+       "x",
+       "y"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ],
+  "5E": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{x}{3} + \\dfrac{x}{5}$.",
+    "answer": "$\\dfrac{8x}{15}$",
+    "solution": "**Key idea:** Use the lowest common denominator, 15.\n\n1. $\\frac{x}{3} = \\frac{5x}{15}$ and $\\frac{x}{5} = \\frac{3x}{15}$\n2. $\\frac{5x}{15} + \\frac{3x}{15} = \\frac{8x}{15}$\n\n**Answer:** $\\dfrac{8x}{15}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "8*x/15",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{3a}{4} - \\dfrac{a}{6}$.",
+    "answer": "$\\dfrac{7a}{12}$",
+    "solution": "**Key idea:** Use the lowest common denominator, 12.\n\n1. $\\frac{3a}{4} = \\frac{9a}{12}$ and $\\frac{a}{6} = \\frac{2a}{12}$\n2. $\\frac{9a}{12} - \\frac{2a}{12} = \\frac{7a}{12}$\n\n**Answer:** $\\dfrac{7a}{12}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "7*a/12",
+      "vars": [
+       "a"
+      ]
+     }
+    ]
+   }
+  ],
+  "5F": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{4x}{9} \\times \\dfrac{3}{8x}$.",
+    "answer": "$\\dfrac{1}{6}$",
+    "solution": "**Key idea:** Cancel common factors before multiplying.\n\n1. Cancel $x$, then $4$ with $8$ and $3$ with $9$: $\\frac{1}{3} \\times \\frac{1}{2}$\n2. $= \\frac{1}{6}$\n\n**Answer:** $\\dfrac{1}{6}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.16666666666666666
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\dfrac{5a}{6} \\div \\dfrac{10a}{3}$.",
+    "answer": "$\\dfrac{1}{4}$",
+    "solution": "**Key idea:** To divide by a fraction, multiply by its reciprocal.\n\n1. $\\frac{5a}{6} \\times \\frac{3}{10a}$\n2. Cancel $a$: $\\frac{15}{60} = \\frac{1}{4}$\n\n**Answer:** $\\dfrac{1}{4}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.25
+     }
+    ]
+   }
+  ],
+  "5H": [
+   {
+    "kind": "short",
+    "question": "Factorise $8y - 20$.",
+    "answer": "$4(2y - 5)$",
+    "solution": "**Key idea:** Take out the highest common factor, 4.\n\n1. $8y = 4 \\times 2y$ and $20 = 4 \\times 5$\n2. $8y - 20 = 4(2y - 5)$\n\n**Answer:** $4(2y - 5)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "4*(2*y-5)",
+      "vars": [
+       "y"
+      ],
+      "form": "factorised"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Factorise fully $9ab + 6a$.",
+    "answer": "$3a(3b + 2)$",
+    "solution": "**Key idea:** The highest common factor includes both a number and a pronumeral.\n\n1. The HCF of $9ab$ and $6a$ is $3a$\n2. $9ab + 6a = 3a(3b + 2)$\n\n**Answer:** $3a(3b + 2)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3*a*(3*b+2)",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "factorised"
+     }
+    ]
+   }
+  ],
+  "5I": [
+   {
+    "kind": "extended",
+    "question": "A rectangular garden bed is $(x + 7)$ m long and $x$ m wide.\n\n(a) Write a simplified expression for its perimeter.\n\n(b) Find the perimeter when $x = 6$.",
+    "answer": "(a) $4x + 14$ (b) $38$ m",
+    "solution": "**Key idea:** Perimeter is twice the length plus twice the width.\n\n1. $P = 2(x + 7) + 2x = 2x + 14 + 2x = 4x + 14$\n2. When $x = 6$: $4 \\times 6 + 14 = 38$\n\n**Answer:** (a) $4x + 14$ (b) $38$ m",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "4*x+14",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 38,
+      "unit": "m",
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A phone plan charges \\$15 per month plus \\$0.20 for each minute of calls.\n\n(a) Write an expression for the monthly cost, in dollars, when $m$ minutes of calls are made.\n\n(b) Find the monthly cost when $120$ minutes of calls are made.",
+    "answer": "(a) $15 + 0.2m$ (b) \\$39",
+    "solution": "**Key idea:** Fixed charge plus the charge per minute times the number of minutes.\n\n1. Cost $= 15 + 0.2m$\n2. $15 + 0.2 \\times 120 = 15 + 24 = 39$\n\n**Answer:** (a) $15 + 0.2m$ (b) \\$39",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "15+0.2*m",
+      "vars": [
+       "m"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 39,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Think of a number $n$. Double it, add $10$, halve the result, then subtract the number you first thought of. Simplify the expression to find the final answer.",
+    "answer": "$5$",
+    "solution": "**Key idea:** Write each step as an expression and simplify.\n\n1. Double: $2n$; add 10: $2n + 10$\n2. Halve: $n + 5$\n3. Subtract $n$: $n + 5 - n = 5$\n\n**Answer:** $5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Three consecutive whole numbers are $n$, $n + 1$ and $n + 2$.\n\n(a) Write a simplified expression for their sum.\n\n(b) The sum of the three numbers is $72$. Find $n$.",
+    "answer": "(a) $3n + 3$ (b) $n = 23$",
+    "solution": "**Key idea:** Add the expressions, then use the total to form and solve an equation.\n\n1. $n + (n + 1) + (n + 2) = 3n + 3$\n2. $3n + 3 = 72$, so $3n = 69$ and $n = 23$\n\n**Answer:** (a) $3n + 3$ (b) $n = 23$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3*n+3",
+      "vars": [
+       "n"
+      ],
+      "form": "simplified",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 23,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "5J": [
+   {
+    "kind": "short",
+    "question": "Simplify $m^{4} \\times m^{7}$.",
+    "answer": "$m^{11}$",
+    "solution": "**Key idea:** When multiplying powers with the same base, add the indices.\n\n1. $m^{4 + 7} = m^{11}$\n\n**Answer:** $m^{11}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "m^11",
+      "vars": [
+       "m"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $15x^{8} \\div 3x^{2}$.",
+    "answer": "$5x^{6}$",
+    "solution": "**Key idea:** Divide the coefficients and subtract the indices.\n\n1. $15 \\div 3 = 5$\n2. $x^{8 - 2} = x^{6}$\n\n**Answer:** $5x^{6}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "5*x^6",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $3a^{2}b \\times 4a^{5}b^{3}$.",
+    "answer": "$12a^{7}b^{4}$",
+    "solution": "**Key idea:** Multiply the coefficients, then add the indices for each base.\n\n1. $3 \\times 4 = 12$\n2. $a^{2 + 5} = a^{7}$ and $b^{1 + 3} = b^{4}$\n\n**Answer:** $12a^{7}b^{4}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "12*a^7*b^4",
+      "vars": [
+       "a",
+       "b"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $n$ if $2^{n} \\times 2^{3} = 2^{10}$.",
+    "answer": "$n = 7$",
+    "solution": "**Key idea:** When multiplying powers with the same base, add the indices.\n\n1. $n + 3 = 10$\n2. $n = 7$\n\n**Answer:** $n = 7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   }
+  ],
+  "5K": [
+   {
+    "kind": "short",
+    "question": "Simplify $(y^{5})^{3}$.",
+    "answer": "$y^{15}$",
+    "solution": "**Key idea:** For a power of a power, multiply the indices.\n\n1. $y^{5 \\times 3} = y^{15}$\n\n**Answer:** $y^{15}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "y^15",
+      "vars": [
+       "y"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $(3x^{4})^{2}$.",
+    "answer": "$9x^{8}$",
+    "solution": "**Key idea:** Raise every factor inside the brackets to the power.\n\n1. $3^{2} = 9$\n2. $(x^{4})^{2} = x^{8}$\n\n**Answer:** $9x^{8}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "9*x^8",
+      "vars": [
+       "x"
+      ],
+      "form": "simplified"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $7m^{0} + 2$.",
+    "answer": "$9$",
+    "solution": "**Key idea:** Any non-zero number to the power of zero is 1.\n\n1. $m^{0} = 1$\n2. $7 \\times 1 + 2 = 9$\n\n**Answer:** $9$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the value of $n$ if $(5^{n})^{3} = 5^{12}$.",
+    "answer": "$n = 4$",
+    "solution": "**Key idea:** For a power of a power, multiply the indices.\n\n1. $3n = 12$\n2. $n = 4$\n\n**Answer:** $n = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Simplify $\\dfrac{(2a^{3})^{2} \\times a^{0}}{4a^{2}}$.",
+    "answer": "$a^{4}$",
+    "solution": "**Key idea:** Expand the power of a power, use $a^{0} = 1$, then divide.\n\n1. $(2a^{3})^{2} = 4a^{6}$\n2. $a^{0} = 1$, so the numerator is $4a^{6}$\n3. $\\frac{4a^{6}}{4a^{2}} = a^{4}$\n\n**Answer:** $a^{4}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "a^4",
+      "vars": [
+       "a"
+      ],
+      "form": "simplified"
+     }
+    ]
+   }
+  ]
+ }
+}

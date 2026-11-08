@@ -1,0 +1,1786 @@
+{
+ "Year 10A": {
+  "1D": [
+   {
+    "kind": "short",
+    "question": "Solve $\\frac{x + 2}{3} - \\frac{x - 1}{4} = 2$.",
+    "answer": "$x = 13$",
+    "solution": "**Key idea:** Multiply every term by the lowest common denominator, 12, to clear the fractions.\n\n1. $4(x + 2) - 3(x - 1) = 24$\n2. $4x + 8 - 3x + 3 = 24$\n3. $x + 11 = 24$, so $x = 13$\n\n**Answer:** $x = 13$",
+    "key": [
+     {
+      "type": "num",
+      "value": 13
+     }
+    ]
+   }
+  ],
+  "2F": [
+   {
+    "kind": "short",
+    "question": "A circle has radius $17$ cm. A chord of the circle is $30$ cm long. Find the perpendicular distance from the centre of the circle to the chord.",
+    "answer": "$8$ cm",
+    "solution": "**Key idea:** The perpendicular from the centre to a chord bisects the chord, which makes a right-angled triangle with the radius as hypotenuse.\n\n1. Half the chord is $15$ cm.\n2. Distance $= \\sqrt{17^{2} - 15^{2}} = \\sqrt{289 - 225} = \\sqrt{64}$\n3. Distance $= 8$ cm\n\n**Answer:** $8$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A chord is drawn $5$ cm from the centre of a circle with radius $13$ cm. Find the length of the chord.",
+    "answer": "$24$ cm",
+    "solution": "**Key idea:** The perpendicular from the centre bisects the chord, so use Pythagoras to find half the chord.\n\n1. Half the chord $= \\sqrt{13^{2} - 5^{2}} = \\sqrt{144} = 12$ cm\n2. Chord $= 2 \\times 12 = 24$ cm\n\n**Answer:** $24$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 24,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A chord of length $48$ mm is $7$ mm from the centre of a circle. Find the radius of the circle.",
+    "answer": "$25$ mm",
+    "solution": "**Key idea:** The radius is the hypotenuse of a right-angled triangle with legs half the chord and the distance from the centre.\n\n1. Half the chord is $24$ mm.\n2. Radius $= \\sqrt{24^{2} + 7^{2}} = \\sqrt{576 + 49} = \\sqrt{625}$\n3. Radius $= 25$ mm\n\n**Answer:** $25$ mm",
+    "key": [
+     {
+      "type": "num",
+      "value": 25,
+      "unit": "mm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A circular table top has radius $25$ cm. Two parallel straight cuts are made across it, forming chords of length $48$ cm and $14$ cm. The chords are on opposite sides of the centre.\n\n(a) Find the distance from the centre to the $48$ cm chord.\n\n(b) Find the distance from the centre to the $14$ cm chord.\n\n(c) Find the distance between the two chords.",
+    "answer": "(a) $7$ cm (b) $24$ cm (c) $31$ cm",
+    "solution": "**Key idea:** The perpendicular from the centre bisects each chord, so each distance comes from Pythagoras with the radius as hypotenuse.\n\n1. $48$ cm chord: half is $24$, distance $= \\sqrt{25^{2} - 24^{2}} = \\sqrt{49} = 7$ cm\n2. $14$ cm chord: half is $7$, distance $= \\sqrt{25^{2} - 7^{2}} = \\sqrt{576} = 24$ cm\n3. On opposite sides of the centre, the distances add: $7 + 24 = 31$ cm\n\n**Answer:** (a) $7$ cm (b) $24$ cm (c) $31$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 7,
+      "unit": "cm",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 24,
+      "unit": "cm",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 31,
+      "unit": "cm",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "2G": [
+   {
+    "kind": "short",
+    "question": "$P$, $Q$ and $R$ are points on a circle with centre $O$, and $R$ lies on the major arc $PQ$. $\\angle POQ = 136^\\circ$. Find $\\angle PRQ$.",
+    "answer": "$68^\\circ$",
+    "solution": "**Key idea:** The angle at the centre is twice the angle at the circumference standing on the same arc.\n\n1. $\\angle PRQ = \\frac{1}{2} \\times \\angle POQ$\n2. $\\angle PRQ = \\frac{1}{2} \\times 136^\\circ = 68^\\circ$\n\n**Answer:** $68^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 68,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$A$, $B$ and $C$ are points on a circle with centre $O$, with $C$ on the major arc $AB$. $\\angle OAB = 31^\\circ$. Find $\\angle ACB$.",
+    "answer": "$59^\\circ$",
+    "solution": "**Key idea:** Triangle $OAB$ is isosceles because $OA$ and $OB$ are radii; then use the angle at the centre theorem.\n\n1. $\\angle OBA = 31^\\circ$ (base angles of isosceles triangle $OAB$)\n2. $\\angle AOB = 180^\\circ - 62^\\circ = 118^\\circ$\n3. $\\angle ACB = \\frac{1}{2} \\times 118^\\circ = 59^\\circ$\n\n**Answer:** $59^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 59,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "2I": [
+   {
+    "kind": "short",
+    "question": "A circle has centre $O$ and radius $8$ cm. A tangent from the point $T$ touches the circle at $A$, and $OT = 17$ cm. Find the length $TA$.",
+    "answer": "$15$ cm",
+    "solution": "**Key idea:** A tangent is perpendicular to the radius at the point of contact, so triangle $OAT$ is right-angled at $A$.\n\n1. $TA^{2} = OT^{2} - OA^{2} = 289 - 64 = 225$\n2. $TA = 15$ cm\n\n**Answer:** $15$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two tangents are drawn from a point $T$ outside a circle with centre $O$. They touch the circle at $A$ and $B$, and $\\angle AOB = 110^\\circ$. Find $\\angle ATB$.",
+    "answer": "$70^\\circ$",
+    "solution": "**Key idea:** Each tangent meets its radius at $90^\\circ$, and the angles of quadrilateral $OATB$ add to $360^\\circ$.\n\n1. $\\angle OAT = \\angle OBT = 90^\\circ$\n2. $\\angle ATB = 360^\\circ - 90^\\circ - 90^\\circ - 110^\\circ = 70^\\circ$\n\n**Answer:** $70^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 70,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $ST$ is a tangent to a circle at $A$. $AB$ is a chord, and the angle between the tangent and the chord is $\\angle BAT = 48^\\circ$. $C$ is a point on the circle in the alternate segment. Find $\\angle ACB$.",
+    "answer": "$48^\\circ$",
+    "solution": "**Key idea:** The alternate segment theorem: the angle between a tangent and a chord equals the angle in the alternate segment.\n\n1. $\\angle ACB$ stands on chord $AB$ in the alternate segment.\n2. $\\angle ACB = \\angle BAT = 48^\\circ$\n\n**Answer:** $48^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 48,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Jack stands at point $P$ outside a circular garden bed with centre $O$ and radius $7$ m. His line of sight just touches the edge of the bed at $A$, and $PA = 24$ m.\n\n(a) Find the distance $OP$.\n\n(b) Find the shortest distance from Jack to the edge of the garden bed.",
+    "answer": "(a) $25$ m (b) $18$ m",
+    "solution": "**Key idea:** The tangent $PA$ is perpendicular to the radius $OA$; the nearest point of the circle lies on the line $OP$.\n\n1. $OP = \\sqrt{24^{2} + 7^{2}} = \\sqrt{625} = 25$ m\n2. The nearest point of the edge is one radius from $O$ along $OP$, so the distance is $25 - 7 = 18$ m\n\n**Answer:** (a) $25$ m (b) $18$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 25,
+      "unit": "m",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 18,
+      "unit": "m",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "2J": [
+   {
+    "kind": "short",
+    "question": "Two chords $AB$ and $CD$ of a circle intersect at $X$. $AX = 5$ cm, $XB = 8$ cm and $CX = 4$ cm. Find $XD$.",
+    "answer": "$10$ cm",
+    "solution": "**Key idea:** For intersecting chords, $AX \\times XB = CX \\times XD$.\n\n1. $5 \\times 8 = 4 \\times XD$\n2. $XD = \\frac{40}{4} = 10$ cm\n\n**Answer:** $10$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 10,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "From a point $P$ outside a circle, a tangent touches the circle at $T$. A secant from $P$ cuts the circle at $A$ and then $B$, with $PA = 3$ cm and $AB = 9$ cm. Find $PT$.",
+    "answer": "$6$ cm",
+    "solution": "**Key idea:** For a tangent and a secant from the same point, $PT^{2} = PA \\times PB$.\n\n1. $PB = 3 + 9 = 12$ cm\n2. $PT^{2} = 3 \\times 12 = 36$\n3. $PT = 6$ cm\n\n**Answer:** $6$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 6,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "3L": [
+   {
+    "kind": "short",
+    "question": "Solve $3^{x} = 20$, giving your answer correct to $2$ decimal places.",
+    "answer": "$x \\approx 2.73$",
+    "solution": "**Key idea:** Take the logarithm of both sides and use $\\log a^{x} = x\\log a$.\n\n1. $x\\log 3 = \\log 20$\n2. $x = \\frac{\\log 20}{\\log 3} = 2.7268\\ldots$\n3. $x \\approx 2.73$\n\n**Answer:** $x \\approx 2.73$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2.73,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "4A": [
+   {
+    "kind": "short",
+    "question": "Write $0.\\overline{45}$ as a fraction in simplest form.",
+    "answer": "$\\frac{5}{11}$",
+    "solution": "**Key idea:** Multiply by a power of 10 that moves one full repeating block, then subtract.\n\n1. Let $x = 0.4545\\ldots$, so $100x = 45.4545\\ldots$\n2. $99x = 45$, so $x = \\frac{45}{99}$\n3. $x = \\frac{5}{11}$\n\n**Answer:** $\\frac{5}{11}$",
+    "key": [
+     {
+      "type": "num",
+      "value": 0.45454545454545453
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The number $\\sqrt{60}$ lies between two consecutive whole numbers. Write them, smaller first.",
+    "answer": "$7$ and $8$",
+    "solution": "**Key idea:** Find the perfect squares on either side of $60$.\n\n1. $7^{2} = 49$ and $8^{2} = 64$\n2. $49 < 60 < 64$, so $7 < \\sqrt{60} < 8$\n\n**Answer:** $7$ and $8$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       7,
+       8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{48}$, writing it in the form $a\\sqrt{3}$. State the value of $a$.",
+    "answer": "$a = 4$",
+    "solution": "**Key idea:** Split the number under the root into a perfect square times another factor.\n\n1. $\\sqrt{48} = \\sqrt{16 \\times 3}$\n2. $= \\sqrt{16} \\times \\sqrt{3} = 4\\sqrt{3}$\n3. So $a = 4$\n\n**Answer:** $a = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write $5\\sqrt{2}$ as an entire surd $\\sqrt{n}$. State the value of $n$.",
+    "answer": "$n = 50$",
+    "solution": "**Key idea:** Write the whole-number factor as a square root and multiply.\n\n1. $5 = \\sqrt{25}$\n2. $5\\sqrt{2} = \\sqrt{25 \\times 2} = \\sqrt{50}$\n3. So $n = 50$\n\n**Answer:** $n = 50$",
+    "key": [
+     {
+      "type": "num",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A square courtyard has an area of $45 \\text{ m}^2$. Its exact side length can be written as $a\\sqrt{5}$ m. Find $a$.",
+    "answer": "$a = 3$",
+    "solution": "**Key idea:** The side length of a square is the square root of its area; then simplify the surd.\n\n1. Side $= \\sqrt{45}$ m\n2. $\\sqrt{45} = \\sqrt{9 \\times 5} = 3\\sqrt{5}$\n3. So $a = 3$\n\n**Answer:** $a = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A right-angled triangle has shorter sides of $2$ cm and $4$ cm.\n\n(a) The hypotenuse is $\\sqrt{n}$ cm. Find $n$.\n\n(b) The hypotenuse can also be written as $a\\sqrt{5}$ cm. Find $a$.\n\n(c) Find the perimeter of the triangle, correct to $2$ decimal places.",
+    "answer": "(a) $20$ (b) $2$ (c) $10.47$ cm",
+    "solution": "**Key idea:** Use Pythagoras, then simplify the surd; use a calculator only for the decimal approximation.\n\n1. Hypotenuse$^{2} = 2^{2} + 4^{2} = 20$, so the hypotenuse is $\\sqrt{20}$\n2. $\\sqrt{20} = \\sqrt{4 \\times 5} = 2\\sqrt{5}$\n3. Perimeter $= 6 + 2\\sqrt{5} = 10.472\\ldots \\approx 10.47$ cm\n\n**Answer:** (a) $20$ (b) $2$ (c) $10.47$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 20,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 10.47,
+      "dp": 2,
+      "unit": "cm",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "4B": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{12} + \\sqrt{27}$, writing it in the form $a\\sqrt{3}$. State the value of $a$.",
+    "answer": "$a = 5$",
+    "solution": "**Key idea:** Simplify each surd so they have the same surd part, then add like surds.\n\n1. $\\sqrt{12} = 2\\sqrt{3}$ and $\\sqrt{27} = 3\\sqrt{3}$\n2. $2\\sqrt{3} + 3\\sqrt{3} = 5\\sqrt{3}$\n3. So $a = 5$\n\n**Answer:** $a = 5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $3\\sqrt{2} + \\sqrt{50} - \\sqrt{8}$, writing it in the form $a\\sqrt{2}$. State the value of $a$.",
+    "answer": "$a = 6$",
+    "solution": "**Key idea:** Write every term as a multiple of $\\sqrt{2}$, then collect like surds.\n\n1. $\\sqrt{50} = 5\\sqrt{2}$ and $\\sqrt{8} = 2\\sqrt{2}$\n2. $3\\sqrt{2} + 5\\sqrt{2} - 2\\sqrt{2} = 6\\sqrt{2}$\n3. So $a = 6$\n\n**Answer:** $a = 6$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $2\\sqrt{45} - \\sqrt{20}$, writing it in the form $a\\sqrt{5}$. State the value of $a$.",
+    "answer": "$a = 4$",
+    "solution": "**Key idea:** Simplify each surd to a multiple of $\\sqrt{5}$, then subtract.\n\n1. $2\\sqrt{45} = 2 \\times 3\\sqrt{5} = 6\\sqrt{5}$\n2. $\\sqrt{20} = 2\\sqrt{5}$\n3. $6\\sqrt{5} - 2\\sqrt{5} = 4\\sqrt{5}$, so $a = 4$\n\n**Answer:** $a = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{75} + \\sqrt{48} - \\sqrt{12}$, writing it in the form $a\\sqrt{3}$. State the value of $a$.",
+    "answer": "$a = 7$",
+    "solution": "**Key idea:** Write each surd as a multiple of $\\sqrt{3}$.\n\n1. $\\sqrt{75} = 5\\sqrt{3}$, $\\sqrt{48} = 4\\sqrt{3}$, $\\sqrt{12} = 2\\sqrt{3}$\n2. $5\\sqrt{3} + 4\\sqrt{3} - 2\\sqrt{3} = 7\\sqrt{3}$\n3. So $a = 7$\n\n**Answer:** $a = 7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangular garden bed is $\\sqrt{18}$ m long and $\\sqrt{8}$ m wide.\n\n(a) The perimeter can be written as $a\\sqrt{2}$ m. Find $a$.\n\n(b) Find the area of the bed in square metres.",
+    "answer": "(a) $10$ (b) $12 \\text{ m}^2$",
+    "solution": "**Key idea:** Simplify the surds before adding; multiply surds by multiplying the numbers under the roots.\n\n1. $\\sqrt{18} = 3\\sqrt{2}$ and $\\sqrt{8} = 2\\sqrt{2}$\n2. Perimeter $= 2(3\\sqrt{2} + 2\\sqrt{2}) = 10\\sqrt{2}$, so $a = 10$\n3. Area $= \\sqrt{18} \\times \\sqrt{8} = \\sqrt{144} = 12 \\text{ m}^2$\n\n**Answer:** (a) $10$ (b) $12 \\text{ m}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 10,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 12,
+      "unit": "m²",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "4C": [
+   {
+    "kind": "short",
+    "question": "Simplify $\\sqrt{6} \\times \\sqrt{15}$, writing it in the form $a\\sqrt{10}$. State the value of $a$.",
+    "answer": "$a = 3$",
+    "solution": "**Key idea:** Multiply under one root, then take out the largest square factor.\n\n1. $\\sqrt{6} \\times \\sqrt{15} = \\sqrt{90}$\n2. $\\sqrt{90} = \\sqrt{9 \\times 10} = 3\\sqrt{10}$\n3. So $a = 3$\n\n**Answer:** $a = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Evaluate $(3\\sqrt{2})^{2}$.",
+    "answer": "$18$",
+    "solution": "**Key idea:** Square both the whole number and the surd: $(a\\sqrt{b})^{2} = a^{2}b$.\n\n1. $(3\\sqrt{2})^{2} = 3^{2} \\times (\\sqrt{2})^{2}$\n2. $= 9 \\times 2 = 18$\n\n**Answer:** $18$",
+    "key": [
+     {
+      "type": "num",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand and simplify $(\\sqrt{11} - 3)(\\sqrt{11} + 3)$.",
+    "answer": "$2$",
+    "solution": "**Key idea:** This is a difference of two squares: $(a - b)(a + b) = a^{2} - b^{2}$.\n\n1. $(\\sqrt{11})^{2} - 3^{2}$\n2. $= 11 - 9 = 2$\n\n**Answer:** $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Simplify $2\\sqrt{3} \\times 5\\sqrt{6}$, writing it in the form $a\\sqrt{2}$. State the value of $a$.",
+    "answer": "$a = 30$",
+    "solution": "**Key idea:** Multiply the whole numbers together and the surds together, then simplify.\n\n1. $2 \\times 5 = 10$ and $\\sqrt{3} \\times \\sqrt{6} = \\sqrt{18} = 3\\sqrt{2}$\n2. $10 \\times 3\\sqrt{2} = 30\\sqrt{2}$\n3. So $a = 30$\n\n**Answer:** $a = 30$",
+    "key": [
+     {
+      "type": "num",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand $(\\sqrt{5} + 2)^{2}$ and write it in the form $a + b\\sqrt{5}$. State $a$ and $b$, in that order.",
+    "answer": "$a = 9$, $b = 4$",
+    "solution": "**Key idea:** Use $(x + y)^{2} = x^{2} + 2xy + y^{2}$.\n\n1. $(\\sqrt{5})^{2} + 2 \\times 2 \\times \\sqrt{5} + 2^{2}$\n2. $= 5 + 4\\sqrt{5} + 4 = 9 + 4\\sqrt{5}$\n3. So $a = 9$ and $b = 4$\n\n**Answer:** $a = 9$, $b = 4$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       9,
+       4
+      ]
+     }
+    ]
+   }
+  ],
+  "4D": [
+   {
+    "kind": "short",
+    "question": "Rationalise the denominator of $\\frac{12}{\\sqrt{3}}$ and write the answer in the form $a\\sqrt{3}$. State the value of $a$.",
+    "answer": "$a = 4$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by the surd in the denominator.\n\n1. $\\frac{12}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{12\\sqrt{3}}{3}$\n2. $= 4\\sqrt{3}$, so $a = 4$\n\n**Answer:** $a = 4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rationalise the denominator of $\\frac{15}{\\sqrt{5}}$ and write the answer in the form $a\\sqrt{5}$. State the value of $a$.",
+    "answer": "$a = 3$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by $\\sqrt{5}$.\n\n1. $\\frac{15\\sqrt{5}}{5}$\n2. $= 3\\sqrt{5}$, so $a = 3$\n\n**Answer:** $a = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rationalise the denominator of $\\frac{14}{\\sqrt{7}}$ and write the answer in the form $a\\sqrt{7}$. State the value of $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by $\\sqrt{7}$.\n\n1. $\\frac{14\\sqrt{7}}{7}$\n2. $= 2\\sqrt{7}$, so $a = 2$\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rationalise the denominator: $\\frac{4}{\\sqrt{3} - 1} = a(\\sqrt{3} + 1)$. Find $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by the conjugate $\\sqrt{3} + 1$.\n\n1. Denominator: $(\\sqrt{3} - 1)(\\sqrt{3} + 1) = 3 - 1 = 2$\n2. $\\frac{4(\\sqrt{3} + 1)}{2} = 2(\\sqrt{3} + 1)$\n3. So $a = 2$\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rationalise the denominator of $\\frac{6}{3 + \\sqrt{3}}$ and write the answer in the form $a - b\\sqrt{3}$. State $a$ and $b$, in that order.",
+    "answer": "$a = 3$, $b = 1$",
+    "solution": "**Key idea:** Multiply the numerator and denominator by the conjugate $3 - \\sqrt{3}$.\n\n1. Denominator: $(3 + \\sqrt{3})(3 - \\sqrt{3}) = 9 - 3 = 6$\n2. $\\frac{6(3 - \\sqrt{3})}{6} = 3 - \\sqrt{3}$\n3. So $a = 3$ and $b = 1$\n\n**Answer:** $a = 3$, $b = 1$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "(a) Rationalise the denominator of $\\frac{1}{\\sqrt{7} - \\sqrt{5}}$ and write it in the form $\\frac{\\sqrt{7} + \\sqrt{5}}{c}$. Find $c$.\n\n(b) Rationalise the denominator of $\\frac{\\sqrt{5} + 1}{\\sqrt{5} - 1}$ and write it in the form $\\frac{a + \\sqrt{b}}{c}$, where $a$, $b$ and $c$ are whole numbers with no common factor. State $a$, $b$ and $c$, in that order.",
+    "answer": "(a) $c = 2$ (b) $a = 3$, $b = 5$, $c = 2$",
+    "solution": "**Key idea:** Multiply by the conjugate of the denominator so the surds in the denominator cancel.\n\n1. (a) $\\frac{\\sqrt{7} + \\sqrt{5}}{(\\sqrt{7} - \\sqrt{5})(\\sqrt{7} + \\sqrt{5})} = \\frac{\\sqrt{7} + \\sqrt{5}}{7 - 5}$, so $c = 2$\n2. (b) $\\frac{(\\sqrt{5} + 1)^{2}}{5 - 1} = \\frac{6 + 2\\sqrt{5}}{4}$\n3. Divide top and bottom by 2: $\\frac{3 + \\sqrt{5}}{2}$, so $a = 3$, $b = 5$, $c = 2$\n\n**Answer:** (a) $c = 2$ (b) $a = 3$, $b = 5$, $c = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2,
+      "label": "a"
+     },
+     {
+      "type": "list",
+      "values": [
+       3,
+       5,
+       2
+      ],
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "4M": [
+   {
+    "kind": "short",
+    "question": "A bocce ball is a sphere with radius $4.5$ cm. Find its volume, correct to $1$ decimal place.",
+    "answer": "$381.7 \\text{ cm}^3$",
+    "solution": "**Key idea:** The volume of a sphere is $V = \\frac{4}{3}\\pi r^{3}$.\n\n1. $V = \\frac{4}{3} \\times \\pi \\times 4.5^{3}$\n2. $= \\frac{4}{3} \\times \\pi \\times 91.125 = 381.70\\ldots$\n3. $V \\approx 381.7 \\text{ cm}^3$\n\n**Answer:** $381.7 \\text{ cm}^3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 381.7,
+      "dp": 1,
+      "unit": "cm³"
+     }
+    ]
+   }
+  ],
+  "6E": [
+   {
+    "kind": "short",
+    "question": "A rectangular storage box is $12$ cm long, $9$ cm wide and $8$ cm high. Find the length of a space diagonal of the box.",
+    "answer": "$17$ cm",
+    "solution": "**Key idea:** Use Pythagoras twice: first across the base, then up to the opposite top corner.\n\n1. Base diagonal $= \\sqrt{12^{2} + 9^{2}} = \\sqrt{225} = 15$ cm\n2. Space diagonal $= \\sqrt{15^{2} + 8^{2}} = \\sqrt{289} = 17$ cm\n\n**Answer:** $17$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 17,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangular storage box is $12$ cm long, $9$ cm wide and $8$ cm high. Find the angle between a space diagonal and the base of the box, correct to $1$ decimal place.",
+    "answer": "$28.1^\\circ$",
+    "solution": "**Key idea:** The angle with the base is in the right-angled triangle formed by the base diagonal, the vertical edge and the space diagonal.\n\n1. Base diagonal $= \\sqrt{12^{2} + 9^{2}} = 15$ cm\n2. $\\tan \\theta = \\frac{8}{15}$\n3. $\\theta = 28.07\\ldots^\\circ \\approx 28.1^\\circ$\n\n**Answer:** $28.1^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 28.1,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A vertical flagpole stands at point $F$ on level ground. From point $A$, $40$ m due south of $F$, the angle of elevation of the top of the pole is $28^\\circ$. Point $B$ is $30$ m due east of $F$.\n\n(a) Find the height of the flagpole, correct to $2$ decimal places.\n\n(b) Find the angle of elevation of the top of the pole from $B$, correct to $1$ decimal place.",
+    "answer": "(a) $21.27$ m (b) $35.3^\\circ$",
+    "solution": "**Key idea:** Each sighting line forms a right-angled triangle with the pole, with the right angle at $F$.\n\n1. Height $= 40\\tan 28^\\circ = 21.268\\ldots \\approx 21.27$ m\n2. From $B$: $\\tan \\theta = \\frac{21.268\\ldots}{30}$\n3. $\\theta = 35.33\\ldots^\\circ \\approx 35.3^\\circ$\n\n**Answer:** (a) $21.27$ m (b) $35.3^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 21.27,
+      "dp": 2,
+      "unit": "m",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 35.3,
+      "dp": 1,
+      "unit": "°",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "6F": [
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $A = 35^\\circ$, $B = 72^\\circ$ and $a = 9$ cm. Find $b$, correct to $1$ decimal place.",
+    "answer": "$b \\approx 14.9$ cm",
+    "solution": "**Key idea:** The sine rule: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$.\n\n1. $\\frac{b}{\\sin 72^\\circ} = \\frac{9}{\\sin 35^\\circ}$\n2. $b = \\frac{9\\sin 72^\\circ}{\\sin 35^\\circ} = 14.92\\ldots$\n3. $b \\approx 14.9$ cm\n\n**Answer:** $b \\approx 14.9$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 14.9,
+      "dp": 1,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $A = 50^\\circ$, $C = 60^\\circ$ and $c = 12$ m. Find $a$, correct to $1$ decimal place.",
+    "answer": "$a \\approx 10.6$ m",
+    "solution": "**Key idea:** Use the sine rule with the pair of known side and opposite angle.\n\n1. $\\frac{a}{\\sin 50^\\circ} = \\frac{12}{\\sin 60^\\circ}$\n2. $a = \\frac{12\\sin 50^\\circ}{\\sin 60^\\circ} = 10.61\\ldots$\n3. $a \\approx 10.6$ m\n\n**Answer:** $a \\approx 10.6$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 10.6,
+      "dp": 1,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $a = 10$ cm, $b = 8$ cm and $A = 65^\\circ$. Find $B$, correct to $1$ decimal place.",
+    "answer": "$B \\approx 46.5^\\circ$",
+    "solution": "**Key idea:** Use the sine rule for angles. Since $b < a$, angle $B$ is smaller than angle $A$, so it must be acute and there is only one answer.\n\n1. $\\sin B = \\frac{8\\sin 65^\\circ}{10} = 0.725\\ldots$\n2. $B = 46.47\\ldots^\\circ$\n3. The obtuse option $133.5^\\circ$ is impossible because $65^\\circ + 133.5^\\circ > 180^\\circ$, so $B \\approx 46.5^\\circ$\n\n**Answer:** $B \\approx 46.5^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 46.5,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Mia and Noah stand at points $M$ and $N$ on one bank of a straight river, $120$ m apart. A tree $T$ is on the other bank. $\\angle TMN = 48^\\circ$ and $\\angle TNM = 64^\\circ$. Find the distance from Mia to the tree, correct to $1$ decimal place.",
+    "answer": "$116.3$ m",
+    "solution": "**Key idea:** Find the third angle, then use the sine rule. The side $MT$ is opposite the angle at $N$.\n\n1. $\\angle MTN = 180^\\circ - 48^\\circ - 64^\\circ = 68^\\circ$\n2. $\\frac{MT}{\\sin 64^\\circ} = \\frac{120}{\\sin 68^\\circ}$\n3. $MT = \\frac{120\\sin 64^\\circ}{\\sin 68^\\circ} = 116.32\\ldots \\approx 116.3$ m\n\n**Answer:** $116.3$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 116.3,
+      "dp": 1,
+      "unit": "m"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "In triangle $ABC$, $A = 40^\\circ$, $B = 75^\\circ$ and $c = 20$ cm.\n\n(a) Find $C$.\n\n(b) Find $a$, correct to $2$ decimal places.\n\n(c) Find $b$, correct to $2$ decimal places.",
+    "answer": "(a) $65^\\circ$ (b) $14.18$ cm (c) $21.32$ cm",
+    "solution": "**Key idea:** Find the third angle first so the known side $c$ has a known opposite angle, then use the sine rule.\n\n1. $C = 180^\\circ - 40^\\circ - 75^\\circ = 65^\\circ$\n2. $a = \\frac{20\\sin 40^\\circ}{\\sin 65^\\circ} = 14.18\\ldots \\approx 14.18$ cm\n3. $b = \\frac{20\\sin 75^\\circ}{\\sin 65^\\circ} = 21.31\\ldots \\approx 21.32$ cm\n\n**Answer:** (a) $65^\\circ$ (b) $14.18$ cm (c) $21.32$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 65,
+      "unit": "°",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 14.18,
+      "dp": 2,
+      "unit": "cm",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 21.32,
+      "dp": 2,
+      "unit": "cm",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "6G": [
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $b = 7$ cm, $c = 9$ cm and $A = 52^\\circ$. Find $a$, correct to $2$ decimal places.",
+    "answer": "$a \\approx 7.24$ cm",
+    "solution": "**Key idea:** Two sides and the included angle are known, so use the cosine rule $a^{2} = b^{2} + c^{2} - 2bc\\cos A$.\n\n1. $a^{2} = 49 + 81 - 2 \\times 7 \\times 9 \\times \\cos 52^\\circ = 52.42\\ldots$\n2. $a = 7.240\\ldots \\approx 7.24$ cm\n\n**Answer:** $a \\approx 7.24$ cm",
+    "key": [
+     {
+      "type": "num",
+      "value": 7.24,
+      "dp": 2,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A triangle has sides $6$ cm, $8$ cm and $11$ cm. Find the size of its largest angle, correct to $1$ decimal place.",
+    "answer": "$102.6^\\circ$",
+    "solution": "**Key idea:** The largest angle is opposite the longest side. Rearrange the cosine rule to find it.\n\n1. $\\cos \\theta = \\frac{6^{2} + 8^{2} - 11^{2}}{2 \\times 6 \\times 8} = \\frac{-21}{96}$\n2. $\\theta = 102.63\\ldots^\\circ \\approx 102.6^\\circ$\n\n**Answer:** $102.6^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 102.6,
+      "dp": 1,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two fishing boats leave a harbour at the same time. One travels $15$ km on a bearing of $040^\\circ$ and the other travels $22$ km on a bearing of $115^\\circ$. How far apart are the boats? Give your answer correct to $1$ decimal place.",
+    "answer": "$23.2$ km",
+    "solution": "**Key idea:** The angle between the two paths is the difference of the bearings; then use the cosine rule.\n\n1. Angle between the paths $= 115^\\circ - 40^\\circ = 75^\\circ$\n2. $d^{2} = 15^{2} + 22^{2} - 2 \\times 15 \\times 22 \\times \\cos 75^\\circ = 538.18\\ldots$\n3. $d = 23.19\\ldots \\approx 23.2$ km\n\n**Answer:** $23.2$ km",
+    "key": [
+     {
+      "type": "num",
+      "value": 23.2,
+      "dp": 1,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In triangle $ABC$, $a = 5$ cm, $b = 7$ cm and $c = 8$ cm. Use the cosine rule to find the exact size of angle $B$.",
+    "answer": "$60^\\circ$",
+    "solution": "**Key idea:** Angle $B$ is opposite side $b$, so $\\cos B = \\frac{a^{2} + c^{2} - b^{2}}{2ac}$.\n\n1. $\\cos B = \\frac{25 + 64 - 49}{2 \\times 5 \\times 8} = \\frac{40}{80} = \\frac{1}{2}$\n2. $B = 60^\\circ$\n\n**Answer:** $60^\\circ$",
+    "key": [
+     {
+      "type": "num",
+      "value": 60,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "6H": [
+   {
+    "kind": "short",
+    "question": "A triangular garden bed has two sides of $9$ m and $14$ m, with an angle of $38^\\circ$ between them. Find its area, correct to $1$ decimal place.",
+    "answer": "$38.8 \\text{ m}^2$",
+    "solution": "**Key idea:** Area $= \\frac{1}{2}ab\\sin C$, where $C$ is the angle between sides $a$ and $b$.\n\n1. Area $= \\frac{1}{2} \\times 9 \\times 14 \\times \\sin 38^\\circ$\n2. $= 63 \\times 0.6156\\ldots = 38.78\\ldots$\n3. Area $\\approx 38.8 \\text{ m}^2$\n\n**Answer:** $38.8 \\text{ m}^2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 38.8,
+      "dp": 1,
+      "unit": "m²"
+     }
+    ]
+   }
+  ],
+  "6I": [
+   {
+    "kind": "short",
+    "question": "Use the unit circle to find the exact value of:\n\n(a) $\\cos 180^\\circ$\n\n(b) $\\sin 270^\\circ$\n\n(c) $\\cos 300^\\circ$",
+    "answer": "(a) $-1$ (b) $-1$ (c) $\\frac{1}{2}$",
+    "solution": "**Key idea:** The point at angle $\\theta$ on the unit circle is $(\\cos \\theta, \\sin \\theta)$; use reference angles for non-axis angles.\n\n1. At $180^\\circ$ the point is $(-1, 0)$, so $\\cos 180^\\circ = -1$\n2. At $270^\\circ$ the point is $(0, -1)$, so $\\sin 270^\\circ = -1$\n3. $300^\\circ$ is in the fourth quadrant with reference angle $60^\\circ$, and cosine is positive there, so $\\cos 300^\\circ = \\cos 60^\\circ = \\frac{1}{2}$\n\n**Answer:** (a) $-1$ (b) $-1$ (c) $\\frac{1}{2}$",
+    "key": [
+     {
+      "type": "num",
+      "value": -1,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -1,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 0.5,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The angle $\\theta$ is in the fourth quadrant and $\\cos \\theta = \\frac{8}{17}$.\n\n(a) Find the exact value of $\\sin \\theta$.\n\n(b) Find the exact value of $\\tan \\theta$.",
+    "answer": "(a) $-\\frac{15}{17}$ (b) $-\\frac{15}{8}$",
+    "solution": "**Key idea:** Use $\\sin^{2}\\theta + \\cos^{2}\\theta = 1$, then the sign of sine in the fourth quadrant.\n\n1. $\\sin^{2}\\theta = 1 - \\frac{64}{289} = \\frac{225}{289}$\n2. Sine is negative in the fourth quadrant, so $\\sin \\theta = -\\frac{15}{17}$\n3. $\\tan \\theta = \\frac{\\sin \\theta}{\\cos \\theta} = -\\frac{15}{8}$\n\n**Answer:** (a) $-\\frac{15}{17}$ (b) $-\\frac{15}{8}$",
+    "key": [
+     {
+      "type": "num",
+      "value": -0.8823529411764706,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -1.875,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "6J": [
+   {
+    "kind": "short",
+    "question": "For the graph of $y = 4\\sin x$:\n\n(a) State the amplitude.\n\n(b) State the period, in degrees.\n\n(c) State the minimum value of $y$.",
+    "answer": "(a) $4$ (b) $360^\\circ$ (c) $-4$",
+    "solution": "**Key idea:** For $y = a\\sin x$, the amplitude is $|a|$ and the period is still $360^\\circ$.\n\n1. Amplitude $= 4$\n2. Period $= 360^\\circ$ (the $x$ is not multiplied by anything)\n3. The graph goes from $-4$ to $4$, so the minimum is $-4$\n\n**Answer:** (a) $4$ (b) $360^\\circ$ (c) $-4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 360,
+      "unit": "°",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": -4,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the graph of $y = \\cos 3x$:\n\n(a) State the period, in degrees.\n\n(b) State the maximum value of $y$.",
+    "answer": "(a) $120^\\circ$ (b) $1$",
+    "solution": "**Key idea:** For $y = \\cos bx$, the period is $\\frac{360^\\circ}{b}$ and the amplitude is unchanged.\n\n1. Period $= \\frac{360^\\circ}{3} = 120^\\circ$\n2. The amplitude is $1$, so the maximum is $1$\n\n**Answer:** (a) $120^\\circ$ (b) $1$",
+    "key": [
+     {
+      "type": "num",
+      "value": 120,
+      "unit": "°",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 1,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider $y = 2\\sin x + 1$ for $0^\\circ \\le x \\le 360^\\circ$.\n\n(a) Find the maximum value of $y$.\n\n(b) Find the minimum value of $y$.\n\n(c) Find the value of $y$ when $x = 30^\\circ$.",
+    "answer": "(a) $3$ (b) $-1$ (c) $2$",
+    "solution": "**Key idea:** $\\sin x$ ranges from $-1$ to $1$; multiply by 2 and add 1.\n\n1. Maximum: $2 \\times 1 + 1 = 3$\n2. Minimum: $2 \\times (-1) + 1 = -1$\n3. $x = 30^\\circ$: $2 \\times \\frac{1}{2} + 1 = 2$\n\n**Answer:** (a) $3$ (b) $-1$ (c) $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -1,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Use the graphs of $y = \\sin x$, $y = \\cos x$ and $y = \\tan x$ for $0^\\circ \\le x \\le 360^\\circ$ to state the number of solutions of each equation.\n\n(a) $\\sin x = 0.6$\n\n(b) $\\cos x = -1$\n\n(c) $\\tan x = 3$",
+    "answer": "(a) $2$ (b) $1$ (c) $2$",
+    "solution": "**Key idea:** Count how many times the horizontal line meets the graph between $0^\\circ$ and $360^\\circ$.\n\n1. $y = 0.6$ crosses the sine curve once in the first quadrant and once in the second: 2 solutions\n2. $\\cos x = -1$ only at the minimum, $x = 180^\\circ$: 1 solution\n3. $\\tan x = 3$ once in the first quadrant and once in the third: 2 solutions\n\n**Answer:** (a) $2$ (b) $1$ (c) $2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 1,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The depth of water at a boat ramp is modelled by $h = 3 + 1.5\\cos(30t)^\\circ$ metres, where $t$ is the number of hours after midnight.\n\n(a) Find the greatest depth.\n\n(b) Find the least depth.\n\n(c) Find the period of the tide, in hours.\n\n(d) Find the depth at 2 am.",
+    "answer": "(a) $4.5$ m (b) $1.5$ m (c) $12$ hours (d) $3.75$ m",
+    "solution": "**Key idea:** The cosine part ranges from $-1.5$ to $1.5$; the period is $\\frac{360}{30}$ hours.\n\n1. Greatest: $3 + 1.5 = 4.5$ m\n2. Least: $3 - 1.5 = 1.5$ m\n3. Period $= \\frac{360}{30} = 12$ hours\n4. $t = 2$: $3 + 1.5\\cos 60^\\circ = 3 + 0.75 = 3.75$ m\n\n**Answer:** (a) $4.5$ m (b) $1.5$ m (c) $12$ hours (d) $3.75$ m",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.5,
+      "unit": "m",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 1.5,
+      "unit": "m",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 12,
+      "unit": "hours",
+      "label": "c"
+     },
+     {
+      "type": "num",
+      "value": 3.75,
+      "unit": "m",
+      "label": "d"
+     }
+    ]
+   }
+  ],
+  "7G": [
+   {
+    "kind": "short",
+    "question": "Find the $x$-coordinates of the points where the parabola $y = x^{2}$ meets the line $y = 2x + 8$.",
+    "answer": "$x = 4$ or $x = -2$",
+    "solution": "**Key idea:** At an intersection point the $y$-values are equal, so set the two rules equal and solve.\n\n1. $x^{2} = 2x + 8$\n2. $x^{2} - 2x - 8 = 0$\n3. $(x - 4)(x + 2) = 0$, so $x = 4$ or $x = -2$\n\n**Answer:** $x = 4$ or $x = -2$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       4,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-coordinates of the points where $y = x^{2} - 3x + 1$ meets $y = x - 2$.",
+    "answer": "$x = 1$ or $x = 3$",
+    "solution": "**Key idea:** Equate the two expressions for $y$ and solve the quadratic.\n\n1. $x^{2} - 3x + 1 = x - 2$\n2. $x^{2} - 4x + 3 = 0$\n3. $(x - 1)(x - 3) = 0$, so $x = 1$ or $x = 3$\n\n**Answer:** $x = 1$ or $x = 3$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $y = 4x - 4$ touches the parabola $y = x^{2}$ at exactly one point. Find the coordinates of that point.",
+    "answer": "$(2, 4)$",
+    "solution": "**Key idea:** Equate the rules; a single point of contact gives a perfect square (discriminant $0$).\n\n1. $x^{2} = 4x - 4$, so $x^{2} - 4x + 4 = 0$\n2. $(x - 2)^{2} = 0$, so $x = 2$\n3. $y = 2^{2} = 4$, giving the point $(2, 4)$\n\n**Answer:** $(2, 4)$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       2,
+       4
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $y = 2x + k$ touches the parabola $y = x^{2} + 4x + 6$ at exactly one point.\n\n(a) Find $k$.\n\n(b) Find the coordinates of the point of contact.",
+    "answer": "(a) $k = 5$ (b) $(-1, 3)$",
+    "solution": "**Key idea:** Equate the rules and set the discriminant of the resulting quadratic to zero.\n\n1. $x^{2} + 4x + 6 = 2x + k$ gives $x^{2} + 2x + 6 - k = 0$\n2. $\\Delta = 4 - 4(6 - k) = 0$, so $4k = 20$ and $k = 5$\n3. Then $x^{2} + 2x + 1 = 0$, so $x = -1$ and $y = 2(-1) + 5 = 3$\n\n**Answer:** (a) $k = 5$ (b) $(-1, 3)$",
+    "key": [
+     {
+      "type": "num",
+      "value": 5,
+      "label": "a"
+     },
+     {
+      "type": "list",
+      "values": [
+       -1,
+       3
+      ],
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The parabolas $y = x^{2} + 1$ and $y = 3 - x^{2}$ meet at two points.\n\n(a) Find the $x$-coordinates of the points.\n\n(b) Find the $y$-coordinate that the two points share.",
+    "answer": "(a) $x = 1$ or $x = -1$ (b) $2$",
+    "solution": "**Key idea:** Set the two rules equal and solve.\n\n1. $x^{2} + 1 = 3 - x^{2}$\n2. $2x^{2} = 2$, so $x^{2} = 1$ and $x = \\pm 1$\n3. $y = 1^{2} + 1 = 2$ at both points\n\n**Answer:** (a) $x = 1$ or $x = -1$ (b) $2$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1,
+       -1
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A ball is kicked from the bottom of a ramp. Measured from the kick, its path is $y = 6x - x^{2}$ and the ramp is the line $y = x$, where $x$ is the horizontal distance and $y$ the height, both in metres.\n\n(a) Find the $x$-coordinates of the points where the path meets the ramp.\n\n(b) Find the height at which the ball lands on the ramp.\n\n(c) The vertical gap between the ball and the ramp is $5x - x^{2}$ metres. Find the largest vertical gap.",
+    "answer": "(a) $x = 0$ or $x = 5$ (b) $5$ m (c) $6.25$ m",
+    "solution": "**Key idea:** Equate the two rules to find where they meet; the largest gap is at the turning point of the gap function, halfway between its zeros.\n\n1. $6x - x^{2} = x$ gives $x^{2} - 5x = 0$, so $x(x - 5) = 0$ and $x = 0$ or $x = 5$\n2. It lands at $x = 5$, where $y = 5$ m\n3. The gap $5x - x^{2}$ has zeros $0$ and $5$, so its maximum is at $x = 2.5$: $5(2.5) - 2.5^{2} = 12.5 - 6.25 = 6.25$ m\n\n**Answer:** (a) $x = 0$ or $x = 5$ (b) $5$ m (c) $6.25$ m",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       5
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 5,
+      "unit": "m",
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 6.25,
+      "unit": "m",
+      "label": "c"
+     }
+    ]
+   }
+  ],
+  "7H": [
+   {
+    "kind": "short",
+    "question": "A cyclist rides $45$ km along a rail trail in $1.5$ hours. Find her average speed in km/h.",
+    "answer": "$30$ km/h",
+    "solution": "**Key idea:** Average speed is distance divided by time.\n\n1. $45 \\div 1.5 = 30$ km/h\n\n**Answer:** $30$ km/h",
+    "key": [
+     {
+      "type": "num",
+      "value": 30,
+      "unit": "km/h"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Let $f(x) = x^{2} + 3x$. Find the average rate of change of $f$ from $x = 1$ to $x = 4$.",
+    "answer": "$8$",
+    "solution": "**Key idea:** Average rate of change $= \\frac{f(b) - f(a)}{b - a}$.\n\n1. $f(4) = 16 + 12 = 28$ and $f(1) = 1 + 3 = 4$\n2. $\\frac{28 - 4}{4 - 1} = \\frac{24}{3} = 8$\n\n**Answer:** $8$",
+    "key": [
+     {
+      "type": "num",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rainwater tank holds $120$ L. During a storm it fills to $480$ L in $15$ minutes. Find the average rate at which the tank filled, in litres per minute.",
+    "answer": "$24$ L/min",
+    "solution": "**Key idea:** Average rate $= \\frac{\\text{change in volume}}{\\text{change in time}}$.\n\n1. Change in volume $= 480 - 120 = 360$ L\n2. $\\frac{360}{15} = 24$ L per minute\n\n**Answer:** $24$ L/min",
+    "key": [
+     {
+      "type": "num",
+      "value": 24,
+      "unit": "L/min"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A car was worth \\$32 000 in 2020 and \\$20 000 in 2024. Find the average rate of change of its value, in dollars per year.",
+    "answer": "$-3000$ dollars per year",
+    "solution": "**Key idea:** Average rate of change $= \\frac{\\text{change in value}}{\\text{change in time}}$; a decrease gives a negative rate.\n\n1. Change in value $= 20\\,000 - 32\\,000 = -12\\,000$ dollars\n2. Change in time $= 4$ years\n3. $\\frac{-12\\,000}{4} = -3000$ dollars per year\n\n**Answer:** $-3000$ dollars per year",
+    "key": [
+     {
+      "type": "num",
+      "value": -3000
+     }
+    ]
+   }
+  ],
+  "7I": [
+   {
+    "kind": "short",
+    "question": "Let $f(x) = x^{2}$. Find the average rate of change of $f$ from $x = 3$ to $x = 3.1$.",
+    "answer": "$6.1$",
+    "solution": "**Key idea:** Average rate of change $= \\frac{f(3.1) - f(3)}{3.1 - 3}$.\n\n1. $f(3.1) = 9.61$ and $f(3) = 9$\n2. $\\frac{9.61 - 9}{0.1} = \\frac{0.61}{0.1} = 6.1$\n\n**Answer:** $6.1$",
+    "key": [
+     {
+      "type": "num",
+      "value": 6.1
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find $\\lim_{h \\to 0} \\frac{h^{2} + 7h}{h}$.",
+    "answer": "$7$",
+    "solution": "**Key idea:** Simplify the fraction first (for $h \\neq 0$), then let $h$ approach $0$.\n\n1. $\\frac{h^{2} + 7h}{h} = h + 7$ for $h \\neq 0$\n2. As $h \\to 0$, $h + 7 \\to 7$\n\n**Answer:** $7$",
+    "key": [
+     {
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Let $f(x) = 2x^{2}$. The average rate of change of $f$ from $x = 1$ to $x = 1 + h$ is $4 + 2h$.\n\n(a) Evaluate the average rate of change when $h = 0.01$.\n\n(b) Find the instantaneous rate of change of $f$ at $x = 1$.",
+    "answer": "(a) $4.02$ (b) $4$",
+    "solution": "**Key idea:** Substitute the value of $h$; the instantaneous rate is the limit as $h$ approaches $0$.\n\n1. $4 + 2(0.01) = 4.02$\n2. As $h \\to 0$, $4 + 2h \\to 4$\n\n**Answer:** (a) $4.02$ (b) $4$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4.02,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 4,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A stone is thrown upwards. Its height after $t$ seconds is $h(t) = 30t - 5t^{2}$ metres.\n\n(a) Find the average velocity from $t = 1$ to $t = 2$.\n\n(b) The average velocity from $t = 1$ to $t = 1 + k$ simplifies to $20 - 5k$. Find the velocity at the instant $t = 1$.",
+    "answer": "(a) $15$ m/s (b) $20$ m/s",
+    "solution": "**Key idea:** Average velocity is change in height over change in time; the instantaneous velocity is the limit as the time interval shrinks to $0$.\n\n1. $h(2) = 60 - 20 = 40$ and $h(1) = 30 - 5 = 25$\n2. Average velocity $= \\frac{40 - 25}{2 - 1} = 15$ m/s\n3. As $k \\to 0$, $20 - 5k \\to 20$, so the velocity at $t = 1$ is $20$ m/s\n\n**Answer:** (a) $15$ m/s (b) $20$ m/s",
+    "key": [
+     {
+      "type": "num",
+      "value": 15,
+      "unit": "m/s",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 20,
+      "unit": "m/s",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "8J": [
+   {
+    "kind": "short",
+    "question": "In how many ways can a group of $4$ students be chosen from $9$ students?",
+    "answer": "$126$",
+    "solution": "**Key idea:** Order does not matter, so use $\\binom{n}{r} = \\frac{n!}{r!(n - r)!}$.\n\n1. $\\binom{9}{4} = \\frac{9 \\times 8 \\times 7 \\times 6}{4 \\times 3 \\times 2 \\times 1}$\n2. $= \\frac{3024}{24} = 126$\n\n**Answer:** $126$",
+    "key": [
+     {
+      "type": "num",
+      "value": 126
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A school committee of $3$ boys and $2$ girls is to be chosen from $6$ boys and $5$ girls. How many different committees are possible?",
+    "answer": "$200$",
+    "solution": "**Key idea:** Choose the boys and the girls separately, then multiply.\n\n1. Boys: $\\binom{6}{3} = 20$\n2. Girls: $\\binom{5}{2} = 10$\n3. Committees: $20 \\times 10 = 200$\n\n**Answer:** $200$",
+    "key": [
+     {
+      "type": "num",
+      "value": 200
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A pizza shop offers $10$ different toppings, including pineapple. A customer chooses $3$ different toppings.\n\n(a) How many different selections of $3$ toppings are possible?\n\n(b) How many of these selections include pineapple?",
+    "answer": "(a) $120$ (b) $36$",
+    "solution": "**Key idea:** Order does not matter. If pineapple must be included, choose the other two toppings from the remaining nine.\n\n1. $\\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{6} = 120$\n2. With pineapple: $\\binom{9}{2} = \\frac{9 \\times 8}{2} = 36$\n\n**Answer:** (a) $120$ (b) $36$",
+    "key": [
+     {
+      "type": "num",
+      "value": 120,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 36,
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "9F": [
+   {
+    "kind": "short",
+    "question": "Find the population standard deviation of the data set $12$, $15$, $15$, $18$, $20$, correct to $2$ decimal places.",
+    "answer": "$2.76$",
+    "solution": "**Key idea:** $\\sigma = \\sqrt{\\frac{\\Sigma (x - \\bar{x})^{2}}{n}}$, dividing by $n$.\n\n1. Mean $= \\frac{80}{5} = 16$\n2. Squared deviations: $16, 1, 1, 4, 16$, with sum $38$\n3. $\\sigma = \\sqrt{\\frac{38}{5}} = \\sqrt{7.6} = 2.756\\ldots \\approx 2.76$\n\n**Answer:** $2.76$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2.76,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "9G": [
+   {
+    "kind": "short",
+    "question": "The numbers of goals scored by a soccer team in its matches are shown.\n\n| Goals | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency | 3 | 6 | 9 | 5 | 2 |\n\nWrite the cumulative frequencies for $0$, $1$, $2$, $3$ and $4$ goals, in that order.",
+    "answer": "$3$, $9$, $18$, $23$, $25$",
+    "solution": "**Key idea:** Each cumulative frequency is the running total of the frequencies so far.\n\n1. $3$\n2. $3 + 6 = 9$\n3. $9 + 9 = 18$\n4. $18 + 5 = 23$\n5. $23 + 2 = 25$\n\n**Answer:** $3$, $9$, $18$, $23$, $25$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       9,
+       18,
+       23,
+       25
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The heights of $50$ seedlings are summarised below.\n\n| Height (mm) | $< 10$ | $< 20$ | $< 30$ | $< 40$ | $< 50$ |\n|---|---|---|---|---|---|\n| Cumulative frequency | 5 | 17 | 35 | 47 | 50 |\n\nAssuming a straight-line ogive, estimate the median height, correct to $1$ decimal place.",
+    "answer": "$24.4$ mm",
+    "solution": "**Key idea:** The median is the 25th value ($50\\%$ of 50). Interpolate along the straight segment that contains it.\n\n1. The 25th value is between 20 mm (17 seedlings) and 30 mm (35 seedlings)\n2. It is $\\frac{25 - 17}{35 - 17} = \\frac{8}{18}$ of the way along that 10 mm interval\n3. Median $\\approx 20 + 10 \\times \\frac{8}{18} = 24.44\\ldots \\approx 24.4$ mm\n\n**Answer:** $24.4$ mm",
+    "key": [
+     {
+      "type": "num",
+      "value": 24.4,
+      "dp": 1,
+      "unit": "mm"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The masses of $80$ newborn lambs are summarised below.\n\n| Mass (kg) | $< 2$ | $< 4$ | $< 6$ | $< 8$ | $< 10$ |\n|---|---|---|---|---|---|\n| Cumulative frequency | 8 | 30 | 62 | 75 | 80 |\n\n(a) What percentage of the lambs have a mass less than $6$ kg?\n\n(b) Assuming a straight-line ogive, estimate the 25th percentile, correct to $1$ decimal place.",
+    "answer": "(a) $77.5\\%$ (b) $3.1$ kg",
+    "solution": "**Key idea:** Percentages come from the cumulative frequency over the total; a percentile is found by interpolating on the ogive.\n\n1. $\\frac{62}{80} \\times 100\\% = 77.5\\%$\n2. 25th percentile: $25\\%$ of 80 is the 20th value, between 2 kg (8 lambs) and 4 kg (30 lambs)\n3. $2 + 2 \\times \\frac{20 - 8}{30 - 8} = 2 + 2 \\times \\frac{12}{22} = 3.09\\ldots \\approx 3.1$ kg\n\n**Answer:** (a) $77.5\\%$ (b) $3.1$ kg",
+    "key": [
+     {
+      "type": "num",
+      "value": 77.5,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 3.1,
+      "dp": 1,
+      "unit": "kg",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "10B": [
+   {
+    "kind": "short",
+    "question": "For the polynomial $P(x) = 5x^{4} - 3x^{2} + 2x - 9$:\n\n(a) State the degree.\n\n(b) State the coefficient of $x^{3}$.\n\n(c) Find $P(1)$.",
+    "answer": "(a) $4$ (b) $0$ (c) $-5$",
+    "solution": "**Key idea:** The degree is the highest power; a missing power has coefficient 0.\n\n1. The highest power is $x^{4}$, so the degree is $4$\n2. There is no $x^{3}$ term, so its coefficient is $0$\n3. $P(1) = 5 - 3 + 2 - 9 = -5$\n\n**Answer:** (a) $4$ (b) $0$ (c) $-5$",
+    "key": [
+     {
+      "type": "num",
+      "value": 4,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 0,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": -5,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Let $P(x) = 2x^{3} - x^{2} + 4$. Find:\n\n(a) $P(-1)$\n\n(b) $P(2)$",
+    "answer": "(a) $1$ (b) $16$",
+    "solution": "**Key idea:** Substitute the value for $x$ everywhere, taking care with negative numbers.\n\n1. $P(-1) = 2(-1) - 1 + 4 = 1$\n2. $P(2) = 2(8) - 4 + 4 = 16$\n\n**Answer:** (a) $1$ (b) $16$",
+    "key": [
+     {
+      "type": "num",
+      "value": 1,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 16,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The polynomial $P(x) = x^{3} + kx - 4$ has $P(2) = 10$. Find $k$.",
+    "answer": "$k = 3$",
+    "solution": "**Key idea:** Substitute $x = 2$ and solve the resulting equation for $k$.\n\n1. $P(2) = 8 + 2k - 4 = 2k + 4$\n2. $2k + 4 = 10$, so $k = 3$\n\n**Answer:** $k = 3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 3
+     }
+    ]
+   }
+  ],
+  "10C": [
+   {
+    "kind": "short",
+    "question": "Expand and simplify $(x - 3)(x^{2} + 2x - 4)$.",
+    "answer": "$x^{3} - x^{2} - 10x + 12$",
+    "solution": "**Key idea:** Multiply each term of the first bracket by every term of the second, then collect like terms.\n\n1. $x(x^{2} + 2x - 4) = x^{3} + 2x^{2} - 4x$\n2. $-3(x^{2} + 2x - 4) = -3x^{2} - 6x + 12$\n3. Total: $x^{3} - x^{2} - 10x + 12$\n\n**Answer:** $x^{3} - x^{2} - 10x + 12$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x^3-x^2-10x+12",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Expand and simplify $(2x + 1)^{3}$.",
+    "answer": "$8x^{3} + 12x^{2} + 6x + 1$",
+    "solution": "**Key idea:** Write it as $(2x + 1)^{2}(2x + 1)$ and expand in two steps.\n\n1. $(2x + 1)^{2} = 4x^{2} + 4x + 1$\n2. $(4x^{2} + 4x + 1)(2x + 1) = 8x^{3} + 4x^{2} + 8x^{2} + 4x + 2x + 1$\n3. $= 8x^{3} + 12x^{2} + 6x + 1$\n\n**Answer:** $8x^{3} + 12x^{2} + 6x + 1$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "8x^3+12x^2+6x+1",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   }
+  ],
+  "10D": [
+   {
+    "kind": "short",
+    "question": "Use long division to find the quotient when $x^{3} + 5x^{2} + 2x - 8$ is divided by $(x + 2)$. (The remainder is $0$.)",
+    "answer": "$x^{2} + 3x - 4$",
+    "solution": "**Key idea:** Divide the leading term each time, multiply back, subtract and bring down the next term.\n\n1. $x^{3} \\div x = x^{2}$; subtract $x^{2}(x + 2) = x^{3} + 2x^{2}$ to leave $3x^{2} + 2x$\n2. $3x^{2} \\div x = 3x$; subtract $3x(x + 2) = 3x^{2} + 6x$ to leave $-4x - 8$\n3. $-4x \\div x = -4$; subtract $-4(x + 2) = -4x - 8$ to leave $0$\n4. Quotient: $x^{2} + 3x - 4$\n\n**Answer:** $x^{2} + 3x - 4$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x^2+3x-4",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Divide $2x^{3} - 5x^{2} + x + 7$ by $(x - 2)$.\n\n(a) Find the quotient.\n\n(b) Find the remainder.",
+    "answer": "(a) $2x^{2} - x - 1$ (b) $5$",
+    "solution": "**Key idea:** Use long division, dividing the leading term at each step.\n\n1. $2x^{3} \\div x = 2x^{2}$; subtract $2x^{3} - 4x^{2}$ to leave $-x^{2} + x$\n2. $-x^{2} \\div x = -x$; subtract $-x^{2} + 2x$ to leave $-x + 7$\n3. $-x \\div x = -1$; subtract $-x + 2$ to leave $5$\n4. Quotient $2x^{2} - x - 1$, remainder $5$\n\n**Answer:** (a) $2x^{2} - x - 1$ (b) $5$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "2x^2-x-1",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 5,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the quotient when $x^{3} - 6x^{2} + 11x - 6$ is divided by $(x - 3)$. (The remainder is $0$.)",
+    "answer": "$x^{2} - 3x + 2$",
+    "solution": "**Key idea:** Use long division.\n\n1. $x^{3} \\div x = x^{2}$; subtract $x^{3} - 3x^{2}$ to leave $-3x^{2} + 11x$\n2. $-3x^{2} \\div x = -3x$; subtract $-3x^{2} + 9x$ to leave $2x - 6$\n3. $2x \\div x = 2$; subtract $2x - 6$ to leave $0$\n4. Quotient: $x^{2} - 3x + 2$\n\n**Answer:** $x^{2} - 3x + 2$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "x^2-3x+2",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find $a$, $b$ and $r$ such that $x^{3} + 2x^{2} - x + 5 = (x + 1)(x^{2} + ax + b) + r$ for all $x$. State $a$, $b$ and $r$, in that order.",
+    "answer": "$a = 1$, $b = -2$, $r = 7$",
+    "solution": "**Key idea:** Expand the right-hand side and match the coefficients of each power of $x$.\n\n1. $(x + 1)(x^{2} + ax + b) + r = x^{3} + (a + 1)x^{2} + (a + b)x + b + r$\n2. $a + 1 = 2$, so $a = 1$\n3. $a + b = -1$, so $b = -2$\n4. $b + r = 5$, so $r = 7$\n\n**Answer:** $a = 1$, $b = -2$, $r = 7$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       1,
+       -2,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangle has area $(2x^{3} + 7x^{2} + 2x - 3) \\text{ cm}^2$ and length $(x + 3)$ cm.\n\n(a) Find an expression for the width of the rectangle.\n\n(b) Find the width when $x = 4$.",
+    "answer": "(a) $(2x^{2} + x - 1)$ cm (b) $35$ cm",
+    "solution": "**Key idea:** Width $=$ area $\\div$ length, found by polynomial long division.\n\n1. $2x^{3} \\div x = 2x^{2}$; subtract $2x^{3} + 6x^{2}$ to leave $x^{2} + 2x$\n2. $x^{2} \\div x = x$; subtract $x^{2} + 3x$ to leave $-x - 3$\n3. $-x \\div x = -1$; subtract $-x - 3$ to leave $0$, so the width is $2x^{2} + x - 1$\n4. At $x = 4$: $32 + 4 - 1 = 35$ cm\n\n**Answer:** (a) $(2x^{2} + x - 1)$ cm (b) $35$ cm",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "2x^2+x-1",
+      "vars": [
+       "x"
+      ],
+      "form": "expanded",
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 35,
+      "unit": "cm",
+      "label": "b"
+     }
+    ]
+   }
+  ],
+  "10E": [
+   {
+    "kind": "short",
+    "question": "Use the remainder theorem to find the remainder when $x^{3} - 2x^{2} + 5$ is divided by $(x + 2)$.",
+    "answer": "$-11$",
+    "solution": "**Key idea:** The remainder when $P(x)$ is divided by $(x - a)$ is $P(a)$; here $a = -2$.\n\n1. $P(-2) = (-2)^{3} - 2(-2)^{2} + 5$\n2. $= -8 - 8 + 5 = -11$\n\n**Answer:** $-11$",
+    "key": [
+     {
+      "type": "num",
+      "value": -11
+     }
+    ]
+   }
+  ],
+  "10F": [
+   {
+    "kind": "short",
+    "question": "Solve $x^{3} - 7x + 6 = 0$.",
+    "answer": "$x = 1$, $x = 2$ or $x = -3$",
+    "solution": "**Key idea:** Find one factor using the factor theorem, divide, then factorise the quadratic.\n\n1. $P(1) = 1 - 7 + 6 = 0$, so $(x - 1)$ is a factor\n2. $x^{3} - 7x + 6 = (x - 1)(x^{2} + x - 6) = (x - 1)(x + 3)(x - 2)$\n3. $x = 1$, $x = -3$ or $x = 2$\n\n**Answer:** $x = 1$, $x = 2$ or $x = -3$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       1,
+       2,
+       -3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x(x - 5)(2x + 1) = 0$.",
+    "answer": "$x = 0$, $x = 5$ or $x = -\\frac{1}{2}$",
+    "solution": "**Key idea:** If a product is zero, one of the factors must be zero.\n\n1. $x = 0$\n2. $x - 5 = 0$ gives $x = 5$\n3. $2x + 1 = 0$ gives $x = -\\frac{1}{2}$\n\n**Answer:** $x = 0$, $x = 5$ or $x = -\\frac{1}{2}$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       5,
+       -0.5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $x^{3} - 4x = 0$.",
+    "answer": "$x = 0$, $x = 2$ or $x = -2$",
+    "solution": "**Key idea:** Take out the common factor, then use the difference of two squares.\n\n1. $x(x^{2} - 4) = 0$\n2. $x(x - 2)(x + 2) = 0$\n3. $x = 0$, $x = 2$ or $x = -2$\n\n**Answer:** $x = 0$, $x = 2$ or $x = -2$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       2,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $2x^{3} - 3x^{2} - 3x + 2 = 0$.",
+    "answer": "$x = 2$, $x = \\frac{1}{2}$ or $x = -1$",
+    "solution": "**Key idea:** Use the factor theorem to find one factor, then divide and factorise the quadratic.\n\n1. $P(2) = 16 - 12 - 6 + 2 = 0$, so $(x - 2)$ is a factor\n2. $2x^{3} - 3x^{2} - 3x + 2 = (x - 2)(2x^{2} + x - 1)$\n3. $2x^{2} + x - 1 = (2x - 1)(x + 1)$\n4. $x = 2$, $x = \\frac{1}{2}$ or $x = -1$\n\n**Answer:** $x = 2$, $x = \\frac{1}{2}$ or $x = -1$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       2,
+       0.5,
+       -1
+      ]
+     }
+    ]
+   }
+  ],
+  "10G": [
+   {
+    "kind": "short",
+    "question": "Consider the cubic $y = (x - 3)^{3} + 8$.\n\n(a) State the coordinates of the point of inflection.\n\n(b) Find the $y$-intercept.\n\n(c) Find the $x$-intercept.",
+    "answer": "(a) $(3, 8)$ (b) $-19$ (c) $1$",
+    "solution": "**Key idea:** For $y = a(x - h)^{3} + k$ the point of inflection is $(h, k)$.\n\n1. Point of inflection: $(3, 8)$\n2. $x = 0$: $(-3)^{3} + 8 = -27 + 8 = -19$\n3. $y = 0$: $(x - 3)^{3} = -8$, so $x - 3 = -2$ and $x = 1$\n\n**Answer:** (a) $(3, 8)$ (b) $-19$ (c) $1$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       3,
+       8
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -19,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 1,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the cubic $y = 2(x + 1)^{3} - 16$.\n\n(a) State the coordinates of the point of inflection.\n\n(b) Find the $y$-intercept.\n\n(c) Find the $x$-intercept.",
+    "answer": "(a) $(-1, -16)$ (b) $-14$ (c) $1$",
+    "solution": "**Key idea:** For $y = a(x - h)^{3} + k$ the point of inflection is $(h, k)$; here $h = -1$.\n\n1. Point of inflection: $(-1, -16)$\n2. $x = 0$: $2(1)^{3} - 16 = -14$\n3. $y = 0$: $(x + 1)^{3} = 8$, so $x + 1 = 2$ and $x = 1$\n\n**Answer:** (a) $(-1, -16)$ (b) $-14$ (c) $1$",
+    "key": [
+     {
+      "type": "list",
+      "values": [
+       -1,
+       -16
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -14,
+      "label": "b"
+     },
+     {
+      "type": "num",
+      "value": 1,
+      "label": "c"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the cubic $y = -(x - 2)^{3} + 1$.\n\n(a) Find the $y$-intercept.\n\n(b) Find the $x$-intercept.",
+    "answer": "(a) $9$ (b) $3$",
+    "solution": "**Key idea:** Substitute $x = 0$ for the $y$-intercept and $y = 0$ for the $x$-intercept.\n\n1. $x = 0$: $-(-2)^{3} + 1 = 8 + 1 = 9$\n2. $y = 0$: $(x - 2)^{3} = 1$, so $x - 2 = 1$ and $x = 3$\n\n**Answer:** (a) $9$ (b) $3$",
+    "key": [
+     {
+      "type": "num",
+      "value": 9,
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 3,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = a(x - 1)^{3} + 2$ passes through the point $(3, 18)$. Find $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Substitute the coordinates of the point and solve for $a$.\n\n1. $18 = a(3 - 1)^{3} + 2$\n2. $18 = 8a + 2$\n3. $a = 2$\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A cubic graph has the rule $y = a(x - h)^{3} + k$. Its point of inflection is $(-2, 5)$ and it passes through $(0, -3)$. Find the rule.",
+    "answer": "$y = -(x + 2)^{3} + 5$",
+    "solution": "**Key idea:** The point of inflection gives $h$ and $k$; substitute the other point to find $a$.\n\n1. $h = -2$, $k = 5$, so $y = a(x + 2)^{3} + 5$\n2. $-3 = a(2)^{3} + 5$, so $8a = -8$ and $a = -1$\n3. $y = -(x + 2)^{3} + 5$\n\n**Answer:** $y = -(x + 2)^{3} + 5$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-(x+2)^3+5",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   }
+  ],
+  "10H": [
+   {
+    "kind": "short",
+    "question": "Consider the graph of $y = (x - 4)(x + 1)(x + 3)$.\n\n(a) State the $x$-intercepts.\n\n(b) Find the $y$-intercept.",
+    "answer": "(a) $x = 4$, $x = -1$, $x = -3$ (b) $-12$",
+    "solution": "**Key idea:** Each factor gives an $x$-intercept; substitute $x = 0$ for the $y$-intercept.\n\n1. $x - 4 = 0$, $x + 1 = 0$, $x + 3 = 0$ give $x = 4$, $-1$, $-3$\n2. $y = (-4)(1)(3) = -12$\n\n**Answer:** (a) $x = 4$, $x = -1$, $x = -3$ (b) $-12$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       4,
+       -1,
+       -3
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -12,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Consider the graph of $y = -2x(x - 1)(x + 5)$.\n\n(a) State the $x$-intercepts.\n\n(b) Find the value of $y$ when $x = 2$.",
+    "answer": "(a) $x = 0$, $x = 1$, $x = -5$ (b) $-28$",
+    "solution": "**Key idea:** Set each factor to zero; then substitute.\n\n1. $x = 0$, $x = 1$, $x = -5$\n2. $y = -2(2)(1)(7) = -28$\n\n**Answer:** (a) $x = 0$, $x = 1$, $x = -5$ (b) $-28$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       1,
+       -5
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": -28,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A cubic has $x$-intercepts $-2$, $1$ and $5$, and its $y$-intercept is $20$. Its rule is $y = a(x + 2)(x - 1)(x - 5)$. Find $a$.",
+    "answer": "$a = 2$",
+    "solution": "**Key idea:** Substitute $x = 0$, $y = 20$ into the factorised rule.\n\n1. $20 = a(2)(-1)(-5)$\n2. $20 = 10a$, so $a = 2$\n\n**Answer:** $a = 2$",
+    "key": [
+     {
+      "type": "num",
+      "value": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-intercepts of the graph of $y = x^{4} - 9x^{2}$.",
+    "answer": "$x = 0$, $x = 3$, $x = -3$",
+    "solution": "**Key idea:** Factorise fully, then set each factor to zero.\n\n1. $x^{4} - 9x^{2} = x^{2}(x^{2} - 9) = x^{2}(x - 3)(x + 3)$\n2. $x = 0$ (where the graph touches the axis), $x = 3$ and $x = -3$\n\n**Answer:** $x = 0$, $x = 3$, $x = -3$",
+    "key": [
+     {
+      "type": "set",
+      "values": [
+       0,
+       3,
+       -3
+      ]
+     }
+    ]
+   }
+  ],
+  "10K": [
+   {
+    "kind": "short",
+    "question": "The graph of $y = x^{2}$ is reflected in the $x$-axis and then translated $3$ units to the right. Write the equation of the new graph.",
+    "answer": "$y = -(x - 3)^{2}$",
+    "solution": "**Key idea:** Reflecting in the $x$-axis multiplies $y$ by $-1$; translating $h$ units right replaces $x$ with $x - h$.\n\n1. Reflect: $y = -x^{2}$\n2. Translate 3 right: $y = -(x - 3)^{2}$\n\n**Answer:** $y = -(x - 3)^{2}$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "-(x-3)^2",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = \\frac{1}{x}$ is translated $2$ units to the left and $5$ units up.\n\n(a) Write the equation of the new graph.\n\n(b) Find its $y$-intercept.",
+    "answer": "(a) $y = \\frac{1}{x + 2} + 5$ (b) $5.5$",
+    "solution": "**Key idea:** Translating 2 left replaces $x$ with $x + 2$; translating 5 up adds 5.\n\n1. $y = \\frac{1}{x + 2} + 5$\n2. At $x = 0$: $\\frac{1}{2} + 5 = 5.5$\n\n**Answer:** (a) $y = \\frac{1}{x + 2} + 5$ (b) $5.5$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "1/(x+2)+5",
+      "vars": [
+       "x"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 5.5,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = 2^{x}$ is dilated by a factor of $3$ from the $x$-axis and then translated $1$ unit down.\n\n(a) Write the equation of the new graph.\n\n(b) Find its $y$-intercept.",
+    "answer": "(a) $y = 3 \\times 2^{x} - 1$ (b) $2$",
+    "solution": "**Key idea:** A dilation by factor 3 from the $x$-axis multiplies $y$ by 3; translating down subtracts.\n\n1. Dilate: $y = 3 \\times 2^{x}$\n2. Translate 1 down: $y = 3 \\times 2^{x} - 1$\n3. At $x = 0$: $3 \\times 1 - 1 = 2$\n\n**Answer:** (a) $y = 3 \\times 2^{x} - 1$ (b) $2$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "3*2^x-1",
+      "vars": [
+       "x"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "num",
+      "value": 2,
+      "label": "b"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graph of $y = x^{3}$ is translated $2$ units to the right and $4$ units down.\n\n(a) Write the equation of the new graph.\n\n(b) The point $(1, 1)$ is on $y = x^{3}$. Find the coordinates of its image.",
+    "answer": "(a) $y = (x - 2)^{3} - 4$ (b) $(3, -3)$",
+    "solution": "**Key idea:** Translating right replaces $x$ with $x - 2$; every point moves 2 right and 4 down.\n\n1. $y = (x - 2)^{3} - 4$\n2. $(1 + 2, 1 - 4) = (3, -3)$\n3. Check: $(3 - 2)^{3} - 4 = -3$\n\n**Answer:** (a) $y = (x - 2)^{3} - 4$ (b) $(3, -3)$",
+    "key": [
+     {
+      "type": "expr",
+      "expr": "(x-2)^3-4",
+      "vars": [
+       "x"
+      ],
+      "label": "a"
+     },
+     {
+      "type": "list",
+      "values": [
+       3,
+       -3
+      ],
+      "label": "b"
+     }
+    ]
+   }
+  ]
+ }
+}

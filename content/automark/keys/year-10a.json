@@ -1,0 +1,2639 @@
+{
+ "2bb042111399669f": [
+  {
+   "type": "num",
+   "value": 20
+  }
+ ],
+ "ab71d436abf49f46": [
+  {
+   "type": "num",
+   "value": 5
+  }
+ ],
+ "e0dc663173181639": [
+  {
+   "type": "num",
+   "value": 13,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 1,
+   "label": "b"
+  }
+ ],
+ "6e20d31016ec1051": [
+  {
+   "type": "num",
+   "value": 4,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 8,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "c"
+  }
+ ],
+ "be44c45f38dde07d": null,
+ "a7fab7877c91f40c": null,
+ "845828af420e6d40": null,
+ "d838b2ca88ff0917": null,
+ "f85d69d52c50ddc8": [
+  {
+   "type": "num",
+   "value": 0.8
+  }
+ ],
+ "e1c3a295c46bac14": null,
+ "af571e9955264935": null,
+ "9a62140d33c6e785": [
+  {
+   "type": "num",
+   "value": 16,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 5,
+   "unit": "cm",
+   "label": "b"
+  }
+ ],
+ "b50730c232cdeab2": null,
+ "b7ffa099b1e447c2": [
+  {
+   "type": "num",
+   "value": 6,
+   "unit": "cm"
+  }
+ ],
+ "5af4f56082f98959": null,
+ "9e12956965db50f0": null,
+ "63f3de672f87501c": [
+  {
+   "type": "num",
+   "value": 55,
+   "unit": "°"
+  }
+ ],
+ "9ec5ef7ee7463f06": null,
+ "8fe9b2a1326d0325": [
+  {
+   "type": "num",
+   "value": 132,
+   "unit": "°",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 66,
+   "unit": "°",
+   "label": "b"
+  }
+ ],
+ "7663f98ed425ee3c": [
+  {
+   "type": "num",
+   "value": 62,
+   "unit": "°"
+  }
+ ],
+ "0185f9963b684d77": [
+  {
+   "type": "num",
+   "value": 34,
+   "unit": "°"
+  }
+ ],
+ "44eca47f0da87e7e": null,
+ "779c097de37cd159": null,
+ "d42c536f37319c7e": null,
+ "622e984be638b5b2": [
+  {
+   "type": "num",
+   "value": 90,
+   "unit": "°",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 55,
+   "unit": "°",
+   "label": "b"
+  }
+ ],
+ "84a2345ec6687849": [
+  {
+   "type": "list",
+   "values": [
+    108,
+    85
+   ]
+  }
+ ],
+ "ad5f1f8725a5e8f9": null,
+ "d7b44393d2cedab9": null,
+ "c868808d82c6af73": [
+  {
+   "type": "num",
+   "value": 90,
+   "unit": "°",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 62,
+   "unit": "°",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 118,
+   "unit": "°",
+   "label": "c"
+  }
+ ],
+ "ec1a4af507b3d0c7": null,
+ "39388f4dd18a4fc5": null,
+ "6f011139530d7ff8": [
+  {
+   "type": "num",
+   "value": 34,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 29,
+   "label": "b"
+  },
+  {
+   "type": "list",
+   "values": [
+    83,
+    92,
+    97,
+    88
+   ],
+   "label": "c"
+  }
+ ],
+ "d9c37d584e79922b": [
+  {
+   "type": "list",
+   "values": [
+    107,
+    75
+   ]
+  }
+ ],
+ "01e014afbbf03788": [
+  {
+   "type": "num",
+   "value": 106
+  }
+ ],
+ "335a73d1199b5726": null,
+ "155dc559426ace28": [
+  {
+   "type": "num",
+   "value": 13,
+   "unit": "cm"
+  }
+ ],
+ "04585ca263c7d1d0": null,
+ "39ab6577d0323198": null,
+ "c0ad79c9c627281b": null,
+ "0c6fd36bfc13576e": null,
+ "00dfdb79f12c0f47": [
+  {
+   "type": "num",
+   "value": 17,
+   "unit": "m"
+  }
+ ],
+ "e02d9e65ed7722cb": [
+  {
+   "type": "num",
+   "value": 8,
+   "unit": "cm"
+  }
+ ],
+ "ffbc2e0ce03130df": [
+  {
+   "type": "list",
+   "values": [
+    9,
+    5
+   ]
+  }
+ ],
+ "f8429d0b0476be1d": [
+  {
+   "type": "list",
+   "values": [
+    8,
+    11
+   ]
+  }
+ ],
+ "db9e22233244768f": [
+  {
+   "type": "num",
+   "value": 4,
+   "unit": "cm"
+  }
+ ],
+ "a14123d1441d2579": null,
+ "51eb26b808cde98e": [
+  {
+   "type": "num",
+   "value": 4,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 2,
+   "label": "c"
+  }
+ ],
+ "344cfa2373a1f728": [
+  {
+   "type": "num",
+   "value": 4,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 125,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.3333333333333333,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.421875,
+   "label": "d"
+  }
+ ],
+ "b7ca5c20b74b873f": null,
+ "802c061d7d8511fb": null,
+ "9e6d2b937c076705": null,
+ "c5530d141634e67b": null,
+ "cc09ec799c6a681a": null,
+ "9c5b4dc57424676b": null,
+ "229734b7ac5b3269": [
+  {
+   "type": "num",
+   "value": 7,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 10,
+   "label": "d"
+  }
+ ],
+ "369a09e7787b93c0": [
+  {
+   "type": "num",
+   "value": 9,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 8,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 32,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 1000,
+   "label": "d"
+  }
+ ],
+ "51a13c300fe10732": [
+  {
+   "type": "num",
+   "value": 0.3333333333333333,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.25,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.36,
+   "label": "d"
+  }
+ ],
+ "8976ce0fa2fa2ca3": null,
+ "d93fd18d32896b93": null,
+ "dc91ae1836beb4c7": [
+  {
+   "type": "expr",
+   "expr": "8x^3",
+   "vars": [
+    "x"
+   ],
+   "form": "simplified",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "5a^2/b",
+   "vars": [
+    "a",
+    "b"
+   ],
+   "form": "simplified",
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "y^3/x",
+   "vars": [
+    "x",
+    "y"
+   ],
+   "form": "simplified",
+   "label": "c"
+  }
+ ],
+ "abcd0f1bb0a0914f": null,
+ "c52d010bb2225547": null,
+ "e47819cf042a2516": [
+  {
+   "type": "num",
+   "value": 2,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 125,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "d"
+  }
+ ],
+ "6691d561800efc6a": [
+  {
+   "type": "num",
+   "value": 36,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.125,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 25,
+   "label": "d"
+  }
+ ],
+ "d44b84cbde5b2828": [
+  {
+   "type": "num",
+   "value": 7,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 96,
+   "unit": "cm²",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 125,
+   "unit": "cm³",
+   "label": "c"
+  }
+ ],
+ "2c624a47e1fda3f7": null,
+ "b9e5a8ad52b42cf3": null,
+ "d73d8b30b3d30e72": null,
+ "f9ace564c544c50c": null,
+ "2a0736fc4dd5538f": [
+  {
+   "type": "num",
+   "value": 560,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 1890,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 8,
+   "label": "c"
+  }
+ ],
+ "029afca1b86cfa24": null,
+ "5aa5662f73b4af14": null,
+ "5a76a565068f27af": [
+  {
+   "type": "num",
+   "value": 16,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 9,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 9,
+   "label": "c"
+  }
+ ],
+ "1db90fb29559bfca": null,
+ "1d096def3fea66a6": [
+  {
+   "type": "num",
+   "value": 2,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 2,
+   "label": "d"
+  }
+ ],
+ "d2ec277ca68101c2": [
+  {
+   "type": "expr",
+   "expr": "p+q",
+   "vars": [
+    "p",
+    "q"
+   ],
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "2q",
+   "vars": [
+    "q"
+   ],
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "3p-q",
+   "vars": [
+    "p",
+    "q"
+   ],
+   "label": "c"
+  },
+  {
+   "type": "expr",
+   "expr": "p+2q",
+   "vars": [
+    "p",
+    "q"
+   ],
+   "label": "d"
+  }
+ ],
+ "78c1c14a7df779fb": null,
+ "4ed0c309627b56de": [
+  {
+   "type": "num",
+   "value": 7,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 1,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.4,
+   "label": "d"
+  }
+ ],
+ "cae0878b584bfb30": [
+  {
+   "type": "num",
+   "value": 3,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 2,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "c"
+  }
+ ],
+ "4e2e8990dc45f8e4": [
+  {
+   "type": "num",
+   "value": 4,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 2,
+   "label": "b"
+  }
+ ],
+ "6fbb562778ef1a36": null,
+ "89bf5fc56c080954": [
+  {
+   "type": "num",
+   "value": 3
+  }
+ ],
+ "35b5bbbd8f093a96": [
+  {
+   "type": "num",
+   "value": 2
+  }
+ ],
+ "01f1c633198860ea": null,
+ "199c74cb5daa55a3": [
+  {
+   "type": "num",
+   "value": 3
+  }
+ ],
+ "6908e486727b8841": [
+  {
+   "type": "num",
+   "value": 3
+  }
+ ],
+ "e08da7f9b64e37cf": null,
+ "db5da805819fcad9": [
+  {
+   "type": "num",
+   "value": 3.585,
+   "dp": 3,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 1.679,
+   "dp": 3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 3.453,
+   "dp": 3,
+   "label": "c"
+  }
+ ],
+ "0d470408c89e4923": null,
+ "f1c3540c9d70c8dd": [
+  {
+   "type": "num",
+   "value": 6.2,
+   "dp": 1,
+   "unit": "hours",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 3.1,
+   "dp": 1,
+   "unit": "hours",
+   "label": "b"
+  }
+ ],
+ "82cfbe1df0842bf8": null,
+ "b6da0028eaa0747b": null,
+ "015b490d4a11cdbe": null,
+ "0e26191d643ce467": null,
+ "63da5c0ed9376339": null,
+ "c20e7c8ec988bbb3": [
+  {
+   "type": "num",
+   "value": 3.32,
+   "dp": 2,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 2.86,
+   "dp": 2,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": -0.63,
+   "dp": 2,
+   "label": "c"
+  }
+ ],
+ "855c8adf27de4af0": [
+  {
+   "type": "num",
+   "value": 7,
+   "unit": "years"
+  }
+ ],
+ "fa21f27d419b19b5": [
+  {
+   "type": "num",
+   "value": 5.64,
+   "dp": 2
+  }
+ ],
+ "b6232d502bc7c2f1": null,
+ "514404eb00d00c5a": null,
+ "74158bf7074089c1": null,
+ "1fc34de58a73637d": null,
+ "8ba593d2ef804dd5": null,
+ "1c1307b602ff448e": null,
+ "a5f0404f33112bc1": null,
+ "bc1008ad867d1c57": null,
+ "d65d84a7cc7b102d": null,
+ "ca9b7f69cbfc3b83": [
+  {
+   "type": "num",
+   "value": 7,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 5,
+   "label": "b"
+  },
+  {
+   "type": "list",
+   "values": [
+    17,
+    12
+   ],
+   "label": "c"
+  }
+ ],
+ "0946cbdd24bcdf0a": null,
+ "1f1fd93678591bdb": null,
+ "d67d44b5be2f387b": null,
+ "9efdd1947884fba8": null,
+ "5a590186f43ef2bc": null,
+ "d371efb1d74032df": null,
+ "6dcea863078adccf": null,
+ "fa3b8287981c90e4": [
+  {
+   "type": "num",
+   "value": 4
+  }
+ ],
+ "b473aa35f5bf5549": null,
+ "2481ab93dc61d017": null,
+ "14df70d05740241e": null,
+ "45eb5ea8b8881867": null,
+ "043864ad603fe38a": null,
+ "ecef7a7feb55afd8": null,
+ "7328acc7be5f8a4b": null,
+ "b9bbea1d932b8177": [
+  {
+   "type": "num",
+   "value": 13,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 360,
+   "unit": "cm²",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 400,
+   "unit": "cm³",
+   "label": "c"
+  }
+ ],
+ "e7ff2bd601481f3c": null,
+ "8af94a799beff237": [
+  {
+   "type": "num",
+   "value": 15,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 13,
+   "unit": "cm",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 564,
+   "unit": "cm²",
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 720,
+   "unit": "cm³",
+   "label": "d"
+  }
+ ],
+ "4228353843226555": [
+  {
+   "type": "num",
+   "value": 15,
+   "unit": "m²",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 180,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 2,
+   "unit": "m",
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "unit": "m³",
+   "label": "d"
+  }
+ ],
+ "55c7b9b9a9d184cf": null,
+ "858d160cccbc8ee0": [
+  {
+   "type": "num",
+   "value": 144,
+   "unit": "m²"
+  }
+ ],
+ "d4a46772dfd51a64": [
+  {
+   "type": "num",
+   "value": 282.7,
+   "dp": 1,
+   "unit": "cm²"
+  }
+ ],
+ "a861eb54a6195ba6": [
+  {
+   "type": "num",
+   "value": 261.7,
+   "dp": 1,
+   "unit": "m²"
+  }
+ ],
+ "b719b044f375f6a5": [
+  {
+   "type": "num",
+   "value": 13,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 314.2,
+   "dp": 1,
+   "unit": "cm³",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 282.7,
+   "dp": 1,
+   "unit": "cm²",
+   "label": "c"
+  }
+ ],
+ "ca092e9cf2b01016": [
+  {
+   "type": "num",
+   "value": 150.8,
+   "dp": 1,
+   "unit": "cm³"
+  }
+ ],
+ "4d7c58a641d871a2": [
+  {
+   "type": "num",
+   "value": 120,
+   "unit": "cm³"
+  }
+ ],
+ "8df8f377102aef4f": null,
+ "028b7eeea6234bf5": [
+  {
+   "type": "num",
+   "value": 18,
+   "unit": "cm"
+  }
+ ],
+ "d37aea87ab6eb924": null,
+ "15afd6b88eac0458": null,
+ "95e4ce90b8b424f9": [
+  {
+   "type": "num",
+   "value": 24
+  }
+ ],
+ "b467ad7248275e3f": null,
+ "646acd462d59e30b": [
+  {
+   "type": "num",
+   "value": 320.4,
+   "dp": 1,
+   "unit": "m³"
+  }
+ ],
+ "cc4ad8eb2b7125bc": [
+  {
+   "type": "num",
+   "value": 904.8,
+   "dp": 1,
+   "unit": "cm³",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 452.4,
+   "dp": 1,
+   "unit": "cm²",
+   "label": "b"
+  }
+ ],
+ "4c14b0ff5f8fcd45": null,
+ "35f42739e814b49a": [
+  {
+   "type": "num",
+   "value": 184.3,
+   "dp": 1,
+   "unit": "cm³",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 201.1,
+   "dp": 1,
+   "unit": "cm²",
+   "label": "b"
+  }
+ ],
+ "22fb295c485f2f31": [
+  {
+   "type": "num",
+   "value": 9,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 452.4,
+   "dp": 1,
+   "unit": "cm²",
+   "label": "b"
+  }
+ ],
+ "9cf4d471ea11e929": null,
+ "bf442b46a66e3428": null,
+ "e4609cd7ba769b90": null,
+ "48a0347e02f2ab34": [
+  {
+   "type": "num",
+   "value": 3,
+   "unit": "cm",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 7,
+   "unit": "cm",
+   "label": "b"
+  }
+ ],
+ "7326019511ebcd6f": null,
+ "e3176975ffc397e9": null,
+ "141af2b5b589d288": null,
+ "90f8d2e8c4db94d7": null,
+ "8fcbf6fe1fa694d4": [
+  {
+   "type": "num",
+   "value": 1150.35,
+   "dp": 2,
+   "unit": "cm³"
+  }
+ ],
+ "663ae28f4f1ce2a3": [
+  {
+   "type": "expr",
+   "expr": "(2x+1)(x+3)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "(3x-4)(x-2)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "(5x-2)(x+3)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "c"
+  },
+  {
+   "type": "expr",
+   "expr": "(2x+1)(3x-2)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "d"
+  }
+ ],
+ "ed8292a872247765": [
+  {
+   "type": "expr",
+   "expr": "2(2x+1)(x-2)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "-(x-5)(x+2)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "3(2x-3)(2x+3)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised",
+   "label": "c"
+  }
+ ],
+ "1fe877f0cf34b06f": [
+  {
+   "type": "set",
+   "values": [
+    -0.5,
+    3
+   ],
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    0.3333333333333333,
+    -4
+   ],
+   "label": "b"
+  },
+  {
+   "type": "set",
+   "values": [
+    1.5,
+    -1.5
+   ],
+   "label": "c"
+  }
+ ],
+ "9ea78e48317f70ea": null,
+ "c49f88fb1fa71dfc": null,
+ "1236cad40ea11878": [
+  {
+   "type": "expr",
+   "expr": "(3x+1)(2x+3)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised"
+  }
+ ],
+ "293f4ab37504c6b0": [
+  {
+   "type": "set",
+   "values": [
+    1.5,
+    -0.5
+   ]
+  }
+ ],
+ "95528543b71f33e3": [
+  {
+   "type": "num",
+   "value": 3,
+   "unit": "m"
+  }
+ ],
+ "eb4e559a132ccfa8": null,
+ "64c198da015b9239": [
+  {
+   "type": "set",
+   "values": [
+    4,
+    -0.6666666666666666
+   ]
+  }
+ ],
+ "a348e2611100be09": null,
+ "f31f125e1a072dba": null,
+ "2bb16a78c7d56a2b": null,
+ "2900c6ba5cbc3c49": null,
+ "9a27ccbf263d0eae": null,
+ "20c95969a9212aa1": null,
+ "980269be7e87d785": null,
+ "6b776cb378477f69": null,
+ "1a01d64cba4ac529": null,
+ "6fe750632d9513dc": null,
+ "f8dd9ec16f14fb89": null,
+ "614a229b5a00fff4": [
+  {
+   "type": "num",
+   "value": 26.6,
+   "dp": 1,
+   "unit": "°"
+  }
+ ],
+ "62fe177c22ce8659": [
+  {
+   "type": "num",
+   "value": 67.4,
+   "dp": 1,
+   "unit": "°"
+  }
+ ],
+ "1d5338f5c65d0e05": [
+  {
+   "type": "num",
+   "value": 16.3,
+   "dp": 1,
+   "unit": "°"
+  }
+ ],
+ "d3ebba862ad2a18c": null,
+ "d04513aad8a9f393": null,
+ "d4c139fcb3edfc24": null,
+ "516cd3511eab9d1c": null,
+ "96b50c193344c6c3": null,
+ "a9993166f173672c": null,
+ "422140f5b377c42b": [
+  {
+   "type": "num",
+   "value": 17.1,
+   "dp": 1,
+   "unit": "cm"
+  }
+ ],
+ "d24cd0bd8b407b01": null,
+ "3ba4b0c0b4863484": [
+  {
+   "type": "num",
+   "value": 7,
+   "unit": "cm"
+  }
+ ],
+ "3ee46f3a5414b020": [
+  {
+   "type": "num",
+   "value": 120,
+   "unit": "°"
+  }
+ ],
+ "e7f6a5a2b274713f": null,
+ "79e80b7cdd6c9ce0": null,
+ "e1efdc6e5e64a644": null,
+ "01a0dce35d8e590f": null,
+ "9aca07bdcfbb49c8": null,
+ "7cf4a9675b38d0ea": null,
+ "19515c9f26bb206f": null,
+ "11be1cce465a5621": null,
+ "0e674f1070a86309": null,
+ "dda673a690802fdc": null,
+ "5bf9c97e00dce070": null,
+ "cae4a2c9e7047bc8": [
+  {
+   "type": "num",
+   "value": 30,
+   "unit": "cm²"
+  }
+ ],
+ "ea4e7258e3e343bd": [
+  {
+   "type": "num",
+   "value": 8693,
+   "unit": "m²",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.87,
+   "dp": 2,
+   "unit": "ha",
+   "label": "b"
+  }
+ ],
+ "29839a75ba99d61a": [
+  {
+   "type": "set",
+   "values": [
+    30,
+    150
+   ]
+  }
+ ],
+ "9271620b96524fe7": [
+  {
+   "type": "list",
+   "values": [
+    199,
+    25
+   ]
+  }
+ ],
+ "d02841d553a8f2a4": [
+  {
+   "type": "num",
+   "value": 1958,
+   "unit": "m²",
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    48.6,
+    131.4
+   ],
+   "dps": [
+    1,
+    1
+   ],
+   "label": "b"
+  }
+ ],
+ "f4f5ac8b1b8dae5d": null,
+ "5b144b6304b84076": null,
+ "cdea2e644edc7181": [
+  {
+   "type": "num",
+   "value": 0.5,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -0.5,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 1,
+   "label": "c"
+  }
+ ],
+ "a6bd5a61cd8cb672": null,
+ "3794b412e45b1bef": null,
+ "0891d93eb62726c2": [
+  {
+   "type": "num",
+   "value": 0.574,
+   "dp": 3,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -0.819,
+   "dp": 3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": -0.574,
+   "dp": 3,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.819,
+   "dp": 3,
+   "label": "d"
+  }
+ ],
+ "cca55bbecaabc8c8": null,
+ "ff143323a9b4c07d": [
+  {
+   "type": "list",
+   "values": [
+    0.8,
+    -1.3333333333333333
+   ]
+  }
+ ],
+ "15d7f5b7c8cd4643": null,
+ "5266d1099ff6365d": null,
+ "6741fe342e44b3a6": [
+  {
+   "type": "list",
+   "values": [
+    -0.9230769230769231,
+    -0.38461538461538464
+   ],
+   "label": "a"
+  },
+  {
+   "type": "list",
+   "values": [
+    0.38461538461538464,
+    0.9230769230769231
+   ],
+   "label": "b"
+  },
+  {
+   "type": "list",
+   "values": [
+    -0.38461538461538464,
+    0.9230769230769231
+   ],
+   "label": "c"
+  }
+ ],
+ "bed525d6c0f10503": null,
+ "31b5616b1e430829": null,
+ "86517483e3729d51": null,
+ "18e77e1d9a5db6fd": null,
+ "a7de159263df7558": null,
+ "c70ad38a02807a2e": [
+  {
+   "type": "list",
+   "values": [
+    2,
+    11,
+    29,
+    38
+   ],
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 38,
+   "unit": "m",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 30,
+   "unit": "minutes",
+   "label": "c"
+  }
+ ],
+ "40a8553a9702845b": null,
+ "424fe29ac64d9ce3": null,
+ "a33693a812d9d3d7": null,
+ "8476ae1fcc8601ee": [
+  {
+   "type": "set",
+   "values": [
+    30,
+    150
+   ]
+  }
+ ],
+ "bf866e91da44d264": [
+  {
+   "type": "set",
+   "values": [
+    120,
+    240
+   ]
+  }
+ ],
+ "6c5b564b7eea182a": [
+  {
+   "type": "set",
+   "values": [
+    45,
+    225
+   ]
+  }
+ ],
+ "160c35a55dfa5ad8": [
+  {
+   "type": "set",
+   "values": [
+    23.6,
+    156.4
+   ],
+   "dps": [
+    1,
+    1
+   ]
+  }
+ ],
+ "d9706d12a2fd212b": [
+  {
+   "type": "set",
+   "values": [
+    150,
+    210
+   ]
+  }
+ ],
+ "52268dbb95ae0b26": [
+  {
+   "type": "set",
+   "values": [
+    30,
+    210
+   ],
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    120,
+    300
+   ],
+   "label": "b"
+  }
+ ],
+ "037a0d232e0fc260": [
+  {
+   "type": "set",
+   "values": [
+    224.4,
+    315.6
+   ],
+   "dps": [
+    1,
+    1
+   ]
+  }
+ ],
+ "7a8ab5d704102673": [
+  {
+   "type": "set",
+   "values": [
+    113.6,
+    246.4
+   ],
+   "dps": [
+    1,
+    1
+   ]
+  }
+ ],
+ "fcf464674a0211d7": [
+  {
+   "type": "set",
+   "values": [
+    -135,
+    -45
+   ],
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    -90,
+    90
+   ],
+   "label": "b"
+  }
+ ],
+ "93549406a8c3503c": [
+  {
+   "type": "set",
+   "values": [
+    30,
+    60,
+    210,
+    240
+   ]
+  }
+ ],
+ "3e4d91c46a29af6d": [
+  {
+   "type": "expr",
+   "expr": "(2s+1)(s-1)",
+   "vars": [
+    "s"
+   ],
+   "form": "factorised",
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    90,
+    210,
+    330
+   ],
+   "label": "b"
+  }
+ ],
+ "3d9654ca45492ae0": null,
+ "980406a465c68714": null,
+ "cc0223649bc3bad2": [
+  {
+   "type": "set",
+   "values": [
+    90,
+    330
+   ]
+  }
+ ],
+ "bdeeb23667cb9f8a": [
+  {
+   "type": "list",
+   "values": [
+    30,
+    38
+   ],
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    0.3333333333333333,
+    1.6666666666666667
+   ],
+   "label": "b"
+  }
+ ],
+ "c2c36ad35633cc60": [
+  {
+   "type": "set",
+   "values": [
+    60,
+    120,
+    240,
+    300
+   ]
+  }
+ ],
+ "628db4823c0d3b40": null,
+ "b07fbd3b5db26ac8": null,
+ "eb13f2ac7b0ed595": null,
+ "04b6898fe45295d9": [
+  {
+   "type": "set",
+   "values": [
+    70,
+    110
+   ],
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 90,
+   "unit": "°",
+   "label": "b"
+  }
+ ],
+ "888d26a59b0af2cb": [
+  {
+   "type": "set",
+   "values": [
+    60,
+    120
+   ]
+  }
+ ],
+ "5dd3bf4578932764": [
+  {
+   "type": "set",
+   "values": [
+    150,
+    210
+   ]
+  }
+ ],
+ "6d11e47db67c26a3": [
+  {
+   "type": "set",
+   "values": [
+    30,
+    150
+   ]
+  }
+ ],
+ "72fee928c80331ec": [
+  {
+   "type": "list",
+   "values": [
+    150,
+    210
+   ]
+  }
+ ],
+ "9bbf3d48d8f667ed": [
+  {
+   "type": "set",
+   "values": [
+    45,
+    225
+   ]
+  }
+ ],
+ "7389d19a27517981": null,
+ "30bc95586f843b07": null,
+ "3b10784453dfb12c": null,
+ "3dce99895390d6bd": null,
+ "be666b771078d6d2": null,
+ "734430179e8bffb1": null,
+ "bdc0ca3448db8a72": null,
+ "422079c022a363d3": null,
+ "928446a765768af4": null,
+ "f0f849f584d3fec1": null,
+ "47e5587b3a4683bb": null,
+ "d8806f5aedb5154e": null,
+ "e1118bf11e9e0f4b": null,
+ "1a9a1fcdaba02b32": [
+  {
+   "type": "num",
+   "value": 4,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -2,
+   "label": "b"
+  }
+ ],
+ "dc4fecfadaf082e0": [
+  {
+   "type": "num",
+   "value": 72,
+   "unit": "km/h"
+  }
+ ],
+ "6c373f76eda5cb06": null,
+ "479aa8b8f854eea3": null,
+ "08af7cae247d9fd6": null,
+ "6b9523b8ae286e40": null,
+ "3afe20d04e416134": null,
+ "675210b7041cbb93": [
+  {
+   "type": "num",
+   "value": 5,
+   "unit": "m/s",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 9.5,
+   "unit": "m/s",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 9.95,
+   "unit": "m/s",
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 10,
+   "unit": "m/s",
+   "label": "d"
+  }
+ ],
+ "75f4df3324b31468": null,
+ "44a1c8bcc944d942": [
+  {
+   "type": "num",
+   "value": 5,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -3,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "c"
+  }
+ ],
+ "253d03a2a4be2ee1": null,
+ "d297506b2e48a8ac": null,
+ "edd4dbccabf13eca": null,
+ "89c441aebf3e4b5a": null,
+ "782fae70c881cd96": null,
+ "67c7049dd71dc49f": null,
+ "332a1f47f4f1ebb1": null,
+ "2f523d667ee5b965": null,
+ "08f9e5f25f86c818": null,
+ "f28e82297aea4b1a": null,
+ "3ad9eeb1a5c40987": null,
+ "b951b1cbf6b9e0ac": [
+  {
+   "type": "num",
+   "value": 120,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 42,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 1,
+   "label": "c"
+  }
+ ],
+ "fadd7286b805cefa": [
+  {
+   "type": "num",
+   "value": 24
+  }
+ ],
+ "b4e5bf1c3489dca9": null,
+ "0318e63394f75534": [
+  {
+   "type": "expr",
+   "expr": "n",
+   "vars": [
+    "n"
+   ],
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "n*(n+1)",
+   "vars": [
+    "n"
+   ],
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "c"
+  }
+ ],
+ "d28afb2c9fe56759": [
+  {
+   "type": "num",
+   "value": 10000,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 5040,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 4536,
+   "label": "c"
+  }
+ ],
+ "c7d47f50ac41915c": [
+  {
+   "type": "num",
+   "value": 17576000,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 15600000,
+   "label": "b"
+  }
+ ],
+ "910dc43686542a5c": null,
+ "a0a8ccb1df84ab17": null,
+ "a6c19adbba4a21d8": [
+  {
+   "type": "num",
+   "value": 56
+  }
+ ],
+ "0534f122467e630d": [
+  {
+   "type": "num",
+   "value": 120
+  }
+ ],
+ "3311850e0585fbf7": [
+  {
+   "type": "num",
+   "value": 720,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 120,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 240,
+   "label": "c"
+  }
+ ],
+ "6ae7676cb635e5f6": null,
+ "a81f9ba025fe9bf6": null,
+ "c3cc9436f7e1bc10": [
+  {
+   "type": "num",
+   "value": 120,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 60,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 40,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.5,
+   "label": "d"
+  }
+ ],
+ "2bdd5dbf1ca74d45": [
+  {
+   "type": "num",
+   "value": 720
+  }
+ ],
+ "2bd3c5b5b9a297e6": [
+  {
+   "type": "num",
+   "value": 40320
+  }
+ ],
+ "ad5d95295afbf312": [
+  {
+   "type": "num",
+   "value": 5040
+  }
+ ],
+ "ccb2d7ae863dca8f": null,
+ "4f829d65e07422f7": null,
+ "4be86443282b7cda": [
+  {
+   "type": "num",
+   "value": 56
+  }
+ ],
+ "3365c165dffa4228": [
+  {
+   "type": "num",
+   "value": 350
+  }
+ ],
+ "6f0b6b2b641565b1": [
+  {
+   "type": "num",
+   "value": 792,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 350,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 771,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.44191919191919193,
+   "label": "d"
+  }
+ ],
+ "44d73f90db8e38c0": [
+  {
+   "type": "num",
+   "value": 120,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.2,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.4,
+   "label": "c"
+  }
+ ],
+ "6b18c77dd609edb8": [
+  {
+   "type": "num",
+   "value": 504,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.001984126984126984,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.11904761904761904,
+   "label": "c"
+  }
+ ],
+ "e9a802a7803d2c33": [
+  {
+   "type": "num",
+   "value": 720,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 72,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.1,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 0.2,
+   "label": "d"
+  }
+ ],
+ "a75b74cbe3b2f233": [
+  {
+   "type": "num",
+   "value": 10000,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 5040,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.496,
+   "label": "c"
+  }
+ ],
+ "40c63761e6d07c73": [
+  {
+   "type": "num",
+   "value": 1140,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 0.0008771929824561404,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.04473684210526316,
+   "label": "c"
+  }
+ ],
+ "52e3d8058b885dc4": [
+  {
+   "type": "num",
+   "value": 0.017857142857142856
+  }
+ ],
+ "e4f06ba49cb61230": null,
+ "082d0f32a6fef55f": null,
+ "2b289d0eb4fff6c6": [
+  {
+   "type": "num",
+   "value": 50,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 5,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 5,
+   "unit": "games",
+   "label": "c"
+  }
+ ],
+ "6a0e58cf6f1dc11a": null,
+ "eef7b7ca6d7c096a": null,
+ "befa5e76b2c34ceb": null,
+ "1ab41c973727006a": null,
+ "d730b9494e4497f6": [
+  {
+   "type": "num",
+   "value": 8,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 1,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 87.5,
+   "label": "c"
+  }
+ ],
+ "b3be911b36f4bde8": null,
+ "1f8a9789b4fa8214": null,
+ "a9f5c954a8692229": null,
+ "902f8bcfa000f061": null,
+ "2a83a8ec6aac9390": null,
+ "9f4ae61f9179ab08": null,
+ "f31965f54cbe96ad": null,
+ "2f3abb3e6ad57171": null,
+ "0c98ede0420b566f": null,
+ "c63b6ebcf3ce456d": null,
+ "dd66a10013a3e168": null,
+ "7d73acf474aeb0f3": null,
+ "94e0f663916fd878": null,
+ "2a77f7e2215ee041": null,
+ "e21c73ec67e9af86": null,
+ "dcb20c8897a9f571": null,
+ "8ca92be73bcddca2": [
+  {
+   "type": "list",
+   "values": [
+    7,
+    1.67
+   ],
+   "dps": [
+    null,
+    2
+   ]
+  }
+ ],
+ "406e06f46b302e13": null,
+ "2004b70f8d93bcb7": null,
+ "9d42f140db3c5946": [
+  {
+   "type": "num",
+   "value": 3.03,
+   "dp": 2
+  }
+ ],
+ "9d19f480d78762b0": [
+  {
+   "type": "num",
+   "value": 1.29,
+   "dp": 2
+  }
+ ],
+ "19fa4194f9e7191c": [
+  {
+   "type": "list",
+   "values": [
+    2,
+    7,
+    15,
+    19,
+    20
+   ],
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 7,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 35,
+   "label": "c"
+  }
+ ],
+ "9de6914e03253c51": null,
+ "fbe98f0e235dc138": [
+  {
+   "type": "num",
+   "value": 166.1,
+   "dp": 1,
+   "unit": "cm"
+  }
+ ],
+ "c61950e413098d60": [
+  {
+   "type": "num",
+   "value": 73.3,
+   "dp": 1,
+   "unit": "kg"
+  }
+ ],
+ "6726025ce022ddd5": null,
+ "b8386ec6df1bd747": null,
+ "c65c90c79845c068": [
+  {
+   "type": "num",
+   "value": -5,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 7,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": -11,
+   "label": "c"
+  }
+ ],
+ "f7b78f9caced44e6": [
+  {
+   "type": "num",
+   "value": 15,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -1,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 1.25,
+   "label": "c"
+  }
+ ],
+ "2b106dac50507c4f": [
+  {
+   "type": "num",
+   "value": 6,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -3.5,
+   "label": "b"
+  }
+ ],
+ "18197bf6450a309a": null,
+ "e68c2f1b9a28e80a": [
+  {
+   "type": "expr",
+   "expr": "a^2-4a+1",
+   "vars": [
+    "a"
+   ],
+   "form": "simplified",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "x^2-2x-2",
+   "vars": [
+    "x"
+   ],
+   "form": "simplified",
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "4k^2-8k+1",
+   "vars": [
+    "k"
+   ],
+   "form": "simplified",
+   "label": "c"
+  }
+ ],
+ "14159ae73db24fbd": null,
+ "460f806c79e72609": null,
+ "a642b01e1c5e7770": null,
+ "f2f3bec604308448": null,
+ "d0f044f6c0f8fba8": null,
+ "09e30eace71267b2": null,
+ "f0085893d87c8998": [
+  {
+   "type": "list",
+   "values": [
+    1,
+    -6
+   ],
+   "label": "a"
+  },
+  {
+   "type": "set",
+   "values": [
+    2,
+    -3
+   ],
+   "label": "b"
+  }
+ ],
+ "7aecd728021f3617": null,
+ "1d5f9b92972cea75": null,
+ "4501a53c916244c0": null,
+ "e8b0b8a3032d3e1a": null,
+ "98f7608067e4392c": [
+  {
+   "type": "expr",
+   "expr": "30n-1500",
+   "vars": [
+    "n"
+   ],
+   "form": "simplified",
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 50,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 150,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": 40,
+   "label": "d"
+  }
+ ],
+ "c12166cb2e7d5846": null,
+ "0f81f23d011b3269": null,
+ "875396a6f282e310": null,
+ "fee03ed371f65211": null,
+ "d2386331ff5a1930": null,
+ "6f986d1d1607ae4e": null,
+ "f531efcf3c4407e7": null,
+ "953ad66d5487b68f": [
+  {
+   "type": "num",
+   "value": 41
+  }
+ ],
+ "15ada054189f1bf0": [
+  {
+   "type": "set",
+   "values": [
+    3,
+    -1.5
+   ]
+  }
+ ],
+ "d0af6703c7951380": null,
+ "bb0e4324881aa2c5": [
+  {
+   "type": "num",
+   "value": 4
+  }
+ ],
+ "17d5a423cd04c42e": [
+  {
+   "type": "set",
+   "values": [
+    3,
+    -4
+   ]
+  }
+ ],
+ "8b559da83f615b06": [
+  {
+   "type": "num",
+   "value": 3,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": -7,
+   "label": "c"
+  },
+  {
+   "type": "num",
+   "value": -2,
+   "label": "d"
+  }
+ ],
+ "0c190215fda46b20": null,
+ "7d1d4c9dabe57d7c": [
+  {
+   "type": "num",
+   "value": 2,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 4,
+   "label": "c"
+  }
+ ],
+ "2b1a9c43beedc2c6": [
+  {
+   "type": "num",
+   "value": 3,
+   "label": "a"
+  },
+  {
+   "type": "list",
+   "values": [
+    1,
+    -7
+   ],
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 3,
+   "label": "c"
+  }
+ ],
+ "94bbe9fff620936d": null,
+ "2295c908755ff9ed": null,
+ "f296e442aeb73f34": [
+  {
+   "type": "expr",
+   "expr": "x^3-x^2-5x+2",
+   "vars": [
+    "x"
+   ],
+   "form": "expanded"
+  }
+ ],
+ "42503004eb154a79": [
+  {
+   "type": "expr",
+   "expr": "3x^3-2x^2-5x+6",
+   "vars": [
+    "x"
+   ],
+   "form": "simplified",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "x^3+4x^2-5x+2",
+   "vars": [
+    "x"
+   ],
+   "form": "simplified",
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "c"
+  }
+ ],
+ "2fd12d00273dd176": null,
+ "a40a2253431faa00": [
+  {
+   "type": "expr",
+   "expr": "x^3+2x^2-5x-6",
+   "vars": [
+    "x"
+   ],
+   "form": "expanded"
+  }
+ ],
+ "3142fd76f23a2d56": [
+  {
+   "type": "expr",
+   "expr": "x^3+2x^2-14x+11",
+   "vars": [
+    "x"
+   ],
+   "form": "expanded"
+  }
+ ],
+ "f34b5cc0694a2d57": null,
+ "af34433eee4a76d7": [
+  {
+   "type": "list",
+   "values": [
+    -1,
+    -1,
+    3
+   ]
+  }
+ ],
+ "95d67e6bc0336e48": null,
+ "3a8c7043cb3629c3": null,
+ "82412e2ce3899d85": null,
+ "03c6fd5b1bee90c3": [
+  {
+   "type": "num",
+   "value": 2,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -23,
+   "label": "b"
+  },
+  {
+   "type": "num",
+   "value": 0.625,
+   "label": "c"
+  }
+ ],
+ "05f28514317797cb": null,
+ "c325e5d0d39c96c0": [
+  {
+   "type": "num",
+   "value": 1,
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": -1,
+   "label": "b"
+  }
+ ],
+ "485f58c679c39032": null,
+ "96683562f412a52e": null,
+ "6c0e1604b20d137a": null,
+ "488e8c4dba7b8937": null,
+ "c2bb67724f5fd6c4": null,
+ "1557dfbc701e2917": [
+  {
+   "type": "num",
+   "value": 1
+  }
+ ],
+ "4475b2bf6a8d6195": [
+  {
+   "type": "expr",
+   "expr": "(x+1)(x+2)(x-1)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised"
+  }
+ ],
+ "384ec229fc35157f": [
+  {
+   "type": "expr",
+   "expr": "(x-3)^2(x+2)",
+   "vars": [
+    "x"
+   ],
+   "form": "factorised"
+  }
+ ],
+ "30497c7a1bc633a3": null,
+ "98a0fe32215bf500": null,
+ "148c55539100dbd3": null,
+ "7ac9ab46e9b033ed": null,
+ "c5417b2ddb506053": [
+  {
+   "type": "set",
+   "values": [
+    4,
+    -1,
+    1.5
+   ]
+  }
+ ],
+ "49ed3a4d39ee50e1": [
+  {
+   "type": "set",
+   "values": [
+    1,
+    4
+   ]
+  }
+ ],
+ "2e26393d70a7d6e2": null,
+ "af6d21e20cdd7999": null,
+ "05422a1d70792e87": null,
+ "3e9c1914f14e5e96": null,
+ "ce432f088010b94d": [
+  {
+   "type": "expr",
+   "expr": "2(x-3)^3-4",
+   "vars": [
+    "x"
+   ]
+  }
+ ],
+ "fd891f27328a749a": null,
+ "2556055d2b058176": null,
+ "5cb5118f63ad9253": null,
+ "064f72782eed55a2": [
+  {
+   "type": "expr",
+   "expr": "x^3-5x^2+2x+8",
+   "vars": [
+    "x"
+   ],
+   "form": "expanded",
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "2x^3-10x^2+4x+16",
+   "vars": [
+    "x"
+   ],
+   "form": "expanded",
+   "label": "b"
+  }
+ ],
+ "73a25a63649b02ab": null,
+ "2de96e442e9884ab": null,
+ "59f6506f1be858ee": null,
+ "c4c4f494c992dfe6": null,
+ "84e8ccea8ff86f6f": null,
+ "116ea006f6b6e268": [
+  {
+   "type": "expr",
+   "expr": "2(x+3)(x-1)(x-2)",
+   "vars": [
+    "x"
+   ],
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "-2(x-4)^2(x+1)",
+   "vars": [
+    "x"
+   ],
+   "label": "b"
+  }
+ ],
+ "a478f743049b290e": null,
+ "485376f338166aaa": null,
+ "0b88118f581ef4bc": null,
+ "560461e722ab92b9": null,
+ "24fa8ff598268f9e": null,
+ "25e6169f8fdcc767": [
+  {
+   "type": "expr",
+   "expr": "(x-4)^2+3",
+   "vars": [
+    "x"
+   ],
+   "label": "a"
+  },
+  {
+   "type": "expr",
+   "expr": "-x^2-2",
+   "vars": [
+    "x"
+   ],
+   "label": "b"
+  },
+  {
+   "type": "expr",
+   "expr": "3x^2",
+   "vars": [
+    "x"
+   ],
+   "label": "c"
+  }
+ ],
+ "8c1829959dd9c330": null,
+ "46d570de89a9b201": null,
+ "bb78b6460dd8461e": null,
+ "7047c67d23df18b3": null,
+ "9505c47588c33014": null,
+ "17baa78be0ee39b3": null,
+ "b761cb604da23e3e": null,
+ "6d3fd1b8d18e1794": [
+  {
+   "type": "expr",
+   "expr": "(x-1)(x-3)(x+1)+3",
+   "vars": [
+    "x"
+   ],
+   "label": "a"
+  },
+  {
+   "type": "num",
+   "value": 6,
+   "label": "b"
+  },
+  {
+   "type": "list",
+   "values": [
+    3,
+    3
+   ],
+   "label": "c"
+  }
+ ],
+ "20e3e6c49dce4989": null,
+ "9b43396585db742a": null,
+ "c08779d890f863ee": null
+}

@@ -3561,7 +3561,7 @@
     {
      "src": "nq",
      "kind": "extended",
-     "question": "A family's monthly budget of \\$2400 is shown in a sector graph with these sector angles: rent $135^\\circ$, food $60^\\circ$, transport $45^\\circ$, savings $90^\\circ$ and other.\n\n(a) Find the angle of the \"other\" sector.\" \"\\n\\n(b) How much money is spent on rent each month?\n\n(c) What percentage of the budget goes to savings?",
+     "question": "A family's monthly budget of \\$2400 is shown in a sector graph with these sector angles: rent $135^\\circ$, food $60^\\circ$, transport $45^\\circ$, savings $90^\\circ$ and other.\n\n(a) Find the angle of the \"other\" sector.\n\n(b) How much money is spent on rent each month?\n\n(c) What percentage of the budget goes to savings?",
      "answer": "(a) $30^\\circ$ (b) \\$900 (c) $25\\%$",
      "solution": "**Key idea:** The angles in a sector graph add to $360^\\circ$, and each sector's share of the total is its angle divided by $360^\\circ$.\n\n1. (a) $360 - 135 - 60 - 45 - 90 = 30^\\circ$\n2. (b) $\\dfrac{135}{360} \\times 2400 = 900$, so \\$900\n3. (c) $\\dfrac{90}{360} = \\dfrac{1}{4} = 25\\%$\n\n**Answer:** (a) $30^\\circ$ (b) \\$900 (c) $25\\%$"
     }

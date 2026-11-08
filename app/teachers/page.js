@@ -3,6 +3,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import ExamGenerator from "@/components/exam/ExamGenerator";
+import TeacherBuilder from "@/components/paper/TeacherBuilder";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { STRANDS, strandOf } from "@/lib/year-hubs";
@@ -10,15 +11,16 @@ import { writtenTopicTest, SHEET_QUESTIONS } from "@/lib/topic-test-files";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
+import "@/components/paper/paper.css";
 
 // For teachers: free Years 7 to 10 maths resources for class use. The
 // Tutero playbook's link engine (Nov 2026): a page teachers share and
 // schools link to. Printable practice sheets (ungated PDFs), full topic
 // tests (emailed), the practice exam builder, and the other free tools.
 
-const TITLE = "Free Years 7 to 10 Maths Tests and Worksheets for Teachers (Australian Curriculum) | Tuterly";
+const TITLE = "Free Auto-Marked Maths Tests for Teachers, Years 7 to 10 | Tuterly Teacher Zone";
 const DESCRIPTION =
-  "Free printable maths practice sheets with answers for every Years 7 to 10 topic, full 20-question topic tests with answer keys, and a practice exam builder. Australian Curriculum v9, no login needed for the printables.";
+  "Build a Years 7 to 10 maths test on any topic, share one link, and every student is marked automatically with worked solutions. Plus free printable practice sheets and topic tests. Victorian and Australian Curriculum.";
 const URL = `${SITE_URL}/teachers`;
 
 export const metadata = {
@@ -61,7 +63,23 @@ const FAQS = [
     a: "Yes. The practice sheets, topic tests and practice exams are free to print, copy and share with your students, in class or as homework. Please don't sell them or republish them as your own.",
   },
   {
-    q: "Do I need an account?",
+    q: "How does the Teacher Zone work?",
+    a: "Pick a year level and the topics, choose how many questions, and create the test. You get two links: one for students, which opens the questions on Tuterly, and one with the answers and worked solutions for you. Students type their answers, press Mark my test, and see their mark and a worked solution for every question straight away.",
+  },
+  {
+    q: "How are students' answers marked?",
+    a: "Automatically. Teacher Zone tests only use questions with a single answer a computer can check: a number, a fraction, a list of values or an algebraic expression. Equivalent answers count, so 0.75, 3/4 and 75/100 are all marked right, and a factorise question needs the answer in factorised form. Questions that need an explanation stay in the printable tests.",
+  },
+  {
+    q: "Can I see my students' results?",
+    a: "Not yet. Each student sees their own mark and the worked solutions. A class results view is on the way.",
+  },
+  {
+    q: "Is the Teacher Zone free? Do students need an account?",
+    a: "Yes, it's free, up to 5 tests a day. Sign up once with your email and school. Students don't need an account or an email: they just open the link.",
+  },
+  {
+    q: "Do I need an account for the printables?",
     a: "No. The printable practice sheets download straight away, with no login or email. The full 20-question topic tests and the practice exam builder ask for an email so we can send you the file.",
   },
   {
@@ -119,18 +137,34 @@ export default function TeachersPage() {
       </nav>
 
       <header className="sh-hero">
-        <p className="sh-eyebrow">For teachers · Years 7 to 10 · Australian Curriculum v9</p>
-        <h1>Free Years 7 to 10 maths tests and practice sheets for your class</h1>
+        <p className="sh-eyebrow">Teacher Zone · Years 7 to 10 · Free</p>
+        <h1>Set a maths test in two minutes. Every student marked automatically.</h1>
         <p className="sh-lead">
-          A printable practice sheet with answers for {topicCount} topics, a full 20-question test with an answer key for each, and a practice exam builder. Free to print and use with your students. No login for the printables.
+          Pick the topics, share one link with your class, and each student gets their mark and a worked solution for every question the moment they finish. Plus free printable practice sheets and topic tests for {topicCount} topics.
+        </p>
+        <p className="tz-hero-btns">
+          <a href="#teacher-zone" className="tb-btn tb-btn--primary">Create a test</a>
+          <a href="#sheets" className="tb-btn tb-btn--secondary">Printable sheets</a>
         </p>
         <dl className="sh-facts">
-          <div><dt>Practice sheets</dt><dd>{topicCount} topics, {SHEET_QUESTIONS} questions each, answers included</dd></div>
-          <div><dt>Full topic tests</dt><dd>20 questions, basics to harder problems, answer key</dd></div>
-          <div><dt>Answers</dt><dd>Every answer checked twice</dd></div>
-          <div><dt>Cost</dt><dd>Free</dd></div>
+          <div><dt>Marking</dt><dd>Automatic, with a worked solution for every question</dd></div>
+          <div><dt>Students</dt><dd>No account or email needed, works on any phone</dd></div>
+          <div><dt>Topics</dt><dd>Named like the textbook chapters most Victorian schools use</dd></div>
+          <div><dt>Cost</dt><dd>Free, up to 5 tests a day</dd></div>
         </dl>
       </header>
+
+      <section id="teacher-zone" className="sh-sec tz-sec" aria-labelledby="t-zone">
+        <div className="sh-wrap">
+          <h2 id="t-zone">Teacher Zone: build a test and share it</h2>
+          <ol className="tz-steps">
+            <li><strong>Pick the topics.</strong> Year level, chapters and topics, and how many questions.</li>
+            <li><strong>Share one link.</strong> Post it on your class page or Compass. Keep the second link, with the worked solutions, for yourself.</li>
+            <li><strong>Students are marked instantly.</strong> They type their answers and get their mark and a worked solution for every question.</li>
+          </ol>
+          <TeacherBuilder catalogue={catalogue} initialYear="Year 8" />
+        </div>
+      </section>
 
       <main id="sheets" className="sh-sec sh-sec--paper" aria-labelledby="t-sheets">
         <div className="sh-wrap">
@@ -175,8 +209,8 @@ export default function TeachersPage() {
 
       <section className="sh-sec" aria-labelledby="t-exam">
         <div className="sh-wrap">
-          <h2 id="t-exam">Build a practice exam</h2>
-          <p className="sh-sub">Pick a year and the topics you&rsquo;ve covered. You&rsquo;ll get a printable exam with marks, a suggested time and answers, ready for end-of-term or end-of-year revision.</p>
+          <h2 id="t-exam">Build a printable practice exam</h2>
+          <p className="sh-sub">Prefer paper? Pick a year and the topics you&rsquo;ve covered for a printable exam with marks, a suggested time and answers, including the questions that need working or an explanation.</p>
           <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="teachers_exam" />
         </div>
       </section>
@@ -223,7 +257,7 @@ export default function TeachersPage() {
         </div>
       </section>
 
-      <AppCtaBand placement="teachers_final" />
+      <AppCtaBand placement="teachers_final" title="Unlimited practice for your students, at home." lead="The Tuterly app gives every student fresh questions on what they got wrong, with a worked solution for each one, aligned to the Victorian Curriculum." />
       <MarketingFooter />
     </div>
   );

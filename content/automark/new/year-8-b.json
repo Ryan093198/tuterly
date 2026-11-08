@@ -1,0 +1,2494 @@
+{
+ "Year 8": {
+  "6A": [
+   {
+    "kind": "short",
+    "question": "Simplify the ratio $1.2$ m $: 80$ cm.",
+    "answer": "$3 : 2$",
+    "solution": "**Key idea:** Write both quantities in the same unit, then divide by the highest common factor.\n\n1. $1.2 \\text{ m} = 120 \\text{ cm}$, so the ratio is $120 : 80$.\n2. The HCF of $120$ and $80$ is $40$.\n3. $120 \\div 40 = 3$ and $80 \\div 40 = 2$.\n\n**Answer:** $3 : 2$",
+    "key": [
+     {
+      "label": null,
+      "type": "ratio",
+      "values": [
+       3,
+       2
+      ]
+     }
+    ]
+   }
+  ],
+  "6B": [
+   {
+    "kind": "short",
+    "question": "In a jar, the ratio of red jelly beans to green jelly beans is $3 : 5$. There are $24$ red jelly beans. How many green jelly beans are there?",
+    "answer": "$40$",
+    "solution": "**Key idea:** Find the value of one part, then multiply by the number of parts needed.\n\n1. $3$ parts $= 24$, so $1$ part $= 24 \\div 3 = 8$.\n2. Green is $5$ parts: $5 \\times 8 = 40$.\n\n**Answer:** $40$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 40
+     }
+    ]
+   }
+  ],
+  "6C": [
+   {
+    "kind": "short",
+    "question": "A walking map has a scale of $1 : 25\\,000$. Two lookouts are $3.4$ km apart. How far apart are they on the map, in centimetres?",
+    "answer": "$13.6$ cm",
+    "solution": "**Key idea:** Convert the real distance to centimetres, then divide by the scale factor.\n\n1. $3.4 \\text{ km} = 3.4 \\times 100\\,000 = 340\\,000 \\text{ cm}$.\n2. $340\\,000 \\div 25\\,000 = 13.6 \\text{ cm}$.\n\n**Answer:** $13.6$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 13.6,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "6D": [
+   {
+    "kind": "short",
+    "question": "A car uses $45$ L of petrol to travel $540$ km. Find the rate of travel in kilometres per litre.",
+    "answer": "$12$ km/L",
+    "solution": "**Key idea:** A rate compares two different quantities; divide to find the amount per one unit.\n\n1. Kilometres per litre $= 540 \\div 45$.\n2. $540 \\div 45 = 12$ km/L.\n\n**Answer:** $12$ km/L",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 12,
+      "unit": "km/L"
+     }
+    ]
+   }
+  ],
+  "6G": [
+   {
+    "kind": "short",
+    "question": "Six gel pens cost \\$8.40. At the same price per pen, how much do $15$ gel pens cost?",
+    "answer": "\\$21.00",
+    "solution": "**Key idea:** Use the unitary method: find the cost of one, then multiply.\n\n1. One pen costs $8.40 \\div 6 = \\$1.40$.\n2. $15$ pens cost $15 \\times 1.40 = \\$21.00$.\n\n**Answer:** \\$21.00",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 21,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A pancake recipe for $6$ people uses $450$ g of flour. How much flour is needed to make the same recipe for $10$ people?",
+    "answer": "$750$ g",
+    "solution": "**Key idea:** Find the amount for one person, then multiply by the number of people.\n\n1. For $1$ person: $450 \\div 6 = 75$ g.\n2. For $10$ people: $10 \\times 75 = 750$ g.\n\n**Answer:** $750$ g",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 750,
+      "unit": "g"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A ute travels $375$ km on $30$ L of diesel. At the same rate, how far can it travel on $46$ L?",
+    "answer": "$575$ km",
+    "solution": "**Key idea:** Find the distance travelled on one litre, then multiply.\n\n1. On $1$ L: $375 \\div 30 = 12.5$ km.\n2. On $46$ L: $46 \\times 12.5 = 575$ km.\n\n**Answer:** $575$ km",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 575,
+      "unit": "km"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A $1.2$ kg tub of yoghurt costs \\$9.60. Find the cost per $100$ g, in dollars.",
+    "answer": "\\$0.80",
+    "solution": "**Key idea:** Work out how many lots of 100 g are in the tub, then divide the price.\n\n1. $1.2 \\text{ kg} = 1200 \\text{ g}$, which is $12$ lots of $100$ g.\n2. $9.60 \\div 12 = \\$0.80$ per $100$ g.\n\n**Answer:** \\$0.80",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 0.8,
+      "dp": 2
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Mia earns \\$247 for $13$ hours of work at a café.\n\n(a) What is her hourly rate of pay?\n\n(b) How much will she earn for $20$ hours of work?\n\n(c) How many hours must she work to earn \\$361?",
+    "answer": "(a) \\$19 (b) \\$380 (c) $19$ hours",
+    "solution": "**Key idea:** Find the rate for one hour first, then use it to scale up or to divide.\n\n1. Hourly rate: $247 \\div 13 = \\$19$.\n2. $20$ hours: $20 \\times 19 = \\$380$.\n3. Hours for \\$361: $361 \\div 19 = 19$ hours.\n\n**Answer:** (a) \\$19 (b) \\$380 (c) $19$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 19,
+      "dp": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 380,
+      "dp": 2
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 19,
+      "unit": "hours"
+     }
+    ]
+   }
+  ],
+  "7A": [
+   {
+    "kind": "short",
+    "question": "Solve $5x - 4 = 31$.",
+    "answer": "$x = 7$",
+    "solution": "**Key idea:** Undo the operations in reverse order, doing the same thing to both sides.\n\n1. Add $4$ to both sides: $5x = 35$.\n2. Divide both sides by $5$: $x = 7$.\n\n**Answer:** $x = 7$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve:\n\n(a) $x - 12 = -5$\n\n(b) $-4x = 36$",
+    "answer": "(a) $x = 7$ (b) $x = -9$",
+    "solution": "**Key idea:** Use inverse operations to get $x$ on its own.\n\n1. (a) Add $12$ to both sides: $x = -5 + 12 = 7$.\n2. (b) Divide both sides by $-4$: $x = 36 \\div (-4) = -9$.\n\n**Answer:** (a) $x = 7$ (b) $x = -9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -9
+     }
+    ]
+   }
+  ],
+  "7B": [
+   {
+    "kind": "short",
+    "question": "Solve $8 - 5x = 23$.",
+    "answer": "$x = -3$",
+    "solution": "**Key idea:** Perform the same operation on both sides to produce simpler equivalent equations.\n\n1. Subtract $8$ from both sides: $-5x = 15$.\n2. Divide both sides by $-5$: $x = -3$.\n\n**Answer:** $x = -3$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $4x + 9 = -11$.",
+    "answer": "$x = -5$",
+    "solution": "**Key idea:** Perform the same operation on both sides to produce simpler equivalent equations.\n\n1. Subtract $9$ from both sides: $4x = -20$.\n2. Divide both sides by $4$: $x = -5$.\n\n**Answer:** $x = -5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $0.5x - 3 = 4$.",
+    "answer": "$x = 14$",
+    "solution": "**Key idea:** Perform the same operation on both sides to produce simpler equivalent equations.\n\n1. Add $3$ to both sides: $0.5x = 7$.\n2. Divide both sides by $0.5$ (or multiply by $2$): $x = 14$.\n\n**Answer:** $x = 14$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 14
+     }
+    ]
+   }
+  ],
+  "7C": [
+   {
+    "kind": "short",
+    "question": "Solve $\\dfrac{3x - 2}{4} = 7$.",
+    "answer": "$x = 10$",
+    "solution": "**Key idea:** Multiply both sides by the denominator first to remove the fraction.\n\n1. Multiply both sides by $4$: $3x - 2 = 28$.\n2. Add $2$: $3x = 30$.\n3. Divide by $3$: $x = 10$.\n\n**Answer:** $x = 10$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 10
+     }
+    ]
+   }
+  ],
+  "7D": [
+   {
+    "kind": "short",
+    "question": "Solve $8x + 3 = 5x - 12$.",
+    "answer": "$x = -5$",
+    "solution": "**Key idea:** Collect the pronumeral terms on one side and the numbers on the other.\n\n1. Subtract $5x$ from both sides: $3x + 3 = -12$.\n2. Subtract $3$: $3x = -15$.\n3. Divide by $3$: $x = -5$.\n\n**Answer:** $x = -5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $9 - 2x = 3x - 16$.",
+    "answer": "$x = 5$",
+    "solution": "**Key idea:** Collect the pronumeral terms on one side and the numbers on the other.\n\n1. Add $2x$ to both sides: $9 = 5x - 16$.\n2. Add $16$: $25 = 5x$.\n3. Divide by $5$: $x = 5$.\n\n**Answer:** $x = 5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Liam has \\$40 in his money box and adds \\$15 each week. Zoe has \\$100 and adds \\$5 each week.\n\n(a) After how many weeks will they have the same amount?\n\n(b) How much will each of them have at that time?",
+    "answer": "(a) $6$ weeks (b) \\$130",
+    "solution": "**Key idea:** Write an expression for each amount and set them equal.\n\n1. Liam has $40 + 15w$ and Zoe has $100 + 5w$ after $w$ weeks.\n2. $40 + 15w = 100 + 5w$, so $10w = 60$ and $w = 6$.\n3. Liam: $40 + 15 \\times 6 = 130$; Zoe: $100 + 5 \\times 6 = 130$. Each has \\$130.\n\n**Answer:** (a) $6$ weeks (b) \\$130",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6,
+      "unit": "weeks"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 130
+     }
+    ]
+   }
+  ],
+  "7E": [
+   {
+    "kind": "short",
+    "question": "Solve $5(x + 2) = 35$.",
+    "answer": "$x = 5$",
+    "solution": "**Key idea:** Expand the brackets (or divide both sides by the number outside) and then solve.\n\n1. Divide both sides by $5$: $x + 2 = 7$.\n2. Subtract $2$: $x = 5$.\n\n**Answer:** $x = 5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $2(3x - 4) = 4(x + 1)$.",
+    "answer": "$x = 6$",
+    "solution": "**Key idea:** Expand both sets of brackets, then collect like terms.\n\n1. Expand: $6x - 8 = 4x + 4$.\n2. Subtract $4x$: $2x - 8 = 4$.\n3. Add $8$ and divide by $2$: $x = 6$.\n\n**Answer:** $x = 6$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $3(x - 1) - 2(x - 4) = 12$.",
+    "answer": "$x = 7$",
+    "solution": "**Key idea:** Expand carefully, remembering that $-2 \\times -4 = +8$, then simplify.\n\n1. Expand: $3x - 3 - 2x + 8 = 12$.\n2. Simplify: $x + 5 = 12$.\n3. Subtract $5$: $x = 7$.\n\n**Answer:** $x = 7$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 7
+     }
+    ]
+   }
+  ],
+  "7F": [
+   {
+    "kind": "short",
+    "question": "Solve $x^2 - 7 = 57$.",
+    "answer": "$x = 8$ or $x = -8$",
+    "solution": "**Key idea:** Get $x^2$ on its own, then take the positive and negative square roots.\n\n1. Add $7$ to both sides: $x^2 = 64$.\n2. $x = \\sqrt{64} = 8$ or $x = -8$.\n\n**Answer:** $x = 8$ or $x = -8$",
+    "key": [
+     {
+      "label": null,
+      "type": "set",
+      "values": [
+       8,
+       -8
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Solve $2x^2 = 98$.",
+    "answer": "$x = 7$ or $x = -7$",
+    "solution": "**Key idea:** Get $x^2$ on its own, then take the positive and negative square roots.\n\n1. Divide both sides by $2$: $x^2 = 49$.\n2. $x = 7$ or $x = -7$.\n\n**Answer:** $x = 7$ or $x = -7$",
+    "key": [
+     {
+      "label": null,
+      "type": "set",
+      "values": [
+       7,
+       -7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A square courtyard has an area of $225 \\text{ m}^2$. Its side length is $x$ m.\n\n(a) Solve $x^2 = 225$, giving both solutions.\n\n(b) What is the side length of the courtyard?\n\n(c) Find the perimeter of the courtyard.",
+    "answer": "(a) $x = 15$ or $x = -15$ (b) $15$ m (c) $60$ m",
+    "solution": "**Key idea:** A squared number has two square roots, but a length must be positive.\n\n1. $x^2 = 225$ gives $x = 15$ or $x = -15$.\n2. A length cannot be negative, so the side is $15$ m.\n3. Perimeter $= 4 \\times 15 = 60$ m.\n\n**Answer:** (a) $x = 15$ or $x = -15$ (b) $15$ m (c) $60$ m",
+    "key": [
+     {
+      "label": "a",
+      "type": "set",
+      "values": [
+       15,
+       -15
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15,
+      "unit": "m"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 60,
+      "unit": "m"
+     }
+    ]
+   }
+  ],
+  "7G": [
+   {
+    "kind": "short",
+    "question": "The area of a triangle is given by $A = \\frac{1}{2}bh$. Find the height $h$ when $A = 36 \\text{ cm}^2$ and $b = 9$ cm.",
+    "answer": "$8$ cm",
+    "solution": "**Key idea:** Substitute the known values into the formula, then solve for the unknown.\n\n1. $36 = \\frac{1}{2} \\times 9 \\times h = 4.5h$.\n2. $h = 36 \\div 4.5 = 8$ cm.\n\n**Answer:** $8$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "7I": [
+   {
+    "kind": "short",
+    "question": "How many integers satisfy $-3 \\le x < 4$?",
+    "answer": "$7$",
+    "solution": "**Key idea:** $\\le$ includes the end value, $<$ does not.\n\n1. The integers are $-3, -2, -1, 0, 1, 2, 3$ ($4$ is not included).\n2. There are $7$ integers.\n\n**Answer:** $7$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the smallest integer that satisfies $x > -2.5$?",
+    "answer": "$-2$",
+    "solution": "**Key idea:** On a number line, numbers greater than $-2.5$ lie to the right of $-2.5$.\n\n1. $-3$ is less than $-2.5$, so it does not satisfy the inequality.\n2. $-2$ is greater than $-2.5$, so the smallest integer is $-2$.\n\n**Answer:** $-2$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the largest whole number that satisfies $x \\le 7.8$?",
+    "answer": "$7$",
+    "solution": "**Key idea:** $x \\le 7.8$ means $x$ is $7.8$ or smaller.\n\n1. $8$ is larger than $7.8$, so it does not satisfy the inequality.\n2. $7 \\le 7.8$, so the largest whole number is $7$.\n\n**Answer:** $7$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "List all the integers that satisfy $2 < x \\le 6$.",
+    "answer": "$3, 4, 5, 6$",
+    "solution": "**Key idea:** $<$ excludes the end value and $\\le$ includes it.\n\n1. $2$ is not included because the sign is $<$.\n2. $6$ is included because the sign is $\\le$.\n3. The integers are $3, 4, 5, 6$.\n\n**Answer:** $3, 4, 5, 6$",
+    "key": [
+     {
+      "label": null,
+      "type": "set",
+      "values": [
+       3,
+       4,
+       5,
+       6
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "To ride a roller coaster, a person's height must satisfy $h \\ge 110$ cm. Ava is $104$ cm tall. What is the least number of centimetres she must grow before she can ride?",
+    "answer": "$6$ cm",
+    "solution": "**Key idea:** $h \\ge 110$ means the height can be exactly $110$ cm or more.\n\n1. The smallest allowed height is $110$ cm.\n2. $110 - 104 = 6$ cm.\n\n**Answer:** $6$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "7J": [
+   {
+    "kind": "short",
+    "question": "Find the smallest integer $x$ that satisfies $3x + 4 > 19$.",
+    "answer": "$6$",
+    "solution": "**Key idea:** Solve the inequality like an equation, then decide which integers fit.\n\n1. Subtract $4$: $3x > 15$.\n2. Divide by $3$: $x > 5$.\n3. The smallest integer greater than $5$ is $6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the largest integer $x$ that satisfies $5x - 2 \\le 23$.",
+    "answer": "$5$",
+    "solution": "**Key idea:** Solve the inequality like an equation, then decide which integers fit.\n\n1. Add $2$: $5x \\le 25$.\n2. Divide by $5$: $x \\le 5$.\n3. The largest integer is $5$.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the largest integer $x$ that satisfies $-2x + 3 > 11$.",
+    "answer": "$-5$",
+    "solution": "**Key idea:** When you divide both sides by a negative number, reverse the inequality sign.\n\n1. Subtract $3$: $-2x > 8$.\n2. Divide by $-2$ and reverse the sign: $x < -4$.\n3. The largest integer less than $-4$ is $-5$.\n\n**Answer:** $-5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A school band sells raffle tickets for \\$12 each. They need to raise at least \\$300. What is the smallest number of tickets they must sell?",
+    "answer": "$25$ tickets",
+    "solution": "**Key idea:** Write an inequality using $\\ge$ for 'at least', then solve it.\n\n1. $12n \\ge 300$.\n2. $n \\ge 25$.\n3. The smallest number of tickets is $25$.\n\n**Answer:** $25$ tickets",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 25
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many positive integers satisfy $4x - 7 < 21$?",
+    "answer": "$6$",
+    "solution": "**Key idea:** Solve the inequality, then count the positive integers that fit.\n\n1. Add $7$: $4x < 28$.\n2. Divide by $4$: $x < 7$.\n3. The positive integers are $1, 2, 3, 4, 5, 6$, so there are $6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "(a) Find the smallest integer that satisfies $\\dfrac{x + 5}{2} \\ge 6$.\n\n(b) Find the largest integer that satisfies $10 - 3x > 1$.",
+    "answer": "(a) $7$ (b) $2$",
+    "solution": "**Key idea:** Solve each inequality with inverse operations, reversing the sign if you divide by a negative.\n\n1. (a) Multiply by $2$: $x + 5 \\ge 12$, so $x \\ge 7$. The smallest integer is $7$.\n2. (b) Subtract $10$: $-3x > -9$. Divide by $-3$ and reverse: $x < 3$. The largest integer is $2$.\n\n**Answer:** (a) $7$ (b) $2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 2
+     }
+    ]
+   }
+  ],
+  "8A": [
+   {
+    "kind": "short",
+    "question": "The table shows the number of umbrellas sold by a Melbourne shop over five months.\n\n| Month | May | Jun | Jul | Aug | Sep |\n|---|---|---|---|---|---|\n| Umbrellas sold | 64 | 58 | 47 | 33 | 21 |\n\n(a) How many umbrellas were sold altogether over the five months?\n\n(b) How many more umbrellas were sold in May than in September?",
+    "answer": "(a) $223$ (b) $43$",
+    "solution": "**Key idea:** Read the values from the table carefully, then add or subtract.\n\n1. (a) $64 + 58 + 47 + 33 + 21 = 223$.\n2. (b) $64 - 21 = 43$.\n\n**Answer:** (a) $223$ (b) $43$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 223
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 43
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In a survey of $72$ students, $18$ chose swimming as their favourite sport. The results are shown in a sector (pie) graph. Find the angle of the swimming sector.",
+    "answer": "$90^\\circ$",
+    "solution": "**Key idea:** The sector angle is the fraction of the total multiplied by $360^\\circ$.\n\n1. Fraction choosing swimming: $\\frac{18}{72} = \\frac{1}{4}$.\n2. Angle: $\\frac{1}{4} \\times 360^\\circ = 90^\\circ$.\n\n**Answer:** $90^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 90.0,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A sector graph shows how $400$ people travel to work. The sector for cycling has an angle of $54^\\circ$. How many people cycle to work?",
+    "answer": "$60$ people",
+    "solution": "**Key idea:** The sector angle out of $360^\\circ$ gives the fraction of the total.\n\n1. Fraction who cycle: $\\frac{54}{360} = 0.15$.\n2. $0.15 \\times 400 = 60$ people.\n\n**Answer:** $60$ people",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 60.0
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A column graph shows the number of books Ruby read in each school term: Term 1: $12$, Term 2: $18$, Term 3: $15$, Term 4: $15$.\n\n(a) How many books did she read in the year?\n\n(b) What percentage of the year's books did she read in Term 3?\n\n(c) What was the mean number of books read per term?",
+    "answer": "(a) $60$ (b) $25\\%$ (c) $15$",
+    "solution": "**Key idea:** Add the column heights for the total, then use the total for percentages and the mean.\n\n1. (a) $12 + 18 + 15 + 15 = 60$.\n2. (b) $\\frac{15}{60} \\times 100\\% = 25\\%$.\n3. (c) $60 \\div 4 = 15$.\n\n**Answer:** (a) $60$ (b) $25\\%$ (c) $15$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 60
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 25.0
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 15
+     }
+    ]
+   }
+  ],
+  "8B": [
+   {
+    "kind": "short",
+    "question": "Sixteen students were asked how many people live in their street who they know by name. Their answers were:\n\n$$3, 1, 2, 2, 4, 1, 2, 3, 2, 0, 2, 1, 3, 2, 4, 1$$\n\n(a) What is the frequency of the score $2$?\n\n(b) What is the relative frequency of the score $2$, as a decimal?",
+    "answer": "(a) $6$ (b) $0.375$",
+    "solution": "**Key idea:** Frequency is how many times a value appears; relative frequency is frequency divided by the total.\n\n1. (a) Count the $2$s: there are $6$.\n2. (b) $\\frac{6}{16} = 0.375$.\n\n**Answer:** (a) $6$ (b) $0.375$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.375
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The frequency table shows the number of goals scored by a hockey team in each game of a season.\n\n| Goals | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency | 3 | 7 | 6 | 3 | 1 |\n\n(a) How many games did the team play?\n\n(b) In how many games did the team score at least $2$ goals?",
+    "answer": "(a) $20$ (b) $10$",
+    "solution": "**Key idea:** Add the frequencies; 'at least 2' means 2 or more.\n\n1. (a) $3 + 7 + 6 + 3 + 1 = 20$ games.\n2. (b) $6 + 3 + 1 = 10$ games.\n\n**Answer:** (a) $20$ (b) $10$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 10
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A class of $30$ students recorded their favourite colour using a tally. The tally for green was one complete group of five (four strokes crossed by a fifth stroke), followed by four more single strokes.\n\n(a) How many students chose green?\n\n(b) What percentage of the class chose green?",
+    "answer": "(a) $9$ (b) $30\\%$",
+    "solution": "**Key idea:** Each crossed group of tally marks is $5$; add the single marks.\n\n1. (a) $5 + 4 = 9$ students.\n2. (b) $\\frac{9}{30} \\times 100\\% = 30\\%$.\n\n**Answer:** (a) $9$ (b) $30\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 30.0
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The scores, out of $25$, of $12$ students on a spelling test were:\n\n$$12, 17, 23, 9, 15, 19, 21, 14, 18, 25, 11, 16$$\n\nHow many scores belong in the class $15$ to $19$?",
+    "answer": "$5$",
+    "solution": "**Key idea:** Count every score that is from $15$ up to and including $19$.\n\n1. The scores in the class are $17, 15, 19, 18, 16$.\n2. There are $5$ scores.\n\n**Answer:** $5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The table shows the number of pets owned by $40$ families.\n\n| Pets | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| Frequency | 8 | 14 | ? | 6 |\n\n(a) Find the missing frequency.\n\n(b) Find the relative frequency of families with exactly $1$ pet, as a decimal.\n\n(c) What percentage of the families have no pets?",
+    "answer": "(a) $12$ (b) $0.35$ (c) $20\\%$",
+    "solution": "**Key idea:** The frequencies add to the total; relative frequency is frequency divided by the total.\n\n1. (a) $40 - 8 - 14 - 6 = 12$.\n2. (b) $\\frac{14}{40} = 0.35$.\n3. (c) $\\frac{8}{40} \\times 100\\% = 20\\%$.\n\n**Answer:** (a) $12$ (b) $0.35$ (c) $20\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.35
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 20
+     }
+    ]
+   }
+  ],
+  "8C": [
+   {
+    "kind": "short",
+    "question": "The stem-and-leaf plot shows the ages of people at a community garden working bee.\n\n| Stem | Leaf |\n|---|---|\n| 2 | 1 4 8 |\n| 3 | 0 3 3 7 |\n| 4 | 1 5 6 |\n| 5 | 2 |\n\nKey: $2 | 1$ means $21$\n\n(a) How many people were at the working bee?\n\n(b) Find the median age.\n\n(c) Find the range of the ages.",
+    "answer": "(a) $11$ (b) $33$ (c) $31$",
+    "solution": "**Key idea:** A stem-and-leaf plot keeps the data in order, so the middle value is easy to find.\n\n1. (a) Count the leaves: $3 + 4 + 3 + 1 = 11$ people.\n2. (b) The median is the $6$th value: $33$.\n3. (c) Range $= 52 - 21 = 31$.\n\n**Answer:** (a) $11$ (b) $33$ (c) $31$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 11
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 33
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 31
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A dot plot shows the number of hours of sleep Year 8 students had on Sunday night: $3$ dots above $5$, $6$ dots above $6$, $4$ dots above $7$ and $2$ dots above $8$.\n\n(a) How many students are shown?\n\n(b) What is the mode?\n\n(c) How many students slept for at least $7$ hours?",
+    "answer": "(a) $15$ (b) $6$ hours (c) $6$",
+    "solution": "**Key idea:** Each dot is one student; the mode has the tallest column of dots.\n\n1. (a) $3 + 6 + 4 + 2 = 15$ students.\n2. (b) The most dots ($6$) are above $6$, so the mode is $6$ hours.\n3. (c) $4 + 2 = 6$ students.\n\n**Answer:** (a) $15$ (b) $6$ hours (c) $6$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "hours"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A histogram shows the times, in minutes, that students took to finish a puzzle: $0$ to less than $5$: $4$; $5$ to less than $10$: $9$; $10$ to less than $15$: $11$; $15$ to less than $20$: $5$; $20$ to less than $25$: $1$.\n\n(a) How many students are shown in the histogram?\n\n(b) What percentage of the students took $15$ minutes or more?",
+    "answer": "(a) $30$ (b) $20\\%$",
+    "solution": "**Key idea:** Add the column heights for the total, then use the columns from $15$ minutes upwards.\n\n1. (a) $4 + 9 + 11 + 5 + 1 = 30$.\n2. (b) $5 + 1 = 6$ students; $\\frac{6}{30} \\times 100\\% = 20\\%$.\n\n**Answer:** (a) $30$ (b) $20\\%$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 30
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 20.0
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The stem-and-leaf plot shows the masses, in kilograms, of $13$ Year 8 students.\n\n| Stem | Leaf |\n|---|---|\n| 5 | 2 5 8 |\n| 6 | 1 1 4 6 9 |\n| 7 | 0 3 8 |\n| 8 | 1 4 |\n\nKey: $5 | 2$ means $52$ kg\n\n(a) How many values are greater than $65$ kg?\n\n(b) What is the mode?",
+    "answer": "(a) $7$ (b) $61$ kg",
+    "solution": "**Key idea:** Read each stem with its leaves to rebuild the data values.\n\n1. (a) Values above $65$: $66, 69, 70, 73, 78, 81, 84$, which is $7$ values.\n2. (b) $61$ appears twice, more than any other value, so the mode is $61$ kg.\n\n**Answer:** (a) $7$ (b) $61$ kg",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 61,
+      "unit": "kg"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A column graph shows how many students in a class have each number of siblings: $0$ siblings: $5$ students; $1$ sibling: $11$ students; $2$ siblings: $7$ students; $3$ siblings: $2$ students.\n\n(a) What is the modal number of siblings?\n\n(b) How many students have fewer than $2$ siblings?",
+    "answer": "(a) $1$ (b) $16$",
+    "solution": "**Key idea:** The mode is the value with the tallest column.\n\n1. (a) The tallest column ($11$ students) is above $1$ sibling, so the mode is $1$.\n2. (b) $5 + 11 = 16$ students.\n\n**Answer:** (a) $1$ (b) $16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 16
+     }
+    ]
+   }
+  ],
+  "8D": [
+   {
+    "kind": "short",
+    "question": "The numbers of laps swum by seven swimmers at training were:\n\n$$15, 8, 11, 21, 6, 11, 12$$\n\n(a) Find the mean.\n\n(b) Find the median.",
+    "answer": "(a) $12$ (b) $11$",
+    "solution": "**Key idea:** The mean is the total divided by the count; the median is the middle value once the data are in order.\n\n1. (a) Total: $15 + 8 + 11 + 21 + 6 + 11 + 12 = 84$, so the mean is $84 \\div 7 = 12$.\n2. (b) In order: $6, 8, 11, 11, 12, 15, 21$. The middle (4th) value is $11$.\n\n**Answer:** (a) $12$ (b) $11$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 12
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 11
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Noah's marks on four maths tests were $72$, $85$, $69$ and $81$.\n\n(a) Find the mean of his four marks.\n\n(b) What mark does he need on a fifth test so that the mean of all five marks is $78$?",
+    "answer": "(a) $76.75$ (b) $83$",
+    "solution": "**Key idea:** Mean $=$ total $\\div$ number of values, so the total needed is the mean multiplied by the number of values.\n\n1. (a) $72 + 85 + 69 + 81 = 307$, and $307 \\div 4 = 76.75$.\n2. (b) For a mean of $78$ over $5$ tests, the total must be $5 \\times 78 = 390$.\n3. He needs $390 - 307 = 83$.\n\n**Answer:** (a) $76.75$ (b) $83$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 76.75,
+      "dp": 2
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 83
+     }
+    ]
+   }
+  ],
+  "8E": [
+   {
+    "kind": "short",
+    "question": "The daily maximum temperatures, in degrees Celsius, in Mildura for one week were:\n\n$$34, 41, 29, 38, 45, 31, 40$$\n\nFind the range.",
+    "answer": "$16^\\circ\\text{C}$",
+    "solution": "**Key idea:** Range $=$ highest value $-$ lowest value.\n\n1. Highest $= 45$, lowest $= 29$.\n2. Range $= 45 - 29 = 16$.\n\n**Answer:** $16^\\circ\\text{C}$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 16
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two netballers recorded the number of goals they scored in five games.\n\nMei: $12, 15, 18, 14, 16$\n\nSienna: $8, 22, 15, 11, 19$\n\n(a) Find the range of Mei's scores.\n\n(b) Find the range of Sienna's scores.\n\n(c) Both players have the same mean. Find it.",
+    "answer": "(a) $6$ (b) $14$ (c) $15$",
+    "solution": "**Key idea:** The range measures spread; the mean measures centre.\n\n1. (a) $18 - 12 = 6$.\n2. (b) $22 - 8 = 14$.\n3. (c) Mei: $75 \\div 5 = 15$; Sienna: $75 \\div 5 = 15$.\n\n**Answer:** (a) $6$ (b) $14$ (c) $15$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 6
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 14
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Eight students recorded how many text messages they sent on one day:\n\n$$3, 5, 6, 8, 9, 11, 14, 16$$\n\n(a) Find the lower quartile, $Q_1$ (the median of the lower half).\n\n(b) Find the upper quartile, $Q_3$ (the median of the upper half).\n\n(c) Find the interquartile range.",
+    "answer": "(a) $5.5$ (b) $12.5$ (c) $7$",
+    "solution": "**Key idea:** Split the ordered data into a lower half and an upper half; IQR $= Q_3 - Q_1$.\n\n1. Lower half: $3, 5, 6, 8$, so $Q_1 = \\frac{5 + 6}{2} = 5.5$.\n2. Upper half: $9, 11, 14, 16$, so $Q_3 = \\frac{11 + 14}{2} = 12.5$.\n3. IQR $= 12.5 - 5.5 = 7$.\n\n**Answer:** (a) $5.5$ (b) $12.5$ (c) $7$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12.5
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 7.0
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The numbers of customers at a bakery on $11$ mornings were:\n\n$$41, 47, 52, 55, 58, 60, 63, 66, 70, 74, 79$$\n\n(a) Find the median.\n\n(b) Find the lower quartile and the upper quartile, leaving out the median when you split the data into halves. Write your answer as $Q_1, Q_3$.\n\n(c) Find the interquartile range.\n\n(d) Find the range.",
+    "answer": "(a) $60$ (b) $52, 70$ (c) $18$ (d) $38$",
+    "solution": "**Key idea:** With an odd number of values, leave out the median and find the middle of each half.\n\n1. (a) The 6th value is $60$.\n2. (b) Lower half $41, 47, 52, 55, 58$ gives $Q_1 = 52$; upper half $63, 66, 70, 74, 79$ gives $Q_3 = 70$.\n3. (c) IQR $= 70 - 52 = 18$.\n4. (d) Range $= 79 - 41 = 38$.\n\n**Answer:** (a) $60$ (b) $52, 70$ (c) $18$ (d) $38$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 60
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       52,
+       70
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 18
+     },
+     {
+      "label": "d",
+      "type": "num",
+      "value": 38
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The range of a set of test marks is $37$. The lowest mark is $48$. What is the highest mark?",
+    "answer": "$85$",
+    "solution": "**Key idea:** Range $=$ highest $-$ lowest, so highest $=$ lowest $+$ range.\n\n1. Highest $= 48 + 37 = 85$.\n\n**Answer:** $85$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 85
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two random samples of $6$ eggs were weighed, in grams.\n\nSample 1: $150, 148, 153, 151, 149, 152$\n\nSample 2: $146, 155, 150, 158, 143, 149$\n\n(a) Find the range of Sample 1.\n\n(b) Find the range of Sample 2.\n\n(c) How many grams larger is the range of Sample 2 than the range of Sample 1?",
+    "answer": "(a) $5$ g (b) $15$ g (c) $10$ g",
+    "solution": "**Key idea:** Range $=$ highest value $-$ lowest value.\n\n1. (a) $153 - 148 = 5$ g.\n2. (b) $158 - 143 = 15$ g.\n3. (c) $15 - 5 = 10$ g.\n\n**Answer:** (a) $5$ g (b) $15$ g (c) $10$ g",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5,
+      "unit": "g"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15,
+      "unit": "g"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 10,
+      "unit": "g"
+     }
+    ]
+   }
+  ],
+  "8I": [
+   {
+    "kind": "short",
+    "question": "A fair coin is tossed and a spinner with four equal sections numbered $1$, $2$, $3$ and $4$ is spun. A tree diagram is used to list the outcomes.\n\n(a) How many outcomes are there?\n\n(b) Find the probability of a head and an even number.",
+    "answer": "(a) $8$ (b) $\\frac{2}{8} = \\frac{1}{4}$",
+    "solution": "**Key idea:** Multiply the number of branches at each stage to count outcomes; count the favourable ones.\n\n1. (a) $2 \\times 4 = 8$ outcomes.\n2. (b) H2 and H4 are favourable: $\\frac{2}{8} = \\frac{1}{4}$.\n\n**Answer:** (a) $8$ (b) $\\frac{2}{8} = \\frac{1}{4}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.25
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A bag holds $3$ red counters and $2$ blue counters. A counter is drawn at random, its colour is recorded and it is put back. A second counter is then drawn.\n\n(a) Find the probability that both counters are red.\n\n(b) Find the probability that the two counters are different colours.\n\n(c) Find the probability that at least one counter is blue.",
+    "answer": "(a) $\\frac{9}{25}$ (b) $\\frac{12}{25}$ (c) $\\frac{16}{25}$",
+    "solution": "**Key idea:** Multiply along the branches of the tree diagram, and add the results for different paths.\n\n1. (a) $\\frac{3}{5} \\times \\frac{3}{5} = \\frac{9}{25}$.\n2. (b) RB or BR: $\\frac{3}{5} \\times \\frac{2}{5} + \\frac{2}{5} \\times \\frac{3}{5} = \\frac{12}{25}$.\n3. (c) $1 - P(\\text{both red}) = 1 - \\frac{9}{25} = \\frac{16}{25}$.\n\n**Answer:** (a) $\\frac{9}{25}$ (b) $\\frac{12}{25}$ (c) $\\frac{16}{25}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.36
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.48
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.64
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Three fair coins are tossed one after the other. A tree diagram shows all the outcomes.\n\n(a) How many outcomes are there?\n\n(b) Find the probability of exactly two heads.",
+    "answer": "(a) $8$ (b) $\\frac{3}{8}$",
+    "solution": "**Key idea:** Each toss doubles the number of branches; count the outcomes with exactly two heads.\n\n1. (a) $2 \\times 2 \\times 2 = 8$.\n2. (b) HHT, HTH and THH: $\\frac{3}{8}$.\n\n**Answer:** (a) $8$ (b) $\\frac{3}{8}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.375
+     }
+    ]
+   }
+  ],
+  "8J": [
+   {
+    "kind": "short",
+    "question": "In a group of $45$ students, $27$ have been to Sydney, $19$ have been to Adelaide and $8$ have been to both.\n\n(a) How many students have been to Sydney only?\n\n(b) How many students have been to neither city?\n\n(c) A student is chosen at random. Find the probability that the student has been to exactly one of the two cities.",
+    "answer": "(a) $19$ (b) $7$ (c) $\\frac{30}{45} = \\frac{2}{3}$",
+    "solution": "**Key idea:** Fill the overlap of the Venn diagram first, then work outwards.\n\n1. (a) $27 - 8 = 19$.\n2. Adelaide only: $19 - 8 = 11$.\n3. (b) $45 - 19 - 8 - 11 = 7$.\n4. (c) Exactly one: $19 + 11 = 30$, so $\\frac{30}{45} = \\frac{2}{3}$.\n\n**Answer:** (a) $19$ (b) $7$ (c) $\\frac{30}{45} = \\frac{2}{3}$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 19
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 7
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 0.6666666666666666
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The two-way table shows whether $80$ Year 8 students play a team sport.\n\n| | Team sport | No team sport | Total |\n|---|---|---|---|\n| Boys | 26 | 14 | 40 |\n| Girls | 22 | 18 | 40 |\n| Total | 48 | 32 | 80 |\n\nA student is chosen at random. Find the probability, as a decimal, that the student:\n\n(a) plays a team sport\n\n(b) is a girl who does not play a team sport",
+    "answer": "(a) $0.6$ (b) $0.225$",
+    "solution": "**Key idea:** Use the cell or total that matches the event, divided by the overall total.\n\n1. (a) $\\frac{48}{80} = 0.6$.\n2. (b) $\\frac{18}{80} = 0.225$.\n\n**Answer:** (a) $0.6$ (b) $0.225$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 0.6
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 0.225
+     }
+    ]
+   }
+  ],
+  "9A": [
+   {
+    "kind": "short",
+    "question": "Find the length of the vertical line segment joining $P(4, -3)$ and $Q(4, 6)$.",
+    "answer": "$9$ units",
+    "solution": "**Key idea:** For a vertical segment the $x$-coordinates are equal, so the length is the difference in the $y$-coordinates.\n\n1. Length $= 6 - (-3) = 9$ units.\n\n**Answer:** $9$ units",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 9,
+      "unit": "units"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the coordinates of the midpoint of the segment joining $A(-2, 5)$ and $B(6, 1)$.",
+    "answer": "$(2, 3)$",
+    "solution": "**Key idea:** The midpoint is found by averaging the $x$-coordinates and averaging the $y$-coordinates.\n\n1. $x$: $\\frac{-2 + 6}{2} = 2$.\n2. $y$: $\\frac{5 + 1}{2} = 3$.\n3. Midpoint $(2, 3)$.\n\n**Answer:** $(2, 3)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       2,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A rectangle has vertices $A(-3, -2)$, $B(5, -2)$, $C(5, 4)$ and $D(-3, 4)$.\n\n(a) Find the length of $AB$.\n\n(b) Find the length of $BC$.\n\n(c) Find the area of the rectangle.\n\n(d) Find the perimeter of the rectangle.",
+    "answer": "(a) $8$ units (b) $6$ units (c) $48$ square units (d) $28$ units",
+    "solution": "**Key idea:** Horizontal and vertical lengths are differences in coordinates.\n\n1. (a) $5 - (-3) = 8$.\n2. (b) $4 - (-2) = 6$.\n3. (c) $8 \\times 6 = 48$ square units.\n4. (d) $2 \\times (8 + 6) = 28$ units.\n\n**Answer:** (a) $8$ units (b) $6$ units (c) $48$ square units (d) $28$ units",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "units"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "units"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 48,
+      "unit": "square units"
+     },
+     {
+      "label": "d",
+      "type": "num",
+      "value": 28,
+      "unit": "units"
+     }
+    ]
+   }
+  ],
+  "9B": [
+   {
+    "kind": "short",
+    "question": "Complete the table of values for $y = 5 - 3x$. Give the $y$-values in order.\n\n| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |\n|---|---|---|---|---|---|\n| $y$ | | | | | |",
+    "answer": "$11, 8, 5, 2, -1$",
+    "solution": "**Key idea:** Substitute each $x$-value into the rule.\n\n1. $x = -2$: $5 - 3(-2) = 11$; $x = -1$: $5 + 3 = 8$; $x = 0$: $5$.\n2. $x = 1$: $5 - 3 = 2$; $x = 2$: $5 - 6 = -1$.\n\n**Answer:** $11, 8, 5, 2, -1$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       11,
+       8,
+       5,
+       2,
+       -1
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(k, 17)$ lies on the line $y = 4x - 3$.\n\n(a) Find $k$.\n\n(b) Find the $y$-value on the same line when $x = -2$.",
+    "answer": "(a) $k = 5$ (b) $y = -11$",
+    "solution": "**Key idea:** A point lies on a line when its coordinates satisfy the rule.\n\n1. (a) $4k - 3 = 17$, so $4k = 20$ and $k = 5$.\n2. (b) $y = 4(-2) - 3 = -11$.\n\n**Answer:** (a) $k = 5$ (b) $y = -11$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -11
+     }
+    ]
+   }
+  ],
+  "9D": [
+   {
+    "kind": "short",
+    "question": "The lines $y = 2x - 1$ and $y = 8 - x$ are graphed on the same axes. Find the coordinates of their point of intersection.",
+    "answer": "$(3, 5)$",
+    "solution": "**Key idea:** At the point of intersection both rules give the same $y$-value, so solve $2x - 1 = 8 - x$.\n\n1. $2x - 1 = 8 - x$ gives $3x = 9$, so $x = 3$.\n2. $y = 2(3) - 1 = 5$.\n3. The point is $(3, 5)$.\n\n**Answer:** $(3, 5)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       3.0,
+       5.0
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The table shows values for $y = 3x + 2$.\n\n| $x$ | $0$ | $1$ | $2$ | $3$ | $4$ |\n|---|---|---|---|---|---|\n| $y$ | $2$ | $5$ | $8$ | $11$ | $14$ |\n\nUse the table to solve $3x + 2 = 11$.",
+    "answer": "$x = 3$",
+    "solution": "**Key idea:** Find the column where $y$ equals the right-hand side; its $x$-value is the solution.\n\n1. $y = 11$ when $x = 3$.\n2. So $x = 3$ (check: $3(3) + 2 = 11$).\n\n**Answer:** $x = 3$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The graphs of $y = \\frac{1}{2}x + 1$ and $y = 7 - x$ meet at a point. Find the coordinates of the point.",
+    "answer": "$(4, 3)$",
+    "solution": "**Key idea:** Solve the equation formed by setting the two rules equal.\n\n1. $\\frac{1}{2}x + 1 = 7 - x$, so $\\frac{3}{2}x = 6$ and $x = 4$.\n2. $y = 7 - 4 = 3$.\n3. The point is $(4, 3)$.\n\n**Answer:** $(4, 3)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       4.0,
+       3.0
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $y = 2x + 5$ is graphed. Use it to solve $2x + 5 = -3$ by finding the $x$-value where the line has a height of $-3$.",
+    "answer": "$x = -4$",
+    "solution": "**Key idea:** The solution is the $x$-coordinate of the point on the line with $y = -3$.\n\n1. $2x + 5 = -3$ gives $2x = -8$.\n2. $x = -4$, so the point is $(-4, -3)$.\n\n**Answer:** $x = -4$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -4
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Two phone plans charge $C = 20 + 1.5m$ and $C = 10 + 2m$ dollars, where $m$ is the number of gigabytes of data used.\n\n(a) If the two rules were graphed, at what value of $m$ would the lines cross?\n\n(b) What is the cost on each plan at that point?\n\n(c) Find the cost of the first plan when $m = 30$.",
+    "answer": "(a) $m = 20$ (b) \\$50 (c) \\$65",
+    "solution": "**Key idea:** The lines cross where the two costs are equal.\n\n1. (a) $20 + 1.5m = 10 + 2m$ gives $10 = 0.5m$, so $m = 20$.\n2. (b) $C = 20 + 1.5(20) = 50$.\n3. (c) $C = 20 + 1.5(30) = 65$.\n\n**Answer:** (a) $m = 20$ (b) \\$50 (c) \\$65",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 20.0
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 50.0,
+      "dp": 2
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 65,
+      "dp": 2
+     }
+    ]
+   }
+  ],
+  "9E": [
+   {
+    "kind": "short",
+    "question": "The graph of $y = 2x - 5$ is drawn with the horizontal line $y = 9$. Find the largest integer value of $x$ for which the line $y = 2x - 5$ is below $y = 9$.",
+    "answer": "$6$",
+    "solution": "**Key idea:** Find where the lines cross, then decide which side of that point satisfies the inequality.\n\n1. Below means $2x - 5 < 9$, so $2x < 14$ and $x < 7$.\n2. The largest integer less than $7$ is $6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the line $y = 3x + 6$, find the smallest integer value of $x$ for which the graph is above the $x$-axis.",
+    "answer": "$-1$",
+    "solution": "**Key idea:** Above the $x$-axis means $y > 0$.\n\n1. $3x + 6 > 0$ gives $3x > -6$, so $x > -2$.\n2. The smallest integer greater than $-2$ is $-1$.\n\n**Answer:** $-1$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -1
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The line $y = 12 - 2x$ is graphed. For which value of $x$ does the line cross the horizontal line $y = 4$? (This is the boundary value for the inequality $12 - 2x \\ge 4$.)",
+    "answer": "$x = 4$",
+    "solution": "**Key idea:** The boundary of the inequality is where the two graphs meet.\n\n1. $12 - 2x = 4$ gives $2x = 8$.\n2. $x = 4$.\n\n**Answer:** $x = 4$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Using the graph of $y = 12 - 2x$, how many positive integer values of $x$ make $y \\ge 4$?",
+    "answer": "$4$",
+    "solution": "**Key idea:** Solve the inequality, then count the positive integers that fit.\n\n1. $12 - 2x \\ge 4$ gives $-2x \\ge -8$, so $x \\le 4$.\n2. The positive integers are $1, 2, 3, 4$, so there are $4$.\n\n**Answer:** $4$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The lines $y = x + 1$ and $y = 7 - x$ are drawn on the same axes.\n\n(a) Find the $x$-coordinate of the point where they intersect.\n\n(b) Find the smallest integer $x$ for which $y = x + 1$ is above $y = 7 - x$.\n\n(c) How many integer values of $x$ make $y = x + 1$ above $y = 7 - x$ and also below the line $y = 10$?",
+    "answer": "(a) $3$ (b) $4$ (c) $5$",
+    "solution": "**Key idea:** The intersection is the boundary; to the right of it the line with the greater gradient is higher.\n\n1. (a) $x + 1 = 7 - x$ gives $x = 3$.\n2. (b) $x + 1 > 7 - x$ gives $x > 3$; the smallest integer is $4$.\n3. (c) Also $x + 1 < 10$, so $x < 9$. The integers are $4, 5, 6, 7, 8$, which is $5$ values.\n\n**Answer:** (a) $3$ (b) $4$ (c) $5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 4
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A taxi fare is $C = 4 + 2.5d$ dollars for a trip of $d$ km. Graphing this rule with the line $C = 39$ shows the distances Kai can afford with \\$39. What is the greatest whole number of kilometres he can travel?",
+    "answer": "$14$ km",
+    "solution": "**Key idea:** Solve $4 + 2.5d \\le 39$ and take the largest whole number in the solution.\n\n1. $4 + 2.5d \\le 39$ gives $2.5d \\le 35$.\n2. $d \\le 14$, so the greatest whole number is $14$ km.\n\n**Answer:** $14$ km",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 14,
+      "unit": "km"
+     }
+    ]
+   }
+  ],
+  "9F": [
+   {
+    "kind": "short",
+    "question": "For the line $y = 5x + 15$, find the coordinates of:\n\n(a) the $y$-intercept\n\n(b) the $x$-intercept",
+    "answer": "(a) $(0, 15)$ (b) $(-3, 0)$",
+    "solution": "**Key idea:** Set $x = 0$ for the $y$-intercept and $y = 0$ for the $x$-intercept.\n\n1. (a) $x = 0$: $y = 15$.\n2. (b) $y = 0$: $5x + 15 = 0$, so $x = -3$.\n\n**Answer:** (a) $(0, 15)$ (b) $(-3, 0)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       0,
+       15
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       -3,
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the line $3x + 4y = 24$, find the coordinates of:\n\n(a) the $x$-intercept\n\n(b) the $y$-intercept",
+    "answer": "(a) $(8, 0)$ (b) $(0, 6)$",
+    "solution": "**Key idea:** Set $y = 0$ for the $x$-intercept and $x = 0$ for the $y$-intercept.\n\n1. (a) $y = 0$: $3x = 24$, so $x = 8$.\n2. (b) $x = 0$: $4y = 24$, so $y = 6$.\n\n**Answer:** (a) $(8, 0)$ (b) $(0, 6)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       8,
+       0
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       0,
+       6
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "What is the $x$-coordinate of the $x$-intercept of the line $y = 10 - 4x$?",
+    "answer": "$2.5$",
+    "solution": "**Key idea:** At the $x$-intercept, $y = 0$.\n\n1. $10 - 4x = 0$ gives $4x = 10$.\n2. $x = 2.5$.\n\n**Answer:** $2.5$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 2.5
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "The line $y = 2x + 8$ crosses the $x$-axis at $A$ and the $y$-axis at $B$.\n\n(a) Find the coordinates of $A$.\n\n(b) Find the coordinates of $B$.\n\n(c) Find the area of the triangle formed by $A$, $B$ and the origin.",
+    "answer": "(a) $(-4, 0)$ (b) $(0, 8)$ (c) $16$ square units",
+    "solution": "**Key idea:** Find both intercepts; the triangle's base and height are the distances from the origin.\n\n1. (a) $2x + 8 = 0$ gives $x = -4$, so $A(-4, 0)$.\n2. (b) $x = 0$ gives $y = 8$, so $B(0, 8)$.\n3. (c) Area $= \\frac{1}{2} \\times 4 \\times 8 = 16$ square units.\n\n**Answer:** (a) $(-4, 0)$ (b) $(0, 8)$ (c) $16$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -4,
+       0
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       0,
+       8
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 16,
+      "unit": "square units"
+     }
+    ]
+   }
+  ],
+  "9G": [
+   {
+    "kind": "short",
+    "question": "Find the gradient of the line passing through $(-2, 7)$ and $(4, -5)$.",
+    "answer": "$-2$",
+    "solution": "**Key idea:** Gradient $= \\frac{\\text{rise}}{\\text{run}} = \\frac{y_2 - y_1}{x_2 - x_1}$.\n\n1. Rise $= -5 - 7 = -12$; run $= 4 - (-2) = 6$.\n2. Gradient $= \\frac{-12}{6} = -2$.\n\n**Answer:** $-2$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": -2.0
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A straight driveway rises $1.5$ m over a horizontal distance of $12$ m. Find its gradient as a decimal.",
+    "answer": "$0.125$",
+    "solution": "**Key idea:** Gradient $=$ rise $\\div$ run.\n\n1. $1.5 \\div 12 = 0.125$.\n\n**Answer:** $0.125$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 0.125
+     }
+    ]
+   }
+  ],
+  "9H": [
+   {
+    "kind": "short",
+    "question": "For the line $y = -4x + 9$, state:\n\n(a) the gradient\n\n(b) the $y$-intercept (the $y$-value where the line crosses the $y$-axis)",
+    "answer": "(a) $-4$ (b) $9$",
+    "solution": "**Key idea:** In $y = mx + c$, $m$ is the gradient and $c$ is the $y$-intercept.\n\n1. (a) $m = -4$.\n2. (b) $c = 9$.\n\n**Answer:** (a) $-4$ (b) $9$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -4
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 9
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write the rule of the line with gradient $3$ and $y$-intercept $-7$, in the form $y = mx + c$.",
+    "answer": "$y = 3x - 7$",
+    "solution": "**Key idea:** Substitute $m$ and $c$ into $y = mx + c$.\n\n1. $m = 3$, $c = -7$, so $y = 3x - 7$.\n\n**Answer:** $y = 3x - 7$",
+    "key": [
+     {
+      "label": null,
+      "type": "expr",
+      "expr": "3x-7",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The equation $4x + 2y = 10$ is rearranged into the form $y = mx + c$.\n\n(a) Write the rule for $y$.\n\n(b) State the gradient.",
+    "answer": "(a) $y = -2x + 5$ (b) $-2$",
+    "solution": "**Key idea:** Make $y$ the subject, then read off $m$.\n\n1. Subtract $4x$: $2y = 10 - 4x$.\n2. Divide by $2$: $y = -2x + 5$.\n3. The gradient is $-2$.\n\n**Answer:** (a) $y = -2x + 5$ (b) $-2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "5-2x",
+      "vars": [
+       "x"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": -2
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the rule of the line that has gradient $2$ and passes through the point $(3, 1)$. Write it in the form $y = mx + c$.",
+    "answer": "$y = 2x - 5$",
+    "solution": "**Key idea:** Substitute the point into $y = 2x + c$ to find $c$.\n\n1. $1 = 2(3) + c$, so $c = -5$.\n2. $y = 2x - 5$.\n\n**Answer:** $y = 2x - 5$",
+    "key": [
+     {
+      "label": null,
+      "type": "expr",
+      "expr": "2x-5",
+      "vars": [
+       "x"
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A line passes through $(0, 4)$ and $(2, 10)$.\n\n(a) Find its gradient.\n\n(b) Write its rule in the form $y = mx + c$.\n\n(c) Find the value of $y$ when $x = -3$.",
+    "answer": "(a) $3$ (b) $y = 3x + 4$ (c) $-5$",
+    "solution": "**Key idea:** The point $(0, c)$ gives the $y$-intercept directly.\n\n1. (a) $\\frac{10 - 4}{2 - 0} = 3$.\n2. (b) The $y$-intercept is $4$, so $y = 3x + 4$.\n3. (c) $y = 3(-3) + 4 = -5$.\n\n**Answer:** (a) $3$ (b) $y = 3x + 4$ (c) $-5$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 3
+     },
+     {
+      "label": "b",
+      "type": "expr",
+      "expr": "3x+4",
+      "vars": [
+       "x"
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": -5
+     }
+    ]
+   }
+  ],
+  "9I": [
+   {
+    "kind": "short",
+    "question": "An electrician charges $C = 90 + 70h$ dollars for a job taking $h$ hours.\n\n(a) Find the cost of a $3$ hour job.\n\n(b) A job cost \\$440. How many hours did it take?",
+    "answer": "(a) \\$300 (b) $5$ hours",
+    "solution": "**Key idea:** Substitute into the rule, or solve an equation for the unknown.\n\n1. (a) $90 + 70(3) = 300$.\n2. (b) $90 + 70h = 440$, so $70h = 350$ and $h = 5$.\n\n**Answer:** (a) \\$300 (b) $5$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 300
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5,
+      "unit": "hours"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A water tank holds $1800$ L and is emptied at a steady $120$ L per minute. The volume left is $V = 1800 - 120t$ litres after $t$ minutes.\n\n(a) What is the gradient of the graph of $V$ against $t$?\n\n(b) After how many minutes is the tank empty?",
+    "answer": "(a) $-120$ (b) $15$ minutes",
+    "solution": "**Key idea:** The gradient is the rate of change; the tank is empty when $V = 0$.\n\n1. (a) The coefficient of $t$ is $-120$.\n2. (b) $1800 - 120t = 0$ gives $t = 15$.\n\n**Answer:** (a) $-120$ (b) $15$ minutes",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -120
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 15,
+      "unit": "minutes"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Tickets to a school play cost \\$12 each. The hall hire costs \\$360. The profit is $P = 12n - 360$ dollars when $n$ tickets are sold. How many tickets must be sold to break even?",
+    "answer": "$30$ tickets",
+    "solution": "**Key idea:** Break even means the profit is zero; this is where the graph crosses the horizontal axis.\n\n1. $12n - 360 = 0$.\n2. $n = 30$.\n\n**Answer:** $30$ tickets",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Gym A charges a \\$60 joining fee plus \\$12 per week. Gym B has no joining fee and charges \\$17 per week.\n\n(a) Write a rule for the cost $A$ dollars of Gym A after $w$ weeks.\n\n(b) After how many weeks do the two gyms cost the same?\n\n(c) What is the cost at that point?",
+    "answer": "(a) $A = 60 + 12w$ (b) $12$ weeks (c) \\$204",
+    "solution": "**Key idea:** The graphs cross where the two costs are equal.\n\n1. (a) $A = 60 + 12w$.\n2. (b) $60 + 12w = 17w$ gives $5w = 60$, so $w = 12$.\n3. (c) $17 \\times 12 = 204$.\n\n**Answer:** (a) $A = 60 + 12w$ (b) $12$ weeks (c) \\$204",
+    "key": [
+     {
+      "label": "a",
+      "type": "expr",
+      "expr": "60+12w",
+      "vars": [
+       "w"
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 12,
+      "unit": "weeks"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 204
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A candle is $24$ cm tall and burns down $1.5$ cm every hour. Its height is $h = 24 - 1.5t$ cm after $t$ hours.\n\n(a) Find the height after $6$ hours.\n\n(b) After how many hours will the candle be $9$ cm tall?",
+    "answer": "(a) $15$ cm (b) $10$ hours",
+    "solution": "**Key idea:** Substitute to find a height; solve an equation to find a time.\n\n1. (a) $24 - 1.5(6) = 15$ cm.\n2. (b) $24 - 1.5t = 9$ gives $1.5t = 15$, so $t = 10$.\n\n**Answer:** (a) $15$ cm (b) $10$ hours",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 15,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 10,
+      "unit": "hours"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A Melbourne plumber's charges form a straight-line graph. A $2$ hour job costs \\$210 and a $5$ hour job costs \\$435. What is the hourly rate (the gradient of the graph), in dollars per hour?",
+    "answer": "\\$75 per hour",
+    "solution": "**Key idea:** The gradient is the change in cost divided by the change in hours.\n\n1. Change in cost $= 435 - 210 = 225$.\n2. Change in hours $= 5 - 2 = 3$.\n3. Rate $= 225 \\div 3 = 75$ dollars per hour.\n\n**Answer:** \\$75 per hour",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 75
+     }
+    ]
+   }
+  ],
+  "9J": [
+   {
+    "kind": "short",
+    "question": "Complete the table of values for $y = x^2 + 3$. Give the $y$-values in order.\n\n| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |\n|---|---|---|---|---|---|\n| $y$ | | | | | |",
+    "answer": "$7, 4, 3, 4, 7$",
+    "solution": "**Key idea:** Square the $x$-value first, then add $3$.\n\n1. $(-2)^2 + 3 = 7$, $(-1)^2 + 3 = 4$, $0^2 + 3 = 3$.\n2. $1^2 + 3 = 4$, $2^2 + 3 = 7$.\n\n**Answer:** $7, 4, 3, 4, 7$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       7,
+       4,
+       3,
+       4,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Find the $x$-values where the parabola $y = x^2 - 25$ crosses the $x$-axis.",
+    "answer": "$x = 5$ or $x = -5$",
+    "solution": "**Key idea:** On the $x$-axis $y = 0$; solve $x^2 = 25$.\n\n1. $x^2 - 25 = 0$ gives $x^2 = 25$.\n2. $x = 5$ or $x = -5$.\n\n**Answer:** $x = 5$ or $x = -5$",
+    "key": [
+     {
+      "label": null,
+      "type": "set",
+      "values": [
+       5,
+       -5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "For the parabola $y = x^2 - 6$:\n\n(a) find the $y$-intercept (the $y$-value when $x = 0$)\n\n(b) find the $y$-value when $x = -3$",
+    "answer": "(a) $-6$ (b) $3$",
+    "solution": "**Key idea:** Substitute into the rule, remembering that $(-3)^2 = 9$.\n\n1. (a) $0^2 - 6 = -6$.\n2. (b) $(-3)^2 - 6 = 9 - 6 = 3$.\n\n**Answer:** (a) $-6$ (b) $3$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": -6
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Write the coordinates of the turning point of the parabola $y = x^2 + 5$.",
+    "answer": "$(0, 5)$",
+    "solution": "**Key idea:** The graph of $y = x^2 + c$ has its lowest point where $x = 0$.\n\n1. When $x = 0$, $y = 5$, and every other $x$ gives a larger $y$.\n2. The turning point is $(0, 5)$.\n\n**Answer:** $(0, 5)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       0,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A stone is dropped from a bridge. Its distance fallen is $d = 5t^2$ metres after $t$ seconds.\n\n(a) How far has it fallen after $3$ seconds?\n\n(b) How far does it fall during the $4$th second (from $t = 3$ to $t = 4$)?\n\n(c) After how many seconds has it fallen $125$ m?",
+    "answer": "(a) $45$ m (b) $35$ m (c) $5$ seconds",
+    "solution": "**Key idea:** The rule is not linear, so equal time steps give unequal distances.\n\n1. (a) $5 \\times 3^2 = 45$ m.\n2. (b) $5 \\times 4^2 = 80$; $80 - 45 = 35$ m.\n3. (c) $5t^2 = 125$ gives $t^2 = 25$, so $t = 5$ (time is positive).\n\n**Answer:** (a) $45$ m (b) $35$ m (c) $5$ seconds",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 45,
+      "unit": "m"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 35,
+      "unit": "m"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 5,
+      "unit": "seconds"
+     }
+    ]
+   }
+  ],
+  "10A": [
+   {
+    "kind": "short",
+    "question": "Write the coordinates of the image of the point $(-5, 3)$ after a reflection in:\n\n(a) the $x$-axis\n\n(b) the $y$-axis",
+    "answer": "(a) $(-5, -3)$ (b) $(5, 3)$",
+    "solution": "**Key idea:** Reflecting in the $x$-axis changes the sign of $y$; reflecting in the $y$-axis changes the sign of $x$.\n\n1. (a) $(-5, 3) \\to (-5, -3)$.\n2. (b) $(-5, 3) \\to (5, 3)$.\n\n**Answer:** (a) $(-5, -3)$ (b) $(5, 3)$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -5,
+       -3
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       5,
+       3
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(2, 7)$ is reflected in the vertical line $x = 5$. Find the coordinates of its image.",
+    "answer": "$(8, 7)$",
+    "solution": "**Key idea:** The image is the same distance from the mirror line, on the other side.\n\n1. $(2, 7)$ is $3$ units left of $x = 5$.\n2. The image is $3$ units right of $x = 5$: $(8, 7)$.\n\n**Answer:** $(8, 7)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       8,
+       7
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(-1, 4)$ is reflected in the horizontal line $y = 1$. Find the coordinates of its image.",
+    "answer": "$(-1, -2)$",
+    "solution": "**Key idea:** The image is the same distance from the mirror line, on the other side.\n\n1. $(-1, 4)$ is $3$ units above $y = 1$.\n2. The image is $3$ units below $y = 1$: $(-1, -2)$.\n\n**Answer:** $(-1, -2)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       -1,
+       -2
+      ]
+     }
+    ]
+   }
+  ],
+  "10B": [
+   {
+    "kind": "short",
+    "question": "The point $(-3, 4)$ is translated $5$ units right and $6$ units down. Find the coordinates of its image.",
+    "answer": "$(2, -2)$",
+    "solution": "**Key idea:** Right adds to $x$; down subtracts from $y$.\n\n1. $x$: $-3 + 5 = 2$.\n2. $y$: $4 - 6 = -2$.\n\n**Answer:** $(2, -2)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       2,
+       -2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $A(1, -2)$ is translated to $A'(-4, 3)$.\n\n(a) How many units left is the translation?\n\n(b) How many units up is the translation?",
+    "answer": "(a) $5$ units (b) $5$ units",
+    "solution": "**Key idea:** Compare the coordinates of the point and its image.\n\n1. (a) $x$ changes from $1$ to $-4$: $5$ units left.\n2. (b) $y$ changes from $-2$ to $3$: $5$ units up.\n\n**Answer:** (a) $5$ units (b) $5$ units",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 5,
+      "unit": "units"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 5,
+      "unit": "units"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A point is translated $4$ units right and $3$ units down. Its image is $(0, -1)$. Find the coordinates of the original point.",
+    "answer": "$(-4, 2)$",
+    "solution": "**Key idea:** Undo the translation: move $4$ units left and $3$ units up.\n\n1. $x$: $0 - 4 = -4$.\n2. $y$: $-1 + 3 = 2$.\n\n**Answer:** $(-4, 2)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       -4,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Triangle $PQR$ has vertices $P(0, 1)$, $Q(4, 1)$ and $R(4, 5)$. It is translated $3$ units left and $2$ units up.\n\n(a) Find the coordinates of $P'$.\n\n(b) Find the coordinates of $R'$.\n\n(c) Find the area of triangle $P'Q'R'$.",
+    "answer": "(a) $(-3, 3)$ (b) $(1, 7)$ (c) $8$ square units",
+    "solution": "**Key idea:** A translation moves every point the same way and does not change size.\n\n1. (a) $(0 - 3, 1 + 2) = (-3, 3)$.\n2. (b) $(4 - 3, 5 + 2) = (1, 7)$.\n3. (c) Area of $PQR = \\frac{1}{2} \\times 4 \\times 4 = 8$, and translation keeps the area, so $8$ square units.\n\n**Answer:** (a) $(-3, 3)$ (b) $(1, 7)$ (c) $8$ square units",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       -3,
+       3
+      ]
+     },
+     {
+      "label": "b",
+      "type": "list",
+      "values": [
+       1,
+       7
+      ]
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 8,
+      "unit": "square units"
+     }
+    ]
+   }
+  ],
+  "10C": [
+   {
+    "kind": "short",
+    "question": "The point $(5, 2)$ is rotated $90^\\circ$ anticlockwise about the origin. Find its image.",
+    "answer": "$(-2, 5)$",
+    "solution": "**Key idea:** A $90^\\circ$ anticlockwise rotation about the origin takes $(x, y)$ to $(-y, x)$.\n\n1. $(5, 2) \\to (-2, 5)$.\n\n**Answer:** $(-2, 5)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       -2,
+       5
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The point $(-3, 1)$ is rotated $90^\\circ$ clockwise about the origin. Find its image.",
+    "answer": "$(1, 3)$",
+    "solution": "**Key idea:** A $90^\\circ$ clockwise rotation about the origin takes $(x, y)$ to $(y, -x)$.\n\n1. $(-3, 1) \\to (1, 3)$.\n\n**Answer:** $(1, 3)$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       1,
+       3
+      ]
+     }
+    ]
+   }
+  ],
+  "10D": [
+   {
+    "kind": "short",
+    "question": "Quadrilateral $ABCD$ is congruent to quadrilateral $WXYZ$, with vertices in matching order. $AB = 7$ cm, $BC = 5$ cm, $CD = 9$ cm and $DA = 4$ cm. Find the perimeter of $WXYZ$.",
+    "answer": "$25$ cm",
+    "solution": "**Key idea:** Congruent figures have matching sides equal, so they have equal perimeters.\n\n1. Perimeter of $ABCD = 7 + 5 + 9 + 4 = 25$ cm.\n2. So the perimeter of $WXYZ$ is $25$ cm.\n\n**Answer:** $25$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 25,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Pentagon $FGHIJ$ is congruent to pentagon $KLMNO$, with vertices in matching order. $GH = 8$ cm and $\\angle I = 112^\\circ$.\n\n(a) Find $LM$.\n\n(b) Find $\\angle N$.",
+    "answer": "(a) $8$ cm (b) $112^\\circ$",
+    "solution": "**Key idea:** In congruent figures, matching sides and matching angles are equal.\n\n1. (a) $LM$ matches $GH$, so $LM = 8$ cm.\n2. (b) $\\angle N$ matches $\\angle I$, so $\\angle N = 112^\\circ$.\n\n**Answer:** (a) $8$ cm (b) $112^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 112,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two congruent rectangles each have a length of $12$ cm. One has an area of $84 \\text{ cm}^2$. Find the width of the other rectangle.",
+    "answer": "$7$ cm",
+    "solution": "**Key idea:** Congruent shapes have the same area and the same side lengths.\n\n1. Width of the first rectangle $= 84 \\div 12 = 7$ cm.\n2. The second rectangle is congruent, so its width is also $7$ cm.\n\n**Answer:** $7$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 7,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Quadrilateral $PQRS$ is congruent to quadrilateral $TUVW$, with vertices in matching order. $\\angle P = 75^\\circ$, $\\angle Q = 105^\\circ$ and $\\angle R = 80^\\circ$. Find $\\angle W$.",
+    "answer": "$100^\\circ$",
+    "solution": "**Key idea:** Angles in a quadrilateral add to $360^\\circ$; matching angles in congruent figures are equal.\n\n1. $\\angle S = 360^\\circ - 75^\\circ - 105^\\circ - 80^\\circ = 100^\\circ$.\n2. $\\angle W$ matches $\\angle S$, so $\\angle W = 100^\\circ$.\n\n**Answer:** $100^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 100,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A tiler cuts congruent triangular tiles. One tile has sides of $15$ cm, $20$ cm and $25$ cm and has a right angle.\n\n(a) Find the perimeter of one tile.\n\n(b) Find the area of one tile.\n\n(c) Find the total area of $40$ of these tiles, in square centimetres.",
+    "answer": "(a) $60$ cm (b) $150 \\text{ cm}^2$ (c) $6000 \\text{ cm}^2$",
+    "solution": "**Key idea:** Congruent tiles all have the same perimeter and area.\n\n1. (a) $15 + 20 + 25 = 60$ cm.\n2. (b) The two shorter sides are perpendicular: $\\frac{1}{2} \\times 15 \\times 20 = 150 \\text{ cm}^2$.\n3. (c) $40 \\times 150 = 6000 \\text{ cm}^2$.\n\n**Answer:** (a) $60$ cm (b) $150 \\text{ cm}^2$ (c) $6000 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 60,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 150,
+      "unit": "cm²"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 6000,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "10E": [
+   {
+    "kind": "short",
+    "question": "$\\triangle ABC \\cong \\triangle DEF$, with vertices in matching order. $\\angle A = 48^\\circ$, $\\angle B = 67^\\circ$ and $BC = 11$ cm.\n\n(a) Find $\\angle F$.\n\n(b) Find $EF$.",
+    "answer": "(a) $65^\\circ$ (b) $11$ cm",
+    "solution": "**Key idea:** Matching angles and sides of congruent triangles are equal.\n\n1. (a) $\\angle C = 180^\\circ - 48^\\circ - 67^\\circ = 65^\\circ$, and $\\angle F$ matches $\\angle C$.\n2. (b) $EF$ matches $BC$, so $EF = 11$ cm.\n\n**Answer:** (a) $65^\\circ$ (b) $11$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 65,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 11,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "$\\triangle KLM \\cong \\triangle XYZ$, with vertices in matching order. $KL = 6$ cm, $LM = 9$ cm and $XZ = 10$ cm. Find the perimeter of $\\triangle KLM$.",
+    "answer": "$25$ cm",
+    "solution": "**Key idea:** Matching sides are equal: $KM$ matches $XZ$.\n\n1. $KM = XZ = 10$ cm.\n2. Perimeter $= 6 + 9 + 10 = 25$ cm.\n\n**Answer:** $25$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 25,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Isosceles triangle $PQR$ has $PQ = PR$ and $\\angle P = 40^\\circ$. The line from $P$ to the midpoint $M$ of $QR$ splits it into two congruent triangles (SSS). Find $\\angle PQR$.",
+    "answer": "$70^\\circ$",
+    "solution": "**Key idea:** Congruent triangles $PQM$ and $PRM$ give $\\angle Q = \\angle R$.\n\n1. $\\angle Q = \\angle R$ and they add to $180^\\circ - 40^\\circ = 140^\\circ$.\n2. So $\\angle PQR = 70^\\circ$.\n\n**Answer:** $70^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 70,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "In $\\triangle ABC$ and $\\triangle PQR$, $AB = PQ = 8$ cm, $\\angle B = \\angle Q = 90^\\circ$ and the hypotenuses $AC = PR = 17$ cm. The triangles are congruent by RHS. Given that $BC = 15$ cm, find the area of $\\triangle PQR$.",
+    "answer": "$60 \\text{ cm}^2$",
+    "solution": "**Key idea:** Congruent triangles have equal areas; use the two sides that meet at the right angle.\n\n1. $QR = BC = 15$ cm.\n2. Area $= \\frac{1}{2} \\times 8 \\times 15 = 60 \\text{ cm}^2$.\n\n**Answer:** $60 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 60,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "Straight segments $AB$ and $CD$ that cross at $M$, the midpoint of both. So $AM = MB = 5$ cm and $CM = MD = 7$ cm, and $\\triangle AMC \\cong \\triangle BMD$ (SAS).\n\n$AC = 9$ cm and $\\angle CAM = 50^\\circ$.\n\n(a) Find $BD$.\n\n(b) Find $\\angle DBM$.\n\n(c) Find the perimeter of $\\triangle BMD$.",
+    "answer": "(a) $9$ cm (b) $50^\\circ$ (c) $21$ cm",
+    "solution": "**Key idea:** Matching sides and angles of congruent triangles are equal.\n\n1. (a) $BD$ matches $AC$, so $BD = 9$ cm.\n2. (b) $\\angle DBM$ matches $\\angle CAM$, so it is $50^\\circ$.\n3. (c) $BM + MD + BD = 5 + 7 + 9 = 21$ cm.\n\n**Answer:** (a) $9$ cm (b) $50^\\circ$ (c) $21$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 50,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 21,
+      "unit": "cm"
+     }
+    ]
+   }
+  ],
+  "10F": [
+   {
+    "kind": "short",
+    "question": "Find the size of each interior angle of a regular octagon.",
+    "answer": "$135^\\circ$",
+    "solution": "**Key idea:** The interior angles of an $n$-sided polygon add to $(n - 2) \\times 180^\\circ$.\n\n1. Sum $= 6 \\times 180^\\circ = 1080^\\circ$.\n2. Each angle $= 1080^\\circ \\div 8 = 135^\\circ$.\n\n**Answer:** $135^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 135.0,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many regular hexagons meet at each vertex of a tessellation made only of regular hexagons?",
+    "answer": "$3$",
+    "solution": "**Key idea:** The angles meeting at a point in a tessellation add to $360^\\circ$.\n\n1. Each interior angle of a regular hexagon is $120^\\circ$.\n2. $360^\\circ \\div 120^\\circ = 3$.\n\n**Answer:** $3$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "How many equilateral triangles meet at each vertex of a tessellation made only of equilateral triangles?",
+    "answer": "$6$",
+    "solution": "**Key idea:** The angles meeting at a point in a tessellation add to $360^\\circ$.\n\n1. Each angle of an equilateral triangle is $60^\\circ$.\n2. $360^\\circ \\div 60^\\circ = 6$.\n\n**Answer:** $6$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two regular pentagons are placed side by side so that they share a vertex. What angle is left over at that vertex to make up $360^\\circ$?",
+    "answer": "$144^\\circ$",
+    "solution": "**Key idea:** Each interior angle of a regular pentagon is $108^\\circ$.\n\n1. $2 \\times 108^\\circ = 216^\\circ$.\n2. $360^\\circ - 216^\\circ = 144^\\circ$.\n\n**Answer:** $144^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 144.0,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A tiling has one regular hexagon, two squares and one other regular polygon meeting at each vertex. Find the size of the angle that the other polygon must fill.",
+    "answer": "$60^\\circ$",
+    "solution": "**Key idea:** The angles around a vertex add to $360^\\circ$.\n\n1. Hexagon $120^\\circ$ plus two squares $2 \\times 90^\\circ = 180^\\circ$ gives $300^\\circ$.\n2. $360^\\circ - 300^\\circ = 60^\\circ$ (an equilateral triangle).\n\n**Answer:** $60^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 60,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A semi-regular tessellation uses regular octagons and squares, with two octagons and one square at each vertex.\n\n(a) Find the interior angle of a regular octagon.\n\n(b) Find the sum of the angles at each vertex.\n\n(c) A rectangular patio uses $24$ octagonal tiles and $35$ square tiles. Each octagon has an area of $483 \\text{ cm}^2$ and each square has an area of $100 \\text{ cm}^2$. Find the total tiled area in square centimetres.",
+    "answer": "(a) $135^\\circ$ (b) $360^\\circ$ (c) $15\\,092 \\text{ cm}^2$",
+    "solution": "**Key idea:** In a tessellation the angles at each vertex add to $360^\\circ$.\n\n1. (a) $\\frac{6 \\times 180^\\circ}{8} = 135^\\circ$.\n2. (b) $135^\\circ + 135^\\circ + 90^\\circ = 360^\\circ$.\n3. (c) $24 \\times 483 + 35 \\times 100 = 11\\,592 + 3500 = 15\\,092 \\text{ cm}^2$.\n\n**Answer:** (a) $135^\\circ$ (b) $360^\\circ$ (c) $15\\,092 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 135,
+      "unit": "°"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 360,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 15092,
+      "unit": "cm²"
+     }
+    ]
+   }
+  ],
+  "10G": [
+   {
+    "kind": "short",
+    "question": "$ABCD$ is a parallelogram. $AB = 11$ cm, $BC = 6$ cm and $\\angle ABC = 115^\\circ$.\n\n(a) Find $CD$.\n\n(b) Find $\\angle ADC$.\n\n(c) Find $\\angle BCD$.",
+    "answer": "(a) $11$ cm (b) $115^\\circ$ (c) $65^\\circ$",
+    "solution": "**Key idea:** A diagonal splits a parallelogram into two congruent triangles, so opposite sides and opposite angles are equal; co-interior angles add to $180^\\circ$.\n\n1. (a) Opposite sides are equal: $CD = AB = 11$ cm.\n2. (b) Opposite angles are equal: $\\angle ADC = \\angle ABC = 115^\\circ$.\n3. (c) $\\angle BCD = 180^\\circ - 115^\\circ = 65^\\circ$ (co-interior angles).\n\n**Answer:** (a) $11$ cm (b) $115^\\circ$ (c) $65^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 11,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 115,
+      "unit": "°"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 65,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "The diagonals of parallelogram $PQRS$ meet at $M$. $PR = 18$ cm and $QM = 7$ cm. Find the length of $PM$ and the length of $QS$. Give your answer as $PM, QS$.",
+    "answer": "$9, 14$",
+    "solution": "**Key idea:** Congruent triangles show that the diagonals of a parallelogram bisect each other.\n\n1. $PM = \\frac{1}{2} \\times 18 = 9$ cm.\n2. $QS = 2 \\times 7 = 14$ cm.\n\n**Answer:** $9, 14$",
+    "key": [
+     {
+      "label": null,
+      "type": "list",
+      "values": [
+       9,
+       14
+      ]
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A rectangle $ABCD$ has diagonal $AC = 26$ cm. Congruent triangles $ABC$ and $BAD$ show that the diagonals are equal. Find the length of $BM$, where $M$ is the point where the diagonals meet.",
+    "answer": "$13$ cm",
+    "solution": "**Key idea:** The diagonals of a rectangle are equal and bisect each other.\n\n1. $BD = AC = 26$ cm.\n2. $BM = \\frac{1}{2} \\times 26 = 13$ cm.\n\n**Answer:** $13$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 13,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Rhombus $ABCD$ has diagonals $AC = 16$ cm and $BD = 12$ cm, which meet at right angles at $M$.\n\n(a) Find $AM$.\n\n(b) Find $BM$.\n\n(c) Find the area of the rhombus.",
+    "answer": "(a) $8$ cm (b) $6$ cm (c) $96 \\text{ cm}^2$",
+    "solution": "**Key idea:** The diagonals of a rhombus bisect each other at right angles, making four congruent right-angled triangles.\n\n1. (a) $AM = 16 \\div 2 = 8$ cm.\n2. (b) $BM = 12 \\div 2 = 6$ cm.\n3. (c) Four triangles of area $\\frac{1}{2} \\times 8 \\times 6 = 24$: $4 \\times 24 = 96 \\text{ cm}^2$.\n\n**Answer:** (a) $8$ cm (b) $6$ cm (c) $96 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 8,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 6,
+      "unit": "cm"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 96,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Kite $ABCD$ has $AB = AD$ and $CB = CD$. Triangles $ABC$ and $ADC$ are congruent (SSS). If $\\angle BAD = 70^\\circ$ and $\\angle BCD = 50^\\circ$, find $\\angle ABC$.",
+    "answer": "$120^\\circ$",
+    "solution": "**Key idea:** The congruent triangles give $\\angle ABC = \\angle ADC$; angles in a quadrilateral add to $360^\\circ$.\n\n1. $\\angle ABC + \\angle ADC = 360^\\circ - 70^\\circ - 50^\\circ = 240^\\circ$.\n2. They are equal, so $\\angle ABC = 120^\\circ$.\n\n**Answer:** $120^\\circ$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 120,
+      "unit": "°"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "$ABCD$ is a parallelogram with perimeter $50$ cm. Side $AB$ is $7$ cm longer than side $BC$.\n\n(a) Find the length of $BC$.\n\n(b) Find the length of $AB$.\n\n(c) $\\angle DAB = 62^\\circ$. Find $\\angle ABC$.",
+    "answer": "(a) $9$ cm (b) $16$ cm (c) $118^\\circ$",
+    "solution": "**Key idea:** Opposite sides of a parallelogram are equal; co-interior angles add to $180^\\circ$.\n\n1. (a) Let $BC = x$. Then $2x + 2(x + 7) = 50$, so $4x + 14 = 50$ and $x = 9$.\n2. (b) $AB = 9 + 7 = 16$ cm.\n3. (c) $\\angle ABC = 180^\\circ - 62^\\circ = 118^\\circ$.\n\n**Answer:** (a) $9$ cm (b) $16$ cm (c) $118^\\circ$",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 9,
+      "unit": "cm"
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 16,
+      "unit": "cm"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 118,
+      "unit": "°"
+     }
+    ]
+   }
+  ],
+  "10H": [
+   {
+    "kind": "short",
+    "question": "Rectangle $A$ is $4$ cm by $7$ cm. Rectangle $B$ is similar to $A$, and its shorter side is $10$ cm. Find the length of its longer side.",
+    "answer": "$17.5$ cm",
+    "solution": "**Key idea:** Find the scale factor from a pair of matching sides, then multiply.\n\n1. Scale factor $= 10 \\div 4 = 2.5$.\n2. Longer side $= 7 \\times 2.5 = 17.5$ cm.\n\n**Answer:** $17.5$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 17.5,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A photo $15$ cm wide and $10$ cm high is enlarged to be $45$ cm wide. The enlargement is similar to the original. What is the scale factor?",
+    "answer": "$3$",
+    "solution": "**Key idea:** Scale factor $=$ image length $\\div$ original length.\n\n1. $45 \\div 15 = 3$.\n\n**Answer:** $3$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A model of a house is built to a scale factor of $\\frac{1}{40}$. The real house is $9.6$ m tall. How tall is the model, in centimetres?",
+    "answer": "$24$ cm",
+    "solution": "**Key idea:** Multiply real lengths by the scale factor, and convert units.\n\n1. $9.6 \\text{ m} = 960 \\text{ cm}$.\n2. $960 \\div 40 = 24$ cm.\n\n**Answer:** $24$ cm",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 24,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "Two similar pentagons have matching sides of $6$ cm and $9$ cm.\n\n(a) Find the scale factor from the smaller pentagon to the larger.\n\n(b) The smaller pentagon has a perimeter of $28$ cm. Find the perimeter of the larger pentagon.",
+    "answer": "(a) $1.5$ (b) $42$ cm",
+    "solution": "**Key idea:** Every length in the larger figure is the scale factor times the matching length.\n\n1. (a) $9 \\div 6 = 1.5$.\n2. (b) $28 \\times 1.5 = 42$ cm.\n\n**Answer:** (a) $1.5$ (b) $42$ cm",
+    "key": [
+     {
+      "label": "a",
+      "type": "num",
+      "value": 1.5
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 42,
+      "unit": "cm"
+     }
+    ]
+   },
+   {
+    "kind": "short",
+    "question": "A smaller rectangle is similar to a $12$ cm by $20$ cm rectangle, with a scale factor of $0.75$. Find the area of the smaller rectangle.",
+    "answer": "$135 \\text{ cm}^2$",
+    "solution": "**Key idea:** Multiply each side by the scale factor, then find the area.\n\n1. Sides: $12 \\times 0.75 = 9$ cm and $20 \\times 0.75 = 15$ cm.\n2. Area $= 9 \\times 15 = 135 \\text{ cm}^2$.\n\n**Answer:** $135 \\text{ cm}^2$",
+    "key": [
+     {
+      "label": null,
+      "type": "num",
+      "value": 135,
+      "unit": "cm²"
+     }
+    ]
+   },
+   {
+    "kind": "extended",
+    "question": "A $3$ cm by $5$ cm rectangle is enlarged by a scale factor of $4$.\n\n(a) Find the dimensions of the enlarged rectangle. Give your answer as width, length.\n\n(b) Find the area of the enlarged rectangle.\n\n(c) How many times larger is the new area than the original area?",
+    "answer": "(a) $12, 20$ (b) $240 \\text{ cm}^2$ (c) $16$",
+    "solution": "**Key idea:** Lengths multiply by the scale factor $k$; areas multiply by $k^2$.\n\n1. (a) $3 \\times 4 = 12$ cm and $5 \\times 4 = 20$ cm.\n2. (b) $12 \\times 20 = 240 \\text{ cm}^2$.\n3. (c) Original area $15 \\text{ cm}^2$; $240 \\div 15 = 16$ (which is $4^2$).\n\n**Answer:** (a) $12, 20$ (b) $240 \\text{ cm}^2$ (c) $16$",
+    "key": [
+     {
+      "label": "a",
+      "type": "list",
+      "values": [
+       12,
+       20
+      ]
+     },
+     {
+      "label": "b",
+      "type": "num",
+      "value": 240,
+      "unit": "cm²"
+     },
+     {
+      "label": "c",
+      "type": "num",
+      "value": 16
+     }
+    ]
+   }
+  ]
+ }
+}
