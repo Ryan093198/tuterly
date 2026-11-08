@@ -32,7 +32,9 @@ export const EXAM_ZONE_VIDEO = {
   label: "Tuterly Exam Zone demo: add your test outline, a past paper and your teacher's notes, Tuterly analyses your test and writes a practice exam in your school's style, then marks it by topic so you can fix what you missed.",
 };
 
-export default function DemoVideo({ width = 340, placement = "demo", className = "", priority = false, video = DEMO_VIDEO }) {
+// Every page uses the Exam Zone demo (Ryan, 8 Nov 2026). DEMO_VIDEO (snap a
+// question) is kept in case a page wants it again.
+export default function DemoVideo({ width = 340, placement = "demo", className = "", priority = false, video = EXAM_ZONE_VIDEO }) {
   const ref = useRef(null);
   const [mode, setMode] = useState("video"); // video | anim | still
   const [paused, setPaused] = useState(false);
