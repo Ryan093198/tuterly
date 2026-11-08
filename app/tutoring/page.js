@@ -1,6 +1,6 @@
 import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
-import { AppHeroBlock } from "@/components/study/TutoringPageApp";
+import SuburbHero from "@/components/study/SuburbHero";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { SITE_URL } from "@/lib/site";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
@@ -38,20 +38,12 @@ export default function TutoringDirectory() {
       <MarketingNav />
 
       {/* HERO */}
-      <section style={{ padding: "72px 24px 56px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Maths tutoring across Melbourne</p>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              What works in maths tutoring, rebuilt as an app.
-            </h1>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              {STUDY_APP.name} is built by the team behind Bayside Academics, a Melbourne tutoring centre. It follows your child&rsquo;s own school: upload their test outline, past papers and class notes, and it works out what&rsquo;s on their next test and writes practice in their school&rsquo;s style. Then they fix every mistake until it&rsquo;s mastered. A private tutor usually costs ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour; {STUDY_APP.name} is ${STUDY_APP.priceWeek} a week at the launch price, 50% off until 31 March 2027. iPhone now, Android coming soon.
-            </p>
-            <AppHeroBlock placement="tutoring_hero" />
-          </Fade>
-        </div>
-      </section>
+      <SuburbHero
+        kicker="Maths tutoring across Melbourne · Years 7 to 10"
+        h1="What works in maths tutoring, rebuilt as an app."
+        lead={<>{STUDY_APP.name} is built by the team behind Bayside Academics, a Melbourne tutoring centre. It follows your child&rsquo;s own school: upload their test outline, past papers and class notes, and it works out what&rsquo;s on their next test and writes practice in their school&rsquo;s style. Then they fix every mistake until it&rsquo;s mastered. A private tutor usually costs ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour; {STUDY_APP.name} is ${STUDY_APP.priceWeek} a week at the launch price, 50% off until 31 March 2027. iPhone now, Android coming soon.</>}
+        placement="tutoring_hero"
+      />
 
       {/* SUBURB LIST */}
       <section style={{ padding: "56px 24px", background: c.offWhite }}>

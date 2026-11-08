@@ -16,7 +16,7 @@ import {
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
-import { AppHeroBlock } from "@/components/study/TutoringPageApp";
+import SuburbHero from "@/components/study/SuburbHero";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
@@ -132,23 +132,14 @@ export default async function SuburbPage({ params }) {
       <MarketingNav />
 
       {/* HERO */}
-      <section style={{ padding: "72px 24px 56px", background: c.white }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <p style={kicker}>Maths tutoring in {data.name} · Years 7 to 10</p>
-            <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Maths help for {data.name} students that follows their own school.
-            </h1>
-            <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              {schoolList
-                ? `Whether your child is at ${schoolList}, ${name} works from their own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`
-                : `${name} works from your child's own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`}{" "}
-              It&rsquo;s built by the team behind Bayside Academics, a Melbourne tutoring centre, and puts what works in tutoring into an iPhone app (Android coming soon).
-            </p>
-            <AppHeroBlock placement="suburb_hero" />
-          </Fade>
-        </div>
-      </section>
+      <SuburbHero
+        kicker={`Maths tutoring in ${data.name} · Years 7 to 10`}
+        h1={`Maths help for ${data.name} students that follows their own school.`}
+        lead={`${schoolList
+          ? `Whether your child is at ${schoolList}, ${name} works from their own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`
+          : `${name} works from your child's own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`} It's built by the team behind Bayside Academics, a Melbourne tutoring centre, and puts what works in tutoring into an iPhone app (Android coming soon).`}
+        placement="suburb_hero"
+      />
 
       {/* BUILT BY TUTORS */}
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
