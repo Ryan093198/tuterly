@@ -106,6 +106,8 @@ const STATIC_PAGES = [
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
   { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/parents/maths-tutoring-cost-australia", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/parents/tutero-review", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/cluey-learning-review", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/preparing-for-maths-topic-tests", priority: 0.8, changeFrequency: "monthly" },
   { path: "/tutoring", priority: 0.7, changeFrequency: "weekly" },
