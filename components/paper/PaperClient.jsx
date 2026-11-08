@@ -91,8 +91,14 @@ export default function PaperClient({ paper }) {
       <header className="sh-hero pp-hero" ref={topRef}>
         <p className="sh-eyebrow">{paper.year} maths · Practice test</p>
         <h1>{paper.title}</h1>
-        <p className="sh-lead"><strong>Topics:</strong> {paper.topics.join(", ")}</p>
-        <p className="pp-meta">{paper.questionCount} questions · {paper.totalMarks} marks · about {paper.minutes} minutes</p>
+        <ul className="pp-chips" aria-label="Topics">
+          {paper.chapters.map((c) => <li key={c}>{c}</li>)}
+        </ul>
+        <dl className="pp-facts">
+          <div><dt>Questions</dt><dd>{paper.questionCount}</dd></div>
+          <div><dt>Marks</dt><dd>{paper.totalMarks}</dd></div>
+          <div><dt>Time</dt><dd>about {paper.minutes} min</dd></div>
+        </dl>
         {!result && <p className="pp-inst">Work each question out on paper, then type your answer in the box. When you&rsquo;ve finished, press <strong>Mark my test</strong> to get your mark and the worked solutions.</p>}
       </header>
 

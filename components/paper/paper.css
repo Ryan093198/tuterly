@@ -31,6 +31,12 @@
 
 /* ---------- student paper ---------- */
 .pp-hero { padding-bottom: 8px; }
+.pp-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; margin: 14px auto 0; max-width: 760px; }
+.pp-chips li { background: var(--brand-soft); color: var(--brand-text); border: 1px solid var(--brand); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 700; line-height: 1.3; }
+.pp-facts { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 16px 0 0; }
+.pp-facts div { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 8px 16px; min-width: 96px; text-align: center; }
+.pp-facts dt { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+.pp-facts dd { margin: 2px 0 0; font-size: 17px; font-weight: 800; }
 .pp-meta { margin: 6px 0 0; color: var(--muted); font-size: 14.5px; }
 .pp-inst { margin: 14px 0 0; font-size: 15px; line-height: 1.55; max-width: 680px; }
 .pp-hero__btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
@@ -97,3 +103,8 @@
 /* sh-wrap has no side padding of its own; give the paper pages a gutter. */
 .pp-wrap, .pp-sols, .pp-score { padding-left: 20px; padding-right: 20px; box-sizing: border-box; }
 @media (max-width: 600px) { .pp-wrap, .pp-sols, .pp-score { padding-left: 16px; padding-right: 16px; } }
+@media (max-width: 480px) {
+  .pp-facts { flex-wrap: nowrap; gap: 6px; }
+  .pp-facts div { min-width: 0; flex: 1 1 0; padding: 8px 6px; }
+  .pp-facts dd { font-size: 15px; }
+}

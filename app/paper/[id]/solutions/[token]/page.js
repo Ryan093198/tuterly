@@ -5,7 +5,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import MathMd from "@/components/maths/MathMd";
 import PrintButton from "@/components/paper/PrintButton";
-import { loadPaper, paperPath } from "@/lib/teacher-papers";
+import { loadPaper, paperPath, paperChapters } from "@/lib/teacher-papers";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
 import "@/components/paper/paper.css";
@@ -34,8 +34,14 @@ export default async function SolutionsPage({ params }) {
         <h1>{ok ? row.title : "We couldn’t find these answers"}</h1>
         {ok ? (
           <>
-            <p className="sh-lead"><strong>Topics:</strong> {row.topics.join(", ")}</p>
-            <p className="pp-meta">{row.question_count} questions · {row.total_marks} marks · about {row.minutes} minutes</p>
+            <ul className="pp-chips" aria-label="Topics">
+              {paperChapters(row.year_level, row.topics).map((c) => <li key={c}>{c}</li>)}
+            </ul>
+            <dl className="pp-facts">
+              <div><dt>Questions</dt><dd>{row.question_count}</dd></div>
+              <div><dt>Marks</dt><dd>{row.total_marks}</dd></div>
+              <div><dt>Time</dt><dd>about {row.minutes} min</dd></div>
+            </dl>
             <div className="pp-hero__btns">
               <Link href={paperPath(row.id)} className="tb-btn tb-btn--secondary">Open the student paper</Link>
               <PrintButton />
