@@ -14,14 +14,14 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 const DESCRIPTION =
-  "Tutoring across Melbourne: a private tutor usually costs $80 to $100 an hour. For Years 7 to 10 maths, Tuterly lets your child practise the exact questions they get wrong.";
+  "Maths tutoring across Melbourne, rebuilt as an app for Years 7 to 10. Built by the team behind Bayside Academics, Tuterly follows your child's own school: their tests, past papers and class notes.";
 
 export const metadata = {
-  title: { absolute: "Tutoring across Melbourne | Tuterly" },
+  title: { absolute: "Maths Tutoring Across Melbourne, Years 7 to 10, in an App | Tuterly" },
   description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/tutoring` },
   openGraph: { images: ["/og-tuterly.png"],
-    title: "Tutoring across Melbourne | Tuterly",
+    title: "Maths Tutoring Across Melbourne, Years 7 to 10, in an App | Tuterly",
     description: DESCRIPTION,
     url: `${SITE_URL}/tutoring`,
     type: "website",
@@ -41,12 +41,12 @@ export default function TutoringDirectory() {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Tutoring across Melbourne</p>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Maths tutoring across Melbourne</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Tutoring across Melbourne.
+              What works in maths tutoring, rebuilt as an app.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              Across Melbourne, help with maths usually comes down to two options: a private tutor, usually ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour, or regular practice on the exact questions your child gets wrong. For Years 7 to 10, {STUDY_APP.name} is an iPhone app (Android coming soon) that does the practice part, from ${STUDY_APP.priceWeek} a week at the launch price.
+              {STUDY_APP.name} is built by the team behind Bayside Academics, a Melbourne tutoring centre. It follows your child&rsquo;s own school: upload their test outline, past papers and class notes, and it works out what&rsquo;s on their next test and writes practice in their school&rsquo;s style. Then they fix every mistake until it&rsquo;s mastered. A private tutor usually costs ${PRICING.tutorCompareLow} to ${PRICING.tutorCompareHigh} an hour; {STUDY_APP.name} is ${STUDY_APP.priceWeek} a week at the launch price, 50% off until 31 March 2027. iPhone now, Android coming soon.
             </p>
             <AppHeroBlock placement="tutoring_hero" />
           </Fade>
@@ -59,10 +59,10 @@ export default function TutoringDirectory() {
           <Fade>
             <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Suburb guides</p>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 30, color: c.navy, marginBottom: 24, lineHeight: 1.25 }}>
-              Tutoring in your suburb.
+              Maths help in your suburb.
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 20 }}>
-              Each guide covers the local schools, what families in that suburb usually look for, and where {STUDY_APP.name} fits.
+              Each guide covers the local schools, what families in that suburb usually look for, and how {STUDY_APP.name} follows each school&rsquo;s tests.
             </p>
             {live.length === 0 ? (
               <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7 }}>

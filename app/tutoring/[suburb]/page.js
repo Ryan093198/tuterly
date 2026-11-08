@@ -22,7 +22,14 @@ import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import LaunchPrice from "@/components/study/LaunchPrice";
 
-// /tutoring/[suburb] - programmatic SEO landing pages. Each page still
+// /tutoring/[suburb] - suburb landing pages.
+// 9 Nov 2026 (Ryan): reframed around Tuterly itself: it follows each
+// child's own school (their tests, past papers and class notes, via Exam
+// Zone), and it's built from what the Bayside Academics tutors know works.
+// Local content (schools, what families look for) comes from
+// lib/seo-suburbs.js, so each page is genuinely about that suburb.
+//
+// Previously: Each page still
 // answers "tutoring in <suburb>" for Melbourne parents, but since Oct 2026
 // the tutor marketplace is paused and the only call to action is the
 // Tuterly app (Years 7 to 10 maths). Static content per suburb comes
@@ -49,8 +56,9 @@ export async function generateMetadata({ params }) {
   const { suburb: slug } = await params;
   const data = getSeoSuburb(slug);
   if (!data) return {};
-  const title = `Tutoring in ${data.name} | Tuterly`;
-  const description = `Tutoring in ${data.name}: a private tutor usually costs $${PRICING.tutorCompareLow} to $${PRICING.tutorCompareHigh} an hour. For Years 7 to 10 maths, ${STUDY_APP.name} lets your child practise the exact questions they get wrong.`;
+  const title = `Maths Tutoring in ${data.name}, Years 7 to 10, in an App | Tuterly`;
+  const first = data.schools?.[0]?.name;
+  const description = `Maths help for ${data.name} students in Years 7 to 10${first ? `, including ${first}` : ""}. Built by Melbourne tutors, Tuterly follows your child's own school: their tests, past papers and class notes. Launch price: 50% off until 31 March 2027.`;
   const url = `${SITE_URL}/tutoring/${slug}`;
   const robots = isPublishable(data)
     ? undefined
@@ -76,11 +84,27 @@ export default async function SuburbPage({ params }) {
   const name = STUDY_APP.name;
   const low = PRICING.tutorCompareLow;
   const high = PRICING.tutorCompareHigh;
+  const schoolNames = (data.schools || []).map((x) => x.name).slice(0, 3);
+  const schoolList = schoolNames.length > 1 ? `${schoolNames.slice(0, -1).join(", ")} or ${schoolNames[schoolNames.length - 1]}` : schoolNames[0] || "";
+  const faqs = [
+    {
+      q: `Is ${name} a tutoring service in ${data.name}?`,
+      a: `${name} is an app, not a tutor who comes to your home. It's built by the team behind Bayside Academics, a tutoring centre in Brighton, and turns what works in their sessions into daily practice: find the exact mistake, explain it, practise a fresh version until it sticks, and prepare for the way your school writes its tests. If you'd like a tutor in person, Bayside Academics tutors in Melbourne's bayside suburbs.`,
+    },
+    {
+      q: `Does it follow what ${schoolNames[0] || `my child's school in ${data.name}`} teaches?`,
+      a: `Yes. Topics follow the Victorian Curriculum for Years 7 to 10 maths, and Exam Zone works from your child's own school: upload the test outline, past papers and class notes, and ${name} writes practice exams in the same style before the real one. Every school sets its tests a little differently, so it follows theirs.`,
+    },
+    {
+      q: `How much does it cost compared with a tutor in ${data.name}?`,
+      a: `A private maths tutor in Melbourne usually costs $${low} to $${high} an hour. ${name} is ${STUDY_APP.priceLine}, and your child can use it any day of the week. Some families use both.`,
+    },
+  ];
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Tutoring in ${data.name}`,
+    name: `Maths tutoring in ${data.name}, Years 7 to 10`,
     url: `${SITE_URL}/tutoring/${slug}`,
     contentLocation: { "@type": "Place", name: `${data.name}, Victoria, Australia` },
     about: {
@@ -100,6 +124,10 @@ export default async function SuburbPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }) }}
+      />
 
       <MarketingNav />
 
@@ -107,21 +135,49 @@ export default async function SuburbPage({ params }) {
       <section style={{ padding: "72px 24px 56px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
-            <p style={kicker}>Tutoring in {data.name}</p>
+            <p style={kicker}>Maths tutoring in {data.name} · Years 7 to 10</p>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: 44, color: c.navy, lineHeight: 1.15, marginBottom: 20 }}>
-              Tutoring in {data.name}
+              Maths help for {data.name} students that follows their own school.
             </h1>
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, marginBottom: 24 }}>
-              {data.blurb ||
-                `Looking for tutoring in ${data.name}? Help with maths usually comes down to a private tutor or regular practice on the exact questions they get wrong. For Years 7 to 10, ${name} is an iPhone app (Android coming soon) that does the practice part.`}
+              {schoolList
+                ? `Whether your child is at ${schoolList}, ${name} works from their own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`
+                : `${name} works from your child's own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`}{" "}
+              It&rsquo;s built by the team behind Bayside Academics, a Melbourne tutoring centre, and puts what works in tutoring into an iPhone app (Android coming soon).
             </p>
             <AppHeroBlock placement="suburb_hero" />
           </Fade>
         </div>
       </section>
 
-      {/* TUTOR OR APP */}
+      {/* BUILT BY TUTORS */}
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <Fade>
+            <p style={kicker}>From Melbourne tutors</p>
+            <h2 style={h2}>What works in a tutoring session, rebuilt as an app.</h2>
+            <p style={{ ...body, marginBottom: 16 }}>
+              {name} comes from the team behind Bayside Academics, a tutoring centre in Brighton. Years of one-on-one sessions showed us what actually moves a maths mark, and it&rsquo;s rarely another worksheet:
+            </p>
+          </Fade>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+            {[
+              ["Start with their mistakes", "A good tutor looks at what your child got wrong first. In the app, they snap it and see exactly where it went wrong."],
+              ["Practise until it sticks", "Then a fresh question on the same idea, and another, until it's mastered, not just explained once."],
+              ["Prepare for their school's test", "Tutors use the school's own outline and past papers. Exam Zone does the same, and writes practice exams in that style."],
+              ["Keep parents in the loop", "A weekly summary of what was practised and mastered, like a tutor's note after each session."],
+            ].map(([t, x]) => (
+              <div key={t} style={{ background: c.white, borderRadius: 16, border: `1px solid ${c.border}`, padding: "18px 18px" }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 700, color: c.navy, marginBottom: 6 }}>{t}</p>
+                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.6 }}>{x}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TUTOR OR APP */}
+      <section style={{ padding: "56px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <Fade>
             <p style={kicker}>What families are choosing between</p>
@@ -178,12 +234,12 @@ export default async function SuburbPage({ params }) {
         <section style={{ padding: "56px 24px", background: c.offWhite }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <Fade>
-              <p style={kicker}>Schools in the area</p>
+              <p style={kicker}>Follows your child&rsquo;s school</p>
               <h2 style={h2}>
-                Schools in and around {data.name}.
+                Every school in {data.name} tests maths a little differently.
               </h2>
               <p style={{ ...body, marginBottom: 20 }}>
-                {name} topics follow the {STUDY_APP_FACTS.curriculum} for Years 7 to 10 maths. Whichever school your child attends, they can upload their real tests, so their practice comes from what their own teacher set.
+                The topics follow the {STUDY_APP_FACTS.curriculum}, but each school chooses its own order, its own question style and its own tests. Upload your child&rsquo;s test outline, past papers and teacher&rsquo;s notes, and Exam Zone works out what&rsquo;s on their next test and writes practice exams in their school&rsquo;s style, before the real one. Schools in and around {data.name}:
               </p>
               <ul style={{ display: "grid", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
                 {data.schools.map((s) => (
@@ -193,6 +249,9 @@ export default async function SuburbPage({ params }) {
                   </li>
                 ))}
               </ul>
+              <p style={{ ...body, fontSize: 15, marginTop: 16 }}>
+                <Link href="/features/exam-zone" style={{ color: c.teal, fontWeight: 700 }}>See how Exam Zone works →</Link>
+              </p>
             </Fade>
           </div>
         </section>
@@ -226,11 +285,26 @@ export default async function SuburbPage({ params }) {
         </section>
       </div>
 
+      {/* FAQ */}
+      <section style={{ padding: "56px 24px", background: c.white }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <p style={kicker}>Questions from {data.name} parents</p>
+          <div style={{ display: "grid", gap: 12 }}>
+            {faqs.map((f) => (
+              <div key={f.q} style={{ background: c.offWhite, borderRadius: 14, border: `1px solid ${c.border}`, padding: "18px 20px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: c.navy, marginBottom: 6 }}>{f.q}</h3>
+                <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.65 }}>{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* NEARBY SUBURBS - INTERNAL LINKS */}
       {neighbours.length > 0 && (
         <section style={{ padding: "48px 24px 72px", background: c.offWhite }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
-            <p style={kicker}>Tutoring in nearby suburbs</p>
+            <p style={kicker}>Maths help in nearby suburbs</p>
             <ul style={{ display: "flex", flexWrap: "wrap", gap: 8, listStyle: "none", padding: 0, margin: 0 }}>
               {neighbours.map((n) => (
                 <li key={n.slug}>
