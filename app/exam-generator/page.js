@@ -64,7 +64,7 @@ export default function ExamGeneratorPage() {
           <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question. Free, one exam a day.</p>
         </div>
         <figure className="eg-hero__video">
-          <DemoVideo width={250} placement="exam_generator_hero" video={EXAM_ZONE_VIDEO} />
+          <DemoVideo width={250} placement="exam_generator_hero" priority video={EXAM_ZONE_VIDEO} />
           <figcaption>
             Exam Zone in the Tuterly app writes practice exams from your own test outline.{" "}
             <a href="#eg-app" className="sh-link">How it compares</a>

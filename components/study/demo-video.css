@@ -1,2 +1,9 @@
 .dv { width: min(var(--dv-w, 340px), 78vw); aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(11, 26, 44, 0.45), 0 0 0 1px rgba(11, 26, 44, 0.06); background: #e6f7fb; position: relative; z-index: 1; }
 .dv__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dv__video { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.dv__play {
+  position: absolute; inset: 0; margin: auto; width: 72px; height: 72px; border-radius: 50%;
+  display: grid; place-items: center; border: 0; cursor: pointer;
+  background: rgba(11, 26, 44, 0.72); color: #fff; box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
+}
+.dv__play svg { margin-left: 4px; }
