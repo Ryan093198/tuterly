@@ -7,6 +7,7 @@ import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@
 import { FEATURES } from "@/lib/feature-pages";
 import TryCta from "@/components/study/TryCta";
 import DifferentQuestions from "@/components/study/DifferentQuestions";
+import DemoVideo from "@/components/study/DemoVideo";
 import "./study-landing.css";
 import "./features.css";
 
@@ -43,7 +44,11 @@ export default function FeaturePage({ feature }) {
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
-            <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={290} priority sizes="(max-width: 899px) 60vw, 290px" className="sl-hero__phone" />
+            {f.video ? (
+              <DemoVideo width={320} placement={`${placement}_hero`} priority video={f.video} />
+            ) : (
+              <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={290} priority sizes="(max-width: 899px) 60vw, 290px" className="sl-hero__phone" />
+            )}
           </div>
         </div>
       </section>

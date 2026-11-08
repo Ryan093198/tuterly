@@ -14,7 +14,15 @@ export const DEMO_VIDEO = {
   label: "Tuterly demo: snap a question your child got wrong, see the worked solution, practise fresh questions until it's mastered, then test the whole topic.",
 };
 
-export default function DemoVideo({ width = 340, placement = "demo", className = "", priority = false }) {
+// The 26-second Exam Zone demo (8 Nov 2026), from real app screens of a
+// demo student and made-up test materials (marketing/exam-zone-demo).
+export const EXAM_ZONE_VIDEO = {
+  src: "/videos/tuterly-exam-zone-demo.mp4",
+  poster: "/videos/tuterly-exam-zone-demo-poster.jpg",
+  label: "Tuterly Exam Zone demo: add your test outline, a past paper and your teacher's notes, Tuterly analyses your test and writes a practice exam in your school's style, then marks it by topic so you can fix what you missed.",
+};
+
+export default function DemoVideo({ width = 340, placement = "demo", className = "", priority = false, video = DEMO_VIDEO }) {
   const ref = useRef(null);
   const [still, setStill] = useState(false);
   const seen = useRef(false);
@@ -44,13 +52,13 @@ export default function DemoVideo({ width = 340, placement = "demo", className =
       <video
         ref={ref}
         className="dv__video"
-        src={DEMO_VIDEO.src}
-        poster={DEMO_VIDEO.poster}
+        src={video.src}
+        poster={video.poster}
         muted
         loop
         playsInline
         preload={priority ? "auto" : "metadata"}
-        aria-label={DEMO_VIDEO.label}
+        aria-label={video.label}
         controls={still}
       />
     </div>

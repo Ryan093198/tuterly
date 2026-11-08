@@ -50,6 +50,7 @@ const STATIC_PAGES = [
   { path: "/naplan/year-7-numeracy/practice-test.pdf", priority: 0.6, changeFrequency: "monthly" },
   { path: "/naplan/year-9-numeracy/practice-test.pdf", priority: 0.6, changeFrequency: "monthly" },
   { path: "/features", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/features/exam-zone", priority: 0.8, changeFrequency: "monthly" },
   { path: "/features/snap-a-question", priority: 0.7, changeFrequency: "monthly" },
   { path: "/features/topic-check", priority: 0.7, changeFrequency: "monthly" },
   { path: "/features/study-notes", priority: 0.7, changeFrequency: "monthly" },

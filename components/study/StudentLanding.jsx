@@ -1,4 +1,4 @@
-import DemoVideo from "@/components/study/DemoVideo";
+import DemoVideo, { EXAM_ZONE_VIDEO } from "@/components/study/DemoVideo";
 import Link from "next/link";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import MarketingNav from "@/components/marketing/MarketingNav";
@@ -49,10 +49,12 @@ const STEPS = [
 // Exam Zone: practice exams written from the student's own test materials.
 // Facts from the features doc (7 Nov 2026). Headline wording is Ryan's call
 // (7 Nov 2026); the FAQ says plainly it can't promise the exact questions.
+const EZ = `${S}/flow-exam-zone`;
 const EXAM_STEPS = [
-  { n: "1", title: "Add what you’ve got", text: "Your test outline, past papers and your teacher’s notes. Photos, a PDF or a Word file. Nothing yet? Pick up to 6 topics." },
-  { n: "2", title: "Tuterly analyses your test", text: "It works out what’s on your test and how your school writes its questions, and the match meter shows how close it can get." },
-  { n: "3", title: "Sit your exam before the exam", text: "Tuterly creates a brand new practice exam in your school’s style. Marked by topic, with a worked solution for every question." },
+  { src: `${EZ}/02-great-match.png`, alt: "Exam Zone with a test outline and a past paper read, and the match meter at Great match", title: "Add what you’ve got", text: "Your outline, past papers and teacher’s notes. The match meter shows how close it can get." },
+  { src: `${EZ}/03-exam-set-up.png`, alt: "The exam set up: Term 4 topic test on Thu 19 Nov, the two topics on the test, and the style of the school’s paper", title: "Tuterly analyses your test", text: "It finds the topics and the test date, and reads how your school writes its questions." },
+  { src: `${EZ}/05-marked-by-topic.png`, alt: "A practice exam marked 14 out of 20, with marks for each topic", title: "Sit your exam before the exam", text: "A brand new practice exam in your school’s style, marked by topic." },
+  { src: `${EZ}/07-fix-what-you-missed.png`, alt: "Fix what you missed: each wrong question with Try again and Similar one", title: "Fix what you missed", text: "Redo each one you got wrong, or try a similar question, until it sticks." },
 ];
 
 const EXAM_FEATURES = [
@@ -82,26 +84,6 @@ const MORE_FEATURES = [
   { icon: "streak", tone: "streak", title: "Goals, streaks and Quinn", text: "Weekly goals, XP and stars. Master a topic to unlock a new accessory for Quinn the quokka." },
 ];
 
-function ExamCard() {
-  return (
-    <div className="ezc" aria-label="Example: an Exam Zone practice exam built from a test outline and a past paper">
-      <p className="ezc__k">Exam Zone</p>
-      <p className="ezc__t">Year 9 maths test: Linear relationships</p>
-      <ul className="ezc__files">
-        <li><span aria-hidden="true">✓</span> Test outline</li>
-        <li><span aria-hidden="true">✓</span> Past paper</li>
-        <li><span aria-hidden="true">✓</span> Teacher’s notes</li>
-      </ul>
-      <p className="ezc__m">Match meter <strong>Great match</strong></p>
-      <div className="ezc__bar" aria-hidden="true"><span /></div>
-      <div className="ezc__ready">
-        <span className="ezc__badge">Practice exam ready</span>
-        <span>20 questions · your test is in 6 days</span>
-      </div>
-    </div>
-  );
-}
-
 function ExamZoneSection({ placement }) {
   return (
     <section id="exam-zone" className="tb-section tb-section--card" aria-labelledby="stl-exam">
@@ -114,22 +96,17 @@ function ExamZoneSection({ placement }) {
             lead="Your teacher has already told you most of what’s coming: it’s in the outline, the past papers and the notes. Tuterly analyses all of it and creates practice exams you can sit first."
           />
         </Reveal>
-        <ol className="ezs">
-          {EXAM_STEPS.map((st) => (
-            <li key={st.n} className="ezs__step">
-              <span className="ezs__n" aria-hidden="true">{st.n}</span>
-              <p className="ezs__t">{st.title}</p>
-              <p className="ezs__x">{st.text}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="tb-tiles tb-tiles--3 ezs__tiles">
+        <FlowSteps steps={EXAM_STEPS} label="Exam Zone, how it works" />
+        <div className="tb-tiles tb-tiles--3 ezs__tiles" style={{ marginTop: 28 }}>
           {EXAM_FEATURES.map((t) => (
             <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
           ))}
         </div>
         <p className="ezs__note">
           Is it cheating? No. It’s the practice exam your teacher never gave you. You still have to do the maths, and the answers stay hidden until you’ve had a go.
+        </p>
+        <p className="stl-other">
+          Parents: <Link href="/features/exam-zone" className="tb-link">see how Exam Zone works</Link>.
         </p>
       </div>
     </section>
@@ -183,7 +160,7 @@ export default function StudentLanding({ year = null }) {
           </div>
           <div className="sl-hero__visual">
             <div className="sl-hero__blob" aria-hidden="true" />
-            {year ? <DemoVideo width={330} placement="students_hero" priority /> : <ExamCard />}
+            {year ? <DemoVideo width={330} placement="students_hero" priority /> : <DemoVideo width={330} placement="students_hero_exam_zone" priority video={EXAM_ZONE_VIDEO} />}
           </div>
         </div>
       </section>
