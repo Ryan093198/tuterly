@@ -78,3 +78,12 @@
 .eg-cmp tr:last-child th, .eg-cmp tr:last-child td { border-bottom: 0; }
 .eg-cmp__app { background: var(--brand-soft, #e6f6fa); box-shadow: inset 4px 0 0 var(--brand, #0fa3c4); font-weight: 700; }
 .eg-app__cta { max-width: 640px; }
+
+/* Exam generator hero with the Exam Zone video */
+.eg-hero { max-width: 1040px; display: grid; gap: 22px; justify-items: center; }
+.eg-hero__video { margin: 0; display: grid; justify-items: center; gap: 10px; }
+.eg-hero__video figcaption { max-width: 280px; font-size: 14px; line-height: 1.45; color: var(--muted, #5b6b7b); text-align: center; }
+@media (min-width: 860px) {
+  .eg-hero { grid-template-columns: 1fr auto; align-items: center; text-align: left; gap: 48px; }
+  .eg-hero__copy .sh-lead { margin-left: 0; }
+}

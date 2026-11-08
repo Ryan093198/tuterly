@@ -3,6 +3,7 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import DemoVideo, { EXAM_ZONE_VIDEO } from "@/components/study/DemoVideo";
 import ExamGenerator from "@/components/exam/ExamGenerator";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { SITE_URL } from "@/lib/site";
@@ -56,10 +57,19 @@ export default function ExamGeneratorPage() {
     <div className="sh">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <MarketingNav />
-      <header className="sh-hero">
-        <p className="sh-eyebrow">Free practice exam generator</p>
-        <h1>Make a free maths practice exam, Years 7 to 10</h1>
-        <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question. Free, one exam a day.</p>
+      <header className="sh-hero eg-hero">
+        <div className="eg-hero__copy">
+          <p className="sh-eyebrow">Free practice exam generator</p>
+          <h1>Make a free maths practice exam, Years 7 to 10</h1>
+          <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question. Free, one exam a day.</p>
+        </div>
+        <figure className="eg-hero__video">
+          <DemoVideo width={250} placement="exam_generator_hero" video={EXAM_ZONE_VIDEO} />
+          <figcaption>
+            Exam Zone in the Tuterly app writes practice exams from your own test outline.{" "}
+            <a href="#eg-app" className="sh-link">How it compares</a>
+          </figcaption>
+        </figure>
       </header>
       <main className="sh-gen" style={{ maxWidth: 1000 }}>
         <ExamGenerator catalogue={getExamCatalogue()} placement="exam_generator" />
