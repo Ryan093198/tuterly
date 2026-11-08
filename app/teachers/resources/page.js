@@ -2,7 +2,7 @@ import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 import { CHAPTER_YEARS, chaptersForYear } from "@/lib/chapter-pages";
-import { teacherChapterPath, chapterPrintables, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
+import { teacherChapterPath, chapterPrintables, chapterMindMap, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
 import "@/components/maths/maths.css";
 import "@/components/paper/paper.css";
 
@@ -23,7 +23,7 @@ export default function TeacherResourcesHub() {
       crumbs={[{ name: "For teachers", path: "/teachers" }, { name: "Teaching resources", path: PATH }]}
       eyebrow="For teachers · Years 7 to 10"
       h1="Free maths teaching resources, Years 7 to 10"
-      lead="Pick a year and chapter for printable worksheets and topic tests with answers, a printable exam, or an auto-marked test you can share with your class."
+      lead="Pick a year and chapter for printable worksheets and topic tests with answers, a revision mind map, a printable exam, or an auto-marked test you can share with your class."
       quickAnswer="Every chapter from Year 7 to Year 10 (and 10A) has its own page, named the same way as the textbook most Victorian schools use, with free printables and a one-click auto-marked test."
       toc={CHAPTER_YEARS.map((y) => [y.slug, y.label])}
       ctaTitle="Practice at home for your students"
@@ -54,7 +54,7 @@ export default function TeacherResourcesHub() {
                 return (
                   <Link key={c.slug} href={teacherChapterPath(c)} className="ct-card">
                     <span className="ct-card__t">{c.name}</span>
-                    <span className="ct-card__x">{c.sections.length} topics{n ? ` · ${n} printable worksheet${n === 1 ? "" : "s"}` : ""} · auto-marked tests</span>
+                    <span className="ct-card__x">{c.sections.length} topics{n ? ` · ${n} printable worksheet${n === 1 ? "" : "s"}` : ""}{chapterMindMap(c) ? " · mind map" : ""} · auto-marked tests</span>
                   </Link>
                 );
               })}

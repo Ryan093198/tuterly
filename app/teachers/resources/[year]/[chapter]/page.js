@@ -5,7 +5,7 @@ import { getChapterPages, chaptersForYear } from "@/lib/chapter-pages";
 import { SHEET_QUESTIONS } from "@/lib/topic-test-files";
 import {
   getTeacherChapter, teacherChapterPath, chapterPrintables, teacherZoneHref, printableExamHref,
-  CLASS_USES, TEACHER_RESOURCES_PATH,
+  CLASS_USES, TEACHER_RESOURCES_PATH, chapterMindMap,
 } from "@/lib/teacher-resources";
 import "@/components/maths/maths.css";
 import "@/components/paper/paper.css";
@@ -25,7 +25,7 @@ function meta(c) {
   const subs = c.sections.slice(0, 3).map((s) => s.name.toLowerCase()).join(", ");
   return {
     title: `${c.yearLabel} ${titleCase(c.name)} Teaching Resources: Worksheets and Tests | Tuterly`,
-    description: `Free ${c.yearLabel} ${c.name.toLowerCase()} teaching resources: printable worksheets and topic tests with answers, plus an auto-marked test to share with your class. Covers ${subs} and more.`,
+    description: `Free ${c.yearLabel} ${c.name.toLowerCase()} teaching resources: printable worksheets and topic tests with answers, a revision mind map, and an auto-marked test to share with your class. Covers ${subs} and more.`,
   };
 }
 
@@ -45,6 +45,7 @@ export default async function TeacherChapterPage({ params }) {
   const { title, description } = meta(c);
   const path = teacherChapterPath(c);
   const sheets = chapterPrintables(c);
+  const map = chapterMindMap(c);
   const isTen = c.fileYear === "Year 10A";
   const ext = c.sections.filter((s) => s.extension);
   const others = chaptersForYear(c.yearSlug).filter((o) => o.slug !== c.slug);
@@ -71,6 +72,7 @@ export default async function TeacherChapterPage({ params }) {
         ["set", "Set it for your class"],
         ["covered", "What's covered"],
         ...(sheets.length ? [["printables", "Worksheets and tests"]] : []),
+        ...(map ? [["mind-map", "Revision mind map"]] : []),
         ["ideas", "Ideas for class"],
         ["faq", "FAQ"],
       ]}
@@ -151,7 +153,26 @@ export default async function TeacherChapterPage({ params }) {
         </section>
       )}
 
-      <section id="ideas" className="tb-section tb-section--card" aria-labelledby="h-ideas">
+      {map && (
+        <section id="mind-map" className="tb-section tb-section--card" aria-labelledby="h-map">
+          <div className="tb-wrap pg-narrow">
+            <h2 id="h-map" className="tb-h2 pg-h2">Revision mind map</h2>
+            <div className="tr-map">
+              <Link href={map.path} className="tr-map__img" aria-label={`${c.yearLabel} ${map.title} mind map`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={map.preview} alt={`${c.yearLabel} ${map.title} revision mind map`} width={720} height={509} loading="lazy" />
+              </Link>
+              <div>
+                <p className="tr-action__t">{c.yearLabel} {map.title}: the whole chapter on one page</p>
+                <p className="tr-action__x">{map.summary} A worked example for each topic, ready to print on A4 for revision or to put on the board.</p>
+                <Link href={map.path} className="tb-btn tb-btn--secondary">View and download (PDF)</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section id="ideas" className="tb-section" aria-labelledby="h-ideas">
         <div className="tb-wrap pg-narrow">
           <h2 id="h-ideas" className="tb-h2 pg-h2">Ideas for using them in class</h2>
           <div className="tr-uses">
@@ -162,7 +183,7 @@ export default async function TeacherChapterPage({ params }) {
         </div>
       </section>
 
-      <section className="tb-section" aria-labelledby="h-others">
+      <section className="tb-section tb-section--card" aria-labelledby="h-others">
         <div className="tb-wrap pg-narrow">
           <h2 id="h-others" className="tb-h2 pg-h2">Other {c.yearLabel} chapters</h2>
           <ul className="ct-others">

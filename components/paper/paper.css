@@ -142,3 +142,9 @@
 .tz-faq[open] summary::after { content: "–"; }
 .tz-faq summary .sh-h3 { margin: 0; }
 .tz-faq .sh-p { margin: 10px 0 0; }
+
+.tr-map { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: center; margin-top: 12px; }
+@media (max-width: 700px) { .tr-map { grid-template-columns: 1fr; } }
+.tr-map__img { display: block; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; }
+.tr-map__img img { display: block; width: 100%; height: auto; }
+.tr-map .tr-action__x { margin: 6px 0 14px; }
