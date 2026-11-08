@@ -50,19 +50,44 @@ export default function ParentsPage() {
           <div>
             <LaunchPill />
             <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
-            <h1 id="pp-title" className="tb-h1">Boost maths marks, and see the progress each week.</h1>
+            <h1 id="pp-title" className="tb-h1">Better marks on their next maths test.</h1>
             <p className="tb-lead pp-hero__lead">
-              {`With ${name}, your child snaps the maths questions they get wrong and practises fresh versions until each one is mastered. Each week you see what they added and mastered, plus their test scores.`}
+              {`Upload the test outline, past papers or term planner from school, and ${name} builds practice tests and drills on exactly what your child will be doing, in their school's style. Every question they get wrong becomes a worked solution and fresh practice until it's mastered, and you see the progress each week.`}
             </p>
             <MadeInAustralia />
             <ResultsProof />
             <div className="pp-hero__cta">
               <StudyAppCTA variant="hero" placement="parents_hero" slim />
+              <p className="pp-hero__more"><Link href="/features/exam-zone">See how the practice exams work →</Link></p>
             </div>
           </div>
-          <div className="pp-hero__visual">
+          <figure className="pp-hero__visual">
             <div className="pp-hero__blob" aria-hidden="true" />
             <DemoVideo width={320} placement="parents_hero" priority />
+            <figcaption className="pp-hero__cap">
+              <strong>Practice exams written from their own school&rsquo;s tests.</strong> Upload the outline, past papers and teacher&rsquo;s notes; {name} writes a practice exam in the same style, then marks it by topic.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* 1a. PAIN POINTS (parent research, Nov 2026): the goal is better
+          test and exam marks; these are what stands in the way. */}
+      <section className="tb-section pp-pains" aria-labelledby="pp-pains-h">
+        <div className="tb-wrap">
+          <SectionHead id="pp-pains-h" eyebrow="Sound familiar?" title="What gets in the way of better marks." />
+          <div className="pp-pains__grid">
+            {[
+              ["“They studied, but the mark didn’t show it.”", "Re-reading notes isn’t practice. Tuterly tests them on the exact topics in their school’s test, and drills every question they get wrong until it’s mastered."],
+              ["“I don’t know what’s on the test.”", "Upload the test outline or term planner. Tuterly works out what’s coming and builds practice on exactly that, in their school’s style."],
+              ["“It’s taught differently from when I was at school.”", "You don’t have to remember Year 9 maths. Every question gets a step-by-step worked solution, set out the way Australian maths is taught today."],
+              ["“A tutor is $80 to $100 an hour.”", `${name} is ${STUDY_APP.offerShort}, 50% off until 31 March 2027, and they can practise any day, not just once a week.`],
+            ].map(([t, x]) => (
+              <Card key={t}>
+                <h3 className="tb-h3 pp-pain__t">{t}</h3>
+                <p className="tb-muted pp-pain__x">{x}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

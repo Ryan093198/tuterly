@@ -3,9 +3,9 @@ import { SITE_URL } from "@/lib/site";
 // Route-segment metadata for /parents (the parent page for the Tuterly
 // Study app since Oct 2026; it used to be the tutor marketplace page).
 
-const TITLE = "Help Your Child Improve Their Maths Marks: Tuterly for Parents";
+const TITLE = "Better Maths Test Marks for Years 7 to 10: Practice Built From Their School | Tuterly for Parents";
 const DESCRIPTION =
-  "See the maths questions your child gets wrong, and watch them get mastered. A weekly summary, topic test scores, not their photos. Designed by Australian educators.";
+  "Upload the test outline, past papers or term planner and Tuterly builds practice tests and drills on exactly what your child is doing at school, then fixes every mistake. Built by the team behind Bayside Academics.";
 const URL = `${SITE_URL}/parents`;
 
 export const metadata = {
