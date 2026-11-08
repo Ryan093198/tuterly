@@ -179,8 +179,8 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   return (
     <div className="eg">
       <div className="eg-card">
-        <h2 className="eg-title">Build a practice exam</h2>
-        <p className="eg-lead">Pick a year, tick the topics, and get an exam with marks, a time and answers to every question. Free with your email, one exam a day.</p>
+        <h2 className="eg-title">Build a Maths practice exam, Years 7 to 10</h2>
+        <p className="eg-lead">Pick a year, tick the topics, and get an exam with marks, a time and answers to every question.</p>
 
         <p className="eg-label" id="eg-year-l">1. Year level</p>
         <div className="eg-years" role="radiogroup" aria-labelledby="eg-year-l">

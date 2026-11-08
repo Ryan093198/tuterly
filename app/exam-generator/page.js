@@ -61,7 +61,7 @@ export default function ExamGeneratorPage() {
         <div className="eg-hero__copy">
           <p className="sh-eyebrow">Free practice exam generator</p>
           <h1>Make a free maths practice exam, Years 7 to 10</h1>
-          <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question. Free, one exam a day.</p>
+          <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question.</p>
         </div>
         <figure className="eg-hero__video">
           <DemoVideo width={250} placement="exam_generator_hero" priority video={EXAM_ZONE_VIDEO} />
