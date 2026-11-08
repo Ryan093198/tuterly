@@ -7,6 +7,7 @@ import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import { TOPIC_HUBS, TOPIC_HUB_SLUGS, HUB_YEARS_ALL, hubTopics } from "@/lib/topic-hubs";
 import { getSkillPage } from "@/lib/skill-pages";
+import SkillYearPicker from "@/components/worksheets/SkillYearPicker";
 import { HUB_YEARS } from "@/lib/year-hubs";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
@@ -96,6 +97,8 @@ export default function TopicHub({ slug }) {
           <div><dt>Years</dt><dd>{years.map((y) => y.replace("Year ", "")).join(", ").replace(/, ([^,]*)$/, " and $1")}</dd></div>
         </dl>
       </header>
+
+      <SkillYearPicker slug={slug} />
 
       <main className="sh-gen">
         <WorksheetGenerator topicsByYear={topicsByYear} initialYearLevel={years[0]} initialTopicId={groups[0]?.items[0]?.topicId} yearLevels={years} studyAppUnderGenerator={false} />

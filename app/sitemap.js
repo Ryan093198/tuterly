@@ -7,6 +7,7 @@ import { SITE_URL } from "@/lib/site";
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import { getAllPosts } from "@/lib/learn";
 import { teacherChapterPath } from "@/lib/teacher-resources";
+import { skillYearPairs, skillPdfPath } from "@/lib/skill-years";
 import { LIVE_YEARS, mindMapPath, mindMapsForYear, revisionYearPath } from "@/lib/mind-maps";
 
 // Public marketing pages Google should be aware of. Anything under
@@ -204,6 +205,8 @@ export default function sitemap() {
     { url: `${SITE_URL}/teachers/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/teachers/printable-exam`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...getChapterPages().map((c) => ({ url: `${SITE_URL}${teacherChapterPath(c)}`, lastModified: now, changeFrequency: "monthly", priority: 0.6 })),
+    // Skill worksheet PDFs by year (8 Nov 2026)
+    ...skillYearPairs().map(({ slug, year }) => ({ url: `${SITE_URL}${skillPdfPath(slug, year)}`, lastModified: now, changeFrequency: "monthly", priority: 0.5 })),
   ];
   return [
     ...statics,

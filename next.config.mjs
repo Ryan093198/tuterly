@@ -30,7 +30,7 @@ const nextConfig = {
     "/api/topic-test/**": ["./content/topic-tests/**/*.json"],
     "/api/cron/**": ["./content/topic-tests/**/*.json"],
     // Free practice sheet PDFs (built at deploy, traced in case of a rebuild).
-    "/worksheets/**": ["./content/topic-tests/**/*.json", "./public/fonts/*.ttf"],
+    "/worksheets/**": ["./content/topic-tests/**/*.json", "./public/fonts/*.ttf", "./content/exam-sections/*.json", "./content/worked-examples/*.json", "./content/automark/**/*.json"],
     "/naplan/**": ["./content/naplan/*.json", "./content/learn/*.md", "./content/topic-tests/**/*.json", "./public/fonts/*.ttf"],
   },
   experimental: {

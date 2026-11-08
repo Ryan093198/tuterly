@@ -1,0 +1,17 @@
+/* "Choose your year" on skill pages and topic hubs */
+.sy { scroll-margin-top: 80px; }
+.sy-years { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px; }
+.sy-year { border: 1.5px solid var(--border, #d9e2ea); background: var(--card, #fff); color: inherit; border-radius: 999px; padding: 9px 18px; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+.sy-year:hover { border-color: var(--brand, #0e9fbf); }
+.sy-year.is-on { background: var(--brand, #0e9fbf); border-color: var(--brand, #0e9fbf); color: #fff; }
+.sy-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.sy-card { background: var(--card, #fff); border: 1px solid var(--border, #d9e2ea); border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.sy-card--main { border: 2px solid var(--brand, #0e9fbf); }
+.sy-card__t { margin: 0; font-weight: 800; font-size: 16.5px; }
+.sy-card__x { margin: 0 0 8px; font-size: 14px; line-height: 1.5; color: var(--muted, #5b6b7a); flex: 1; }
+.sy-card .tb-btn { align-self: flex-start; }
+.sy-label { margin: 22px 0 8px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted, #5b6b7a); }
+.sy-secs { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; }
+.sy-secs li { background: var(--card, #fff); border: 1px solid var(--border, #d9e2ea); border-radius: 999px; padding: 6px 12px; font-size: 14px; }
+.sy-tag { margin-left: 6px; font-size: 11px; font-weight: 800; color: var(--brand-text, #0a7088); }
+.sy-samples { margin-top: 4px; }

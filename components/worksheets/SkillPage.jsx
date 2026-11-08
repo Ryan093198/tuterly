@@ -5,6 +5,7 @@ import AppCtaBand from "@/components/study/AppCtaBand";
 import WorksheetGenerator from "@/components/WorksheetGenerator";
 import WorksheetUpgrade from "@/components/study/WorksheetUpgrade";
 import TopicGuide from "@/components/study/TopicGuide";
+import SkillYearPicker from "@/components/worksheets/SkillYearPicker";
 import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import { getLandingPageBySlug } from "@/lib/worksheet-landing-pages";
 import { SKILL_PAGES, skillTopic } from "@/lib/skill-pages";
@@ -89,12 +90,15 @@ export default function SkillPage({ skill }) {
         <h1>{skill.h1}</h1>
         <p className="sh-lead">{skill.lead}</p>
         <p className="yt-jump" style={{ marginTop: 16 }}>
+          <a href="#by-year" style={{ fontWeight: 800, color: "var(--brand-text)", textDecoration: "none" }}>Choose your year ↓</a>
+          <span aria-hidden="true" style={{ color: "var(--muted)", margin: "0 10px" }}>·</span>
           <a href="#make-worksheet" style={{ fontWeight: 800, color: "var(--brand-text)", textDecoration: "none" }}>Make a worksheet ↓</a>
           <span aria-hidden="true" style={{ color: "var(--muted)", margin: "0 10px" }}>·</span>
           <a href="#guide" style={{ fontWeight: 800, color: "var(--brand-text)", textDecoration: "none" }}>How to do it and a quick check ↓</a>
         </p>
       </header>
 
+      <SkillYearPicker slug={skill.slug} initialYear={topic?.yearLevel} />
       <TopicGuide guide={skill.guide} id="guide" />
 
       <main id="make-worksheet" className="sh-gen" style={{ scrollMarginTop: 90 }}>
