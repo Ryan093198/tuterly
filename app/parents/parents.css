@@ -49,3 +49,9 @@ figure.pp-hero__visual { margin: 0; gap: 12px; }
 .pp-pains__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
 .pp-pain__t { font-size: 17px; line-height: 1.35; margin: 0 0 8px; }
 .pp-pain__x { margin: 0; font-size: 15px; line-height: 1.55; }
+.pp-method__steps { list-style: none; padding: 0; margin: 22px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.pp-method__step { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; }
+.pp-method__n { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 900; display: grid; place-items: center; }
+.pp-method__t { margin: 2px 0 6px; font-size: 17px; }
+.pp-method__x { margin: 0; font-size: 15px; line-height: 1.6; }
+.pp-method__foot { margin: 20px 0 0; font-size: 17px; font-weight: 700; color: var(--foreground); }

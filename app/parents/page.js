@@ -9,6 +9,7 @@ import PriceTrial from "@/components/study/PriceTrial";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
 import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
+import { BAYSIDE } from "@/lib/bayside";
 import TryCta from "@/components/study/TryCta";
 import TutorCompare from "@/components/study/TutorCompare";
 import "./parents.css";
@@ -89,6 +90,41 @@ export default function ParentsPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 1b. FROM OUR TUTORING CENTRE TO AN APP (Ryan, 9 Nov 2026). Every
+          feature named here is in TUTERLY_FEATURES.md: onboarding (year,
+          goal, test date and topics, weekly target), the To do list, the
+          test countdown, term planner upload, Exam Zone, weekly review,
+          stars, XP and the weekly streak. */}
+      <section className="tb-section tb-section--card pp-method" aria-labelledby="pp-method-h">
+        <div className="tb-wrap">
+          <SectionHead
+            id="pp-method-h"
+            eyebrow="From our tutoring centre to their phone"
+            title="Everything a good tutor does between sessions, built into an app."
+            lead={`${name} is built by the team behind ${BAYSIDE.line}. A decade of one-on-one sessions showed us what actually moves a maths mark: knowing exactly what's on the next test, working from the student's own mistakes, and practising the right thing every week, not just more worksheets. We've put that into an app your child will actually open.`}
+          />
+          <ol className="pp-method__steps">
+            {[
+              ["It starts with their school", "When they sign up, they tell the app their year, their goal, their next test date and its topics. Upload the term planner, test outline or past papers, and everything that follows is built around what their school is teaching, not a generic syllabus."],
+              ["It tells them what to practise next", "A To do list on the home screen shows the next step each day: the questions to fix, the topic test to sit, the drill to finish. A countdown keeps the next test in view, so practice is planned around it."],
+              ["It works from their mistakes", "Every question they get wrong, in homework, a topic test or a real school test, becomes a worked solution and fresh practice on the same idea, until it's mastered. That's how a tutor spends a session, and it's where the marks are."],
+              ["It predicts the test", "Exam Zone writes practice exams in their school's style from the outline and past papers, then marks them by topic and shows what to fix before the real one."],
+              ["It keeps them coming back", "Stars for every question mastered, XP and levels, a weekly streak and weekly goals. Short sessions that feel like progress, not homework."],
+              ["It keeps you in the loop", "Week in review shows what they practised and mastered, their test scores and their trickiest topic, like a tutor's note after each session."],
+            ].map(([t, x], i) => (
+              <li key={t} className="pp-method__step">
+                <span className="pp-method__n" aria-hidden="true">{i + 1}</span>
+                <div>
+                  <h3 className="tb-h3 pp-method__t">{t}</h3>
+                  <p className="tb-muted pp-method__x">{x}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="pp-method__foot">The result: your child always knows what to practise next, and it&rsquo;s focused on what&rsquo;s coming up in their next test.</p>
         </div>
       </section>
 
