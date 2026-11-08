@@ -11,7 +11,7 @@ export default function ResultsProof({ className = "", compact = false }) {
         <span className="rp__icon" aria-hidden="true"><Icon name="star" size={16} /></span>
         <div>
           <p className="rp__title">{STUDY_RESULTS.headline}</p>
-          <p className="rp__fine">{STUDY_RESULTS.finePrint} <a href="/results">How we measured this</a></p>
+          <p className="rp__fine">{STUDY_RESULTS.finePrint}</p>
         </div>
       </div>
     );
@@ -21,7 +21,7 @@ export default function ResultsProof({ className = "", compact = false }) {
       <span className="rp__icon" aria-hidden="true"><Icon name="star" size={20} /></span>
       <div>
         <p className="rp__title">{STUDY_RESULTS.headline}</p>
-        <p className="rp__fine">{STUDY_RESULTS.finePrint} <a href="/results">How we measured this</a></p>
+        <p className="rp__fine">{STUDY_RESULTS.finePrint}</p>
       </div>
     </div>
   );
