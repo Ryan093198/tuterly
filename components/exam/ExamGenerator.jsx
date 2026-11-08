@@ -9,6 +9,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { trackEvent } from "@/lib/analytics";
+import { fixDollars } from "@/lib/md-dollars";
 import { appCta } from "@/lib/study-app";
 import ResultsProof from "@/components/study/ResultsProof";
 import "./exam.css";
@@ -31,7 +32,7 @@ function Md({ children }) {
   return (
     <div className="eg-md">
       <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-        {children || ""}
+        {fixDollars(children)}
       </ReactMarkdown>
     </div>
   );
@@ -60,6 +61,22 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
     if (e) setEmail(e);
     const y = store.get(YEAR_KEY);
     if (y && catalogue[y]) setYear(y);
+    // A chapter page can open the generator with its topics ticked:
+    // /exam-generator?year=Year%209&topics=year-9-3a,year-9-3b#build
+    try {
+      const q = new URLSearchParams(window.location.search);
+      const qy = q.get("year");
+      if (qy && catalogue[qy]) {
+        const valid = new Set(catalogue[qy].flatMap((g) => g.topics.map((t) => t.slug)));
+        const want = (q.get("topics") || "").split(",").filter((t) => valid.has(t));
+        setYear(qy);
+        if (want.length) {
+          setPicked(new Set(want));
+          setExam(null);
+          return;
+        }
+      }
+    } catch {}
     const last = store.get(LAST_KEY);
     if (last) {
       try {

@@ -27,6 +27,7 @@ const GROUPS = [
       { href: "/worksheets", label: "Worksheet generator" },
       { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
       { href: "/exam-generator", label: "Practice exam generator" },
+      { href: "/maths-tests", label: "Practice tests by topic" },
       { href: "/end-of-year-maths-exams", label: "End-of-year exam practice" },
       { href: "/naplan", label: "NAPLAN practice tests" },
       { href: "/formula-sheets", label: "Formula sheets" },

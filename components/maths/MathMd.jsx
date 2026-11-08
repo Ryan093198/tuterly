@@ -1,3 +1,4 @@
+import { fixDollars } from "@/lib/md-dollars";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -9,8 +10,9 @@ import "./maths.css";
 // maths concept pages. Tables sit in a scroll box.
 // A line that is only $$...$$ becomes its own display block, so each line
 // of working sits on its own line (markdown otherwise joins them).
+
 function blocks(md) {
-  return String(md || "")
+  return fixDollars(md)
     .split("\n")
     .map((l) => {
       const t = l.trim();

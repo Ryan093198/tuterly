@@ -1,3 +1,4 @@
+import { getChapterPages } from "@/lib/chapter-pages";
 import { STATE_CODES } from "@/lib/state-curriculum";
 import { SEO_SUBURBS, isPublishable } from "@/lib/seo-suburbs";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
@@ -195,8 +196,13 @@ export default function sitemap() {
     ...LIVE_YEARS.flatMap((y) => mindMapsForYear(y).map((m) => ({ url: `${SITE_URL}${mindMapPath(m)}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 }))),
   ];
 
+  const chapterTests = [
+    { url: `${SITE_URL}/maths-tests`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    ...getChapterPages().map((c) => ({ url: `${SITE_URL}${c.path}`, lastModified: now, changeFrequency: "monthly", priority: 0.7 })),
+  ];
   return [
     ...statics,
+    ...chapterTests,
     ...parentSuburbs,
     ...worksheetTopics,
     ...learn,

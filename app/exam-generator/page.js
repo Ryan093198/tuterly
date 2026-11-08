@@ -71,7 +71,7 @@ export default function ExamGeneratorPage() {
           </figcaption>
         </figure>
       </header>
-      <main className="sh-gen" style={{ maxWidth: 1000 }}>
+      <main id="build" className="sh-gen" style={{ maxWidth: 1000, scrollMarginTop: 90 }}>
         <ExamGenerator catalogue={getExamCatalogue()} placement="exam_generator" />
       </main>
 

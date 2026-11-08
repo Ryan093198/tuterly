@@ -53,6 +53,7 @@ const MARKETING_PATH_PREFIXES = [
   "/photomath-alternative",
   "/quizlet-maths-australia",
   "/maths",
+  "/maths-tests",
   "/calculators",
   "/teachers",
   "/best-maths-apps-australia",
