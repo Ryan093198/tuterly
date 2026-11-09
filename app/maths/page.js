@@ -11,6 +11,14 @@ const DESCRIPTION =
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
 const TOPICS = [
+  { href: "/maths/percentages", k: "Years 7 to 10", t: "Percentages", x: "Percentage of a number, increase and decrease, percentage change, with a calculator." },
+  { href: "/maths/area-of-a-circle", k: "Years 7 to 10", t: "Area of a circle", x: "From the radius or diameter, semicircles and sectors, with a calculator." },
+  { href: "/maths/circumference-of-a-circle", k: "Years 7 to 10", t: "Circumference of a circle", x: "From the radius or diameter, semicircles and arc length, with a calculator." },
+  { href: "/maths/simplifying-fractions", k: "Years 7 to 10", t: "Simplifying fractions", x: "The HCF method, mixed numbers, ratios and algebraic fractions." },
+  { href: "/maths/mean-median-mode", k: "Years 7 to 10", t: "Mean, median, mode and range", x: "Plus quartiles and the interquartile range, with a calculator." },
+  { href: "/maths/expanding-brackets", k: "Years 8 to 10", t: "Expanding brackets", x: "The distributive law, FOIL, perfect squares and difference of squares." },
+  { href: "/maths/factorising", k: "Years 8 to 10", t: "Factorising", x: "Common factors, quadratics, difference of squares and grouping, with a calculator." },
+  { href: "/maths/solving-linear-equations", k: "Years 7 to 10", t: "Solving linear equations", x: "One-step, two-step, brackets, fractions and word problems." },
   { href: "/maths/pythagoras-theorem", k: "Years 8 to 10", t: "Pythagoras’ theorem", x: "The formula, finding any side, word problems and practice." },
   { href: "/maths/sohcahtoa", k: "Years 9 and 10", t: "SOH CAH TOA (trigonometry)", x: "Labelling sides, choosing sin, cos or tan, finding sides and angles." },
   { href: "/maths/index-laws", k: "Years 8 to 10", t: "Index laws", x: "All 7 laws of indices with examples, plus fractional indices." },
@@ -20,6 +28,11 @@ const TOPICS = [
   { href: "/maths/3d-pythagoras", k: "Year 10A", t: "3D Pythagoras", x: "Space diagonals, pyramids and cones." },
 ];
 const CALCULATORS = [
+  { href: "/maths/percentages#calculator", k: "Calculator", t: "Percentage calculator", x: "Percentage of a number, percentage change, increase and decrease, with the working." },
+  { href: "/maths/area-of-a-circle#calculator", k: "Calculator", t: "Circle calculator", x: "Area, circumference, radius and diameter from any one of them, with the working." },
+  { href: "/maths/simplifying-fractions#calculator", k: "Calculator", t: "Fraction simplifier", x: "Simplify any fraction, with the HCF and the working." },
+  { href: "/maths/mean-median-mode#calculator", k: "Calculator", t: "Mean, median and mode calculator", x: "Mean, median, mode, range, quartiles and IQR from a list, with the working." },
+  { href: "/maths/factorising#calculator", k: "Calculator", t: "Factorising calculator", x: "Factorise a quadratic, with every step shown." },
   { href: "/calculators/pythagoras", k: "Calculator", t: "Pythagoras calculator", x: "Find the hypotenuse or a missing side, with the working." },
   { href: "/calculators/trigonometry", k: "Calculator", t: "Trigonometry calculator", x: "Find a missing side or angle with SOH CAH TOA, with the working." },
   { href: "/calculators/quadratic-formula", k: "Calculator", t: "Quadratic formula calculator", x: "Exact answers in surd form, plus decimals, with the working." },
