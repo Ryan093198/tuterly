@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { recordSignupSource } from "@/lib/signup-source";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { trustedClientIp } from "@/lib/client-ip";
 
@@ -76,6 +77,13 @@ export async function POST(request) {
       { status: 500 }
     );
   }
+
+  await recordSignupSource(email, {
+    source: body?.source,
+    page: body?.source_page,
+    weekly: body?.weekly_opt_in === true,
+    weeklySource: body?.weekly_source,
+  });
 
   return NextResponse.json({ ok: true });
 }

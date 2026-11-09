@@ -176,7 +176,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn, weekly_opt_in: optIn }),
+        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn, weekly_opt_in: optIn, source: "exam_generator", source_page: typeof window !== "undefined" ? window.location.pathname : null, weekly_source: "exam_gate" }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Could not save your email. Try again.");

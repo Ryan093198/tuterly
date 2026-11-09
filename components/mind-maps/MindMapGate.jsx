@@ -24,7 +24,7 @@ async function unlock(body) {
   const res = await fetch("/api/mind-maps/unlock", {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify(body),
+    body: JSON.stringify({ ...body, source_page: window.location.pathname }),
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data?.error || "Something went wrong. Try again.");

@@ -19,7 +19,7 @@ export default function WeeklySignup({ yearLevel, placement }) {
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, year_level: yearLevel, marketing_opt_in: true, weekly_opt_in: true }),
+        body: JSON.stringify({ email, year_level: yearLevel, marketing_opt_in: true, weekly_opt_in: true, source: "weekly_signup", source_page: typeof window !== "undefined" ? window.location.pathname : null, weekly_source: String(placement || "weekly_signup").replace(/[^a-z0-9_]/gi, "_").toLowerCase().slice(0, 40) }),
       });
       const d = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(d?.error || "Something went wrong. Try again.");

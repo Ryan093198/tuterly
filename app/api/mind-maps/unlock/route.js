@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { recordSignupSource } from "@/lib/signup-source";
 import { createAdminClient } from "@/lib/supabase-admin";
 import { trustedClientIp } from "@/lib/client-ip";
 import { guardPublicForm } from "@/lib/public-form-guard";
@@ -42,6 +43,8 @@ export async function POST(request) {
     console.error("[mind-maps/unlock] upsert failed", error.message);
     return NextResponse.json({ error: "Could not save your email. Try again." }, { status: 500 });
   }
+
+  await recordSignupSource(row.email, { source: "mind_maps", page: body?.source_page });
 
   const res = NextResponse.json({ ok: true });
   const secure = process.env.NODE_ENV === "production";

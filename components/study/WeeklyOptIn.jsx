@@ -108,7 +108,16 @@ export function WeeklyOptInCard({ email, yearLevel, placement, onSubscribed, kin
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, year_level: yearLevel, marketing_opt_in: true, weekly_opt_in: true }),
+        body: JSON.stringify({
+          email,
+          year_level: yearLevel,
+          marketing_opt_in: true,
+          weekly_opt_in: true,
+          source: kind === "exam" ? "exam_generator" : "worksheet_generator",
+          source_page: typeof window !== "undefined" ? window.location.pathname : null,
+          // e.g. worksheet_result, worksheet_limit, exam_exam_result -> exam_result
+          weekly_source: `${kind}_${String(placement || "card").replace(/^exam_/, "")}`,
+        }),
       });
       if (!res.ok) throw new Error();
       markWeeklySubscribedHere();

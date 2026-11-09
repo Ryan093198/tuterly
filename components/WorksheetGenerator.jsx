@@ -235,6 +235,9 @@ export default function WorksheetGenerator({
           year_level: modalYearInput,
           marketing_opt_in: modalMarketingOptIn,
           weekly_opt_in: modalMarketingOptIn,
+          source: "worksheet_generator",
+          source_page: typeof window !== "undefined" ? window.location.pathname : null,
+          weekly_source: "worksheet_gate",
         }),
       });
       const data = await readJsonOrFallback(res);
