@@ -86,7 +86,7 @@
 .eg-print-root { display: none; }
 @media print {
   @page { size: A4; margin: 14mm; }
-  body > *:not(.eg-print-root) { display: none !important; }
+  body:has(> .eg-print-root) > *:not(.eg-print-root) { display: none !important; }
   body { background: #fff !important; }
   .eg-print-root { display: block !important; }
   .eg-print-root .eg-paper { border: 0; padding: 0; border-radius: 0; }
@@ -95,3 +95,10 @@
   .eg-print-root .eg-ans { break-before: page; }
   .eg-print-root .eg-md { font-size: 13px; }
 }
+
+/* Ready-made exams: the answers in a closed section under the paper. */
+.eg-ans-toggle { margin-top: 18px; border-top: 2px solid var(--border); padding-top: 14px; }
+.eg-ans-toggle > summary { cursor: pointer; font-weight: 800; font-size: 16px; color: var(--brand-text); padding: 10px 0; list-style: none; }
+.eg-ans-toggle > summary::-webkit-details-marker { display: none; }
+.eg-ans-toggle > summary::before { content: "+ "; }
+.eg-ans-toggle[open] > summary::before { content: "− "; }

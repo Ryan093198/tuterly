@@ -364,8 +364,35 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   );
 }
 
-function ExamPaper({ exam, showAnswers, forPrint = false }) {
+// collapsedAnswers: when the answers aren't shown, keep them on the page in
+// a closed <details> (the ready-made exams on the exam preparation pages,
+// so "with answers" is true for readers and for Google).
+export function ExamPaper({ exam, showAnswers, forPrint = false, collapsedAnswers = false }) {
   const all = exam.sections.flatMap((s) => s.questions);
+  const answers = (
+        <section className="eg-ans">
+          <h4 className="eg-sec__title">Answers</h4>
+          {all.map((q) => (
+            <div key={q.n} className="eg-ans__item">
+              <p className="eg-ans__head">
+                <strong>Question {q.n}</strong> <span>{q.topic}</span>
+              </p>
+              <div className="eg-ans__answer"><strong>Answer:</strong> <Md>{q.answer}</Md></div>
+              {!q.solution ? (
+                !forPrint && q.slug ? <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p> : null
+              ) : forPrint ? (
+                <Md>{q.solution}</Md>
+              ) : (
+                <details className="eg-ans__sol">
+                  <summary>Worked solution</summary>
+                  <Md>{q.solution}</Md>
+                  {q.slug && <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p>}
+                </details>
+              )}
+            </div>
+          ))}
+        </section>
+  );
   return (
     <article className={`eg-paper ${forPrint ? "is-print" : ""}`}>
       <header className="eg-paper__head">
@@ -399,29 +426,12 @@ function ExamPaper({ exam, showAnswers, forPrint = false }) {
         </section>
       ))}
 
-      {showAnswers && (
-        <section className="eg-ans">
-          <h4 className="eg-sec__title">Answers</h4>
-          {all.map((q) => (
-            <div key={q.n} className="eg-ans__item">
-              <p className="eg-ans__head">
-                <strong>Question {q.n}</strong> <span>{q.topic}</span>
-              </p>
-              <div className="eg-ans__answer"><strong>Answer:</strong> <Md>{q.answer}</Md></div>
-              {!q.solution ? (
-                !forPrint && q.slug ? <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p> : null
-              ) : forPrint ? (
-                <Md>{q.solution}</Md>
-              ) : (
-                <details className="eg-ans__sol">
-                  <summary>Worked solution</summary>
-                  <Md>{q.solution}</Md>
-                  {q.slug && <p className="eg-ans__more"><Link href={`/worksheets/${q.slug}`}>More practice on {q.topic.toLowerCase()} →</Link></p>}
-                </details>
-              )}
-            </div>
-          ))}
-        </section>
+      {showAnswers && answers}
+      {!showAnswers && collapsedAnswers && (
+        <details className="eg-ans-toggle">
+          <summary>Show the answers and worked solutions</summary>
+          {answers}
+        </details>
       )}
       <p className="eg-paper__foot">tuterly.com.au · Free practice exam · Questions from Tuterly&rsquo;s topic pages and topic tests, every answer checked.</p>
     </article>

@@ -7,12 +7,16 @@ import { Card, CtaBand, Eyebrow, PhoneFrame, Reveal, SectionHead } from "@/compo
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { EXAM_PLAN, EXAM_YEARS, examFaqs, examTopics } from "@/lib/exam-prep-pages";
 import TryCta from "@/components/study/TryCta";
+import ReadyExam from "@/components/exam/ReadyExam";
 import "./study-landing.css";
 import "./student-landing.css";
 
 // Maths exam preparation: the hub (year = null) and a page for each of
 // Years 7 to 10. Written to parents. Content in lib/exam-prep-pages.js.
-export default function ExamPrepLanding({ year = null }) {
+// exam: a ready-made practice exam for the year (lib/exam-bank.js
+// readyMadeExam), shown with its answers in a closed section (Ryan, 9 Nov
+// 2026: exam season searches want "Year N maths exam with answers").
+export default function ExamPrepLanding({ year = null, exam = null }) {
   const name = STUDY_APP.name;
   const faqs = examFaqs(name, year);
   const topics = year ? examTopics(year.year) : [];
@@ -54,6 +58,11 @@ export default function ExamPrepLanding({ year = null }) {
                 ? `${name} writes a new practice test on any ${year.year} topic, with a worked solution for every question.`
                 : `Following the ${STUDY_APP_FACTS.curriculum}, with a worked solution for every question.`}
             </p>
+            {year && exam && (
+              <p className="ep-hero__exam">
+                <a href="#practice-exam">Free {year.year} practice exam with answers ↓</a>
+              </p>
+            )}
             <div id="get-app" className="sl-hero__cta">
               <StudyAppCTA variant="hero" placement={`${placement}_hero`} slim />
             </div>
@@ -77,6 +86,34 @@ export default function ExamPrepLanding({ year = null }) {
           <TryCta />
         </div>
       </section>
+
+      {/* READY-MADE PRACTICE EXAM (year pages) */}
+      {year && exam && (
+        <section className="tb-section" id="practice-exam" aria-labelledby="ep-exam" style={{ scrollMarginTop: 80 }}>
+          <div className="tb-wrap">
+            <Reveal>
+              <SectionHead
+                id="ep-exam"
+                eyebrow="Free practice exam"
+                title={`A free ${year.year} maths practice exam, with answers.`}
+                lead={`${exam.questionCount} questions across the ${year.year} topics, in short answer and extended response sections, with ${exam.totalMarks} marks and a suggested time of ${exam.minutes} minutes. Print it, sit it in exam conditions, then check the answers and worked solutions underneath.`}
+              />
+            </Reveal>
+            <ReadyExam exam={exam} placement={`${placement}_ready_exam`} />
+            <ul className="ep-exam__next">
+              <li>
+                <Link href={`/exam-generator?year=${encodeURIComponent(year.year)}#build`}>Make a new exam on just the topics in your test →</Link>
+              </li>
+              <li>
+                <Link href={`/formula-sheets/${year.slug}-maths`}>The {year.year} maths formula sheet →</Link>
+              </li>
+              <li>
+                <Link href={`/worksheets/year-${year.slug.replace("year-", "")}`}>Free {year.year} worksheets on every topic →</Link>
+              </li>
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* WHAT'S IN THE EXAM (year pages) */}
       {year && (

@@ -1,4 +1,5 @@
 import { writtenTopicTest } from "@/lib/topic-test-files";
+import { worksheetMeta } from "@/lib/worksheet-meta";
 import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { notFound } from "next/navigation";
@@ -54,14 +55,10 @@ export async function generateMetadata({ params }) {
   const page = getLandingPageBySlug(slug);
   if (!page) return {};
   const url = `${SITE_URL}/worksheets/${page.slug}`;
-  // Pages with a free practice sheet PDF say so in the title and snippet
-  // (Search Console, Nov 2026: these pages sit at positions 5 to 10, so a
-  // more clickable snippet is the fastest win).
+  // Snippet built in lib/worksheet-meta.js (Search Console, 9 Nov 2026:
+  // these pages sit at positions 5 to 8 with few clicks).
   const hasPdf = Boolean(writtenTopicTest(page.yearLevel, page.topicId));
-  const metaTitle = hasPdf
-    ? page.metaTitle.replace(" (Free, Australian Curriculum)", /with Answers/.test(page.metaTitle) ? " (Free PDF, Australian Curriculum)" : " with Answers (Free PDF, Australian Curriculum)")
-    : page.metaTitle;
-  const metaDescription = hasPdf ? `${page.metaDescription.replace(/\s*$/, "")} Free printable PDF with answers, no sign-up.` : page.metaDescription;
+  const { title: metaTitle, description: metaDescription } = worksheetMeta(page, { hasPdf });
   return {
     title: { absolute: metaTitle },
     description: metaDescription,
@@ -101,6 +98,9 @@ export default async function WorksheetTopicLandingPage({ params }) {
   const pageUrl = `${SITE_URL}/worksheets/${page.slug}`;
   const faqs = getFaqsForSlug(page.slug);
   const worked = getWorkedExamples(page.slug);
+  // Year 10A pages use the Year 10 exam preparation page.
+  const examYearNum = { "Year 7": 7, "Year 8": 8, "Year 9": 9, "Year 10": 10, "Year 10A": 10 }[page.yearLevel];
+  const examPrep = examYearNum ? { year: `Year ${examYearNum}`, slug: `year-${examYearNum}` } : null;
 
   // Schema.org markup. BreadcrumbList matches the visible breadcrumb
   // below the nav. LearningResource is Google's official type for
@@ -272,6 +272,24 @@ export default async function WorksheetTopicLandingPage({ params }) {
       </section>
 
       <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.topic} slug={page.slug} />
+
+      {/* Exam season (Ryan, 9 Nov 2026): every Years 7 to 10 topic page
+          points to its year's practice exam and formula sheet. */}
+      {examPrep && (
+        <section style={{ padding: "8px 24px 40px", background: c.white }}>
+          <div style={{ maxWidth: 760, margin: "0 auto", padding: "18px 20px", borderRadius: 18, border: "2px solid var(--brand-soft)", background: "var(--brand-pale, var(--brand-soft))" }}>
+            <p style={{ margin: 0, fontSize: 18, fontWeight: 900, color: c.navy }}>{page.yearLevel} maths exam coming up?</p>
+            <p style={{ margin: "6px 0 10px", fontSize: 15, color: c.textLight, lineHeight: 1.6 }}>
+              Sit a full practice exam on every {examPrep.year} topic, with answers and worked solutions, and keep the formula sheet next to you.
+            </p>
+            <p style={{ margin: 0, fontSize: 15.5, fontWeight: 800, lineHeight: 1.9 }}>
+              <Link href={`/maths-exam-preparation/${examPrep.slug}#practice-exam`} style={{ color: c.tealDark }}>{examPrep.year} maths practice exam with answers →</Link>
+              <br />
+              <Link href={`/formula-sheets/${page.yearLevel === "Year 10A" ? "year-10a" : examPrep.slug}-maths`} style={{ color: c.tealDark }}>{page.yearLevel} maths formula sheet →</Link>
+            </p>
+          </div>
+        </section>
+      )}
 
       {worked && (
         <section style={{ padding: "24px 24px 64px", background: c.white }}>
