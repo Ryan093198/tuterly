@@ -58,13 +58,22 @@ export async function POST(request) {
   };
 
   try {
-    const { data: signup } = await admin.from("worksheet_email_signups").select("id").eq("email", email).limit(1);
+    const { data: signup } = await admin.from("worksheet_email_signups").select("id, weekly_opt_in, unsubscribed_at").eq("email", email).limit(1);
     if (!signup?.length) return NextResponse.json({ need_email: true }, { status: 402 });
+    // Weekly worksheet email subscribers get two a day (Ryan, 9 Nov 2026).
+    const subscribed = signup[0].weekly_opt_in === true && !signup[0].unsubscribed_at;
+    const perDay = subscribed ? Math.max(2, PER_DAY) : PER_DAY;
     if (!unlimited) {
       const [byIp, byEmail] = await Promise.all([countSince(ENDPOINT, ip), countSince(EMAIL_ENDPOINT, emailKey)]);
-      if (byIp >= PER_DAY || byEmail >= PER_DAY) {
+      if (byIp >= perDay || byEmail >= perDay) {
         return NextResponse.json(
-          { limit: true, error: "That’s today’s free practice exam. With Tuterly Plus your child gets unlimited practice questions and Topic checks on every Years 7 to 10 topic, each with a worked solution. Or come back tomorrow for another free exam." },
+          {
+            limit: true,
+            subscribed,
+            error: subscribed
+              ? "That’s today’s two free practice exams. Come back tomorrow for more, or try the Tuterly app for unlimited practice on every Years 7 to 10 topic."
+              : "That’s today’s free practice exam. Come back tomorrow for another, or try the Tuterly app for unlimited practice on every Years 7 to 10 topic.",
+          },
           { status: 429 }
         );
       }

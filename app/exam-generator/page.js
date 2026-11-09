@@ -8,6 +8,10 @@ import ExamGenerator from "@/components/exam/ExamGenerator";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
+import "@/components/brand/brand.css";
+import "../worksheets/worksheets.css";
+import { Eyebrow } from "@/components/brand";
+import { BAYSIDE } from "@/lib/bayside";
 
 const TITLE = "Free Maths Practice Exam Generator, Years 7 to 10 | Tuterly";
 const DESCRIPTION =
@@ -40,7 +44,7 @@ const COMPARE = [
 
 const FAQS = [
   { q: "What’s the difference between this and the Tuterly app?", a: "This free generator builds an exam from Tuterly’s question bank on the topics you pick. Exam Zone in the Tuterly app goes further: upload the test outline, past papers and teacher’s notes, and Tuterly writes practice exams in the style of your school’s real test, marks them by topic and turns every miss into practice." },
-  { q: "Is the practice exam generator free?", a: "Yes. Enter your email to unlock it and you can make one free practice exam a day. It uses the same email as the free worksheet generator." },
+  { q: "Is the practice exam generator free?", a: "Yes. Enter your email to unlock it and you can make one free practice exam a day, or two a day if you sign up for the free weekly worksheet email. It uses the same email as the free worksheet generator." },
   { q: "Where do the questions come from?", a: "From Tuterly’s topic pages and topic tests for Years 7 to 10A, sorted into the same topic names as the textbooks students use. Every answer was checked, and many questions come with a fully worked solution." },
   { q: "Which year levels and topics does it cover?", a: "Years 7, 8, 9 and 10, plus Year 10A extension topics, across number, algebra, measurement, space, statistics and probability, following the Australian Curriculum." },
   { q: "How long is each exam?", a: "Up to 20 questions. Pick one topic for a short topic test, or several for a mixed exam like an end-of-term or end-of-year test. Each exam shows its total marks and a suggested time." },
@@ -57,21 +61,44 @@ export default function ExamGeneratorPage() {
     <div className="sh">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <MarketingNav />
-      <header className="sh-hero eg-hero">
-        <div className="eg-hero__copy">
-          <p className="sh-eyebrow">Free practice exam generator</p>
-          <h1>Make a free maths practice exam, Years 7 to 10</h1>
-          <p className="sh-lead">Pick the year and the topics their next test covers. Get an exam with marks, a suggested time and answers to every question.</p>
+      {/* HERO (Ryan, 9 Nov 2026): same type and layout as /worksheets. */}
+      <section className="tb ws-hero2" aria-labelledby="eg-title">
+        <div className="tb-wrap ws-hero2__grid">
+          <div>
+            <Eyebrow>Free practice exam generator · Years 7 to 10</Eyebrow>
+            <h1 id="eg-title" className="tb-h1">
+              Free maths practice exam generator, <span className="ws-hero2__accent">Year&nbsp;7 to Year&nbsp;10.</span>
+            </h1>
+            <p className="tb-lead ws-hero2__lead">
+              Pick the year and the topics on your next test, and get a printable practice exam with marks, a suggested time and answers to every question. Australian Curriculum, for every state.
+            </p>
+            <ul className="ws-hero2__ticks">
+              <li>Up to 20 questions, in short answer and extended response sections</li>
+              <li>Answers to every question, and worked solutions for many</li>
+              <li>Free with your email: one exam a day, or two with our weekly worksheet email</li>
+            </ul>
+            <div className="ws-hero2__bayside">
+              <p className="ws-hero2__bayside-t">Designed by senior educators at Bayside Academics</p>
+              <p className="ws-hero2__bayside-x">
+                {`${BAYSIDE.line.replace(/^Bayside Academics, a/, "A")}. For practice exams written from your own school's test outline and past papers, try Exam Zone in the Tuterly app.`}
+              </p>
+            </div>
+            <div className="ws-hero2__cta">
+              <a href="#build" className="tb-btn tb-btn--primary">Build my exam</a>
+              <a href="#eg-app" className="ws-hero2__more">How it compares to Exam Zone →</a>
+            </div>
+          </div>
+          <figure className="ws-hero2__visual">
+            <div className="ws-hero2__blob" aria-hidden="true" />
+            <DemoVideo width={300} placement="exam_generator_hero" priority video={EXAM_ZONE_VIDEO} />
+            <figcaption className="ws-hero2__cap">
+              <strong>Predict the questions on your maths exam.</strong> Exam Zone in the Tuterly app writes practice exams from your own test outline and past papers.{" "}
+              <Link href="/students#exam-zone">See how it works</Link>
+            </figcaption>
+          </figure>
         </div>
-        <figure className="eg-hero__video">
-          <DemoVideo width={250} placement="exam_generator_hero" priority video={EXAM_ZONE_VIDEO} />
-          <figcaption>
-            Exam Zone in the Tuterly app writes practice exams from your own test outline.{" "}
-            <a href="#eg-app" className="sh-link">How it compares</a>
-          </figcaption>
-        </figure>
-      </header>
-      <main id="build" className="sh-gen" style={{ maxWidth: 1000, scrollMarginTop: 90 }}>
+      </section>
+      <main id="build" className="sh-gen" style={{ maxWidth: 1000, scrollMarginTop: 90, paddingTop: 8 }}>
         <ExamGenerator catalogue={getExamCatalogue()} placement="exam_generator" />
       </main>
 

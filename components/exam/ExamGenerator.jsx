@@ -12,6 +12,7 @@ import { trackEvent } from "@/lib/analytics";
 import { fixDollars } from "@/lib/md-dollars";
 import { appCta } from "@/lib/study-app";
 import ResultsProof from "@/components/study/ResultsProof";
+import { WeeklyOptInCard, WeeklyOptInBox, isWeeklySubscribedHere, markWeeklySubscribedHere } from "@/components/study/WeeklyOptIn";
 import "./exam.css";
 
 // Free practice exam generator. Pick a year, tick topics (a main topic
@@ -49,6 +50,11 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
   const [limit, setLimit] = useState(false);
+  // Weekly worksheet email (Ryan, 9 Nov 2026): subscribers get two exams a
+  // day; the card after the exam and at the limit asks again.
+  const [weekly, setWeekly] = useState(false);
+  const [limitSubscribed, setLimitSubscribed] = useState(null);
+  const [justSubscribed, setJustSubscribed] = useState(null);
   const [exam, setExam] = useState(null);
   const [showAnswers, setShowAnswers] = useState(false);
   const [printing, setPrinting] = useState(false);
@@ -59,6 +65,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   useEffect(() => {
     const e = store.get(EMAIL_KEY);
     if (e) setEmail(e);
+    if (isWeeklySubscribedHere()) setWeekly(true);
     const y = store.get(YEAR_KEY);
     if (y && catalogue[y]) setYear(y);
     // A chapter page can open the generator with its topics ticked:
@@ -141,6 +148,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       if (res.status === 402 || data?.need_email) { setGate(true); return; }
       if (res.status === 429 || data?.limit) {
         setLimit(true);
+        setLimitSubscribed(typeof data?.subscribed === "boolean" ? data.subscribed : null);
         setError(data?.error || "That’s your free practice exam for today.");
         trackEvent("exam_limit", { year });
         return;
@@ -174,6 +182,11 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       if (!res.ok) throw new Error(data?.error || "Could not save your email. Try again.");
       store.set(EMAIL_KEY, em);
       store.set(YEAR_KEY, year);
+      if (optIn) {
+        markWeeklySubscribedHere();
+        setWeekly(true);
+        trackEvent("weekly_opt_in", { source: "gate", year, kind: "exam" });
+      }
       setEmail(em);
       trackEvent("generate_lead", { lead_type: "exam_unlock", source: placement });
       setGate(false);
@@ -258,16 +271,38 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
         {gate && (
           <form className="eg-gate" onSubmit={submitGate}>
             <p className="eg-gate__title">Unlock your free practice exam</p>
-            <p className="eg-gate__text">Enter your email to get the exam. It&rsquo;s the same unlock as the free worksheet generator.</p>
+            <p className="eg-gate__text">Your email, so we can unlock it (the same unlock as the free worksheet generator). Free, no card needed.</p>
+            <div style={{ margin: "12px 0" }}>
+              <WeeklyOptInBox yearLevel={year} kind="exam" checked={optIn} onChange={setOptIn} disabled={busy} />
+            </div>
             <div className="eg-gate__row">
               <input type="email" required autoComplete="email" placeholder="Your email" value={gateEmail} onChange={(e) => setGateEmail(e.target.value)} aria-label="Email" />
               <button type="submit" className="eg-btn" disabled={busy}>{busy ? "One moment…" : "Unlock my exam"}</button>
             </div>
-            <label className="eg-optin">
-              <input type="checkbox" checked={optIn} onChange={(e) => setOptIn(e.target.checked)} />
-              <span>Email me a free worksheet for my child&rsquo;s year each week, plus Tuterly news. Unsubscribe any time.</span>
-            </label>
           </form>
+        )}
+
+        {/* At the limit and not on the weekly email: signing up unlocks a
+            second exam today. */}
+        {limit && limitSubscribed === false && !weekly && email && (
+          <WeeklyOptInCard
+            email={email}
+            yearLevel={year}
+            kind="exam"
+            placement="limit"
+            onSubscribed={() => {
+              setWeekly(true);
+              setJustSubscribed("limit");
+              setLimit(false);
+              setLimitSubscribed(null);
+              setError(null);
+            }}
+          />
+        )}
+        {justSubscribed === "limit" && !busy && (
+          <p className="eg-msg eg-msg--limit" role="status" style={{ marginTop: 16 }}>
+            You&rsquo;re in. Press <strong>Generate my exam</strong> for your second one today.
+          </p>
         )}
 
         {error && (
@@ -293,6 +328,19 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             </button>
           </div>
           <ExamPaper exam={exam} showAnswers={showAnswers} />
+          {(!weekly || justSubscribed === "result") && email && (
+            <WeeklyOptInCard
+              email={email}
+              yearLevel={exam.year || year}
+              kind="exam"
+              placement="exam_result"
+              style={{ marginTop: 0 }}
+              onSubscribed={() => {
+                setWeekly(true);
+                setJustSubscribed("result");
+              }}
+            />
+          )}
           <div className="eg-next">
             <p className="eg-next__title">Marked it? Turn the wrong answers into marks.</p>
             <p className="eg-next__text">Snap the questions they got wrong in the Tuterly app. They get the worked solution, then fresh questions on the same idea until each one is mastered, and Topic check builds a new test whenever they want one.</p>

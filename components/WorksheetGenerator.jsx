@@ -8,6 +8,7 @@ import TopicTestOffer from "@/components/study/TopicTestOffer";
 import QuinnWorking from "@/components/brand/QuinnWorking";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
+import { WeeklyOptInCard, WeeklyOptInBox, WEEKLY_STORAGE_KEY } from "@/components/study/WeeklyOptIn";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -31,9 +32,7 @@ const UPSELL_SESSION_KEY = "tuterly:worksheet_upsell_seen";
 // Floor on how soon after generation the modal may appear, so a fast scroll
 // or a stray toggle click cannot pre-empt them actually looking at it.
 const UPSELL_MIN_DWELL_MS = 4000;
-// Set once this browser has ticked the weekly worksheet email, so the
-// sign-up card under the worksheet isn't shown to people already on it.
-const WEEKLY_STORAGE_KEY = "tuterly:worksheet_weekly";
+
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -724,91 +723,6 @@ export default function WorksheetGenerator({
   );
 }
 
-const WEEKLY_YEAR_SET = new Set(STUDY_APP_YEARS);
-
-// What ticking the weekly email gets them, worded for their year. The
-// weekly email itself only goes to Years 7 to 10A (lib/weekly-email.js);
-// every subscriber gets two worksheets a day.
-function weeklyOffer(yearLevel) {
-  const weekly = WEEKLY_YEAR_SET.has(yearLevel);
-  return {
-    weekly,
-    title: weekly
-      ? `Get a new ${yearLevel} worksheet every Monday`
-      : "Get 2 free worksheets a day",
-    points: weekly
-      ? [
-          "Fully worked solutions, a different topic each week",
-          "2 free worksheets a day here, instead of 1",
-        ]
-      : ["2 free worksheets a day here, instead of 1", "New free maths resources by email"],
-    fine: "Free. Includes occasional Tuterly news. Unsubscribe any time from any email.",
-  };
-}
-
-// The second ask, under a finished worksheet or at the daily limit. One
-// tap is the consent: the button says exactly what they're signing up for.
-function WeeklyOptInCard({ email, yearLevel, placement, onSubscribed }) {
-  const [state, setState] = useState("idle"); // idle | pending | done | error
-  const offer = weeklyOffer(yearLevel);
-  const atLimit = placement === "limit";
-
-  async function subscribe() {
-    if (!email) return;
-    setState("pending");
-    try {
-      const res = await fetch("/api/worksheets/email", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email, year_level: yearLevel, marketing_opt_in: true, weekly_opt_in: true }),
-      });
-      if (!res.ok) throw new Error();
-      try { window.localStorage.setItem(WEEKLY_STORAGE_KEY, "1"); } catch {}
-      setState("done");
-      trackEvent("weekly_opt_in", { source: placement, year: yearLevel });
-      onSubscribed?.();
-    } catch {
-      setState("error");
-    }
-  }
-
-  if (state === "done") {
-    return (
-      <div style={weeklyCardStyle} role="status">
-        <p style={weeklyTitleStyle}>You&rsquo;re in.</p>
-        <p style={weeklyFineStyle}>
-          {offer.weekly
-            ? `Your first ${yearLevel} worksheet arrives on Monday evening. You can now make 2 worksheets a day here.`
-            : "You can now make 2 worksheets a day here."}
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <div style={weeklyCardStyle}>
-      <p style={weeklyKickerStyle}>{atLimit ? "Want another one today?" : "Free, every week"}</p>
-      <p style={weeklyTitleStyle}>{offer.title}</p>
-      <ul style={weeklyListStyle}>
-        {offer.points.map((p) => (
-          <li key={p} style={weeklyItemStyle}>
-            <span aria-hidden="true" style={weeklyTickStyle}>✓</span>
-            {p}
-          </li>
-        ))}
-      </ul>
-      <button type="button" onClick={subscribe} disabled={state === "pending" || !email} style={{ ...primaryButtonStyle, marginTop: 14, opacity: state === "pending" ? 0.7 : 1 }}>
-        {state === "pending" ? "Saving…" : atLimit ? "Sign me up and unlock it" : offer.weekly ? "Yes, send them to me" : "Yes, sign me up"}
-      </button>
-      {state === "error" && <p style={{ ...errorTextStyle, marginTop: 10 }}>That didn&rsquo;t work. Try again.</p>}
-      <p style={{ ...weeklyFineStyle, marginTop: 10 }}>
-        {email ? <>Sending to {email}. </> : null}
-        {offer.fine}
-      </p>
-    </div>
-  );
-}
-
 function EmailGateModal({
   email,
   year,
@@ -907,34 +821,7 @@ function EmailGateModal({
               ))}
             </select>
           </label>
-          <label
-            style={{
-              display: "flex",
-              gap: 12,
-              alignItems: "flex-start",
-              cursor: "pointer",
-              padding: "14px 14px 14px 12px",
-              borderRadius: 14,
-              border: `2px solid ${marketingOptIn ? "var(--brand)" : "var(--brand-soft)"}`,
-              background: "var(--brand-pale, var(--brand-soft))",
-            }}
-          >
-            <input
-              type="checkbox"
-              checked={!!marketingOptIn}
-              onChange={(e) => onMarketingOptInChange(e.target.checked)}
-              disabled={pending}
-              style={{ width: 20, height: 20, margin: "1px 0 0", flex: "none", accentColor: "var(--brand)" }}
-            />
-            <span style={{ display: "grid", gap: 4 }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: c.navy, lineHeight: 1.35 }}>
-                {weeklyOffer(year).title}
-              </span>
-              <span style={{ fontSize: 13.5, fontWeight: 600, color: c.textLight, lineHeight: 1.5 }}>
-                {weeklyOffer(year).points.join(". ")}. {weeklyOffer(year).fine}
-              </span>
-            </span>
-          </label>
+          <WeeklyOptInBox yearLevel={year} checked={!!marketingOptIn} onChange={onMarketingOptInChange} disabled={pending} />
         </div>
 
         {error && (
@@ -1083,39 +970,6 @@ const worksheetBodyStyle = {
   paddingTop: 8,
 };
 
-// Weekly worksheet email card (Ryan, 9 Nov 2026).
-const weeklyCardStyle = {
-  marginTop: 20,
-  padding: "18px 18px 16px",
-  borderRadius: 18,
-  border: "2px solid var(--brand-soft)",
-  background: "var(--brand-pale, var(--brand-soft))",
-};
-const weeklyKickerStyle = {
-  margin: 0,
-  fontSize: 12.5,
-  fontWeight: 800,
-  letterSpacing: "0.1em",
-  textTransform: "uppercase",
-  color: c.teal,
-};
-const weeklyTitleStyle = { margin: "6px 0 0", fontSize: 19, fontWeight: 900, color: c.navy, lineHeight: 1.3 };
-const weeklyListStyle = { listStyle: "none", padding: 0, margin: "10px 0 0", display: "grid", gap: 6 };
-const weeklyItemStyle = { display: "flex", gap: 10, alignItems: "flex-start", fontSize: 15, fontWeight: 700, color: c.navy, lineHeight: 1.45 };
-const weeklyTickStyle = {
-  flex: "none",
-  width: 20,
-  height: 20,
-  marginTop: 1,
-  borderRadius: "50%",
-  display: "grid",
-  placeItems: "center",
-  background: "var(--brand)",
-  color: "var(--on-brand, #fff)",
-  fontSize: 11,
-  fontWeight: 900,
-};
-const weeklyFineStyle = { margin: "6px 0 0", fontSize: 13, fontWeight: 600, color: c.textLight, lineHeight: 1.5 };
 const okNoteStyle = {
   margin: 0,
   padding: "10px 12px",
