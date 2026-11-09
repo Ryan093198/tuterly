@@ -103,6 +103,7 @@ const STATIC_PAGES = [
   { path: "/maths/simultaneous-equations", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/gradient", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/percentages", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/study-planner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/area-of-a-circle", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/circumference-of-a-circle", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/simplifying-fractions", priority: 0.9, changeFrequency: "monthly" },

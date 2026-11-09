@@ -1,0 +1,76 @@
+/* Maths exam study planner (/study-planner) and saved plans (/plan/[id]),
+   9 Nov 2026. */
+
+/* Saved plan */
+.pl-hero h1 { margin-top: 6px; }
+.pl-progress { margin-top: 18px; max-width: 520px; }
+.pl-progress__bar { height: 12px; border-radius: 99px; background: var(--brand-soft); overflow: hidden; }
+.pl-progress__bar span { display: block; height: 100%; background: var(--brand); border-radius: 99px; transition: width 0.3s; }
+.pl-progress__t { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+.pl-progress__t strong { color: var(--foreground); }
+.pl-tabs { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.pl-tabs button { font: inherit; font-weight: 800; font-size: 15px; padding: 9px 16px; border-radius: 99px; border: 2px solid var(--border); background: var(--card); color: var(--foreground); cursor: pointer; }
+.pl-tabs button.is-on { border-color: var(--brand); background: var(--brand-pale, var(--brand-soft)); }
+.pl-tabs .pl-print { margin-left: auto; }
+.pl-wrap { padding-top: 8px; padding-bottom: 56px; max-width: 820px; }
+.pl-error { padding: 10px 12px; border-radius: 10px; background: #fff1f2; color: var(--danger, #be123c); font-size: 14px; }
+
+.pl-nights { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 14px; }
+.pl-night { padding: 16px 18px; border-radius: 18px; border: 2px solid var(--border); background: var(--card); }
+.pl-night.is-next { border-color: var(--brand); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); }
+.pl-night.is-done { opacity: 0.72; }
+.pl-night.is-done .pl-night__title { text-decoration: line-through; text-decoration-thickness: 2px; }
+.pl-night--practice_exam { background: var(--violet-soft, #f3efff); }
+.pl-night--review { background: var(--brand-pale, var(--brand-soft)); }
+.pl-night__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.pl-night__date { font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-text); }
+.pl-night.is-missed .pl-night__date::after { content: " · catch up"; color: var(--muted); }
+.pl-night__title { margin: 0; font-size: 19px; font-weight: 900; line-height: 1.3; color: var(--foreground); }
+.pl-tasks { margin: 10px 0 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15.5px; line-height: 1.5; }
+.pl-tasks a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--brand); text-underline-offset: 3px; }
+.pl-tasks li.is-app { font-weight: 700; }
+.pl-app { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 99px; background: var(--brand); color: var(--on-brand, #fff) !important; text-decoration: none !important; }
+.pl-check { margin-top: 12px; display: inline-flex; gap: 10px; align-items: center; font-weight: 800; font-size: 15px; cursor: pointer; }
+.pl-check input { width: 22px; height: 22px; accent-color: var(--brand); }
+.pl-foot { margin-top: 28px; font-size: 14.5px; color: var(--muted); }
+.pl-foot a { color: var(--brand-text); font-weight: 800; }
+
+.pl-parent { margin-top: 12px; padding: 18px; border-radius: 18px; border: 2px solid var(--brand-soft); background: var(--brand-pale, var(--brand-soft)); }
+.pl-parent h2 { margin: 0; font-size: 20px; font-weight: 900; }
+.pl-parent__lead { margin: 6px 0 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.pl-weeks { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 12px; }
+.pl-weeks__h { margin: 0; font-weight: 900; }
+.pl-weeks__h span { font-weight: 600; color: var(--muted); font-size: 14px; }
+.pl-weeks ul { margin: 4px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.55; }
+
+@media print {
+  .pl-tabs, .pl-check, .pl-app, .pl-foot { display: none !important; }
+  .pl-night { break-inside: avoid; border-color: #999; }
+}
+
+/* Planner form */
+.sp-form { display: grid; gap: 22px; padding: 22px; border-radius: 22px; border: 2px solid var(--border); background: var(--card); }
+.sp-field > p, .sp-field > label { display: block; margin: 0 0 8px; font-weight: 900; font-size: 16px; color: var(--foreground); }
+.sp-field small { display: block; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+.sp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.sp-chip { font: inherit; font-weight: 800; font-size: 15px; padding: 9px 14px; border-radius: 99px; border: 2px solid var(--border); background: var(--background); color: var(--foreground); cursor: pointer; }
+.sp-chip.is-on { border-color: var(--brand); background: var(--brand-pale, var(--brand-soft)); }
+.sp-topics { display: grid; gap: 8px; }
+.sp-topic { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 12px; border: 2px solid var(--border); cursor: pointer; font-weight: 700; font-size: 15px; line-height: 1.4; }
+.sp-topic.is-on { border-color: var(--brand); background: var(--brand-pale, var(--brand-soft)); }
+.sp-topic input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--brand); }
+.sp-input { width: 100%; max-width: 360px; font: inherit; font-size: 16px; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--border); background: var(--background); color: var(--foreground); }
+.sp-error { margin: 0; padding: 10px 12px; border-radius: 10px; background: #fff1f2; color: var(--danger, #be123c); font-size: 14.5px; }
+.sp-done { padding: 22px; border-radius: 22px; border: 2px solid var(--brand); background: var(--brand-pale, var(--brand-soft)); }
+.sp-done h3 { margin: 0; font-size: 22px; font-weight: 900; }
+.sp-done p { margin: 8px 0 0; font-size: 15.5px; line-height: 1.6; }
+.sp-optin { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: var(--muted); cursor: pointer; }
+.sp-optin input { width: 18px; height: 18px; margin: 1px 0 0; flex: none; accent-color: var(--brand); }
+@media (min-width: 700px) { .sp-topics { grid-template-columns: 1fr 1fr; } }
+
+/* Centred hero (sh-hero is centred) */
+.pl-hero .pl-progress { margin-left: auto; margin-right: auto; }
+.pl-hero .pl-tabs { justify-content: center; }
+.pl-hero .pl-tabs .pl-print { margin-left: 0; }
+.pl-weeks ul { list-style: disc; }
+.sp-h2 { margin: 8px 0 16px; font-size: clamp(26px, 2.2vw + 14px, 36px); font-weight: 900; line-height: 1.15; color: var(--foreground); }
