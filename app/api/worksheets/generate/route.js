@@ -48,6 +48,20 @@ const DAILY_IP_LIMIT = Number(process.env.WORKSHEET_DAILY_IP_LIMIT) || 1;
 // per week; a subscription or purchased pack unlocks unlimited. Anonymous
 // visitors keep the public per-IP daily funnel (DAILY_IP_LIMIT) below.
 const FREE_WORKSHEET_PER_WEEK = 1;
+// Weekly worksheet email subscribers get two a day (Ryan, 9 Nov 2026).
+const SUBSCRIBER_DAILY_LIMIT = Math.max(2, DAILY_IP_LIMIT);
+
+// Has this address ticked the weekly worksheet email (and not unsubscribed)?
+async function isWeeklySubscriber(admin, email) {
+  if (!email) return false;
+  const { data, error } = await admin
+    .from("worksheet_email_signups")
+    .select("weekly_opt_in, unsubscribed_at")
+    .eq("email", email)
+    .maybeSingle();
+  if (error || !data) return false;
+  return data.weekly_opt_in === true && !data.unsubscribed_at;
+}
 
 // Only retry (bad layout or maths that won't render) if the first attempt
 // finished within this, so the retry still fits inside maxDuration.
@@ -200,15 +214,21 @@ async function handle(request) {
     if (countErr) {
       console.warn("[worksheets/generate] rate-count failed:", countErr);
     }
-    if ((count ?? 0) >= DAILY_IP_LIMIT) {
-      return NextResponse.json(
-        {
-          error:
-            "You've used your free worksheet for today. Come back tomorrow for another one.",
-          rate_limited: true,
-        },
-        { status: 429 }
-      );
+    const used = count ?? 0;
+    if (used >= DAILY_IP_LIMIT) {
+      const subscribed = await isWeeklySubscriber(admin, email);
+      if (!subscribed || used >= SUBSCRIBER_DAILY_LIMIT) {
+        return NextResponse.json(
+          {
+            error: subscribed
+              ? "You've used your two free worksheets for today. Come back tomorrow for more."
+              : "You've used your free worksheet for today. Come back tomorrow for another one.",
+            rate_limited: true,
+            subscribed,
+          },
+          { status: 429 }
+        );
+      }
     }
   }
 

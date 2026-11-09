@@ -6,6 +6,7 @@ import { readJsonOrFallback } from "@/lib/practice-client";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import TopicTestOffer from "@/components/study/TopicTestOffer";
 import QuinnWorking from "@/components/brand/QuinnWorking";
+import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
@@ -30,6 +31,9 @@ const UPSELL_SESSION_KEY = "tuterly:worksheet_upsell_seen";
 // Floor on how soon after generation the modal may appear, so a fast scroll
 // or a stray toggle click cannot pre-empt them actually looking at it.
 const UPSELL_MIN_DWELL_MS = 4000;
+// Set once this browser has ticked the weekly worksheet email, so the
+// sign-up card under the worksheet isn't shown to people already on it.
+const WEEKLY_STORAGE_KEY = "tuterly:worksheet_weekly";
 
 const YEAR_LEVELS = [
   "Year 3",
@@ -104,6 +108,15 @@ export default function WorksheetGenerator({
   const [trialPending, setTrialPending] = useState(false);
   const [trialError, setTrialError] = useState(null);
   const [upsellOpen, setUpsellOpen] = useState(false);
+  // Weekly worksheet email (Ryan, 9 Nov 2026): subscribers get two
+  // worksheets a day, and the card under the worksheet asks again.
+  const [weeklySubscribed, setWeeklySubscribed] = useState(false);
+  // From the server's limit response: false means a sign-up would unlock a
+  // second worksheet today.
+  const [limitSubscribed, setLimitSubscribed] = useState(null);
+  // Where they just signed up from this visit ("limit" or "result"), to
+  // show the confirmation in place.
+  const [justSubscribed, setJustSubscribed] = useState(null);
   // Ref rather than state: the guard is read inside listeners that must not
   // re-subscribe when it flips.
   const upsellFiredRef = useRef(false);
@@ -141,6 +154,7 @@ export default function WorksheetGenerator({
         setEmail(saved);
         setEmailSaved(true);
       }
+      if (window.localStorage.getItem(WEEKLY_STORAGE_KEY)) setWeeklySubscribed(true);
       const params = new URLSearchParams(window.location.search);
       const ref = params.get("ref");
       if (ref && /^[A-Za-z2-9]{6,12}$/.test(ref)) {
@@ -229,7 +243,12 @@ export default function WorksheetGenerator({
       try {
         window.localStorage.setItem(STORAGE_KEY, modalEmailInput);
         window.localStorage.setItem(YEAR_STORAGE_KEY, modalYearInput);
+        if (modalMarketingOptIn) window.localStorage.setItem(WEEKLY_STORAGE_KEY, "1");
       } catch {}
+      if (modalMarketingOptIn) {
+        setWeeklySubscribed(true);
+        trackEvent("weekly_opt_in", { source: "gate", year: modalYearInput });
+      }
       setEmail(modalEmailInput);
       setEmailSaved(true);
       trackEvent("generate_lead", { lead_type: "worksheet_unlock", source: "worksheets" });
@@ -412,6 +431,7 @@ export default function WorksheetGenerator({
         // the Tuterly app is the site's only call to action.
         if ((res.status === 429 && data?.rate_limited) || res.status === 402) {
           setLimitReached(true);
+          setLimitSubscribed(typeof data?.subscribed === "boolean" ? data.subscribed : null);
           throw new Error(data?.error || "You've used your free worksheet for today. Come back tomorrow for another one.");
         }
         throw new Error(data?.error || "Could not generate worksheet.");
@@ -521,6 +541,28 @@ export default function WorksheetGenerator({
 
           {error && !(limitReached && STUDY_APP_YEARS.includes(yearLevel)) && <p style={errorTextStyle}>{error}</p>}
 
+          {/* Free limit reached and not on the weekly email: signing up
+              unlocks a second worksheet today. */}
+          {limitReached && limitSubscribed === false && !weeklySubscribed && (
+            <WeeklyOptInCard
+              email={email}
+              yearLevel={yearLevel}
+              placement="limit"
+              onSubscribed={() => {
+                setWeeklySubscribed(true);
+                setJustSubscribed("limit");
+                setLimitReached(false);
+                setLimitSubscribed(null);
+                setError(null);
+              }}
+            />
+          )}
+          {justSubscribed === "limit" && !generating && (
+            <p style={okNoteStyle} role="status">
+              You&rsquo;re in. Press <strong>Generate worksheet</strong> for your second one today.
+            </p>
+          )}
+
           {/* Free limit reached, Years 7 to 10: one tap emails a full test
               on the topic they picked and joins the Tuterly early list. */}
           {limitReached && STUDY_APP_YEARS.includes(yearLevel) && (
@@ -621,6 +663,26 @@ export default function WorksheetGenerator({
             {/* Engagement sentinel: crossing this means they read to the end. */}
             <div ref={upsellSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
+            {/* Second ask, now they've seen what they get (Ryan, 9 Nov 2026). */}
+            {(!weeklySubscribed || justSubscribed === "result") && (
+              <WeeklyOptInCard
+                email={email}
+                yearLevel={worksheet.yearLevel}
+                placement="result"
+                onSubscribed={() => {
+                  setWeeklySubscribed(true);
+                  setJustSubscribed("result");
+                }}
+              />
+            )}
+
+            <p style={{ margin: "14px 0 0", fontSize: 14.5, fontWeight: 700, color: c.navy }}>
+              Exams coming up?{" "}
+              <Link href="/exam-generator" style={{ color: c.teal, textDecoration: "underline", textUnderlineOffset: 3 }}>
+                Build a full practice exam with worked solutions →
+              </Link>
+            </p>
+
             {/* After the answers: the app first (Years 7 to 10), then the
                 tutor offer as the second option. */}
             {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
@@ -658,6 +720,91 @@ export default function WorksheetGenerator({
       )}
 
 
+    </div>
+  );
+}
+
+const WEEKLY_YEAR_SET = new Set(STUDY_APP_YEARS);
+
+// What ticking the weekly email gets them, worded for their year. The
+// weekly email itself only goes to Years 7 to 10A (lib/weekly-email.js);
+// every subscriber gets two worksheets a day.
+function weeklyOffer(yearLevel) {
+  const weekly = WEEKLY_YEAR_SET.has(yearLevel);
+  return {
+    weekly,
+    title: weekly
+      ? `Get a new ${yearLevel} worksheet every Monday`
+      : "Get 2 free worksheets a day",
+    points: weekly
+      ? [
+          "Fully worked solutions, a different topic each week",
+          "2 free worksheets a day here, instead of 1",
+        ]
+      : ["2 free worksheets a day here, instead of 1", "New free maths resources by email"],
+    fine: "Free. Includes occasional Tuterly news. Unsubscribe any time from any email.",
+  };
+}
+
+// The second ask, under a finished worksheet or at the daily limit. One
+// tap is the consent: the button says exactly what they're signing up for.
+function WeeklyOptInCard({ email, yearLevel, placement, onSubscribed }) {
+  const [state, setState] = useState("idle"); // idle | pending | done | error
+  const offer = weeklyOffer(yearLevel);
+  const atLimit = placement === "limit";
+
+  async function subscribe() {
+    if (!email) return;
+    setState("pending");
+    try {
+      const res = await fetch("/api/worksheets/email", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ email, year_level: yearLevel, marketing_opt_in: true, weekly_opt_in: true }),
+      });
+      if (!res.ok) throw new Error();
+      try { window.localStorage.setItem(WEEKLY_STORAGE_KEY, "1"); } catch {}
+      setState("done");
+      trackEvent("weekly_opt_in", { source: placement, year: yearLevel });
+      onSubscribed?.();
+    } catch {
+      setState("error");
+    }
+  }
+
+  if (state === "done") {
+    return (
+      <div style={weeklyCardStyle} role="status">
+        <p style={weeklyTitleStyle}>You&rsquo;re in.</p>
+        <p style={weeklyFineStyle}>
+          {offer.weekly
+            ? `Your first ${yearLevel} worksheet arrives on Monday evening. You can now make 2 worksheets a day here.`
+            : "You can now make 2 worksheets a day here."}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div style={weeklyCardStyle}>
+      <p style={weeklyKickerStyle}>{atLimit ? "Want another one today?" : "Free, every week"}</p>
+      <p style={weeklyTitleStyle}>{offer.title}</p>
+      <ul style={weeklyListStyle}>
+        {offer.points.map((p) => (
+          <li key={p} style={weeklyItemStyle}>
+            <span aria-hidden="true" style={weeklyTickStyle}>✓</span>
+            {p}
+          </li>
+        ))}
+      </ul>
+      <button type="button" onClick={subscribe} disabled={state === "pending" || !email} style={{ ...primaryButtonStyle, marginTop: 14, opacity: state === "pending" ? 0.7 : 1 }}>
+        {state === "pending" ? "Saving…" : atLimit ? "Sign me up and unlock it" : offer.weekly ? "Yes, send them to me" : "Yes, sign me up"}
+      </button>
+      {state === "error" && <p style={{ ...errorTextStyle, marginTop: 10 }}>That didn&rsquo;t work. Try again.</p>}
+      <p style={{ ...weeklyFineStyle, marginTop: 10 }}>
+        {email ? <>Sending to {email}. </> : null}
+        {offer.fine}
+      </p>
     </div>
   );
 }
@@ -727,8 +874,8 @@ function EmailGateModal({
           Unlock your free worksheet
         </h2>
         <p style={{ color: c.textLight, fontSize: 14, lineHeight: 1.6, margin: "0 0 18px" }}>
-          Drop your email and your child&apos;s year level. One free
-          worksheet per day, no credit card needed.
+          Your email and year level (yours, or your child&rsquo;s). Free,
+          no card needed.
         </p>
 
         <div style={{ display: "grid", gap: 14 }}>
@@ -746,7 +893,7 @@ function EmailGateModal({
             />
           </label>
           <label style={labelStyle}>
-            <span>Child&apos;s year level</span>
+            <span>Year level</span>
             <select
               value={year}
               onChange={(e) => onYearChange(e.target.value)}
@@ -763,12 +910,13 @@ function EmailGateModal({
           <label
             style={{
               display: "flex",
-              gap: 10,
+              gap: 12,
               alignItems: "flex-start",
-              fontSize: 13,
-              lineHeight: 1.5,
-              color: c.textLight,
               cursor: "pointer",
+              padding: "14px 14px 14px 12px",
+              borderRadius: 14,
+              border: `2px solid ${marketingOptIn ? "var(--brand)" : "var(--brand-soft)"}`,
+              background: "var(--brand-pale, var(--brand-soft))",
             }}
           >
             <input
@@ -776,9 +924,16 @@ function EmailGateModal({
               checked={!!marketingOptIn}
               onChange={(e) => onMarketingOptInChange(e.target.checked)}
               disabled={pending}
-              style={{ width: 16, height: 16, margin: "2px 0 0", flex: "none", accentColor: c.teal }}
+              style={{ width: 20, height: 20, margin: "1px 0 0", flex: "none", accentColor: "var(--brand)" }}
             />
-            <span>Email me a free worksheet for my child&rsquo;s year each week, plus Tuterly news. Unsubscribe any time.</span>
+            <span style={{ display: "grid", gap: 4 }}>
+              <span style={{ fontSize: 15, fontWeight: 800, color: c.navy, lineHeight: 1.35 }}>
+                {weeklyOffer(year).title}
+              </span>
+              <span style={{ fontSize: 13.5, fontWeight: 600, color: c.textLight, lineHeight: 1.5 }}>
+                {weeklyOffer(year).points.join(". ")}. {weeklyOffer(year).fine}
+              </span>
+            </span>
           </label>
         </div>
 
@@ -926,4 +1081,47 @@ const infoTextStyle = {
 const worksheetBodyStyle = {
   borderTop: `1px solid ${c.border}`,
   paddingTop: 8,
+};
+
+// Weekly worksheet email card (Ryan, 9 Nov 2026).
+const weeklyCardStyle = {
+  marginTop: 20,
+  padding: "18px 18px 16px",
+  borderRadius: 18,
+  border: "2px solid var(--brand-soft)",
+  background: "var(--brand-pale, var(--brand-soft))",
+};
+const weeklyKickerStyle = {
+  margin: 0,
+  fontSize: 12.5,
+  fontWeight: 800,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  color: c.teal,
+};
+const weeklyTitleStyle = { margin: "6px 0 0", fontSize: 19, fontWeight: 900, color: c.navy, lineHeight: 1.3 };
+const weeklyListStyle = { listStyle: "none", padding: 0, margin: "10px 0 0", display: "grid", gap: 6 };
+const weeklyItemStyle = { display: "flex", gap: 10, alignItems: "flex-start", fontSize: 15, fontWeight: 700, color: c.navy, lineHeight: 1.45 };
+const weeklyTickStyle = {
+  flex: "none",
+  width: 20,
+  height: 20,
+  marginTop: 1,
+  borderRadius: "50%",
+  display: "grid",
+  placeItems: "center",
+  background: "var(--brand)",
+  color: "var(--on-brand, #fff)",
+  fontSize: 11,
+  fontWeight: 900,
+};
+const weeklyFineStyle = { margin: "6px 0 0", fontSize: 13, fontWeight: 600, color: c.textLight, lineHeight: 1.5 };
+const okNoteStyle = {
+  margin: 0,
+  padding: "10px 12px",
+  borderRadius: 10,
+  background: "var(--success-soft, #e8f7ee)",
+  color: c.navy,
+  fontSize: 14,
+  fontWeight: 600,
 };

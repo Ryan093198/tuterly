@@ -33,7 +33,7 @@ const HOW = [
 ];
 
 const FAQS = [
-  { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day. There's nothing to pay and no card needed." },
+  { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day, or two a day if you sign up for the free weekly worksheet email. There's nothing to pay and no card needed." },
   { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Australian Curriculum. Topics are organised as in the Victorian Curriculum 2.0, Victoria's version of it, and cover the same maths taught in the other states, including NSW and WA, which have their own syllabuses. Choose the year, then the topic your child's class is on." },
   { q: "Are the worksheets the same every time?", a: "No. The generator writes six new questions each time, across Foundation, Standard and Extension, each with a fully worked solution." },
   { q: "Can it make a worksheet from my child's own mistakes?", a: "That's what the Tuterly app does for Years 7 to 10. Your child snaps the questions they got wrong, or uploads a marked test, and the app writes fresh questions on the same ideas until each one is mastered." },
@@ -130,7 +130,7 @@ export default function WorksheetsPage() {
             <ul className="ws-hero2__ticks">
               <li>Six fresh questions every time, never the same sheet twice</li>
               <li>A fully worked solution for every question</li>
-              <li>Free with your email, one worksheet a day</li>
+              <li>Free with your email: one worksheet a day, or two with our weekly worksheet email</li>
             </ul>
             <div className="ws-hero2__bayside">
               <p className="ws-hero2__bayside-t">Designed by senior educators at Bayside Academics</p>
