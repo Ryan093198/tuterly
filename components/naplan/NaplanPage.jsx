@@ -7,6 +7,7 @@ import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
+import AppCtaBand from "@/components/study/AppCtaBand";
 import { Eyebrow, Reveal, SectionHead } from "@/components/brand";
 import NaplanTest from "@/components/naplan/NaplanTest";
 import { NAPLAN_FACTS, NAPLAN_SOURCES, NAPLAN_YEARS, OFFICIAL_DEMO, calculatorLine, getNaplanTest, naplanFaqs, naplanSlug, naplanPdfPath, STRAND_PRACTICE, NAPLAN_READING } from "@/lib/naplan";
@@ -77,6 +78,13 @@ export default function NaplanPage({ year }) {
             <a href="#naplan-test" className="tb-btn tb-btn--primary">Start the practice test</a>
             <a href={naplanPdfPath(year)} className="tb-btn tb-btn--secondary">Download the PDF</a>
           </div>
+          {isApp && (
+            <div className="np-appbox">
+              <p className="np-appbox__title">Get ready for NAPLAN with the Tuterly app.</p>
+              <p className="np-appbox__text">Snap any question they get wrong. Quinn shows the worked solution, then gives fresh questions on the same skill until it sticks.</p>
+              <div className="np-appbox__form"><StudyAppCTA variant="hero" placement={`naplan_year_${year}_hero`} position="hero" slim /></div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -214,6 +222,14 @@ export default function NaplanPage({ year }) {
         </div>
       </section>
 
+      {isApp && (
+        <AppCtaBand
+          placement={`naplan_year_${year}_final`}
+          title={`Walk into Year ${year} NAPLAN ready.`}
+          lead={`The Tuterly app is built for Years 7 to 10. Every wrong answer becomes a worked solution and new practice on that exact skill, so the weak spots from this test get fixed before the real one.`}
+        />
+      )}
+      {isApp && <StudyAppCTA variant="banner" placement={`naplan_year_${year}_banner`} />}
       <MarketingFooter />
     </div>
   );
