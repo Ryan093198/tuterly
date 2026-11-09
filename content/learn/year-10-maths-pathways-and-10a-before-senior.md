@@ -92,7 +92,7 @@ Before the subject selection deadline, it is worth getting clear answers to thes
 
 Senior maths choices matter most because of university and course prerequisites. Some courses require a particular senior maths subject. Others list it as assumed knowledge or recommended study, which is not the same as a requirement but still matters for how hard the first year feels.
 
-Prerequisites are set by universities and admissions centres and they change. Check the current requirements for any courses your child is interested in on the official university and admissions centre websites. Victorian families can also try our [ATAR planner](/atar-planner), which maps VCE subject choices against course prerequisites for a set of courses, as a starting point for that conversation.
+Prerequisites are set by universities and admissions centres and they change. Check the current requirements for any courses your child is interested in on the official university and admissions centre websites.
 
 A useful rule of thumb: if your child is undecided and has a reasonable chance of managing the more advanced subject, keeping that option open is often easier than adding it later. But choosing a subject that does not suit them can make senior years harder and less enjoyable. The maths teacher's view on how your child copes with algebra is usually the best guide.
 

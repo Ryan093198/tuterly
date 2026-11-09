@@ -1,4 +1,5 @@
 ---
+studyApp: full
 title: "Online vs in-person tutoring: which is better for your child?"
 description: "An honest comparison of online and in-person tutoring for Australian families, when each works best, and why the tutor matters more than the format."
 date: "2026-07-30"
@@ -34,6 +35,16 @@ If you go online, a few things make the difference between a great session and a
 - A way to show handwritten maths working, a cheap stylus or a phone camera pointed at paper both do the job.
 - A quiet space and a device with a webcam.
 - A tutor who is comfortable teaching online, not just hosting a call.
+
+## Before you book: try this for one week
+
+Tutoring is usually one hour a week, and the slipping tends to happen in the six days in between. Before you commit to weekly sessions, it's worth trying a week of short, focused practice at home on maths, Years 7 to 10:
+
+1. Each night, your child snaps the maths questions they got wrong.
+2. They read the worked solution, then answer a new question on the same idea, not just the same question with new numbers.
+3. At the end of the week, the weekly review tests them on up to 8 of that week's trickiest questions.
+
+That's what the Tuterly app does. It was designed by educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years. If your child is still stuck after a week, a tutor's hour is well spent on the hard bits, and you'll know exactly which bits those are. [Try it free on one of tonight's questions](/try).
 
 ## The bottom line
 

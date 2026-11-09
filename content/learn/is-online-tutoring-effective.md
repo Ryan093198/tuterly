@@ -1,4 +1,5 @@
 ---
+studyApp: full
 title: "Is online tutoring actually effective?"
 description: "A straight answer for parents wondering whether online tutoring really works, what makes it effective, and when in-person is still the better call."
 date: "2026-07-28"
@@ -25,6 +26,16 @@ The catch is in "well-run". Online done badly, a distracted student, a weak conn
 ## When in-person is still better
 
 Online is not right for everyone. Very young children who cannot yet focus on a screen, or households without a reliable connection and a quiet space, may do better in person for now. And a small number of hands-on subjects genuinely benefit from being in the room. For mainstream academic tutoring, maths, English, the sciences, VCE, these are the exceptions rather than the rule.
+
+## Before you book: try this for one week
+
+Tutoring is usually one hour a week, and the slipping tends to happen in the six days in between. Before you commit to weekly sessions, it's worth trying a week of short, focused practice at home on maths, Years 7 to 10:
+
+1. Each night, your child snaps the maths questions they got wrong.
+2. They read the worked solution, then answer a new question on the same idea, not just the same question with new numbers.
+3. At the end of the week, the weekly review tests them on up to 8 of that week's trickiest questions.
+
+That's what the Tuterly app does. It was designed by educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years. If your child is still stuck after a week, a tutor's hour is well spent on the hard bits, and you'll know exactly which bits those are. [Try it free on one of tonight's questions](/try).
 
 ## How to give it the best chance
 

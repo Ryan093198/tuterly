@@ -78,6 +78,61 @@ const PAUSED_PREFIXES = [
 ];
 const PAUSED_EXACT = ["/tutors"];
 
+// Removed for good (Ryan, 9 Nov 2026): VCE content from the old tutor
+// marketplace. 410 Gone tells Google to drop them; the site is now about
+// the Years 7 to 10 maths app.
+const GONE_EXACT = new Set([
+  "/vce-tutoring",
+  "/atar-planner",
+  "/learn/atar-results-day-guide-victorian-parents-year-12",
+  "/learn/vce-accounting-year-11-guide-victoria",
+  "/learn/vce-biology-year-11-guide-victoria",
+  "/learn/vce-biology-year-12-guide-victoria",
+  "/learn/vce-chemistry-year-11-guide-victoria",
+  "/learn/vce-chemistry-year-12-guide-victoria",
+  "/learn/vce-economics-year-11-guide-victoria",
+  "/learn/vce-economics-year-12-guide-victoria",
+  "/learn/vce-english-analysing-argument-year-12-guide-victoria",
+  "/learn/vce-english-creative-writing-year-12-guide-victoria",
+  "/learn/vce-english-essay-writing-year-12-guide-victoria",
+  "/learn/vce-english-exam-preparation-year-12-term-4",
+  "/learn/vce-english-language-guide-year-11-12-victoria",
+  "/learn/vce-english-oral-presentation-year-12-guide-victoria",
+  "/learn/vce-english-what-makes-9-out-of-10-essay",
+  "/learn/vce-english-what-makes-a-high-scoring-essay",
+  "/learn/vce-english-year-11-guide-victoria",
+  "/learn/vce-english-year-12-guide-victoria",
+  "/learn/vce-exam-study-timetable-guide-year-12-victoria",
+  "/learn/vce-further-mathematics-year-11-guide-victoria",
+  "/learn/vce-further-mathematics-year-12-guide-victoria",
+  "/learn/vce-history-year-11-guide-victoria",
+  "/learn/vce-legal-studies-year-11-guide-victoria",
+  "/learn/vce-legal-studies-year-12-guide-victoria",
+  "/learn/vce-maths-methods-year-11-guide-victoria",
+  "/learn/vce-maths-methods-year-12-guide-victoria",
+  "/learn/vce-methods-study-plan-40-plus",
+  "/learn/vce-physics-year-11-guide-victoria",
+  "/learn/vce-physics-year-12-guide-victoria",
+  "/learn/vce-psychology-year-11-guide-victoria",
+  "/learn/vce-psychology-year-12-guide-victoria",
+  "/learn/vce-sac-season-guide-year-11-parents-victoria",
+  "/learn/vce-specialist-mathematics-year-11-guide-victoria",
+  "/learn/vce-specialist-mathematics-year-12-guide-victoria",
+  "/learn/vce-year-11-what-students-need-to-do-differently",
+]);
+// Retired posts with a current equivalent.
+const MOVED = {
+  "/learn/vce-maths-methods-vs-further-mathematics-guide-victoria": "/learn/vce-general-maths-vs-methods",
+  "/learn/how-much-does-online-tutoring-cost-victoria": "/parents/maths-tutoring-cost-australia",
+};
+
+function goneResponse() {
+  return new NextResponse(
+    '<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>Page removed | Tuterly</title><body style="font-family:system-ui;padding:40px;max-width:560px;margin:auto"><h1>This page has been removed</h1><p>Tuterly is now a Years 7 to 10 maths app. <a href="/">Go to the home page</a> or <a href="/worksheets">get a free maths worksheet</a>.</p></body>',
+    { status: 410, headers: { "content-type": "text/html; charset=utf-8", "x-robots-tag": "noindex" } }
+  );
+}
+
 const APP_URL = "https://app.tuterly.com.au";
 const MARKETING_URL = "https://tuterly.com.au";
 
@@ -91,6 +146,11 @@ export async function proxy(request) {
   const rawHost = (request.headers.get("host") || "").toLowerCase();
   const host = rawHost.split(":")[0]; // strip :3000 in dev
   const { pathname, search } = request.nextUrl;
+
+  // Removed and moved pages, on every host.
+  const cleanPath = pathname.replace(/\/+$/, "") || "/";
+  if (MOVED[cleanPath]) return NextResponse.redirect(new URL(MOVED[cleanPath], request.url), 308);
+  if (GONE_EXACT.has(cleanPath)) return goneResponse();
 
   const isMarketingDomain = MARKETING_HOSTS.has(host);
   const isAppDomain = host === APP_HOST;

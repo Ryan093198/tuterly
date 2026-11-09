@@ -1,4 +1,5 @@
 ---
+studyApp: full
 title: "When does your child actually need a tutor? An honest answer."
 description: "An honest framework for Melbourne parents. Signs your child needs support, signs they want to be pushed further, and how to find the right fit."
 date: "2026-05-18"
@@ -23,6 +24,16 @@ A good tutor doesn't just re-teach what the school covered. They identify the sp
 Then there's the other side. Your child is getting good marks but isn't being challenged. They finish classwork quickly and spend the rest of the lesson waiting. They're capable of more but the school curriculum moves at the pace of the middle.
 
 This is where tutoring becomes about extension, not remediation. A tutor can introduce harder problems, deeper thinking, and topics beyond the year level. For students eyeing selective entry, scholarships, or high VCE scores, this kind of early extension builds the habits and confidence that matter later.
+
+## Before you book: try this for one week
+
+Tutoring is usually one hour a week, and the slipping tends to happen in the six days in between. Before you commit to weekly sessions, it's worth trying a week of short, focused practice at home on maths, Years 7 to 10:
+
+1. Each night, your child snaps the maths questions they got wrong.
+2. They read the worked solution, then answer a new question on the same idea, not just the same question with new numbers.
+3. At the end of the week, the weekly review tests them on up to 8 of that week's trickiest questions.
+
+That's what the Tuterly app does. It was designed by educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years. If your child is still stuck after a week, a tutor's hour is well spent on the hard bits, and you'll know exactly which bits those are. [Try it free on one of tonight's questions](/try).
 
 ## How to find the right fit
 

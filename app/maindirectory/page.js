@@ -21,7 +21,6 @@ const MAIN_MARKETING = [
   { path: "/worksheets", label: "Free Worksheets" },
   { path: "/directory", label: "Parent-facing tutor directory" },
   { path: "/learn", label: "Learn (blog)" },
-  { path: "/atar-planner", label: "ATAR Course Planner (tool)" },
   { path: "/privacy", label: "Privacy" },
   { path: "/terms", label: "Terms" },
 ];
@@ -41,7 +40,6 @@ const BOTTOM_OF_FUNNEL = [
   { path: "/tutor-doctor-alternative", label: "Tutor Doctor alternative (comparison)" },
   { path: "/best-tutoring-melbourne", label: "Best tutoring in Melbourne (showcase)" },
   { path: "/tutoring-prices-melbourne", label: "Tutoring prices Melbourne (pricing)" },
-  { path: "/vce-tutoring", label: "VCE tutoring hub" },
   { path: "/online-tutoring-melbourne", label: "Online tutoring Melbourne" },
   { path: "/scholarship-test-prep", label: "Scholarship test prep" },
   { path: "/sample-report", label: "Sample report showcase" },

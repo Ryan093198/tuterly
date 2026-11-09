@@ -36,7 +36,6 @@ const GROUPS = [
       { href: "/years", label: "Maths by year (7 to 10)" },
       { href: "/calculators/pythagoras", label: "Pythagoras calculator" },
       { href: "/calculators/trigonometry", label: "Trigonometry calculator" },
-      { href: "/atar-planner", label: "ATAR planner" },
     ],
   },
   {
@@ -80,7 +79,6 @@ const GROUPS = [
     links: [
       { href: "/tutoring", label: "Tutoring in Melbourne" },
       { href: "/best-online-tutoring-melbourne", label: "Online tutoring" },
-      { href: "/vce-tutoring", label: "VCE tutoring" },
     ],
   },
   {
