@@ -74,3 +74,291 @@
 .pl-hero .pl-tabs .pl-print { margin-left: 0; }
 .pl-weeks ul { list-style: disc; }
 .sp-h2 { margin: 8px 0 16px; font-size: clamp(26px, 2.2vw + 14px, 36px); font-weight: 900; line-height: 1.15; color: var(--foreground); }
+
+/* =====================================================================
+   Saved plan, redesigned (10 Nov 2026): a ticket to exam day, then a
+   trail of stops. Done stops are stamped; the next stop is open.
+   ===================================================================== */
+.pv {
+  --pv-teal: var(--brand);
+  --pv-teal-deep: var(--brand-edge);
+  --pv-sun: #ffc23d;
+  --pv-sun-ink: #7a5200;
+  --pv-violet: var(--violet);
+  --pv-coral: #ff7a59;
+  --pv-line: #d5dde3;
+  --pv-paper: var(--card);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 16px 72px;
+  font-family: var(--font-display);
+}
+
+/* Ticket */
+.pv-ticket {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-radius: 22px;
+  background: var(--pv-teal);
+  color: #fff;
+  box-shadow: 0 8px 0 var(--pv-teal-deep);
+}
+.pv-ticket__main { padding: 22px 22px 22px 24px; min-width: 0; }
+.pv-ticket__k { margin: 0; font-size: 16px; font-weight: 800; opacity: 0.9; }
+.pv-ticket__date { margin: 2px 0 0; font-size: clamp(26px, 4vw + 10px, 40px); font-weight: 900; line-height: 1.08; letter-spacing: -0.01em; }
+.pv-ticket__topics { margin: 10px 0 0; font-size: 14.5px; font-weight: 600; line-height: 1.5; opacity: 0.92; max-width: 46ch; }
+.pv-ticket__stub {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-width: 112px;
+  padding: 18px 16px;
+  border-left: 3px dashed rgba(255, 255, 255, 0.55);
+  text-align: center;
+}
+/* The notches where the stub tears off. */
+.pv-ticket__stub::before,
+.pv-ticket__stub::after {
+  content: "";
+  position: absolute;
+  left: -13px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--card);
+}
+.pv-ticket__stub::before { top: -11px; }
+.pv-ticket__stub::after { bottom: -11px; }
+.pv-ticket__n { font-size: 56px; font-weight: 900; line-height: 0.95; color: var(--pv-sun); }
+.pv-ticket__u { font-size: 14px; font-weight: 800; }
+.pv-ticket__u--big { font-size: 17px; max-width: 9ch; line-height: 1.25; }
+
+/* One bead per night */
+.pv-beads { display: flex; flex-wrap: wrap; gap: 6px; margin: 26px 0 0; }
+.pv-bead { width: 18px; height: 18px; border-radius: 50%; border: 2.5px solid var(--pv-line); background: var(--card); transition: background 0.25s, border-color 0.25s, transform 0.25s; }
+.pv-bead--practice_exam { border-radius: 5px; transform: rotate(45deg) scale(0.86); }
+.pv-bead.is-done { background: var(--pv-teal); border-color: var(--pv-teal); }
+.pv-bead--practice_exam.is-done { background: var(--pv-violet); border-color: var(--pv-violet); }
+.pv-bead.is-next { border-color: var(--pv-teal); }
+.pv-count { margin: 10px 0 0; font-size: 15.5px; color: var(--muted); }
+.pv-count strong { color: var(--foreground); font-weight: 900; }
+
+.pv-switch { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pv-switch button { font: inherit; font-size: 15px; font-weight: 800; padding: 8px 16px; border-radius: 99px; border: 2px solid var(--border); background: var(--card); color: var(--foreground); cursor: pointer; }
+.pv-switch button.is-on { border-color: var(--foreground); background: var(--foreground); color: var(--card); }
+.pv-switch .pv-print { margin-left: auto; }
+.pv button:focus-visible, .pv a:focus-visible { outline: 3px solid var(--pv-sun); outline-offset: 2px; }
+
+.pv-error { margin: 16px 0 0; padding: 10px 12px; border-radius: 12px; background: #fff1f2; color: var(--danger, #be123c); font-size: 15px; }
+
+/* Parent notes */
+.pv-parent { margin-top: 22px; padding: 20px; border-radius: 18px; background: var(--violet-soft); color: var(--foreground); }
+.pv-parent h2 { margin: 0; font-size: 21px; font-weight: 900; }
+.pv-parent > p { margin: 6px 0 0; font-size: 15.5px; line-height: 1.6; }
+.pv-weeks { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 14px; }
+.pv-weeks__h { margin: 0; font-weight: 900; color: var(--violet-text); }
+.pv-weeks ul { margin: 4px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.55; }
+
+/* The trail */
+.pv-trail { list-style: none; margin: 30px 0 0; padding: 0; }
+.pv-stop { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding-bottom: 18px; }
+/* The path down to the next stop: dashed until reached, then solid teal. */
+.pv-stop::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 44px;
+  bottom: -2px;
+  border-left: 3px dashed var(--pv-line);
+}
+.pv-stop.is-done::before { border-left: 3px solid var(--pv-teal); }
+.pv-stop--finish::before { display: none; }
+
+.pv-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--pv-line);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 900;
+}
+.pv-stop.is-next .pv-node { border-color: var(--pv-teal); color: var(--pv-teal); box-shadow: 0 0 0 6px var(--brand-soft); }
+.pv-node--done { border-color: var(--pv-teal); background: var(--pv-teal); color: #fff; }
+.pv-stop--practice_exam .pv-node--exam { border-color: var(--pv-violet); color: var(--pv-violet); }
+.pv-stop--practice_exam.is-done .pv-node--done { border-color: var(--pv-violet); background: var(--pv-violet); }
+.pv-node--review { color: var(--pv-sun-ink); border-color: var(--pv-sun); }
+.pv-node--flag { border-color: var(--foreground); color: var(--foreground); }
+.pv-stop--finish.is-done .pv-node--flag { background: var(--pv-sun); border-color: var(--pv-sun); color: var(--foreground); }
+
+/* Stops: quiet by default; the next one is the big, open card. */
+.pv-card { min-width: 0; padding: 8px 0 4px; }
+.pv-stop.is-next .pv-card {
+  padding: 18px 18px 18px;
+  border-radius: 20px;
+  border: 3px solid var(--pv-teal);
+  background: var(--card);
+  box-shadow: 0 6px 0 var(--brand-soft);
+}
+.pv-stop--practice_exam.is-next .pv-card { border-color: var(--pv-violet); box-shadow: 0 6px 0 var(--violet-soft); }
+.pv-card__head { position: relative; padding-right: 92px; }
+.pv-when { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; color: var(--muted); }
+.pv-tonight { padding: 2px 10px; border-radius: 99px; background: var(--pv-sun); color: var(--foreground); }
+.pv-catch { padding: 2px 10px; border-radius: 99px; background: #ffe9e2; color: #9a3412; }
+.pv-title { margin: 2px 0 0; font-size: 19px; font-weight: 900; line-height: 1.28; color: var(--foreground); }
+.pv-stop.is-next .pv-title { font-size: clamp(21px, 1.4vw + 14px, 26px); }
+.pv-stop.is-done .pv-title { color: var(--muted); }
+
+/* The stamp on a finished night */
+.pv-stamp {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  display: grid;
+  justify-items: center;
+  width: 82px;
+  padding: 6px 4px;
+  border: 3px solid var(--pv-teal);
+  border-radius: 12px;
+  color: var(--pv-teal-deep);
+  transform: rotate(-8deg);
+  background: var(--card);
+  line-height: 1.1;
+  animation: pv-stamp 0.42s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+.pv-stamp span { font-size: 18px; font-weight: 900; }
+.pv-stamp small { font-size: 11px; font-weight: 800; }
+.pv-stop--practice_exam .pv-stamp { border-color: var(--pv-violet); color: var(--violet-text); }
+@keyframes pv-stamp {
+  0% { opacity: 0; transform: rotate(-24deg) scale(1.9); }
+  100% { opacity: 1; transform: rotate(-8deg) scale(1); }
+}
+
+/* Tasks in an open stop */
+.pv-tasks { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; }
+.pv-task { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; padding: 8px 0; font-family: var(--font-sans); font-size: 15.5px; line-height: 1.5; color: var(--foreground); }
+.pv-task + .pv-task { border-top: 1px solid var(--border); }
+.pv-task__i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--brand-pale); color: var(--pv-teal-deep); }
+.pv-task--timer .pv-task__i { background: var(--violet-soft); color: var(--violet-text); }
+.pv-task--snap .pv-task__i { background: #fff4d6; color: var(--pv-sun-ink); }
+.pv-task--moon .pv-task__i, .pv-task--sheet .pv-task__i { background: #fff4d6; color: var(--pv-sun-ink); }
+.pv-task__t { padding-top: 5px; }
+.pv-task__t a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--pv-teal); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.pv-task--snap .pv-task__t { font-weight: 600; }
+.pv-app {
+  display: inline-block;
+  margin: 6px 0 0 6px;
+  padding: 3px 11px;
+  border-radius: 99px;
+  background: var(--foreground);
+  color: var(--card) !important;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none !important;
+  vertical-align: 1px;
+}
+
+.pv-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 12px; }
+.pv-done-btn {
+  position: relative;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--pv-teal);
+  color: #fff;
+  box-shadow: 0 5px 0 var(--pv-teal-deep);
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.pv-stop--practice_exam .pv-done-btn { background: var(--pv-violet); box-shadow: 0 5px 0 #5a52b8; }
+.pv-done-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--pv-teal-deep); }
+.pv-stop:not(.is-next) .pv-done-btn { font-size: 14.5px; padding: 7px 14px; border-radius: 12px; background: var(--card); color: var(--foreground); border: 2px solid var(--border); box-shadow: none; }
+.pv-done-btn:disabled { opacity: 0.75; }
+.pv-undo, .pv-peek { font: inherit; font-size: 14px; font-weight: 800; padding: 0; border: 0; background: none; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.pv-peek { color: var(--brand-text); }
+
+/* Confetti from the button */
+.pv-burst { position: absolute; left: 50%; top: 50%; width: 0; height: 0; pointer-events: none; }
+.pv-bit {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin: -4px;
+  border-radius: 50%;
+  animation: pv-bit 0.75s cubic-bezier(0.15, 0.7, 0.3, 1) forwards;
+}
+.pv-bit--sq { border-radius: 2px; width: 7px; height: 11px; }
+@keyframes pv-bit {
+  0% { transform: rotate(var(--a)) translateY(0) scale(1); opacity: 1; }
+  100% { transform: rotate(var(--a)) translateY(calc(var(--d) * -1)) scale(0.6) rotate(140deg); opacity: 0; }
+}
+
+/* Exam day */
+.pv-finish { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0 4px; }
+.pv-finish__x { margin: 4px 0 0; font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: var(--muted); max-width: 46ch; }
+.pv-stop--finish.is-done .pv-finish__x { color: var(--foreground); font-weight: 600; }
+.pv-quinn { flex: none; }
+
+.pv-foot { margin: 28px 0 0; font-family: var(--font-sans); font-size: 14.5px; color: var(--muted); }
+.pv-foot a { color: var(--brand-text); font-weight: 700; }
+
+/* Message after ticking a night */
+.pv-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  z-index: 60;
+  max-width: calc(100% - 32px);
+  padding: 12px 20px;
+  border-radius: 16px;
+  background: var(--foreground);
+  color: var(--card);
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+  transform: translate(-50%, 140%);
+  transition: transform 0.35s cubic-bezier(0.2, 1.3, 0.4, 1);
+  pointer-events: none;
+}
+.pv-toast.is-on { transform: translate(-50%, 0); }
+
+@media (max-width: 520px) {
+  .pv-ticket { grid-template-columns: 1fr; }
+  .pv-ticket__stub { grid-auto-flow: column; justify-content: start; align-items: baseline; gap: 8px; border-left: 0; border-top: 3px dashed rgba(255, 255, 255, 0.55); padding: 12px 24px 16px; }
+  .pv-ticket__stub::before, .pv-ticket__stub::after { top: -12px; bottom: auto; }
+  .pv-ticket__stub::before { left: -11px; }
+  .pv-ticket__stub::after { left: auto; right: -11px; }
+  .pv-ticket__n { font-size: 44px; }
+  .pv-stop { grid-template-columns: 38px 1fr; gap: 10px; }
+  .pv-node { width: 38px; height: 38px; font-size: 15px; }
+  .pv-stop::before { left: 18px; top: 38px; }
+  .pv-stop.is-next .pv-card { padding: 16px 14px; }
+  .pv-card__head { padding-right: 74px; }
+  .pv-stamp { width: 70px; }
+  .pv-stamp span { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pv-stamp, .pv-bit { animation: none; }
+  .pv-bit { display: none; }
+  .pv-toast, .pv-bead { transition: none; }
+}
+
+@media print {
+  .pv-switch, .pv-actions, .pv-app, .pv-foot, .pv-toast { display: none !important; }
+  .pv-ticket { box-shadow: none; border: 2px solid #999; color: #000; background: #fff; }
+  .pv-stop { break-inside: avoid; }
+}
+.pv-tasks.is-collapsed { display: none; }
+@media print { .pv-tasks.is-collapsed { display: grid; } }
