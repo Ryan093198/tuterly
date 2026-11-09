@@ -17,6 +17,7 @@ import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import SuburbHero from "@/components/study/SuburbHero";
+import NotYetTutor from "@/components/study/NotYetTutor";
 import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
@@ -134,12 +135,15 @@ export default async function SuburbPage({ params }) {
       {/* HERO */}
       <SuburbHero
         kicker={`Maths tutoring in ${data.name} · Years 7 to 10`}
-        h1={`Maths help for ${data.name} students that follows their own school.`}
+        h1={`Looking for a maths tutor in ${data.name}? You might not need one just yet.`}
         lead={`${schoolList
           ? `Whether your child is at ${schoolList}, ${name} works from their own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`
           : `${name} works from your child's own school: upload their test outline, past papers and class notes, and it works out what's on their next test and how their school writes its questions.`} It's built by the team behind Bayside Academics, a Melbourne tutoring centre, and puts what works in tutoring into an iPhone app (Android coming soon).`}
         placement="suburb_hero"
       />
+
+      {/* NOT YET A TUTOR (9 Nov 2026): the founder angle, straight under the hero */}
+      <NotYetTutor suburbName={data.name} region={data.region} />
 
       {/* BUILT BY TUTORS */}
       <section style={{ padding: "56px 24px", background: c.offWhite }}>
