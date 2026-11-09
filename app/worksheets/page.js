@@ -12,6 +12,10 @@ import { SITE_URL } from "@/lib/site";
 import { StateSwitcher } from "@/components/state/StateHub";
 import { SKILL_PAGES } from "@/lib/skill-pages";
 import { TOPIC_HUBS } from "@/lib/topic-hubs";
+import { Eyebrow } from "@/components/brand";
+import { BAYSIDE } from "@/lib/bayside";
+import "@/components/brand/brand.css";
+import "./worksheets.css";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
@@ -20,7 +24,7 @@ import { TOPIC_HUBS } from "@/lib/topic-hubs";
 
 const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 (Australian Curriculum) | Tuterly";
 const DESCRIPTION =
-  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Australian Curriculum, for every state.";
+  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Designed by senior educators at Bayside Academics. Australian Curriculum, for every state.";
 
 const HOW = [
   { n: "1", title: "Pick the year and topic", body: "Every Year 3 to 10 maths topic in the Australian Curriculum (as set out in the Victorian Curriculum 2.0), grouped by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
@@ -100,55 +104,53 @@ export default function WorksheetsPage() {
         ::selection { background: ${c.tealPale}; color: ${c.ink}; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @media(max-width:768px) {
-          .ws-hero { padding: 120px 20px 44px !important; }
-          .ws-hero h1 { font-size: 38px !important; }
           .ws-section { padding-left: 20px !important; padding-right: 20px !important; }
           .ws-nav { padding: 0 16px !important; }
           .ws-nav-links a:not(.ws-nav-cta) { display: none; }
-        }
-        .ws-hero__grid { max-width: 1040px; margin: 0 auto; display: grid; gap: 28px; justify-items: center; }
-        .ws-hero__video { margin: 0; display: grid; justify-items: center; gap: 10px; }
-        .ws-hero__video figcaption { max-width: 290px; font-size: 14px; line-height: 1.45; color: ${c.textLight}; text-align: center; }
-        .ws-hero__video a { color: ${c.tealDeep}; font-weight: 700; }
-        @media(min-width:900px) {
-          .ws-hero__grid { grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
-          .ws-hero__copy { text-align: left !important; }
-          .ws-hero__copy p, .ws-hero__copy div { margin-left: 0 !important; justify-content: flex-start !important; }
         }
       `}</style>
 
       {/* NAV */}
       <MarketingNav />
 
-      {/* HERO */}
-      <section className="ws-hero" style={{ padding: "56px 40px 60px", background: "linear-gradient(180deg, #FFFFFF 0%, #F7F9FC 100%)" }}>
-        <div className="ws-hero__grid">
-        <div className="ws-hero__copy" style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", animation: "fadeUp 0.8s ease" }}>
-          <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 16 }}>
-            Free worksheet generator
-          </p>
-          <h1 style={{ fontWeight: 800, fontSize: 52, color: c.ink, lineHeight: 1.1, letterSpacing: "-1.4px", marginBottom: 20 }}>
-            Free maths worksheet generator,{" "}
-            <span style={{ color: c.teal }}>Year 3 to Year 10</span>.
-          </h1>
-          <p style={{ fontSize: 17.5, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto 22px" }}>
-            Pick the year and topic and get six new questions, from Foundation
-            to Extension, with fully worked solutions. Australian Curriculum,
-            for every state. Free with your email, one worksheet a day.
-          </p>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-            <p style={{ fontSize: 13, color: c.textLight, fontWeight: 500 }}>
-              Designed by Australian educators at Bayside Academics
+      {/* HERO (Ryan, 9 Nov 2026: the most visited page, so it uses the
+          same hero type and layout as /parents). The questions are written
+          fresh by the generator, so the Bayside line credits the design,
+          not the individual questions. */}
+      <section className="tb ws-hero2" aria-labelledby="ws-title">
+        <div className="tb-wrap ws-hero2__grid">
+          <div>
+            <Eyebrow>Free worksheet generator · Years 3 to 10</Eyebrow>
+            <h1 id="ws-title" className="tb-h1">
+              Free maths worksheet generator, <span className="ws-hero2__accent">Year&nbsp;3 to Year&nbsp;10.</span>
+            </h1>
+            <p className="tb-lead ws-hero2__lead">
+              Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions. Australian Curriculum, for every state.
             </p>
+            <ul className="ws-hero2__ticks">
+              <li>Six fresh questions every time, never the same sheet twice</li>
+              <li>A fully worked solution for every question</li>
+              <li>Free with your email, one worksheet a day</li>
+            </ul>
+            <div className="ws-hero2__bayside">
+              <p className="ws-hero2__bayside-t">Designed by senior educators at Bayside Academics</p>
+              <p className="ws-hero2__bayside-x">
+                {`${BAYSIDE.line.replace(/^Bayside Academics, a/, "A")}. For unlimited questions, worked solutions, topic tests and practice exams, try the Tuterly app.`}
+              </p>
+            </div>
+            <div className="ws-hero2__cta">
+              <a href="#generator" className="tb-btn tb-btn--primary">Make a worksheet</a>
+              <Link href="/students" className="ws-hero2__more">Unlimited practice in the Tuterly app →</Link>
+            </div>
           </div>
-        </div>
-        <figure className="ws-hero__video">
-          <DemoVideo width={250} placement="worksheets_hero" priority video={EXAM_ZONE_VIDEO} />
-          <figcaption>
-            Predict the questions on your maths exam: Exam Zone in the Tuterly app writes practice exams from your own test outline and past papers.{" "}
-            <Link href="/students#exam-zone">See how it works</Link>
-          </figcaption>
-        </figure>
+          <figure className="ws-hero2__visual">
+            <div className="ws-hero2__blob" aria-hidden="true" />
+            <DemoVideo width={300} placement="worksheets_hero" priority video={EXAM_ZONE_VIDEO} />
+            <figcaption className="ws-hero2__cap">
+              <strong>Predict the questions on your maths exam.</strong> Exam Zone in the Tuterly app writes practice exams from your own test outline and past papers.{" "}
+              <Link href="/students#exam-zone">See how it works</Link>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -156,7 +158,7 @@ export default function WorksheetsPage() {
       <StateSwitcher title="Topics, term dates and tests for your state" />
 
       {/* GENERATOR */}
-      <main className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px" }}>
+      <main id="generator" className="ws-section" style={{ maxWidth: 760, margin: "0 auto", padding: "8px 24px 56px", scrollMarginTop: 90 }}>
         <WorksheetGenerator topicsByYear={topicsByYear} studyAppUnderGenerator={false} />
       </main>
 

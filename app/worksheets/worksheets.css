@@ -1,0 +1,38 @@
+/* /worksheets hero, matched to the /parents hero (Ryan, 9 Nov 2026).
+   Shared pieces: components/brand/brand.css. */
+
+.ws-hero2 { padding-block: 28px 48px; overflow: hidden; background: linear-gradient(180deg, var(--card) 0%, var(--background) 100%); }
+.ws-hero2__grid { display: grid; gap: 32px; align-items: center; }
+.ws-hero2__grid > * { min-width: 0; }
+.ws-hero2__accent { color: var(--brand-text); }
+.ws-hero2__lead { margin-top: 16px; }
+
+.ws-hero2__ticks { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+.ws-hero2__ticks li { position: relative; padding-left: 32px; font-size: 16.5px; font-weight: 800; line-height: 1.45; color: var(--foreground); }
+.ws-hero2__ticks li::before {
+  content: "✓"; position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--brand); color: var(--on-brand, #fff); font-size: 12px; font-weight: 900;
+}
+
+.ws-hero2__bayside { margin-top: 22px; padding: 16px 18px; border-radius: 18px; background: var(--brand-pale, var(--brand-soft)); border: 2px solid var(--brand-soft); max-width: 600px; }
+.ws-hero2__bayside-t { font-size: 16px; font-weight: 900; color: var(--foreground); line-height: 1.35; }
+.ws-hero2__bayside-x { margin-top: 6px !important; font-size: 14.5px; font-weight: 600; line-height: 1.55; color: var(--muted); }
+
+.ws-hero2__cta { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.ws-hero2__more { font-size: 15.5px; font-weight: 800; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
+
+.ws-hero2__visual { margin: 0; position: relative; display: grid; justify-items: center; gap: 12px; padding: 12px 0 0; }
+.ws-hero2__blob { position: absolute; inset: 4% 12% 18%; border-radius: 48px; background: var(--violet-soft); transform: rotate(-6deg); }
+.ws-hero2__visual > :not(.ws-hero2__blob) { position: relative; }
+.ws-hero2__cap { max-width: 300px; font-size: 14px; line-height: 1.5; color: var(--muted); text-align: center; }
+.ws-hero2__cap strong { color: var(--foreground); }
+.ws-hero2__cap a { color: var(--brand-text); font-weight: 800; }
+
+@media (max-width: 599px) {
+  .ws-hero2__cta .tb-btn { width: 100%; }
+}
+@media (min-width: 900px) {
+  .ws-hero2 { padding-block: 56px 80px; }
+  .ws-hero2__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; }
+}
+.ws-hero2 .tb-h1 { font-size: clamp(38px, 3.6vw + 18px, 62px); }
