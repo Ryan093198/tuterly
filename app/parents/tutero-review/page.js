@@ -3,6 +3,7 @@ import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 import { PLUS_PRICES } from "@/lib/study-launch";
 import { BAYSIDE } from "@/lib/bayside";
+import BaysideBuilt from "@/components/parent-guides/BaysideBuilt";
 
 // Tutero review (Ryan, 9 Nov 2026): "tutero" 3,600 a month in Australia,
 // "tutero reviews" 260 (Keyword Planner, Nov 2026). Facts only from Tutero's
@@ -113,13 +114,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="tuterly" className="tb-section" aria-labelledby="h-tuterly">
-        <div className="tb-wrap pg-narrow">
-          <h2 id="h-tuterly" className="tb-h2 pg-h2">Where Tuterly fits</h2>
-          <p>Tuterly is built by the team behind {BAYSIDE.line}. It&rsquo;s the tutoring method in an app: find every mistake, fix it with a worked solution, master it with fresh practice, then predict the test with practice exams in your school&rsquo;s style.</p>
-          <p>It isn&rsquo;t a live tutor and only covers Years 7 to 10 maths. Some families use it instead of weekly lessons; others use it alongside Tutero or another tutor, so the practice happens between lessons and the tutor&rsquo;s hour goes further.</p>
-        </div>
-      </section>
+      <BaysideBuilt id="tuterly" />
     </GuideShell>
   );
 }
