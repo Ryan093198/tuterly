@@ -85,7 +85,7 @@ export default function ExamGeneratorPage() {
             </div>
             <div className="ws-hero2__cta">
               <a href="#build" className="tb-btn tb-btn--primary">Build my exam</a>
-              <a href="#eg-app" className="ws-hero2__more">How it compares to Exam Zone →</a>
+              <a href="#eg-app" className="ws-hero2__more">How it compares to the Tuterly app →</a>
             </div>
           </div>
           <figure className="ws-hero2__visual">
