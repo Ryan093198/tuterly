@@ -17,6 +17,11 @@ export const maxDuration = 300;
 //   ?to=a@b.com     send this week's email for ?year= to one address only (test)
 // Fails closed if CRON_SECRET is unset.
 
+// Paused by Ryan on 9 Nov 2026 while the email content is reworked: the
+// cron is also out of vercel.json. ?preview= and ?to= (single test send)
+// still work. To resume, set this to false and put the cron back.
+const PAUSED = true;
+
 const FROM = process.env.RESEND_FROM_EMAIL || "Tuterly <noreply@tuterly.com.au>";
 
 function authorized(request) {
@@ -55,6 +60,8 @@ async function handle(request) {
     const { data, error } = await resend.emails.send({ from: FROM, to: testTo, subject: `[Test] ${subject}`, html, text });
     return NextResponse.json({ ok: !error, id: data?.id, error: error?.message });
   }
+
+  if (PAUSED) return NextResponse.json({ ok: true, paused: true, sent: 0 });
 
   const admin = createAdminClient();
   const cutoff = new Date(Date.now() - 6 * 86_400_000).toISOString();

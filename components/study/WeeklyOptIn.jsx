@@ -11,6 +11,10 @@ import { trackEvent } from "@/lib/analytics";
 
 // Set once this browser has signed up, so the card isn't shown again.
 export const WEEKLY_STORAGE_KEY = "tuterly:worksheet_weekly";
+// The weekly worksheet email is paused (Ryan, 9 Nov 2026) while its content
+// is reworked, so no offer promises it. Sign-ups still get 2 a day and the
+// email list. Set to true when the weekly send is back on.
+export const WEEKLY_EMAIL_LIVE = false;
 // The weekly email itself only goes to these years (lib/weekly-email.js).
 const WEEKLY_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 
@@ -76,7 +80,7 @@ const WEEKLY_YEAR_SET = new Set(WEEKLY_YEARS);
 // every subscriber gets two worksheets a day.
 // kind: "worksheet" or "exam" (what the extra daily allowance is for).
 export function weeklyOffer(yearLevel, kind = "worksheet") {
-  const weekly = WEEKLY_YEAR_SET.has(yearLevel);
+  const weekly = WEEKLY_EMAIL_LIVE && WEEKLY_YEAR_SET.has(yearLevel);
   const extra = kind === "exam" ? "2 free practice exams a day here, instead of 1" : "2 free worksheets a day here, instead of 1";
   return {
     weekly,
@@ -88,8 +92,8 @@ export function weeklyOffer(yearLevel, kind = "worksheet") {
           "Fully worked solutions, a different topic each week",
           extra,
         ]
-      : [extra, "New free maths resources by email"],
-    fine: "Free. Includes occasional Tuterly news. Unsubscribe any time from any email.",
+      : [extra, "Free maths resources and Tuterly news by email"],
+    fine: weekly ? "Free. Includes occasional Tuterly news. Unsubscribe any time from any email." : "Free. Unsubscribe any time from any email.",
   };
 }
 
@@ -144,7 +148,7 @@ export function WeeklyOptInCard({ email, yearLevel, placement, onSubscribed, kin
 
   return (
     <div style={{ ...weeklyCardStyle, ...style }}>
-      <p style={weeklyKickerStyle}>{atLimit ? "Want another one today?" : "Free, every week"}</p>
+      <p style={weeklyKickerStyle}>{atLimit ? "Want another one today?" : offer.weekly ? "Free, every week" : "Free"}</p>
       <p style={weeklyTitleStyle}>{offer.title}</p>
       <ul style={weeklyListStyle}>
         {offer.points.map((p) => (

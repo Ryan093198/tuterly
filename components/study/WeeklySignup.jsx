@@ -7,10 +7,15 @@ import { trackEvent } from "@/lib/analytics";
 // route as the worksheet generator (/api/worksheets/email), with weekly and
 // marketing consent: the form's only purpose is the weekly email, and the
 // consent wording sits right under the button (Spam Act: express consent).
+import { WEEKLY_EMAIL_LIVE } from "@/components/study/WeeklyOptIn";
+
 export default function WeeklySignup({ yearLevel, placement }) {
   const [email, setEmail] = useState("");
   const [state, setState] = useState("idle"); // idle | busy | done | error
   const [msg, setMsg] = useState("");
+
+  // Hidden while the weekly worksheet email is paused (9 Nov 2026).
+  if (!WEEKLY_EMAIL_LIVE) return null;
 
   async function submit(e) {
     e.preventDefault();

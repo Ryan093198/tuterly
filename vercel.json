@@ -7,10 +7,6 @@
     {
       "path": "/api/cron/search-console",
       "schedule": "13 21 * * 0"
-    },
-    {
-      "path": "/api/cron/weekly-email",
-      "schedule": "7 8 * * 1"
     }
   ]
 }

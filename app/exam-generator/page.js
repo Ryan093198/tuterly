@@ -44,7 +44,7 @@ const COMPARE = [
 
 const FAQS = [
   { q: "What’s the difference between this and the Tuterly app?", a: "This free generator builds an exam from Tuterly’s question bank on the topics you pick. Exam Zone in the Tuterly app goes further: upload the test outline, past papers and teacher’s notes, and Tuterly writes practice exams in the style of your school’s real test, marks them by topic and turns every miss into practice." },
-  { q: "Is the practice exam generator free?", a: "Yes. Enter your email to unlock it and you can make one free practice exam a day, or two a day if you sign up for the free weekly worksheet email. It uses the same email as the free worksheet generator." },
+  { q: "Is the practice exam generator free?", a: "Yes. Enter your email to unlock it and you can make one free practice exam a day, or two a day if you join our free email list. It uses the same email as the free worksheet generator." },
   { q: "Where do the questions come from?", a: "From Tuterly’s topic pages and topic tests for Years 7 to 10A, sorted into the same topic names as the textbooks students use. Every answer was checked, and many questions come with a fully worked solution." },
   { q: "Which year levels and topics does it cover?", a: "Years 7, 8, 9 and 10, plus Year 10A extension topics, across number, algebra, measurement, space, statistics and probability, following the Australian Curriculum." },
   { q: "How long is each exam?", a: "Up to 20 questions. Pick one topic for a short topic test, or several for a mixed exam like an end-of-term or end-of-year test. Each exam shows its total marks and a suggested time." },
@@ -75,7 +75,7 @@ export default function ExamGeneratorPage() {
             <ul className="ws-hero2__ticks">
               <li>Up to 20 questions, in short answer and extended response sections</li>
               <li>Answers to every question, and worked solutions for many</li>
-              <li>Free with your email: one exam a day, or two with our weekly worksheet email</li>
+              <li>Free with your email: one exam a day, or two when you join our email list</li>
             </ul>
             <div className="ws-hero2__bayside">
               <p className="ws-hero2__bayside-t">Designed by senior educators at Bayside Academics</p>
