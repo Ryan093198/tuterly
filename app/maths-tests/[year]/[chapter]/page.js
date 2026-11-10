@@ -62,6 +62,7 @@ export default async function ChapterTestPage({ params }) {
       eyebrow={`${c.yearLabel} maths practice test`}
       h1={`${c.yearLabel} ${c.name}: free practice test with answers`}
       lead={`Practice questions for every part of ${c.name.toLowerCase()}, with answers, then a full printable exam on the chapter in one click. Topic names follow the textbook most Victorian schools use.`}
+      quickAnswerAt="bottom"
       quickAnswer={`${c.yearLabel} ${c.name} covers ${c.sections.length} topics: ${subList}. Try the sample questions below, then build a full practice exam on any of them.`}
       toc={[
         ["covered", "What’s covered"],

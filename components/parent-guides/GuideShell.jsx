@@ -37,6 +37,10 @@ export default function GuideShell({
   finalTitle,
   finalText,
   quickAnswer,
+  // "top" (in the hero) or "bottom" (after the page content, before the
+  // FAQ). Chapter pages use "bottom": their summary is a topic list that
+  // only confuses at the top (Ryan, 10 Nov 2026).
+  quickAnswerAt = "top",
   updated = UPDATED,
   moreTitle = "More for parents of Years 7 to 10",
   showGuides = true,
@@ -76,7 +80,7 @@ export default function GuideShell({
                   By {AUTHOR.name}, {AUTHOR.role} · Updated {updatedLabel}
                 </p>
               )}
-              {quickAnswer && (
+              {quickAnswer && quickAnswerAt === "top" && (
                 <div className="pg-quick">
                   <p className="pg-quick__k">Quick answer</p>
                   <p className="pg-quick__x">{quickAnswer}</p>
@@ -98,6 +102,17 @@ export default function GuideShell({
       </header>
 
       <main className="pg-main">{children}</main>
+
+      {quickAnswer && quickAnswerAt === "bottom" && (
+        <section className="tb-section" aria-label="In short">
+          <div className="tb-wrap pg-narrow">
+            <div className="pg-quick">
+              <p className="pg-quick__k">In short</p>
+              <p className="pg-quick__x">{quickAnswer}</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {faqs?.length > 0 && (
         <section id="faq" className="tb-section tb-section--card" aria-labelledby="h-faq">

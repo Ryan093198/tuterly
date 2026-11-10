@@ -67,6 +67,7 @@ export default async function TeacherChapterPage({ params }) {
       eyebrow={`${c.yearLabel} maths · Teaching resources`}
       h1={`${c.yearLabel} ${c.name}: free teaching resources`}
       lead={`Printable worksheets and topic tests with answers for every part of ${name}, and an auto-marked test you can share with your class in one link.`}
+      quickAnswerAt="bottom"
       quickAnswer={`${c.yearLabel} ${c.name} covers ${c.sections.length} topics. Set an auto-marked test on any of them in two minutes, print a practice exam, or download a practice sheet with answers for each topic.`}
       toc={[
         ["set", "Set it for your class"],

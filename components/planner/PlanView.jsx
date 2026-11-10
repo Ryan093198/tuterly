@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
 import { appCta } from "@/lib/study-app";
@@ -220,8 +220,8 @@ export default function PlanView({ id, plan, initialDone, role, today, checkIns 
           const expanded = isNext || open[n.key];
           const prevDone = i === 0 ? true : !!done[plan.nights[i - 1].key];
           return (
+            <Fragment key={n.key}>
             <li
-              key={n.key}
               className={`pv-stop pv-stop--${n.kind} ${isDone ? "is-done" : ""} ${isNext ? "is-next" : ""} ${prevDone ? "is-reached" : ""}`}
             >
               <Marker n={n} index={i} done={isDone} />
@@ -239,6 +239,12 @@ export default function PlanView({ id, plan, initialDone, role, today, checkIns 
                     </span>
                   )}
                 </div>
+
+                {!isDone && n.topics?.length > 0 && (
+                  <ul className={`pv-topics ${expanded ? "" : "is-collapsed"}`} aria-label="Tonight's topics">
+                    {n.topics.map((t) => <li key={t}>{t}</li>)}
+                  </ul>
+                )}
 
                 {!isDone && (
                   <ul className={`pv-tasks ${expanded ? "" : "is-collapsed"}`}>
@@ -276,6 +282,22 @@ export default function PlanView({ id, plan, initialDone, role, today, checkIns 
                 </div>
               </div>
             </li>
+            {isNext && (
+              <li className="pv-aside" aria-label="What the Tuterly app adds">
+                <div className="pv-aside__card">
+                  <p className="pv-aside__t">The plan gets you through the topics. Tuterly makes the mistakes stick.</p>
+                  <ul className="pv-aside__list">
+                    <li><strong>Free here:</strong> one practice set and one practice exam a day, with answers.</li>
+                    <li><strong>In Tuterly:</strong> unlimited questions on exactly what you got wrong, each with a worked solution, until you&rsquo;ve mastered it.</li>
+                    <li><strong>Exam Zone:</strong> upload your test outline and past papers, and get practice exams in your school&rsquo;s style.</li>
+                  </ul>
+                  <Link className="pv-aside__btn" href={cta.href} onClick={() => trackEvent("plan_app_click", { kind: "aside", live: cta.live })}>
+                    {cta.live ? "Try Tuterly free" : cta.label}
+                  </Link>
+                </div>
+              </li>
+            )}
+            </Fragment>
           );
         })}
 

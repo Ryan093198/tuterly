@@ -362,3 +362,24 @@
 }
 .pv-tasks.is-collapsed { display: none; }
 @media print { .pv-tasks.is-collapsed { display: grid; } }
+
+/* Tonight's subtopics (10 Nov 2026: links are specific to the night). */
+.pv-topics { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.pv-topics li { padding: 4px 10px; border-radius: 8px; background: var(--brand-pale); color: var(--brand-foreground, var(--brand-text)); font-family: var(--font-sans); font-size: 13.5px; font-weight: 600; line-height: 1.35; }
+.pv-stop--topic:not(.is-next) .pv-topics li { background: var(--background); color: var(--muted); }
+.pv-topics.is-collapsed { display: none; }
+@media print { .pv-topics.is-collapsed { display: flex; } }
+
+/* What the app adds, under tonight's stop. The trail runs past it. */
+.pv-aside { position: relative; padding: 0 0 18px 58px; }
+.pv-aside::before { content: ""; position: absolute; left: 21px; top: -2px; bottom: -2px; border-left: 3px dashed var(--pv-line); }
+.pv-aside__card { padding: 16px 18px; border-radius: 18px; background: var(--foreground); color: var(--card); }
+.pv-aside__t { margin: 0; font-size: 17px; font-weight: 900; line-height: 1.35; }
+.pv-aside__list { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; font-family: var(--font-sans); font-size: 14.5px; line-height: 1.5; }
+.pv-aside__list strong { color: var(--pv-sun); font-weight: 700; }
+.pv-aside__btn { display: inline-block; margin-top: 14px; padding: 9px 16px; border-radius: 12px; background: var(--pv-sun); color: var(--foreground) !important; font-size: 15px; font-weight: 900; text-decoration: none; box-shadow: 0 4px 0 #c99213; }
+@media (max-width: 520px) {
+  .pv-aside { padding-left: 48px; }
+  .pv-aside::before { left: 18px; }
+}
+@media print { .pv-aside { display: none; } }
