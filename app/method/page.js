@@ -46,7 +46,7 @@ const STEPS = [
   {
     word: "Ace.",
     action: "Prove it's stuck.",
-    body: "A full test on your topics, with questions you've got wrong before mixed in, so you find out if they've really stuck. Anything you miss goes back on the list, and round it goes.",
+    body: "A full test on your topics, with questions you've got wrong before mixed in, so you find out if they've really stuck. Anything you miss goes back on your list.",
     moment: "Exam coming up? Start a week or two before.",
   },
 ];
@@ -54,21 +54,17 @@ const STEPS = [
 const TABLE = [
   {
     step: "Snap",
-    free: "Keep a list in a notebook.",
+    free: "Not on the website",
     app: "Snap any question from a test, worksheet or textbook. It's saved, sorted by topic, and ready to fix.",
   },
   {
     step: "Fix",
-    free: (
-      <>Worked examples and practice questions for every topic in <Link href="/maths-tests">practice tests by topic</Link>.</>
-    ),
+    free: "Worked examples by topic",
     app: "The worked solution to your exact question, then fresh questions on that skill until you get it right.",
   },
   {
     step: "Ace",
-    free: (
-      <>One <Link href="/exam-generator">generated practice exam</Link> a day, and a free <Link href="/study-planner">study planner</Link>.</>
-    ),
+    free: "One practice exam a day",
     app: "Full practice tests on your topics, with the questions you've got wrong before mixed in, and Exam Zone for practice exams in your school's style.",
   },
 ];
@@ -83,8 +79,8 @@ const FAQS = [
     a: "Less than most revision, because it skips what you already know. On a normal week, fixing a question or two a night is enough. In the two or three weeks before an exam, 30 to 45 minutes a night works well, and the free study planner sets out each night for you.",
   },
   {
-    q: "Does it work without the app?",
-    a: "Yes. Write the questions you get wrong in a notebook, use our free worked examples to fix them, and use the free practice exam generator to test yourself. The Tuterly app does all three in one place, and writes new questions on exactly the skill you got wrong.",
+    q: "Do I need the app?",
+    a: "The app is where the method happens: it's where you snap, and it writes new questions on exactly the skill you got wrong. Our free worked examples and practice exams are a good place to start.",
   },
   {
     q: "Who came up with it?",
@@ -138,7 +134,7 @@ export default function MethodPage() {
 
       <section id="steps" className="mt-steps" aria-labelledby="mt-steps-h">
         <div className="tb-wrap">
-          <h2 id="mt-steps-h" className="tb-h2 mt-steps__h">Three steps. Then round again.</h2>
+          <h2 id="mt-steps-h" className="tb-h2 mt-steps__h">Three steps.</h2>
           <ol className="mt-steps__list">
             {STEPS.map((s, i) => (
               <li key={s.word} className={`mt-step mt-step--${i + 1}`}>
@@ -149,10 +145,6 @@ export default function MethodPage() {
               </li>
             ))}
           </ol>
-          <p className="mt-loop">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8" /><path d="M21 3v5h-5" /><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16" /><path d="M3 21v-5h5" /></svg>
-            Then back to Snap. The list only gets shorter.
-          </p>
         </div>
       </section>
 
@@ -178,8 +170,7 @@ export default function MethodPage() {
 
       <section className="mt-table-sec" aria-labelledby="mt-table-h">
         <div className="tb-wrap">
-          <h2 id="mt-table-h" className="tb-h2">Use it free, or do all three in one app</h2>
-          <p className="tb-lead">Everything on the left is free on this website, today.</p>
+          <h2 id="mt-table-h" className="tb-h2">What's free, and what the app adds</h2>
           <div className="mt-table" role="table" aria-label="The method, free and in the Tuterly app">
             <div className="mt-row mt-row--head" role="row">
               <span role="columnheader">Step</span>
