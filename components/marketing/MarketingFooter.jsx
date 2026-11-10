@@ -16,6 +16,7 @@ const GROUPS = [
       { href: "/", label: `About ${STUDY_APP.name}` },
       { href: "/try", label: "Try it free" },
       { href: "/features", label: "Features" },
+      { href: "/method", label: "The Tuterly Method" },
       { href: "/parents", label: "For parents" },
       { href: "/students", label: "For students" },
       { href: "/teachers", label: "For teachers" },

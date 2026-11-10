@@ -33,6 +33,18 @@ function taskKind(t) {
   return "book";
 }
 
+// Which step of the Tuterly Method (Snap. Fix. Test.) a task is, for its
+// label. Worked out from the task, so plans saved earlier get it too.
+function methodStep(t) {
+  const x = t.text.toLowerCase();
+  if (x.includes("redo the questions you snapped")) return "fix";
+  if (t.app) return "snap";
+  if (x.includes("practice exam") || x.includes("practice test")) return "test";
+  if (x.includes("practice set") || x.includes("worked solutions") || x.includes("redo anything")) return "fix";
+  return null;
+}
+const STEP_LABEL = { snap: "Snap", fix: "Fix", test: "Test" };
+
 function Glyph({ kind }) {
   const p = { width: 20, height: 20, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true };
   switch (kind) {
@@ -252,6 +264,7 @@ export default function PlanView({ id, plan, initialDone, role, today, checkIns 
                       <li key={k} className={`pv-task pv-task--${taskKind(t)}`}>
                         <span className="pv-task__i"><Glyph kind={taskKind(t)} /></span>
                         <span className="pv-task__t">
+                          {methodStep(t) && <span className={`pv-step pv-step--${methodStep(t)}`}>{STEP_LABEL[methodStep(t)]}</span>}
                           {t.href ? <Link href={t.href}>{t.text}</Link> : t.text}
                           {t.app && (
                             <Link className="pv-app" href={cta.href} onClick={() => trackEvent("plan_app_click", { kind: n.kind, live: cta.live })}>
@@ -286,6 +299,7 @@ export default function PlanView({ id, plan, initialDone, role, today, checkIns 
               <li className="pv-aside" aria-label="What the Tuterly app adds">
                 <div className="pv-aside__card">
                   <p className="pv-aside__t">The plan gets you through the topics. Tuterly makes the mistakes stick.</p>
+                  <p className="pv-aside__m">Every night follows <Link href="/method">Snap. Fix. Test.</Link> Snap what you got wrong, fix it, then test yourself.</p>
                   <ul className="pv-aside__list">
                     <li><strong>Free here:</strong> one practice set and one practice exam a day, with answers.</li>
                     <li><strong>In Tuterly:</strong> unlimited questions on exactly what you got wrong, each with a worked solution, until you&rsquo;ve mastered it.</li>

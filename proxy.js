@@ -59,6 +59,7 @@ const MARKETING_PATH_PREFIXES = [
   "/paper",
   "/study-planner",
   "/plan",
+  "/method",
   "/best-maths-apps-australia",
   // Tuterly Study checkout, manage and parent consent (linked from app emails)
   "/study",

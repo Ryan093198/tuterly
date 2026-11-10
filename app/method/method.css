@@ -1,0 +1,92 @@
+/* /method: The Tuterly Method (Snap. Fix. Test.). Uses the ws-hero2 hero
+ * from the worksheet page so it matches the other tool pages. One
+ * memorable thing: the "to fix" list that shrinks. Everything else is
+ * quiet. Step colours: Snap teal, Fix violet, Test green. */
+
+.mt-hero .ws-hero2__grid { align-items: center; }
+.mt-h1 { display: flex; flex-wrap: wrap; gap: 0 0.28em; }
+.mt-h1 span:nth-child(1) { color: var(--brand-text); }
+.mt-h1 span:nth-child(2) { color: var(--violet-text); }
+.mt-h1 span:nth-child(3) { color: var(--success-text); }
+.mt-sub { margin-top: 10px; font-family: var(--font-display); font-weight: 800; font-size: clamp(21px, 1.2vw + 15px, 27px); line-height: 1.25; color: var(--foreground); }
+.mt-plain { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* The shrinking list */
+.mt-list { margin: 0; width: 100%; max-width: 440px; justify-self: center; }
+.mt-list__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 18px 20px 14px; background: var(--foreground); color: #fff; border-radius: 22px 22px 0 0; }
+.mt-list__t { font-family: var(--font-display); font-weight: 800; font-size: 17px; }
+.mt-list__n { font-weight: 800; font-size: 15px; color: rgba(255, 255, 255, 0.78); }
+.mt-list__num { display: inline-block; min-width: 1ch; font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: 1; color: #ffc23d; animation: mt-pop 420ms cubic-bezier(.2, 1.4, .4, 1); }
+.mt-list__items { list-style: none; margin: 0; padding: 8px 12px 12px; background: var(--card); border: 2px solid var(--foreground); border-top: 0; border-radius: 0 0 22px 22px; box-shadow: 0 6px 0 var(--foreground); }
+.mt-item { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 520ms ease 650ms, opacity 400ms ease 650ms; }
+.mt-item__in { min-height: 0; overflow: hidden; position: relative; transition: padding 520ms ease 650ms, border-color 300ms ease 650ms; display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; padding: 12px 8px; border-bottom: 1px solid var(--border); }
+.mt-item:last-child .mt-item__in { border-bottom: 0; }
+.mt-item__cam { grid-row: span 2; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--brand-soft); color: var(--brand-text); }
+.mt-item__q { font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--foreground); }
+.mt-item__from { margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.mt-item__stamp { position: absolute; right: 10px; top: 50%; translate: 0 -50%; rotate: -8deg; padding: 4px 10px; border: 2.5px solid var(--success); border-radius: 8px; font-family: var(--font-display); font-weight: 900; font-size: 15px; color: var(--success-text); background: var(--success-soft); opacity: 0; scale: 1.6; transition: opacity 200ms ease, scale 260ms cubic-bezier(.2, 1.4, .4, 1); }
+.mt-item.is-fixed .mt-item__stamp { opacity: 1; scale: 1; }
+.mt-item.is-fixed .mt-item__q { text-decoration: line-through; text-decoration-thickness: 2px; color: var(--muted); }
+.mt-item.is-fixed { grid-template-rows: 0fr; opacity: 0; }
+.mt-item.is-fixed .mt-item__in { padding-block: 0; border-bottom-color: transparent; }
+.mt-list__cap { margin-top: 18px; font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--muted); text-align: center; }
+@keyframes mt-pop { from { transform: scale(1.5); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .mt-item, .mt-item__in, .mt-item__stamp { transition: none; }
+  .mt-list__num { animation: none; }
+}
+
+/* The three steps */
+.mt-steps { padding: 64px 0 56px; background: var(--card); border-top: 1px solid var(--border); }
+.mt-steps__h { max-width: 22ch; }
+.mt-steps__list { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 18px; }
+@media (min-width: 900px) { .mt-steps__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; } }
+.mt-step { --c: var(--brand-text); --soft: var(--brand-soft); padding: 24px 22px 22px; border-radius: 22px; background: var(--background); border: 2px solid var(--border); border-top: 6px solid var(--c); display: flex; flex-direction: column; }
+.mt-step--2 { --c: var(--violet-text); --soft: var(--violet-soft); }
+.mt-step--3 { --c: var(--success-text); --soft: var(--success-soft); }
+.mt-step__word { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 900; font-size: 40px; line-height: 1; letter-spacing: -0.02em; color: var(--c); }
+.mt-step__n { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--c); color: #fff; font-size: 17px; letter-spacing: 0; }
+.mt-step__action { margin-top: 16px; font-family: var(--font-display); font-weight: 800; font-size: 20px; line-height: 1.3; color: var(--foreground); }
+.mt-step__body { margin-top: 10px; font-size: 16px; font-weight: 600; line-height: 1.6; color: var(--muted); flex: 1; }
+.mt-step__moment { margin-top: 16px; padding: 10px 14px; border-radius: 12px; background: var(--soft); color: var(--foreground); font-size: 15px; font-weight: 800; line-height: 1.45; }
+.mt-loop { margin-top: 24px; display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16.5px; color: var(--foreground); }
+.mt-loop svg { color: var(--brand-text); flex: none; }
+
+/* Reframe band */
+.mt-reframe { padding: 64px 0; background: var(--foreground); color: #fff; }
+.mt-reframe__big { font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 3vw + 16px, 52px); line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch; text-wrap: balance; }
+.mt-reframe__x { margin-top: 16px; max-width: 56ch; font-size: 18px; font-weight: 600; line-height: 1.55; color: rgba(255, 255, 255, 0.8); }
+
+/* Parents */
+.mt-parents { padding: 64px 0; background: var(--background); }
+.mt-parents__grid { display: grid; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .mt-parents__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; } }
+.mt-parents .tb-lead { margin-top: 14px; }
+.mt-bubble { position: relative; padding: 26px 26px 22px; border-radius: 26px 26px 26px 6px; background: var(--card); border: 2px solid var(--foreground); box-shadow: 0 6px 0 var(--foreground); }
+.mt-bubble__q { font-family: var(--font-display); font-weight: 900; font-size: clamp(24px, 1.4vw + 16px, 32px); line-height: 1.2; color: var(--foreground); }
+.mt-bubble__x { margin-top: 12px; font-size: 16px; font-weight: 600; line-height: 1.6; color: var(--muted); }
+
+/* Free vs app */
+.mt-table-sec { padding: 64px 0; background: var(--card); border-top: 1px solid var(--border); }
+.mt-table-sec .tb-lead { margin-top: 12px; }
+.mt-table { margin-top: 28px; border: 2px solid var(--border); border-radius: 20px; overflow: hidden; }
+.mt-row { display: grid; gap: 6px 18px; padding: 18px 20px; border-top: 1px solid var(--border); font-size: 15.5px; font-weight: 600; line-height: 1.55; }
+.mt-row:first-child { border-top: 0; }
+.mt-row a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+.mt-row--head { display: none; }
+.mt-row__step { font-family: var(--font-display); font-weight: 900; font-size: 20px; color: var(--foreground); }
+.mt-row:nth-child(2) .mt-row__step { color: var(--brand-text); }
+.mt-row:nth-child(3) .mt-row__step { color: var(--violet-text); }
+.mt-row:nth-child(4) .mt-row__step { color: var(--success-text); }
+.mt-row__free { color: var(--muted); }
+.mt-row__app { color: var(--foreground); }
+.mt-row__lab { display: block; font-style: normal; font-size: 13px; font-weight: 800; color: var(--muted); }
+.mt-row__app .mt-row__lab { color: var(--brand-text); }
+@media (min-width: 760px) {
+  .mt-row { grid-template-columns: 110px minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+  .mt-row--head { display: grid; background: var(--background); font-size: 14px; font-weight: 800; color: var(--muted); padding-block: 12px; }
+  .mt-row__lab { display: none; }
+  .mt-row__app { background: var(--brand-pale); margin: -18px -20px -18px 0; padding: 18px 20px; }
+}
+.mt-table__more { margin-top: 18px; font-size: 16px; font-weight: 600; color: var(--muted); }
+.mt-table__more a { color: var(--brand-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }

@@ -375,6 +375,8 @@
 .pv-aside::before { content: ""; position: absolute; left: 21px; top: -2px; bottom: -2px; border-left: 3px dashed var(--pv-line); }
 .pv-aside__card { padding: 16px 18px; border-radius: 18px; background: var(--foreground); color: var(--card); }
 .pv-aside__t { margin: 0; font-size: 17px; font-weight: 900; line-height: 1.35; }
+.pv-aside__m { margin: 8px 0 0; font-family: var(--font-sans); font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,.82); }
+.pv-aside__m a { color: #ffc23d; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .pv-aside__list { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; font-family: var(--font-sans); font-size: 14.5px; line-height: 1.5; }
 .pv-aside__list strong { color: var(--pv-sun); font-weight: 700; }
 .pv-aside__btn { display: inline-block; margin-top: 14px; padding: 9px 16px; border-radius: 12px; background: var(--pv-sun); color: var(--foreground) !important; font-size: 15px; font-weight: 900; text-decoration: none; box-shadow: 0 4px 0 #c99213; }
@@ -383,3 +385,10 @@
   .pv-aside::before { left: 18px; }
 }
 @media print { .pv-aside { display: none; } }
+
+/* Snap. Fix. Test. labels on the plan's tasks (the Tuterly Method, /method). */
+.pv-step { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 999px; font-family: var(--font-display); font-size: 12.5px; font-weight: 800; line-height: 1.6; vertical-align: 2px; text-decoration: none; }
+.pv-step--snap { background: var(--brand-soft); color: var(--brand-foreground); }
+.pv-step--fix { background: var(--violet-soft); color: var(--violet-text); }
+.pv-step--test { background: var(--success-soft); color: var(--success-text); }
+@media print { .pv-step { border: 1px solid currentColor; background: none; } }
