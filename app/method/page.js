@@ -45,8 +45,8 @@ const STEPS = [
   },
   {
     word: "Test.",
-    action: "List empty? Test yourself.",
-    body: "Before the real exam, sit a practice test on the topics you snapped. Anything you still miss goes back on the list, and round it goes.",
+    action: "Sit a full practice test.",
+    body: "A full test on your topics, with questions you've got wrong before mixed in, so you find out if they've really stuck. Anything you miss goes back on the list, and round it goes.",
     moment: "Exam coming up? Start a week or two before.",
   },
 ];
@@ -69,14 +69,14 @@ const TABLE = [
     free: (
       <>One <Link href="/exam-generator">generated practice exam</Link> a day, and a free <Link href="/study-planner">study planner</Link>.</>
     ),
-    app: "Practice tests built from your own snapped questions, and Exam Zone for practice exams in your school's style.",
+    app: "Full practice tests on your topics, with the questions you've got wrong before mixed in, and Exam Zone for practice exams in your school's style.",
   },
 ];
 
 const FAQS = [
   {
     q: "What is the Tuterly Method?",
-    a: "Three steps: snap every maths question you get wrong, fix each one with the worked solution and fresh practice on the same skill, then test yourself before the exam. Anything you still miss goes back on the list. You only ever study your mistakes.",
+    a: "Three steps: snap every maths question you get wrong, fix each one with the worked solution and fresh practice on the same skill, then sit a full practice test with your past mistakes mixed in. Anything you miss goes back on the list. You only ever study your mistakes.",
   },
   {
     q: "How much time does it take?",
@@ -138,7 +138,7 @@ export default function MethodPage() {
 
       <section id="steps" className="mt-steps" aria-labelledby="mt-steps-h">
         <div className="tb-wrap">
-          <h2 id="mt-steps-h" className="tb-h2 mt-steps__h">Three small steps. Then round again.</h2>
+          <h2 id="mt-steps-h" className="tb-h2 mt-steps__h">Three steps. Then round again.</h2>
           <ol className="mt-steps__list">
             {STEPS.map((s, i) => (
               <li key={s.word} className={`mt-step mt-step--${i + 1}`}>
