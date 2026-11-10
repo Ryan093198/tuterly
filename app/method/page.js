@@ -45,8 +45,8 @@ const STEPS = [
   },
   {
     word: "Ace.",
-    action: "Prove it's stuck.",
-    body: "A full test on your topics, with questions you've got wrong before mixed in, so you find out if they've really stuck. Anything you miss goes back on your list.",
+    action: "Make sure it's understood.",
+    body: "A full test on your topics, with questions you've got wrong mixed in. Anything you aren't sure about goes back onto your list.",
     moment: "Exam coming up? Start a week or two before.",
   },
 ];

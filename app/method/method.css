@@ -17,23 +17,46 @@
 .mt-list__t { font-family: var(--font-display); font-weight: 800; font-size: 17px; }
 .mt-list__n { font-weight: 800; font-size: 15px; color: rgba(255, 255, 255, 0.78); }
 .mt-list__num { display: inline-block; min-width: 1ch; font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: 1; color: #ffc23d; animation: mt-pop 420ms cubic-bezier(.2, 1.4, .4, 1); }
-.mt-list__items { list-style: none; margin: 0; padding: 8px 12px 12px; background: var(--card); border: 2px solid var(--foreground); border-top: 0; border-radius: 0 0 22px 22px; box-shadow: 0 6px 0 var(--foreground); }
+.mt-list__all { display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 900; font-size: 20px; line-height: 34px; color: #7ee2a8; animation: mt-pop 420ms cubic-bezier(.2, 1.4, .4, 1); }
+.mt-list__body { position: relative; min-height: 236px; background: var(--card); border: 2px solid var(--foreground); border-top: 0; border-radius: 0 0 22px 22px; box-shadow: 0 6px 0 var(--foreground); overflow: hidden; }
+.mt-list__items { list-style: none; margin: 0; padding: 8px 12px 12px; }
 .mt-item { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 520ms ease 650ms, opacity 400ms ease 650ms; }
-.mt-item__in { min-height: 0; overflow: hidden; position: relative; transition: padding 520ms ease 650ms, border-color 300ms ease 650ms; display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; padding: 12px 8px; border-bottom: 1px solid var(--border); }
+.mt-item__in { min-height: 0; overflow: hidden; position: relative; display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; padding: 12px 8px; border-radius: 12px; border-bottom: 1px solid var(--border); transition: padding 520ms ease 650ms, border-color 300ms ease 650ms, background-color 200ms ease; }
 .mt-item:last-child .mt-item__in { border-bottom: 0; }
-.mt-item__cam { grid-row: span 2; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--brand-soft); color: var(--brand-text); }
-.mt-item__q { font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--foreground); }
+.mt-item__cam { grid-row: span 2; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: var(--brand-soft); color: var(--brand-text); transition: background-color 200ms ease, color 200ms ease; }
+.mt-item__q { font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--foreground); padding-right: 76px; }
 .mt-item__from { margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--muted); }
-.mt-item__stamp { position: absolute; right: 10px; top: 50%; translate: 0 -50%; rotate: -8deg; padding: 4px 10px; border: 2.5px solid var(--success); border-radius: 8px; font-family: var(--font-display); font-weight: 900; font-size: 15px; color: var(--success-text); background: var(--success-soft); opacity: 0; scale: 1.6; transition: opacity 200ms ease, scale 260ms cubic-bezier(.2, 1.4, .4, 1); }
+.mt-item__stamp { position: absolute; right: 10px; top: 50%; translate: 0 -50%; rotate: -8deg; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border: 2.5px solid var(--success); border-radius: 8px; font-family: var(--font-display); font-weight: 900; font-size: 15px; color: var(--success-text); background: #fff; opacity: 0; scale: 1.6; transition: opacity 200ms ease, scale 260ms cubic-bezier(.2, 1.4, .4, 1); }
+.mt-item.is-fixed .mt-item__in { background: var(--success-soft); }
+.mt-item.is-fixed .mt-item__cam { background: var(--success); color: #fff; }
 .mt-item.is-fixed .mt-item__stamp { opacity: 1; scale: 1; }
 .mt-item.is-fixed .mt-item__q { text-decoration: line-through; text-decoration-thickness: 2px; color: var(--muted); }
 .mt-item.is-fixed { grid-template-rows: 0fr; opacity: 0; }
 .mt-item.is-fixed .mt-item__in { padding-block: 0; border-bottom-color: transparent; }
+
+/* The reward once the list is empty */
+.mt-done { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 6px; padding: 20px; text-align: center; opacity: 0; pointer-events: none; }
+.is-mastered .mt-done { opacity: 1; transition: opacity 250ms ease; }
+.mt-done__badge { position: relative; width: 72px; height: 72px; display: grid; place-items: center; border-radius: 50%; background: var(--success); color: #fff; box-shadow: 0 5px 0 #146b39; scale: 0.3; }
+.is-mastered .mt-done__badge { scale: 1; transition: scale 480ms cubic-bezier(.2, 1.6, .4, 1); }
+.mt-done__t { margin-top: 10px; font-family: var(--font-display); font-weight: 900; font-size: 34px; line-height: 1; letter-spacing: -0.02em; color: var(--success-text); translate: 0 10px; opacity: 0; }
+.mt-done__x { font-size: 15px; font-weight: 700; color: var(--muted); translate: 0 10px; opacity: 0; }
+.is-mastered .mt-done__t { translate: 0 0; opacity: 1; transition: translate 380ms ease 180ms, opacity 380ms ease 180ms; }
+.is-mastered .mt-done__x { translate: 0 0; opacity: 1; transition: translate 380ms ease 300ms, opacity 380ms ease 300ms; }
+.mt-done__burst { position: absolute; left: 50%; top: calc(50% - 38px); width: 0; height: 0; }
+.mt-done__burst i { position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 3px; background: #ffc23d; opacity: 0; }
+.mt-done__burst i:nth-child(3n) { background: var(--brand); }
+.mt-done__burst i:nth-child(3n + 1) { background: var(--violet); border-radius: 50%; }
+.is-mastered .mt-done__burst i { animation: mt-burst 900ms cubic-bezier(.15, .7, .3, 1) var(--d) forwards; }
+@keyframes mt-burst {
+  0% { opacity: 1; transform: rotate(var(--a)) translateY(0) scale(1); }
+  100% { opacity: 0; transform: rotate(var(--a)) translateY(-92px) scale(0.6); }
+}
 .mt-list__cap { margin-top: 18px; font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--muted); text-align: center; }
 @keyframes mt-pop { from { transform: scale(1.5); } to { transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) {
-  .mt-item, .mt-item__in, .mt-item__stamp { transition: none; }
-  .mt-list__num { animation: none; }
+  .mt-item, .mt-item__in, .mt-item__cam, .mt-item__stamp, .mt-done, .mt-done__badge, .mt-done__t, .mt-done__x { transition: none !important; }
+  .mt-list__num, .mt-list__all, .mt-done__burst i { animation: none !important; }
 }
 
 /* The three steps */
