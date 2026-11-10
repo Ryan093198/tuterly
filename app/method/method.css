@@ -1,7 +1,7 @@
-/* /method: The Tuterly Method (Snap. Fix. Test.). Uses the ws-hero2 hero
+/* /method: The Tuterly Method (Snap. Fix. Ace.). Uses the ws-hero2 hero
  * from the worksheet page so it matches the other tool pages. One
  * memorable thing: the "to fix" list that shrinks. Everything else is
- * quiet. Step colours: Snap teal, Fix violet, Test green. */
+ * quiet. Step colours: Snap teal, Fix violet, Ace green. */
 
 .mt-hero .ws-hero2__grid { align-items: center; }
 .mt-h1 { display: flex; flex-wrap: wrap; gap: 0 0.28em; }

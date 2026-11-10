@@ -12,15 +12,15 @@ import "@/components/brand/brand.css";
 import "../worksheets/worksheets.css";
 import "./method.css";
 
-// The Tuterly Method: Snap. Fix. Test. (Ryan, 10 Nov 2026). The aim is a
+// The Tuterly Method: Snap. Fix. Ace. (Ryan, 10 Nov 2026; Ace chosen over Test). The aim is a
 // simple, repeatable system that feels small: only study the questions you
 // got wrong, and the list only gets shorter. No promised results.
 
 const PATH = "/method";
 const URL = `${SITE_URL}${PATH}`;
-const TITLE = "The Tuterly Method: Snap. Fix. Test. | Tuterly";
+const TITLE = "The Tuterly Method: Snap. Fix. Ace. | Tuterly";
 const DESCRIPTION =
-  "Don't study more. Study your mistakes. The 3-step maths method from the team behind Bayside Academics and Educourse: snap every question you get wrong, fix it, then test yourself.";
+  "Don't study more. Study your mistakes. The 3-step maths method from the team behind Bayside Academics and Educourse: snap every question you get wrong, fix it, then ace a full practice test.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -44,8 +44,8 @@ const STEPS = [
     moment: "One question is enough for tonight.",
   },
   {
-    word: "Test.",
-    action: "Sit a full practice test.",
+    word: "Ace.",
+    action: "Prove it's stuck.",
     body: "A full test on your topics, with questions you've got wrong before mixed in, so you find out if they've really stuck. Anything you miss goes back on the list, and round it goes.",
     moment: "Exam coming up? Start a week or two before.",
   },
@@ -65,7 +65,7 @@ const TABLE = [
     app: "The worked solution to your exact question, then fresh questions on that skill until you get it right.",
   },
   {
-    step: "Test",
+    step: "Ace",
     free: (
       <>One <Link href="/exam-generator">generated practice exam</Link> a day, and a free <Link href="/study-planner">study planner</Link>.</>
     ),
@@ -117,7 +117,7 @@ export default function MethodPage() {
           <div>
             <Eyebrow>The Tuterly Method</Eyebrow>
             <h1 id="mt-title" className="tb-h1 mt-h1">
-              <span>Snap.</span> <span>Fix.</span> <span>Test.</span>
+              <span>Snap.</span> <span>Fix.</span> <span>Ace.</span>
             </h1>
             <p className="mt-sub">Don&rsquo;t study more. Study your mistakes.</p>
             <p className="tb-lead ws-hero2__lead">
@@ -216,7 +216,7 @@ export default function MethodPage() {
 
       <AppCtaBand
         placement="method_final"
-        title="Snap. Fix. Test. All three in one app."
+        title="Snap. Fix. Ace. All three in one app."
         lead="Snap a question you got wrong, see the worked solution, then fresh questions on that skill until it's fixed. Years 7 to 10 maths."
       />
       <MarketingFooter />
