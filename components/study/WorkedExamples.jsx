@@ -85,7 +85,7 @@ export default function WorkedExamples({ data, topic, yearLevel, slug }) {
             </div>
           )}
           <p className="wx-tryline">
-            Got a different {topic.toLowerCase()} question wrong? <Link href="/try">Upload it to Tuterly</Link> and get the worked solution and a fresh one to practise, free.
+            Got a different {topic.toLowerCase()} question wrong? <Link href="/method#try">Upload it to Tuterly</Link> and get the worked solution and a fresh one to practise, free.
           </p>
         </section>
       )}

@@ -7,7 +7,7 @@ import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
 import { STUDY_APP, appCta } from "@/lib/study-app";
 
-// The "Try it" demo (home page and /try). Enter an email first (it joins
+// The "Try it" demo (home page and /method#try). Enter an email first (it joins
 // the early sign-up list), then snap or upload one maths question (or type
 // it) and get it back with a worked solution plus a fresh question on the
 // same idea to try. 2 a day per email. API: /api/try-question.
@@ -55,11 +55,24 @@ function fileToDataUrl(file) {
   });
 }
 
+const MAX_PDF_BYTES = 3 * 1024 * 1024;
+function fileToRawDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).replace(/^data:[^;]*;/, "data:application/pdf;"));
+    r.onerror = () => reject(new Error("We couldn’t open that PDF. Try a photo of the question instead."));
+    r.readAsDataURL(file);
+  });
+}
+const isPdf = (f) => f.type === "application/pdf" || /\.pdf$/i.test(f.name || "");
+
 const STAGES = ["Reading your question…", "Working out the solution…", "Writing a fresh version…"];
 
 export default function TryQuestion() {
   const [mode, setMode] = useState("photo"); // photo | type
   const [preview, setPreview] = useState(null);
+  const [pdf, setPdf] = useState(null); // { name, data }
+  const [pdfWhich, setPdfWhich] = useState("");
   const [typed, setTyped] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | done | need_email | error
   const [stage, setStage] = useState(0);
@@ -87,7 +100,12 @@ export default function TryQuestion() {
     const f = e.target.files?.[0];
     if (!f) return;
     setError("");
-    try { setPreview(await fileToDataUrl(f)); } catch (err) { setError(err.message); }
+    if (isPdf(f)) {
+      if (f.size > MAX_PDF_BYTES) { setError("That PDF is too large. Try one under 3 MB, or a photo of the question."); return; }
+      try { setPdf({ name: f.name || "Your PDF", data: await fileToRawDataUrl(f) }); setPreview(null); } catch (err) { setError(err.message); }
+      return;
+    }
+    try { setPreview(await fileToDataUrl(f)); setPdf(null); } catch (err) { setError(err.message); }
   }
 
   const cta = appCta();
@@ -109,7 +127,7 @@ export default function TryQuestion() {
   }, []);
 
   async function send(payload) {
-    ev("try_generate", { mode: payload.image ? "photo" : "typed" });
+    ev("try_generate", { mode: payload.image ? "photo" : payload.pdf ? "pdf" : "typed" });
     setStage(0);
     setStatus("loading");
     setError("");
@@ -153,7 +171,8 @@ export default function TryQuestion() {
   function onSubmit(e) {
     e.preventDefault();
     if (mode === "photo") {
-      if (!preview) { setError("Add a photo of one question first."); return; }
+      if (pdf) { send({ pdf: pdf.data, pdf_question: pdfWhich.trim() || undefined }); return; }
+      if (!preview) { setError("Add a photo or PDF of the question first."); return; }
       send({ image: preview });
     } else {
       if (typed.trim().length < 3) { setError("Type the question first."); return; }
@@ -193,6 +212,8 @@ export default function TryQuestion() {
 
   function reset() {
     setPreview(null);
+    setPdf(null);
+    setPdfWhich("");
     setTyped("");
     setResult(null);
     setStatus("idle");
@@ -208,7 +229,7 @@ export default function TryQuestion() {
         <form className="tq-card" onSubmit={onSubmit}>
           <div className="tq-tabs" role="tablist" aria-label="How to add the question">
             <button type="button" role="tab" aria-selected={mode === "photo"} className={mode === "photo" ? "is-on" : ""} onClick={() => setMode("photo")}>
-              <Icon name="snap" size={18} /> Photo
+              <Icon name="snap" size={18} /> Photo or PDF
             </button>
             <button type="button" role="tab" aria-selected={mode === "type"} className={mode === "type" ? "is-on" : ""} onClick={() => setMode("type")}>
               <Icon name="notes" size={18} /> Type it
@@ -216,19 +237,37 @@ export default function TryQuestion() {
           </div>
 
           {mode === "photo" ? (
-            <label className={`tq-drop ${preview ? "has-img" : ""}`}>
-              <input ref={fileRef} type="file" accept="image/*" onChange={onFile} disabled={loading} />
-              {preview ? (
+            <>
+            <label className={`tq-drop ${preview ? "has-img" : ""} ${pdf ? "has-pdf" : ""}`}>
+              <input ref={fileRef} type="file" accept="image/*,application/pdf,.pdf" onChange={onFile} disabled={loading} />
+              {pdf ? (
+                <span className="tq-pdf">
+                  <span className="tq-pdf__ico" aria-hidden="true">PDF</span>
+                  <span className="tq-pdf__name">{pdf.name}</span>
+                </span>
+              ) : preview ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={preview} alt="Your question" />
               ) : (
                 <span className="tq-drop__hint">
                   <Icon name="snap" size={28} />
-                  <strong>Take a photo or choose one</strong>
+                  <strong>Take a photo, or choose a photo or PDF</strong>
                   <span>One maths question, Years 7 to 10</span>
                 </span>
               )}
             </label>
+            {pdf && (
+              <input
+                className="tb-input tq-which"
+                placeholder="Which question? e.g. Question 4b (optional)"
+                value={pdfWhich}
+                maxLength={120}
+                onChange={(e) => setPdfWhich(e.target.value)}
+                disabled={loading}
+                aria-label="Which question in the PDF"
+              />
+            )}
+            </>
           ) : (
             <textarea
               className="tq-text"
@@ -247,10 +286,10 @@ export default function TryQuestion() {
           <button type="submit" className="tb-btn tb-btn--primary tq-go" disabled={loading}>
             {loading ? STAGES[stage] : "Generate"}
           </button>
-          {preview && mode === "photo" && !loading && (
-            <button type="button" className="tq-link" onClick={() => { setPreview(null); if (fileRef.current) fileRef.current.value = ""; }}>Use a different photo</button>
+          {(preview || pdf) && mode === "photo" && !loading && (
+            <button type="button" className="tq-link" onClick={() => { setPreview(null); setPdf(null); setPdfWhich(""); if (fileRef.current) fileRef.current.value = ""; }}>{pdf ? "Use a different file" : "Use a different photo"}</button>
           )}
-          <p className="tq-small">2 free questions a day. Photos are only used to read the question and aren’t saved (<a href="/privacy" className="tb-link">privacy</a>).</p>
+          <p className="tq-small">2 free questions a day. Photos and PDFs are only used to read the question and aren’t saved (<a href="/privacy" className="tb-link">privacy</a>).</p>
           {error && <p className="tq-error" role="alert">{error}</p>}
         </form>
       )}

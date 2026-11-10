@@ -104,11 +104,11 @@ export default function PlusForm() {
 
       <button type="submit" disabled={busy || !agreed || !email.trim()}
         className="w-full rounded-xl bg-[#0e9fc1] py-3 font-semibold text-white disabled:opacity-50">
-        {busy ? "Opening checkout…" : plan === "monthly" ? "Start my free week" : "Get Plus weekly"}
+        {busy ? "Opening checkout…" : plan === "monthly" ? "Get Plus monthly" : "Get Plus weekly"}
       </button>
       <p className="text-xs text-muted text-center">
         {plan === "monthly"
-          ? "Free for 7 days, then $29.99 a month until you cancel. We'll email you before the free week ends."
+          ? "$29.99 a month until you cancel."
           : "$8.99 a week until you cancel."}
       </p>
     </form>

@@ -5,7 +5,7 @@ import PlusForm from "./PlusForm";
 
 export const metadata = {
   title: "Tuterly Study Plus",
-  description: "Unlimited snaps, drills, tests and study notes in Tuterly Study. Start with a free week.",
+  description: "Unlimited snaps, drills, tests and study notes in Tuterly Study.",
   alternates: { canonical: "/study/plus" },
 };
 
@@ -31,7 +31,7 @@ export default function StudyPlus() {
           <div className="space-y-2">
             <h1 className="text-3xl font-semibold tracking-tight">Tuterly Study Plus</h1>
             <p className="text-muted">
-              Everything in Tuterly Study, for Years 7 to 10 maths. Start with a free week, cancel any time.
+              Everything in Tuterly Study, for Years 7 to 10 maths. Cancel any time.
             </p>
           </div>
           <ul className="space-y-1.5 text-[15px]">

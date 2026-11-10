@@ -88,7 +88,7 @@ export default function NaplanTest({ year, questions, appYears }) {
                 </p>
                 <div className="nt-next__btns">
                   <Link href={cta.href} className="nt-btn" onClick={() => { trackEvent("naplan_cta_click", { year, to: "app", score: marked.score }); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "naplan" }); }}>{cta.label}</Link>
-                  <Link href="/try" className="nt-link" onClick={() => trackEvent("naplan_cta_click", { year, to: "try", score: marked.score })}>Try it free on one question →</Link>
+                  <Link href="/method#try" className="nt-link" onClick={() => trackEvent("naplan_cta_click", { year, to: "try", score: marked.score })}>Try it free on one question →</Link>
                 </div>
               </>
             ) : (

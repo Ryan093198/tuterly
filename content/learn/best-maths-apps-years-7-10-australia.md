@@ -86,7 +86,7 @@ Tuterly is built to make that routine easy to keep up at home, between lessons a
 
 The aim is simple: walk into the next test or exam having already practised the questions that matter, with the confidence that comes from getting them right, and come out with better marks.
 
-**Good to know:** it covers Years 7 to 10 maths only, not primary, VCE or other subjects. It isn't in the App Store yet: it's coming soon on iPhone, with Android soon after. It's free to download. At the launch price it's $8.99 a week or $29.99 a month, with a 7-day free trial on the monthly plan only.
+**Good to know:** it covers Years 7 to 10 maths only, not primary, VCE or other subjects. It isn't in the App Store yet: it's coming soon on iPhone, with Android soon after. It's free to download. At the launch price it's $8.99 a week or $29.99 a month.
 
 ## Photomath
 
@@ -121,4 +121,4 @@ Cluey is online one-to-one tutoring rather than a self-study app: $99 for a one-
 
 If there's a test coming up, our [maths exam preparation plan](/maths-exam-preparation) sets out what to do in the three weeks before.
 
-Whatever you choose, check it covers your child's year level and state, and use the free trial for a real week of homework before you pay.
+Whatever you choose, check it covers your child's year level and state, and use any free trial or money-back guarantee to test it on a real week of homework.

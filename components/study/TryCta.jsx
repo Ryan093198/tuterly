@@ -5,9 +5,9 @@ import { Icon } from "@/components/brand";
 import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
 
-// A short, eye-catching pointer to the Try it demo (/try). Used on the
+// A short, eye-catching pointer to the Try it demo (/method#try). Used on the
 // parents, students, features, worksheets, exam prep and practice pages.
-export default function TryCta({ title = "Got a question wrong? Try Tuterly on it now.", text, href = "/try", label = "Try it free" }) {
+export default function TryCta({ title = "Got a question wrong? Try Tuterly on it now.", text, href = "/method#try", label = "Try it free" }) {
   return (
     <div className="tq-cta">
       <span className="tq-cta__icon" aria-hidden="true"><Icon name="snap" size={26} /></span>

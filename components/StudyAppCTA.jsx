@@ -111,7 +111,7 @@ export default function StudyAppCTA({
     const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl;
     if (live && storeUrl) {
       href = STUDY_CHECKOUT.plus;
-      label = "Start free week";
+      label = "Get Tuterly";
     }
     return (
       <a
@@ -152,7 +152,7 @@ export default function StudyAppCTA({
 
   let action;
   if (mode === "store") {
-    // Live: the free week at checkout on the website first (no App Store
+    // Live: checkout on the website first (no App Store
     // cut, and it's the step we can measure), the App Store second.
     action = (
       <div className="tb-appcta__buy">
@@ -164,7 +164,7 @@ export default function StudyAppCTA({
             trackEvent("begin_checkout", { item_id: "plus", source: placement || variant });
           }}
         >
-          Start your free week
+          Get Tuterly
         </a>
         {!compact && (
           <StoreButton
@@ -188,7 +188,7 @@ export default function StudyAppCTA({
         ? "Join the free pilot"
         : mode === "android-button"
           ? "Get notified for Android"
-          : "Sign up early for a free trial";
+          : "Sign up early";
     action = (
       <button
         type="button"
@@ -237,11 +237,11 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {`Free to download · ${STUDY_APP.trialDays}-day free trial on monthly · Years 7 to 10 maths · ${STUDY_APP.playStoreUrl ? "iPhone and Android" : "On iPhone. Android coming soon"}`}
-      {pos === "final" && pathname !== "/try" && (
+      {`Free to download · Years 7 to 10 maths · ${STUDY_APP.playStoreUrl ? "iPhone and Android" : "On iPhone. Android coming soon"}`}
+      {pos === "final" && pathname !== "/method" && (
         <>
           <br />
-          <a href="/try" className="tb-appcta__try" onClick={() => track("try_link")}>Or try it free now with your own question →</a>
+          <a href="/method#try" className="tb-appcta__try" onClick={() => track("try_link")}>Or try it free now with your own question →</a>
         </>
       )}
     </p>
@@ -420,7 +420,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       ? "Join the free pilot"
       : kind === "android"
         ? compact ? "Notify me" : "Get notified when Android launches"
-        : "Sign up early for a free trial";
+        : "Sign up early";
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."

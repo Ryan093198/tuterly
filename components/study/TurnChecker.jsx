@@ -104,7 +104,7 @@ export default function TurnChecker({ slug, topic, kind, accept, question, hint,
             <Link href={cta.href} className="tc__cta" onClick={() => { trackEvent("turn_cta_click", { slug, to: "app", result: result || "solution" }); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "topic_turn" }); }}>
               {cta.label}
             </Link>
-            <Link href="/try" className="tc__cta2" onClick={() => trackEvent("turn_cta_click", { slug, to: "try", result: result || "solution" })}>
+            <Link href="/method#try" className="tc__cta2" onClick={() => trackEvent("turn_cta_click", { slug, to: "try", result: result || "solution" })}>
               Try it free on a question they got wrong →
             </Link>
           </div>

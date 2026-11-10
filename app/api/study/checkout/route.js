@@ -6,8 +6,8 @@ import { cleanEmail, familyCode, priceFor, SCH_PASS_LEVELS, STUDY_APP, STUDY_TRI
 export const runtime = "nodejs";
 
 // POST /api/study/checkout  { kind: "self"|"family", plan: "monthly"|"weekly", email, agreed }
-// Starts a Stripe Checkout for Tuterly Study Plus. The free week is on the
-// monthly plan, once per email (like the App Store, once per person).
+// Starts a Stripe Checkout for Tuterly Study Plus. No free trial since
+// 11 Nov 2026 (STUDY_TRIAL_DAYS is 0).
 export async function POST(request) {
   let body;
   try { body = await request.json(); } catch { body = {}; }
@@ -35,7 +35,7 @@ export async function POST(request) {
         error: "This email already has Tuterly Study Plus. To change it, use Manage subscription.", manage: true,
       }, { status: 409 });
     }
-    const trial = plan === "monthly" && subs.length === 0;
+    const trial = STUDY_TRIAL_DAYS > 0 && plan === "monthly" && subs.length === 0;
     const code = kind === "family" ? familyCode() : null;
     const metadata = { app: STUDY_APP, kind, plan, email, ...(code ? { family_code: code } : {}) };
     const site = process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;

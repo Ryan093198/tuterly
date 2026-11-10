@@ -3,6 +3,8 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import MethodList from "@/components/method/MethodList";
+import TryQuestion from "@/components/study/TryQuestion";
+import ResultsProof from "@/components/study/ResultsProof";
 import { Eyebrow } from "@/components/brand";
 import { BAYSIDE } from "@/lib/bayside";
 import { SITE_URL, EDUCOURSE_URL } from "@/lib/site";
@@ -18,9 +20,9 @@ import "./method.css";
 
 const PATH = "/method";
 const URL = `${SITE_URL}${PATH}`;
-const TITLE = "The Tuterly Method: Snap. Fix. Ace. | Tuterly";
+const TITLE = "The Tuterly Method: Snap. Fix. Ace. Try It Free | Tuterly";
 const DESCRIPTION =
-  "Don't study more. Study your mistakes. The 3-step maths method from the team behind Bayside Academics and Educourse: snap every question you get wrong, fix it, then ace a full practice test.";
+  "Don't study more. Study your mistakes. The 3-step maths method from the team behind Bayside Academics and Educourse: snap every question you get wrong, fix it, then ace a full practice test. Try it free: upload a question your child got wrong.";
 
 export const metadata = {
   title: { absolute: TITLE },
@@ -124,8 +126,8 @@ export default function MethodPage() {
               <p className="ws-hero2__bayside-x">{`Built on 10 years of tutoring over 1,000 students at Bayside Academics in ${BAYSIDE.where}, with a ${BAYSIDE.rating} rating on Google.`}</p>
             </div>
             <div className="ws-hero2__cta">
-              <a href="#steps" className="tb-btn tb-btn--primary">See the 3 steps</a>
-              <Link href="/study-planner" className="ws-hero2__more">Exam coming up? Make a free plan →</Link>
+              <a href="#try" className="tb-btn tb-btn--primary">Try it free on a question</a>
+              <a href="#steps" className="ws-hero2__more">See the 3 steps ↓</a>
             </div>
           </div>
           <MethodList />
@@ -145,6 +147,21 @@ export default function MethodPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section id="try" className="tb mt-try" aria-labelledby="mt-try-h">
+        <div className="tb-wrap">
+          <div className="tb-head tb-head--center">
+            <h2 id="mt-try-h" className="tb-h2">Try Snap and Fix on one question, free</h2>
+            <p className="tb-lead">
+              Upload a photo or PDF of a maths question your child got wrong. Tuterly shows the worked solution, then writes a fresh question on the same skill to practise, checked twice before you see it.
+            </p>
+          </div>
+          <TryQuestion />
+          <div className="mt-try__proof">
+            <ResultsProof />
+          </div>
         </div>
       </section>
 
@@ -205,11 +222,13 @@ export default function MethodPage() {
         </div>
       </section>
 
+      <div id="get-app" style={{ scrollMarginTop: 80 }}>
       <AppCtaBand
         placement="method_final"
         title="Snap. Fix. Ace. All three in one app."
         lead="Snap a question you got wrong, see the worked solution, then fresh questions on that skill until it's fixed. Years 7 to 10 maths."
       />
+      </div>
       <MarketingFooter />
     </div>
   );

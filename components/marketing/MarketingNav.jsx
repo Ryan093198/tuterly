@@ -10,7 +10,7 @@ import "@/components/brand/brand.css";
 // Tutor" live in the footer's Tutoring group, and Learn in its Study guides. On phones: logo, the app
 // button and a Menu (a <details>, so no JavaScript).
 const LINKS = [
-  { href: "/try", label: "Try it free" },
+  { href: "/method", label: "Try it free" },
   { href: "/features", label: "Features" },
   { href: "/parents", label: "For parents" },
   { href: "/students", label: "For students" },
@@ -37,7 +37,7 @@ export default function MarketingNav() {
         <div className="tb-nav__right">
           <div className="tb-nav__links">
             {LINKS.map((l) => (
-              <Link key={l.href} href={l.href} className={`tb-nav__link${l.href === "/try" ? " tb-nav__link--try" : ""}`}>{l.label}</Link>
+              <Link key={l.href} href={l.href} className={`tb-nav__link${l.href === "/method" ? " tb-nav__link--try" : ""}`}>{l.label}</Link>
             ))}
           </div>
           <StudyAppCTA variant="nav" placement="nav" />
@@ -47,7 +47,7 @@ export default function MarketingNav() {
             </summary>
             <div className="tb-nav__panel">
               {LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className={`tb-nav__link${l.href === "/try" ? " tb-nav__link--try" : ""}`}>{l.label}</Link>
+                <Link key={l.href} href={l.href} className={`tb-nav__link${l.href === "/method" ? " tb-nav__link--try" : ""}`}>{l.label}</Link>
               ))}
               </div>
           </details>

@@ -39,6 +39,10 @@ const SITE_DAILY_CAP = Number(process.env.TRY_SITE_DAILY_CAP) || 300;
 const MAX_IMAGE_CHARS = 7_000_000; // ~5 MB of base64
 const MAX_TEXT = 1200;
 const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
+// PDFs (Ryan, 11 Nov 2026): a worksheet or test saved as a PDF. Capped so
+// the request stays under Vercel's body limit and the model cost stays small.
+const MAX_PDF_CHARS = 4_200_000; // ~3 MB of base64
+const MAX_PDF_PAGES = 20;
 
 const clean = cleanMathText;
 
@@ -66,8 +70,23 @@ export async function POST(request) {
     }
     image = { media_type: m[1], data: m[2] };
   }
+  let pdf = null;
+  if (!image && typeof body.pdf === "string" && body.pdf.startsWith("data:")) {
+    const m = body.pdf.match(/^data:application\/pdf;base64,([A-Za-z0-9+/=]+)$/);
+    if (!m) return NextResponse.json({ error: "That file doesn't look like a PDF." }, { status: 400 });
+    if (m[1].length > MAX_PDF_CHARS) {
+      return NextResponse.json({ error: "That PDF is too large. Try one under 3 MB, or a photo of the question." }, { status: 400 });
+    }
+    const raw = Buffer.from(m[1], "base64").toString("latin1");
+    const pages = (raw.match(/\/Type\s*\/Page(?!s)/g) || []).length;
+    if (pages > MAX_PDF_PAGES) {
+      return NextResponse.json({ error: `That PDF has ${pages} pages. Try one with ${MAX_PDF_PAGES} or fewer, or a photo of the question.` }, { status: 400 });
+    }
+    pdf = m[1];
+  }
+  const pdfWhich = pdf && typeof body.pdf_question === "string" ? body.pdf_question.trim().slice(0, 120) : "";
   const text = typeof body.text === "string" ? body.text.trim().slice(0, MAX_TEXT) : "";
-  if (!image && !text) {
+  if (!image && !pdf && !text) {
     return NextResponse.json({ error: "Add a photo of a question, or type one in." }, { status: 400 });
   }
 
@@ -137,7 +156,13 @@ export async function POST(request) {
 
   const content = [];
   if (image) content.push({ type: "image", source: { type: "base64", media_type: image.media_type, data: image.data } });
-  content.push({ type: "text", text: text ? `The question (typed by the visitor):\n${text}` : "The question is in the photo." });
+  if (pdf) content.push({ type: "document", source: { type: "base64", media_type: "application/pdf", data: pdf } });
+  content.push({
+    type: "text",
+    text: pdf
+      ? `The question is in the attached PDF. ${pdfWhich ? `The visitor says the question is: ${pdfWhich}. Use only that question.` : "If the PDF has more than one question, use the first complete maths question only."}`
+      : text ? `The question (typed by the visitor):\n${text}` : "The question is in the photo.",
+  });
 
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const callTool = async (system, tool, messages, maxTokens) => {

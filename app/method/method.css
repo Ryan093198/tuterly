@@ -75,6 +75,12 @@
 .mt-loop { margin-top: 24px; display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16.5px; color: var(--foreground); }
 .mt-loop svg { color: var(--brand-text); flex: none; }
 
+/* Try it free (merged from /try, 11 Nov 2026) */
+.mt-try { padding: 64px 0; background: var(--background); border-top: 1px solid var(--border); scroll-margin-top: 70px; }
+.mt-try .tb-head { margin-bottom: 26px; }
+.mt-try__proof { max-width: 640px; margin: 24px auto 0; }
+#steps { scroll-margin-top: 70px; }
+
 /* Reframe band */
 .mt-reframe { padding: 64px 0; background: var(--foreground); color: #fff; }
 .mt-reframe__big { font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 3vw + 16px, 52px); line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch; text-wrap: balance; }

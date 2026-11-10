@@ -127,6 +127,8 @@ const GONE_EXACT = new Set([
 const MOVED = {
   "/learn/vce-maths-methods-vs-further-mathematics-guide-victoria": "/learn/vce-general-maths-vs-methods",
   "/learn/how-much-does-online-tutoring-cost-victoria": "/parents/maths-tutoring-cost-australia",
+  // /try merged into /method (Ryan, 11 Nov 2026): the method first, then the uploader.
+  "/try": "/method",
 };
 
 function goneResponse() {

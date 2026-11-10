@@ -226,7 +226,7 @@ export default function Page() {
             </div>
           </div>
           <p className="pg-small">
-            Good to know: Tuterly covers Years 7 to 10 maths only, not primary, VCE or other subjects. It&rsquo;s coming soon on iPhone, with Android soon after. {WEEK} a week or {MONTH} a month, with a 7-day free trial on the monthly plan.
+            Good to know: Tuterly covers Years 7 to 10 maths only, not primary, VCE or other subjects. It&rsquo;s coming soon on iPhone, with Android soon after. {WEEK} a week or {MONTH} a month.
           </p>
         </div>
       </section>
@@ -264,7 +264,7 @@ export default function Page() {
             <li><strong>If they&rsquo;re stuck and losing confidence,</strong>{" "}a tutor, online or in person, may be worth more than any app.</li>
           </ul>
           <p className="pg-small">
-            Whatever you choose, check it covers your child&rsquo;s year level and state, and use the free trial for a real week of homework before you pay.
+            Whatever you choose, check it covers your child&rsquo;s year level and state, and use any free trial or money-back guarantee to test it on a real week of homework.
           </p>
           <p className="pg-small">
             Tuterly isn&rsquo;t affiliated with Mathspace, Atomi, Edrolo, StudyPug, Mathletics, IXL, Maths Pathway, Photomath, Google, Khan Academy, Education Perfect, MathDingo or Cluey Learning. All names are trademarks of their owners.

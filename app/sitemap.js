@@ -24,7 +24,6 @@ const STATIC_PAGES = [
   { path: "/students/year-8", priority: 0.7, changeFrequency: "monthly" },
   { path: "/students/year-9", priority: 0.7, changeFrequency: "monthly" },
   { path: "/students/year-10", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/try", priority: 0.9, changeFrequency: "monthly" },
   { path: "/guarantee", priority: 0.5, changeFrequency: "monthly" },
   { path: "/naplan", priority: 0.8, changeFrequency: "monthly" },
   { path: "/formula-sheets", priority: 0.7, changeFrequency: "monthly" },

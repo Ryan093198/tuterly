@@ -347,7 +347,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             <ResultsProof compact />
             <div className="eg-next__btns">
               <Link href={cta.href} className="eg-btn" onClick={() => trackCta("exam_cta_click", { to: "app", from: "result" })}>{cta.label}</Link>
-              <Link href="/try" className="eg-linkbtn" onClick={() => trackEvent("exam_cta_click", { to: "try", from: "result" })}>Try it free on a question they got wrong →</Link>
+              <Link href="/method#try" className="eg-linkbtn" onClick={() => trackEvent("exam_cta_click", { to: "try", from: "result" })}>Try it free on a question they got wrong →</Link>
             </div>
           </div>
         </div>

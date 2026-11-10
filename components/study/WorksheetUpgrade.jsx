@@ -80,7 +80,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
 
         <div className="wu__cta">
           <div className="wu__cta-copy">
-            <p className="wu__cta-title">{isStudyAppLive() ? "Start your free week." : "Sign up early for a free trial."}</p>
+            <p className="wu__cta-title">{isStudyAppLive() ? "Get Tuterly." : "Sign up early."}</p>
             <ul className="wu__cta-ticks">
               <li>Fresh questions on exactly what they got wrong</li>
               <li>Practice exams in their school&rsquo;s style</li>
@@ -94,7 +94,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
           <div className="wu__cta-form">
             <StudyAppCTA variant="hero" placement={placement} position="inline" slim hideMeta />
             <p className="wu__cta-try">
-              <Link href="/try">Or try it free now on one of their questions →</Link>
+              <Link href="/method#try">Or try it free now on one of their questions →</Link>
             </p>
           </div>
         </div>

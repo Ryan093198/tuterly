@@ -11,7 +11,7 @@ import "@/components/state/state-hub.css";
 // Ad landing page (Google and Meta) for school maths, Years 7 to 10.
 // One offer, one button. Not in the sitemap and not indexed: it repeats the
 // home page for paid traffic. The button follows STUDY_APP.stage: early
-// sign-up before launch, the free week at checkout once live.
+// sign-up before launch, checkout once live.
 export const metadata = {
   title: { absolute: "Tuterly: practise the questions their next maths test will ask" },
   description: "Years 7 to 10 maths. Every question your child gets wrong becomes fresh practice until it's mastered.",
@@ -63,7 +63,7 @@ export default function StartMaths() {
           <h2 id="sm-proof">Does it work?</h2>
           <ResultsProof />
           <p className="sh-p" style={{ marginTop: 18 }}>
-            <strong>Price:</strong> <LaunchPrice trial /> Cancel any time.
+            <strong>Price:</strong> <LaunchPrice /> Cancel any time.
           </p>
           <p className="sh-p">
             <strong>Guarantee:</strong> {GUARANTEE.short} <Link href="/guarantee" className="sh-link">See the conditions</Link>.
