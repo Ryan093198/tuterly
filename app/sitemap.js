@@ -104,6 +104,7 @@ const STATIC_PAGES = [
   { path: "/maths/percentages", priority: 0.9, changeFrequency: "monthly" },
   { path: "/study-planner", priority: 0.9, changeFrequency: "monthly" },
   { path: "/method", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/maths/area-of-a-circle", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/circumference-of-a-circle", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/simplifying-fractions", priority: 0.9, changeFrequency: "monthly" },

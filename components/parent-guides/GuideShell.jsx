@@ -4,6 +4,8 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { Eyebrow } from "@/components/brand";
 import { PARENT_GUIDES, YEAR_HUBS, UPDATED, AUTHOR, guideJsonLd } from "@/lib/parent-guides";
+import ReviewedBy from "@/components/brand/ReviewedBy";
+import { REVIEWER } from "@/lib/reviewed";
 import "@/components/brand/brand.css";
 import "@/components/study/study-landing.css";
 import "./guides.css";
@@ -77,9 +79,10 @@ export default function GuideShell({
               <p className="tb-lead pg-lead">{lead}</p>
               {pageType === "Article" && (
                 <p className="pg-byline">
-                  By {AUTHOR.name}, {AUTHOR.role} · Updated {updatedLabel}
+                  By <Link href={REVIEWER.href}>{AUTHOR.name}</Link>, {AUTHOR.role} · Updated {updatedLabel}
                 </p>
               )}
+              {pageType !== "Article" && <ReviewedBy path={path} className="pg-byline" style={{ margin: 0 }} />}
               {quickAnswer && quickAnswerAt === "top" && (
                 <div className="pg-quick">
                   <p className="pg-quick__k">Quick answer</p>

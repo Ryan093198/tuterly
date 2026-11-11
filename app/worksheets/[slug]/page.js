@@ -1,6 +1,7 @@
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import { worksheetMeta } from "@/lib/worksheet-meta";
 import Link from "next/link";
+import ReviewedBy from "@/components/brand/ReviewedBy";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
@@ -240,6 +241,7 @@ export default async function WorksheetTopicLandingPage({ params }) {
             <p style={{ fontSize: 17, color: c.textLight, lineHeight: 1.7, maxWidth: 640, margin: "0 auto" }}>
               {page.subtitle}
             </p>
+            <ReviewedBy path={`/worksheets/${page.slug}`} style={{ textAlign: "center" }} />
           </Fade>
           <TopicStateNote slug={page.slug} yearLevel={page.yearLevel} />
           {worked?.summary && <QuickAnswer q={worked.summary.q} a={worked.summary.a} />}

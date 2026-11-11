@@ -1,3 +1,4 @@
+import ReviewedBy from "@/components/brand/ReviewedBy";
 import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -89,6 +90,7 @@ export default function SkillPage({ skill }) {
         <p className="sh-eyebrow">Free worksheet · Australian Curriculum</p>
         <h1>{skill.h1}</h1>
         <p className="sh-lead">{skill.lead}</p>
+        <ReviewedBy path={`/worksheets/${skill.slug}`} />
         <p className="yt-jump" style={{ marginTop: 16 }}>
           <a href="#by-year" style={{ fontWeight: 800, color: "var(--brand-text)", textDecoration: "none" }}>Choose your year ↓</a>
           <span aria-hidden="true" style={{ color: "var(--muted)", margin: "0 10px" }}>·</span>
