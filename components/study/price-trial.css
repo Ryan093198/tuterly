@@ -1,6 +1,6 @@
 .pt { max-width: 760px; margin: 0 auto; padding: 32px 24px; text-align: center; display: grid; gap: 14px; justify-items: center; }
 .pt__title { margin: 0; }
-.pt__plans { display: grid; gap: 18px; width: 100%; grid-template-columns: minmax(0, 1fr); }
+.pt__plans { display: grid; gap: 14px; width: 100%; max-width: 560px; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 560px) { .pt__plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pt__price { display: grid; gap: 4px; font-weight: 800; font-size: 18px; color: var(--foreground); margin: 0; }
 .pt__plan { font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
@@ -24,3 +24,11 @@
 .pt__guarantee strong { font-weight: 900; }
 .pt__guarantee a { font-weight: 800; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
 .pt__full { color: var(--muted); font-weight: 600; margin-right: 4px; }
+
+/* Plan cards (tidied 11 Nov 2026): same structure side by side so the prices line up. */
+.pt__plan-card { display: grid; justify-items: center; gap: 6px; padding: 18px 16px 16px; border-radius: 18px; border: 2px solid var(--border); background: var(--background); }
+.pt__plan-card .pt__plan { margin: 0; }
+.pt__amounts { margin: 0; display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 4px 8px; font-weight: 800; color: var(--foreground); }
+.pt__amounts .pt__full { margin: 0; font-size: 17px; }
+.pt__per { font-size: 16px; font-weight: 800; color: var(--foreground); }
+.pt__plan-card .pt__perday { margin: 0; font-size: 14.5px; }

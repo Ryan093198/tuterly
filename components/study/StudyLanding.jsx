@@ -290,7 +290,7 @@ export default function StudyLanding() {
         <div className="tb-wrap">
           <PriceTrial id="price">
             <div style={{ width: "100%", maxWidth: 460 }}>
-              <StudyAppCTA variant="hero" placement="home_price" position="inline" slim />
+              <StudyAppCTA variant="hero" placement="home_price" position="inline" slim hideDeal hideMeta />
             </div>
           </PriceTrial>
         </div>

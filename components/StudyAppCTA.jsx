@@ -69,6 +69,7 @@ export default function StudyAppCTA({
   hideMeta = false, // hero: drop the "Free to download · ..." line (when the page already says it)
   audience = "parent", // "student" on the student pages: the sign-up is saved as a student
   formIntro, // optional shorter line above the early sign-up form (launch form only)
+  hideDeal = false, // inside the price card, which already shows the launch price
   style,
 }) {
   const pathname = usePathname() || "/";
@@ -204,7 +205,7 @@ export default function StudyAppCTA({
   } else {
     const kind = mode === "pilot-form" ? "pilot" : mode === "android-form" ? "android" : "launch";
     action = (
-      <WaitlistForm
+      <WaitlistForm hideDeal={hideDeal}
         key={kind}
         kind={kind}
         wide={big}
@@ -274,7 +275,7 @@ export default function StudyAppCTA({
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
             {mode.endsWith("form") ? (
-              <WaitlistForm
+              <WaitlistForm hideDeal={hideDeal}
                 key={mode}
                 kind={mode === "pilot-form" ? "pilot" : mode === "android-form" ? "android" : "launch"}
                 compact
@@ -406,7 +407,7 @@ const ROLES = [
   { value: "tutor", label: "I'm a tutor" },
 ];
 
-function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass, placement, pathname, introText, onSubmitClick }) {
+function WaitlistForm({ kind, wide, slim, compact, hideDeal = false, audience = "parent", btnClass, placement, pathname, introText, onSubmitClick }) {
   const id = useId();
   const [email, setEmail] = useState("");
   const [role, setRole] = useState(audience === "student" ? "student" : "parent");
@@ -527,7 +528,7 @@ function WaitlistForm({ kind, wide, slim, compact, audience = "parent", btnClass
       {error && (
         <p role="alert" className="tb-appcta__error">{error}</p>
       )}
-      {kind === "launch" && !compact && (
+      {kind === "launch" && !compact && !hideDeal && (
         <p className="tb-appcta__deal"><LaunchPrice /></p>
       )}
       {/* Marketing consent (Spam Act). Signing up here is the consent, so
