@@ -3,7 +3,7 @@ import GuideShell from "@/components/scholarship-guides/GuideShell";
 import { pageMetadata } from "@/lib/scholarship-guides";
 
 const PATH = "/scholarship";
-const TITLE = "Scholarship Test Prep for ACER, Edutest and AAS: A Parent Guide | Tuterly";
+const TITLE = "Scholarship Test Prep: ACER, Edutest and AAS | Tuterly";
 const DESCRIPTION =
   "A plain-English parent guide to private school scholarship tests in Australia for Year 5, 6 and 7 entry: ACER, Edutest and AAS in brief, how scholarships differ from government selective entry, a planning checklist, and a Numerical Reasoning diagnostic you can start free.";
 

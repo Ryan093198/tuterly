@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import FeaturePage from "@/components/study/FeaturePage";
 import { FEATURES, getFeature } from "@/lib/feature-pages";
 import { SITE_URL } from "@/lib/site";
+import { fitTitle } from "@/lib/seo-title";
 
 export function generateStaticParams() {
   return FEATURES.map((f) => ({ slug: f.slug }));
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const f = getFeature(slug);
   if (!f) return {};
-  const title = `${f.title} | Tuterly`;
+  const title = fitTitle(`${f.title} | Tuterly`);
   const description = f.lead;
   const url = `${SITE_URL}/features/${f.slug}`;
   return {

@@ -1,7 +1,7 @@
 import FeaturesHub from "@/components/study/FeaturesHub";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Tuterly Features: Snap a Question, Topic Check, Study Notes | Tuterly";
+const TITLE = "Tuterly Features: Snap, Topic Check, Study Notes";
 const DESCRIPTION =
   "What the Tuterly maths app does for Years 7 to 10: snap the questions they got wrong, practice tests on any topic, study notes built from their mistakes, and a weekly view for parents.";
 const URL = `${SITE_URL}/features`;

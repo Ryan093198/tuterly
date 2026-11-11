@@ -11,6 +11,7 @@ import SkillYearPicker from "@/components/worksheets/SkillYearPicker";
 import { HUB_YEARS } from "@/lib/year-hubs";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
+import { fitTitle } from "@/lib/seo-title";
 
 const SHARED_FAQS = (name) => [
   {
@@ -27,7 +28,7 @@ export function topicHubMetadata(slug) {
   const h = TOPIC_HUBS[slug];
   const url = `${SITE_URL}/worksheets/${slug}`;
   return {
-    title: { absolute: h.title },
+    title: { absolute: fitTitle(h.title) },
     description: h.description,
     alternates: { canonical: url },
     openGraph: { images: ["/og-tuterly.png"], title: h.title, description: h.description, url, type: "website" },

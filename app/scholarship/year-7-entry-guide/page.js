@@ -3,7 +3,7 @@ import GuideShell from "@/components/scholarship-guides/GuideShell";
 import { pageMetadata } from "@/lib/scholarship-guides";
 
 const PATH = "/scholarship/year-7-entry-guide";
-const TITLE = "Year 7 Scholarship Entry Guide for Parents: Timeline, Skills and Prep | Tuterly";
+const TITLE = "Year 7 Scholarship Entry Guide for Parents | Tuterly";
 const DESCRIPTION =
   "A parent guide to Year 7 entry scholarship tests in Australia: when to start, what ACER, Edutest and AAS test, writing and maths tips, applying to several schools, and where Tuterly's Numerical Reasoning diagnostic fits.";
 

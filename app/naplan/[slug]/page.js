@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const y = yearFromSlug(slug);
   if (!y) return {};
-  const title = `Year ${y} NAPLAN Practice Test: Free Numeracy Test with Answers + PDF | Tuterly`;
+  const title = `Year ${y} NAPLAN Practice Test with Answers (Free PDF) | Tuterly`;
   const description = `A free Year ${y} NAPLAN-style numeracy practice test: 20 questions across every strand, marked instantly, with a worked solution for each. Printable PDF too. NAPLAN 2027 runs ${NAPLAN_FACTS.window}.`;
   const url = `${SITE_URL}/naplan/${slug}`;
   return {

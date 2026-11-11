@@ -9,12 +9,13 @@ import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { YEAR_HUBS, HUB_YEARS, STRANDS, strandOf } from "@/lib/year-hubs";
 import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
+import { fitTitle } from "@/lib/seo-title";
 
 export function yearHubMetadata(n) {
   const h = YEAR_HUBS[n];
   const url = `${SITE_URL}/worksheets/year-${n}`;
   return {
-    title: { absolute: h.title },
+    title: { absolute: fitTitle(h.title) },
     description: h.description,
     alternates: { canonical: url },
     openGraph: { images: ["/og-tuterly.png"], title: h.title, description: h.description, url, type: "website" },

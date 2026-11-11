@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/parent-guides";
 import MathMd from "@/components/maths/MathMd";
 import "@/components/maths/maths.css";
 import { getChapterPages, getChapterPage, chaptersForYear, chapterSamples, chapterWorksheets, chapterGeneratorHref } from "@/lib/chapter-pages";
+import { fitTitle } from "@/lib/seo-title";
 
 // One practice test page per textbook chapter (Ryan, 8 Nov 2026). Chapter
 // and subtopic names follow the Cambridge Essential Mathematics for the
@@ -21,7 +22,11 @@ const titleCase = (s) =>
 function meta(c) {
   const subs = c.sections.slice(0, 4).map((s) => s.name.toLowerCase()).join(", ");
   return {
-    title: `${c.yearLabel} ${titleCase(c.name)} Practice Test (Free, with Answers) | Tuterly`,
+    title: fitTitle(
+      `${c.yearLabel} ${titleCase(c.name)} Practice Test (Free, with Answers) | Tuterly`,
+      `${c.yearLabel} ${titleCase(c.name)} Practice Test with Answers`,
+      `${c.yearLabel} ${titleCase(c.name)} Practice Test`,
+    ),
     description: `Free ${c.yearLabel} ${c.name.toLowerCase()} practice test with answers, covering ${subs} and more. Sample questions, then build a full printable exam on the chapter. Australian Curriculum.`,
   };
 }

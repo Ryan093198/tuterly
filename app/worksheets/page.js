@@ -23,7 +23,7 @@ import MethodStrip from "@/components/method/MethodStrip";
 // gradient hero, clean cards). Pre-computes the VCAA F-10 topic list for
 // every Year 3-10 level so the client-side dropdown is instant.
 
-const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 (Australian Curriculum) | Tuterly";
+const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 | Tuterly";
 const DESCRIPTION =
   "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Designed by senior educators at Bayside Academics. Australian Curriculum, for every state.";
 

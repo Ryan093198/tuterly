@@ -11,6 +11,7 @@ import {
 import { SITE_URL } from "@/lib/site";
 import "@/components/study/study-landing.css";
 import "./mind-maps.css";
+import { fitTitle } from "@/lib/seo-title";
 
 const yearFaqs = (y, maps) => [
   {
@@ -53,7 +54,7 @@ function PaywallJsonLd() {
 }
 
 export function revisionYearMetadata(y) {
-  const title = `Year ${y} Maths Revision: Mind Maps for Every Topic (Free PDF) | Tuterly`;
+  const title = fitTitle(`Year ${y} Maths Revision: Mind Maps for Every Topic (Free PDF) | Tuterly`, `Year ${y} Maths Revision Mind Maps (Free PDF) | Tuterly`);
   const description = `Free Year ${y} maths revision notes as one-page mind maps: a summary of every chapter with rules, worked examples and common mistakes. Download the full revision booklet PDF.`;
   const url = `${SITE_URL}${revisionYearPath(y)}`;
   return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "website", images: [mindMapFiles(mindMapsForYear(y)[0]).preview] } };
@@ -134,7 +135,7 @@ export function RevisionYearPage({ year: y }) {
 }
 
 export function revisionChapterMetadata(m) {
-  const title = `Year ${m.year} ${m.short} Revision: Mind Map and Summary (Free PDF) | Tuterly`;
+  const title = fitTitle(`Year ${m.year} ${m.short} Revision: Mind Map and Summary (Free PDF) | Tuterly`, `Year ${m.year} ${m.short} Revision: Mind Map (Free PDF) | Tuterly`, `Year ${m.year} ${m.short} Revision Mind Map`, `Year ${m.year} ${m.short} Mind Map`);
   const description = `Year ${m.year} ${m.short.toLowerCase()} on one page: ${m.summary} Free printable summary sheet and PDF.`;
   const url = `${SITE_URL}${mindMapPath(m)}`;
   return { title: { absolute: title }, description, alternates: { canonical: url }, openGraph: { title, description, url, type: "article", images: [mindMapFiles(m).preview] } };

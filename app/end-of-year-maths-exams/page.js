@@ -19,7 +19,7 @@ import "@/components/exam/exam.css";
 // every topic test by year, a three-week revision plan and FAQs.
 // State-neutral: schools set their own exam dates.
 
-const TITLE = "End-of-Year Maths Exam Kit, Years 7 to 10: Free Practice Exams | Tuterly";
+const TITLE = "End-of-Year Maths Exam Kit, Years 7 to 10 (Free) | Tuterly";
 const DESCRIPTION =
   "Free end-of-year maths exam kit for Years 7 to 10: a practice exam with worked solutions, formula sheet and topic tests for each year, plus a study planner. No sign-up.";
 const URL = `${SITE_URL}/end-of-year-maths-exams`;

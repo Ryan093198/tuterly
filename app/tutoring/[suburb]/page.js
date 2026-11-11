@@ -22,6 +22,7 @@ import AppPracticeBlock from "@/components/study/AppPracticeBlock";
 import MadeByEducators from "@/components/study/MadeByEducators";
 import PriceTrial from "@/components/study/PriceTrial";
 import LaunchPrice from "@/components/study/LaunchPrice";
+import { fitTitle } from "@/lib/seo-title";
 
 // /tutoring/[suburb] - suburb landing pages.
 // 9 Nov 2026 (Ryan): reframed around Tuterly itself: it follows each
@@ -57,7 +58,7 @@ export async function generateMetadata({ params }) {
   const { suburb: slug } = await params;
   const data = getSeoSuburb(slug);
   if (!data) return {};
-  const title = `Maths Tutoring in ${data.name}, Years 7 to 10, in an App | Tuterly`;
+  const title = fitTitle(`Maths Tutoring in ${data.name}, Years 7 to 10, in an App | Tuterly`, `Maths Tutoring in ${data.name}, Years 7 to 10 | Tuterly`, `Maths Tutoring in ${data.name}, Years 7 to 10`, `Maths Tutoring in ${data.name}`);
   const first = data.schools?.[0]?.name;
   const description = `Maths help for ${data.name} students in Years 7 to 10${first ? `, including ${first}` : ""}. Built by Melbourne tutors, Tuterly follows your child's own school: their tests, past papers and class notes. Launch price: 50% off until 31 March 2027.`;
   const url = `${SITE_URL}/tutoring/${slug}`;

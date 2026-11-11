@@ -11,7 +11,7 @@ import "@/components/naplan/naplan.css";
 // March), "naplan past papers" 12,100, "naplan results" 5,400 (Nov 2026).
 
 const PATH = "/naplan";
-const TITLE = "Free NAPLAN Practice Tests with Answers (2027): Years 3, 5, 7 and 9 | Tuterly";
+const TITLE = "Free NAPLAN Practice Tests with Answers (2027) | Tuterly";
 const DESCRIPTION = `Free NAPLAN-style numeracy practice tests for Years 3, 5, 7 and 9, marked instantly with worked solutions, plus printable PDFs and where to find past papers. NAPLAN 2027 runs ${NAPLAN_FACTS.window}.`;
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH, type: "website" });

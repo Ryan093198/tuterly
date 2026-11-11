@@ -9,6 +9,7 @@ import Fade from "@/components/marketing/Fade";
 import StudyAppCTA from "@/components/StudyAppCTA";
 import { STUDY_APP } from "@/lib/study-app";
 import { studyAppFit, splitAtThird } from "@/lib/learn-study-fit";
+import { fitTitle } from "@/lib/seo-title";
 
 
 export async function generateStaticParams() {
@@ -20,11 +21,11 @@ export async function generateMetadata({ params }) {
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: { absolute: `${post.title} | Tuterly` },
+    title: { absolute: fitTitle(`${post.title} | Tuterly`) },
     description: post.description,
     alternates: { canonical: `${SITE_URL}/learn/${slug}` },
     openGraph: { images: ["/og-tuterly.png"],
-      title: `${post.title} | Tuterly`,
+      title: fitTitle(`${post.title} | Tuterly`),
       description: post.description,
       url: `${SITE_URL}/learn/${slug}`,
       type: "article",

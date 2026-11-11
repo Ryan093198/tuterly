@@ -9,7 +9,7 @@ import "@/components/naplan/naplan.css";
 // Facts checked 7 Nov 2026 against ACARA's test paper pages (PAST_PAPERS).
 
 const PATH = "/naplan/past-papers";
-const TITLE = "NAPLAN Past Papers with Answers (2008 to 2016): Where to Find Them | Tuterly";
+const TITLE = "NAPLAN Past Papers with Answers (2008 to 2016) | Tuterly";
 const DESCRIPTION =
   "Where to find the official NAPLAN past papers and answers for Years 3, 5, 7 and 9, why there are none after 2016, how they differ from today’s online test, and free NAPLAN-style practice tests with worked solutions.";
 

@@ -9,6 +9,7 @@ import {
 } from "@/lib/teacher-resources";
 import "@/components/maths/maths.css";
 import "@/components/paper/paper.css";
+import { fitTitle } from "@/lib/seo-title";
 
 // One teaching-resources page per textbook chapter, Years 7 to 10 (Ryan,
 // 8 Nov 2026). Chapter names follow Cambridge Essential Mathematics for the
@@ -24,7 +25,12 @@ const titleCase = (s) =>
 function meta(c) {
   const subs = c.sections.slice(0, 3).map((s) => s.name.toLowerCase()).join(", ");
   return {
-    title: `${c.yearLabel} ${titleCase(c.name)} Teaching Resources: Worksheets and Tests | Tuterly`,
+    title: fitTitle(
+      `${c.yearLabel} ${titleCase(c.name)} Teaching Resources: Worksheets and Tests | Tuterly`,
+      `${c.yearLabel} ${titleCase(c.name)} Teaching Resources | Tuterly`,
+      `${c.yearLabel} ${titleCase(c.name)} Teaching Resources`,
+      `${c.yearLabel} ${titleCase(c.name)}: Teacher Resources`,
+    ),
     description: `Free ${c.yearLabel} ${c.name.toLowerCase()} teaching resources: printable worksheets and topic tests with answers, a revision mind map, and an auto-marked test to share with your class. Covers ${subs} and more.`,
   };
 }

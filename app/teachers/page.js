@@ -15,7 +15,7 @@ import "@/components/paper/paper.css";
 // tests and the paper exam builder live on their own pages under
 // /teachers/resources and /teachers/printable-exam (lib/teacher-resources.js).
 
-const TITLE = "Free Auto-Marked Maths Tests for Teachers, Years 7 to 10 | Tuterly Teacher Zone";
+const TITLE = "Free Auto-Marked Maths Tests for Teachers | Tuterly";
 const DESCRIPTION =
   "Build a Years 7 to 10 maths test on any topic, share one link, and every student is marked automatically with a worked solution for every question. Free for teachers, up to 5 tests a day. Victorian Curriculum.";
 const URL = `${SITE_URL}/teachers`;

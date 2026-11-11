@@ -4,7 +4,7 @@ import { pageMetadata } from "@/lib/parent-guides";
 
 // Hub for the maths concept pages and calculators (Nov 2026).
 const PATH = "/maths";
-const TITLE = "Maths Explained: Key Topics and Free Calculators for Years 7 to 10 | Tuterly";
+const TITLE = "Maths Explained and Free Calculators, Years 7 to 10 | Tuterly";
 const DESCRIPTION =
   "Plain-English explanations of the maths topics students search for most, with worked examples, practice questions with answers and free calculators that show the working. Australian Curriculum, Years 7 to 10.";
 
