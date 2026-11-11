@@ -5,6 +5,7 @@ import {
   ChevronRight, Upload, ShieldCheck, Link2, Lightbulb, ListChecks, Target,
   GraduationCap, School, BadgeCheck,
 } from "lucide-react";
+import { QuinnFigure } from "./QuinnArt";
 import "./brand.css";
 
 // Shared building blocks for the marketing site, in the Tuterly app's
@@ -95,19 +96,9 @@ export function PhoneFrame({ src, alt, width = 280, priority = false, sizes, cla
   );
 }
 
-// Quinn the quokka. Only quinn-happy and quinn-celebrate, kept small.
+// Quinn the quokka: the app's current design (QuinnArt.jsx), drawn inline.
 export function Quinn({ pose = "celebrate", size = 110, className = "" }) {
-  const file = pose === "happy" ? "quinn-happy" : "quinn-celebrate";
-  return (
-    <Image
-      src={`/quinn/${file}.svg`}
-      alt="Quinn the quokka, the Tuterly mascot"
-      width={Math.min(size, 120)}
-      height={Math.min(size, 120)}
-      unoptimized
-      className={className}
-    />
-  );
+  return <QuinnFigure mood={pose === "happy" ? "happy" : "celebrate"} size={Math.min(size, 120)} className={className} title="Quinn the quokka, the Tuterly mascot" />;
 }
 
 export function Reveal({ as: Tag = "div", className = "", children, ...rest }) {

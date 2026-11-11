@@ -1,5 +1,6 @@
 "use client";
 
+import { QuinnFigure } from "@/components/brand/QuinnArt";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { trackEvent } from "@/lib/analytics";
@@ -97,7 +98,7 @@ function UnlockModal({ onClose, placement, year }) {
     <div className="mm-modal" role="dialog" aria-modal="true" aria-labelledby="mm-modal-title" onClick={onClose}>
       <div className="mm-modal__card" onClick={(e) => e.stopPropagation()}>
         <button type="button" className="mm-modal__x" onClick={onClose} aria-label="Close">×</button>
-        <img src="/quinn/quinn-happy-bag-glasses.png" alt="" width="72" height="72" />
+        <QuinnFigure mood="happy" bag glasses size={72} />
         <h2 id="mm-modal-title" className="mm-modal__title">Get the free mind maps</h2>
         <p className="mm-modal__text">Enter your email to unlock every revision mind map, with the A4 PDFs and the full revision booklet.</p>
         <UnlockForm placement={placement} year={year} onDone={onClose} />

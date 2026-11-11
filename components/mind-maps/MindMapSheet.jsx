@@ -1,3 +1,4 @@
+import { QuinnFigure } from "@/components/brand/QuinnArt";
 import "katex/dist/katex.min.css";
 import Figure from "@/components/mind-maps/Figure";
 import MindMapLinks from "@/components/mind-maps/MindMapLinks";
@@ -31,7 +32,7 @@ export default function MindMapSheet({ map, mode = "page" }) {
             </section>
           ))}
           <div className="mm-hub" data-mm-hub>
-            <img src="/quinn/quinn-happy-bag-glasses.png" alt="" width="96" height="96" />
+            <QuinnFigure mood="happy" bag glasses size={96} />
             <div>
               <p className="mm-hub__eyebrow">{`Year ${map.year} maths · Chapter ${map.chapter} · Mind map`}</p>
               <p className="mm-hub__title">{map.short || map.title}</p>

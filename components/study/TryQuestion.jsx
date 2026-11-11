@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { Icon } from "@/components/brand";
 import { trackEvent } from "@/lib/analytics";
 import "./try-question.css";
+import QuinnSolving, { SOLVE_STAGES } from "./QuinnSolving";
 import { STUDY_APP, appCta } from "@/lib/study-app";
 
 // The "Try it" demo (home page and /method#try). Enter an email first (it joins
@@ -66,7 +67,7 @@ function fileToRawDataUrl(file) {
 }
 const isPdf = (f) => f.type === "application/pdf" || /\.pdf$/i.test(f.name || "");
 
-const STAGES = ["Reading your question…", "Working out the solution…", "Writing a fresh version…"];
+const STAGES = SOLVE_STAGES.map((x) => `${x.label}…`);
 
 export default function TryQuestion() {
   const [mode, setMode] = useState("photo"); // photo | type
@@ -92,7 +93,7 @@ export default function TryQuestion() {
 
   useEffect(() => {
     if (status !== "loading") return;
-    const t = setInterval(() => setStage((s) => Math.min(s + 1, STAGES.length - 1)), 6000);
+    const t = setInterval(() => setStage((s) => Math.min(s + 1, STAGES.length - 1)), 5000);
     return () => clearInterval(t);
   }, [status]);
 
@@ -225,7 +226,9 @@ export default function TryQuestion() {
 
   return (
     <div className="tq" ref={rootRef}>
-      {unlocked && status !== "done" && (
+      {loading && <QuinnSolving stage={stage} />}
+
+      {unlocked && status !== "done" && !loading && (
         <form className="tq-card" onSubmit={onSubmit}>
           <div className="tq-tabs" role="tablist" aria-label="How to add the question">
             <button type="button" role="tab" aria-selected={mode === "photo"} className={mode === "photo" ? "is-on" : ""} onClick={() => setMode("photo")}>

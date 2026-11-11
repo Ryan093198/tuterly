@@ -8,8 +8,7 @@ export default function LaunchPrice() {
   const { week, month } = PLUS_PRICES;
   return (
     <>
-      {LAUNCH_SPECIAL_LINE} <s>{week.full}</s> {week.now} a week or <s>{month.full}</s> {month.now} a month
-      .
+      {LAUNCH_SPECIAL_LINE} <s>{week.full}</s> {week.now} a week or <s>{month.full}</s> {month.now} a month.
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { QuinnFigure } from "@/components/brand/QuinnArt";
 import Link from "next/link";
 import { appCta } from "@/lib/study-app";
 
@@ -24,7 +25,7 @@ export default function RevisionHero({ crumbs, eyebrow, title, lead, panel, prev
             <span className="rv-stack__badge">Free A4 PDF</span>
           </div>
           <Link href={app.href} className="rv-app">
-            <img src="/quinn/quinn-happy-bag-glasses.png" alt="" width="52" height="52" />
+            <QuinnFigure mood="happy" bag glasses size={52} />
             <span>
               <strong>Got questions wrong in a test?</strong>
               <span className="rv-app__x">The Tuterly app turns each one into practice until it&apos;s mastered.</span>

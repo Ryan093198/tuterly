@@ -6,7 +6,6 @@ import MethodList from "@/components/method/MethodList";
 import TryQuestion from "@/components/study/TryQuestion";
 import ResultsProof from "@/components/study/ResultsProof";
 import { Eyebrow } from "@/components/brand";
-import { BAYSIDE } from "@/lib/bayside";
 import { SITE_URL, EDUCOURSE_URL } from "@/lib/site";
 import { appCta } from "@/lib/study-app";
 import "@/components/state/state-hub.css";
@@ -41,9 +40,9 @@ const STEPS = [
   },
   {
     word: "Fix.",
-    action: "Fix one before dinner.",
+    action: "Even just one each day.",
     body: "See the worked solution and where it went wrong. Then do fresh questions on that same skill until you get one right without help. Then it comes off the list.",
-    moment: "One question is enough for tonight.",
+    moment: "You'll master the difficult questions.",
   },
   {
     word: "Ace.",
@@ -86,7 +85,7 @@ const FAQS = [
   },
   {
     q: "Who came up with it?",
-    a: `The educators behind Bayside Academics and Educourse. ${BAYSIDE.line.replace(/^Bayside Academics, a/, "Bayside Academics is a")}. Educourse is our selective entry and scholarship preparation platform.`,
+    a: `The educators behind Bayside Academics and Educourse. Bayside Academics is a Melbourne tutoring centre that has taught over 2,000 students in 10 years, with a 5.0 rating on Google. Educourse is our selective entry and scholarship preparation platform.`,
   },
   {
     q: "Is it only for students who are struggling?",
@@ -119,11 +118,11 @@ export default function MethodPage() {
             </h1>
             <p className="mt-sub">Don&rsquo;t study more. Study your mistakes.</p>
             <p className="tb-lead ws-hero2__lead">
-              Most revision goes on practising what a student already knows. This method only spends time on the questions they got wrong, so there&rsquo;s less to do, and every night it&rsquo;s clear what&rsquo;s next.
+              Most revision goes on practising what a student already knows. The Tuterly Method ensures time is focused on the questions they&rsquo;re getting wrong. This means less to do and a clear path to what&rsquo;s next.
             </p>
             <div className="ws-hero2__bayside">
               <p className="ws-hero2__bayside-t">From the team behind Bayside Academics and <a href={EDUCOURSE_URL} className="mt-plain">Educourse</a></p>
-              <p className="ws-hero2__bayside-x">{`Built on 10 years of tutoring over 1,000 students at Bayside Academics in ${BAYSIDE.where}, with a ${BAYSIDE.rating} rating on Google.`}</p>
+              <p className="ws-hero2__bayside-x">Built on 10 years of tutoring over 2,000 students at Bayside Academics in Melbourne, with a 5.0 rating on Google.</p>
             </div>
             <div className="ws-hero2__cta">
               <a href="#try" className="tb-btn tb-btn--primary">Try it free on a question</a>
