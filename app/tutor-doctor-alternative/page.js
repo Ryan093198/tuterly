@@ -140,7 +140,7 @@ export default function TutorDoctorAlternativePage() {
               They can also use Topic check for a short test on any topic in their year, Fix my mistakes to work through the questions they got wrong, and Study notes for a revision sheet before a test. Parents link with a 6-character code and see Week in review: what was added and mastered, test scores and the trickiest topic, not their child’s photos.
             </p>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.75 }}>
-              It was designed by Australian educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years, with a 5.0 rating on Google, with topics from the Victorian Curriculum 2.0. It’s {STUDY_APP.priceLine}. Cancel any time. Coming soon to the App Store on iPhone, with Android soon after.
+              It was designed by Australian educators at Bayside Academics, a Melbourne tutoring centre that has taught over 2,000 students in 10 years, with a 5.0 rating on Google, with topics from the Victorian Curriculum 2.0. It’s {STUDY_APP.priceLine}. Cancel any time. Coming soon to the App Store on iPhone, with Android soon after.
             </p>
           </Fade>
         </div>

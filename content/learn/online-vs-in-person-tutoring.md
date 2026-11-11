@@ -44,7 +44,7 @@ Tutoring is usually one hour a week, and the slipping tends to happen in the six
 2. They read the worked solution, then answer a new question on the same idea, not just the same question with new numbers.
 3. At the end of the week, the weekly review tests them on up to 8 of that week's trickiest questions.
 
-That's what the Tuterly app does. It was designed by educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years. If your child is still stuck after a week, a tutor's hour is well spent on the hard bits, and you'll know exactly which bits those are. [Try it free on one of tonight's questions](/try).
+That's what the Tuterly app does. It was designed by educators at Bayside Academics, a Melbourne tutoring centre that has taught over 2,000 students in 10 years. If your child is still stuck after a week, a tutor's hour is well spent on the hard bits, and you'll know exactly which bits those are. [Try it free on one of tonight's questions](/try).
 
 ## The bottom line
 

@@ -38,7 +38,7 @@ export default function MadeByEducators({ id = "educators", className = "" }) {
             id={id}
             eyebrow="Made in Australia"
             title="Built by Australian educators, for Australian students."
-            lead={`Tuterly has been built by a team of experienced educators at Bayside Academics, a Melbourne tutoring centre that has taught over 1,000 students in 10 years, with a 5.0 rating on Google. It’s made specifically for Australian students: every topic follows the Australian Curriculum for Years 7 to 10, using the same terms their teachers use. It’s already used by tutoring centres and teachers in Victoria, and now it’s opening to the public.`}
+            lead={`Tuterly has been built by a team of experienced educators at Bayside Academics, a Melbourne tutoring centre that has taught over 2,000 students in 10 years, with a 5.0 rating on Google. It’s made specifically for Australian students: every topic follows the Australian Curriculum for Years 7 to 10, using the same terms their teachers use. It’s already used by tutoring centres and teachers in Victoria, and now it’s opening to the public.`}
           />
         </Reveal>
         <ul className="mbe">

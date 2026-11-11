@@ -75,7 +75,7 @@ export default function NotYetTutor({ suburbName, region }) {
         <TryCta title="See it on one of tonight's questions" label="Try it free" />
 
         <p style={{ fontSize: 14, color: c.textLight, lineHeight: 1.6, marginTop: 18 }}>
-          <strong style={{ color: c.navy }}>Ryan, founder of Bayside Academics</strong>, 15 years in private tutoring. Bayside Academics has taught over 1,000 students in 10 years and has a 5.0 Google rating.
+          <strong style={{ color: c.navy }}>Ryan, founder of Bayside Academics</strong>, 15 years in private tutoring. Bayside Academics has taught over 2,000 students in 10 years and has a 5.0 Google rating.
         </p>
       </div>
     </section>
