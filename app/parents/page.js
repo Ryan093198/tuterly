@@ -265,6 +265,9 @@ export default function ParentsPage() {
 
       {/* 4. COMPARED WITH TUTORING (moved from the home page) */}
       <TutorCompare />
+      <p className="tb-wrap tb-muted" style={{ marginTop: -8, marginBottom: 24, fontWeight: 700 }}>
+        Comparing apps as well? Read our guide to the <Link href="/best-maths-apps-australia">best maths apps for Years 7 to 10 in Australia</Link>.
+      </p>
 
       {/* 5. PRICE */}
       <section className="tb-section" aria-labelledby="price">

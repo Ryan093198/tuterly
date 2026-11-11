@@ -286,6 +286,8 @@ export default async function WorksheetTopicLandingPage({ params }) {
               <Link href={`/maths-exam-preparation/${examPrep.slug}#practice-exam`} style={{ color: c.tealDark }}>{examPrep.year} maths practice exam with answers →</Link>
               <br />
               <Link href={`/formula-sheets/${page.yearLevel === "Year 10A" ? "year-10a" : examPrep.slug}-maths`} style={{ color: c.tealDark }}>{page.yearLevel} maths formula sheet →</Link>
+              <br />
+              <Link href="/end-of-year-maths-exams" style={{ color: c.tealDark }}>End-of-year maths exams: practice for every year →</Link>
             </p>
           </div>
         </section>

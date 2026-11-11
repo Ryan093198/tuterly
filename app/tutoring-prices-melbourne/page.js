@@ -3,7 +3,6 @@ import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
-import SavingsCalculator from "@/components/marketing/SavingsCalculator";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -70,9 +69,9 @@ const BY_PROVIDER = [
     body: "Generally cheaper than national agencies and often run by educators who actually know the local schools. Variable quality - the strongest local agencies are excellent, the weakest are just middlemen with a website.",
   },
   {
-    type: "Independent platform tutors (eg Tuterly)",
+    type: "Independent tutors through online platforms",
     range: "$50 - $100 / hour",
-    body: "Same calibre of tutor as agencies (most platform tutors are educators or strong recent VCE graduates) but priced directly because there&apos;s no agency commission taken. You pay the tutor, the platform takes a small subscription instead.",
+    body: "Same calibre of tutor as agencies (most platform tutors are educators or strong recent VCE graduates) but priced directly because there&apos;s no agency commission taken. Some platforms charge the tutor a fee or subscription instead.",
   },
   {
     type: "Independent listings (Gumtree, FB groups)",
@@ -112,8 +111,8 @@ export default function TutoringPricesPage() {
             </p>
             <AppHeroBlock placement="tutoring_prices_melbourne_hero" heading="A lower-cost option for Years 7 to 10 maths" />
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/directory" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
-                See Tuterly tutor rates →
+              <Link href="/tutoring" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.navy}`, color: c.navy, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
+                Compare tutoring in your suburb →
               </Link>
               <Link href="/parents" style={{ padding: "14px 28px", borderRadius: 10, border: `2px solid ${c.border}`, color: c.text, fontSize: 15, fontWeight: 600, textDecoration: "none", display: "inline-block" }}>
                 How Tuterly works
@@ -174,20 +173,6 @@ export default function TutoringPricesPage() {
         </div>
       </section>
 
-      <section style={{ padding: "80px 24px", background: c.offWhite }}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <Fade>
-            <p style={{ fontFamily: "var(--font-display)", fontSize: 13, fontWeight: 600, color: c.teal, textTransform: "uppercase", letterSpacing: 2, textAlign: "center", marginBottom: 12 }}>What you&apos;d save</p>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, textAlign: "center", marginBottom: 12, lineHeight: 1.25 }}>
-              Tuterly vs a typical agency.
-            </h2>
-            <p style={{ fontSize: 15, color: c.textLight, textAlign: "center", maxWidth: 600, margin: "0 auto 32px", lineHeight: 1.7 }}>
-              Drag the slider to see what tutoring costs over different windows. Assumes the typical-agency rate of $100/hr vs an average Tuterly tutor rate of $60/hr, four lessons a month.
-            </p>
-          </Fade>
-          <SavingsCalculator />
-        </div>
-      </section>
 
       <section style={{ padding: "64px 24px", background: c.white }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
@@ -215,13 +200,13 @@ export default function TutoringPricesPage() {
         <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
           <Fade>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: 32, color: c.navy, marginBottom: 16, lineHeight: 1.25 }}>
-              See real rates in the directory.
+              Not sure you need a tutor yet?
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, marginBottom: 28 }}>
-              Browse Tuterly tutors with their actual hourly rates visible up front. No agency markup, no enquiry-form pricing games.
+              For a lot of Years 7 to 10 students, focused practice on the questions they get wrong does the job. Try the Tuterly Method first: snap it, fix it, ace it.
             </p>
-            <Link href="/directory" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Browse the directory →
+            <Link href="/method" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+              See the Tuterly Method →
             </Link>
           </Fade>
         </div>

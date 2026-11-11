@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
@@ -144,7 +145,7 @@ export default function ScholarshipPrepPage() {
               ))}
             </div>
             <p style={{ fontSize: 15, color: c.textLight, lineHeight: 1.7, marginTop: 20 }}>
-              Tests are usually sat the year before entry: in primary school for Year 7 entry, and in Year 8 for Year 9 entry. Dates vary by school, so check each one.
+              Tests are usually sat the year before entry: in primary school for Year 7 entry, and in Year 8 for Year 9 entry. Dates vary by school, so check each one. For the full timeline, read our <Link href="/scholarship/year-7-entry-guide" style={{ color: c.teal, fontWeight: 700 }}>Year 7 entry scholarship guide</Link>.
             </p>
           </Fade>
         </div>

@@ -65,21 +65,23 @@ const MARKETING_PATH_PREFIXES = [
   "/study",
 ];
 
-// Paused while the Tuterly tutor marketplace is on hold (Oct 2026): the
-// site's only call to action is the Tuterly app, so these pages
-// send visitors to the home page. Temporary (307) so they can come back
-// by deleting entries here. Keep app/sitemap.js in step.
-const PAUSED_PREFIXES = [
-  "/directory",
-  "/maindirectory",
-  "/find-a-tutor",
-  "/get-started",
-  "/centres",
-  "/sample-report",
-  "/tutor-jobs",
-  "/practice-maths-tests-primary",
+// The old tutor marketplace, retired for good (Ryan, 11 Nov 2026). These
+// were paused with a temporary redirect in Oct 2026; /directory alone still
+// drew over 1,000 Google impressions a week for "find a tutor", "tutors
+// melbourne" and similar. Permanent redirects pass that history on to the
+// closest real page. Tutor job pages have no equivalent, so they're gone
+// (410). Keep app/sitemap.js in step.
+const RETIRED_PREFIXES = [
+  ["/directory", "/tutoring"],
+  ["/maindirectory", "/tutoring"],
+  ["/find-a-tutor", "/tutoring"],
+  ["/tutors", "/tutoring"],
+  ["/get-started", "/"],
+  ["/centres", "/"],
+  ["/sample-report", "/"],
+  ["/practice-maths-tests-primary", "/worksheets"],
 ];
-const PAUSED_EXACT = ["/tutors"];
+const RETIRED_GONE = ["/tutor-jobs"];
 
 // Removed for good (Ryan, 9 Nov 2026): VCE content from the old tutor
 // marketplace. 410 Gone tells Google to drop them; the site is now about
@@ -188,14 +190,18 @@ export async function proxy(request) {
     }
   }
 
-  // Paused marketing pages go to the home page (the app). On the app
-  // domain they already bounced to the marketing domain above, or aren't
-  // marketing paths at all.
-  if (!isAppDomain && (PAUSED_EXACT.includes(pathname) || pathMatchesPrefix(pathname, PAUSED_PREFIXES))) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/";
-    url.search = "";
-    return NextResponse.redirect(url, 307);
+  // Retired marketplace pages (RETIRED_PREFIXES). On the app domain they
+  // already bounced to the marketing domain above, or aren't marketing
+  // paths at all.
+  if (!isAppDomain) {
+    if (pathMatchesPrefix(pathname, RETIRED_GONE)) return goneResponse();
+    const moved = RETIRED_PREFIXES.find(([p]) => pathMatchesPrefix(pathname, [p]));
+    if (moved) {
+      const url = request.nextUrl.clone();
+      url.pathname = moved[1];
+      url.search = "";
+      return NextResponse.redirect(url, 308);
+    }
   }
 
   // Marketing pages on tuterly.com.au never read the session on the server,

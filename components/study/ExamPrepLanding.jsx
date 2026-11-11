@@ -170,6 +170,16 @@ export default function ExamPrepLanding({ year = null, exam = null }) {
             />
           </Reveal>
           <FlowSteps steps={EXAM_PLAN} label="Exam preparation plan" />
+          <p className="tb-muted" style={{ marginTop: 18, fontWeight: 700 }}>
+            Also free:{" "}
+            {year ? (
+              <Link href={`/formula-sheets/${year.slug}-maths`}>{year.year} maths formula sheet</Link>
+            ) : (
+              <Link href="/formula-sheets">maths formula sheets for every year</Link>
+            )}
+            {", "}<Link href="/end-of-year-maths-exams">practice exams and topic tests</Link>{" "}and a{" "}
+            <Link href="/study-planner">night-by-night study planner</Link>.
+          </p>
         </div>
       </section>
 
