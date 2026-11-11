@@ -1,7 +1,4 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import { Md } from "@/lib/md-html";
 import "katex/dist/katex.min.css";
 import TopicTestOffer from "@/components/study/TopicTestOffer";
 import { writtenTopicTest, sectionA, SHEET_QUESTIONS } from "@/lib/topic-test-files";
@@ -28,9 +25,7 @@ export default function TopicTestTeaser({ yearLevel, topicId, topic, slug }) {
           A full {n}-question test on {topic.toLowerCase()}, from the basics up to harder questions, with an answer key to mark it. Here are the first four, and the first {SHEET_QUESTIONS} are a free printable PDF with answers.
         </p>
         <div style={{ border: `1px solid ${c.border}`, borderRadius: 16, padding: "8px 22px", background: c.offWhite, fontSize: 16, lineHeight: 1.7 }}>
-          <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-            {cleanMathText(sample)}
-          </ReactMarkdown>
+          <Md md={cleanMathText(sample)} />
         </div>
         {slug && (
           <a

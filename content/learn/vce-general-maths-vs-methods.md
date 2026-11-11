@@ -6,8 +6,6 @@ audience: "Year 10 parents"
 published: true
 ---
 
-# VCE General Maths vs Methods: which should your child do?
-
 The most common mistake parents make with this decision is treating it as a ranking. General Maths gets labelled the "easy" option and Methods the "real" maths, so the assumption becomes that the capable child does Methods and everyone else settles for General. That framing is wrong, and acting on it leads plenty of students into the wrong subject.
 
 General and Methods are different subjects built for different paths. General is applied and data-driven: statistics, financial modelling, networks, matrices. It still demands discipline, consistent practice, and clear thinking, and a student who coasts will not do well. Methods is abstract and built on calculus and algebra. The honest comparison isn't easy versus hard. It's applied versus abstract.

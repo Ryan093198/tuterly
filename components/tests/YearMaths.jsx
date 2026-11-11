@@ -1,8 +1,5 @@
+import { Md } from "@/lib/md-html";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -28,11 +25,7 @@ export function yearMathsMetadata(n) {
 }
 
 const M = ({ md }) => (
-  <div className="tg-md">
-    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-      {cleanMathText(md)}
-    </ReactMarkdown>
-  </div>
+  <Md className="tg-md" md={cleanMathText(md)} />
 );
 
 export default function YearMaths({ n }) {

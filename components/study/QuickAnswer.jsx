@@ -1,6 +1,4 @@
-import ReactMarkdown from "react-markdown";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import { Md } from "@/lib/md-html";
 import "katex/dist/katex.min.css";
 import "./worked-examples.css";
 
@@ -13,9 +11,7 @@ export default function QuickAnswer({ q, a }) {
     <section className="qa-box" aria-labelledby="qa-title">
       <p className="qa-eyebrow">Quick answer</p>
       <h2 id="qa-title" className="qa-q">{q}</h2>
-      <div className="qa-a">
-        <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{a}</ReactMarkdown>
-      </div>
+      <Md className="qa-a" gfm={false} md={a} />
     </section>
   );
 }

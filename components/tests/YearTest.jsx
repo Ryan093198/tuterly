@@ -1,8 +1,5 @@
+import { Md as MdHtml } from "@/lib/md-html";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -29,11 +26,7 @@ export function yearTestMetadata(n) {
 
 function Md({ children }) {
   return (
-    <div className="eg-md">
-      <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}>
-        {children || ""}
-      </ReactMarkdown>
-    </div>
+    <MdHtml className="eg-md" md={children || ""} />
   );
 }
 

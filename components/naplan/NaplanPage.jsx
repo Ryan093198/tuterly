@@ -1,8 +1,5 @@
+import { Md } from "@/lib/md-html";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -22,12 +19,7 @@ import "./naplan.css";
 const APP_YEARS = [7, 9];
 
 const M = ({ md, inline = false }) => (
-  <div className={inline ? "wx-md nt-inline" : "wx-md"}>
-    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}
-      components={{ table: ({ node, ...p }) => <div className="wx-table"><table {...p} /></div> }}>
-      {md}
-    </ReactMarkdown>
-  </div>
+  <Md className={inline ? "wx-md nt-inline" : "wx-md"} tableClass="wx-table" md={md} />
 );
 
 // One NAPLAN numeracy practice page (Years 3, 5, 7 or 9): facts, a marked

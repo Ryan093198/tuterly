@@ -1,7 +1,4 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import { Md } from "@/lib/md-html";
 import "katex/dist/katex.min.css";
 import { cleanMathText } from "@/lib/math-text-fixes";
 import "./topic-guide.css";
@@ -9,12 +6,7 @@ import "./topic-guide.css";
 // A written explainer and quick check for a topic page (lib/topic-guides.js).
 // Server-rendered; answers sit in <details> so students try first.
 const M = ({ md }) => (
-  <div className="tg-md">
-    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}
-      components={{ table: ({ node, ...p }) => <div className="tg-table"><table {...p} /></div> }}>
-      {cleanMathText(md.replace(/\n(\$\$[^\n]+\$\$)(?=\n|$)/g, "\n\n$1\n"))}
-    </ReactMarkdown>
-  </div>
+  <Md className="tg-md" tableClass="tg-table" md={cleanMathText(md.replace(/\n(\$\$[^\n]+\$\$)(?=\n|$)/g, "\n\n$1\n"))} />
 );
 
 export default function TopicGuide({ guide, id = "guide" }) {

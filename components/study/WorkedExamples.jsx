@@ -1,8 +1,5 @@
+import { Md } from "@/lib/md-html";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import "./worked-examples.css";
 import { mathToReadable } from "@/lib/try-email";
@@ -12,12 +9,7 @@ import TurnChecker from "@/components/study/TurnChecker";
 // Rendered on the server (no JavaScript); solutions sit in <details> so
 // students can have a go first, and the text is still there for search.
 const M = ({ md }) => (
-  <div className="wx-md">
-    <ReactMarkdown remarkPlugins={[remarkGfm, remarkMath]} rehypePlugins={[rehypeKatex]}
-      components={{ table: ({ node, ...p }) => <div className="wx-table"><table {...p} /></div> }}>
-      {md}
-    </ReactMarkdown>
-  </div>
+  <Md className="wx-md" tableClass="wx-table" md={md} />
 );
 
 export default function WorkedExamples({ data, topic, yearLevel, slug }) {

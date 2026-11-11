@@ -6,8 +6,6 @@ audience: "Year 5–7 parents (scholarship)"
 published: true
 ---
 
-# EduTest vs ACER: which scholarship exam does your child need to sit?
-
 Most parents starting down the scholarship path assume there's one exam. There isn't. Melbourne's independent and Catholic schools use different testing providers, and the two big ones, EduTest and ACER, are different enough that preparing for the wrong one quietly wastes months. Before you buy a single practice book, find out which test your child is actually sitting.
 
 ## EduTest, in brief

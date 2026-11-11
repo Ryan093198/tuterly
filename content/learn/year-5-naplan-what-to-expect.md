@@ -6,8 +6,6 @@ audience: "Year 5 parents"
 published: true
 ---
 
-# Year 5 NAPLAN: what to expect and how to prepare
-
 Year 5 NAPLAN can feel like a bigger deal than it should. Your child sits down at a computer, works through a set of adaptive questions, and a few months later you get a report full of bands and numbers. Here's what it actually involves, what the results mean, and how to prepare without turning your household upside down.
 
 ## What's actually tested
