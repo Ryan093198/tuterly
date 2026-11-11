@@ -1,0 +1,79 @@
+{
+ "examples": [
+  {
+   "title": "Finding the HCF of algebraic terms",
+   "question": "Find the highest common factor (HCF) of each pair or group of terms.\n\n(a) $12ab$ and $18a$\n\n(b) $20xy$, $15y$ and $10xyz$",
+   "solution": "**Key idea:** The HCF of algebraic terms is the HCF of the numbers multiplied by every pronumeral that appears in **all** of the terms.\n\n1. **(a)** The factors of $12$ are $1, 2, 3, 4, 6, 12$ and the factors of $18$ are $1, 2, 3, 6, 9, 18$. The highest one they share is $6$.\n2. The pronumeral $a$ is in both terms. The pronumeral $b$ is only in $12ab$, so it is not part of the HCF.\n$$\\text{HCF}(12ab, 18a) = 6a$$\n3. **(b)** The HCF of $20$, $15$ and $10$ is $5$.\n4. Only $y$ is in all three terms ($x$ is missing from $15y$, and $z$ is only in $10xyz$).\n$$\\text{HCF}(20xy, 15y, 10xyz) = 5y$$\n\n**Answer:** (a) $6a$, (b) $5y$",
+   "answer": "(a) $6a$, (b) $5y$"
+  },
+  {
+   "title": "Factorising by taking out the HCF",
+   "question": "Factorise fully.\n\n(a) $15x + 20$\n\n(b) $14m - 21mn$\n\n(c) $24n + 36$",
+   "solution": "**Key idea:** Write the HCF outside a bracket. Inside the bracket, write what each term becomes when you divide it by the HCF. Then expand to check.\n\n1. **(a)** $\\text{HCF}(15x, 20) = 5$. Divide each term: $15x \\div 5 = 3x$ and $20 \\div 5 = 4$.\n$$15x + 20 = 5(3x + 4)$$\nCheck: $5 \\times 3x + 5 \\times 4 = 15x + 20$ ✓\n2. **(b)** $\\text{HCF}(14m, 21mn) = 7m$. Divide each term: $14m \\div 7m = 2$ and $21mn \\div 7m = 3n$.\n$$14m - 21mn = 7m(2 - 3n)$$\nCheck: $7m \\times 2 - 7m \\times 3n = 14m - 21mn$ ✓\n3. **(c)** $24n + 36$ can be written as $2(12n + 18)$ or $6(4n + 6)$, but neither is **fully** factorised because the bracket still has a common factor. The HCF of $24$ and $36$ is $12$.\n$$24n + 36 = 12(2n + 3)$$\nCheck: $12 \\times 2n + 12 \\times 3 = 24n + 36$ ✓, and $2n$ and $3$ have no common factor left.\n\n**Answer:** (a) $5(3x + 4)$, (b) $7m(2 - 3n)$, (c) $12(2n + 3)$",
+   "answer": "(a) $5(3x + 4)$, (b) $7m(2 - 3n)$, (c) $12(2n + 3)$"
+  },
+  {
+   "title": "Taking out a negative common factor",
+   "question": "Factorise $-6p - 9q + 3$ by taking out a negative common factor.",
+   "solution": "**Key idea:** When the first term is negative, take out the negative of the HCF. Dividing by a negative number changes the sign of every term inside the bracket.\n\n1. The HCF of $6$, $9$ and $3$ is $3$, so take out $-3$.\n2. Divide each term by $-3$:\n$$-6p \\div (-3) = 2p$$\n$$-9q \\div (-3) = 3q$$\n$$3 \\div (-3) = -1$$\n3. Write the factorised form:\n$$-6p - 9q + 3 = -3(2p + 3q - 1)$$\n4. Check by expanding: $-3 \\times 2p + (-3) \\times 3q + (-3) \\times (-1) = -6p - 9q + 3$ ✓\n\n**Answer:** $-3(2p + 3q - 1)$",
+   "answer": "$-3(2p + 3q - 1)$"
+  },
+  {
+   "title": "Using factorising in a perimeter problem",
+   "question": "A rectangle has a perimeter of $(10w + 16)$ cm.\n\n(a) Factorise $10w + 16$ fully.\n\n(b) Use your answer to write an expression for the length plus the width.\n\n(c) The width is $(w + 3)$ cm. Find an expression for the length.",
+   "solution": "**Key idea:** The perimeter of a rectangle is $2 \\times (\\text{length} + \\text{width})$, so taking out the factor $2$ shows what length plus width must be.\n\n1. **(a)** $\\text{HCF}(10w, 16) = 2$.\n$$10w + 16 = 2(5w + 8)$$\n2. **(b)** Comparing $2(5w + 8)$ with $2 \\times (\\text{length} + \\text{width})$:\n$$\\text{length} + \\text{width} = 5w + 8$$\n3. **(c)** Subtract the width:\n$$\\text{length} = (5w + 8) - (w + 3) = 4w + 5$$\n4. Check: $2\\big((4w + 5) + (w + 3)\\big) = 2(5w + 8) = 10w + 16$ ✓\n\n**Answer:** (a) $2(5w + 8)$, (b) $5w + 8$ cm, (c) $(4w + 5)$ cm",
+   "answer": "(a) $2(5w + 8)$, (b) $5w + 8$ cm, (c) $(4w + 5)$ cm"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Not factorising fully",
+   "wrong": "$18x + 30 = 3(6x + 10)$, stopping as soon as a common factor is found.",
+   "fix": "Look inside the bracket. $6x$ and $10$ still share a factor of $2$, so take out the highest common factor straight away: $18x + 30 = 6(3x + 5)$."
+  },
+  {
+   "title": "Leaving out the 1",
+   "wrong": "$5a + 5 = 5(a)$, because the second term seems to disappear.",
+   "fix": "When a term is exactly the HCF, dividing it by the HCF leaves $1$. Write it in: $5a + 5 = 5(a + 1)$. The bracket must have as many terms as the original expression."
+  },
+  {
+   "title": "Taking out a pronumeral that isn't in every term",
+   "wrong": "$8xy + 12x = 4xy(2 + 3)$, as if $y$ were in both terms.",
+   "fix": "A pronumeral is only part of the HCF if it is in every term. $12x$ has no $y$, so the HCF is $4x$: $8xy + 12x = 4x(2y + 3)$."
+  },
+  {
+   "title": "Sign errors with a negative factor",
+   "wrong": "$-4k + 10 = -2(2k + 5)$",
+   "fix": "Dividing $+10$ by $-2$ gives $-5$, so $-4k + 10 = -2(2k - 5)$. Always expand your answer to check the signs match the original."
+  }
+ ],
+ "practice": {
+  "question": "Factorise fully: $18k - 12kt$",
+  "answer": "$6k(3 - 2t)$",
+  "solution": "**Key idea:** Find the HCF of the numbers and of the pronumerals, take it outside the bracket, then divide each term by it.\n\n1. HCF of $18$ and $12$ is $6$.\n2. $k$ is in both terms; $t$ is only in the second term. So the HCF is $6k$.\n3. Divide each term by $6k$: $18k \\div 6k = 3$ and $12kt \\div 6k = 2t$.\n$$18k - 12kt = 6k(3 - 2t)$$\n4. Check by expanding: $6k \\times 3 - 6k \\times 2t = 18k - 12kt$ ✓\n\n**Answer:** $6k(3 - 2t)$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you factorise in Year 8?",
+  "a": "In Year 8, factorising means taking out the highest common factor (HCF). Find the HCF of the numbers and of the pronumerals in every term, write it outside a bracket, then divide each term by it. For example, 15x + 20 = 5(3x + 4). Expand to check."
+ },
+ "turn": {
+  "question": "What is the highest common factor of $24xy$ and $36x$? Enter it as an algebraic term.",
+  "kind": "expression",
+  "accept": {
+   "expr": "12*x",
+   "vars": [
+    "x",
+    "y"
+   ]
+  },
+  "answer_display": "$12x$",
+  "hint": "Find the HCF of 24 and 36 first, then include only the pronumerals that appear in both terms.",
+  "solution": "**Key idea:** The HCF of algebraic terms is the HCF of the numbers times the pronumerals common to every term.\n\n1. $\\text{HCF}(24, 36) = 12$.\n2. $x$ is in both terms, but $y$ is only in $24xy$.\n3. So the HCF is $12x$.\n4. Check: $24xy \\div 12x = 2y$ and $36x \\div 12x = 3$, and $2y$ and $3$ share no factor.\n\n**Answer:** $12x$"
+ },
+ "turn_checked": {
+  "my_answer": "12x",
+  "attempts": 1
+ }
+}

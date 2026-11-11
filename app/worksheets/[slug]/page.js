@@ -19,6 +19,7 @@ import {
 } from "@/lib/worksheet-landing-pages";
 import { getFaqsForSlug } from "@/lib/worksheet-faqs";
 import { getWorkedExamples } from "@/lib/worked-examples";
+import MethodStrip from "@/components/method/MethodStrip";
 import WorkedExamples from "@/components/study/WorkedExamples";
 import TopicTestTeaser from "@/components/study/TopicTestTeaser";
 import QuickAnswer from "@/components/study/QuickAnswer";
@@ -417,6 +418,9 @@ export default async function WorksheetTopicLandingPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* The Tuterly Method, only on pages that opt in (methodStrip: true). */}
+      {page.methodStrip && <MethodStrip />}
 
       {/* TESTIMONIALS - real consented quotes only (lib/testimonials.js). */}
       <Testimonials

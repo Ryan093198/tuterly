@@ -113,6 +113,7 @@ const STATIC_PAGES = [
   { path: "/maths/expanding-brackets", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/solving-linear-equations", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths/3d-pythagoras", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths/volume-of-a-cylinder", priority: 0.8, changeFrequency: "monthly" },
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
   { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },
