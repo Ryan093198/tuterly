@@ -11,6 +11,7 @@ import "@/components/state/state-hub.css";
 import "@/components/brand/brand.css";
 import "../worksheets/worksheets.css";
 import "@/components/planner/planner.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // Free maths exam study planner (Ryan, 9 Nov 2026). "study planner" is
 // about 3,600 searches a month (parent research, Nov 2026). The plan is
@@ -125,6 +126,8 @@ export default function StudyPlannerPage() {
           </p>
         </div>
       </section>
+
+      <MethodStrip lead="Every night of the plan follows it. Don't study more. Study your mistakes." />
 
       <section className="sh-sec" aria-labelledby="sp-faq">
         <div className="sh-wrap sh-narrow">

@@ -18,6 +18,7 @@ import TopicGrid from "@/components/study/TopicGrid";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import "./topic-grid.css";
 import "./study-landing.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app, in
 // the app's own look (components/brand). Server component.
@@ -228,6 +229,9 @@ export default function StudyLanding() {
           </p>
         </div>
       </section>
+
+      {/* 5b. THE TUTERLY METHOD (Ryan, 11 Nov 2026) */}
+      <MethodStrip />
 
       {/* 6. FOR PARENTS */}
       <section className="tb-section tb-section--card" aria-labelledby="parents">

@@ -13,6 +13,7 @@ import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
 import { STUDENT_YEARS, studentFaqs, topicsForYear } from "@/lib/student-pages";
 import "./study-landing.css";
 import "./student-landing.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // Landing page written to Years 7 to 10 students themselves ("you").
 // /students (year = null) and /students/year-7 to year-10. Product facts
@@ -230,6 +231,9 @@ export default function StudentLanding({ year = null }) {
           </div>
         </div>
       </section>
+
+      {/* THE TUTERLY METHOD (Ryan, 11 Nov 2026) */}
+      <MethodStrip lead="Don't study more. Study your mistakes. It's quicker, and it's where the marks are." />
 
       {/* TOPICS FOR THE YEAR, or YEAR PICKER */}
       <section className="tb-section" aria-labelledby="stl-years">

@@ -13,6 +13,7 @@ import { BAYSIDE } from "@/lib/bayside";
 import TryCta from "@/components/study/TryCta";
 import TutorCompare from "@/components/study/TutorCompare";
 import "./parents.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // /parents: the parent's view of Tuterly, parent-first order:
 // the app in one screen, what you'll see each week, safety and privacy,
@@ -106,6 +107,12 @@ export default function ParentsPage() {
             title="Everything a good tutor does between sessions, built into an app."
             lead={`${name} is built by the team behind ${BAYSIDE.line}. A decade of one-on-one sessions showed us what actually moves a maths mark: knowing exactly what's on the next test, working from the student's own mistakes, and practising the right thing every week, not just more worksheets. We've put that into an app your child will actually open.`}
           />
+          <div className="pp-method__ms">
+            <MethodStrip
+              variant="inline"
+              lead="We boiled it down to three steps, so revision never feels daunting: don't study more, study your mistakes. Everything below is built around them."
+            />
+          </div>
           <ol className="pp-method__steps">
             {[
               ["It starts with their school", "When they sign up, they tell the app their year, their goal, their next test date and its topics. Upload the term planner, test outline or past papers, and everything that follows is built around what their school is teaching, not a generic syllabus."],

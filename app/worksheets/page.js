@@ -16,6 +16,7 @@ import { Eyebrow } from "@/components/brand";
 import { BAYSIDE } from "@/lib/bayside";
 import "@/components/brand/brand.css";
 import "./worksheets.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
@@ -287,6 +288,9 @@ export default function WorksheetsPage() {
           </div>
         </div>
       </section>
+
+      {/* THE TUTERLY METHOD (Ryan, 11 Nov 2026) */}
+      <MethodStrip lead="Worksheets are a great start. The marks come from fixing the questions you get wrong." />
 
       {/* FAQ */}
       <section className="ws-section" aria-labelledby="ws-faq" style={{ background: c.white, padding: "64px 40px" }}>

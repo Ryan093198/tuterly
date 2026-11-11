@@ -12,6 +12,7 @@ import "@/components/brand/brand.css";
 import "../worksheets/worksheets.css";
 import { Eyebrow } from "@/components/brand";
 import { BAYSIDE } from "@/lib/bayside";
+import MethodStrip from "@/components/method/MethodStrip";
 
 const TITLE = "Free Maths Practice Exam Generator, Years 7 to 10 | Tuterly";
 const DESCRIPTION =
@@ -148,6 +149,8 @@ export default function ExamGeneratorPage() {
           </p>
         </div>
       </section>
+
+      <MethodStrip lead="A practice exam shows what they got wrong. The Tuterly Method turns that into marks." />
 
       <section className="sh-sec" aria-labelledby="eg-faq">
         <div className="sh-wrap sh-narrow">

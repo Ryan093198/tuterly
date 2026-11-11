@@ -10,6 +10,7 @@ import TryCta from "@/components/study/TryCta";
 import ReadyExam from "@/components/exam/ReadyExam";
 import "./study-landing.css";
 import "./student-landing.css";
+import MethodStrip from "@/components/method/MethodStrip";
 
 // Maths exam preparation: the hub (year = null) and a page for each of
 // Years 7 to 10. Written to parents. Content in lib/exam-prep-pages.js.
@@ -171,6 +172,9 @@ export default function ExamPrepLanding({ year = null, exam = null }) {
           <FlowSteps steps={EXAM_PLAN} label="Exam preparation plan" />
         </div>
       </section>
+
+      {/* THE TUTERLY METHOD (Ryan, 11 Nov 2026) */}
+      <MethodStrip lead="Exam prep, simplified. Don't study more. Study your mistakes." />
 
       {/* WHY TESTS, NOT RE-READING (hub) */}
       {!year && (
