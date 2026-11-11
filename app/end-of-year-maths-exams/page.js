@@ -8,6 +8,8 @@ import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { STRANDS, strandOf } from "@/lib/year-hubs";
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import { SITE_URL } from "@/lib/site";
+import CopyBlurb from "@/components/study/CopyBlurb";
+import "./exam-kit.css";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
 
@@ -17,9 +19,9 @@ import "@/components/exam/exam.css";
 // every topic test by year, a three-week revision plan and FAQs.
 // State-neutral: schools set their own exam dates.
 
-const TITLE = "End-of-Year Maths Exam Practice, Years 7 to 10 (Free) | Tuterly";
+const TITLE = "End-of-Year Maths Exam Kit, Years 7 to 10: Free Practice Exams | Tuterly";
 const DESCRIPTION =
-  "Free end-of-year maths exam practice for Years 7 to 10: build a practice exam with answers, a free test on every topic with an answer key, and a three-week revision plan. Australian Curriculum.";
+  "Free end-of-year maths exam kit for Years 7 to 10: a practice exam with worked solutions, formula sheet and topic tests for each year, plus a study planner. No sign-up.";
 const URL = `${SITE_URL}/end-of-year-maths-exams`;
 
 export const metadata = {
@@ -31,6 +33,19 @@ export const metadata = {
 };
 
 const YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
+
+// The free exam kit (Ryan, 11 Nov 2026): the page schools and local press
+// are pointed to, so every resource here is free with no sign-up except the
+// custom exam builder further down.
+const KIT = [
+  { year: "Year 7", exam: "/maths-exam-preparation/year-7#practice-exam", sheet: "/formula-sheets/year-7-maths" },
+  { year: "Year 8", exam: "/maths-exam-preparation/year-8#practice-exam", sheet: "/formula-sheets/year-8-maths" },
+  { year: "Year 9", exam: "/maths-exam-preparation/year-9#practice-exam", sheet: "/formula-sheets/year-9-maths" },
+  { year: "Year 10", exam: "/maths-exam-preparation/year-10#practice-exam", sheet: "/formula-sheets/year-10-maths" },
+  { year: "Year 10A", exam: null, sheet: "/formula-sheets/year-10a-maths" },
+];
+const SHARE_TEXT =
+  "Free maths revision for end-of-year exams: Tuterly, built by Brighton tutoring centre Bayside Academics, has a free practice exam with worked solutions, a formula sheet and topic tests for each of Years 7 to 10, plus a night-by-night study planner. All free and following the Australian Curriculum: tuterly.com.au/end-of-year-maths-exams";
 const anchor = (y) => y.toLowerCase().replace(/\s+/g, "-");
 
 // Topic pages that have a written test, grouped by strand.
@@ -125,6 +140,7 @@ export default function EndOfYearMathsExamsPage() {
         <p className="sh-lead">
           Find out what your child doesn&rsquo;t know before the exam does. Build a practice exam with answers, then fix the weak topics with a free test on each one.
         </p>
+        <p className="ek-from">From the tutors at Bayside Academics in Brighton: over 2,000 students in 10 years, 5.0 rating on Google.</p>
         <dl className="sh-facts">
           <div><dt>Practice exams</dt><dd>Up to 20 questions, marks and a suggested time</dd></div>
           <div><dt>Topic tests</dt><dd>Every topic, 20 questions each, with answer keys</dd></div>
@@ -133,17 +149,51 @@ export default function EndOfYearMathsExamsPage() {
         </dl>
       </header>
 
+      <section id="kit" className="sh-sec ek" aria-labelledby="ey-kit">
+        <div className="sh-wrap">
+          <h2 id="ey-kit">The free exam kit, by year</h2>
+          <p className="sh-sub">Everything a student needs for the end-of-year maths exam, free and with no sign-up: a practice exam with worked solutions, the formula sheet and a test on every topic.</p>
+          <div className="ek-grid">
+            {KIT.map((k) => (
+              <div key={k.year} className="ek-card">
+                <p className="ek-card__y">{k.year}</p>
+                <ul>
+                  {k.exam && <li><Link href={k.exam}>Practice exam with answers</Link></li>}
+                  <li><Link href={k.sheet}>Formula sheet</Link></li>
+                  <li><a href={`#${anchor(k.year)}`}>Topic tests</a></li>
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="ek-also">
+            Plus: a <Link href="/study-planner">study planner</Link> that maps revision night by night up to the exam, and{" "}
+            <Link href="/method">the Tuterly Method</Link> for fixing the questions they get wrong.
+          </p>
+
+          <div className="ek-share" aria-labelledby="ek-share-h">
+            <h3 id="ek-share-h">For schools and teachers: share the kit</h3>
+            <p>
+              You&rsquo;re welcome to share this page with students and families, in a newsletter, on the school website or on the LMS. Here&rsquo;s a blurb you can paste as it is:
+            </p>
+            <CopyBlurb text={SHARE_TEXT} />
+            <p className="ek-share__more">
+              Teachers can also print topic tests and exams for class from <Link href="/teachers">the teacher resources</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <main id="practice-exam" className="sh-sec sh-sec--paper" aria-labelledby="ey-make">
         <div className="sh-wrap">
-          <h2 id="ey-make">Step 1: make a practice exam</h2>
-          <p className="sh-sub">Pick your child&rsquo;s year and the topics their exam covers (or all of them). You&rsquo;ll get a printable exam with marks, a suggested time and answers.</p>
+          <h2 id="ey-make">Make a custom practice exam</h2>
+          <p className="sh-sub">Want an exam on just the topics your child&rsquo;s test covers? Pick the year and the topics. You&rsquo;ll get a printable exam with marks, a suggested time and answers.</p>
           <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="end_of_year_exam" />
         </div>
       </main>
 
       <section className="sh-sec" aria-labelledby="ey-topics">
         <div className="sh-wrap">
-          <h2 id="ey-topics">Step 2: fix the weak topics</h2>
+          <h2 id="ey-topics">Fix the weak topics: a test on every topic</h2>
           <p className="sh-sub">Every topic has a free 20-question test with an answer key. Open a topic to try the first four questions, then get the full test by email.</p>
           <nav className="sh-switch" aria-label="Jump to a year level" style={{ margin: "8px 0 24px" }}>
             <ul>
@@ -179,7 +229,7 @@ export default function EndOfYearMathsExamsPage() {
 
       <section className="sh-sec sh-sec--paper" aria-labelledby="ey-plan">
         <div className="sh-wrap">
-          <h2 id="ey-plan">Step 3: a three-week revision plan</h2>
+          <h2 id="ey-plan">A three-week revision plan</h2>
           <p className="sh-sub">Start three weeks before the first exam. If you have less time, shorten each week but keep the order: find the gaps, fix them, then practise under exam conditions.</p>
           <div className="sh-tests">
             {PLAN.map((s) => (

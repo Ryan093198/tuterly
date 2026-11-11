@@ -1,0 +1,16 @@
+/* The free exam kit section on /end-of-year-maths-exams (11 Nov 2026). */
+.ek-from { margin: 12px 0 0; font-size: 15px; font-weight: 700; color: var(--muted); }
+.ek-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin-top: 18px; }
+.ek-card { padding: 18px 18px 14px; border-radius: 18px; background: var(--card); border: 2px solid var(--border); border-top: 6px solid var(--brand); }
+.ek-card__y { margin: 0 0 8px; font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--foreground); }
+.ek-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ek-card a { font-weight: 800; font-size: 15.5px; color: var(--brand-text); text-decoration: underline; text-underline-offset: 3px; }
+.ek-also { margin: 18px 0 0; font-size: 16px; font-weight: 600; color: var(--muted); }
+.ek-also a { color: var(--brand-text); font-weight: 800; }
+.ek-share { margin-top: 28px; padding: 22px; border-radius: 20px; background: var(--brand-pale, var(--brand-soft)); border: 2px solid var(--brand-soft); max-width: 760px; }
+.ek-share h3 { margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 900; color: var(--foreground); }
+.ek-share p { margin: 8px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--foreground); }
+.ek-share__more a { color: var(--brand-text); font-weight: 800; }
+.ek-blurb { margin-top: 12px; padding: 16px; border-radius: 14px; background: var(--card); border: 1px dashed var(--brand); }
+.ek-blurb__x { margin: 0; font-size: 15px; line-height: 1.6; color: var(--foreground); }
+.ek-blurb__btn { margin-top: 12px; }
