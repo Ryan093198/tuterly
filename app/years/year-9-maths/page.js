@@ -71,7 +71,7 @@ const STRANDS = [
       "Similar triangles and finding unknown sides",
       "Geometric reasoning with reasons for each step",
     ],
-    links: [W("year-9-enlargements", "Enlargements")],
+    links: [W("year-9-enlargements", "Enlargements"), W("year-9-similar-triangles", "Similar triangles")],
   },
   {
     name: "Statistics",

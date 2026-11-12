@@ -27,6 +27,7 @@ const TOPICS = [
   { href: "/maths/gradient", k: "Years 8 to 10", t: "Gradient", x: "From two points, a graph or an equation, with a calculator." },
   { href: "/maths/3d-pythagoras", k: "Year 10A", t: "3D Pythagoras", x: "Space diagonals, pyramids and cones." },
   { href: "/maths/volume-of-a-cylinder", k: "Years 8 to 10", t: "Volume of a cylinder", x: "V = πr²h from the radius or diameter, litres, and finding the height, with a calculator." },
+  { href: "/maths/order-of-operations", k: "Years 7 to 10", t: "Order of operations (BODMAS)", x: "Brackets, powers, left to right, and negatives, with a step-by-step checker." },
 ];
 const CALCULATORS = [
   { href: "/maths/percentages#calculator", k: "Calculator", t: "Percentage calculator", x: "Percentage of a number, percentage change, increase and decrease, with the working." },
@@ -41,6 +42,7 @@ const CALCULATORS = [
   { href: "/maths/simultaneous-equations#solver", k: "Calculator", t: "Simultaneous equations solver", x: "Two linear equations, solved by elimination, with exact fractions." },
   { href: "/maths/gradient#calculator", k: "Calculator", t: "Gradient calculator", x: "Gradient, equation of the line, midpoint and distance from two points." },
   { href: "/maths/volume-of-a-cylinder#calculator", k: "Calculator", t: "Volume of a cylinder calculator", x: "Volume from the radius or diameter, or the missing height or radius, with the working." },
+  { href: "/maths/order-of-operations#checker", k: "Checker", t: "Order of operations checker", x: "Type any calculation and see it worked out one BODMAS step at a time." },
 ];
 
 const Cards = ({ items }) => (

@@ -1,0 +1,70 @@
+{
+ "examples": [
+  {
+   "title": "Testing whether two triangles are similar (SSS)",
+   "question": "Are these pairs of triangles similar? Give a reason.\n\n(a) Triangle $A$ has sides $5$ cm, $8$ cm and $10$ cm. Triangle $B$ has sides $7.5$ cm, $12$ cm and $15$ cm.\n\n(b) Triangle $C$ has sides $4$ cm, $6$ cm and $7$ cm. Triangle $D$ has sides $8$ cm, $12$ cm and $15$ cm.",
+   "solution": "**Key idea:** Two triangles are similar (SSS) if all three pairs of matching sides are in the same ratio. Match shortest with shortest, middle with middle and longest with longest, then divide each larger side by its smaller partner.\n\n1. **(a)** Divide each side of triangle $B$ by the matching side of triangle $A$:\n$$\\frac{7.5}{5} = 1.5 \\qquad \\frac{12}{8} = 1.5 \\qquad \\frac{15}{10} = 1.5$$\n2. All three ratios are equal, so the triangles are similar, with scale factor $1.5$.\n3. **(b)** Divide each side of triangle $D$ by the matching side of triangle $C$:\n$$\\frac{8}{4} = 2 \\qquad \\frac{12}{6} = 2 \\qquad \\frac{15}{7} \\approx 2.14$$\n4. The third ratio is different, so the triangles are **not** similar. Two matching ratios aren't enough: all three must agree.\n\n**Answer:** (a) Similar (SSS, scale factor $1.5$). (b) Not similar, because $\\dfrac{15}{7} \\neq 2$.",
+   "answer": "(a) Similar, scale factor $1.5$; (b) not similar"
+  },
+  {
+   "title": "Finding missing sides with the scale factor",
+   "question": "$\\triangle ABC \\sim \\triangle PQR$, with $A$ matching $P$, $B$ matching $Q$ and $C$ matching $R$. $AB = 6$ cm, $BC = 8$ cm, $AC = 10$ cm, $PQ = 9$ cm and $QR = 12$ cm.\n\n(a) Find the scale factor from $\\triangle ABC$ to $\\triangle PQR$.\n\n(b) Find $PR$.\n\n(c) A third similar triangle, $\\triangle XYZ$, has $XZ = 4$ cm matching $AC$. Find $XY$.",
+   "solution": "**Key idea:** The order of the letters tells you which sides match: $AB \\leftrightarrow PQ$, $BC \\leftrightarrow QR$, $AC \\leftrightarrow PR$. The scale factor is $\\dfrac{\\text{image side}}{\\text{original side}}$ for any matching pair.\n\n1. **(a)** Use the pair where both lengths are known, $AB$ and $PQ$:\n$$k = \\frac{PQ}{AB} = \\frac{9}{6} = 1.5$$\nCheck with the second pair: $\\dfrac{QR}{BC} = \\dfrac{12}{8} = 1.5$ ✓\n2. **(b)** $PR$ matches $AC$. Multiply by the scale factor:\n$$PR = 1.5 \\times 10 = 15 \\text{ cm}$$\n3. **(c)** From $\\triangle ABC$ to $\\triangle XYZ$ the scale factor is\n$$k = \\frac{XZ}{AC} = \\frac{4}{10} = 0.4$$\nA scale factor less than $1$ means the triangle is smaller.\n4. $XY$ matches $AB$:\n$$XY = 0.4 \\times 6 = 2.4 \\text{ cm}$$\n\n**Answer:** (a) $1.5$, (b) $PR = 15$ cm, (c) $XY = 2.4$ cm",
+   "answer": "(a) $1.5$, (b) $15$ cm, (c) $2.4$ cm"
+  },
+  {
+   "title": "A triangle inside a triangle (parallel line)",
+   "question": "In $\\triangle ABC$, point $D$ is on $AB$ and point $E$ is on $AC$, with $DE \\parallel BC$. $AD = 4$ cm, $DB = 6$ cm and $DE = 5$ cm. Find $BC$.",
+   "solution": "**Key idea:** A line parallel to one side cuts off a smaller triangle that is similar to the whole triangle. Compare the **whole** side $AB$ with $AD$, not the piece $DB$.\n\n1. Show the triangles are similar (AAA). $\\angle A$ is shared. $\\angle ADE = \\angle ABC$ because they are corresponding angles on parallel lines. So $\\triangle ADE \\sim \\triangle ABC$.\n2. Find the whole side:\n$$AB = AD + DB = 4 + 6 = 10 \\text{ cm}$$\n3. Scale factor from the small triangle to the large one:\n$$k = \\frac{AB}{AD} = \\frac{10}{4} = 2.5$$\n4. $BC$ matches $DE$:\n$$BC = 2.5 \\times 5 = 12.5 \\text{ cm}$$\n5. Check with a ratio: $\\dfrac{BC}{DE} = \\dfrac{12.5}{5} = 2.5 = \\dfrac{AB}{AD}$ ✓\n\n**Answer:** $BC = 12.5$ cm",
+   "answer": "$BC = 12.5$ cm"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Matching the wrong sides",
+   "wrong": "Comparing the sides in the order they appear on the page, so a $6$ cm side is matched with a $15$ cm side that is opposite a different angle.",
+   "fix": "Match sides by the angles they are opposite, or use the letter order in a statement like $\\triangle ABC \\sim \\triangle PQR$ ($AB \\leftrightarrow PQ$). With side lengths only, match shortest to shortest and longest to longest."
+  },
+  {
+   "title": "Using a piece of a side in a nested triangle",
+   "wrong": "With $AD = 4$, $DB = 6$ and $DE = 5$, writing $BC = 5 \\times \\dfrac{6}{4} = 7.5$.",
+   "fix": "The big triangle's side is the whole of $AB = 4 + 6 = 10$. So $BC = 5 \\times \\dfrac{10}{4} = 12.5$. Redraw the two triangles separately if it helps."
+  },
+  {
+   "title": "Adding instead of multiplying",
+   "wrong": "Sides $6$ and $9$ match, so 'the big triangle is $3$ longer', and the side matching $10$ becomes $13$.",
+   "fix": "Similar shapes are an enlargement, so every length is **multiplied** by the same scale factor: $k = \\dfrac{9}{6} = 1.5$ and $10 \\times 1.5 = 15$."
+  },
+  {
+   "title": "Turning the scale factor upside down",
+   "wrong": "Finding a side of the smaller triangle by multiplying by $k = 2.5$, which makes it bigger.",
+   "fix": "Multiply by $k$ to go from small to large, and divide by $k$ to go from large to small. Ask: should my answer be bigger or smaller than the side I started with?"
+  }
+ ],
+ "practice": {
+  "question": "$\\triangle LMN \\sim \\triangle XYZ$, with $LM = 8$ cm, $MN = 6$ cm and $XY = 12$ cm. Find $YZ$.",
+  "answer": "$YZ = 9$ cm",
+  "solution": "**Key idea:** The letter order gives the matching sides: $LM \\leftrightarrow XY$ and $MN \\leftrightarrow YZ$.\n\n1. Scale factor from $\\triangle LMN$ to $\\triangle XYZ$:\n$$k = \\frac{XY}{LM} = \\frac{12}{8} = 1.5$$\n2. $YZ$ matches $MN$:\n$$YZ = 1.5 \\times 6 = 9 \\text{ cm}$$\n\n**Answer:** $YZ = 9$ cm"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find a missing side in similar triangles?",
+  "a": "Match the sides that sit opposite equal angles, then find the scale factor by dividing a side of the new triangle by its matching side in the original. Multiply by the scale factor to find a missing side in the larger triangle, or divide to find one in the smaller triangle."
+ },
+ "turn": {
+  "question": "A vertical $2$ m pole casts a shadow $3.2$ m long. At the same time, a building casts a shadow $24$ m long. How tall is the building, in metres?",
+  "kind": "number",
+  "accept": {
+   "value": 15,
+   "tol": 0
+  },
+  "answer_display": "$15$ m",
+  "hint": "The two triangles are similar, so height ÷ shadow is the same for both. Find the scale factor from the pole's shadow to the building's shadow.",
+  "solution": "**Key idea:** At the same time of day, the pole and the building make similar right-angled triangles with their shadows.\n\n1. Scale factor from the pole's triangle to the building's:\n$$k = \\frac{24}{3.2} = 7.5$$\n2. Multiply the pole's height:\n$$h = 7.5 \\times 2 = 15 \\text{ m}$$\n\n**Answer:** The building is $15$ m tall."
+ },
+ "turn_checked": {
+  "my_answer": "15",
+  "attempts": 1
+ }
+}
