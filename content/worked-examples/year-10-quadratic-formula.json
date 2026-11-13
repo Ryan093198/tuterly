@@ -1,0 +1,76 @@
+{
+ "examples": [
+  {
+   "title": "Exact answers with the quadratic formula",
+   "question": "Solve $x^2 + 6x + 2 = 0$. Give your answers in exact (surd) form.",
+   "solution": "**Key idea:** For $ax^2 + bx + c = 0$, the solutions are $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$. Write down $a$, $b$ and $c$ first, then substitute.\n\n1. Read off the coefficients: $a = 1$, $b = 6$, $c = 2$.\n2. Work out the part under the square root (the discriminant):\n$$b^2 - 4ac = 6^2 - 4 \\times 1 \\times 2 = 36 - 8 = 28$$\n3. Substitute into the formula:\n$$x = \\frac{-6 \\pm \\sqrt{28}}{2 \\times 1} = \\frac{-6 \\pm \\sqrt{28}}{2}$$\n4. Simplify the surd: $\\sqrt{28} = \\sqrt{4 \\times 7} = 2\\sqrt{7}$, so\n$$x = \\frac{-6 \\pm 2\\sqrt{7}}{2}$$\n5. Divide **every** term on top by $2$:\n$$x = -3 \\pm \\sqrt{7}$$\n\n**Answer:** $x = -3 + \\sqrt{7}$ or $x = -3 - \\sqrt{7}$",
+   "answer": "$x = -3 \\pm \\sqrt{7}$"
+  },
+  {
+   "title": "A negative b and answers to 2 decimal places",
+   "question": "Solve $2x^2 - 5x - 4 = 0$, correct to 2 decimal places.",
+   "solution": "**Key idea:** Keep the signs of $b$ and $c$ with them. When $b$ is negative, $-b$ is positive, and $b^2$ is always positive.\n\n1. Coefficients: $a = 2$, $b = -5$, $c = -4$.\n2. Discriminant:\n$$b^2 - 4ac = (-5)^2 - 4 \\times 2 \\times (-4) = 25 + 32 = 57$$\n3. Substitute:\n$$x = \\frac{-(-5) \\pm \\sqrt{57}}{2 \\times 2} = \\frac{5 \\pm \\sqrt{57}}{4}$$\n4. Work out each solution separately on your calculator:\n$$x = \\frac{5 + \\sqrt{57}}{4} \\approx 3.137 \\qquad x = \\frac{5 - \\sqrt{57}}{4} \\approx -0.637$$\n5. Round at the end: $x \\approx 3.14$ or $x \\approx -0.64$.\n6. Quick check: $2(3.137)^2 - 5(3.137) - 4 \\approx 0$ ✓\n\n**Answer:** $x \\approx 3.14$ or $x \\approx -0.64$",
+   "answer": "$x \\approx 3.14$ or $x \\approx -0.64$"
+  },
+  {
+   "title": "Using the discriminant to count solutions",
+   "question": "Use the discriminant to find how many real solutions each equation has. Don't solve them.\n\n(a) $3x^2 - 2x + 5 = 0$\n\n(b) $4x^2 - 12x + 9 = 0$\n\n(c) $x^2 - 3x - 7 = 0$",
+   "solution": "**Key idea:** The discriminant is $\\Delta = b^2 - 4ac$. If $\\Delta > 0$ there are two solutions, if $\\Delta = 0$ there is one, and if $\\Delta < 0$ there are none (you can't take the square root of a negative number). If $\\Delta$ is a perfect square, the solutions are rational and the quadratic factorises.\n\n1. **(a)** $a = 3$, $b = -2$, $c = 5$:\n$$\\Delta = (-2)^2 - 4 \\times 3 \\times 5 = 4 - 60 = -56$$\n$\\Delta < 0$, so there are **no real solutions**. The parabola never touches the $x$-axis.\n2. **(b)** $a = 4$, $b = -12$, $c = 9$:\n$$\\Delta = (-12)^2 - 4 \\times 4 \\times 9 = 144 - 144 = 0$$\n$\\Delta = 0$, so there is **one solution**, $x = \\dfrac{12}{8} = 1.5$. (It's a perfect square: $(2x - 3)^2 = 0$.)\n3. **(c)** $a = 1$, $b = -3$, $c = -7$:\n$$\\Delta = (-3)^2 - 4 \\times 1 \\times (-7) = 9 + 28 = 37$$\n$\\Delta > 0$, so there are **two solutions**. $37$ isn't a perfect square, so they are irrational: use the formula, not factorising.\n\n**Answer:** (a) none, (b) one, (c) two",
+   "answer": "(a) $0$, (b) $1$, (c) $2$ real solutions"
+  },
+  {
+   "title": "A worded problem: rearrange first, then reject a negative",
+   "question": "A rectangular garden bed is $4$ m longer than it is wide, and its area is $20$ m². Find its width, correct to 2 decimal places.",
+   "solution": "**Key idea:** Make the equation equal $0$ before reading off $a$, $b$ and $c$. Then check each answer makes sense in the context.\n\n1. Let the width be $x$ m. The length is $x + 4$ m, so\n$$x(x + 4) = 20$$\n2. Expand and rearrange so one side is $0$:\n$$x^2 + 4x - 20 = 0$$\nSo $a = 1$, $b = 4$, $c = -20$.\n3. Discriminant:\n$$\\Delta = 4^2 - 4 \\times 1 \\times (-20) = 16 + 80 = 96$$\n4. Substitute:\n$$x = \\frac{-4 \\pm \\sqrt{96}}{2} = \\frac{-4 \\pm 4\\sqrt{6}}{2} = -2 \\pm 2\\sqrt{6}$$\n5. The two solutions are $x \\approx 2.899$ and $x \\approx -6.899$. A width can't be negative, so reject $-6.899$.\n6. Check: $2.899 \\times 6.899 \\approx 20$ ✓\n\n**Answer:** The width is about $2.90$ m (and the length about $6.90$ m).",
+   "answer": "Width $\\approx 2.90$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Losing the negative sign on b",
+   "wrong": "For $2x^2 - 5x - 4 = 0$, writing $x = \\dfrac{-5 \\pm \\sqrt{57}}{4}$.",
+   "fix": "Here $b = -5$, so $-b = -(-5) = +5$. Write $b$ in brackets when you substitute: $\\dfrac{-(-5) \\pm \\sqrt{(-5)^2 - 4(2)(-4)}}{2(2)}$."
+  },
+  {
+   "title": "Squaring a negative b on the calculator",
+   "wrong": "Typing $-5^2$ and getting $-25$, so the discriminant comes out as $-25 + 32 = 7$.",
+   "fix": "$b^2$ is never negative. Use brackets, $(-5)^2 = 25$, or just square the number without its sign."
+  },
+  {
+   "title": "Dividing only part of the top by 2a",
+   "wrong": "Writing $x = -6 \\pm \\dfrac{\\sqrt{28}}{2}$, or simplifying $\\dfrac{-6 \\pm 2\\sqrt{7}}{2}$ to $-6 \\pm \\sqrt{7}$.",
+   "fix": "The fraction line goes under the whole of $-b \\pm \\sqrt{b^2 - 4ac}$. When simplifying, divide every term on top by the bottom: $\\dfrac{-6}{2} \\pm \\dfrac{2\\sqrt{7}}{2} = -3 \\pm \\sqrt{7}$."
+  },
+  {
+   "title": "Using the formula before the equation equals 0",
+   "wrong": "For $x(x + 4) = 20$, taking $a = 1$, $b = 4$, $c = 20$.",
+   "fix": "Expand and move everything to one side first: $x^2 + 4x - 20 = 0$, so $c = -20$."
+  }
+ ],
+ "practice": {
+  "question": "Solve $3x^2 + 4x - 2 = 0$. Give your answers in exact form.",
+  "answer": "$x = \\dfrac{-2 \\pm \\sqrt{10}}{3}$",
+  "solution": "**Key idea:** Substitute $a = 3$, $b = 4$, $c = -2$ into $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$, then simplify the surd.\n\n1. Discriminant:\n$$\\Delta = 4^2 - 4 \\times 3 \\times (-2) = 16 + 24 = 40$$\n2. Substitute:\n$$x = \\frac{-4 \\pm \\sqrt{40}}{6}$$\n3. Simplify: $\\sqrt{40} = 2\\sqrt{10}$, so $x = \\dfrac{-4 \\pm 2\\sqrt{10}}{6}$.\n4. Divide every term by $2$:\n$$x = \\frac{-2 \\pm \\sqrt{10}}{3}$$\n\n**Answer:** $x = \\dfrac{-2 + \\sqrt{10}}{3} \\approx 0.39$ or $x = \\dfrac{-2 - \\sqrt{10}}{3} \\approx -1.72$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you use the quadratic formula?",
+  "a": "Rearrange the equation into the form ax² + bx + c = 0 and write down a, b and c with their signs. Work out the discriminant b² − 4ac, then substitute into x = (−b ± √(b² − 4ac)) ÷ 2a, once with + and once with −. A negative discriminant means there are no real solutions."
+ },
+ "turn": {
+  "question": "Find the discriminant of $2x^2 - 3x - 5 = 0$.",
+  "kind": "number",
+  "accept": {
+   "value": 49,
+   "tol": 0
+  },
+  "answer_display": "$\\Delta = 49$ (two rational solutions)",
+  "hint": "Here $a = 2$, $b = -3$ and $c = -5$. Work out $b^2 - 4ac$, keeping the signs in brackets.",
+  "solution": "**Key idea:** The discriminant is $\\Delta = b^2 - 4ac$.\n\n1. Substitute $a = 2$, $b = -3$, $c = -5$:\n$$\\Delta = (-3)^2 - 4 \\times 2 \\times (-5) = 9 + 40 = 49$$\n2. $49 > 0$, so there are two solutions, and because $49 = 7^2$ is a perfect square they are rational: $x = \\dfrac{3 \\pm 7}{4}$, which gives $x = 2.5$ or $x = -1$.\n\n**Answer:** $\\Delta = 49$"
+ },
+ "turn_checked": {
+  "my_answer": "49",
+  "attempts": 1
+ }
+}

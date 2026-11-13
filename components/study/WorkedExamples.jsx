@@ -20,7 +20,7 @@ export default function WorkedExamples({ data, topic, yearLevel, slug }) {
       <section className="wx-sec" aria-labelledby="wx-examples">
         <p className="wx-eyebrow">Worked examples</p>
         <h2 id="wx-examples" className="wx-h2">{yearLevel} {topic.toLowerCase()}: worked examples</h2>
-        <p className="wx-lead">Three examples, from a standard question to a worded problem. Have a go at each one before you open the solution.</p>
+        <p className="wx-lead">{["Three", "Four", "Five"][examples.length - 3] || "These"} examples, from a standard question to a worded problem. Have a go at each one before you open the solution.</p>
         <ol className="wx-list">
           {examples.map((e, i) => (
             <li key={i} className="wx-card">

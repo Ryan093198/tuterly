@@ -136,6 +136,7 @@ const STRANDS_10A = [
     links: [
       W("year-10a-polynomials", "Polynomials"),
       W("year-10a-non-monic-quadratics", "Non-monic quadratics"),
+      W("year-10-quadratic-formula", "Quadratic formula"),
       W("year-10a-exponential-log-equations", "Exponential and log equations"),
       W("year-10a-function-notation", "Function notation"),
       W("year-10a-non-linear-simultaneous-equations", "Non-linear simultaneous equations"),

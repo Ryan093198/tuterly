@@ -10,6 +10,8 @@
 .mx-table { overflow-x: auto; margin: 12px 0; }
 .mx-table table { border-collapse: collapse; min-width: 420px; width: 100%; font-size: 15px; }
 .mx-table th, .mx-table td { border-bottom: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+.mx-table--tight table { min-width: 0; font-size: 14px; font-variant-numeric: tabular-nums; }
+.mx-table--tight th, .mx-table--tight td { padding: 8px 6px; white-space: nowrap; }
 .mx-example { background: var(--card); border: 2px solid var(--border); border-radius: 16px; padding: 18px 20px; margin: 16px 0; }
 .mx-example__k { margin: 0 0 6px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); }
 .mx-formula { text-align: center; background: var(--brand-soft); border-radius: 16px; padding: 14px 16px; margin: 14px 0; font-size: 20px; }
