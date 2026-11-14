@@ -48,6 +48,15 @@
 .mx-tri { display: block; margin: 0 auto 14px; max-width: 260px; width: 100%; height: auto; }
 .mx-tri text { font-family: inherit; font-weight: 700; fill: var(--foreground); }
 .mx-calc textarea { width: 100%; resize: vertical; font-family: inherit; }
+.mx-calc__row--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mx-calc__label { margin: 0 0 6px; font-weight: 800; font-size: 15px; }
+.mx-plot { display: block; margin: 6px auto 14px; max-width: 360px; width: 100%; height: auto; overflow: visible; }
+.mx-plot text { font-family: inherit; font-weight: 700; font-size: 12px; fill: var(--foreground); }
+.mx-plot .mx-plot__small { font-size: 11px; font-weight: 600; fill: var(--muted); }
+.mx-plot__axis { stroke: var(--border); stroke-width: 1.5; }
+.mx-plot__leg { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.mx-plot__d { stroke: var(--brand); stroke-width: 3; }
+.mx-plot__pt { fill: var(--foreground); }
 .mx-calc__eq { margin: 0 0 12px; font-size: 18px; }
 .mx-calc__exact { margin: 0 0 8px; font-size: 17px; }
 

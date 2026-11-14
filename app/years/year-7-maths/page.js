@@ -26,6 +26,7 @@ const STRANDS = [
     ],
     links: [
       W("year-7-integers", "Integers"),
+      W("year-7-order-of-operations", "Order of operations"),
       W("year-7-prime-factors", "Prime factors"),
       W("year-7-square-roots", "Square roots"),
       W("year-7-fraction-operations", "Fraction operations"),

@@ -274,7 +274,8 @@ export default async function WorksheetTopicLandingPage({ params }) {
         </div>
       </section>
 
-      <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.topic} slug={page.slug} />
+      {/* testTopic: names the shared topic test honestly when a page's own topic is narrower than the test's. */}
+      <TopicTestTeaser yearLevel={page.yearLevel} topicId={page.topicId} topic={page.testTopic || page.topic} slug={page.slug} />
 
       {/* Exam season (Ryan, 9 Nov 2026): every Years 7 to 10 topic page
           points to its year's practice exam and formula sheet. */}

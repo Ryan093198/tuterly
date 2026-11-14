@@ -116,6 +116,7 @@ const STATIC_PAGES = [
   { path: "/maths/volume-of-a-cylinder", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/order-of-operations", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/compound-interest", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths/distance-between-two-points", priority: 0.8, changeFrequency: "monthly" },
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
   { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },

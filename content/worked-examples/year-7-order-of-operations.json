@@ -1,0 +1,76 @@
+{
+ "examples": [
+  {
+   "title": "Brackets, then multiply, then add",
+   "question": "Evaluate $4 + 6 \\times (9 - 5)$.",
+   "solution": "**Key idea:** Work out the brackets first. Then multiplication and division come before addition and subtraction, even when the addition is written first.\n\n1. Brackets: $9 - 5 = 4$\n$$4 + 6 \\times 4$$\n2. Multiply before you add: $6 \\times 4 = 24$\n$$4 + 24$$\n3. Add:\n$$= 28$$\n\nWorking strictly left to right would give $4 + 6 = 10$, then $10 \\times 4 = 40$, which is wrong.\n\n**Answer:** $28$",
+   "answer": "$28$"
+  },
+  {
+   "title": "A square number and a division in the same calculation",
+   "question": "Evaluate $2 \\times 3^2 - 24 \\div 4$.",
+   "solution": "**Key idea:** Powers come straight after brackets. A power belongs only to the number it sits on, so $2 \\times 3^2$ means square the $3$, then multiply by $2$.\n\n1. There are no brackets, so start with the power: $3^2 = 3 \\times 3 = 9$\n$$2 \\times 9 - 24 \\div 4$$\n2. Multiplication and division next. Do both before you subtract: $2 \\times 9 = 18$ and $24 \\div 4 = 6$\n$$18 - 6$$\n3. Subtract:\n$$= 12$$\n\nA common slip is $2 \\times 3 = 6$ then $6^2 = 36$. That squares the $2$ as well, which the question doesn't ask for.\n\n**Answer:** $12$",
+   "answer": "$12$"
+  },
+  {
+   "title": "The fraction bar works like brackets",
+   "question": "Evaluate $\\dfrac{6 + 18}{11 - 3}$.",
+   "solution": "**Key idea:** A fraction bar groups the whole top and the whole bottom. Work each one out fully, then divide.\n\n1. Top: $6 + 18 = 24$\n2. Bottom: $11 - 3 = 8$\n3. Divide:\n$$\\frac{24}{8} = 3$$\n\nOn a calculator, type it as $(6 + 18) \\div (11 - 3)$. Without the brackets, the calculator divides only the $18$ by the $11$ and gives about $4.64$.\n\n**Answer:** $3$",
+   "answer": "$3$"
+  },
+  {
+   "title": "Negative numbers inside brackets",
+   "question": "Evaluate $12 - (5 - 9) + 2^2$.",
+   "solution": "**Key idea:** The bracket can give a negative number. Keep it in brackets, then use the integer rule: subtracting a negative is the same as adding.\n\n1. Brackets: $5 - 9 = -4$\n$$12 - (-4) + 2^2$$\n2. Power: $2^2 = 4$\n$$12 - (-4) + 4$$\n3. Subtracting $-4$ is adding $4$:\n$$12 + 4 + 4$$\n4. Add left to right:\n$$= 20$$\n\n**Answer:** $20$",
+   "answer": "$20$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Working straight from left to right",
+   "wrong": "$4 + 6 \\times 4 = 10 \\times 4 = 40$",
+   "fix": "Multiplication comes before addition. $6 \\times 4 = 24$ first, then $4 + 24 = 28$. Only go left to right when the operations have the same priority."
+  },
+  {
+   "title": "Multiplying before dividing every time",
+   "wrong": "$24 \\div 4 \\times 2 = 24 \\div 8 = 3$",
+   "fix": "× and ÷ are equal, so do whichever comes first from the left: $24 \\div 4 = 6$, then $6 \\times 2 = 12$. The same goes for − and +: $15 - 5 + 3 = 13$."
+  },
+  {
+   "title": "Squaring the wrong thing",
+   "wrong": "$2 \\times 3^2 = 6^2 = 36$",
+   "fix": "The power only applies to the number it is written on. $3^2 = 9$, then $2 \\times 9 = 18$. If the whole product were squared it would be written $(2 \\times 3)^2$."
+  },
+  {
+   "title": "Losing the negative from a bracket",
+   "wrong": "$12 - (5 - 9) = 12 - 4 = 8$",
+   "fix": "$5 - 9 = -4$, not $4$. Keep the sign in brackets: $12 - (-4) = 12 + 4 = 16$."
+  }
+ ],
+ "practice": {
+  "question": "Evaluate $5 + 3 \\times (8 - 2)^2 \\div 12$.",
+  "answer": "$14$",
+  "solution": "**Key idea:** Brackets, then the power, then × and ÷ left to right, then the addition.\n\n1. Brackets: $8 - 2 = 6$\n$$5 + 3 \\times 6^2 \\div 12$$\n2. Power: $6^2 = 36$\n$$5 + 3 \\times 36 \\div 12$$\n3. × and ÷ from the left: $3 \\times 36 = 108$, then $108 \\div 12 = 9$\n$$5 + 9$$\n4. Add:\n$$= 14$$\n\n**Answer:** $14$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you do the order of operations in Year 7?",
+  "a": "Work out anything in brackets first, then powers such as 3², then multiplication and division from left to right, then addition and subtraction from left to right. Treat a fraction bar as brackets around the top and the bottom. Write each step on a new line so nothing gets skipped."
+ },
+ "turn": {
+  "question": "Evaluate $30 - 4 \\times (3 + 2)$.",
+  "kind": "number",
+  "accept": {
+   "value": 10,
+   "tol": 0
+  },
+  "answer_display": "$10$",
+  "hint": "Do the brackets first, then the multiplication, and leave the subtraction until last.",
+  "solution": "**Key idea:** Brackets, then ×, then −.\n\n1. Brackets: $3 + 2 = 5$\n$$30 - 4 \\times 5$$\n2. Multiply: $4 \\times 5 = 20$\n$$30 - 20$$\n3. Subtract:\n$$= 10$$\n\n**Answer:** $10$"
+ },
+ "turn_checked": {
+  "my_answer": "10",
+  "attempts": 1
+ }
+}

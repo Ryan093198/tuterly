@@ -26,7 +26,7 @@ export async function GET(_request, { params }) {
     questions: sheet.questions,
     answers: sheet.answers,
     yearLevel: page.yearLevel,
-    topicLabel: page.topic,
+    topicLabel: page.testTopic || page.topic,
     pageUrl: `${SITE_URL}/worksheets/${page.slug}`,
     count: sheet.count,
   });
