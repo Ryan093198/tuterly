@@ -1,0 +1,82 @@
+{
+ "examples": [
+  {
+   "title": "Gradient from a graph: counting rise and run",
+   "question": "A straight line passes through the grid points $A(0, -2)$ and $B(3, 4)$. Each grid square is $1$ unit. Find the gradient of the line.",
+   "solution": "**Key idea:** Gradient $= \\dfrac{\\text{rise}}{\\text{run}}$. Move from the left point to the right point: count the run across first, then the rise up or down.\n\n1. Start at $A(0, -2)$ and move right to be directly below $B$. That is $3$ squares across, so the run is $3$.\n2. Now move up to $B(3, 4)$. From $-2$ up to $4$ is $6$ squares, so the rise is $6$.\n3. Divide:\n$$m = \\frac{\\text{rise}}{\\text{run}} = \\frac{6}{3} = 2$$\n4. Sense check: the line goes **up** from left to right, so the gradient should be positive ✓. A gradient of $2$ means the line climbs $2$ units for every $1$ unit across.\n\n**Answer:** $m = 2$",
+   "answer": "$m = 2$"
+  },
+  {
+   "title": "A negative gradient",
+   "question": "A line passes through $P(0, 5)$ and $Q(4, 2)$. Find its gradient.",
+   "solution": "**Key idea:** If the line goes **down** as you move from left to right, the rise is negative, so the gradient is negative.\n\n1. Run: from $x = 0$ to $x = 4$ is $4$ units to the right.\n2. Rise: from $y = 5$ down to $y = 2$ is $3$ units **down**, so the rise is $-3$.\n3. Divide:\n$$m = \\frac{-3}{4} = -\\frac{3}{4}$$\n4. Sense check: the line falls from left to right, so a negative gradient makes sense ✓. It drops $\\dfrac{3}{4}$ of a unit for every $1$ unit across, which is less steep than a gradient of $-1$.\n\n**Answer:** $m = -\\dfrac{3}{4}$",
+   "answer": "$m = -\\dfrac{3}{4}$"
+  },
+  {
+   "title": "Gradient from two points (no graph)",
+   "question": "Find the gradient of the line through $(-1, -4)$ and $(3, 6)$.",
+   "solution": "**Key idea:** Without a grid, find the rise and run by subtracting. Rise is the change in $y$; run is the change in $x$. Subtract in the **same order** both times.\n\n1. Change in $y$ (second point minus first point):\n$$\\text{rise} = 6 - (-4) = 6 + 4 = 10$$\n2. Change in $x$ (in the same order):\n$$\\text{run} = 3 - (-1) = 3 + 1 = 4$$\n3. Divide and simplify:\n$$m = \\frac{10}{4} = \\frac{5}{2}$$\n4. Check by subtracting the other way: $\\dfrac{-4 - 6}{-1 - 3} = \\dfrac{-10}{-4} = \\dfrac{5}{2}$ ✓. Either order works, as long as it's the same for $x$ and $y$.\n\n**Answer:** $m = \\dfrac{5}{2}$ (or $2.5$)",
+   "answer": "$m = \\dfrac{5}{2}$"
+  },
+  {
+   "title": "Horizontal and vertical lines",
+   "question": "Find the gradient of the line through each pair of points.\n\n(a) $(2, 3)$ and $(7, 3)$\n\n(b) $(4, 1)$ and $(4, 6)$",
+   "solution": "**Key idea:** A horizontal line has no rise. A vertical line has no run, and you can't divide by $0$.\n\n1. **(a)** Rise: $3 - 3 = 0$. Run: $7 - 2 = 5$.\n$$m = \\frac{0}{5} = 0$$\nThe $y$-values are the same, so the line is horizontal (it's the line $y = 3$). A gradient of $0$ means it's flat.\n2. **(b)** Rise: $6 - 1 = 5$. Run: $4 - 4 = 0$.\n$$m = \\frac{5}{0}$$\nDividing by $0$ has no answer, so the gradient is **undefined**. The $x$-values are the same, so the line is vertical (it's the line $x = 4$).\n\n**Answer:** (a) $0$, (b) undefined",
+   "answer": "(a) $0$, (b) undefined"
+  },
+  {
+   "title": "Gradient as a rate of change",
+   "question": "A graph shows the water in a tank as it drains. At $0$ minutes the tank holds $300$ L. After $6$ minutes it holds $120$ L. The graph is a straight line.\n\n(a) Find the gradient.\n\n(b) What does the gradient mean in this situation?\n\n(c) How long does the tank take to empty?",
+   "solution": "**Key idea:** When the axes measure real quantities, the gradient is a **rate**. Its units are (units on the vertical axis) per (unit on the horizontal axis).\n\n1. **(a)** Rise: $120 - 300 = -180$ L. Run: $6 - 0 = 6$ minutes.\n$$m = \\frac{-180}{6} = -30 \\text{ L per minute}$$\n2. **(b)** The water level drops by $30$ litres every minute. The negative sign means the amount is going down.\n3. **(c)** The tank starts with $300$ L and loses $30$ L each minute:\n$$300 \\div 30 = 10 \\text{ minutes}$$\n4. Check: after $10$ minutes, $300 - 30 \\times 10 = 0$ L ✓\n\n**Answer:** (a) $-30$ L/min, (b) the tank loses $30$ L every minute, (c) $10$ minutes",
+   "answer": "(a) $-30$ L/min, (b) loses $30$ L each minute, (c) $10$ minutes"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Writing run over rise",
+   "wrong": "Through $(1, 2)$ and $(5, 4)$: $m = \\dfrac{5 - 1}{4 - 2} = \\dfrac{4}{2} = 2$",
+   "fix": "Rise (up and down, the $y$-values) goes on top. Run (across, the $x$-values) goes underneath: $m = \\dfrac{4 - 2}{5 - 1} = \\dfrac{2}{4} = \\dfrac{1}{2}$. A memory hook: you have to **rise** out of bed before you can **run**."
+  },
+  {
+   "title": "Subtracting in a different order on the top and bottom",
+   "wrong": "Through $(2, 7)$ and $(6, 3)$: $m = \\dfrac{7 - 3}{6 - 2} = \\dfrac{4}{4} = 1$",
+   "fix": "The top used first minus second, but the bottom used second minus first, so the sign flipped. Keep the same order: $m = \\dfrac{3 - 7}{6 - 2} = \\dfrac{-4}{4} = -1$. The line goes down from left to right, so a negative answer makes sense."
+  },
+  {
+   "title": "Counting squares when the scale isn't 1",
+   "wrong": "A line goes up $3$ squares for every $2$ squares across, so $m = \\dfrac{3}{2}$, even though each square on the $y$-axis is $10$ units.",
+   "fix": "Read the values from the axes, not the number of squares. The rise is $3 \\times 10 = 30$ and the run is $2$, so $m = \\dfrac{30}{2} = 15$. Using the coordinates of two points avoids this altogether."
+  },
+  {
+   "title": "Saying a vertical line has gradient 0",
+   "wrong": "The line $x = 4$ is straight up and down, so its gradient is $0$.",
+   "fix": "Gradient $0$ is a **flat** (horizontal) line, like $y = 3$. A vertical line has a run of $0$, and you can't divide by $0$, so its gradient is **undefined**."
+  }
+ ],
+ "practice": {
+  "question": "Find the gradient of the line through $(-4, 1)$ and $(2, -8)$.",
+  "answer": "$-\\dfrac{3}{2}$",
+  "solution": "**Key idea:** Rise over run, subtracting in the same order on the top and the bottom.\n\n1. Rise: $-8 - 1 = -9$\n2. Run: $2 - (-4) = 6$\n3. Divide and simplify:\n$$m = \\frac{-9}{6} = -\\frac{3}{2}$$\n4. Sense check: $y$ goes down as $x$ goes up, so the gradient is negative ✓\n\n**Answer:** $-\\dfrac{3}{2}$ (or $-1.5$)"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you find the gradient in Year 8?",
+  "a": "Gradient = rise ÷ run. On a graph, pick two points on the line, count how far up or down (the rise) and how far across (the run), then divide. From two points, the rise is the difference in the y-values and the run is the difference in the x-values, subtracted in the same order. Lines going down from left to right have a negative gradient."
+ },
+ "turn": {
+  "question": "Find the gradient of the line through $(-2, 3)$ and $(6, -3)$. You can type a fraction like 2/5.",
+  "kind": "number",
+  "accept": {
+   "value": -0.75,
+   "tol": 0
+  },
+  "answer_display": "$-\\dfrac{3}{4}$",
+  "hint": "Work out the change in $y$ and the change in $x$, subtracting in the same order. Then simplify the fraction.",
+  "solution": "**Key idea:** Gradient $= \\dfrac{\\text{rise}}{\\text{run}} = \\dfrac{\\text{change in } y}{\\text{change in } x}$.\n\n1. Rise: $-3 - 3 = -6$\n2. Run: $6 - (-2) = 8$\n3. Divide and simplify:\n$$m = \\frac{-6}{8} = -\\frac{3}{4}$$\n4. The line goes down from left to right, so a negative gradient makes sense ✓\n\n**Answer:** $-\\dfrac{3}{4}$"
+ },
+ "turn_checked": {
+  "my_answer": "-3/4",
+  "attempts": 1
+ }
+}

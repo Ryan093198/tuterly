@@ -44,6 +44,7 @@ const STRANDS = [
       W("year-8-algebra", "Algebra"),
       W("year-8-factorising", "Factorising"),
       W("year-8-linear-equations", "Linear equations"),
+      W("year-8-gradient", "Gradient"),
       W("year-8-linear-problems", "Linear problems"),
     ],
   },
