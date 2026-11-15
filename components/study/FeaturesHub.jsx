@@ -45,24 +45,6 @@ export default function FeaturesHub() {
         </div>
       </section>
 
-      <section className="tb-section tb-section--card" aria-label="Features">
-        <div className="tb-wrap ft-rows">
-          {FEATURES.map((f) => (
-            <div key={f.slug} className="ft-row">
-              <div className="ft-row__copy">
-                <span className="ft-row__icon" aria-hidden="true"><Icon name={f.icon} /></span>
-                <h2 className="tb-h2 ft-row__title">{f.name}</h2>
-                <p className="ft-row__text">{f.short}</p>
-                <Link href={`/features/${f.slug}#how-it-works`} className="tb-link">See how {f.name.toLowerCase()} works →</Link>
-              </div>
-              <div className="ft-row__phone">
-                <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={250} sizes="(max-width: 899px) 60vw, 250px" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="tb-section" aria-labelledby="fh-all">
         <div className="tb-wrap">
           <Reveal>
@@ -81,7 +63,25 @@ export default function FeaturesHub() {
         </div>
       </section>
 
-      <section className="tb-section tb-section--card" aria-labelledby="fh-sticks">
+      <section className="tb-section tb-section--card" aria-label="Features">
+        <div className="tb-wrap ft-rows">
+          {FEATURES.map((f) => (
+            <div key={f.slug} className="ft-row">
+              <div className="ft-row__copy">
+                <span className="ft-row__icon" aria-hidden="true"><Icon name={f.icon} /></span>
+                <h2 className="tb-h2 ft-row__title">{f.name}</h2>
+                <p className="ft-row__text">{f.short}</p>
+                <Link href={`/features/${f.slug}#how-it-works`} className="tb-link">See how {f.name.toLowerCase()} works →</Link>
+              </div>
+              <div className="ft-row__phone">
+                <PhoneFrame src={f.hero.src} alt={f.hero.alt} width={250} sizes="(max-width: 899px) 60vw, 250px" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="tb-section" aria-labelledby="fh-sticks">
         <div className="tb-wrap">
           <Reveal>
             <SectionHead id="fh-sticks" eyebrow="Learning that sticks" title="Built so it stays learned." />
@@ -97,7 +97,7 @@ export default function FeaturesHub() {
         </div>
       </section>
 
-      <section className="tb-section" aria-labelledby="fh-parents">
+      <section className="tb-section tb-section--card" aria-labelledby="fh-parents">
         <div className="tb-wrap">
           <div className="ft-row">
             <div className="ft-row__copy">
