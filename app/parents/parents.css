@@ -56,3 +56,8 @@ figure.pp-hero__visual { margin: 0; gap: 12px; }
 .pp-method__t { margin: 2px 0 6px; font-size: 17px; }
 .pp-method__x { margin: 0; font-size: 15px; line-height: 1.6; }
 .pp-method__foot { margin: 20px 0 0; font-size: 17px; font-weight: 700; color: var(--foreground); }
+
+/* Tutoring company reviews, linked from /parents */
+.pp-reviews { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 20px; }
+.pp-reviews a { font-weight: 700; color: var(--brand-text, #0e87a1); text-decoration: none; }
+.pp-reviews a:hover, .pp-reviews a:focus-visible { text-decoration: underline; }

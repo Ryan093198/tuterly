@@ -12,6 +12,7 @@ import { STUDY_APP, isStudyAppLive } from "@/lib/study-app";
 import { BAYSIDE } from "@/lib/bayside";
 import TryCta from "@/components/study/TryCta";
 import TutorCompare from "@/components/study/TutorCompare";
+import { REVIEW_PAGES } from "@/lib/tutoring-brands";
 import "./parents.css";
 import MethodStrip from "@/components/method/MethodStrip";
 
@@ -284,6 +285,21 @@ export default function ParentsPage() {
       >
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />
       </CtaBand>
+
+      {/* 7. Tutoring options compared (links the review pages together) */}
+      <section className="tb-section" aria-labelledby="pp-compare-h">
+        <div className="tb-wrap tb-wrap--narrow">
+          <h2 id="pp-compare-h" className="tb-h2">Comparing tutoring options?</h2>
+          <p className="tb-lead">
+            Prices and formats from each company&rsquo;s own website. Start with <Link href="/parents/maths-tutoring-cost-australia">maths tutoring costs in Australia, compared</Link>, or read a review:
+          </p>
+          <ul className="pp-reviews">
+            {REVIEW_PAGES.map((r) => (
+              <li key={r.href}><Link href={r.href}>{r.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
 
 

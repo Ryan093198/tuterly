@@ -254,7 +254,7 @@ export default function Page() {
           </p>
           <div className="pg-grid">
             <div className="pg-box">
-              <h3><Link href="/years/year-7-maths">Year 7</Link></h3>
+              <h3><Link href="/year-7-maths">Year 7</Link></h3>
               <p>Negative numbers, fraction and percentage calculations, and the first algebra. Homework is often about setting out working clearly, a habit worth building now.</p>
               <ul>
                 <li><Link href="/worksheets/year-7-integers">Integers worksheet</Link></li>
@@ -262,7 +262,7 @@ export default function Page() {
               </ul>
             </div>
             <div className="pg-box">
-              <h3><Link href="/years/year-8-maths">Year 8</Link></h3>
+              <h3><Link href="/year-8-maths">Year 8</Link></h3>
               <p>Expanding brackets, equations with several steps, and often Pythagoras. Algebra slips start to cost marks across topics.</p>
               <ul>
                 <li><Link href="/worksheets/year-8-algebra">Algebra worksheet</Link></li>
@@ -270,7 +270,7 @@ export default function Page() {
               </ul>
             </div>
             <div className="pg-box">
-              <h3><Link href="/years/year-9-maths">Year 9</Link></h3>
+              <h3><Link href="/year-9-maths">Year 9</Link></h3>
               <p>Index laws, quadratics and right-angled trigonometry. Many students need a reminder to use a calculator in degree mode.</p>
               <ul>
                 <li><Link href="/worksheets/year-9-exponent-laws">Exponent laws worksheet</Link></li>
@@ -278,7 +278,7 @@ export default function Page() {
               </ul>
             </div>
             <div className="pg-box">
-              <h3><Link href="/years/year-10-maths">Year 10</Link></h3>
+              <h3><Link href="/year-10-maths">Year 10</Link></h3>
               <p>Quadratics, simultaneous equations and, for 10A students, surds and logarithms. Homework loads are heavier and earlier gaps show up quickly.</p>
               <ul>
                 <li><Link href="/worksheets/year-10-simultaneous-equations">Simultaneous equations worksheet</Link></li>

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/parent-guides";
 // what Tuterly does. Also a landing page for exam-season ads.
 
 const PATH = "/parents/studied-but-failed-maths-test";
-const TITLE = "They Studied but Still Failed the Maths Test? Here's Why (Years 7 to 10) | Tuterly";
+const TITLE = "Studied but Still Failed the Maths Test? Here's Why";
 const DESCRIPTION =
   "Your child studied for hours and still got a low maths mark. Why re-reading notes doesn't show up in tests, how to work out where the marks went, and a one-week plan before the next test. For parents of Years 7 to 10.";
 

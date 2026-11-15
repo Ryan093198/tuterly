@@ -4,7 +4,8 @@ import GuideShell from "@/components/parent-guides/GuideShell";
 import BaysideBuilt from "@/components/parent-guides/BaysideBuilt";
 import { pageMetadata } from "@/lib/parent-guides";
 import { PLUS_PRICES } from "@/lib/study-launch";
-import { BRANDS, getBrand, TUTOR_AVG } from "@/lib/tutoring-brands";
+import { BRANDS, getBrand, TUTOR_AVG, withReviewLinks } from "@/lib/tutoring-brands";
+import { fitTitle } from "@/lib/seo-title";
 
 // Tutoring company reviews: Mathnasium, Success Tutoring, Ezy Math
 // Tutoring, Kip McGrath (lib/tutoring-brands.js). Same honest format as
@@ -20,7 +21,11 @@ const MONTH = PLUS_PRICES.month.now;
 
 function meta(b) {
   return {
-    title: `${b.name} Review (2026): Cost, How It Works, and Alternatives | Tuterly`,
+    title: fitTitle(
+      `${b.name} Review (2026): Cost, How It Works, and Alternatives`,
+      `${b.name} Review 2026: Cost, How It Works and Alternatives`,
+      `${b.name} Review 2026: Cost and Alternatives`,
+    ),
     description: `${b.name} review for parents: how it works, what it costs, who it suits, and a cheaper alternative for Years 7 to 10 maths, designed by the educators at Bayside Academics.`,
     path: `/parents/${b.slug}`,
   };
@@ -64,12 +69,10 @@ export default async function BrandPage({ params }) {
       placement={`parents_${b.slug.replace(/-/g, "_")}`}
       faqs={faqs}
       faqTitle={`${b.name}: questions parents ask`}
-      links={[
+      links={withReviewLinks([
         { href: b.site, label: `${b.name} website` },
         { href: "/parents/maths-tutoring-cost-australia", label: "Maths tutoring costs in Australia, compared" },
-        { href: "/parents/tutero-review", label: "Tutero review" },
-        { href: "/parents/kumon-cost-australia", label: "Kumon cost in Australia" },
-      ]}
+      ], path)}
       finalTitle="What works in tutoring, in an app"
       finalText="Designed by the educators at Bayside Academics. Find every mistake, fix it, master it, then predict the test."
     >

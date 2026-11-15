@@ -1,3 +1,4 @@
+import { withReviewLinks } from "@/lib/tutoring-brands";
 import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
@@ -44,12 +45,12 @@ export default function Page() {
       placement="parents_tutero"
       faqs={FAQS}
       faqTitle="Tutero: questions parents ask"
-      links={[
+      links={withReviewLinks([
         { href: SRC, label: "Tutero: one-on-one online tutoring" },
         { href: "/parents/maths-tutoring-cost-australia", label: "Maths tutoring costs in Australia, compared" },
         { href: "/parents/cluey-learning-review", label: "Cluey Learning review" },
         { href: "/parents/kumon-cost-australia", label: "Kumon cost in Australia" },
-      ]}
+      ], "/parents/tutero-review")}
       finalTitle="What works in tutoring, in an app"
       finalText={`Built by the team behind ${BAYSIDE.line}. Find every mistake, fix it, master it, then predict the test.`}
     >

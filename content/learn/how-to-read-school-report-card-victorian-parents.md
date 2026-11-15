@@ -1,5 +1,6 @@
 ---
 title: "How to Read Your Child's School Report: A to E Grades, Effort Ratings and Comments Explained (Victoria)"
+seoTitle: "School Reports in Victoria: What a C Grade Really Means"
 description: "What a C really means, what effort ratings and teacher comments tell you, and what to do next. A plain-English guide to Victorian school reports for parents."
 date: "2026-06-02"
 audience: "Primary and secondary parents (Year 1–10)"

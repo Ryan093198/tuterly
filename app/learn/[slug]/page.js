@@ -21,11 +21,11 @@ export async function generateMetadata({ params }) {
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: { absolute: fitTitle(`${post.title} | Tuterly`) },
+    title: { absolute: fitTitle(`${post.seoTitle || post.title} | Tuterly`, post.seoTitle || post.title) },
     description: post.description,
     alternates: { canonical: `${SITE_URL}/learn/${slug}` },
     openGraph: { images: ["/og-tuterly.png"],
-      title: fitTitle(`${post.title} | Tuterly`),
+      title: fitTitle(`${post.seoTitle || post.title} | Tuterly`, post.seoTitle || post.title),
       description: post.description,
       url: `${SITE_URL}/learn/${slug}`,
       type: "article",

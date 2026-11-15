@@ -9,9 +9,9 @@ import YearLinks from "@/components/maths/YearLinks";
 // practice answer was checked (Nov 2026).
 
 const PATH = "/maths/index-laws";
-const TITLE = "Index Laws Explained: All 7 Laws of Indices with Examples and Practice (Years 8 to 10) | Tuterly";
+const TITLE = "Index Laws: All 7 Laws of Indices, with Examples and Practice";
 const DESCRIPTION =
-  "The 7 index laws explained simply, with an example for each: multiplying and dividing powers, powers of powers, the zero index and negative indices, plus fractional indices for Year 10A. Worked examples and practice questions with answers.";
+  "All 7 index laws on one page, each with a worked example: multiplying and dividing powers, power of a power, the zero index and negative indices. Plus 10 practice questions with answers.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 

@@ -1,19 +1,21 @@
+import Link from "next/link";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { AppHeroBlock, AppLowerCostSection } from "@/components/study/TutoringPageApp";
 import { SITE_URL } from "@/lib/site";
+import { REVIEW_PAGES } from "@/lib/tutoring-brands";
 import { STUDY_APP } from "@/lib/study-app";
 import { c, MARKETING_FONTS_IMPORT } from "@/components/marketing/theme";
 import Fade from "@/components/marketing/Fade";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 
-const TITLE = "Tutor Doctor Alternative: In-Home Tutoring vs the Tuterly App";
+const TITLE = "Tutor Doctor Alternatives: Cost ($80 to $130/hr) and Options";
 const DESCRIPTION =
-  "Comparing Tutor Doctor’s in-home tutoring franchise with Tuterly, an iPhone app for Years 7 to 10 maths practice (Android coming soon). What each does, what each costs, and when Tutor Doctor is the better fit.";
+  "Tutor Doctor in-home tutoring typically costs $80 to $130 an hour, set by each local franchise. What it offers, when it's the better fit, and a lower-cost option for Years 7 to 10 maths practice.";
 const URL = `${SITE_URL}/tutor-doctor-alternative`;
 
 export const metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: URL },
   openGraph: { images: ["/og-tuterly.png"],
@@ -200,6 +202,19 @@ export default function TutorDoctorAlternativePage() {
 
       <AppLowerCostSection competitor="Tutor Doctor" placement="tutor_doctor_alternative_lower_cost" />
 
+      <section style={{ padding: "48px 20px" }} aria-labelledby="td-reviews">
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <h2 id="td-reviews" style={{ fontFamily: "var(--font-display)", fontSize: 26, color: c.navy, marginBottom: 10 }}>Other tutoring options, reviewed</h2>
+          <p style={{ color: c.textLight, marginBottom: 14 }}>
+            Every option side by side: <Link href="/parents/maths-tutoring-cost-australia" style={{ color: c.tealDark, fontWeight: 700 }}>maths tutoring costs in Australia, compared</Link>.
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "8px 20px" }}>
+            {REVIEW_PAGES.filter((r) => r.href !== "/tutor-doctor-alternative").map((r) => (
+              <li key={r.href}><Link href={r.href} style={{ color: c.tealDark, fontWeight: 700 }}>{r.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <AppCtaBand placement="tutor_doctor_alternative_final" />
       <MarketingFooter />
     </main>

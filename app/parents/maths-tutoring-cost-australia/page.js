@@ -1,3 +1,4 @@
+import { withReviewLinks } from "@/lib/tutoring-brands";
 import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
@@ -14,7 +15,7 @@ import BaysideBuilt from "@/components/parent-guides/BaysideBuilt";
 // page says so. Fair to each: describe, don't disparage.
 
 const PATH = "/parents/maths-tutoring-cost-australia";
-const TITLE = "How Much Does Maths Tutoring Cost in Australia? Every Option Compared (2026) | Tuterly";
+const TITLE = "Maths Tutoring Cost in Australia (2026): 8 Options Compared";
 const DESCRIPTION =
   "Maths tutoring prices in Australia compared: Tutero, Cluey, Kip McGrath, Kumon, Mathnasium, Success Tutoring, Ezymath and private tutors, from each company's own website, plus the cost of a year.";
 
@@ -71,12 +72,12 @@ export default function Page() {
       placement="parents_tutoring_cost"
       faqs={FAQS}
       faqTitle="Tutoring costs: questions parents ask"
-      links={[
+      links={withReviewLinks([
         { href: "/parents/tutero-review", label: "Tutero review: cost and how it works" },
         { href: "/parents/cluey-learning-review", label: "Cluey Learning review" },
         { href: "/parents/kumon-cost-australia", label: "Kumon cost in Australia" },
         { href: "/parents/maths-app-vs-tutoring", label: "Maths help without the $100-an-hour tutor" },
-      ]}
+      ], "/parents/maths-tutoring-cost-australia")}
       finalTitle="What works in tutoring, in an app"
       finalText={`Built by the team behind ${BAYSIDE.line}. Find every mistake, fix it, master it, then predict the test.`}
     >

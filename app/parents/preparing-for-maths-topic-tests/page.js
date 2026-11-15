@@ -248,7 +248,7 @@ export default function Page() {
               <li>Keep the wrong ones somewhere they will be seen again before the end-of-term exam.</li>
             </ul>
             <p>
-              Topics build on each other, so a gap left now often shows up again later. Each year guide lists the skills that tend to carry forward: <Link href="/years/year-7-maths">Year 7</Link>, <Link href="/years/year-8-maths">Year 8</Link>, <Link href="/years/year-9-maths">Year 9</Link>{" "}and <Link href="/years/year-10-maths">Year 10</Link>.
+              Topics build on each other, so a gap left now often shows up again later. Each year guide lists the skills that tend to carry forward: <Link href="/year-7-maths">Year 7</Link>, <Link href="/year-8-maths">Year 8</Link>, <Link href="/year-9-maths">Year 9</Link>{" "}and <Link href="/year-10-maths">Year 10</Link>.
             </p>
             <h3 className="pg-h3">How Tuterly fits</h3>
             <p>

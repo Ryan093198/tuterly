@@ -1,3 +1,4 @@
+import { withReviewLinks } from "@/lib/tutoring-brands";
 import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
@@ -10,9 +11,9 @@ import { PLUS_PRICES } from "@/lib/study-launch";
 // Tuterly's price: current weekly and monthly only (Ryan, 6 Nov 2026).
 
 const PATH = "/parents/kumon-cost-australia";
-const TITLE = "Kumon Cost in Australia (2026): Fees, and Is It Worth It for High School? | Tuterly";
+const TITLE = "Kumon Fees Australia 2026: $160 a Month. Is It Worth It?";
 const DESCRIPTION =
-  "Kumon costs $160 a month per subject in Australia, plus a $100 enrolment fee. What you get, who it suits, and how it compares with a tutor or a maths app for Years 7 to 10.";
+  "Kumon costs $160 a month per subject in Australia, plus a $100 enrolment fee: $2,020 for the first year of one subject. What you get, who it suits, and how it compares with a tutor or a maths app for Years 7 to 10.";
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH });
 
@@ -82,7 +83,7 @@ export default function Page() {
       placement="parents_kumon"
       faqs={FAQS}
       faqTitle="Kumon: questions parents ask"
-      links={LINKS}
+      links={withReviewLinks(LINKS, "/parents/kumon-cost-australia")}
       finalTitle="Practice that follows their school maths"
       finalText="Tuterly works from the questions your child actually gets wrong in class, homework and tests, explains each one step by step, and gives fresh practice until it’s mastered."
     >

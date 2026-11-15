@@ -1,3 +1,4 @@
+import { withReviewLinks } from "@/lib/tutoring-brands";
 import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
@@ -11,7 +12,7 @@ import { PLUS_PRICES } from "@/lib/study-launch";
 // page is for people already looking to switch.
 
 const PATH = "/parents/cluey-learning-review";
-const TITLE = "Cluey Learning Review (2026): Cost, Parent Reviews and Who It Suits | Tuterly";
+const TITLE = "Cluey Learning Review 2026: Cost and What 933 Parents Say";
 const DESCRIPTION =
   "An honest Cluey Learning review for parents: how Cluey works, what it costs, what parents say in 933 reviews (3.6 out of 5), the questions to ask before you sign up, and the alternatives for Years 7 to 10 maths.";
 
@@ -78,7 +79,7 @@ export default function Page() {
       placement="parents_cluey_review"
       faqs={FAQS}
       faqTitle="Cluey Learning: questions parents ask"
-      links={LINKS}
+      links={withReviewLinks(LINKS, "/parents/cluey-learning-review")}
       finalTitle="No sessions to book or cancel"
       finalText="Tuterly is there whenever homework is: your child snaps the question they got wrong, sees the method step by step, and practises until it’s mastered. You see what they mastered each week."
     >

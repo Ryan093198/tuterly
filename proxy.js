@@ -132,6 +132,12 @@ const MOVED = {
   "/learn/how-much-does-online-tutoring-cost-victoria": "/parents/maths-tutoring-cost-australia",
   // /try merged into /method (Ryan, 11 Nov 2026): the method first, then the uploader.
   "/try": "/method",
+  // Two "what Year N maths covers, for parents" pages competed for the same
+  // searches (Ryan, 16 Nov 2026). /year-N-maths keeps the topic.
+  "/years/year-7-maths": "/year-7-maths",
+  "/years/year-8-maths": "/year-8-maths",
+  "/years/year-9-maths": "/year-9-maths",
+  "/years/year-10-maths": "/year-10-maths",
 };
 
 function goneResponse() {

@@ -30,6 +30,10 @@ function meta(c) {
       `${c.yearLabel} ${titleCase(c.name)} Teaching Resources | Tuterly`,
       `${c.yearLabel} ${titleCase(c.name)} Teaching Resources`,
       `${c.yearLabel} ${titleCase(c.name)}: Teacher Resources`,
+      // Long chapter names ("Angle relationships and properties of
+      // geometrical figures") were cut off in Google: fall back to the first part.
+      `${c.yearLabel} ${titleCase(c.name.split(/,| and /)[0])}: Worksheets and Tests for Teachers`,
+      `${c.yearLabel} ${titleCase(c.name.split(/,| and /)[0])}: Teacher Resources`,
     ),
     description: `Free ${c.yearLabel} ${c.name.toLowerCase()} teaching resources: printable worksheets and topic tests with answers, a revision mind map, and an auto-marked test to share with your class. Covers ${subs} and more.`,
   };
