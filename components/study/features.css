@@ -21,3 +21,8 @@
 .ft-more a:hover { color: var(--brand-text); }
 /* Sticky nav is ~66px tall: land the "How it works" heading just below it. */
 .ft-anchor { scroll-margin-top: 66px; }
+
+/* All the features, in groups. */
+.ft-group { margin-top: 28px; }
+.ft-group:first-of-type { margin-top: 8px; }
+.ft-group__title { margin: 0 0 14px; }

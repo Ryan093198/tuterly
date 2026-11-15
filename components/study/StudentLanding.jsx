@@ -10,6 +10,7 @@ import { MadeInAustralia } from "@/components/study/MadeByEducators";
 import ResultsProof, { LaunchPill } from "@/components/study/ResultsProof";
 import TryCta from "@/components/study/TryCta";
 import { STUDY_APP, STUDY_APP_FACTS } from "@/lib/study-app";
+import { STUDENT_FEATURES } from "@/lib/app-features";
 import { STUDENT_YEARS, studentFaqs, topicsForYear } from "@/lib/student-pages";
 import "./study-landing.css";
 import "./student-landing.css";
@@ -70,20 +71,6 @@ const EXAM_FEATURES = [
   { icon: "book", tone: "streak", title: "Term plan", text: "Upload your class’s term plan for this week’s topic and a countdown to every test." },
 ];
 
-const MORE_FEATURES = [
-  { icon: "snap", title: "Snap a question", text: "Any wrong question from homework or a test, solved step by step and filed under the right topic." },
-  { icon: "practice", tone: "violet", title: "Similar and harder questions", text: "A new question on the same idea, then a harder one, so you can’t just remember the answer." },
-  { icon: "explain", tone: "streak", title: "Hints, then solutions", text: "Try first, get a nudge, then see the full method. After a wrong answer, it explains the step that went wrong." },
-  { icon: "star", tone: "xp", title: "Mastery you can see", text: "Every question moves from To fix to Learning to Mastered, with stars along the way." },
-  { icon: "drill", tone: "success", title: "Drills", text: "Run through your mistakes, one topic or several together." },
-  { icon: "book", tone: "violet", title: "Spaced review", text: "Questions you got right come back after 3 days, a week and three weeks, so you don’t forget them." },
-  { icon: "test", tone: "violet", title: "Test any topic", text: "A short test on any topic, one question from each part of it. No snapping needed." },
-  { icon: "checked", tone: "success", title: "Topic tests and weekly review", text: "Prove you’ve mastered a topic, and a quick check on this week’s questions." },
-  { icon: "notes", title: "Study notes", text: "A one-page revision sheet on a topic, or only the bits you find hard. Save it or share it as a PDF." },
-  { icon: "bank", title: "Mind maps", text: "40 one-page maps across Years 7 to 10, with rules, examples and diagrams. Free." },
-  { icon: "goal", title: "Quick questions widget", text: "Practice on your home screen. Answer without opening the app." },
-  { icon: "streak", tone: "streak", title: "Goals, streaks and Quinn", text: "Weekly goals, XP and stars. Master a topic to unlock a new accessory for Quinn the quokka." },
-];
 
 function ExamZoneSection({ placement }) {
   return (
@@ -196,7 +183,7 @@ export default function StudentLanding({ year = null }) {
             <SectionHead id="stl-test" eyebrow="All the features" title="Everything you need between now and the test." />
           </Reveal>
           <div className="tb-tiles tb-tiles--3">
-            {MORE_FEATURES.map((t) => (
+            {STUDENT_FEATURES.map((t) => (
               <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
             ))}
           </div>

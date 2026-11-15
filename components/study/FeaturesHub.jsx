@@ -3,7 +3,8 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import ResultsProof from "@/components/study/ResultsProof";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
-import { Card, CtaBand, Eyebrow, Icon, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
+import { Card, CtaBand, Eyebrow, Icon, OptionTile, PhoneFrame, Reveal, SectionHead } from "@/components/brand";
+import { FEATURE_GROUPS } from "@/lib/app-features";
 import { FEATURES, STICKS } from "@/lib/feature-pages";
 import TryCta from "@/components/study/TryCta";
 import "./study-landing.css";
@@ -62,7 +63,25 @@ export default function FeaturesHub() {
         </div>
       </section>
 
-      <section className="tb-section" aria-labelledby="fh-sticks">
+      <section className="tb-section" aria-labelledby="fh-all">
+        <div className="tb-wrap">
+          <Reveal>
+            <SectionHead id="fh-all" eyebrow="All the features" title="Everything in the app." />
+          </Reveal>
+          {FEATURE_GROUPS.map((g) => (
+            <div key={g.title} className="ft-group">
+              <h3 className="tb-h3 ft-group__title">{g.title}</h3>
+              <div className="tb-tiles tb-tiles--3">
+                {g.items.map((t) => (
+                  <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="tb-section tb-section--card" aria-labelledby="fh-sticks">
         <div className="tb-wrap">
           <Reveal>
             <SectionHead id="fh-sticks" eyebrow="Learning that sticks" title="Built so it stays learned." />
@@ -78,7 +97,7 @@ export default function FeaturesHub() {
         </div>
       </section>
 
-      <section className="tb-section tb-section--card" aria-labelledby="fh-parents">
+      <section className="tb-section" aria-labelledby="fh-parents">
         <div className="tb-wrap">
           <div className="ft-row">
             <div className="ft-row__copy">
