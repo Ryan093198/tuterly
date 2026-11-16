@@ -161,7 +161,7 @@ export default function TeachersPage() {
         </p>
         <div className="tft-banner">
           <p className="tft-banner__k">New · Tuterly for Teachers</p>
-          <p className="tft-banner__t">We mark your class&rsquo;s paper tests, then make practice for each student on the topics they&rsquo;re weakest in.</p>
+          <p className="tft-banner__t">Test papers and exams instantly marked. Customised practice for each student on the topics they&rsquo;re weakest in.</p>
           <p className="tz-hero-btns tft-btns">
             <a href="#teacher-signup" className="tb-btn tb-btn--primary">Sign up</a>
             <Link href="/teachers/how-it-works" className="tb-btn tb-btn--secondary">See how it works</Link>
