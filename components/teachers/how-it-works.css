@@ -70,7 +70,7 @@
 .hw-mark--no { color: #dc2626; }
 .hw-mark--part { color: #b45309; font-size: 15px; }
 .hw-paper.is-marked .hw-mark { transform: translateY(-50%) scale(1); transition-delay: calc(var(--i) * 140ms + .9s); }
-.hw-q7box { position: absolute; left: 6%; right: 6%; border: 2px solid #f59e0b; border-radius: 6px; background: rgba(245,158,11,.08); opacity: 0; transition: opacity .5s ease .6s; }
+.hw-q7box { position: absolute; left: 5%; right: 12%; border: 2px solid #f59e0b; border-radius: 6px; background: rgba(245,158,11,.06); box-shadow: 0 0 0 4px rgba(245,158,11,.12); opacity: 0; transition: opacity .5s ease .6s; }
 .hw-paper.is-zoom .hw-q7box { opacity: 1; }
 .hw-paper.is-zoom .hw-mark { font-size: 11px; }
 .hw-paper.is-zoom .hw-mark--part { font-size: 8px; }

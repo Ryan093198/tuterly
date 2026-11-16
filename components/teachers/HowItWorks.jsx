@@ -175,7 +175,8 @@ function Stage({ step }) {
               {m.got === m.of ? "✓" : m.got === 0 ? "✗" : `${m.got}/${m.of}`}
             </span>
           ))}
-          <span className="hw-q7box" style={{ top: `${MARKS[6].y * 100}%`, height: `${MARKS[6].h * 100}%` }} />
+          {/* Frames Q7 with a gap above the question line (text at 84.6% to 88.4% of the scan) */}
+          <span className="hw-q7box" style={{ top: "82.6%", height: "8.2%" }} />
         </div>
       </div>
 
