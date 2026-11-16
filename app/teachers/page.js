@@ -8,6 +8,7 @@ import { getWorkedExamples } from "@/lib/worked-examples";
 import "katex/dist/katex.min.css";
 import "@/components/study/worked-examples.css";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
+import TeacherStory from "@/components/teachers/TeacherStory";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
@@ -200,6 +201,8 @@ export default function TeachersPage() {
             Your class sits the test on paper as usual. Scan the class set, and Tuterly marks every answer, flags anything it isn&rsquo;t sure about, and shows you what to reteach. Then it writes practice for each student on the exact topics they lost marks in. Nothing reaches students until you approve it.
           </p>
           <TftButtons />
+
+          <TeacherStory demoHref={TFT_DEMO} />
 
           <div className="tft-each">
             <div>

@@ -1,4 +1,4 @@
-.sh { font-family: var(--font-display); color: var(--foreground); background: var(--card); overflow-x: hidden; }
+.sh { font-family: var(--font-display); color: var(--foreground); background: var(--card); overflow-x: clip; }
 .sh-crumb { background: var(--card); border-bottom: 1px solid var(--border); padding: 12px 24px; }
 .sh-crumb ol { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; font-size: 13px; color: var(--muted); }
 .sh-crumb a { color: var(--muted); text-decoration: none; }
