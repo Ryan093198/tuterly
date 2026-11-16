@@ -169,7 +169,7 @@ export default function TeachersPage() {
           <p className="tft-banner__t">We mark your class&rsquo;s paper tests, then make practice for each student on the topics they&rsquo;re weakest in.</p>
           <p className="tz-hero-btns tft-btns">
             <a href={TFT_DEMO} className="tb-btn tb-btn--primary">Book a demo</a>
-            <a href="#tuterly-for-teachers" className="tb-btn tb-btn--secondary">See how it works</a>
+            <Link href="/teachers/how-it-works" className="tb-btn tb-btn--secondary">See how it works</Link>
           </p>
         </div>
         <dl className="sh-facts">
