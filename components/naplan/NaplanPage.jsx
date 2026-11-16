@@ -58,7 +58,9 @@ export default function NaplanPage({ year }) {
             Year {year} NAPLAN numeracy <span className="sl-accent">practice test</span>
           </h1>
           <p className="tb-lead np-lead">
-            20 free NAPLAN-style questions across every strand, marked as soon as you finish, with a worked solution for every question. Do it online, or print the PDF.
+            {year >= 7
+              ? "20 free NAPLAN-style questions that work like the real online test: the non-calculator questions first, then an on-screen calculator. Marked as soon as you finish, with a worked solution for every question. Or print the PDF."
+              : "20 free NAPLAN-style questions across every strand, marked as soon as you finish, with a worked solution for every question. Do it online, or print the PDF."}
           </p>
           <div className="np-facts">
             <div><span className="np-facts__k">NAPLAN 2027</span><span className="np-facts__v">{NAPLAN_FACTS.window}</span></div>
@@ -72,8 +74,8 @@ export default function NaplanPage({ year }) {
           </div>
           {isApp && (
             <div className="np-appbox">
-              <p className="np-appbox__title">Get ready for NAPLAN with the Tuterly app.</p>
-              <p className="np-appbox__text">Snap any question they get wrong. Quinn shows the worked solution, then gives fresh questions on the same skill until it sticks.</p>
+              <p className="np-appbox__title">Unlimited practice tests on every topic NAPLAN covers.</p>
+              <p className="np-appbox__text">This free test is 20 questions. In the Tuterly app, they can test any Year {year} topic as often as they like, and every question they get wrong comes back with a worked solution and fresh questions until it sticks.</p>
               <div className="np-appbox__form"><StudyAppCTA variant="hero" placement={`naplan_year_${year}_hero`} position="hero" slim /></div>
             </div>
           )}
@@ -83,7 +85,9 @@ export default function NaplanPage({ year }) {
       <section className="tb-section tb-section--card" id="naplan-test" aria-label={`Year ${year} NAPLAN numeracy practice test`}>
         <div className="tb-wrap np-testwrap">
           <p className="np-note">
-            Answer as many as you can, then press <strong>Mark my test</strong> at the bottom.{year >= 7 ? " Do questions 1 to 5 without a calculator, as in the real test." : " Use paper for working, no calculator."}
+            {year >= 7
+              ? <>Works like NAPLAN Online: one question at a time, flag any to come back to, and an on-screen calculator once the non-calculator section is done. Have paper ready for working.</>
+              : <>Answer as many as you can, then press <strong>Mark my test</strong> at the bottom. Use paper for working, no calculator.</>}
           </p>
           <NaplanTest year={year} questions={questions} appYears={APP_YEARS} />
           <p className="np-disclaimer">
@@ -130,9 +134,9 @@ export default function NaplanPage({ year }) {
           </ol>
           {isApp ? (
             <div className="np-cta">
-              <p className="np-cta__title">Turn their NAPLAN mistakes into practice.</p>
+              <p className="np-cta__title">Unlimited practice tests on every topic NAPLAN covers.</p>
               <p className="np-cta__text">
-                The Tuterly app is built for Years 7 to 10. Snap any question they got wrong, here or in a school test, and they get the worked solution and fresh questions on the same idea until it’s mastered. Topic check covers every part of a topic before the real thing.
+                The Tuterly app is built for Years 7 to 10. Test any topic as often as they like, and snap any question they got wrong, here or in a school test, for the worked solution and fresh questions on the same idea until it’s mastered.
               </p>
               <div className="np-cta__form"><StudyAppCTA variant="hero" placement={`naplan_year_${year}`} position="inline" slim /></div>
             </div>

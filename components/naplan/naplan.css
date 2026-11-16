@@ -109,3 +109,53 @@
 .np-appbox__title { margin: 0; font-weight: 900; font-size: 19px; color: var(--foreground); }
 .np-appbox__text { margin: 0; font-size: 15px; line-height: 1.5; }
 .np-appbox__form { width: 100%; max-width: 460px; }
+
+/* NAPLAN Online-style test for Years 7 and 9 (NaplanTest exam mode) */
+.nt-list--hidden { display: none; }
+.nt-list--one > .nt-q:not(.is-current) { display: none; }
+.nt-list--one > .nt-q { min-height: 260px; }
+.nx-card { padding: 22px; border-radius: 20px; background: var(--card); border: 2px solid var(--brand); box-shadow: 0 6px 0 var(--edge); }
+.nx-intro__t, .nx-gate__t { margin: 0 0 10px; font-family: var(--font-display, inherit); font-weight: 900; font-size: 22px; color: var(--foreground); }
+.nx-intro__facts { margin: 0 0 18px; padding-left: 20px; display: grid; gap: 8px; font-size: 16px; line-height: 1.5; }
+.nx-intro__btns, .nx-gate__btns { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.nx-gate p, .nx-review p { margin: 0 0 16px; font-size: 16px; line-height: 1.5; }
+.nx-toggle { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--muted); cursor: pointer; }
+.nx-toggle input { width: 18px; height: 18px; accent-color: var(--brand); }
+.nt-btn--big { min-height: 54px; padding: 10px 28px; font-size: 17px; }
+
+.nx-bar { position: sticky; top: 72px; z-index: 6; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 12px; padding: 10px 14px; border-radius: 14px; background: var(--foreground); color: #fff; font-weight: 800; font-size: 15px; }
+.nx-bar__sec { padding: 3px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); font-size: 13px; }
+.nx-bar__sec.is-calc { background: var(--brand); }
+.nx-bar__time { margin-left: auto; font-variant-numeric: tabular-nums; }
+.nx-bar__calc { padding: 6px 12px; border-radius: 10px; border: 2px solid rgba(255, 255, 255, 0.5); background: transparent; color: #fff; font: inherit; font-weight: 800; font-size: 14px; cursor: pointer; }
+.nx-bar__calc[aria-expanded="true"] { background: #fff; color: var(--foreground); }
+
+.nx-map { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; margin-bottom: 14px; }
+.nx-map__b { position: relative; min-height: 36px; border-radius: 9px; border: 2px solid var(--border); background: var(--card); font: inherit; font-weight: 800; font-size: 14px; color: var(--foreground); cursor: pointer; }
+.nx-map__b.is-done { background: var(--brand-pale); border-color: var(--brand-soft); }
+.nx-map__b.is-on { border-color: var(--foreground); box-shadow: 0 0 0 2px var(--foreground) inset; }
+.nx-map__b.is-flag::after { content: ""; position: absolute; top: 3px; right: 3px; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; }
+.nx-map__b:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.nx-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; }
+.nx-nav__b, .nx-nav__flag { min-height: 48px; padding: 8px 16px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); font: inherit; font-weight: 800; font-size: 15px; color: var(--foreground); cursor: pointer; }
+.nx-nav__b:disabled { opacity: 0.4; cursor: default; }
+.nx-nav__flag.is-on { border-color: #f59e0b; background: #fff7e6; color: #92400e; }
+
+.nx-calc { position: fixed; right: 16px; bottom: 96px; z-index: 50; width: 268px; padding: 12px; border-radius: 18px; background: var(--foreground); color: #fff; box-shadow: 0 18px 40px -12px rgba(11, 26, 44, 0.55); }
+.nx-calc__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 800; font-size: 14px; }
+.nx-calc__head button { width: 30px; height: 30px; border: 0; border-radius: 8px; background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 18px; cursor: pointer; }
+.nx-calc__screen { width: 100%; height: 44px; padding: 0 10px; border: 0; border-radius: 10px; background: #fff; color: var(--foreground); font: inherit; font-size: 18px; text-align: right; font-variant-numeric: tabular-nums; }
+.nx-calc__out { margin: 6px 2px 8px; min-height: 20px; text-align: right; font-weight: 800; font-size: 15px; color: #bfeefa; }
+.nx-calc__extra, .nx-calc__keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.nx-calc__extra { margin-bottom: 6px; }
+.nx-calc button:not(.nx-calc__head button) { min-height: 42px; border: 0; border-radius: 10px; background: rgba(255, 255, 255, 0.12); color: #fff; font: inherit; font-weight: 800; font-size: 17px; cursor: pointer; }
+.nx-calc .is-op { background: var(--brand); }
+.nx-calc .is-clear { background: rgba(245, 158, 11, 0.85); }
+
+@media (max-width: 560px) {
+  .nx-bar { top: 64px; font-size: 14px; }
+  .nx-map { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
+  .nx-map__b { min-height: 32px; font-size: 12.5px; border-radius: 7px; }
+  .nx-calc { position: static; width: auto; margin-top: 12px; box-shadow: none; }
+}
