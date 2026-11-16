@@ -70,10 +70,10 @@ function TftButtons({ light = false }) {
 // pages (content/worked-examples), so teachers can open each topic and see
 // the questions and worked solutions a student would get.
 const SHEET = [
-  { slug: "year-8-linear-equations", topic: "Solving linear equations", note: "lost 4 marks · 3 questions", pick: [0, 1, 2] },
-  { slug: "year-8-exponents", topic: "Index laws", note: "lost 3 marks · 3 questions", pick: [0, 1, 2] },
-  { slug: "year-8-pythagoras", topic: "Pythagoras’ theorem", note: "lost 2 marks · 3 questions", pick: [0, 1, 2] },
-  { slug: "year-8-rates", topic: "Ratios and rates", note: "full marks · 1 stretch question", pick: [2], ok: true },
+  { slug: "year-8-linear-equations", topic: "Solving linear equations", mark: "Lost 4 marks", count: "3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-exponents", topic: "Index laws", mark: "Lost 3 marks", count: "3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-pythagoras", topic: "Pythagoras’ theorem", mark: "Lost 2 marks", count: "3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-rates", topic: "Ratios and rates", mark: "Full marks", count: "1 stretch question", pick: [2], ok: true },
 ];
 function sheetTopics() {
   return SHEET.map((s) => {
@@ -219,8 +219,14 @@ export default function TeachersPage() {
                 {sheetTopics().map((s) => (
                   <details key={s.slug} className="tft-topic">
                     <summary>
-                      <span className="tft-topic__name">{s.topic}</span>
-                      <span className={s.ok ? "tft-sheet__ok" : "tft-sheet__miss"}>{s.note}</span>
+                      <span className="tft-topic__main">
+                        <span className="tft-topic__name">{s.topic}</span>
+                        <span className="tft-topic__tags">
+                          <span className={`tft-tag ${s.ok ? "tft-tag--ok" : "tft-tag--miss"}`}>{s.mark}</span>
+                          <span className="tft-tag">{s.count}</span>
+                        </span>
+                      </span>
+                      <span className="tft-topic__chev" aria-hidden="true">›</span>
                     </summary>
                     <ol className="tft-topic__qs">
                       {s.questions.map((q, i) => (

@@ -136,3 +136,16 @@
 .tft-q { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14.5px; }
 .tft-q__n { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; color: var(--brand-text); }
 .tft-q .wx-sol { margin-top: 6px; }
+
+/* Example sheet rows: same layout for every topic (16 Nov 2026). */
+.tft-topic > summary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; padding: 11px 13px; }
+.tft-topic__main { display: grid; gap: 6px; min-width: 0; }
+.tft-topic__name { font-weight: 700; font-size: 15px; color: #0b1a2c; }
+.tft-topic__name::before { content: none; }
+.tft-topic__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tft-tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: #fff; border: 1px solid var(--border); color: #5b6677; }
+.tft-tag--miss { background: #fff4e5; border-color: #fcd9a8; color: #b45309; }
+.tft-tag--ok { background: #e9f8ee; border-color: #b7e4c4; color: #15803d; }
+.tft-topic__chev { font-size: 22px; line-height: 1; color: var(--brand, #0e9fbf); transition: transform .15s; }
+.tft-topic[open] .tft-topic__chev { transform: rotate(90deg); }
+.tft-topic[open] > summary { padding-bottom: 8px; }
