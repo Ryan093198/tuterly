@@ -1,0 +1,319 @@
+{
+  "year": 7,
+  "test": 2,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Order of operations",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $18 - 3 \\times 4 + 6$.",
+      "accept": {
+        "value": 12,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Multiply first: $3 \\times 4 = 12$.\n\nThen work left to right: $18 - 12 + 6 = 12$\n\n**Answer:** $12$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Multiplying decimals",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $0.4 \\times 0.3$?",
+      "options": [
+        "1.2",
+        "0.12",
+        "0.012",
+        "0.7"
+      ],
+      "answer_index": 1,
+      "solution": "$4 \\times 3 = 12$. There are $2$ decimal places in the question, so there are $2$ in the answer.\n\n**Answer:** $0.12$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Ordering integers",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these numbers in order from smallest to largest: −3, 2, −8, 0",
+      "items": [
+        "$-3$",
+        "$2$",
+        "$-8$",
+        "$0$"
+      ],
+      "answer_order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "solution": "On a number line, numbers further left are smaller. $-8$ is furthest left, then $-3$, then $0$, then $2$.\n\n**Answer:** $-8$, $-3$, $0$, $2$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Fraction of an amount",
+      "calculator": false,
+      "format": "number",
+      "question": "What is $\\dfrac{2}{3}$ of 48?",
+      "accept": {
+        "value": 32,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "One third of $48$: $48 \\div 3 = 16$.\n\nTwo thirds: $2 \\times 16 = 32$\n\n**Answer:** $32$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Square roots",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $\\sqrt{81} + 3^2$?",
+      "options": [
+        "18",
+        "12",
+        "27",
+        "90"
+      ],
+      "answer_index": 0,
+      "solution": "$\\sqrt{81} = 9$ and $3^2 = 9$.\n\n$9 + 9 = 18$\n\n**Answer:** $18$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Percentage of an amount",
+      "calculator": true,
+      "format": "number",
+      "question": "A bike costs \\$480. It is on sale for 15% off. How many dollars are taken off?",
+      "accept": {
+        "value": 72,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$15\\%$ of $480 = 0.15 \\times 480 = 72$\n\n**Answer:** \\$72"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Substitution",
+      "calculator": true,
+      "format": "choice",
+      "question": "If $a = 5$ and $b = 3$, what is the value of $4a - 2b$?",
+      "options": [
+        "14",
+        "26",
+        "6",
+        "17"
+      ],
+      "answer_index": 0,
+      "solution": "$4a = 4 \\times 5 = 20$ and $2b = 2 \\times 3 = 6$.\n\n$20 - 6 = 14$\n\n**Answer:** $14$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Area of a triangle",
+      "calculator": true,
+      "format": "choice",
+      "question": "A triangle has a base of 14 cm and a perpendicular height of 9 cm. What is its area?",
+      "options": [
+        "63 cm²",
+        "126 cm²",
+        "23 cm²",
+        "46 cm²"
+      ],
+      "answer_index": 0,
+      "solution": "Area $= \\dfrac{1}{2} \\times$ base $\\times$ height $= \\dfrac{1}{2} \\times 14 \\times 9 = 63$ cm²\n\n**Answer:** 63 cm²"
+    },
+    {
+      "n": 9,
+      "strand": "Space",
+      "skill": "Plotting points in four quadrants",
+      "calculator": true,
+      "format": "hotspot",
+      "question": "A point is **3 units to the left** of the origin and **2 units up**. **Click the grid** at that point.",
+      "paper_question": "A point is 3 units to the left of the origin and 2 units up. What are its coordinates?",
+      "grid": {
+        "xmin": -5,
+        "xmax": 5,
+        "ymin": -4,
+        "ymax": 4,
+        "points": []
+      },
+      "answer_point": [
+        -3,
+        2
+      ],
+      "solution": "Left of the origin makes $x$ negative: $x = -3$. Up makes $y$ positive: $y = 2$.\n\n**Answer:** $(-3, 2)$"
+    },
+    {
+      "n": 10,
+      "strand": "Space",
+      "skill": "Angles in a triangle",
+      "calculator": true,
+      "format": "number",
+      "question": "Two angles in a triangle are 38° and 75°. What is the third angle, in degrees?",
+      "accept": {
+        "value": 67,
+        "tol": 0,
+        "unit": "degrees"
+      },
+      "solution": "Angles in a triangle add to $180°$.\n\n$180 - 38 - 75 = 67$\n\n**Answer:** $67°$"
+    },
+    {
+      "n": 11,
+      "strand": "Statistics and probability",
+      "skill": "Mean",
+      "calculator": true,
+      "format": "choice",
+      "question": "Four friends scored 12, 15, 9 and 20 points. What is their mean score?",
+      "options": [
+        "14",
+        "56",
+        "15",
+        "11"
+      ],
+      "answer_index": 0,
+      "solution": "Mean $=$ total $\\div$ number of scores.\n\n$12 + 15 + 9 + 20 = 56$ and $56 \\div 4 = 14$\n\n**Answer:** $14$"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Ratio",
+      "calculator": true,
+      "format": "number",
+      "question": "Paint is mixed using blue and white in the ratio $2 : 5$. How many litres of white paint are needed with 6 litres of blue?",
+      "accept": {
+        "value": 15,
+        "tol": 0,
+        "unit": "litres"
+      },
+      "solution": "Blue goes from $2$ to $6$: that's $\\times 3$.\n\nWhite: $5 \\times 3 = 15$ litres\n\n**Answer:** $15$ litres"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Solving equations",
+      "calculator": true,
+      "format": "choice",
+      "question": "Solve $3x + 4 = 25$.",
+      "options": [
+        "x = 7",
+        "x = 9",
+        "x = 29/3",
+        "x = 21"
+      ],
+      "answer_index": 0,
+      "solution": "Subtract $4$ from both sides: $3x = 21$.\n\nDivide by $3$: $x = 7$\n\n**Answer:** $x = 7$"
+    },
+    {
+      "n": 14,
+      "strand": "Measurement",
+      "skill": "Volume of a rectangular prism",
+      "calculator": true,
+      "format": "number",
+      "question": "A fish tank is 50 cm long, 30 cm wide and 40 cm high. What is its volume, in cubic centimetres?",
+      "accept": {
+        "value": 60000,
+        "tol": 0,
+        "unit": "cm3"
+      },
+      "solution": "Volume $= 50 \\times 30 \\times 40 = 60\\,000$ cm³\n\n**Answer:** $60\\,000$ cm³"
+    },
+    {
+      "n": 15,
+      "strand": "Number",
+      "skill": "Fractions, decimals and percentages",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which is the same as $\\dfrac{3}{8}$?",
+      "options": [
+        "37.5%",
+        "38%",
+        "0.38",
+        "3.8%"
+      ],
+      "answer_index": 0,
+      "solution": "$3 \\div 8 = 0.375 = 37.5\\%$\n\n**Answer:** $37.5\\%$"
+    },
+    {
+      "n": 16,
+      "strand": "Statistics and probability",
+      "skill": "Probability",
+      "calculator": true,
+      "format": "choice",
+      "question": "A bag has 5 red, 7 blue and 8 green counters. One is picked at random. What is the probability it is NOT green?",
+      "options": [
+        "12/20",
+        "8/20",
+        "7/20",
+        "5/12"
+      ],
+      "answer_index": 0,
+      "solution": "Not green means red or blue: $5 + 7 = 12$ counters out of $5 + 7 + 8 = 20$.\n\n**Answer:** $\\dfrac{12}{20}$ (which simplifies to $\\dfrac{3}{5}$)"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Converting units of time",
+      "calculator": true,
+      "format": "number",
+      "question": "A movie runs for 135 minutes. How many hours is that, as a decimal?",
+      "accept": {
+        "value": 2.25,
+        "tol": 0.001,
+        "unit": "hours"
+      },
+      "solution": "$135 \\div 60 = 2.25$ hours (2 hours 15 minutes).\n\n**Answer:** $2.25$ hours"
+    },
+    {
+      "n": 18,
+      "strand": "Space",
+      "skill": "Angles on parallel lines",
+      "calculator": true,
+      "format": "choice",
+      "question": "Two parallel lines are crossed by a transversal. One angle is 64°. The corresponding angle on the other parallel line is:",
+      "options": [
+        "64°",
+        "116°",
+        "26°",
+        "296°"
+      ],
+      "answer_index": 0,
+      "solution": "Corresponding angles on parallel lines are equal.\n\n**Answer:** $64°$"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Patterns and rules",
+      "calculator": true,
+      "format": "number",
+      "question": "A pattern of matchstick squares in a row uses $3n + 1$ matches for $n$ squares. How many matches are needed for 25 squares?",
+      "accept": {
+        "value": 76,
+        "tol": 0,
+        "unit": "matches"
+      },
+      "solution": "Substitute $n = 25$: $3 \\times 25 + 1 = 76$\n\n**Answer:** $76$ matches"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Rates",
+      "calculator": true,
+      "format": "number",
+      "question": "A car uses 7.5 litres of fuel per 100 km. How many litres does it use on a 340 km trip?",
+      "accept": {
+        "value": 25.5,
+        "tol": 0.001,
+        "unit": "litres"
+      },
+      "solution": "$340 \\div 100 = 3.4$ lots of $100$ km.\n\n$3.4 \\times 7.5 = 25.5$ litres\n\n**Answer:** $25.5$ litres"
+    }
+  ]
+}

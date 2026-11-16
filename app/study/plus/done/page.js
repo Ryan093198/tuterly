@@ -59,6 +59,12 @@ export default async function StudyPlusDone({ searchParams }) {
           {pass ? null : <p className="text-sm text-muted">
             Change or cancel any time at <Link className="underline" href="/study/manage">tuterly.com.au/study/manage</Link>.
           </p>}
+          {ok && !pass && (
+            <p className="text-sm text-muted">
+              Your subscription also includes every NAPLAN-style practice test on the website.{" "}
+              <a href={`/api/naplan/claim?session_id=${s.id}`} className="font-semibold underline">Unlock them on this device</a>.
+            </p>
+          )}
         </article>
       </div>
     </main>

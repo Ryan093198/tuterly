@@ -1,0 +1,323 @@
+{
+  "year": 9,
+  "test": 5,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Index laws with numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $\\dfrac{3^5 \\times 3^2}{3^4}$.",
+      "accept": {
+        "value": 27,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Indices: $5 + 2 - 4 = 3$, so the answer is $3^3 = 27$.\n\n**Answer:** $27$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Scientific notation",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $(4 \\times 10^5) \\times (3 \\times 10^{-2})$?",
+      "options": [
+        "$1.2 \\times 10^{4}$",
+        "$12 \\times 10^{3}$",
+        "$1.2 \\times 10^{3}$",
+        "$7 \\times 10^{3}$"
+      ],
+      "answer_index": 0,
+      "solution": "$4 \\times 3 = 12$ and $10^5 \\times 10^{-2} = 10^3$, giving $12 \\times 10^3 = 1.2 \\times 10^4$.\n\n**Answer:** $1.2 \\times 10^4$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Negative numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $\\dfrac{-48}{-6} - 3 \\times (-4)$.",
+      "accept": {
+        "value": 20,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$\\dfrac{-48}{-6} = 8$ and $3 \\times (-4) = -12$.\n\n$8 - (-12) = 20$\n\n**Answer:** $20$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Percentages and fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which is the largest?",
+      "options": [
+        "0.7",
+        "2/3",
+        "68%",
+        "0.666"
+      ],
+      "answer_index": 0,
+      "solution": "As decimals: $0.7$, $0.666\\ldots$, $0.68$, $0.666$. The largest is $0.7$.\n\n**Answer:** $0.7$"
+    },
+    {
+      "n": 5,
+      "strand": "Space",
+      "skill": "Reflections on the Cartesian plane",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "Point $T(-2, 3)$ is reflected in the $y$-axis. **Click the grid** where its image $T'$ lands.",
+      "paper_question": "Point T(−2, 3) is reflected in the y-axis. What are the coordinates of its image T′?",
+      "grid": {
+        "xmin": -4,
+        "xmax": 4,
+        "ymin": -3,
+        "ymax": 4,
+        "points": [
+          {
+            "x": -2,
+            "y": 3,
+            "label": "T"
+          }
+        ]
+      },
+      "answer_point": [
+        2,
+        3
+      ],
+      "solution": "Reflecting in the $y$-axis changes the sign of $x$ and keeps $y$.\n\n**Answer:** $T'(2, 3)$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Compound interest",
+      "calculator": true,
+      "format": "number",
+      "question": "\\$5 000 is invested at 4% per year, compounded annually. How much is the investment worth after 3 years, to the nearest dollar?",
+      "accept": {
+        "value": 5624,
+        "tol": 1,
+        "unit": "$"
+      },
+      "solution": "$A = 5000 \\times 1.04^3 \\approx 5624.32$\n\n**Answer:** \\$5 624"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Factorising quadratics",
+      "calculator": true,
+      "format": "choice",
+      "question": "Factorise $x^2 + 2x - 15$.",
+      "options": [
+        "(x + 5)(x − 3)",
+        "(x − 5)(x + 3)",
+        "(x + 15)(x − 1)",
+        "(x + 5)(x + 3)"
+      ],
+      "answer_index": 0,
+      "solution": "Find two numbers that multiply to $-15$ and add to $2$: $5$ and $-3$.\n\n**Answer:** $(x + 5)(x - 3)$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Volume of a prism",
+      "calculator": true,
+      "format": "number",
+      "question": "A swimming pool's cross-section is a trapezium with parallel sides 1 m and 2.5 m and width 10 m. The pool is 25 m long. What is its volume, in m³?",
+      "accept": {
+        "value": 437.5,
+        "tol": 0.01,
+        "unit": "m3"
+      },
+      "solution": "Cross-section area: $\\dfrac{1}{2}(1 + 2.5) \\times 10 = 17.5$ m².\n\nVolume: $17.5 \\times 25 = 437.5$ m³\n\n**Answer:** $437.5$ m³"
+    },
+    {
+      "n": 9,
+      "strand": "Statistics and probability",
+      "skill": "Ordering probabilities",
+      "calculator": true,
+      "format": "order",
+      "question": "Drag the events into order from **least likely** to **most likely**.",
+      "paper_question": "Write these in order from least likely to most likely: rolling a 6 on a dice; a coin landing on heads; drawing a heart from a deck of cards; rolling a number less than 5 on a dice",
+      "items": [
+        "Rolling a 6 on a dice",
+        "A coin landing heads",
+        "Drawing a heart from a deck of cards",
+        "Rolling less than 5 on a dice"
+      ],
+      "answer_order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "solution": "Probabilities: rolling a 6 is $\\dfrac{1}{6} \\approx 0.17$; a heart is $\\dfrac{13}{52} = 0.25$; heads is $0.5$; less than 5 is $\\dfrac{4}{6} \\approx 0.67$.\n\n**Answer:** rolling a 6, a heart, heads, rolling less than 5"
+    },
+    {
+      "n": 10,
+      "strand": "Space",
+      "skill": "Trigonometry: finding an angle",
+      "calculator": true,
+      "format": "choice",
+      "question": "A ramp rises 1.2 m over a horizontal distance of 8 m. What angle does it make with the ground, to the nearest degree?",
+      "options": [
+        "9°",
+        "8°",
+        "81°",
+        "15°"
+      ],
+      "answer_index": 0,
+      "solution": "$\\tan\\theta = \\dfrac{1.2}{8} = 0.15$, so $\\theta = \\tan^{-1}(0.15) \\approx 8.5° \\approx 9°$ (to the nearest degree).\n\n**Answer:** $9°$"
+    },
+    {
+      "n": 11,
+      "strand": "Algebra",
+      "skill": "Simultaneous equations",
+      "calculator": true,
+      "format": "number",
+      "question": "Solve: $x + y = 12$ and $x - y = 4$. What is $x$?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Add the equations: $2x = 16$, so $x = 8$ (and $y = 4$).\n\n**Answer:** $x = 8$"
+    },
+    {
+      "n": 12,
+      "strand": "Measurement",
+      "skill": "Perimeter of a sector",
+      "calculator": true,
+      "format": "choice",
+      "question": "What is the arc length of a semicircle with diameter 12 cm, to 1 decimal place?",
+      "options": [
+        "18.8 cm",
+        "37.7 cm",
+        "113.1 cm",
+        "6.3 cm"
+      ],
+      "answer_index": 0,
+      "solution": "Arc of a semicircle $= \\dfrac{1}{2}\\pi d = \\dfrac{1}{2} \\times \\pi \\times 12 \\approx 18.8$ cm\n\n**Answer:** 18.8 cm"
+    },
+    {
+      "n": 13,
+      "strand": "Number",
+      "skill": "Rates",
+      "calculator": true,
+      "format": "number",
+      "question": "Water flows into a tank at 18 litres per minute. How many hours does it take to fill a 2 700 litre tank?",
+      "accept": {
+        "value": 2.5,
+        "tol": 0.001,
+        "unit": "hours"
+      },
+      "solution": "$2700 \\div 18 = 150$ minutes.\n\n$150 \\div 60 = 2.5$ hours\n\n**Answer:** $2.5$ hours"
+    },
+    {
+      "n": 14,
+      "strand": "Algebra",
+      "skill": "Linear relationships from tables",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which equation fits this table?\n\n| $x$ | −1 | 0 | 2 | 5 |\n|---|---|---|---|---|\n| $y$ | 7 | 5 | 1 | −5 |",
+      "options": [
+        "y = −2x + 5",
+        "y = 2x + 5",
+        "y = −x + 5",
+        "y = −2x − 5"
+      ],
+      "answer_index": 0,
+      "solution": "When $x = 0$, $y = 5$, so the intercept is $5$. From $x = 0$ to $x = 2$, $y$ drops by $4$: gradient $-2$. Check $x = 5$: $-10 + 5 = -5$ ✓.\n\n**Answer:** $y = -2x + 5$"
+    },
+    {
+      "n": 15,
+      "strand": "Statistics and probability",
+      "skill": "Mean and median",
+      "calculator": true,
+      "format": "number",
+      "question": "Seven test scores have a mean of 68. One student's score of 47 was entered wrongly and should be 75. What is the correct mean?",
+      "accept": {
+        "value": 72.0,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Total $= 7 \\times 68 = 476$. Correcting adds $75 - 47 = 28$, so the new total is $504$.\n\n$504 \\div 7 = 72$\n\n**Answer:** $72$"
+    },
+    {
+      "n": 16,
+      "strand": "Measurement",
+      "skill": "Measurement error",
+      "calculator": true,
+      "format": "number",
+      "question": "A length is measured as 24 cm to the nearest centimetre. What is the smallest the true length could be, in cm?",
+      "accept": {
+        "value": 23.5,
+        "tol": 0.001,
+        "unit": "cm"
+      },
+      "solution": "To the nearest cm, the true length is within $0.5$ cm either way: from $23.5$ cm up to (but not including) $24.5$ cm.\n\n**Answer:** $23.5$ cm"
+    },
+    {
+      "n": 17,
+      "strand": "Space",
+      "skill": "Congruence tests",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which information is enough to prove two triangles congruent?",
+      "options": [
+        "Two sides and the included angle are equal (SAS).",
+        "All three angles are equal (AAA).",
+        "Two sides are equal.",
+        "One side and one angle are equal."
+      ],
+      "answer_index": 0,
+      "solution": "SAS is a congruence test. AAA only proves triangles are similar (they could be different sizes).\n\n**Answer:** Two sides and the included angle are equal (SAS)."
+    },
+    {
+      "n": 18,
+      "strand": "Number",
+      "skill": "Percentage error and change",
+      "calculator": true,
+      "format": "number",
+      "question": "A shop's sales rose from 1 250 to 1 400 items. What was the percentage increase?",
+      "accept": {
+        "value": 12,
+        "tol": 0,
+        "unit": "%"
+      },
+      "solution": "Increase: $150$. $\\dfrac{150}{1250} \\times 100 = 12\\%$\n\n**Answer:** $12\\%$"
+    },
+    {
+      "n": 19,
+      "strand": "Statistics and probability",
+      "skill": "Interpreting scatter plots",
+      "calculator": true,
+      "format": "choice",
+      "question": "A scatter plot shows that as daily temperature rises, ice-cream sales rise too. What does this show?",
+      "options": [
+        "a positive association",
+        "a negative association",
+        "no association",
+        "that heat causes every sale"
+      ],
+      "answer_index": 0,
+      "solution": "Both variables increase together, which is a positive association. A graph alone can't prove one causes the other.\n\n**Answer:** a positive association"
+    },
+    {
+      "n": 20,
+      "strand": "Algebra",
+      "skill": "Substitution and equations",
+      "calculator": true,
+      "format": "number",
+      "question": "The cost of hiring a hall is $C = 250 + 18p$ dollars for $p$ people. A school has a budget of \\$1 600. What is the largest number of people it can invite?",
+      "accept": {
+        "value": 75,
+        "tol": 0,
+        "unit": "people"
+      },
+      "solution": "$250 + 18p \\le 1600$, so $18p \\le 1350$ and $p \\le 75$.\n\n**Answer:** $75$ people"
+    }
+  ]
+}

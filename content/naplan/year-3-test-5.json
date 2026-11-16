@@ -1,0 +1,327 @@
+{
+  "year": 3,
+  "test": 5,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Expanded form",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which is the same as 300 + 50 + 2?",
+      "options": [
+        "352",
+        "3052",
+        "325",
+        "30052"
+      ],
+      "answer_index": 0,
+      "solution": "$3$ hundreds, $5$ tens and $2$ ones make $352$.\n\n**Answer:** $352$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Doubling",
+      "calculator": false,
+      "format": "number",
+      "question": "Double 35 is how much?",
+      "accept": {
+        "value": 70,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Double means $\\times 2$.\n\n$35 + 35 = 70$\n\n**Answer:** $70$"
+    },
+    {
+      "n": 3,
+      "strand": "Space",
+      "skill": "Identifying 2D shapes",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which shape has 3 sides and 3 corners?",
+      "options": [
+        "triangle",
+        "square",
+        "circle",
+        "pentagon"
+      ],
+      "answer_index": 0,
+      "solution": "A triangle has $3$ straight sides and $3$ corners.\n\n**Answer:** triangle"
+    },
+    {
+      "n": 4,
+      "strand": "Measurement",
+      "skill": "Comparing capacity",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which container would hold the most water?",
+      "options": [
+        "a bathtub",
+        "a cup",
+        "a bucket",
+        "a spoon"
+      ],
+      "answer_index": 0,
+      "solution": "A bathtub holds far more water (well over $100$ litres) than a bucket, cup or spoon.\n\n**Answer:** a bathtub"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Adding three numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "Zoe scored 12 points, Max scored 15 and Ivy scored 8. How many points did they score altogether?",
+      "accept": {
+        "value": 35,
+        "tol": 0,
+        "unit": "points"
+      },
+      "solution": "$12 + 15 + 8$\n\n$12 + 8 = 20$, then $20 + 15 = 35$\n\n**Answer:** $35$ points"
+    },
+    {
+      "n": 6,
+      "strand": "Algebra",
+      "skill": "Continuing a shape pattern",
+      "calculator": false,
+      "format": "choice",
+      "question": "A pattern goes: circle, square, square, circle, square, square, circle, … What comes next?",
+      "options": [
+        "square",
+        "circle",
+        "triangle",
+        "star"
+      ],
+      "answer_index": 0,
+      "solution": "The pattern repeats circle, square, square. After a circle comes a square.\n\n**Answer:** square"
+    },
+    {
+      "n": 7,
+      "strand": "Number",
+      "skill": "Ordering numbers to 1000",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these numbers in order from smallest to largest: 707, 770, 77, 700",
+      "items": [
+        "$707$",
+        "$770$",
+        "$77$",
+        "$700$"
+      ],
+      "answer_order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "solution": "$77$ has no hundreds, so it is the smallest. The other three all have $7$ hundreds: compare the tens and ones. $700 < 707 < 770$.\n\n**Answer:** $77$, $700$, $707$, $770$"
+    },
+    {
+      "n": 8,
+      "strand": "Statistics and probability",
+      "skill": "Reading a tally chart",
+      "calculator": false,
+      "format": "choice",
+      "question": "A tally chart shows the weather for 2 weeks: Sunny had one bundle of 5 marks and 4 more single marks. Rainy had 4 single marks. How many days were sunny?",
+      "options": [
+        "4",
+        "5",
+        "9",
+        "10"
+      ],
+      "answer_index": 2,
+      "solution": "One bundle is $5$, plus $4$ more marks.\n\n$5 + 4 = 9$\n\n**Answer:** $9$ days"
+    },
+    {
+      "n": 9,
+      "strand": "Number",
+      "skill": "Simple sharing (division)",
+      "calculator": false,
+      "format": "number",
+      "question": "A teacher puts 30 chairs into 5 equal rows. How many chairs are in each row?",
+      "accept": {
+        "value": 6,
+        "tol": 0,
+        "unit": "chairs"
+      },
+      "solution": "$30 \\div 5 = 6$, because $5 \\times 6 = 30$.\n\n**Answer:** $6$ chairs"
+    },
+    {
+      "n": 10,
+      "strand": "Space",
+      "skill": "Locating a point on a grid",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "The treasure is **3 squares right** and **4 squares up** from the tree at $T$. **Click the grid** where the treasure is buried.",
+      "paper_question": "On a grid, a tree is at (2, 0). The treasure is 3 squares right and 4 squares up from the tree. Where is the treasure? Give the point.",
+      "grid": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 5,
+        "points": [
+          {
+            "x": 2,
+            "y": 0,
+            "label": "T"
+          }
+        ]
+      },
+      "answer_point": [
+        5,
+        4
+      ],
+      "solution": "The tree $T$ is at $(2, 0)$.\n\n3 squares right: $2 + 3 = 5$ across.\n\n4 squares up: $0 + 4 = 4$ up.\n\n**Answer:** the treasure is at $(5, 4)$."
+    },
+    {
+      "n": 11,
+      "strand": "Measurement",
+      "skill": "Time durations",
+      "calculator": false,
+      "format": "choice",
+      "question": "School finishes at 3:15. Ben's bus comes 25 minutes later. What time does the bus come?",
+      "options": [
+        "3:40",
+        "3:30",
+        "3:35",
+        "4:15"
+      ],
+      "answer_index": 0,
+      "solution": "$3{:}15$ plus $25$ minutes: $15 + 25 = 40$ minutes past 3.\n\n**Answer:** 3:40"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Subtracting 3-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A tree is 315 cm tall. A fence is 180 cm tall. How much taller is the tree than the fence, in centimetres?",
+      "accept": {
+        "value": 135,
+        "tol": 0,
+        "unit": "cm"
+      },
+      "solution": "$315 - 180$\n\n$315 - 200 = 115$, then add back $20$: $135$\n\n**Answer:** $135$ cm"
+    },
+    {
+      "n": 13,
+      "strand": "Number",
+      "skill": "Unit fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which fraction is the biggest?",
+      "options": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "1/8"
+      ],
+      "answer_index": 0,
+      "solution": "With $1$ on top, the fewer equal parts the whole is cut into, the bigger each part is. Halves are bigger than thirds, quarters or eighths.\n\n**Answer:** $\\dfrac{1}{2}$"
+    },
+    {
+      "n": 14,
+      "strand": "Statistics and probability",
+      "skill": "Chance words",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which event is certain?",
+      "options": [
+        "The sun will set tonight.",
+        "It will snow in Darwin tomorrow.",
+        "You will roll a 6 on a dice.",
+        "A coin will land on heads."
+      ],
+      "answer_index": 0,
+      "solution": "The sun sets every day, so it is certain. The others might happen or might not.\n\n**Answer:** The sun will set tonight."
+    },
+    {
+      "n": 15,
+      "strand": "Algebra",
+      "skill": "Finding a missing number",
+      "calculator": false,
+      "format": "number",
+      "question": "What number goes in the box?\n\n$5 \\times \\square = 35$",
+      "accept": {
+        "value": 7,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Think: how many fives make $35$? $5 \\times 7 = 35$.\n\n**Answer:** $7$"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Shapes from nets",
+      "calculator": false,
+      "format": "choice",
+      "question": "A shape folds up to make a box with 6 square faces. What 3D object is it?",
+      "options": [
+        "cube",
+        "pyramid",
+        "cylinder",
+        "cone"
+      ],
+      "answer_index": 0,
+      "solution": "A box with $6$ square faces is a cube.\n\n**Answer:** cube"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Mass in kilograms",
+      "calculator": false,
+      "format": "number",
+      "question": "A bag of potatoes weighs 3 kg. How many kilograms do 4 bags weigh?",
+      "accept": {
+        "value": 12,
+        "tol": 0,
+        "unit": "kg"
+      },
+      "solution": "$4 \\times 3 = 12$\n\n**Answer:** $12$ kg"
+    },
+    {
+      "n": 18,
+      "strand": "Statistics and probability",
+      "skill": "Reading a picture graph",
+      "calculator": false,
+      "format": "number",
+      "question": "In a picture graph, each ⭐ stands for 4 stars earned. Class 3B's row shows ⭐⭐⭐⭐⭐. How many stars did Class 3B earn?",
+      "accept": {
+        "value": 20,
+        "tol": 0,
+        "unit": "stars"
+      },
+      "solution": "There are $5$ pictures and each one stands for $4$ stars.\n\n$5 \\times 4 = 20$\n\n**Answer:** $20$ stars"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Growing patterns",
+      "calculator": false,
+      "format": "choice",
+      "question": "Look at this pattern of numbers.\n\n$1, 2, 4, 7, 11, \\square$\n\nThe gap gets 1 bigger each time. What is the missing number?",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "answer_index": 2,
+      "solution": "The gaps are $+1, +2, +3, +4$, so the next gap is $+5$.\n\n$11 + 5 = 16$\n\n**Answer:** $16$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step money problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Ice blocks cost \\$2 each. Lily has \\$15. She buys as many ice blocks as she can. How many dollars does she have left over?",
+      "accept": {
+        "value": 1,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$7$ ice blocks cost $7 \\times 2 = 14$ dollars, and $8$ would cost $16$ dollars, which is too much. So she buys $7$.\n\n$15 - 14 = 1$\n\n**Answer:** \\$1"
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "year": 7,
+  "test": 3,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Integers",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $-7 + 12 - 9$.",
+      "accept": {
+        "value": -4,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$-7 + 12 = 5$, then $5 - 9 = -4$\n\n**Answer:** $-4$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Dividing fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $\\dfrac{3}{4} \\div \\dfrac{1}{8}$?",
+      "options": [
+        "6",
+        "3/32",
+        "2/3",
+        "24"
+      ],
+      "answer_index": 0,
+      "solution": "Dividing by $\\dfrac{1}{8}$ is the same as multiplying by $8$.\n\n$\\dfrac{3}{4} \\times 8 = 6$\n\n**Answer:** $6$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Order of operations with brackets",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $(6 + 4)^2 \\div 5$.",
+      "accept": {
+        "value": 20,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Brackets: $6 + 4 = 10$. Index: $10^2 = 100$. Divide: $100 \\div 5 = 20$.\n\n**Answer:** $20$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Prime factors",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which is the prime factorisation of 60?",
+      "options": [
+        "2 × 2 × 3 × 5",
+        "2 × 3 × 10",
+        "4 × 15",
+        "2 × 30"
+      ],
+      "answer_index": 0,
+      "solution": "Split until every factor is prime: $60 = 6 \\times 10 = 2 \\times 3 \\times 2 \\times 5$.\n\n**Answer:** $2 \\times 2 \\times 3 \\times 5$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Rounding decimals",
+      "calculator": false,
+      "format": "choice",
+      "question": "Round 7.648 to one decimal place.",
+      "options": [
+        "7.6",
+        "7.7",
+        "7.65",
+        "8"
+      ],
+      "answer_index": 0,
+      "solution": "Look at the hundredths digit: $4$ is less than $5$, so round down.\n\n**Answer:** $7.6$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Percentage increase",
+      "calculator": true,
+      "format": "number",
+      "question": "A school had 640 students. Enrolments rose by 5%. How many students are there now?",
+      "accept": {
+        "value": 672,
+        "tol": 0,
+        "unit": "students"
+      },
+      "solution": "$5\\%$ of $640 = 0.05 \\times 640 = 32$.\n\n$640 + 32 = 672$\n\n**Answer:** $672$ students"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Writing expressions",
+      "calculator": true,
+      "format": "choice",
+      "question": "Tickets cost \\$12 each and there is a \\$5 booking fee per order. Which expression gives the cost of $t$ tickets in one order?",
+      "options": [
+        "12t + 5",
+        "5t + 12",
+        "17t",
+        "12 + 5t"
+      ],
+      "answer_index": 0,
+      "solution": "Each ticket is \\$12, so $t$ tickets cost $12t$. The booking fee is added once.\n\n**Answer:** $12t + 5$"
+    },
+    {
+      "n": 8,
+      "strand": "Number",
+      "skill": "Ordering fractions and decimals",
+      "calculator": true,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these numbers in order from smallest to largest: 5/8, 0.6, 2/3, 0.65",
+      "items": [
+        "$\\dfrac{5}{8}$",
+        "$0.6$",
+        "$\\dfrac{2}{3}$",
+        "$0.65$"
+      ],
+      "answer_order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "solution": "Change to decimals: $\\dfrac{5}{8} = 0.625$ and $\\dfrac{2}{3} = 0.666\\ldots$\n\n$0.6 < 0.625 < 0.65 < 0.666\\ldots$\n\n**Answer:** $0.6$, $\\dfrac{5}{8}$, $0.65$, $\\dfrac{2}{3}$"
+    },
+    {
+      "n": 9,
+      "strand": "Measurement",
+      "skill": "Area of a parallelogram",
+      "calculator": true,
+      "format": "number",
+      "question": "A parallelogram has a base of 15 m and a perpendicular height of 8 m. What is its area, in square metres?",
+      "accept": {
+        "value": 120,
+        "tol": 0,
+        "unit": "m2"
+      },
+      "solution": "Area $=$ base $\\times$ perpendicular height $= 15 \\times 8 = 120$ m²\n\n**Answer:** $120$ m²"
+    },
+    {
+      "n": 10,
+      "strand": "Statistics and probability",
+      "skill": "Median",
+      "calculator": true,
+      "format": "choice",
+      "question": "The heights (cm) of 6 plants are: 14, 9, 21, 17, 11, 20. What is the median height?",
+      "options": [
+        "15.5 cm",
+        "14 cm",
+        "17 cm",
+        "15.3 cm"
+      ],
+      "answer_index": 0,
+      "solution": "Order them: $9, 11, 14, 17, 20, 21$. The middle two are $14$ and $17$.\n\n$(14 + 17) \\div 2 = 15.5$\n\n**Answer:** 15.5 cm"
+    },
+    {
+      "n": 11,
+      "strand": "Space",
+      "skill": "Translations on the Cartesian plane",
+      "calculator": true,
+      "format": "hotspot",
+      "question": "Point $A(2, -1)$ is translated **4 units left** and **3 units up**. **Click the grid** where its image $A'$ lands.",
+      "paper_question": "Point A(2, −1) is translated 4 units left and 3 units up. What are the coordinates of its image A′?",
+      "grid": {
+        "xmin": -5,
+        "xmax": 5,
+        "ymin": -4,
+        "ymax": 4,
+        "points": [
+          {
+            "x": 2,
+            "y": -1,
+            "label": "A"
+          }
+        ]
+      },
+      "answer_point": [
+        -2,
+        2
+      ],
+      "solution": "Left changes $x$: $2 - 4 = -2$. Up changes $y$: $-1 + 3 = 2$.\n\n**Answer:** $A'(-2, 2)$"
+    },
+    {
+      "n": 12,
+      "strand": "Space",
+      "skill": "Angles at a point",
+      "calculator": true,
+      "format": "number",
+      "question": "Three angles meet at a point. Two of them are 140° and 95°. What is the third angle, in degrees?",
+      "accept": {
+        "value": 125,
+        "tol": 0,
+        "unit": "degrees"
+      },
+      "solution": "Angles at a point add to $360°$.\n\n$360 - 140 - 95 = 125$\n\n**Answer:** $125°$"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Solving equations",
+      "calculator": true,
+      "format": "choice",
+      "question": "Solve $\\dfrac{x}{5} - 3 = 4$.",
+      "options": [
+        "x = 35",
+        "x = 5",
+        "x = 1.4",
+        "x = 20"
+      ],
+      "answer_index": 0,
+      "solution": "Add $3$: $\\dfrac{x}{5} = 7$. Multiply by $5$: $x = 35$.\n\n**Answer:** $x = 35$"
+    },
+    {
+      "n": 14,
+      "strand": "Measurement",
+      "skill": "Converting units",
+      "calculator": true,
+      "format": "number",
+      "question": "A water bottle holds 750 mL. How many litres do 8 bottles hold?",
+      "accept": {
+        "value": 6,
+        "tol": 0,
+        "unit": "L"
+      },
+      "solution": "$8 \\times 750 = 6000$ mL $= 6$ L\n\n**Answer:** $6$ L"
+    },
+    {
+      "n": 15,
+      "strand": "Statistics and probability",
+      "skill": "Reading a two-way table",
+      "calculator": true,
+      "format": "choice",
+      "question": "In a survey of 60 students, 35 play sport. Of those, 20 also play music. How many students play sport but not music?",
+      "options": [
+        "15",
+        "20",
+        "25",
+        "40"
+      ],
+      "answer_index": 0,
+      "solution": "Sport players: $35$. Those who also play music: $20$.\n\n$35 - 20 = 15$\n\n**Answer:** $15$"
+    },
+    {
+      "n": 16,
+      "strand": "Number",
+      "skill": "Best buy (unit rates)",
+      "calculator": true,
+      "format": "number",
+      "question": "A 2 kg bag of rice costs \\$5.40. What is the price per kilogram, in dollars?",
+      "accept": {
+        "value": 2.7,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "$5.40 \\div 2 = 2.70$\n\n**Answer:** \\$2.70 per kg"
+    },
+    {
+      "n": 17,
+      "strand": "Space",
+      "skill": "Properties of quadrilaterals",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which quadrilateral has diagonals that are equal in length and cross at right angles?",
+      "options": [
+        "square",
+        "rectangle (not a square)",
+        "rhombus (not a square)",
+        "parallelogram"
+      ],
+      "answer_index": 0,
+      "solution": "A rectangle's diagonals are equal but don't cross at right angles; a rhombus's cross at right angles but aren't equal. Only a square has both.\n\n**Answer:** square"
+    },
+    {
+      "n": 18,
+      "strand": "Measurement",
+      "skill": "Time zones and durations",
+      "calculator": true,
+      "format": "number",
+      "question": "A flight leaves Perth at 9:50 am and lands in Sydney at 4:35 pm Sydney time. Sydney is 3 hours ahead of Perth. How long is the flight, in minutes?",
+      "accept": {
+        "value": 225,
+        "tol": 0,
+        "unit": "minutes"
+      },
+      "solution": "Change the landing time to Perth time: $4{:}35$ pm $- 3$ hours $= 1{:}35$ pm.\n\nFrom $9{:}50$ am to $1{:}50$ pm is $4$ hours; $1{:}35$ pm is $15$ minutes earlier.\n\n$240 - 15 = 225$ minutes (3 h 45 min)\n\n**Answer:** $225$ minutes"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Linear patterns from a table",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which rule fits this table?\n\n| $x$ | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| $y$ | 5 | 9 | 13 | 17 |",
+      "options": [
+        "y = 4x + 1",
+        "y = x + 4",
+        "y = 5x",
+        "y = 4x − 1"
+      ],
+      "answer_index": 0,
+      "solution": "$y$ goes up by $4$ each time, so the rule starts $y = 4x \\ldots$. When $x = 1$: $4 + 1 = 5$ ✓.\n\n**Answer:** $y = 4x + 1$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Percentages in context",
+      "calculator": true,
+      "format": "number",
+      "question": "In a class of 28 students, 75% passed a test. How many students did not pass?",
+      "accept": {
+        "value": 7,
+        "tol": 0,
+        "unit": "students"
+      },
+      "solution": "$75\\%$ passed, so $25\\%$ didn't. $25\\%$ of $28 = 28 \\div 4 = 7$.\n\n**Answer:** $7$ students"
+    }
+  ]
+}

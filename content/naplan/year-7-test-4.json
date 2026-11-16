@@ -1,0 +1,323 @@
+{
+  "year": 7,
+  "test": 4,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Mental multiplication",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $25 \\times 36$.",
+      "accept": {
+        "value": 900,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$25 \\times 4 = 100$, and $36 = 4 \\times 9$.\n\n$25 \\times 36 = 100 \\times 9 = 900$\n\n**Answer:** $900$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Adding fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $\\dfrac{2}{3} + \\dfrac{1}{4}$?",
+      "options": [
+        "11/12",
+        "3/7",
+        "3/12",
+        "1"
+      ],
+      "answer_index": 0,
+      "solution": "Common denominator $12$: $\\dfrac{8}{12} + \\dfrac{3}{12} = \\dfrac{11}{12}$\n\n**Answer:** $\\dfrac{11}{12}$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Multiplying integers",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $-6 \\times -4 + -5$.",
+      "accept": {
+        "value": 19,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$-6 \\times -4 = 24$ (negative times negative is positive).\n\n$24 + (-5) = 19$\n\n**Answer:** $19$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Dividing decimals",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $4.8 \\div 0.6$?",
+      "options": [
+        "8",
+        "0.8",
+        "80",
+        "2.88"
+      ],
+      "answer_index": 0,
+      "solution": "Multiply both numbers by $10$: $48 \\div 6 = 8$.\n\n**Answer:** $8$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Ordering numbers with indices",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these in order from smallest to largest: 2⁵, 5², 3³, 4²",
+      "items": [
+        "$2^5$",
+        "$5^2$",
+        "$3^3$",
+        "$4^2$"
+      ],
+      "answer_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "solution": "Work each out: $2^5 = 32$, $5^2 = 25$, $3^3 = 27$, $4^2 = 16$.\n\n$16 < 25 < 27 < 32$\n\n**Answer:** $4^2$, $5^2$, $3^3$, $2^5$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Percentage discount",
+      "calculator": true,
+      "format": "number",
+      "question": "A jacket is priced at \\$85. It is reduced by 20%. What is the sale price, in dollars?",
+      "accept": {
+        "value": 68,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$20\\%$ of $85 = 17$.\n\n$85 - 17 = 68$ (or $0.8 \\times 85 = 68$)\n\n**Answer:** \\$68"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Simplifying expressions",
+      "calculator": true,
+      "format": "choice",
+      "question": "Simplify $5m + 3n - 2m + n$.",
+      "options": [
+        "3m + 4n",
+        "7m + 4n",
+        "3m + 3n",
+        "8mn"
+      ],
+      "answer_index": 0,
+      "solution": "Collect like terms: $5m - 2m = 3m$ and $3n + n = 4n$.\n\n**Answer:** $3m + 4n$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Perimeter of a composite shape",
+      "calculator": true,
+      "format": "number",
+      "question": "A rectangle 12 m by 5 m has a square of side 2 m cut from one corner. What is the perimeter of the new shape, in metres?",
+      "accept": {
+        "value": 34,
+        "tol": 0,
+        "unit": "m"
+      },
+      "solution": "Cutting a square from a corner removes two $2$ m lengths and adds two new $2$ m edges, so the perimeter doesn't change.\n\n$2 \\times (12 + 5) = 34$\n\n**Answer:** $34$ m"
+    },
+    {
+      "n": 9,
+      "strand": "Statistics and probability",
+      "skill": "Mode and range",
+      "calculator": true,
+      "format": "choice",
+      "question": "Data: 4, 7, 7, 9, 12, 7, 3. What are the mode and the range?",
+      "options": [
+        "mode 7, range 9",
+        "mode 7, range 12",
+        "mode 9, range 9",
+        "mode 3, range 9"
+      ],
+      "answer_index": 0,
+      "solution": "$7$ appears most often (three times). Range $=$ highest $-$ lowest $= 12 - 3 = 9$.\n\n**Answer:** mode $7$, range $9$"
+    },
+    {
+      "n": 10,
+      "strand": "Space",
+      "skill": "Reflection in the x-axis",
+      "calculator": true,
+      "format": "hotspot",
+      "question": "Point $B$ is at $(3, 2)$. It is reflected in the $x$-axis. **Click the grid** where its image $B'$ lands.",
+      "paper_question": "Point B(3, 2) is reflected in the x-axis. What are the coordinates of its image B′?",
+      "grid": {
+        "xmin": -5,
+        "xmax": 5,
+        "ymin": -4,
+        "ymax": 4,
+        "points": [
+          {
+            "x": 3,
+            "y": 2,
+            "label": "B"
+          }
+        ]
+      },
+      "answer_point": [
+        3,
+        -2
+      ],
+      "solution": "Reflecting in the $x$-axis keeps $x$ the same and changes the sign of $y$.\n\n**Answer:** $B'(3, -2)$"
+    },
+    {
+      "n": 11,
+      "strand": "Space",
+      "skill": "Angles in an isosceles triangle",
+      "calculator": true,
+      "format": "number",
+      "question": "An isosceles triangle has one angle of 40° between its two equal sides. What is the size of each of the other two angles, in degrees?",
+      "accept": {
+        "value": 70,
+        "tol": 0,
+        "unit": "degrees"
+      },
+      "solution": "The other two angles are equal and add to $180 - 40 = 140°$.\n\n$140 \\div 2 = 70$\n\n**Answer:** $70°$ each"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Ratios",
+      "calculator": true,
+      "format": "choice",
+      "question": "Lena and Omar share \\$90 in the ratio $4 : 5$. How much does Omar get?",
+      "options": [
+        "\\$50",
+        "\\$40",
+        "\\$45",
+        "\\$18"
+      ],
+      "answer_index": 0,
+      "solution": "Total parts: $4 + 5 = 9$. One part: $90 \\div 9 = 10$.\n\nOmar: $5 \\times 10 = 50$\n\n**Answer:** \\$50"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Solving equations",
+      "calculator": true,
+      "format": "number",
+      "question": "Solve $7(x - 2) = 35$. What is $x$?",
+      "accept": {
+        "value": 7,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Divide by $7$: $x - 2 = 5$. Add $2$: $x = 7$.\n\n**Answer:** $x = 7$"
+    },
+    {
+      "n": 14,
+      "strand": "Measurement",
+      "skill": "Area of a circle (estimation)",
+      "calculator": true,
+      "format": "choice",
+      "question": "A circle has a radius of 10 cm. Which is closest to its area? (Use $\\pi \\approx 3.14$.)",
+      "options": [
+        "314 cm²",
+        "31.4 cm²",
+        "62.8 cm²",
+        "100 cm²"
+      ],
+      "answer_index": 0,
+      "solution": "Area $= \\pi r^2 \\approx 3.14 \\times 10^2 = 314$ cm²\n\n**Answer:** 314 cm²"
+    },
+    {
+      "n": 15,
+      "strand": "Number",
+      "skill": "Speed, distance and time",
+      "calculator": true,
+      "format": "number",
+      "question": "A cyclist travels 45 km in 1.5 hours. What is her average speed, in km/h?",
+      "accept": {
+        "value": 30,
+        "tol": 0,
+        "unit": "km/h"
+      },
+      "solution": "Speed $=$ distance $\\div$ time $= 45 \\div 1.5 = 30$ km/h\n\n**Answer:** $30$ km/h"
+    },
+    {
+      "n": 16,
+      "strand": "Statistics and probability",
+      "skill": "Probability from data",
+      "calculator": true,
+      "format": "choice",
+      "question": "A coin is tossed 40 times and lands on heads 22 times. What is the experimental probability of heads?",
+      "options": [
+        "22/40",
+        "1/2",
+        "18/40",
+        "22/18"
+      ],
+      "answer_index": 0,
+      "solution": "Experimental probability $= \\dfrac{\\text{heads}}{\\text{tosses}} = \\dfrac{22}{40}$ (or $0.55$).\n\n**Answer:** $\\dfrac{22}{40}$"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Volume of a prism",
+      "calculator": true,
+      "format": "number",
+      "question": "A triangular prism has a cross-section area of 18 cm² and a length of 10 cm. What is its volume, in cm³?",
+      "accept": {
+        "value": 180,
+        "tol": 0,
+        "unit": "cm3"
+      },
+      "solution": "Volume of a prism $=$ area of cross-section $\\times$ length $= 18 \\times 10 = 180$ cm³\n\n**Answer:** $180$ cm³"
+    },
+    {
+      "n": 18,
+      "strand": "Space",
+      "skill": "Line and rotational symmetry",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which shape has rotational symmetry of order 2 but no lines of symmetry?",
+      "options": [
+        "parallelogram (not a rectangle or rhombus)",
+        "rectangle",
+        "isosceles triangle",
+        "regular hexagon"
+      ],
+      "answer_index": 0,
+      "solution": "A general parallelogram looks the same after a half turn, but folding it never matches the halves. A rectangle has 2 lines of symmetry and a regular hexagon has 6.\n\n**Answer:** parallelogram (not a rectangle or rhombus)"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Using formulas",
+      "calculator": true,
+      "format": "number",
+      "question": "The formula $C = 40 + 25h$ gives a plumber's charge in dollars for $h$ hours. How much is charged for 3.5 hours, in dollars?",
+      "accept": {
+        "value": 127.5,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "$C = 40 + 25 \\times 3.5 = 40 + 87.5 = 127.5$\n\n**Answer:** \\$127.50"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step percentages",
+      "calculator": true,
+      "format": "number",
+      "question": "A \\$200 phone is increased by 10%, then the new price is decreased by 10%. What is the final price, in dollars?",
+      "accept": {
+        "value": 198,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "After the increase: $200 \\times 1.1 = 220$. After the decrease: $220 \\times 0.9 = 198$.\n\nIt isn't back to \\$200, because the second $10\\%$ is taken from a bigger number.\n\n**Answer:** \\$198"
+    }
+  ]
+}

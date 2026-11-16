@@ -32,7 +32,8 @@ const FAQS = [
   { q: "Which year levels sit NAPLAN?", a: "Years 3, 5, 7 and 9. Each sits four tests: reading, writing, conventions of language (spelling, grammar and punctuation) and numeracy." },
   { q: "How long is the NAPLAN numeracy test?", a: `${NAPLAN_FACTS.minutes[3]} minutes in Year 3, ${NAPLAN_FACTS.minutes[5]} minutes in Year 5 and ${NAPLAN_FACTS.minutes[7]} minutes in Years 7 and 9. Years 7 and 9 start with a short non-calculator section, then an online calculator is available.` },
   { q: "Are there NAPLAN past papers?", a: "Yes. ACARA publishes the paper tests from 2008 to 2016, with answers, free on its website. It doesn’t release tests after 2016. Our past papers guide links to them." },
-  { q: "Is there a free NAPLAN online practice test?", a: "Yes. Our free NAPLAN-style numeracy tests for Years 3, 5, 7 and 9 are online and marked instantly, with a worked solution for every question. The Year 7 and 9 tests work like NAPLAN Online: a non-calculator section that locks once you move on, an on-screen calculator, and drag-and-drop and graph questions. ACARA’s public demonstration site also has example questions." },
+  { q: "Is there a free NAPLAN online practice test?", a: "Yes. Test 1 for Years 3, 5, 7 and 9 is free online and marked instantly, with a worked solution for every question. Every test works like NAPLAN Online, with drag-and-drop and graph questions; Years 7 and 9 also have a non-calculator section that locks once you move on, then an on-screen calculator. ACARA’s public demonstration site also has example questions." },
+  { q: "How do I get more NAPLAN practice tests?", a: "Each year has 5 tests. For Years 3 and 5, Tests 2 to 5 come with the NAPLAN Pass, a one-off $49 per year level with no subscription. For Years 7 and 9, they’re included with a Tuterly subscription, along with unlimited practice tests on every topic in the app." },
   { q: "Is NAPLAN online?", a: "Yes. Most schools sit NAPLAN online, and the numeracy test is tailored: everyone starts with the same set of questions, and how a student goes decides whether the next sets are easier or harder." },
   { q: "How are NAPLAN results reported?", a: `Against four proficiency levels: ${NAPLAN_FACTS.levels.join(", ")}. Schools give families an individual student report later in the year.` },
   { q: "Does NAPLAN count towards school grades?", a: "No. NAPLAN isn’t a pass or fail test and it isn’t part of school reports. It shows where a student is against national expectations at that point, which makes it a useful check on gaps." },
@@ -49,7 +50,7 @@ export default function NaplanHub() {
       crumbs={[{ name: "NAPLAN practice tests", path: PATH }]}
       eyebrow="NAPLAN 2027 · Years 3, 5, 7 and 9"
       h1="Free NAPLAN practice tests, with answers"
-      lead="A free NAPLAN-style numeracy test for each year level: 20 questions across every strand, marked as soon as you finish, with a worked solution for every question. The Year 7 and 9 tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. Plus the official past papers, and a plan from now to March."
+      lead="Five NAPLAN-style numeracy tests for each year level, built in the style of ACARA’s example tests and past papers, and working like NAPLAN Online: one question at a time, drag-and-drop and graph questions, and for Years 7 and 9 a non-calculator section and on-screen calculator. Test 1 is free for every year, marked instantly with worked solutions. Plus the official past papers, and a plan from now to March."
       quickAnswer={`NAPLAN 2027 runs ${NAPLAN_FACTS.window}. For free practice: take our NAPLAN-style numeracy test for your child’s year online (it marks itself and shows worked solutions; Years 7 and 9 work like NAPLAN Online) or print the PDF. ACARA’s official past papers from 2008 to 2016 are free too, with answers.`}
       toc={[
         ["tests", "Practice tests by year"],
@@ -72,15 +73,15 @@ export default function NaplanHub() {
       <section id="tests" className="tb-section" aria-labelledby="h-tests">
         <div className="tb-wrap">
           <h2 id="h-tests" className="tb-h2 pg-h2">Free NAPLAN practice tests by year</h2>
-          <p className="pg-intro">Each test has 20 questions across number, algebra, measurement, space, and statistics and probability. Online, it marks itself and breaks the result down by strand. The PDF has the answers and worked solutions at the back.</p>
+          <p className="pg-intro">Five tests for each year, each with 20 questions across number, algebra, measurement, space, and statistics and probability. We studied ACARA’s example tests and past papers and built every test in the same style. Online, each test marks itself and breaks the result down by strand. Test 1 for each year is free, with a printable PDF.</p>
           <div className="nph-grid">
             {NAPLAN_YEARS.map((y) => (
               <div key={y} className="nph-card nph-card--static">
                 <p className="nph-card__title">Year {y} NAPLAN numeracy</p>
                 <p className="nph-card__text">
                   {y >= 7
-                    ? "Works like NAPLAN Online: 20 questions, non-calculator section, on-screen calculator, drag-and-drop and graph questions."
-                    : "20 questions across every strand, marked instantly online. No calculator, as in the real test."}
+                    ? "Works like NAPLAN Online: non-calculator section, on-screen calculator, drag-and-drop and graph questions. Test 1 free; Tests 2 to 5 included with Tuterly."
+                    : "Works like NAPLAN Online: drag-and-drop and grid questions, no calculator. Test 1 free; Tests 2 to 5 with the NAPLAN Pass ($49 one-off)."}
                 </p>
                 <p className="nph-card__links">
                   <Link href={`/naplan/${naplanSlug(y)}`}>Take the test online →</Link>

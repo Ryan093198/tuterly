@@ -7,7 +7,10 @@ import StudyAppCTA from "@/components/StudyAppCTA";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { Eyebrow, Reveal, SectionHead } from "@/components/brand";
 import NaplanTest from "@/components/naplan/NaplanTest";
-import { NAPLAN_FACTS, NAPLAN_SOURCES, NAPLAN_YEARS, OFFICIAL_DEMO, calculatorLine, getNaplanTest, naplanFaqs, naplanSlug, naplanPdfPath, STRAND_PRACTICE, NAPLAN_READING } from "@/lib/naplan";
+import { naplanQuestions } from "@/components/naplan/naplanQuestions";
+import { NAPLAN_PASS, NAPLAN_TESTS, PASS_YEARS } from "@/lib/naplan-access";
+import { STUDY_PLANS } from "@/lib/study-plus";
+import { NAPLAN_FACTS, NAPLAN_SOURCES, NAPLAN_YEARS, OFFICIAL_DEMO, calculatorLine, getNaplanTest, hasNaplanTestFile, naplanFaqs, naplanSlug, naplanPdfPath, STRAND_PRACTICE, NAPLAN_READING } from "@/lib/naplan";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import { getPostBySlug } from "@/lib/learn";
@@ -29,15 +32,9 @@ export default function NaplanPage({ year }) {
   const faqs = naplanFaqs(year);
   const isApp = APP_YEARS.includes(year);
   const mins = NAPLAN_FACTS.minutes[year];
-  const questions = qs.map((q) => ({
-    n: q.n, strand: q.strand, skill: q.skill, format: q.format, calculator: q.calculator,
-    answerIndex: q.answerIndex, accept: q.accept,
-    q: <M md={q.question} />,
-    opts: q.options ? q.options.map((o, j) => <M key={j} md={o} inline />) : null,
-    items: q.items ? q.items.map((o, j) => <M key={j} md={o} inline />) : null,
-    answerOrder: q.answerOrder, grid: q.grid, answerPoint: q.answerPoint,
-    sol: <M md={q.solution} />,
-  }));
+  const questions = naplanQuestions(year, 1);
+  const extraTests = [2, 3, 4, 5].filter((k) => k <= NAPLAN_TESTS && hasNaplanTestFile(year, k));
+  const isPassYear = PASS_YEARS.includes(year);
 
   return (
     <div className="tb sl np">
@@ -62,7 +59,7 @@ export default function NaplanPage({ year }) {
           <p className="tb-lead np-lead">
             {year >= 7
               ? "20 free NAPLAN-style questions that work like the real online test: the non-calculator questions first, then an on-screen calculator. Marked as soon as you finish, with a worked solution for every question. Or print the PDF."
-              : "20 free NAPLAN-style questions across every strand, marked as soon as you finish, with a worked solution for every question. Do it online, or print the PDF."}
+              : "20 free NAPLAN-style questions that work like the real online test, with drag-and-drop and grid questions. Marked as soon as you finish, with a worked solution for every question. Or print the PDF."}
           </p>
           <div className="np-facts">
             <div><span className="np-facts__k">NAPLAN 2027</span><span className="np-facts__v">{NAPLAN_FACTS.window}</span></div>
@@ -89,7 +86,7 @@ export default function NaplanPage({ year }) {
           <p className="np-note">
             {year >= 7
               ? <>Works like NAPLAN Online: one question at a time, flag any to come back to, and an on-screen calculator once the non-calculator section is done. Have paper ready for working.</>
-              : <>Answer as many as you can, then press <strong>Mark my test</strong> at the bottom. Use paper for working, no calculator.</>}
+              : <>Works like NAPLAN Online: one question at a time, flag any to come back to, and drag-and-drop and grid questions. No calculator, as in the real test. Have paper ready for working.</>}
           </p>
           <NaplanTest year={year} questions={questions} appYears={APP_YEARS} />
           <p className="np-disclaimer">
@@ -97,6 +94,31 @@ export default function NaplanPage({ year }) {
           </p>
         </div>
       </section>
+
+      {extraTests.length > 0 && (
+        <section id="more-tests" className="tb-section" aria-labelledby="np-more">
+          <div className="tb-wrap">
+            <h2 id="np-more" className="tb-h2 pg-h2">{1 + extraTests.length} Year {year} NAPLAN practice tests</h2>
+            <p className="pg-intro">
+              {isPassYear
+                ? <>Test 1 is free. Tests 2 to {1 + extraTests.length} come with the <strong>Year {year} NAPLAN Pass: {NAPLAN_PASS.price} one-off</strong>, no subscription. We studied ACARA&rsquo;s example tests and past papers and built every test in the same style, so they go in knowing what to expect.</>
+                : <>Test 1 is free. Tests 2 to {1 + extraTests.length} are included with a <strong>Tuterly subscription ({STUDY_PLANS.monthly.price} a month)</strong>, along with unlimited practice tests on every Year {year} topic in the app. We studied ACARA&rsquo;s example tests and past papers and built every test in the same style.</>}
+            </p>
+            <div className="npt-grid">
+              <a href="#naplan-test" className="npt-card is-free">
+                <span className="npt-card__t">Practice test 1</span>
+                <span className="npt-card__x">Free · 20 questions · on this page</span>
+              </a>
+              {extraTests.map((k) => (
+                <Link key={k} href={`/naplan/${naplanSlug(year)}/test-${k}`} className="npt-card">
+                  <span className="npt-card__t">Practice test {k}</span>
+                  <span className="npt-card__x">{isPassYear ? "NAPLAN Pass" : "With Tuterly"} · 20 new questions</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="tb-section" aria-labelledby="np-about">
         <div className="tb-wrap">

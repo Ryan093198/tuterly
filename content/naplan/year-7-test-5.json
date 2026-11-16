@@ -1,0 +1,333 @@
+{
+  "year": 7,
+  "test": 5,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Subtracting integers",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $4 - (-9)$.",
+      "accept": {
+        "value": 13,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Subtracting a negative is the same as adding: $4 + 9 = 13$.\n\n**Answer:** $13$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Multiplying fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $\\dfrac{4}{5} \\times \\dfrac{15}{16}$?",
+      "options": [
+        "3/4",
+        "60/21",
+        "19/21",
+        "4/3"
+      ],
+      "answer_index": 0,
+      "solution": "$\\dfrac{4 \\times 15}{5 \\times 16} = \\dfrac{60}{80} = \\dfrac{3}{4}$\n\n**Answer:** $\\dfrac{3}{4}$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Order of operations",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $40 \\div (2 + 3) \\times 4 - 1$.",
+      "accept": {
+        "value": 31,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Brackets: $2 + 3 = 5$. Then left to right: $40 \\div 5 = 8$, $8 \\times 4 = 32$, $32 - 1 = 31$.\n\n**Answer:** $31$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Ordering fractions",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the fractions into order from **smallest** to **largest**.",
+      "paper_question": "Write these fractions in order from smallest to largest: 3/5, 7/10, 1/2, 13/20",
+      "items": [
+        "$\\dfrac{3}{5}$",
+        "$\\dfrac{7}{10}$",
+        "$\\dfrac{1}{2}$",
+        "$\\dfrac{13}{20}$"
+      ],
+      "answer_order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "solution": "Use twentieths: $\\dfrac{3}{5} = \\dfrac{12}{20}$, $\\dfrac{7}{10} = \\dfrac{14}{20}$, $\\dfrac{1}{2} = \\dfrac{10}{20}$, $\\dfrac{13}{20}$.\n\n**Answer:** $\\dfrac{1}{2}$, $\\dfrac{3}{5}$, $\\dfrac{13}{20}$, $\\dfrac{7}{10}$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Highest common factor",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is the highest common factor of 36 and 54?",
+      "options": [
+        "6",
+        "9",
+        "18",
+        "108"
+      ],
+      "answer_index": 2,
+      "solution": "Factors of $36$ include $18$ ($36 = 2 \\times 18$) and $54 = 3 \\times 18$. No bigger number divides both.\n\n**Answer:** $18$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Percentage of an amount",
+      "calculator": true,
+      "format": "number",
+      "question": "A survey of 350 people found that 42% prefer tea. How many people prefer tea?",
+      "accept": {
+        "value": 147,
+        "tol": 0,
+        "unit": "people"
+      },
+      "solution": "$42\\%$ of $350 = 0.42 \\times 350 = 147$\n\n**Answer:** $147$ people"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Substitution with indices",
+      "calculator": true,
+      "format": "choice",
+      "question": "If $p = 4$, what is the value of $3p^2 - 5$?",
+      "options": [
+        "43",
+        "139",
+        "7",
+        "31"
+      ],
+      "answer_index": 0,
+      "solution": "$p^2 = 16$, so $3 \\times 16 - 5 = 48 - 5 = 43$.\n\n**Answer:** $43$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Area of a composite shape",
+      "calculator": true,
+      "format": "number",
+      "question": "A shape is made of a 10 m by 6 m rectangle with a triangle on top. The triangle has a base of 10 m and a height of 4 m. What is the total area, in m²?",
+      "accept": {
+        "value": 80,
+        "tol": 0,
+        "unit": "m2"
+      },
+      "solution": "Rectangle: $10 \\times 6 = 60$ m². Triangle: $\\dfrac{1}{2} \\times 10 \\times 4 = 20$ m².\n\n$60 + 20 = 80$ m²\n\n**Answer:** $80$ m²"
+    },
+    {
+      "n": 9,
+      "strand": "Space",
+      "skill": "Vertices of a shape on the Cartesian plane",
+      "calculator": true,
+      "format": "hotspot",
+      "question": "Points $P(-4, 3)$, $Q(2, 3)$ and $R(2, -2)$ are three corners of rectangle $PQRS$. **Click the grid** where corner $S$ goes.",
+      "paper_question": "Points P(−4, 3), Q(2, 3) and R(2, −2) are three corners of rectangle PQRS. What are the coordinates of S?",
+      "grid": {
+        "xmin": -5,
+        "xmax": 5,
+        "ymin": -4,
+        "ymax": 4,
+        "points": [
+          {
+            "x": -4,
+            "y": 3,
+            "label": "P"
+          },
+          {
+            "x": 2,
+            "y": 3,
+            "label": "Q"
+          },
+          {
+            "x": 2,
+            "y": -2,
+            "label": "R"
+          }
+        ]
+      },
+      "answer_point": [
+        -4,
+        -2
+      ],
+      "solution": "$S$ is directly below $P$ (same $x$, $-4$) and level with $R$ (same $y$, $-2$).\n\n**Answer:** $S(-4, -2)$"
+    },
+    {
+      "n": 10,
+      "strand": "Statistics and probability",
+      "skill": "Mean with a missing value",
+      "calculator": true,
+      "format": "choice",
+      "question": "The mean of five numbers is 8. Four of them are 6, 9, 10 and 5. What is the fifth number?",
+      "options": [
+        "10",
+        "8",
+        "40",
+        "30"
+      ],
+      "answer_index": 0,
+      "solution": "Total $= 5 \\times 8 = 40$. The four known numbers add to $6 + 9 + 10 + 5 = 30$.\n\n$40 - 30 = 10$\n\n**Answer:** $10$"
+    },
+    {
+      "n": 11,
+      "strand": "Space",
+      "skill": "Supplementary angles",
+      "calculator": true,
+      "format": "number",
+      "question": "Two angles on a straight line are in the ratio $2 : 7$. What is the size of the larger angle, in degrees?",
+      "accept": {
+        "value": 140,
+        "tol": 0,
+        "unit": "degrees"
+      },
+      "solution": "Angles on a straight line add to $180°$. Total parts: $2 + 7 = 9$. One part: $180 \\div 9 = 20°$.\n\nLarger angle: $7 \\times 20 = 140°$\n\n**Answer:** $140°$"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Rates",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which is the best buy?",
+      "options": [
+        "500 g for \\$3.50",
+        "1 kg for \\$6.80",
+        "250 g for \\$1.90",
+        "2 kg for \\$14.20"
+      ],
+      "answer_index": 1,
+      "solution": "Find the price per kg of each: $3.50 \\times 2 = 7.00$; $6.80$; $1.90 \\times 4 = 7.60$; $14.20 \\div 2 = 7.10$ (all in dollars).\n\nThe cheapest per kg is \\$6.80.\n\n**Answer:** 1 kg for \\$6.80"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Solving two-step equations",
+      "calculator": true,
+      "format": "number",
+      "question": "Solve $5x - 8 = 3x + 10$. What is $x$?",
+      "accept": {
+        "value": 9,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Subtract $3x$: $2x - 8 = 10$. Add $8$: $2x = 18$. Divide by $2$: $x = 9$.\n\n**Answer:** $x = 9$"
+    },
+    {
+      "n": 14,
+      "strand": "Measurement",
+      "skill": "Converting area units",
+      "calculator": true,
+      "format": "choice",
+      "question": "How many square centimetres are in 1 square metre?",
+      "options": [
+        "100",
+        "1 000",
+        "10 000",
+        "1 000 000"
+      ],
+      "answer_index": 2,
+      "solution": "$1$ m $= 100$ cm, so $1$ m² $= 100 \\times 100 = 10\\,000$ cm².\n\n**Answer:** $10\\,000$"
+    },
+    {
+      "n": 15,
+      "strand": "Measurement",
+      "skill": "Volume and capacity",
+      "calculator": true,
+      "format": "number",
+      "question": "A rectangular tank is 1.2 m long, 0.5 m wide and 0.8 m deep. How many litres does it hold? (1 m³ = 1000 L)",
+      "accept": {
+        "value": 480,
+        "tol": 0,
+        "unit": "L"
+      },
+      "solution": "Volume $= 1.2 \\times 0.5 \\times 0.8 = 0.48$ m³.\n\n$0.48 \\times 1000 = 480$ L\n\n**Answer:** $480$ L"
+    },
+    {
+      "n": 16,
+      "strand": "Statistics and probability",
+      "skill": "Interpreting a stem-and-leaf plot",
+      "calculator": true,
+      "format": "choice",
+      "question": "A stem-and-leaf plot shows test scores: stem 6 | leaves 2 5 8, stem 7 | leaves 0 3 3 9, stem 8 | leaves 1 4. How many students scored 70 or more?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "9"
+      ],
+      "answer_index": 1,
+      "solution": "Scores of $70$ or more are in the $7$ and $8$ rows: $70, 73, 73, 79, 81, 84$. That's $6$.\n\n**Answer:** $6$"
+    },
+    {
+      "n": 17,
+      "strand": "Number",
+      "skill": "Ratio problems",
+      "calculator": true,
+      "format": "number",
+      "question": "A recipe uses flour and sugar in the ratio $5 : 2$. Mia uses 750 g of flour. How many grams of sugar does she need?",
+      "accept": {
+        "value": 300,
+        "tol": 0,
+        "unit": "g"
+      },
+      "solution": "Flour: $5$ parts $= 750$ g, so one part $= 150$ g.\n\nSugar: $2 \\times 150 = 300$ g\n\n**Answer:** $300$ g"
+    },
+    {
+      "n": 18,
+      "strand": "Space",
+      "skill": "Transformations",
+      "calculator": true,
+      "format": "choice",
+      "question": "A shape is rotated 90° clockwise about the origin. The point $(0, 4)$ moves to:",
+      "options": [
+        "(4, 0)",
+        "(−4, 0)",
+        "(0, −4)",
+        "(4, 4)"
+      ],
+      "answer_index": 0,
+      "solution": "$(0, 4)$ is straight up from the origin. A quarter turn clockwise moves it to straight right: $(4, 0)$.\n\n**Answer:** $(4, 0)$"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Number patterns",
+      "calculator": true,
+      "format": "number",
+      "question": "A sequence starts at 120 and decreases by 7.5 each step. What is the 9th term?",
+      "accept": {
+        "value": 60.0,
+        "tol": 0.001,
+        "unit": ""
+      },
+      "solution": "The 9th term is $8$ steps after the first.\n\n$120 - 8 \\times 7.5 = 120 - 60 = 60$\n\n**Answer:** $60$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step money problems",
+      "calculator": true,
+      "format": "number",
+      "question": "Mobile plan A costs \\$35 a month. Plan B costs \\$20 a month plus \\$0.50 per GB. Sam uses 26 GB a month. How much does he save each month by choosing the cheaper plan, in dollars?",
+      "accept": {
+        "value": 2.0,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "Plan B: $20 + 0.50 \\times 26 = 20 + 13 = 33$, so \\$33.\n\nPlan A is \\$35. Plan B is cheaper by $35 - 33 = 2$.\n\n**Answer:** \\$2"
+    }
+  ]
+}

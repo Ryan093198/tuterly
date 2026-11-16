@@ -1,0 +1,327 @@
+{
+  "year": 5,
+  "test": 3,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Rounding",
+      "calculator": false,
+      "format": "choice",
+      "question": "Round 4 682 to the nearest hundred.",
+      "options": [
+        "4 600",
+        "4 680",
+        "4 700",
+        "5 000"
+      ],
+      "answer_index": 2,
+      "solution": "The hundreds digit is $6$. The next digit (tens) is $8$, which is $5$ or more, so round up.\n\n**Answer:** $4\\,700$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Subtracting 4-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A school raised \\$3 250 last year and \\$4 105 this year. How much more did it raise this year, in dollars?",
+      "accept": {
+        "value": 855,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$4105 - 3250$\n\n$4105 - 3000 = 1105$, then $1105 - 250 = 855$\n\n**Answer:** \\$855"
+    },
+    {
+      "n": 3,
+      "strand": "Measurement",
+      "skill": "Reading scales",
+      "calculator": false,
+      "format": "choice",
+      "question": "A scale on a jug shows the water level exactly halfway between 500 mL and 1 L. How much water is in the jug?",
+      "options": [
+        "600 mL",
+        "750 mL",
+        "800 mL",
+        "1.5 L"
+      ],
+      "answer_index": 1,
+      "solution": "$1$ L $= 1000$ mL. Halfway between $500$ and $1000$ is $750$.\n\n**Answer:** 750 mL"
+    },
+    {
+      "n": 4,
+      "strand": "Space",
+      "skill": "Properties of 3D objects",
+      "calculator": false,
+      "format": "choice",
+      "question": "A triangular prism has how many faces?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer_index": 2,
+      "solution": "A triangular prism has $2$ triangle faces (the ends) and $3$ rectangle faces (the sides).\n\n$2 + 3 = 5$\n\n**Answer:** $5$"
+    },
+    {
+      "n": 5,
+      "strand": "Space",
+      "skill": "Reflection on a grid",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "Point $P$ is at $(2, 3)$. It is reflected in the vertical line through $x = 4$ (the line straight up and down through 4). **Click the grid** where its image lands.",
+      "paper_question": "Point P is at (2, 3). It is reflected in the vertical line x = 4. What are the coordinates of its image?",
+      "grid": {
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 6,
+        "points": [
+          {
+            "x": 2,
+            "y": 3,
+            "label": "P"
+          }
+        ]
+      },
+      "answer_point": [
+        6,
+        3
+      ],
+      "solution": "$P$ is $2$ units to the left of the mirror line ($4 - 2 = 2$).\n\nIts image is the same distance on the other side: $4 + 2 = 6$. Reflecting in a vertical line doesn't change how high it is.\n\n**Answer:** $(6, 3)$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Multiplying 2-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A crate holds 24 bottles. How many bottles are in 15 crates?",
+      "accept": {
+        "value": 360,
+        "tol": 0,
+        "unit": "bottles"
+      },
+      "solution": "$24 \\times 15$\n\n$24 \\times 10 = 240$ and $24 \\times 5 = 120$\n\n$240 + 120 = 360$\n\n**Answer:** $360$ bottles"
+    },
+    {
+      "n": 7,
+      "strand": "Statistics and probability",
+      "skill": "Chance on a 0 to 1 scale",
+      "calculator": false,
+      "format": "choice",
+      "question": "A bag holds 4 red counters and nothing else. On a scale from 0 to 1, what is the chance of picking a red counter?",
+      "options": [
+        "0",
+        "1/4",
+        "1/2",
+        "1"
+      ],
+      "answer_index": 3,
+      "solution": "Every counter is red, so picking red is certain. Certain is $1$ on the chance scale.\n\n**Answer:** $1$"
+    },
+    {
+      "n": 8,
+      "strand": "Number",
+      "skill": "Ordering decimals",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these numbers in order from smallest to largest: 0.5, 0.45, 0.054, 0.505",
+      "items": [
+        "$0.5$",
+        "$0.45$",
+        "$0.054$",
+        "$0.505$"
+      ],
+      "answer_order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "solution": "Write them all with three decimal places: $0.500$, $0.450$, $0.054$, $0.505$.\n\n$0.054 < 0.450 < 0.500 < 0.505$\n\n**Answer:** $0.054$, $0.45$, $0.5$, $0.505$"
+    },
+    {
+      "n": 9,
+      "strand": "Algebra",
+      "skill": "Number patterns",
+      "calculator": false,
+      "format": "number",
+      "question": "Look at this pattern.\n\n$2, 9, 16, 23, 30, \\dots$\n\nWhat is the 8th number in the pattern?",
+      "accept": {
+        "value": 51,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "The pattern goes up by $7$ each time. Keep going: $37, 44, 51$.\n\nThe 8th number is $51$ (or: $2 + 7 \\times 7 = 51$).\n\n**Answer:** $51$"
+    },
+    {
+      "n": 10,
+      "strand": "Number",
+      "skill": "Adding fractions with the same denominator",
+      "calculator": false,
+      "format": "choice",
+      "question": "Sam ran 3/10 of a track before morning tea and 4/10 after. What fraction of the track did he run altogether?",
+      "options": [
+        "7/10",
+        "7/20",
+        "1/10",
+        "12/10"
+      ],
+      "answer_index": 0,
+      "solution": "The denominators are the same, so add the numerators: $3 + 4 = 7$.\n\n**Answer:** $\\dfrac{7}{10}$"
+    },
+    {
+      "n": 11,
+      "strand": "Measurement",
+      "skill": "Elapsed time",
+      "calculator": false,
+      "format": "number",
+      "question": "A bushwalk starts at 9:35 am and finishes at 12:10 pm. How many minutes does it take?",
+      "accept": {
+        "value": 155,
+        "tol": 0,
+        "unit": "minutes"
+      },
+      "solution": "From 9:35 to 12:35 is $3$ hours $= 180$ minutes.\n\n12:10 is $25$ minutes earlier than 12:35: $180 - 25 = 155$\n\n**Answer:** $155$ minutes"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Multiples",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which number is a multiple of both 4 and 6?",
+      "options": [
+        "10",
+        "18",
+        "24",
+        "30"
+      ],
+      "answer_index": 2,
+      "solution": "$24 = 4 \\times 6$, so it is in both times tables. $18$ isn't a multiple of $4$ and $30$ isn't a multiple of $4$.\n\n**Answer:** $24$"
+    },
+    {
+      "n": 13,
+      "strand": "Measurement",
+      "skill": "Volume by counting cubes",
+      "calculator": false,
+      "format": "number",
+      "question": "A box is filled with 1 cm cubes. It is 5 cubes long, 3 cubes wide and 2 cubes high. How many cubes are in the box?",
+      "accept": {
+        "value": 30,
+        "tol": 0,
+        "unit": "cubes"
+      },
+      "solution": "One layer: $5 \\times 3 = 15$ cubes. There are $2$ layers.\n\n$15 \\times 2 = 30$\n\n**Answer:** $30$ cubes"
+    },
+    {
+      "n": 14,
+      "strand": "Statistics and probability",
+      "skill": "Reading a column graph",
+      "calculator": false,
+      "format": "choice",
+      "question": "A column graph shows rainfall: March 60 mm, April 45 mm, May 90 mm. Which statement is true?",
+      "options": [
+        "May had twice as much rain as March.",
+        "May had twice as much rain as April.",
+        "April had the most rain.",
+        "March had 15 mm less than April."
+      ],
+      "answer_index": 1,
+      "solution": "$45 \\times 2 = 90$, so May had twice April's rain. March had $15$ mm **more** than April, not less.\n\n**Answer:** May had twice as much rain as April."
+    },
+    {
+      "n": 15,
+      "strand": "Number",
+      "skill": "Division word problems",
+      "calculator": false,
+      "format": "number",
+      "question": "A farmer packs 245 eggs into cartons of 12. How many full cartons can she make?",
+      "accept": {
+        "value": 20,
+        "tol": 0,
+        "unit": "cartons"
+      },
+      "solution": "$12 \\times 20 = 240$, which leaves $5$ eggs. $5$ eggs isn't enough for another full carton.\n\n**Answer:** $20$ full cartons"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Angles in a turn",
+      "calculator": false,
+      "format": "choice",
+      "question": "How many degrees is a three-quarter turn?",
+      "options": [
+        "90°",
+        "180°",
+        "270°",
+        "360°"
+      ],
+      "answer_index": 2,
+      "solution": "A full turn is $360°$. A quarter turn is $90°$.\n\n$3 \\times 90 = 270$\n\n**Answer:** $270°$"
+    },
+    {
+      "n": 17,
+      "strand": "Algebra",
+      "skill": "Equivalent number sentences",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which is equal to 6 × 8?",
+      "options": [
+        "6 × 4 × 2",
+        "6 + 8 + 8",
+        "12 × 16",
+        "3 × 8 × 4"
+      ],
+      "answer_index": 0,
+      "solution": "$6 \\times 8 = 48$. And $6 \\times 4 \\times 2 = 24 \\times 2 = 48$. The others are $22$, $192$ and $96$.\n\n**Answer:** $6 \\times 4 \\times 2$"
+    },
+    {
+      "n": 18,
+      "strand": "Number",
+      "skill": "Percentages as fractions",
+      "calculator": false,
+      "format": "number",
+      "question": "50% of the 64 students in Year 5 walk to school. How many students walk?",
+      "accept": {
+        "value": 32,
+        "tol": 0,
+        "unit": "students"
+      },
+      "solution": "$50\\%$ is one half.\n\n$64 \\div 2 = 32$\n\n**Answer:** $32$ students"
+    },
+    {
+      "n": 19,
+      "strand": "Measurement",
+      "skill": "Area of composite shapes",
+      "calculator": false,
+      "format": "choice",
+      "question": "An L-shaped room is made from a 6 m by 4 m rectangle joined to a 3 m by 2 m rectangle. What is the total area?",
+      "options": [
+        "24 m²",
+        "30 m²",
+        "15 m²",
+        "26 m²"
+      ],
+      "answer_index": 1,
+      "solution": "$6 \\times 4 = 24$ m² and $3 \\times 2 = 6$ m².\n\n$24 + 6 = 30$ m²\n\n**Answer:** 30 m²"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Movie tickets cost \\$14 for adults and \\$9 for children. How much do 2 adult and 3 child tickets cost, in dollars?",
+      "accept": {
+        "value": 55,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "Adults: $2 \\times 14 = 28$. Children: $3 \\times 9 = 27$.\n\n$28 + 27 = 55$\n\n**Answer:** \\$55"
+    }
+  ]
+}

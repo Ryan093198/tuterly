@@ -18,8 +18,10 @@ import { OrderQuestion, HotspotQuestion } from "./NaplanInteractive";
 // describes the real test), an on-screen calculator, a timer, and a review
 // screen before marking. Years 3 and 5 keep the single-page list. All
 // questions stay in the page for Google; only the current one shows.
-export default function NaplanTest({ year, questions, appYears }) {
-  const exam = year >= 7;
+export default function NaplanTest({ year, questions, appYears, testNo = 1, nextHref = null }) {
+  // Every year runs NAPLAN Online-style since 17 Nov 2026 (Years 3 and 5
+  // have no calculator section, as in the real test).
+  const exam = true;
   const [answers, setAnswers] = useState({});
   const [marked, setMarked] = useState(null); // { results: {n: true|false}, score, secs }
   const [phase, setPhase] = useState(exam ? "intro" : "list"); // intro | test | gate | review | list
@@ -155,11 +157,11 @@ export default function NaplanTest({ year, questions, appYears }) {
           <div className="nt-next">
             {isApp ? (
               <>
-                <p className="nt-next__title">Unlimited practice tests on every topic NAPLAN covers.</p>
+                <p className="nt-next__title">{testNo > 1 ? "Keep practising in the Tuterly app." : "Unlimited practice tests on every topic NAPLAN covers."}</p>
                 <p className="nt-next__text">
                   {marked.score >= total - 2
-                    ? `This free test has 20 questions. In the Tuterly app, they can test any Year ${year} topic as often as they like, with harder questions as they improve, so strong students keep being stretched before NAPLAN and school tests.`
-                    : `This free test has 20 questions. In the Tuterly app, they can test any Year ${year} topic as often as they like, and every question they get wrong comes back with a worked solution and fresh questions on the same skill until it's mastered.`}
+                    ? `${testNo > 1 ? "Your subscription includes the app too." : "This free test has 20 questions."} In the Tuterly app, they can test any Year ${year} topic as often as they like, with harder questions as they improve, so strong students keep being stretched before NAPLAN and school tests.`
+                    : `${testNo > 1 ? "Your subscription includes the app too." : "This free test has 20 questions."} In the Tuterly app, they can test any Year ${year} topic as often as they like, and every question they get wrong comes back with a worked solution and fresh questions on the same skill until it's mastered.`}
                 </p>
                 <div className="nt-next__btns">
                   <Link href={cta.href} className="nt-btn" onClick={() => { trackEvent("naplan_cta_click", { year, to: "app", score: marked.score }); if (cta.live) trackEvent("begin_checkout", { item_id: "plus", source: "naplan" }); }}>{cta.label}</Link>
@@ -178,6 +180,7 @@ export default function NaplanTest({ year, questions, appYears }) {
               </>
             )}
           </div>
+          {nextHref && <p className="nt-nexttest"><Link href={nextHref} className="nt-btn">Next: Practice test {testNo + 1} →</Link></p>}
           <button type="button" className="nt-link nt-retry" onClick={reset}>Clear my answers and try again</button>
         </section>
       )}
@@ -186,9 +189,15 @@ export default function NaplanTest({ year, questions, appYears }) {
         <div className="nx-card nx-intro">
           <p className="nx-intro__t">Year {year} NAPLAN-style numeracy practice test</p>
           <ul className="nx-intro__facts">
-            <li><strong>{total} questions</strong> across every strand. Suggested time: about 30 minutes.</li>
-            <li><strong>Questions 1 to {ncCount}: no calculator.</strong> Questions {ncCount + 1} to {total}: an on-screen calculator.</li>
-            <li>Like the real test, you can&rsquo;t go back to the non-calculator questions once you start the calculator section.</li>
+            <li><strong>{total} questions</strong> across every strand. Suggested time: about {year >= 7 ? 30 : 25} minutes.</li>
+            {ncCount < total ? (
+              <>
+                <li><strong>Questions 1 to {ncCount}: no calculator.</strong> Questions {ncCount + 1} to {total}: an on-screen calculator.</li>
+                <li>Like the real test, you can&rsquo;t go back to the non-calculator questions once you start the calculator section.</li>
+              </>
+            ) : (
+              <li><strong>No calculator</strong>, as in the real Year {year} test. Have paper ready for working.</li>
+            )}
             <li>Flag any question to come back to. You&rsquo;ll see a review screen before it&rsquo;s marked.</li>
           </ul>
           <div className="nx-intro__btns">
@@ -201,7 +210,7 @@ export default function NaplanTest({ year, questions, appYears }) {
       {inTest && (
         <div className="nx-bar" role="group" aria-label="Test progress">
           <span className="nx-bar__q">Question {idx + 1} of {total}</span>
-          <span className={`nx-bar__sec ${cur.calculator ? "is-calc" : ""}`}>{cur.calculator ? "Calculator section" : "Non-calculator section"}</span>
+          {ncCount < total && <span className={`nx-bar__sec ${cur.calculator ? "is-calc" : ""}`}>{cur.calculator ? "Calculator section" : "Non-calculator section"}</span>}
           {showTime && <span className="nx-bar__time" aria-label="Time elapsed">{clock(secs)}</span>}
           {cur.calculator && (
             <button type="button" className="nx-bar__calc" aria-expanded={calcOpen} onClick={() => setCalcOpen((o) => !o)}>

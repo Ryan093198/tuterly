@@ -1,0 +1,329 @@
+{
+  "year": 3,
+  "test": 3,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Place value to 1000",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which number is 4 hundreds, 0 tens and 7 ones?",
+      "options": [
+        "47",
+        "407",
+        "470",
+        "4007"
+      ],
+      "answer_index": 1,
+      "solution": "$4$ hundreds $= 400$, $0$ tens $= 0$, $7$ ones $= 7$.\n\n$400 + 0 + 7 = 407$\n\n**Answer:** $407$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Multiplication facts for 10",
+      "calculator": false,
+      "format": "number",
+      "question": "Pencils come in boxes of 10. How many pencils are in 7 boxes?",
+      "accept": {
+        "value": 70,
+        "tol": 0,
+        "unit": "pencils"
+      },
+      "solution": "$7 \\times 10 = 70$\n\n**Answer:** $70$ pencils"
+    },
+    {
+      "n": 3,
+      "strand": "Space",
+      "skill": "Identifying 2D shapes",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which shape has exactly 6 straight sides?",
+      "options": [
+        "hexagon",
+        "pentagon",
+        "octagon",
+        "rhombus"
+      ],
+      "answer_index": 0,
+      "solution": "A hexagon has $6$ sides. A pentagon has $5$, an octagon has $8$ and a rhombus has $4$.\n\n**Answer:** hexagon"
+    },
+    {
+      "n": 4,
+      "strand": "Measurement",
+      "skill": "Comparing mass",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which of these would weigh about 1 kilogram?",
+      "options": [
+        "a bag of flour",
+        "a feather",
+        "a car",
+        "a paper clip"
+      ],
+      "answer_index": 0,
+      "solution": "A standard bag of flour is about $1$ kg. A feather and a paper clip are only a few grams, and a car is more than $1000$ kg.\n\n**Answer:** a bag of flour"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Adding 2-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "On Saturday 46 people visited the farm. On Sunday 39 people visited. How many people visited altogether?",
+      "accept": {
+        "value": 85,
+        "tol": 0,
+        "unit": "people"
+      },
+      "solution": "$46 + 39$\n\n$46 + 40 = 86$, then take away $1$: $85$\n\n**Answer:** $85$ people"
+    },
+    {
+      "n": 6,
+      "strand": "Statistics and probability",
+      "skill": "Reading a picture graph",
+      "calculator": false,
+      "format": "choice",
+      "question": "In a picture graph, each 🍎 stands for 2 apples. The row for Year 3 shows 🍎🍎🍎🍎🍎. How many apples is that?",
+      "options": [
+        "5",
+        "7",
+        "10",
+        "12"
+      ],
+      "answer_index": 2,
+      "solution": "There are $5$ pictures and each one stands for $2$ apples.\n\n$5 \\times 2 = 10$\n\n**Answer:** $10$ apples"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Continuing a number pattern (counting back)",
+      "calculator": false,
+      "format": "choice",
+      "question": "Look at this number pattern.\n\n$60, 54, 48, 42, \\square$\n\nWhat is the missing number?",
+      "options": [
+        "36",
+        "38",
+        "40",
+        "32"
+      ],
+      "answer_index": 0,
+      "solution": "Each number is $6$ less than the one before.\n\n$42 - 6 = 36$\n\n**Answer:** $36$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Ordering lengths",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the lengths into order from **shortest** to **longest**.",
+      "paper_question": "Write these lengths in order from shortest to longest: 1 metre, 45 cm, 90 cm, 2 metres",
+      "items": [
+        "1 metre",
+        "45 cm",
+        "2 metres",
+        "90 cm"
+      ],
+      "answer_order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "solution": "Change the metres into centimetres so they can be compared: $1$ metre $= 100$ cm and $2$ metres $= 200$ cm.\n\n$45 < 90 < 100 < 200$\n\n**Answer:** 45 cm, 90 cm, 1 metre, 2 metres"
+    },
+    {
+      "n": 9,
+      "strand": "Number",
+      "skill": "Simple sharing (division)",
+      "calculator": false,
+      "format": "number",
+      "question": "18 cupcakes are shared equally onto 3 plates. How many cupcakes are on each plate?",
+      "accept": {
+        "value": 6,
+        "tol": 0,
+        "unit": "cupcakes"
+      },
+      "solution": "$18 \\div 3 = 6$, because $3 \\times 6 = 18$.\n\n**Answer:** $6$ cupcakes"
+    },
+    {
+      "n": 10,
+      "strand": "Measurement",
+      "skill": "Time durations",
+      "calculator": false,
+      "format": "choice",
+      "question": "A movie starts at 2:30 and finishes at 4:00. How long is the movie?",
+      "options": [
+        "1 hour",
+        "1 hour and 30 minutes",
+        "2 hours",
+        "1 hour and 15 minutes"
+      ],
+      "answer_index": 1,
+      "solution": "From 2:30 to 3:30 is $1$ hour. From 3:30 to 4:00 is $30$ minutes.\n\n**Answer:** 1 hour and 30 minutes"
+    },
+    {
+      "n": 11,
+      "strand": "Space",
+      "skill": "Locating a place on a grid map",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "On this school map, the canteen is at $C$. The office is **4 squares right** of the canteen and **1 square down**. **Click the grid** where the office is.",
+      "paper_question": "On a school map, the canteen is at (1, 3). The office is 4 squares right of the canteen and 1 square down. Where is the office? Give the point.",
+      "grid": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 5,
+        "points": [
+          {
+            "x": 1,
+            "y": 3,
+            "label": "C"
+          }
+        ]
+      },
+      "answer_point": [
+        5,
+        2
+      ],
+      "solution": "The canteen $C$ is at $(1, 3)$.\n\n4 squares right: $1 + 4 = 5$ across.\n\n1 square down: $3 - 1 = 2$ up.\n\n**Answer:** the office is at $(5, 2)$."
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Fractions of a shape",
+      "calculator": false,
+      "format": "choice",
+      "question": "A pizza is cut into 8 equal slices. Tom eats 3 slices. What fraction of the pizza did Tom eat?",
+      "options": [
+        "3/8",
+        "3/5",
+        "5/8",
+        "1/3"
+      ],
+      "answer_index": 0,
+      "solution": "The pizza has $8$ equal slices and Tom ate $3$ of them.\n\n**Answer:** $\\dfrac{3}{8}$"
+    },
+    {
+      "n": 13,
+      "strand": "Number",
+      "skill": "Subtracting 3-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A library had 240 books. It lent out 115 books. How many books were left in the library?",
+      "accept": {
+        "value": 125,
+        "tol": 0,
+        "unit": "books"
+      },
+      "solution": "$240 - 115$\n\n$240 - 100 = 140$, then $140 - 15 = 125$\n\n**Answer:** $125$ books"
+    },
+    {
+      "n": 14,
+      "strand": "Statistics and probability",
+      "skill": "Chance experiments",
+      "calculator": false,
+      "format": "choice",
+      "question": "Lucy rolls a normal 6-sided dice once. Which result is impossible?",
+      "options": [
+        "rolling a 7",
+        "rolling a 6",
+        "rolling an odd number",
+        "rolling a number less than 4"
+      ],
+      "answer_index": 0,
+      "solution": "A normal dice only has the numbers $1$ to $6$, so rolling a $7$ can't happen.\n\n**Answer:** rolling a 7"
+    },
+    {
+      "n": 15,
+      "strand": "Algebra",
+      "skill": "Number patterns in a table",
+      "calculator": false,
+      "format": "number",
+      "question": "Each tricycle has 3 wheels.\n\n| Tricycles | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Wheels | 3 | 6 | 9 | 12 | ? |\n\nHow many wheels are on 5 tricycles?",
+      "accept": {
+        "value": 15,
+        "tol": 0,
+        "unit": "wheels"
+      },
+      "solution": "The number of wheels goes up by $3$ each time.\n\n$12 + 3 = 15$ (or $5 \\times 3 = 15$)\n\n**Answer:** $15$ wheels"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Turns and directions",
+      "calculator": false,
+      "format": "choice",
+      "question": "Ava faces north. She makes a quarter turn clockwise. Which way is she facing now?",
+      "options": [
+        "east",
+        "west",
+        "south",
+        "north"
+      ],
+      "answer_index": 0,
+      "solution": "Clockwise from north, the directions go north, east, south, west. A quarter turn moves one step.\n\n**Answer:** east"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Capacity in litres",
+      "calculator": false,
+      "format": "choice",
+      "question": "A jug holds 2 litres. How many jugs of water are needed to fill a 10-litre bucket?",
+      "options": [
+        "5",
+        "8",
+        "12",
+        "20"
+      ],
+      "answer_index": 0,
+      "solution": "$10 \\div 2 = 5$, because $5 \\times 2 = 10$.\n\n**Answer:** $5$ jugs"
+    },
+    {
+      "n": 18,
+      "strand": "Statistics and probability",
+      "skill": "Reading a table",
+      "calculator": false,
+      "format": "number",
+      "question": "The table shows how many laps each student ran.\n\n| Student | Laps |\n|---|---|\n| Ari | 8 |\n| Bella | 12 |\n| Chen | 7 |\n| Dina | 10 |\n\nHow many laps did the four students run altogether?",
+      "accept": {
+        "value": 37,
+        "tol": 0,
+        "unit": "laps"
+      },
+      "solution": "$8 + 12 + 7 + 10$\n\n$8 + 12 = 20$ and $7 + 10 = 17$\n\n$20 + 17 = 37$\n\n**Answer:** $37$ laps"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Odd and even numbers",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which of these numbers is odd?",
+      "options": [
+        "46",
+        "58",
+        "73",
+        "90"
+      ],
+      "answer_index": 2,
+      "solution": "Odd numbers end in $1, 3, 5, 7$ or $9$. Only $73$ ends in an odd digit.\n\n**Answer:** $73$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Packets of stickers cost \\$4 each. Noah buys 3 packets and pays with a \\$20 note. How much change does he get, in dollars?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$3$ packets cost $3 \\times 4 = 12$ dollars.\n\nChange: $20 - 12 = 8$\n\n**Answer:** \\$8"
+    }
+  ]
+}

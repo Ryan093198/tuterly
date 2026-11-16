@@ -1,0 +1,329 @@
+{
+  "year": 3,
+  "test": 2,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Place value to 1000",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is the value of the digit 6 in the number 562?",
+      "options": [
+        "6",
+        "60",
+        "600",
+        "62"
+      ],
+      "answer_index": 1,
+      "solution": "In $562$, the $5$ is in the hundreds place, the $6$ is in the tens place and the $2$ is in the ones place.\n\n**Answer:** $6$ tens $= 60$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Adding 2-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "Sam has 38 stickers. His friend gives him 25 more. How many stickers does Sam have now?",
+      "accept": {
+        "value": 63,
+        "tol": 0,
+        "unit": "stickers"
+      },
+      "solution": "$38 + 25$\n\n$30 + 20 = 50$ and $8 + 5 = 13$\n\n$50 + 13 = 63$\n\n**Answer:** $63$ stickers"
+    },
+    {
+      "n": 3,
+      "strand": "Measurement",
+      "skill": "Choosing units of length",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which unit is best for measuring the length of a pencil?",
+      "options": [
+        "centimetres",
+        "kilometres",
+        "litres",
+        "kilograms"
+      ],
+      "answer_index": 0,
+      "solution": "A pencil is short, so it is measured in centimetres. Kilometres are for long distances, litres measure capacity and kilograms measure mass.\n\n**Answer:** centimetres"
+    },
+    {
+      "n": 4,
+      "strand": "Space",
+      "skill": "Identifying 3D objects",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which 3D object has 1 flat face and 1 curved surface, and comes to a point?",
+      "options": [
+        "cone",
+        "cylinder",
+        "cube",
+        "sphere"
+      ],
+      "answer_index": 0,
+      "solution": "A cone has one flat circular face, one curved surface and a point (apex) at the top. A cylinder has two flat faces and no point.\n\n**Answer:** cone"
+    },
+    {
+      "n": 5,
+      "strand": "Statistics and probability",
+      "skill": "Reading a tally chart",
+      "calculator": false,
+      "format": "choice",
+      "question": "A class made a tally of favourite fruit. Apples had this tally: one bundle of 5 marks (four lines with a line across them), then 3 more single marks. How many students chose apples?",
+      "options": [
+        "3",
+        "5",
+        "8",
+        "9"
+      ],
+      "answer_index": 2,
+      "solution": "One bundle of tally marks is $5$. Then there are $3$ more marks.\n\n$5 + 3 = 8$\n\n**Answer:** $8$ students"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Ordering numbers to 1000",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these numbers in order from smallest to largest: 318, 381, 183, 138",
+      "items": [
+        "$318$",
+        "$381$",
+        "$183$",
+        "$138$"
+      ],
+      "answer_order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "solution": "Compare the hundreds first: $138$ and $183$ have 1 hundred, $318$ and $381$ have 3 hundreds.\n\nThen compare the tens: $138 < 183$ and $318 < 381$.\n\n**Answer:** $138$, $183$, $318$, $381$"
+    },
+    {
+      "n": 7,
+      "strand": "Number",
+      "skill": "Multiplication facts for 2",
+      "calculator": false,
+      "format": "number",
+      "question": "Each bike has 2 wheels. How many wheels are on 9 bikes?",
+      "accept": {
+        "value": 18,
+        "tol": 0,
+        "unit": "wheels"
+      },
+      "solution": "$9$ bikes with $2$ wheels each: $9 \\times 2 = 18$\n\n**Answer:** $18$ wheels"
+    },
+    {
+      "n": 8,
+      "strand": "Algebra",
+      "skill": "Continuing a number pattern",
+      "calculator": false,
+      "format": "choice",
+      "question": "Look at this number pattern.\n\n$7, 12, 17, 22, \\square$\n\nWhat is the missing number?",
+      "options": [
+        "24",
+        "25",
+        "27",
+        "32"
+      ],
+      "answer_index": 2,
+      "solution": "Each number is $5$ more than the one before.\n\n$22 + 5 = 27$\n\n**Answer:** $27$"
+    },
+    {
+      "n": 9,
+      "strand": "Measurement",
+      "skill": "Telling time (quarter to)",
+      "calculator": false,
+      "format": "choice",
+      "question": "The clock shows that the time is quarter to 4. Which digital time is the same?",
+      "options": [
+        "3:45",
+        "4:15",
+        "4:45",
+        "3:15"
+      ],
+      "answer_index": 0,
+      "solution": "Quarter to 4 means 15 minutes before 4 o'clock.\n\n$60 - 15 = 45$, so it is $45$ minutes past 3.\n\n**Answer:** 3:45"
+    },
+    {
+      "n": 10,
+      "strand": "Space",
+      "skill": "Following directions on a grid",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "Mia starts at the dot marked $H$ (her house). She walks **2 squares right** and then **3 squares up**. **Click the grid** where Mia finishes.",
+      "paper_question": "On a grid, Mia starts at (1, 0). She walks 2 squares right and then 3 squares up. Where does she finish? Give the point.",
+      "grid": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 5,
+        "points": [
+          {
+            "x": 1,
+            "y": 0,
+            "label": "H"
+          }
+        ]
+      },
+      "answer_point": [
+        3,
+        3
+      ],
+      "solution": "Start at $H$, which is at $(1, 0)$.\n\n2 squares right: $1 + 2 = 3$ across.\n\n3 squares up: $0 + 3 = 3$ up.\n\n**Answer:** Mia finishes at $(3, 3)$."
+    },
+    {
+      "n": 11,
+      "strand": "Number",
+      "skill": "Subtracting 2-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A bus has 52 seats. 37 people are sitting on the bus. How many seats are empty?",
+      "accept": {
+        "value": 15,
+        "tol": 0,
+        "unit": "seats"
+      },
+      "solution": "$52 - 37$\n\n$52 - 30 = 22$, then $22 - 7 = 15$\n\n**Answer:** $15$ seats"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Halves and quarters of a collection",
+      "calculator": false,
+      "format": "choice",
+      "question": "Ella has 12 grapes. She eats one quarter of them. How many grapes does she eat?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "8"
+      ],
+      "answer_index": 0,
+      "solution": "One quarter means sharing into $4$ equal groups.\n\n$12 \\div 4 = 3$\n\n**Answer:** $3$ grapes"
+    },
+    {
+      "n": 13,
+      "strand": "Statistics and probability",
+      "skill": "Chance words",
+      "calculator": false,
+      "format": "choice",
+      "question": "A spinner has 4 equal parts: 3 are blue and 1 is red. Which word best describes spinning blue?",
+      "options": [
+        "impossible",
+        "unlikely",
+        "likely",
+        "certain"
+      ],
+      "answer_index": 2,
+      "solution": "Blue covers $3$ of the $4$ parts, which is more than half, so blue is likely. It isn't certain, because red can still come up.\n\n**Answer:** likely"
+    },
+    {
+      "n": 14,
+      "strand": "Measurement",
+      "skill": "Adding money",
+      "calculator": false,
+      "format": "number",
+      "question": "A muffin costs \\$3 and a juice costs \\$2. How much do 2 muffins and 1 juice cost altogether, in dollars?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$2$ muffins: $2 \\times 3 = 6$ dollars\n\nAdd the juice: $6 + 2 = 8$\n\n**Answer:** \\$8"
+    },
+    {
+      "n": 15,
+      "strand": "Algebra",
+      "skill": "Equal groups and repeated addition",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which number sentence matches 4 bags with 5 apples in each bag?",
+      "options": [
+        "4 + 5",
+        "4 × 5",
+        "5 − 4",
+        "5 × 5"
+      ],
+      "answer_index": 1,
+      "solution": "There are $4$ equal groups of $5$, which is $4 \\times 5$ (or $5 + 5 + 5 + 5$).\n\n**Answer:** $4 \\times 5$"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Lines of symmetry",
+      "calculator": false,
+      "format": "choice",
+      "question": "How many lines of symmetry does a square have?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ],
+      "answer_index": 2,
+      "solution": "A square can be folded in half 4 ways so the two halves match: down the middle, across the middle, and along both diagonals.\n\n**Answer:** $4$"
+    },
+    {
+      "n": 17,
+      "strand": "Statistics and probability",
+      "skill": "Reading a column graph",
+      "calculator": false,
+      "format": "number",
+      "question": "A column graph shows how many books were borrowed each day.\n\n| Day | Books |\n|---|---|\n| Monday | 14 |\n| Tuesday | 9 |\n| Wednesday | 17 |\n\nHow many **more** books were borrowed on Wednesday than on Tuesday?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "books"
+      },
+      "solution": "Wednesday: $17$ books. Tuesday: $9$ books.\n\n$17 - 9 = 8$\n\n**Answer:** $8$ more books"
+    },
+    {
+      "n": 18,
+      "strand": "Measurement",
+      "skill": "Months and calendars",
+      "calculator": false,
+      "format": "choice",
+      "question": "Today is 28 May. Leo's party is in 1 week. What is the date of the party?",
+      "options": [
+        "4 June",
+        "3 June",
+        "5 June",
+        "35 May"
+      ],
+      "answer_index": 0,
+      "solution": "May has $31$ days. From 28 May, $3$ days takes you to 31 May, and $4$ more days takes you to 4 June ($3 + 4 = 7$ days).\n\n**Answer:** 4 June"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Finding a missing number",
+      "calculator": false,
+      "format": "number",
+      "question": "What number goes in the box?\n\n$\\square + 26 = 50$",
+      "accept": {
+        "value": 24,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Think: what do you add to $26$ to make $50$?\n\n$26 + 4 = 30$, then $30 + 20 = 50$. That's $4 + 20 = 24$.\n\n**Answer:** $24$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Two-step money problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Jack has \\$20. He buys a book for \\$8 and a pen for \\$3. How much money does he have left, in dollars?",
+      "accept": {
+        "value": 9,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "He spends $8 + 3 = 11$ dollars.\n\n$20 - 11 = 9$\n\n**Answer:** \\$9"
+    }
+  ]
+}

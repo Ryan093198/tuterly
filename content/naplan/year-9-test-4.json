@@ -1,0 +1,328 @@
+{
+  "year": 9,
+  "test": 4,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Index laws",
+      "calculator": false,
+      "format": "choice",
+      "question": "Simplify $(3a^2)^3$.",
+      "options": [
+        "$27a^{6}$",
+        "$9a^{5}$",
+        "$3a^{6}$",
+        "$27a^{5}$"
+      ],
+      "answer_index": 0,
+      "solution": "Cube both parts: $3^3 = 27$ and $(a^2)^3 = a^6$.\n\n**Answer:** $27a^6$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Mental arithmetic with decimals",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $0.6 \\times 45$.",
+      "accept": {
+        "value": 27,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$6 \\times 45 = 270$, and one decimal place gives $27.0$.\n\n**Answer:** $27$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Ordering numbers in scientific notation",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the numbers into order from **smallest** to **largest**.",
+      "paper_question": "Write these in order from smallest to largest: 7 × 10⁻³, 6.5 × 10⁻², 8 × 10⁻⁴, 1.2 × 10⁻²",
+      "items": [
+        "$7 \\times 10^{-3}$",
+        "$6.5 \\times 10^{-2}$",
+        "$8 \\times 10^{-4}$",
+        "$1.2 \\times 10^{-2}$"
+      ],
+      "answer_order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "solution": "As decimals: $0.007$, $0.065$, $0.0008$, $0.012$.\n\n$0.0008 < 0.007 < 0.012 < 0.065$\n\n**Answer:** $8 \\times 10^{-4}$, $7 \\times 10^{-3}$, $1.2 \\times 10^{-2}$, $6.5 \\times 10^{-2}$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Square roots and estimation",
+      "calculator": false,
+      "format": "choice",
+      "question": "Between which two whole numbers is $\\sqrt{58}$?",
+      "options": [
+        "7 and 8",
+        "8 and 9",
+        "5 and 6",
+        "29 and 30"
+      ],
+      "answer_index": 0,
+      "solution": "$7^2 = 49$ and $8^2 = 64$. $58$ is between them, so $\\sqrt{58}$ is between $7$ and $8$.\n\n**Answer:** $7$ and $8$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Dividing fractions",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $\\dfrac{9}{10} \\div \\dfrac{3}{5}$. Give your answer as a decimal.",
+      "accept": {
+        "value": 1.5,
+        "tol": 0.001,
+        "unit": ""
+      },
+      "solution": "$\\dfrac{9}{10} \\times \\dfrac{5}{3} = \\dfrac{45}{30} = 1.5$\n\n**Answer:** $1.5$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Reverse percentages",
+      "calculator": true,
+      "format": "number",
+      "question": "After a 20% discount, a game costs \\$64. What was the original price, in dollars?",
+      "accept": {
+        "value": 80,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "\\$64 is $80\\%$ of the original price.\n\n$64 \\div 0.8 = 80$\n\n**Answer:** \\$80"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Expanding binomials",
+      "calculator": true,
+      "format": "choice",
+      "question": "Expand $(2x - 3)(x + 4)$.",
+      "options": [
+        "$2x^{2} + 5x - 12$",
+        "$2x^{2} - 5x - 12$",
+        "$2x^{2} + 11x - 12$",
+        "$2x^{2} + 5x + 12$"
+      ],
+      "answer_index": 0,
+      "solution": "$2x \\times x = 2x^2$, $2x \\times 4 = 8x$, $-3 \\times x = -3x$, $-3 \\times 4 = -12$.\n\n$2x^2 + 5x - 12$\n\n**Answer:** $2x^2 + 5x - 12$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Area of a trapezium",
+      "calculator": true,
+      "format": "number",
+      "question": "A trapezium has parallel sides of 9 m and 15 m and a perpendicular height of 6 m. What is its area, in m²?",
+      "accept": {
+        "value": 72,
+        "tol": 0,
+        "unit": "m2"
+      },
+      "solution": "Area $= \\dfrac{1}{2}(a + b)h = \\dfrac{1}{2}(9 + 15) \\times 6 = 72$ m²\n\n**Answer:** $72$ m²"
+    },
+    {
+      "n": 9,
+      "strand": "Space",
+      "skill": "Solving simultaneous equations graphically",
+      "calculator": true,
+      "format": "hotspot",
+      "question": "The graphs of $y = x + 2$ and $y = -2x + 8$ are drawn. **Click the point** where they meet.",
+      "paper_question": "Where do the lines y = x + 2 and y = −2x + 8 meet? Give the coordinates.",
+      "grid": {
+        "xmin": -3,
+        "xmax": 5,
+        "ymin": -2,
+        "ymax": 9,
+        "lines": [
+          {
+            "m": 1,
+            "c": 2,
+            "label": "y = x + 2"
+          },
+          {
+            "m": -2,
+            "c": 8,
+            "label": "y = −2x + 8"
+          }
+        ]
+      },
+      "answer_point": [
+        2,
+        4
+      ],
+      "solution": "Set them equal: $x + 2 = -2x + 8$, so $3x = 6$ and $x = 2$.\n\n$y = 2 + 2 = 4$\n\n**Answer:** $(2, 4)$"
+    },
+    {
+      "n": 10,
+      "strand": "Statistics and probability",
+      "skill": "Median and outliers",
+      "calculator": true,
+      "format": "choice",
+      "question": "Data: 3, 5, 6, 6, 7, 8, 41. Which statement is true?",
+      "options": [
+        "The mean is affected more by 41 than the median is.",
+        "The median is 7.",
+        "The mode is 41.",
+        "The range is 41."
+      ],
+      "answer_index": 0,
+      "solution": "Median (the 4th of 7 values) $= 6$, mode $= 6$, range $= 41 - 3 = 38$. The mean is $76 \\div 7 \\approx 10.9$, pulled up by the outlier $41$, while the median stays at $6$.\n\n**Answer:** The mean is affected more by 41 than the median is."
+    },
+    {
+      "n": 11,
+      "strand": "Number",
+      "skill": "Simple interest (finding time)",
+      "calculator": true,
+      "format": "number",
+      "question": "How many years will it take \\$2 500 to earn \\$450 simple interest at 4.5% per year?",
+      "accept": {
+        "value": 4,
+        "tol": 0,
+        "unit": "years"
+      },
+      "solution": "$I = PRT$, so $T = \\dfrac{450}{2500 \\times 0.045} = \\dfrac{450}{112.5} = 4$\n\n**Answer:** $4$ years"
+    },
+    {
+      "n": 12,
+      "strand": "Measurement",
+      "skill": "Converting units of area",
+      "calculator": true,
+      "format": "choice",
+      "question": "A paddock is 0.35 square kilometres. How many hectares is that? (1 km² = 100 ha)",
+      "options": [
+        "35 ha",
+        "3.5 ha",
+        "350 ha",
+        "3 500 ha"
+      ],
+      "answer_index": 0,
+      "solution": "$0.35 \\times 100 = 35$ ha\n\n**Answer:** 35 ha"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Rearranging formulas",
+      "calculator": true,
+      "format": "number",
+      "question": "The formula $F = 1.8C + 32$ converts Celsius to Fahrenheit. What is 95°F in degrees Celsius?",
+      "accept": {
+        "value": 35,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$95 = 1.8C + 32$, so $1.8C = 63$ and $C = 63 \\div 1.8 = 35$.\n\n**Answer:** $35°$C"
+    },
+    {
+      "n": 14,
+      "strand": "Space",
+      "skill": "Enlargement",
+      "calculator": true,
+      "format": "choice",
+      "question": "A photo 10 cm by 15 cm is enlarged by a scale factor of 2.5. What are the new dimensions?",
+      "options": [
+        "25 cm by 37.5 cm",
+        "12.5 cm by 17.5 cm",
+        "20 cm by 30 cm",
+        "25 cm by 30 cm"
+      ],
+      "answer_index": 0,
+      "solution": "Multiply each side by $2.5$: $10 \\times 2.5 = 25$ and $15 \\times 2.5 = 37.5$.\n\n**Answer:** 25 cm by 37.5 cm"
+    },
+    {
+      "n": 15,
+      "strand": "Measurement",
+      "skill": "Pythagoras with a missing short side",
+      "calculator": true,
+      "format": "number",
+      "question": "A right-angled triangle has a hypotenuse of 26 cm and one side of 10 cm. How long is the third side, in cm?",
+      "accept": {
+        "value": 24,
+        "tol": 0,
+        "unit": "cm"
+      },
+      "solution": "$x^2 = 26^2 - 10^2 = 676 - 100 = 576$\n\n$x = 24$ cm\n\n**Answer:** $24$ cm"
+    },
+    {
+      "n": 16,
+      "strand": "Statistics and probability",
+      "skill": "Two-way tables",
+      "calculator": true,
+      "format": "choice",
+      "question": "Of 80 people surveyed, 50 drink coffee. Of the coffee drinkers, 30 also drink tea. If a coffee drinker is chosen at random, what is the probability they also drink tea?",
+      "options": [
+        "3/5",
+        "3/8",
+        "5/8",
+        "30/80"
+      ],
+      "answer_index": 0,
+      "solution": "Only coffee drinkers count: $\\dfrac{30}{50} = \\dfrac{3}{5}$.\n\n**Answer:** $\\dfrac{3}{5}$"
+    },
+    {
+      "n": 17,
+      "strand": "Number",
+      "skill": "Speed, distance and time",
+      "calculator": true,
+      "format": "number",
+      "question": "A train travels at 96 km/h for 2 hours 15 minutes. How far does it go, in km?",
+      "accept": {
+        "value": 216,
+        "tol": 0,
+        "unit": "km"
+      },
+      "solution": "$2$ h $15$ min $= 2.25$ h.\n\n$96 \\times 2.25 = 216$ km\n\n**Answer:** $216$ km"
+    },
+    {
+      "n": 18,
+      "strand": "Algebra",
+      "skill": "Interpreting gradient",
+      "calculator": true,
+      "format": "choice",
+      "question": "A phone plan's monthly cost is shown by $C = 0.4d + 15$, where $d$ is GB of data. What does 0.4 mean?",
+      "options": [
+        "Each GB costs \\$0.40.",
+        "The fixed monthly fee is \\$0.40.",
+        "The plan includes 0.4 GB.",
+        "The cost goes down by \\$0.40 per GB."
+      ],
+      "answer_index": 0,
+      "solution": "$0.4$ multiplies $d$, so it's the cost for each GB. $15$ is the fixed monthly fee.\n\n**Answer:** Each GB costs \\$0.40."
+    },
+    {
+      "n": 19,
+      "strand": "Measurement",
+      "skill": "Surface area of a cylinder",
+      "calculator": true,
+      "format": "number",
+      "question": "A closed cylinder has a radius of 3 cm and a height of 10 cm. What is its total surface area, to the nearest cm²?",
+      "accept": {
+        "value": 245,
+        "tol": 1,
+        "unit": "cm2"
+      },
+      "solution": "Two circles: $2\\pi r^2 = 2\\pi \\times 9 \\approx 56.5$. Curved surface: $2\\pi rh = 2\\pi \\times 3 \\times 10 \\approx 188.5$.\n\n$56.5 + 188.5 = 245$ cm²\n\n**Answer:** $245$ cm²"
+    },
+    {
+      "n": 20,
+      "strand": "Space",
+      "skill": "Angles in polygons",
+      "calculator": true,
+      "format": "number",
+      "question": "What is the size of each interior angle of a regular octagon, in degrees?",
+      "accept": {
+        "value": 135,
+        "tol": 0,
+        "unit": "degrees"
+      },
+      "solution": "Sum of interior angles $= (8 - 2) \\times 180 = 1080°$.\n\n$1080 \\div 8 = 135°$\n\n**Answer:** $135°$"
+    }
+  ]
+}

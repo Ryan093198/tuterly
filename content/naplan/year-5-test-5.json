@@ -1,0 +1,321 @@
+{
+  "year": 5,
+  "test": 5,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Place value of decimals",
+      "calculator": false,
+      "format": "choice",
+      "question": "In 5.37, what is the value of the 7?",
+      "options": [
+        "7 ones",
+        "7 tenths",
+        "7 hundredths",
+        "7 tens"
+      ],
+      "answer_index": 2,
+      "solution": "In $5.37$: $5$ ones, $3$ tenths, $7$ hundredths.\n\n**Answer:** 7 hundredths"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Adding 4-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A plane flew 2 475 km on Monday and 1 836 km on Tuesday. How far did it fly altogether, in km?",
+      "accept": {
+        "value": 4311,
+        "tol": 0,
+        "unit": "km"
+      },
+      "solution": "$2475 + 1836$\n\n$2000 + 1000 = 3000$, $475 + 836 = 1311$\n\n$3000 + 1311 = 4311$\n\n**Answer:** $4\\,311$ km"
+    },
+    {
+      "n": 3,
+      "strand": "Space",
+      "skill": "Identifying angles",
+      "calculator": false,
+      "format": "choice",
+      "question": "What type of angle is between the hands of a clock at 2 o'clock?",
+      "options": [
+        "acute",
+        "right",
+        "obtuse",
+        "reflex"
+      ],
+      "answer_index": 0,
+      "solution": "Each hour mark is $30°$ apart. At 2 o'clock the hands are $2 \\times 30° = 60°$ apart, which is less than $90°$.\n\n**Answer:** acute"
+    },
+    {
+      "n": 4,
+      "strand": "Measurement",
+      "skill": "Converting time",
+      "calculator": false,
+      "format": "choice",
+      "question": "How many minutes are in 2 and a half hours?",
+      "options": [
+        "120",
+        "130",
+        "150",
+        "250"
+      ],
+      "answer_index": 2,
+      "solution": "$2$ hours $= 120$ minutes and half an hour $= 30$ minutes.\n\n$120 + 30 = 150$\n\n**Answer:** $150$"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Equivalent fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which fraction is equal to 4/6?",
+      "options": [
+        "2/3",
+        "3/4",
+        "8/10",
+        "1/6"
+      ],
+      "answer_index": 0,
+      "solution": "Divide the top and bottom by $2$: $\\dfrac{4}{6} = \\dfrac{2}{3}$.\n\n**Answer:** $\\dfrac{2}{3}$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Multiplying by 10 and 100",
+      "calculator": false,
+      "format": "number",
+      "question": "A box of paper has 500 sheets. How many sheets are in 30 boxes?",
+      "accept": {
+        "value": 15000,
+        "tol": 0,
+        "unit": "sheets"
+      },
+      "solution": "$500 \\times 30 = 500 \\times 3 \\times 10 = 1500 \\times 10 = 15\\,000$\n\n**Answer:** $15\\,000$ sheets"
+    },
+    {
+      "n": 7,
+      "strand": "Space",
+      "skill": "Plotting points",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "Starting at $(0, 0)$, Jo moves **3 units across** and **4 units up**. **Click the grid** at the point she reaches.",
+      "paper_question": "Starting at (0, 0), Jo moves 3 units across and 4 units up. What are the coordinates of the point she reaches?",
+      "grid": {
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 6,
+        "points": []
+      },
+      "answer_point": [
+        3,
+        4
+      ],
+      "solution": "The first number tells you how far across: $3$. The second number tells you how far up: $4$.\n\n**Answer:** $(3, 4)$"
+    },
+    {
+      "n": 8,
+      "strand": "Statistics and probability",
+      "skill": "Probability as a fraction",
+      "calculator": false,
+      "format": "choice",
+      "question": "A normal 6-sided dice is rolled. What is the chance of rolling a number greater than 4?",
+      "options": [
+        "1/6",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "answer_index": 1,
+      "solution": "The numbers greater than $4$ are $5$ and $6$: that's $2$ out of $6$.\n\n$\\dfrac{2}{6} = \\dfrac{1}{3}$\n\n**Answer:** $\\dfrac{1}{3}$"
+    },
+    {
+      "n": 9,
+      "strand": "Measurement",
+      "skill": "Area of a rectangle",
+      "calculator": false,
+      "format": "number",
+      "question": "A rectangle has an area of 54 cm². Its width is 6 cm. What is its length, in centimetres?",
+      "accept": {
+        "value": 9,
+        "tol": 0,
+        "unit": "cm"
+      },
+      "solution": "Area $=$ length $\\times$ width, so length $= 54 \\div 6 = 9$.\n\n**Answer:** $9$ cm"
+    },
+    {
+      "n": 10,
+      "strand": "Number",
+      "skill": "Ordering fractions, decimals and percentages",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the amounts into order from **smallest** to **largest**.",
+      "paper_question": "Write these in order from smallest to largest: 0.6, 1/4, 45%, 0.09",
+      "items": [
+        "$0.6$",
+        "$\\dfrac{1}{4}$",
+        "$45\\%$",
+        "$0.09$"
+      ],
+      "answer_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "solution": "Write them all as decimals: $0.6$, $\\dfrac{1}{4} = 0.25$, $45\\% = 0.45$, $0.09$.\n\n$0.09 < 0.25 < 0.45 < 0.6$\n\n**Answer:** $0.09$, $\\dfrac{1}{4}$, $45\\%$, $0.6$"
+    },
+    {
+      "n": 11,
+      "strand": "Algebra",
+      "skill": "Number patterns (decimals)",
+      "calculator": false,
+      "format": "choice",
+      "question": "Look at this pattern.\n\n$1.2, 1.5, 1.8, 2.1, \\square$\n\nWhat is the missing number?",
+      "options": [
+        "2.2",
+        "2.4",
+        "2.5",
+        "3.1"
+      ],
+      "answer_index": 1,
+      "solution": "The pattern goes up by $0.3$ each time.\n\n$2.1 + 0.3 = 2.4$\n\n**Answer:** $2.4$"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Division with remainders",
+      "calculator": false,
+      "format": "number",
+      "question": "58 people need to cross a river. A boat carries 8 people at a time. How many trips are needed to take everyone across?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "trips"
+      },
+      "solution": "$58 \\div 8 = 7$ remainder $2$. Seven trips carry $56$ people; one more trip is needed for the last $2$.\n\n**Answer:** $8$ trips"
+    },
+    {
+      "n": 13,
+      "strand": "Measurement",
+      "skill": "Perimeter of shapes",
+      "calculator": false,
+      "format": "choice",
+      "question": "A regular hexagon has sides of 7 cm. What is its perimeter?",
+      "options": [
+        "35 cm",
+        "42 cm",
+        "49 cm",
+        "28 cm"
+      ],
+      "answer_index": 1,
+      "solution": "A regular hexagon has $6$ equal sides.\n\n$6 \\times 7 = 42$ cm\n\n**Answer:** 42 cm"
+    },
+    {
+      "n": 14,
+      "strand": "Statistics and probability",
+      "skill": "Interpreting a line graph",
+      "calculator": false,
+      "format": "choice",
+      "question": "A line graph shows a puppy's mass: 2 kg at 1 month, 4 kg at 2 months, 7 kg at 3 months. Between which two months did it gain the most?",
+      "options": [
+        "1 to 2 months",
+        "2 to 3 months",
+        "it gained the same each month",
+        "it lost mass"
+      ],
+      "answer_index": 1,
+      "solution": "From 1 to 2 months: $4 - 2 = 2$ kg. From 2 to 3 months: $7 - 4 = 3$ kg.\n\n**Answer:** 2 to 3 months"
+    },
+    {
+      "n": 15,
+      "strand": "Algebra",
+      "skill": "Using a rule",
+      "calculator": false,
+      "format": "number",
+      "question": "A taxi charges \\$4 to start plus \\$2 for every kilometre. How much does a 9 km trip cost, in dollars?",
+      "accept": {
+        "value": 22,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "Distance charge: $9 \\times 2 = 18$ dollars. Add the starting charge: $18 + 4 = 22$.\n\n**Answer:** \\$22"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Rotational symmetry",
+      "calculator": false,
+      "format": "choice",
+      "question": "A shape looks the same after a half turn but not after a quarter turn. Which shape could it be?",
+      "options": [
+        "a rectangle (not a square)",
+        "a square",
+        "a circle",
+        "an equilateral triangle"
+      ],
+      "answer_index": 0,
+      "solution": "A rectangle matches itself after a half turn ($180°$) but not after a quarter turn. A square and a circle match after a quarter turn too, and an equilateral triangle doesn't match after a half turn.\n\n**Answer:** a rectangle (not a square)"
+    },
+    {
+      "n": 17,
+      "strand": "Number",
+      "skill": "Fraction of an amount",
+      "calculator": false,
+      "format": "number",
+      "question": "A water tank holds 600 L. It is 3/4 full. How many litres are in it?",
+      "accept": {
+        "value": 450,
+        "tol": 0,
+        "unit": "L"
+      },
+      "solution": "One quarter of $600$: $600 \\div 4 = 150$. Three quarters: $3 \\times 150 = 450$.\n\n**Answer:** $450$ L"
+    },
+    {
+      "n": 18,
+      "strand": "Measurement",
+      "skill": "Volume",
+      "calculator": false,
+      "format": "choice",
+      "question": "A container is a rectangular prism 10 cm by 10 cm by 10 cm. How much water does it hold? (1 cm³ holds 1 mL.)",
+      "options": [
+        "100 mL",
+        "300 mL",
+        "1 L",
+        "10 L"
+      ],
+      "answer_index": 2,
+      "solution": "Volume $= 10 \\times 10 \\times 10 = 1000$ cm³, which holds $1000$ mL $= 1$ L.\n\n**Answer:** 1 L"
+    },
+    {
+      "n": 19,
+      "strand": "Number",
+      "skill": "Multiplying decimals by whole numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A school buys 6 basketballs at \\$18.50 each. How much do they cost altogether, in dollars?",
+      "accept": {
+        "value": 111.0,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "$6 \\times 18 = 108$ and $6 \\times 0.50 = 3$.\n\n$108 + 3 = 111$\n\n**Answer:** \\$111"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Emma saves \\$15 each week. She already has \\$40. How many weeks until she has at least \\$160?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "weeks"
+      },
+      "solution": "She needs $160 - 40 = 120$ dollars more.\n\n$120 \\div 15 = 8$ weeks.\n\n**Answer:** $8$ weeks"
+    }
+  ]
+}

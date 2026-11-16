@@ -1,0 +1,328 @@
+{
+  "year": 9,
+  "test": 3,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Order of operations",
+      "calculator": false,
+      "format": "number",
+      "question": "Calculate $5 + 3 \\times (8 - 2)^2 \\div 9$.",
+      "accept": {
+        "value": 17,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Brackets: $6$. Index: $36$. Then $3 \\times 36 = 108$, $108 \\div 9 = 12$. Add: $5 + 12 = 17$.\n\n**Answer:** $17$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Negative indices",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $5^{-2}$?",
+      "options": [
+        "1/25",
+        "−25",
+        "−10",
+        "1/10"
+      ],
+      "answer_index": 0,
+      "solution": "A negative index means a reciprocal: $5^{-2} = \\dfrac{1}{5^2} = \\dfrac{1}{25}$.\n\n**Answer:** $\\dfrac{1}{25}$"
+    },
+    {
+      "n": 3,
+      "strand": "Number",
+      "skill": "Fractions",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is $\\dfrac{5}{6} - \\dfrac{3}{8}$?",
+      "options": [
+        "11/24",
+        "2/2",
+        "1/12",
+        "13/24"
+      ],
+      "answer_index": 0,
+      "solution": "Common denominator $24$: $\\dfrac{20}{24} - \\dfrac{9}{24} = \\dfrac{11}{24}$\n\n**Answer:** $\\dfrac{11}{24}$"
+    },
+    {
+      "n": 4,
+      "strand": "Number",
+      "skill": "Percentages without a calculator",
+      "calculator": false,
+      "format": "number",
+      "question": "What is 15% of 260?",
+      "accept": {
+        "value": 39,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$10\\% = 26$ and $5\\% = 13$.\n\n$26 + 13 = 39$\n\n**Answer:** $39$"
+    },
+    {
+      "n": 5,
+      "strand": "Space",
+      "skill": "Midpoints on the Cartesian plane",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "**Click the grid** at the midpoint of $A(-4, 1)$ and $B(2, -3)$.",
+      "paper_question": "What is the midpoint of A(−4, 1) and B(2, −3)?",
+      "grid": {
+        "xmin": -5,
+        "xmax": 4,
+        "ymin": -4,
+        "ymax": 3,
+        "points": [
+          {
+            "x": -4,
+            "y": 1,
+            "label": "A"
+          },
+          {
+            "x": 2,
+            "y": -3,
+            "label": "B"
+          }
+        ]
+      },
+      "answer_point": [
+        -1,
+        -1
+      ],
+      "solution": "Midpoint $= \\left(\\dfrac{-4 + 2}{2}, \\dfrac{1 + (-3)}{2}\\right) = (-1, -1)$\n\n**Answer:** $(-1, -1)$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Compound percentage change",
+      "calculator": true,
+      "format": "number",
+      "question": "A car worth \\$32 000 loses 15% of its value each year. What is it worth after 2 years, in dollars?",
+      "accept": {
+        "value": 23120.0,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "After 1 year: $32\\,000 \\times 0.85 = 27\\,200$.\n\nAfter 2 years: $27\\,200 \\times 0.85 = 23\\,120$\n\n**Answer:** \\$23 120"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Factorising",
+      "calculator": true,
+      "format": "choice",
+      "question": "Factorise fully: $12x^2 - 18x$.",
+      "options": [
+        "6x(2x − 3)",
+        "3x(4x − 6)",
+        "$6(2x^{2} - 3x)$",
+        "x(12x − 18)"
+      ],
+      "answer_index": 0,
+      "solution": "The highest common factor of $12x^2$ and $18x$ is $6x$.\n\n$12x^2 - 18x = 6x(2x - 3)$\n\n**Answer:** $6x(2x - 3)$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "Ordering measurements in different units",
+      "calculator": true,
+      "format": "order",
+      "question": "Drag the lengths into order from **shortest** to **longest**.",
+      "paper_question": "Write these in order from shortest to longest: 0.45 km, 4 600 cm, 460 m, 45 000 mm",
+      "items": [
+        "0.45 km",
+        "4 600 cm",
+        "460 m",
+        "45 000 mm"
+      ],
+      "answer_order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "solution": "Change them all to metres: $0.45$ km $= 450$ m, $4\\,600$ cm $= 46$ m, $460$ m, $45\\,000$ mm $= 45$ m.\n\n$45 < 46 < 450 < 460$\n\n**Answer:** 45 000 mm, 4 600 cm, 0.45 km, 460 m"
+    },
+    {
+      "n": 9,
+      "strand": "Measurement",
+      "skill": "Pythagoras in 2D",
+      "calculator": true,
+      "format": "number",
+      "question": "A rectangular TV screen is 120 cm wide and 50 cm high. How long is its diagonal, in cm?",
+      "accept": {
+        "value": 130,
+        "tol": 0,
+        "unit": "cm"
+      },
+      "solution": "$d^2 = 120^2 + 50^2 = 14\\,400 + 2\\,500 = 16\\,900$\n\n$d = \\sqrt{16\\,900} = 130$ cm\n\n**Answer:** $130$ cm"
+    },
+    {
+      "n": 10,
+      "strand": "Statistics and probability",
+      "skill": "Relative frequency",
+      "calculator": true,
+      "format": "choice",
+      "question": "A spinner was spun 250 times and landed on red 85 times. Based on this, about how many reds would you expect in 1 000 spins?",
+      "options": [
+        "340",
+        "85",
+        "250",
+        "400"
+      ],
+      "answer_index": 0,
+      "solution": "Relative frequency of red $= \\dfrac{85}{250} = 0.34$.\n\n$0.34 \\times 1000 = 340$\n\n**Answer:** $340$"
+    },
+    {
+      "n": 11,
+      "strand": "Algebra",
+      "skill": "Linear equations with brackets",
+      "calculator": true,
+      "format": "number",
+      "question": "Solve $4(x + 3) = 2(x - 5)$. What is $x$?",
+      "accept": {
+        "value": -11,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Expand: $4x + 12 = 2x - 10$.\n\n$2x = -22$, so $x = -11$.\n\n**Answer:** $x = -11$"
+    },
+    {
+      "n": 12,
+      "strand": "Measurement",
+      "skill": "Surface area of a rectangular prism",
+      "calculator": true,
+      "format": "choice",
+      "question": "A closed box is 10 cm by 6 cm by 4 cm. What is its surface area?",
+      "options": [
+        "248 cm²",
+        "240 cm²",
+        "124 cm²",
+        "200 cm²"
+      ],
+      "answer_index": 0,
+      "solution": "Pairs of faces: $2(10 \\times 6) + 2(10 \\times 4) + 2(6 \\times 4) = 120 + 80 + 48 = 248$ cm²\n\n**Answer:** 248 cm²"
+    },
+    {
+      "n": 13,
+      "strand": "Number",
+      "skill": "Ratio and scale",
+      "calculator": true,
+      "format": "number",
+      "question": "A map has a scale of 1 : 25 000. Two towns are 18 cm apart on the map. How far apart are they in real life, in kilometres?",
+      "accept": {
+        "value": 4.5,
+        "tol": 0.001,
+        "unit": "km"
+      },
+      "solution": "$18 \\times 25\\,000 = 450\\,000$ cm $= 4\\,500$ m $= 4.5$ km\n\n**Answer:** $4.5$ km"
+    },
+    {
+      "n": 14,
+      "strand": "Space",
+      "skill": "Trigonometry: finding a side",
+      "calculator": true,
+      "format": "choice",
+      "question": "In a right-angled triangle, the hypotenuse is 20 m and the angle at the base is 35°. The side opposite 35° is closest to:",
+      "options": [
+        "11.5 m",
+        "16.4 m",
+        "14.0 m",
+        "28.6 m"
+      ],
+      "answer_index": 0,
+      "solution": "$\\text{opposite} = 20 \\sin 35° \\approx 20 \\times 0.574 \\approx 11.5$ m\n\n**Answer:** 11.5 m"
+    },
+    {
+      "n": 15,
+      "strand": "Algebra",
+      "skill": "Substitution into formulas",
+      "calculator": true,
+      "format": "number",
+      "question": "The formula $s = ut + \\dfrac{1}{2}at^2$ gives distance. Find $s$ when $u = 4$, $a = 3$ and $t = 6$.",
+      "accept": {
+        "value": 78.0,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "$s = 4 \\times 6 + \\dfrac{1}{2} \\times 3 \\times 6^2 = 24 + 54 = 78$\n\n**Answer:** $78$"
+    },
+    {
+      "n": 16,
+      "strand": "Statistics and probability",
+      "skill": "Two-step probability without replacement",
+      "calculator": true,
+      "format": "choice",
+      "question": "A bag has 3 red and 2 blue marbles. Two are taken out without replacement. What is the probability both are red?",
+      "options": [
+        "3/10",
+        "9/25",
+        "6/25",
+        "1/2"
+      ],
+      "answer_index": 0,
+      "solution": "$P(\\text{red, then red}) = \\dfrac{3}{5} \\times \\dfrac{2}{4} = \\dfrac{6}{20} = \\dfrac{3}{10}$\n\n**Answer:** $\\dfrac{3}{10}$"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Volume of a composite solid",
+      "calculator": true,
+      "format": "number",
+      "question": "A solid is a cylinder of radius 2 m and height 5 m with a cube of side 2 m on top. What is its total volume, in m³, to 1 decimal place?",
+      "accept": {
+        "value": 70.8,
+        "tol": 0.1,
+        "unit": "m3"
+      },
+      "solution": "Cylinder: $\\pi \\times 2^2 \\times 5 \\approx 62.83$ m³. Cube: $2^3 = 8$ m³.\n\n$62.83 + 8 = 70.8$ m³\n\n**Answer:** $70.8$ m³"
+    },
+    {
+      "n": 18,
+      "strand": "Algebra",
+      "skill": "Equation of a line",
+      "calculator": true,
+      "format": "choice",
+      "question": "Which line is parallel to $y = 3x - 2$ and passes through $(0, 5)$?",
+      "options": [
+        "y = 3x + 5",
+        "y = −3x + 5",
+        "y = 5x + 3",
+        "y = (1/3)x + 5"
+      ],
+      "answer_index": 0,
+      "solution": "Parallel lines have the same gradient, $3$. Passing through $(0, 5)$ means the $y$-intercept is $5$.\n\n**Answer:** $y = 3x + 5$"
+    },
+    {
+      "n": 19,
+      "strand": "Statistics and probability",
+      "skill": "Mean from a frequency table",
+      "calculator": true,
+      "format": "number",
+      "question": "Goals scored per game:\n\n| Goals | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| Games | 4 | 7 | 6 | 3 |\n\nWhat is the mean number of goals per game?",
+      "accept": {
+        "value": 1.4,
+        "tol": 0.001,
+        "unit": ""
+      },
+      "solution": "Total goals: $0 \\times 4 + 1 \\times 7 + 2 \\times 6 + 3 \\times 3 = 28$. Total games: $20$.\n\n$28 \\div 20 = 1.4$\n\n**Answer:** $1.4$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Profit and loss",
+      "calculator": true,
+      "format": "number",
+      "question": "A shop buys jackets for \\$60 and sells them at a 35% profit. What is the selling price, in dollars?",
+      "accept": {
+        "value": 81,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$60 \\times 1.35 = 81$\n\n**Answer:** \\$81"
+    }
+  ]
+}

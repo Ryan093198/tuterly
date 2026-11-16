@@ -195,3 +195,36 @@
 .nq-pick.is-wrong circle:first-child { fill: rgba(245, 158, 11, 0.2); stroke: #d97706; }
 .nq-pick.is-wrong .nq-pick__dot { fill: #d97706; }
 .nq-answer { fill: none; stroke: #16a34a; stroke-width: 2.6; stroke-dasharray: 4 3; }
+
+/* Paid practice tests 2 to 5 (NaplanUnlock, test pages, year-page cards) */
+.np-crumbs { margin: 0 0 10px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.np-crumbs a { color: var(--brand-text); }
+.npt-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.npt-tabs a { padding: 8px 14px; border-radius: 999px; border: 2px solid var(--border); background: var(--card); font-weight: 800; font-size: 14.5px; color: var(--foreground); text-decoration: none; }
+.npt-tabs a.is-on { background: var(--foreground); border-color: var(--foreground); color: #fff; }
+.npt-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin-top: 18px; }
+.npt-card { display: grid; gap: 4px; padding: 16px; border-radius: 16px; border: 2px solid var(--border); background: var(--card); box-shadow: 0 3px 0 var(--edge); text-decoration: none; color: var(--foreground); }
+.npt-card:hover, .npt-card:focus-visible { border-color: var(--brand); }
+.npt-card.is-free { border-color: var(--brand); }
+.npt-card__t { font-weight: 900; font-size: 17px; }
+.npt-card__x { font-size: 13.5px; font-weight: 700; color: var(--muted); }
+.nt-nexttest { margin: 14px 0 0; }
+.nu { display: grid; gap: 14px; max-width: 640px; }
+.nu-card { padding: 24px; border-radius: 20px; border: 2px solid var(--brand); background: var(--card); box-shadow: 0 6px 0 var(--edge); }
+.nu-card--quiet { border-color: var(--border); box-shadow: none; }
+.nu-lock { margin: 0 0 6px; font-size: 26px; }
+.nu-t { margin: 0 0 8px; font-family: var(--font-display, inherit); font-weight: 900; font-size: 22px; line-height: 1.25; color: var(--foreground); }
+.nu-t2 { margin: 0 0 8px; font-weight: 900; font-size: 17px; color: var(--foreground); }
+.nu-x { margin: 0 0 16px; font-size: 16px; line-height: 1.55; color: var(--muted); }
+.nu-form { display: grid; gap: 10px; }
+.nu-form--row { grid-template-columns: minmax(0, 1fr) auto; }
+.nu-label { font-weight: 700; font-size: 14px; color: var(--foreground); }
+.nu-form input[type="email"] { height: 48px; padding: 0 14px; border-radius: 12px; border: 2px solid var(--border); font: inherit; font-size: 16px; }
+.nu-form input[type="email"]:focus { outline: none; border-color: var(--brand); }
+.nu-agree { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; }
+.nu-agree input { width: 18px; height: 18px; accent-color: var(--brand); }
+.nu-btn2 { min-height: 48px; padding: 0 16px; border-radius: 12px; border: 2px solid var(--foreground); background: var(--card); font: inherit; font-weight: 800; font-size: 15px; color: var(--foreground); cursor: pointer; }
+.nu-err { margin: 12px 0 0; font-weight: 700; color: #b42318; }
+@media (max-width: 560px) { .nu-form--row { grid-template-columns: 1fr; } }
+
+.tb-section.np-testsec { padding-top: 4px; }

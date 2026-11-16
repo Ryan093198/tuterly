@@ -1,0 +1,327 @@
+{
+  "year": 3,
+  "test": 4,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Counting by tens",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which number is 10 more than 395?",
+      "options": [
+        "396",
+        "405",
+        "495",
+        "305"
+      ],
+      "answer_index": 1,
+      "solution": "Adding $10$ makes the tens digit go up by one. $9$ tens plus $1$ ten is $10$ tens, which makes $1$ more hundred.\n\n$395 + 10 = 405$\n\n**Answer:** $405$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Multiplication facts for 4",
+      "calculator": false,
+      "format": "number",
+      "question": "A table has 4 legs. How many legs do 6 tables have?",
+      "accept": {
+        "value": 24,
+        "tol": 0,
+        "unit": "legs"
+      },
+      "solution": "$6 \\times 4 = 24$\n\n**Answer:** $24$ legs"
+    },
+    {
+      "n": 3,
+      "strand": "Space",
+      "skill": "Properties of 3D objects",
+      "calculator": false,
+      "format": "choice",
+      "question": "How many faces does a cube have?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "12"
+      ],
+      "answer_index": 1,
+      "solution": "A cube has $6$ square faces: top, bottom, front, back, left and right.\n\n**Answer:** $6$"
+    },
+    {
+      "n": 4,
+      "strand": "Measurement",
+      "skill": "Reading a calendar",
+      "calculator": false,
+      "format": "choice",
+      "question": "The 1st of April is a Monday. What day of the week is 8 April?",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Sunday",
+        "Wednesday"
+      ],
+      "answer_index": 0,
+      "solution": "A week is $7$ days, and $1 + 7 = 8$. So 8 April is the same day of the week as 1 April.\n\n**Answer:** Monday"
+    },
+    {
+      "n": 5,
+      "strand": "Number",
+      "skill": "Ordering money amounts",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the amounts into order from **least** to **most**.",
+      "paper_question": "Write these amounts in order from least to most: \\$2.50, \\$5.00, \\$0.75, \\$2.05",
+      "items": [
+        "\\$2.50",
+        "\\$5.00",
+        "\\$0.75",
+        "\\$2.05"
+      ],
+      "answer_order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "solution": "Compare the dollars first: $\\$0.75$ has no dollars, so it is the least. $\\$5.00$ is the most.\n\nFor $\\$2.50$ and $\\$2.05$: 50 cents is more than 5 cents.\n\n**Answer:** \\$0.75, \\$2.05, \\$2.50, \\$5.00"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Adding 3-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "A school ordered 125 red balloons and 148 blue balloons. How many balloons is that altogether?",
+      "accept": {
+        "value": 273,
+        "tol": 0,
+        "unit": "balloons"
+      },
+      "solution": "$125 + 148$\n\n$100 + 100 = 200$, $20 + 40 = 60$, $5 + 8 = 13$\n\n$200 + 60 + 13 = 273$\n\n**Answer:** $273$ balloons"
+    },
+    {
+      "n": 7,
+      "strand": "Statistics and probability",
+      "skill": "Most likely outcome",
+      "calculator": false,
+      "format": "choice",
+      "question": "A bag has 2 green, 5 yellow and 1 purple marble. Kai takes one without looking. Which colour is he most likely to get?",
+      "options": [
+        "green",
+        "yellow",
+        "purple",
+        "they are all equally likely"
+      ],
+      "answer_index": 1,
+      "solution": "There are more yellow marbles ($5$) than any other colour, so yellow is most likely.\n\n**Answer:** yellow"
+    },
+    {
+      "n": 8,
+      "strand": "Algebra",
+      "skill": "Skip counting patterns",
+      "calculator": false,
+      "format": "choice",
+      "question": "Kelly counts by fives starting at 15. Which number will she say?",
+      "options": [
+        "42",
+        "53",
+        "60",
+        "64"
+      ],
+      "answer_index": 2,
+      "solution": "Counting by fives from $15$: $15, 20, 25, 30, \\dots$ Every number ends in $0$ or $5$. Of the options, only $60$ ends in $0$ or $5$.\n\n**Answer:** $60$"
+    },
+    {
+      "n": 9,
+      "strand": "Space",
+      "skill": "Following directions on a grid",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "A robot starts at $R$. It moves **4 squares left** and then **2 squares down**. **Click the grid** where the robot stops.",
+      "paper_question": "On a grid, a robot starts at (5, 4). It moves 4 squares left and then 2 squares down. Where does it stop? Give the point.",
+      "grid": {
+        "xmin": 0,
+        "xmax": 6,
+        "ymin": 0,
+        "ymax": 5,
+        "points": [
+          {
+            "x": 5,
+            "y": 4,
+            "label": "R"
+          }
+        ]
+      },
+      "answer_point": [
+        1,
+        2
+      ],
+      "solution": "The robot $R$ starts at $(5, 4)$.\n\n4 squares left: $5 - 4 = 1$ across.\n\n2 squares down: $4 - 2 = 2$ up.\n\n**Answer:** the robot stops at $(1, 2)$."
+    },
+    {
+      "n": 10,
+      "strand": "Measurement",
+      "skill": "Length in centimetres",
+      "calculator": false,
+      "format": "number",
+      "question": "A ribbon is 1 metre long. Ruby cuts it into 4 equal pieces. How long is each piece in centimetres?",
+      "accept": {
+        "value": 25,
+        "tol": 0,
+        "unit": "cm"
+      },
+      "solution": "$1$ metre $= 100$ centimetres.\n\n$100 \\div 4 = 25$\n\n**Answer:** $25$ cm"
+    },
+    {
+      "n": 11,
+      "strand": "Number",
+      "skill": "Fractions of a collection",
+      "calculator": false,
+      "format": "choice",
+      "question": "There are 20 children in a class. Half of them have a pet dog. How many children have a pet dog?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "answer_index": 1,
+      "solution": "Half means $2$ equal groups.\n\n$20 \\div 2 = 10$\n\n**Answer:** $10$ children"
+    },
+    {
+      "n": 12,
+      "strand": "Number",
+      "skill": "Subtracting 2-digit numbers",
+      "calculator": false,
+      "format": "number",
+      "question": "Ollie had 75 marbles. He gave 28 to his sister. How many marbles does he have left?",
+      "accept": {
+        "value": 47,
+        "tol": 0,
+        "unit": "marbles"
+      },
+      "solution": "$75 - 28$\n\n$75 - 30 = 45$, then add back $2$: $47$\n\n**Answer:** $47$ marbles"
+    },
+    {
+      "n": 13,
+      "strand": "Measurement",
+      "skill": "Telling time to 5 minutes",
+      "calculator": false,
+      "format": "choice",
+      "question": "A clock shows the minute hand pointing at 4 and the hour hand just after 9. What time is it?",
+      "options": [
+        "9:20",
+        "9:04",
+        "4:45",
+        "9:40"
+      ],
+      "answer_index": 0,
+      "solution": "The hour hand is just after $9$, so it is after 9 o'clock. The minute hand on $4$ means $4 \\times 5 = 20$ minutes.\n\n**Answer:** 9:20"
+    },
+    {
+      "n": 14,
+      "strand": "Algebra",
+      "skill": "Related number facts",
+      "calculator": false,
+      "format": "choice",
+      "question": "$8 + 6 = 14$. Which of these is also true?",
+      "options": [
+        "14 − 6 = 8",
+        "14 + 6 = 8",
+        "8 − 6 = 14",
+        "6 − 8 = 14"
+      ],
+      "answer_index": 0,
+      "solution": "Addition and subtraction undo each other. If $8 + 6 = 14$, then $14 - 6 = 8$.\n\n**Answer:** $14 - 6 = 8$"
+    },
+    {
+      "n": 15,
+      "strand": "Statistics and probability",
+      "skill": "Reading a column graph",
+      "calculator": false,
+      "format": "number",
+      "question": "A graph shows the number of cars in a car park each hour.\n\n| Time | Cars |\n|---|---|\n| 9 am | 15 |\n| 10 am | 22 |\n| 11 am | 30 |\n\nHow many more cars were there at 11 am than at 9 am?",
+      "accept": {
+        "value": 15,
+        "tol": 0,
+        "unit": "cars"
+      },
+      "solution": "At 11 am: $30$ cars. At 9 am: $15$ cars.\n\n$30 - 15 = 15$\n\n**Answer:** $15$ more cars"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Half and quarter turns",
+      "calculator": false,
+      "format": "choice",
+      "question": "A clock's minute hand points to 12. It makes a half turn. Which number does it point to now?",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "12"
+      ],
+      "answer_index": 1,
+      "solution": "A half turn goes halfway around the clock. Halfway from $12$ is $6$.\n\n**Answer:** $6$"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Money: making change",
+      "calculator": false,
+      "format": "number",
+      "question": "Grace buys a drink for \\$2.50 and pays with a \\$5 note. How much change does she get, in dollars?",
+      "accept": {
+        "value": 2.5,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "\\$5.00 − \\$2.50 = \\$2.50\n\n**Answer:** \\$2.50"
+    },
+    {
+      "n": 18,
+      "strand": "Statistics and probability",
+      "skill": "Interpreting data",
+      "calculator": false,
+      "format": "choice",
+      "question": "In a class vote, 9 children chose swimming, 6 chose soccer and 9 chose netball. Which statement is true?",
+      "options": [
+        "Swimming and netball got the same number of votes.",
+        "Soccer got the most votes.",
+        "Netball got the fewest votes.",
+        "Swimming got the most votes on its own."
+      ],
+      "answer_index": 0,
+      "solution": "Swimming got $9$ votes and netball got $9$ votes, so they are equal. Soccer got the fewest ($6$).\n\n**Answer:** Swimming and netball got the same number of votes."
+    },
+    {
+      "n": 19,
+      "strand": "Number",
+      "skill": "Multiplication word problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Tickets to the zoo cost \\$5 each. How much do tickets cost for a family of 4, in dollars?",
+      "accept": {
+        "value": 20,
+        "tol": 0,
+        "unit": "$"
+      },
+      "solution": "$4 \\times 5 = 20$\n\n**Answer:** \\$20"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step problems",
+      "calculator": false,
+      "format": "number",
+      "question": "A baker makes 36 rolls. She puts them in bags of 4 and sells 5 bags. How many bags are left?",
+      "accept": {
+        "value": 4,
+        "tol": 0,
+        "unit": "bags"
+      },
+      "solution": "First find how many bags she makes: $36 \\div 4 = 9$ bags.\n\nThen subtract the bags sold: $9 - 5 = 4$\n\n**Answer:** $4$ bags"
+    }
+  ]
+}

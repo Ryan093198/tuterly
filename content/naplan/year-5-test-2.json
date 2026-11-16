@@ -1,0 +1,327 @@
+{
+  "year": 5,
+  "test": 2,
+  "questions": [
+    {
+      "n": 1,
+      "strand": "Number",
+      "skill": "Place value to 100 000",
+      "calculator": false,
+      "format": "choice",
+      "question": "What is the value of the digit 8 in 28 015?",
+      "options": [
+        "8",
+        "800",
+        "8 000",
+        "80 000"
+      ],
+      "answer_index": 2,
+      "solution": "In $28\\,015$ the digits are: $2$ ten thousands, $8$ thousands, $0$ hundreds, $1$ ten, $5$ ones.\n\n**Answer:** $8\\,000$"
+    },
+    {
+      "n": 2,
+      "strand": "Number",
+      "skill": "Multiplying by a 1-digit number",
+      "calculator": false,
+      "format": "number",
+      "question": "A theatre has 9 rows with 26 seats in each row. How many seats are there?",
+      "accept": {
+        "value": 234,
+        "tol": 0,
+        "unit": "seats"
+      },
+      "solution": "$26 \\times 9$\n\n$20 \\times 9 = 180$ and $6 \\times 9 = 54$\n\n$180 + 54 = 234$\n\n**Answer:** $234$ seats"
+    },
+    {
+      "n": 3,
+      "strand": "Measurement",
+      "skill": "Converting units of length",
+      "calculator": false,
+      "format": "choice",
+      "question": "How many centimetres are in 2.5 metres?",
+      "options": [
+        "25",
+        "250",
+        "2 500",
+        "205"
+      ],
+      "answer_index": 1,
+      "solution": "$1$ metre $= 100$ cm, so $2.5$ metres $= 2.5 \\times 100 = 250$ cm.\n\n**Answer:** $250$"
+    },
+    {
+      "n": 4,
+      "strand": "Space",
+      "skill": "Classifying angles",
+      "calculator": false,
+      "format": "choice",
+      "question": "An angle measures 120°. What type of angle is it?",
+      "options": [
+        "acute",
+        "right",
+        "obtuse",
+        "straight"
+      ],
+      "answer_index": 2,
+      "solution": "An obtuse angle is between $90°$ and $180°$. $120°$ is in that range.\n\n**Answer:** obtuse"
+    },
+    {
+      "n": 5,
+      "strand": "Statistics and probability",
+      "skill": "Probability as a fraction",
+      "calculator": false,
+      "format": "choice",
+      "question": "A spinner has 10 equal sections numbered 1 to 10. What is the chance of spinning an even number?",
+      "options": [
+        "1/10",
+        "1/5",
+        "1/2",
+        "2/5"
+      ],
+      "answer_index": 2,
+      "solution": "The even numbers are $2, 4, 6, 8, 10$: that's $5$ out of $10$ sections.\n\n$\\dfrac{5}{10} = \\dfrac{1}{2}$\n\n**Answer:** $\\dfrac{1}{2}$"
+    },
+    {
+      "n": 6,
+      "strand": "Number",
+      "skill": "Ordering fractions",
+      "calculator": false,
+      "format": "order",
+      "question": "Drag the fractions into order from **smallest** to **largest**.",
+      "paper_question": "Write these fractions in order from smallest to largest: 3/4, 1/2, 1/4, 5/8",
+      "items": [
+        "$\\dfrac{3}{4}$",
+        "$\\dfrac{1}{2}$",
+        "$\\dfrac{1}{4}$",
+        "$\\dfrac{5}{8}$"
+      ],
+      "answer_order": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "solution": "Change them all to eighths: $\\dfrac{3}{4} = \\dfrac{6}{8}$, $\\dfrac{1}{2} = \\dfrac{4}{8}$, $\\dfrac{1}{4} = \\dfrac{2}{8}$, $\\dfrac{5}{8}$.\n\n$\\dfrac{2}{8} < \\dfrac{4}{8} < \\dfrac{5}{8} < \\dfrac{6}{8}$\n\n**Answer:** $\\dfrac{1}{4}$, $\\dfrac{1}{2}$, $\\dfrac{5}{8}$, $\\dfrac{3}{4}$"
+    },
+    {
+      "n": 7,
+      "strand": "Algebra",
+      "skill": "Number patterns and rules",
+      "calculator": false,
+      "format": "number",
+      "question": "A pattern starts at 3 and the rule is \"multiply by 2, then add 1\".\n\n$3, 7, 15, 31, \\square$\n\nWhat is the next number?",
+      "accept": {
+        "value": 63,
+        "tol": 0,
+        "unit": ""
+      },
+      "solution": "Apply the rule to $31$: $31 \\times 2 = 62$, then $62 + 1 = 63$.\n\n**Answer:** $63$"
+    },
+    {
+      "n": 8,
+      "strand": "Measurement",
+      "skill": "24-hour time",
+      "calculator": false,
+      "format": "choice",
+      "question": "A plane leaves at 16:40. What is this time in 12-hour time?",
+      "options": [
+        "4:40 am",
+        "4:40 pm",
+        "6:40 pm",
+        "16:40 pm"
+      ],
+      "answer_index": 1,
+      "solution": "Hours after 12 in 24-hour time are afternoon or evening: $16 - 12 = 4$.\n\n**Answer:** 4:40 pm"
+    },
+    {
+      "n": 9,
+      "strand": "Space",
+      "skill": "Coordinates on a grid",
+      "calculator": false,
+      "format": "hotspot",
+      "question": "Point $A$ is at $(1, 2)$. Point $B$ is **5 units right** and **3 units up** from $A$. **Click the grid** at point $B$.",
+      "paper_question": "Point A is at (1, 2). Point B is 5 units right and 3 units up from A. What are the coordinates of B?",
+      "grid": {
+        "xmin": 0,
+        "xmax": 8,
+        "ymin": 0,
+        "ymax": 6,
+        "points": [
+          {
+            "x": 1,
+            "y": 2,
+            "label": "A"
+          }
+        ]
+      },
+      "answer_point": [
+        6,
+        5
+      ],
+      "solution": "Right changes the first number: $1 + 5 = 6$.\n\nUp changes the second number: $2 + 3 = 5$.\n\n**Answer:** $B(6, 5)$"
+    },
+    {
+      "n": 10,
+      "strand": "Number",
+      "skill": "Division with remainders",
+      "calculator": false,
+      "format": "number",
+      "question": "96 students go on an excursion. Each minibus seats 12 students. How many minibuses are needed?",
+      "accept": {
+        "value": 8,
+        "tol": 0,
+        "unit": "minibuses"
+      },
+      "solution": "$96 \\div 12 = 8$ exactly, so $8$ minibuses are full and no one is left over.\n\n**Answer:** $8$ minibuses"
+    },
+    {
+      "n": 11,
+      "strand": "Number",
+      "skill": "Equivalent fractions and decimals",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which decimal is the same as 3/10?",
+      "options": [
+        "0.03",
+        "0.3",
+        "3.10",
+        "3.0"
+      ],
+      "answer_index": 1,
+      "solution": "Three tenths is written $0.3$.\n\n**Answer:** $0.3$"
+    },
+    {
+      "n": 12,
+      "strand": "Measurement",
+      "skill": "Area of a rectangle",
+      "calculator": false,
+      "format": "number",
+      "question": "A rectangular rug is 4 m long and 3 m wide. What is its area in square metres?",
+      "accept": {
+        "value": 12,
+        "tol": 0,
+        "unit": "m2"
+      },
+      "solution": "Area $=$ length $\\times$ width $= 4 \\times 3 = 12$ m²\n\n**Answer:** $12$ m²"
+    },
+    {
+      "n": 13,
+      "strand": "Algebra",
+      "skill": "Factors",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which number is a factor of 48?",
+      "options": [
+        "5",
+        "7",
+        "9",
+        "12"
+      ],
+      "answer_index": 3,
+      "solution": "$48 \\div 12 = 4$ exactly, so $12$ is a factor. $48$ can't be shared exactly by $5$, $7$ or $9$.\n\n**Answer:** $12$"
+    },
+    {
+      "n": 14,
+      "strand": "Number",
+      "skill": "Adding decimals (money)",
+      "calculator": false,
+      "format": "number",
+      "question": "A sandwich costs \\$6.75 and a drink costs \\$3.40. What is the total cost, in dollars?",
+      "accept": {
+        "value": 10.15,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "Add the dollars: $6 + 3 = 9$. Add the cents: $75 + 40 = 115$ cents, which is \\$1.15.\n\n\\$9 + \\$1.15 = \\$10.15\n\n**Answer:** \\$10.15"
+    },
+    {
+      "n": 15,
+      "strand": "Statistics and probability",
+      "skill": "Interpreting a table",
+      "calculator": false,
+      "format": "choice",
+      "question": "The table shows the number of pets owned by students in a class.\n\n| Pet | Number |\n|---|---|\n| Dog | 11 |\n| Cat | 7 |\n| Fish | 4 |\n| Bird | 3 |\n\nWhat fraction of the pets are cats?",
+      "options": [
+        "7/25",
+        "7/18",
+        "1/4",
+        "7/11"
+      ],
+      "answer_index": 0,
+      "solution": "Total pets: $11 + 7 + 4 + 3 = 25$. Cats: $7$.\n\n**Answer:** $\\dfrac{7}{25}$"
+    },
+    {
+      "n": 16,
+      "strand": "Space",
+      "skill": "Lines of symmetry",
+      "calculator": false,
+      "format": "choice",
+      "question": "Which shape has exactly 2 lines of symmetry?",
+      "options": [
+        "a rectangle (not a square)",
+        "a square",
+        "an equilateral triangle",
+        "a circle"
+      ],
+      "answer_index": 0,
+      "solution": "A rectangle has one line of symmetry down the middle and one across the middle. A square has $4$, an equilateral triangle has $3$ and a circle has infinitely many.\n\n**Answer:** a rectangle (not a square)"
+    },
+    {
+      "n": 17,
+      "strand": "Measurement",
+      "skill": "Perimeter",
+      "calculator": false,
+      "format": "number",
+      "question": "A square garden bed has a perimeter of 36 m. How long is each side, in metres?",
+      "accept": {
+        "value": 9,
+        "tol": 0,
+        "unit": "m"
+      },
+      "solution": "A square has $4$ equal sides.\n\n$36 \\div 4 = 9$\n\n**Answer:** $9$ m"
+    },
+    {
+      "n": 18,
+      "strand": "Number",
+      "skill": "Fraction of an amount",
+      "calculator": false,
+      "format": "number",
+      "question": "A bakery made 40 pies. Three-fifths of them were meat pies. How many meat pies were there?",
+      "accept": {
+        "value": 24,
+        "tol": 0,
+        "unit": "pies"
+      },
+      "solution": "One-fifth of $40$: $40 \\div 5 = 8$\n\nThree-fifths: $3 \\times 8 = 24$\n\n**Answer:** $24$ meat pies"
+    },
+    {
+      "n": 19,
+      "strand": "Algebra",
+      "skill": "Finding unknowns",
+      "calculator": false,
+      "format": "choice",
+      "question": "In the number sentence $\\square \\div 6 = 7$, what number goes in the box?",
+      "options": [
+        "13",
+        "42",
+        "48",
+        "36"
+      ],
+      "answer_index": 1,
+      "solution": "Division undoes multiplication: $\\square = 7 \\times 6 = 42$.\n\n**Answer:** $42$"
+    },
+    {
+      "n": 20,
+      "strand": "Number",
+      "skill": "Multi-step problems",
+      "calculator": false,
+      "format": "number",
+      "question": "Mr Lee buys 3 boxes of pencils at \\$12.50 each. He pays with a \\$50 note. How much change does he get, in dollars?",
+      "accept": {
+        "value": 12.5,
+        "tol": 0.001,
+        "unit": "$"
+      },
+      "solution": "Cost: $3 \\times 12.50 = 37.50$, so \\$37.50.\n\nChange: $50 - 37.50 = 12.50$\n\n**Answer:** \\$12.50"
+    }
+  ]
+}

@@ -7,8 +7,8 @@ import "./naplan-callout.css";
 // Online; Years 3 and 5 are the simpler online test. With no year, links all
 // four. Server component; drop it into any page.
 const LINE = {
-  3: "20 free NAPLAN-style questions, marked instantly with worked solutions.",
-  5: "20 free NAPLAN-style questions, marked instantly with worked solutions.",
+  3: "20 free questions that work like NAPLAN Online, with drag-and-drop and grid questions. Marked instantly with worked solutions.",
+  5: "20 free questions that work like NAPLAN Online, with drag-and-drop and grid questions. Marked instantly with worked solutions.",
   7: "20 free questions that work like NAPLAN Online: non-calculator section, on-screen calculator, drag-and-drop and graph questions. Marked instantly.",
   9: "20 free questions that work like NAPLAN Online: non-calculator section, on-screen calculator, drag-and-drop and graph questions. Marked instantly.",
 };
@@ -27,10 +27,10 @@ export default function NaplanCallout({ year, title, className = "" }) {
   return (
     <aside className={`npc ${className}`} aria-label="NAPLAN practice tests">
       <p className="npc__t">{title || "Free NAPLAN numeracy practice tests"}</p>
-      <p className="npc__x">20 NAPLAN-style questions for each year, marked instantly with worked solutions. Years 7 and 9 work like NAPLAN Online.</p>
+      <p className="npc__x">A free 20-question test for each year that works like NAPLAN Online, marked instantly with worked solutions, and 4 more tests for each year.</p>
       <p className="npc__links">
-        <Link href={`/naplan/${naplanSlug(7)}`}>Year 7 (NAPLAN Online-style)</Link>
-        <Link href={`/naplan/${naplanSlug(9)}`}>Year 9 (NAPLAN Online-style)</Link>
+        <Link href={`/naplan/${naplanSlug(7)}`}>Year 7</Link>
+        <Link href={`/naplan/${naplanSlug(9)}`}>Year 9</Link>
         <Link href={`/naplan/${naplanSlug(3)}`}>Year 3</Link>
         <Link href={`/naplan/${naplanSlug(5)}`}>Year 5</Link>
       </p>
