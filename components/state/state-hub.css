@@ -149,3 +149,13 @@
 .tft-topic__chev { font-size: 22px; line-height: 1; color: var(--brand, #0e9fbf); transition: transform .15s; }
 .tft-topic[open] .tft-topic__chev { transform: rotate(90deg); }
 .tft-topic[open] > summary { padding-bottom: 8px; }
+
+/* /teachers: link to the step-by-step demo page (/teachers/how-it-works). */
+.tft-howlink { display: flex; align-items: center; gap: 22px; margin: 26px 0 8px; padding: 18px; border-radius: 22px; background: var(--ink, #0b1a2c); color: #fff; text-decoration: none; box-shadow: 0 18px 40px rgba(11,26,44,.18); transition: transform .2s ease; }
+.tft-howlink:hover { transform: translateY(-2px); }
+.tft-howlink__img { flex: none; width: 120px; height: 150px; object-fit: cover; object-position: top; border-radius: 8px; transform: rotate(-4deg); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+.tft-howlink__copy { display: flex; flex-direction: column; gap: 6px; }
+.tft-howlink__k { font-size: 12.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; color: #7fd3e4; }
+.tft-howlink__t { font-size: 22px; font-weight: 900; line-height: 1.25; }
+.tft-howlink__go { margin-top: 4px; font-weight: 800; color: #7fd3e4; }
+@media (max-width: 600px) { .tft-howlink { flex-direction: column; align-items: flex-start; } .tft-howlink__img { width: 100px; height: 120px; } .tft-howlink__t { font-size: 19px; } }

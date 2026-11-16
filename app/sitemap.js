@@ -87,6 +87,7 @@ const STATIC_PAGES = [
   { path: "/parents/studied-but-failed-maths-test", priority: 0.8, changeFrequency: "monthly" },
   { path: "/parents/dyscalculia", priority: 0.8, changeFrequency: "monthly" },
   { path: "/teachers", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/teachers/how-it-works", priority: 0.7, changeFrequency: "monthly" },
   { path: "/best-maths-apps-australia", priority: 0.9, changeFrequency: "monthly" },
   { path: "/maths", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/pythagoras-theorem", priority: 0.9, changeFrequency: "monthly" },

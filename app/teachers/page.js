@@ -8,7 +8,6 @@ import { getWorkedExamples } from "@/lib/worked-examples";
 import "katex/dist/katex.min.css";
 import "@/components/study/worked-examples.css";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
-import TeacherStory from "@/components/teachers/TeacherStory";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
@@ -202,7 +201,14 @@ export default function TeachersPage() {
           </p>
           <TftButtons />
 
-          <TeacherStory demoHref={TFT_DEMO} />
+          <Link href="/teachers/how-it-works" className="tft-howlink">
+            <img src="/teachers/demo/archie-brown-pythagoras.jpg" alt="" className="tft-howlink__img" />
+            <span className="tft-howlink__copy">
+              <span className="tft-howlink__k">See it step by step</span>
+              <span className="tft-howlink__t">Follow one real class test from the copier to every student&rsquo;s phone</span>
+              <span className="tft-howlink__go">See how it works →</span>
+            </span>
+          </Link>
 
           <div className="tft-each">
             <div>
