@@ -8,9 +8,10 @@ import { getWorkedExamples } from "@/lib/worked-examples";
 import "katex/dist/katex.min.css";
 import "@/components/study/worked-examples.css";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
+import TeacherSignup from "@/components/teachers/TeacherSignup";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
-import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
 import "@/components/paper/paper.css";
@@ -54,15 +55,13 @@ const TFT_FEATURES = [
   { n: "Results students can use", x: "Students get a marked-up copy of their paper, and the questions they missed go into their Tuterly app to practise." },
   { n: "Classes and teachers", x: "Each teacher sees their own classes, and a head of department can see them all." },
 ];
-// Two ways to reach out, each with a short email ready to send.
-const mail = (subject, body) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-const TFT_DEMO = mail("Tuterly for Teachers: book a demo", "Hi Tuterly team,\n\nI'd like a demo of Tuterly for Teachers.\n\nName:\nSchool:\nYear levels I teach:\nBest time to talk:\n\nThanks");
-const TFT_ACCOUNT = mail("Tuterly for Teachers: teacher account", "Hi Tuterly team,\n\nI'd like to set up a teacher account for my own classes.\n\nName:\nSchool:\nYear levels and number of classes:\n\nThanks");
+// Sign up and book a demo both open the sign-up form below
+// (components/teachers/TeacherSignup.jsx), with the matching option picked.
 function TftButtons({ light = false }) {
   return (
     <p className="tz-hero-btns tft-btns">
-      <a href={TFT_DEMO} className="tb-btn tb-btn--primary">Book a demo</a>
-      <a href={TFT_ACCOUNT} className={`tb-btn tb-btn--secondary${light ? " tft-btn--light" : ""}`}>Ask about a teacher account</a>
+      <a href="#teacher-signup" className="tb-btn tb-btn--primary">Sign up for a teacher account</a>
+      <a href="#book-demo" className={`tb-btn tb-btn--secondary${light ? " tft-btn--light" : ""}`}>Book a demo</a>
     </p>
   );
 }
@@ -100,7 +99,7 @@ const FAQS = [
   },
   {
     q: "Can I see my students' results?",
-    a: "Not in the free Teacher Zone: each student sees their own mark and the worked solutions. Tuterly for Teachers, for paper tests marked from a scan, gives you results for the whole class and every student. Email learn@tuterly.com.au to set it up.",
+    a: "Not in the free Teacher Zone: each student sees their own mark and the worked solutions. Tuterly for Teachers, for paper tests marked from a scan, gives you results for the whole class and every student. Sign up on this page, or email learn@tuterly.com.au, to set it up.",
   },
   {
     q: "Is the Teacher Zone free? Do students need an account?",
@@ -168,8 +167,9 @@ export default function TeachersPage() {
           <p className="tft-banner__k">New · Tuterly for Teachers</p>
           <p className="tft-banner__t">We mark your class&rsquo;s paper tests, then make practice for each student on the topics they&rsquo;re weakest in.</p>
           <p className="tz-hero-btns tft-btns">
-            <a href={TFT_DEMO} className="tb-btn tb-btn--primary">Book a demo</a>
+            <a href="#teacher-signup" className="tb-btn tb-btn--primary">Sign up</a>
             <Link href="/teachers/how-it-works" className="tb-btn tb-btn--secondary">See how it works</Link>
+            <a href="#book-demo" className="tft-banner__demo">or book a demo</a>
           </p>
         </div>
         <dl className="sh-facts">
@@ -263,14 +263,13 @@ export default function TeachersPage() {
               </div>
             ))}
           </div>
-          <div className="tft-cta">
+          <div className="tft-cta tft-cta--form">
             <p className="tft-cta__title">Set it up in your school, or get a teacher account.</p>
             <p className="sh-p">
-              It&rsquo;s running now at Bayside Academics in Melbourne, and we&rsquo;re setting up schools one at a time. Book a demo and we&rsquo;ll show you a class set marked from start to finish, whether it&rsquo;s for your whole department or just your own classes.
+              It&rsquo;s running now at Bayside Academics in Melbourne, and we&rsquo;re setting up schools one at a time. Sign up for your own classes, book a demo to see a class set marked from start to finish, or set it up for your whole department.
             </p>
-            <TftButtons />
-            <p className="sh-p tft-cta__or">Or email us any time: <a href={`mailto:${CONTACT_EMAIL}`} className="tft-cta__mail">{CONTACT_EMAIL}</a></p>
           </div>
+          <TeacherSignup />
         </div>
       </section>
 
@@ -306,7 +305,7 @@ export default function TeachersPage() {
       <CtaBand
         id="teachers-tft-final"
         title="Want practice made for every student in your class?"
-        lead="Tuterly for Teachers marks your paper tests and writes each student their own practice on their weakest topics. Book a demo, or ask about an account for your own classes."
+        lead="Tuterly for Teachers marks your paper tests and writes each student their own practice on their weakest topics. Sign up for your own classes, or book a demo first."
       >
         <TftButtons light />
       </CtaBand>

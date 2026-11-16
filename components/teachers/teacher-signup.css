@@ -1,0 +1,41 @@
+/* Tuterly for Teachers sign-up form (/teachers and /teachers/how-it-works). */
+.tsu { position: relative; margin: 26px 0 0; max-width: 760px; padding: 24px; border-radius: 20px; background: var(--card, #fff); border: 2px solid var(--brand, #0e9fbf); text-align: left; scroll-margin-top: 90px; box-shadow: 0 12px 34px rgba(15, 40, 60, .08); }
+.tsu-anchor { position: absolute; top: -90px; }
+.tsu .tsu-k { margin: 0 0 4px; font-size: 12.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; color: var(--brand-text, #0b7d96); }
+.tsu .tsu-title { margin: 0 0 6px; font-size: 24px; font-weight: 900; line-height: 1.2; }
+.tsu .tsu-lead { margin: 0 0 18px; font-size: 16px; line-height: 1.55; color: var(--muted, #52606d); }
+.tsu fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
+.tsu legend { padding: 0; margin: 0 0 8px; font-size: 14px; font-weight: 700; }
+.tsu legend em, .tsu-f em { font-style: normal; font-weight: 500; color: var(--muted, #52606d); }
+.tsu-want { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tsu-want legend { grid-column: 1 / -1; }
+.tsu-want__opt { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--border, #d9e0e6); cursor: pointer; transition: border-color .15s, background .15s; }
+.tsu-want__opt input { position: absolute; opacity: 0; pointer-events: none; }
+.tsu-want__opt.is-on { border-color: var(--brand, #0e9fbf); background: var(--brand-soft, #e6f6f8); }
+.tsu-want__opt:has(input:focus-visible) { outline: 2px solid var(--brand, #0e9fbf); outline-offset: 2px; }
+.tsu-want__t { font-weight: 800; font-size: 15.5px; }
+.tsu-want__x { font-size: 13.5px; color: var(--muted, #52606d); }
+.tsu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; margin: 0 0 16px; }
+.tsu-f { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; }
+.tsu-f--wide { grid-column: 1 / -1; }
+.tsu-f input, .tsu-f select, .tsu-f textarea { font: inherit; font-weight: 500; font-size: 16px; padding: 11px 13px; border-radius: 12px; border: 1.5px solid var(--border, #d9e0e6); background: #fff; color: var(--foreground, #111); width: 100%; box-sizing: border-box; }
+.tsu-f textarea { resize: vertical; min-height: 84px; }
+.tsu-f input:focus, .tsu-f select:focus, .tsu-f textarea:focus { outline: none; border-color: var(--brand, #0e9fbf); box-shadow: 0 0 0 3px rgba(14, 159, 191, .18); }
+.tsu-years > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.tsu-chip { display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; border: 1.5px solid var(--border, #d9e0e6); font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.tsu-chip input { position: absolute; opacity: 0; pointer-events: none; }
+.tsu-chip.is-on { border-color: var(--brand, #0e9fbf); background: var(--brand, #0e9fbf); color: #fff; }
+.tsu-chip:has(input:focus-visible) { outline: 2px solid var(--brand, #0e9fbf); outline-offset: 2px; }
+.tsu-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.tsu .tsu-err { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: #fdecec; color: #a12626; font-weight: 600; font-size: 14.5px; }
+.tsu-go { min-width: 180px; border: 0; cursor: pointer; font-size: 16px; }
+.tsu-go:disabled { opacity: .6; cursor: default; }
+.tsu .tsu-fine { margin: 12px 0 0; font-size: 13.5px; color: var(--muted, #52606d); }
+.tsu-fine a, .tsu-done a { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.tsu .tsu-done__t { margin: 0 0 8px; font-size: 24px; font-weight: 900; }
+.tsu .tsu-done__p { margin: 0 0 6px; font-size: 16px; line-height: 1.55; }
+@media (max-width: 640px) {
+  .tsu { padding: 18px 16px; }
+  .tsu-want { grid-template-columns: 1fr; }
+  .tsu-grid { grid-template-columns: 1fr; }
+}

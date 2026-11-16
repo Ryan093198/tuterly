@@ -260,3 +260,7 @@
 .hw-pack.is-on span { animation: hw-pop .35s ease forwards; animation-delay: calc(var(--i) * 260ms + 2s); }
 @media (max-width: 760px) { .hw-top { min-height: 200px; } .hw-more li { font-size: 12px; padding: 4px 9px; } }
 @media (prefers-reduced-motion: reduce) { .hw-pack span { opacity: 1; transform: none; } }
+
+.hw-end__form { display: flex; justify-content: center; margin-top: 10px; }
+.hw-end__form .tsu { width: 100%; }
+.hw-end .tsu p { max-width: none; }

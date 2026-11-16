@@ -159,3 +159,7 @@
 .tft-howlink__t { font-size: 22px; font-weight: 900; line-height: 1.25; }
 .tft-howlink__go { margin-top: 4px; font-weight: 800; color: #7fd3e4; }
 @media (max-width: 600px) { .tft-howlink { flex-direction: column; align-items: flex-start; } .tft-howlink__img { width: 100px; height: 120px; } .tft-howlink__t { font-size: 19px; } }
+
+/* /teachers: sign-up form replaces the mailto buttons (16 Nov 2026). */
+.tft-cta--form { margin-bottom: 0; }
+.tft-banner__demo { align-self: center; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; color: var(--brand-text); }
