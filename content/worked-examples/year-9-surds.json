@@ -1,0 +1,93 @@
+{
+ "examples": [
+  {
+   "title": "Rational or irrational?",
+   "question": "Sort these numbers into rational and irrational.\n\n$$\\sqrt{49}, \\quad \\sqrt{20}, \\quad 0.\\overline{36}, \\quad \\pi, \\quad -\\frac{5}{8}, \\quad \\sqrt{\\frac{9}{16}}, \\quad \\sqrt{2} \\times \\sqrt{8}$$",
+   "solution": "**Key idea:** A number is **rational** if it can be written as a fraction $\\dfrac{a}{b}$ of two integers. That includes integers, terminating decimals and recurring decimals. A number is **irrational** if its decimal goes on forever without repeating. The square root of a whole number that isn't a perfect square is irrational, and so is $\\pi$.\n\n1. $\\sqrt{49} = 7$, which is $\\dfrac{7}{1}$, so it's **rational**.\n2. $20$ is not a perfect square ($16 < 20 < 25$), so $\\sqrt{20} \\approx 4.4721\\ldots$ never repeats. It's **irrational**.\n3. $0.\\overline{36} = 0.363636\\ldots$ repeats, and recurring decimals are fractions: $0.\\overline{36} = \\dfrac{36}{99} = \\dfrac{4}{11}$. **Rational**.\n4. $\\pi = 3.14159\\ldots$ never repeats. **Irrational**. ($\\dfrac{22}{7}$ is only an approximation.)\n5. $-\\dfrac{5}{8}$ is already a fraction of two integers. **Rational**.\n6. $\\sqrt{\\dfrac{9}{16}} = \\dfrac{3}{4}$, because $3^2 = 9$ and $4^2 = 16$. **Rational**.\n7. $\\sqrt{2} \\times \\sqrt{8} = \\sqrt{16} = 4$. **Rational**, even though both parts are irrational.\n\n**Answer:** Rational: $\\sqrt{49}$, $0.\\overline{36}$, $-\\dfrac{5}{8}$, $\\sqrt{\\dfrac{9}{16}}$, $\\sqrt{2} \\times \\sqrt{8}$. Irrational: $\\sqrt{20}$, $\\pi$.",
+   "answer": "Irrational: $\\sqrt{20}$ and $\\pi$. The rest are rational."
+  },
+  {
+   "title": "Estimating a surd without a calculator",
+   "question": "Without a calculator, find the two consecutive whole numbers that $\\sqrt{40}$ lies between. Then estimate $\\sqrt{40}$ to one decimal place.",
+   "solution": "**Key idea:** Find the perfect squares just below and just above the number under the root. The square root sits between their square roots.\n\n1. The perfect squares either side of $40$ are $36 = 6^2$ and $49 = 7^2$.\n2. Since $36 < 40 < 49$:\n$$6 < \\sqrt{40} < 7$$\n3. $40$ is $4$ above $36$ but $9$ below $49$, so $\\sqrt{40}$ is closer to $6$.\n4. Test decimals by squaring:\n$$6.3^2 = 39.69 \\qquad 6.4^2 = 40.96$$\n5. $40$ is between these, and much closer to $39.69$ (a gap of $0.31$, against $0.96$), so $\\sqrt{40} \\approx 6.3$.\n6. Check on a calculator: $\\sqrt{40} = 6.3245\\ldots$ ✓\n\n**Answer:** $\\sqrt{40}$ is between $6$ and $7$, and $\\sqrt{40} \\approx 6.3$.",
+   "answer": "Between $6$ and $7$; $\\sqrt{40} \\approx 6.3$"
+  },
+  {
+   "title": "Simplifying a surd using the largest square factor",
+   "question": "Write $\\sqrt{72}$ in simplest surd form.",
+   "solution": "**Key idea:** $\\sqrt{a \\times b} = \\sqrt{a} \\times \\sqrt{b}$. Split the number into a **perfect square** times another number, using the **largest** perfect square that divides it. The perfect squares to try are $4, 9, 16, 25, 36, 49, 64, 81, 100$.\n\n1. Work down the list of perfect squares to find the largest one that divides $72$: $64$ doesn't, $49$ doesn't, $36$ does, because $72 = 36 \\times 2$.\n2. Split the root:\n$$\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2}$$\n3. Take the square root of the perfect square:\n$$= 6\\sqrt{2}$$\n4. Check the number left under the root: $2$ has no square factor other than $1$, so the surd is fully simplified.\n5. Check by squaring: $(6\\sqrt{2})^2 = 36 \\times 2 = 72$ ✓\n\n**Answer:** $\\sqrt{72} = 6\\sqrt{2}$",
+   "answer": "$6\\sqrt{2}$"
+  },
+  {
+   "title": "Adding and subtracting surds",
+   "question": "Simplify $3\\sqrt{12} + \\sqrt{75} - \\sqrt{27}$.",
+   "solution": "**Key idea:** You can only add or subtract **like surds**, which have the same number under the root (like $2\\sqrt{3}$ and $5\\sqrt{3}$). Simplify every surd first, then see what matches.\n\n1. Simplify each surd. All three have $3$ left under the root:\n$$3\\sqrt{12} = 3\\sqrt{4 \\times 3} = 3 \\times 2\\sqrt{3} = 6\\sqrt{3}$$\n$$\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$$\n$$\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$$\n2. Rewrite the expression:\n$$6\\sqrt{3} + 5\\sqrt{3} - 3\\sqrt{3}$$\n3. These are like surds, so collect them the same way you'd collect $6x + 5x - 3x$:\n$$= (6 + 5 - 3)\\sqrt{3} = 8\\sqrt{3}$$\n4. Check with a calculator: $3\\sqrt{12} + \\sqrt{75} - \\sqrt{27} \\approx 10.392 + 8.660 - 5.196 = 13.856$, and $8\\sqrt{3} \\approx 13.856$ ✓\n\n**Answer:** $8\\sqrt{3}$",
+   "answer": "$8\\sqrt{3}$"
+  },
+  {
+   "title": "Multiplying surds",
+   "question": "Simplify $2\\sqrt{6} \\times 5\\sqrt{3}$.",
+   "solution": "**Key idea:** Multiply the numbers outside the roots together and the numbers inside the roots together: $a\\sqrt{b} \\times c\\sqrt{d} = ac\\sqrt{bd}$. Then simplify.\n\n1. Multiply the outside numbers: $2 \\times 5 = 10$.\n2. Multiply the inside numbers: $\\sqrt{6} \\times \\sqrt{3} = \\sqrt{18}$.\n3. So far:\n$$2\\sqrt{6} \\times 5\\sqrt{3} = 10\\sqrt{18}$$\n4. $\\sqrt{18}$ isn't simplified yet, because $18 = 9 \\times 2$:\n$$10\\sqrt{18} = 10 \\times \\sqrt{9} \\times \\sqrt{2} = 10 \\times 3\\sqrt{2} = 30\\sqrt{2}$$\n5. Check with a calculator: $2\\sqrt{6} \\times 5\\sqrt{3} \\approx 42.426$ and $30\\sqrt{2} \\approx 42.426$ ✓\n\n**Answer:** $30\\sqrt{2}$",
+   "answer": "$30\\sqrt{2}$"
+  },
+  {
+   "title": "An exact answer from Pythagoras' theorem",
+   "question": "A square floor tile has sides of $5$ cm. Find the length of its diagonal as an exact surd in simplest form, then correct to two decimal places.",
+   "solution": "**Key idea:** The diagonal of a square splits it into two right-angled triangles, with the diagonal as the hypotenuse. An **exact** answer means leaving the square root in, simplified, rather than rounding.\n\n1. Use Pythagoras' theorem with both shorter sides equal to $5$ cm:\n$$d^2 = 5^2 + 5^2 = 25 + 25 = 50$$\n2. Take the square root:\n$$d = \\sqrt{50}$$\n3. Simplify. The largest square factor of $50$ is $25$:\n$$\\sqrt{50} = \\sqrt{25 \\times 2} = 5\\sqrt{2} \\text{ cm}$$\n4. Round only at the end: $5\\sqrt{2} = 7.0710\\ldots \\approx 7.07$ cm.\n5. Sense check: the diagonal should be longer than a side ($5$ cm) but shorter than two sides added ($10$ cm) ✓\n\n**Answer:** $5\\sqrt{2}$ cm, or about $7.07$ cm",
+   "answer": "$5\\sqrt{2}$ cm $\\approx 7.07$ cm"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Splitting a square root across a plus sign",
+   "wrong": "$\\sqrt{9 + 16} = \\sqrt{9} + \\sqrt{16} = 3 + 4 = 7$",
+   "fix": "You can split a square root across **multiplication**, but not across addition. Add first: $\\sqrt{9 + 16} = \\sqrt{25} = 5$. The same goes for subtraction: $\\sqrt{25 - 9}$ is $\\sqrt{16} = 4$, not $5 - 3 = 2$."
+  },
+  {
+   "title": "Stopping before the surd is fully simplified",
+   "wrong": "$\\sqrt{72} = \\sqrt{4 \\times 18} = 2\\sqrt{18}$",
+   "fix": "$18$ still has a square factor ($9$), so keep going: $2\\sqrt{18} = 2 \\times 3\\sqrt{2} = 6\\sqrt{2}$. Using the **largest** square factor first ($72 = 36 \\times 2$) gets there in one step. Always check that the number left under the root has no square factor."
+  },
+  {
+   "title": "Adding unlike surds",
+   "wrong": "$\\sqrt{2} + \\sqrt{3} = \\sqrt{5}$",
+   "fix": "$\\sqrt{2}$ and $\\sqrt{3}$ are unlike surds, like $x$ and $y$ in algebra, so $\\sqrt{2} + \\sqrt{3}$ can't be simplified. A calculator shows why: $\\sqrt{2} + \\sqrt{3} \\approx 3.15$, but $\\sqrt{5} \\approx 2.24$."
+  },
+  {
+   "title": "Forgetting that a surd times itself is a whole number",
+   "wrong": "$4\\sqrt{3} \\times 2\\sqrt{3} = 8\\sqrt{3}$",
+   "fix": "Multiply inside the roots too: $\\sqrt{3} \\times \\sqrt{3} = \\sqrt{9} = 3$. So $4\\sqrt{3} \\times 2\\sqrt{3} = 8 \\times 3 = 24$. In general, $\\sqrt{a} \\times \\sqrt{a} = a$."
+  },
+  {
+   "title": "Thinking every square root is irrational",
+   "wrong": "$\\sqrt{0.25}$ has a square root sign, so it's irrational.",
+   "fix": "$\\sqrt{0.25} = 0.5$, because $0.5^2 = 0.25$. That's a terminating decimal, so it's rational. Only roots that don't work out exactly, like $\\sqrt{0.3}$ or $\\sqrt{7}$, are irrational."
+  }
+ ],
+ "practice": {
+  "question": "Write $\\sqrt{98}$ in simplest surd form.",
+  "answer": "$7\\sqrt{2}$",
+  "solution": "**Key idea:** Find the largest perfect square that divides the number under the root.\n\n1. Try the perfect squares from the top: $81$ doesn't divide $98$, $64$ doesn't, $49$ does, because $98 = 49 \\times 2$.\n2. Split the root:\n$$\\sqrt{98} = \\sqrt{49} \\times \\sqrt{2} = 7\\sqrt{2}$$\n3. $2$ has no square factor, so this is fully simplified.\n4. Check: $(7\\sqrt{2})^2 = 49 \\times 2 = 98$ ✓\n\n**Answer:** $7\\sqrt{2}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What do you learn about surds in Year 9?",
+  "a": "Year 9 students learn that the real numbers are made of rational numbers (which can be written as fractions) and irrational numbers (decimals that never end or repeat). A surd is a square root that is irrational, like √2 or √20. Students estimate surds between whole numbers, simplify them using the largest square factor (√72 = 6√2), add and subtract like surds, multiply surds, and give exact surd answers to Pythagoras questions."
+ },
+ "turn": {
+  "question": "Simplify $4\\sqrt{3} \\times 2\\sqrt{3}$.",
+  "kind": "number",
+  "accept": {
+   "value": 24,
+   "tol": 0
+  },
+  "answer_display": "$24$",
+  "hint": "Multiply the numbers outside the roots, then multiply the numbers inside the roots. What is $\\sqrt{3} \\times \\sqrt{3}$?",
+  "solution": "**Key idea:** $a\\sqrt{b} \\times c\\sqrt{d} = ac\\sqrt{bd}$, and a surd times itself is the number under the root.\n\n1. Outside numbers: $4 \\times 2 = 8$\n2. Inside numbers: $\\sqrt{3} \\times \\sqrt{3} = \\sqrt{9} = 3$\n3. Multiply: $8 \\times 3 = 24$\n\n**Answer:** $24$ (a whole number, so the answer is rational)"
+ },
+ "turn_checked": {
+  "my_answer": "24",
+  "attempts": 1
+ }
+}

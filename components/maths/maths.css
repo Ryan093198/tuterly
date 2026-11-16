@@ -57,6 +57,9 @@
 .mx-plot__leg { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .mx-plot__d { stroke: var(--brand); stroke-width: 3; }
 .mx-plot__pt { fill: var(--foreground); }
+.mx-plot__mid { fill: var(--background, #fff); stroke: var(--brand); stroke-width: 3; }
+.mx-plot__tick { stroke: var(--foreground); stroke-width: 2; }
+.mx-plot .mx-plot__mlabel { fill: var(--brand); }
 .mx-calc__eq { margin: 0 0 12px; font-size: 18px; }
 .mx-calc__exact { margin: 0 0 8px; font-size: 17px; }
 
