@@ -46,6 +46,9 @@ export default function GuideShell({
   updated = UPDATED,
   moreTitle = "More for parents of Years 7 to 10",
   showGuides = true,
+  // A tool shown full width in the header instead of the app sign-up card
+  // (the teacher resources finder). The sign-up still shows lower down.
+  heroTool,
   children,
 }) {
   const updatedLabel = new Date(`${updated}T00:00:00`).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
@@ -72,7 +75,7 @@ export default function GuideShell({
               ))}
             </ol>
           </nav>
-          <div className="pg-hero__grid">
+          <div className={heroTool ? "pg-hero__grid pg-hero__grid--tool" : "pg-hero__grid"}>
             <div>
               <Eyebrow>{eyebrow}</Eyebrow>
               <h1 className="tb-h1 pg-h1">{h1}</h1>
@@ -95,12 +98,15 @@ export default function GuideShell({
                 </ul>
               )}
             </div>
-            <div className="pg-herocta">
-              <p className="pg-herocta__t">{ctaTitle}</p>
-              <p className="pg-herocta__x">{ctaText}</p>
-              <StudyAppCTA variant="hero" placement={`${placement}_hero`} slim />
-            </div>
+            {!heroTool && (
+              <div className="pg-herocta">
+                <p className="pg-herocta__t">{ctaTitle}</p>
+                <p className="pg-herocta__x">{ctaText}</p>
+                <StudyAppCTA variant="hero" placement={`${placement}_hero`} slim />
+              </div>
+            )}
           </div>
+          {heroTool && <div className="pg-hero__tool">{heroTool}</div>}
         </div>
       </header>
 

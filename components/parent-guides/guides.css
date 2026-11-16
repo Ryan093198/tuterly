@@ -75,3 +75,7 @@
 .pg-quick { margin-top: 18px; max-width: 64ch; padding: 14px 18px; border-radius: 14px; background: var(--brand-soft); border-left: 4px solid var(--brand); }
 .pg-quick__k { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-text); }
 .pg-quick__x { margin: 0; font-size: 16px; line-height: 1.6; color: var(--foreground); }
+
+/* Header with a full-width tool instead of the sign-up card (GuideShell heroTool). */
+@media (min-width: 960px) { .pg-hero__grid--tool { grid-template-columns: minmax(0, 760px); } }
+.pg-hero__tool { margin-top: 22px; }

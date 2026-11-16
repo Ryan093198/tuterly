@@ -2,7 +2,8 @@ import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 import { CHAPTER_YEARS, chaptersForYear } from "@/lib/chapter-pages";
-import { teacherChapterPath, chapterPrintables, chapterMindMap, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
+import { teacherChapterPath, chapterPrintables, chapterMindMap, teacherZoneHref, printableExamHref, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
+import TopicFinder from "@/components/teachers/TopicFinder";
 import "@/components/maths/maths.css";
 import "@/components/paper/paper.css";
 
@@ -14,6 +15,36 @@ const DESCRIPTION =
 
 export const metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: PATH, type: "website" });
 
+// Everything the finder needs, built here so the client gets plain data.
+function finderData() {
+  return CHAPTER_YEARS.flatMap((y) =>
+    chaptersForYear(y.slug).map((c) => {
+      const isTen = c.fileYear === "Year 10A";
+      const map = chapterMindMap(c);
+      return {
+        key: `${c.yearSlug}/${c.slug}`,
+        yearSlug: c.yearSlug,
+        yearLabel: c.yearLabel,
+        name: c.name,
+        path: teacherChapterPath(c),
+        topics: c.sections.map((s) => s.name),
+        zone: isTen
+          ? [{ href: teacherZoneHref(c, { standard: true }), label: "Year 10 auto-marked test" }, { href: teacherZoneHref(c), label: "Year 10A auto-marked test" }]
+          : [{ href: teacherZoneHref(c), label: "Auto-marked test" }],
+        exam: isTen
+          ? [{ href: printableExamHref(c, { standard: true }), label: "Year 10 printable exam" }, { href: printableExamHref(c), label: "Year 10A printable exam" }]
+          : [{ href: printableExamHref(c), label: "Printable exam" }],
+        map: map?.path || null,
+        sheets: chapterPrintables(c).map((p) => ({
+          label: `${p.yearLevel} ${p.topic}`,
+          pdf: `/worksheets/${p.slug}/practice-questions.pdf`,
+          test: `/worksheets/${p.slug}#topic-test`,
+        })),
+      };
+    }),
+  );
+}
+
 export default function TeacherResourcesHub() {
   return (
     <GuideShell
@@ -22,10 +53,8 @@ export default function TeacherResourcesHub() {
       description={DESCRIPTION}
       crumbs={[{ name: "For teachers", path: "/teachers" }, { name: "Teaching resources", path: PATH }]}
       eyebrow="For teachers · Years 7 to 10"
-      h1="Free maths teaching resources, Years 7 to 10"
-      lead="Pick a year and chapter for printable worksheets and topic tests with answers, a revision mind map, a printable exam, or an auto-marked test you can share with your class."
-      quickAnswer="Every chapter from Year 7 to Year 10 (and 10A) has its own page, named the same way as the textbook most Victorian schools use, with free printables and a one-click auto-marked test."
-      toc={CHAPTER_YEARS.map((y) => [y.slug, y.label])}
+      h1="Free maths teaching resources"
+      lead="Years 7 to 10, every chapter. Pick a year and chapter, or search a topic: an auto-marked test to share, a printable exam, practice sheets with answers and a revision mind map."
       ctaTitle="Practice at home for your students"
       ctaText="The Tuterly app gives each student fresh questions on what they got wrong, with a worked solution for every one, aligned to the Victorian Curriculum."
       placement="teacher_resources_hub"
@@ -43,11 +72,12 @@ export default function TeacherResourcesHub() {
         { href: "/naplan", label: "NAPLAN numeracy practice tests" },
       ]}
       pageType="CollectionPage"
+      heroTool={<TopicFinder years={CHAPTER_YEARS.map((y) => ({ slug: y.slug, label: y.slug === "year-10" ? "Year 10/10A" : y.label }))} chapters={finderData()} />}
     >
       {CHAPTER_YEARS.map((y, i) => (
         <section key={y.slug} id={y.slug} className={`tb-section${i % 2 ? " tb-section--card" : ""}`} aria-labelledby={`h-${y.slug}`}>
           <div className="tb-wrap">
-            <h2 id={`h-${y.slug}`} className="tb-h2 pg-h2">{y.label} teaching resources</h2>
+            <h2 id={`h-${y.slug}`} className="tb-h2 pg-h2">All {y.label} chapters</h2>
             <div className="ct-grid">
               {chaptersForYear(y.slug).map((c) => {
                 const n = chapterPrintables(c).length;
