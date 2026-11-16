@@ -2,6 +2,7 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
+import { CtaBand } from "@/components/brand";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
@@ -45,11 +46,28 @@ const TFT_FEATURES = [
   { n: "Marked, then checked", x: "Every answer is marked twice, with a separate blind check. Anything it isn't sure about is flagged for you." },
   { n: "You approve every mark", x: "One decision at a time: the student's answer next to the correct one, with big Right and Wrong buttons. It works on a phone." },
   { n: "What to reteach", x: "A class summary after each test, with the topics to reteach by chapter and results for every student." },
-  { n: "Revision packs", x: "Chapter summaries, practice weighted to what the class missed, a practice exam and a page for each student." },
+  { n: "Revision packs before exams", x: "Chapter summaries, practice weighted to what the class missed, a practice exam, and a page for each student on their 3 weakest topics." },
   { n: "Results students can use", x: "Students get a marked-up copy of their paper, and the questions they missed go into their Tuterly app to practise." },
   { n: "Classes and teachers", x: "Each teacher sees their own classes, and a head of department can see them all." },
 ];
-const TFT_MAIL = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Tuterly for Teachers")}`;
+// Two ways to reach out, each with a short email ready to send.
+const mail = (subject, body) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+const TFT_DEMO = mail("Tuterly for Teachers: book a demo", "Hi Tuterly team,\n\nI'd like a demo of Tuterly for Teachers.\n\nName:\nSchool:\nYear levels I teach:\nBest time to talk:\n\nThanks");
+const TFT_ACCOUNT = mail("Tuterly for Teachers: teacher account", "Hi Tuterly team,\n\nI'd like to set up a teacher account for my own classes.\n\nName:\nSchool:\nYear levels and number of classes:\n\nThanks");
+function TftButtons({ light = false }) {
+  return (
+    <p className="tz-hero-btns tft-btns">
+      <a href={TFT_DEMO} className="tb-btn tb-btn--primary">Book a demo</a>
+      <a href={TFT_ACCOUNT} className={`tb-btn tb-btn--secondary${light ? " tft-btn--light" : ""}`}>Ask about a teacher account</a>
+    </p>
+  );
+}
+// How each student gets their own practice (revision sheets and exam packs).
+const TFT_PER_STUDENT = [
+  { n: "1", t: "Mark the class test", x: "Every question marked, so Tuterly knows exactly which ones each student lost marks on." },
+  { n: "2", t: "Find each student's weak topics", x: "Grouped by textbook section, from the questions they got wrong." },
+  { n: "3", t: "Practice made for each student", x: "Fresh questions on their weak topics, with worked solutions. Topics they aced get a harder stretch question instead." },
+];
 
 const FAQS = [
   {
@@ -125,8 +143,15 @@ export default function TeachersPage() {
         <p className="tz-hero-btns">
           <a href="#teacher-zone" className="tb-btn tb-btn--primary">Create a test</a>
           <Link href={TEACHER_RESOURCES_PATH} className="tb-btn tb-btn--secondary">Printable resources</Link>
-          <a href="#tuterly-for-teachers" className="tb-btn tb-btn--secondary">Tuterly for Teachers</a>
         </p>
+        <div className="tft-banner">
+          <p className="tft-banner__k">New · Tuterly for Teachers</p>
+          <p className="tft-banner__t">We mark your class&rsquo;s paper tests, then make practice for each student on the topics they&rsquo;re weakest in.</p>
+          <p className="tz-hero-btns tft-btns">
+            <a href={TFT_DEMO} className="tb-btn tb-btn--primary">Book a demo</a>
+            <a href="#tuterly-for-teachers" className="tb-btn tb-btn--secondary">See how it works</a>
+          </p>
+        </div>
         <dl className="sh-facts">
           <div><dt>Marking</dt><dd>Automatic, with a worked solution for every question</dd></div>
           <div><dt>Students</dt><dd>No account or email needed, works on any phone</dd></div>
@@ -150,10 +175,34 @@ export default function TeachersPage() {
       <section id="tuterly-for-teachers" className="sh-sec sh-sec--paper tft" aria-labelledby="t-tft">
         <div className="sh-wrap">
           <p className="sh-eyebrow">Tuterly for Teachers · Class marking</p>
-          <h2 id="t-tft">Paper tests, marked for you. You approve every mark.</h2>
+          <h2 id="t-tft">Mark the class test. Every student gets practice made for them.</h2>
           <p className="sh-lead tft-lead">
-            Your class sits the test on paper as usual. Scan the class set, and Tuterly marks every answer, flags anything it isn&rsquo;t sure about, and shows you what to reteach. Nothing reaches students until you approve it.
+            Your class sits the test on paper as usual. Scan the class set, and Tuterly marks every answer, flags anything it isn&rsquo;t sure about, and shows you what to reteach. Then it writes practice for each student on the exact topics they lost marks in. Nothing reaches students until you approve it.
           </p>
+          <TftButtons />
+
+          <div className="tft-each">
+            <div>
+              <h3 className="tft-each__title">Practice for every student, not one worksheet for the whole class</h3>
+              <ol className="tft-steps">
+                {TFT_PER_STUDENT.map((s) => (
+                  <li key={s.n}><span className="tft-steps__n" aria-hidden="true">{s.n}</span><span><strong>{s.t}.</strong> {s.x}</span></li>
+                ))}
+              </ol>
+              <p className="sh-p tft-each__note">Print each student&rsquo;s sheet, or let it go to their Tuterly app, where the questions they missed become practice until they&rsquo;ve mastered them.</p>
+            </div>
+            <div className="tft-sheet" aria-label="Example of one student's practice sheet">
+              <p className="tft-sheet__k">Example · one student&rsquo;s sheet</p>
+              <p className="tft-sheet__name">Year 8 · Term 3 topic test</p>
+              <ul className="tft-sheet__list">
+                <li><span>Solving linear equations</span><span className="tft-sheet__miss">lost 4 marks · 3 questions</span></li>
+                <li><span>Index laws</span><span className="tft-sheet__miss">lost 3 marks · 3 questions</span></li>
+                <li><span>Pythagoras&rsquo; theorem</span><span className="tft-sheet__miss">lost 2 marks · 3 questions</span></li>
+                <li><span>Ratios and rates</span><span className="tft-sheet__ok">full marks · 1 stretch question</span></li>
+              </ul>
+              <p className="tft-sheet__foot">Every question has a worked solution. The student next to them gets a different sheet.</p>
+            </div>
+          </div>
           <div className="tft-grid">
             {TFT_FEATURES.map((f) => (
               <div key={f.n} className="sh-box tft-card">
@@ -165,12 +214,10 @@ export default function TeachersPage() {
           <div className="tft-cta">
             <p className="tft-cta__title">Set it up in your school, or get a teacher account.</p>
             <p className="sh-p">
-              It&rsquo;s running now at Bayside Academics in Melbourne, and we&rsquo;re setting up schools one at a time. Email us and we&rsquo;ll walk you through it, whether it&rsquo;s for your whole department or just your own classes.
+              It&rsquo;s running now at Bayside Academics in Melbourne, and we&rsquo;re setting up schools one at a time. Book a demo and we&rsquo;ll show you a class set marked from start to finish, whether it&rsquo;s for your whole department or just your own classes.
             </p>
-            <p className="tz-hero-btns">
-              <a href={TFT_MAIL} className="tb-btn tb-btn--primary">Get in touch</a>
-              <a href={TFT_MAIL} className="tft-cta__mail">{CONTACT_EMAIL}</a>
-            </p>
+            <TftButtons />
+            <p className="sh-p tft-cta__or">Or email us any time: <a href={`mailto:${CONTACT_EMAIL}`} className="tft-cta__mail">{CONTACT_EMAIL}</a></p>
           </div>
         </div>
       </section>
@@ -203,6 +250,14 @@ export default function TeachersPage() {
           </div>
         </div>
       </section>
+
+      <CtaBand
+        id="teachers-tft-final"
+        title="Want practice made for every student in your class?"
+        lead="Tuterly for Teachers marks your paper tests and writes each student their own practice on their weakest topics. Book a demo, or ask about an account for your own classes."
+      >
+        <TftButtons light />
+      </CtaBand>
 
       <AppCtaBand placement="teachers_final" title="Unlimited practice for your students, at home." lead="The Tuterly app gives every student fresh questions on what they got wrong, with a worked solution for each one, aligned to the Victorian Curriculum." />
       <MarketingFooter />
