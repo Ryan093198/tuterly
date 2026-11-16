@@ -26,7 +26,7 @@
 .hw-pin { position: sticky; top: 72px; height: calc(100vh - 72px); box-sizing: border-box; display: grid; grid-template-rows: auto auto 1fr auto; padding: 0 20px 14px; max-width: 1180px; margin: 0 auto; }
 .hw-progress { height: 4px; border-radius: 2px; background: #dfe8ed; overflow: hidden; margin: 10px 0 14px; }
 .hw-progress i { display: block; height: 100%; background: var(--brand); border-radius: 2px; transition: width .5s ease; }
-.hw-top { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; min-height: 104px; }
+.hw-top { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; min-height: 140px; }
 .hw-count { margin: 4px 0 0; font-size: 15px; font-weight: 800; color: var(--muted); white-space: nowrap; }
 .hw-count b { font-size: 40px; line-height: 1; color: var(--brand); margin-right: 4px; }
 .hw-caps { display: grid; }
@@ -35,6 +35,9 @@
 .hw-cap.is-on { opacity: 1; transform: none; filter: none; pointer-events: auto; }
 .hw-cap h2 { margin: 0 0 6px; font-size: clamp(22px, 2.6vw, 30px); font-weight: 900; line-height: 1.15; letter-spacing: -.3px; }
 .hw-cap p { margin: 0; max-width: 760px; font-size: 16.5px; line-height: 1.5; color: var(--muted); }
+.hw-more { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.hw-more li { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 999px; background: #fff; border: 1px solid #d7e5ea; font-size: 13.5px; font-weight: 700; color: var(--ink); }
+.hw-more li::before { content: "✓"; color: var(--brand); font-weight: 900; }
 
 .hw-stage { position: relative; min-height: 0; display: grid; place-items: center; overflow: hidden; border-radius: 22px; }
 .hw-stage__scale { position: absolute; left: 50%; top: 50%; width: 1000px; height: 600px; transform: translate(-50%, -50%) scale(var(--k, 1)); }
@@ -85,8 +88,13 @@
 .hw-copier__out img { position: absolute; right: -60px; top: 6px; width: 64px; border-radius: 2px; box-shadow: 0 4px 10px rgba(11,26,44,.16); opacity: 0; }
 .hw-copier__out.is-on img { animation: hw-out 2.4s cubic-bezier(.4,0,.2,1) infinite; animation-delay: calc(var(--i) * 600ms + .9s); }
 @keyframes hw-out { 0% { transform: translateX(0); opacity: 1; } 55% { transform: translateX(-120px) rotate(-3deg); opacity: 1; } 100% { transform: translateX(-120px) translateY(6px) rotate(-3deg); opacity: 0; } }
-.hw-paper.is-feeding { animation: hw-feed 2.4s cubic-bezier(.5,0,.4,1) .7s infinite; }
-@keyframes hw-feed { 0%, 8% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 1; } 62% { transform: translateY(330px); clip-path: inset(0 0 330px 0); opacity: 1; } 63% { opacity: 0; transform: translateY(0); clip-path: inset(0 0 0 0); } 64% { opacity: 0; } 100% { opacity: 1; } }
+.hw-paper.is-feeding { animation: hw-feed1 3.6s cubic-bezier(.5,0,.4,1) .6s infinite; }
+.hw-feed2 { animation: hw-feed2 3.6s cubic-bezier(.5,0,.4,1) .6s infinite; }
+.hw-feed3 { animation: hw-feed3 3.6s cubic-bezier(.5,0,.4,1) .6s infinite; }
+/* The three papers sink into the feeder in turn, then the stack resets. */
+@keyframes hw-feed1 { 0% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 1; } 22% { transform: translateY(330px); clip-path: inset(0 0 330px 0); opacity: 1; } 23%, 86% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 0; } 100% { opacity: 1; } }
+@keyframes hw-feed2 { 0%, 24% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 1; } 46% { transform: translateY(330px); clip-path: inset(0 0 330px 0); opacity: 1; } 47%, 88% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 0; } 100% { opacity: 1; } }
+@keyframes hw-feed3 { 0%, 48% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 1; } 70% { transform: translateY(330px); clip-path: inset(0 0 330px 0); opacity: 1; } 71%, 90% { transform: translateY(0); clip-path: inset(0 0 0 0); opacity: 0; } 100% { opacity: 1; } }
 .hw-copier__panel i { position: absolute; left: 10px; top: 10px; width: 10px; height: 10px; border-radius: 5px; background: #3ddc84; }
 
 /* Pages flying to the laptop */
@@ -242,3 +250,13 @@
   .hw-chart__line { stroke-dashoffset: 0; }
   .hw-paper.is-marked .hw-mark { transform: translateY(-50%) scale(1); }
 }
+
+/* Step 6: the class pack Tuterly prepares */
+.hw-pack { position: absolute; z-index: 7; left: 712px; top: 150px; width: 228px; box-sizing: border-box; padding: 16px; border-radius: 18px; background: #fff; box-shadow: 0 18px 40px rgba(11,26,44,.18); display: flex; flex-direction: column; gap: 7px; opacity: 0; transform: translateX(60px) scale(.9); transition: transform .8s cubic-bezier(.65,0,.25,1), opacity .5s ease; }
+.hw-pack b { font-size: 16px; }
+.hw-pack small { font-size: 11.5px; color: var(--muted); line-height: 1.35; margin-bottom: 2px; }
+.hw-pack span { padding: 6px 10px; border-radius: 10px; background: var(--good-soft); color: var(--good); font-size: 13px; font-weight: 800; opacity: 0; transform: translateY(6px); }
+.hw-pack.is-on { opacity: 1; transform: none; transition-delay: 1.4s; }
+.hw-pack.is-on span { animation: hw-pop .35s ease forwards; animation-delay: calc(var(--i) * 260ms + 2s); }
+@media (max-width: 760px) { .hw-top { min-height: 200px; } .hw-more li { font-size: 12px; padding: 4px 9px; } }
+@media (prefers-reduced-motion: reduce) { .hw-pack span { opacity: 1; transform: none; } }

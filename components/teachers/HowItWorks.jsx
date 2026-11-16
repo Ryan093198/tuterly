@@ -7,18 +7,18 @@ import "./how-it-works.css";
 // story (Ryan, 16 Nov 2026). One stage of 1000 x 600 design pixels: the same
 // pieces (Archie's paper, the copier, the laptop, the student cards) move and
 // change shape from step to step, so each scene grows out of the last.
-// Everything shown comes from Tuterly Demo College (an invented class) and
+// Everything shown comes from Tuterly Demo School (an invented class) and
 // the marking app's real screens; the phone is a real Tuterly app screenshot.
 const STEPS = [
-  { t: "Any test or exam your class sits on paper.", s: "Your school’s own tests, end-of-term exams, textbook tests. It doesn’t have to come from Tuterly." },
-  { t: "Scan the class set on any copier or scanner.", s: "We set up your school’s copier free of charge, or supply a Tuterly copier that arrives ready to go." },
-  { t: "Every page is matched to the right student.", s: "Each class has its own scan address. Papers come back marked in about 10 minutes, stored securely." },
-  { t: "Every answer is marked twice, with a blind check.", s: "Ticks, crosses and part marks, each with a reason. This is a real paper from our demo class." },
-  { t: "You check the marks and approve.", s: "Flagged answers come first, every mark shows Tuterly’s reason, and you can change any of them. Nothing reaches students until you approve." },
-  { t: "See exactly what to reteach.", s: "The class’s weakest topics first, and what went wrong. In this test, 12 of 19 students lost marks on question 7." },
-  { t: "Every student gets practice on their own weak topics.", s: "Archie, Mia and Henry each get a different set: new questions on what they lost marks on, and an extension question where they got full marks." },
-  { t: "Approve, and every student has it instantly.", s: "In the Tuterly app, at study.tuterly.com.au, or printed for class." },
-  { t: "Then watch the class improve.", s: "Every test feeds the next round of practice. Demo class 9B went from 72% to 79% over three tests." },
+  { t: "Any test or exam your class sits on paper.", s: "Your school’s own tests, end-of-term exams, textbook tests. It doesn’t have to come from Tuterly.", more: ["Short answers and full working", "Part marks for method"] },
+  { t: "Scan the class set on any copier or scanner.", s: "We set up your school’s copier free of charge, or supply a Tuterly copier that arrives ready to go.", more: ["Scan the whole class in one go", "Late papers can be added later"] },
+  { t: "Every page is matched to the right student.", s: "Each class has its own scan address. Papers come back marked in about 10 minutes, stored securely.", more: ["Matched by name and student number", "Absent students show as Abs"] },
+  { t: "Every answer is marked twice, with a blind check.", s: "Ticks, crosses and part marks, each with a reason. This is a real paper from our demo class.", more: ["Each mistake named: careless slip, wrong method or misunderstood idea"] },
+  { t: "You check the marks and approve.", s: "Flagged answers come first, every mark shows Tuterly’s reason, and you can change any of them. Nothing reaches students until you approve.", more: ["Works on a phone between classes", "Flagged answers first"] },
+  { t: "See exactly what to reteach, with the material ready.", s: "The class’s weakest topics first, and what went wrong. Then Tuterly prepares notes and questions on those weak topics, ready to use in class.", more: ["A reteach plan for you", "Revision notes and a practice sheet for the class", "A follow-up quiz"] },
+  { t: "Every student gets practice on their own weak topics.", s: "Archie, Mia and Henry each get a different set: new questions on what they lost marks on, and an extension question where they got full marks.", more: ["From our checked question bank first", "A worked solution for every question"] },
+  { t: "Approve, and every student has it instantly.", s: "In the Tuterly app, at study.tuterly.com.au, or printed for class.", more: ["Their marked paper, with your marks", "Missed questions go into their practice bank"] },
+  { t: "Then watch the class improve.", s: "Every test feeds the next round of practice. Demo class 9B went from 72% to 79% over three tests.", more: ["Results by student, topic and test", "Ready for reports"] },
 ];
 const N = STEPS.length;
 
@@ -59,7 +59,7 @@ const POSE = {
   back2: [P(386, 64, 1, 4), P(650, 26, 0.62, 2), P(700, 190, 0.2, 0, 0), P(700, 190, 0.2, 0, 0)],
   paper: [P(398, 54), P(660, 20, 0.62), P(704, 214, 0.14, 0, 0), P(300, 62, 1.02), P(40, -330, 2.1), P(330, 140, 0.4, 0, 0)],
   copier: [P(1060, 210, 1, 0, 0), P(580, 210), P(40, 300, 0.62), P(-420, 300, 0.62, 0, 0)],
-  laptop: [P(250, 700, 0.8, 0, 0), P(250, 700, 0.8, 0, 0), P(390, 60, 0.92), P(230, 26, 1.12), P(532, 80, 0.74), P(190, 40, 1.0), P(380, 420, 0.3, 0, 0), P(360, 236, 0.56), P(360, 700, 0.5, 0, 0)],
+  laptop: [P(250, 700, 0.8, 0, 0), P(250, 700, 0.8, 0, 0), P(390, 60, 0.92), P(230, 26, 1.12), P(532, 80, 0.74), P(50, 40, 1.0), P(380, 420, 0.3, 0, 0), P(360, 236, 0.56), P(360, 700, 0.5, 0, 0)],
 };
 const poseAt = (key, i) => { const a = POSE[key]; return a[Math.min(i, a.length - 1)]; };
 const style = (p) => ({ transform: `translate(${p.x}px, ${p.y}px) rotate(${p.r}deg) scale(${p.s})`, opacity: p.o });
@@ -165,8 +165,8 @@ function Stage({ step }) {
       <div className="hw-move hw-move--laptop" style={at("laptop")}><Laptop step={step} /></div>
 
       {/* Archie's paper and the class set behind it */}
-      <div className="hw-move" style={at("back1")}><img className="hw-sheet" src="/teachers/demo/scan-2107.jpg" alt="" /></div>
-      <div className="hw-move" style={at("back2")}><img className="hw-sheet" src="/teachers/demo/scan-2102.jpg" alt="" /></div>
+      <div className="hw-move" style={at("back1")}><img className={`hw-sheet${step === 1 ? " hw-feed3" : ""}`} src="/teachers/demo/scan-2107.jpg" alt="" /></div>
+      <div className="hw-move" style={at("back2")}><img className={`hw-sheet${step === 1 ? " hw-feed2" : ""}`} src="/teachers/demo/scan-2102.jpg" alt="" /></div>
       <div className="hw-move hw-move--paper" style={at("paper")}>
         <div className={`hw-paper${step === 1 ? " is-feeding" : ""}${step >= 3 ? " is-marked" : ""}${step === 4 ? " is-zoom" : ""}`}>
           <img className="hw-sheet hw-sheet--top" src="/teachers/demo/archie-brown-pythagoras.jpg" alt="" />
@@ -177,6 +177,13 @@ function Stage({ step }) {
           ))}
           <span className="hw-q7box" style={{ top: `${MARKS[6].y * 100}%`, height: `${MARKS[6].h * 100}%` }} />
         </div>
+      </div>
+
+      {/* Step 6: Tuterly prepares material on the weak topics */}
+      <div className={`hw-pack${step === 5 ? " is-on" : ""}`}>
+        <b>Class pack ready</b>
+        <small>Negative indices · Solving for the denominator</small>
+        {["Reteach plan for you", "Revision notes", "Practice sheet", "Follow-up quiz"].map((t, i) => <span key={t} style={{ "--i": i }}>✓ {t}</span>)}
       </div>
 
       {/* Practice for each student */}
@@ -212,7 +219,7 @@ function Stage({ step }) {
         </svg>
       </div>
 
-      <span className="hw-demo">Tuterly Demo College · invented students</span>
+      <span className="hw-demo">Tuterly Demo School · invented students</span>
     </div>
   );
 }
@@ -319,6 +326,7 @@ export default function HowItWorks({ demoHref }) {
                 <div key={i} className={`hw-cap${i === step ? " is-on" : i < step ? " is-past" : ""}`} aria-hidden={i !== step}>
                   <h2>{st.t}</h2>
                   <p>{st.s}</p>
+                  <ul className="hw-more">{st.more.map((m) => <li key={m}>{m}</li>)}</ul>
                 </div>
               ))}
             </div>
