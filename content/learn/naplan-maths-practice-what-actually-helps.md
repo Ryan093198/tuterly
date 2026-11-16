@@ -42,3 +42,6 @@ Signs you have overdone it are easy to spot: dread before sessions, arguing abou
 
 What you say about NAPLAN matters more than the practice. Framing it as a check on what they have learned so far, rather than a judgement of how smart they are, makes a real difference to how they sit it. If your child gets anxious about tests, the practice itself helps, because familiarity with the format removes a lot of the fear.
 
+## Free NAPLAN practice tests
+
+Each of our free NAPLAN numeracy practice tests has 20 NAPLAN-style questions, marked as soon as you finish, with a worked solution for every question and a breakdown by strand. The [Year 7](/naplan/year-7-numeracy) and [Year 9](/naplan/year-9-numeracy) tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. There are also tests for [Year 3](/naplan/year-3-numeracy) and [Year 5](/naplan/year-5-numeracy).

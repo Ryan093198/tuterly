@@ -56,3 +56,6 @@ If you have identified a specific gap, fractions keep coming up wrong, or writin
 
 Practice between sessions should cover the Year 5 content areas tested in NAPLAN, so your child gets the right kind of repetition.
 
+## Try a free Year 5 NAPLAN practice test
+
+Our [free Year 5 NAPLAN numeracy practice test](/naplan/year-5-numeracy) has 20 NAPLAN-style questions across every strand. Do it online and it's marked as soon as you finish, with a worked solution for every question, or print the PDF.

@@ -169,6 +169,10 @@ export default function StudyLanding() {
                 <strong>Worksheet generator</strong>
                 <span>Six new questions on any topic, from Foundation to Extension, with worked solutions.</span>
               </Link>
+              <Link href="/naplan" className="sl-topic__tool">
+                <strong>NAPLAN practice tests</strong>
+                <span>20 NAPLAN-style numeracy questions for Years 3, 5, 7 and 9, marked instantly. Years 7 and 9 work like NAPLAN Online.</span>
+              </Link>
             </div>
           </div>
         </div>

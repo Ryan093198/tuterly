@@ -53,3 +53,7 @@ In {{STUDY_APP}}, Topic check writes a short practice test on any Years 7 to 10 
 - [Maths practice tests, Years 7 to 10](/practice-maths-tests-secondary)
 
 Related reading: [your child's NAPLAN results were lower than expected, what now](/learn/naplan-results-lower-than-expected-what-to-do) and [NAPLAN maths practice: what actually helps](/learn/naplan-maths-practice-what-actually-helps).
+
+## Free NAPLAN practice tests
+
+Each of our free NAPLAN numeracy practice tests has 20 NAPLAN-style questions, marked as soon as you finish, with a worked solution for every question and a breakdown by strand. The [Year 7](/naplan/year-7-numeracy) and [Year 9](/naplan/year-9-numeracy) tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. There are also tests for [Year 3](/naplan/year-3-numeracy) and [Year 5](/naplan/year-5-numeracy).

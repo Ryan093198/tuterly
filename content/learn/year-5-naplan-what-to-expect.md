@@ -43,3 +43,6 @@ If you've noticed consistent patterns in where your child struggles, a short blo
 
 ---
 
+## Try a free Year 5 NAPLAN practice test
+
+Our [free Year 5 NAPLAN numeracy practice test](/naplan/year-5-numeracy) has 20 NAPLAN-style questions across every strand. Do it online and it's marked as soon as you finish, with a worked solution for every question, or print the PDF.

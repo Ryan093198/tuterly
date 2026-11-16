@@ -1,0 +1,8 @@
+/* NaplanCallout: a small NAPLAN practice test link box used across the site. */
+.npc { max-width: 760px; margin: 0 auto; padding: 18px 20px; border-radius: 18px; border: 2px solid var(--border, #e5e9ef); background: var(--card, #fff); box-shadow: 0 3px 0 var(--edge, #e3e8ee); }
+.npc__t { margin: 0; font-weight: 900; font-size: 18px; color: var(--foreground, #0b1a2c); }
+.npc__x { margin: 6px 0 10px; font-size: 15px; line-height: 1.55; color: var(--muted, #64748b); }
+.npc__a { font-weight: 800; font-size: 15.5px; color: var(--brand-text, #0a7f99); }
+.npc__links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; }
+.npc__links a { font-weight: 800; font-size: 15px; color: var(--brand-text, #0a7f99); }
+.npc-sec { padding: 8px 24px 32px; }

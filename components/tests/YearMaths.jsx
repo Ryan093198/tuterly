@@ -1,4 +1,5 @@
 import { Md } from "@/lib/md-html";
+import NaplanCallout from "@/components/naplan/NaplanCallout";
 import Link from "next/link";
 import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
@@ -167,6 +168,7 @@ export default function YearMaths({ n }) {
         </div>
       </section>
 
+      <section className="npc-sec"><NaplanCallout year={Number(n)} /></section>
       <nav className="sh-switch" aria-label="Maths by year level">
         <p className="sh-switch__title">Another year level?</p>
         <ul>

@@ -61,3 +61,6 @@ For the numeracy side, there is [{{STUDY_APP}}](/), an iPhone app for Years 7 to
 
 ---
 
+## Try a free Year 9 NAPLAN practice test
+
+Our [free Year 9 NAPLAN numeracy practice test](/naplan/year-9-numeracy) works like NAPLAN Online: 20 questions, a non-calculator section first, then an on-screen calculator, with drag-and-drop and graph questions like the real test. It's marked as soon as you finish, with a worked solution for every question and a breakdown by strand, so you can see exactly what to practise.

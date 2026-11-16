@@ -2,6 +2,7 @@ import Link from "next/link";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
 import { NAPLAN_FACTS, NAPLAN_YEARS, OFFICIAL_DEMO, PAST_PAPERS, naplanSlug, naplanPdfPath } from "@/lib/naplan";
+import NaplanCallout from "@/components/naplan/NaplanCallout";
 import "@/components/naplan/naplan.css";
 
 // "naplan past papers" ~12,100 searches a month in Australia (49,500 in
@@ -83,6 +84,12 @@ export default function Page() {
             </table>
           </div>
           <p className="pg-small">Numeracy: Years 3 and 5 have one paper per year. Years 7 and 9 have two, a calculator paper and a non-calculator paper. Checked November 2026.</p>
+        </div>
+      </section>
+
+      <section className="tb-section" aria-label="Practice like today's test">
+        <div className="tb-wrap tb-wrap--narrow">
+          <NaplanCallout title="Want practice that looks like today’s online test?" />
         </div>
       </section>
 

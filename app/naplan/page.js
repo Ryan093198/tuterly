@@ -32,6 +32,7 @@ const FAQS = [
   { q: "Which year levels sit NAPLAN?", a: "Years 3, 5, 7 and 9. Each sits four tests: reading, writing, conventions of language (spelling, grammar and punctuation) and numeracy." },
   { q: "How long is the NAPLAN numeracy test?", a: `${NAPLAN_FACTS.minutes[3]} minutes in Year 3, ${NAPLAN_FACTS.minutes[5]} minutes in Year 5 and ${NAPLAN_FACTS.minutes[7]} minutes in Years 7 and 9. Years 7 and 9 start with a short non-calculator section, then an online calculator is available.` },
   { q: "Are there NAPLAN past papers?", a: "Yes. ACARA publishes the paper tests from 2008 to 2016, with answers, free on its website. It doesn’t release tests after 2016. Our past papers guide links to them." },
+  { q: "Is there a free NAPLAN online practice test?", a: "Yes. Our free NAPLAN-style numeracy tests for Years 3, 5, 7 and 9 are online and marked instantly, with a worked solution for every question. The Year 7 and 9 tests work like NAPLAN Online: a non-calculator section that locks once you move on, an on-screen calculator, and drag-and-drop and graph questions. ACARA’s public demonstration site also has example questions." },
   { q: "Is NAPLAN online?", a: "Yes. Most schools sit NAPLAN online, and the numeracy test is tailored: everyone starts with the same set of questions, and how a student goes decides whether the next sets are easier or harder." },
   { q: "How are NAPLAN results reported?", a: `Against four proficiency levels: ${NAPLAN_FACTS.levels.join(", ")}. Schools give families an individual student report later in the year.` },
   { q: "Does NAPLAN count towards school grades?", a: "No. NAPLAN isn’t a pass or fail test and it isn’t part of school reports. It shows where a student is against national expectations at that point, which makes it a useful check on gaps." },
@@ -48,8 +49,8 @@ export default function NaplanHub() {
       crumbs={[{ name: "NAPLAN practice tests", path: PATH }]}
       eyebrow="NAPLAN 2027 · Years 3, 5, 7 and 9"
       h1="Free NAPLAN practice tests, with answers"
-      lead="A NAPLAN-style numeracy test for each year level: 20 questions across every strand, marked as soon as you finish, with a worked solution for every question. Do it online or print the PDF. Plus where to find the official past papers, and a plan from now to March."
-      quickAnswer={`NAPLAN 2027 runs ${NAPLAN_FACTS.window}. For free practice: take our NAPLAN-style numeracy test for your child’s year online (it marks itself and shows worked solutions) or print the PDF. ACARA’s official past papers from 2008 to 2016 are free too, with answers.`}
+      lead="A free NAPLAN-style numeracy test for each year level: 20 questions across every strand, marked as soon as you finish, with a worked solution for every question. The Year 7 and 9 tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. Plus the official past papers, and a plan from now to March."
+      quickAnswer={`NAPLAN 2027 runs ${NAPLAN_FACTS.window}. For free practice: take our NAPLAN-style numeracy test for your child’s year online (it marks itself and shows worked solutions; Years 7 and 9 work like NAPLAN Online) or print the PDF. ACARA’s official past papers from 2008 to 2016 are free too, with answers.`}
       toc={[
         ["tests", "Practice tests by year"],
         ["format", "NAPLAN 2027 dates and format"],
@@ -59,8 +60,8 @@ export default function NaplanHub() {
         ["reading", "More for parents"],
         ["faq", "FAQ"],
       ]}
-      ctaTitle="Years 7 and 9: turn NAPLAN mistakes into practice"
-      ctaText="Snap any question they got wrong. Tuterly shows the worked solution, then gives fresh questions on the same skill until it’s mastered. Built for the Australian Curriculum, Years 7 to 10."
+      ctaTitle="Unlimited practice tests on every topic NAPLAN covers"
+      ctaText="The free tests are 20 questions. In the Tuterly app, Years 7 to 10 can test any topic as often as they like, with a worked solution and fresh questions on everything they get wrong."
       placement="naplan_hub"
       faqs={FAQS}
       faqTitle="NAPLAN: questions parents ask"
@@ -77,7 +78,9 @@ export default function NaplanHub() {
               <div key={y} className="nph-card nph-card--static">
                 <p className="nph-card__title">Year {y} NAPLAN numeracy</p>
                 <p className="nph-card__text">
-                  20 questions · real test is {NAPLAN_FACTS.minutes[y]} minutes · {y >= 7 ? "non-calculator section, then calculator" : "no calculator"}
+                  {y >= 7
+                    ? "Works like NAPLAN Online: 20 questions, non-calculator section, on-screen calculator, drag-and-drop and graph questions."
+                    : "20 questions across every strand, marked instantly online. No calculator, as in the real test."}
                 </p>
                 <p className="nph-card__links">
                   <Link href={`/naplan/${naplanSlug(y)}`}>Take the test online →</Link>

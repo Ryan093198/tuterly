@@ -13,6 +13,7 @@ import { BAYSIDE } from "@/lib/bayside";
 import TryCta from "@/components/study/TryCta";
 import TutorCompare from "@/components/study/TutorCompare";
 import { REVIEW_PAGES } from "@/lib/tutoring-brands";
+import NaplanCallout from "@/components/naplan/NaplanCallout";
 import "./parents.css";
 import MethodStrip from "@/components/method/MethodStrip";
 
@@ -285,6 +286,11 @@ export default function ParentsPage() {
       >
         <StudyAppCTA variant="hero" placement="parents_final" position="final" />
       </CtaBand>
+
+      {/* NAPLAN practice tests (Ryan, 17 Nov 2026) */}
+      <section className="tb-section" aria-label="NAPLAN practice tests">
+        <div className="tb-wrap tb-wrap--narrow"><NaplanCallout /></div>
+      </section>
 
       {/* 7. Tutoring options compared (links the review pages together) */}
       <section className="tb-section" aria-labelledby="pp-compare-h">

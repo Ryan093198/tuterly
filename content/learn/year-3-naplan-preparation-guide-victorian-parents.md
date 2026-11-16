@@ -52,3 +52,6 @@ The test is one morning. The skills behind it matter for years. Getting those ri
 
 ---
 
+## Try a free Year 3 NAPLAN practice test
+
+Our [free Year 3 NAPLAN numeracy practice test](/naplan/year-3-numeracy) has 20 NAPLAN-style questions across every strand. Do it online and it's marked as soon as you finish, with a worked solution for every question, or print the PDF.

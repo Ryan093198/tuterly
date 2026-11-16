@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NaplanCallout from "@/components/naplan/NaplanCallout";
 import { notFound } from "next/navigation";
 import GuideShell from "@/components/parent-guides/GuideShell";
 import { pageMetadata } from "@/lib/parent-guides";
@@ -169,6 +170,7 @@ export default async function ChapterTestPage({ params }) {
           <p className="pg-small">Topic names follow the chapters of Cambridge Essential Mathematics for the Victorian Curriculum. Questions are Tuterly’s own. Tuterly isn’t affiliated with Cambridge University Press.</p>
         </div>
       </section>
+      <section className="npc-sec"><NaplanCallout year={Number(c.yearSlug.replace("year-", ""))} /></section>
     </GuideShell>
   );
 }

@@ -63,3 +63,7 @@ NAPLAN is sat in March and results land in July, so you have roughly three terms
 Worth considering a tutor if the gap is in numeracy or reading and sits at Developing or below, if working on it at home is creating conflict rather than progress, or if your child has started saying they are "just bad at maths". That last one matters most: the belief does more long-term damage than the gap.
 
 Related reading: [how to read your child's NAPLAN results](/learn/how-to-read-naplan-results-victorian-parents) and [how to improve NAPLAN results before the next test](/learn/how-to-improve-naplan-results-before-next-year).
+
+## Free NAPLAN practice tests
+
+Each of our free NAPLAN numeracy practice tests has 20 NAPLAN-style questions, marked as soon as you finish, with a worked solution for every question and a breakdown by strand. The [Year 7](/naplan/year-7-numeracy) and [Year 9](/naplan/year-9-numeracy) tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. There are also tests for [Year 3](/naplan/year-3-numeracy) and [Year 5](/naplan/year-5-numeracy).

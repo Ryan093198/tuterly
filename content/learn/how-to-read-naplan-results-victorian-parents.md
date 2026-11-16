@@ -85,3 +85,6 @@ Related reading: [your child's NAPLAN results were lower than expected, what now
 
 ---
 
+## Free NAPLAN practice tests
+
+Each of our free NAPLAN numeracy practice tests has 20 NAPLAN-style questions, marked as soon as you finish, with a worked solution for every question and a breakdown by strand. The [Year 7](/naplan/year-7-numeracy) and [Year 9](/naplan/year-9-numeracy) tests work like NAPLAN Online, with a non-calculator section, an on-screen calculator, and drag-and-drop and graph questions. There are also tests for [Year 3](/naplan/year-3-numeracy) and [Year 5](/naplan/year-5-numeracy).
