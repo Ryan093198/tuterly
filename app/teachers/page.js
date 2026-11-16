@@ -3,6 +3,10 @@ import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { CtaBand } from "@/components/brand";
+import { Md } from "@/lib/md-html";
+import { getWorkedExamples } from "@/lib/worked-examples";
+import "katex/dist/katex.min.css";
+import "@/components/study/worked-examples.css";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
@@ -62,6 +66,22 @@ function TftButtons({ light = false }) {
     </p>
   );
 }
+// The example sheet: real questions from the site's checked Year 8 topic
+// pages (content/worked-examples), so teachers can open each topic and see
+// the questions and worked solutions a student would get.
+const SHEET = [
+  { slug: "year-8-linear-equations", topic: "Solving linear equations", note: "lost 4 marks · 3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-exponents", topic: "Index laws", note: "lost 3 marks · 3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-pythagoras", topic: "Pythagoras’ theorem", note: "lost 2 marks · 3 questions", pick: [0, 1, 2] },
+  { slug: "year-8-rates", topic: "Ratios and rates", note: "full marks · 1 stretch question", pick: [2], ok: true },
+];
+function sheetTopics() {
+  return SHEET.map((s) => {
+    const w = getWorkedExamples(s.slug);
+    return { ...s, questions: w ? s.pick.map((i) => w.examples[i]).filter(Boolean) : [] };
+  });
+}
+
 // How each student gets their own practice (revision sheets and exam packs).
 const TFT_PER_STUDENT = [
   { n: "1", t: "Mark the class test", x: "Every question marked, so Tuterly knows exactly which ones each student lost marks on." },
@@ -194,13 +214,30 @@ export default function TeachersPage() {
             <div className="tft-sheet" aria-label="Example of one student's practice sheet">
               <p className="tft-sheet__k">Example · one student&rsquo;s sheet</p>
               <p className="tft-sheet__name">Year 8 · Term 3 topic test</p>
-              <ul className="tft-sheet__list">
-                <li><span>Solving linear equations</span><span className="tft-sheet__miss">lost 4 marks · 3 questions</span></li>
-                <li><span>Index laws</span><span className="tft-sheet__miss">lost 3 marks · 3 questions</span></li>
-                <li><span>Pythagoras&rsquo; theorem</span><span className="tft-sheet__miss">lost 2 marks · 3 questions</span></li>
-                <li><span>Ratios and rates</span><span className="tft-sheet__ok">full marks · 1 stretch question</span></li>
-              </ul>
-              <p className="tft-sheet__foot">Every question has a worked solution. The student next to them gets a different sheet.</p>
+              <p className="tft-sheet__hint">Tap a topic to see the questions.</p>
+              <div className="tft-sheet__list">
+                {sheetTopics().map((s) => (
+                  <details key={s.slug} className="tft-topic">
+                    <summary>
+                      <span className="tft-topic__name">{s.topic}</span>
+                      <span className={s.ok ? "tft-sheet__ok" : "tft-sheet__miss"}>{s.note}</span>
+                    </summary>
+                    <ol className="tft-topic__qs">
+                      {s.questions.map((q, i) => (
+                        <li key={i} className="tft-q">
+                          <p className="tft-q__n">{s.ok ? "Stretch question" : `Question ${i + 1}`}</p>
+                          <Md className="wx-md" tableClass="wx-table" md={q.question} />
+                          <details className="wx-sol">
+                            <summary>Show worked solution</summary>
+                            <Md className="wx-md" tableClass="wx-table" md={q.solution} />
+                          </details>
+                        </li>
+                      ))}
+                    </ol>
+                  </details>
+                ))}
+              </div>
+              <p className="tft-sheet__foot">Real questions from our Year 8 bank, each with a worked solution. The student next to them gets a different sheet.</p>
             </div>
           </div>
           <div className="tft-grid">

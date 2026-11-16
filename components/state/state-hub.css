@@ -115,7 +115,7 @@
 .tft-sheet__k { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: var(--brand-text); }
 .tft-sheet__name { margin: 0 0 10px; font-weight: 800; }
 .tft-sheet__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-.tft-sheet__list li { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 9px 11px; border-radius: 10px; background: #f4f7fa; font-weight: 600; font-size: 14.5px; }
+.tft-sheet__list > li { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 9px 11px; border-radius: 10px; background: #f4f7fa; font-weight: 600; font-size: 14.5px; }
 .tft-sheet__miss { color: #b45309; font-weight: 700; }
 .tft-sheet__ok { color: #15803d; font-weight: 700; }
 .tft-sheet__foot { margin: 10px 0 0; font-size: 13.5px; color: #5b6677; }
@@ -124,3 +124,15 @@
 @media (max-width: 799px) { .tft-each { grid-template-columns: 1fr; padding: 18px; } }
 
 .tft-btns { display: flex; justify-content: flex-start !important; text-align: left; }
+
+/* /teachers example sheet: each topic opens to its real questions. */
+.tft-sheet__hint { margin: -4px 0 10px; font-size: 13.5px; color: #5b6677; }
+.tft-topic { border-radius: 10px; background: #f4f7fa; }
+.tft-topic > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 9px 11px; font-weight: 600; font-size: 14.5px; }
+.tft-topic > summary::-webkit-details-marker { display: none; }
+.tft-topic__name::before { content: "▸"; display: inline-block; margin-right: 8px; color: var(--brand, #0e9fbf); transition: transform .15s; }
+.tft-topic[open] .tft-topic__name::before { transform: rotate(90deg); }
+.tft-topic__qs { list-style: none; margin: 0; padding: 0 11px 11px; display: grid; gap: 10px; }
+.tft-q { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14.5px; }
+.tft-q__n { margin: 0 0 4px; font-size: 12px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; color: var(--brand-text); }
+.tft-q .wx-sol { margin-top: 6px; }
