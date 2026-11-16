@@ -5,7 +5,7 @@ import AppCtaBand from "@/components/study/AppCtaBand";
 import TeacherBuilder from "@/components/paper/TeacherBuilder";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { TEACHER_RESOURCES_PATH, PRINTABLE_EXAM_PATH } from "@/lib/teacher-resources";
-import { SITE_URL } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import "@/components/state/state-hub.css";
 import "@/components/exam/exam.css";
 import "@/components/paper/paper.css";
@@ -37,6 +37,20 @@ const MORE = [
   { href: "/mind-maps", k: "Printable", n: "Revision mind maps by year", x: "Every topic on one page." },
 ];
 
+// Tuterly for Teachers: class marking, piloting at Bayside Academics since
+// Nov 2026 (~/tuterly-marking). Facts only: no time-saved or accuracy claims.
+const TFT_FEATURES = [
+  { n: "Scan the class set", x: "Send the scans straight from your school copier to your class's own Tuterly email address, or upload a PDF." },
+  { n: "Every page matched", x: "Tuterly recognises the test and matches each page to the right student." },
+  { n: "Marked, then checked", x: "Every answer is marked twice, with a separate blind check. Anything it isn't sure about is flagged for you." },
+  { n: "You approve every mark", x: "One decision at a time: the student's answer next to the correct one, with big Right and Wrong buttons. It works on a phone." },
+  { n: "What to reteach", x: "A class summary after each test, with the topics to reteach by chapter and results for every student." },
+  { n: "Revision packs", x: "Chapter summaries, practice weighted to what the class missed, a practice exam and a page for each student." },
+  { n: "Results students can use", x: "Students get a marked-up copy of their paper, and the questions they missed go into their Tuterly app to practise." },
+  { n: "Classes and teachers", x: "Each teacher sees their own classes, and a head of department can see them all." },
+];
+const TFT_MAIL = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Tuterly for Teachers")}`;
+
 const FAQS = [
   {
     q: "How does the Teacher Zone work?",
@@ -48,7 +62,7 @@ const FAQS = [
   },
   {
     q: "Can I see my students' results?",
-    a: "Not yet. Each student sees their own mark and the worked solutions. A class results view is on the way.",
+    a: "Not in the free Teacher Zone: each student sees their own mark and the worked solutions. Tuterly for Teachers, for paper tests marked from a scan, gives you results for the whole class and every student. Email learn@tuterly.com.au to set it up.",
   },
   {
     q: "Is the Teacher Zone free? Do students need an account?",
@@ -60,7 +74,7 @@ const FAQS = [
   },
   {
     q: "Are the answers checked?",
-    a: "Yes. Every question's answer was checked by computing it, and every marking key was tested against right and wrong answers. If you spot an error, email us at admin@baysideacademics.com.au and we'll fix it.",
+    a: "Yes. Every question's answer was checked by computing it, and every marking key was tested against right and wrong answers. If you spot an error, email us at learn@tuterly.com.au and we'll fix it.",
   },
   {
     q: "What is Tuterly?",
@@ -111,6 +125,7 @@ export default function TeachersPage() {
         <p className="tz-hero-btns">
           <a href="#teacher-zone" className="tb-btn tb-btn--primary">Create a test</a>
           <Link href={TEACHER_RESOURCES_PATH} className="tb-btn tb-btn--secondary">Printable resources</Link>
+          <a href="#tuterly-for-teachers" className="tb-btn tb-btn--secondary">Tuterly for Teachers</a>
         </p>
         <dl className="sh-facts">
           <div><dt>Marking</dt><dd>Automatic, with a worked solution for every question</dd></div>
@@ -129,6 +144,34 @@ export default function TeachersPage() {
             <li><strong>Students are marked instantly.</strong> They type their answers and get their mark and a worked solution for every question.</li>
           </ol>
           <TeacherBuilder catalogue={catalogue} initialYear="Year 8" />
+        </div>
+      </section>
+
+      <section id="tuterly-for-teachers" className="sh-sec sh-sec--paper tft" aria-labelledby="t-tft">
+        <div className="sh-wrap">
+          <p className="sh-eyebrow">Tuterly for Teachers · Class marking</p>
+          <h2 id="t-tft">Paper tests, marked for you. You approve every mark.</h2>
+          <p className="sh-lead tft-lead">
+            Your class sits the test on paper as usual. Scan the class set, and Tuterly marks every answer, flags anything it isn&rsquo;t sure about, and shows you what to reteach. Nothing reaches students until you approve it.
+          </p>
+          <div className="tft-grid">
+            {TFT_FEATURES.map((f) => (
+              <div key={f.n} className="sh-box tft-card">
+                <h3 className="sh-h3">{f.n}</h3>
+                <p className="sh-p">{f.x}</p>
+              </div>
+            ))}
+          </div>
+          <div className="tft-cta">
+            <p className="tft-cta__title">Set it up in your school, or get a teacher account.</p>
+            <p className="sh-p">
+              It&rsquo;s running now at Bayside Academics in Melbourne, and we&rsquo;re setting up schools one at a time. Email us and we&rsquo;ll walk you through it, whether it&rsquo;s for your whole department or just your own classes.
+            </p>
+            <p className="tz-hero-btns">
+              <a href={TFT_MAIL} className="tb-btn tb-btn--primary">Get in touch</a>
+              <a href={TFT_MAIL} className="tft-cta__mail">{CONTACT_EMAIL}</a>
+            </p>
+          </div>
         </div>
       </section>
 

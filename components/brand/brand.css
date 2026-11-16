@@ -354,3 +354,8 @@ a.tb-tile:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge); 
 .tb-season__close { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; display: grid; place-items: center; border: 0; background: transparent; color: inherit; cursor: pointer; border-radius: 10px; }
 .tb-season__close:hover { background: rgba(255, 255, 255, 0.15); }
 .dark .tb-appcta__deal { background: #3a2c08; border-color: #8a6a12; }
+
+/* Footer: the enquiries email, on every marketing page. */
+.tb-footer__contact { margin: 32px 0 0; font-size: 15px; font-weight: 600; }
+.tb-footer__contact a { color: var(--brand-deep, #0b7285); text-decoration: underline; text-underline-offset: 3px; }
+.tb-footer__contact + .tb-footer__legal { margin-top: 10px; }

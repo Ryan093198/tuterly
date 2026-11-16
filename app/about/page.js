@@ -102,7 +102,7 @@ export default function AboutPage() {
             <li>Everything follows the Australian Curriculum (Version 9.0) and the Victorian Curriculum 2.0.</li>
           </ul>
           <p className="sh-p">
-            Spotted a mistake? Email <a href="mailto:admin@baysideacademics.com.au">admin@baysideacademics.com.au</a> and we&rsquo;ll fix it.
+            Spotted a mistake? Email <a href="mailto:learn@tuterly.com.au">learn@tuterly.com.au</a> and we&rsquo;ll fix it.
           </p>
         </div>
       </section>

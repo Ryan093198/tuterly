@@ -14,7 +14,7 @@ export default async function UnsubscribedPage({ searchParams }) {
           <>
             <h1 style={{ fontSize: 30, marginBottom: 12 }}>That link didn&rsquo;t work</h1>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--muted)" }}>
-              The unsubscribe link may be incomplete. Email learning@baysideacademics.com.au and we&rsquo;ll remove you straight away.
+              The unsubscribe link may be incomplete. Email learn@tuterly.com.au and we&rsquo;ll remove you straight away.
             </p>
           </>
         ) : (

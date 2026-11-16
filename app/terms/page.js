@@ -61,10 +61,10 @@ export default function TermsOfService() {
               <li>
                 You may close your account at any time by contacting us at{" "}
                 <a
-                  href="mailto:learning@baysideacademics.com.au"
+                  href="mailto:learn@tuterly.com.au"
                   className="text-brand hover:text-brand-dark underline"
                 >
-                  learning@baysideacademics.com.au
+                  learn@tuterly.com.au
                 </a>
                 .
               </li>

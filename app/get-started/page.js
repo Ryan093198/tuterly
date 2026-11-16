@@ -82,7 +82,7 @@ function SuccessPanel() {
       </p>
       <p style={{ fontSize: 13.5, color: c.muted }}>
         Didn&apos;t get it within a few minutes? Check your spam folder, or email{" "}
-        <a href="mailto:admin@baysideacademics.com.au" style={{ color: c.tealDeep, fontWeight: 600 }}>admin@baysideacademics.com.au</a>.
+        <a href="mailto:learn@tuterly.com.au" style={{ color: c.tealDeep, fontWeight: 600 }}>learn@tuterly.com.au</a>.
       </p>
     </div>
   );

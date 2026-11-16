@@ -32,7 +32,7 @@ export default async function StudyPlusDone({ searchParams }) {
               <h1 className="text-3xl font-semibold tracking-tight">Almost there</h1>
               <p className="text-muted">
                 We couldn&apos;t find that checkout. If you&apos;ve paid, check your email for your details, or write to
-                learning@baysideacademics.com.au.
+                learn@tuterly.com.au.
               </p>
             </>
           ) : family ? (

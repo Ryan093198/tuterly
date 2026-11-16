@@ -451,9 +451,9 @@ export default function CentresLanding() {
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", maxWidth: 480, margin: "0 auto 24px", lineHeight: 1.7 }}>Book a free 15-minute demo. We'll show you the platform, answer your questions, and set you up with a 30-day trial.</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 24 }}>
             <a href="tel:0426787978" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📱 0426 787 978</a>
-            <a href="mailto:admin@baysideacademics.com.au?subject=Tuterly Demo Request" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 admin@baysideacademics.com.au</a>
+            <a href="mailto:learn@tuterly.com.au?subject=Tuterly Demo Request" style={{ display: "flex", alignItems: "center", gap: 6, color: "rgba(255,255,255,0.6)", fontSize: 14, textDecoration: "none" }}>📧 learn@tuterly.com.au</a>
           </div>
-          <a href="mailto:admin@baysideacademics.com.au?subject=Tuterly Demo Request&body=Hi, I'd like to book a demo of Tuterly for my tutoring centre.%0A%0ACentre name:%0ANumber of tutors:%0APhone number:" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Book a free demo →</a>
+          <a href="mailto:learn@tuterly.com.au?subject=Tuterly Demo Request&body=Hi, I'd like to book a demo of Tuterly for my tutoring centre.%0A%0ACentre name:%0ANumber of tutors:%0APhone number:" style={{ display: "inline-block", padding: "14px 32px", borderRadius: 10, background: c.teal, color: c.white, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>Book a free demo →</a>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.25)", marginTop: 16 }}>Or start your 30-day free trial at <a href="https://app.tuterly.com.au" style={{ color: c.teal, textDecoration: "none" }}>app.tuterly.com.au</a></p>
         </Fade>
       </section>

@@ -87,3 +87,14 @@
   .eg-hero { grid-template-columns: 1fr auto; align-items: center; text-align: left; gap: 48px; }
   .eg-hero__copy .sh-lead { margin-left: 0; }
 }
+
+/* /teachers: Tuterly for Teachers (class marking). */
+.tft-lead { max-width: 760px; margin: 0 0 8px; }
+.tft-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-top: 22px; }
+.tft-card { margin: 0; }
+.tft-card .sh-h3 { margin: 0 0 6px; }
+.tft-card .sh-p { margin: 0; }
+.tft-cta { margin-top: 26px; padding: 22px; border-radius: 20px; background: var(--brand-soft, #e6f6f8); border: 2px solid var(--brand, #0e9fbf); max-width: 760px; }
+.tft-cta__title { margin: 0 0 6px; font-weight: 900; font-size: 20px; }
+.tft-cta .tz-hero-btns { justify-content: flex-start; flex-wrap: wrap; gap: 12px 16px; margin-bottom: 0; }
+.tft-cta__mail { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; align-self: center; }

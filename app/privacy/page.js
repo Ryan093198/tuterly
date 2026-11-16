@@ -57,10 +57,10 @@ export default function PrivacyPolicy() {
             <p>
               For privacy questions or to exercise the rights below, contact{" "}
               <a
-                href="mailto:learning@baysideacademics.com.au"
+                href="mailto:learn@tuterly.com.au"
                 className="text-brand hover:text-brand-dark underline"
               >
-                learning@baysideacademics.com.au
+                learn@tuterly.com.au
               </a>
               .
             </p>
@@ -156,10 +156,10 @@ export default function PrivacyPolicy() {
               and a parent can ask us at any time what we hold about their child
               or ask for it to be deleted, by emailing{" "}
               <a
-                href="mailto:learning@baysideacademics.com.au"
+                href="mailto:learn@tuterly.com.au"
                 className="text-brand hover:text-brand-dark underline"
               >
-                learning@baysideacademics.com.au
+                learn@tuterly.com.au
               </a>
               .
             </p>
@@ -239,10 +239,10 @@ export default function PrivacyPolicy() {
               store it and send our emails. Reply to any of these emails, or
               email{" "}
               <a
-                href="mailto:learning@baysideacademics.com.au"
+                href="mailto:learn@tuterly.com.au"
                 className="text-brand hover:text-brand-dark underline"
               >
-                learning@baysideacademics.com.au
+                learn@tuterly.com.au
               </a>
               , to be removed.
             </p>
@@ -300,10 +300,10 @@ export default function PrivacyPolicy() {
               every email has an unsubscribe link. To have your details
               deleted, email{" "}
               <a
-                href="mailto:learning@baysideacademics.com.au"
+                href="mailto:learn@tuterly.com.au"
                 className="text-brand hover:text-brand-dark underline"
               >
-                learning@baysideacademics.com.au
+                learn@tuterly.com.au
               </a>
               .
             </p>

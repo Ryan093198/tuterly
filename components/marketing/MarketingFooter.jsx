@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { STUDY_APP } from "@/lib/study-app";
+import { CONTACT_EMAIL } from "@/lib/site";
 import { Logo } from "./MarketingNav";
 import "@/components/brand/brand.css";
 
@@ -114,6 +115,9 @@ export default function MarketingFooter() {
             </div>
           ))}
         </div>
+        <p className="tb-footer__contact">
+          Questions? Email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </p>
         <p className="tb-footer__legal">© 2026 Tuterly by Bayside Academics</p>
       </div>
     </footer>

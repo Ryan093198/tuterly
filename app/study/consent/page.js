@@ -53,8 +53,8 @@ export default async function StudyConsent({ searchParams }) {
             <p>
               You can ask what we hold about your child, or have their account deleted, at any time by
               emailing{" "}
-              <a className="underline" href="mailto:learning@baysideacademics.com.au">
-                learning@baysideacademics.com.au
+              <a className="underline" href="mailto:learn@tuterly.com.au">
+                learn@tuterly.com.au
               </a>
               . Full details are in our{" "}
               <Link className="underline" href="/privacy">
