@@ -159,10 +159,6 @@ export default function TeachersPage() {
         <p className="sh-lead">
           Pick the topics, share one link with your class, and each student gets their mark and a worked solution for every question the moment they finish.
         </p>
-        <p className="tz-hero-btns">
-          <a href="#teacher-zone" className="tb-btn tb-btn--primary">Create a test</a>
-          <Link href={TEACHER_RESOURCES_PATH} className="tb-btn tb-btn--secondary">Printable resources</Link>
-        </p>
         <div className="tft-banner">
           <p className="tft-banner__k">New · Tuterly for Teachers</p>
           <p className="tft-banner__t">We mark your class&rsquo;s paper tests, then make practice for each student on the topics they&rsquo;re weakest in.</p>
