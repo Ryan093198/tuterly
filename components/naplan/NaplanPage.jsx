@@ -34,6 +34,8 @@ export default function NaplanPage({ year }) {
     answerIndex: q.answerIndex, accept: q.accept,
     q: <M md={q.question} />,
     opts: q.options ? q.options.map((o, j) => <M key={j} md={o} inline />) : null,
+    items: q.items ? q.items.map((o, j) => <M key={j} md={o} inline />) : null,
+    answerOrder: q.answerOrder, grid: q.grid, answerPoint: q.answerPoint,
     sol: <M md={q.solution} />,
   }));
 

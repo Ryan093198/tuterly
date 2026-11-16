@@ -6,6 +6,7 @@ import { checkAnswer } from "@/lib/answer-check";
 import { trackEvent } from "@/lib/analytics";
 import { appCta } from "@/lib/study-app";
 import NaplanCalculator from "./NaplanCalculator";
+import { OrderQuestion, HotspotQuestion } from "./NaplanInteractive";
 
 // The 20-question NAPLAN-style practice test. Questions, options and
 // solutions arrive already rendered from the server (maths included).
@@ -89,6 +90,8 @@ export default function NaplanTest({ year, questions, appYears }) {
     for (const q of questions) {
       const a = answers[q.n];
       if (q.format === "choice") results[q.n] = a !== undefined && Number(a) === q.answerIndex;
+      else if (q.format === "order") results[q.n] = Array.isArray(a) && a.join() === q.answerOrder.join();
+      else if (q.format === "hotspot") results[q.n] = Array.isArray(a) && a[0] === q.answerPoint[0] && a[1] === q.answerPoint[1];
       else results[q.n] = checkAnswer(math, "number", q.accept || {}, a ?? "").ok === true;
     }
     const score = Object.values(results).filter(Boolean).length;
@@ -274,7 +277,11 @@ export default function NaplanTest({ year, questions, appYears }) {
                 {r !== null && <span className={`nt-q__mark ${r ? "is-right" : "is-wrong"}`}>{r ? "✓ Correct" : "✗ Not quite"}</span>}
               </div>
               {q.q}
-              {q.format === "choice" ? (
+              {q.format === "order" ? (
+                <OrderQuestion n={q.n} items={q.items} value={answers[q.n]} onChange={(v) => setAnswer(q.n, v)} disabled={!!marked || locked} correctOrder={marked ? q.answerOrder : null} />
+              ) : q.format === "hotspot" ? (
+                <HotspotQuestion n={q.n} grid={q.grid} value={answers[q.n]} onChange={(v) => setAnswer(q.n, v)} disabled={!!marked || locked} answer={marked ? q.answerPoint : null} />
+              ) : q.format === "choice" ? (
                 <div className="nt-opts" role="radiogroup" aria-label={`Question ${q.n} options`}>
                   {q.opts.map((o, j) => {
                     const chosen = Number(answers[q.n]) === j && answers[q.n] !== undefined;

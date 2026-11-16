@@ -159,3 +159,39 @@
   .nx-map__b { min-height: 32px; font-size: 12.5px; border-radius: 7px; }
   .nx-calc { position: static; width: auto; margin-top: 12px; box-shadow: none; }
 }
+
+/* Interactive NAPLAN Online-style questions (NaplanInteractive.jsx) */
+.nq-order { margin-top: 12px; max-width: 460px; }
+.nq-order__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.nq-order__item { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 8px 6px 10px; border-radius: 12px; border: 2px solid var(--border); background: var(--card); box-shadow: 0 2px 0 var(--edge); cursor: grab; user-select: none; }
+.nq-order__item.is-drag { opacity: 0.5; border-style: dashed; }
+.nq-order__item.is-right { border-color: #22c55e; }
+.nq-order__item.is-wrong { border-color: #f59e0b; }
+.nq-order__grip { color: var(--muted); font-size: 18px; line-height: 1; }
+.nq-order__pos { flex: none; width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; background: var(--surface-soft); font-weight: 900; font-size: 13px; color: var(--muted); }
+.nq-order__text { flex: 1; min-width: 0; font-size: 17px; }
+.nq-order__btns { display: flex; gap: 4px; }
+.nq-order__btns button { width: 38px; height: 38px; border-radius: 10px; border: 2px solid var(--border); background: var(--card); font: inherit; font-weight: 900; font-size: 16px; color: var(--foreground); cursor: pointer; }
+.nq-order__btns button:disabled { opacity: 0.3; cursor: default; }
+.nq-note { margin: 8px 0 0; font-size: 14.5px; color: var(--muted); }
+.nq-hot { margin-top: 12px; }
+.nq-hot__svg { display: block; width: 100%; max-width: 420px; height: auto; border-radius: 12px; background: #fff; border: 2px solid var(--border); touch-action: manipulation; }
+.nq-hot__svg.is-live { cursor: crosshair; }
+.nq-hot__svg:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.nq-gridline { stroke: #e3e8ee; stroke-width: 1; }
+.nq-axis { stroke: #0b1a2c; stroke-width: 1.6; }
+.nq-tick { font-size: 10px; fill: #64748b; font-weight: 700; }
+.nq-axislabel { font-size: 12px; fill: #0b1a2c; font-weight: 900; font-style: italic; }
+.nq-line { stroke-width: 2.4; }
+.nq-line--0 { stroke: #0e87a1; fill: #0e87a1; }
+.nq-line--1 { stroke: #c2410c; fill: #c2410c; }
+.nq-linelabel { font-size: 11.5px; font-weight: 800; stroke: none; }
+.nq-given { fill: #0b1a2c; }
+.nq-givenlabel { font-size: 13px; font-weight: 900; fill: #0b1a2c; }
+.nq-pick circle:first-child { fill: rgba(14, 135, 161, 0.18); stroke: #0e87a1; stroke-width: 2.4; }
+.nq-pick__dot { fill: #0e87a1; }
+.nq-pick.is-right circle:first-child { fill: rgba(34, 197, 94, 0.2); stroke: #16a34a; }
+.nq-pick.is-right .nq-pick__dot { fill: #16a34a; }
+.nq-pick.is-wrong circle:first-child { fill: rgba(245, 158, 11, 0.2); stroke: #d97706; }
+.nq-pick.is-wrong .nq-pick__dot { fill: #d97706; }
+.nq-answer { fill: none; stroke: #16a34a; stroke-width: 2.6; stroke-dasharray: 4 3; }
