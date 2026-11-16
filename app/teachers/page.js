@@ -73,7 +73,7 @@ const SHEET = [
   { slug: "year-8-linear-equations", topic: "Solving linear equations", mark: "Lost 4 marks", count: "3 questions", pick: [0, 1, 2] },
   { slug: "year-8-exponents", topic: "Index laws", mark: "Lost 3 marks", count: "3 questions", pick: [0, 1, 2] },
   { slug: "year-8-pythagoras", topic: "Pythagoras’ theorem", mark: "Lost 2 marks", count: "3 questions", pick: [0, 1, 2] },
-  { slug: "year-8-rates", topic: "Ratios and rates", mark: "Full marks", count: "1 stretch question", pick: [2], ok: true },
+  { slug: "year-8-rates", topic: "Ratios and rates", mark: "Full marks", count: "1 extension question", pick: [2], ok: true },
 ];
 function sheetTopics() {
   return SHEET.map((s) => {
@@ -86,7 +86,7 @@ function sheetTopics() {
 const TFT_PER_STUDENT = [
   { n: "1", t: "Mark the class test", x: "Every question marked, so Tuterly knows exactly which ones each student lost marks on." },
   { n: "2", t: "Find each student's weak topics", x: "Grouped by textbook section, from the questions they got wrong." },
-  { n: "3", t: "Practice made for each student", x: "Fresh questions on their weak topics, with worked solutions. Topics they aced get a harder stretch question instead." },
+  { n: "3", t: "Practice made for each student", x: "Fresh questions on their weak topics, with worked solutions. Topics they aced get a harder extension question instead." },
 ];
 
 const FAQS = [
@@ -240,7 +240,7 @@ export default function TeachersPage() {
                     <ol className="tft-topic__qs">
                       {s.questions.map((q, i) => (
                         <li key={i} className="tft-q">
-                          <p className="tft-q__n">{s.ok ? "Stretch question" : `Question ${i + 1}`}</p>
+                          <p className="tft-q__n">{s.ok ? "Extension question" : `Question ${i + 1}`}</p>
                           <Md className="wx-md" tableClass="wx-table" md={q.question} />
                           <details className="wx-sol">
                             <summary>Show worked solution</summary>

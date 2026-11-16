@@ -16,7 +16,7 @@ const STEPS = [
   { t: "Every answer is marked twice, with a blind check.", s: "Ticks, crosses and part marks, each with a reason. This is a real paper from our demo class." },
   { t: "You check the marks and approve.", s: "Flagged answers come first, every mark shows Tuterly’s reason, and you can change any of them. Nothing reaches students until you approve." },
   { t: "See exactly what to reteach.", s: "The class’s weakest topics first, and what went wrong. In this test, 12 of 19 students lost marks on question 7." },
-  { t: "Every student gets practice on their own weak topics.", s: "Archie, Mia and Henry each get a different set: new questions on what they lost marks on, and a stretch question where they got full marks." },
+  { t: "Every student gets practice on their own weak topics.", s: "Archie, Mia and Henry each get a different set: new questions on what they lost marks on, and an extension question where they got full marks." },
   { t: "Approve, and every student has it instantly.", s: "In the Tuterly app, at study.tuterly.com.au, or printed for class." },
   { t: "Then watch the class improve.", s: "Every test feeds the next round of practice. Demo class 9B went from 72% to 79% over three tests." },
 ];
@@ -47,9 +47,9 @@ const RETEACH = [
 
 // Each student's own practice, from their real marks on this test.
 const STUDENTS = [
-  { name: "Archie Brown", score: "8/12", miss: ["Trigonometric ratios", "Finding unknown side lengths", "Solving for the denominator"], stretch: "Finding unknown angles" },
-  { name: "Mia Kowalski", score: "7/12", miss: ["Finding unknown side lengths", "Solving for the denominator", "Finding the shorter sides"], stretch: "Using Pythagoras in problems" },
-  { name: "Henry Walsh", score: "6/12", miss: ["Pythagoras’ theorem", "Finding the shorter sides", "Finding unknown angles"], stretch: "Trigonometric ratios" },
+  { name: "Archie Brown", score: "8/12", miss: ["Trigonometric ratios", "Finding unknown side lengths", "Solving for the denominator"], ext: "Finding unknown angles" },
+  { name: "Mia Kowalski", score: "7/12", miss: ["Finding unknown side lengths", "Solving for the denominator", "Finding the shorter sides"], ext: "Using Pythagoras in problems" },
+  { name: "Henry Walsh", score: "6/12", miss: ["Pythagoras’ theorem", "Finding the shorter sides", "Finding unknown angles"], ext: "Trigonometric ratios" },
 ];
 
 // Where each moving piece sits at each step: x, y (top left), scale, rotate, opacity.
@@ -149,7 +149,10 @@ function Stage({ step }) {
       <div className="hw-move" style={at("copier")}>
         <div className="hw-copier">
           <div className="hw-copier__lid" />
-          <div className="hw-copier__body"><span className={`hw-copier__light${step === 1 ? " is-on" : ""}`} /><span className="hw-copier__panel"><i /></span></div>
+          <div className="hw-copier__body"><span className={`hw-copier__light${step === 1 ? " is-on" : ""}`} /><span className="hw-copier__panel"><i /></span><span className="hw-copier__slot" /></div>
+          <div className={`hw-copier__out${step === 1 ? " is-on" : ""}`}>
+            {[0, 1, 2, 3].map((i) => <img key={i} src={`/teachers/demo/scan-${["2102", "2107", "2112", "2102"][i]}.jpg`} alt="" style={{ "--i": i }} />)}
+          </div>
         </div>
       </div>
 
@@ -165,7 +168,7 @@ function Stage({ step }) {
       <div className="hw-move" style={at("back1")}><img className="hw-sheet" src="/teachers/demo/scan-2107.jpg" alt="" /></div>
       <div className="hw-move" style={at("back2")}><img className="hw-sheet" src="/teachers/demo/scan-2102.jpg" alt="" /></div>
       <div className="hw-move hw-move--paper" style={at("paper")}>
-        <div className={`hw-paper${step >= 3 ? " is-marked" : ""}${step === 4 ? " is-zoom" : ""}`}>
+        <div className={`hw-paper${step === 1 ? " is-feeding" : ""}${step >= 3 ? " is-marked" : ""}${step === 4 ? " is-zoom" : ""}`}>
           <img className="hw-sheet hw-sheet--top" src="/teachers/demo/archie-brown-pythagoras.jpg" alt="" />
           {MARKS.map((m, i) => (
             <span key={m.q} className={`hw-mark ${m.got === m.of ? "hw-mark--ok" : m.got === 0 ? "hw-mark--no" : "hw-mark--part"}${m.q === 7 ? " hw-mark--q7" : ""}`} style={{ top: `${(m.y + m.h / 2) * 100}%`, "--i": i }}>
@@ -181,7 +184,7 @@ function Stage({ step }) {
         <div key={st.name} className={`hw-student hw-student--${i}${step === 6 ? " is-on" : step === 7 ? " is-gone" : ""}`} style={{ "--i": i }}>
           <div className="hw-student__head"><b>{st.name}</b><span>{st.score}</span></div>
           {st.miss.map((t) => <span key={t} className="hw-pchip hw-pchip--miss">{t} · 3 Qs</span>)}
-          <span className="hw-pchip hw-pchip--ok">Stretch: {st.stretch}</span>
+          <span className="hw-pchip hw-pchip--ok">Extension: {st.ext}</span>
         </div>
       ))}
 
@@ -292,15 +295,17 @@ export default function HowItWorks({ demoHref }) {
     <>
       <section className="hw-hero" aria-labelledby="hw-title">
         <p className="hw-eyebrow">Tuterly for Teachers · How it works</p>
-        <h1 id="hw-title">From a pile of paper tests to practice for every student.</h1>
+        <h1 id="hw-title">Paper tests become customised questions for every student.</h1>
         <p className="hw-lead">Follow one real class test from the copier to each student’s phone, in nine steps. Every screen here comes from our demo class.</p>
         <div className="hw-hero__btns">
           <button type="button" className="tb-btn tb-btn--primary" onClick={() => { go(0); setPlaying(true); }}>Play the demo</button>
           <a href={demoHref} className="tb-btn tb-btn--secondary">Book a demo</a>
         </div>
         <button type="button" className="hw-scrollcue" onClick={() => go(0)}>
-          <span>Scroll to see how it works</span>
-          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          <span className="hw-mouse" aria-hidden="true"><i /></span>
+          <span className="hw-scrollcue__t">Keep scrolling down</span>
+          <span className="hw-scrollcue__s">to follow a class test through all 9 steps</span>
+          <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
       </section>
 
@@ -320,6 +325,9 @@ export default function HowItWorks({ demoHref }) {
           </div>
           <div ref={stageBox} className="hw-stage" aria-hidden="true">
             <div className="hw-stage__scale"><Stage step={step} /></div>
+            <span className={`hw-keep${step < 2 && !playing ? " is-on" : ""}`}>Keep scrolling down
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </span>
           </div>
           <div className="hw-controls">
             <button type="button" className="hw-ctl" onClick={() => go(step - 1)} disabled={step === 0} aria-label="Back">
