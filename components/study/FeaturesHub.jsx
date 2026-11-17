@@ -9,6 +9,9 @@ import { FEATURES, STICKS } from "@/lib/feature-pages";
 import TryCta from "@/components/study/TryCta";
 import "./study-landing.css";
 import "./features.css";
+import StickyAppBar from "@/components/marketing/StickyAppBar";
+import JumpNav from "@/components/marketing/JumpNav";
+import Tabs from "@/components/marketing/Tabs";
 
 // /features: each headline feature as a short row with a real screen,
 // then the small things that make learning stick, then the parent view.
@@ -19,7 +22,7 @@ export default function FeaturesHub() {
 
       <section className="sl-hero" aria-labelledby="fh-title">
         <div className="tb-wrap sl-hero__grid">
-          <div className="sl-hero__copy">
+          <div className="sl-hero__copy mx-hero-phone">
             <Eyebrow>Features · Years 7 to 10 maths</Eyebrow>
             <h1 id="fh-title" className="tb-h1">
               Everything Tuterly does starts with a <span className="sl-accent">wrong answer</span>.
@@ -39,6 +42,15 @@ export default function FeaturesHub() {
         </div>
       </section>
 
+      <JumpNav
+        items={[
+          { href: "#fh-all", label: "All the features" },
+          { href: "#fh-tour", label: "Feature tour" },
+          { href: "#fh-sticks", label: "Learning that sticks" },
+          { href: "#fh-parents", label: "For parents" },
+        ]}
+      />
+
       <section className="sl-try-band" aria-label="Try it free">
         <div className="tb-wrap">
           <TryCta />
@@ -50,20 +62,25 @@ export default function FeaturesHub() {
           <Reveal>
             <SectionHead id="fh-all" eyebrow="All the features" title="Everything in the app." />
           </Reveal>
-          {FEATURE_GROUPS.map((g) => (
-            <div key={g.title} className="ft-group">
-              <h3 className="tb-h3 ft-group__title">{g.title}</h3>
-              <div className="tb-tiles tb-tiles--3">
-                {g.items.map((t) => (
-                  <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
-                ))}
+          <Tabs label="Feature groups" tabs={FEATURE_GROUPS.map((g) => ({ id: `features-${g.title.toLowerCase().replace(/\W+/g, "-")}`, label: g.title }))}>
+            {FEATURE_GROUPS.map((g) => (
+              <div key={g.title} className="ft-group">
+                <h3 className="tb-h3 ft-group__title">{g.title}</h3>
+                <div className="tb-tiles tb-tiles--3">
+                  {g.items.map((t) => (
+                    <OptionTile key={t.title} icon={t.icon} tone={t.tone} title={t.title} text={t.text} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Tabs>
         </div>
       </section>
 
-      <section className="tb-section tb-section--card" aria-label="Features">
+      <section className="tb-section tb-section--card" aria-label="Features" id="fh-tour">
+        <div className="tb-wrap">
+          <p className="ft-swipe-hint">Swipe to see each feature →</p>
+        </div>
         <div className="tb-wrap ft-rows">
           {FEATURES.map((f) => (
             <div key={f.slug} className="ft-row">
@@ -123,6 +140,7 @@ export default function FeaturesHub() {
         <StudyAppCTA variant="hero" placement="features_final" position="final" />
       </CtaBand>
       <MarketingFooter />
+      <StickyAppBar placement="features_sticky" />
     </div>
   );
 }

@@ -26,3 +26,14 @@
 .ft-group { margin-top: 28px; }
 .ft-group:first-of-type { margin-top: 8px; }
 .ft-group__title { margin: 0 0 14px; }
+
+/* Phones: the feature tour swipes sideways instead of stacking five
+   screens deep (Ryan, 18 Nov 2026). */
+.ft-swipe-hint { display: none; }
+@media (max-width: 767px) {
+  .ft-swipe-hint { display: block; margin: 0 0 12px; font-size: 14px; font-weight: 800; color: var(--brand-text); }
+  .ft-rows { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 20px 12px; scroll-padding-inline: 20px; scrollbar-width: thin; }
+  .ft-row { flex: 0 0 86%; scroll-snap-align: start; gap: 16px; padding: 18px; border-radius: 20px; border: 2px solid var(--border); background: var(--background); align-content: start; }
+  .ft-row__text { font-size: 16px; }
+  .ft-row__phone .tb-phone { --phone-w: 170px !important; }
+}

@@ -80,7 +80,7 @@ export default function WorksheetUpgrade({ topic, placement }) {
 
         <div className="wu__cta">
           <div className="wu__cta-copy">
-            <p className="wu__cta-title">{isStudyAppLive() ? "Get Tuterly." : "Sign up early."}</p>
+            <p className="wu__cta-title">{isStudyAppLive() ? "Get Tuterly." : "Get early access."}</p>
             <ul className="wu__cta-ticks">
               <li>Fresh questions on exactly what they got wrong</li>
               <li>Practice exams in their school&rsquo;s style</li>

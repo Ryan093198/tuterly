@@ -15,6 +15,8 @@ import { STUDENT_YEARS, studentFaqs, topicsForYear } from "@/lib/student-pages";
 import "./study-landing.css";
 import "./student-landing.css";
 import MethodStrip from "@/components/method/MethodStrip";
+import StickyAppBar from "@/components/marketing/StickyAppBar";
+import JumpNav from "@/components/marketing/JumpNav";
 
 // Landing page written to Years 7 to 10 students themselves ("you").
 // /students (year = null) and /students/year-7 to year-10. Product facts
@@ -124,7 +126,7 @@ export default function StudentLanding({ year = null }) {
       {/* HERO */}
       <section className="sl-hero" aria-labelledby="stl-title">
         <div className="tb-wrap sl-hero__grid">
-          <div className="sl-hero__copy">
+          <div className="sl-hero__copy mx-hero-phone">
             <LaunchPill />
             <Eyebrow>For students · {year ? `${year.year} maths` : "Years 7 to 10 maths"}</Eyebrow>
             <h1 id="stl-title" className="tb-h1">
@@ -152,6 +154,16 @@ export default function StudentLanding({ year = null }) {
           </div>
         </div>
       </section>
+
+      <JumpNav
+        items={[
+          { href: "#exam-zone", label: "Practice exams" },
+          { href: "#stl-how", label: "How it works" },
+          { href: "#stl-test", label: "All the features" },
+          { href: "#stl-years", label: "Your year" },
+          { href: "#stl-faq", label: "FAQ" },
+        ]}
+      />
 
       <section className="sl-try-band" aria-label="Try it free">
         <div className="tb-wrap">
@@ -303,6 +315,7 @@ export default function StudentLanding({ year = null }) {
       </CtaBand>
 
       <MarketingFooter />
+      <StickyAppBar placement={`${placement}_sticky`} text="Maths practice, Years 7 to 10" />
     </div>
   );
 }

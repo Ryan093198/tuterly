@@ -97,7 +97,7 @@ function Pitch({ next }) {
       </ul>
       <p className="dg-pitch__proof">{STUDY_RESULTS.line}</p>
       <Link href={cta.href} className="tb-btn tb-btn--primary dg-pitch__btn" onClick={() => trackEvent("diagnostic_cta_click", { live: cta.live })}>
-        {cta.live ? "Get Tuterly" : "Sign up early for the Tuterly app"}
+        {cta.live ? "Get Tuterly" : "Get early access to the Tuterly app"}
       </Link>
       <p className="dg-pitch__fine">{STUDY_RESULTS.finePrint}</p>
     </div>

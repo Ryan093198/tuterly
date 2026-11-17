@@ -19,6 +19,9 @@ import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import "./topic-grid.css";
 import "./study-landing.css";
 import MethodStrip from "@/components/method/MethodStrip";
+import StickyAppBar from "@/components/marketing/StickyAppBar";
+import JumpNav from "@/components/marketing/JumpNav";
+import FreeTools from "@/components/marketing/FreeTools";
 
 // Home page for tuterly.com.au: the landing page for the Tuterly app, in
 // the app's own look (components/brand). Server component.
@@ -80,7 +83,7 @@ export default function StudyLanding() {
       {/* 1. HERO */}
       <section className="sl-hero" aria-labelledby="hero-title">
         <div className="tb-wrap sl-hero__grid">
-          <div className="sl-hero__copy">
+          <div className="sl-hero__copy mx-hero-phone">
             <LaunchPill />
             <h1 id="hero-title" className="tb-h1 sl-hero__h1">
               The secret tool for <br /><span className="sl-accent">better maths marks</span>!
@@ -101,6 +104,18 @@ export default function StudyLanding() {
           </div>
         </div>
       </section>
+
+      <JumpNav
+        items={[
+          { href: "#how-section", label: "How it works" },
+          { href: "#try-it", label: "Try a question" },
+          { href: "#topics", label: "Topics" },
+          { href: "#price", label: "Price" },
+          { href: "#faq", label: "FAQ" },
+        ]}
+      />
+
+      <FreeTools lead="Not ready for the app yet? These are free, with worked solutions." />
 
       {/* 2. HOW IT WORKS */}
       <section className="tb-section tb-section--card sl-how" aria-labelledby="how" id="how-section">
@@ -329,6 +344,7 @@ export default function StudyLanding() {
       </CtaBand>
 
       <MarketingFooter />
+      <StickyAppBar placement="home_sticky" />
     </div>
   );
 }

@@ -16,6 +16,9 @@ import { REVIEW_PAGES } from "@/lib/tutoring-brands";
 import NaplanCallout from "@/components/naplan/NaplanCallout";
 import "./parents.css";
 import MethodStrip from "@/components/method/MethodStrip";
+import StickyAppBar from "@/components/marketing/StickyAppBar";
+import JumpNav from "@/components/marketing/JumpNav";
+import FreeTools from "@/components/marketing/FreeTools";
 
 // /parents: the parent's view of Tuterly, parent-first order:
 // the app in one screen, what you'll see each week, safety and privacy,
@@ -51,7 +54,7 @@ export default function ParentsPage() {
       {/* 1. THE APP IN ONE SCREEN */}
       <section className="pp-hero" aria-labelledby="pp-title">
         <div className="tb-wrap pp-hero__grid">
-          <div>
+          <div className="mx-hero-phone">
             <LaunchPill />
             <Eyebrow>For parents · Years 7 to 10 maths</Eyebrow>
             <h1 id="pp-title" className="tb-h1">Better marks on their next maths test.</h1>
@@ -60,7 +63,7 @@ export default function ParentsPage() {
             </p>
             <MadeInAustralia />
             <ResultsProof />
-            <div className="pp-hero__cta">
+            <div id="get-app" className="pp-hero__cta">
               <StudyAppCTA variant="hero" placement="parents_hero" slim />
               <p className="pp-hero__more"><Link href="/features/exam-zone">See how the practice exams work →</Link></p>
             </div>
@@ -74,6 +77,19 @@ export default function ParentsPage() {
           </figure>
         </div>
       </section>
+
+      <JumpNav
+        items={[
+          { href: "#pp-method-h", label: "How it works" },
+          { href: "#see", label: "What you see" },
+          { href: "#upload", label: "School tests" },
+          { href: "#privacy", label: "Privacy" },
+          { href: "#price", label: "Price" },
+          { href: "#pp-compare-h", label: "Compare tutoring" },
+        ]}
+      />
+
+      <FreeTools lead="Want to see where your child is at first? These are free, and you don’t need the app." />
 
       {/* 1a. PAIN POINTS (parent research, Nov 2026): the goal is better
           test and exam marks; these are what stands in the way. */}
@@ -310,6 +326,7 @@ export default function ParentsPage() {
 
 
       <MarketingFooter />
+      <StickyAppBar placement="parents_sticky" />
     </div>
   );
 }

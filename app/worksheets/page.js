@@ -17,6 +17,9 @@ import { BAYSIDE } from "@/lib/bayside";
 import "@/components/brand/brand.css";
 import "./worksheets.css";
 import MethodStrip from "@/components/method/MethodStrip";
+import StickyAppBar from "@/components/marketing/StickyAppBar";
+import JumpNav from "@/components/marketing/JumpNav";
+import Tabs from "@/components/marketing/Tabs";
 
 // Public landing page for the free maths worksheet generator. Restyled to
 // match the marketing home page (Inter, teal + ink palette, blur nav,
@@ -155,6 +158,15 @@ export default function WorksheetsPage() {
         </div>
       </section>
 
+      <JumpNav
+        items={[
+          { href: "#generator", label: "Make a worksheet" },
+          { href: "#ws-skills", label: "By skill" },
+          { href: "#ws-topics", label: "By topic and year" },
+          { href: "#ws-faq", label: "FAQ" },
+        ]}
+      />
+
       {/* STATE HUBS */}
       <StateSwitcher title="Topics, term dates and tests for your state" />
 
@@ -207,7 +219,7 @@ export default function WorksheetsPage() {
       {/* SKILL WORKSHEETS */}
       <section className="ws-section" style={{ background: c.white, borderTop: `1px solid ${c.border}`, padding: "56px 40px" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <h2 style={{ fontSize: 26, fontWeight: 800, color: c.ink, letterSpacing: "-0.5px", margin: "0 0 8px", textAlign: "center" }}>
+          <h2 id="ws-skills" style={{ fontSize: 26, fontWeight: 800, color: c.ink, letterSpacing: "-0.5px", margin: "0 0 8px", textAlign: "center" }}>
             Worksheets by skill
           </h2>
           <p style={{ fontSize: 15.5, color: c.textLight, lineHeight: 1.7, margin: "0 auto 22px", maxWidth: 560, textAlign: "center" }}>
@@ -235,7 +247,7 @@ export default function WorksheetsPage() {
             <p style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: "0.7px", textTransform: "uppercase", color: c.tealDeep, marginBottom: 14 }}>
               Browse by topic
             </p>
-            <h2 style={{ fontSize: 34, fontWeight: 800, color: c.ink, letterSpacing: "-0.8px", lineHeight: 1.18, margin: "0 0 14px" }}>
+            <h2 id="ws-topics" style={{ fontSize: 34, fontWeight: 800, color: c.ink, letterSpacing: "-0.8px", lineHeight: 1.18, margin: "0 0 14px" }}>
               Topic-specific worksheet pages
             </h2>
             <p style={{ fontSize: 16, color: c.textLight, lineHeight: 1.7, maxWidth: 540, margin: "0 auto" }}>
@@ -244,8 +256,8 @@ export default function WorksheetsPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gap: 32 }}>
-            {GRID_YEARS.map((year) => {
+          <Tabs label="Year level" tabs={GRID_YEARS.filter((y) => WORKSHEET_LANDING_PAGES.some((p) => p.yearLevel === y)).map((y) => ({ id: `year-${y.split(" ")[1]}`, label: y }))}>
+            {GRID_YEARS.filter((y) => WORKSHEET_LANDING_PAGES.some((p) => p.yearLevel === y)).map((year) => {
               const items = WORKSHEET_LANDING_PAGES.filter(
                 (p) => p.yearLevel === year
               );
@@ -254,7 +266,7 @@ export default function WorksheetsPage() {
               return (
                 <div key={year} id={anchorId} style={{ scrollMarginTop: 100 }}>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 16 }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 800, color: c.ink, letterSpacing: "-0.4px", margin: 0 }}>
+                    <h3 className="mx-sr" style={{ fontSize: 18, fontWeight: 800, color: c.ink, letterSpacing: "-0.4px", margin: 0 }}>
                       {year}
                     </h3>
                     {year !== "Year 10A" && (
@@ -266,7 +278,7 @@ export default function WorksheetsPage() {
                       {items.length} topics
                     </span>
                   </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
                     {items.map((p) => (
                       <Link
                         key={p.slug}
@@ -285,7 +297,7 @@ export default function WorksheetsPage() {
                 </div>
               );
             })}
-          </div>
+          </Tabs>
         </div>
       </section>
 
@@ -301,10 +313,10 @@ export default function WorksheetsPage() {
           </h2>
           <div style={{ display: "grid", gap: 12 }}>
             {FAQS.map((f) => (
-              <div key={f.q} style={{ background: c.paper, borderRadius: 14, border: `1px solid ${c.border}`, padding: "18px 20px" }}>
-                <h3 style={{ fontSize: 16, fontWeight: 700, color: c.ink, margin: "0 0 6px" }}>{f.q}</h3>
-                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65, margin: 0 }}>{f.a}</p>
-              </div>
+              <details key={f.q} className="ws-faq" style={{ background: c.paper, borderRadius: 14, border: `1px solid ${c.border}`, padding: "16px 20px" }}>
+                <summary style={{ fontSize: 16, fontWeight: 700, color: c.ink, cursor: "pointer" }}>{f.q}</summary>
+                <p style={{ fontSize: 14.5, color: c.textLight, lineHeight: 1.65, margin: "8px 0 0" }}>{f.a}</p>
+              </details>
             ))}
           </div>
         </div>
@@ -313,6 +325,7 @@ export default function WorksheetsPage() {
       {/* FOOTER */}
       <AppCtaBand placement="worksheets_index_final" />
       <MarketingFooter />
+      <StickyAppBar placement="worksheets_sticky" text="Unlimited practice" />
     </div>
   );
 }

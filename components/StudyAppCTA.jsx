@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import { STUDY_APP, STUDY_CHECKOUT, isStudyAppLive } from "@/lib/study-app";
+import { APP_CTA_LABEL, STUDY_APP, STUDY_CHECKOUT, isStudyAppLive } from "@/lib/study-app";
 import { trackEvent } from "@/lib/analytics";
 import "@/components/brand/brand.css";
 import LaunchPrice from "@/components/study/LaunchPrice";
@@ -108,11 +108,11 @@ export default function StudyAppCTA({
   // hero (#get-app), so the nav never grows a form.
   if (variant === "nav") {
     let href = "/#get-app";
-    let label = "Free to download";
+    let label = APP_CTA_LABEL.pilot;
     const storeUrl = platform === "android" ? STUDY_APP.playStoreUrl : STUDY_APP.appStoreUrl;
     if (live && storeUrl) {
       href = STUDY_CHECKOUT.plus;
-      label = "Get Tuterly";
+      label = APP_CTA_LABEL.live;
     }
     return (
       <a
@@ -165,7 +165,7 @@ export default function StudyAppCTA({
             trackEvent("begin_checkout", { item_id: "plus", source: placement || variant });
           }}
         >
-          Get Tuterly
+          {APP_CTA_LABEL.live}
         </a>
         {!compact && (
           <StoreButton
@@ -189,7 +189,7 @@ export default function StudyAppCTA({
         ? "Join the free pilot"
         : mode === "android-button"
           ? "Get notified for Android"
-          : "Sign up early";
+          : APP_CTA_LABEL.pilot;
     action = (
       <button
         type="button"
@@ -238,7 +238,9 @@ export default function StudyAppCTA({
 
   const meta = (
     <p className="tb-appcta__meta">
-      {`Free to download · Years 7 to 10 maths · ${STUDY_APP.playStoreUrl ? "iPhone and Android" : "On iPhone. Android coming soon"}`}
+      {live
+        ? `Free to download · Years 7 to 10 maths · ${STUDY_APP.playStoreUrl ? "iPhone and Android" : "On iPhone. Android coming soon"}`
+        : "Years 7 to 10 maths · Coming to iPhone first, then Android"}
       {pos === "final" && pathname !== "/method" && (
         <>
           <br />
@@ -421,7 +423,7 @@ function WaitlistForm({ kind, wide, slim, compact, hideDeal = false, audience = 
       ? "Join the free pilot"
       : kind === "android"
         ? compact ? "Notify me" : "Get notified when Android launches"
-        : "Sign up early";
+        : APP_CTA_LABEL.pilot;
   const intro =
     kind === "pilot"
       ? "The pilot is with Bayside Academics students right now. Leave your email and we'll let you know if more spots open, and when the app launches."

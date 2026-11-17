@@ -1,0 +1,80 @@
+/* Shared UX pieces for the main marketing pages (Ryan, 18 Nov 2026):
+   sticky phone app bar, "On this page" chips, free tools row, tabs. */
+
+html { scroll-padding-top: 88px; }
+
+/* Sticky app bar: phones only, slides up once past the first screen. */
+.mx-sticky {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 8px 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  background: var(--card); border-top: 2px solid var(--border);
+  box-shadow: 0 -8px 24px rgba(15, 23, 42, .08);
+  transform: translateY(110%); transition: transform .25s ease;
+}
+.mx-sticky.is-shown { transform: translateY(0); }
+.mx-sticky__text { flex: 1 1 auto; margin: 0; font-size: 14px; line-height: 1.3; color: var(--muted); }
+.mx-sticky__text strong { display: block; color: var(--foreground); font-weight: 800; font-size: 15px; }
+.mx-sticky__btn { flex: 0 0 auto; margin-bottom: 4px; white-space: nowrap; }
+.mx-sticky__close { flex: 0 0 auto; min-width: 40px; min-height: 44px; border: 0; background: none; color: var(--muted); font-size: 22px; cursor: pointer; }
+@media (min-width: 768px) { .mx-sticky { display: none; } }
+@media (prefers-reduced-motion: reduce) { .mx-sticky { transition: none; } }
+
+/* On this page */
+.mx-jump { border-block: 1px solid var(--border); background: var(--card); }
+.mx-jump__in { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.mx-jump__in::-webkit-scrollbar { display: none; }
+.mx-jump__label { flex: 0 0 auto; font-size: 12px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); margin-right: 4px; }
+.mx-jump__chip { flex: 0 0 auto; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--background); color: var(--foreground); font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.mx-jump__chip:hover { border-color: var(--brand); color: var(--brand-text); }
+
+/* Free tools row */
+.mx-tools { padding: 40px 0 8px; }
+.mx-tools__h { font-size: clamp(22px, 3vw, 28px); font-weight: 800; letter-spacing: -.5px; margin: 0 0 6px; }
+.mx-tools__lead { color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 0 18px; max-width: 60ch; }
+.mx-tools__grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }
+@media (max-width: 820px) { .mx-tools__grid { grid-template-columns: 1fr; } }
+.mx-tool { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 18px; border: 2px solid var(--border); background: var(--card); color: inherit; text-decoration: none; box-shadow: 0 3px 0 var(--border); transition: border-color .15s, transform .15s; }
+.mx-tool:hover { border-color: var(--brand); transform: translateY(-2px); }
+.mx-tool__k { font-size: 12px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; color: var(--brand-text); }
+.mx-tool__t { font-size: 19px; font-weight: 900; color: var(--foreground); }
+.mx-tool__x { font-size: 15px; line-height: 1.5; color: var(--muted); }
+.mx-tool__go { margin-top: 6px; font-weight: 800; font-size: 15px; color: var(--brand-text); }
+
+/* Tabs */
+.mx-tabs__list { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 6px; margin-bottom: 18px; scrollbar-width: none; }
+.mx-tabs__list::-webkit-scrollbar { display: none; }
+.mx-tabs__tab { flex: 0 0 auto; min-height: 44px; padding: 10px 18px; border-radius: 999px; border: 2px solid var(--border); background: var(--card); color: var(--foreground); font: inherit; font-size: 15px; font-weight: 800; cursor: pointer; }
+.mx-tabs__tab[aria-selected="true"] { background: var(--foreground); border-color: var(--foreground); color: var(--card); }
+.mx-tabs__tab:focus-visible { outline: 3px solid var(--brand-soft); outline-offset: 2px; }
+
+/* Phone heroes: the sign-up comes straight after the headline and the
+   intro; the launch pill, ticks and results line move just below it.
+   Nothing is removed, and desktop keeps its order. */
+@media (max-width: 767px) {
+  .mx-hero-phone { display: grid; }
+  .mx-hero-phone > * { order: 5; }
+  .mx-hero-phone > .tb-eyebrow { order: 0; }
+  .mx-hero-phone > h1 { order: 1; }
+  .mx-hero-phone > .tb-lead { order: 2; }
+  .mx-hero-phone > .sl-hero__cta, .mx-hero-phone > .pp-hero__cta { order: 3; margin-top: 18px; }
+  .mx-hero-phone > .sl-hero__trytext, .mx-hero-phone > .sl-hero__try { order: 4; }
+  .mx-hero-phone > .rp { order: 6; margin-top: 18px; }
+  .mx-hero-phone > .mia { order: 7; margin-top: 16px; }
+  .mx-hero-phone > .sl-launch { order: 8; margin: 16px 0 0; justify-self: start; }
+}
+
+/* A heading that repeats its tab's label stays for screen readers only. */
+.mx-tabs__panel .mx-sr, .mx-tabs__panel .ft-group__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Phones: the free tools are a short list, not three tall cards. */
+@media (max-width: 767px) {
+  .mx-tools { padding-top: 28px; }
+  .mx-tools__grid { gap: 8px; }
+  .mx-tool { padding: 14px 16px; border-radius: 14px; box-shadow: none; display: grid; grid-template-columns: 1fr auto; column-gap: 10px; align-items: center; }
+  .mx-tool__k { grid-column: 1; }
+  .mx-tool__t { grid-column: 1; font-size: 17px; }
+  .mx-tool__x { display: none; }
+  .mx-tool__go { grid-column: 2; grid-row: 1 / span 2; margin: 0; font-size: 0; }
+  .mx-tool__go::after { content: "→"; font-size: 22px; }
+}
