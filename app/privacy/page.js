@@ -289,6 +289,17 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
+          <Section title="If you use our free worksheets, exams or mind maps">
+            <p>
+              To unlock them we ask for your email (and, for worksheets, your
+              child&rsquo;s year level). Unlocking adds you to Tuterly&rsquo;s
+              email list for free maths resources, tips and Tuterly news, as
+              the form says before you submit it. Every email has a one-click
+              unsubscribe link, and once you unsubscribe we don&rsquo;t add you
+              back unless you ask us to. We record when and where you signed up.
+            </p>
+          </Section>
+
           <Section title="If you asked us to find a tutor">
             <p>
               This service is currently paused. If you used it, we shared the

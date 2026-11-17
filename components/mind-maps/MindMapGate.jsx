@@ -45,7 +45,8 @@ function useAutoUnlock() {
 // The email form: inline at the top of the page, or inside the pop-up.
 function UnlockForm({ placement, year, onDone, inline = false, cta = "Unlock the mind maps" }) {
   const [email, setEmail] = useState("");
-  const [optIn, setOptIn] = useState(false);
+  // Unlocking joins the email list (Ryan, 18 Nov 2026).
+  const optIn = true;
   const [trap, setTrap] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -78,10 +79,9 @@ function UnlockForm({ placement, year, onDone, inline = false, cta = "Unlock the
       <div aria-hidden="true" style={{ position: "absolute", left: -10000, width: 1, height: 1, overflow: "hidden" }}>
         <input tabIndex={-1} autoComplete="off" name="company_website" value={trap} onChange={(e) => setTrap(e.target.value)} />
       </div>
-      <label className="mm-modal__tick">
-        <input type="checkbox" checked={optIn} onChange={(e) => setOptIn(e.target.checked)} disabled={busy} />
-        <span>Send me maths revision tips and offers from Tuterly. Unsubscribe any time.</span>
-      </label>
+      <p className="mm-modal__tick">
+        <span>When you unlock the mind maps, you also join Tuterly&rsquo;s email list for maths revision tips and offers. Unsubscribe any time from any email.</span>
+      </p>
       {error && <p className="mm-modal__error" role="alert">{error}</p>}
       <p className="mm-modal__small">Free. Unlocks every mind map on this device. See our <a href="/privacy">privacy policy</a>.</p>
     </form>

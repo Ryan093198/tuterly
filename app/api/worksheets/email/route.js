@@ -40,6 +40,17 @@ export async function POST(request) {
   // Marketing consent (Spam Act): only recorded when ticked. An unticked
   // resubmission never clears an earlier opt-in; unsubscribes are handled
   // by the unsubscribe link, not by the gate.
+  // Gates now opt people in automatically (weekly_source "*_auto", Ryan
+  // 18 Nov 2026). That must never re-subscribe someone who unsubscribed:
+  // only their own active choice (a tick or a subscribe button) can.
+  const auto = typeof body?.weekly_source === "string" && body.weekly_source.endsWith("_auto");
+  if (auto && (body?.marketing_opt_in === true || body?.weekly_opt_in === true)) {
+    const { data: prev } = await admin.from("worksheet_email_signups").select("unsubscribed_at").eq("email", email).maybeSingle();
+    if (prev?.unsubscribed_at) {
+      body.marketing_opt_in = false;
+      body.weekly_opt_in = false;
+    }
+  }
   if (body?.marketing_opt_in === true) {
     upsertRow.marketing_opt_in = true;
     upsertRow.marketing_opt_in_at = new Date().toISOString();

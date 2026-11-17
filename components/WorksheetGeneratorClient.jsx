@@ -8,7 +8,7 @@ import TopicTestOffer from "@/components/study/TopicTestOffer";
 import QuinnWorking from "@/components/brand/QuinnWorking";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
-import { WeeklyOptInCard, WeeklyOptInBox, WEEKLY_STORAGE_KEY } from "@/components/study/WeeklyOptIn";
+import { WeeklyOptInCard, WEEKLY_STORAGE_KEY, WeeklyOptInNotice } from "@/components/study/WeeklyOptIn";
 import { chapterQuestionCount, MAX_CHAPTER_QUESTIONS } from "@/lib/worksheet-count";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
@@ -98,7 +98,8 @@ export default function WorksheetGenerator({
   const [modalEmailInput, setModalEmailInput] = useState("");
   const [modalYearInput, setModalYearInput] = useState(defaultYear);
   // Marketing consent (Spam Act). Unticked by default; only these signups get emailed.
-  const [modalMarketingOptIn, setModalMarketingOptIn] = useState(false);
+  // Getting a worksheet joins the email list (Ryan, 18 Nov 2026).
+  const [modalMarketingOptIn, setModalMarketingOptIn] = useState(true);
 
   const [yearLevel, setYearLevel] = useState(defaultYear);
   // Topic-specific landing pages preselect a curriculum code. We seed
@@ -284,7 +285,7 @@ export default function WorksheetGenerator({
           weekly_opt_in: modalMarketingOptIn,
           source: "worksheet_generator",
           source_page: typeof window !== "undefined" ? window.location.pathname : null,
-          weekly_source: "worksheet_gate",
+          weekly_source: "worksheet_gate_auto",
         }),
       });
       const data = await readJsonOrFallback(res);
@@ -940,7 +941,7 @@ function EmailGateModal({
               ))}
             </select>
           </label>
-          <WeeklyOptInBox yearLevel={year} checked={!!marketingOptIn} onChange={onMarketingOptInChange} disabled={pending} />
+          <WeeklyOptInNotice yearLevel={year} />
         </div>
 
         {error && (
@@ -969,7 +970,7 @@ function EmailGateModal({
             cursor: pending ? "wait" : "pointer",
           }}
         >
-          {pending ? "Saving…" : "Generate worksheet"}
+          {pending ? "Saving…" : "Get my worksheet"}
         </button>
       </form>
     </div>

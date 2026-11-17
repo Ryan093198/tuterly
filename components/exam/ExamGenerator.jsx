@@ -12,7 +12,7 @@ import { trackEvent } from "@/lib/analytics";
 import { fixDollars } from "@/lib/md-dollars";
 import { appCta } from "@/lib/study-app";
 import ResultsProof from "@/components/study/ResultsProof";
-import { WeeklyOptInCard, WeeklyOptInBox, isWeeklySubscribedHere, markWeeklySubscribedHere } from "@/components/study/WeeklyOptIn";
+import { WeeklyOptInCard, WeeklyOptInNotice, isWeeklySubscribedHere, markWeeklySubscribedHere } from "@/components/study/WeeklyOptIn";
 import "./exam.css";
 
 // Free practice exam generator. Pick a year, tick topics (a main topic
@@ -46,7 +46,8 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
   const [email, setEmail] = useState("");
   const [gate, setGate] = useState(false);
   const [gateEmail, setGateEmail] = useState("");
-  const [optIn, setOptIn] = useState(false);
+  // Getting an exam joins the email list (Ryan, 18 Nov 2026).
+  const optIn = true;
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
   const [limit, setLimit] = useState(false);
@@ -176,7 +177,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
       const res = await fetch("/api/worksheets/email", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn, weekly_opt_in: optIn, source: "exam_generator", source_page: typeof window !== "undefined" ? window.location.pathname : null, weekly_source: "exam_gate" }),
+        body: JSON.stringify({ email: em, year_level: year, marketing_opt_in: optIn, weekly_opt_in: optIn, source: "exam_generator", source_page: typeof window !== "undefined" ? window.location.pathname : null, weekly_source: "exam_gate_auto" }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Could not save your email. Try again.");
@@ -273,7 +274,7 @@ export default function ExamGenerator({ catalogue, placement = "exam_generator",
             <p className="eg-gate__title">Unlock your free practice exam</p>
             <p className="eg-gate__text">Your email, so we can unlock it (the same unlock as the free worksheet generator). Free, no card needed.</p>
             <div style={{ margin: "12px 0" }}>
-              <WeeklyOptInBox yearLevel={year} kind="exam" checked={optIn} onChange={setOptIn} disabled={busy} />
+              <WeeklyOptInNotice yearLevel={year} kind="exam" />
             </div>
             <div className="eg-gate__row">
               <input type="email" required autoComplete="email" placeholder="Your email" value={gateEmail} onChange={(e) => setGateEmail(e.target.value)} aria-label="Email" />

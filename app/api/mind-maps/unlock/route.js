@@ -29,11 +29,16 @@ export async function POST(request) {
 
   const row = { email, ip: trustedClientIp(request), last_seen_at: new Date().toISOString() };
   if (year) row.year_level = year;
-  if (body?.marketing_opt_in === true) {
-    row.marketing_opt_in = true;
-    row.marketing_opt_in_at = new Date().toISOString();
-  }
   const admin = createAdminClient();
+  // Unlocking opts in automatically (Ryan, 18 Nov 2026), but never for
+  // someone who has unsubscribed.
+  if (body?.marketing_opt_in === true) {
+    const { data: prev } = await admin.from("worksheet_email_signups").select("unsubscribed_at").eq("email", email).maybeSingle();
+    if (!prev?.unsubscribed_at) {
+      row.marketing_opt_in = true;
+      row.marketing_opt_in_at = new Date().toISOString();
+    }
+  }
   let { error } = await admin.from("worksheet_email_signups").upsert(row, { onConflict: "email" });
   if (error && /marketing_opt_in/.test(error.message || "")) {
     delete row.marketing_opt_in; delete row.marketing_opt_in_at;

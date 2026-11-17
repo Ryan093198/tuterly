@@ -39,7 +39,38 @@ export function markWeeklySubscribedHere() {
   try { window.localStorage.setItem(WEEKLY_STORAGE_KEY, "1"); } catch {}
 }
 
-// The tick box in an email gate.
+// The email gate's opt-in (Ryan, 18 Nov 2026): getting the free resource
+// joins the email list, said plainly right above the button rather than as
+// a tick box. Ryan's call, made knowing ACMA's view that consent bundled
+// with access to something generally won't meet its expectations; the
+// sign-up records the method (weekly_source "*_auto") and every email has a
+// one-click unsubscribe. Applies to new sign-ups only.
+export function WeeklyOptInNotice({ yearLevel, kind = "worksheet", style }) {
+  const offer = weeklyOffer(yearLevel, kind);
+  const thing = kind === "exam" ? "practice exam" : kind === "mind_map" ? "mind maps" : "worksheet";
+  return (
+    <p
+      style={{
+        margin: 0,
+        padding: "12px 14px",
+        borderRadius: 14,
+        background: "var(--brand-pale, var(--brand-soft))",
+        fontSize: 13.5,
+        fontWeight: 600,
+        color: c.textLight,
+        lineHeight: 1.5,
+        textAlign: "left",
+        ...style,
+      }}
+    >
+      <strong style={{ color: c.navy }}>Free, with our email list.</strong>{" "}
+      When you get the {thing}, you also join Tuterly&rsquo;s email list: {offer.points.map((p) => p.charAt(0).toLowerCase() + p.slice(1)).join(", and ")}. Unsubscribe any time from any email.
+    </p>
+  );
+}
+
+// The tick box in an email gate (no longer used by the gates; kept for any
+// page that still wants an optional tick).
 export function WeeklyOptInBox({ yearLevel, checked, onChange, disabled, kind = "worksheet" }) {
   const offer = weeklyOffer(yearLevel, kind);
   return (
