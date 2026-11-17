@@ -1,0 +1,93 @@
+{
+ "examples": [
+  {
+   "title": "Writing a growth rule and using it",
+   "question": "A country town has a population of $12\\,000$ and it is growing by $4\\%$ per year.\n\na) Write a rule for the population $P$ after $n$ years.\n\nb) Find the population after $5$ years, to the nearest whole person.",
+   "solution": "**Key idea:** A percentage increase becomes a **growth multiplier**: add the percentage to $100\\%$ and write it as a decimal. Growing by $4\\%$ means multiplying by $104\\% = 1.04$ every year, so after $n$ years you have multiplied by $1.04$ a total of $n$ times.\n\n1. Multiplier: $100\\% + 4\\% = 104\\% = 1.04$\n2. Starting value: $P_0 = 12\\,000$\n3. **a)** The rule is:\n$$P = 12\\,000 \\times 1.04^{n}$$\n4. **b)** Substitute $n = 5$:\n$$P = 12\\,000 \\times 1.04^{5}$$\n5. $1.04^{5} = 1.216\\,652\\,9\\ldots$, so:\n$$P = 12\\,000 \\times 1.216\\,652\\,9\\ldots = 14\\,599.83\\ldots$$\n6. Round to a whole number of people: $14\\,600$.\n7. Sense check: $4\\%$ of $12\\,000$ is $480$, and $5 \\times 480 = 2\\,400$ would give $14\\,400$ if it grew by the same amount each year. The exponential answer is a little higher because each year's $4\\%$ is taken of a bigger population ✓\n\n**Answer:** a) $P = 12\\,000 \\times 1.04^{n}$ b) about $14\\,600$ people",
+   "answer": "a) $P = 12\\,000 \\times 1.04^{n}$ b) $14\\,600$ people"
+  },
+  {
+   "title": "Depreciation: exponential decay",
+   "question": "A ute is bought new for \\$32 000. Its value falls by $15\\%$ each year. Find its value after $4$ years.",
+   "solution": "**Key idea:** A percentage **decrease** gives a **decay multiplier** between $0$ and $1$: subtract the percentage from $100\\%$. Losing $15\\%$ a year means keeping $85\\%$, so multiply by $0.85$ each year.\n\n1. Multiplier: $100\\% - 15\\% = 85\\% = 0.85$\n2. Rule: $V = 32\\,000 \\times 0.85^{n}$\n3. Substitute $n = 4$:\n$$V = 32\\,000 \\times 0.85^{4}$$\n4. $0.85^{4} = 0.522\\,006\\,25$, so:\n$$V = 32\\,000 \\times 0.522\\,006\\,25 = 16\\,704.20$$\n5. Year by year, as a check:\n\n| Year | Value |\n|---|---|\n| $0$ | \\$32 000.00 |\n| $1$ | \\$27 200.00 |\n| $2$ | \\$23 120.00 |\n| $3$ | \\$19 652.00 |\n| $4$ | \\$16 704.20 |\n\n6. Notice the drop gets smaller each year (\\$4800, then \\$4080, then \\$3468, then \\$2947.80), because $15\\%$ is taken of a smaller value each time.\n\n**Answer:** \\$16 704.20",
+   "answer": "\\$16 704.20"
+  },
+  {
+   "title": "Doubling: counting the periods",
+   "question": "A culture starts with $500$ bacteria and the number doubles every $3$ hours. How many bacteria are there after $12$ hours? Write a rule for the number $N$ after $t$ hours.",
+   "solution": "**Key idea:** When something doubles every few hours, the multiplier is $2$, but it only applies once per **doubling period**. First work out how many periods fit into the time.\n\n1. Number of doubling periods in $12$ hours:\n$$\\frac{12}{3} = 4$$\n2. Multiply by $2$ four times:\n$$N = 500 \\times 2^{4} = 500 \\times 16 = 8\\,000$$\n3. For any time $t$ in hours, the number of periods is $\\dfrac{t}{3}$, so the rule is:\n$$N = 500 \\times 2^{t/3}$$\n4. Check with the rule: $t = 12$ gives $500 \\times 2^{12/3} = 500 \\times 2^{4} = 8\\,000$ ✓\n\n**Answer:** $8\\,000$ bacteria; $N = 500 \\times 2^{t/3}$",
+   "answer": "$8\\,000$ bacteria"
+  },
+  {
+   "title": "Half-life",
+   "question": "A laboratory has $80$ mg of a radioactive isotope with a half-life of $6$ hours. How much is left after $24$ hours?",
+   "solution": "**Key idea:** **Half-life** is the time it takes for half of the substance to decay. Each half-life multiplies the amount by $\\dfrac{1}{2} = 0.5$.\n\n1. Number of half-lives in $24$ hours:\n$$\\frac{24}{6} = 4$$\n2. Halve four times:\n$$80 \\times 0.5^{4} = 80 \\times 0.0625 = 5$$\n3. Step by step: $80 \\to 40 \\to 20 \\to 10 \\to 5$ mg ✓\n4. As a rule: $M = 80 \\times 0.5^{t/6}$, where $t$ is in hours.\n\n**Answer:** $5$ mg",
+   "answer": "$5$ mg"
+  },
+  {
+   "title": "Repeated percentage changes",
+   "question": "A jacket costs \\$200. Its price rises by $10\\%$, then the new price is reduced by $10\\%$. Find the final price and the overall percentage change.",
+   "solution": "**Key idea:** Percentage changes in a row **multiply**. Find each multiplier and multiply them together to get one overall multiplier.\n\n1. A $10\\%$ rise: multiplier $1.1$. A $10\\%$ fall: multiplier $0.9$.\n2. Overall multiplier:\n$$1.1 \\times 0.9 = 0.99$$\n3. Final price: $200 \\times 0.99 = 198$, so the jacket now costs \\$198.\n4. Check in two steps: $200 \\times 1.1 = 220$, then $220 \\times 0.9 = 198$ ✓\n5. A multiplier of $0.99$ means keeping $99\\%$, so the overall change is a **$1\\%$ decrease**. The $10\\%$ fall is taken from \\$220, so it removes \\$22, more than the \\$20 the rise added.\n\n**Answer:** \\$198, an overall decrease of $1\\%$",
+   "answer": "\\$198; a $1\\%$ decrease"
+  },
+  {
+   "title": "When does it pass a target?",
+   "question": "A suburb has $8\\,000$ households and the number grows by $6\\%$ per year. After how many whole years will it first have more than $12\\,000$ households?",
+   "solution": "**Key idea:** Without logarithms, solve $8\\,000 \\times 1.06^{n} > 12\\,000$ by **trial and improvement**: substitute whole numbers for $n$ until the rule first passes the target.\n\n1. Rule: $H = 8\\,000 \\times 1.06^{n}$\n2. You need $1.06^{n} > \\dfrac{12\\,000}{8\\,000} = 1.5$.\n3. Try values of $n$:\n\n| $n$ | $8\\,000 \\times 1.06^{n}$ |\n|---|---|\n| $5$ | $10\\,705.8\\ldots$ |\n| $6$ | $11\\,348.2\\ldots$ |\n| $7$ | $12\\,029.0\\ldots$ |\n\n4. After $6$ years it's still below $12\\,000$. After $7$ years it's above.\n\n**Answer:** after $7$ years",
+   "answer": "$7$ years"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Using the percentage as the multiplier",
+   "wrong": "A car worth \\$20 000 loses $15\\%$ a year, so after $2$ years it's worth $20\\,000 \\times 0.15^{2} = 450$, just \\$450.",
+   "fix": "$0.15$ is the part that's **lost**, not the part that's kept. Keep $85\\%$: $20\\,000 \\times 0.85^{2} = 14\\,450$, so \\$14 450. For growth, add to $1$ ($4\\%$ growth is $\\times 1.04$, not $\\times 0.04$)."
+  },
+  {
+   "title": "Adding the same amount every year",
+   "wrong": "$12\\,000$ growing at $4\\%$ a year: $4\\%$ of $12\\,000$ is $480$, so after $5$ years it's $12\\,000 + 5 \\times 480 = 14\\,400$.",
+   "fix": "That's linear (simple) growth. With exponential growth each year's $4\\%$ is taken of the new, bigger amount: $12\\,000 \\times 1.04^{5} \\approx 14\\,600$."
+  },
+  {
+   "title": "Using the time instead of the number of periods",
+   "wrong": "Half-life $6$ hours, $80$ mg, after $24$ hours: $80 \\times 0.5^{24}$, which is almost $0$.",
+   "fix": "The power counts **half-lives**, not hours. $24$ hours is $\\dfrac{24}{6} = 4$ half-lives, so $80 \\times 0.5^{4} = 5$ mg."
+  },
+  {
+   "title": "Thinking equal percentage changes cancel out",
+   "wrong": "Up $10\\%$ then down $10\\%$ is no change overall.",
+   "fix": "Multiply the multipliers: $1.1 \\times 0.9 = 0.99$, a $1\\%$ decrease. The second change is a percentage of a different amount."
+  },
+  {
+   "title": "Rounding the multiplier or a middle step",
+   "wrong": "$32\\,000 \\times 0.85^{4} \\approx 32\\,000 \\times 0.52 = 16\\,640$, so \\$16 640.",
+   "fix": "Keep the full calculator value until the end: $32\\,000 \\times 0.85^{4} = 16\\,704.20$, so \\$16 704.20. Rounding $0.522\\ldots$ to $0.52$ costs over \\$60."
+  }
+ ],
+ "practice": {
+  "question": "A phone is bought for \\$1500 and loses $20\\%$ of its value each year. Find its value after $3$ years.",
+  "answer": "\\$768",
+  "solution": "**Key idea:** A $20\\%$ loss each year means keeping $80\\%$, so the decay multiplier is $0.8$.\n\n1. Rule: $V = 1\\,500 \\times 0.8^{n}$\n2. Substitute $n = 3$:\n$$V = 1\\,500 \\times 0.8^{3} = 1\\,500 \\times 0.512 = 768$$\n3. Check year by year: $1\\,500 \\to 1\\,200 \\to 960 \\to 768$ ✓\n\n**Answer:** \\$768"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is exponential growth and decay in Year 10?",
+  "a": "Exponential growth and decay describe a quantity that is multiplied by the same factor each period, giving a rule A = A₀ × bⁿ. If the multiplier b is more than 1, it grows (4% growth gives b = 1.04); if b is between 0 and 1, it decays (15% depreciation gives b = 0.85). Year 10 students write these rules, use them for population, depreciation, doubling and half-life, and find when a target is reached."
+ },
+ "turn": {
+  "question": "A sample of $64$ g of a substance has a half-life of $5$ days. How many grams are left after $15$ days?",
+  "kind": "number",
+  "accept": {
+   "value": 8,
+   "tol": 0
+  },
+  "answer_display": "$8$ g",
+  "hint": "How many half-lives fit into $15$ days? Halve $64$ that many times.",
+  "solution": "**Key idea:** Each half-life multiplies the amount by $0.5$.\n\n1. Number of half-lives: $\\dfrac{15}{5} = 3$\n2. $64 \\times 0.5^{3} = 64 \\times 0.125 = 8$\n3. Check: $64 \\to 32 \\to 16 \\to 8$ ✓\n\n**Answer:** $8$ g"
+ },
+ "turn_checked": {
+  "my_answer": "8",
+  "attempts": 1
+ }
+}
