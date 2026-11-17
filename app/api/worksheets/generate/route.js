@@ -19,6 +19,7 @@ import { sanitizeGenerated } from "@/lib/sanitize-generated";
 import { worksheetStructureProblems } from "@/lib/worksheet-structure";
 import { topicKey, viewerKeys, pickFromPool, recordServe, saveToPool } from "@/lib/worksheet-pool";
 import { CHAPTER_WORKSHEET_YEARS, chapterRequest } from "@/lib/worksheet-chapters";
+import { pickFromBank, writeMissing, assembleWorksheet, saveWritten, checkWritten, recordBankServes } from "@/lib/worksheet-bank";
 
 export const runtime = "nodejs";
 // A fresh worksheet is written with extended thinking (the model works each
@@ -300,6 +301,33 @@ async function handle(request) {
     await admin.from("worksheet_generations").delete().eq("id", reservationId);
   }
 
+  // Years 7 to 10: build the sheet from the question bank; the model only
+  // writes questions this student has run out of (lib/worksheet-bank).
+  if (chapter) {
+    // Track what each student has had by email or account, not IP: a whole
+    // school can share one IP. IP only when there's nothing else.
+    const who = viewerKeys({ email: email || user?.email, userId: user?.id });
+    const viewers = who.length ? who : viewerKeys({ ip });
+    try {
+      const built = await buildFromBank({ admin, yearLevel, body, chapter, questionCount, viewers });
+      if (!built) {
+        await releaseReservation();
+        return NextResponse.json({ error: "Could not build that worksheet. Try ticking a different subtopic." }, { status: 502 });
+      }
+      await bumpQuestionTally(admin, "worksheets", built.count);
+      return NextResponse.json({
+        content: built.content,
+        year_level: yearLevel,
+        topic_label: topicLabel,
+        from_bank: built.fromBank,
+        written: built.written,
+      });
+    } catch (e) {
+      await releaseReservation();
+      throw e;
+    }
+  }
+
   // A checked worksheet on this topic that this visitor hasn't had yet?
   // Serve it straight away. (It still counts as their worksheet for today.)
   const key = topicKey(topicId, topicLabel);
@@ -438,6 +466,57 @@ async function handle(request) {
     year_level: yearLevel,
     topic_label: topicLabel,
   });
+}
+
+async function buildFromBank({ admin, yearLevel, body, chapter, questionCount, viewers }) {
+  const { chapter: ch, picked, pool, used } = await pickFromBank(admin, {
+    yearLevel,
+    chapterNo: body.chapter,
+    codes: chapter.codes,
+    count: questionCount,
+    viewers,
+  });
+  const gaps = picked.map((p, i) => ({ ...p, i })).filter((p) => !p.q);
+  let written = [];
+  if (gaps.length) {
+    try {
+      const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+      written = await writeMissing(anthropic, { yearLevel, chapterName: ch.name, gaps, count: questionCount });
+    } catch (e) {
+      console.warn("[worksheets] writing new questions failed:", e?.message || e);
+    }
+  }
+  for (const w of written) picked[gaps[w.gapIndex].i] = { section: w.section, q: w.q, written: w };
+  // Anything still empty: reuse a bank question on that subtopic the student
+  // has had before, rather than leave a hole.
+  for (let i = 0; i < picked.length; i++) {
+    if (picked[i].q) continue;
+    const again = pool.find((q) => q.code === picked[i].section.code && !used.has(q.id));
+    if (again) {
+      used.add(again.id);
+      picked[i] = { section: picked[i].section, q: again };
+    }
+  }
+  const items = picked.filter((p) => p.q);
+  if (!items.length) return null;
+  const content = assembleWorksheet({ yearLevel, chapterName: ch.name, items });
+
+  // Remember what this student has had, save the new questions and have a
+  // second model check them once the student has their sheet.
+  const saved = await saveWritten(admin, { bankYear: ch.fileYear, written: written.map((w) => ({ section: w.section, q: w.q })) });
+  const ids = [...items.filter((p) => p.q.id).map((p) => p.q.id), ...saved.map((w) => `d:${w.dbId}`)];
+  try {
+    await recordBankServes(admin, viewers, ids);
+  } catch (e) {
+    console.warn("[worksheets] serve log failed:", e?.message || e);
+  }
+  if (saved.length) {
+    after(async () => {
+      const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+      await checkWritten(admin, anthropic, { yearLevel, chapterName: ch.name, saved });
+    });
+  }
+  return { content, count: items.length, fromBank: items.length - written.length, written: written.length };
 }
 
 function sanitizeEmail(raw) {

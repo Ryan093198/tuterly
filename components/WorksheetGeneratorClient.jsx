@@ -688,9 +688,14 @@ export default function WorksheetGenerator({
 
           {generating && (
             <QuinnWorking
-              seconds={questionCount > 6 ? 70 : 48}
-              note={questionCount > 6 ? "This can take a minute or two. Please don't close the tab." : "This can take up to a minute. Please don't close the tab."}
-              steps={[
+              seconds={chapterMode ? 20 : 48}
+              note={chapterMode ? "Usually a few seconds. If we're writing you new questions it can take up to a minute." : "This can take up to a minute. Please don't close the tab."}
+              steps={chapterMode ? [
+                `Picking questions on ${chapter ? chapter.name.toLowerCase() : "your chapter"} you haven't done yet`,
+                "Sorting them from Foundation to Extension",
+                "Writing new questions if you've done all of ours",
+                "Putting your worksheet together",
+              ] : [
                 `Picking questions on ${chapterMode ? (chapter ? chapter.name.toLowerCase() : "your chapter") : topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
                 `Writing ${qWord(bands[0])} Foundation question${bands[0] === 1 ? "" : "s"}`,
                 `Writing ${qWord(bands[1])} Standard question${bands[1] === 1 ? "" : "s"}`,

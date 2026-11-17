@@ -29,14 +29,14 @@ const DESCRIPTION =
 
 const HOW = [
   { n: "1", title: "Pick the year and chapter", body: "Years 7 to 10 follow the textbook chapters: pick one chapter and every subtopic is ticked, then untick any you don't need. Years 3 to 6 list every topic by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
-  { n: "2", title: "Generate new questions", body: "Up to 3 questions per subtopic and 10 in all for Years 7 to 10, or six for Years 3 to 6, from Foundation through Standard to Extension. Written fresh each time, so you never get the same sheet twice." },
-  { n: "3", title: "Download the PDF", body: "Print it or work from the screen. Every question comes with a fully worked solution to check against." },
+  { n: "2", title: "Generate new questions", body: "Up to 3 questions per subtopic and 10 in all for Years 7 to 10, or six for Years 3 to 6, from Foundation through Standard to Extension. Years 7 to 10 never repeat a question your child has already had." },
+  { n: "3", title: "Download the PDF", body: "Print it or work from the screen. Every question comes with a worked solution or the answer to check against." },
 ];
 
 const FAQS = [
   { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day, or two a day if you join our free email list. There's nothing to pay and no card needed." },
   { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Australian Curriculum. Topics are organised as in the Victorian Curriculum 2.0, Victoria's version of it, and cover the same maths taught in the other states, including NSW and WA, which have their own syllabuses. For Years 7 to 10, pick the textbook chapter your child's class is on and untick any subtopics they haven't done yet. For Years 3 to 6, pick the topic." },
-  { q: "Are the worksheets the same every time?", a: "No. The generator writes new questions each time (up to 10 for Years 7 to 10, six for Years 3 to 6), across Foundation, Standard and Extension, each with a fully worked solution." },
+  { q: "Are the worksheets the same every time?", a: "No. For Years 7 to 10, each sheet picks questions from our checked question bank that your child hasn't had before, up to 10, and writes new ones once they've done all of ours on a topic. For Years 3 to 6, six new questions are written each time. Every question has a worked solution or answer." },
   { q: "Can it make a worksheet from my child's own mistakes?", a: "That's what the Tuterly app does for Years 7 to 10. Your child snaps the questions they got wrong, or uploads a marked test, and the app writes fresh questions on the same ideas until each one is mastered." },
 ];
 const URL = `${SITE_URL}/worksheets`;
