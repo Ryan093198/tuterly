@@ -2,6 +2,7 @@ import Link from "next/link";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
+import DiagnosticCallout from "@/components/diagnostic/DiagnosticCallout";
 import ExamGenerator from "@/components/exam/ExamGenerator";
 import { getExamCatalogue } from "@/lib/exam-bank";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
@@ -190,6 +191,8 @@ export default function EndOfYearMathsExamsPage() {
           <ExamGenerator catalogue={catalogue} initialYear="Year 8" placement="end_of_year_exam" />
         </div>
       </main>
+
+      <section className="npc-sec"><DiagnosticCallout title="Not sure which topics to revise?" /></section>
 
       <section className="sh-sec" aria-labelledby="ey-topics">
         <div className="sh-wrap">

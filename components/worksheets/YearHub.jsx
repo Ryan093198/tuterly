@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NaplanCallout from "@/components/naplan/NaplanCallout";
+import DiagnosticCallout from "@/components/diagnostic/DiagnosticCallout";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
@@ -190,6 +191,7 @@ export default function YearHub({ n }) {
         </div>
       </section>
 
+      <section className="npc-sec"><DiagnosticCallout year={Number(n)} /></section>
       <section className="npc-sec"><NaplanCallout year={Number(n)} /></section>
       <YearSwitcher current={String(n)} />
       <AppCtaBand placement={`year_${n}_hub_final`} />

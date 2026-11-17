@@ -1,5 +1,6 @@
 import { Md as MdHtml } from "@/lib/md-html";
 import Link from "next/link";
+import DiagnosticCallout from "@/components/diagnostic/DiagnosticCallout";
 import "katex/dist/katex.min.css";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
@@ -93,6 +94,8 @@ export default function YearTest({ n }) {
         <p className="sh-lead">{t.lead}</p>
         <p className="yt-jump"><a href="#make-test">Make a full {year} practice test ↓</a></p>
       </header>
+
+      <section className="npc-sec"><DiagnosticCallout year={Number(n)} title={`Want a full check of ${year} instead?`} /></section>
 
       <main className="sh-wrap yt-test" aria-labelledby="yt-sample">
         <h2 id="yt-sample">{year} sample test</h2>

@@ -19,8 +19,8 @@ export async function generateMetadata({ params }) {
   const { year } = await params;
   const d = buildDiagnostic(year);
   if (!d) return {};
-  const title = `Free ${d.year} Maths Diagnostic Test | Tuterly`;
-  const description = `A free ${d.year} maths diagnostic test: two questions from every chapter, marked straight away, with a free parent report on what to work on before ${d.next}.`;
+  const title = `Free ${d.year} Maths Assessment Test: Ready for ${d.next}? | Tuterly`;
+  const description = `A free online ${d.year} maths assessment test (diagnostic test): 20 questions from every chapter, marked straight away, showing the gaps to fix before ${d.next}, with a free report for parents.`;
   const url = `${SITE_URL}${DIAG_PATH}/${d.slug}`;
   return {
     title: { absolute: title },

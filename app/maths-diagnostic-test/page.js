@@ -10,9 +10,9 @@ import "@/components/diagnostic/diagnostic.css";
 
 // Free maths diagnostic test, Years 7 to 9 (Ryan, 17 Nov 2026): a lead
 // magnet for parents. lib/diagnostic.js builds and marks it.
-const TITLE = "Free Maths Diagnostic Test, Years 7 to 9 | Tuterly";
+const TITLE = "Free Maths Assessment Test, Years 7 to 9 (Diagnostic) | Tuterly";
 const DESCRIPTION =
-  "A free online maths diagnostic test for Years 7, 8 and 9. Two questions from every chapter of the year, marked straight away, with a free report for parents on what to work on before next year.";
+  "A free online maths assessment and diagnostic test for Years 7, 8 and 9. Two questions from every chapter of the year, marked straight away, with a free report for parents on what to work on before next year.";
 const URL = `${SITE_URL}${DIAG_PATH}`;
 
 export const metadata = {
@@ -51,9 +51,9 @@ export default function DiagnosticLanding() {
       <MarketingNav />
       <header className="sh-hero">
         <p className="sh-eyebrow">Free · Years 7, 8 and 9 · About 35 minutes</p>
-        <h1>Free maths diagnostic test. Find the gaps before next year.</h1>
+        <h1>Free maths assessment test. Find the gaps before next year.</h1>
         <p className="sh-lead">
-          Two questions from every chapter of this year&rsquo;s maths, marked straight away. Parents get a free report on what to work on before next year.
+          A quick diagnostic test with two questions from every chapter of this year&rsquo;s maths, marked straight away. Parents get a free report on what to work on before next year.
         </p>
       </header>
 

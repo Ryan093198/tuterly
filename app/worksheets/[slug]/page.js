@@ -1,5 +1,6 @@
 import { writtenTopicTest } from "@/lib/topic-test-files";
 import NaplanCallout from "@/components/naplan/NaplanCallout";
+import DiagnosticCallout from "@/components/diagnostic/DiagnosticCallout";
 import { worksheetMeta } from "@/lib/worksheet-meta";
 import Link from "next/link";
 import ReviewedBy from "@/components/brand/ReviewedBy";
@@ -296,6 +297,10 @@ export default async function WorksheetTopicLandingPage({ params }) {
             </p>
           </div>
         </section>
+      )}
+
+      {["Year 7", "Year 8", "Year 9"].includes(page.yearLevel) && (
+        <section className="npc-sec" style={{ background: c.white }}><DiagnosticCallout year={Number(page.yearLevel.slice(5))} /></section>
       )}
 
       {(page.yearLevel === "Year 7" || page.yearLevel === "Year 9") && (
