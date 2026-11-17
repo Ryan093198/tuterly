@@ -18,6 +18,7 @@ import {
 import { sanitizeGenerated } from "@/lib/sanitize-generated";
 import { worksheetStructureProblems } from "@/lib/worksheet-structure";
 import { topicKey, viewerKeys, pickFromPool, recordServe, saveToPool } from "@/lib/worksheet-pool";
+import { CHAPTER_WORKSHEET_YEARS, chapterRequest } from "@/lib/worksheet-chapters";
 
 export const runtime = "nodejs";
 // A fresh worksheet is written with extended thinking (the model works each
@@ -95,8 +96,21 @@ async function handle(request) {
       { status: 400 }
     );
   }
-  const topicId = body?.topic_id?.toString().trim() || null;
-  const topicLabel = body?.topic_label?.toString().trim();
+  let topicId = body?.topic_id?.toString().trim() || null;
+  let topicLabel = body?.topic_label?.toString().trim();
+  // Years 7 to 10: one textbook chapter and the subtopics ticked in it
+  // (lib/worksheet-chapters). The label and pool id come from the server's
+  // own chapter list, not the client.
+  let chapter = null;
+  if (body?.chapter != null && CHAPTER_WORKSHEET_YEARS.includes(yearLevel)) {
+    const codes = Array.isArray(body.sections) ? body.sections.slice(0, 40).map((x) => String(x).slice(0, 8)) : [];
+    chapter = chapterRequest(yearLevel, body.chapter, codes);
+    if (!chapter) {
+      return NextResponse.json({ error: "Pick a chapter and at least one subtopic." }, { status: 400 });
+    }
+    topicId = chapter.topicId;
+    topicLabel = chapter.topicLabel;
+  }
   if (!topicLabel) {
     return NextResponse.json({ error: "Pick a topic." }, { status: 400 });
   }
@@ -237,7 +251,7 @@ async function handle(request) {
   // in that case we pass just the human label.
   const lookup = getCurriculumForStudent(yearLevel, [yearLevel], "maths");
   let topicDescription = null;
-  if (lookup && !lookup.isVCE && topicId) {
+  if (lookup && !lookup.isVCE && topicId && !chapter) {
     for (const items of Object.values(lookup.curriculum)) {
       for (const item of items) {
         if (item.code === topicId) {
@@ -304,6 +318,7 @@ async function handle(request) {
     topicLabel,
     topicDescription,
     variantSeed,
+    chapter,
   });
   const baseMessages = [{ role: "user", content: userMessage }];
 

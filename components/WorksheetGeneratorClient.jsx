@@ -1,0 +1,1158 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import MarkdownReport from "@/components/MarkdownReport";
+import { readJsonOrFallback } from "@/lib/practice-client";
+import StudyAppCTA from "@/components/StudyAppCTA";
+import TopicTestOffer from "@/components/study/TopicTestOffer";
+import QuinnWorking from "@/components/brand/QuinnWorking";
+import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
+import { WeeklyOptInCard, WeeklyOptInBox, WEEKLY_STORAGE_KEY } from "@/components/study/WeeklyOptIn";
+
+// Public worksheet generator at /worksheets. Three states drive the UI:
+//   1. Email gate (no email in localStorage yet) — collect + POST to
+//      /api/worksheets/email, set localStorage flag, advance.
+//   2. Form — year + topic + Generate.
+//   3. Result — rendered markdown + PDF + Regenerate + trial banner.
+//
+// Topic data is pre-rendered server-side (see app/worksheets/page.js)
+// so the dropdown is instant.
+const STORAGE_KEY = "tuterly:worksheet_email";
+// Tuterly covers Years 7 to 10 maths; younger year levels keep the
+// tutor offer instead of the app.
+const STUDY_APP_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
+// Child's year from the gate, used to prefill the "Find a local tutor" form.
+const YEAR_STORAGE_KEY = "tuterly:worksheet_year";
+// Post-generation upsell. Fires on ENGAGEMENT (scrolled to the end of the
+// worksheet, opened a worked solution, or downloaded the PDF) rather than the
+// instant the worksheet paints - a modal thrown over the thing they just
+// waited 30s for reads as bait-and-switch and gets dismissed reflexively.
+const UPSELL_SESSION_KEY = "tuterly:worksheet_upsell_seen";
+// Floor on how soon after generation the modal may appear, so a fast scroll
+// or a stray toggle click cannot pre-empt them actually looking at it.
+const UPSELL_MIN_DWELL_MS = 4000;
+
+
+const YEAR_LEVELS = [
+  "Year 3",
+  "Year 4",
+  "Year 5",
+  "Year 6",
+  "Year 7",
+  "Year 8",
+  "Year 9",
+  "Year 10",
+  "Year 10A",
+];
+
+const c = {
+  teal: "var(--brand-text)",
+  tealLight: "var(--brand)",
+  tealDark: "var(--brand-text)",
+  tealPale: "var(--brand-soft)",
+  navy: "var(--foreground)",
+  navyMid: "var(--foreground)",
+  text: "var(--foreground)",
+  textLight: "var(--muted)",
+  textMuted: "var(--muted)",
+  white: "var(--card)",
+  offWhite: "var(--background)",
+  border: "var(--border)",
+  rose: "var(--danger)",
+  amber: "var(--xp)",
+};
+
+export default function WorksheetGenerator({
+  topicsByYear,
+  initialYearLevel,
+  initialTopicId,
+  // Optional subset of year levels to offer (e.g. primary-only pages pass
+  // Years 3-6). Defaults to the full Year 3-10 range.
+  yearLevels,
+  // Pages that place their own Tuterly card next to the generator
+  // (e.g. /worksheets) pass false to avoid two app CTAs side by side.
+  studyAppUnderGenerator = true,
+  // Years 7 to 10: textbook chapters, each with its subtopics (added by the
+  // server wrapper, components/WorksheetGenerator.jsx). One chapter at a
+  // time; every subtopic starts ticked.
+  chaptersByYear = {},
+  // { n, codes } preset by a topic page, or null.
+  initialChapter = null,
+}) {
+  const years =
+    Array.isArray(yearLevels) && yearLevels.length ? yearLevels : YEAR_LEVELS;
+  const defaultYear =
+    initialYearLevel && years.includes(initialYearLevel)
+      ? initialYearLevel
+      : years[0];
+  const [email, setEmail] = useState("");
+  const [emailSaved, setEmailSaved] = useState(false);
+  const [emailPending, setEmailPending] = useState(false);
+  const [emailError, setEmailError] = useState(null);
+  // Email-capture modal opens on first Generate click instead of
+  // gating the whole page. Visitors get to browse year + topic +
+  // difficulty before being asked to part with their address.
+  const [emailModalOpen, setEmailModalOpen] = useState(false);
+  const [modalEmailInput, setModalEmailInput] = useState("");
+  const [modalYearInput, setModalYearInput] = useState(defaultYear);
+  // Marketing consent (Spam Act). Unticked by default; only these signups get emailed.
+  const [modalMarketingOptIn, setModalMarketingOptIn] = useState(false);
+
+  const [yearLevel, setYearLevel] = useState(defaultYear);
+  // Topic-specific landing pages preselect a curriculum code. We seed
+  // topicId at mount and resolve its label from the dropdown source
+  // once it's available so the picker reflects the preset.
+  const [topicId, setTopicId] = useState(initialTopicId || "");
+  const [topicLabel, setTopicLabel] = useState("");
+  const [generating, setGenerating] = useState(false);
+  const [error, setError] = useState(null);
+  const [worksheet, setWorksheet] = useState(null);
+  const [trialPromptOpen, setTrialPromptOpen] = useState(false);
+  const [limitReached, setLimitReached] = useState(false);
+  const [trialPending, setTrialPending] = useState(false);
+  const [trialError, setTrialError] = useState(null);
+  const [upsellOpen, setUpsellOpen] = useState(false);
+  // Weekly worksheet email (Ryan, 9 Nov 2026): subscribers get two
+  // worksheets a day, and the card under the worksheet asks again.
+  const [weeklySubscribed, setWeeklySubscribed] = useState(false);
+  // From the server's limit response: false means a sign-up would unlock a
+  // second worksheet today.
+  const [limitSubscribed, setLimitSubscribed] = useState(null);
+  // Where they just signed up from this visit ("limit" or "result"), to
+  // show the confirmation in place.
+  const [justSubscribed, setJustSubscribed] = useState(null);
+  // Ref rather than state: the guard is read inside listeners that must not
+  // re-subscribe when it flips.
+  const upsellFiredRef = useRef(false);
+  const worksheetShownAtRef = useRef(0);
+  const upsellSentinelRef = useRef(null);
+  // Mirrors "some other modal is open" into a ref. Kept out of the
+  // maybeOpenUpsell dep list on purpose: if the callback changed identity
+  // whenever a modal opened or closed, the observer effect below would
+  // re-subscribe and drop any engagement during the gap.
+  const upsellBlockedRef = useRef(false);
+  // Pending delayed-open timer, so it can be cancelled and cannot outlive the
+  // component or the state it was scheduled under.
+  const upsellTimerRef = useRef(null);
+  const resultRef = useRef(null);
+
+  // Scroll to the generated worksheet once it actually paints. Keyed on
+  // `worksheet` (not a rAF in the click handler) so the ref is attached by
+  // the time we scroll - otherwise the result lands below the fold, hidden
+  // under the upsell card, and parents think nothing happened.
+  useEffect(() => {
+    if (worksheet) {
+      worksheetShownAtRef.current = Date.now();
+      resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [worksheet]);
+
+  // Hydrate email from localStorage on mount so returning visitors skip the gate.
+  // Also stash a `?ref=` query param into localStorage so the referral code
+  // survives email-gate detours and lands in the Stripe checkout body when
+  // the visitor finally signs up.
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        setEmail(saved);
+        setEmailSaved(true);
+      }
+      if (window.localStorage.getItem(WEEKLY_STORAGE_KEY)) setWeeklySubscribed(true);
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get("ref");
+      if (ref && /^[A-Za-z2-9]{6,12}$/.test(ref)) {
+        window.localStorage.setItem("tuterly:ref", ref.toUpperCase());
+      }
+    } catch {
+      // localStorage can throw in private-browsing / sandboxed contexts.
+      // Fall back to in-memory state — the gate still works, just resets
+      // on each visit.
+    }
+  }, []);
+
+  // The public worksheet page is white-themed regardless of OS preference.
+  // MarkdownReport uses Tailwind `dark:` variants that flip to light-grey
+  // text under a `.dark` ancestor, so when a visitor's OS is in dark mode
+  // (or they previously toggled dark mode in the dashboard) the worksheet
+  // becomes unreadable on the white card. Strip `.dark` for the lifetime
+  // of this component and restore it on unmount so the dashboard's theme
+  // toggle still works normally elsewhere.
+  useEffect(() => {
+    const html = document.documentElement;
+    const wasDark = html.classList.contains("dark");
+    if (wasDark) html.classList.remove("dark");
+    return () => {
+      if (wasDark) html.classList.add("dark");
+    };
+  }, []);
+
+  const yearGroups = topicsByYear[yearLevel] || [];
+  const yearChapters = chaptersByYear[yearLevel] || [];
+  const chapterMode = yearChapters.length > 0;
+  const [chapterNo, setChapterNo] = useState(
+    initialChapter && (chaptersByYear[defaultYear] || []).some((c) => c.n === initialChapter.n) ? String(initialChapter.n) : ""
+  );
+  const [ticked, setTicked] = useState(() => new Set(initialChapter?.codes || []));
+  const chapter = chapterMode ? yearChapters.find((c) => String(c.n) === chapterNo) || null : null;
+  const tickedCodes = chapter ? chapter.sections.filter((x) => ticked.has(x.code)).map((x) => x.code) : [];
+  // What the sheet is on, for the loading steps and the full-test offer.
+  const chapterLabel = chapter
+    ? tickedCodes.length === chapter.sections.length
+      ? chapter.name
+      : tickedCodes.length <= 3
+        ? `${chapter.name}: ${chapter.sections.filter((x) => ticked.has(x.code)).map((x) => x.name).join(", ")}`
+        : `${chapter.name} (${tickedCodes.length} of ${chapter.sections.length} subtopics)`
+    : "";
+  const ready = chapterMode ? tickedCodes.length > 0 : !!topicLabel.trim();
+
+  function pickChapter(n) {
+    setChapterNo(n);
+    const ch = yearChapters.find((c) => String(c.n) === n);
+    setTicked(new Set(ch ? ch.sections.map((x) => x.code) : []));
+    setError(null);
+  }
+
+  function toggleSection(code) {
+    setTicked((prev) => {
+      const next = new Set(prev);
+      if (next.has(code)) next.delete(code);
+      else next.add(code);
+      return next;
+    });
+  }
+
+  // Flatten for the id→label lookup. Memoised because the user can flip
+  // years without rebuilding the dropdown source on every render.
+  const flatTopics = useMemo(
+    () => yearGroups.flatMap((g) => g.topics),
+    [yearGroups]
+  );
+
+  // When year changes, clear the picked topic (it likely doesn't exist
+  // in the new year's curriculum). Skipped on the very first mount when
+  // the parent landing page seeded an initialTopicId — otherwise the
+  // preset would be wiped before the user ever sees it.
+  const initialTopicIdRef = useRef(initialTopicId || null);
+  useEffect(() => {
+    if (initialTopicIdRef.current) {
+      initialTopicIdRef.current = null;
+      return;
+    }
+    setTopicId("");
+    setTopicLabel("");
+    setChapterNo("");
+    setTicked(new Set());
+  }, [yearLevel]);
+
+  // Resolve the preset topic's display label once the dropdown data
+  // is available. Runs whenever the topic list for the active year
+  // updates (e.g. on mount, or if topicsByYear changes).
+  useEffect(() => {
+    if (!topicId || topicLabel) return;
+    const match = flatTopics.find((t) => t.id === topicId);
+    if (match) setTopicLabel(match.label);
+  }, [topicId, topicLabel, flatTopics]);
+
+  // Submitted from the email-capture modal. Saves the address + child's
+  // year level to the marketing list, mirrors them into local state +
+  // localStorage, closes the modal, and continues straight to the
+  // generation the user just clicked Generate to start.
+  async function handleEmailModalSubmit(e) {
+    e.preventDefault();
+    setEmailError(null);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(modalEmailInput)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
+    setEmailPending(true);
+    try {
+      const res = await fetch("/api/worksheets/email", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email: modalEmailInput,
+          year_level: modalYearInput,
+          marketing_opt_in: modalMarketingOptIn,
+          weekly_opt_in: modalMarketingOptIn,
+          source: "worksheet_generator",
+          source_page: typeof window !== "undefined" ? window.location.pathname : null,
+          weekly_source: "worksheet_gate",
+        }),
+      });
+      const data = await readJsonOrFallback(res);
+      if (!res.ok) throw new Error(data?.error || "Could not save email.");
+      try {
+        window.localStorage.setItem(STORAGE_KEY, modalEmailInput);
+        window.localStorage.setItem(YEAR_STORAGE_KEY, modalYearInput);
+        if (modalMarketingOptIn) window.localStorage.setItem(WEEKLY_STORAGE_KEY, "1");
+      } catch {}
+      if (modalMarketingOptIn) {
+        setWeeklySubscribed(true);
+        trackEvent("weekly_opt_in", { source: "gate", year: modalYearInput });
+      }
+      setEmail(modalEmailInput);
+      setEmailSaved(true);
+      trackEvent("generate_lead", { lead_type: "worksheet_unlock", source: "worksheets" });
+      // Sync the form's year picker to whatever they confirmed in the
+      // modal (might differ from the year they had open at the time).
+      setYearLevel(modalYearInput);
+      setEmailModalOpen(false);
+      // Re-trigger the generation now that we have an email on file.
+      // Pass an explicit year override since React state hasn't flushed
+      // yet on the next line.
+      handleGenerate(undefined, { yearLevelOverride: modalYearInput, emailOverride: modalEmailInput });
+    } catch (err) {
+      setEmailError(err.message || "Could not save email.");
+    } finally {
+      setEmailPending(false);
+    }
+  }
+
+  // Single gate for every engagement signal. Once per browser session, never
+  // stacked on top of another modal, and never before the dwell floor unless
+  // the signal is high-intent (a PDF download).
+  useEffect(() => {
+    upsellBlockedRef.current = emailModalOpen || trialPromptOpen || generating;
+  }, [emailModalOpen, trialPromptOpen, generating]);
+
+  // Spends the once-per-session budget and opens the modal. Guards are
+  // re-checked HERE rather than at schedule time, so a delayed open that is
+  // no longer appropriate (another modal went up, a regenerate started) is
+  // dropped without consuming the budget.
+  const commitUpsell = useCallback(() => {
+    if (upsellFiredRef.current) return;
+    if (upsellBlockedRef.current) return;
+    try {
+      if (window.sessionStorage.getItem(UPSELL_SESSION_KEY)) {
+        upsellFiredRef.current = true;
+        return;
+      }
+      window.sessionStorage.setItem(UPSELL_SESSION_KEY, "1");
+    } catch {}
+    upsellFiredRef.current = true;
+    setUpsellOpen(true);
+  }, []);
+
+  const cancelPendingUpsell = useCallback(() => {
+    if (upsellTimerRef.current) {
+      clearTimeout(upsellTimerRef.current);
+      upsellTimerRef.current = null;
+    }
+  }, []);
+
+  const maybeOpenUpsell = useCallback(
+    ({ force = false, delayMs = 0 } = {}) => {
+      if (upsellFiredRef.current) return;
+      if (upsellBlockedRef.current) return;
+      if (upsellTimerRef.current) return;
+      if (!force && Date.now() - worksheetShownAtRef.current < UPSELL_MIN_DWELL_MS) {
+        return;
+      }
+      if (delayMs > 0) {
+        upsellTimerRef.current = setTimeout(() => {
+          upsellTimerRef.current = null;
+          commitUpsell();
+        }, delayMs);
+        return;
+      }
+      commitUpsell();
+    },
+    [commitUpsell]
+  );
+
+  useEffect(() => cancelPendingUpsell, [cancelPendingUpsell]);
+
+  // Signal 1: they scrolled to the END of the worksheet.
+  //
+  // Only a not-visible -> visible TRANSITION counts. IntersectionObserver
+  // always delivers an initial callback describing the current state, so
+  // firing on any intersecting entry would trigger on short worksheets that
+  // already fit the viewport, with no scrolling at all - the opposite of the
+  // signal we want, and more likely now the worksheet is 6 questions rather
+  // than 10. A sentinel that was on screen from the start proves nothing;
+  // those parents reach the modal by opening a solution or downloading
+  // instead, both of which are real engagement.
+  useEffect(() => {
+    if (!worksheet) return;
+    if (typeof IntersectionObserver === "undefined") return;
+    const el = upsellSentinelRef.current;
+    if (!el) return;
+    let seenOffScreen = false;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          seenOffScreen = true;
+          return;
+        }
+        if (!seenOffScreen) return;
+        // The transition IS the engagement signal, so never drop it just
+        // because the dwell floor has not elapsed - defer it by whatever is
+        // left instead. The deferred open re-checks every guard when it runs.
+        const remaining =
+          UPSELL_MIN_DWELL_MS - (Date.now() - worksheetShownAtRef.current);
+        maybeOpenUpsell(
+          remaining > 0 ? { force: true, delayMs: remaining } : {}
+        );
+      },
+      { threshold: 0 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [worksheet, maybeOpenUpsell]);
+
+  // Signal 2: they opened a worked solution. The `toggle` event does not
+  // bubble, so listen in the capture phase on the result container.
+  useEffect(() => {
+    if (!worksheet) return;
+    const el = resultRef.current;
+    if (!el) return;
+    const onToggle = (ev) => {
+      const t = ev.target;
+      if (t && t.tagName === "DETAILS" && t.open) maybeOpenUpsell();
+    };
+    el.addEventListener("toggle", onToggle, true);
+    return () => el.removeEventListener("toggle", onToggle, true);
+  }, [worksheet, maybeOpenUpsell]);
+
+  function pickTopic(id) {
+    setTopicId(id);
+    const match = flatTopics.find((t) => t.id === id);
+    setTopicLabel(match?.label || "");
+  }
+
+  async function handleGenerate(e, opts = {}) {
+    if (e) e.preventDefault();
+    setError(null);
+    if (chapterMode && !chapter) {
+      setError("Pick a chapter.");
+      return;
+    }
+    if (chapterMode && !tickedCodes.length) {
+      setError("Tick at least one subtopic.");
+      return;
+    }
+    if (!chapterMode && !topicLabel.trim()) {
+      setError("Pick a topic.");
+      return;
+    }
+    // First-time generators land on the email + year-level capture
+    // modal instead of the generate endpoint. Pre-fill the modal with
+    // the year they currently have selected.
+    // Straight after the email box, state hasn't caught up yet (this is the
+    // same render's closure), so the box passes the email in. Without that,
+    // emailSaved still reads false and the box reopens empty.
+    const effectiveEmail = opts.emailOverride || email;
+    if (!emailSaved && !opts.emailOverride) {
+      cancelPendingUpsell();
+      setUpsellOpen(false);
+      setModalEmailInput(email || "");
+      setModalYearInput(yearLevel);
+      setEmailError(null);
+      setEmailModalOpen(true);
+      return;
+    }
+    const effectiveYear = opts.yearLevelOverride || yearLevel;
+    // Regenerating behind an open (or about-to-open) upsell would scroll the
+    // fresh worksheet in underneath the overlay.
+    cancelPendingUpsell();
+    setUpsellOpen(false);
+    setGenerating(true);
+    try {
+      const res = await fetch("/api/worksheets/generate", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email: effectiveEmail,
+          year_level: effectiveYear,
+          ...(chapterMode
+            ? { chapter: chapter.n, sections: tickedCodes, topic_label: chapterLabel }
+            : { topic_id: topicId || undefined, topic_label: topicLabel }),
+          // Fresh seed each click so "Regenerate" returns different numbers.
+          variant_seed: Math.random().toString(36).slice(2, 10),
+        }),
+      });
+      const data = await readJsonOrFallback(res);
+      if (!res.ok) {
+        // Rate-limit response triggers the trial-signup modal instead
+        // of a plain error toast. Anonymous + already-used-free-quota
+        // visitors see the conversion prompt.
+        // The free limit: show the server's message, or for Years 7 to 10
+        // the full topic test offer (TopicTestOffer, joins the app list). No paid trial offer since Oct 2026:
+        // the Tuterly app is the site's only call to action.
+        if ((res.status === 429 && data?.rate_limited) || res.status === 402) {
+          setLimitReached(true);
+          setLimitSubscribed(typeof data?.subscribed === "boolean" ? data.subscribed : null);
+          throw new Error(data?.error || "You've used your free worksheet for today. Come back tomorrow for another one.");
+        }
+        throw new Error(data?.error || "Could not generate worksheet.");
+      }
+      setWorksheet({
+        content: data.content,
+        yearLevel: data.year_level || effectiveYear,
+        topicLabel: data.topic_label || (chapterMode ? chapterLabel : topicLabel),
+        topicId: chapterMode ? chapter.testTopicId : topicId,
+      });
+      // Scrolling to the result is handled by an effect keyed on `worksheet`,
+      // which runs after the result has painted.
+    } catch (err) {
+      setError(err.message || "Could not generate worksheet.");
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  async function handleDownloadPdf() {
+    if (!worksheet) return;
+    try {
+      const res = await fetch("/api/worksheets/pdf", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          content: worksheet.content,
+          year_level: worksheet.yearLevel,
+          topic_label: worksheet.topicLabel,
+        }),
+      });
+      if (!res.ok) {
+        const data = await readJsonOrFallback(res);
+        throw new Error(data?.error || "Could not render PDF.");
+      }
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      const dispo = res.headers.get("content-disposition") || "";
+      const m = dispo.match(/filename="([^"]+)"/);
+      a.download = m?.[1] || "Tuterly-Worksheet.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      // Signal 3: downloading the PDF. Highest intent of the three, so it
+      // skips the dwell floor - but it waits out the browser's own download
+      // UI rather than painting on top of it.
+      cancelPendingUpsell();
+      maybeOpenUpsell({ force: true, delayMs: 1500 });
+    } catch (err) {
+      setError(err.message || "Could not download PDF.");
+    }
+  }
+
+  // --- Render ---
+
+  return (
+    <div style={{ fontFamily: "var(--font-display)" }}>
+      <div style={cardStyle}>
+        <h2 style={h2Style}>Generate a free maths worksheet</h2>
+        <p style={pMutedStyle}>
+          Six questions across Foundation, Standard and Extension, with full
+          worked solutions, written to the Australian Curriculum.
+        </p>
+
+        <form onSubmit={handleGenerate} style={{ marginTop: 20, display: "grid", gap: 16 }}>
+          <label style={labelStyle}>
+            <span>Year level</span>
+            <select
+              value={yearLevel}
+              onChange={(e) => setYearLevel(e.target.value)}
+              disabled={generating}
+              style={inputStyle}
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </label>
+
+{chapterMode ? (
+            <div style={{ display: "grid", gap: 12 }}>
+              <label style={labelStyle}>
+                <span>Chapter</span>
+                <select
+                  value={chapterNo}
+                  onChange={(e) => pickChapter(e.target.value)}
+                  disabled={generating}
+                  style={inputStyle}
+                >
+                  <option value="" disabled hidden>
+                    Choose a chapter
+                  </option>
+                  {yearChapters.map((ch) => (
+                    <option key={ch.n} value={String(ch.n)}>
+                      {ch.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              {chapter && (
+                <fieldset style={subtopicBoxStyle} disabled={generating}>
+                  <legend style={subtopicLegendStyle}>
+                    Subtopics <span style={{ fontWeight: 500, color: c.textLight }}>({tickedCodes.length} of {chapter.sections.length} ticked)</span>
+                  </legend>
+                  <p style={subtopicHintStyle}>
+                    Every subtopic starts ticked. Untick any you don&rsquo;t need.
+                    {tickedCodes.length < chapter.sections.length && (
+                      <>
+                        {" "}
+                        <button type="button" style={linkButtonStyle} onClick={() => setTicked(new Set(chapter.sections.map((x) => x.code)))}>
+                          Tick all
+                        </button>
+                      </>
+                    )}
+                  </p>
+                  <div style={subtopicListStyle}>
+                    {chapter.sections.map((sec) => (
+                      <label key={sec.code} style={subtopicRowStyle}>
+                        <input
+                          type="checkbox"
+                          checked={ticked.has(sec.code)}
+                          onChange={() => toggleSection(sec.code)}
+                          style={{ width: 18, height: 18, margin: 0, flex: "none", accentColor: "var(--brand)" }}
+                        />
+                        <span>
+                          {sec.name}
+                          {sec.ext && <span style={extTagStyle}>10A</span>}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              )}
+              <p style={{ margin: 0, fontSize: 12.5, color: c.textLight, lineHeight: 1.5 }}>
+                Chapters follow Cambridge Essential Mathematics for the Victorian Curriculum. Questions are Tuterly&rsquo;s own. Tuterly isn&rsquo;t affiliated with Cambridge University Press.
+              </p>
+            </div>
+          ) : (
+                    <label style={labelStyle}>
+              <span>Topic</span>
+              <select
+                value={topicId}
+                onChange={(e) => pickTopic(e.target.value)}
+                disabled={generating || yearGroups.length === 0}
+                style={inputStyle}
+              >
+                <option value="" disabled hidden>
+                  Choose a topic
+                </option>
+                {yearGroups.map((g) => (
+                  <optgroup key={g.strand} label={g.strand}>
+                    {g.topics.map((t) => (
+                      <option key={t.id} value={t.id} title={t.desc}>
+                        {t.label}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            </label>
+          )}
+
+          {error && !(limitReached && STUDY_APP_YEARS.includes(yearLevel)) && <p style={errorTextStyle}>{error}</p>}
+
+          {/* Free limit reached and not on the weekly email: signing up
+              unlocks a second worksheet today. */}
+          {limitReached && limitSubscribed === false && !weeklySubscribed && (
+            <WeeklyOptInCard
+              email={email}
+              yearLevel={yearLevel}
+              placement="limit"
+              onSubscribed={() => {
+                setWeeklySubscribed(true);
+                setJustSubscribed("limit");
+                setLimitReached(false);
+                setLimitSubscribed(null);
+                setError(null);
+              }}
+            />
+          )}
+          {justSubscribed === "limit" && !generating && (
+            <p style={okNoteStyle} role="status">
+              You&rsquo;re in. Press <strong>Generate worksheet</strong> for your second one today.
+            </p>
+          )}
+
+          {/* Free limit reached, Years 7 to 10: one tap emails a full test
+              on the topic they picked and joins the Tuterly early list. */}
+          {limitReached && STUDY_APP_YEARS.includes(yearLevel) && (
+            <TopicTestOffer email={email} yearLevel={yearLevel} topicId={chapterMode ? chapter?.testTopicId : topicId} topicLabel={chapterMode ? chapter?.name || "" : topicLabel} />
+          )}
+
+          {generating && (
+            <QuinnWorking
+              seconds={48}
+              note="This can take up to a minute. Please don't close the tab."
+              steps={[
+                `Picking questions on ${chapterMode ? (chapter ? chapter.name.toLowerCase() : "your chapter") : topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
+                "Writing two Foundation questions",
+                "Writing two Standard questions",
+                "Writing two Extension questions",
+                "Writing the worked solutions",
+                "Checking the maths and the layout",
+              ]}
+            />
+          )}
+
+          <div>
+            <button
+              type="submit"
+              disabled={generating || !ready}
+              style={primaryButtonStyle}
+            >
+              {generating ? "Generating…" : "Generate worksheet"}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      {/* Under the generator: the app for Years 7 to 10, the tutor offer
+          (returning users) for younger year levels. */}
+      {studyAppUnderGenerator && !limitReached && !worksheet && STUDY_APP_YEARS.includes(yearLevel) && (
+        <StudyAppCTA
+          variant="inline"
+          placement="worksheet_generator"
+          heading="Already got some wrong at school?"
+          style={{ margin: "16px 0 0" }}
+        />
+      )}
+
+      {worksheet && (
+        <button
+          type="button"
+          onClick={() =>
+            resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+          }
+          style={readyPromptStyle}
+        >
+          Your worksheet is ready. Tap here to view it below ↓
+        </button>
+      )}
+
+      {worksheet && (
+        <div ref={resultRef} style={{ marginTop: 20 }}>
+          <div style={{ ...cardStyle }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: c.teal, marginBottom: 10 }}>
+              Your worksheet is ready
+            </p>
+            <div
+              style={{
+                display: "flex",
+                gap: 12,
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginBottom: 20,
+              }}
+            >
+              <div style={{ fontSize: 13, color: c.textLight }}>
+                {worksheet.yearLevel} · {worksheet.topicLabel}
+              </div>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button
+                  type="button"
+                  onClick={handleDownloadPdf}
+                  style={secondaryButtonStyle}
+                >
+                  Download PDF
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleGenerate()}
+                  disabled={generating}
+                  style={secondaryButtonStyle}
+                >
+                  {generating ? "Generating…" : "Generate new questions"}
+                </button>
+              </div>
+            </div>
+
+            <div style={worksheetBodyStyle}>
+              <MarkdownReport content={worksheet.content} />
+            </div>
+            {/* Engagement sentinel: crossing this means they read to the end. */}
+            <div ref={upsellSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+
+            {/* Second ask, now they've seen what they get (Ryan, 9 Nov 2026). */}
+            {(!weeklySubscribed || justSubscribed === "result") && (
+              <WeeklyOptInCard
+                email={email}
+                yearLevel={worksheet.yearLevel}
+                placement="result"
+                onSubscribed={() => {
+                  setWeeklySubscribed(true);
+                  setJustSubscribed("result");
+                }}
+              />
+            )}
+
+            <p style={{ margin: "14px 0 0", fontSize: 14.5, fontWeight: 700, color: c.navy }}>
+              Exams coming up?{" "}
+              <Link href="/exam-generator" style={{ color: c.teal, textDecoration: "underline", textUnderlineOffset: 3 }}>
+                Build a full practice exam with worked solutions →
+              </Link>
+            </p>
+
+            {/* After the answers: the app first (Years 7 to 10), then the
+                tutor offer as the second option. */}
+            {STUDY_APP_YEARS.includes(worksheet.yearLevel) && (
+              <StudyAppCTA
+                variant="inline"
+                placement="worksheet_answers"
+                heading="Finished the sheet? Now practise the ones they got wrong."
+                sub="Snap them in Tuterly for the worked solution, then fresh questions on the same idea until each one is mastered. No more hunting for the next worksheet."
+              />
+            )}
+          </div>
+
+        </div>
+      )}
+
+
+      {emailModalOpen && (
+        <EmailGateModal
+          email={modalEmailInput}
+          year={modalYearInput}
+          marketingOptIn={modalMarketingOptIn}
+          onMarketingOptInChange={setModalMarketingOptIn}
+          yearLevels={years}
+          pending={emailPending}
+          error={emailError}
+          onEmailChange={setModalEmailInput}
+          onYearChange={setModalYearInput}
+          onSubmit={handleEmailModalSubmit}
+          onClose={() => {
+            if (emailPending) return;
+            setEmailModalOpen(false);
+            setEmailError(null);
+          }}
+        />
+      )}
+
+
+    </div>
+  );
+}
+
+function EmailGateModal({
+  email,
+  year,
+  marketingOptIn,
+  onMarketingOptInChange,
+  yearLevels,
+  pending,
+  error,
+  onEmailChange,
+  onYearChange,
+  onSubmit,
+  onClose,
+}) {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 24,
+        background: "rgba(15, 23, 42, 0.55)",
+      }}
+      onClick={pending ? undefined : onClose}
+    >
+      <form
+        onSubmit={onSubmit}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: c.white,
+          borderRadius: 20,
+          padding: 32,
+          maxWidth: 440,
+          width: "100%",
+          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.25)",
+          border: `1px solid ${c.border}`,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: 12,
+            fontWeight: 600,
+            color: c.teal,
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            margin: 0,
+          }}
+        >
+          One quick step
+        </p>
+        <h2
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: 24,
+            color: c.navy,
+            lineHeight: 1.2,
+            margin: "8px 0 8px",
+          }}
+        >
+          Unlock your free worksheet
+        </h2>
+        <p style={{ color: c.textLight, fontSize: 14, lineHeight: 1.6, margin: "0 0 18px" }}>
+          Your email and year level (yours, or your child&rsquo;s). Free,
+          no card needed.
+        </p>
+
+        <div style={{ display: "grid", gap: 14 }}>
+          <label style={labelStyle}>
+            <span>Your email</span>
+            <input
+              type="email"
+              required
+              autoFocus
+              value={email}
+              onChange={(e) => onEmailChange(e.target.value)}
+              placeholder="you@example.com"
+              disabled={pending}
+              style={inputStyle}
+            />
+          </label>
+          <label style={labelStyle}>
+            <span>Year level</span>
+            <select
+              value={year}
+              onChange={(e) => onYearChange(e.target.value)}
+              disabled={pending}
+              style={inputStyle}
+            >
+              {(yearLevels || YEAR_LEVELS).map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
+          </label>
+          <WeeklyOptInBox yearLevel={year} checked={!!marketingOptIn} onChange={onMarketingOptInChange} disabled={pending} />
+        </div>
+
+        {error && (
+          <p
+            style={{
+              color: c.rose,
+              fontSize: 13,
+              margin: "12px 0 0",
+              background: "#FFF1F2",
+              padding: "8px 10px",
+              borderRadius: 8,
+            }}
+          >
+            {error}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={pending}
+          style={{
+            ...primaryButtonStyle,
+            width: "100%",
+            marginTop: 16,
+            opacity: pending ? 0.7 : 1,
+            cursor: pending ? "wait" : "pointer",
+          }}
+        >
+          {pending ? "Saving…" : "Generate worksheet"}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+
+
+
+// --- Styles ---
+
+
+const readyPromptStyle = {
+  display: "block",
+  width: "100%",
+  marginTop: 16,
+  padding: "13px 16px",
+  borderRadius: 12,
+  border: "1px solid #0D9488",
+  background: "#ECFDFB",
+  color: "#0F766E",
+  fontSize: 14.5,
+  fontWeight: 600,
+  cursor: "pointer",
+  textAlign: "center",
+};
+
+const cardStyle = {
+  background: c.white,
+  border: `1px solid ${c.border}`,
+  borderRadius: 20,
+  padding: 32,
+  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.06)",
+};
+
+const h2Style = {
+  fontFamily: "var(--font-display)",
+  fontSize: 28,
+  fontWeight: 800,
+  letterSpacing: "-0.6px",
+  color: c.navy,
+  margin: "0 0 8px",
+};
+
+const pMutedStyle = {
+  color: c.textLight,
+  fontSize: 15,
+  lineHeight: 1.6,
+  margin: 0,
+};
+
+const labelStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: 6,
+  fontSize: 13,
+  fontWeight: 600,
+  color: c.text,
+};
+
+const inputStyle = {
+  width: "100%",
+  height: 44,
+  padding: "0 14px",
+  borderRadius: 10,
+  border: `1px solid ${c.border}`,
+  background: c.white,
+  fontSize: 15,
+  color: c.text,
+  outline: "none",
+  fontFamily: "inherit",
+};
+
+const primaryButtonStyle = {
+  padding: "14px 28px",
+  borderRadius: 12,
+  background: c.navy,
+  color: c.white,
+  fontSize: 15,
+  fontWeight: 600,
+  border: "none",
+  cursor: "pointer",
+  boxShadow: "0 4px 14px rgba(15,27,45,0.18)",
+};
+
+const secondaryButtonStyle = {
+  padding: "9px 16px",
+  borderRadius: 8,
+  background: c.white,
+  color: c.text,
+  fontSize: 14,
+  fontWeight: 600,
+  border: `1px solid ${c.border}`,
+  cursor: "pointer",
+};
+
+const errorTextStyle = {
+  color: c.rose,
+  fontSize: 14,
+  margin: 0,
+  background: "#FFF1F2",
+  padding: "10px 12px",
+  borderRadius: 8,
+};
+
+const infoTextStyle = {
+  color: c.tealDark,
+  fontSize: 13,
+  margin: 0,
+  background: c.tealPale,
+  padding: "10px 12px",
+  borderRadius: 8,
+};
+
+const worksheetBodyStyle = {
+  borderTop: `1px solid ${c.border}`,
+  paddingTop: 8,
+};
+
+const okNoteStyle = {
+  margin: 0,
+  padding: "10px 12px",
+  borderRadius: 10,
+  background: "var(--success-soft, #e8f7ee)",
+  color: c.navy,
+  fontSize: 14,
+  fontWeight: 600,
+};
+
+const subtopicBoxStyle = {
+  margin: 0,
+  padding: "12px 14px 14px",
+  border: `1px solid ${c.border}`,
+  borderRadius: 12,
+  background: c.offWhite,
+  minWidth: 0,
+};
+
+const subtopicLegendStyle = {
+  padding: "0 6px",
+  fontSize: 13,
+  fontWeight: 600,
+  color: c.text,
+};
+
+const subtopicHintStyle = {
+  margin: "0 0 10px",
+  fontSize: 13,
+  color: c.textLight,
+  lineHeight: 1.5,
+};
+
+// Columns (not a grid) so subtopics read down in textbook order.
+const subtopicListStyle = {
+  columns: "2 240px",
+  columnGap: 20,
+};
+
+const subtopicRowStyle = {
+  display: "flex",
+  alignItems: "flex-start",
+  gap: 10,
+  padding: "7px 2px",
+  breakInside: "avoid",
+  fontSize: 14.5,
+  lineHeight: 1.35,
+  color: c.text,
+  cursor: "pointer",
+};
+
+const extTagStyle = {
+  marginLeft: 6,
+  padding: "1px 6px",
+  borderRadius: 6,
+  fontSize: 11,
+  fontWeight: 700,
+  background: c.tealPale,
+  color: c.tealDark,
+  verticalAlign: "1px",
+};
+
+const linkButtonStyle = {
+  padding: 0,
+  border: "none",
+  background: "none",
+  color: c.tealDark,
+  fontWeight: 600,
+  fontSize: 13,
+  textDecoration: "underline",
+  cursor: "pointer",
+  fontFamily: "inherit",
+};
