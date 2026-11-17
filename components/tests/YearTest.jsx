@@ -99,20 +99,20 @@ export default function YearTest({ n }) {
 
       <main className="sh-wrap yt-test" aria-labelledby="yt-sample">
         <h2 id="yt-sample">{year} sample test</h2>
-        <p className="sh-sub">{questions.length} questions, one from each of {questions.length} topics. Work them out on paper, then open each answer to mark it.</p>
+        <p className="sh-sub">{questions.length} questions, one from each chapter of {year}. Work them out on paper, then open each answer to mark it.</p>
         <ol className="yt-list">
           {questions.map((q) => (
             <li key={q.n} className="yt-q">
               <div className="yt-q__head">
                 <span className="yt-q__num">Question {q.n}</span>
-                <Link href={`/worksheets/${q.slug}`} className="yt-q__topic">{q.topic}</Link>
+                <Link href={q.href} className="yt-q__topic">{q.topic}</Link>
               </div>
               <Md>{q.question}</Md>
               <details className="yt-ans">
                 <summary>Show the answer and working</summary>
                 <div className="yt-ans__answer"><strong>Answer:</strong> <Md>{q.answer}</Md></div>
                 <Md>{q.solution}</Md>
-                <p className="yt-ans__more"><Link href={`/worksheets/${q.slug}`}>More {q.topic.toLowerCase()} practice →</Link></p>
+                <p className="yt-ans__more"><Link href={q.href}>More {q.chapter.toLowerCase()} practice →</Link></p>
               </details>
             </li>
           ))}
@@ -138,6 +138,11 @@ export default function YearTest({ n }) {
               <h3 className="sh-h3">Practise one topic</h3>
               <p className="sh-p">Worksheets for every {year} topic, with worked solutions.</p>
               <p className="sh-p"><Link href={`/worksheets/year-${n}`} className="sh-link">{year} maths worksheets →</Link></p>
+            </div>
+            <div className="sh-box">
+              <h3 className="sh-h3">End-of-year exam coming up?</h3>
+              <p className="sh-p">A full practice exam and a three-week revision plan.</p>
+              <p className="sh-p"><Link href={`/maths-exam-preparation/year-${n}`} className="sh-link">{year} maths exam preparation →</Link></p>
             </div>
             {t.naplan && (
               <div className="sh-box">

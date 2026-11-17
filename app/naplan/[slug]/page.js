@@ -13,7 +13,9 @@ export async function generateMetadata({ params }) {
   if (!y) return {};
   // Search wants online practice (Keyword Planner, Nov 2026: "naplan
   // practice tests online" and "naplan online practice"), so lead with it.
-  const title = `Year ${y} NAPLAN Practice Test Online: Free, Marked Instantly`;
+  // 17 Nov 2026: "Numeracy" and the year in the title. Searchers want the
+  // whole test, and this page is numeracy only, so say so up front.
+  const title = `Year ${y} NAPLAN Numeracy Practice Test 2027: Free Online`;
   const description = y >= 7
     ? `A free Year ${y} NAPLAN-style numeracy test that works like NAPLAN Online: 20 questions, non-calculator section first, on-screen calculator, marked instantly with worked solutions. NAPLAN 2027 runs ${NAPLAN_FACTS.window}.`
     : `A free Year ${y} NAPLAN-style numeracy practice test: 20 questions across every strand, marked instantly, with a worked solution for each. Printable PDF too. NAPLAN 2027 runs ${NAPLAN_FACTS.window}.`;

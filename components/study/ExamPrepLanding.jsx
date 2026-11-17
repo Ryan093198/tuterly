@@ -44,7 +44,7 @@ export default function ExamPrepLanding({ year = null, exam = null }) {
             <Eyebrow>Maths exam preparation · {year ? year.year : "Years 7 to 10"}</Eyebrow>
             <h1 id="ep-title" className="tb-h1">
               {year ? (
-                <>{year.year} maths exam <span className="sl-accent">preparation</span>.</>
+                <>{year.year} maths exam: practice exam and <span className="sl-accent">revision plan</span>.</>
               ) : (
                 <>Maths exam preparation that starts with their <span className="sl-accent">mistakes</span>.</>
               )}
@@ -234,7 +234,7 @@ export default function ExamPrepLanding({ year = null, exam = null }) {
             ))}
           </ul>
           <p className="stl-other">
-            Also useful: the <Link href="/practice-maths-tests-secondary" className="tb-link">maths practice test generator</Link>, the <Link href="/worksheets" className="tb-link">free maths worksheet generator</Link>, and our <Link href="/best-maths-apps-australia" className="tb-link">comparison of maths apps for Years 7 to 10</Link>.
+            Also useful: {year && <>a quick <Link href={`/year-${year.slug.replace("year-", "")}-maths-test`} className="tb-link">{year.year} maths test</Link> with answers, </>}the <Link href="/practice-maths-tests-secondary" className="tb-link">maths practice test generator</Link>, the <Link href="/worksheets" className="tb-link">free maths worksheet generator</Link>, and our <Link href="/best-maths-apps-australia" className="tb-link">comparison of maths apps for Years 7 to 10</Link>.
           </p>
         </div>
       </section>

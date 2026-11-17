@@ -228,3 +228,16 @@
 @media (max-width: 560px) { .nu-form--row { grid-template-columns: 1fr; } }
 
 .tb-section.np-testsec { padding-top: 4px; }
+
+/* Past papers by year (/naplan/past-papers/year-N): on phones each year's
+   row stacks (year, then numeracy, then the other tests) instead of
+   scrolling sideways. */
+@media (max-width: 640px) {
+  .pg-table.pp-table table { min-width: 0; }
+  .pg-table.pp-table table, .pg-table.pp-table tbody, .pg-table.pp-table tr, .pg-table.pp-table th, .pg-table.pp-table td { display: block; width: auto; }
+  .pg-table.pp-table thead { display: none; }
+  .pg-table.pp-table tr { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .pg-table.pp-table tr:last-child { border-bottom: 0; }
+  .pg-table.pp-table th, .pg-table.pp-table td { border-bottom: 0; padding-top: 2px; padding-bottom: 2px; }
+  .pg-table.pp-table td + td { padding-top: 6px; }
+}

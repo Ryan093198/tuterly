@@ -27,6 +27,9 @@ const M = ({ md, inline = false }) => (
 
 // One NAPLAN numeracy practice page (Years 3, 5, 7 or 9): facts, a marked
 // 20-question test, FAQ, and the right next step for the year level.
+// Shown on each year page; change when the tests are next reviewed.
+const NAPLAN_UPDATED = "November 2026";
+
 export default function NaplanPage({ year }) {
   const qs = getNaplanTest(year) || [];
   const faqs = naplanFaqs(year);
@@ -66,6 +69,7 @@ export default function NaplanPage({ year }) {
             <div><span className="np-facts__k">Numeracy test</span><span className="np-facts__v">{mins} minutes, online</span></div>
             <div><span className="np-facts__k">Calculator</span><span className="np-facts__v">{year >= 7 ? "After a short non-calculator section" : "Not allowed"}</span></div>
             <div><span className="np-facts__k">This practice test</span><span className="np-facts__v">20 questions, about {year >= 7 ? 30 : 25} minutes</span></div>
+            <div><span className="np-facts__k">Updated</span><span className="np-facts__v">{NAPLAN_UPDATED}</span></div>
           </div>
           <div className="np-btns">
             <a href="#naplan-test" className="tb-btn tb-btn--primary">Start the practice test</a>
@@ -91,6 +95,15 @@ export default function NaplanPage({ year }) {
           <NaplanTest year={year} questions={questions} appYears={APP_YEARS} />
           <p className="np-disclaimer">
             These are Tuterly’s own NAPLAN-style questions, not official NAPLAN questions. NAPLAN is run by ACARA. For the official practice tests, see the <a href={OFFICIAL_DEMO} rel="noopener">NAPLAN public demonstration site</a>.
+          </p>
+        </div>
+      </section>
+
+      <section className="tb-section" aria-labelledby="np-other">
+        <div className="tb-wrap">
+          <h2 id="np-other" className="tb-h2 pg-h2">Reading, writing and conventions of language</h2>
+          <p className="pg-intro">
+            Year {year} NAPLAN has four tests: reading, writing, conventions of language (spelling, grammar and punctuation) and numeracy. The tests on this page are numeracy only. For the other three, ACARA&rsquo;s free <a href={OFFICIAL_DEMO} rel="noopener" className="tb-link">public demonstration site</a> has an example test for each year level{year === 3 ? " (Year 3 writing is done on paper, so there's no online writing example)" : ""}. It shows how each test looks and works on screen. For paper practice in all four, see the <Link href={`/naplan/past-papers/year-${year}`} className="tb-link">Year {year} NAPLAN past papers</Link> (2008 to 2016, with answers).
           </p>
         </div>
       </section>
@@ -230,7 +243,7 @@ export default function NaplanPage({ year }) {
                   const p = getPostBySlug(slug);
                   return p ? <li key={slug}><Link href={`/learn/${slug}`}>{p.title}</Link></li> : null;
                 })}
-                <li><Link href="/naplan/past-papers">NAPLAN past papers: where to find them, with answers</Link></li>
+                <li><Link href={`/naplan/past-papers/year-${year}`}>Year {year} NAPLAN past papers, with answers (2008 to 2016)</Link></li>
               </ul>
             </div>
           )}

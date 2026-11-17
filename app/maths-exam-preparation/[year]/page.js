@@ -16,8 +16,10 @@ export async function generateMetadata({ params }) {
   const y = getExamYear(year);
   if (!y) return {};
   // Exam season (Ryan, 9 Nov 2026): lead with the free practice exam.
-  const title = fitTitle(`${y.year} Maths Exam Practice: Free Practice Exam with Answers | Tuterly`);
-  const description = `A free ${y.year} maths practice exam with answers and worked solutions, plus the topics a ${y.year} exam can cover, where students lose marks and a three-week revision plan.`;
+  // 17 Nov 2026: aimed at "year N maths exam" and revision, so it doesn't
+  // compete with /year-N-maths-test ("year N maths test", practice questions).
+  const title = fitTitle(`${y.year} Maths Exam: Free Practice Exam and 3-Week Revision Plan | Tuterly`);
+  const description = `Preparing for the ${y.year} maths exam: a free practice exam with worked solutions, the topics it can cover, where students lose marks and a three-week revision plan.`;
   const url = `${SITE_URL}/maths-exam-preparation/${y.slug}`;
   return {
     title: { absolute: title },

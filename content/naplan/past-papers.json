@@ -1,0 +1,1213 @@
+{
+ "source": [
+  "https://acara.edu.au/assessment/naplan/naplan-2012-2016-test-papers",
+  "https://acara.edu.au/assessment/naplan/naplan-2008-2011-test-papers"
+ ],
+ "checked": "2026-11-17",
+ "years": {
+  "3": [
+   {
+    "year": 2016,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e5-naplan-2016-final-test-numeracy-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2016-yr-3-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e4-naplan-2016-final-test-reading-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e3-naplan-2016-final-test-reading-magazine-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e6-naplan-2016-final-test-language-conventions-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e2-naplan-2016-final-test-writing-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e1-naplan-2016-final-test-writing-prompt---imagine-years-3-and-5.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2015,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---numeracy-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-yr-3-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---reading-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---reading-magazine-year-3-(redacted-image-of-face-page-4).pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---language-conventions-year-3.pdf"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---writing-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test---writing-prompt-(years-3-and-5-only).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2014,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---numeracy-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-yr-3-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---reading-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---reading-magazine-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---language-conventions-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---writing-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test---writing-prompt---change-a-rule-or-law-(year-3-and-all-year-levels).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2013,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-3-(with-redacted-image).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-yr-3-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test---reading-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test---reading-magazine-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test---language-conventions-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test---writing-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test---writing-prompt---hero-award-year-3.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2012,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test---numeracy-year-3-(redacted-image-of-face-page-14).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-yr-3-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test---reading-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test---reading-magazine-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test---language-conventions-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test---writing-year-3.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-prompt-all-year-levels.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2011,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/201105_NAPLAN_2011_Final_Test_Numeracy_Year_3.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2011-yr-3-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201115_NAPLAN_2011_Final_Test_Reading_Year_3.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201111_NAPLAN_2011_Final_Test_Reading_Magazine_Year_3.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201101_NAPLAN_2011_Final_Test_Language_Conventions_Year_3.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201119_NAPLAN_2011_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2010,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/201005_NAPLAN_2010_Final_Test_Numeracy_Year_3.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2010-yr-3-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201015_NAPLAN_2010_Final_Test_Reading_Year_3.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201011_NAPLAN_2010_Final_Test_Reading_Magazine_Year_3.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201001_NAPLAN_2010_Final_Test_Language_Conventions_Year_3.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201019_NAPLAN_2010_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2009,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/200905_NAPLAN_2009_Final_Test_Numeracy_Year_3.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2009-yr-3-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200915_NAPLAN_2009_Final_Test_Reading_Year_3.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200911_NAPLAN_2009_Final_Test_Reading_magazine_Year_3.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200901_NAPLAN_2009_Final_Test_Language_Conventions_Year_3.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200919_NAPLAN_2009_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2008,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/200805_NAPLAN_2008_Final_Test_Numeracy_Year_3.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2008-yr-3-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200815_NAPLAN_2008_Final_Test_Reading_Year_3.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200811_NAPLAN_2008_Final_Test_Reading_Magazine_Year_3.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200801_NAPLAN_2008_Final_Test_Language_Conventions_Year_3.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200819_NAPLAN_2008_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   }
+  ],
+  "5": [
+   {
+    "year": 2016,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e5-naplan-2016-final-test-numeracy-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2016-yr-5-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e4-naplan-2016-final-test-reading-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e3-naplan-2016-final-test-reading-magazine-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e6-naplan-2016-final-test-language-conventions-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e2-naplan-2016-final-test-writing-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e1-naplan-2016-final-test-writing-prompt---imagine-years-3-and-5e2ce12404c94637ead88ff00003e0139.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2015,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-numeracy-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-yr-5-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-magazine-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-language-conventions-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-prompt-(years-3-and-5-only)-(1).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2014,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-numeracy-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-yr-5-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reading-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reading-magazine-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-language-conventions-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-prompt---change-a-rule-or-law.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2013,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-5-(redacted-image-of-face-page-8).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-yr-5-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-magazine-year-5-(redacted-image-of-face-page-3).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-language-conventions-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-prompt-hero-award.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2012,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-numeracy-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-yr-5-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-magazine-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-language-conventions-year5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-year-5.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-prompt-(all-years).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2011,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/201106_NAPLAN_2011_Final_Test_Numeracy_Year_5.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2011-yr-5-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201116_NAPLAN_2011_Final_Test_Reading_Year_5.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201112_NAPLAN_2011_Final_Test_Reading_Magazine_Year_5.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201102_NAPLAN_2011_Final_Test_Language_Conventions_Year_5.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201119_NAPLAN_2011_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2010,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/201006_NAPLAN_2010_Final_Test_Numeracy_Year_5.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2010-yr-5-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201016_NAPLAN_2010_Final_Test_Reading_Year_5.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201012_NAPLAN_2010_Final_Test_Reading_Magazine_Year_5.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201002_NAPLAN_2010_Final_Test_Language_Conventions_Year_5.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201019_NAPLAN_2010_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2009,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/200906_NAPLAN_2009_Final_Test_Numeracy_Year_5.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2009-yr-5-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200916_NAPLAN_2009_Final_Test_Reading_Year_5.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200912_NAPLAN_2009_Final_Test_Reading_magazine_Year_5.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200902_NAPLAN_2009_Final_Test_Language_Conventions_Year_5.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200919_NAPLAN_2009_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2008,
+    "papers": [
+     {
+      "kind": "numeracy",
+      "url": "http://www.acara.edu.au/_resources/200806_NAPLAN_2008_Final_Test_Numeracy_Year_5.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2008-yr-5-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200816_NAPLAN_2008_Final_Test_Reading_Year_5.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200812_NAPLAN_2008_Final_Test_Reading_Magazine_Year_5.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200802_NAPLAN_2008_Final_Test_Language_Conventions_Year_5.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200819_NAPLAN_2008_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   }
+  ],
+  "7": [
+   {
+    "year": 2016,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e6-naplan-2016-final-test-numeracy-year-7-(non-calc).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e5-naplan-2016-final-test-numeracy-year-7-(calc).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2016-yr-7-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e4-naplan-2016-final-test-reading-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e3-naplan-2016-final-test-reading-magazine-year-7-(redacted-name-on-page-7).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e7-naplan-2016-final-test-language-conventions-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e2-naplan-2016-final-test-writing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/e1-naplan-2016-final-test-writing-prompt---sign-said-(years-7-and-9-only).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2015,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-numeracy-(no-calculator)-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-numeracy-(calculator)-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-yr-7-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-magazine-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-language-conventions-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-prompt---the-best-(years-7-and-9-only).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2014,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-numeracy-year-7-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-numeracy-year-7-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-yr-7-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reaing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reading-magazine-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-language-conventions-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-prompt---change-a-rule-or-law-(all-year-levels).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2013,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-7-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-7-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-yr-7-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-magazine-year-7-(redacted-image-of-face-page-2).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-language-conventions-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-prompt---hero-award-(all-year-levels).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2012,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-numeracy-year-7-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-numeracy-year-7-(calculator-allowed).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-yr-7-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-magazine-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-language-conventions-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-year-7.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-prompt-(all-year-levels).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2011,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/201108_NAPLAN_2011_Final_Test_Numeracy_Year_7_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/201107_NAPLAN_2011_Final_Test_Numeracy_Year_7_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2011-yr-7-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201117_NAPLAN_2011_Final_Test_Reading_Year_7.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201113_NAPLAN_2011_Final_Test_Reading_Magazine_Year_7.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201103_NAPLAN_2011_Final_Test_Language_Conventions_Year_7.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201119_NAPLAN_2011_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2010,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/201008_NAPLAN_2010_Final_Test_Numeracy_Year_7_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/201007_NAPLAN_2010_Final_Test_Numeracy_Year_7_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2010-yr-7-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201017_NAPLAN_2010_Final_Test_Reading_Year_7.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201013_NAPLAN_2010_Final_Test_Reading_Magazine_Year_7.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201003_NAPLAN_2010_Final_Test_Language_Conventions_Year_7.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201019_NAPLAN_2010_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2009,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/200908_NAPLAN_2009_Final_Test_Numeracy_Year_7_NON-CALC.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/200907_NAPLAN_2009_Final_Test_Numeracy_Year_7_CALC.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2009-yr-7-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200917_NAPLAN_2009_Final_Test_Reading_Year_7.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200913_NAPLAN_2009_Final_Test_Reading_magazine_Year_7.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200903_NAPLAN_2009_Final_Test_Language_Conventions_Year_7.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200919_NAPLAN_2009_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2008,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/200808_NAPLAN_2008_Final_Test_Numeracy_year_7_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/200807_NAPLAN_2008_Final_Test_Numeracy_Year_7_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2008-yr-7-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200817_NAPLAN_2008_Final_Test_Reading_Year_7.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://docs.acara.edu.au/resources/200813_NAPLAN_2008_Final_Test_Reading_Magazine_Year_7.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200803_NAPLAN_2008_Final_Test_Language_Conventions_Year_7.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200819_NAPLAN_2008_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   }
+  ],
+  "9": [
+   {
+    "year": 2016,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/31-naplan-2016-final-test-numeracy-year-9-non-calc.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/30-naplan-2016-final-test-numeracy-year-9-calc.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2016-yr-9-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/29-naplan-2016-final-test-reading-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/28-naplan-2016-final-test-reading-magazine-year-9-(1).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/32-naplan-2016-final-test-language-conventions-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/26-naplan-2016-final-test-writing-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/27-naplan-2016-final-test-writing-prompt---sign-said-years-7-and-9.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2015,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-numeracy-year-9-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-numeracy-year-9-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-yr-9-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-reading-magazine-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-language-conventions-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2015-final-test-writing-prompt---the-best-(years-7-and-9-only).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2014,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-numeracy-year-9-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-numeracy-year-9-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-yr-9-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reading-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-reading-magazine-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-language-conventions-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2014-final-test-writing-prompt---change-a-rule-or-law2b9c12404c94637ead88ff00003e0139.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2013,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-9-non-calc.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-numeracy-year-9-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-yr-9-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-reading-magazine-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-language-conventions-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2013-final-test-writing-prompt---hero-award-(all-year-levels).pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2012,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-numeracy-year-9-(no-calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-numeracy-year-9-(calculator).pdf?sfvrsn=2"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-yr-9-paper-test-answers.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-reading-magazine-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-language-conventions-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-year-9.pdf?sfvrsn=2"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2012-final-test-writing-prompt-all-year-levels.pdf?sfvrsn=2"
+     }
+    ]
+   },
+   {
+    "year": 2011,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/201110_NAPLAN_2011_Final_Test_Numeracy_Year_9_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/201109_NAPLAN_2011_Final_Test_Numeracy_Year_9_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2011-yr-9-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201118_NAPLAN_2011_Final_Test_Reading_Year_9.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201114_NAPLAN_2011_Final_Test_Reading_Magazine_Year_9.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201104_NAPLAN_2011_Final_Test_Language_Conventions_Year_9.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201119_NAPLAN_2011_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2010,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/201010_NAPLAN_2010_Final_Test_Numeracy_Year_9_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/201009_NAPLAN_2010_Final_Test_Numeracy_Year_9_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2010-yr-9-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/201018_NAPLAN_2010_Final_Test_Reading_Year_9.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/201014_NAPLAN_2010_Final_Test_Reading_Magazine_Year_9.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/201004_NAPLAN_2010_Final_Test_Language_Conventions_Year_9.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/201019_NAPLAN_2010_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2009,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/200910_NAPLAN_2009_Final_Test_Numeracy_Year_9_NON-CALC.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/200909_NAPLAN_2009_Final_Test_Numeracy_Year_9_CALC.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2009-yr-9-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200918_NAPLAN_2009_Final_Test_Reading_Year_9.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200914_NAPLAN_2009_Final_Test_Reading_magazine_Year_9.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "http://www.acara.edu.au/_resources/200904_NAPLAN_2009_Final_Test_Language_Conventions_Year_9.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200919_NAPLAN_2009_Final_Test_Writing_prompt.pdf"
+     }
+    ]
+   },
+   {
+    "year": 2008,
+    "papers": [
+     {
+      "kind": "numeracy (non-calculator)",
+      "url": "http://www.acara.edu.au/_resources/200810_NAPLAN_2008_Final_Test_Numeracy_Year_9_non_calculator.pdf"
+     },
+     {
+      "kind": "numeracy (calculator)",
+      "url": "http://www.acara.edu.au/_resources/200809_NAPLAN_2008_Final_Test_Numeracy_Year_9_calculator.pdf"
+     },
+     {
+      "kind": "answers",
+      "url": "https://acaraweb.blob.core.windows.net/acaraweb/docs/default-source/assessment-and-reporting-publications/naplan-2008-yr-9-paper-test-answers.pdf"
+     },
+     {
+      "kind": "reading",
+      "url": "http://www.acara.edu.au/_resources/200818_NAPLAN_2008_Final_Test_Reading_Year_9.pdf"
+     },
+     {
+      "kind": "reading magazine",
+      "url": "http://www.acara.edu.au/_resources/200814_NAPLAN_2008_Final_Test_Reading_Magazine_Year_9.pdf"
+     },
+     {
+      "kind": "language conventions",
+      "url": "https://docs.acara.edu.au/resources/200804_NAPLAN_2008_Final_Test_Language_Conventions_Year_9.pdf"
+     },
+     {
+      "kind": "writing prompt",
+      "url": "http://www.acara.edu.au/_resources/200819_NAPLAN_2008_Final_Test_Writing_Prompt.pdf"
+     }
+    ]
+   }
+  ]
+ }
+}

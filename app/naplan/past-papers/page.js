@@ -83,6 +83,12 @@ export default function Page() {
               </tbody>
             </table>
           </div>
+          <p className="pg-intro">
+            Every paper by year level, linked straight to ACARA&rsquo;s PDFs:{" "}
+            {NAPLAN_YEARS.map((y, i) => (
+              <span key={y}>{i > 0 && " · "}<Link href={`/naplan/past-papers/year-${y}`}>Year {y} past papers</Link></span>
+            ))}
+          </p>
           <p className="pg-small">Numeracy: Years 3 and 5 have one paper per year. Years 7 and 9 have two, a calculator paper and a non-calculator paper. Checked November 2026.</p>
         </div>
       </section>
