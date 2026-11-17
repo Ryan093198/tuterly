@@ -8,7 +8,9 @@ import { getTopicGroupsForLevel } from "@/lib/curriculum-topics";
 import { WORKSHEET_LANDING_PAGES } from "@/lib/worksheet-landing-pages";
 import { STATES, STATE_CODES, NAPLAN_2027 } from "@/lib/state-curriculum";
 import { SITE_URL } from "@/lib/site";
+import { DIAG_PATH, DIAG_YEARS } from "@/lib/diagnostic";
 import "./state-hub.css";
+import "@/components/diagnostic/diagnostic.css";
 
 const GEN_YEARS = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 10A"];
 
@@ -44,6 +46,13 @@ export default function StateHub({ code }) {
     { k: "NAPLAN 2027", v: NAPLAN_2027 },
   ];
 
+  // Same free diagnostic test for every state; the state page adds its own note.
+  const diagFaq = {
+    q: `Is there a free test to see where my child is at in ${s.abbr}?`,
+    a: `Yes. The free Tuterly diagnostic test covers Years 7, 8 and 9: 20 questions, two from each chapter of the year, marked straight away. Parents can get a free emailed report on what to work on before next year. ${s.diag}`,
+  };
+  const faqs = [...s.faqs, diagFaq];
+
   const schema = [
     {
       "@context": "https://schema.org",
@@ -57,7 +66,7 @@ export default function StateHub({ code }) {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: s.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
     },
   ];
 
@@ -99,6 +108,33 @@ export default function StateHub({ code }) {
       <div className="sh-upgrade">
         <WorksheetUpgrade placement={`state_${code}_upgrade`} />
       </div>
+
+      <section className="sh-sec sh-diag" id="diagnostic-test" aria-labelledby="sh-diag">
+        <div className="sh-wrap">
+          <p className="sh-eyebrow sh-diag__eyebrow">Free · About 35 minutes · Marked straight away</p>
+          <h2 id="sh-diag">Free maths diagnostic test for {s.abbr} students in Years 7 to 9</h2>
+          <p className="sh-sub">
+            Twenty questions, two from every chapter of the year. Students see which topics are strong and which need work,
+            and parents can get a free report on what to fix before next year.
+          </p>
+          <p className="sh-diag__note">{s.diag}</p>
+          <p className="sh-diag__pick">Pick the year you&rsquo;re in <strong>now</strong>, not next year.</p>
+          <div className="dg-pick">
+            {DIAG_YEARS.map((y) => {
+              const label = s.group(y.year).label;
+              return (
+                <Link key={y.slug} href={`${DIAG_PATH}/${y.slug}`} className="dg-year">
+                  <span className="dg-year__k">I&rsquo;m in</span>
+                  <span className="dg-year__n">{y.year}</span>
+                  <span className="dg-year__x">Checks {label === y.year ? `${y.year} maths` : label}. Gets you ready for {y.next}.</span>
+                  <span className="dg-year__go">Start the test →</span>
+                </Link>
+              );
+            })}
+          </div>
+          <p className="sh-small">The same test is used in every state. The questions are written to the Australian Curriculum, which covers the same maths as {s.curriculumShort}.</p>
+        </div>
+      </section>
 
       <section className="sh-sec sh-sec--paper" aria-labelledby="sh-topics">
         <div className="sh-wrap">
@@ -181,7 +217,7 @@ export default function StateHub({ code }) {
         <div className="sh-wrap sh-narrow">
           <h2 id="sh-faq">Questions from {s.abbr} parents</h2>
           <div className="sh-faqs">
-            {s.faqs.map((f) => (
+            {faqs.map((f) => (
               <div key={f.q} className="sh-box">
                 <h3 className="sh-h3">{f.q}</h3>
                 <p className="sh-p">{f.a}</p>
@@ -207,14 +243,14 @@ export default function StateHub({ code }) {
   );
 }
 
-export function StateSwitcher({ current, title = "Another state or territory?" }) {
+export function StateSwitcher({ current, title = "Another state or territory?", hash = "" }) {
   return (
     <nav className="sh-switch" aria-label="Worksheets by state">
       <p className="sh-switch__title">{title}</p>
       <ul>
         {STATE_CODES.map((k) => (
           <li key={k}>
-            <Link href={`/worksheets/${k}`} aria-current={k === current ? "page" : undefined} className={k === current ? "is-current" : ""}>
+            <Link href={`/worksheets/${k}${hash}`} aria-current={k === current ? "page" : undefined} className={k === current ? "is-current" : ""}>
               {STATES[k].abbr}
             </Link>
           </li>

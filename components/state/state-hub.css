@@ -163,3 +163,11 @@
 /* /teachers: sign-up form replaces the mailto buttons (16 Nov 2026). */
 .tft-cta--form { margin-bottom: 0; }
 .tft-banner__demo { align-self: center; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; color: var(--brand-text); }
+
+/* Free diagnostic test block on each state page */
+.sh-diag .sh-diag__eyebrow { text-align: left; margin-bottom: 10px; }
+.sh-diag__note { font-size: 15px; line-height: 1.65; margin: 0 0 18px; padding: 12px 16px; border-left: 4px solid var(--brand); background: var(--background); border-radius: 0 12px 12px 0; }
+.sh-diag__pick { font-size: 15.5px; font-weight: 600; margin: 0 0 12px; }
+.sh-diag .dg-pick { margin-bottom: 16px; }
+.sh-sec.sh-diag { padding-top: 8px; }
+.sh-diag { scroll-margin-top: 80px; }

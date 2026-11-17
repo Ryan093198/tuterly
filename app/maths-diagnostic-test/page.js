@@ -4,6 +4,7 @@ import MarketingFooter from "@/components/marketing/MarketingFooter";
 import AppCtaBand from "@/components/study/AppCtaBand";
 import { DIAG_PATH, DIAG_YEARS, buildDiagnostic } from "@/lib/diagnostic";
 import { SITE_URL } from "@/lib/site";
+import { StateSwitcher } from "@/components/state/StateHub";
 import "@/components/state/state-hub.css";
 import "@/components/diagnostic/diagnostic.css";
 
@@ -29,6 +30,7 @@ const FAQS = [
   { q: "Can they use a calculator?", a: "Yes. Have a pen, paper and a calculator ready, and work each question out on paper before typing the answer." },
   { q: "What’s in the parent report?", a: "The score, a result for every chapter (Strong, Needs work or Not yet), and for each weak chapter, what it leads to next year. It’s emailed from learn@tuterly.com.au." },
   { q: "Is it a full assessment?", a: "No. Two questions per chapter gives a quick picture of where the gaps are, so you know where to start. It isn’t a school report or a prediction of marks." },
+  { q: "Does it work for my state?", a: "Yes. The questions are written to the Australian Curriculum, which covers the same maths taught in every state. Pick your state below for a short note on how the years line up there, such as Stage 4 and 5 in NSW." },
   { q: "What about Year 10?", a: "Students choose different maths pathways for Year 11, so the diagnostic covers Years 7, 8 and 9 for now." },
   { q: "Do you keep my child’s answers?", a: "No. The test is marked and the answers are not stored. If you ask for the report, we use your email to send it, and only email you again if you tick the box to hear when the app launches." },
 ];
@@ -102,7 +104,8 @@ export default function DiagnosticLanding() {
         </div>
       </section>
 
-      <AppCtaBand placement="diagnostic_landing" title="Then practise exactly what they missed." lead="The Tuterly app gives fresh questions on every topic your child got wrong, with a worked solution for each one, aligned to the Victorian Curriculum." />
+      <StateSwitcher title="Notes for your state or territory" hash="#diagnostic-test" />
+      <AppCtaBand placement="diagnostic_landing" title="Then practise exactly what they missed." lead="The Tuterly app gives fresh questions on every topic your child got wrong, with a worked solution for each one, written to the Australian Curriculum." />
       <MarketingFooter />
     </div>
   );
