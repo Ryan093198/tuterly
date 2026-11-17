@@ -601,17 +601,13 @@ export default function WorksheetGenerator({
                   <legend style={subtopicLegendStyle}>
                     Subtopics <span style={{ fontWeight: 500, color: c.textLight }}>({tickedCodes.length} of {chapter.sections.length} ticked{tickedCodes.length ? `, ${questionCount} questions` : ""})</span>
                   </legend>
-                  <p style={subtopicHintStyle}>
-                    Every subtopic starts ticked. Untick any you don&rsquo;t need. Up to 3 questions per subtopic, {MAX_CHAPTER_QUESTIONS} at most.
-                    {tickedCodes.length < chapter.sections.length && (
-                      <>
-                        {" "}
-                        <button type="button" style={linkButtonStyle} onClick={() => setTicked(new Set(chapter.sections.map((x) => x.code)))}>
-                          Tick all
-                        </button>
-                      </>
-                    )}
-                  </p>
+                  {tickedCodes.length < chapter.sections.length && (
+                    <p style={subtopicHintStyle}>
+                      <button type="button" style={linkButtonStyle} onClick={() => setTicked(new Set(chapter.sections.map((x) => x.code)))}>
+                        Tick all
+                      </button>
+                    </p>
+                  )}
                   <div style={subtopicListStyle}>
                     {chapter.sections.map((sec) => (
                       <label key={sec.code} style={subtopicRowStyle}>
