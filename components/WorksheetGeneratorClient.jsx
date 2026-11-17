@@ -9,6 +9,7 @@ import QuinnWorking from "@/components/brand/QuinnWorking";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
 import { WeeklyOptInCard, WeeklyOptInBox, WEEKLY_STORAGE_KEY } from "@/components/study/WeeklyOptIn";
+import { chapterQuestionCount, MAX_CHAPTER_QUESTIONS } from "@/lib/worksheet-count";
 
 // Public worksheet generator at /worksheets. Three states drive the UI:
 //   1. Email gate (no email in localStorage yet) — collect + POST to
@@ -206,6 +207,11 @@ export default function WorksheetGenerator({
         : `${chapter.name} (${tickedCodes.length} of ${chapter.sections.length} subtopics)`
     : "";
   const ready = chapterMode ? tickedCodes.length > 0 : !!topicLabel.trim();
+  // 3 questions per ticked subtopic, up to 10; Years 3 to 6 get 6.
+  const questionCount = chapterMode ? (tickedCodes.length ? chapterQuestionCount(tickedCodes.length) : MAX_CHAPTER_QUESTIONS) : 6;
+  const per = Math.floor(questionCount / 3);
+  const bands = [per, per + (questionCount % 3 >= 1 ? 1 : 0), per + (questionCount % 3 >= 2 ? 1 : 0)];
+  const qWord = (n) => (n === 1 ? "one" : n === 2 ? "two" : n === 3 ? "three" : n === 4 ? "four" : String(n));
 
   function pickChapter(n) {
     setChapterNo(n);
@@ -547,7 +553,9 @@ export default function WorksheetGenerator({
       <div style={cardStyle}>
         <h2 style={h2Style}>Generate a free maths worksheet</h2>
         <p style={pMutedStyle}>
-          Six questions across Foundation, Standard and Extension, with full
+          {chapterMode
+            ? `Up to ${MAX_CHAPTER_QUESTIONS} questions on the chapter you pick`
+            : "Six questions"} across Foundation, Standard and Extension, with full
           worked solutions, written to the Australian Curriculum.
         </p>
 
@@ -591,10 +599,10 @@ export default function WorksheetGenerator({
               {chapter && (
                 <fieldset style={subtopicBoxStyle} disabled={generating}>
                   <legend style={subtopicLegendStyle}>
-                    Subtopics <span style={{ fontWeight: 500, color: c.textLight }}>({tickedCodes.length} of {chapter.sections.length} ticked)</span>
+                    Subtopics <span style={{ fontWeight: 500, color: c.textLight }}>({tickedCodes.length} of {chapter.sections.length} ticked{tickedCodes.length ? `, ${questionCount} questions` : ""})</span>
                   </legend>
                   <p style={subtopicHintStyle}>
-                    Every subtopic starts ticked. Untick any you don&rsquo;t need.
+                    Every subtopic starts ticked. Untick any you don&rsquo;t need. Up to 3 questions per subtopic, {MAX_CHAPTER_QUESTIONS} at most.
                     {tickedCodes.length < chapter.sections.length && (
                       <>
                         {" "}
@@ -622,9 +630,6 @@ export default function WorksheetGenerator({
                   </div>
                 </fieldset>
               )}
-              <p style={{ margin: 0, fontSize: 12.5, color: c.textLight, lineHeight: 1.5 }}>
-                Chapters follow Cambridge Essential Mathematics for the Victorian Curriculum. Questions are Tuterly&rsquo;s own. Tuterly isn&rsquo;t affiliated with Cambridge University Press.
-              </p>
             </div>
           ) : (
                     <label style={labelStyle}>
@@ -683,13 +688,13 @@ export default function WorksheetGenerator({
 
           {generating && (
             <QuinnWorking
-              seconds={48}
-              note="This can take up to a minute. Please don't close the tab."
+              seconds={questionCount > 6 ? 70 : 48}
+              note={questionCount > 6 ? "This can take a minute or two. Please don't close the tab." : "This can take up to a minute. Please don't close the tab."}
               steps={[
                 `Picking questions on ${chapterMode ? (chapter ? chapter.name.toLowerCase() : "your chapter") : topicLabel ? topicLabel.toLowerCase() : "your topic"} for ${yearLevel}`,
-                "Writing two Foundation questions",
-                "Writing two Standard questions",
-                "Writing two Extension questions",
+                `Writing ${qWord(bands[0])} Foundation question${bands[0] === 1 ? "" : "s"}`,
+                `Writing ${qWord(bands[1])} Standard question${bands[1] === 1 ? "" : "s"}`,
+                `Writing ${qWord(bands[2])} Extension question${bands[2] === 1 ? "" : "s"}`,
                 "Writing the worked solutions",
                 "Checking the maths and the layout",
               ]}

@@ -25,11 +25,13 @@ export const runtime = "nodejs";
 // question out before writing it), which takes 40-55s, plus at most one
 // retry if the layout comes back wrong. Reused (pooled) worksheets return
 // instantly. Vercel Pro allows up to 300s.
-export const maxDuration = 120;
+export const maxDuration = 180;
 
 // Thinking budget for a fresh worksheet. Tested Oct 2026: without thinking
 // 3 of 5 sample worksheets had a wrong or contradictory answer; with it, 1 of 6.
+// A 10-question chapter worksheet gets a little more room.
 const THINKING_BUDGET = 3000;
+const thinkingFor = (count) => THINKING_BUDGET + Math.max(0, count - 6) * 250;
 
 const ALLOWED_YEARS = new Set([
   "Year 3",
@@ -66,7 +68,7 @@ async function isWeeklySubscriber(admin, email) {
 
 // Only retry (bad layout or maths that won't render) if the first attempt
 // finished within this, so the retry still fits inside maxDuration.
-const RETRY_BUDGET_MS = 60_000;
+const RETRY_BUDGET_MS = 85_000;
 
 export async function POST(request) {
   try {
@@ -114,6 +116,7 @@ async function handle(request) {
   if (!topicLabel) {
     return NextResponse.json({ error: "Pick a topic." }, { status: 400 });
   }
+  const questionCount = chapter ? chapter.count : 6;
   const email = sanitizeEmail(body?.email);
 
   const ip = trustedClientIp(request);
@@ -281,7 +284,7 @@ async function handle(request) {
         year_level: yearLevel,
         topic_id: topicId,
         topic_label: topicLabel,
-        question_count: 6,
+        question_count: questionCount,
       })
       .select("id")
       .maybeSingle();
@@ -319,14 +322,15 @@ async function handle(request) {
     topicDescription,
     variantSeed,
     chapter,
+    count: questionCount,
   });
   const baseMessages = [{ role: "user", content: userMessage }];
 
   async function generateOnce(messages) {
     const m = await anthropic.messages.create({
       model: "claude-sonnet-4-6",
-      max_tokens: 3500 + THINKING_BUDGET,
-      thinking: { type: "enabled", budget_tokens: THINKING_BUDGET },
+      max_tokens: Math.max(3500, 600 * questionCount) + thinkingFor(questionCount),
+      thinking: { type: "enabled", budget_tokens: thinkingFor(questionCount) },
       system: [
         {
           type: "text",
@@ -354,14 +358,14 @@ async function handle(request) {
   }
 
   // Two cheap checks with no model call: every maths block must render
-  // (KaTeX), and the layout must be right (six questions numbered 1 to 6
+  // (KaTeX), and the layout must be right (every question numbered from 1
   // under Foundation / Standard / Extension, one solution each, no
   // answer line that disagrees with another). If either fails and there's
   // time, write the worksheet again from scratch and keep whichever is
   // better.
   const problemsOf = (md) => {
     const katex = findKatexErrors(md);
-    const layout = worksheetStructureProblems(sanitizeGenerated(md));
+    const layout = worksheetStructureProblems(sanitizeGenerated(md), questionCount);
     return { katex, layout, total: katex.length + layout.length };
   };
   let problems = problemsOf(worksheetMarkdown);
@@ -402,8 +406,8 @@ async function handle(request) {
   }
 
   // The generation was reserved (logged) before the model call — see above.
-  // Add its six questions to the running total for the home page counter.
-  await bumpQuestionTally(admin, "worksheets", 6);
+  // Add its questions to the running total for the home page counter.
+  await bumpQuestionTally(admin, "worksheets", questionCount);
 
   // Save it to the pool and, once the visitor has it, have a second model
   // check every answer. Only worksheets that pass are reused for others.
@@ -419,7 +423,7 @@ async function handle(request) {
             method: "POST",
             headers: { authorization: `Bearer ${secret}`, "content-type": "application/json" },
             body: JSON.stringify({ id: poolId }),
-            signal: AbortSignal.timeout(58_000),
+            signal: AbortSignal.timeout(118_000),
           });
         } catch (e) {
           // Stays 'pending' (never reused) if the check couldn't run.

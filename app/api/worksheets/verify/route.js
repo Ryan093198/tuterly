@@ -4,7 +4,7 @@ import { createAdminClient } from "@/lib/supabase-admin";
 import { checkWorksheet } from "@/lib/worksheet-pool";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 120; // a 10-question worksheet takes longer to check
 
 // Checks one pending worksheet in the pool (lib/worksheet-pool.js): a second
 // model solves all six questions independently. Pass -> 'verified' (reused

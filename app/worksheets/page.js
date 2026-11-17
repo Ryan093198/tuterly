@@ -25,18 +25,18 @@ import MethodStrip from "@/components/method/MethodStrip";
 
 const TITLE = "Free Maths Worksheet Generator, Years 3 to 10 | Tuterly";
 const DESCRIPTION =
-  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions as a PDF. Designed by senior educators at Bayside Academics. Australian Curriculum, for every state.";
+  "Free maths worksheet generator for Year 3 to Year 10. Pick the year and topic (or textbook chapter for Years 7 to 10) and get up to 10 new questions, from Foundation to Extension, with fully worked solutions as a PDF. Designed by senior educators at Bayside Academics. Australian Curriculum, for every state.";
 
 const HOW = [
   { n: "1", title: "Pick the year and chapter", body: "Years 7 to 10 follow the textbook chapters: pick one chapter and every subtopic is ticked, then untick any you don't need. Years 3 to 6 list every topic by strand: Number, Algebra, Measurement, Space, Statistics and Probability." },
-  { n: "2", title: "Generate six new questions", body: "Two Foundation, two Standard and two Extension, written fresh each time, so you never get the same sheet twice." },
+  { n: "2", title: "Generate new questions", body: "Up to 3 questions per subtopic and 10 in all for Years 7 to 10, or six for Years 3 to 6, from Foundation through Standard to Extension. Written fresh each time, so you never get the same sheet twice." },
   { n: "3", title: "Download the PDF", body: "Print it or work from the screen. Every question comes with a fully worked solution to check against." },
 ];
 
 const FAQS = [
   { q: "Is the maths worksheet generator really free?", a: "Yes. Enter your email the first time and you can generate one free worksheet a day, or two a day if you join our free email list. There's nothing to pay and no card needed." },
   { q: "Which year levels and topics does it cover?", a: "Year 3 to Year 10, every maths topic in the Australian Curriculum. Topics are organised as in the Victorian Curriculum 2.0, Victoria's version of it, and cover the same maths taught in the other states, including NSW and WA, which have their own syllabuses. For Years 7 to 10, pick the textbook chapter your child's class is on and untick any subtopics they haven't done yet. For Years 3 to 6, pick the topic." },
-  { q: "Are the worksheets the same every time?", a: "No. The generator writes six new questions each time, across Foundation, Standard and Extension, each with a fully worked solution." },
+  { q: "Are the worksheets the same every time?", a: "No. The generator writes new questions each time (up to 10 for Years 7 to 10, six for Years 3 to 6), across Foundation, Standard and Extension, each with a fully worked solution." },
   { q: "Can it make a worksheet from my child's own mistakes?", a: "That's what the Tuterly app does for Years 7 to 10. Your child snaps the questions they got wrong, or uploads a marked test, and the app writes fresh questions on the same ideas until each one is mastered." },
 ];
 const URL = `${SITE_URL}/worksheets`;
@@ -126,10 +126,10 @@ export default function WorksheetsPage() {
               Free maths worksheet generator, <span className="ws-hero2__accent">Year&nbsp;3 to Year&nbsp;10.</span>
             </h1>
             <p className="tb-lead ws-hero2__lead">
-              Pick the year and topic and get six new questions, from Foundation to Extension, with fully worked solutions. Australian Curriculum, for every state.
+              Pick the year and topic and get up to 10 new questions, from Foundation to Extension, with fully worked solutions. Australian Curriculum, for every state.
             </p>
             <ul className="ws-hero2__ticks">
-              <li>Six fresh questions every time, never the same sheet twice</li>
+              <li>Fresh questions every time, never the same sheet twice</li>
               <li>A fully worked solution for every question</li>
               <li>Free with your email: one worksheet a day, or two when you join our email list</li>
             </ul>
