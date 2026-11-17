@@ -30,7 +30,11 @@ const store = {
   set(k, v) { try { window.localStorage.setItem(k, v); } catch {} },
 };
 
-export default function PaperClient({ paper }) {
+// Options (all optional, used by the free diagnostic test,
+// components/diagnostic/DiagnosticClient.jsx): markUrl and markExtra change
+// where answers are marked; eyebrow and intro change the header text;
+// renderResult(result, answers) replaces the app panels after marking.
+export default function PaperClient({ paper, markUrl, markExtra, eyebrow, intro, renderResult }) {
   const draftKey = `tuterly:paper:${paper.id}`;
   const questions = useMemo(() => paper.sections.flatMap((s) => s.questions), [paper]);
   const [answers, setAnswers] = useState({});
@@ -65,10 +69,10 @@ export default function PaperClient({ paper }) {
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch(`/api/papers/${paper.id}/mark`, {
+      const res = await fetch(markUrl || `/api/papers/${paper.id}/mark`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ answers }),
+        body: JSON.stringify({ ...(markExtra || {}), answers }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) throw new Error(data?.error || "Something went wrong. Try again.");
@@ -89,7 +93,7 @@ export default function PaperClient({ paper }) {
   return (
     <>
       <header className="sh-hero pp-hero" ref={topRef}>
-        <p className="sh-eyebrow">{paper.year} maths · Practice test</p>
+        <p className="sh-eyebrow">{eyebrow || `${paper.year} maths · Practice test`}</p>
         <h1>{paper.title}</h1>
         <ul className="pp-chips" aria-label="Topics">
           {paper.chapters.map((c) => <li key={c}>{c}</li>)}
@@ -99,7 +103,8 @@ export default function PaperClient({ paper }) {
           <div><dt>Marks</dt><dd>{paper.totalMarks}</dd></div>
           <div><dt>Time</dt><dd>about {paper.minutes} min</dd></div>
         </dl>
-        {!result && <p className="pp-inst">Work each question out on paper, then type your answer in the box. When you&rsquo;ve finished, press <strong>Mark my test</strong> to get your mark and the worked solutions.</p>}
+        {!result && intro}
+        {!result && !intro && <p className="pp-inst">Work each question out on paper, then type your answer in the box. When you&rsquo;ve finished, press <strong>Mark my test</strong> to get your mark and the worked solutions.</p>}
       </header>
 
       {result && (
@@ -109,11 +114,11 @@ export default function PaperClient({ paper }) {
             <p className="pp-score__sub">{pct}% · {result.correct} of {result.questions} questions fully right</p>
             <p className="pp-score__msg">{pct >= 85 ? "Excellent work. Check the worked solutions for anything you missed." : pct >= 60 ? "Good effort. Go through the worked solutions for the ones you missed, then try those topics again." : "Have a look at the worked solutions below, then practise the topics you found hard."}</p>
           </div>
-          <div className="pp-cta">
+          {renderResult ? renderResult(result, answers) : <div className="pp-cta">
             <p className="pp-cta__t">Keep going with unlimited practice</p>
             <p className="pp-cta__x">The Tuterly app writes fresh questions on exactly what you got wrong, with a worked solution for each one, on every Years 7 to 10 topic. All aligned to the Victorian Curriculum.</p>
             <Link href={cta.href} className="tb-btn tb-btn--primary" onClick={() => trackEvent("paper_cta_click", { to: "app", from: "score", live: cta.live })}>{cta.live ? "Try Tuterly free" : cta.label}</Link>
-          </div>
+          </div>}
         </section>
       )}
 
@@ -190,7 +195,7 @@ export default function PaperClient({ paper }) {
           </div>
         )}
 
-        {result && (
+        {result && !renderResult && (
           <div className="pp-cta pp-cta--end">
             <p className="pp-cta__t">Want more questions like these?</p>
             <p className="pp-cta__x">Try Tuterly for unlimited worksheets and practice tests on every topic, aligned to the Victorian Curriculum. Snap any question you get wrong and get the worked solution, then fresh questions until you&rsquo;ve got it.</p>
