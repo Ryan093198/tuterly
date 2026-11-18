@@ -9,8 +9,8 @@ import "./marketing-ux.css";
 const TOOLS = [
   {
     href: "/exam-plan",
-    k: "Years 7 to 10",
-    t: "Free exam plan",
+    k: "Years 7 to 10 · Free exam plan",
+    t: "Exam Zone",
     x: "Upload a marked test, or pick your topics. Get a plan to your exam and questions on your weak spots.",
   },
   {

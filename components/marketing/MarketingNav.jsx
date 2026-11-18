@@ -15,7 +15,7 @@ const LINKS = [
   { href: "/parents", label: "For parents" },
   { href: "/students", label: "For students" },
   { href: "/worksheets", label: "Free worksheets" },
-  { href: "/exam-generator", label: "Exam generator" },
+  { href: "/exam-plan", label: "Exam Zone" }, // the free exam plan (Ryan, 18 Nov 2026); the exam generator stays in the footer
 ];
 
 export function Logo() {

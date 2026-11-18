@@ -66,7 +66,7 @@ export default function ExamPlanPage() {
       <section className="epx-top" aria-labelledby="epx-h1">
         <div className="epx-top__in">
           <div className="epx-copy">
-            <p className="epx-kicker">Free for Years 7 to 10</p>
+            <p className="epx-kicker">Exam Zone · Free for Years 7 to 10</p>
             <h1 id="epx-h1">Upload your school tests. Get a customised exam plan and questions.</h1>
             <p className="epx-lead">
               We find exactly what you got wrong, plan your days to the exam, and make you a customised test on your weak spots, with worked solutions.

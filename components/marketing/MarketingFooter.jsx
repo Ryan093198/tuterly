@@ -28,7 +28,7 @@ const GROUPS = [
   {
     title: "Free resources",
     links: [
-      { href: "/exam-plan", label: "Free exam plan (Years 7 to 10)" },
+      { href: "/exam-plan", label: "Exam Zone: free exam plan" },
       { href: "/maths-diagnostic-test", label: "Free diagnostic test (Years 7 to 9)" },
       { href: "/worksheets", label: "Worksheet generator" },
       { href: "/practice-maths-tests-secondary", label: "Practice test generator" },
