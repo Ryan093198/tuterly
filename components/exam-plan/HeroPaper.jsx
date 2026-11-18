@@ -60,7 +60,7 @@ export default function HeroPaper() {
           <li><span>Thu</span>Index laws</li>
           <li><span>Fri</span>Solving equations</li>
           <li><span>Sat</span>Factorising</li>
-          <li className="is-test"><span>Sun</span>Your custom test</li>
+          <li className="is-test"><span>Sun</span>Your customised test</li>
         </ul>
       </div>
     </div>

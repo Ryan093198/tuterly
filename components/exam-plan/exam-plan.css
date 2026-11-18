@@ -112,7 +112,7 @@
 .epx-visual { grid-area: visual; }
 .epx-flow { grid-area: flow; scroll-margin-top: 84px; }
 .epx-kicker { display: inline-block; margin: 0 0 14px; padding: 6px 12px; border-radius: 99px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); font-size: 14px; font-weight: 700; color: #bdf0fa; }
-.epx-top h1 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -1.6px; color: #fff; max-width: 15ch; text-wrap: balance; }
+.epx-top h1 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(31px, 4.2vw, 52px); line-height: 1.04; letter-spacing: -1.6px; color: #fff; max-width: 17ch; text-wrap: balance; }
 .epx-lead { margin: 18px 0 0; font-size: clamp(17px, 1.6vw, 19px); line-height: 1.55; color: var(--desk-text); max-width: 46ch; }
 .epx-facts { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .epx-facts li { position: relative; padding-left: 26px; font-weight: 700; font-size: 15px; color: #fff; }
@@ -213,3 +213,9 @@
 .epx-end h2 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.05; letter-spacing: -1.2px; max-width: 18ch; text-wrap: balance; }
 .epx-end p { margin: 0; color: var(--desk-text); font-size: 15px; }
 @media (max-width: 560px) { .epx-sec { padding: 56px 0; } .epx-top { padding: 28px 0 48px; } }
+
+/* Once the plan and test are ready they take the whole width, centred,
+   instead of sitting in the right-hand column. */
+.epx-top__in:has(.ep-results) { grid-template-columns: minmax(0, 1fr); grid-template-areas: "flow"; }
+.epx-top__in:has(.ep-results) .epx-copy, .epx-top__in:has(.ep-results) .epx-visual { display: none; }
+.epx-top__in:has(.ep-results) .epx-flow { position: static; width: 100%; max-width: 780px; justify-self: center; }

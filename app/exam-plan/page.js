@@ -14,7 +14,7 @@ import "@/components/exam-plan/exam-plan.css";
 // Tuterly app account, so everything is waiting in the app.
 const TITLE = "Free Maths Exam Study Plan from Your Marked Tests (Years 7 to 10) | Tuterly";
 const DESCRIPTION =
-  "Upload a marked maths test and get a free study plan to your exam date, plus a custom test on exactly the questions you got wrong, with worked solutions. For Years 7 to 10.";
+  "Upload a marked maths test and get a free study plan to your exam date, plus a customised test on exactly the questions you got wrong, with worked solutions. For Years 7 to 10.";
 const URL = `${SITE_URL}/exam-plan`;
 
 export const metadata = {
@@ -26,7 +26,7 @@ export const metadata = {
 };
 
 const FAQS = [
-  { q: "Is it really free?", a: "Yes. Your study plan and your custom test are free, with one upload a day. The Tuterly app is the paid version, with unlimited questions, notes and practice tests." },
+  { q: "Is it really free?", a: "Yes. Your study plan and your customised test are free, with one upload a day. The Tuterly app is the paid version, with unlimited questions, notes and practice tests." },
   { q: "What can I upload?", a: "Any maths test you've done with the marking on it: a class test, a topic test, a practice exam or a past test. Photos of each page (up to 10) or one PDF." },
   { q: "What if my test isn't marked?", a: "Upload it anyway. You'll see every question we found, and you tick the ones you got wrong or weren't sure about." },
   { q: "Where do the test questions come from?", a: "From Tuterly's own bank of checked questions, written for the Victorian and Australian Curriculum and matched to the topics you got wrong. Your school's questions are never copied." },
@@ -51,13 +51,13 @@ export default function ExamPlanPage() {
         <div className="epx-top__in">
           <div className="epx-copy">
             <p className="epx-kicker">Free for Years 7 to 10</p>
-            <h1 id="epx-h1">Upload your marked tests. Get a plan for your exam.</h1>
+            <h1 id="epx-h1">Upload your school tests. Get a customised exam plan and questions.</h1>
             <p className="epx-lead">
-              We find exactly what you got wrong, plan your days to the exam, and make you a custom test on your weak spots, with worked solutions.
+              We find exactly what you got wrong, plan your days to the exam, and make you a customised test on your weak spots, with worked solutions.
             </p>
             <ul className="epx-facts">
               <li>A plan to your exam date</li>
-              <li>Up to 10 questions on your weak spots</li>
+              <li>Questions based on your weaknesses</li>
               <li>Saved to your Tuterly app</li>
             </ul>
           </div>
@@ -87,7 +87,7 @@ export default function ExamPlanPage() {
             <li>
               <span className="epx-steps__n">3</span>
               <h3>Get your plan and test</h3>
-              <p>A day-by-day plan to your exam date and a custom test on exactly your weak spots. We email you the plan too.</p>
+              <p>A day-by-day plan to your exam date and a customised test on exactly your weak spots. We email you the plan too.</p>
             </li>
           </ol>
         </div>
