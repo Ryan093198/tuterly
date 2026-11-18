@@ -7,6 +7,7 @@ import { PhoneFrame } from "@/components/brand";
 import { SITE_URL } from "@/lib/site";
 import { appCta } from "@/lib/study-app";
 import { PLAN_YEARS, topicChoices } from "@/lib/exam-plan";
+import { getChapterPages } from "@/lib/chapter-pages";
 import "katex/dist/katex.min.css";
 import "@/components/exam-plan/exam-plan.css";
 
@@ -14,7 +15,7 @@ import "@/components/exam-plan/exam-plan.css";
 // point. Upload a marked test, get a study plan to the exam date and a custom
 // test on the questions you got wrong, free (one upload a day). It's a real
 // Tuterly app account, so everything is waiting in the app.
-const TITLE = "Free Maths Exam Study Plan from Your Marked Tests (Years 7 to 10) | Tuterly";
+const TITLE = "Free Maths Exam Study Plan and Revision Questions (Years 7 to 10) | Tuterly";
 const DESCRIPTION =
   "Upload a marked maths test and get a free study plan to your exam date, plus a customised test on exactly the questions you got wrong, with worked solutions. For Years 7 to 10.";
 const URL = `${SITE_URL}/exam-plan`;
@@ -53,6 +54,8 @@ const FAQS = [
 export default function ExamPlanPage() {
   const cta = appCta();
   const appLabel = cta.live ? "Get Tuterly" : "Get early access to the app";
+  const topics = Object.fromEntries(PLAN_YEARS.map((y) => [y, topicChoices(y)]));
+  const chapterPath = Object.fromEntries(getChapterPages().map((c) => [`${c.year}|${c.chapter}`, c.path]));
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -81,7 +84,7 @@ export default function ExamPlanPage() {
             <HeroPaper />
           </div>
           <div className="epx-flow" id="start">
-            <ExamPlanFlow cta={{ href: cta.href, label: appLabel }} topics={Object.fromEntries(PLAN_YEARS.map((y) => [y, topicChoices(y)]))} />
+            <ExamPlanFlow cta={{ href: cta.href, label: appLabel }} topics={topics} />
           </div>
         </div>
       </section>
@@ -146,6 +149,40 @@ export default function ExamPlanPage() {
               <details key={f.q}>
                 <summary>{f.q}</summary>
                 <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="epx-sec epx-sec--topics" aria-labelledby="epx-topics">
+        <div className="epx-wrap epx-wrap--narrow">
+          <h2 id="epx-topics" className="epx-h2">What&rsquo;s on the Year 7 to 10 maths exam</h2>
+          <p className="epx-p">
+            Every topic you can build a study plan for, by year, following the Australian Curriculum (including the Victorian Curriculum 2.0). Open your year to see the chapters and subtopics your maths exam can cover.
+          </p>
+          <div className="epx-years">
+            {PLAN_YEARS.map((y) => (
+              <details key={y}>
+                <summary>Year {y} maths exam topics</summary>
+                <p className="epx-years__links">
+                  <a href={`/maths-exam-preparation/year-${y}`}>How to prepare for the Year {y} maths exam</a>
+                  <a href={`/worksheets/year-${y}`}>Year {y} maths worksheets</a>
+                </p>
+                {topics[y].map((ch) => (
+                  <div key={ch.n} className="epx-years__ch">
+                    <h3>
+                      {chapterPath[`Year ${y}|${ch.n}`] ? (
+                        <a href={chapterPath[`Year ${y}|${ch.n}`]}>Chapter {ch.n}: {ch.name}</a>
+                      ) : (
+                        <>Chapter {ch.n}: {ch.name}</>
+                      )}
+                    </h3>
+                    <ul>
+                      {ch.sections.map((sec) => <li key={sec.code}>{sec.code} {sec.name}</li>)}
+                    </ul>
+                  </div>
+                ))}
               </details>
             ))}
           </div>

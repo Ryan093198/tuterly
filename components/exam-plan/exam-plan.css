@@ -307,3 +307,17 @@ button.ep-day__btn:focus-visible { outline: 3px solid var(--brand-soft); outline
 .ep-ex__cta b { color: #fff; }
 .ep-ex__btn { justify-self: start; min-height: 46px; font-size: 16px; padding: 0 20px; }
 @media (max-width: 560px) { .ep-ex { margin: 0 4px 4px; padding: 12px; } .ep-ex__btn { justify-self: stretch; } }
+
+/* Topics by year, collapsed (for people searching what their exam covers). */
+.epx-sec--topics { padding-top: 0; }
+.epx-years { display: grid; gap: 10px; margin-top: 24px; }
+.epx-years details { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 16px 20px; }
+.epx-years summary { font-family: var(--font-display); font-size: 18px; font-weight: 800; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.epx-years summary::-webkit-details-marker { display: none; }
+.epx-years summary::after { content: "+"; color: var(--brand-text); font-size: 24px; line-height: 1; transition: transform .2s ease; }
+.epx-years details[open] summary::after { transform: rotate(45deg); }
+.epx-years__links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 14px 0 4px; }
+.epx-years__links a, .epx-years__ch h3 a { color: var(--brand-text); font-weight: 700; text-underline-offset: 3px; }
+.epx-years__ch h3 { margin: 18px 0 6px; font-size: 15.5px; font-weight: 800; }
+.epx-years__ch ul { margin: 0; padding-left: 18px; columns: 2; column-gap: 28px; font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+@media (max-width: 560px) { .epx-years__ch ul { columns: 1; } .epx-years details { padding: 14px 16px; } }
