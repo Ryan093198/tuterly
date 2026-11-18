@@ -17,7 +17,6 @@ const APP_URL = "https://iuiqiqtthmpvtxmirdam.supabase.co";
 const APP_KEY = "sb_publishable_ZYFGIG5b3L8SnnidBGjyFQ_Laie64Fo";
 const YEARS = [7, 8, 9, 10];
 const MAX_PAGES = 10;
-const PREVIEW = 6; // the custom test shown here is a preview (Ryan, 18 Nov 2026)
 
 let client = null;
 function app() {
@@ -477,7 +476,7 @@ function Results({ result, cta, shown, setShown }) {
         <h2 className="ep-h">Questions based on your weaknesses</h2>
         <p className="ep-muted">Work each one out on paper, then check the answer.</p>
         <ol className="ep-test">
-          {(test || []).slice(0, PREVIEW).map((q) => (
+          {(test || []).map((q) => (
             <li key={q.n} className="ep-q">
               <p className="ep-q__meta">Question {q.n} · {q.code} {q.section}</p>
               <div className="ep-q__body" dangerouslySetInnerHTML={{ __html: q.question_html }} />
