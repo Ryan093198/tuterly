@@ -44,22 +44,21 @@ export default function MarkdownReport({ content, flagOptions }) {
           ul: (props) => (
             <ul className="my-2.5 space-y-1.5 list-none pl-0" {...props} />
           ),
-          ol: (props) => (
-            <ol className="my-2.5 space-y-1.5 list-decimal pl-5" {...props} />
+          // react-markdown 10 no longer tells li whether its list is
+          // numbered, so the ol hides the bullet dot and the extra indent
+          // itself (otherwise steps showed "1. •").
+          ol: ({ node, ...props }) => (
+            <ol className="my-2.5 space-y-1.5 list-decimal pl-6 ml-1 [&>li]:pl-1 [&>li>.md-dot]:hidden" {...props} />
           ),
-          li: ({ ordered, ...props }) => (
+          li: ({ node, ...props }) => (
             <li
-              className={`text-[15px] leading-[1.65] text-zinc-700 dark:text-zinc-300 ${
-                ordered ? "" : "pl-5 relative"
-              }`}
+              className="text-[15px] leading-[1.65] text-zinc-700 dark:text-zinc-300 pl-5 relative"
               {...props}
             >
-              {!ordered && (
-                <span
-                  aria-hidden="true"
-                  className="absolute left-0 top-[0.6em] w-2 h-2 rounded-full bg-brand"
-                />
-              )}
+              <span
+                aria-hidden="true"
+                className="md-dot absolute left-0 top-[0.6em] w-2 h-2 rounded-full bg-brand"
+              />
               {props.children}
             </li>
           ),
@@ -90,7 +89,7 @@ export default function MarkdownReport({ content, flagOptions }) {
             return (
               <details
                 id={`question-${num}`}
-                className="group my-3 scroll-mt-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30 target:ring-2 target:ring-brand/40"
+                className="group my-3 scroll-mt-6 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-surface-soft overflow-hidden [&>*:not(summary)]:px-5 [&>ol:not(summary)]:pl-10 [&>ul:not(summary)]:pl-5 [&>*:not(summary):first-of-type]:mt-3 [&>*:not(summary):last-of-type]:mb-3 open:bg-card open:border-brand/30 target:ring-2 target:ring-brand/40"
                 {...props}
               >
                 {props.children}
