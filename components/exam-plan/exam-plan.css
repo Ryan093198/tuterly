@@ -219,3 +219,6 @@
 .epx-top__in:has(.ep-results) { grid-template-columns: minmax(0, 1fr); grid-template-areas: "flow"; }
 .epx-top__in:has(.ep-results) .epx-copy, .epx-top__in:has(.ep-results) .epx-visual { display: none; }
 .epx-top__in:has(.ep-results) .epx-flow { position: static; width: 100%; max-width: 780px; justify-self: center; }
+.ep-res-head { display: grid; justify-items: center; gap: 14px; margin: 8px 0 28px; text-align: center; color: #fff; }
+.ep-res-head h2 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; letter-spacing: -1.2px; max-width: 18ch; text-wrap: balance; }
+.ep-res-head p { margin: 0; max-width: 52ch; color: var(--desk-text, #d4ecf1); font-size: 17px; line-height: 1.55; }

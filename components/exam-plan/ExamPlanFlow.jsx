@@ -444,6 +444,11 @@ function Results({ result, cta, shown, setShown }) {
   const { plan, weak, test, exam_name: examName, added } = result;
   return (
     <div className="ep-results">
+      <header className="ep-res-head">
+        <h2>Your Customised Exam Plan and Questions</h2>
+        <p>Built from your test. For unlimited questions on your weak topics, plus notes and practice tests, keep going in the Tuterly app.</p>
+        {cta && <a href={cta.href} className="epx-btn">{cta.label}</a>}
+      </header>
       <div className="ep-card">
         <p className="ep-step">Your plan</p>
         <h2 className="ep-h">
