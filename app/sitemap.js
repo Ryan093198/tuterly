@@ -47,6 +47,7 @@ const STATIC_PAGES = [
   { path: "/naplan/year-7-numeracy", priority: 0.8, changeFrequency: "monthly" },
   { path: "/naplan/year-9-numeracy", priority: 0.8, changeFrequency: "monthly" },
   { path: "/naplan/past-papers", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/exam-plan", priority: 0.8, changeFrequency: "monthly" },
   { path: "/naplan/past-papers/year-3", priority: 0.7, changeFrequency: "monthly" },
   { path: "/naplan/past-papers/year-5", priority: 0.7, changeFrequency: "monthly" },
   { path: "/naplan/past-papers/year-7", priority: 0.7, changeFrequency: "monthly" },

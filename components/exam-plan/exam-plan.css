@@ -1,0 +1,77 @@
+/* The free exam plan (/exam-plan). Uses the site tokens in globals.css. */
+.sh-sec.ep-sec { padding-top: 0; }
+.ep-wrap { max-width: 680px; }
+.ep { scroll-margin-top: 90px; }
+
+.ep-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 3px 0 var(--edge); padding: 28px; display: grid; gap: 14px; }
+.ep-card + .ep-card { margin-top: 18px; }
+.ep-card--cta { background: var(--brand-pale); border-color: var(--brand-soft); }
+.ep-step { margin: 0; font-size: 13px; font-weight: 700; color: var(--brand-text); }
+.ep-h { margin: 0; font-size: clamp(22px, 3.4vw, 28px); font-weight: 800; letter-spacing: -.5px; line-height: 1.2; }
+.ep-h3 { margin: 8px 0 0; font-size: 16px; font-weight: 800; }
+.ep-muted { margin: 0; color: var(--muted); line-height: 1.55; }
+.ep-small { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.ep-small a, .ep-link { color: var(--brand-text); font-weight: 700; text-decoration: underline; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.ep-note { margin: 0; padding: 10px 12px; border-radius: 12px; background: var(--brand-pale); font-size: 14px; }
+.ep-err { margin: 0; padding: 10px 12px; border-radius: 12px; background: #fef2f2; color: #b91c1c; font-size: 14px; font-weight: 600; }
+.ep-who { margin-top: 4px; }
+
+.ep-label { display: grid; gap: 6px; font-size: 14px; font-weight: 700; }
+.ep-opt { font-weight: 500; color: var(--muted); }
+.ep-input { width: 100%; box-sizing: border-box; padding: 13px 14px; border: 1.5px solid var(--border); border-radius: 12px; font: inherit; font-size: 16px; background: var(--card); color: var(--foreground); }
+.ep-input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+.ep-input--code { font-size: 26px; letter-spacing: 8px; text-align: center; font-weight: 800; }
+.ep-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .ep-row { grid-template-columns: 1fr; } .ep-card { padding: 20px; } }
+
+.ep-btn { display: inline-flex; justify-content: center; align-items: center; min-height: 52px; padding: 0 22px; border: 0; border-radius: 14px; background: var(--brand); color: var(--on-brand); font: inherit; font-size: 17px; font-weight: 800; cursor: pointer; box-shadow: 0 3px 0 var(--brand-edge); text-decoration: none; }
+.ep-btn:disabled { opacity: .55; cursor: default; }
+.ep-btn:focus-visible { outline: 3px solid var(--brand-soft); outline-offset: 2px; }
+
+.ep-years { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.ep-years button { min-height: 48px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--card); font: inherit; font-weight: 700; cursor: pointer; color: var(--foreground); }
+.ep-years button.is-on { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-foreground); }
+
+.ep-drop { position: relative; display: grid; gap: 4px; place-items: center; text-align: center; padding: 28px 16px; border: 2px dashed var(--brand); border-radius: 16px; background: var(--brand-pale); cursor: pointer; }
+.ep-drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.ep-drop__t { font-weight: 800; color: var(--brand-foreground); font-size: 16px; }
+.ep-drop__x { font-size: 12.5px; color: var(--muted); word-break: break-all; }
+.ep-drop:focus-within { box-shadow: 0 0 0 3px var(--brand-soft); }
+
+.ep-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-height: 460px; overflow: auto; }
+.ep-items label { display: grid; grid-template-columns: auto auto 1fr auto; gap: 10px; align-items: start; padding: 11px 12px; border: 1.5px solid var(--border); border-radius: 12px; cursor: pointer; }
+.ep-items label.is-on { border-color: var(--brand); background: var(--brand-pale); }
+.ep-items input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--brand); }
+.ep-items__l { font-weight: 800; white-space: nowrap; }
+.ep-items__q { font-size: 14px; color: var(--muted); line-height: 1.4; }
+.ep-mark { font-size: 11.5px; font-weight: 800; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.ep-mark--wrong { background: #fef2f2; color: #b91c1c; }
+.ep-mark--partial { background: #fff7ed; color: #b45309; }
+.ep-mark--right { background: #ecfdf3; color: #15803d; }
+
+.ep-weak { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.ep-weak a { color: var(--brand-text); font-weight: 700; }
+.ep-days { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ep-day { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 10px 12px; border-radius: 12px; background: var(--background); }
+.ep-day__d { font-size: 13px; font-weight: 700; color: var(--muted); }
+.ep-day__t { font-weight: 600; }
+.ep-day--review { background: var(--violet-soft); }
+.ep-day--practice { background: var(--brand-soft); }
+
+.ep-test { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.ep-q { padding: 16px; border: 1px solid var(--border); border-radius: 14px; }
+.ep-q__meta { margin: 0 0 8px; font-size: 12.5px; font-weight: 700; color: var(--brand-text); }
+.ep-q__body p { margin: 0 0 8px; }
+.ep-q__ans { margin-top: 10px; padding: 12px 14px; border-radius: 12px; background: var(--brand-pale); }
+.ep-q__ans p { margin: 0 0 6px; }
+.ep-reveal { margin-top: 6px; background: none; border: 1.5px solid var(--brand); color: var(--brand-text); border-radius: 10px; padding: 8px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+.ep-q .katex-display { overflow-x: auto; overflow-y: hidden; }
+
+.ep-perks { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.ep-btn--cta { justify-self: start; }
+
+.ep-how { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 10px; line-height: 1.55; }
+.ep-faq { display: grid; gap: 10px; margin-top: 16px; }
+.ep-faq details { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.ep-faq summary { font-weight: 800; cursor: pointer; }
+.ep-faq p { margin: 10px 0 0; color: var(--muted); line-height: 1.55; }
