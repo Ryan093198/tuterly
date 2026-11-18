@@ -31,9 +31,25 @@ export async function POST(request) {
 
   const admin = createAdminClient();
   const since = new Date(Date.now() - 30 * 3600 * 1000).toISOString();
-  const { data: recent } = await admin.from("exam_plan_runs").select("id, created_at").eq("app_user_id", user.id).gte("created_at", since);
+  const { data: recent } = await admin.from("exam_plan_runs").select("id, created_at, status, paper_id").eq("app_user_id", user.id).gte("created_at", since);
   const today = melbDay(Date.now());
-  if ((recent || []).some((r) => melbDay(r.created_at) === today)) {
+  // A test the app couldn't read (blank page, blurry photo, not a test)
+  // doesn't use up the day: drop those runs before checking the limit.
+  const todays = (recent || []).filter((r) => melbDay(r.created_at) === today);
+  const counted = [];
+  for (const r of todays) {
+    if (r.status === "uploaded" && r.paper_id) {
+      try {
+        const [p] = await appSelect(token, "papers", `id=eq.${r.paper_id}&select=status`);
+        if (!p || p.status === "failed") {
+          await admin.from("exam_plan_runs").delete().eq("id", r.id);
+          continue;
+        }
+      } catch {}
+    }
+    counted.push(r);
+  }
+  if (counted.length) {
     return NextResponse.json(
       { error: "That's your free upload for today. Come back tomorrow for another, or get Tuterly for unlimited uploads and practice.", limit: true },
       { status: 429 },

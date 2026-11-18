@@ -238,7 +238,8 @@ export default function ExamPlanFlow({ cta }) {
         scrollTop();
       } else if (data?.status === "failed" || (data?.processing_error && data?.status !== "processing") || Date.now() - started > 5 * 60 * 1000) {
         clearInterval(pollRef.current);
-        setErr(data?.processing_error || "We couldn't read that test. Try clearer photos of each page, flat and in good light.");
+        setErr(data?.processing_error || "We couldn't read that test. Try clearer photos of each page, flat and in good light. This try didn't use up your free upload.");
+        setUsedToday(false);
         setStep("upload");
       }
     }, 3000);
@@ -357,7 +358,11 @@ export default function ExamPlanFlow({ cta }) {
         <div className="ep-card">
           <p className="ep-step">Step 3 of 3</p>
           <h2 className="ep-h">{wrongCount ? `We found ${items.length} questions. You got ${wrongCount} wrong.` : `We found ${items.length} questions.`}</h2>
-          <p className="ep-muted">Tick the ones you got wrong or weren&rsquo;t sure about. We&rsquo;ve ticked the ones marked wrong.</p>
+          <p className="ep-muted">
+            {wrongCount
+              ? "Tick the ones you got wrong or weren't sure about. We've ticked the ones marked wrong."
+              : "We couldn't see any marking, so tick the ones you got wrong or weren't sure about, or the topics you want to practise."}
+          </p>
           <ul className="ep-items">
             {items.map((it) => (
               <li key={it.index}>

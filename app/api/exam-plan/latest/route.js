@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { appUser, bearer } from "@/lib/exam-plan";
+import { appSelect, appUser, bearer } from "@/lib/exam-plan";
 
 // GET /api/exam-plan/latest   Authorization: Bearer <app access token>
 // The student's latest exam plan run (so a reload, or coming back later,
@@ -10,11 +10,22 @@ export const dynamic = "force-dynamic";
 const melbDay = (d) => new Date(d).toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
 
 export async function GET(request) {
-  const user = await appUser(bearer(request));
+  const token = bearer(request);
+  const user = await appUser(token);
   if (!user) return NextResponse.json({ error: "Sign in again to continue." }, { status: 401 });
   const admin = createAdminClient();
   const { data } = await admin.from("exam_plan_runs").select("*").eq("app_user_id", user.id).order("created_at", { ascending: false }).limit(1);
-  const run = data?.[0] || null;
+  let run = data?.[0] || null;
+  // A test the app couldn't read doesn't count as today's upload.
+  if (run?.status === "uploaded" && run.paper_id) {
+    try {
+      const [p] = await appSelect(token, "papers", `id=eq.${run.paper_id}&select=status`);
+      if (!p || p.status === "failed") {
+        await admin.from("exam_plan_runs").delete().eq("id", run.id);
+        run = null;
+      }
+    } catch {}
+  }
   const usedToday = !!run && melbDay(run.created_at) === melbDay(Date.now());
   return NextResponse.json({
     ok: true,
