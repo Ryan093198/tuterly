@@ -213,3 +213,9 @@ a.sl-resource:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edg
 .sl-topic__tool strong { font-size: 15.5px; color: var(--foreground); }
 .sl-topic__tool strong::after { content: " →"; color: var(--brand-text); }
 .sl-topic__tool span { font-size: 14px; line-height: 1.5; color: var(--muted); }
+
+/* The free exam plan, under the hero buttons (Ryan, 18 Nov 2026). */
+.sl-hero__plan { display: inline-flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; margin-top: 12px; padding: 10px 14px; border-radius: 14px; background: #06343f; color: #fff; font-weight: 700; font-size: 15px; line-height: 1.35; text-decoration: none; }
+.sl-hero__plan:hover { background: #0b4d5c; }
+.sl-hero__plan:focus-visible { outline: 3px solid var(--brand-soft); outline-offset: 2px; }
+.sl-hero__plan-k { padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,.14); color: #bdf0fa; font-size: 13px; }

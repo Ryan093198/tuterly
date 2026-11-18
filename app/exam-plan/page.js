@@ -6,6 +6,7 @@ import HeroPaper from "@/components/exam-plan/HeroPaper";
 import { PhoneFrame } from "@/components/brand";
 import { SITE_URL } from "@/lib/site";
 import { appCta } from "@/lib/study-app";
+import { PLAN_YEARS, topicChoices } from "@/lib/exam-plan";
 import "katex/dist/katex.min.css";
 import "@/components/exam-plan/exam-plan.css";
 
@@ -42,6 +43,7 @@ const COMPARE = [
 const FAQS = [
   { q: "Is it really free?", a: "Yes. Your study plan and your customised test are free, with one upload a day. The Tuterly app is the paid version, with unlimited questions, notes and practice tests." },
   { q: "What can I upload?", a: "Any maths test you've done with the marking on it: a class test, a topic test, a practice exam or a past test. Photos of each page (up to 10) or one PDF." },
+  { q: "What if I don't have a test to upload?", a: "Pick the topics on your exam instead: a whole chapter, or just the subtopics you need. You get the same day-by-day plan and a customised test on those topics." },
   { q: "What if my test isn't marked?", a: "Upload it anyway. You'll see every question we found, and you tick the ones you got wrong or weren't sure about." },
   { q: "Where do the test questions come from?", a: "From Tuterly's own bank of checked questions, written for the Victorian and Australian Curriculum and matched to the topics you got wrong. Your school's questions are never copied." },
   { q: "Who sees my test?", a: "Only you. The photos stay private to your account. We use them to find your weak spots and save the questions you got wrong to your Tuterly account." },
@@ -79,7 +81,7 @@ export default function ExamPlanPage() {
             <HeroPaper />
           </div>
           <div className="epx-flow" id="start">
-            <ExamPlanFlow cta={{ href: cta.href, label: appLabel }} />
+            <ExamPlanFlow cta={{ href: cta.href, label: appLabel }} topics={Object.fromEntries(PLAN_YEARS.map((y) => [y, topicChoices(y)]))} />
           </div>
         </div>
       </section>

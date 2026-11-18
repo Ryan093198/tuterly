@@ -18,6 +18,7 @@ const APP_URL = "https://iuiqiqtthmpvtxmirdam.supabase.co";
 const APP_KEY = "sb_publishable_ZYFGIG5b3L8SnnidBGjyFQ_Laie64Fo";
 const YEARS = [7, 8, 9, 10];
 const MAX_PAGES = 10;
+const MAX_TOPICS = 12; // lib/exam-plan.js MAX_TOPIC_SECTIONS
 
 let client = null;
 function app() {
@@ -101,7 +102,7 @@ async function api(path, token, body) {
   return d;
 }
 
-export default function ExamPlanFlow({ cta }) {
+export default function ExamPlanFlow({ cta, topics: topicData = {} }) {
   const [step, setStep] = useState("loading"); // loading | email | code | profile | upload | reading | review | building | results
   const [session, setSession] = useState(null);
   const [email, setEmail] = useState("");
@@ -118,6 +119,8 @@ export default function ExamPlanFlow({ cta }) {
   const [run, setRun] = useState(null); // { run_id, paper_id }
   const [items, setItems] = useState([]);
   const [ticked, setTicked] = useState(new Set());
+  const [picked, setPicked] = useState(new Set()); // subtopic codes, when there is no test to upload
+  const [openCh, setOpenCh] = useState(null);
   const [result, setResult] = useState(null);
   const [shown, setShown] = useState(new Set());
   const pollRef = useRef(null);
@@ -278,6 +281,31 @@ export default function ExamPlanFlow({ cta }) {
     }, 3000);
   }
 
+  async function buildFromTopics(e) {
+    e.preventDefault();
+    if (!picked.size) return setErr("Pick at least one topic that's on your exam.");
+    setErr("");
+    setLimit(false);
+    setStep("building");
+    scrollTop();
+    try {
+      const d = await api("/api/exam-plan/topics", session.access_token, {
+        sections: [...picked],
+        exam_date: examDate || null,
+        exam_name: examName || null,
+      });
+      trackEvent("exam_plan_built", { weak: d.weak?.length || 0, from: "topics" });
+      setUsedToday(true);
+      setResult(d);
+      setStep("results");
+      scrollTop();
+    } catch (e2) {
+      setErr(e2.message);
+      setLimit(!!e2.limit);
+      setStep("topics");
+    }
+  }
+
   async function build() {
     if (!ticked.size) return setErr("Tick at least one question you got wrong.");
     setErr("");
@@ -368,11 +396,81 @@ export default function ExamPlanFlow({ cta }) {
             <label className="ep-label">Exam date <span className="ep-opt">(optional)</span><input className="ep-input" type="date" value={examDate} onChange={(e) => setExamDate(e.target.value)} /></label>
           </div>
           <button className="ep-btn" disabled={busy || !files.length || usedToday}>{busy ? "Uploading…" : "Find my weak spots"}</button>
+          <button type="button" className="ep-alt" onClick={() => { setErr(""); setStep("topics"); scrollTop(); }}>
+            <b>No test to upload?</b> Pick the topics on your exam instead
+          </button>
           {usedToday && !err && <p className="ep-note">You&rsquo;ve used today&rsquo;s free upload. Come back tomorrow for another, or get Tuterly for unlimited.</p>}
           <p className="ep-small">One free upload a day. We read the questions and the marking to find your weak spots; the photos stay private to your account.</p>
           {err && <p className="ep-err" role="alert">{err}</p>}
           {limit && cta && <p className="ep-small"><a href={cta.href} className="ep-link">{cta.label}</a></p>}
           {session && <p className="ep-small ep-who">Signed in as {session.user.email}. <button type="button" className="ep-link" onClick={signOut}>Sign out</button></p>}
+        </form>
+      )}
+
+      {step === "topics" && (
+        <form className="ep-card" onSubmit={buildFromTopics}>
+          <Progress n={2} />
+          <h2 className="ep-h">Pick the topics on your exam</h2>
+          <p className="ep-muted">Choose a whole chapter or just the subtopics you need. Up to {MAX_TOPICS} subtopics.</p>
+          <div className="ep-row">
+            <label className="ep-label">Which exam is it for? <span className="ep-opt">(optional)</span><input className="ep-input" maxLength={60} placeholder="e.g. Term 4 exam" value={examName} onChange={(e) => setExamName(e.target.value)} /></label>
+            <label className="ep-label">Exam date <span className="ep-opt">(optional)</span><input className="ep-input" type="date" value={examDate} onChange={(e) => setExamDate(e.target.value)} /></label>
+          </div>
+          <div className="ep-items__bar">
+            <span className="ep-muted"><b>Year {year}</b> topics · {picked.size} picked</span>
+            {picked.size > 0 && <button type="button" className="ep-link" onClick={() => setPicked(new Set())}>Clear all</button>}
+          </div>
+          <ul className="ep-topics">
+            {(topicData[year] || []).map((ch) => {
+              const codes = ch.sections.map((x) => x.code);
+              const n = codes.filter((c) => picked.has(c)).length;
+              const all = n === codes.length;
+              const open = openCh === ch.n;
+              const setChapter = (on) => setPicked((prev) => {
+                const next = new Set(prev);
+                for (const c of codes) on ? next.add(c) : next.delete(c);
+                return next;
+              });
+              return (
+                <li key={ch.n} className={n ? "is-on" : ""}>
+                  <div className="ep-topics__row">
+                    <label>
+                      <input type="checkbox" checked={all} ref={(el) => { if (el) el.indeterminate = n > 0 && !all; }} onChange={() => setChapter(!all)} />
+                      <span><b>Chapter {ch.n}</b> {ch.name}</span>
+                    </label>
+                    <button type="button" className="ep-topics__more" aria-expanded={open} onClick={() => setOpenCh(open ? null : ch.n)}>
+                      {n ? `${n} of ${codes.length}` : `${codes.length} subtopics`}
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" /></svg>
+                    </button>
+                  </div>
+                  {open && (
+                    <ul className="ep-topics__subs">
+                      {ch.sections.map((sec) => (
+                        <li key={sec.code}>
+                          <label>
+                            <input
+                              type="checkbox"
+                              checked={picked.has(sec.code)}
+                              onChange={() => setPicked((prev) => { const next = new Set(prev); next.has(sec.code) ? next.delete(sec.code) : next.add(sec.code); return next; })}
+                            />
+                            <span><b>{sec.code}</b> {sec.name}</span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          {picked.size > MAX_TOPICS && <p className="ep-note">That&rsquo;s {picked.size} subtopics. Untick some so there are {MAX_TOPICS} or fewer: start with the ones you find hardest.</p>}
+          <button className="ep-btn" disabled={busy || !picked.size || picked.size > MAX_TOPICS || usedToday}>Make my plan and test</button>
+          {usedToday && !err && <p className="ep-note">You&rsquo;ve used today&rsquo;s free plan. Come back tomorrow for another, or get Tuterly for unlimited.</p>}
+          <button type="button" className="ep-alt" onClick={() => { setErr(""); setStep("upload"); scrollTop(); }}>
+            <b>Have a marked test?</b> Upload it instead for a sharper plan
+          </button>
+          {err && <p className="ep-err" role="alert">{err}</p>}
+          {limit && cta && <p className="ep-small"><a href={cta.href} className="ep-link">{cta.label}</a></p>}
         </form>
       )}
 
@@ -446,7 +544,7 @@ function Results({ result, cta, shown, setShown }) {
     <div className="ep-results">
       <header className="ep-res-head">
         <h2>Your Customised Exam Plan and Questions</h2>
-        <p>Built from your test. For unlimited questions on your weak topics, plus notes and practice tests, keep going in the Tuterly app.</p>
+        <p>Built from your {result.from_topics ? "topics" : "test"}. For unlimited questions on your weak topics, plus notes and practice tests, keep going in the Tuterly app.</p>
         {cta && <a href={cta.href} className="epx-btn">{cta.label}</a>}
       </header>
       <div className="ep-card">
@@ -454,8 +552,8 @@ function Results({ result, cta, shown, setShown }) {
         <h2 className="ep-h">
           {plan?.exam_date ? `${plan.days_left} day${plan.days_left === 1 ? "" : "s"} until ${examName || "your exam"}` : `Your next 7 days`}
         </h2>
-        <p className="ep-muted">Built from the questions you got wrong. We&rsquo;ve emailed you a copy.</p>
-        <h3 className="ep-h3">Your weak spots</h3>
+        <p className="ep-muted">Built from {result.from_topics ? "the topics you picked" : "the questions you got wrong"}. We&rsquo;ve emailed you a copy.</p>
+        <h3 className="ep-h3">{result.from_topics ? "Your topics" : "Your weak spots"}</h3>
         <ul className="ep-weak">
           {(weak || []).map((w) => (
             <li key={w.code}><Link href={w.path}>{w.code} {w.name}</Link>{w.wrong > 1 && <span className="ep-muted"> ({w.wrong} wrong)</span>}</li>

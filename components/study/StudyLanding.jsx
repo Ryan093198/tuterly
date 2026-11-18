@@ -96,6 +96,9 @@ export default function StudyLanding() {
               <StudyAppCTA variant="hero" placement="home_hero" slim />
             </div>
             <TryHeroLink variant="text" />
+            <Link href="/exam-plan" className="sl-hero__plan">
+              <span className="sl-hero__plan-k">Exam coming up?</span> Get a free exam plan and questions on your weak spots →
+            </Link>
             <ResultsProof compact className="sl-hero__proof" />
           </div>
           <div className="sl-hero__visual">

@@ -31,7 +31,7 @@ export async function GET(request) {
     ok: true,
     used_today: usedToday,
     run: run
-      ? { run_id: run.id, status: run.status, paper_id: run.paper_id, exam_name: run.exam_name, weak: run.weak, plan: run.plan, test: run.test, added: run.added, year: run.year_level }
+      ? { run_id: run.id, status: run.status, paper_id: run.paper_id, from_topics: !run.paper_id, exam_name: run.exam_name, weak: run.weak, plan: run.plan, test: run.test, added: run.added, year: run.year_level }
       : null,
   });
 }

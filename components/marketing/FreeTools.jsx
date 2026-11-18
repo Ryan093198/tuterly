@@ -4,8 +4,15 @@ import { naplanSlug } from "@/lib/naplan";
 import "./marketing-ux.css";
 
 // The free tools, in one row near the top of the main pages (Ryan, 18 Nov
-// 2026): the easiest first step for a parent before the app.
+// 2026): the easiest first step for a parent before the app. The exam plan
+// leads (Ryan, 18 Nov 2026): it signs students in to their app account.
 const TOOLS = [
+  {
+    href: "/exam-plan",
+    k: "Years 7 to 10",
+    t: "Free exam plan",
+    x: "Upload a marked test, or pick your topics. Get a plan to your exam and questions on your weak spots.",
+  },
   {
     href: DIAG_PATH,
     k: "Years 7 to 9 · 35 minutes",

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { PLAN_YEARS, appFunction, appSelect, appUser, bearer } from "@/lib/exam-plan";
+import { LIMIT_MESSAGE, PLAN_YEARS, appFunction, appSelect, appUser, bearer, todaysRuns } from "@/lib/exam-plan";
 
 // POST /api/exam-plan/start   Authorization: Bearer <app access token>
 //   { paper_id, page_paths }
@@ -11,7 +11,6 @@ import { PLAN_YEARS, appFunction, appSelect, appUser, bearer } from "@/lib/exam-
 export const dynamic = "force-dynamic";
 
 const UUID = /^[0-9a-f-]{36}$/i;
-const melbDay = (d) => new Date(d).toLocaleDateString("en-CA", { timeZone: "Australia/Melbourne" });
 
 export async function POST(request) {
   const token = bearer(request);
@@ -30,28 +29,10 @@ export async function POST(request) {
   }
 
   const admin = createAdminClient();
-  const since = new Date(Date.now() - 30 * 3600 * 1000).toISOString();
-  const { data: recent } = await admin.from("exam_plan_runs").select("id, created_at, status, paper_id").eq("app_user_id", user.id).gte("created_at", since);
-  const today = melbDay(Date.now());
-  // A test the app couldn't read (blank page, blurry photo, not a test)
-  // doesn't use up the day: drop those runs before checking the limit.
-  const todays = (recent || []).filter((r) => melbDay(r.created_at) === today);
-  const counted = [];
-  for (const r of todays) {
-    if (r.status === "uploaded" && r.paper_id) {
-      try {
-        const [p] = await appSelect(token, "papers", `id=eq.${r.paper_id}&select=status`);
-        if (!p || p.status === "failed") {
-          await admin.from("exam_plan_runs").delete().eq("id", r.id);
-          continue;
-        }
-      } catch {}
-    }
-    counted.push(r);
-  }
+  const counted = await todaysRuns(admin, token, user.id);
   if (counted.length) {
     return NextResponse.json(
-      { error: "That's your free upload for today. Come back tomorrow for another, or get Tuterly for unlimited uploads and practice.", limit: true },
+      { error: LIMIT_MESSAGE, limit: true },
       { status: 429 },
     );
   }
