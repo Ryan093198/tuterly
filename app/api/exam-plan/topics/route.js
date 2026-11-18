@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { LIMIT_MESSAGE, MAX_TOPIC_SECTIONS, PLAN_YEARS, appFunction, appSelect, appUser, bearer, customTest, examTopics, pickedSections, studyPlan, todaysRuns } from "@/lib/exam-plan";
+import { LIMIT_MESSAGE, MAX_TOPIC_SECTIONS, PLAN_YEARS, appFunction, appSelect, appUser, bearer, customTest, examTopics, pickedSections, studyPlan, todaysRuns, recordExamSignup } from "@/lib/exam-plan";
 import { mdToHtml } from "@/lib/md-html";
 import { sendExamPlanEmail } from "@/lib/email";
 
@@ -66,9 +66,10 @@ export async function POST(request) {
     return NextResponse.json({ error: "Something went wrong. Try again." }, { status: 500 });
   }
 
+  const unsub = await recordExamSignup(admin, token, user, "topics");
   if (user.email) {
     try {
-      await sendExamPlanEmail({ to: user.email, examName, plan, weak: weakOut, year, fromTopics: true });
+      await sendExamPlanEmail({ to: user.email, examName, plan, weak: weakOut, year, unsubToken: unsub, fromTopics: true });
     } catch (e) {
       console.warn("[exam-plan/topics] email", e?.message || e);
     }

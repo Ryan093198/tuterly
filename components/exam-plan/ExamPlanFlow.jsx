@@ -348,7 +348,7 @@ export default function ExamPlanFlow({ cta, topics: topicData = {} }) {
           <p className="ep-muted">Your email, and we&rsquo;ll send a 6-digit code. It&rsquo;s the same account as the Tuterly app.</p>
           <input className="ep-input" type="email" required autoComplete="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" />
           <button className="ep-btn" disabled={busy}>{busy ? "Sending…" : "Send my code"}</button>
-          <p className="ep-small">Free. For Years 7 to 10. By continuing you agree to the <Link href="/terms">terms</Link> and <Link href="/privacy">privacy policy</Link>.</p>
+          <p className="ep-small">Free. For Years 7 to 10. Your free plan comes with our email list: study tips and Tuterly news, and you can unsubscribe any time. By continuing you agree to the <Link href="/terms">terms</Link> and <Link href="/privacy">privacy policy</Link>.</p>
           {err && <p className="ep-err" role="alert">{err}</p>}
         </form>
       )}

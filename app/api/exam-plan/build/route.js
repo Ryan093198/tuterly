@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase-admin";
-import { MAX_CONFIRM, appFunction, appSelect, appUser, bearer, customTest, examTopics, studyPlan, weakSections } from "@/lib/exam-plan";
+import { MAX_CONFIRM, appFunction, appSelect, appUser, bearer, customTest, examTopics, studyPlan, weakSections, recordExamSignup } from "@/lib/exam-plan";
 import { mdToHtml } from "@/lib/md-html";
 import { sendExamPlanEmail } from "@/lib/email";
 
@@ -77,9 +77,10 @@ export async function POST(request) {
     .single();
   if (error) console.error("[exam-plan/build] save", error.message);
 
+  const unsub = await recordExamSignup(admin, token, user, "upload");
   if (user.email) {
     try {
-      await sendExamPlanEmail({ to: user.email, examName, plan, weak: weakOut, year });
+      await sendExamPlanEmail({ to: user.email, examName, plan, weak: weakOut, year, unsubToken: unsub });
     } catch (e) {
       console.warn("[exam-plan/build] email", e?.message || e);
     }

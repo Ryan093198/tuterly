@@ -289,7 +289,7 @@ export default function PrivacyPolicy() {
             </p>
           </Section>
 
-          <Section title="If you use our free worksheets, exams or mind maps">
+          <Section title="If you use our free worksheets, exams, exam plan or mind maps">
             <p>
               To unlock them we ask for your email (and, for worksheets, your
               child&rsquo;s year level). Unlocking adds you to Tuterly&rsquo;s
@@ -297,6 +297,12 @@ export default function PrivacyPolicy() {
               the form says before you submit it. Every email has a one-click
               unsubscribe link, and once you unsubscribe we don&rsquo;t add you
               back unless you ask us to. We record when and where you signed up.
+            </p>
+            <p>
+              The free exam plan (Exam Zone) works the same way: making a plan
+              adds the email on your Tuterly account to our email list, as the
+              sign-up step says. We keep your plan, your first name and year
+              level with it.
             </p>
           </Section>
 
