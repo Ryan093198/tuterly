@@ -1,3 +1,4 @@
+import { Caveat } from "next/font/google";
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import ExamPlanFlow from "@/components/exam-plan/ExamPlanFlow";
@@ -17,6 +18,9 @@ const DESCRIPTION =
   "Upload a marked maths test and get a free study plan to your exam date, plus a customised test on exactly the questions you got wrong, with worked solutions. For Years 7 to 10.";
 const URL = `${SITE_URL}/exam-plan`;
 
+// Handwriting for the pen marks and the arrow into the app.
+const hand = Caveat({ subsets: ["latin"], weight: ["700"], variable: "--font-hand", display: "swap" });
+
 export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
@@ -24,6 +28,16 @@ export const metadata = {
   openGraph: { images: ["/og-tuterly.png"], title: TITLE, description: DESCRIPTION, url: URL, type: "website" },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
+
+// What the free page does next to the app (TUTERLY_FEATURES.md, 29 Oct 2026).
+const COMPARE = [
+  ["Uploads", "One test a day", "Unlimited, and snap any question"],
+  ["Questions", "Up to 10, once", "Unlimited, made fresh every time"],
+  ["Your answers", "Worked solutions to read", "Checked, with a similar one until it's mastered"],
+  ["Study notes and topic tests", null, "Any topic in your year, notes as a PDF"],
+  ["Exam countdown and daily to-do", null, "Included"],
+  ["Week in review for parents", null, "Included"],
+];
 
 const FAQS = [
   { q: "Is it really free?", a: "Yes. Your study plan and your customised test are free, with one upload a day. The Tuterly app is the paid version, with unlimited questions, notes and practice tests." },
@@ -43,7 +57,7 @@ export default function ExamPlanPage() {
     mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
   return (
-    <div className="epx">
+    <div className={`epx ${hand.variable}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <MarketingNav />
 
@@ -96,15 +110,24 @@ export default function ExamPlanPage() {
       <section className="epx-sec epx-sec--app" aria-labelledby="epx-app">
         <div className="epx-wrap epx-app">
           <div className="epx-app__copy">
-            <h2 id="epx-app" className="epx-h2">Then keep going in the Tuterly app</h2>
+            <h2 id="epx-app" className="epx-h2">The plan is the start. The app is where it gets fixed.</h2>
             <p className="epx-p">
               Your account here is your Tuterly app account. Sign in with the same email and your exam and every question you got wrong are already waiting, ready to fix.
             </p>
-            <ul className="epx-ticks">
-              <li>Unlimited questions on your weak spots, made fresh every time</li>
-              <li>Get a similar one right and it&rsquo;s fixed in your bank</li>
-              <li>Notes and practice tests for every topic before your exam</li>
-            </ul>
+<table className="epx-cmp">
+              <thead>
+                <tr><th scope="col"><span className="sr-only">Feature</span></th><th scope="col">Free here</th><th scope="col">Tuterly app</th></tr>
+              </thead>
+              <tbody>
+                {COMPARE.map(([f, here, app]) => (
+                  <tr key={f}>
+                    <th scope="row">{f}</th>
+                    <td className={here ? "" : "is-no"}>{here || "Not included"}</td>
+                    <td>{app}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
             <a href={cta.href} className="epx-btn epx-btn--ghost">{appLabel}</a>
           </div>
           <div className="epx-app__phone">

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import QuinnWorking from "@/components/brand/QuinnWorking";
+import { PhoneFrame } from "@/components/brand";
 import { trackEvent } from "@/lib/analytics";
 import katex from "katex";
 import "katex/dist/katex.min.css";
@@ -490,19 +491,33 @@ function Results({ result, cta, shown, setShown }) {
         </ol>
       </div>
 
+      <div className="ep-hand" aria-hidden="true">
+        <span>{added ? `Your ${added} question${added === 1 ? "" : "s"}, saved to your app` : "Saved to your app"}</span>
+        <svg viewBox="0 0 200 120">
+          <path d="M18 10 C 40 70, 120 30, 150 92" />
+          <path d="M132 86 L151 96 L158 75" />
+        </svg>
+      </div>
+
       <div className="ep-card ep-card--cta">
-        <h2 className="ep-h">Keep going until every weak topic is fixed</h2>
-        <p className="ep-muted">
-          {added ? `Sign up to the Tuterly app. We've saved your exam and the ${added} question${added === 1 ? "" : "s"} you got incorrect. ` : "Sign up to the Tuterly app. We've saved your exam. "}
-          Sign in with the same email to pick up where you left off.
-        </p>
-        <ul className="ep-perks">
-          <li>Unlimited questions on your weak spots, made fresh every time</li>
-          <li>Practise any time, with worked solutions for every question</li>
-          <li>Unlimited notes and practice tests before your exam</li>
-        </ul>
-        {cta && <a href={cta.href} className="ep-btn ep-btn--cta">{cta.label}</a>}
-        <p className="ep-small">You get one free upload a day here. Come back tomorrow to add another test.</p>
+        <div className="ep-cta__copy">
+          <h2 className="ep-h">Keep going until every weak topic is fixed</h2>
+          <p className="ep-muted">
+            {added ? `Sign up to the Tuterly app. We've saved your exam and the ${added} question${added === 1 ? "" : "s"} you got incorrect. ` : "Sign up to the Tuterly app. We've saved your exam. "}
+            Sign in with the same email to pick up where you left off.
+          </p>
+          <ul className="ep-perks">
+            <li><b>Similar questions until it&rsquo;s mastered.</b> Try each one again, then a fresh similar one. The app checks your answer.</li>
+            <li><b>Unlimited uploads.</b> Snap homework, class work and every test, any time.</li>
+            <li><b>Unlimited notes and topic tests.</b> Study notes as a PDF, and a test on any topic in your year.</li>
+            <li><b>A countdown to your exam,</b> with a to-do list for each day.</li>
+          </ul>
+          {cta && <a href={cta.href} className="epx-btn ep-cta__btn">{cta.label}</a>}
+          <p className="ep-small">Here you get one free upload a day. Come back tomorrow to add another test.</p>
+        </div>
+        <div className="ep-cta__phone">
+          <PhoneFrame src="/app-screens/flow-exam-zone/07-fix-what-you-missed.png" alt="The Tuterly app's Fix what you missed screen with the questions a student got wrong, ready to try again" width={230} sizes="230px" />
+        </div>
       </div>
     </div>
   );

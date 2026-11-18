@@ -132,7 +132,7 @@
 .hp-paper { position: absolute; right: 0; top: 6px; width: 82%; padding: 18px 20px 14px; border-radius: 6px; background: var(--paper) repeating-linear-gradient(180deg, transparent 0 33px, var(--rule) 33px 34px); background-position: 0 52px; color: #1b2a3a; transform: rotate(2deg); box-shadow: 0 2px 0 rgba(0,0,0,.05), 0 30px 50px -20px rgba(0,0,0,.6); }
 .hp-paper::before { content: ""; position: absolute; top: 0; bottom: 0; left: 34px; width: 1.5px; background: #f2b9b6; }
 .hp-paper__head { display: flex; justify-content: space-between; align-items: center; padding-left: 26px; height: 40px; font-family: var(--font-display); font-weight: 800; font-size: 15px; }
-.hp-score { position: relative; display: inline-grid; place-items: center; width: 84px; height: 46px; color: var(--pen); font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive; font-size: 19px; transform: rotate(-6deg); }
+.hp-score { position: relative; display: inline-grid; place-items: center; width: 84px; height: 46px; color: var(--pen); font-family: var(--font-hand), "Bradley Hand", cursive; font-size: 25px; transform: rotate(-6deg); }
 .hp-score svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--pen); stroke-width: 3; stroke-linecap: round; }
 .hp-score b { font-weight: 700; }
 .hp-qs { list-style: none; margin: 0; padding: 0 0 0 26px; }
@@ -222,3 +222,39 @@
 .ep-res-head { display: grid; justify-items: center; gap: 14px; margin: 8px 0 28px; text-align: center; color: #fff; }
 .ep-res-head h2 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(30px, 4.4vw, 46px); line-height: 1.05; letter-spacing: -1.2px; max-width: 18ch; text-wrap: balance; }
 .ep-res-head p { margin: 0; max-width: 52ch; color: var(--desk-text, #d4ecf1); font-size: 17px; line-height: 1.55; }
+
+/* From the last test question into the app: a pen arrow drawn on the desk
+   that lands on the phone in the card below. */
+.ep-hand { display: flex; align-items: flex-end; justify-content: flex-end; gap: 4px; margin: 6px 140px -6px 0; color: #bdf0fa; }
+.ep-hand span { max-width: 15ch; margin-bottom: 52px; font-family: var(--font-hand), "Bradley Hand", cursive; font-size: 24px; line-height: 1.1; text-align: right; transform: rotate(-4deg); }
+.ep-hand svg { width: 150px; height: 92px; fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.ep-results .ep-card--cta { margin-top: 0; grid-template-columns: minmax(0, 1fr) 230px; align-items: center; gap: 28px; }
+.ep-cta__copy { display: grid; gap: 14px; }
+.ep-cta__phone { display: grid; justify-items: center; }
+.ep-cta__btn { justify-self: start; }
+.ep-perks { list-style: none; padding: 0; gap: 10px; }
+.ep-perks li { position: relative; padding-left: 30px; line-height: 1.5; }
+.ep-perks li::before { content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; }
+.ep-perks b { font-weight: 800; }
+@media (max-width: 720px) {
+  .ep-hand { justify-content: center; margin: 6px 0 -4px; }
+  .ep-hand span { margin-bottom: 46px; }
+  .ep-hand svg { width: 120px; height: 74px; }
+  .ep-results .ep-card--cta { grid-template-columns: minmax(0, 1fr); }
+  .ep-cta__phone { order: -1; }
+  .ep-cta__phone .tb-phone { --phone-w: 190px !important; }
+  .ep-cta__btn { justify-self: stretch; }
+}
+
+/* Free here vs the app. */
+.epx-cmp { width: 100%; margin: 26px 0 28px; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; font-size: 15px; }
+.epx-cmp th, .epx-cmp td { padding: 13px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--border); line-height: 1.4; }
+.epx-cmp thead th { border-top: 0; font-family: var(--font-display); font-size: 15px; font-weight: 900; color: var(--muted); }
+.epx-cmp thead th:last-child { color: var(--brand-foreground); }
+.epx-cmp tbody th { font-weight: 700; width: 34%; }
+.epx-cmp td { color: var(--muted); }
+.epx-cmp td:last-child { background: var(--brand-pale); color: var(--foreground); font-weight: 700; }
+.epx-cmp thead th:last-child { background: var(--brand-soft); }
+.epx-cmp td.is-no { color: var(--muted); font-weight: 500; }
+@media (max-width: 560px) { .epx-cmp { font-size: 13.5px; } .epx-cmp th, .epx-cmp td { padding: 11px 10px; } }
+@media (max-width: 899px) { .epx-app__phone { display: none; } }
