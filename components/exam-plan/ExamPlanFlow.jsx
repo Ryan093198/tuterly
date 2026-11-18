@@ -540,6 +540,7 @@ export default function ExamPlanFlow({ cta, topics: topicData = {} }) {
 
 function Results({ result, cta, shown, setShown }) {
   const { plan, weak, test, exam_name: examName, added } = result;
+  const [openDay, setOpenDay] = useState(null);
   return (
     <div className="ep-results">
       <header className="ep-res-head">
@@ -560,13 +561,29 @@ function Results({ result, cta, shown, setShown }) {
           ))}
         </ul>
         <h3 className="ep-h3">Day by day</h3>
+        <p className="ep-small">Tap a day to see an example question on that topic, with a worked solution.</p>
         <ol className="ep-days">
-          {(plan?.days || []).map((d) => (
-            <li key={d.date} className={`ep-day ep-day--${d.kind}`}>
-              <span className="ep-day__d">{d.label}</span>
-              <span className="ep-day__t">{d.title}</span>
-            </li>
-          ))}
+          {(plan?.days || []).map((d) => {
+            const open = openDay === d.date;
+            const can = Array.isArray(d.sections) && d.sections.length > 0 && !!result.year;
+            return (
+              <li key={d.date} className={`ep-day ep-day--${d.kind}${open ? " is-open" : ""}`}>
+                {can ? (
+                  <button type="button" className="ep-day__btn" aria-expanded={open} onClick={() => setOpenDay(open ? null : d.date)}>
+                    <span className="ep-day__d">{d.label}</span>
+                    <span className="ep-day__t">{d.title}</span>
+                    <svg className="ep-day__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" /></svg>
+                  </button>
+                ) : (
+                  <div className="ep-day__btn">
+                    <span className="ep-day__d">{d.label}</span>
+                    <span className="ep-day__t">{d.title}</span>
+                  </div>
+                )}
+                {open && <DayExample day={d} year={result.year} weak={weak || []} test={test || []} cta={cta} />}
+              </li>
+            );
+          })}
         </ol>
       </div>
 
@@ -616,6 +633,71 @@ function Results({ result, cta, shown, setShown }) {
         <div className="ep-cta__phone">
           <PhoneFrame src="/app-screens/flow-exam-zone/07-fix-what-you-missed.png" alt="The Tuterly app's Fix what you missed screen with the questions a student got wrong, ready to try again" width={230} sizes="230px" />
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Tap a day in the plan: one worked example from our bank on that day's
+// topic (never one of the questions in their customised test), then the app.
+function DayExample({ day, year, weak, test, cta }) {
+  const codes = day.sections;
+  const [code, setCode] = useState(codes[0]);
+  const [ex, setEx] = useState(null);
+  const [seen, setSeen] = useState([]);
+  const [sol, setSol] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState("");
+  const nameOf = (c) => weak.find((w) => w.code === c)?.name || c;
+
+  async function load(c, extra = []) {
+    setBusy(true);
+    setErr("");
+    setSol(false);
+    try {
+      const not = [...test.filter((q) => q.code === c).map((q) => String(q.question || "").slice(0, 400)), ...extra];
+      const r = await fetch("/api/exam-plan/example", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ year: Number(year), code: c, not }) });
+      const d = await r.json().catch(() => null);
+      if (!r.ok || !d?.ok) throw new Error(d?.error || "We couldn't load an example. Try again.");
+      setEx(d);
+      setSeen((p) => [...p, d.key]);
+      trackEvent("exam_plan_example", { code: c });
+    } catch (e) {
+      setErr(e.message);
+    }
+    setBusy(false);
+  }
+
+  useEffect(() => { load(code); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [code]);
+
+  return (
+    <div className="ep-ex">
+      {codes.length > 1 && (
+        <div className="ep-ex__chips" role="group" aria-label="Topic">
+          {codes.map((c) => (
+            <button key={c} type="button" className={c === code ? "is-on" : ""} aria-pressed={c === code} onClick={() => { setSeen([]); setCode(c); }}>
+              {c} {nameOf(c)}
+            </button>
+          ))}
+        </div>
+      )}
+      <p className="ep-ex__k">Example question · {code} {nameOf(code)}</p>
+      {busy && !ex && <p className="ep-muted">Loading…</p>}
+      {err && <p className="ep-err" role="alert">{err}</p>}
+      {ex && (
+        <div className={busy ? "ep-ex__q is-busy" : "ep-ex__q"}>
+          <div className="ep-q__body" dangerouslySetInnerHTML={{ __html: ex.question_html }} />
+          {sol ? (
+            <div className="ep-q__ans" dangerouslySetInnerHTML={{ __html: ex.solution_html }} />
+          ) : (
+            <button type="button" className="ep-reveal" onClick={() => setSol(true)}>Show the worked solution</button>
+          )}
+          <button type="button" className="ep-link ep-ex__more" disabled={busy} onClick={() => load(code, seen)}>Another example</button>
+        </div>
+      )}
+      <div className="ep-ex__cta">
+        <p><b>Want unlimited questions on every topic?</b> Worked solutions, exam-style versions and customised notes, all in the Tuterly app.</p>
+        {cta && <a href={cta.href} className="epx-btn ep-ex__btn">Try the Tuterly app</a>}
       </div>
     </div>
   );
