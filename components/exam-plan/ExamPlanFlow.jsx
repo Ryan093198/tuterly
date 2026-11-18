@@ -65,6 +65,20 @@ function mathHtml(md) {
     try { return katex.renderToString(m[1].replace(/\u0000/g, "\\$"), { throwOnError: false }); } catch { return esc(m[1]); }
   }).join("");
 }
+const STAGES = ["Your account", "Your test", "Check it"];
+function Progress({ n }) {
+  return (
+    <div className="ep-prog" aria-label={`Step ${n} of 3: ${STAGES[n - 1]}`}>
+      {STAGES.map((t, i) => (
+        <span key={t} className={i + 1 < n ? "is-done" : i + 1 === n ? "is-on" : ""}>
+          <i aria-hidden="true" />
+          <b>{t}</b>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function MathText({ md, className }) {
   const html = useMemo(() => mathHtml(md), [md]);
   return <span className={className} dangerouslySetInnerHTML={{ __html: html }} />;
@@ -300,7 +314,7 @@ export default function ExamPlanFlow({ cta }) {
 
       {step === "email" && (
         <form className="ep-card" onSubmit={sendCode}>
-          <p className="ep-step">Step 1 of 3</p>
+          <Progress n={1} />
           <h2 className="ep-h">Make your free account</h2>
           <p className="ep-muted">Your email, and we&rsquo;ll send a 6-digit code. It&rsquo;s the same account as the Tuterly app.</p>
           <input className="ep-input" type="email" required autoComplete="email" placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Your email" />
@@ -312,7 +326,7 @@ export default function ExamPlanFlow({ cta }) {
 
       {step === "code" && (
         <form className="ep-card" onSubmit={checkCode}>
-          <p className="ep-step">Step 1 of 3</p>
+          <Progress n={1} />
           <h2 className="ep-h">Check your email</h2>
           <p className="ep-muted">We sent a 6-digit code to <strong>{email}</strong>.</p>
           <input className="ep-input ep-input--code" inputMode="numeric" autoComplete="one-time-code" maxLength={8} placeholder="123456" value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} aria-label="6-digit code" />
@@ -324,7 +338,7 @@ export default function ExamPlanFlow({ cta }) {
 
       {step === "profile" && (
         <form className="ep-card" onSubmit={saveProfile}>
-          <p className="ep-step">Step 1 of 3</p>
+          <Progress n={1} />
           <h2 className="ep-h">Nearly there</h2>
           <label className="ep-label">First name<input className="ep-input" value={firstName} onChange={(e) => setFirstName(e.target.value)} autoComplete="given-name" /></label>
           <span className="ep-label">Year level</span>
@@ -340,7 +354,7 @@ export default function ExamPlanFlow({ cta }) {
 
       {step === "upload" && (
         <form className="ep-card" onSubmit={upload}>
-          <p className="ep-step">Step 2 of 3</p>
+          <Progress n={2} />
           <h2 className="ep-h">Upload a marked test</h2>
           <p className="ep-muted">A class test, practice exam or past test you&rsquo;ve done, with the teacher&rsquo;s marking. Photos of each page (up to {MAX_PAGES}), or one PDF.</p>
           <label className="ep-drop">
@@ -374,7 +388,7 @@ export default function ExamPlanFlow({ cta }) {
 
       {step === "review" && (
         <div className="ep-card">
-          <p className="ep-step">Step 3 of 3</p>
+          <Progress n={3} />
           <h2 className="ep-h">{wrongCount ? `We found ${items.length} questions. You got ${wrongCount} wrong.` : `We found ${items.length} questions.`}</h2>
           <p className="ep-muted">
             {wrongCount

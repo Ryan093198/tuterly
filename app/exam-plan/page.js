@@ -1,10 +1,11 @@
 import MarketingNav from "@/components/marketing/MarketingNav";
 import MarketingFooter from "@/components/marketing/MarketingFooter";
 import ExamPlanFlow from "@/components/exam-plan/ExamPlanFlow";
+import HeroPaper from "@/components/exam-plan/HeroPaper";
+import { PhoneFrame } from "@/components/brand";
 import { SITE_URL } from "@/lib/site";
 import { appCta } from "@/lib/study-app";
 import "katex/dist/katex.min.css";
-import "@/components/state/state-hub.css";
 import "@/components/exam-plan/exam-plan.css";
 
 // The free exam plan, Years 7 to 10 (Ryan, 18 Nov 2026): where the UGC ads
@@ -35,44 +36,87 @@ const FAQS = [
 
 export default function ExamPlanPage() {
   const cta = appCta();
+  const appLabel = cta.live ? "Get Tuterly" : "Get early access to the app";
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
   return (
-    <div className="sh">
+    <div className="epx">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <MarketingNav />
-      <header className="sh-hero ep-hero">
-        <p className="sh-eyebrow">Free · Years 7 to 10</p>
-        <h1>Upload your marked tests. Get a plan for your exam.</h1>
-        <p className="sh-lead">
-          We find exactly what you got wrong, plan your days to the exam, and make you a custom test on your weak spots, with worked solutions. Free.
-        </p>
-      </header>
 
-      <section className="sh-sec ep-sec" aria-label="Make your exam plan">
-        <div className="sh-wrap ep-wrap">
-          <ExamPlanFlow cta={{ href: cta.href, label: cta.live ? "Get Tuterly" : "Get early access to the app" }} />
+      <section className="epx-top" aria-labelledby="epx-h1">
+        <div className="epx-top__in">
+          <div className="epx-copy">
+            <p className="epx-kicker">Free for Years 7 to 10</p>
+            <h1 id="epx-h1">Upload your marked tests. Get a plan for your exam.</h1>
+            <p className="epx-lead">
+              We find exactly what you got wrong, plan your days to the exam, and make you a custom test on your weak spots, with worked solutions.
+            </p>
+            <ul className="epx-facts">
+              <li>A plan to your exam date</li>
+              <li>Up to 10 questions on your weak spots</li>
+              <li>Saved to your Tuterly app</li>
+            </ul>
+          </div>
+          <div className="epx-visual">
+            <HeroPaper />
+          </div>
+          <div className="epx-flow" id="start">
+            <ExamPlanFlow cta={{ href: cta.href, label: appLabel }} />
+          </div>
         </div>
       </section>
 
-      <section className="sh-sec sh-sec--paper" aria-labelledby="ep-how">
-        <div className="sh-wrap">
-          <h2 id="ep-how">How it works</h2>
-          <ol className="ep-how">
-            <li><strong>Upload a marked test.</strong> A class test, practice exam or past test, with the marking on it.</li>
-            <li><strong>Check what we found.</strong> We read every question and the marking, and tick the ones you got wrong.</li>
-            <li><strong>Get your plan and test.</strong> A day-by-day plan to your exam date, and up to 10 questions on exactly your weak spots, with worked solutions. We email you the plan too.</li>
+      <section className="epx-sec" aria-labelledby="epx-how">
+        <div className="epx-wrap">
+          <h2 id="epx-how" className="epx-h2">From your test to your exam in three steps</h2>
+          <ol className="epx-steps">
+            <li>
+              <span className="epx-steps__n">1</span>
+              <h3>Upload a marked test</h3>
+              <p>A class test, practice exam or past test, with the marking on it. Photos of each page, or one PDF.</p>
+            </li>
+            <li>
+              <span className="epx-steps__n">2</span>
+              <h3>Check what we found</h3>
+              <p>We read every question and the marking, and tick the ones you got wrong. Change anything we missed.</p>
+            </li>
+            <li>
+              <span className="epx-steps__n">3</span>
+              <h3>Get your plan and test</h3>
+              <p>A day-by-day plan to your exam date and a custom test on exactly your weak spots. We email you the plan too.</p>
+            </li>
           </ol>
         </div>
       </section>
 
-      <section className="sh-sec" aria-labelledby="ep-faq">
-        <div className="sh-wrap">
-          <h2 id="ep-faq">Questions</h2>
-          <div className="ep-faq">
+      <section className="epx-sec epx-sec--app" aria-labelledby="epx-app">
+        <div className="epx-wrap epx-app">
+          <div className="epx-app__copy">
+            <h2 id="epx-app" className="epx-h2">Then keep going in the Tuterly app</h2>
+            <p className="epx-p">
+              Your account here is your Tuterly app account. Sign in with the same email and your exam and every question you got wrong are already waiting, ready to fix.
+            </p>
+            <ul className="epx-ticks">
+              <li>Unlimited questions on your weak spots, made fresh every time</li>
+              <li>Get a similar one right and it&rsquo;s fixed in your bank</li>
+              <li>Notes and practice tests for every topic before your exam</li>
+            </ul>
+            <a href={cta.href} className="epx-btn epx-btn--ghost">{appLabel}</a>
+          </div>
+          <div className="epx-app__phone">
+            <PhoneFrame src="/app-screens/flow-exam-zone/07-fix-what-you-missed.png" alt="The Tuterly app's Fix what you missed screen, listing the questions a student got wrong with Try again and Similar one buttons" width={270} sizes="(max-width: 899px) 62vw, 270px" />
+          </div>
+        </div>
+      </section>
+
+      <section className="epx-sec" aria-labelledby="epx-faq">
+        <div className="epx-wrap epx-wrap--narrow">
+          <h2 id="epx-faq" className="epx-h2">Questions</h2>
+          <div className="epx-faq">
             {FAQS.map((f) => (
               <details key={f.q}>
                 <summary>{f.q}</summary>
@@ -80,6 +124,14 @@ export default function ExamPlanPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="epx-end" aria-labelledby="epx-end">
+        <div className="epx-wrap epx-end__in">
+          <h2 id="epx-end">Your next test is coming. Know exactly what to fix.</h2>
+          <a href="#start" className="epx-btn">Make my free plan</a>
+          <p>Free. One upload a day. Years 7 to 10.</p>
         </div>
       </section>
       <MarketingFooter />
