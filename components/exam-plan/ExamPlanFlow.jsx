@@ -5,6 +5,8 @@ import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import QuinnWorking from "@/components/brand/QuinnWorking";
 import { trackEvent } from "@/lib/analytics";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 
 // The free exam plan (Ryan, 18 Nov 2026). Signs the student in to their
 // Tuterly app account (the app's own Supabase project), uploads one marked
@@ -50,7 +52,23 @@ async function toJpeg(file) {
   }
 }
 
-const plain = (md) => String(md || "").replace(/\$+/g, "").replace(/\\[a-zA-Z]+/g, " ").replace(/[{}]/g, "").replace(/\s+/g, " ").trim();
+// Question text from the app, with its maths in KaTeX (same notation as
+// everywhere else on the site). Text outside $...$ is escaped, money is
+// written \$ as in the bank, and images and markdown markers are dropped so
+// a list row stays a short preview.
+const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+function mathHtml(md) {
+  const src = String(md || "").replace(/\\\$/g, "\u0000").replace(/!\[[^\]]*\]\([^)]*\)/g, "").replace(/\\\((.+?)\\\)/g, "$$$1$$").replace(/\s+/g, " ").trim();
+  return src.split(/(\$\$[\s\S]+?\$\$|\$[^$]+?\$)/g).map((part) => {
+    const m = part.match(/^\$\$([\s\S]+)\$\$$/) || part.match(/^\$([^$]+)\$$/);
+    if (!m) return esc(part.replace(/[*_#`]/g, "").replace(/\u0000/g, "$"));
+    try { return katex.renderToString(m[1].replace(/\u0000/g, "\\$"), { throwOnError: false }); } catch { return esc(m[1]); }
+  }).join("");
+}
+function MathText({ md, className }) {
+  const html = useMemo(() => mathHtml(md), [md]);
+  return <span className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+}
 
 async function api(path, token, body) {
   const r = await fetch(path, {
@@ -363,6 +381,16 @@ export default function ExamPlanFlow({ cta }) {
               ? "Tick the ones you got wrong or weren't sure about. We've ticked the ones marked wrong."
               : "We couldn't see any marking, so tick the ones you got wrong or weren't sure about, or the topics you want to practise."}
           </p>
+          <div className="ep-items__bar">
+            <span className="ep-muted">{ticked.size} of {items.length} ticked</span>
+            <button
+              type="button"
+              className="ep-link"
+              onClick={() => setTicked(ticked.size === items.length ? new Set() : new Set(items.map((i) => i.index)))}
+            >
+              {ticked.size === items.length ? "Clear all" : "Select all"}
+            </button>
+          </div>
           <ul className="ep-items">
             {items.map((it) => (
               <li key={it.index}>
@@ -373,7 +401,7 @@ export default function ExamPlanFlow({ cta }) {
                     onChange={() => setTicked((prev) => { const n = new Set(prev); n.has(it.index) ? n.delete(it.index) : n.add(it.index); return n; })}
                   />
                   <span className="ep-items__l">Q{it.label}</span>
-                  <span className="ep-items__q">{plain(it.question_md).slice(0, 110)}{plain(it.question_md).length > 110 ? "…" : ""}</span>
+                  <MathText className="ep-items__q" md={it.question_md} />
                   {it.mark && it.mark !== "unmarked" && <span className={`ep-mark ep-mark--${it.mark}`}>{it.mark === "partial" ? "Part marks" : it.mark === "wrong" ? "Wrong" : "Right"}</span>}
                 </label>
               </li>
@@ -444,9 +472,9 @@ function Results({ result, cta, shown, setShown }) {
       </div>
 
       <div className="ep-card ep-card--cta">
-        <h2 className="ep-h">Keep going until every weak spot is fixed</h2>
+        <h2 className="ep-h">Keep going until every weak topic is fixed</h2>
         <p className="ep-muted">
-          {added ? `Your exam and ${added} question${added === 1 ? "" : "s"} you got wrong are already saved in the Tuterly app. ` : "Your exam is already saved in the Tuterly app. "}
+          {added ? `Sign up to the Tuterly app. We've saved your exam and the ${added} question${added === 1 ? "" : "s"} you got incorrect. ` : "Sign up to the Tuterly app. We've saved your exam. "}
           Sign in with the same email to pick up where you left off.
         </p>
         <ul className="ep-perks">
