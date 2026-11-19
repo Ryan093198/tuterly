@@ -1,0 +1,93 @@
+{
+ "examples": [
+  {
+   "title": "Reading and writing inequalities",
+   "question": "(a) A number line has an open circle at $-2$ and an arrow pointing to the right. Write the inequality it shows. (b) Rewrite $4 > x$ with $x$ on the left. (c) List the integers that satisfy $-3 < x \\le 2$.",
+   "solution": "**Key idea:** An **open** circle means the number is **not** included ($<$ or $>$). A **closed** circle means it **is** included ($\\le$ or $\\ge$). The arrow shows which way the solutions go.\n\n1. (a) Open circle, so $-2$ itself is not included. The arrow points right, towards bigger numbers, so $x$ is greater than $-2$:\n$$x > -2$$\n2. (b) $4 > x$ says $4$ is bigger than $x$, which means $x$ is smaller than $4$. Read it from the other side and the sign turns around with it:\n$$x < 4$$\n3. (c) $-3 < x$ means $-3$ is **not** included. $x \\le 2$ means $2$ **is** included. The integers in between are\n$$-2,\\ -1,\\ 0,\\ 1,\\ 2$$\n4. Sense check: $-3$ fails because $-3 < -3$ is false ✓, and $2$ passes because $2 \\le 2$ is true ✓.\n\n**Answer:** (a) $x > -2$ (b) $x < 4$ (c) $-2, -1, 0, 1, 2$",
+   "answer": "(a) $x > -2$ (b) $x < 4$ (c) $-2, -1, 0, 1, 2$"
+  },
+  {
+   "title": "One-step inequality with a negative answer",
+   "question": "Solve $x + 7 \\le 3$ and show the solution on a number line.",
+   "solution": "**Key idea:** Solve it exactly like the equation $x + 7 = 3$, keeping the inequality sign in place of the equals sign.\n\n1. Subtract $7$ from both sides:\n$$x + 7 - 7 \\le 3 - 7$$\n$$x \\le -4$$\n2. Subtracting doesn't change the sign, even though the answer is negative.\n3. Number line: a **closed** circle at $-4$ (because $\\le$ includes $-4$), with an arrow pointing **left**.\n4. Check inside: $x = -5$ gives $-5 + 7 = 2$, and $2 \\le 3$ is true ✓. Check outside: $x = 0$ gives $7 \\le 3$, which is false ✓.\n\n**Answer:** $x \\le -4$ (closed circle at $-4$, arrow left)",
+   "answer": "$x \\le -4$"
+  },
+  {
+   "title": "Two-step inequality",
+   "question": "Solve $5x - 3 > 17$.",
+   "solution": "**Key idea:** Undo the operations in reverse order, the same as an equation: deal with the $-3$ first, then the $\\times 5$.\n\n1. Add $3$ to both sides:\n$$5x > 20$$\n2. Divide both sides by $5$. Five is positive, so the sign stays the same:\n$$x > 4$$\n3. Check inside: $x = 5$ gives $5 \\times 5 - 3 = 22$, and $22 > 17$ ✓. Check the boundary: $x = 4$ gives exactly $17$, and $17 > 17$ is false, so $4$ is correctly left out ✓.\n\n**Answer:** $x > 4$",
+   "answer": "$x > 4$"
+  },
+  {
+   "title": "Dividing by a negative: flip the sign",
+   "question": "Solve $9 - 2x \\ge 15$.",
+   "solution": "**Key idea:** When you multiply or divide both sides by a **negative** number, the inequality sign **reverses**.\n\n1. Subtract $9$ from both sides:\n$$-2x \\ge 6$$\n2. Divide both sides by $-2$. It's negative, so $\\ge$ becomes $\\le$:\n$$x \\le -3$$\n3. Why the flip? $2 < 3$ is true, but multiply both by $-1$ and you get $-2$ and $-3$, where $-2 > -3$. Multiplying by a negative swaps which side is bigger.\n4. Check inside: $x = -4$ gives $9 - 2(-4) = 17$, and $17 \\ge 15$ ✓. Check outside: $x = 0$ gives $9 \\ge 15$, which is false ✓.\n\n**Answer:** $x \\le -3$",
+   "answer": "$x \\le -3$"
+  },
+  {
+   "title": "Inequality with a fraction",
+   "question": "Solve $\\dfrac{x + 5}{3} < 4$.",
+   "solution": "**Key idea:** Get rid of the fraction first by multiplying both sides by the denominator. Multiplying by a positive number keeps the sign.\n\n1. Multiply both sides by $3$:\n$$x + 5 < 12$$\n2. Subtract $5$ from both sides:\n$$x < 7$$\n3. Check inside: $x = 4$ gives $\\dfrac{9}{3} = 3$, and $3 < 4$ ✓. Check the boundary: $x = 7$ gives $\\dfrac{12}{3} = 4$, and $4 < 4$ is false, so $7$ is not included ✓.\n\n**Answer:** $x < 7$",
+   "answer": "$x < 7$"
+  },
+  {
+   "title": "Word problem: a taxi budget",
+   "question": "A taxi charges a flag fall of \\$4.50 plus \\$2.20 per kilometre. Mia has \\$30. Write an inequality for the number of kilometres, $k$, she can afford, and find the greatest whole number of kilometres.",
+   "solution": "**Key idea:** \"Has \\$30\" means the fare must be **at most** \\$30, so use $\\le$. Then decide which way to round from the context.\n\n1. Fare: $4.50 + 2.20k$. It must be no more than $30$:\n$$4.50 + 2.20k \\le 30$$\n2. Subtract $4.50$:\n$$2.20k \\le 25.50$$\n3. Divide by $2.20$:\n$$k \\le 11.59\\ldots$$\n4. She can't go $12$ km, because that is more than $11.59$. Round **down**: the greatest whole number is $11$.\n5. Check: $11$ km costs $4.50 + 2.20 \\times 11 = 28.70$, which is under \\$30 ✓. $12$ km costs $4.50 + 2.20 \\times 12 = 30.90$, which is over ✓.\n\n**Answer:** $4.50 + 2.20k \\le 30$, so at most $11$ km",
+   "answer": "$4.50 + 2.20k \\le 30$; $11$ km"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Forgetting to flip when dividing by a negative",
+   "wrong": "$9 - 2x \\ge 15$, so $-2x \\ge 6$, so $x \\ge -3$.",
+   "fix": "Dividing by $-2$ reverses the sign: $x \\le -3$. Test it: $x = 0$ satisfies $x \\ge -3$, but $9 - 0 \\ge 15$ is false, so $x \\ge -3$ can't be right."
+  },
+  {
+   "title": "Flipping when you don't need to",
+   "wrong": "$2x > -6$. The answer will be negative, so flip: $x < -3$.",
+   "fix": "Only multiplying or dividing by a **negative** flips the sign. Here you divide by $+2$, so the sign stays: $x > -3$. A negative number on the right-hand side doesn't matter."
+  },
+  {
+   "title": "Open and closed circles mixed up",
+   "wrong": "$x \\le 4$ is drawn with an open circle at $4$ and an arrow pointing left.",
+   "fix": "$\\le$ includes $4$, so the circle must be **closed** (filled in). Open circles are only for $<$ and $>$."
+  },
+  {
+   "title": "Reading the inequality backwards",
+   "wrong": "$4 > x$ means $x > 4$.",
+   "fix": "$4 > x$ says $x$ is **less than** $4$, so it is $x < 4$. If you swap the sides, turn the sign around too, so it still points at the smaller side."
+  },
+  {
+   "title": "Rounding up in a word problem",
+   "wrong": "$k \\le 11.59$, so Mia can travel $12$ km.",
+   "fix": "$12$ is bigger than $11.59$, so it breaks the inequality: $12$ km would cost \\$30.90. With $\\le$ and whole numbers, round **down** to $11$ km."
+  }
+ ],
+ "practice": {
+  "question": "Solve $7 - 4x < 23$ and describe the solution on a number line.",
+  "answer": "$x > -4$ (open circle at $-4$, arrow right)",
+  "solution": "**Key idea:** Dividing by a negative reverses the sign.\n\n1. Subtract $7$ from both sides:\n$$-4x < 16$$\n2. Divide by $-4$ and flip $<$ to $>$:\n$$x > -4$$\n3. Number line: an **open** circle at $-4$ (because $>$ does not include $-4$), arrow pointing right.\n4. Check: $x = 0$ gives $7 < 23$ ✓, and $x = -5$ gives $7 + 20 = 27$, which is not less than $23$ ✓.\n\n**Answer:** $x > -4$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you solve inequalities in Year 8?",
+  "a": "Solve an inequality the same way as an equation: do the same thing to both sides until x is on its own. The one difference is that multiplying or dividing both sides by a negative number reverses the sign, so -2x ≥ 6 becomes x ≤ -3. Show the answer on a number line, with a closed circle for ≤ or ≥ and an open circle for < or >."
+ },
+ "turn": {
+  "question": "Solve $4 - 3x > 19$. What is the largest integer that satisfies the inequality?",
+  "kind": "number",
+  "accept": {
+   "value": -6,
+   "tol": 0
+  },
+  "answer_display": "$-6$",
+  "hint": "Subtract $4$ from both sides, then divide by $-3$. Remember what happens to the sign.",
+  "solution": "**Key idea:** Dividing by a negative reverses the sign.\n\n1. Subtract $4$: $-3x > 15$\n2. Divide by $-3$ and flip: $x < -5$\n3. $-5$ itself is not included, so the largest integer below $-5$ is $-6$.\n4. Check: $x = -6$ gives $4 + 18 = 22 > 19$ ✓, and $x = -5$ gives $19 > 19$, which is false ✓.\n\n**Answer:** $-6$"
+ },
+ "turn_checked": {
+  "my_answer": "-6",
+  "attempts": 1
+ }
+}
