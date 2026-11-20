@@ -1,0 +1,93 @@
+{
+ "examples": [
+  {
+   "title": "Naming the sampling method",
+   "question": "A council wants residents' views on a new skate park. Name the sampling method in each plan. (a) Every resident's name is entered into a computer, which picks 150 at random. (b) Starting with the 7th house on a street list, every 20th house is surveyed. (c) The council works out what fraction of residents live in each of its three suburbs, and chooses that fraction of the 150 people at random from each suburb. (d) A council officer asks people walking past the library on a Tuesday morning.",
+   "solution": "**Key idea:** Ask how each person ends up in the sample. Is it pure chance, a fixed pattern, chance within groups, or whoever is easiest to reach?\n\n1. (a) Every resident has the same chance of being picked and the choices are independent: **simple random sampling**.\n2. (b) A random start, then a fixed gap of $20$: **systematic sampling**.\n3. (c) The population is split into groups (suburbs), and each group is sampled at random in proportion to its size: **stratified sampling**. It guarantees every suburb is fairly represented.\n4. (d) Whoever happens to be nearby is asked: **convenience sampling**. It's quick, but people at the library on a Tuesday morning (retirees, parents with young children) don't represent everyone, so the results are likely to be **biased**.\n\n**Answer:** (a) simple random (b) systematic (c) stratified (d) convenience, which is likely to be biased",
+   "answer": "(a) simple random (b) systematic (c) stratified (d) convenience"
+  },
+  {
+   "title": "Setting up a systematic sample",
+   "question": "A school has $840$ students on an alphabetical roll. The principal wants a systematic sample of $60$ students. (a) Find the sampling interval. (b) A random starting number of $9$ is chosen. List the first five students' positions on the roll. (c) What is the position of the last student chosen?",
+   "solution": "**Key idea:** Sampling interval $=$ population size $\\div$ sample size. Start at a random position within the first interval, then keep adding the interval.\n\n1. (a) Interval:\n$$k = \\frac{840}{60} = 14$$\nSo every $14$th student is chosen.\n2. (b) Start at $9$ and add $14$ each time:\n$$9,\\ 23,\\ 37,\\ 51,\\ 65$$\n3. (c) The $60$th student is $59$ gaps after the first:\n$$9 + 59 \\times 14 = 9 + 826 = 835$$\n4. Check: $835 \\le 840$, so the last pick is still on the roll ✓, and one more gap would give $849$, which is past the end ✓.\n\n**Answer:** (a) every $14$th student (b) $9, 23, 37, 51, 65$ (c) position $835$",
+   "answer": "(a) $14$ (b) $9, 23, 37, 51, 65$ (c) $835$"
+  },
+  {
+   "title": "Stratified sample with rounding",
+   "question": "A secondary school has $220$ Year 7, $200$ Year 8, $180$ Year 9 and $160$ Year 10 students. A stratified sample of $50$ students is needed, in proportion to the size of each year level. How many students should be chosen from each year?",
+   "solution": "**Key idea:** Each group's share of the sample matches its share of the population: $\\dfrac{\\text{group size}}{\\text{population}} \\times \\text{sample size}$.\n\n1. Population total:\n$$220 + 200 + 180 + 160 = 760$$\n2. Year 7: $\\dfrac{220}{760} \\times 50 = 14.47\\ldots \\approx 14$\n3. Year 8: $\\dfrac{200}{760} \\times 50 = 13.15\\ldots \\approx 13$\n4. Year 9: $\\dfrac{180}{760} \\times 50 = 11.84\\ldots \\approx 12$\n5. Year 10: $\\dfrac{160}{760} \\times 50 = 10.52\\ldots \\approx 11$\n6. Check the total: $14 + 13 + 12 + 11 = 50$ ✓. Always add them back up, because rounding can leave you one over or one short.\n7. Within each year level, the students are then picked at random.\n\n**Answer:** $14$ from Year 7, $13$ from Year 8, $12$ from Year 9, $11$ from Year 10",
+   "answer": "Year 7: $14$, Year 8: $13$, Year 9: $12$, Year 10: $11$"
+  },
+  {
+   "title": "Spotting the bias in a survey",
+   "question": "For each survey, explain why the results could be biased and suggest a fix. (a) To find how often Melburnians exercise, a researcher surveys people leaving a gym. (b) A sports club emails all $400$ members asking whether fees should rise. Only $35$ reply. (c) A survey asks: \"Don't you agree that the canteen should stop selling unhealthy food?\"",
+   "solution": "**Key idea:** A sample is **biased** when the way it is collected makes some answers more likely than they are in the whole population. The three common causes are an unrepresentative sample, non-response and leading questions.\n\n1. (a) **Unrepresentative sample.** People leaving a gym exercise more than average, so the estimate will be too high. Fix: choose people at random from the whole population, for example from the electoral roll, or stratify by age and suburb.\n2. (b) **Non-response bias.** Only $\\dfrac{35}{400} = 8.75\\%$ replied, and people with strong opinions (often those opposed to higher fees) are more likely to reply. Fix: follow up a random sample of members who didn't reply, or make the survey short and easy to return.\n3. (c) **Leading question.** \"Don't you agree\" pushes people towards yes, and \"unhealthy\" is a loaded word. Fix: ask neutrally, such as \"Should the canteen change the food it sells? Yes / No / Unsure\".\n\n**Answer:** (a) gym-goers aren't representative, so sample randomly from the whole population (b) $8.75\\%$ response rate gives non-response bias, so follow up non-responders (c) leading question, so reword it neutrally",
+   "answer": "(a) unrepresentative sample (b) non-response bias (c) leading question"
+  },
+  {
+   "title": "Two random samples, two different results",
+   "question": "Two students each take a random sample of $10$ Year 9 students and record hours of sleep on a school night. Sample A: $8, 7, 9, 6, 8, 7, 8, 9, 7, 8$. Sample B: $6, 7, 7, 8, 6, 9, 7, 6, 8, 7$. (a) Find the mean of each sample. (b) Both samples were random. Why are the means different? (c) How could they get a more reliable estimate?",
+   "solution": "**Key idea:** Different random samples from the same population give different results. This is called **sampling variability**. Larger samples vary less, so they give more reliable estimates.\n\n1. (a) Sample A total: $8 + 7 + 9 + 6 + 8 + 7 + 8 + 9 + 7 + 8 = 77$, so\n$$\\bar{x}_A = \\frac{77}{10} = 7.7 \\text{ hours}$$\n2. Sample B total: $6 + 7 + 7 + 8 + 6 + 9 + 7 + 6 + 8 + 7 = 71$, so\n$$\\bar{x}_B = \\frac{71}{10} = 7.1 \\text{ hours}$$\n3. (b) Neither student did anything wrong. Each random sample happens to include different people, and with only $10$ students, one or two very short or very long sleepers shift the mean noticeably.\n4. (c) Use a larger random sample, such as $50$ students, or combine the two samples. Combined, the mean is $\\dfrac{77 + 71}{20} = \\dfrac{148}{20} = 7.4$ hours, which is based on twice as much data.\n\n**Answer:** (a) $7.7$ hours and $7.1$ hours (b) sampling variability (c) take a bigger random sample; combined mean $7.4$ hours",
+   "answer": "(a) $7.7$ and $7.1$ hours (b) sampling variability (c) larger sample, e.g. combined mean $7.4$ hours"
+  },
+  {
+   "title": "Using a sample to estimate the population",
+   "question": "A random sample of $60$ students from a school of $840$ is asked whether they would buy lunch from a new canteen menu. $21$ say yes. (a) What percentage of the sample said yes? (b) Estimate how many students in the whole school would buy from the new menu. (c) Why would the estimate be unreliable if the $60$ students had all been surveyed in the canteen queue?",
+   "solution": "**Key idea:** If a sample is random, the proportion in the sample is a reasonable estimate of the proportion in the population. Multiply that proportion by the population size.\n\n1. (a) Proportion who said yes:\n$$\\frac{21}{60} = 0.35 = 35\\%$$\n2. (b) Apply it to the whole school:\n$$0.35 \\times 840 = 294$$\nAbout $294$ students would buy from the new menu. It's an estimate, so a different random sample could give a slightly different number.\n3. (c) Students already in the canteen queue buy lunch at school, so they are more likely to say yes than students who bring lunch from home. The sample isn't representative, and $35\\%$ would probably **overestimate** the school-wide figure.\n\n**Answer:** (a) $35\\%$ (b) about $294$ students (c) the queue sample is biased towards canteen users",
+   "answer": "(a) $35\\%$ (b) about $294$ students (c) biased towards canteen users"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Thinking a bigger sample fixes bias",
+   "wrong": "\"We surveyed 2,000 people at the football, so our result on Melbourne's favourite sport must be accurate.\"",
+   "fix": "Size reduces random variation, but it can't fix a biased method. Football fans will over-represent football no matter how many you ask. Choose people randomly from the whole population first, then make the sample large."
+  },
+  {
+   "title": "Taking the same number from every group",
+   "wrong": "Year 7 has $220$ students and Year 10 has $160$, so a stratified sample of $40$ takes $10$ from each of the four year levels.",
+   "fix": "Stratified samples are **proportional**. Work out each group's fraction of the population and multiply by the sample size, e.g. Year 7 gets $\\dfrac{220}{760} \\times 40 \\approx 12$, Year 10 gets $\\dfrac{160}{760} \\times 40 \\approx 8$. Then check the numbers add to $40$."
+  },
+  {
+   "title": "Calling a convenience sample random",
+   "wrong": "\"I asked the first 30 people I saw at lunch, so it was a random sample.\"",
+   "fix": "Random means every member of the population has the same chance of being chosen, decided by chance (a random number generator or drawing names). Asking whoever is nearby is convenience sampling and usually leaves groups out."
+  },
+  {
+   "title": "Wrong interval for a systematic sample",
+   "wrong": "A sample of $60$ from $840$ students: interval $= 60 \\div 840$, or always start at student $1$.",
+   "fix": "The interval is population $\\div$ sample size: $840 \\div 60 = 14$. Pick the starting point at random between $1$ and $14$, then add $14$ each time."
+  },
+  {
+   "title": "Treating a sample estimate as exact",
+   "wrong": "\"35% of our sample said yes, so exactly 294 students will buy from the new menu.\"",
+   "fix": "A sample gives an **estimate**. Say \"about 294 students\", and expect a different random sample to give a slightly different answer."
+  }
+ ],
+ "practice": {
+  "question": "A sports club has $120$ junior, $200$ senior and $80$ veteran members. The committee wants a stratified sample of $30$ members, in proportion to each group's size. How many members should be chosen from each group, and how should they then be picked?",
+  "answer": "$9$ juniors, $15$ seniors, $6$ veterans, chosen at random within each group",
+  "solution": "**Key idea:** Each group gets the same fraction of the sample as it makes up of the club.\n\n1. Total members: $120 + 200 + 80 = 400$\n2. Juniors: $\\dfrac{120}{400} \\times 30 = 9$\n3. Seniors: $\\dfrac{200}{400} \\times 30 = 15$\n4. Veterans: $\\dfrac{80}{400} \\times 30 = 6$\n5. Check: $9 + 15 + 6 = 30$ ✓\n6. Within each group, choose the members at random, for example by drawing membership numbers with a random number generator.\n\n**Answer:** $9$ juniors, $15$ seniors and $6$ veterans, chosen at random within each group"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What do you learn about sampling in Year 9?",
+  "a": "Year 9 students analyse how the way a sample is chosen affects survey results. They compare simple random, systematic, stratified and convenience sampling, work out sampling intervals and proportional stratified samples, spot bias from unrepresentative samples, non-response and leading questions, and see that different random samples give different results, with larger samples giving more reliable estimates."
+ },
+ "turn": {
+  "question": "A systematic sample of $25$ members is taken from a list of $600$ members. What is the sampling interval?",
+  "kind": "number",
+  "accept": {
+   "value": 24,
+   "tol": 0
+  },
+  "answer_display": "$24$",
+  "hint": "Divide the size of the population by the size of the sample.",
+  "solution": "**Key idea:** Sampling interval $=$ population size $\\div$ sample size.\n\n1. $600 \\div 25 = 24$\n2. So every $24$th member is chosen, after a random start between $1$ and $24$.\n3. Check: $25$ picks with a gap of $24$ cover $25 \\times 24 = 600$ positions ✓\n\n**Answer:** $24$"
+ },
+ "turn_checked": {
+  "my_answer": "24",
+  "attempts": 1
+ }
+}

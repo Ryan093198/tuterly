@@ -127,6 +127,7 @@ const STATIC_PAGES = [
   { path: "/maths/scientific-notation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/surface-area-of-a-cylinder", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/prime-factorisation", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths/hcf-and-lcm", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/simple-interest", priority: 0.8, changeFrequency: "monthly" },
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
