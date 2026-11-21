@@ -34,6 +34,7 @@ const TOPICS = [
   { href: "/maths/distance-between-two-points", k: "Years 9 and 10", t: "Distance between two points", x: "The distance formula, negative coordinates, exact surd answers and missing coordinates, with a calculator." },
   { href: "/maths/midpoint-formula", k: "Years 9 and 10", t: "Midpoint formula", x: "Average the coordinates to find the midpoint, work back to a missing endpoint, and find the centre of a circle." },
   { href: "/maths/scientific-notation", k: "Years 9 and 10", t: "Scientific notation", x: "Write large and small numbers as a × 10ⁿ, convert back, round to significant figures, and multiply and divide." },
+  { href: "/maths/speed-distance-time", k: "Years 7 and 8", t: "Speed, distance and time", x: "The formula three ways, minutes and decimal hours, km/h to m/s, average speed and distance-time graphs." },
   { href: "/maths/simple-interest", k: "Year 9", t: "Simple interest", x: "I = Prt, time in months, finding the rate, time or principal, and loan repayments." },
   { href: "/maths/compound-interest", k: "Year 10", t: "Compound interest", x: "A = P(1 + r)^n, monthly and quarterly compounding, finding the principal and depreciation." },
 ];
@@ -57,6 +58,7 @@ const CALCULATORS = [
   { href: "/maths/distance-between-two-points#calculator", k: "Calculator", t: "Distance between two points calculator", x: "Exact and rounded distance between any two points, with the working and a sketch." },
   { href: "/maths/midpoint-formula#calculator", k: "Calculator", t: "Midpoint calculator", x: "The midpoint of two points or a missing endpoint, with the working and a sketch." },
   { href: "/maths/scientific-notation#calculator", k: "Converter", t: "Scientific notation converter", x: "Ordinary numbers to scientific notation and back, with significant figures and the working." },
+  { href: "/maths/speed-distance-time#calculator", k: "Calculator", t: "Speed, distance and time calculator", x: "Find the speed, distance or time from the other two in mixed units, with the conversions shown." },
   { href: "/maths/simple-interest#calculator", k: "Calculator", t: "Simple interest calculator", x: "Find the interest, principal, rate or time from the other three, with the working." },
   { href: "/maths/compound-interest#calculator", k: "Calculator", t: "Compound interest calculator", x: "Final amount and interest for any compounding period, with a year-by-year table." },
 ];

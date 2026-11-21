@@ -1,0 +1,104 @@
+{
+ "examples": [
+  {
+   "title": "Reading sin, cos and tan from a point on the unit circle",
+   "question": "The point $P(-0.6,\\ 0.8)$ lies on the unit circle, and $OP$ makes an angle $\\theta$ measured anticlockwise from the positive $x$-axis. (a) Show that $P$ is on the unit circle. (b) Write down $\\sin\\theta$, $\\cos\\theta$ and $\\tan\\theta$. (c) Which quadrant is $\\theta$ in? (d) Find $\\theta$ to the nearest degree.",
+   "solution": "**Key idea:** On the unit circle (centre $O$, radius $1$), the point at angle $\\theta$ is $(\\cos\\theta,\\ \\sin\\theta)$. The $x$-coordinate is the cosine, the $y$-coordinate is the sine, and $\\tan\\theta = \\dfrac{y}{x}$.\n\n1. (a) A point is on the unit circle when $x^2 + y^2 = 1$:\n$$(-0.6)^2 + 0.8^2 = 0.36 + 0.64 = 1$$\nSo $P$ is on the unit circle \u2713\n2. (b) Read the coordinates: $\\cos\\theta = -0.6$ and $\\sin\\theta = 0.8$.\n3. $\\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} = \\dfrac{0.8}{-0.6} = -\\dfrac{4}{3}$\n4. (c) $x$ is negative and $y$ is positive, so $P$ is in the **second quadrant**.\n5. (d) The angle between $OP$ and the negative $x$-axis (the reference angle) is $\\tan^{-1}\\left(\\dfrac{0.8}{0.6}\\right) \\approx 53.13^\\circ$.\n6. In the second quadrant, $\\theta = 180^\\circ - 53.13^\\circ = 126.87^\\circ \\approx 127^\\circ$.\n7. Check: $\\cos 126.87^\\circ \\approx -0.6$ and $\\sin 126.87^\\circ \\approx 0.8$ \u2713\n\n**Answer:** (b) $\\sin\\theta = 0.8$, $\\cos\\theta = -0.6$, $\\tan\\theta = -\\dfrac{4}{3}$ (c) second quadrant (d) $\\theta \\approx 127^\\circ$",
+   "answer": "$\\sin\\theta = 0.8$, $\\cos\\theta = -0.6$, $\\tan\\theta = -\\dfrac{4}{3}$, second quadrant, $\\theta \\approx 127^\\circ$"
+  },
+  {
+   "title": "Angles on the axes",
+   "question": "Use the unit circle to find the exact value of: (a) $\\sin 90^\\circ$ (b) $\\cos 180^\\circ$ (c) $\\sin 270^\\circ$ (d) $\\cos 270^\\circ$ (e) $\\tan 180^\\circ$ (f) $\\tan 90^\\circ$",
+   "solution": "**Key idea:** The angles $0^\\circ$, $90^\\circ$, $180^\\circ$, $270^\\circ$ and $360^\\circ$ land on the axes, so their points are easy to read: $(1, 0)$, $(0, 1)$, $(-1, 0)$, $(0, -1)$ and back to $(1, 0)$.\n\n1. At $90^\\circ$ the point is $(0, 1)$, so (a) $\\sin 90^\\circ = 1$.\n2. At $180^\\circ$ the point is $(-1, 0)$, so (b) $\\cos 180^\\circ = -1$.\n3. At $270^\\circ$ the point is $(0, -1)$, so (c) $\\sin 270^\\circ = -1$ and (d) $\\cos 270^\\circ = 0$.\n4. (e) $\\tan 180^\\circ = \\dfrac{y}{x} = \\dfrac{0}{-1} = 0$\n5. (f) $\\tan 90^\\circ = \\dfrac{1}{0}$. You can't divide by zero, so $\\tan 90^\\circ$ is **undefined**. On a graph of $y = \\tan\\theta$ this shows up as a vertical asymptote at $\\theta = 90^\\circ$.\n\n**Answer:** (a) $1$ (b) $-1$ (c) $-1$ (d) $0$ (e) $0$ (f) undefined",
+   "answer": "(a) $1$ (b) $-1$ (c) $-1$ (d) $0$ (e) $0$ (f) undefined"
+  },
+  {
+   "title": "Positive or negative? Using the quadrants",
+   "question": "(a) Without a calculator, state whether each value is positive or negative: $\\sin 200^\\circ$, $\\cos 300^\\circ$, $\\tan 100^\\circ$, $\\cos 135^\\circ$. (b) In which quadrant is $\\theta$ if $\\sin\\theta < 0$ and $\\tan\\theta > 0$?",
+   "solution": "**Key idea:** The signs follow the coordinates. Cosine is positive where $x > 0$ (quadrants 1 and 4), sine is positive where $y > 0$ (quadrants 1 and 2), and tangent is positive where $x$ and $y$ have the same sign (quadrants 1 and 3). Many students remember this as **All Stations To Central**, starting in quadrant 1 and going anticlockwise: All, Sin, Tan, Cos.\n\n1. $200^\\circ$ is between $180^\\circ$ and $270^\\circ$: quadrant 3, where only tan is positive. $\\sin 200^\\circ$ is **negative**.\n2. $300^\\circ$ is between $270^\\circ$ and $360^\\circ$: quadrant 4, where cos is positive. $\\cos 300^\\circ$ is **positive**.\n3. $100^\\circ$ is in quadrant 2, where only sin is positive. $\\tan 100^\\circ$ is **negative**.\n4. $135^\\circ$ is in quadrant 2. $\\cos 135^\\circ$ is **negative**.\n5. (b) $\\sin\\theta < 0$ in quadrants 3 and 4. $\\tan\\theta > 0$ in quadrants 1 and 3. The only quadrant in both lists is **quadrant 3**.\n\n**Answer:** (a) negative, positive, negative, negative (b) quadrant 3",
+   "answer": "(a) negative, positive, negative, negative (b) quadrant 3"
+  },
+  {
+   "title": "Exact values beyond 90\u00b0",
+   "question": "Find the exact value of: (a) $\\sin 150^\\circ$ (b) $\\cos 225^\\circ$ (c) $\\tan 300^\\circ$",
+   "solution": "**Key idea:** For any angle, find the **reference angle** (the acute angle between the radius and the nearest part of the $x$-axis), use the exact value for that acute angle, then give it the sign for the quadrant. The first-quadrant exact values are $\\sin 30^\\circ = \\dfrac{1}{2}$, $\\cos 30^\\circ = \\dfrac{\\sqrt{3}}{2}$, $\\sin 45^\\circ = \\cos 45^\\circ = \\dfrac{\\sqrt{2}}{2}$, $\\sin 60^\\circ = \\dfrac{\\sqrt{3}}{2}$, $\\cos 60^\\circ = \\dfrac{1}{2}$, $\\tan 30^\\circ = \\dfrac{\\sqrt{3}}{3}$, $\\tan 45^\\circ = 1$ and $\\tan 60^\\circ = \\sqrt{3}$.\n\n1. (a) $150^\\circ$ is in quadrant 2. Reference angle: $180^\\circ - 150^\\circ = 30^\\circ$. Sine is positive in quadrant 2:\n$$\\sin 150^\\circ = +\\sin 30^\\circ = \\frac{1}{2}$$\n2. (b) $225^\\circ$ is in quadrant 3. Reference angle: $225^\\circ - 180^\\circ = 45^\\circ$. Cosine is negative in quadrant 3:\n$$\\cos 225^\\circ = -\\cos 45^\\circ = -\\frac{\\sqrt{2}}{2}$$\n3. (c) $300^\\circ$ is in quadrant 4. Reference angle: $360^\\circ - 300^\\circ = 60^\\circ$. Tangent is negative in quadrant 4:\n$$\\tan 300^\\circ = -\\tan 60^\\circ = -\\sqrt{3}$$\n4. Check with a calculator in degree mode: $\\sin 150^\\circ = 0.5$, $\\cos 225^\\circ \\approx -0.7071$ and $\\tan 300^\\circ \\approx -1.7321$ \u2713\n\n**Answer:** (a) $\\dfrac{1}{2}$ (b) $-\\dfrac{\\sqrt{2}}{2}$ (c) $-\\sqrt{3}$",
+   "answer": "(a) $\\dfrac{1}{2}$ (b) $-\\dfrac{\\sqrt{2}}{2}$ (c) $-\\sqrt{3}$"
+  },
+  {
+   "title": "Using symmetry to relate angles",
+   "question": "Given that $\\sin 40^\\circ \\approx 0.6428$ and $\\cos 40^\\circ \\approx 0.7660$, use the symmetry of the unit circle to write down: (a) $\\sin 140^\\circ$ (b) $\\cos 140^\\circ$ (c) $\\sin 220^\\circ$ (d) $\\cos 320^\\circ$",
+   "solution": "**Key idea:** The points at $40^\\circ$, $180^\\circ - 40^\\circ$, $180^\\circ + 40^\\circ$ and $360^\\circ - 40^\\circ$ are reflections of each other in the axes. They all have coordinates $\\pm 0.7660$ and $\\pm 0.6428$; only the signs change.\n\n1. (a) $140^\\circ = 180^\\circ - 40^\\circ$ is the reflection of $40^\\circ$ in the $y$-axis. The $y$-coordinate stays the same:\n$$\\sin 140^\\circ = \\sin 40^\\circ \\approx 0.6428$$\n2. (b) The $x$-coordinate changes sign:\n$$\\cos 140^\\circ = -\\cos 40^\\circ \\approx -0.7660$$\n3. (c) $220^\\circ = 180^\\circ + 40^\\circ$ is the point opposite $40^\\circ$ through the origin, so both coordinates change sign:\n$$\\sin 220^\\circ = -\\sin 40^\\circ \\approx -0.6428$$\n4. (d) $320^\\circ = 360^\\circ - 40^\\circ$ is the reflection of $40^\\circ$ in the $x$-axis. The $x$-coordinate stays the same:\n$$\\cos 320^\\circ = \\cos 40^\\circ \\approx 0.7660$$\n\n**Answer:** (a) $0.6428$ (b) $-0.7660$ (c) $-0.6428$ (d) $0.7660$",
+   "answer": "(a) $0.6428$ (b) $-0.7660$ (c) $-0.6428$ (d) $0.7660$"
+  },
+  {
+   "title": "Finding cos and tan from sin with the identity",
+   "question": "Given $\\sin\\theta = \\dfrac{5}{13}$ and $90^\\circ < \\theta < 180^\\circ$, find the exact values of $\\cos\\theta$ and $\\tan\\theta$.",
+   "solution": "**Key idea:** Every point on the unit circle satisfies $x^2 + y^2 = 1$, which gives the identity $\\sin^2\\theta + \\cos^2\\theta = 1$. The square root gives two possible signs, and the quadrant decides which one is right.\n\n1. Substitute $\\sin\\theta = \\dfrac{5}{13}$:\n$$\\cos^2\\theta = 1 - \\left(\\frac{5}{13}\\right)^2 = 1 - \\frac{25}{169} = \\frac{144}{169}$$\n2. So $\\cos\\theta = \\pm\\dfrac{12}{13}$.\n3. $\\theta$ is between $90^\\circ$ and $180^\\circ$ (quadrant 2), where cosine is negative:\n$$\\cos\\theta = -\\frac{12}{13}$$\n4. $\\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} = \\dfrac{5}{13} \\div \\left(-\\dfrac{12}{13}\\right) = -\\dfrac{5}{12}$\n5. Check: $\\left(\\dfrac{5}{13}\\right)^2 + \\left(-\\dfrac{12}{13}\\right)^2 = \\dfrac{25 + 144}{169} = 1$ \u2713, and tan is negative in quadrant 2 \u2713\n\n**Answer:** $\\cos\\theta = -\\dfrac{12}{13}$, $\\tan\\theta = -\\dfrac{5}{12}$",
+   "answer": "$\\cos\\theta = -\\dfrac{12}{13}$, $\\tan\\theta = -\\dfrac{5}{12}$"
+  },
+  {
+   "title": "From the unit circle to the graph of y = cos \u03b8",
+   "question": "(a) Use exact values to complete a table for $y = \\cos\\theta$ at $\\theta = 0^\\circ$, $60^\\circ$, $90^\\circ$, $120^\\circ$, $180^\\circ$, $240^\\circ$, $270^\\circ$, $300^\\circ$ and $360^\\circ$. (b) State the maximum value, the minimum value, the amplitude and the period of $y = \\cos\\theta$.",
+   "solution": "**Key idea:** As the point travels once around the unit circle, its $x$-coordinate gives the graph of $y = \\cos\\theta$. Use the reference angle and the quadrant sign for each value.\n\n1. $\\cos 0^\\circ = 1$, $\\cos 60^\\circ = \\dfrac{1}{2}$, $\\cos 90^\\circ = 0$\n2. $120^\\circ$: quadrant 2, reference angle $60^\\circ$, so $\\cos 120^\\circ = -\\dfrac{1}{2}$\n3. $\\cos 180^\\circ = -1$\n4. $240^\\circ$: quadrant 3, reference angle $60^\\circ$, so $\\cos 240^\\circ = -\\dfrac{1}{2}$\n5. $\\cos 270^\\circ = 0$\n6. $300^\\circ$: quadrant 4, reference angle $60^\\circ$, so $\\cos 300^\\circ = \\dfrac{1}{2}$\n7. $\\cos 360^\\circ = 1$, back where it started.\n8. So the $y$-values are $1$, $\\dfrac{1}{2}$, $0$, $-\\dfrac{1}{2}$, $-1$, $-\\dfrac{1}{2}$, $0$, $\\dfrac{1}{2}$, $1$. Plotted and joined with a smooth curve, they make one full wave.\n9. (b) The $x$-coordinate of a point on a circle of radius $1$ can't go above $1$ or below $-1$. Maximum $1$ (at $0^\\circ$ and $360^\\circ$), minimum $-1$ (at $180^\\circ$). The amplitude is the distance from the centre line $y = 0$ to the maximum: $1$. The pattern repeats every full turn, so the period is $360^\\circ$.\n\n**Answer:** (a) $1$, $\\dfrac{1}{2}$, $0$, $-\\dfrac{1}{2}$, $-1$, $-\\dfrac{1}{2}$, $0$, $\\dfrac{1}{2}$, $1$ (b) maximum $1$, minimum $-1$, amplitude $1$, period $360^\\circ$",
+   "answer": "(a) $1$, $\\tfrac{1}{2}$, $0$, $-\\tfrac{1}{2}$, $-1$, $-\\tfrac{1}{2}$, $0$, $\\tfrac{1}{2}$, $1$ (b) max $1$, min $-1$, amplitude $1$, period $360^\\circ$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Swapping sine and cosine",
+   "wrong": "\\\"The point at $30^\\circ$ is $\\left(\\dfrac{1}{2},\\ \\dfrac{\\sqrt{3}}{2}\\right)$.\\\"",
+   "fix": "The point is $(\\cos\\theta,\\ \\sin\\theta)$: cos goes with $x$, sin goes with $y$, in alphabetical order. At $30^\\circ$ it is $\\left(\\dfrac{\\sqrt{3}}{2},\\ \\dfrac{1}{2}\\right)$. A quick check: $30^\\circ$ is close to the $x$-axis, so the $x$-coordinate should be the bigger one."
+  },
+  {
+   "title": "Measuring the reference angle from the y-axis",
+   "wrong": "\\\"$150^\\circ$ is $60^\\circ$ past $90^\\circ$, so $\\sin 150^\\circ = \\sin 60^\\circ = \\dfrac{\\sqrt{3}}{2}$.\\\"",
+   "fix": "The reference angle is always measured to the **$x$-axis**: $180^\\circ - 150^\\circ = 30^\\circ$. So $\\sin 150^\\circ = \\sin 30^\\circ = \\dfrac{1}{2}$."
+  },
+  {
+   "title": "Getting the size right but not the sign",
+   "wrong": "$\\cos 120^\\circ = \\dfrac{1}{2}$",
+   "fix": "$120^\\circ$ is in quadrant 2, where $x$ is negative, so $\\cos 120^\\circ = -\\dfrac{1}{2}$. Decide the quadrant and the sign first, then find the size."
+  },
+  {
+   "title": "Saying tan 90\u00b0 is 0 or 1",
+   "wrong": "$\\tan 90^\\circ = 0$",
+   "fix": "At $90^\\circ$ the point is $(0, 1)$, so $\\tan 90^\\circ = \\dfrac{1}{0}$, which is **undefined**. It's $\\tan 0^\\circ$ and $\\tan 180^\\circ$ that equal $0$."
+  },
+  {
+   "title": "Dropping the minus sign after a square root",
+   "wrong": "$\\sin\\theta = \\dfrac{5}{13}$ with $\\theta$ in quadrant 2, so $\\cos\\theta = \\sqrt{1 - \\dfrac{25}{169}} = \\dfrac{12}{13}$.",
+   "fix": "$\\cos^2\\theta = \\dfrac{144}{169}$ gives $\\cos\\theta = \\pm\\dfrac{12}{13}$. In quadrant 2 cosine is negative, so $\\cos\\theta = -\\dfrac{12}{13}$."
+  },
+  {
+   "title": "Calculator in radian mode",
+   "wrong": "Typing $\\cos 300$ and getting $-0.0221\\ldots$ instead of $0.5$.",
+   "fix": "Questions in degrees need the calculator in **degree** mode. If $\\sin 30$ doesn't give $0.5$, change the mode before going any further."
+  }
+ ],
+ "practice": {
+  "question": "Find the exact values of $\\cos 330^\\circ$ and $\\sin 330^\\circ$, and hence find the exact value of $\\tan 330^\\circ$.",
+  "answer": "$\\cos 330^\\circ = \\dfrac{\\sqrt{3}}{2}$, $\\sin 330^\\circ = -\\dfrac{1}{2}$, $\\tan 330^\\circ = -\\dfrac{\\sqrt{3}}{3}$",
+  "solution": "**Key idea:** Reference angle first, then the sign from the quadrant.\n\n1. $330^\\circ$ is in quadrant 4. Reference angle: $360^\\circ - 330^\\circ = 30^\\circ$.\n2. Cosine is positive in quadrant 4: $\\cos 330^\\circ = \\cos 30^\\circ = \\dfrac{\\sqrt{3}}{2}$\n3. Sine is negative in quadrant 4: $\\sin 330^\\circ = -\\sin 30^\\circ = -\\dfrac{1}{2}$\n4. $\\tan 330^\\circ = \\dfrac{\\sin 330^\\circ}{\\cos 330^\\circ} = -\\dfrac{1}{2} \\div \\dfrac{\\sqrt{3}}{2} = -\\dfrac{1}{\\sqrt{3}} = -\\dfrac{\\sqrt{3}}{3}$\n5. Check: the point $\\left(\\dfrac{\\sqrt{3}}{2},\\ -\\dfrac{1}{2}\\right)$ satisfies $\\dfrac{3}{4} + \\dfrac{1}{4} = 1$ \u2713\n\n**Answer:** $\\cos 330^\\circ = \\dfrac{\\sqrt{3}}{2}$, $\\sin 330^\\circ = -\\dfrac{1}{2}$, $\\tan 330^\\circ = -\\dfrac{\\sqrt{3}}{3}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is the unit circle in Year 10A maths?",
+  "a": "The unit circle is a circle of radius 1 centred at the origin. The point at angle \u03b8 is (cos \u03b8, sin \u03b8), which defines sine and cosine for any angle, not just acute ones. Year 10A students use it to find exact values such as cos 225\u00b0 = \u2212\u221a2/2, decide signs by quadrant, and sketch the graphs of y = sin \u03b8 and y = cos \u03b8."
+ },
+ "turn": {
+  "question": "Find the exact value of $\\cos 240^\\circ$.",
+  "kind": "number",
+  "accept": {
+   "value": -0.5,
+   "tol": 0
+  },
+  "answer_display": "$-\\dfrac{1}{2}$",
+  "hint": "Which quadrant is 240\u00b0 in, and what is its reference angle?",
+  "solution": "**Key idea:** Find the reference angle, then use the sign for the quadrant.\n\n1. $240^\\circ$ is in quadrant 3. Reference angle: $240^\\circ - 180^\\circ = 60^\\circ$.\n2. Cosine is negative in quadrant 3, so $\\cos 240^\\circ = -\\cos 60^\\circ = -\\dfrac{1}{2}$\n3. Check with a calculator in degree mode: $\\cos 240^\\circ = -0.5$ \u2713\n\n**Answer:** $-\\dfrac{1}{2}$"
+ },
+ "turn_checked": {
+  "my_answer": "-0.5",
+  "attempts": 1
+ }
+}
