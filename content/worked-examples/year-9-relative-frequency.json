@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Relative frequency from a results table",
+   "question": "A spinner with red, blue and green sections is spun $80$ times. It lands on red $26$ times, blue $18$ times and green $36$ times. (a) Find the relative frequency of each colour as a decimal. (b) Use the results to estimate the probability that the next spin lands on green. (c) Check that the relative frequencies make sense.",
+   "solution": "**Key idea:** Relative frequency $= \\dfrac{\\text{number of times the outcome happened}}{\\text{total number of trials}}$. It is the best estimate of a probability when you only have experimental results.\n\n1. (a) Total spins: $26 + 18 + 36 = 80$ \u2713\n2. Red: $\\dfrac{26}{80} = 0.325$\n3. Blue: $\\dfrac{18}{80} = 0.225$\n4. Green: $\\dfrac{36}{80} = 0.45$\n5. (b) The estimate of $P(\\text{green})$ is the relative frequency of green, $0.45$.\n6. (c) The outcomes cover every possibility, so the relative frequencies should add to $1$:\n$$0.325 + 0.225 + 0.45 = 1$$\nThey do \u2713\n\n**Answer:** (a) red $0.325$, blue $0.225$, green $0.45$ (b) $P(\\text{green}) \\approx 0.45$ (c) they add to $1$",
+   "answer": "red $0.325$, blue $0.225$, green $0.45$; $P(\\text{green}) \\approx 0.45$"
+  },
+  {
+   "title": "Using relative frequency to predict",
+   "question": "A drawing pin is dropped $250$ times and lands point up $95$ times. (a) Find the relative frequency of the pin landing point up. (b) Estimate how many times it would land point up in $1200$ drops. (c) Estimate the probability it lands point down.",
+   "solution": "**Key idea:** Expected number $=$ relative frequency $\\times$ number of trials. A drawing pin isn't symmetrical, so there's no theoretical probability to work from. Experiments are the only way to estimate it.\n\n1. (a) Relative frequency of point up:\n$$\\frac{95}{250} = 0.38$$\n2. (b) Expected number of point-up landings in $1200$ drops:\n$$0.38 \\times 1200 = 456$$\n3. (c) Point down is the complement of point up:\n$$1 - 0.38 = 0.62$$\n4. Check: point down happened $250 - 95 = 155$ times, and $\\dfrac{155}{250} = 0.62$ \u2713\n\n**Answer:** (a) $0.38$ (b) about $456$ times (c) about $0.62$",
+   "answer": "(a) $0.38$ (b) about $456$ (c) $0.62$"
+  },
+  {
+   "title": "Experimental versus theoretical probability",
+   "question": "Jai rolls a standard six-sided die $60$ times and gets a six $14$ times. (a) What is the relative frequency of rolling a six? (b) What is the theoretical probability of rolling a six? (c) How many sixes would you expect in $60$ rolls of a fair die? (d) Jai says the die must be biased. Is he right?",
+   "solution": "**Key idea:** Theoretical probability comes from equally likely outcomes. Relative frequency comes from an experiment. In a small experiment they are usually close but not equal.\n\n1. (a) Relative frequency:\n$$\\frac{14}{60} = \\frac{7}{30} \\approx 0.233$$\n2. (b) There are $6$ equally likely faces and one of them is a six:\n$$P(6) = \\frac{1}{6} \\approx 0.167$$\n3. (c) Expected number of sixes:\n$$\\frac{1}{6} \\times 60 = 10$$\n4. (d) $14$ is more than $10$, but $60$ rolls is a small experiment, and results always vary from what's expected. That's not enough evidence to say the die is biased. Jai should roll it many more times, say $600$ or more, and see whether the relative frequency settles near $0.167$ or stays well above it.\n\n**Answer:** (a) $\\dfrac{7}{30} \\approx 0.233$ (b) $\\dfrac{1}{6} \\approx 0.167$ (c) $10$ (d) Not yet. $60$ rolls is too few to decide; he needs many more trials.",
+   "answer": "(a) $\\dfrac{7}{30} \\approx 0.233$ (b) $\\dfrac{1}{6}$ (c) $10$ (d) not enough trials to say"
+  },
+  {
+   "title": "More trials, a better estimate",
+   "question": "Ella tosses a coin and keeps a running count of heads. After $10$ tosses she has $7$ heads, after $50$ tosses $29$ heads, after $100$ tosses $54$ heads and after $500$ tosses $247$ heads. (a) Find the relative frequency of heads at each stage. (b) Describe what happens as the number of tosses increases. (c) Which result gives the best estimate of $P(\\text{heads})$?",
+   "solution": "**Key idea:** The more trials you run, the closer the relative frequency tends to get to the true probability. Early results can be a long way off.\n\n1. (a) Divide the heads so far by the tosses so far:\n\n| Tosses | Heads | Relative frequency |\n|---|---|---|\n| $10$ | $7$ | $\\dfrac{7}{10} = 0.7$ |\n| $50$ | $29$ | $\\dfrac{29}{50} = 0.58$ |\n| $100$ | $54$ | $\\dfrac{54}{100} = 0.54$ |\n| $500$ | $247$ | $\\dfrac{247}{500} = 0.494$ |\n\n2. (b) The relative frequency jumps around at first ($0.7$ after $10$ tosses) and then settles closer and closer to $0.5$.\n3. (c) The $500$-toss result, $0.494$, is the best estimate because it's based on the most trials.\n\n**Answer:** (a) $0.7$, $0.58$, $0.54$, $0.494$ (b) it gets closer to $0.5$ as the tosses increase (c) $0.494$, from $500$ tosses",
+   "answer": "$0.7$, $0.58$, $0.54$, $0.494$; settles towards $0.5$; best estimate $0.494$"
+  },
+  {
+   "title": "And, inclusive or and exclusive or from survey data",
+   "question": "$120$ Year 9 students were asked whether they play a team sport and whether they learn a musical instrument. $22$ do both, $48$ play sport only, $18$ learn an instrument only and $32$ do neither. Estimate the probability that a Year 9 student chosen at random: (a) plays sport and learns an instrument (b) plays sport or learns an instrument (or both) (c) does exactly one of the two.",
+   "solution": "**Key idea:** Count the students in the outcome you want, then divide by the total surveyed. Inclusive or means one or the other or both. Exclusive or means one or the other but not both.\n\n1. Check the total: $22 + 48 + 18 + 32 = 120$ \u2713\n2. (a) Both: $\\dfrac{22}{120} = \\dfrac{11}{60} \\approx 0.183$\n3. (b) Sport or instrument (inclusive) counts everyone except the neither group:\n$$\\frac{22 + 48 + 18}{120} = \\frac{88}{120} = \\frac{11}{15} \\approx 0.733$$\n4. Another way: $1 - \\dfrac{32}{120} = \\dfrac{88}{120}$ \u2713\n5. (c) Exactly one of the two (exclusive or) leaves out the $22$ who do both:\n$$\\frac{48 + 18}{120} = \\frac{66}{120} = \\frac{11}{20} = 0.55$$\n\n**Answer:** (a) $\\dfrac{11}{60} \\approx 0.183$ (b) $\\dfrac{11}{15} \\approx 0.733$ (c) $\\dfrac{11}{20} = 0.55$",
+   "answer": "(a) $\\dfrac{11}{60}$ (b) $\\dfrac{11}{15}$ (c) $\\dfrac{11}{20}$"
+  },
+  {
+   "title": "Working backwards from a relative frequency",
+   "question": "A factory tests light globes from its production line. The relative frequency of a faulty globe is $0.04$. (a) In one batch, $18$ faulty globes were found. About how many globes were tested? (b) How many faulty globes would you expect in an order of $3500$ globes?",
+   "solution": "**Key idea:** Number of times $=$ relative frequency $\\times$ total. If you know the number of times and the relative frequency, divide to find the total.\n\n1. (a) Let $n$ be the number of globes tested:\n$$0.04 \\times n = 18$$\n$$n = \\frac{18}{0.04} = 450$$\n2. Check: $\\dfrac{18}{450} = 0.04$ \u2713\n3. (b) Expected faulty globes:\n$$0.04 \\times 3500 = 140$$\n\n**Answer:** (a) about $450$ globes (b) about $140$ faulty globes",
+   "answer": "(a) about $450$ (b) about $140$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Dividing by the wrong total",
+   "wrong": "Red came up $26$ times and the other colours $54$ times, so the relative frequency of red is $\\dfrac{26}{54}$.",
+   "fix": "Divide by the **total number of trials**, not by the number of other outcomes: $\\dfrac{26}{80} = 0.325$."
+  },
+  {
+   "title": "Giving the count instead of the relative frequency",
+   "wrong": "\\\"The relative frequency of point up is $95$.\\\"",
+   "fix": "$95$ is the frequency. The relative frequency is a fraction of the trials: $\\dfrac{95}{250} = 0.38$. It is always between $0$ and $1$."
+  },
+  {
+   "title": "Expecting the experiment to match the theory exactly",
+   "wrong": "\\\"A fair coin gave $54$ heads in $100$ tosses, not $50$, so the coin is unfair.\\\"",
+   "fix": "Results always vary. In a small experiment, relative frequency is usually close to the theoretical probability but rarely equal to it. Only a big, persistent difference over many trials suggests bias."
+  },
+  {
+   "title": "Trusting an estimate from very few trials",
+   "wrong": "\\\"After $10$ tosses I got $7$ heads, so $P(\\text{heads}) = 0.7$.\\\"",
+   "fix": "Ten trials can be a long way off. Use as many trials as you can, and quote the estimate from the largest number of trials."
+  },
+  {
+   "title": "Counting the overlap twice for or",
+   "wrong": "$P(\\text{sport or instrument}) = \\dfrac{70 + 40}{120} = \\dfrac{110}{120}$",
+   "fix": "The $22$ students who do both are in the $70$ and in the $40$. Count them once: $\\dfrac{48 + 22 + 18}{120} = \\dfrac{88}{120}$, or use $1 - P(\\text{neither})$."
+  },
+  {
+   "title": "Rounding too early",
+   "wrong": "Rounding $\\dfrac{14}{60}$ to $0.2$, then estimating $0.2 \\times 600 = 120$ sixes.",
+   "fix": "Keep the fraction (or at least three decimal places) until the end: $\\dfrac{14}{60} \\times 600 = 140$."
+  }
+ ],
+ "practice": {
+  "question": "A basketball player takes $160$ free throws in training and scores $124$. (a) Estimate the probability that she scores her next free throw. (b) In a season she takes $75$ free throws. About how many would you expect her to score?",
+  "answer": "(a) $0.775$ (b) about $58$",
+  "solution": "**Key idea:** Relative frequency estimates the probability, then expected number $=$ relative frequency $\\times$ number of trials.\n\n1. (a) Relative frequency of scoring:\n$$\\frac{124}{160} = 0.775$$\n2. (b) Expected number scored:\n$$0.775 \\times 75 = 58.125$$\n3. You can't score part of a free throw, so round to a whole number: about $58$.\n\n**Answer:** (a) $0.775$ (b) about $58$ free throws"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What is relative frequency in Year 9 maths?",
+  "a": "Relative frequency is the number of times an outcome happens divided by the total number of trials. Year 9 students use it to estimate probabilities from experiments and survey data, including events with and, inclusive or and exclusive or, predict how often an outcome will happen, compare results with theoretical probability, and see that more trials give a more reliable estimate."
+ },
+ "turn": {
+  "question": "A coin is tossed $200$ times and lands on tails $124$ times. What is the relative frequency of tails, as a decimal?",
+  "kind": "number",
+  "accept": {
+   "value": 0.62,
+   "tol": 0
+  },
+  "answer_display": "$0.62$",
+  "hint": "Divide the number of tails by the total number of tosses.",
+  "solution": "**Key idea:** Relative frequency $=$ number of times the outcome happened $\\div$ total number of trials.\n\n1. $\\dfrac{124}{200} = 0.62$\n2. Check: heads came up $200 - 124 = 76$ times, and $0.62 + \\dfrac{76}{200} = 0.62 + 0.38 = 1$ \u2713\n\n**Answer:** $0.62$"
+ },
+ "turn_checked": {
+  "my_answer": "0.62",
+  "attempts": 1
+ }
+}

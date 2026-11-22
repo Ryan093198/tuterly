@@ -130,6 +130,7 @@ const STATIC_PAGES = [
   { path: "/maths/hcf-and-lcm", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/simple-interest", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/speed-distance-time", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths/rearranging-formulas", priority: 0.8, changeFrequency: "monthly" },
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
   { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },
