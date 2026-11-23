@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Rational or irrational?",
+   "question": "Classify each number as rational or irrational: $0.75$, $\\sqrt{49}$, $\\sqrt{12}$, $\\pi$, $0.\\overline{3}$, $-5$, $\\dfrac{22}{7}$, $\\sqrt{0.16}$.",
+   "solution": "**Key idea:** A number is **rational** if it can be written as a fraction $\\dfrac{a}{b}$ of two integers (with $b \\ne 0$). As a decimal it either stops or repeats. An **irrational** number can't be written as a fraction, and its decimal goes on forever with no repeating pattern.\n\n1. $0.75 = \\dfrac{3}{4}$, so it is rational.\n2. $\\sqrt{49} = 7 = \\dfrac{7}{1}$, because $49$ is a perfect square. Rational.\n3. $12$ is not a perfect square ($3^2 = 9$ and $4^2 = 16$), so $\\sqrt{12} = 3.4641\\ldots$ never stops or repeats. Irrational.\n4. $\\pi = 3.14159\\ldots$ never stops or repeats. Irrational.\n5. $0.\\overline{3} = 0.333\\ldots = \\dfrac{1}{3}$. It goes on forever, but it repeats, so it is rational.\n6. $-5 = \\dfrac{-5}{1}$. Rational (every integer is rational).\n7. $\\dfrac{22}{7}$ is already a fraction of two integers. Rational. It is close to $\\pi$ but not equal to it.\n8. $\\sqrt{0.16} = 0.4 = \\dfrac{2}{5}$, because $0.4^2 = 0.16$. Rational.\n\n**Answer:** Irrational: $\\sqrt{12}$ and $\\pi$. Rational: $0.75$, $\\sqrt{49}$, $0.\\overline{3}$, $-5$, $\\dfrac{22}{7}$, $\\sqrt{0.16}$",
+   "answer": "Irrational: $\\sqrt{12}$, $\\pi$. The other six are rational."
+  },
+  {
+   "title": "Which two whole numbers is a square root between?",
+   "question": "Between which two consecutive whole numbers does $\\sqrt{52}$ lie? Which one is it closer to?",
+   "solution": "**Key idea:** Find the perfect squares on either side of the number under the root sign.\n\n1. List some perfect squares: $36, 49, 64, 81$\n2. $52$ sits between $49$ and $64$:\n$$49 < 52 < 64$$\n3. Take square roots of all three parts:\n$$7 < \\sqrt{52} < 8$$\n4. $52$ is $3$ more than $49$ but $12$ less than $64$, so $\\sqrt{52}$ is much closer to $7$.\n5. Check with a calculator: $\\sqrt{52} = 7.2111\\ldots$ \u2713\n\n**Answer:** Between $7$ and $8$, closer to $7$",
+   "answer": "Between $7$ and $8$, closer to $7$ ($\\sqrt{52} \\approx 7.21$)"
+  },
+  {
+   "title": "Estimating a square root to one decimal place",
+   "question": "Without the square root button, estimate $\\sqrt{20}$ correct to one decimal place.",
+   "solution": "**Key idea:** Trap the root between two whole numbers, then try decimals and square them.\n\n1. $4^2 = 16$ and $5^2 = 25$, so $4 < \\sqrt{20} < 5$.\n2. Try $4.4$: $4.4^2 = 19.36$, which is less than $20$.\n3. Try $4.5$: $4.5^2 = 20.25$, which is more than $20$.\n4. So $4.4 < \\sqrt{20} < 4.5$. To decide how to round, test the halfway point $4.45$:\n$$4.45^2 = 19.8025$$\n5. $19.8025 < 20$, so $\\sqrt{20}$ is more than $4.45$ and rounds up to $4.5$.\n6. Check: $\\sqrt{20} = 4.4721\\ldots$ \u2713\n\n**Answer:** $\\sqrt{20} \\approx 4.5$",
+   "answer": "$\\sqrt{20} \\approx 4.5$"
+  },
+  {
+   "title": "Ordering rational and irrational numbers",
+   "question": "Write these numbers in ascending order: $\\sqrt{10}$, $3.1$, $\\pi$, $\\dfrac{22}{7}$, $3.16$.",
+   "solution": "**Key idea:** Convert everything to decimals with enough places to tell them apart, usually 3 or 4.\n\n1. $\\sqrt{10} = 3.1623\\ldots$\n2. $3.1 = 3.1000$\n3. $\\pi = 3.1416\\ldots$\n4. $\\dfrac{22}{7} = 3.1429\\ldots$\n5. $3.16 = 3.1600$\n6. Compare: $3.1000 < 3.1416 < 3.1429 < 3.1600 < 3.1623$\n\n**Answer:** $3.1$, $\\pi$, $\\dfrac{22}{7}$, $3.16$, $\\sqrt{10}$\n\nNotice that $\\dfrac{22}{7}$ is a little bigger than $\\pi$. It is a handy approximation, not the exact value.",
+   "answer": "$3.1$, $\\pi$, $\\dfrac{22}{7}$, $3.16$, $\\sqrt{10}$"
+  },
+  {
+   "title": "Exact answers with pi",
+   "question": "A circular garden bed has radius $7$ m. (a) Find its circumference as an exact value. (b) Give the circumference to 2 decimal places. (c) What answer do you get using $\\pi \\approx \\dfrac{22}{7}$, and using $\\pi \\approx 3.14$? Why are they different?",
+   "solution": "**Key idea:** Because $\\pi$ is irrational, any decimal is an approximation. Leaving $\\pi$ in the answer gives the **exact** value.\n\n1. (a) $C = 2\\pi r = 2 \\times \\pi \\times 7 = 14\\pi$ m\n2. (b) Using the $\\pi$ button: $14\\pi = 43.9822\\ldots \\approx 43.98$ m\n3. (c) With $\\dfrac{22}{7}$: $14 \\times \\dfrac{22}{7} = 44$ m\n4. With $3.14$: $14 \\times 3.14 = 43.96$ m\n5. The answers differ because $\\dfrac{22}{7}$ and $3.14$ are both rational approximations of $\\pi$, which has no exact decimal or fraction form. $\\dfrac{22}{7}$ is slightly too big and $3.14$ is slightly too small.\n\n**Answer:** (a) $14\\pi$ m (b) $43.98$ m (c) $44$ m and $43.96$ m. Both are approximations because $\\pi$ is irrational.",
+   "answer": "(a) $14\\pi$ m (b) $43.98$ m (c) $44$ m and $43.96$ m"
+  },
+  {
+   "title": "A square root in a real problem",
+   "question": "A square vegetable patch has an area of $50$ m\u00b2. (a) Find the exact side length. (b) Is the side length rational or irrational? (c) Find the length of edging needed to go around the patch, to 2 decimal places.",
+   "solution": "**Key idea:** The side of a square is the square root of its area. If the area isn't a perfect square, the side is irrational, so keep it exact until the last step.\n\n1. (a) Side $= \\sqrt{50}$ m, because side $\\times$ side $= 50$.\n2. (b) $49 < 50 < 64$ and $50$ is not a perfect square, so $\\sqrt{50} = 7.0710\\ldots$ is irrational.\n3. (c) Perimeter $= 4 \\times \\sqrt{50}$\n4. Use the exact value in the calculator in one go: $4\\sqrt{50} = 28.2842\\ldots \\approx 28.28$ m\n5. If you round first to $7.07$, you get $4 \\times 7.07 = 28.28$ here, but rounding early can throw later answers off, so keep the root until the end.\n\n**Answer:** (a) $\\sqrt{50}$ m (b) irrational (c) about $28.28$ m of edging",
+   "answer": "(a) $\\sqrt{50}$ m (b) irrational (c) $28.28$ m"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Thinking every square root is irrational",
+   "wrong": "$\\sqrt{49}$ and $\\sqrt{0.25}$ are irrational because they have a root sign.",
+   "fix": "Work the root out first. $\\sqrt{49} = 7$ and $\\sqrt{0.25} = 0.5 = \\dfrac{1}{2}$, so both are rational. Only roots of numbers that aren't perfect squares (like $\\sqrt{12}$) are irrational."
+  },
+  {
+   "title": "Treating a recurring decimal as irrational",
+   "wrong": "$0.\\overline{6}$ goes on forever, so it's irrational.",
+   "fix": "A decimal that repeats is rational: $0.\\overline{6} = \\dfrac{2}{3}$. Irrational decimals go on forever **without** a repeating pattern."
+  },
+  {
+   "title": "Saying pi equals 22/7 or 3.14",
+   "wrong": "$\\pi = \\dfrac{22}{7}$, so $\\pi$ is rational.",
+   "fix": "$\\dfrac{22}{7} = 3.1428\\ldots$ and $3.14$ are approximations. $\\pi = 3.14159\\ldots$ is irrational, so it has no exact fraction."
+  },
+  {
+   "title": "Halving instead of square rooting",
+   "wrong": "$\\sqrt{50} = 25$",
+   "fix": "A square root is the number that multiplies by **itself** to give $50$. $25 \\times 25 = 625$, not $50$. Since $7^2 = 49$, $\\sqrt{50}$ is just over $7$."
+  },
+  {
+   "title": "Judging by the calculator screen",
+   "wrong": "$\\dfrac{1}{7} = 0.142857142\\ldots$ fills the screen, so it must be irrational.",
+   "fix": "A fraction of two integers is always rational. Look for the repeating block: $\\dfrac{1}{7} = 0.\\overline{142857}$. The screen just runs out of digits."
+  },
+  {
+   "title": "Rounding too early",
+   "wrong": "Round $\\sqrt{50}$ to $7$, then the edging is $4 \\times 7 = 28$ m.",
+   "fix": "Keep the exact value $\\sqrt{50}$ (or the full calculator value) until the final step: $4\\sqrt{50} \\approx 28.28$ m."
+  }
+ ],
+ "practice": {
+  "question": "(a) Between which two consecutive whole numbers does $\\sqrt{75}$ lie? (b) Is $\\sqrt{75}$ rational or irrational? (c) Use a calculator to give $\\sqrt{75}$ to 2 decimal places.",
+  "answer": "(a) $8$ and $9$ (b) irrational (c) $8.66$",
+  "solution": "**Key idea:** Trap the number between perfect squares. If it isn't a perfect square itself, its square root is irrational.\n\n1. (a) $64 < 75 < 81$, so $8 < \\sqrt{75} < 9$.\n2. (b) $75$ is not a perfect square, so $\\sqrt{75}$ is irrational.\n3. (c) $\\sqrt{75} = 8.6602\\ldots \\approx 8.66$\n4. Check: $8.66^2 = 74.9956$, very close to $75$ \u2713\n\n**Answer:** (a) $8$ and $9$ (b) irrational (c) $8.66$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are irrational numbers in Year 8 maths?",
+  "a": "An irrational number can't be written as a fraction of two integers, so its decimal never stops and never repeats. In Year 8, students recognise irrational numbers such as \u03c0 and the square roots of numbers that aren't perfect squares, like \u221a2 and \u221a20, estimate them between whole numbers, and use them in real problems with circles and squares."
+ },
+ "turn": {
+  "question": "Without the square root button, estimate $\\sqrt{40}$ correct to one decimal place.",
+  "kind": "number",
+  "accept": {
+   "value": 6.3,
+   "tol": 0
+  },
+  "answer_display": "$6.3$",
+  "hint": "$6^2 = 36$ and $7^2 = 49$. Now try squaring $6.3$ and $6.4$.",
+  "solution": "**Key idea:** Trap the root between two whole numbers, then narrow it down by squaring decimals.\n\n1. $6^2 = 36$ and $7^2 = 49$, so $6 < \\sqrt{40} < 7$.\n2. $6.3^2 = 39.69$ and $6.4^2 = 40.96$, so $6.3 < \\sqrt{40} < 6.4$.\n3. Halfway point: $6.35^2 = 40.3225$, which is more than $40$, so $\\sqrt{40}$ is less than $6.35$ and rounds down.\n4. Check: $\\sqrt{40} = 6.3245\\ldots$ \u2713\n\n**Answer:** $6.3$"
+ },
+ "turn_checked": {
+  "my_answer": "6.3",
+  "attempts": 1
+ }
+}
