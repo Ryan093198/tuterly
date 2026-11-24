@@ -11,6 +11,8 @@ import { trackEvent } from "@/lib/analytics";
 // ratio, or find the other shares from one known share. The bar model
 // redraws to show the parts. Logic lives in ratio-engine.js.
 
+// The bar model is skipped for ratios with more than 40 parts in total,
+// where the blocks would be too thin to read.
 function BarModel({ ints }) {
   const parts = ints && ints.length && ints.reduce((a, b) => a + b, 0) <= 40 ? ints : null;
   if (!parts) return null;
