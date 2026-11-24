@@ -82,3 +82,5 @@
 .mx-practice > li { min-width: 0; }
 .mx-practice .mx-md { min-width: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 .mx-md .katex-display { overflow-x: auto; overflow-y: hidden; }
+.mx-ratio-bars { display: block; width: 100%; max-width: 420px; height: auto; margin: 4px 0 12px; color: var(--brand); }
+.mx-ratio-bars text { fill: var(--foreground); }

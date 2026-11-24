@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Faces, edges and vertices of a prism",
+   "question": "A triangular prism is shaped like a tent with a floor. How many faces, edges and vertices does it have?",
+   "solution": "**Key idea:** A prism has two identical ends (its cross-section) joined by rectangles. Count the ends first, then the rectangles.\n\n1. **Faces:** $2$ triangular ends $+ 3$ rectangles joining the sides of the triangles $= 5$ faces.\n2. **Vertices:** each triangle has $3$ corners and there are $2$ triangles, so $3 \\times 2 = 6$ vertices.\n3. **Edges:** $3$ edges around each triangle gives $3 \\times 2 = 6$, plus $3$ edges running along the length joining the two triangles. $6 + 3 = 9$ edges.\n4. Check with Euler's formula $F + V - E = 2$: $5 + 6 - 9 = 2$ ✓\n\n**Answer:** $5$ faces, $9$ edges, $6$ vertices",
+   "answer": "$5$ faces, $9$ edges, $6$ vertices"
+  },
+  {
+   "title": "Faces, edges and vertices of a pyramid",
+   "question": "How many faces, edges and vertices does a pentagonal pyramid have?",
+   "solution": "**Key idea:** A pyramid has one base, and every corner of the base is joined to a single point at the top (the apex) by a triangular face.\n\n1. **Faces:** $1$ pentagon base $+ 5$ triangles (one on each side of the base) $= 6$ faces.\n2. **Vertices:** $5$ corners of the base $+ 1$ apex $= 6$ vertices.\n3. **Edges:** $5$ edges around the base $+ 5$ edges running up to the apex $= 10$ edges.\n4. Check: $F + V - E = 6 + 6 - 10 = 2$ ✓\n\n**Answer:** $6$ faces, $10$ edges, $6$ vertices",
+   "answer": "$6$ faces, $10$ edges, $6$ vertices"
+  },
+  {
+   "title": "Using Euler's formula to find a missing count",
+   "question": "A polyhedron has $12$ vertices and $18$ edges. How many faces does it have? Suggest what the solid could be.",
+   "solution": "**Key idea:** For any polyhedron (a solid with flat faces and straight edges), $F + V - E = 2$. Substitute what you know and solve.\n\n1. Substitute $V = 12$ and $E = 18$:\n$$F + 12 - 18 = 2$$\n2. Simplify: $F - 6 = 2$\n3. Add $6$ to both sides: $F = 8$\n4. A hexagonal prism fits: $2$ hexagon ends $+ 6$ rectangles $= 8$ faces, $6 \\times 2 = 12$ vertices and $6 + 6 + 6 = 18$ edges.\n\n**Answer:** $8$ faces, for example a hexagonal prism",
+   "answer": "$8$ faces (for example, a hexagonal prism)"
+  },
+  {
+   "title": "Naming a solid from its net",
+   "question": "Name the solid each net folds into. (a) $2$ congruent triangles and $3$ rectangles. (b) $1$ square and $4$ congruent triangles. (c) $2$ circles and $1$ rectangle.",
+   "solution": "**Key idea:** Look for a pair of identical end shapes (a prism or cylinder) or a single base with triangles meeting at a point (a pyramid).\n\n1. (a) Two identical triangles are the ends and the $3$ rectangles join their sides, so it is a **triangular prism**.\n2. (b) One square base with $4$ triangles that fold up to meet at a point is a **square-based pyramid**.\n3. (c) Two circles are the ends and the rectangle rolls around to join them, so it is a **cylinder**. The rectangle's length equals the circumference of each circle.\n\n**Answer:** (a) triangular prism (b) square-based pyramid (c) cylinder",
+   "answer": "(a) triangular prism (b) square-based pyramid (c) cylinder"
+  },
+  {
+   "title": "Will it fold into a cube?",
+   "question": "Six squares are joined edge to edge. Net A is a row of $4$ squares with one extra square above the second square and one extra square below the second square. Net B is a row of $4$ squares with one extra square above the second square and one extra square above the third square. Which of these is the net of a cube?",
+   "solution": "**Key idea:** Imagine folding. In a row of $4$ squares, the row wraps around to make the four side faces. The two extra squares must become the top and the bottom, so one must go on each side of the row.\n\n1. **Net A:** the row of $4$ wraps around as front, right, back and left. The square above the second square folds down to make the top, and the square below it folds up to make the bottom. All $6$ faces are covered once, so A is a net of a cube.\n2. **Net B:** the row of $4$ again makes the four sides. Both extra squares are **above** the row, so both fold over to the top. They overlap, and the bottom is left open.\n3. So B is not a net of a cube, even though it has $6$ squares.\n\n**Answer:** Net A folds into a cube. Net B does not.",
+   "answer": "Net A only"
+  },
+  {
+   "title": "Top, front and side views",
+   "question": "Describe the top view, front view and side view of (a) a cylinder standing upright on its circular base and (b) a square-based pyramid sitting on its base.",
+   "solution": "**Key idea:** Each view is the flat outline you see when you look straight at the object from that direction. Lines you can see on the object (like edges) are drawn in.\n\n1. (a) Cylinder: from the **top** you see a circle. From the **front** you see a rectangle (the height by the diameter). From the **side** you also see a rectangle, the same as the front, because a cylinder looks the same from all around.\n2. (b) Square-based pyramid: from the **top** you see a square with both diagonals drawn in, because the four sloping edges run from the corners up to the apex in the middle. From the **front** you see a triangle. From the **side** you also see a triangle.\n3. Notice that both the front and side views of the pyramid are triangles, so you need the top view as well to tell it apart from a cone, whose top view is a circle.\n\n**Answer:** (a) top: circle; front and side: rectangles. (b) top: square with diagonals; front and side: triangles.",
+   "answer": "(a) circle; rectangle; rectangle (b) square with diagonals; triangle; triangle"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Counting the edges of the net",
+   "wrong": "The net of a cube has $14$ edges on its outline, so a cube has $14$ edges.",
+   "fix": "Count edges on the folded solid. When the net folds up, outline edges join in pairs. A cube has $12$ edges."
+  },
+  {
+   "title": "Thinking any six squares make a cube",
+   "wrong": "This shape has $6$ squares, so it must fold into a cube.",
+   "fix": "Imagine folding it, or test it: if two squares land on the same face, it isn't a net. A $2 \\times 3$ rectangle of squares has $6$ squares but can't fold into a cube."
+  },
+  {
+   "title": "Mixing up prisms and pyramids",
+   "wrong": "A square-based pyramid is a square prism because it has a square in it.",
+   "fix": "A prism has **two** identical ends joined by rectangles. A pyramid has **one** base and triangles that meet at an apex."
+  },
+  {
+   "title": "Getting the signs in Euler's formula wrong",
+   "wrong": "$F + V + E = 2$, so a cube gives $6 + 8 + 12 = 26$.",
+   "fix": "It's $F + V - E = 2$. For a cube: $6 + 8 - 12 = 2$ ✓"
+  },
+  {
+   "title": "Giving curved solids vertices",
+   "wrong": "A cylinder has $2$ vertices, one in the middle of each circle.",
+   "fix": "A vertex is a corner where edges meet. A cylinder has $0$ vertices, $2$ curved edges and $2$ flat faces plus a curved surface. Euler's formula only applies to polyhedra, which have flat faces."
+  },
+  {
+   "title": "Naming a prism by its side faces",
+   "wrong": "A prism with $2$ hexagon ends and $6$ rectangles is a rectangular prism.",
+   "fix": "Prisms and pyramids are named after their cross-section or base, not the rectangles or triangles around it. This is a hexagonal prism."
+  }
+ ],
+ "practice": {
+  "question": "A pentagonal prism has two pentagon ends. (a) How many faces, edges and vertices does it have? (b) Check your answer with Euler's formula.",
+  "answer": "(a) $7$ faces, $15$ edges, $10$ vertices (b) $7 + 10 - 15 = 2$ ✓",
+  "solution": "**Key idea:** Count the two ends, then the rectangles that join them.\n\n1. Faces: $2$ pentagons $+ 5$ rectangles $= 7$\n2. Vertices: $5$ corners on each pentagon, $5 \\times 2 = 10$\n3. Edges: $5$ around each pentagon is $10$, plus $5$ along the length, $= 15$\n4. (b) $F + V - E = 7 + 10 - 15 = 2$ ✓\n\n**Answer:** (a) $7$ faces, $15$ edges, $10$ vertices (b) $7 + 10 - 15 = 2$ ✓"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are nets and 3D objects in Year 7 maths?",
+  "a": "A net is a flat shape that folds up to make a 3D object, like a cardboard box opened out. In Year 7, students name prisms and pyramids, count their faces, edges and vertices, check those counts with Euler's formula F + V − E = 2, decide whether a net will fold into a solid, and draw objects from the top, front and side."
+ },
+ "turn": {
+  "question": "A polyhedron has $9$ faces and $16$ edges. Use Euler's formula to find how many vertices it has.",
+  "kind": "number",
+  "accept": {
+   "value": 9,
+   "tol": 0
+  },
+  "answer_display": "$9$",
+  "hint": "Use $F + V - E = 2$ and substitute $F = 9$ and $E = 16$.",
+  "solution": "**Key idea:** $F + V - E = 2$ for every polyhedron.\n\n1. Substitute: $9 + V - 16 = 2$\n2. Simplify: $V - 7 = 2$\n3. So $V = 9$\n4. An octagonal pyramid fits: $8$ triangles $+ 1$ base $= 9$ faces, $8 + 8 = 16$ edges and $8 + 1 = 9$ vertices ✓\n\n**Answer:** $9$"
+ },
+ "turn_checked": {
+  "my_answer": "9",
+  "attempts": 1
+ }
+}
