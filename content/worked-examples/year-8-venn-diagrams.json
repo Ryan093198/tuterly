@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Sorting numbers into a Venn diagram",
+   "question": "The numbers $1$ to $15$ are sorted into a Venn diagram with two circles: $A$ = even numbers and $B$ = multiples of $3$. (a) List the numbers in each region. (b) One number is chosen at random. Find the probability that it is even and a multiple of $3$.",
+   "solution": "**Key idea:** Fill the overlap first, then the rest of each circle, then the region outside both circles.\n\n1. **Overlap (even and a multiple of $3$):** $6, 12$\n2. **$A$ only (even, not a multiple of $3$):** $2, 4, 8, 10, 14$\n3. **$B$ only (multiple of $3$, not even):** $3, 9, 15$\n4. **Neither (outside both circles):** $1, 5, 7, 11, 13$\n5. Check the count: $2 + 5 + 3 + 5 = 15$ ✓\n6. (b) $2$ of the $15$ numbers are in the overlap, so $P(\\text{even and multiple of } 3) = \\dfrac{2}{15}$\n\n**Answer:** (a) overlap $6, 12$; $A$ only $2, 4, 8, 10, 14$; $B$ only $3, 9, 15$; neither $1, 5, 7, 11, 13$ (b) $\\dfrac{2}{15}$",
+   "answer": "(a) overlap $6, 12$; $A$ only $2, 4, 8, 10, 14$; $B$ only $3, 9, 15$; neither $1, 5, 7, 11, 13$ (b) $\\dfrac{2}{15}$"
+  },
+  {
+   "title": "Building a Venn diagram from survey totals",
+   "question": "In a survey of $50$ Year 8 students, $28$ have a dog, $19$ have a cat and $8$ have both. (a) Draw a Venn diagram showing the number of students in each region. (b) How many students have neither pet? (c) Find the probability that a randomly chosen student has a dog but not a cat.",
+   "solution": "**Key idea:** The totals $28$ and $19$ both include the $8$ students who have both. Put the $8$ in the overlap first, then subtract it from each total.\n\n1. **Both:** $8$\n2. **Dog only:** $28 - 8 = 20$\n3. **Cat only:** $19 - 8 = 11$\n4. **At least one pet:** $20 + 8 + 11 = 39$\n5. (b) **Neither:** $50 - 39 = 11$\n6. Check the count: $20 + 8 + 11 + 11 = 50$ ✓\n7. (c) Dog but not a cat is the dog-only region: $P = \\dfrac{20}{50} = \\dfrac{2}{5}$\n\n**Answer:** (a) dog only $20$, both $8$, cat only $11$, neither $11$ (b) $11$ (c) $\\dfrac{2}{5}$",
+   "answer": "(a) dog only $20$, both $8$, cat only $11$, neither $11$ (b) $11$ (c) $\\dfrac{2}{5}$"
+  },
+  {
+   "title": "Finding the overlap when it isn't given",
+   "question": "A class of $32$ students chooses electives. $20$ chose art, $17$ chose drama and $4$ chose neither. How many chose both art and drama? How many chose art only?",
+   "solution": "**Key idea:** Adding the two totals counts the students who chose both twice. The amount you go over is the overlap.\n\n1. Students in at least one circle: $32 - 4 = 28$\n2. Add the two totals: $20 + 17 = 37$\n3. That's $37 - 28 = 9$ more than $28$, so $9$ students were counted twice. **Both** $= 9$\n4. **Art only:** $20 - 9 = 11$\n5. **Drama only:** $17 - 9 = 8$\n6. Check: $11 + 9 + 8 + 4 = 32$ ✓\n\n**Answer:** $9$ chose both, $11$ chose art only",
+   "answer": "$9$ chose both, $11$ chose art only"
+  },
+  {
+   "title": "Turning a Venn diagram into a two-way table",
+   "question": "At the beach, $40$ people were checked for a hat ($H$) and sunglasses ($S$). The Venn diagram shows: hat only $9$, both $14$, sunglasses only $7$, neither $10$. (a) Show the same information in a two-way table with totals. (b) Find $P(\\text{sunglasses but no hat})$.",
+   "solution": "**Key idea:** Each region of the Venn diagram is one inside cell of the table. The overlap goes where the 'hat' row meets the 'sunglasses' column.\n\n1. Hat and sunglasses (both): $14$. Hat, no sunglasses (hat only): $9$\n2. No hat, sunglasses (sunglasses only): $7$. No hat, no sunglasses (neither): $10$\n3. Row totals: hat $14 + 9 = 23$, no hat $7 + 10 = 17$\n4. Column totals: sunglasses $14 + 7 = 21$, no sunglasses $9 + 10 = 19$\n5. Grand total: $23 + 17 = 40$ and $21 + 19 = 40$ ✓\n\n| | $S$ | not $S$ | Total |\n|---|---|---|---|\n| $H$ | $14$ | $9$ | $23$ |\n| not $H$ | $7$ | $10$ | $17$ |\n| Total | $21$ | $19$ | $40$ |\n\n6. (b) Sunglasses but no hat is the 'not $H$, $S$' cell: $P = \\dfrac{7}{40}$\n\n**Answer:** (a) table above (b) $\\dfrac{7}{40}$",
+   "answer": "(a) $H$ row: $14, 9, 23$; not $H$ row: $7, 10, 17$; totals $21, 19, 40$ (b) $\\dfrac{7}{40}$"
+  },
+  {
+   "title": "Completing a two-way table with gaps",
+   "question": "$80$ students were asked whether they catch the bus to school and whether they bring a phone. $35$ catch the bus. $22$ catch the bus and bring a phone. $30$ bring a phone but don't catch the bus. Complete the two-way table and find the probability that a randomly chosen student neither catches the bus nor brings a phone.",
+   "solution": "**Key idea:** Every row and every column must add to its total. Fill in whichever cell has only one gap in its row or column.\n\n1. Bus, no phone: $35 - 22 = 13$\n2. Phone total: $22 + 30 = 52$\n3. No phone total: $80 - 52 = 28$\n4. No bus total: $80 - 35 = 45$\n5. No bus, no phone: $45 - 30 = 15$ (check down the column: $13 + 15 = 28$ ✓)\n\n| | Bus | No bus | Total |\n|---|---|---|---|\n| Phone | $22$ | $30$ | $52$ |\n| No phone | $13$ | $15$ | $28$ |\n| Total | $35$ | $45$ | $80$ |\n\n6. $P(\\text{no bus and no phone}) = \\dfrac{15}{80} = \\dfrac{3}{16}$\n\n**Answer:** $\\dfrac{3}{16}$",
+   "answer": "$\\dfrac{3}{16}$"
+  },
+  {
+   "title": "'And', 'or' and 'not' from a Venn diagram",
+   "question": "Use the pet survey from Example 2 (dog only $20$, both $8$, cat only $11$, neither $11$, total $50$). Find (a) $P(\\text{dog or cat})$ (b) $P(\\text{not a dog})$ (c) $P(\\text{exactly one of the two pets})$.",
+   "solution": "**Key idea:** 'And' is the overlap only. 'Or' is everything inside either circle, with the overlap counted once. 'Not' is everything outside that circle.\n\n1. (a) Inside either circle: $20 + 8 + 11 = 39$, so $P(\\text{dog or cat}) = \\dfrac{39}{50}$\n2. (b) Outside the dog circle: cat only $+$ neither $= 11 + 11 = 22$, so $P(\\text{not a dog}) = \\dfrac{22}{50} = \\dfrac{11}{25}$\n3. Check with the complement: $P(\\text{dog}) = \\dfrac{28}{50}$ and $1 - \\dfrac{28}{50} = \\dfrac{22}{50}$ ✓\n4. (c) Exactly one pet means dog only or cat only, not both: $20 + 11 = 31$, so $P = \\dfrac{31}{50}$\n\n**Answer:** (a) $\\dfrac{39}{50}$ (b) $\\dfrac{11}{25}$ (c) $\\dfrac{31}{50}$",
+   "answer": "(a) $\\dfrac{39}{50}$ (b) $\\dfrac{11}{25}$ (c) $\\dfrac{31}{50}$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Putting the whole total in one part of the circle",
+   "wrong": "$28$ have a dog and $8$ have both, so write $28$ in the dog-only region.",
+   "fix": "The $28$ already includes the $8$ in the overlap. Dog only is $28 - 8 = 20$. Always fill the overlap first and subtract it."
+  },
+  {
+   "title": "Counting the overlap twice",
+   "wrong": "Students with a dog or a cat: $28 + 19 = 47$.",
+   "fix": "Adding the totals counts the $8$ students with both pets twice. Use the regions instead: $20 + 8 + 11 = 39$, or $28 + 19 - 8 = 39$."
+  },
+  {
+   "title": "Forgetting the 'neither' region",
+   "wrong": "The regions are $20$, $8$ and $11$, so there are $39$ students.",
+   "fix": "The rectangle around the circles holds everyone who is in neither group. $50 - 39 = 11$ students go outside both circles. The four regions must add to the total."
+  },
+  {
+   "title": "Mixing up 'and' with 'or'",
+   "wrong": "$P(\\text{dog and cat}) = \\dfrac{39}{50}$",
+   "fix": "'And' means both at once, which is only the overlap: $\\dfrac{8}{50} = \\dfrac{4}{25}$. 'Or' is anything inside either circle."
+  },
+  {
+   "title": "Using the wrong total in a two-way table",
+   "wrong": "Of the students who catch the bus, the fraction with a phone is $\\dfrac{22}{80}$.",
+   "fix": "'Of the students who catch the bus' means divide by the bus total, $35$, not the grand total: $\\dfrac{22}{35}$. Read the question for which group you're choosing from."
+  },
+  {
+   "title": "Giving a count instead of a probability",
+   "wrong": "$P(\\text{neither pet}) = 11$",
+   "fix": "A probability is a number from $0$ to $1$. Divide by the total: $\\dfrac{11}{50}$."
+  }
+ ],
+ "practice": {
+  "question": "The numbers $1$ to $20$ are sorted into a Venn diagram with circles $P$ = prime numbers and $O$ = odd numbers. (a) Which numbers go in the overlap? (b) How many numbers are in neither circle? (c) Find the probability that a number chosen at random is prime and odd.",
+  "answer": "(a) $3, 5, 7, 11, 13, 17, 19$ (b) $9$ (c) $\\dfrac{7}{20}$",
+  "solution": "**Key idea:** List each set first, then fill the overlap.\n\n1. Primes up to $20$: $2, 3, 5, 7, 11, 13, 17, 19$ (that's $8$)\n2. Odd numbers up to $20$: $1, 3, 5, 7, 9, 11, 13, 15, 17, 19$ (that's $10$)\n3. (a) In both lists: $3, 5, 7, 11, 13, 17, 19$, which is $7$ numbers. $2$ is prime but even, so it's in $P$ only.\n4. $P$ only: $2$ (one number). $O$ only: $1, 9, 15$ (three numbers; remember $1$ is not prime)\n5. (b) Neither: $20 - (1 + 7 + 3) = 9$, the even numbers $4, 6, 8, \\ldots, 20$\n6. (c) $P(\\text{prime and odd}) = \\dfrac{7}{20}$\n\n**Answer:** (a) $3, 5, 7, 11, 13, 17, 19$ (b) $9$ (c) $\\dfrac{7}{20}$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are Venn diagrams and two-way tables in Year 8 maths?",
+  "a": "A Venn diagram uses overlapping circles inside a rectangle to sort things into groups: one group only, both groups, the other group only, or neither. A two-way table shows the same four counts in rows and columns with totals. In Year 8, students fill in both from survey data or lists, find missing values, switch between the two, and use them to find probabilities with and, or and not."
+ },
+ "turn": {
+  "question": "In a group of $45$ people, $26$ own a bike, $18$ own a skateboard and $9$ own both. How many people own neither?",
+  "kind": "number",
+  "accept": {
+   "value": 10,
+   "tol": 0
+  },
+  "answer_display": "$10$",
+  "hint": "Fill the overlap first. Bike only is $26 - 9$ and skateboard only is $18 - 9$.",
+  "solution": "**Key idea:** Fill the overlap first, then each circle, then subtract from the total.\n\n1. Both: $9$\n2. Bike only: $26 - 9 = 17$\n3. Skateboard only: $18 - 9 = 9$\n4. At least one: $17 + 9 + 9 = 35$\n5. Neither: $45 - 35 = 10$\n\n**Answer:** $10$"
+ },
+ "turn_checked": {
+  "my_answer": "10",
+  "attempts": 1
+ }
+}
