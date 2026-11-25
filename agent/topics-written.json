@@ -537,5 +537,12 @@
     "title": "Year 9 linear graphs: gradient and intercept mistakes Victorian students keep making",
     "audience": "Year 8–9 parents in Victoria",
     "angle": "Linear graphs (gradient, intercept, equation of a line) are a core Year 9 topic in the Victorian curriculum and a known sticking point before Year 10 and VCE. Tuterly already covers index laws and Pythagoras/trig at Year 9, but linear graphs — a topic where students make predictable, fixable errors — has no dedicated post yet. A Melbourne parent whose child just bombed a linear graphs test will search for exactly this, and no competitor has a Victorian-specific, error-focused piece on it."
+  },
+  {
+    "date": "2026-11-25",
+    "slug": "year-10-quadratics-factorising-solving-victoria",
+    "title": "Year 10 quadratics: how to factorise and solve without guessing",
+    "audience": "Year 9-10 parents in Victoria",
+    "angle": "Quadratics are the single biggest algebraic hurdle in Year 10 and a direct prerequisite for VCE Maths Methods. Most students learn a half-understood trial-and-error method that collapses under test conditions; this post unpacks the specific errors Victorian students make (wrong sign pairs, forgetting the null factor law, mishandling non-monic quadratics) and gives parents a clear picture of what mastery actually looks like. The natural next step—practising the question types they got wrong—maps directly to Tuterly's core use case."
   }
 ]
