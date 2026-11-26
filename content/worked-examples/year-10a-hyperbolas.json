@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Sketching y = a/x from a table of values",
+   "question": "Sketch $y = \\dfrac{6}{x}$ for $-6 \\le x \\le 6$. (a) Complete a table of values for $x = -6, -3, -2, -1, 1, 2, 3, 6$. (b) State the equations of the asymptotes. (c) Which quadrants do the branches lie in?",
+   "solution": "**Key idea:** $y = \\dfrac{a}{x}$ is a hyperbola. You can't divide by zero, so there is no point at $x = 0$, and $\\dfrac{6}{x}$ is never $0$, so the curve never reaches $y = 0$ either. Those two lines are the asymptotes.\n\n1. (a) Divide $6$ by each $x$-value. Negative $x$ first:\n\n| $x$ | $-6$ | $-3$ | $-2$ | $-1$ |\n|---|---|---|---|---|\n| $y$ | $-1$ | $-2$ | $-3$ | $-6$ |\n\nThen positive $x$:\n\n| $x$ | $1$ | $2$ | $3$ | $6$ |\n|---|---|---|---|---|\n| $y$ | $6$ | $3$ | $2$ | $1$ |\n\n2. (b) $x = 0$ makes the denominator zero, so the vertical asymptote is $x = 0$ (the $y$-axis).\n3. As $x$ gets very large, $\\dfrac{6}{x}$ gets closer to $0$, so the horizontal asymptote is $y = 0$ (the $x$-axis).\n4. (c) When $x > 0$, $y > 0$ (first quadrant). When $x < 0$, $y < 0$ (third quadrant).\n5. Plot the points and join each set with a smooth curve that bends towards both axes without touching them. The two branches are separate: never join them across $x = 0$.\n\n**Answer:** asymptotes $x = 0$ and $y = 0$; branches in the first and third quadrants, through $(1, 6)$, $(2, 3)$, $(3, 2)$, $(6, 1)$ and $(-1, -6)$, $(-2, -3)$, $(-3, -2)$, $(-6, -1)$",
+   "answer": "Asymptotes $x = 0$ and $y = 0$; branches in quadrants 1 and 3, e.g. through $(2, 3)$ and $(-2, -3)$"
+  },
+  {
+   "title": "A negative numerator: y = −4/x",
+   "question": "(a) Find $y$ when $x = -4, -2, -1, 1, 2, 4$ for $y = -\\dfrac{4}{x}$. (b) Which quadrants is the graph in? (c) Describe how the graph of $y = -\\dfrac{4}{x}$ is related to the graph of $y = \\dfrac{4}{x}$.",
+   "solution": "**Key idea:** The sign of $a$ in $y = \\dfrac{a}{x}$ decides where the branches go. Positive $a$: quadrants 1 and 3. Negative $a$: quadrants 2 and 4.\n\n1. (a) $x = -4$: $y = -\\dfrac{4}{-4} = 1$\n2. $x = -2$: $y = -\\dfrac{4}{-2} = 2$, and $x = -1$: $y = 4$\n3. $x = 1$: $y = -4$, $x = 2$: $y = -2$, $x = 4$: $y = -1$\n4. (b) Negative $x$ gives positive $y$ (second quadrant) and positive $x$ gives negative $y$ (fourth quadrant).\n5. (c) Every $y$-value of $y = \\dfrac{4}{x}$ has changed sign, so the graph is **reflected in the $x$-axis**. The asymptotes are still $x = 0$ and $y = 0$.\n\n**Answer:** (a) $y = 1, 2, 4, -4, -2, -1$ (b) quadrants 2 and 4 (c) a reflection of $y = \\dfrac{4}{x}$ in the $x$-axis",
+   "answer": "(a) $1, 2, 4, -4, -2, -1$ (b) quadrants 2 and 4 (c) reflection in the $x$-axis"
+  },
+  {
+   "title": "Sketching a translated hyperbola",
+   "question": "For $y = \\dfrac{2}{x - 3} + 1$: (a) state the asymptotes, (b) find the $x$- and $y$-intercepts, (c) state the domain and range, (d) describe the sketch.",
+   "solution": "**Key idea:** In $y = \\dfrac{a}{x - h} + k$, the vertical asymptote is $x = h$ and the horizontal asymptote is $y = k$. The graph is $y = \\dfrac{a}{x}$ moved $h$ right and $k$ up.\n\n1. (a) The denominator $x - 3$ is zero when $x = 3$, so the vertical asymptote is $x = 3$. The $+1$ lifts everything up $1$, so the horizontal asymptote is $y = 1$.\n2. (b) $y$-intercept: put $x = 0$:\n$$y = \\frac{2}{0 - 3} + 1 = -\\frac{2}{3} + 1 = \\frac{1}{3}$$\n3. $x$-intercept: put $y = 0$:\n$$0 = \\frac{2}{x - 3} + 1 \\;\\Rightarrow\\; \\frac{2}{x - 3} = -1 \\;\\Rightarrow\\; x - 3 = -2 \\;\\Rightarrow\\; x = 1$$\n4. (c) Domain: all real $x$ except $x = 3$. Range: all real $y$ except $y = 1$.\n5. (d) $a = 2$ is positive, so the branches sit in the top-right and bottom-left of the cross made by the asymptotes. Draw dashed lines at $x = 3$ and $y = 1$, mark $(0, \\tfrac{1}{3})$ and $(1, 0)$ on the bottom-left branch, and add a point such as $(4, 3)$ on the top-right branch.\n6. Check $(4, 3)$: $\\dfrac{2}{4 - 3} + 1 = 3$ ✓\n\n**Answer:** asymptotes $x = 3$, $y = 1$; intercepts $(1, 0)$ and $\\left(0, \\dfrac{1}{3}\\right)$; domain $x \\ne 3$, range $y \\ne 1$",
+   "answer": "Asymptotes $x = 3$ and $y = 1$; intercepts $(1, 0)$ and $\\left(0, \\tfrac{1}{3}\\right)$; domain $x \\ne 3$, range $y \\ne 1$"
+  },
+  {
+   "title": "A shift left and down",
+   "question": "For $y = \\dfrac{1}{x + 2} - 4$, find the asymptotes and both intercepts.",
+   "solution": "**Key idea:** $x + 2 = x - (-2)$, so $h = -2$. A plus sign in the denominator moves the graph **left**.\n\n1. Vertical asymptote: $x + 2 = 0$, so $x = -2$.\n2. Horizontal asymptote: $y = -4$.\n3. $y$-intercept ($x = 0$):\n$$y = \\frac{1}{2} - 4 = -3.5$$\n4. $x$-intercept ($y = 0$):\n$$\\frac{1}{x + 2} = 4 \\;\\Rightarrow\\; x + 2 = \\frac{1}{4} \\;\\Rightarrow\\; x = -1.75$$\n5. Both intercepts are to the right of $x = -2$, on the upper-right branch, which makes sense: that branch starts high near the asymptote and drops towards $y = -4$, crossing both axes on the way.\n\n**Answer:** asymptotes $x = -2$ and $y = -4$; $y$-intercept $(0, -3.5)$; $x$-intercept $(-1.75, 0)$",
+   "answer": "Asymptotes $x = -2$, $y = -4$; intercepts $(0, -3.5)$ and $(-1.75, 0)$"
+  },
+  {
+   "title": "Finding the equation from a graph",
+   "question": "A hyperbola has asymptotes $x = 1$ and $y = -2$ and passes through $(3, 0)$. (a) Find its equation in the form $y = \\dfrac{a}{x - h} + k$. (b) Find its $y$-intercept.",
+   "solution": "**Key idea:** The asymptotes give $h$ and $k$ straight away. One point on the curve then gives $a$.\n\n1. Vertical asymptote $x = 1$ means $h = 1$; horizontal asymptote $y = -2$ means $k = -2$:\n$$y = \\frac{a}{x - 1} - 2$$\n2. Substitute the point $(3, 0)$:\n$$0 = \\frac{a}{3 - 1} - 2 \\;\\Rightarrow\\; \\frac{a}{2} = 2 \\;\\Rightarrow\\; a = 4$$\n3. (a) So $y = \\dfrac{4}{x - 1} - 2$.\n4. (b) Put $x = 0$: $y = \\dfrac{4}{-1} - 2 = -6$.\n5. Check with the given point: $\\dfrac{4}{3 - 1} - 2 = 0$ ✓\n\n**Answer:** (a) $y = \\dfrac{4}{x - 1} - 2$ (b) $(0, -6)$",
+   "answer": "(a) $y = \\dfrac{4}{x - 1} - 2$ (b) $(0, -6)$"
+  },
+  {
+   "title": "Describing transformations and finding where a line meets the curve",
+   "question": "(a) Describe the transformations that take $y = \\dfrac{1}{x}$ to $y = \\dfrac{3}{x + 1} - 2$. (b) Find the points where $y = \\dfrac{8}{x}$ meets the line $y = x + 2$.",
+   "solution": "**Key idea:** Read $y = \\dfrac{a}{x - h} + k$ from the inside out: $a$ stretches, $h$ moves sideways, $k$ moves up or down.\n\n1. (a) $a = 3$: a dilation by a factor of $3$ from the $x$-axis.\n2. $x + 1 = x - (-1)$: a translation of $1$ unit **left**.\n3. $-2$: a translation of $2$ units **down**.\n4. So the new asymptotes are $x = -1$ and $y = -2$.\n5. (b) Where they meet, the $y$-values are equal:\n$$\\frac{8}{x} = x + 2$$\n6. Multiply both sides by $x$ (which can't be $0$ here): $8 = x^2 + 2x$, so $x^2 + 2x - 8 = 0$.\n7. Factorise: $(x + 4)(x - 2) = 0$, so $x = -4$ or $x = 2$.\n8. Find $y$ from the line: $x = 2$ gives $y = 4$; $x = -4$ gives $y = -2$.\n9. Check on the hyperbola: $\\dfrac{8}{2} = 4$ ✓ and $\\dfrac{8}{-4} = -2$ ✓\n\n**Answer:** (a) dilation by factor $3$ from the $x$-axis, then $1$ left and $2$ down (b) $(2, 4)$ and $(-4, -2)$",
+   "answer": "(a) dilation factor $3$ from the $x$-axis, translate $1$ left and $2$ down (b) $(2, 4)$ and $(-4, -2)$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Moving the vertical asymptote the wrong way",
+   "wrong": "\\\"$y = \\dfrac{1}{x - 3}$ has a vertical asymptote at $x = -3$.\\\"",
+   "fix": "The asymptote is where the denominator is zero: $x - 3 = 0$, so $x = 3$. A minus sign inside moves the graph **right**, and a plus sign moves it left."
+  },
+  {
+   "title": "Leaving the horizontal asymptote on the x-axis",
+   "wrong": "\\\"$y = \\dfrac{2}{x} + 5$ has asymptotes $x = 0$ and $y = 0$.\\\"",
+   "fix": "Adding $5$ lifts every point, and the asymptote with it. The horizontal asymptote is $y = 5$. As $x$ gets large, $\\dfrac{2}{x}$ gets close to $0$, so $y$ gets close to $5$."
+  },
+  {
+   "title": "Joining the two branches",
+   "wrong": "Drawing one continuous curve through the vertical asymptote, like a wobbly line.",
+   "fix": "A hyperbola has two separate branches. There is no point on the graph at $x = h$, so the curve can't cross that line. Draw the asymptotes as dashed lines first, then sketch each branch in its own corner."
+  },
+  {
+   "title": "Putting a negative hyperbola in the wrong quadrants",
+   "wrong": "Sketching $y = -\\dfrac{3}{x}$ in quadrants 1 and 3.",
+   "fix": "Test one point: $x = 1$ gives $y = -3$, which is in quadrant 4. Negative $a$ puts the branches in quadrants 2 and 4 (or the matching corners of the shifted asymptotes)."
+  },
+  {
+   "title": "Giving y = a/x a y-intercept",
+   "wrong": "\\\"The $y$-intercept of $y = \\dfrac{3}{x}$ is $(0, 3)$.\\\"",
+   "fix": "Putting $x = 0$ gives $\\dfrac{3}{0}$, which is undefined. The $y$-axis is the asymptote, so there is **no** $y$-intercept, and since $\\dfrac{3}{x}$ is never $0$ there is no $x$-intercept either."
+  },
+  {
+   "title": "Swapping the intercept rules",
+   "wrong": "Putting $x = 0$ to find the $x$-intercept of $y = \\dfrac{2}{x - 3} + 1$.",
+   "fix": "The $x$-intercept is on the $x$-axis, where $y = 0$. Put $y = 0$ to find it ($x = 1$). Put $x = 0$ for the $y$-intercept ($y = \\dfrac{1}{3}$)."
+  }
+ ],
+ "practice": {
+  "question": "For $y = \\dfrac{6}{x + 2} - 3$: (a) state the asymptotes, (b) find all the axis intercepts, (c) state the domain and range.",
+  "answer": "(a) $x = -2$ and $y = -3$ (b) the graph passes through the origin, $(0, 0)$, and has no other intercepts (c) domain $x \\ne -2$, range $y \\ne -3$",
+  "solution": "**Key idea:** Read $h$ and $k$ from the equation, then put $x = 0$ and $y = 0$ in turn.\n\n1. (a) $x + 2 = 0$ gives the vertical asymptote $x = -2$. The $-3$ gives the horizontal asymptote $y = -3$.\n2. (b) $y$-intercept: $x = 0$ gives $y = \\dfrac{6}{2} - 3 = 0$.\n3. $x$-intercept: $y = 0$ gives $\\dfrac{6}{x + 2} = 3$, so $x + 2 = 2$ and $x = 0$.\n4. Both intercepts are the same point, the origin. There is only one $x$-value that solves step 3, so there are no other intercepts.\n5. (c) Domain: all real $x$ except $-2$. Range: all real $y$ except $-3$.\n\n**Answer:** asymptotes $x = -2$, $y = -3$; the only intercept is $(0, 0)$; domain $x \\ne -2$, range $y \\ne -3$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What are hyperbolas in Year 10A maths?",
+  "a": "A hyperbola is the graph of an equation like y = 6/x or y = a/(x − h) + k. It has two separate branches that get closer and closer to two lines, the asymptotes, without touching them. In Year 10A, students read the asymptotes x = h and y = k from the equation, use the sign of a to place the branches, find intercepts, state the domain and range, and work out the equation from a graph."
+ },
+ "turn": {
+  "question": "Find the $y$-intercept of $y = \\dfrac{6}{x - 3} + 4$.",
+  "kind": "number",
+  "accept": {
+   "value": 2,
+   "tol": 0
+  },
+  "answer_display": "$2$",
+  "hint": "Put $x = 0$. The denominator becomes $0 - 3$.",
+  "solution": "**Key idea:** The $y$-intercept is where $x = 0$.\n\n1. $y = \\dfrac{6}{0 - 3} + 4$\n2. $= -2 + 4$\n3. $= 2$\n\n**Answer:** $2$, so the graph crosses the $y$-axis at $(0, 2)$"
+ },
+ "turn_checked": {
+  "my_answer": "2",
+  "attempts": 1
+ }
+}
