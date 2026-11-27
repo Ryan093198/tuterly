@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Solving a quadratic equation from its graph",
+   "question": "(a) Complete a table of values for $y = x^2 - 2x - 3$ for $x = -2, -1, 0, 1, 2, 3, 4$. (b) Use the graph to solve $x^2 - 2x - 3 = 0$.",
+   "solution": "**Key idea:** The solutions of $x^2 - 2x - 3 = 0$ are the $x$-values where the graph of $y = x^2 - 2x - 3$ has $y = 0$. That is where it crosses the $x$-axis.\n\n1. (a) Substitute each $x$-value. For example, $x = -2$: $(-2)^2 - 2(-2) - 3 = 4 + 4 - 3 = 5$.\n\n| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ | $4$ |\n|---|---|---|---|---|---|---|---|\n| $y$ | $5$ | $0$ | $-3$ | $-4$ | $-3$ | $0$ | $5$ |\n\n2. Plot the points and join them with a smooth U-shaped curve. The turning point is $(1, -4)$.\n3. (b) The curve crosses the $x$-axis at $x = -1$ and $x = 3$.\n4. Check $x = 3$: $9 - 6 - 3 = 0$ ✓. Check $x = -1$: $1 + 2 - 3 = 0$ ✓\n\n**Answer:** $x = -1$ or $x = 3$",
+   "answer": "$x = -1$ or $x = 3$"
+  },
+  {
+   "title": "Using a horizontal line to solve f(x) = k",
+   "question": "Use the graph of $y = x^2 - 2x - 3$ from the previous example to solve (a) $x^2 - 2x - 3 = 5$ (b) $x^2 - 2x - 3 = -4$. (c) How many solutions does $x^2 - 2x - 3 = -6$ have?",
+   "solution": "**Key idea:** To solve $f(x) = k$, draw the horizontal line $y = k$ on the same axes. Each point where the line meets the curve gives one solution: read off its $x$-value.\n\n1. (a) Draw $y = 5$. It meets the parabola at the points $(-2, 5)$ and $(4, 5)$ from the table, so $x = -2$ or $x = 4$.\n2. Check $x = 4$: $16 - 8 - 3 = 5$ ✓. Check $x = -2$: $4 + 4 - 3 = 5$ ✓\n3. (b) $y = -4$ just touches the parabola at its turning point $(1, -4)$. There is only one solution: $x = 1$.\n4. (c) The lowest point of the parabola is $y = -4$. The line $y = -6$ is below it and never meets the curve, so there are **no** solutions.\n\n**Answer:** (a) $x = -2$ or $x = 4$ (b) $x = 1$ (c) no solutions",
+   "answer": "(a) $x = -2$ or $x = 4$ (b) $x = 1$ (c) none"
+  },
+  {
+   "title": "Break-even point: where two lines cross",
+   "question": "A school club sells hoodies. Making them costs a setup fee of $\\$200$ plus $\\$5$ per hoodie, so $C = 200 + 5n$. Each hoodie sells for $\\$15$, so the money coming in is $R = 15n$. (a) Graph both lines for $0 \\le n \\le 30$. (b) Find the break-even point and explain what it means.",
+   "solution": "**Key idea:** The break-even point is where cost equals income, $C = R$. On a graph, that is where the two lines intersect.\n\n1. (a) Two points are enough for each line.\n   - $C = 200 + 5n$: $n = 0$ gives $200$, $n = 30$ gives $350$.\n   - $R = 15n$: $n = 0$ gives $0$, $n = 30$ gives $450$.\n2. Plot and join each pair. $R$ starts lower but is steeper, so the lines cross.\n3. (b) Reading the graph, the lines meet at $n = 20$, where both are $300$.\n4. Check algebraically: $200 + 5n = 15n$ gives $200 = 10n$, so $n = 20$, and $15 \\times 20 = 300$ ✓\n5. Meaning: after selling $20$ hoodies the club has taken $\\$300$ and spent $\\$300$. Every hoodie after the 20th makes a profit; fewer than 20 is a loss.\n\n**Answer:** break-even at $(20, 300)$: $20$ hoodies, $\\$300$ cost and income",
+   "answer": "$(20, 300)$: 20 hoodies, $\\$300$"
+  },
+  {
+   "title": "Where a line meets a parabola",
+   "question": "On the same axes, sketch $y = x^2$ and $y = x + 2$. Use the graphs to solve $x^2 = x + 2$, and state the points of intersection.",
+   "solution": "**Key idea:** The solutions of $x^2 = x + 2$ are the $x$-values where the two graphs meet, because at those points both sides have the same $y$-value.\n\n1. Table for $y = x^2$: $x = -2, -1, 0, 1, 2, 3$ gives $y = 4, 1, 0, 1, 4, 9$.\n2. Table for $y = x + 2$: $x = -2, -1, 0, 1, 2, 3$ gives $y = 0, 1, 2, 3, 4, 5$.\n3. Both tables have $y = 1$ at $x = -1$ and $y = 4$ at $x = 2$, so the graphs meet at $(-1, 1)$ and $(2, 4)$.\n4. Check by algebra: $x^2 - x - 2 = 0$, so $(x - 2)(x + 1) = 0$, giving $x = 2$ or $x = -1$ ✓\n\n**Answer:** $x = -1$ or $x = 2$; the graphs intersect at $(-1, 1)$ and $(2, 4)$",
+   "answer": "$x = -1$ or $x = 2$; points $(-1, 1)$ and $(2, 4)$"
+  },
+  {
+   "title": "Guess, check and refine: 2ˣ = 10",
+   "question": "The graphs of $y = 2^x$ and $y = 10$ intersect once. (a) Between which two whole numbers is the solution of $2^x = 10$? (b) Use guess, check and refine to find the solution correct to 2 decimal places.",
+   "solution": "**Key idea:** A graph shows roughly where the solution is. Then test values on a calculator, keeping track of whether each one is too big or too small, to narrow it down.\n\n1. (a) $2^3 = 8$ is less than $10$ and $2^4 = 16$ is more, so the curve crosses $y = 10$ between $x = 3$ and $x = 4$.\n2. (b) Try values and record each result:\n\n| $x$ | $2^x$ | Too small or too big? |\n|---|---|---|\n| $3.3$ | $9.849$ | too small |\n| $3.4$ | $10.556$ | too big |\n| $3.32$ | $9.987$ | too small |\n| $3.33$ | $10.056$ | too big |\n| $3.325$ | $10.021$ | too big |\n\n3. The solution is between $3.32$ and $3.325$, so every value in that interval rounds to $3.32$.\n\n**Answer:** (a) between $3$ and $4$ (b) $x \\approx 3.32$",
+   "answer": "(a) between 3 and 4 (b) $x \\approx 3.32$"
+  },
+  {
+   "title": "A circle and a line",
+   "question": "The circle $x^2 + y^2 = 25$ and the line $y = x + 1$ are drawn on the same axes. (a) Find the points where they meet. (b) How many times does the line $y = 7$ meet the circle?",
+   "solution": "**Key idea:** $x^2 + y^2 = 25$ is a circle with centre $(0, 0)$ and radius $5$. Points of intersection must satisfy both equations.\n\n1. (a) From a sketch, the line crosses the circle in the first quadrant and the third quadrant. Good candidates from the grid are $(3, 4)$ and $(-4, -3)$.\n2. Check $(3, 4)$: on the line, $3 + 1 = 4$ ✓; on the circle, $9 + 16 = 25$ ✓\n3. Check $(-4, -3)$: on the line, $-4 + 1 = -3$ ✓; on the circle, $16 + 9 = 25$ ✓\n4. Confirm by algebra: substitute $y = x + 1$ to get $x^2 + (x + 1)^2 = 25$, so $2x^2 + 2x - 24 = 0$, which is $x^2 + x - 12 = 0$ and $(x + 4)(x - 3) = 0$.\n5. (b) The circle only reaches up to $y = 5$. The line $y = 7$ is above the whole circle, so it never meets it.\n\n**Answer:** (a) $(3, 4)$ and $(-4, -3)$ (b) zero times",
+   "answer": "(a) $(3, 4)$ and $(-4, -3)$ (b) no points of intersection"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Giving the y-values as the solutions",
+   "wrong": "\"$x^2 - 2x - 3 = 5$ has solution $5$, because that's where the line is.\"",
+   "fix": "The equation asks for $x$. Read down from each intersection point to the $x$-axis: $x = -2$ or $x = 4$. The $5$ is the height of the line, not the answer."
+  },
+  {
+   "title": "Reading the x-intercepts when the equation doesn't equal zero",
+   "wrong": "Solving $x^2 - 2x - 3 = 5$ by reading where $y = x^2 - 2x - 3$ crosses the $x$-axis ($x = -1$ or $3$).",
+   "fix": "The $x$-axis is the line $y = 0$, so the intercepts only solve $x^2 - 2x - 3 = 0$. For $= 5$, draw $y = 5$ and use where it meets the curve."
+  },
+  {
+   "title": "Only giving x for a point of intersection",
+   "wrong": "\"The lines $y = 2x - 1$ and $y = -x + 5$ intersect at $x = 2$.\"",
+   "fix": "A point needs both coordinates. Substitute back: $y = 2(2) - 1 = 3$, so the point is $(2, 3)$. Check it works in the other equation too: $-2 + 5 = 3$ ✓"
+  },
+  {
+   "title": "Treating a graph reading as exact",
+   "wrong": "Reading $x = 2.6$ off a hand-drawn graph and writing it as the exact solution.",
+   "fix": "A graph gives an estimate. Either check it by substitution, refine it with guess-check-refine, or write $x \\approx 2.6$. Whole-number readings should still be checked in the equation."
+  },
+  {
+   "title": "Missing a solution off the edge of the grid",
+   "wrong": "Drawing $y = x^2$ and $y = x + 2$ only for $0 \\le x \\le 3$ and finding just $x = 2$.",
+   "fix": "A line can meet a parabola twice. Extend the table to negative $x$ (or check with algebra) and you find the second solution, $x = -1$."
+  },
+  {
+   "title": "Rounding too early in guess, check and refine",
+   "wrong": "\"$2^{3.32} \\approx 9.99$ is close to 10, so the answer is $3.32$\" without testing anything above it.",
+   "fix": "You need to trap the solution between two values. Test the halfway value, $3.325$: it gives $10.021$, too big, so the solution is between $3.32$ and $3.325$ and rounds to $3.32$."
+  }
+ ],
+ "practice": {
+  "question": "(a) Use a table of values for $x = -5$ to $3$ to sketch $y = x^2 + 2x - 8$, and solve $x^2 + 2x - 8 = 0$ from the graph. (b) Use the same graph to solve $x^2 + 2x - 8 = -5$.",
+  "answer": "(a) $x = -4$ or $x = 2$ (b) $x = -3$ or $x = 1$",
+  "solution": "**Key idea:** $= 0$ means read the $x$-intercepts. $= -5$ means draw the line $y = -5$ and read where it meets the curve.\n\n1. Table: $x = -5, -4, -3, -2, -1, 0, 1, 2, 3$ gives $y = 7, 0, -5, -8, -9, -8, -5, 0, 7$.\n2. (a) The curve crosses the $x$-axis at $x = -4$ and $x = 2$.\n3. Check: $16 - 8 - 8 = 0$ ✓ and $4 + 4 - 8 = 0$ ✓\n4. (b) The table already shows $y = -5$ at $x = -3$ and $x = 1$, so the line $y = -5$ meets the curve there.\n5. Check: $9 - 6 - 8 = -5$ ✓ and $1 + 2 - 8 = -5$ ✓\n\n**Answer:** (a) $x = -4$ or $x = 2$ (b) $x = -3$ or $x = 1$"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "What does solving equations graphically mean in Year 10 maths?",
+  "a": "Solving an equation graphically means drawing a graph for each side of the equation and reading the x-values where the graphs meet. For an equation that equals zero, the solutions are where the curve crosses the x-axis. In Year 10, students use this to solve linear, quadratic, exponential and circle problems, read break-even points, count how many solutions there are, and narrow a solution down with guess, check and refine."
+ },
+ "turn": {
+  "question": "The lines $y = 3x - 2$ and $y = x + 4$ are graphed on the same axes. What is the $x$-coordinate of the point where they intersect?",
+  "kind": "number",
+  "accept": {
+   "value": 3,
+   "tol": 0
+  },
+  "answer_display": "$3$",
+  "hint": "At the intersection both lines have the same $y$-value, so set $3x - 2 = x + 4$.",
+  "solution": "**Key idea:** Where two graphs meet, their $y$-values are equal.\n\n1. $3x - 2 = x + 4$\n2. $2x = 6$\n3. $x = 3$\n4. Check: $3(3) - 2 = 7$ and $3 + 4 = 7$ ✓\n\n**Answer:** $3$, at the point $(3, 7)$"
+ },
+ "turn_checked": {
+  "my_answer": "3",
+  "attempts": 1
+ }
+}
