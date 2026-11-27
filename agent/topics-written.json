@@ -544,5 +544,12 @@
     "title": "Year 10 quadratics: how to factorise and solve without guessing",
     "audience": "Year 9-10 parents in Victoria",
     "angle": "Quadratics are the single biggest algebraic hurdle in Year 10 and a direct prerequisite for VCE Maths Methods. Most students learn a half-understood trial-and-error method that collapses under test conditions; this post unpacks the specific errors Victorian students make (wrong sign pairs, forgetting the null factor law, mishandling non-monic quadratics) and gives parents a clear picture of what mastery actually looks like. The natural next step—practising the question types they got wrong—maps directly to Tuterly's core use case."
+  },
+  {
+    "date": "2026-11-27",
+    "slug": "year-10-simultaneous-equations-mistakes-victoria",
+    "title": "Year 10 simultaneous equations: where Victorian students lose marks (and how to fix it)",
+    "audience": "Parents of Year 9–10 students in Victoria",
+    "angle": "Simultaneous equations are a core Year 10 topic in the Victorian curriculum and a known sticking point before VCE — students often pick the wrong method, make sign errors in elimination, or lose track of which variable they've solved for. This post follows the successful pattern of Tuterly's existing 'mistakes' series (index laws, linear graphs, quadratics, expanding and factorising) with a specific, actionable focus that naturally leads parents toward targeted practice on the exact question types their child got wrong."
   }
 ]
