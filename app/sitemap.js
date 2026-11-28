@@ -136,6 +136,7 @@ const STATIC_PAGES = [
   { path: "/maths/volume-of-a-prism", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/area-of-a-trapezium", priority: 0.8, changeFrequency: "monthly" },
   { path: "/maths/bearings", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/maths/probability", priority: 0.8, changeFrequency: "monthly" },
   { path: "/calculators/standard-deviation", priority: 0.9, changeFrequency: "monthly" },
   { path: "/calculators/quadratic-formula", priority: 0.9, changeFrequency: "monthly" },
   { path: "/parents/kumon-cost-australia", priority: 0.8, changeFrequency: "monthly" },

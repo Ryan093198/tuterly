@@ -1,0 +1,98 @@
+{
+ "examples": [
+  {
+   "title": "Sketching a cubic from its factors",
+   "question": "Sketch $y = (x + 2)(x - 1)(x - 3)$. Show the $x$- and $y$-intercepts and describe what happens at each end of the graph.",
+   "solution": "**Key idea:** A factorised polynomial shows its $x$-intercepts straight away. Each factor equals zero at one $x$-value, and the leading term tells you which way the ends point.\n\n1. $x$-intercepts: set each factor to zero. $x + 2 = 0$ gives $x = -2$, $x - 1 = 0$ gives $x = 1$ and $x - 3 = 0$ gives $x = 3$.\n2. $y$-intercept: put $x = 0$:\n$$y = (0 + 2)(0 - 1)(0 - 3) = 2 \\times (-1) \\times (-3) = 6$$\n3. Leading term: multiplying the $x$ from each bracket gives $x \\times x \\times x = x^3$, with a positive coefficient. A positive cubic starts at the bottom left and finishes at the top right.\n4. Check the shape with the $y$-intercept: between $x = -2$ and $x = 1$ the graph is above the axis, and $(0, 6)$ is above the axis ✓\n5. Sketch: come up from the bottom left, cross at $(-2, 0)$, rise through $(0, 6)$, turn and come down through $(1, 0)$, turn below the axis and rise through $(3, 0)$ to the top right.\n\n**Answer:** $x$-intercepts $(-2, 0)$, $(1, 0)$, $(3, 0)$; $y$-intercept $(0, 6)$; bottom left to top right",
+   "answer": "$x$-intercepts $-2$, $1$, $3$; $y$-intercept $6$; starts bottom left, ends top right"
+  },
+  {
+   "title": "A negative leading coefficient",
+   "question": "Sketch $y = -x(x - 2)(x + 3)$. (a) Find the intercepts. (b) Is the graph above or below the $x$-axis at $x = -1$ and at $x = 1$?",
+   "solution": "**Key idea:** The negative out the front flips the whole graph upside down. A negative cubic starts at the top left and finishes at the bottom right.\n\n1. (a) $x$-intercepts: $-x = 0$ gives $x = 0$, $x - 2 = 0$ gives $x = 2$, $x + 3 = 0$ gives $x = -3$.\n2. $y$-intercept: $x = 0$ is already an $x$-intercept, so the graph passes through the origin $(0, 0)$.\n3. Leading term: $-x \\times x \\times x = -x^3$, so the ends go top left to bottom right.\n4. (b) At $x = -1$:\n$$y = -(-1)(-1 - 2)(-1 + 3) = 1 \\times (-3) \\times 2 = -6$$\nso the graph is **below** the axis between $-3$ and $0$.\n5. At $x = 1$:\n$$y = -(1)(1 - 2)(1 + 3) = -1 \\times (-1) \\times 4 = 4$$\nso the graph is **above** the axis between $0$ and $2$.\n6. Sketch: down from the top left, cross at $(-3, 0)$, dip below the axis, rise through the origin, peak above the axis, then come down through $(2, 0)$ to the bottom right.\n\n**Answer:** (a) $(-3, 0)$, $(0, 0)$, $(2, 0)$ (b) below at $x = -1$ ($y = -6$), above at $x = 1$ ($y = 4$)",
+   "answer": "(a) $(-3, 0)$, $(0, 0)$, $(2, 0)$ (b) $y = -6$ (below) and $y = 4$ (above)"
+  },
+  {
+   "title": "A repeated factor: touching the axis",
+   "question": "Sketch $y = (x - 2)^2(x + 1)$, showing the intercepts and what the graph does at each $x$-intercept.",
+   "solution": "**Key idea:** A squared factor gives a repeated root. The graph **touches** the $x$-axis there and turns around, instead of crossing it.\n\n1. $x$-intercepts: $(x - 2)^2 = 0$ gives $x = 2$ (repeated), and $x + 1 = 0$ gives $x = -1$.\n2. $y$-intercept: $x = 0$ gives\n$$y = (0 - 2)^2(0 + 1) = 4 \\times 1 = 4$$\n3. Leading term: $x^2 \\times x = x^3$, positive, so bottom left to top right.\n4. At $x = -1$ the factor is not repeated, so the graph crosses. At $x = 2$ the factor is squared, so the graph touches the axis and bounces back up.\n5. Check a point just either side of $x = 2$: $x = 1$ gives $1 \\times 2 = 2$ and $x = 3$ gives $1 \\times 4 = 4$. Both are positive, so the graph stays above the axis on both sides of $x = 2$ ✓\n6. Sketch: from the bottom left, cross at $(-1, 0)$, rise through $(0, 4)$, turn, come down to just touch $(2, 0)$, then rise to the top right.\n\n**Answer:** crosses at $(-1, 0)$, touches at $(2, 0)$, $y$-intercept $(0, 4)$",
+   "answer": "Crosses at $(-1, 0)$, touches (turning point) at $(2, 0)$, $y$-intercept $(0, 4)$"
+  },
+  {
+   "title": "A translated cubic and its point of inflection",
+   "question": "For $y = (x - 1)^3 + 8$: (a) state the point of inflection, (b) find the $x$- and $y$-intercepts, (c) describe the transformations from $y = x^3$.",
+   "solution": "**Key idea:** $y = x^3$ has a flat point of inflection at the origin. In $y = a(x - h)^3 + k$ that point moves to $(h, k)$.\n\n1. (a) $h = 1$ and $k = 8$, so the point of inflection is $(1, 8)$.\n2. (b) $y$-intercept: $x = 0$ gives $y = (-1)^3 + 8 = -1 + 8 = 7$.\n3. $x$-intercept: put $y = 0$:\n$$(x - 1)^3 = -8 \\;\\Rightarrow\\; x - 1 = \\sqrt[3]{-8} = -2 \\;\\Rightarrow\\; x = -1$$\n4. A cube root has only one real value, so there is only one $x$-intercept.\n5. (c) The graph of $y = x^3$ is translated $1$ unit right and $8$ units up.\n6. Check $(-1, 0)$: $(-1 - 1)^3 + 8 = -8 + 8 = 0$ ✓\n\n**Answer:** (a) $(1, 8)$ (b) $x$-intercept $(-1, 0)$, $y$-intercept $(0, 7)$ (c) $1$ right, $8$ up",
+   "answer": "(a) $(1, 8)$ (b) $(-1, 0)$ and $(0, 7)$ (c) translate $1$ right and $8$ up"
+  },
+  {
+   "title": "Factorising a quartic before sketching",
+   "question": "Sketch $y = x^4 - 5x^2 + 4$. Factorise first, then show all the intercepts.",
+   "solution": "**Key idea:** $x^4 - 5x^2 + 4$ is a quadratic in $x^2$. Factorise it like $u^2 - 5u + 4$, then use the difference of two squares.\n\n1. Factorise: $x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$, since $-1 \\times -4 = 4$ and $-1 + -4 = -5$.\n2. Difference of two squares on each bracket:\n$$y = (x - 1)(x + 1)(x - 2)(x + 2)$$\n3. $x$-intercepts: $x = -2, -1, 1, 2$.\n4. $y$-intercept: $x = 0$ gives $y = 0 - 0 + 4 = 4$.\n5. Leading term $x^4$ is positive, and an even power, so **both** ends point up.\n6. Signs between the intercepts: at $x = 0$, $y = 4$ (above). At $x = 1.5$, $y = (1.25)(-1.75) = -2.1875$ (below). By symmetry, $x = -1.5$ is also below.\n7. Sketch a W shape: down from the top left, cross at $-2$, dip below, up through $-1$, peak at $(0, 4)$, down through $1$, dip below, up through $2$ to the top right.\n\n**Answer:** $y = (x + 2)(x + 1)(x - 1)(x - 2)$; $x$-intercepts $\\pm 1$, $\\pm 2$; $y$-intercept $(0, 4)$; W shape, both ends up",
+   "answer": "$x$-intercepts $-2, -1, 1, 2$; $y$-intercept $(0, 4)$; W shape with both ends up"
+  },
+  {
+   "title": "Finding the equation from a graph",
+   "question": "A cubic crosses the $x$-axis at $x = -1$, touches it at $x = 3$, and cuts the $y$-axis at $(0, 18)$. Find its equation.",
+   "solution": "**Key idea:** Crossing at $x = -1$ gives a factor $(x + 1)$. Touching at $x = 3$ gives a squared factor $(x - 3)^2$. One more point finds the stretch factor $a$.\n\n1. Write the general form:\n$$y = a(x + 1)(x - 3)^2$$\n2. Substitute the $y$-intercept $(0, 18)$:\n$$18 = a(0 + 1)(0 - 3)^2 = 9a$$\n3. So $a = 2$, and the equation is $y = 2(x + 1)(x - 3)^2$.\n4. Check another way: $a = 2$ is positive, so the graph should go from bottom left to top right, crossing at $-1$ and touching at $3$ from above. At $x = 4$: $2 \\times 5 \\times 1 = 10$, above the axis ✓\n\n**Answer:** $y = 2(x + 1)(x - 3)^2$",
+   "answer": "$y = 2(x + 1)(x - 3)^2$"
+  }
+ ],
+ "mistakes": [
+  {
+   "title": "Getting the sign of an intercept wrong",
+   "wrong": "\"$y = (x + 2)(x - 5)(x - 1)$ crosses the $x$-axis at $x = 2$, $-5$ and $-1$.\"",
+   "fix": "Set each factor to zero. $x + 2 = 0$ gives $x = -2$, $x - 5 = 0$ gives $x = 5$ and $x - 1 = 0$ gives $x = 1$. The intercept has the opposite sign to the number in the bracket."
+  },
+  {
+   "title": "Missing a hidden negative leading coefficient",
+   "wrong": "Sketching $y = (2 - x)(x + 1)(x + 3)$ from bottom left to top right.",
+   "fix": "The $x$ terms multiply to $-x \\times x \\times x = -x^3$, so the leading coefficient is negative and the graph goes from top left to bottom right. Check: at $x = 3$, $y = (-1)(4)(6) = -24$, below the axis."
+  },
+  {
+   "title": "Crossing the axis at a squared factor",
+   "wrong": "Drawing $y = x(x - 4)^2$ cutting straight through the $x$-axis at $x = 4$.",
+   "fix": "$(x - 4)^2$ is never negative, so $y$ has the same sign just before and just after $x = 4$. The graph touches the axis there and turns. A cubed factor, like $(x - 4)^3$, is different: it crosses with a flat point of inflection."
+  },
+  {
+   "title": "Forgetting the stretch factor in the y-intercept",
+   "wrong": "\"$y = 3(x - 1)(x + 2)(x - 4)$ has a $y$-intercept of $8$.\"",
+   "fix": "Put $x = 0$ into the whole equation, including the $3$: $3 \\times (-1) \\times 2 \\times (-4) = 24$. The $y$-intercept is $(0, 24)$."
+  },
+  {
+   "title": "Using odd-degree ends for an even-degree polynomial",
+   "wrong": "Sketching $y = -x^4 + \\dots$ with one end up and one end down.",
+   "fix": "Even powers ($x^2$, $x^4$) have both ends pointing the same way: both up if the leading coefficient is positive, both down if it is negative. Odd powers ($x^3$, $x^5$) have ends pointing opposite ways."
+  },
+  {
+   "title": "Putting turning points exactly halfway between intercepts",
+   "wrong": "Marking the turning point of $y = (x + 2)(x - 1)(x - 3)$ at exactly $x = -0.5$, halfway between $-2$ and $1$.",
+   "fix": "A cubic's turning points are usually not halfway between its intercepts. In Year 10A, label the intercepts and show the shape, and only give a turning point's coordinates when the question gives you a way to find them (such as a repeated root)."
+  }
+ ],
+ "practice": {
+  "question": "Factorise $y = x^3 - x^2 - 6x$ fully, then state the $x$- and $y$-intercepts and the end behaviour of its graph.",
+  "answer": "$y = x(x - 3)(x + 2)$; $x$-intercepts $-2$, $0$ and $3$; $y$-intercept $(0, 0)$; bottom left to top right",
+  "solution": "**Key idea:** Take out the common factor of $x$ first, then factorise the quadratic that is left.\n\n1. Common factor: $y = x(x^2 - x - 6)$.\n2. Two numbers that multiply to $-6$ and add to $-1$: $-3$ and $2$. So $y = x(x - 3)(x + 2)$.\n3. $x$-intercepts: $x = 0$, $x = 3$ and $x = -2$.\n4. $y$-intercept: $x = 0$ gives $y = 0$, so the graph passes through the origin.\n5. Leading term $x^3$ is positive, so the graph goes from bottom left to top right.\n6. Check between $-2$ and $0$: $x = -1$ gives $y = (-1)(-4)(1) = 4$, above the axis, which fits a graph that has just come up through $(-2, 0)$ ✓\n\n**Answer:** $y = x(x - 3)(x + 2)$; intercepts $(-2, 0)$, $(0, 0)$, $(3, 0)$; bottom left to top right"
+ },
+ "checked": true,
+ "attempts": 1,
+ "summary": {
+  "q": "How do you sketch a polynomial graph in Year 10A?",
+  "a": "Factorise the polynomial, set each factor to zero to find the x-intercepts, and put x = 0 to find the y-intercept. The leading term sets the ends: a positive cubic goes from bottom left to top right, a negative cubic the reverse, and even powers like x⁴ have both ends pointing the same way. A squared factor means the graph touches the x-axis and turns, and a cubed factor means it crosses with a flat point of inflection."
+ },
+ "turn": {
+  "question": "Find the $y$-intercept of $y = (x - 2)(x + 1)(x + 5)$.",
+  "kind": "number",
+  "accept": {
+   "value": -10,
+   "tol": 0
+  },
+  "answer_display": "$-10$",
+  "hint": "Put $x = 0$ in every bracket, then multiply.",
+  "solution": "**Key idea:** The $y$-intercept is where $x = 0$.\n\n1. $y = (0 - 2)(0 + 1)(0 + 5)$\n2. $= -2 \\times 1 \\times 5$\n3. $= -10$\n\n**Answer:** $-10$, so the graph crosses the $y$-axis at $(0, -10)$"
+ },
+ "turn_checked": {
+  "my_answer": "-10",
+  "attempts": 1
+ }
+}
